@@ -98,13 +98,16 @@ public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
         switch (state)
         {
             case NetworkConfiguratorUserInterfaceState configState:
-                _listMenu?.UpdateState(configState);
+                if (_listMenu is { Disposed: false })
+                    _listMenu.UpdateState(configState);
                 break;
             case DeviceListUserInterfaceState listState:
-                _configurationMenu?.UpdateState(listState);
+                if (_configurationMenu is { Disposed: false })
+                    _configurationMenu.UpdateState(listState);
                 break;
             case DeviceLinkUserInterfaceState linkState:
-                _linkMenu?.UpdateState(linkState);
+                if (_linkMenu is { Disposed: false })
+                    _linkMenu.UpdateState(linkState);
                 break;
         }
     }

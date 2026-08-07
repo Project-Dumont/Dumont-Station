@@ -89,10 +89,10 @@
   access:
   - Cargo
   - Maintenance
+  - Mail # Dumont
   extendedAccess:
   - Salvage
   - External # goobstation
-  - Mail # Dumont
   - Mining # Dumont
   - Bitrun # Dumont
   special:

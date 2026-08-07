@@ -169,6 +169,12 @@ public sealed partial class DungeonJob
 
         for (var i = 0; i < chosenPacks.Length; i++)
         {
+
+            if (chosenPacks[i] == null)
+            {
+                _sawmill.Error($"Nenhum RoomPack encontrado para o índice {i}");
+                continue;
+            }
             var pack = chosenPacks[i]!;
             var packTransform = packTransforms[i];
 

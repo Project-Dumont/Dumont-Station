@@ -91,6 +91,9 @@ namespace Content.Client.Chemistry.UI
         {
             base.UpdateState(state);
 
+            if (_window is not { Disposed: false })
+                return;
+
             var castState = (ChemMasterBoundUserInterfaceState) state;
 
             _window?.UpdateState(castState); // Update window state

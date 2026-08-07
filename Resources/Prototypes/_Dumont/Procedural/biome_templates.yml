@@ -1,0 +1,197 @@
+# Floresta Densa // Dumont
+
+- type: biomeTemplate
+  id: DenseForest
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorPlanetGrass
+
+    - !type:BiomeTileLayer
+      tile: FloorPlanetDirt
+      threshold: 0.95
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        lacunarity: 1.50
+        fractalType: Ridged
+        octaves: 1
+
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorPlanetGrass
+        - FloorPlanetDirt
+      threshold: 0.95
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        lacunarity: 1.50
+        fractalType: Ridged
+        octaves: 1
+      entities:
+        - FloorWaterEntity
+
+    - !type:BiomeEntityLayer
+      threshold: 0.1
+      noise:
+        seed: 42
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.5
+        octaves: 3
+      allowedTiles:
+        - FloorPlanetGrass
+      entities:
+        - FloraTree
+        - FloraTreeLarge
+
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - FloorPlanetGrass
+      divisions: 1
+      threshold: -0.8
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.3
+      decals:
+        - BushAOne
+        - BushATwo
+        - BushAThree
+        - BushCOne
+        - BushCTwo
+        - BushCThree
+
+## Floresta Congelada
+
+- type: biomeTemplate
+  id: FrozenForest
+  layers:
+    # Decals de neve
+    - !type:BiomeDecalLayer
+      allowedTiles:
+      - FloorSnow
+      divisions: 2
+      threshold: -0.50
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+      decals:
+      - grasssnowa1
+      - grasssnowa2
+      - grasssnowa3
+      - grasssnowb1
+      - grasssnowb2
+      - grasssnowb3
+      - grasssnowc1
+      - grasssnowc2
+      - grasssnowc3
+
+    # Vegetação baixa
+    - !type:BiomeDecalLayer
+      allowedTiles:
+      - FloorSnow
+      divisions: 1
+      threshold: -0.35
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      decals:
+      - grasssnow
+      - grasssnow01
+      - grasssnow02
+      - grasssnow03
+      - grasssnow04
+      - grasssnow05
+      - grasssnow06
+
+    # Árvores (menos densas que Mountains)
+    - !type:BiomeEntityLayer
+      threshold: 0.5
+      noise:
+        seed: 42
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+      - FloorSnow
+      entities:
+      - FloraTreeConifer
+
+    # Rios de plasma
+    - !type:BiomeEntityLayer
+      allowedTiles:
+      - FloorSnow
+      threshold: 0.97
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        frequency: 0.015
+        lacunarity: 2
+        fractalType: Ridged
+      entities:
+      - FloorLiquidPlasmaEntity
+
+    # Rochas
+    - !type:BiomeEntityLayer
+      allowedTiles:
+      - FloorSnow
+      threshold: -0.30
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+      - WallRockSnow
+
+    # Spawn de mobs
+    - !type:BiomeEntityLayer
+      allowedTiles:
+      - FloorSnow
+      threshold: 0.995
+      noise:
+        seed: 91
+        noiseType: Cellular
+        frequency: 0.08
+      entities:
+      - MobWhiteWolf
+      - MobReindeerBuck
+
+    # Gelo
+    - !type:BiomeTileLayer
+      tile: FloorIce
+      threshold: -0.9
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.03
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+
+    - !type:BiomeDummyLayer
+      id: Loot
+
+    - !type:BiomeTileLayer
+      threshold: -0.7
+      tile: FloorSnow
+      noise:
+        seed: 0
+        frequency: 0.02
+        fractalType: None

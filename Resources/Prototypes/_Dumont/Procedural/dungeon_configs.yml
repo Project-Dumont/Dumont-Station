@@ -1,0 +1,107 @@
+- type: dungeonConfig
+  id: XenoDungeon
+  layers:
+  - !type:PrefabDunGen
+    roomWhitelist:
+      tags:
+      - XenoDungeon
+    presets:
+    - Bucket
+    - Wow
+    - SpaceShip
+    - Tall
+
+  - !type:CorridorDunGen
+    width: 3
+    tile: RMCFloorHybrisaEngineerShipPlating
+
+  - !type:DungeonEntranceDunGen
+    count: 2
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: BaseAirlock2
+
+  - !type:RoomEntranceDunGen
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: BaseAirlock2
+
+  - !type:EntranceFlankDunGen
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: XenoWindowTable
+
+  - !type:ExternalWindowDunGen
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: XenoWindowTable
+
+  - !type:WallMountDunGen
+    contents: XenoWalls
+    tile: RMCFloorHybrisaEngineerShipPlating
+
+  - !type:BoundaryWallDunGen
+    wall: WallXenoResinThick
+    cornerWall: WallResin
+    tile: RMCFloorHybrisaEngineerShipPlating
+
+  - !type:JunctionDunGen
+    width: 1
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: BaseAirlock2
+
+  - !type:JunctionDunGen
+    width: 3
+    tile: RMCFloorHybrisaEngineerShipPlating
+    contents: BaseAirlock2
+
+  - !type:AutoCablingDunGen
+    entity: CableApcExtension
+
+  - !type:CornerClutterDunGen
+    contents: BaseXenoClutter
+
+  - !type:CorridorDecalSkirtingDunGen
+    cardinalDecals:
+      South: BrickTileWhiteLineS
+      East: BrickTileWhiteLineE
+      North: BrickTileWhiteLineN
+      West: BrickTileWhiteLineW
+    cornerDecals:
+      SouthEast: BrickTileWhiteCornerSe
+      SouthWest: BrickTileWhiteCornerSw
+      NorthEast: BrickTileWhiteCornerNe
+      NorthWest: BrickTileWhiteCornerNw
+    pocketDecals:
+      SouthWest: BrickTileWhiteInnerSw
+      SouthEast: BrickTileWhiteInnerSe
+      NorthWest: BrickTileWhiteInnerNw
+      NorthEast: BrickTileWhiteInnerNe
+
+- type: entityTable
+  id: XenoWalls
+  table: !type:GroupSelector
+    children:
+    # Posters
+    - id: RandomPosterLegit
+    - id: ExtinguisherCabinetFilled
+      prob: 0.2
+    - id: RandomPainting
+      prob: 0.05
+    - id: IntercomCommon
+      prob: 0.1
+
+- type: entityTable
+  id: BaseXenoClutter
+  table: !type:GroupSelector
+    children:
+    - id: PottedPlantRandom
+      amount: 1
+
+- type: entityTable
+  id: BaseAirlock2
+  table: !type:AllSelector
+    children:
+      - id: AirlockMiningGlass
+
+- type: entityTable
+  id: XenoWindowTable
+  table: !type:AllSelector
+    children:
+      - id: MiningWindow

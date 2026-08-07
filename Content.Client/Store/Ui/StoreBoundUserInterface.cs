@@ -101,6 +101,9 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         switch (state)
         {
             case StoreUpdateState msg:
