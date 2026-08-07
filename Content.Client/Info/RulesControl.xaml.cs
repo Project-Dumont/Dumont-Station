@@ -54,16 +54,22 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
         var coreEntry = UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry();
         entry ??= coreEntry;
 
+        var target = entry.Value;
+
         Scroll.SetScrollValue(default);
         RulesContainer.Children.Clear();
-        if (!_parsingMan.TryAddMarkup(RulesContainer, entry.Value))
-            return;
+
+        if (!_parsingMan.TryAddMarkup(RulesContainer, target) && RulesContainer.ChildCount == 0) // Gabystation - regras
+        {
+            target = coreEntry.Id;
+            _parsingMan.TryAddMarkup(RulesContainer, target);
+        }
 
         if (addToPrior && _currentEntry != null)
             _priorEntries.Push(_currentEntry);
-        _currentEntry = entry.Value;
+        _currentEntry = target;
 
-        HomeButton.Visible = entry.Value != coreEntry.Id;
-        BackButton.Visible = _priorEntries.Count != 0 && _priorEntries.Peek() != entry.Value;
+        HomeButton.Visible = target != coreEntry.Id;
+        BackButton.Visible = _priorEntries.Count != 0 && _priorEntries.Peek() != target;
     }
 }
