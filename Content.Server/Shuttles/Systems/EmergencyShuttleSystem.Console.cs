@@ -85,6 +85,8 @@ using Content.Shared.Parallax.Biomes;
 using System.Numerics;
 using Content.Shared.Procedural;
 using Robust.Shared.Map.Components;
+using Content.Shared.Chat;
+using Content.Server.Screens.Components;
 // Starlight End
 
 namespace Content.Server.Shuttles.Systems;
@@ -277,6 +279,7 @@ public sealed partial class EmergencyShuttleSystem
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
+        var timeDelay = 0f;
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
@@ -630,6 +633,7 @@ public sealed partial class EmergencyShuttleSystem
                 foreach (var oreId in oreMarkers)
                 {
                     _biomes.AddMarkerLayer(_evacuationPlanetMap.Value, biomeComp, oreId);
+                    
                 }
             }
 
@@ -640,41 +644,35 @@ public sealed partial class EmergencyShuttleSystem
             var dungeonConfigs = new[]
             {
                 "Experiment",
-                "ShipWreckDungeon",
+                "XenoDungeon",
                 "SovietDungeonWeh",
                 "Mineshaft"
             };
             
-            var numRuins = _random.Next(3, 6); // 3-5 ruins
-            var selectedConfigs = _random.GetItems(dungeonConfigs, numRuins, allowDuplicates: false);
+            var selectedConfig = _random.Pick(dungeonConfigs);
             var seed = _random.Next();
-            var offsetDistance = 50f;
             
-            foreach (var configId in selectedConfigs)
+            var offsetDistance = 80f; 
+            
+            if (_protoManager.TryIndex<DungeonConfigPrototype>(selectedConfig, out var dungeonProto))
             {
-                if (!_protoManager.TryIndex<DungeonConfigPrototype>(configId, out var dungeonProto))
-                {
-                    Log.Warning($"Could not load dungeon config {configId}");
-                    continue;
-                }
-                
-                // Calculate offset position for this ruin
                 var angle = _random.NextAngle();
                 var offset = angle.ToVec() * offsetDistance;
                 var offsetPos = (Vector2i)(Vector2.Zero + offset);
-                
 
-                // Generate the dungeon
                 try
                 {
-                    _dungeon.GenerateDungeon(dungeonProto, _evacuationPlanetMap.Value, grid, offsetPos, seed++);
-                    
-                    Log.Debug($"Generated ruin {configId} at offset {offsetPos}");
+                    _dungeon.GenerateDungeon(dungeonProto, _evacuationPlanetMap.Value, grid, offsetPos, seed);
+                    Log.Info($"Gerada uma única ruin {selectedConfig} no offset {offsetPos}");
                 }
                 catch (Exception e)
                 {
-                    Log.Warning($"Error generating ruin {configId}: {e.Message}");
+                    Log.Warning($"Erro ao gerar a ruin {selectedConfig}: {e.Message}");
                 }
+            }
+            else
+            {
+                Log.Warning($"Não foi possível carregar a config da dungeon {selectedConfig}");
             }
             
             // Set landing zone at center of planet
@@ -686,7 +684,7 @@ public sealed partial class EmergencyShuttleSystem
             // Set a nice name
             _metaData.SetEntityName(_evacuationPlanetMap.Value, "Evacuation Planet");
             
-            Log.Info($"Created evacuation planet with {selectedBiome} biome and {numRuins} ruins");
+            Log.Info($"Created evacuation planet with {selectedBiome} biome and 1 ruin");
         }
         catch (Exception ex)
         {
