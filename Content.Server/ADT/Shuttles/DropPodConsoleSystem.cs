@@ -50,7 +50,7 @@ public sealed class DropPodConsoleSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
@@ -309,7 +309,11 @@ public sealed class DropPodConsoleSystem : EntitySystem
         }
 
         // 3. Remove the now-empty pod grid.
-        QueueDel(podGrid);
+        Timer.Spawn(TimeSpan.FromSeconds(0.5), () =>
+        {
+            if (Exists(podGrid))
+                QueueDel(podGrid);
+        });
     }
 
     // Find all grids that belong to stations marked with DropPodTargetStationComponent
