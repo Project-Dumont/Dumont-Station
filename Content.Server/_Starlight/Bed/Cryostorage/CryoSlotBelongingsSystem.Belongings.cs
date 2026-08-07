@@ -33,16 +33,16 @@ public sealed partial class CryoSlotBelongingsSystem
     // make sure things like hardsuit helmets return back to the hardsuit
     private void ReturnAttachedClothingToParents(EntityUid body)
     {
-        var attachedItems = new List<EntityUid>();
+        var attachedItems = new List<(EntityUid Item, string Slot)>();
         var enumerator = _inventory.GetSlotEnumerator(body);
 
-        while (enumerator.NextItem(out var item, out _))
+        while (enumerator.NextItem(out var item, out var slot))
         {
             if (HasComp<AttachedClothingComponent>(item))
-                attachedItems.Add(item);
+                attachedItems.Add((item, slot.Name));
         }
 
-        foreach (var item in attachedItems)
+        foreach (var (item, slotName) in attachedItems)
         {
             if (!TryComp<AttachedClothingComponent>(item, out var attached))
                 continue;
@@ -62,9 +62,10 @@ public sealed partial class CryoSlotBelongingsSystem
                 continue;
 
             // try unequip it first so container metadata is cleared before it returns to the parent.
-            if (_inventory.TryUnequip(body, toggleable.Slot, force: true))
+            if (_inventory.TryUnequip(body, slotName, force: true))
                 continue;
 
+            _container.TryRemoveFromContainer(item);
             _container.Insert(item, toggleableContainer, force: true);
         }
     }
