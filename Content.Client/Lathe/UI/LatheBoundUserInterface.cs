@@ -83,15 +83,17 @@ namespace Content.Client.Lathe.UI
         {
             base.UpdateState(state);
 
+            if (_menu is not { Disposed: false })
+                return;
+
             switch (state)
             {
                 case LatheUpdateState msg:
-                    if (_menu != null)
-                        _menu.Recipes = msg.Recipes;
-                    _menu?.PopulateRecipes();
-                    _menu?.UpdateCategories();
-                    _menu?.PopulateQueueList(msg.Queue);
-                    _menu?.SetQueueInfo(msg.CurrentlyProducing);
+                    _menu.Recipes = msg.Recipes;
+                    _menu.PopulateRecipes();
+                    _menu.UpdateCategories();
+                    _menu.PopulateQueueList(msg.Queue);
+                    _menu.SetQueueInfo(msg.CurrentlyProducing);
                     break;
             }
         }

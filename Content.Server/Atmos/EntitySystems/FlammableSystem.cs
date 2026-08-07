@@ -164,6 +164,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
 using Content.Goobstation.Common.Flammability;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -584,8 +585,11 @@ namespace Content.Server.Atmos.EntitySystems
             _stunSystem.KnockdownOrStun(uid, TimeSpan.FromSeconds(2f));
 
             // TODO FLAMMABLE: Make this not use TimerComponent...
-            uid.SpawnTimer(2000, () =>
+            Timer.Spawn(2000, () =>
             {
+                if (TerminatingOrDeleted(uid))
+                    return;
+
                 flammable.Resisting = false;
                 flammable.FireStacks -= flammable.FirestackFade * 10f; // EE Plasmamen Change
                 UpdateAppearance(uid, flammable);

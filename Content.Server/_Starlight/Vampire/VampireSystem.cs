@@ -65,7 +65,6 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
@@ -429,7 +428,7 @@ public sealed partial class VampireSystem : EntitySystem
         var vampireTransform = Transform(vampireUid);
         var vampirePosition = _transform.GetMapCoordinates(vampireTransform);
 
-        if (!_mapMan.TryFindGridAt(vampirePosition, out _, out var grid))
+        if (!_mapSystem.TryFindGridAt(vampirePosition, out _, out var grid))
             return true;
 
         if (!_mapSystem.TryGetTileRef(vampireUid, grid, vampireTransform.Coordinates, out var tileRef))

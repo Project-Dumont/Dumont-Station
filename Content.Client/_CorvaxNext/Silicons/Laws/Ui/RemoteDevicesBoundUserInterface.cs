@@ -32,6 +32,9 @@ public sealed class RemoteDevicesBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not RemoteDevicesBuiState msg)
             return;
 

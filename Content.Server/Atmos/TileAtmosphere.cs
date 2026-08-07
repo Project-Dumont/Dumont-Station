@@ -122,7 +122,6 @@ public sealed class TileAtmosphere : IGasMixtureHolder
     [ViewVariables]
     public GasMixture? AirArchived { get; set; }
 
-    [DataField("lastShare")]
     public float LastShare;
 
     GasMixture IGasMixtureHolder.Air
