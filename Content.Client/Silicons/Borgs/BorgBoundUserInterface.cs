@@ -53,6 +53,9 @@ public sealed class BorgBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not BorgBuiState msg)
             return;
         _menu?.UpdateState(msg);
