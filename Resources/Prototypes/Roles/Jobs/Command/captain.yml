@@ -192,7 +192,6 @@
   - CaptainTitleAdmiral
   - CaptainTitleChief
 
-
 - type: startingGear
   id: CaptainGear
   equipment:
@@ -207,7 +206,6 @@
     - TelescopicBaton # Goobstation
     # - StationCharter
 
-
 - type: chameleonOutfit
   id: CaptainChameleonOutfit
   job: Captain
@@ -218,16 +216,13 @@
     mask: ClothingMaskGasCaptain
     neck: ClothingNeckCloakCap
 
-
 - type: jobAlternateTitle
   id: CaptainTitleMaster
   name: job-name-alt-captain-master
 
-
 - type: jobAlternateTitle
   id: CaptainTitleAdmiral
   name: job-name-alt-captain-admiral
-
 
 - type: jobAlternateTitle
   id: CaptainTitleChief

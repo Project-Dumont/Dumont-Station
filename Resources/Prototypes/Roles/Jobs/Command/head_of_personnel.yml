@@ -228,7 +228,6 @@
   - HoPTitleBoatswain
   - HoPTitleHead
 
-
 - type: startingGear
   id: HoPGear
   equipment:
@@ -243,7 +242,6 @@
     - Flash
     - TelescopicBaton # Goobstation
 
-
 - type: chameleonOutfit
   id: HeadOfPersonnelChameleonOutfit
   job: HeadOfPersonnel
@@ -255,22 +253,18 @@
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
 
-
   # gaby alt job titles
 - type: jobAlternateTitle
   id: HoPTitleFirstMate
   name: job-name-alt-hop-first-mate
 
-
 - type: jobAlternateTitle
   id: HoPTitleHeadService
   name: job-name-alt-hop-head-service
 
-
 - type: jobAlternateTitle
   id: HoPTitleBoatswain
   name: job-name-alt-hop-boatswain
-
 
 - type: jobAlternateTitle
   id: HoPTitleHead

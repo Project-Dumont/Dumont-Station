@@ -88,7 +88,6 @@
   - BlueshieldTitleGuard
   - BlueshieldTitleSecurity
 
-
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
@@ -103,7 +102,6 @@
     - Flash
     - ClothingBSOMaskGasSwat
     - CombatKnife
-
 
 - type: chameleonOutfit
   id: BlueshieldOfficerChameleonOutfit
@@ -121,16 +119,13 @@
     back: ClothingBackpackBlueshield
     shoes: ClothingShoesBootsJack
 
-
 - type: jobAlternateTitle
   id: BlueshieldTitleSentinel
   name: job-name-alt-blueshield-sentinel
 
-
 - type: jobAlternateTitle
   id: BlueshieldTitleGuard
   name: job-name-alt-blueshield-guard
-
 
 - type: jobAlternateTitle
   id: BlueshieldTitleSecurity

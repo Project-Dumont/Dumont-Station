@@ -151,7 +151,6 @@
   #- NanotrasenRepresentativeTitleLiason
   #- NanotrasenRepresentativeTitleInspector
 
-
 - type: startingGear
   id: NanotrasenRepresentativeGear
   equipment:
@@ -165,7 +164,6 @@
     - TelescopicBaton
   # inhand:
   #   - ExecutiveBriefcaseEmpty # TODO: Maybe change this to not-empty, so that ntr wouldn't be poor at the start of every shift but whatever
-
 
 - type: chameleonOutfit
   id: NanotrasenRepresentativeChameleonOutfit
@@ -182,11 +180,9 @@
     head: ClothingHeadHatTophat
     neck: ClothingNeckScarfStripedCentcom
 
-
 - type: jobAlternateTitle
   id: NanotrasenRepresentativeTitleLiason
   name: job-name-alt-nanotrasenrepresentative-liason
-
 
 - type: jobAlternateTitle
   id: NanotrasenRepresentativeTitleInspector

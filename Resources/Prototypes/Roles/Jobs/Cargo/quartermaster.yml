@@ -186,7 +186,6 @@
   - QuarterMasterTitleSupervisor
   - QuarterMasterTitleManager
 
-
 - type: startingGear
   id: QuartermasterGear
   equipment:
@@ -198,7 +197,6 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
-
 
 - type: chameleonOutfit
   id: QuartermasterChameleonOutfit
@@ -214,21 +212,17 @@
 
 
 
-
 - type: jobAlternateTitle
   id: QuarterMasterTitleChief
   name: job-name-alt-qm-chief
-
 
 - type: jobAlternateTitle
   id: QuarterMasterTitleAccountant
   name: job-name-alt-qm-accountant
 
-
 - type: jobAlternateTitle
   id: QuarterMasterTitleSupervisor
   name: job-name-alt-qm-supervisor
-
 
 - type: jobAlternateTitle
   id: QuarterMasterTitleManager

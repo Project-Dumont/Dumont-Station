@@ -187,7 +187,6 @@
   - CETitleForeman
   - CETitleManager
 
-
 - type: startingGear
   id: ChiefEngineerGear
   equipment:
@@ -199,7 +198,6 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
-
 
 - type: chameleonOutfit
   id: ChiefEngineerChameleonOutfit
@@ -213,16 +211,13 @@
     gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsMagAdv
 
-
 - type: jobAlternateTitle
   id: CETitleSupervisor
   name: job-name-alt-ce-supervisor
 
-
 - type: jobAlternateTitle
   id: CETitleForeman
   name: job-name-alt-ce-foreman
-
 
 - type: jobAlternateTitle
   id: CETitleManager
