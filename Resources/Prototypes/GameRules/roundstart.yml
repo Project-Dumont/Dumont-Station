@@ -272,7 +272,7 @@
   - type: GameRule
     minPlayers: 20
   - type: LoadMapRule
-    mapPath: /Maps/_Dumont/Nonstations/nukieplanet.yml # Dumont edit with nukedroppod
+    mapPath: /Maps/_Dumont/Nonstations/nukieplanet.yml # Dumont edit with nukedroppod!
   - type: NukieOperation
     operations: NukieOperations
   - type: AntagSelection
