@@ -1,13 +1,12 @@
 <Document>
   # Regra 14 - Diretrizes de Continuidade
 Algumas informações, continuidade e memória são carregadas entre rodadas no Dumont, dentro de limites definidos.
-Isso é realizado no universo pelo Sistema de Clonagem PSO e vem com alguns limites e regras para garantir roleplay suave e mínima interrupção.
 
 Você só pode lembrar informações de turnos que você sobreviveu. Isso significa que se você ficar preso ou for morto, você esquece a rodada completamente.
 Se seu corpo for revivível ao chegar em CentComm, você também lembrará a rodada, mas esquecerá todos os detalhes que levaram à sua morte conforme a Regra 3.
 Colocar-se em um criotubo permitirá que você lembre detalhes até o momento em que entrou no criotubo.
 
-[bold]Qualquer informação que seja [textlink="Metashielded" link="Metashield"][/bold] é esquecida entre turnos e apagada da memória do seu clone.
+[bold]Qualquer informação que seja parte do [textlink="Metashield" link="RuleA13"][/bold] é esquecida entre turnos e apagada da memória do seu clone.
 
 Ex.: Um Capitão que sobreviver a uma Revolução ainda terá informações sobre a Revolução apagadas e não lembrará que ela aconteceu naquela rodada.
 
@@ -20,7 +19,7 @@ Exemplos de coisas que você [bold]pode[/bold] lembrar:
 
 Exemplos de coisas que você [bold]não pode[/bold] lembrar:
 
-- Joe, o Botânico, era um Sindicante que roubou o Jetpack do Capitão
+- Joe, o Botânico, era um Traidor que roubou o Jetpack do Capitão
 - Operativos Nucleares atacando a estação
 - CentComm chamando Código Epsilon e matando um monte de pessoas na estação
 - Testemunhar um corpo Oco ou ver um Changeling comer alguém
