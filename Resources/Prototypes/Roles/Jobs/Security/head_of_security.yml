@@ -139,101 +139,97 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: job
-  id: HeadOfSecurity
-  name: job-name-hos
-  description: job-description-hos
-  playTimeTracker: JobHeadOfSecurity
-  requirements: # Dumont edit
+  id: ChiefMedicalOfficer
+  name: job-name-cmo
+  description: job-description-cmo
+  playTimeTracker: JobChiefMedicalOfficer
+  requirements:
     - !type:RoleTimeRequirement
-      role: JobWarden # SpaceLaw and proper arrest procedure knowledge needed
-      time: 86400 # 24 hrs
+      role: JobChemist
+      time: 36000 #10 hrs
     - !type:RoleTimeRequirement
-      role: JobDetective # Learn the basics on how to use the tools and properly investigate
-      time: 43200 # 12 hrs
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer # HoS is kind of a SecOff with a pocket arsenal and full autority if you think about it
-      time: 129600 # 36 hrs
-    - !type:RoleTimeRequirement
-      role: JobBrigmedic # You are their commander, you should at the very least know their SOP and what they do
-      time: 21600 # 6 hrs
+      role: JobMedicalDoctor
+      time: 28000 #8 hrs
     - !type:DepartmentTimeRequirement
-      department: Security # Gotta grind! Be robust! Don't be a shitsec!
-      time: 432000 # 120 hrs
-    - !type:RoleTimeRequirement
-      role: JobAdminAssistant # Command basics
-      time: 43200 # 12 hrs
-  weight: 10
-  startingGear: HoSGear
-  icon: "JobIconHeadOfSecurity"
+      department: Medical
+      time: 36000 #10 hrs
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
+  startingGear: CMOGear
+  icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
   canBeAntag: false
   guides: # goobstation
-  - Security
-  - SpaceLaw
-  # - LegalSOP
+  - Medical
+  # - ChiefMedicalOfficerSOP
+  # - MedicalSOP
   - Command
-  # - HeadOfSecuritySOP
-  # - SecuritySOP
-  # - AlertLevels
-  goobcoins: 45 #Goob content
+  - Chemicals
+  - Virology
+  goobcoins: 40 #Goob content
   salary: 75 # Gaby content
+  weight: 10 #Goob Edit
   access:
-  - HeadOfSecurity
+  - Medical
+  - Virology # Dumont
+  - Psychology # Dumont
+  - Pharmacy # Dumont
   - Command
-  - Brig
-  - Security
-  - BrigMedic # Dumont
-  - Armory
   - Maintenance
-  - Service
-  - External
-  - Detective
+  - Chemistry
+  - ChiefMedicalOfficer
+  - Brig
   - Cryogenics
+  - External # goobstation
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: SecurityStaff # goobstation
+  # Shitmed Change
+  - !type:AddComponentSpecial
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 2
   alternateTitles:
-  - HeadOfSecurityTitleGuard
-  - HeadOfSecurityTitleSheriff
-  - HeadOfSecurityTitleChief
-  - HeadOfSecurityTitleDirector
+  - CMOTitleDirector
+  - CMOTitleSupervisor
+
 
 - type: startingGear
-  id: HoSGear
+  id: CMOGear
   equipment:
-    eyes: ClothingEyesGlassesSecurity
-    id: HoSPDA
-    #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
-    ears: ClothingHeadsetAltSecurity
+    id: CMOPDA
+    ears: ClothingHeadsetAltMedical # Goobstation
+    eyes: ClothingEyesGlassesMedChemFlash #Omu
+    belt: ClothingBeltMedicalFilled
   storage:
     back:
     - Flash
-    - SecHypo # Goobstation
+    - TelescopicBaton # Goobstation
+
 
 - type: chameleonOutfit
-  id: HeadOfSecurityChameleonOutfit
-  job: HeadOfSecurity
+  id: ChiefMedicalOfficerChameleonOutfit
+  job: ChiefMedicalOfficer
   hasMindShield: true
   equipment:
-    mask: ClothingMaskGasSecurity
-    neck: ClothingNeckCloakHos
+    head: ClothingHeadHatBeretCmo
+    eyes: ClothingEyesGlassesMedChemFlash # Omu
+    mask: ClothingMaskSterile
+    neck: ClothingCloakCmo
+    outerClothing: ClothingOuterCoatLabCmo
+    gloves: ClothingHandsGlovesNitrile
+
 
 - type: jobAlternateTitle
-  id: HeadOfSecurityTitleGuard
-  name: job-name-alt-hos-guard
+  id: CMOTitleDirector
+  name: job-name-alt-cmo-director
+
 
 - type: jobAlternateTitle
-  id: HeadOfSecurityTitleSheriff
-  name: job-name-alt-hos-sheriff
-
-- type: jobAlternateTitle
-  id: HeadOfSecurityTitleChief
-  name: job-name-alt-hos-chief
-
-- type: jobAlternateTitle
-  id: HeadOfSecurityTitleDirector
-  name: job-name-alt-hos-director
+  id: CMOTitleSupervisor
+  name: job-name-alt-cmo-supervisor

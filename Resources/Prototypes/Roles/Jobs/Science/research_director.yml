@@ -132,92 +132,112 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: job
-  id: ResearchDirector
-  name: job-name-rd
-  description: job-description-rd
-  playTimeTracker: JobResearchDirector
-  requirements: # Dumont edit
+  id: HeadOfSecurity
+  name: job-name-hos
+  description: job-description-hos
+  playTimeTracker: JobHeadOfSecurity
+  requirements:
     - !type:RoleTimeRequirement
-      role: JobScientist # RD's main role is directing research
-      time: 108000 #30 hrs
+      role: JobWarden
+      time: 72000 #20 hr
     - !type:RoleTimeRequirement
-      role: JobRoboticist # RD should know about mechs, borgs, modules and the robotics console
-      time: 86400 #24 hrs
+      role: JobDetective
+      time: 18000 #5 hr, knowing how to use the tools is important
     - !type:RoleTimeRequirement
-      role: JobGeneticist # Genetics has quite a lot of genes to familiarize with
-      time: 86400 #24 hrs
+      role: JobSecurityOfficer
+      time: 36000 #10 hrs
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 3600 #1 hrs
     - !type:DepartmentTimeRequirement
-      department: Science # Gotta grind! RD should have enought understanding to handle anomalies, maintain silicons and direct research
-      time: 360000 #100 hrs
-    - !type:RoleTimeRequirement
-      role: JobAdminAssistant # Command basics
-      time: 43200 #12 hrs
+      department: Security
+      time: 108000 # 30 hrs
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
+  #  - !type:StyleRequirement
+  #    styles:
+  #    - HumanHairFloorlengthBedhead
+  #    - HumanHairClassicFloorlengthBedhead
+  #    - HumanHairFloorlengthBraid
   weight: 10
-  startingGear: ResearchDirectorGear
-  icon: "JobIconResearchDirector"
+  startingGear: HoSGear
+  icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
-  #canBeAntag: false
-  antagAdvantage: 75 # Goobstation
+  canBeAntag: false
   guides: # goobstation
-  - Science
+  - Security
+  - SpaceLaw
+  # - LegalSOP
   - Command
-  # - ResearchDirectorSOP
-  # - ScienceSOP
-  goobcoins: 40 #Goob content
+  # - HeadOfSecuritySOP
+  # - SecuritySOP
+  # - AlertLevels
+  goobcoins: 45 #Goob content
   salary: 75 # Gaby content
   access:
-  - Research
-  - Robotics # Dumont
-  - Genetics # Dumont
+  - HeadOfSecurity
   - Command
-  - Maintenance
-  - ResearchDirector
   - Brig
+  - Security
+  - BrigMedic # Dumont
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
   - Cryogenics
-  - External # Goobstation
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: SecurityStaff # goobstation
   alternateTitles:
-  - ResearchDirectorTitleChief
-  - ResearchDirectorTitleManager
-  - ResearchDirectorTitleSupervisor
+  - HeadOfSecurityTitleGuard
+  - HeadOfSecurityTitleSheriff
+  - HeadOfSecurityTitleChief
+  - HeadOfSecurityTitleDirector
 
 
 - type: startingGear
-  id: ResearchDirectorGear
+  id: HoSGear
   equipment:
-    id: RnDPDA
-    ears: ClothingHeadsetAltScience # Goobstation
+    eyes: ClothingEyesGlassesSecurity
+    id: HoSPDA
+    #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
+    ears: ClothingHeadsetAltSecurity
   storage:
     back:
     - Flash
-    - TelescopicBaton # Goobstation
+    - SecHypo # Goobstation
+
 
 - type: chameleonOutfit
-  id: ResearchDirectorChameleonOutfit
-  job: ResearchDirector
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
   hasMindShield: true
   equipment:
-    head: ClothingHeadHatBeretRND
-    eyes: ClothingEyesGlasses
-    mask: ClothingMaskGas
-    neck: ClothingNeckCloakRd
-    outerClothing: ClothingOuterCoatRD
-    gloves: ClothingHandsGlovesColorPurple
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos
+
 
 - type: jobAlternateTitle
-  id: ResearchDirectorTitleChief
-  name: job-name-alt-rd-chief
+  id: HeadOfSecurityTitleGuard
+  name: job-name-alt-hos-guard
+
 
 - type: jobAlternateTitle
-  id: ResearchDirectorTitleManager
-  name: job-name-alt-rd-manager
+  id: HeadOfSecurityTitleSheriff
+  name: job-name-alt-hos-sheriff
+
 
 - type: jobAlternateTitle
-  id: ResearchDirectorTitleSupervisor
-  name: job-name-alt-rd-supervisor
+  id: HeadOfSecurityTitleChief
+  name: job-name-alt-hos-chief
 
+- type: jobAlternateTitle
+  id: HeadOfSecurityTitleDirector
+  name: job-name-alt-hos-director

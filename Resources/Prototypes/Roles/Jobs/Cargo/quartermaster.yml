@@ -132,25 +132,20 @@
   name: job-name-qm
   description: job-description-qm
   playTimeTracker: JobQuartermaster
-  requirements: # Dumont edit
+  requirements:
     - !type:RoleTimeRequirement
-      role: JobCargoTechnician # QM needs to be very familiar with bounties and what cargo techs do, this is the job they will mostly supervise
-      time: 86400 # 24 hrs
+      role: JobCargoTechnician
+      time: 18000 #5 hrs
     - !type:RoleTimeRequirement
-      role: JobSalvageLead # How to lead a team and how salvage works
-      time: 43200 # 12 hrs
-    - !type:RoleTimeRequirement
-      role: JobBitrunner # Bitrunning basics
-      time: 28800 # 8 hrs
-    - !type:RoleTimeRequirement
-      role: JobShaftMiner # Mining basics
-      time: 43200 # 12 hrs
+      role: JobSalvageSpecialist
+      time: 9000 #2.5 hrs
     - !type:DepartmentTimeRequirement
-      department: Cargo # Gotta grind! A QM needs to undertand how to prioritize, make money, materials and properly distribute them
-      time: 360000 # 100 hrs
-    - !type:RoleTimeRequirement
-      role: JobAdminAssistant # Command basics
-      time: 43200 # 12 hrs
+      department: Cargo
+      time: 36000 #10 hours
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
@@ -191,6 +186,7 @@
   - QuarterMasterTitleSupervisor
   - QuarterMasterTitleManager
 
+
 - type: startingGear
   id: QuartermasterGear
   equipment:
@@ -202,6 +198,7 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
 
 - type: chameleonOutfit
   id: QuartermasterChameleonOutfit
@@ -216,17 +213,22 @@
     gloves: ClothingHandsKnuckleDustersQM
 
 
+
+
 - type: jobAlternateTitle
   id: QuarterMasterTitleChief
   name: job-name-alt-qm-chief
+
 
 - type: jobAlternateTitle
   id: QuarterMasterTitleAccountant
   name: job-name-alt-qm-accountant
 
+
 - type: jobAlternateTitle
   id: QuarterMasterTitleSupervisor
   name: job-name-alt-qm-supervisor
+
 
 - type: jobAlternateTitle
   id: QuarterMasterTitleManager

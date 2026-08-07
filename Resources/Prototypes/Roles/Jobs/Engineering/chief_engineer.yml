@@ -138,19 +138,20 @@
   name: job-name-ce
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
-  requirements: # Dumont edit
+  requirements:
     - !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician # How to Atmos
-      time: 129600 # 36 hrs
+      role: JobAtmosphericTechnician
+      time: 36000 #10 hrs
     - !type:RoleTimeRequirement
-      role: JobStationEngineer # How to fix and power
-      time: 129600 # 36 hrs
+      role: JobStationEngineer
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
-      department: Engineering # Gotta grind! We don't want a CE that can't use an air alarm or build an AME
-      time: 360000 # 100 hrs
-    - !type:RoleTimeRequirement
-      role: JobAdminAssistant # Command basics
-      time: 43200 # 12 hrs
+      department: Engineering
+      time: 54000 #15 hrs
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
@@ -186,6 +187,7 @@
   - CETitleForeman
   - CETitleManager
 
+
 - type: startingGear
   id: ChiefEngineerGear
   equipment:
@@ -197,6 +199,7 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
 
 - type: chameleonOutfit
   id: ChiefEngineerChameleonOutfit
@@ -210,13 +213,16 @@
     gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsMagAdv
 
+
 - type: jobAlternateTitle
   id: CETitleSupervisor
   name: job-name-alt-ce-supervisor
 
+
 - type: jobAlternateTitle
   id: CETitleForeman
   name: job-name-alt-ce-foreman
+
 
 - type: jobAlternateTitle
   id: CETitleManager

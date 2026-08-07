@@ -149,9 +149,6 @@
     - !type:RoleTimeRequirement
       role: JobPrisonGuard # Main job is to deal with prisoners, good to learn how to RP with them
       time: 21600 # 6 hrs
-    - !type:RoleTimeRequirement
-      role: JobPermaPrisoner # Suffer, know where you're putting people in
-      time: 21600 # 6 hrs
     - !type:DepartmentTimeRequirement
       department: Security # Be familiar with the entire workings of Sec, you're the 2nd in command
       time: 216000 # 60 hrs

@@ -32,23 +32,22 @@
   name: job-name-bs
   description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
   playTimeTracker: JobBlueshieldOfficer
-  requirements: # Dumont edit
+  requirements:
     - !type:DepartmentTimeRequirement
-      department: Command # How they work
-      time: 180000 # 50 hrs
-    - !type:RoleTimeRequirement
-      role: JobParamedic # How to save them
-      time: 43200 #12 hrs
-    - !type:RoleTimeRequirement
-      role: JobBrigmedic # How to save yourself
-      time: 43200 #12 hrs
+      department: Command
+      time: 90000 # 25 hours
     - !type:DepartmentTimeRequirement
-      department: Security # How to protect them
-      time: 360000 # 100 hours
-    # Good thing to have for MRP, but to be discussed at a later date
-    # because there's no sense on enforcing this requirement on only 2 jobs
-    #- !type:AgeRequirement
-    #  requiredAge: 21
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 90000 # 25 hours
+    - !type:AgeRequirement
+      requiredAge: 21
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   guides:
   # - BlueshieldOfficerSOP
   - Command
@@ -89,6 +88,7 @@
   - BlueshieldTitleGuard
   - BlueshieldTitleSecurity
 
+
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
@@ -103,6 +103,7 @@
     - Flash
     - ClothingBSOMaskGasSwat
     - CombatKnife
+
 
 - type: chameleonOutfit
   id: BlueshieldOfficerChameleonOutfit
@@ -120,13 +121,16 @@
     back: ClothingBackpackBlueshield
     shoes: ClothingShoesBootsJack
 
+
 - type: jobAlternateTitle
   id: BlueshieldTitleSentinel
   name: job-name-alt-blueshield-sentinel
 
+
 - type: jobAlternateTitle
   id: BlueshieldTitleGuard
   name: job-name-alt-blueshield-guard
+
 
 - type: jobAlternateTitle
   id: BlueshieldTitleSecurity

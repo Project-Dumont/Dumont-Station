@@ -142,28 +142,26 @@
   name: job-name-hop
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
-  requirements: # Dumont edit
+  requirements:
     - !type:DepartmentTimeRequirement
-      department: Engineering # Basics
-      time: 43200 # 12 hrs
+      department: Engineering
+      time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
-      department: Medical # of
-      time: 43200 # 12 hrs
+      department: Medical
+      time: 14400 # 4 hours
     - !type:DepartmentTimeRequirement
-      department: Science # everything
-      time: 43200 # 12 hrs
+      department: Science
+      time: 14400 # 4 hrs
     - !type:DepartmentTimeRequirement
-      department: Security # on
-      time: 43200 # 12 hrs
+      department: Security
+      time: 14400 # 4 hrs
     - !type:DepartmentTimeRequirement
-      department: Cargo # station
-      time: 43200 # 12 hrs
-    - !type:DepartmentTimeRequirement
-      department: Service # Double this, it's your department
-      time: 86400 # 24 hrs
-    - !type:RoleTimeRequirement
-      role: JobAdminAssistant # Known the bridge and paperwork very well
-      time: 86400 # 24 hrs
+      department: Command
+      time: 14400 # 4 hours
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   guides: # goobstation
   - Command
   # - Succession
@@ -230,6 +228,7 @@
   - HoPTitleBoatswain
   - HoPTitleHead
 
+
 - type: startingGear
   id: HoPGear
   equipment:
@@ -244,6 +243,7 @@
     - Flash
     - TelescopicBaton # Goobstation
 
+
 - type: chameleonOutfit
   id: HeadOfPersonnelChameleonOutfit
   job: HeadOfPersonnel
@@ -255,18 +255,22 @@
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
 
+
   # gaby alt job titles
 - type: jobAlternateTitle
   id: HoPTitleFirstMate
   name: job-name-alt-hop-first-mate
 
+
 - type: jobAlternateTitle
   id: HoPTitleHeadService
   name: job-name-alt-hop-head-service
 
+
 - type: jobAlternateTitle
   id: HoPTitleBoatswain
   name: job-name-alt-hop-boatswain
+
 
 - type: jobAlternateTitle
   id: HoPTitleHead
