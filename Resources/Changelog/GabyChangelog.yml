@@ -3901,3 +3901,9 @@ Entries:
       message: Agora catatônicos não aparecem na lista de vivos da interface fantasma.
   id: 457
   time: '2026-08-06T02:51:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Altera o preço do Sandevistan
+  id: 458
+  time: '2026-08-08T04:29:49.0000000+00:00'
