@@ -141,6 +141,9 @@ namespace Content.Client.Communications.UI
         {
             base.UpdateState(state);
 
+            if (_menu is not { Disposed: false })
+                return;
+
             if (state is not CommunicationsConsoleInterfaceState commsState)
                 return;
 

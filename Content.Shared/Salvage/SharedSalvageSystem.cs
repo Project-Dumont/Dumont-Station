@@ -114,6 +114,8 @@ public abstract partial class SharedSalvageSystem : EntitySystem
     public T GetMod<T>(System.Random rand, ref float rating, string difficultyId) where T : class, IPrototype, ISalvageMod
     {
         var mods = _proto.EnumeratePrototypes<T>().Where(x => x.Difficulties == null || x.Difficulties.Contains(difficultyId)).ToList();
+
+
         mods.Sort((x, y) => string.Compare(x.ID, y.ID, StringComparison.Ordinal));
         rand.Shuffle(mods);
 
@@ -127,7 +129,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
             return mod;
         }
- 
+
         throw new InvalidOperationException();
     }
 }
