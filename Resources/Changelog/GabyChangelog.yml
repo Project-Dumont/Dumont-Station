@@ -1575,7 +1575,7 @@ Entries:
     - type: Tweak
       message: >-
         Aumenta resistência à radiação de paredes reforçadas e cortinas
-        anti-rad. 
+        anti-rad.
   id: 183
   time: '2025-12-09T14:53:38.0000000+00:00'
 - author: joshepvodka
@@ -2373,7 +2373,7 @@ Entries:
     - type: Fix
       message: >-
         Magos, piratas, nukies, e ERTs agora podem usar suas próprias máquinas
-        de venda, pois agora elas são grátis de usar. 
+        de venda, pois agora elas são grátis de usar.
   id: 288
   time: '2026-04-04T14:03:52.0000000+00:00'
 - author: Will-Oliver-Br
@@ -3010,7 +3010,7 @@ Entries:
     - type: Tweak
       message: >-
         A moeda local mudou! Vá trocar esse Gaby Coins, ninguém usa mais
-        isso... 
+        isso...
   id: 362
   time: '2026-06-07T14:07:39.0000000+00:00'
 - author: Will-Oliver-Br
@@ -3631,7 +3631,7 @@ Entries:
     - type: Fix
       message: >-
         fantasmas não podem mais remover pacientes da cryopod e acessar o
-        computador de arma da nave 
+        computador de arma da nave
   id: 427
   time: '2026-07-16T02:13:24.0000000+00:00'
 - author: Will-Oliver-Br
@@ -3875,3 +3875,11 @@ Entries:
         atmosfera e uma espuma reguladora de temperatura.
   id: 454
   time: '2026-08-01T12:06:19.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        As regras do servidor foram bastante modificadas para um melhor
+        entendimento, não esqueça de conferi-las!
+  id: 455
+  time: '2026-08-09T01:47:39.0000000+00:00'
