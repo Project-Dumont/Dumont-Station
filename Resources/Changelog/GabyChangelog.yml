@@ -3913,3 +3913,11 @@ Entries:
       message: O objetivo de sequestrar heads foi desativado da rotação dos nuke ops.
   id: 459
   time: '2026-08-08T04:31:16.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        As regras do servidor foram bastante modificadas para um melhor
+        entendimento, não esqueça de conferi-las!
+  id: 460
+  time: '2026-08-09T01:47:39.0000000+00:00'
