@@ -6,7 +6,7 @@
   parent: BaseItem
   id: TriageTagger
   name: triage tagger
-  description: Projects a holographic priority tag onto a patient. Only readable through a medical HUD.
+  description: Projects a priority marker over a pacient. Only visible through medical HUD. 
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
