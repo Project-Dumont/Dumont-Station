@@ -3927,3 +3927,11 @@ Entries:
       message: Alterado o chat do jogo para o do ss13
   id: 461
   time: '2026-08-10T17:58:32.0000000+00:00'
+- author: RaposoG
+  changes:
+    - type: Add
+      message: >-
+        marcador de triagem na med. marca a prioridade do paciente e só quem usa
+        medhud enxerga.
+  id: 462
+  time: '2026-08-10T22:39:00.0000000+00:00'
