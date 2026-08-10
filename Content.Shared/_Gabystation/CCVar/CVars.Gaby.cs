@@ -57,10 +57,10 @@ public sealed partial class GabyCVars
     #region Chemical Spoilage
 
     /// <summary>
-    /// Global multiplier for how fast medicinal chems spoil into toxin.
+    /// How long takes to medicinal chems fully spoil into toxin.
     /// </summary>
-    public static readonly CVarDef<float> ChemSpoilageDecayRate =
-        CVarDef.Create("gaby.chem_spoilage.decay_rate", 1f, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<TimeSpan> ChemSpoilageTime =
+        CVarDef.Create("gaby.chem_spoilage.time", TimeSpan.FromMinutes(20), CVar.SERVER | CVar.REPLICATED);
 
     #endregion
 

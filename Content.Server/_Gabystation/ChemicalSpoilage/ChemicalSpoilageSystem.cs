@@ -18,17 +18,20 @@ namespace Content.Server._Gabystation.ChemicalSpoilage;
 /// Server-side loop that progresses (or reverses) chemical spoilage on entities with a
 /// SpoilingSolutionComponent.
 /// </summary>
-public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
+public sealed partial class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
-    /// <summary>
-    /// How much a fully-spoiled solution's color is muted towards gray. Kept low - this should read
-    /// as "looking a bit off", not a dramatic color change.
-    /// </summary>
     private const float MaxDesaturation = 0.35f;
+    private TimeSpan _spoilageTime = TimeSpan.Zero;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        Subs.CVar(_cfg, GabyCVars.ChemSpoilageTime, v => _spoilageTime = v, true);
+    }
 
     public override void Update(float frameTime)
     {
@@ -76,7 +79,7 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
         if (spoiling.ShelfLife <= TimeSpan.Zero)
             return false;
 
-        var decayRate = _cfg.GetCVar(GabyCVars.ChemSpoilageDecayRate);
+        var decayRate = _spoilageTime <= TimeSpan.Zero ? 0f : (float) (20f / _spoilageTime.TotalMinutes);
         spoiling.SpoilAccumulator += spoiling.UpdateRate * decayRate;
 
         var elapsedFraction = Math.Clamp(
@@ -87,10 +90,6 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
         if (elapsedFraction < 1f / MaxStages)
             return false;
 
-        // Per-reagent totals (fresh + already spoiled from it) and how much of that is already
-        // spoiled, so we can convert straight to whatever the elapsed time *should* have spoiled by
-        // now (a fixed target), instead of nibbling a fraction of whatever's currently left (which
-        // would only ever asymptotically approach - but never reach - fully spoiled).
         var totals = new Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>();
         var alreadySpoiled = new Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>();
         foreach (var (reagent, quantity) in solution.Contents)
@@ -208,7 +207,8 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
         if (!TryComp<AppearanceComponent>(uid, out var appearance))
             return;
 
-        var color = solution.GetColor(Proto);
+        // Blends using each reagent original color
+        var color = GetOriginalColor(solution);
         var amount = MaxDesaturation * (spoiling.Stage / (float) MaxStages);
         if (amount > 0f)
         {
@@ -218,5 +218,41 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
         }
 
         _appearance.SetData(uid, SolutionContainerVisuals.Color, color, appearance);
+    }
+
+    /// <summary>
+    /// Returns the original color without the toxine reagent color.
+    /// </summary>
+    private Color GetOriginalColor(Solution solution)
+    {
+        if (solution.Volume == FixedPoint2.Zero)
+            return Color.Transparent;
+
+        Color mixColor = default;
+        var runningTotalQuantity = FixedPoint2.Zero;
+        var first = true;
+
+        foreach (var (reagent, quantity) in solution.Contents)
+        {
+            var protoId = TryGetSpoiledOrigin(reagent, out var original)
+                ? original
+                : (ProtoId<ReagentPrototype>) reagent.Prototype;
+            if (!Proto.TryIndex(protoId, out ReagentPrototype? proto))
+                continue;
+
+            runningTotalQuantity += quantity;
+
+            if (first)
+            {
+                first = false;
+                mixColor = proto.SubstanceColor;
+                continue;
+            }
+
+            var interpolateValue = quantity.Float() / runningTotalQuantity.Float();
+            mixColor = Color.InterpolateBetween(mixColor, proto.SubstanceColor, interpolateValue);
+        }
+
+        return mixColor;
     }
 }
