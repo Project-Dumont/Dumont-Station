@@ -123,7 +123,11 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
-        _window?.Populate((PaperBoundUserInterfaceState) state);
+
+        if (_window is not { Disposed: false })
+            return;
+
+        _window.Populate((PaperBoundUserInterfaceState) state);
     }
 
     private void InputOnTextEntered(string text)

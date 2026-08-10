@@ -88,6 +88,12 @@ namespace Content.Server.Communications
         [DataField]
         public double ToggleAcessDelay = 5;
 
+        [DataField]
+        public double RenameTimer = -300;
+
+        [DataField]
+        public double RenameDelay = 300;
+
         /// <summary>
         /// Can call or recall the shuttle
         /// </summary>

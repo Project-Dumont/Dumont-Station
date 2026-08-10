@@ -1,0 +1,23 @@
+#Salvage Lead
+- type: loadoutGroup
+  id: SalvageLeadHead
+  name: loadout-group-salvage-head
+  minLimit: 0
+  loadouts:
+    - ClothingHeadHelmetSalvageMerc
+    - ClothingHeadHatBeretSalvageMercBrown
+
+- type: loadoutGroup
+  id: SalvageLeadNeck
+  name: loadout-group-salvage-lead-mantle
+  loadouts:
+#    - ClothingNeckCloakHelldiver
+    - ClothingNeckMantleDecoratedSalvager
+
+- type: loadoutGroup
+  id: SalvageLeadPDALoad
+  name: loadout-group-salvagelead-id
+  loadouts:
+    - SalvageLeadPDA
+#    - HelldiverPDA
+

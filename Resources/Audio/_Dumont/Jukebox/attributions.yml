@@ -1,0 +1,783 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["alien_boy.ogg"]
+  copyright: "Alien Boy. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/3wLLgJ_a7Rs?si=uHL6wsGMEgTkCMvN"
+
+- files: ["all_star.ogg"]
+  copyright: "All Star. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/L_jWHffIx5E?si=VnCKrFTgByrsSUeq"
+
+- files: ["all_the_things_she_said.ogg"]
+  copyright: "All The Things She Said. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/8mGBaXPlri8?si=6xivYtTacVjT-IUN"
+
+- files: ["alone_again.ogg"]
+  copyright: "Alone Again. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=8OPgIdn95Zg"
+
+- files: ["american_idiot.ogg"]
+  copyright: "American Idiot. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=kqkGY9jsBOw"
+
+- files: ["and_i_love_her.ogg"]
+  copyright: "And I Love Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=atZwaJ84XP4"
+
+- files: ["axel_f.ogg"]
+  copyright: "Axel F. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=k85mRPqvMbE"
+
+- files: ["baker_street.ogg"]
+  copyright: "Baker Street. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Fo6aKnRnBxM?si=9A7HNCHipcKUqBz-"
+
+- files: ["barbie_girl.ogg"]
+  copyright: "Barbie Girl. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/ZyhrYis509A?si=Lk2eGv5846bfaJY2"
+
+- files: ["beat_it.ogg"]
+  copyright: "Beat It. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/kOn-HdEg6AQ?si=FrLXQE6YNSz9DDny"
+
+- files: ["because.ogg"]
+  copyright: "Because. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/hL0tnrl2L_U?si=FJBnyVfYLROQXYgp"
+
+- files: ["better_off_alone.ogg"]
+  copyright: "Better Off Alone. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Lgs9QUtWc3M"
+
+- files: ["billie_jean.ogg"]
+  copyright: "Billie Jean. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Zi_XLOBDo_Y?si=awhpLLTaPAkBbxpd"
+
+- files: ["blue.ogg"]
+  copyright: "Blue. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/68ugkg9RePc?si=Au4snOn98WoqDxR0"
+
+- files: ["boom_boom_boom_boom.ogg"]
+  copyright: "Boom, Boom, Boom, Boom!!. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/llyiQ4I-mcQ?si=Rp3WDklK748jmW9z"
+
+- files: ["brain_stew.ogg"]
+  copyright: "Brain Stew. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5n_I68l4mfA?si=B0a5e8jqBRhepeoX"
+
+- files: ["break_my_stride.ogg"]
+  copyright: "Break My Stride. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/B4c_SkROzzo?si=G0Wy53_Xe50Nrc6m"
+
+- files: ["brother_louie.ogg"]
+  copyright: "Brother Louie. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Lp2qcCrdBLA?si=tTkXTIRXS2lDYu84"
+
+- files: ["bumble_bee.ogg"]
+  copyright: "Bumble Bee. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/230Z9WC-7nk?si=vvoVdcob6WiRjq3R"
+
+- files: ["butterfly.ogg"]
+  copyright: "Butterfly. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/QzcvRDWgRIE?si=Zgs9WExDfaQzSAmN"
+
+- files: ["california_dreamin.ogg"]
+  copyright: "California Dreamin'. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/lo9ui5FezV4?si=oEES7FABNVOWaq0w"
+
+- files: ["californication.ogg"]
+  copyright: "Californication. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YlUKcNNmywk?si=9x-E0cJS-ppU3bnu"
+
+- files: ["cant_stop.ogg"]
+  copyright: "Can't Stop. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/8DyziWtkfBw?si=H8wu7R7DnsE_XO5Y"
+
+- files: ["cant_take_my_eyes_off_you.ogg"]
+  copyright: "Can't My Eyes Off You. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/J36z7AnhvOM?si=8r3LXU-Fs5vQqWI0"
+
+- files: ["catch_the_rainbow.ogg"]
+  copyright: "Catch The Rainbow. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/V5QukAC-jqE?si=I-8NqgW8-1E1NDHA"
+
+- files: ["cheri_cheri_lady.ogg"]
+  copyright: "Cheri Cheri Lady. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/eNvUS-6PTbs?si=0b5PmUiryCMYvvBw"
+
+- files: ["chopis_centis.ogg"]
+  copyright: "Chopis Centis. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/GKiwYir0leg?si=sYc3clbW5TM7eNa3"
+
+- files: ["clint_eastwood.ogg"]
+  copyright: "Clint Eastwood. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/1V_xRb0x9aw?si=8yVKeh6eJtkwy0kY"
+
+- files: ["cor_de_caramelo.ogg"]
+  copyright: "Cor De Caramelo. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/vrVnaYPoAHw?si=RdlBX62oAvuYWqFD"
+
+- files: ["crystal_dolphin.ogg"]
+  copyright: "Crystal Dolphin. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/UXiwRmlCZ7E?si=_SmpFBTgkIrlg9yO"
+
+- files: ["danca_kuduro.ogg"]
+  copyright: "Dança Kuduro. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/com8zsb73aY?si=Vn0WPSe8UwLk7qcH"
+
+- files: ["dancing_queen.ogg"]
+  copyright: "Dancing Queen. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/xFrGuyw1V8s?si=UH8l_dvMO7tjOJpD"
+
+- files: ["dancing_with_myself.ogg"]
+  copyright: "Dancing With Myself. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/FG1NrQYXjLU?si=F2MhqldVJiSPr3VJ"
+
+- files: ["day_after_day.ogg"]
+  copyright: "Day After Day. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/SzUxfLQ7HmU?si=Xp1AyAHibWmBVWsb"
+
+- files: ["disco.ogg"]
+  copyright: "D.I.S.C.O.. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/EO51YkA3qys?si=D5cmRki4XmCAdPIy"
+
+- files: ["dont_dream_its_over.ogg"]
+  copyright: "Don't Dream It's Over. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/J9gKyRmic20?si=9GBSG9RuTVtjHrbQ"
+
+- files: ["dont_let_the_stars_get_in_your_eyes.ogg"]
+  copyright: "Don't Let The Stars Get In Your Eyes. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/TVm-_rc8B6g?si=Dv01ZP28yrTc6gZC"
+
+- files: ["dont_stop_me_now.ogg"]
+  copyright: "Don't Stop Me Now. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/HgzGwKwLmgM?si=QSKkchj7GkAOIi2L"
+
+- files: ["dota.ogg"]
+  copyright: "DotA. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/qTsaS1Tm-Ic?si=Y1U7OVaKiEfNuyhy"
+
+- files: ["down_under.ogg"]
+  copyright: "Down Under. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/XfR9iY5y94s?si=FCBtdvwlfPWAG5oh"
+
+- files: ["dragostea_din_tei.ogg"]
+  copyright: "Dragostea Din Tei. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YnopHCL1Jk8?si=vtShHKus-K2atBmv"
+
+- files: ["elenore.ogg"]
+  copyright: "Elenore. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/_NCd0Y776VQ?si=P05ga_CusrmslHLw"
+
+- files: ["enjoy_the_silence.ogg"]
+  copyright: "Enjoy The Silence. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/aGSKrC7dGcY?si=R64auIrFhRQ9nKPX"
+
+- files: ["escape.ogg"]
+  copyright: "Escape. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YGAeI5KODLA?si=0FvPgbjnTnZq70M7"
+
+- files: ["eu_nasci_ha_dez_mil_anos.ogg"]
+  copyright: "Eu Nasci Há 10 Mil Anos Atrás. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/DcoVEMethks?si=K0ezerBMmekYZeqF"
+
+- files: ["eu_sem_voce.ogg"]
+  copyright: "Eu Sem Você. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/LTv0FhFJPLI?si=2zqHIQ4EU-1a-2Q0"
+
+- files: ["every_breath_you_take.ogg"]
+  copyright: "Every Breath You Take. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/OMOGaugKpzs?si=4WqdggRt0wreMaJp"
+
+- files: ["everybody_wants_to_rule_the_world.ogg"]
+  copyright: "Everybody Wants To Rule The World. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/znDgBy2mHbc?si=Fk4S7y4Muqg6c76L"
+
+- files: ["everything_she_wants.ogg"]
+  copyright: "Everything She Wants. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/vDYw__at664?si=hvNjGBi2Lwe0yxKs"
+
+- files: ["exagerado.ogg"]
+  copyright: "Exagerado. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/szts-5Zs5_8?si=2lr4zLpxmV1_Vx9P"
+
+- files: ["eye_of_the_tiger.ogg"]
+  copyright: "Eye Of The Tiger. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/btPJPFnesV4?si=KhzXnNyPuRsBjnw0"
+
+- files: ["fernando.ogg"]
+  copyright: "Fernando. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/dQsjAbZDx-4?si=q_ZczmqiKRQmDM3e"
+
+- files: ["festa_no_ape.ogg"]
+  copyright: "Festa No Apê. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/zjnxBbGILY0?si=OY8hPfeNBz2FRWxf"
+
+- files: ["five_hundred_miles.ogg"]
+  copyright: "500 Miles. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/UJmbn1sQw2A?si=Bx_oHl-_iA6Os6nV"
+
+- files: ["funkytown.ogg"]
+  copyright: "Funkytown. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Z6dqIYKIBSU?si=w4qkKGi2herGiZk9"
+
+- files: ["girls_just_wanna_have_fun.ogg"]
+  copyright: "Girls Just Want To Have Fun. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/PIb6AZdTr-A?si=UtfIPT03fjXNlAhj"
+
+- files: ["got_to_get_you_into_my_life.ogg"]
+  copyright: "Got To Get You Into My Life. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/r95-7zfgtLw?si=Aa-jjgmaNWELQVgH"
+
+- files: ["happy_togheter.ogg"]
+  copyright: "Happy Togheter. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/pSw8an1u3rc?si=MWDJsufgt6pgsH04"
+
+- files: ["have_you_ever_seen_the_rain.ogg"]
+  copyright: "Have You Ever Seen The Rain. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/bO28lB1uwp4?si=SpMGhDlbNVMjeJzR"
+
+- files: ["heart_of_glass.ogg"]
+  copyright: "Heart Of Glass. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/WGU_4-5RaxU?si=7xcpxefPApZeG0EO"
+
+- files: ["heaven_knows_im_miserable_now.ogg"]
+  copyright: "Heaven Knows I'm Miserable Now. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/TjPhzgxe3L0?si=WKn5ysGu8dBgnC-b"
+
+- files: ["help.ogg"]
+  copyright: "Help!. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/2Q_ZzBGPdqE?si=n6BUFFAtalV9fqW3"
+
+- files: ["he_man.ogg"]
+  copyright: "He-Man. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/9fBMAmxtGAE?si=VBD5yd9O3rkpF-QY"
+
+- files: ["here_comes_the_sun.ogg"]
+  copyright: "Here Comes The Sun. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/KQetemT1sWc?si=_xbvsqZKVbS5aFOE"
+
+- files: ["heroes.ogg"]
+  copyright: "\"Heroes\". Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/lXgkuM2NhYI?si=-1yEnbOVQ9svRkTJ"
+
+- files: ["hey_jude.ogg"]
+  copyright: "Hey Jude. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/mQER0A0ej0M?si=Y4z246RWA29uUBE2"
+
+- files: ["hey_tonight.ogg"]
+  copyright: "Hey Tonight. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/tk8ZRq7uzrk?si=r-Xu6eiUR-enax-H"
+
+- files: ["heyyeyaaeyaaaeyaeyaa.ogg"]
+  copyright: "Fabulous Secret Powers. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/FR7wOGyAzpw?si=UwwG95lYMPQ4bGC6"
+
+- files: ["hotel_california.ogg"]
+  copyright: "Hotel California. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/dLl4PZtxia8?si=cFOS3_VjG1z6427r"
+
+- files: ["how_soon_is_now.ogg"]
+  copyright: "How Soon Is Now?. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/hnpILIIo9ek?si=eus12oFzn-yR03g5"
+
+- files: ["i_just_threw_out_the_love_of_my_dreams.ogg"]
+  copyright: "I Just Threw Out The Love Of My Dreams. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/r2dosVRzLSM?si=UvsDdukrADIblTTj"
+
+- files: ["i_ran_so_far_away.ogg"]
+  copyright: "A Flock Of Seagulls - I Ran. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/iIpfWORQWhU?si=ZCmgeNYE6ePHarTx"
+
+- files: ["i_want_you.ogg"]
+  copyright: "I Want You. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/4QwZi9-7i5s?si=Z6ngKQKTwADn_CS1"
+
+- files: ["ill_never_smile_again.ogg"]
+  copyright: "I'll Never Smile Again. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/rEn--T2hBXg?si=UzMFUM9cwjZSfUnC"
+
+- files: ["im_a_believer.ogg"]
+  copyright: "I'm A Believer. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/0mYBSayCsH0?si=c3JckOrfVDdFlZ9o"
+
+- files: ["im_gonna_be.ogg"]
+  copyright: "I'm Gonna Be. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/tbNlMtqrYS0?si=CvRxf40lyMhZNkix"
+
+- files: ["imagine.ogg"]
+  copyright: "Imagine. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/VOgFZfRVaww?si=L0zFp03s5Qu6bda6"
+
+- files: ["in_my_life.ogg"]
+  copyright: "In My Life. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YBcdt6DsLQA?si=I8B7ukTOfJDpa8Op"
+
+- files: ["into_each_life_some_rain_must_fall.ogg"]
+  copyright: "Into Each Life Some Rain Must Fall. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/ayGkA-vxrMc?si=cSEN-Mc0HtsSRy-U"
+
+- files: ["island_in_the_sun.ogg"]
+  copyright: "Island In The Sun. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/erG5rgNYSdk?si=QRGZ9z95Yd2nBWsZ"
+
+- files: ["it_aint_over_til_its_over.ogg"]
+  copyright: "It Ain't Over 'Til It's Over. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/TmENMZFUU_0?si=PaCqm2ckVEY3FdJz"
+
+- files: ["johnny_be_goode.ogg"]
+  copyright: "Johnny B. Goode. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Y-9Y4CCIWnM?si=L2nQeylLt0JUc0nF"
+
+- files: ["killer_queen.ogg"]
+  copyright: "Killer Queen. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/2ZBtPf7FOoM?si=YOnFw4G1JVm3CISm"
+
+- files: ["kokomo.ogg"]
+  copyright: "Kokomo. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/tIieHL8LerI?si=4rs1EtHPDXJd0Gec"
+
+- files: ["la_vem_o_alemao.ogg"]
+  copyright: "Lá Vem O Alemão. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/VG-JixfPJrA?si=axrBNhkluXF6tRDB"
+
+- files: ["lamour_toujours.ogg"]
+  copyright: "L'Amour Toujours. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/w15oWDh02K4?si=16OnogS2lBji4w5o"
+
+- files: ["last_christmas.ogg"]
+  copyright: "Last Christmas. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/E8gmARGvPlI?si=LuwSrmnhIcukZDpg"
+
+- files: ["let_it_be.ogg"]
+  copyright: "Let It Be. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/CGj85pVzRJs?si=mO0AzOROve4BImrY"
+
+- files: ["lets_dance.ogg"]
+  copyright: "Let's Dance. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/VbD_kBJc_gI?si=weHjxO3xcYPY9XN7"
+
+- files: ["live_and_let_die.ogg"]
+  copyright: "Live And Let Die. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/08saJgLmytU?si=fwKHN0uIi1Ja-fXu"
+
+- files: ["maria_izabel.ogg"]
+  copyright: "Maria Izabel. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/495hXaML70M?si=EhsoNA11bh4yhJVf"
+
+- files: ["maybe.ogg"]
+  copyright: "Maybe. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/fsLPj_BG3fg?si=H1-wEYWtWvN_0-Fi"
+
+- files: ["menina_veneno.ogg"]
+  copyright: "Menina Veneno. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/BK_X3FvQTdE?si=08kPPWKerM9BMb2I"
+
+- files: ["my_lucky_stars.ogg"]
+  copyright: "My Lucky Stars. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/R_2rNnmac34?si=ywWNNkLcH_ULIol0"
+
+- files: ["my_way.ogg"]
+  copyright: "My Way. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/qQzdAsjWGPg?si=OKkUf-3pPBAL_-lv"
+
+- files: ["nineteen_two_thousand.ogg"]
+  copyright: "19-2000. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/WXR-bCF5dbM?si=4mBjWHCJALf5EYmh"
+
+- files: ["november_rain.ogg"]
+  copyright: "November Rain. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/8SbUC-UaAxE?si=mbhqadtYs6NCj-qw"
+
+- files: ["marmore.ogg"]
+  copyright: "O Astronauta De Mármore. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5r4i5MNRtgI?si=Vg7C-ISy5tN6BVl2"
+
+- files: ["ocean_man.ogg"]
+  copyright: "Ocean Man. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/vcaPiiFZu2o?si=WssXF31ZIgBqNzIB"
+
+- files: ["one_way_or_another.ogg"]
+  copyright: "One Way Or Another. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/_zBwRDEFMRY?si=jZrrN7qhUL8SrMkd"
+
+- files: ["only_you.ogg"]
+  copyright: "Only You. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5p2k55F-uag?si=HjOneksfy44xn8K2"
+
+- files: ["out_of_touch.ogg"]
+  copyright: "Out Of Touch. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/DCkJ5lGPqFs?si=jdBwaRigpYv3OMpD"
+
+- files: ["paradise_city.ogg"]
+  copyright: "Paradise City. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Rbm6GXllBiw?si=E7RQLxKeVg-6bO4W"
+
+- files: ["pare.ogg"]
+  copyright: "Pare!. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/sBhmjWmQHjU?si=IT5Y54E8ANG0HmRj"
+
+- files: ["pelados_em_santos.ogg"]
+  copyright: "Pelados Em Santos. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/M0vEPlTv514?si=NZNGHC-_mvlPeXrE"
+
+- files: ["purple_rain.ogg"]
+  copyright: "Purple Rain. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/iSBVeZrDfGY?si=34LNZmUSHaBRb6AW"
+
+- files: ["raindrops_keep_falling_on_my_head.ogg"]
+  copyright: "Raindrops Keep Fallin' On My Head. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/sySlY1XKlhM?si=QTVuLeZhPpaKfWb-"
+
+- files: ["rap_da_felicidade.ogg"]
+  copyright: "Rap Da Felicidade. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/7pD8k2zaLqk?si=WCPLlSIgiixgrsTy"
+
+- files: ["rap_do_silva.ogg"]
+  copyright: "Rap Do Silva. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/vlZ9MGgC1NI?si=-HXRYFPKtaxqH3tA"
+
+- files: ["relax.ogg"]
+  copyright: "Relax. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/D8um3SAwlOg?si=C_Gl9bKUjzQo97RE"
+
+- files: ["rockin_around_the_christmas_tree.ogg"]
+  copyright: "Rockin' Around The Christmas Tree. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/TFsZy9t-qDc?si=DEu-O7hzrWtyJzfQ"
+
+- files: ["sandman.ogg"]
+  copyright: "Sandman. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/ShYuNe5z0NU?si=-QQXeD4hqtJzBmeE"
+
+- files: ["say_it_isnt_so.ogg"]
+  copyright: "Say It Isn't So. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/_R5xIdXwNMk?si=GAF1DrMCp8jHDr-5"
+
+- files: ["september.ogg"]
+  copyright: "September. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Gs069dndIYk?si=XLICRSNEv2ju38gI"
+
+- files: ["should_i_stay_or_should_i_go.ogg"]
+  copyright: "Should I Stay Or Should I Go. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/BN1WwnEDWAM?si=RBwh9m8kNQEtGjG7"
+
+- files: ["some_enchanted_evening.ogg"]
+  copyright: "Some Enchanted Evening. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/JXmADoAZB6w?si=1AaFZ3v3ymlgGIrH"
+
+- files: ["somethin_stupid.ogg"]
+  copyright: "Somethin' Stupid. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Y_t2gNCXYbY?si=GWGn27HDDq5qjmTq"
+
+- files: ["southern_nights.ogg"]
+  copyright: "Southern Nights. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/jYTfV5o2ZMY?si=yOLf2AroPDase7gW"
+
+- files: ["space_oddity.ogg"]
+  copyright: "Space Oddity. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/iYYRH4apXDo?si=uOZNMIoa6XagzxPl"
+
+- files: ["starman.ogg"]
+  copyright: "Starman. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/t365MuktYQs?si=JvOVCm8jsj3dgGjf"
+
+- files: ["stars.ogg"]
+  copyright: "Stars. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/izOdvBmTDh0?si=Qrp30KZlNGYZZIzH"
+
+- files: ["start_me_up.ogg"]
+  copyright: "Start Me Up. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/7JR10AThY8M?si=KEDjsWXdh472kxi3"
+
+- files: ["strangers_by_the_day.ogg"]
+  copyright: "Strangers By The Day. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/OR4ooJWgG0A?si=YO5dwa0z5lxs0pao"
+
+- files: ["strawberry_fields.ogg"]
+  copyright: "Strawberry Fields. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/HtUH9z_Oey8?si=-m3S_CuMJL7Fmgwe"
+
+- files: ["sugar_sugar.ogg"]
+  copyright: "Sugar Sugar. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5rmwDnOozWU?si=OIM70NucDndS6cGO"
+
+- files: ["sultans_of_swing.ogg"]
+  copyright: "Sultans Of Swing. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/h0ffIJ7ZO4U?si=7FeWZTsLTvdxiyio"
+
+- files: ["sunshine_lollipops_and_rainbows.ogg"]
+  copyright: "Sunshine, Lollipopos And Rainbows. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/atY7ymXAcRQ?si=brWJqQyas5aMwUwW"
+
+- files: ["supersonic_rocketship.ogg"]
+  copyright: "Supersonic Rocket Ship. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/iZB8XXYePy0?si=QxtV9s31HUXudhU2"
+
+- files: ["sweet_child_o_mine.ogg"]
+  copyright: "Sweet Child O' Mine. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/1w7OgIMMRc4?si=6C6vNsLXI5745uE7"
+
+- files: ["take_me_out.ogg"]
+  copyright: "Take Me Out. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Ijk4j-r7qPA?si=-IXA_210901X7HS0"
+
+- files: ["tempo_perdido.ogg"]
+  copyright: "Tempo Perdido. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YPLQHeUSX2g?si=vwVlQfM0OTJLUreB"
+
+- files: ["there_is_a_light_that_never_goes_out.ogg"]
+  copyright: "There Is A Light That Never Goes Out. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/siO6dkqidc4?si=JN_OUm4sV0RgOfGn"
+
+- files: ["tie_a_yellow_ribbon_round_the_ole_oak_tree.ogg"]
+  copyright: "Tie A Yellow Ribbon Round The Ole Oak Tree. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/PxG9XFqHSFw?si=vCO4BUyVX-mvJZ35"
+
+- files: ["time_in_a_bottle.ogg"]
+  copyright: "Time In A Bottle. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Q29sOLG8xGE?si=7ka0cicpGP_P6Ww5"
+
+- files: ["tokyo_reggie.ogg"]
+  copyright: "Tokyo Reggie. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/CnKd3V-VpDs?si=8-OWtN74KSZgibwg"
+
+- files: ["tu_es_o_mdc_da_minha_vida.ogg"]
+  copyright: "Tu És O MDC Da Minha Vida. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/li8EEGSxSSo?si=UOAJUmV-mQ24ipDH"
+
+- files: ["tu_llegaste_cuando_menos_te_esperaba.ogg"]
+  copyright: "Tú Llegaste, Cuando Menos Te Esperaba. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/RznXLK2TXaE?si=qp0UoalysWVnlXFl"
+
+- files: ["twist_and_shout.ogg"]
+  copyright: "Twist And Shout. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/2RicaUqd9Hg?si=IexQ2pU5AybPn96A"
+
+- files: ["two_of_us.ogg"]
+  copyright: "Two Of Us. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/cLQox8e9688?si=NCms7gyWLNhTVbHU"
+
+- files: ["uma_partida_de_futebol.ogg"]
+  copyright: "É Uma Partida De Futebol. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/7Ie4oL17Nwc?si=AtvYTmCDOo1Cb_az"
+
+- files: ["under_pressure.ogg"]
+  copyright: "Under Pressure. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/a01QQZyl-_I?si=L6qGl74djY2xYr6z"
+
+- files: ["uni_duni_te.ogg"]
+  copyright: "Uni-Duni-Tê. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/dDH_MagdKsY?si=08Ldi6nsGCjFjRsw"
+
+- files: ["vamos_fugir.ogg"]
+  copyright: "Vamos Fugir. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/XLpdc_uVSgY?si=Nw1JM_azagMuII9Y"
+
+- files: ["vou_deixar.ogg"]
+  copyright: "Vou Deixar. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/EofmoQhm1sw?si=ADndk6Tp65wJeKAV"
+
+- files: ["we_like_to_party.ogg"]
+  copyright: "We Like To Party!. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/6Zbi0XmGtMw?si=dhfF6qwlprnX-RJt"
+
+- files: ["we_no_speak_americano.ogg"]
+  copyright: "We No Speak Americano. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/7E9Ed9DUQoQ?si=Xn4k5VphHCJizhFF"
+
+- files: ["welcome_to_the_jungle.ogg"]
+  copyright: "Welcome To The Jungle. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/o1tj2zJ2Wvg?si=ZDXdRsBmc9ZOFUwn"
+
+- files: ["well_meet_again.ogg"]
+  copyright: "We'll Meet Again. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/oLuJby7ZKEY?si=HpUbwt0kLACBtirn"
+
+- files: ["wham_bam_shang_a_lang.ogg"]
+  copyright: "Wham Bam Shang-A-Lang. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/M5iSEdo5VNI?si=Z6JiHIkcLPlurT4p"
+
+- files: ["while_my_guitar_gently_weeps.ogg"]
+  copyright: "While My Guitar Gently Weeps. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YFDg-pgE0Hk?si=Ng31AYJU6scY8Wfl"
+
+- files: ["whisky_a_go_go.ogg"]
+  copyright: "Whisky A Go-Go. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/-YHMDNki67s?si=5zx6HPs2qNxBiHC9"
+
+- files: ["who_can_it_be_now.ogg"]
+  copyright: "Who Can It Be Now?. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/SECVGN4Bsgg?si=xcJYV1U5doifYNzZ"
+
+- files: ["wouldnt_it_be_nice.ogg"]
+  copyright: "Wouldn't It Be Nice. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5lP8BZcyoEQ?si=AjVqDDXTcPVTk3T9"
+
+- files: ["youre_my_heart_youre_my_soul.ogg"]
+  copyright: "You're My Hear, You're My Soul. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/4kHl4FoK1Ys?si=3vEVibS-9A-pC_lD"
+
+- files: ["careless_whisper.ogg"]
+  copyright: "Careless Whisper. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/izGwDsrQ1eQ?si=j1sxCKG7vc3Cpd0d"
+
+- files: ["i_dont_want_to_set_the_world_on_fire.ogg"]
+  copyright: "I Don't Want To Set The World On Fire. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/TmIwm5RElRs?si=fPM3knPa7Fdgl5aS"

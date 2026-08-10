@@ -54,7 +54,6 @@ public sealed class NetpodSystem : EntitySystem
         SubscribeLocalEvent<NetpodComponent, EntityTerminatingEvent>(OnTerminating);
         SubscribeLocalEvent<NetpodComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
         SubscribeLocalEvent<NetpodComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
-        SubscribeLocalEvent<NetpodComponent, ContainerIsRemovingAttemptEvent>(OnOccupantRemoveAttempt);
         SubscribeLocalEvent<NetpodComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<NetpodComponent, BoundUIOpenedEvent>(OnUiOpened);
         SubscribeLocalEvent<NetpodComponent, NetpodSelectLoadoutMessage>(OnSelectLoadout);
@@ -215,6 +214,9 @@ public sealed class NetpodSystem : EntitySystem
         if (args.Container.ID != "netpod-body")
             return;
 
+        if (!ent.Comp.EjectingOccupant && ent.Comp.Avatar is { } avatar && Exists(avatar))
+            _server.DisconnectAvatar(avatar, true);
+
         ent.Comp.Occupant = null;
         Dirty(ent);
         SetVisualState(ent, NetpodVisualState.Opening);
@@ -227,27 +229,6 @@ public sealed class NetpodSystem : EntitySystem
 
             UpdateVisuals(ent);
         });
-    }
-
-    private void OnOccupantRemoveAttempt(Entity<NetpodComponent> ent, ref ContainerIsRemovingAttemptEvent args)
-    {
-        if (args.Container.ID != "netpod-body")
-            return;
-
-        if (ent.Comp.EjectingOccupant)
-            return;
-
-        if (ent.Comp.Avatar is not { } avatar)
-            return;
-
-        if (Exists(avatar))
-            _server.DisconnectAvatar(avatar, true);
-
-        ent.Comp.Occupant = TryComp<NetpodContainerComponent>(ent.Owner, out var containerComp)
-            ? containerComp.BodyContainer.ContainedEntity
-            : null;
-        Dirty(ent);
-        UpdateVisuals(ent);
     }
 
     private void OnUiOpened(Entity<NetpodComponent> ent, ref BoundUIOpenedEvent args)

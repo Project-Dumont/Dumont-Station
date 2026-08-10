@@ -1,0 +1,180 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ALPHABETIZE
+
+
+- type: Tag
+  id: AnomalyScanner
+
+- type: Tag
+  id: AutoMender
+
+- type: Tag
+  id: BioSec
+
+- type: Tag
+  id: BorgModuleCentcomm
+
+- type: Tag
+  id: BorgModuleSecurity
+
+- type: Tag
+  id: BoxFolderHoPClipboard
+
+- type: Tag
+  id: BulletproofArmor
+
+- type: Tag
+  id: CrayonBox
+
+- type: Tag
+  id: CombatShotgun
+
+- type: Tag
+  id: Cyclorite
+
+- type: Tag
+  id: Drozd
+
+- type: Tag
+  id: ExternalContainerInjectorVial
+
+- type: Tag
+  id: Hypospray
+
+- type: Tag
+  id: IPC
+
+- type: Tag
+  id: IPCExternalCooling
+
+- type: Tag
+  id: Protogen
+
+- type: Tag
+  id: ProtoArachnid
+
+- type: Tag
+  id: ProtoAvali
+
+- type: Tag
+  id: ProtoCyclops
+
+- type: Tag
+  id: ProtoDawi
+
+- type: Tag
+  id: ProtoDionae
+
+- type: Tag
+  id: ProtoFeline
+
+- type: Tag
+  id: ProtoHumie
+
+- type: Tag
+  id: ProtoMoth
+
+- type: Tag
+  id: ProtoReptile
+
+- type: Tag
+  id: ProtoResomi
+
+- type: Tag
+  id: ProtoSlimePerson
+
+- type: Tag
+  id: ProtoThaven
+
+- type: Tag
+  id: ProtoVox
+
+- type: Tag
+  id: ProtoVulp
+
+- type: Tag
+  id: ProtoKin
+
+- type: Tag
+  id: ProtogenCybernetics
+
+- type: Tag
+  id: OilPack
+
+- type: Tag
+  id: IntegrityAnalyzer
+
+- type: Tag
+  id: Inorganic
+
+- type: Tag
+  id: Organic
+
+- type: Tag
+  id: LaserRifle
+
+- type: Tag
+  id: Lecter
+
+- type: Tag
+  id: Leikha
+
+- type: Tag
+  id: ResearchTreeMapElectronics
+
+- type: Tag
+  id: ReflectArmor
+
+- type: Tag
+  id: RiotArmor
+
+- type: Tag
+  id: RiotShotgun
+
+- type: Tag
+  id: RocketAmmo120mm
+
+- type: Tag
+  id: RocketAmmo120mmAP
+
+- type: Tag
+  id: RocketAmmo120mmHE
+
+- type: Tag
+  id: RocketAmmo120mmIncendiary
+
+- type: Tag
+  id: RocketAmmo120mmShrapnel
+
+- type: Tag
+  id: SalvageFactory
+
+- type: Tag
+  id: SalvageReactor
+
+- type: Tag
+  id: SP91RC
+
+- type: Tag
+  id: Shadekin
+
+- type: Tag
+  id: SiliconEmotesFH
+
+- type: Tag
+  id: Thaven
+
+- type: Tag
+  id: TrueProtogen
+
+- type: Tag
+  id: NodeScanner
+
+- type: Tag
+  id: Seismic
+
+- type: Tag
+  id: AnomalyLocator

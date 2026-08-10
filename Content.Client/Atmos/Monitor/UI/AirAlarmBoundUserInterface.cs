@@ -115,6 +115,9 @@ public sealed class AirAlarmBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not AirAlarmUIState cast || _window == null)
         {
             return;

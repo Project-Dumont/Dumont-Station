@@ -57,6 +57,7 @@ using Content.Shared.Administration.Logs;
 using Robust.Shared.Network;
 using Content.Shared.Roles;
 using Content.Server.Roles; //Goobstation
+using Content.Server._CD.Traits; // CD: Round End Redacting
 
 namespace Content.Server.Objectives;
 
@@ -196,7 +197,6 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
             // goobstation - traitor flavor
             // TODO: the entirety of roundend methods are shitcode
-            // if we were to add changeling/heretic/bloodbrother/antag flavor
             // (something like "Timmy Turner was the Ashbringer" or "Grey Maria was from Gami Hive")
             // we'd need to make a type check on every mind role or raise a separate event for each game rule/role
             // and i can't be assed to do it!
@@ -392,6 +392,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             _player.TryGetPlayerData(mind.Comp.OriginalOwnerUserId.Value, out var sessionData))
         {
             var username = sessionData.UserName;
+
+            // CD: Round End Redacting
+            if (mind.Comp.OriginalOwnedEntity != null &&
+                TryGetEntity(mind.Comp.OriginalOwnedEntity.Value, out var originalEntity) &&
+                HasComp<HideFromRoundEndScreenComponent>(originalEntity))
+            {
+                username = Loc.GetString("cd-name-redacted-text");
+            }
 
             var nameWithJobMaybe = name;
             if (_job.MindTryGetJobName(mind, out var jobName))

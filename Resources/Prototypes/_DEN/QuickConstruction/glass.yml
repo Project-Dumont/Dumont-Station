@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: quickConstructionCategory
+  id: Glass
+  constructionEntries:
+  - Window
+  - WindowDiagonal
+  - WindowDirectional
+
+- type: quickConstructionCategory
+  id: ReinforcedGlass
+  constructionEntries:
+  - ReinforcedWindow
+  - ReinforcedWindowDiagonal
+  - WindowReinforcedDirectional
+
+- type: quickConstructionCategory
+  id: UraniumGlass
+  constructionEntries:
+  - UraniumWindow
+  - UraniumWindowDiagonal
+
+- type: quickConstructionCategory
+  id: ReinforcedUraniumGlass
+  constructionEntries:
+  - ReinforcedUraniumWindow
+  - ReinforcedUraniumWindowDiagonal
+
+- type: quickConstructionCategory
+  id: PlasmaGlass
+  constructionEntries:
+  - PlasmaWindow
+  - PlasmaWindowDiagonal
+  - PlasmaWindowDirectional
+
+- type: quickConstructionCategory
+  id: ReinforcedPlasmaGlass
+  constructionEntries:
+  - ReinforcedPlasmaWindow
+  - ReinforcedPlasmaWindowDiagonal
+  - PlasmaReinforcedWindowDirectional
+
+- type: quickConstructionCategory
+  id: ClockworkGlass
+  constructionEntries:
+  - ClockworkWindow
+  - ClockworkWindowDiagonal
+  - WindowClockworkDirectional

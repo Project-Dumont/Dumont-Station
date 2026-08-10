@@ -133,6 +133,7 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleToggleEmergencyMaintMessage>(OnToggleEmergencyMaintMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCentCommButtonMessage>(OnCentCommMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleMartialButtonMessage>(OnMartialMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleStationRenameMessage>(OnRenameMessage);
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -143,7 +144,6 @@ namespace Content.Server.Communications
             _maintDoorPrototypeList.Add("AirlockMaintLocked");
             _maintDoorPrototypeList.Add("AirlockMaintCommonLocked");
         }
-
         public override void Update(float frameTime)
         {
             var query = EntityQueryEnumerator<CommunicationsConsoleComponent>();
@@ -251,6 +251,9 @@ namespace Content.Server.Communications
             var isSyndie = protoId == "SyndicateComputerComms";
 
 
+            var stationName = stationUid != null ? MetaData(stationUid.Value).EntityName : string.Empty;
+            var renameOnCooldown = (_timing.CurTime.TotalSeconds - comp.RenameTimer) < comp.RenameDelay;
+
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 isSyndie,
                 CanAnnounce(comp),
@@ -258,7 +261,9 @@ namespace Content.Server.Communications
                 levels,
                 currentLevel,
                 currentDelay,
-                _roundEndSystem.ExpectedCountdownEnd
+                _roundEndSystem.ExpectedCountdownEnd,
+                stationName,
+                renameOnCooldown
             ));
         }
 
@@ -412,6 +417,54 @@ namespace Content.Server.Communications
                 } //pop up avisando q ta vazio
                 _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), uid, message.Actor);
             });
+        }
+
+        private void OnRenameMessage(Entity<CommunicationsConsoleComponent> ent, ref CommunicationsConsoleStationRenameMessage message)
+        {
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, ent.Owner))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), ent.Owner, message.Actor);
+                return;
+            }
+
+            var accessTags = _accessReaderSystem.FindAccessTags(mob);
+            if (!accessTags.Contains("Captain") && !accessTags.Contains("CentralCommand"))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), ent.Owner, message.Actor);
+                return;
+            }
+
+            if ((_timing.CurTime.TotalSeconds - ent.Comp.RenameTimer) < ent.Comp.RenameDelay)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-rename-cooldown"), ent.Owner, message.Actor);
+                return;
+            }
+
+            var newName = message.NewName.Trim();
+            if (string.IsNullOrWhiteSpace(newName))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), ent.Owner, message.Actor);
+                return;
+            }
+
+            var stationUid = _stationSystem.GetOwningStation(ent.Owner);
+            if (stationUid == null)
+                return;
+
+            var currentName = MetaData(stationUid.Value).EntityName;
+            if (newName == currentName)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-rename-same-name"), ent.Owner, message.Actor);
+                return;
+            }
+
+            _stationSystem.RenameStation(stationUid.Value, newName, loud: true);
+            _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(mob):player} renamed the station to '{newName}'.");
+            ent.Comp.RenameTimer = _timing.CurTime.TotalSeconds;
         }
 
         private void OnMartialMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleMartialButtonMessage message)

@@ -27,6 +27,9 @@ public sealed class FundingAllocationConsoleBoundUserInterface(EntityUid owner, 
     {
         base.UpdateState(message);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (message is not FundingAllocationConsoleBuiState state)
             return;
 

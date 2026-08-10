@@ -59,6 +59,8 @@
       - type: NpcFactionMember
         factions:
         - Wizard
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistWizard
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
@@ -154,6 +156,8 @@
       - type: NpcFactionMember
         factions:
         - Wizard
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistWizard
 
 - type: entity
   parent: BaseGameRule

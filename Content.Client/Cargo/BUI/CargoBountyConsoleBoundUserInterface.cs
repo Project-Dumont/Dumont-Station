@@ -45,6 +45,9 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(message);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (message is not CargoBountyConsoleState state)
             return;
 

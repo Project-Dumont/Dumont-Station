@@ -31,6 +31,7 @@
 - type: entity
   parent: BaseAmmoProvider
   id: AmmoProviderShotgunShell
+  description: 16-shell box of .50 Shotgun ammunition. #Far Horizons
   abstract: true
   components:
     # Goobstation edit start

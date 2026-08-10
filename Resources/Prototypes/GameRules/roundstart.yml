@@ -158,12 +158,29 @@
     rules:
     - id: Thief
       prob: 0.5
+    # Harmony start
+    - id: Conspirators
+      prob: 0.25
+    # Harmony end
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoWizard
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
     - id: Heretic # goob edit
       prob: 0.2
     - id: Devil # Goob
       prob: 0.02
     - id: Shadowling # Goob
       prob: 0.02
+    # Harmony start
+    - id: Conspirators
+      prob: 0.25
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -248,7 +265,6 @@
     objectives:
     - NukeopsDetonateObjective
 
-
 - type: entity
   parent: BaseNukeopsRule
   id: Nukeops
@@ -271,6 +287,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -290,6 +308,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -313,6 +333,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -387,6 +409,34 @@
       lateJoinAdditional: true
       mindRoles:
       - MindRoleTraitor
+
+- type: entity
+  parent: BaseGameRule
+  id: Conspirators
+  components:
+  - type: GameRule
+    minPlayers: 28 # minimum of 4 conspirators
+    chaosScore: 250 # Dumont
+  - type: ConspiratorRule
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ Conspirator ]
+      min: 4
+      max: 7
+      playerRatio: 7
+      lateJoinAdditional: true
+      briefing:
+        text: conspirator-role-greeting
+        color: "#724F29"
+        sound: /Audio/_Harmony/Misc/conspirator_greeting.ogg
+      components:
+      - type: Conspirator
+      - type: AutoImplant
+        implants:
+        - RadioImplantConspiracy
+      mindRoles:
+      - MindRoleConspirator
 
 - type: entity
   id: Revolutionary

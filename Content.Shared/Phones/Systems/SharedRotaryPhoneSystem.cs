@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
 using System.Numerics;
-using Content.Shared.Body;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Destructible;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
@@ -44,6 +44,7 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
     [Dependency] private readonly SharedToolSystem _tool = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedJointSystem _joint = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
@@ -57,12 +58,23 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
         SubscribeLocalEvent<RotaryPhoneComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RotaryPhoneComponent, InteractUsingEvent>(OnInteract);
         SubscribeLocalEvent<RotaryPhoneComponent, DestructionEventArgs>(OnPhoneDestroy);
+        SubscribeLocalEvent<RotaryPhoneComponent, ContainerGettingInsertedAttemptEvent>(OnInsertAttemptContainer);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, ExaminedEvent>(OnExamineHolder);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, EntRemovedFromContainerMessage>(OnPhoneRemoveHolder);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, DestructionEventArgs>(OnDestruction);
     }
 
+    private void OnInsertAttemptContainer(Entity<RotaryPhoneComponent> ent, ref ContainerGettingInsertedAttemptEvent args)
+    {
+        if (HasComp<RotaryPhoneHolderComponent>(args.Container.Owner))
+            return;
+
+        if (!HasComp<HandsComponent>(args.Container.Owner))
+            args.Cancel();
+        if (!_hands.TryGetHand(args.Container.Owner, args.Container.ID, out _))
+            args.Cancel();
+    }
     private void OnPhoneRemoveHolder(Entity<RotaryPhoneHolderComponent> ent, ref EntRemovedFromContainerMessage args)
     {
         if (Deleted(ent.Owner)
@@ -262,15 +274,17 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
     {
         if (thisPhone.ConnectedPhone != null)
         {
-            var ev = new PhoneHungUpEvent();
-
-            RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
-
             if (TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
             {
+                // Dumont
                 if (otherPhone.SoundEntity != null)
                     otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
 
+                // Dumont
+                var ev = new PhoneHungUpEvent();
+                RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
+
+                // Dumont
                 otherPhone.ConnectedPhone = null;
                 otherPhone.Connected = false;
                 otherPhone.Engaged = false;
@@ -279,6 +293,7 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
             }
         }
 
+        // Dumont
         if (thisPhone.SoundEntity != null)
             thisPhone.SoundEntity = _audio.Stop(thisPhone.SoundEntity);
 

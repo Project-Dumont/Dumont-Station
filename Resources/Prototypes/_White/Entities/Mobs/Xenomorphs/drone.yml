@@ -65,6 +65,8 @@
         type: SurgeryBui
       enum.RadialSelectorUiKey.Key:
         type: TrackedRadialSelectorMenuBUI
+  - type: GlobalAntagonist # Orion
+    antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphDrone]

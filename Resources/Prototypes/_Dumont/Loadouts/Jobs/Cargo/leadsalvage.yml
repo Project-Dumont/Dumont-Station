@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Hat
+- type: loadout
+  id: ClothingHeadHelmetSalvageMerc
+  equipment:
+    head: ClothingHeadHelmetSalvageMerc
+
+- type: loadout
+  id: ClothingHeadHatBeretSalvageMercBrown
+  equipment:
+    head: ClothingHeadHatBeretSalvageMercBrown
+
+# Neck
+
+# - type: loadout
+#   id: ClothingNeckCloakHelldiver
+#   equipment:
+#     neck: ClothingNeckCloakHelldiver
+
+- type: loadout
+  id: ClothingNeckMantleDecoratedSalvager
+  equipment:
+    neck: ClothingNeckMantleDecoratedSalvager
+
+# PDA
+
+# - type: loadout
+#   id: HelldiverPDA
+#   equipment:
+#     id: HelldiverPDA
+
+- type: loadout
+  id: SalvageLeadPDA
+  equipment:
+    id: SalvageLeadPDA

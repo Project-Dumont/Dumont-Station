@@ -27,9 +27,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.ComponentModel;
+using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Communications;
+using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 using Content.Client.UserInterface.Controls;
@@ -40,12 +42,16 @@ namespace Content.Client.Communications.UI
     public sealed class CommunicationsConsoleBoundUserInterface : BoundUserInterface
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+        private AccessReaderSystem _accessReader = default!;
 
         [ViewVariables]
         private CommunicationsConsoleMenu? _menu;
 
         public CommunicationsConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
+            _accessReader = EntMan.System<AccessReaderSystem>();
         }
 
         protected override void Open()
@@ -61,6 +67,7 @@ namespace Content.Client.Communications.UI
             _menu.OnMaint += MaintEmergencyButtonPressed;
             _menu.OnCentcomm += CentCommButtonPressed;
             _menu.OnMartial += MartialButtonPressed;
+            _menu.OnRenameStation += RenameStationPressed;
         }
 
         public void AlertLevelSelected(string level)
@@ -106,6 +113,20 @@ namespace Content.Client.Communications.UI
             SendMessage(new CommunicationsConsoleMartialButtonMessage());
         }
 
+        public void RenameStationPressed(string newName)
+        {
+            SendMessage(new CommunicationsConsoleStationRenameMessage(newName));
+        }
+
+        private bool LocalPlayerCanRename()
+        {
+            var localEntity = _playerManager.LocalSession?.AttachedEntity;
+            if (localEntity == null)
+                return false;
+            var tags = _accessReader.FindAccessTags(localEntity.Value);
+            return tags.Contains("Captain") || tags.Contains("CentralCommand");
+        }
+
         public void CallShuttle()
         {
             SendMessage(new CommunicationsConsoleCallEmergencyShuttleMessage());
@@ -119,6 +140,9 @@ namespace Content.Client.Communications.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
+
+            if (_menu is not { Disposed: false })
+                return;
 
             if (state is not CommunicationsConsoleInterfaceState commsState)
                 return;
@@ -136,13 +160,32 @@ namespace Content.Client.Communications.UI
                 if (commsState.AlertLevels is not null && !_menu.LoadedButtons) _menu.AddAlertButtons(commsState.AlertLevels);
 
                 // shit code, mas fds
-                if (commsState.IsSyndie) {
+                if (commsState.IsSyndie)
+                {
                     _menu.BroadcastButton.Visible = false;
                     _menu.CentCommButton.Visible = false;
 
                     _menu.EmergencyArea.Visible = false;
                     _menu.AlertLevelArea.Visible = false;
+                    _menu.RenameArea.Visible = false;
                 }
+
+                if (!string.IsNullOrEmpty(commsState.StationName))
+                {
+                    _menu.StationNameLabel.Text = Loc.GetString("comms-console-menu-header", ("stationName", commsState.StationName));
+                    if (!_menu.StationNameLoaded)
+                    {
+                        _menu.RenameInput.Text = commsState.StationName;
+                        _menu.StationNameLoaded = true;
+                    }
+                }
+
+                var canRename = LocalPlayerCanRename();
+                _menu.RenameButton.Visible = canRename;
+                _menu.RenameInput.Visible = canRename;
+                _menu.RenameButton.Disabled = commsState.RenameOnCooldown;
+                _menu.RenameButton.ToolTip = commsState.RenameOnCooldown
+                    ? Loc.GetString("comms-console-rename-cooldown") : null;
 
                 _menu.UpdateButtons();
                 _menu.UpdateRemainingTime();

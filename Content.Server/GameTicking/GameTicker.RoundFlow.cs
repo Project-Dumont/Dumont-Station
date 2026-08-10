@@ -119,6 +119,7 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.Mind.Components;
 
 using Content.Server._CD.Traits;
+using Content.Server._Gabystation.Economy;
 
 namespace Content.Server.GameTicking
 {
@@ -127,6 +128,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly EconomyManagerSystem _econSys = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -185,7 +187,7 @@ namespace Content.Server.GameTicking
         /// </remarks>
         private void LoadMaps()
         {
-            if (_mapManager.MapExists(DefaultMap))
+            if (_map.MapExists(DefaultMap))
                 return;
 
             AddGamePresetRules();
@@ -443,6 +445,11 @@ namespace Content.Server.GameTicking
             return total;
         }
 
+        public int OnlinePlayerCount()
+        {
+            return _playerManager.PlayerCount;
+        }
+
         public void StartRound(bool force = false)
         {
 #if EXCEPTION_TOLERANCE
@@ -686,6 +693,11 @@ namespace Content.Server.GameTicking
                 }
 
                 #endregion
+                #region GabyStation
+                var icCurrency = 0;
+                if (mind.NanoBankAccount is not null)
+                    icCurrency = _econSys.GetFirstBalance(mind.NanoBankAccount.Value);
+                #endregion
                 // END
 
                 var playerEndRoundInfo = new RoundEndMessageEvent.RoundEndPlayerInfo()
@@ -708,7 +720,8 @@ namespace Content.Server.GameTicking
                     // Goob Station - End of Round Screen
                     LastWords = lastWords,
                     EntMobState = mobState,
-                    DamagePerGroup = damagePerGroup
+                    DamagePerGroup = damagePerGroup,
+                    PlayerICCurrency = icCurrency,
                 };
                 listOfPlayerInfo.Add(playerEndRoundInfo);
             }
@@ -851,8 +864,6 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(ev);
 
             EntityManager.FlushEntities();
-
-            _mapManager.Restart();
 
             _banManager.Restart();
 

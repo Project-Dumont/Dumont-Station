@@ -25,6 +25,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Stunnable;
 using Content.Server.SurveillanceCamera;
 using Content.Shared._Lavaland.Mobs;
+using Content.Shared.Chat;
 using Content.Shared._Orion.Bitrunning;
 using Content.Shared._Orion.Bitrunning.Components;
 using Content.Shared._Orion.Bitrunning.Prototypes;
@@ -498,22 +499,12 @@ public sealed class QuantumServerSystem : EntitySystem
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
             return false;
 
-        if (pod.Avatar != null || pod.DeployedAvatar)
+        if (pod.DeployedAvatar)
         {
-            if (TryReconnectRunner((podUid, pod), user))
+            if (pod.Avatar != null && Exists(pod.Avatar) && TryReconnectRunner((podUid, pod), user))
                 return true;
 
-            if (pod.DeployedAvatar)
-            {
-                _popup.PopupEntity(Loc.GetString("bitrunning-netpod-connect-failed"), podUid, user);
-                return false;
-            }
-
-            if (pod.Avatar is { } oldAvatar && Exists(oldAvatar))
-                DisconnectAvatar(oldAvatar, true);
-
-            pod.Avatar = null;
-            Dirty(podUid, pod);
+            return false;
         }
 
         pod.DeployedAvatar = true;
@@ -568,26 +559,42 @@ public sealed class QuantumServerSystem : EntitySystem
         if (HasComp<ActorComponent>(avatarUid))
             return false;
 
-        if (TryComp<MobStateComponent>(avatarUid, out var state) && state.CurrentState == MobState.Dead)
+        if (IsAvatarInCriticalState(avatarUid) || _mobState.IsDead(avatarUid))
             return false;
 
-        if (!_mind.TryGetMind(user, out var mindId, out var mind))
+        if (!_mind.TryGetMind(user, out var newMindId, out var newMind))
             return false;
 
-        var isOriginalBodyReconnect = connection.OriginalBody == user;
-        var isMindOwnerReconnect = connection.RunnerMind == mindId;
-        if (!isOriginalBodyReconnect && !isMindOwnerReconnect)
-            return false;
+        if (TryComp<MindContainerComponent>(avatarUid, out var mindContainer) && mindContainer.Mind is { } oldMindId)
+        {
+            if (oldMindId != newMindId)
+            {
+                if (connection.OriginalBody is { } oldBody && Exists(oldBody) && !TerminatingOrDeleted(oldBody))
+                    _mind.TransferTo(oldMindId, oldBody);
+                else
+                    _mind.TransferTo(oldMindId, null);
+            }
+        }
 
-        _mind.TransferTo(mindId, avatarUid, mind: mind);
+        connection.OriginalBody = user;
+        connection.RunnerMind = newMindId;
+        connection.Netpod = pod.Owner;
+
+        if (pod.Comp.LinkedServer != null)
+            connection.Server = pod.Comp.LinkedServer;
+
+        _mind.TransferTo(newMindId, avatarUid, mind: newMind);
+
+        if (connection.DisconnectActionEntity != null)
+        {
+            _actions.RemoveAction(connection.DisconnectActionEntity);
+            connection.DisconnectActionEntity = null;
+        }
+
         _actions.AddAction(avatarUid, ref connection.DisconnectActionEntity, connection.DisconnectActionPrototype, avatarUid);
         EnsureComp<AvatarNavRelayComponent>(avatarUid).RelayEntity = pod.Owner;
         EnsureComp<AvatarNavRelayComponent>(pod.Owner).RelayEntity = avatarUid;
-
-        connection.Netpod = pod.Owner;
-        connection.OriginalBody = user;
-        if (pod.Comp.LinkedServer != null)
-            connection.Server = pod.Comp.LinkedServer;
+        pod.Comp.Occupant = user;
 
         if (connection.Server != null && TryComp<QuantumServerComponent>(connection.Server.Value, out var server))
         {
@@ -600,6 +607,7 @@ public sealed class QuantumServerSystem : EntitySystem
         }
 
         _bitrunningDisk.RefreshAvatarEffects(avatarUid);
+        Dirty(pod.Owner, pod.Comp);
         return true;
     }
 
@@ -700,8 +708,11 @@ public sealed class QuantumServerSystem : EntitySystem
                 ? containerComp.BodyContainer.ContainedEntity
                 : null;
 
-            if (connection.DeleteOnDisconnect || _mobState.IsDead(avatarUid) || IsAvatarInCriticalState(avatarUid))
+            if (connection.DeleteOnDisconnect)
+            {
                 pod.Avatar = null;
+                pod.DeployedAvatar = false;
+            }
 
             Dirty(podUid.Value, pod);
             _netpod.UpdateVisuals((podUid.Value, pod));
@@ -726,8 +737,11 @@ public sealed class QuantumServerSystem : EntitySystem
         if (HasComp<ActorComponent>(avatarUid))
             return;
 
-        _actions.RemoveAction(connection.DisconnectActionEntity);
-        connection.DisconnectActionEntity = null;
+        if (connection.DisconnectActionEntity != null)
+        {
+            _actions.RemoveAction(connection.DisconnectActionEntity);
+            connection.DisconnectActionEntity = null;
+        }
     }
 
     public void AddObjectiveProgress(EntityUid serverUid, int points)
