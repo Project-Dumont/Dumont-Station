@@ -3921,3 +3921,9 @@ Entries:
         entendimento, não esqueça de conferi-las!
   id: 460
   time: '2026-08-09T01:47:39.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado o chat do jogo para o do ss13
+  id: 461
+  time: '2026-08-10T17:58:32.0000000+00:00'
