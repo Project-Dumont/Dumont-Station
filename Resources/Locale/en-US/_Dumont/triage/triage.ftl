@@ -1,3 +1,6 @@
+ent-TriageTagger = triage marker
+    .desc = Projects a priority marker over a pacient. Only visible through medical HUD. 
+
 triage-tagger-window-title = Triage
 triage-tagger-patient = {$name} - {$species}
 triage-tagger-clear = Remove tag
