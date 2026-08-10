@@ -117,6 +117,7 @@
   - type: ShowHealthBars
   - type: ShowHealthIcons
   - type: ShowDiseaseIcons # Goobstation
+  - type: ShowTriageIcons # Dumont-triagem
 
 - type: entity
   parent: ClothingEyesBase

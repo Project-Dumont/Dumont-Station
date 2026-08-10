@@ -1,0 +1,71 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: triageIcon
+  id: TriageIcon
+  abstract: true
+  priority: 4
+  layer: Mod
+  locationPreference: Left
+  isShaded: true
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconImmediate
+  name: triage-level-immediate
+  description: triage-level-immediate-desc
+  color: "#D42A2A"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: immediate
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconVeryUrgent
+  name: triage-level-very-urgent
+  description: triage-level-very-urgent-desc
+  color: "#E8801E"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: very-urgent
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconUrgent
+  name: triage-level-urgent
+  description: triage-level-urgent-desc
+  color: "#E8D01E"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: urgent
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconStandard
+  name: triage-level-standard
+  description: triage-level-standard-desc
+  color: "#35B54A"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: standard
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconNonUrgent
+  name: triage-level-non-urgent
+  description: triage-level-non-urgent-desc
+  color: "#2E7FD4"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: non-urgent
+
+- type: triageIcon
+  parent: TriageIcon
+  id: TriageIconDeceased
+  name: triage-level-deceased
+  description: triage-level-deceased-desc
+  color: "#3A3A3A"
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/triage_icons.rsi
+    state: deceased
