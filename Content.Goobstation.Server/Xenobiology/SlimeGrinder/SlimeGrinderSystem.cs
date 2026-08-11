@@ -76,8 +76,7 @@ public sealed partial class SlimeGrinderSystem : EntitySystem
 
             grinder.YieldQueue.Clear();
 
-            if (HasComp<ActiveSlimeGrinderComponent>(uid))
-                RemCompDeferred<ActiveSlimeGrinderComponent>(uid);
+            RemCompDeferred<ActiveSlimeGrinderComponent>(uid);
         }
 
     }
@@ -92,7 +91,8 @@ public sealed partial class SlimeGrinderSystem : EntitySystem
 
     private void OnShutdown(Entity<SlimeGrinderComponent> grinder, ref ComponentShutdown args)
     {
-        if (grinder.Comp.SlimeContainer.Owner == EntityUid.Invalid)
+        if (grinder.Comp.SlimeContainer is null ||
+            grinder.Comp.SlimeContainer.Owner == EntityUid.Invalid)
             return;
 
         _container.EmptyContainer(grinder.Comp.SlimeContainer, destination: Transform(grinder).Coordinates);
@@ -213,7 +213,6 @@ public sealed partial class SlimeGrinderSystem : EntitySystem
 
         foreach (var ent in _container.EmptyContainer(slime.Stomach)) // spew everything out jic
         {
-            _container.TryRemoveFromContainer(ent, true);
             _throwing.TryThrow(ent, _robustRandom.NextVector2() * 5);
         }
         QueueDel(toProcess);

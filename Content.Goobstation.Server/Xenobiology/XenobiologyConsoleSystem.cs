@@ -251,21 +251,35 @@ public sealed partial class XenobiologyConsoleSystem : EntitySystem
         if (TryRefreshCameraCoverage(controllerEnt, consoleEnt, args.NewPosition))
             return;
 
-        var fallback = controller.LastValidCoordinates ?? args.OldPosition;
-        if (!TryFindVisibleCamera(fallback, console, out _))
+        EntityCoordinates? fallback = null;
+        if (controller.LastValidCoordinates is { } lastValid &&
+            TryFindVisibleCamera(lastValid, console, out _))
+        {
+            fallback = lastValid;
+        }
+        else if (TryFindVisibleCamera(args.OldPosition, console, out _))
+        {
             fallback = args.OldPosition;
+        }
+
+        if (fallback is not { } visibleFallback)
+        {
+            StopControl(controllerEnt, removeController: true);
+            return;
+        }
 
         ent.Comp.ReturningToCameraView = true;
         try
         {
-            _transform.SetCoordinates(ent, fallback);
+            _transform.SetCoordinates(ent, visibleFallback);
         }
         finally
         {
             ent.Comp.ReturningToCameraView = false;
         }
 
-        TryRefreshCameraCoverage(controllerEnt, consoleEnt, fallback);
+        if (!TryRefreshCameraCoverage(controllerEnt, consoleEnt, visibleFallback))
+            StopControl(controllerEnt, removeController: true);
     }
 
     private void StartControl(EntityUid user, Entity<XenobiologyConsoleComponent> console)
@@ -282,7 +296,8 @@ public sealed partial class XenobiologyConsoleSystem : EntitySystem
             return;
         }
 
-        if (console.Comp.SlimeContainer.Owner == EntityUid.Invalid)
+        if (console.Comp.SlimeContainer is null ||
+            console.Comp.SlimeContainer.Owner == EntityUid.Invalid)
             console.Comp.SlimeContainer = _container.EnsureContainer<Container>(console, XenobiologyConsoleComponent.SlimeContainerId);
 
         var remote = Spawn(console.Comp.RemoteEntityPrototype, Transform(camera).Coordinates);
@@ -417,11 +432,22 @@ public sealed partial class XenobiologyConsoleSystem : EntitySystem
         if (TryRefreshCameraCoverage(controller, (consoleUid, console), remoteCoordinates))
             return;
 
-        if (controller.Comp.LastValidCoordinates is { } lastValid)
+        if (controller.Comp.LastValidCoordinates is { } lastValid &&
+            TryFindVisibleCamera(lastValid, console, out _) &&
+            TryComp<XenobiologyConsoleRemoteComponent>(remote, out var remoteComp))
         {
-            _transform.SetCoordinates(remote, lastValid);
+            remoteComp.ReturningToCameraView = true;
+            try
+            {
+                _transform.SetCoordinates(remote, lastValid);
+            }
+            finally
+            {
+                remoteComp.ReturningToCameraView = false;
+            }
 
-            TryRefreshCameraCoverage(controller, (consoleUid, console), lastValid);
+            if (!TryRefreshCameraCoverage(controller, (consoleUid, console), lastValid))
+                StopControl(controller, removeController: true);
 
             return;
         }

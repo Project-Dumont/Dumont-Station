@@ -41,7 +41,7 @@ public sealed partial class SlimeScannerSystem : EntitySystem
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
 
-        var message = FormattedMessage.RemoveMarkupOrThrow(GenerateSlimeMarkup(slime));
+        var message = FormattedMessage.RemoveMarkupPermissive(GenerateSlimeMarkup(slime));
         _chat.DispatchServerMessage(actor.PlayerSession, message);
     }
 

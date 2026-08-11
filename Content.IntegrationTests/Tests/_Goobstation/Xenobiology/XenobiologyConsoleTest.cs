@@ -241,17 +241,20 @@ public sealed class XenobiologyConsoleTest
             });
 
             var controller = ctx.EntMan.GetComponent<XenobiologyConsoleControllerComponent>(ctx.User);
+            var existingMonkeys = FindEntitiesByPrototype(ctx, MonkeyPrototype);
             PerformAction(ctx, controller.PlaceMonkeyActionEntity);
 
             Assert.That(
                 console.MonkeyBiomass,
                 Is.EqualTo(FixedPoint2.Zero));
 
-            var monkey = FindEntityByPrototype(ctx, MonkeyPrototype);
-            Assert.That(monkey, Is.Not.Null);
+            var newMonkeys = FindEntitiesByPrototype(ctx, MonkeyPrototype);
+            newMonkeys.ExceptWith(existingMonkeys);
+            Assert.That(newMonkeys, Has.Count.EqualTo(1));
+            var monkey = newMonkeys.Single();
 
             var mobState = ctx.EntMan.System<MobStateSystem>();
-            mobState.ChangeMobState(monkey!.Value, MobState.Dead, ctx.EntMan.GetComponent<MobStateComponent>(monkey.Value));
+            mobState.ChangeMobState(monkey, MobState.Dead, ctx.EntMan.GetComponent<MobStateComponent>(monkey));
 
             PerformAction(ctx, controller.RecycleMonkeyActionEntity);
 
@@ -682,16 +685,17 @@ public sealed class XenobiologyConsoleTest
         Assert.That(interact.Handled, Is.True);
     }
 
-    private static EntityUid? FindEntityByPrototype(TestContext ctx, string prototype)
+    private static HashSet<EntityUid> FindEntitiesByPrototype(TestContext ctx, string prototype)
     {
+        var entities = new HashSet<EntityUid>();
         var query = ctx.EntMan.EntityQueryEnumerator<MetaDataComponent>();
         while (query.MoveNext(out var uid, out var meta))
         {
             if (meta.EntityPrototype?.ID == prototype)
-                return uid;
+                entities.Add(uid);
         }
 
-        return null;
+        return entities;
     }
 
     private static EntityUid SpawnTestGrinder(TestContext ctx, EntityCoordinates coordinates)

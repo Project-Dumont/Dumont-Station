@@ -4,6 +4,7 @@
 
 #nullable enable
 using Content.Goobstation.Shared.Xenobiology.Components;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.IntegrationTests.Pair;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -96,7 +97,7 @@ public sealed class SlimeLatchTest
                 ?? throw new InvalidOperationException("Plasmaman chemical solution was not resolved.");
             Assert.That(
                 chemicalSolution.GetTotalPrototypeQuantity(damage.ToxinReagent.Id),
-                Is.GreaterThan(Content.Goobstation.Maths.FixedPoint.FixedPoint2.Zero));
+                Is.GreaterThan(FixedPoint2.Zero));
         });
 
         await pair.CleanReturnAsync();

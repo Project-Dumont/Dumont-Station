@@ -121,8 +121,8 @@ public sealed partial class XenobiologyTransferAnimationSystem : EntitySystem
                     {
                         new KeyFrame(new Vector2(0f, TubeRetractedOffset), 0f),
                         new KeyFrame(new Vector2(0f, TubeOffset), TubeDeployTime),
-                        new KeyFrame(new Vector2(0f, TubeOffset), TubeHoldTime),
-                        new KeyFrame(new Vector2(0f, TubeRetractedOffset), TubeDeployTime),
+                        new KeyFrame(new Vector2(0f, TubeOffset), TubeDeployTime + TubeHoldTime),
+                        new KeyFrame(new Vector2(0f, TubeRetractedOffset), TubeDeployTime * 2 + TubeHoldTime),
                     },
                 },
                 new AnimationTrackComponentProperty
@@ -134,8 +134,8 @@ public sealed partial class XenobiologyTransferAnimationSystem : EntitySystem
                     {
                         new KeyFrame(sprite.Color.WithAlpha(0f), 0f),
                         new KeyFrame(sprite.Color, TubeDeployTime),
-                        new KeyFrame(sprite.Color, TubeHoldTime),
-                        new KeyFrame(sprite.Color.WithAlpha(0f), TubeDeployTime),
+                        new KeyFrame(sprite.Color, TubeDeployTime + TubeHoldTime),
+                        new KeyFrame(sprite.Color.WithAlpha(0f), TubeDeployTime * 2 + TubeHoldTime),
                     },
                 },
             },

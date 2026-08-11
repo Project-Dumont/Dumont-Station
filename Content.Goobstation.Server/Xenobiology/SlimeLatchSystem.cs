@@ -130,13 +130,15 @@ public sealed partial class SlimeLatchSystem : EntitySystem
                         bloodstream.BloodSolution.Value,
                         bloodTransfer / stomachCount,
                         ent.Comp.ToxinReagent);
-                    _stomach.TryTransferSolution(stomach.Owner, bloodSolution, stomach);
+                    if (!_stomach.TryTransferSolution(stomach.Owner, bloodSolution, stomach))
+                        _solutionContainer.TryAddSolution(bloodstream.BloodSolution.Value, bloodSolution);
 
                     var chemicalSolution = _solutionContainer.SplitSolutionWithout(
                         bloodstream.ChemicalSolution.Value,
                         chemicalTransfer / stomachCount,
                         ent.Comp.ToxinReagent);
-                    _stomach.TryTransferSolution(stomach.Owner, chemicalSolution, stomach);
+                    if (!_stomach.TryTransferSolution(stomach.Owner, chemicalSolution, stomach))
+                        _solutionContainer.TryAddSolution(bloodstream.ChemicalSolution.Value, chemicalSolution);
                 }
             }
 
