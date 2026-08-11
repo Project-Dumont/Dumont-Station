@@ -52,7 +52,8 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: xenobiology
+      sprite: _Goobstation/Xenobiology/Structures/Computers/xenobiology_console.rsi
+      state: screen
     - map: ["computerLayerKeys"]
       state: tech_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
