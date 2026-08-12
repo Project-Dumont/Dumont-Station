@@ -12,7 +12,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Shared._Trauma.BloodSplatter;
 
-public sealed class BloodSplatterSystem : EntitySystem
+public sealed class SharedBloodSplatterSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
@@ -56,20 +56,17 @@ public sealed class BloodSplatterSystem : EntitySystem
         args.DamageDelta.DamageDict.TryGetValue(PierceProto, out var piercing);
         args.DamageDelta.DamageDict.TryGetValue(SlashProto, out var slash);
 
-        if (args.DamageDelta.GetTotal() < ent.Comp.MinimalTriggerDamage
-            || piercing == 0 && slash == 0)
+        var sharpDamage = piercing + slash;
+        if (sharpDamage < ent.Comp.MinimalTriggerDamage)
             return;
 
         if (!TryComp<BloodstreamComponent>(ent.Owner, out var bloodstream)
             || _bloodstream.GetBloodLevelPercentage((ent.Owner, bloodstream)) <= 0.5f)
             return;
 
-        ent.Comp.Chance += (float)args.DamageDelta.GetTotal() / 50; // Higher damage has higher change to splatter
+        var splatterChance = Math.Min(1f, ent.Comp.Chance + (float) sharpDamage / 50); // Higher damage has higher change to splatter
 
-        if (ent.Comp.Chance >= 1)
-            ent.Comp.Chance = 1;
-
-        if (!_random.Prob(ent.Comp.Chance))
+        if (!_random.Prob(splatterChance))
             return;
 
         SpawnDecal(ent, bloodstream, ent.Comp.Decal);
