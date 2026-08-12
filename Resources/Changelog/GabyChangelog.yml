@@ -3941,3 +3941,15 @@ Entries:
       message: TBA
   id: 463
   time: '2026-08-12T16:19:02.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        players pacificados com oculos de barman agora podem apenas jogar
+        bebidas
+    - type: Tweak
+      message: bebidas jogadas com oculos de barman não dão mais dano
+    - type: Tweak
+      message: 'bebidas jogadas com oculos de barman não geram mais efervescência '
+  id: 464
+  time: '2026-08-12T17:00:21.0000000+00:00'
