@@ -168,11 +168,6 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
         // Fill blood solution with BLOOD
         // The DNA string might not be initialized yet, but the reagent data gets updated in the GenerateDnaEvent subscription
         bloodSolution.AddReagent(new ReagentId(entity.Comp.BloodReagent, GetEntityBloodData(entity.Owner)), entity.Comp.BloodMaxVolume - bloodSolution.Volume);
-
-        //BloodType Start
-        if (string.IsNullOrEmpty(entity.Comp.BloodType))
-            SetBloodstreamType(entity.Owner);
-        //BloodType End
     }
 
     // forensics is not predicted yet
@@ -198,13 +193,19 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();
-
+        var bloodtypeData = new BloodTypeData();
+        if (TryComp<BloodTypeComponent>(uid, out var comp) && comp.Type != null)
+        {
+            bloodtypeData.Type = comp.Type;
+        }
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
+        {
             dnaData.DNA = donorComp.DNA;
+        }
         else
             dnaData.DNA = Loc.GetString("forensics-dna-unknown");
-
         bloodData.Add(dnaData);
+        bloodData.Add(bloodtypeData);
 
         return bloodData;
     }

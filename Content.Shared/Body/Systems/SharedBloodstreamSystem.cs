@@ -1,7 +1,6 @@
 using Content.Goobstation.Common.Bloodstream;
 using Content.Goobstation.Common.CCVar; // Goobstation
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.Humanoid;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness;
@@ -32,13 +31,13 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.EntityEffects.Effects;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Body.Systems;
 
 public abstract partial class SharedBloodstreamSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!; //BloodType change
+
+    [Dependency] private readonly SharedBloodTypeSystem _bloodTypeSystem = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -95,23 +94,10 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 TryModifyBloodLevel((uid, bloodstream), bloodstream.BloodRefreshAmount);
             }
 
-            {// BloodTypes start
-                ///<summary>
-                ///  Verify if any Reagent in the bloodstream isn't the entity "blood" Reagent
-                ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
-                ///</summary>
-
-                FixedPoint2 foreignBloodAmount = GetForeignBloodAmount(bloodstream, bloodSolution);
-                if (foreignBloodAmount != 0)
-                {
-                    var internalBlood = bloodSolution.Contents.SkipWhile(content => bloodstream.BloodReagent.Id.Equals(content.Reagent.ToString())).ToList();
-                    internalBlood.ForEach(content => bloodSolution.RemoveReagent(content.Reagent, bloodstream.ForeignBloodDeducted));
-                    var celularTotal = bloodstream.CellularDamage * 10f * (foreignBloodAmount / bloodstream.BloodMaxVolume);
-                    _damageableSystem.TryChangeDamage(uid, celularTotal, ignoreResistances: false,
-                        interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
-                        targetPart: TargetBodyPart.All);
-                }
-            }// BloodTypes end
+            if(!_bloodTypeSystem.GetBloodType(uid).HasValue)
+                _bloodTypeSystem.SetBloodType(uid);
+            if(_bloodTypeSystem.GetForeignBloodAmount(uid) > 0)
+                _bloodTypeSystem.ApplyBloodTypeDamage(uid);
 
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
@@ -625,64 +611,6 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (currentVolume > 0)
             SolutionContainer.TryAddReagent(ent.Comp.BloodSolution.Value, ent.Comp.BloodReagent, currentVolume, null, GetEntityBloodData(ent));
     }
-    //BloodType start
-    public string GenerateBloodType(BloodstreamComponent? uidBloodstream, HumanoidAppearanceComponent? uidAppearence)
-    {
-
-        var rh = SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.RHsWeights), _random);
-        if (uidAppearence!.Species.Id == "Reptilian")
-        {
-            return "L" + rh;
-        }
-        if (uidAppearence!.Species.Id == "Resomi")
-        {
-            uidBloodstream.BloodTypesWeights = "ResomiTypes";
-            return SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.BloodTypesWeights), _random);
-        }
-        if (uidAppearence!.Species.Id == "Gingerbread")
-        {
-            uidBloodstream.BloodTypesWeights = "GingerbreadTypes";
-            return SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.BloodTypesWeights), _random);
-        }
-
-        return SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.BloodTypesWeights), _random) + rh;
-
-    }
-
-    public FixedPoint2 GetForeignBloodAmount(BloodstreamComponent? bloodstream, Solution? bloodSolution)
-    {
-        FixedPoint2 amount = 0;
-        foreach (var internalContent in bloodSolution!.Contents)
-        {
-            if (!internalContent.Reagent.Prototype.Equals(bloodstream!.BloodReagent.Id))
-            {
-                amount += internalContent.Quantity;
-                continue;
-            }
-            foreach (var reagentData in internalContent.Reagent.EnsureReagentData())
-            {
-                if (reagentData is DnaData data)
-                {
-                    if (data.BloodType == bloodstream.BloodType)
-                    {
-                        continue;
-                    }
-                    amount += internalContent.Quantity;
-                }
-            }
-        }
-        return amount;
-    }
-    public void SetBloodstreamType(EntityUid uid, BloodstreamComponent? uidBloodstream = null, HumanoidAppearanceComponent? uidAppearence = null)
-    {
-        if (!Resolve(uid, ref uidBloodstream, ref uidAppearence, false))
-            return;
-
-        uidBloodstream.BloodType = GenerateBloodType( uidBloodstream, uidAppearence);
-        DirtyField(uid, uidBloodstream, nameof(BloodstreamComponent.BloodType));
-    }
-    //BloodType end
-
     /// <summary>
     /// Get the reagent data for blood that a specific entity should have.
     /// </summary>
@@ -690,12 +618,11 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();
-        //BloodType Start
-        if (TryComp<BloodstreamComponent>(uid, out var bloodstream) && !string.IsNullOrEmpty(bloodstream.BloodType))
+        var bloodtypeData = new BloodTypeData();
+        if (TryComp<BloodTypeComponent>(uid, out var comp) && comp.Type != null)
         {
-            dnaData.BloodType = bloodstream.BloodType;
+            bloodtypeData.Type = comp.Type;
         }
-        //BloodType end
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
         {
             dnaData.DNA = donorComp.DNA;
@@ -703,6 +630,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         else
             dnaData.DNA = Loc.GetString("forensics-dna-unknown");
         bloodData.Add(dnaData);
+        bloodData.Add(bloodtypeData);
 
         return bloodData;
     }

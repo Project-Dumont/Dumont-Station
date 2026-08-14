@@ -88,30 +88,6 @@ public sealed partial class BloodstreamComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public DamageSpecifier BloodlossDamage = new();
 
-    //bloodType start
-    /// <summary>
-    ///  How much cellular damage will be received based on the "foreign blood".
-    ///  The Value will be defined per species in YML.
-    /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public DamageSpecifier CellularDamage = new();
-
-    [DataField, AutoNetworkedField]
-    public string? BloodType;
-
-    [DataField, AutoNetworkedField]
-    public ProtoId<WeightedRandomPrototype> BloodTypesWeights = "HumanoidBloodTypes";
-
-    [DataField, AutoNetworkedField]
-    public ProtoId<WeightedRandomPrototype> RHsWeights = "RHs";
-
-    /// <summary>
-    /// The amount of "foreign blood" being removed from the bloodstream every update interval.
-    /// At the moment it's equal to <see cref="BloodRefreshAmount"/>
-    [DataField, AutoNetworkedField]
-    public FixedPoint2 ForeignBloodDeducted = 1.0f;
-    //bloodType end
-
     /// <summary>
     /// The base bloodloss damage to be healed if above <see cref="BloodlossThreshold"/>
     /// The default values are defined per mob/species in YML.
