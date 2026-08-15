@@ -36,8 +36,6 @@ namespace Content.Shared.Body.Systems;
 
 public abstract partial class SharedBloodstreamSystem : EntitySystem
 {
-
-    [Dependency] private readonly SharedBloodTypeSystem _bloodTypeSystem = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -93,11 +91,6 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             {
                 TryModifyBloodLevel((uid, bloodstream), bloodstream.BloodRefreshAmount);
             }
-
-            if(!_bloodTypeSystem.GetBloodType(uid).HasValue)
-                _bloodTypeSystem.SetBloodType(uid);
-            if(_bloodTypeSystem.GetForeignBloodAmount(uid) > 0)
-                _bloodTypeSystem.ApplyBloodTypeDamage(uid);
 
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
