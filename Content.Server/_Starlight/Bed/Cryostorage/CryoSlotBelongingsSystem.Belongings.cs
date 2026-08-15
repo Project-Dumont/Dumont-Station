@@ -2,7 +2,9 @@ using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Database;
 using Content.Shared.PDA;
-using Content.Shared.Storage;
+using Robust.Shared.Containers;
+using Content.Shared.Popups;
+using Content.Shared.Bed.Cryostorage;
 
 namespace Content.Server._Starlight.Bed.Cryostorage;
 
@@ -112,16 +114,19 @@ public sealed partial class CryoSlotBelongingsSystem
             _transform.SetCoordinates(mob, Transform(pod).Coordinates);
 
         var bag = SpawnAtPosition(CryoBelongingsBag, Transform(mob).Coordinates);
+        var container = _container.EnsureContainer<Container>(bag, "contents");
 
-        if (_container.TryGetContainer(bag, StorageComponent.ContainerId, out var container))
-        {
-            // force bypasses the read only insert guard on the bag
-            foreach (var item in items)
-                _container.Insert(item, container, force: true);
-        }
+        // force bypasses the read only insert guard on the bag
+        foreach (var item in items)
+            _container.Insert(item, container, force: true);
 
         // hand it over, if both hands are full it just drops at their feet
         _hands.TryPickupAnyHand(mob, bag);
+
+        _popup.PopupEntity(Loc.GetString("cryostorage-belongings"), mob, mob, PopupType.Large);
+
+        if (loadout.Pod is { } cryoPod && !Deleted(cryoPod) && TryComp<CryostorageComponent>(cryoPod, out var cryoComp))
+            _audio.PlayPvs(cryoComp.RemoveSound, mob);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(mob):player} late joined into a cryo vacated slot and got {ToPrettyString(bag)} with {items.Count} preserved item(s).");

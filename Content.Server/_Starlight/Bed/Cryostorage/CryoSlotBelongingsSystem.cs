@@ -6,6 +6,8 @@ using Content.Shared.Inventory;
 using Content.Shared.Roles;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Audio.Systems;
+using Content.Server.Popups;
 
 namespace Content.Server._Starlight.Bed.Cryostorage;
 
@@ -18,9 +20,11 @@ public sealed partial class CryoSlotBelongingsSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    // the bag we hand to whoever takes a cryo vacated slot
-    private static readonly EntProtoId CryoBelongingsBag = "ClothingBackpackDuffelCryostorageBelongings";
+    // the mail we hand to whoever takes a cryo vacated slot
+    private static readonly EntProtoId CryoBelongingsBag = "MailCryostorageBelongings";
 
     // preserved belongings keyed by the job slot they freed up
     private readonly Dictionary<ProtoId<JobPrototype>, Queue<CryoLoadout>> _preservedLoadouts = [];
