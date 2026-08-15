@@ -14,6 +14,8 @@
     layers:
     - state: icon
       map: ["enum.MailVisualLayers.Icon"]
+    - map: ["enum.MailVisualLayers.JobStamp"]
+      visible: false
     - state: broken
       map: ["enum.MailVisualLayers.Breakage"]
       visible: false
