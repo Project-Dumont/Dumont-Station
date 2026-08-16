@@ -3953,3 +3953,9 @@ Entries:
       message: 'bebidas jogadas com oculos de barman não geram mais efervescência '
   id: 464
   time: '2026-08-12T17:00:21.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Blood Splatter
+  id: 465
+  time: '2026-08-16T05:02:08.0000000+00:00'
