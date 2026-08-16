@@ -82,12 +82,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 Name="Like"
                 MinWidth="52"
                 VerticalAlignment="Bottom"
-                ToolTip="{Loc 'news-read-ui-like-tooltip'}"/>
+                ToolTip="{Loc 'news-read-ui-like-tooltip'}">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextureRect
+                        TexturePath="/Textures/_Dumont/Interface/NanoChat/Emotes/up.png"
+                        MinSize="16 16"
+                        SetSize="16 16"
+                        Stretch="KeepAspectCentered"
+                        VerticalAlignment="Center" />
+                    <Label Name="LikeCountLabel" VerticalAlignment="Center" />
+                </BoxContainer>
+            </Button>
             <Button
                 Name="Dislike"
                 MinWidth="52"
                 VerticalAlignment="Bottom"
-                ToolTip="{Loc 'news-read-ui-dislike-tooltip'}"/>
+                ToolTip="{Loc 'news-read-ui-dislike-tooltip'}">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextureRect
+                        TexturePath="/Textures/_Dumont/Interface/NanoChat/Emotes/down.png"
+                        MinSize="16 16"
+                        SetSize="16 16"
+                        Stretch="KeepAspectCentered"
+                        VerticalAlignment="Center" />
+                    <Label Name="DislikeCountLabel" VerticalAlignment="Center" />
+                </BoxContainer>
+            </Button>
             <customControls:VSeparator Name="ViewsSeparator" Margin="2 0"/>
             <RichTextLabel Margin="5,1,2,1" Name="Views" VerticalAlignment="Bottom"/>
         </BoxContainer>
