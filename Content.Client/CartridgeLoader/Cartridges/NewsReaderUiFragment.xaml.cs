@@ -82,8 +82,8 @@ public sealed partial class NewsReaderUiFragment : BoxContainer
         var author = Loc.GetString("news-read-ui-author-prefix") + " " + (article.Author ?? Loc.GetString("news-read-ui-no-author"));
         Author.SetMessage(FormattedMessage.FromMarkupPermissive(author), AllowedTags);
         // Starlight-edit: start
-        Like.Text = Loc.GetString("news-read-ui-like-text", ("count", article.Likes));
-        Dislike.Text = Loc.GetString("news-read-ui-dislike-text", ("count", article.Dislikes));
+        LikeCountLabel.Text = Loc.GetString("news-read-ui-like-text", ("count", article.Likes));
+        DislikeCountLabel.Text = Loc.GetString("news-read-ui-dislike-text", ("count", article.Dislikes));
         Views.SetMarkup(Loc.GetString("news-read-ui-views-text", ("count", article.Views)));
 
         Like.Disabled = hasReacted;
