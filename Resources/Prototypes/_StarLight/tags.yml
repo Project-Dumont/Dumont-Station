@@ -2,6 +2,9 @@
   id: ElderArena
 
 - type: Tag
+  id: MilkCarton # Storage whitelist: MilkCrate
+
+- type: Tag
   id: SovietDungeon
 
 - type: Tag
@@ -9,3 +12,6 @@
 
 - type: Tag
   id: SovietWarehouse
+
+- type: Tag
+  id: VinylSleeve # Storage whitelist: RecordMilkCrate, SyndicateMilkCrate

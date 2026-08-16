@@ -281,6 +281,8 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkCarton # Starlight
+      - MilkCarton # Starlight
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]
@@ -299,6 +301,8 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkCarton # Starlight
+      - MilkCarton # Starlight
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]
@@ -314,6 +318,10 @@
           Quantity: 100
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
+  - type: Tag
+    tags:
+      - DrinkCarton # Starlight
+      - MilkCarton # Starlight
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
