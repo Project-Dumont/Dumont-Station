@@ -215,6 +215,9 @@
   - type: StealTarget
     stealGroup: Bible
   - type: EnchantingTool # Goobstation
+    userWhitelist: # Trauma
+      components:
+      - BibleUser
   - type: StatusEffectOnCollideGhost # Goobstation
     whitelist:
       tags:
