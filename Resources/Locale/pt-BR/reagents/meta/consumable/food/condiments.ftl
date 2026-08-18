@@ -7,7 +7,7 @@ reagent-desc-bbq-sauce = Molho de churrasco. Cai bem com lajes.
 reagent-name-cornoil = óleo de milho
 reagent-desc-cornoil = Óleo de milho, um delicioso óleo usado na cozinha. Feito de milho.
 
-reagent-name-frostoil = frostoil
+reagent-name-frostoil = Óleo Gélido
 reagent-desc-frostoil = Deixa a língua dormente.
 
 reagent-name-horseradish-sauce = molho de rábano silvestre

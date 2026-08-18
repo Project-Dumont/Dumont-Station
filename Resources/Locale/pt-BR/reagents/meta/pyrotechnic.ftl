@@ -1,4 +1,4 @@
-reagent-name-thermite = termite
+reagent-name-thermite = termita
 reagent-desc-thermite = Uma mistura que fica extremamente quente quando ateiada, que pode queimar através das paredes quando aplicado e ateiado. Vai lentamente infligir dano de queimaduras para qualquer um burro o suficiente de ingerir isto, mas não pode ser ateiado dentro de certa pessoa burra.
 
 reagent-name-napalm = napalm
@@ -13,8 +13,11 @@ reagent-desc-chlorine-trifluoride = Você realmente, NÃO QUER essa merda perto 
 reagent-name-foaming-agent = formador de espuma
 reagent-desc-foaming-agent = Cria uma espuma que é necessária para criar granadas de espuma.
 
-reagent-name-welding-fuel = Combustível de solda
+reagent-name-welding-fuel = combustível de solda
 reagent-desc-welding-fuel = Usado por soldadores para soldar.
 
 reagent-name-fluorosurfactant = fluorosurfactante
 reagent-desc-fluorosurfactant = Um ácido sulfônico perfluoronado que forma uma espuma quando misturado com água.
+
+reagent-name-blackpowder = black powder
+reagent-desc-blackpowder = A primitive yet powerful explosive. Explodes when heated to 474K!
