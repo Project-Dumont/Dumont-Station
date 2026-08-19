@@ -165,19 +165,13 @@
     supercriticalSoundAtAnimationStart:
       collection: AnomalyPyroSupercritical
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_fire.rsi # Orion-Edit
+    sprite: Structures/Specific/Anomalies/pyro_anom.rsi
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom
       map: ["enum.AnomalyVisualLayers.Base"]
     - state: pulse
-      shader: unshaded
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 6.0
     energy: 7.5
@@ -226,19 +220,12 @@
       collection: AnomalyGravitySupercritical
     supercriticalDuration: 15s
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_gravity.rsi # Orion-Edit
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom2
       map: ["enum.AnomalyVisualLayers.Base"]
-    - state: pulse
-      shader: unshaded
+    - state: anom2-pulse
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 5.0
     energy: 20
@@ -267,19 +254,12 @@
     supercriticalSoundAtAnimationStart:
       collection: AnomalyElectricitySupercritical
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_electric.rsi # Orion-Edit
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom3
       map: ["enum.AnomalyVisualLayers.Base"]
-    - state: pulse
-      shader: unshaded
+    - state: anom3-pulse
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 2.0
     energy: 5.0
@@ -301,19 +281,12 @@
     supercriticalSoundAtAnimationStart:
       collection: AnomalyFleshSupercritical
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_flesh.rsi # Orion-Edit
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom5
       map: ["enum.AnomalyVisualLayers.Base"]
-    - state: pulse
-      shader: unshaded
+    - state: anom5-pulse
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 2.0
     energy: 7.5
@@ -396,19 +369,12 @@
   suffix: Bluespace
   components:
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_bluespace.rsi # Orion-Edit
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom4
       map: ["enum.AnomalyVisualLayers.Base"]
-    - state: pulse
-      shader: unshaded
+    - state: anom4-pulse
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 2.0
     energy: 7.5
@@ -452,19 +418,13 @@
   suffix: Ice
   components:
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_ice.rsi # Orion-Edit
+    sprite: Structures/Specific/Anomalies/ice_anom.rsi
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom
       map: ["enum.AnomalyVisualLayers.Base"]
     - state: pulse
-      shader: unshaded
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 2.0
     energy: 2.5
@@ -1005,19 +965,13 @@
   suffix: Liquid
   components:
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_liquid.rsi # Orion-Edit
+    sprite: Structures/Specific/Anomalies/liquid_anom.rsi
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
     - state: anom
-      shader: unshaded
       map: ["enum.AnomalyVisualLayers.Base"]
     - state: pulse
-      shader: unshaded
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: RandomSprite
     selected: # Initialized layer values. Edited through the ReagentProducerAnomalySystem
       enum.AnomalyVisualLayers.Base:
@@ -1160,19 +1114,13 @@
   suffix: Shadow
   components:
   - type: Sprite
-    sprite: _Orion/Structures/Specific/Anomalies/anomaly_shadow.rsi # Orion-Edit
+    sprite: Structures/Specific/Anomalies/shadow_anom.rsi
     layers:
-    # Orion-Edit-Start
-    - state: shadow-anomaly
-      shader: unshaded
-    - state: vfx
-      shader: unshaded
+    - state: anom
       map: ["enum.AnomalyVisualLayers.Base"]
     - state: pulse
-      shader: unshaded
       map: ["enum.AnomalyVisualLayers.Animated"]
       visible: false
-    # Orion-Edit-End
   - type: PointLight
     radius: 1.5
     energy: 12.5
