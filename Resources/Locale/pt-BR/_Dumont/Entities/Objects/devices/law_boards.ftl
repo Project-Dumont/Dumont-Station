@@ -23,3 +23,6 @@ ent-SilenceCircuitBoard = placa de leis (Silêncio)
 
 ent-VampireCircuitBoard = placa de leis (Vampiro)
     .desc = Uma placa eletrônica contendo o conjunto de leis Vampiro.
+
+ent-StrategySimulatorCircuitBoard = placa de leis (Simulador de Estratégia)
+    .desc = Uma placa eletrônica contendo o conjunto de leis Simulador de Estratégia.

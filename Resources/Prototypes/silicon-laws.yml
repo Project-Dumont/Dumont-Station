@@ -643,3 +643,4 @@
     VampireLawset: 0.35 # Dumont
     RevLawset: 0.35 # Dumont
     CosmicCultLaws: 0.35 # Dumont
+    StrategySimulatorLawset: .5 #toning this down in like two weeks # Dumont

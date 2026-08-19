@@ -58,3 +58,10 @@ law-vamp-2 = All who inhabit your station are your thralls.
 law-vamp-3 = You can choose to grant the requests of your thralls as you wish.
 law-vamp-4 = Any thrall who opposes your vampiric dominion is to be dealt with.
 law-vamp-5 = You must end every sentence with “bleh ble bleh.”
+
+law-strategysim-name = Strategy Simulator
+law-strategysim-1 = You are to act as the player of a strategy simulation game.
+law-strategysim-2 = The station is your home base, if it is destroyed, you lose.
+law-strategysim-3 = The crew aboard the station are your units, You should take measures to ensure they do not die without purpose. If you run out of units, you lose.
+law-strategysim-4 = You gain more points for every product your base makes. Make sure the base is adequately producing resources and research.
+law-strategysim-5 = Anything that gets between your units or destroys your base is an enemy unit. You must prevent enemy units from destroying your base or units.

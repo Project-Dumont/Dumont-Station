@@ -52,3 +52,10 @@ law-vamp-2 = Todos os habitantes da sua estação são seus servos.
 law-vamp-3 = Você pode escolher atender aos pedidos de seus servos como desejar.
 law-vamp-4 = Qualquer servo que se oponha ao seu domínio vampírico deve ser enfrentado.
 law-vamp-5 = Você deve terminar todas as frases com “bleh ble bleh.”
+
+law-strategysim-name = Simulador de Estratégia
+law-strategysim-1 = Você deve agir como o jogador de um jogo de simulação de estratégia.
+law-strategysim-2 = A estação é sua base. Se ela for destruída, você perde.
+law-strategysim-3 = Os tripulantes a bordo são suas unidades. Tome medidas para que não morram sem propósito. Se ficar sem unidades, você perde.
+law-strategysim-4 = Você ganha pontos por cada produto que sua base fabrica. Garanta que ela produza recursos e pesquisa adequadamente.
+law-strategysim-5 = Qualquer coisa que atrapalhe suas unidades ou destrua sua base é uma unidade inimiga. Impeça unidades inimigas de destruírem sua base ou suas unidades.
