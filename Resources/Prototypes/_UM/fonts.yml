@@ -1,0 +1,39 @@
+- type: font
+  id: Grand9K
+  path: /Fonts/Grand9K_Pixel.ttf
+
+- type: font
+  id: TinyUnicode
+  path: /Fonts/TinyUnicode.ttf
+
+- type: font
+  id: SpessFont
+  path: /Fonts/SpessFont.ttf
+
+- type: font
+  id: PixelComicSans
+  path: /Fonts/PixelComicSans.ttf
+
+- type: font
+  id: IbmVga
+  path: /Fonts/ibmvga9.ttf
+
+- type: font
+  id: KiwiSoda
+  path: /Fonts/KiwiSoda.ttf
+
+- type: font
+  id: Minecraft
+  path: /Fonts/Minecraft/macs-minecraft.ttf
+
+- type: font
+  id: MinecraftBold
+  path: /Fonts/Minecraft/macs-minecraft-Bold.ttf
+
+- type: font
+  id: MinecraftBoldItalic
+  path: /Fonts/Minecraft/macs-minecraft-Bold-Italic.ttf
+
+- type: font
+  id: MinecraftItalic
+  path: /Fonts/Minecraft/macs-minecraft-Italic.ttf

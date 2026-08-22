@@ -1,0 +1,7 @@
+<Control xmlns="https://spacestation14.io">
+    <PanelContainer>
+        <BoxContainer Name="TextContainer" Orientation="Vertical" Align="Center">
+
+        </BoxContainer>
+    </PanelContainer>
+</Control>
