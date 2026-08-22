@@ -612,4 +612,22 @@ public sealed partial class GoobCVars
 
     public static readonly CVarDef<bool> SecretUseOnlinePlayerCount =
         CVarDef.Create("game.secret_use_online_count", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
+
+    #region Decals
+
+    /// <summary>
+    /// How long despawning decals like blood splatters last before despawning.
+    /// </summary>
+    public static readonly CVarDef<float> DecalDespawnTime =
+        CVarDef.Create("decals.despawn_time", 300f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// How many decals are allowed to be despawning at the same time.
+    /// If another decal is spawned, it will remove the oldest decal.
+    /// If this value is changed ingame it will only take affected after restarting the round.
+    /// </summary>
+    public static readonly CVarDef<int> DecalDespawnLimit =
+        CVarDef.Create("decals.despawn_limit", 128, CVar.SERVER | CVar.REPLICATED);
+
+    #endregion
 }

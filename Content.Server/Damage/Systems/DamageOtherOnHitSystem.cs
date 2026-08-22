@@ -73,6 +73,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Content.Shared._Adventure.Bartender.Systems; // Adventure
+using Content.Shared.Chemistry.EntitySystems; // Omu - MBGCA
 
 namespace Content.Server.Damage.Systems
 {
@@ -85,6 +86,7 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
         [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
+        [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu - MBGCA
 
         public override void Initialize()
         {
@@ -100,6 +102,11 @@ namespace Content.Server.Damage.Systems
 
             if (args.Target == args.Component.Thrower) // Goobstation - Mjolnir
                 return;
+
+            // Omu start - Prevents thrown drinks from dealing damage when the thrower is wearing beer goggles
+            if (args.Component.Thrower is { } thrower && _nonspillthrower.GetSpillProofThrow(thrower) && _solutions.TryGetSolution(uid, "drink", out _))
+                return;
+            // Omu end
 
             var dmg = _damageable.TryChangeDamage(args.Target, component.Damage * _damageable.UniversalThrownDamageModifier, component.IgnoreResistances, origin: args.Component.Thrower);
 
@@ -134,10 +141,11 @@ namespace Content.Server.Damage.Systems
         /// </summary>
         private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
         {
-            // Adventure start
-            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid))
+            // Adventure start - Pacified players wearing beer goggles can now perform throws.
+            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid) && _solutions.TryGetSolution(ent.Owner, "drink", out _))
                 return;
             // Adventure end
+
             args.Cancel("pacified-cannot-throw");
         }
     }
