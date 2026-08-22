@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "size": {
+        "x": 8,
+        "y": 12
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Feito para a Dumont Station por RaposoG",
+    "states": [
+        {
+            "name": "immediate"
+        },
+        {
+            "name": "very-urgent"
+        },
+        {
+            "name": "urgent"
+        },
+        {
+            "name": "standard"
+        },
+        {
+            "name": "non-urgent"
+        },
+        {
+            "name": "deceased"
+        }
+    ]
+}

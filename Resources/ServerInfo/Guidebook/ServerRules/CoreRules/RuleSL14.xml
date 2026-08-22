@@ -1,0 +1,28 @@
+<Document>
+  # Regra 14 - Diretrizes de Continuidade
+Algumas informações, continuidade e memória são carregadas entre rodadas no Dumont, dentro de limites definidos.
+
+Você só pode lembrar informações de turnos que você sobreviveu. Isso significa que se você ficar preso ou for morto, você esquece a rodada completamente.
+Se seu corpo for revivível ao chegar em CentComm, você também lembrará a rodada, mas esquecerá todos os detalhes que levaram à sua morte conforme a Regra 3.
+Colocar-se em um criotubo permitirá que você lembre detalhes até o momento em que entrou no criotubo.
+
+[bold]Qualquer informação que seja parte do [textlink="Metashield" link="RuleA13"][/bold] é esquecida entre turnos e apagada da memória do seu clone.
+
+Ex.: Um Capitão que sobreviver a uma Revolução ainda terá informações sobre a Revolução apagadas e não lembrará que ela aconteceu naquela rodada.
+
+Você pode lembrar que crimes ocorreram, mas nunca lembrará quem os cometeu. Isso inclui se você mesmo foi um Agente da Sindicância.
+
+Exemplos de coisas que você [bold]pode[/bold] lembrar:
+- Interações sociais com outro personagem, como tomar uma bebida no bar ou até mesmo entrar em uma discussão
+- Quais empregos os personagens geralmente fazem — embora isso não deva ser usado para metagamear que algo está “estranho” se alguém não estiver no trabalho habitual
+- A disposição da estação, embora alguma margem de esquecimento de salas secretas deva ser aceita — as manutenções são um labirinto em constante mudança mesmo que pareçam iguais a cada turno por razões OOC
+
+Exemplos de coisas que você [bold]não pode[/bold] lembrar:
+
+- Joe, o Botânico, era um Traidor que roubou o Jetpack do Capitão
+- Operativos Nucleares atacando a estação
+- CentComm chamando Código Epsilon e matando um monte de pessoas na estação
+- Testemunhar um corpo Oco ou ver um Changeling comer alguém
+- Como Representante NanoTrasen, lembrar que no turno anterior havia Operativos Nucleares
+
+</Document>

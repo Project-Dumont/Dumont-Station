@@ -1,0 +1,25 @@
+<Document>
+ # Regra 9 - Interagindo com jogadores SSD/AFK.
+ Jogadores SSD (Distúrbio do Sono Espacial) são aqueles que se desconectaram do jogo, mas ainda podem retornar ao personagem.
+ Eles são identificados por texto amarelo ao serem inspecionados e por Zs ao lado do modelo do personagem.
+ Jogadores AFK são aqueles que permanecem no jogo, mas não respondem a interações ao redor.
+ Matar ou roubar um jogador SSD ou AFK não contribui para uma jogabilidade interessante — isso atrapalha tanto a experiência do agressor quanto a da vítima.
+ Se seu alvo estiver SSD, use Ahelp para determinar o curso de ação apropriado.
+
+Jogadores que estiverem AFK por um período significativo serão automaticamente transportados para um criotubo.
+
+## Regras Gerais para Interações com SSD/AFK
+- Você não pode interagir com jogadores SSD/AFK, a menos que se encaixe em um dos seguintes casos:
+\n - [color=000000] Levá-los para um criotubo [/color]
+\n - [color=000000] Fornecer assistência médica [/color]
+\n - [color=000000] Resgatá-los de perigo imediato (por exemplo, carregá-los para fora de um incêndio) [/color]
+- Se um jogador com SSD estiver com status Procurado, ele não pode ser detido sem permissão de um administrador.
+\n - [color=000000] Contudo, se o jogador entrou em SSD durante ou imediatamente após a detenção, a prisão pode prosseguir. [/color]
+- Antagonistas podem continuar suas interações com um alvo se o jogador entrar em SSD após o ataque ter começado.
+- Se interagir com um jogador SSD for necessário para roleplay ou progressão (por exemplo, recuperar equipamento crítico de um Capitão), em caso de dúvida, use ahelp primeiro para confirmar.
+
+## Restrições ao Roubo de Itens de SSD
+- Roubar itens de jogadores SSD é proibido, exceto ao cumprir objetivos específicos, como missões para adquirir capas, medalhas, figuras, IDs ou outros itens únicos.
+- Itens que ajudam diretamente a completar seus objetivos (como o ID do RD se ele não estiver com seu traje experimental, ou o ID do Capitão se ele não estiver com sua pistola laser) podem ser roubados.
+
+</Document>

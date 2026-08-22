@@ -48,7 +48,7 @@
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 25 # Dumont - Murderbone when lowpop
   - type: AntagRandomObjectives
     sets:
     - groups: ChangelingObjectiveGroups
