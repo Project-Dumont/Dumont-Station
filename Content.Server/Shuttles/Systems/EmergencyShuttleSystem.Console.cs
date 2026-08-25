@@ -96,7 +96,7 @@ namespace Content.Server.Shuttles.Systems;
 public sealed partial class EmergencyShuttleSystem
 {
     /*
-     * Handles the emergency shuttle's console and early launching.
+     * Handles the emergency shuttle's console and early launching
      */
 
     // Starlight Start: Evacuation pod planet landing
