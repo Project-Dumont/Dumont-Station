@@ -1,4 +1,4 @@
-## Tradução droppod
+## Tradução droppod >
 
 drop-pod-console-title = Console de Implantação da Cápsula de Assalto
 
