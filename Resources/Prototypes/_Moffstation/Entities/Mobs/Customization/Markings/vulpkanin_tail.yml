@@ -2,7 +2,8 @@
 - type: marking
   id: VulpTailExpie
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  markingCategory: Tail
+  speciesRestriction: [ Vulpkanin ]
   sprites:
   - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
     state: expie
