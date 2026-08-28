@@ -324,7 +324,7 @@
       - state: equipped-HELMET
       - state: equipped-HELMET-unshaded # Dumont change
         shader: unshaded
-  - type: PressureProtection
+  - type: PressureProtection # Dumont change
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: Armor
@@ -348,6 +348,8 @@
     radius: 3
     energy: 2.5
     color: "#de835b"
+  - type: FlashImmunity # Dumont change
+  - type: FlashSoundSuppression # Dumont change
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitCybersunStealth
