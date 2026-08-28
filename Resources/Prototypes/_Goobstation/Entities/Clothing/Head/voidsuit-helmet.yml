@@ -159,7 +159,7 @@
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
   - type: PointLight
     color: red # Starlight
-    radius: 7 
+    radius: 7
     energy: 5
   - type: PressureProtection
     highPressureMultiplier: 0.08
@@ -309,7 +309,7 @@
 # singuloth head
 
 - type: entity
-  parent: [ClothingHeadHelmetHardsuitBlueshield, BaseMagicalContraband]
+  parent: [ClothingHeadHardsuitBase, BaseMagicalContraband] # Dumont change
   id: ClothingHeadSinguloth
   name: singuloth knight's helm
   description: An adamantium helmet from the chapter of the Singuloth Knights. It shines with a holy aura
@@ -319,11 +319,14 @@
     state: icon
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hardsuits/singulothhelm.rsi
-  - type: PointLight
-    color: "#CD7F32"
-    rotation: 30
-    energy: 10
-    radius: 5
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-unshaded # Dumont change
+        shader: unshaded
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.2
@@ -337,10 +340,14 @@
         Slash: 0.85
         Piercing: 0.75
         Heat: 0.7
-        Radiation: 0.9
+        Radiation: 0.0 # Dumont change
         Caustic: 0.9
   - type: FireProtection
     reduction: 0.4
+  - type: PointLight # Dumont change
+    radius: 3
+    energy: 2.5
+    color: "#de835b"
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitCybersunStealth
@@ -364,7 +371,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
-  
+
 # Detective's Hardsuit
 
 - type: entity
