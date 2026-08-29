@@ -129,7 +129,7 @@ public sealed class DropPodConsoleSystem : EntitySystem
         // Play loud impact sound at landing site
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_slam5.ogg"), podCoords, AudioParams.Default.WithVolume(12f));
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/explosion3.ogg"), podCoords, AudioParams.Default.WithVolume(10f));
-        // Dumont
+        // Dumont start
         _audio.PlayGlobal(DropPodMusic, Filter.Broadcast(), true , AudioParams.Default.WithVolume(-6f));
         // Dumont end
 
