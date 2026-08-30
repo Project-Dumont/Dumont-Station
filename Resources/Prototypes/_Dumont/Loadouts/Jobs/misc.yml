@@ -1,0 +1,6 @@
+#Plushies
+- type: loadout
+  id: PlushieIdiosoma
+  storage:
+    back:
+    - PlushieIdiosoma

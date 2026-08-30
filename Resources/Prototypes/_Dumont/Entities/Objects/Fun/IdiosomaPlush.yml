@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieIdiosoma
+  name: Idiosoma plushie
+  description: An Idiosoma plushie, clearly a cheap knockoff.
+  components:
+    - type: Sprite
+      sprite: _Dumont/Objects/Fun/Idiosoma_plush.rsi
+      state: icon
+    - type: UseDelay
+      delay: 1.5
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Items/Lighters/zippo_open.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /_Dumont/Voice/Arachnid/arachnid_cough.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+    - type: Clothing
+      quickEquip: false
+      sprite: _Dumont/Objects/Fun/Idiosoma_plush.rsi
+      slots:
+      - HEAD
+    - type: FoodSequenceElement
+      entries:
+       CottonBurger: ArachnidPlushie
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
