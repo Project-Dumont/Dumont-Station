@@ -173,6 +173,8 @@
     - id: PlushieMoth
     - id: PlushieArachind
     - id: PlushiePenguin
+    #mesma situação do plushie da Janie, infelizmente não sei como adicionar sem modificar o codigo original do jogo
+    - id: PlushieIdiosoma
 
 - type: entityTable
   id: AllPottedPlantsTable
