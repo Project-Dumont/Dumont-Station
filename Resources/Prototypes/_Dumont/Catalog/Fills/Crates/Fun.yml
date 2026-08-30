@@ -1,5 +1,0 @@
-- type: entityTable
-  id: AllPlushiesTable
-  table: !type:GroupSelector
-    children:
-    - id: PlushieIdiosoma
