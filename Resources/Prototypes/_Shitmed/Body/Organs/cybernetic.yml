@@ -80,6 +80,7 @@
     - type: ShowHealthIcons
       damageContainers:
       - Biological
+    - type: ShowTriageIcons # Dumont-triagem
 
 - type: entity
   parent: BasicCyberneticEyes
