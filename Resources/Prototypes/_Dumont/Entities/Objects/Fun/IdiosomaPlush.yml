@@ -43,3 +43,12 @@
     - type: EmitSoundOnTrigger
       sound:
         path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+    - type: IgnitionSource
+      ignited: false
+    - type: ItemToggle
+      predictable: false
+    - type: ItemToggleMeleeWeapon
+      activatedDamage:
+        types:
+            Heat: 1
+    - type: ItemToggleHot
