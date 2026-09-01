@@ -15,13 +15,13 @@
       delay: 1.5
     - type: EmitSoundOnUse
       sound:
-        path: /Audio/Items/Lighters/zippo_open.ogg
+        path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     - type: EmitSoundOnLand
       sound:
         path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     - type: EmitSoundOnActivate
       sound:
-        path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+        path: /Audio/Items/Lighters/zippo_open.ogg
     - type: EmitSoundOnCollide
       sound:
         path: /Audio/_Dumont/Voice/Arachnid/arachnid_cough.ogg
