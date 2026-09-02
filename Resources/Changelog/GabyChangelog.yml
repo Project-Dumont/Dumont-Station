@@ -3965,3 +3965,9 @@ Entries:
       message: A interface da maquina de venda foi retrabalhada.
   id: 466
   time: '2026-09-02T02:31:44.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Corrige bug do RCD que spawnava as entidades na rotação incorreta.
+  id: 467
+  time: '2026-09-02T15:15:46.0000000+00:00'
