@@ -36,9 +36,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
+
+using Content.Goobstation.Common.CCVar;
+using Robust.Shared.Configuration;
 using Content.Client.UserInterface.Systems.Chat.Controls;
-using Content.Goobstation.Common.CCVar; // Goobstation Change
 using Content.Shared.Chat;
 using Content.Shared.Input;
 using Robust.Client.Audio;
@@ -47,7 +48,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Audio;
-using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -59,13 +59,15 @@ namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 [Virtual]
 public partial class ChatBox : UIWidget
 {
+    // <Trauma>
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
+    // </Trauma>
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly ILogManager _log = default!;
 
     private readonly ISawmill _sawmill;
     private readonly ChatUIController _controller;
-    private readonly IConfigurationManager _cfg; // WD EDIT
-    private readonly ILocalizationManager _loc; // WD EDIT
 
     public bool Main { get; set; }
 
@@ -96,7 +98,6 @@ public partial class ChatBox : UIWidget
         _controller.RegisterChat(this);
 
         // WD EDIT START
-        _cfg = IoCManager.Resolve<IConfigurationManager>();
         _coalescence = _cfg.GetCVar(GoobCVars.CoalesceIdenticalMessages); // i am uncomfortable calling repopulate on chatbox in its ctor, even though it worked in testing i'll still err on the side of caution
         _cfg.OnValueChanged(GoobCVars.CoalesceIdenticalMessages, UpdateCoalescence, true); // eplicitly false to underline the above comment
         // WD EDIT END
@@ -132,6 +133,9 @@ public partial class ChatBox : UIWidget
         // Thanks robustengine, very cool.
         if (_coalescence && msg.CanCoalesce && _lastLine == tup)
         {
+            if (!msg.CanCoalesce) // Goobstation Edit - Coalescing Chat
+                return;
+
             _lastLineRepeatCount++;
             AddLine(msg.WrappedMessage, color, _lastLineRepeatCount);
             Contents.RemoveEntry(^2);
@@ -202,7 +206,7 @@ public partial class ChatBox : UIWidget
                                 ("size", 8+sizeIncrease)
                                 ));
         } // WD EDIT END
-        Contents.AddMessage(formatted);
+        Contents.AddMessage(formatted, tagsAllowed: null);
     }
 
     public void Focus(ChatSelectChannel? channel = null)

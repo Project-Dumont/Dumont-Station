@@ -3959,3 +3959,9 @@ Entries:
       message: Blood Splatter
   id: 465
   time: '2026-08-16T05:02:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: A interface da maquina de venda foi retrabalhada.
+  id: 466
+  time: '2026-09-02T02:31:44.0000000+00:00'

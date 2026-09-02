@@ -1,0 +1,42 @@
+- type: entity
+  parent: BaseMail
+  id: MailCryostorageBelongings
+  name: lost property package
+  description: A sealed package holding the belongings of a crew member who left for cryosleep.
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _NF/Objects/Specific/Mail/mail_large.rsi
+    layers:
+    - state: icon
+      map: ["enum.MailVisualLayers.Icon"]
+    - map: ["enum.MailVisualLayers.JobStamp"]
+      visible: false
+    - state: broken
+      map: ["enum.MailVisualLayers.Breakage"]
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.MailVisuals.IsTrash:
+        enum.MailVisualLayers.Icon:
+          True:
+            state: trash
+          False:
+            state: icon
+      enum.MailVisuals.IsBroken:
+        enum.MailVisualLayers.Breakage:
+          True:
+            visible: true
+          False:
+            visible: false
+  - type: Mail
+    isLocked: false
+    isProfitable: false
+    isPriority: false
+    isLarge: true
+    bounty: 0
+    penalty: 0
