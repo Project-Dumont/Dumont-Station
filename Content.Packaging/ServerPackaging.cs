@@ -275,7 +275,10 @@ public static class ServerPackaging
 
         var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Server.deps.json"));
 
-        var contentAssemblies = GetContentAssemblyNamesToCopy(deps);
+		// dumont change
+        var contentAssemblies = GetContentAssemblyNamesToCopy(deps)
+            .Concat(FindServerModules())
+            .Distinct();
 
         await RobustSharedPackaging.DoResourceCopy(
             Path.Combine("RobustToolbox", "bin", "Server",
