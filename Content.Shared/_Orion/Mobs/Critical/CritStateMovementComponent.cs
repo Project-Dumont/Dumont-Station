@@ -6,6 +6,9 @@ namespace Content.Shared._Orion.Mobs.Critical;
 public sealed partial class CritStateMovementComponent : Component
 {
     [DataField]
+    public bool SoftCritMovement = true;
+
+    [DataField]
     public float SoftCritWalkModifier = 0.25f;
 
     [DataField]

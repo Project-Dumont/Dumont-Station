@@ -19,6 +19,21 @@ namespace Content.Goobstation.UIKit.UserInterface.Controls;
 
 internal struct CustomRichTextEntry
 {
+    public static readonly Type[] DefaultTags =
+    [
+        typeof(BoldItalicTag),
+        typeof(BoldTag),
+        typeof(BulletTag),
+        typeof(ColorTag),
+        typeof(HeadingTag),
+        typeof(ItalicTag),
+        typeof(ButtonTag),
+        typeof(IconTag),
+        typeof(EntityTextureTag),
+        typeof(RadioIconTag),
+        typeof(TextureTag),
+    ];
+
     private readonly Color _defaultColor;
     private readonly Type[]? _tagsAllowed;
 
@@ -50,9 +65,17 @@ internal struct CustomRichTextEntry
     public CustomRichTextEntry(
             FormattedMessage message,
             Control parent,
+            MarkupTagManager tagMan,
+            IEntityManager entMan,
+            Color? defaultColor = null)
+        : this(message, parent, tagMan, entMan, DefaultTags, defaultColor) {}
+
+    public CustomRichTextEntry(
+            FormattedMessage message,
+            Control parent,
             MarkupTagManager tagManager,
             IEntityManager entManager,
-            Type[]? tagsAllowed = null,
+            Type[]? tagsAllowed,
             Color? defaultColor = null)
     {
         Message = message;
@@ -386,8 +409,8 @@ internal struct CustomRichTextEntry
         var boxPadding = (BoxPadding * uiScale);
 
         return new UIBox2(
-                new Vector2(drawBox.Left + (margin - boxPadding) - sPixelWidth, baseLineBase.Y - boxPadding),
-                new Vector2(drawBox.Right - (margin - boxPadding) - sPixelWidth, baseLine.Y - GetLineHeight(defaultFont, uiScale, lineHeightScale) + boxPadding));
+                new Vector2(drawBox.Left + (margin - boxPadding) - sPixelWidth, baseLineBase.Y - defaultFont.GetAscent(uiScale) - boxPadding),
+                new Vector2(drawBox.Right - (margin - boxPadding) - sPixelWidth, baseLine.Y + defaultFont.GetDescent(uiScale) + boxPadding));
     }
 
     private readonly string ProcessNode(MarkupTagManager tagManager, MarkupNode node, MarkupDrawingContext context)
@@ -406,7 +429,14 @@ internal struct CustomRichTextEntry
             return tag.TextBefore(node);
         }
 
-        tag.PopDrawContext(node, context);
+        try
+        {
+            tag.PopDrawContext(node, context);
+        }
+        catch
+        {
+            throw new Exception($"Bad closing tag for {node.Name}");
+        }
         return tag.TextAfter(node);
     }
 

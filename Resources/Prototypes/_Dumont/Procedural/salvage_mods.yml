@@ -1,0 +1,22 @@
+- type: salvageDungeonMod
+  id: XenoDungeon
+  desc: salvage-dungeon-mod-xeno
+  proto: XenoDungeon
+  biomes:
+    - DenseForest
+  difficulties: 
+    - Impossible
+
+- type: salvageBiomeMod
+  id: DenseForest
+  desc: salvage-biome-mod-dense-forest
+  biome: DenseForest
+  difficulties:
+    - Impossible
+
+- type: salvageBiomeMod
+  id: FrozenForest
+  desc: salvage-biome-mod-dense-forest-frozen
+  biome: FrozenForest
+  difficulties:
+    - Difficult

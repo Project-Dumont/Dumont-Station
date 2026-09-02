@@ -262,27 +262,49 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var randomSystem = _entManager.System<RandomSystem>();
 
         foreach (var entry in faction.MobGroups)
-        {
-            budgetEntries.Add(entry);
-        }
+{
+    if (!entry.Guaranteed)
+        budgetEntries.Add(entry);
+}
 
-        var probSum = budgetEntries.Sum(x => x.Prob);
+// Spawn garantido
+foreach (var entry in faction.MobGroups)
+{
+    if (!entry.Guaranteed)
+        continue;
 
-        while (mobBudget > 0f)
-        {
-            var entry = randomSystem.GetBudgetEntry(ref mobBudget, ref probSum, budgetEntries, random);
-            if (entry == null)
-                break;
+    if (entry.Cost > mobBudget)
+        continue;
 
-            try
-            {
-                await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
-            }
-            catch (Exception e)
-            {
-                _sawmill.Error($"Failed to spawn mobs for {entry.Proto}: {e}");
-            }
-        }
+    mobBudget -= entry.Cost;
+
+    try
+    {
+        await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
+    }
+    catch (Exception e)
+    {
+        _sawmill.Error($"Failed to spawn guaranteed mob {entry.Proto}: {e}");
+    }
+}
+
+var probSum = budgetEntries.Sum(x => x.Prob);
+
+while (mobBudget > 0f)
+{
+    var entry = randomSystem.GetBudgetEntry(ref mobBudget, ref probSum, budgetEntries, random);
+    if (entry == null)
+        break;
+
+    try
+    {
+        await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
+    }
+    catch (Exception e)
+    {
+        _sawmill.Error($"Failed to spawn mobs for {entry.Proto}: {e}");
+    }
+}
 
         var allLoot = _prototypeManager.Index<SalvageLootPrototype>(difficultyProto.LootPrototypeId);
         var lootBudget = difficultyProto.LootBudget;

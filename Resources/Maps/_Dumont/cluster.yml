@@ -64312,7 +64312,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 9421
     components:
     - type: Transform
@@ -64321,7 +64320,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 9422
     components:
     - type: Transform
@@ -65780,7 +65778,6 @@ entities:
     - type: Transform
       pos: -23.5,-22.5
       parent: 2
-    - type: Timer
 - proto: PoweredSmallLightEmpty
   entities:
   - uid: 8871

@@ -147,6 +147,17 @@
     - type: SleepEmitSound
       snore: /Audio/Voice/Misc/silly_snore.ogg
       interval: 10
+# _Starfall Currently due to the way this works this overwrites the species sounds for that job. TODO: Make it so font overrides are applied separately.
+#      #UM START
+#    - type: Speech
+#      speechVerb: Clown
+#      suffixSpeechVerbs:
+#        chat-speech-verb-suffix-exclamation-strong: ClownExclamationStrong
+#        chat-speech-verb-suffix-exclamation: ClownExclamation
+#        chat-speech-verb-suffix-question: ClownQuestion
+#        chat-speech-verb-suffix-stutter: ClownStutter
+#        chat-speech-verb-suffix-mumble: ClownMumble
+#      #UM END
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
   alternateTitles:

@@ -151,6 +151,7 @@
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes
+  - type: BloodSplatterer # Trauma
 
 
 - type: entity

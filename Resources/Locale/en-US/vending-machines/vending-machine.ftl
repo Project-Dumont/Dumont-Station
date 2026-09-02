@@ -8,5 +8,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 vending-machine-thanks-1 = Thanks for using { $name }!
-vending-machine-flavor-left = Request refills at cargo
+# funky change to Logistics
+vending-machine-flavor-left = Request refills at Logistics.
 vending-machine-flavor-right = v1.1

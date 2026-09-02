@@ -76211,7 +76211,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,31.5
       parent: 2
-    - type: Timer
   - uid: 11048
     components:
     - type: Transform
@@ -76425,7 +76424,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 11077
     components:
     - type: Transform
@@ -76718,7 +76716,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 11118
     components:
     - type: Transform
@@ -76727,7 +76724,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 11119
     components:
     - type: Transform
@@ -77852,7 +77848,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 30.5,-12.5
       parent: 2
-    - type: Timer
   - uid: 11287
     components:
     - type: Transform
