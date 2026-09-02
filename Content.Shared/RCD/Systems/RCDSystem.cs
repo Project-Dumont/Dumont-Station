@@ -729,12 +729,13 @@ public sealed class RCDSystem : EntitySystem
                 // Funky - end of changes
 
                 // Funky - Calculate rotation and apply it before spawning
+                var gridRotation = _transform.GetWorldRotation(gridUid);
                 var rotation = prototype.Rotation switch
                 {
-                    RcdRotation.Fixed => Angle.Zero,
-                    RcdRotation.Camera => Transform(uid).LocalRotation,
-                    RcdRotation.User => direction.ToAngle(),
-                    _ => Angle.Zero // Fallback
+                    RcdRotation.Fixed => gridRotation,
+                    RcdRotation.Camera => Transform(uid).LocalRotation + gridRotation,
+                    RcdRotation.User => direction.ToAngle() + gridRotation,
+                    _ => gridRotation // Fallback
                 };
 
                 // Convert EntityCoordinates to MapCoordinates
