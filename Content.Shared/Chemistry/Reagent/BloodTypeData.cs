@@ -10,6 +10,8 @@ public sealed partial class BloodTypeData : ReagentData
     [DataField]
     public ProtoId<BloodTypePrototype>? Type;
 
+    public BloodTypeData();
+
     public BloodTypeData(BloodTypeData other)
     {
         Type = other.Type;
