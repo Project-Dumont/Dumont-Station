@@ -193,11 +193,7 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();
-        var bloodtypeData = new BloodTypeData();
-        if (TryComp<BloodTypeComponent>(uid, out var comp) && comp.Type != null)
-        {
-            bloodtypeData.Type = comp.Type;
-        }
+
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
         {
             dnaData.DNA = donorComp.DNA;
@@ -205,7 +201,6 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
         else
             dnaData.DNA = Loc.GetString("forensics-dna-unknown");
         bloodData.Add(dnaData);
-        bloodData.Add(bloodtypeData);
 
         return bloodData;
     }

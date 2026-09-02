@@ -14,5 +14,7 @@ public sealed partial class BloodTypeComponent : Component
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 ForeignBloodDeducted = 1.0f;
+
+
 }
 

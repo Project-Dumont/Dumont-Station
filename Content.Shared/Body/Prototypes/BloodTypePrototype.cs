@@ -10,8 +10,8 @@ public sealed partial class BloodTypePrototype : IPrototype
 
     [IdDataField] public string ID { get; private set; } = default!;
 
-    [DataField]
-    public HashSet<string>? Compatibilities = new();
+    [DataField("Compat")]
+    public List<string>? Compatibilities = new();
 
     [DataField("DamageList")]
     public DamageSpecifier IncompatibilityDamage = new();

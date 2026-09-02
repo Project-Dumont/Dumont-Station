@@ -1,299 +1,299 @@
 
 - type: bloodtype
   id: O+
-  Compatibilities:
-    O-
-    O+
+  Compat:
+    - O-
+    - O+
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: O-
-  Compatibilities:
-    O-
+  Compat:
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: A+
-  Compatibilities:
-    A+
-    A-
-    O+
-    O-
+  Compat:
+    - A+
+    - A-
+    - O+
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: A-
-  Compatibilities:
-    A-
-    O-
+  Compat:
+    - A-
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: B+
-  Compatibilities:
-    B+
-    B-
-    O+
-    O-
+  Compat:
+    - B+
+    - B-
+    - O+
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: B-
-  Compatibilities:
-    B-
-    O-
+  Compat:
+    - B-
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: AB+
-  Compatibilities:
-    A+
-    A-
-    B+
-    B-
-    AB+
-    AB-
-    O+
-    O-
+  Compat:
+    - A+
+    - A-
+    - B+
+    - B-
+    - AB+
+    - AB-
+    - O+
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: AB-
-  Compatibilities:
-    A-
-    B-
-    AB-
-    O-
+  Compat:
+    - A-
+    - B-
+    - AB-
+    - O-
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Clara
-  Compatibilities:
-    Clara
+  Compat:
+    - Clara
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Âmbar
-  Compatibilities:
-    Clara
-    Âmbar
+  Compat:
+    - Clara
+    - Âmbar
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Melânica
-  Compatibilities:
-    Clara
-    Âmbar
-    Melânica
+  Compat:
+    - Clara
+    - Âmbar
+    - Melânica
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Cuprosa
-  Compatibilities:
-    Cuprosa
+  Compat:
+    - Cuprosa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Cúprica
-  Compatibilities:
-    Cuprosa
-    Cúprica
+  Compat:
+    - Cuprosa
+    - Cúprica
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: "Ferro-Cúprica"
-  Compatibilities:
-    Cuprosa
-    Cúprica
-    "Ferro-Cúprica"
+  Compat:
+    - Cuprosa
+    - Cúprica
+    - "Ferro-Cúprica"
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Ureica
-  Compatibilities:
-    Ureica
+  Compat:
+    - Ureica
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Amoniacal
-  Compatibilities:
-    Ureica
-    Amoniacal
+  Compat:
+    - Ureica
+    - Amoniacal
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Nitrosa
-  Compatibilities:
-    Ureica
-    Amoniacal
-    Nitrosa
+  Compat:
+    - Ureica
+    - Amoniacal
+    - Nitrosa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Difusa
-  Compatibilities:
-    Difusa
+  Compat:
+    - Difusa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Coesa
-  Compatibilities:
-    Difusa
-    Coesa
+  Compat:
+    - Difusa
+    - Coesa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Reativa
-  Compatibilities:
-    Difusa
-    Coesa
-    Reativa
+  Compat:
+    - Difusa
+    - Coesa
+    - Reativa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Xilêmica
-  Compatibilities:
-    Xilêmica
+  Compat:
+    - Xilêmica
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Floêmica
-  Compatibilities:
-    Xilêmica
-    Floêmica
+  Compat:
+    - Xilêmica
+    - Floêmica
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Resinosa
-  Compatibilities:
-    Xilêmica
-    Floêmica
-    Resinosa
+  Compat:
+    - Xilêmica
+    - Floêmica
+    - Resinosa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Estagnada
-  Compatibilities:
-    Estagnada
+  Compat:
+    - Estagnada
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Crepuscular
-  Compatibilities:
-    Estagnada
-    Crepuscular
+  Compat:
+    - Estagnada
+    - Crepuscular
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Plena
-  Compatibilities:
-    Estagnada
-    Crepuscular
-    Plena
+  Compat:
+    - Estagnada
+    - Crepuscular
+    - Plena
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Xaroposa
-  Compatibilities:
-    Xaroposa
+  Compat:
+    - Xaroposa
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Cristalizada
-  Compatibilities:
-    Xaroposa
-    Cristalizada
+  Compat:
+    - Xaroposa
+    - Cristalizada
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Caramelizada
-  Compatibilities:
-    Xaroposa
-    Cristalizada
-    Caramelizada
+  Compat:
+    - Xaroposa
+    - Cristalizada
+    - Caramelizada
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Verde
-  Compatibilities:
-    Verde
+  Compat:
+    - Verde
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Madura
-  Compatibilities:
-    Verde
-    Madura
+  Compat:
+    - Verde
+    - Madura
   DamageList:
     types:
       Cellular: 0.2
 
 - type: bloodtype
   id: Passada
-  Compatibilities:
-    Verde
-    Madura
-    Passada
+  Compat:
+    - Verde
+    - Madura
+    - Passada
   DamageList:
     types:
       Cellular: 0.2

@@ -95,7 +95,7 @@
     Plena: 15
 
 - type: weightedRandom
-  id: SlimeTypes
+  id: SlimePersonTypes
   weights:
     Difusa: 50
     Coesa: 35
@@ -127,7 +127,7 @@
     "Ferro-Cúprica": 15
 
 - type: weightedRandom
-  id: BananamenTypes
+  id: BananaMenTypes
   weights:
     Verde: 45
     Madura: 40
