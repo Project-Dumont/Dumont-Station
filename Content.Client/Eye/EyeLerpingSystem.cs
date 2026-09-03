@@ -193,16 +193,11 @@ public sealed class EyeLerpingSystem : EntitySystem
     {
         var tickFraction = (float) _gameTiming.TickFraction / ushort.MaxValue;
         const double lerpMinimum = 0.00001;
-        // ES START
-        // add contenteye bc we only want to modify the fuckin base rotation
-        var query = AllEntityQuery<LerpingEyeComponent, EyeComponent, ContentEyeComponent, TransformComponent>();
-        // ES END
+        var query = AllEntityQuery<LerpingEyeComponent, EyeComponent, TransformComponent>();
 
-        // ES START
-        // contenteye
-        while (query.MoveNext(out var entity, out var lerpInfo, out var eye, out var contentEye, out var xform))
-        // ES END
+        while (query.MoveNext(out var entity, out var lerpInfo, out var eye, out var xform))
         {
+            TryComp<ContentEyeComponent>(entity, out var contentEye);
             // Handle zoom
             var zoomDiff = Vector2.Lerp(lerpInfo.LastZoom, lerpInfo.TargetZoom, tickFraction);
 
@@ -231,10 +226,7 @@ public sealed class EyeLerpingSystem : EntitySystem
 
             if (!NeedsLerp(mover))
             {
-                // ES START
-                // contenteye
-                contentEye.BaseRotation = lerpInfo.TargetRotation;
-                // ES END
+                SetBaseRotation(entity, eye, contentEye, lerpInfo.TargetRotation);
                 continue;
             }
 
@@ -242,17 +234,19 @@ public sealed class EyeLerpingSystem : EntitySystem
 
             if (Math.Abs(shortest.Theta) < lerpMinimum)
             {
-                // ES START
-                // contenteye
-                contentEye.BaseRotation = lerpInfo.TargetRotation;
-                // ES END
+                SetBaseRotation(entity, eye, contentEye, lerpInfo.TargetRotation);
                 continue;
             }
 
-            // ES START
-            // contenteye
-            contentEye.BaseRotation = shortest * tickFraction + lerpInfo.LastRotation;
-            // ES END
+            SetBaseRotation(entity, eye, contentEye, shortest * tickFraction + lerpInfo.LastRotation);
         }
+    }
+
+    private void SetBaseRotation(EntityUid entity, EyeComponent eye, ContentEyeComponent? contentEye, Angle rotation)
+    {
+        if (contentEye != null)
+            contentEye.BaseRotation = rotation;
+        else
+            _eye.SetRotation(entity, rotation, eye);
     }
 }
