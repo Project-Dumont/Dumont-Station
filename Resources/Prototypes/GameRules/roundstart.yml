@@ -190,8 +190,8 @@
     rules:
     - id: DummyNonAntag
       prob: 0.3
-    - id: Vampire
-      prob: 0.25
+    #- id: Vampire # Dumont
+    #  prob: 0.25
 
 - type: entity
   id: DeathMatch31
@@ -270,7 +270,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 40 # Who decided 20 was a safe amount for Nukies?
   - type: LoadMapRule
     mapPath: /Maps/_Dumont/Nonstations/nukieplanet.yml # Dumont edit with nukedroppod!
   - type: NukieOperation

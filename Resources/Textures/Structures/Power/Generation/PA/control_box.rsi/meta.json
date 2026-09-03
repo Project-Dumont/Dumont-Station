@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from vgstation at commit https://github.com/vgstation-coders/vgstation13/commit/a0fc71b279ceb41c8c5387b08e60d2cc4f15bef8",
+  "copyright": "Taken from paradise station at https://github.com/ParadiseSS13/Paradise/blob/master/icons/obj/machines/particle_accelerator.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -11,38 +11,72 @@
       "name": "unwired"
     },
     {
-      "name": "completed",
-      "directions": 4
+      "name": "wired"
+    },
+    {
+      "name": "completed"
     },
     {
       "name": "unlitp",
-      "directions": 4
-    },
-    {
-      "name": "unlitp0",
-      "directions": 4
-    },
-    {
-      "name": "unlitp1",
-      "directions": 4
-    },
-    {
-      "name": "unlitp2",
-      "directions": 4
-    },
-    {
-      "name": "unlitp3",
-      "directions": 4,
       "delays": [
-        [0.5, 0.5],
-        [0.5, 0.5],
-        [0.5, 0.5],
-        [0.5, 0.5]
+        [
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12
+        ]
       ]
     },
     {
-      "name": "wired",
-      "directions": 4
+      "name": "unlitp0",
+      "delays": [
+        [
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "name": "unlitp1",
+      "delays": [
+        [
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "name": "unlitp2",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
     }
   ]
 }

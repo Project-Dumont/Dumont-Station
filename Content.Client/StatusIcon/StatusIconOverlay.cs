@@ -26,6 +26,11 @@ public sealed class StatusIconOverlay : Overlay
 {
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
 
+    /// <summary>
+    /// Dumont-triagem: afasta a coluna esquerda da barra de vida, para a moldura de triagem não encostar nela.
+    /// </summary>
+    private const float LeftColumnNudge = 3f;
+
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -83,6 +88,8 @@ public sealed class StatusIconOverlay : Overlay
             var countR = 0;
             var accOffsetL = 0;
             var accOffsetR = 0;
+            var baseSizeL = Vector2.Zero; // Dumont-triagem
+            var baseSizeR = Vector2.Zero; // Dumont-triagem
             icons.Sort();
 
             foreach (var proto in icons)
@@ -101,29 +108,45 @@ public sealed class StatusIconOverlay : Overlay
                 if (proto.LocationPreference == StatusIconLocationPreference.Left ||
                     proto.LocationPreference == StatusIconLocationPreference.None && countL <= countR)
                 {
-                    if (accOffsetL + texture.Height > _sprite.GetLocalBounds((uid, sprite)).Height * EyeManager.PixelsPerMeter)
+                    if (proto.Layer == StatusIconLayer.Base // Dumont-triagem
+                        && accOffsetL + texture.Height > _sprite.GetLocalBounds((uid, sprite)).Height * EyeManager.PixelsPerMeter)
                         break;
                     if (proto.Layer == StatusIconLayer.Base)
                     {
                         accOffsetL += texture.Height;
                         countL++;
+                        baseSizeL = new Vector2(texture.Width, texture.Height); // Dumont-triagem
                     }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float)(accOffsetL - proto.Offset) / EyeManager.PixelsPerMeter;
-                    xOffset = -(bounds.Width + sprite.Offset.X) / 2f;
+                    xOffset = -(bounds.Width + sprite.Offset.X) / 2f - LeftColumnNudge / EyeManager.PixelsPerMeter; // Dumont-triagem
 
+                    // Dumont-triagem
+                    if (proto.Layer == StatusIconLayer.Mod && baseSizeL != Vector2.Zero)
+                    {
+                        xOffset -= (texture.Width - baseSizeL.X) / 2f / EyeManager.PixelsPerMeter;
+                        yOffset -= (texture.Height - baseSizeL.Y) / 2f / EyeManager.PixelsPerMeter;
+                    }
                 }
                 else
                 {
-                    if (accOffsetR + texture.Height > _sprite.GetLocalBounds((uid, sprite)).Height * EyeManager.PixelsPerMeter)
+                    if (proto.Layer == StatusIconLayer.Base // Dumont-triagem
+                        && accOffsetR + texture.Height > _sprite.GetLocalBounds((uid, sprite)).Height * EyeManager.PixelsPerMeter)
                         break;
                     if (proto.Layer == StatusIconLayer.Base)
                     {
                         accOffsetR += texture.Height;
                         countR++;
+                        baseSizeR = new Vector2(texture.Width, texture.Height); // Dumont-triagem
                     }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float)(accOffsetR - proto.Offset) / EyeManager.PixelsPerMeter;
                     xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float)texture.Width / EyeManager.PixelsPerMeter;
 
+                    // Dumont-triagem
+                    if (proto.Layer == StatusIconLayer.Mod && baseSizeR != Vector2.Zero)
+                    {
+                        xOffset += (texture.Width - baseSizeR.X) / 2f / EyeManager.PixelsPerMeter;
+                        yOffset -= (texture.Height - baseSizeR.Y) / 2f / EyeManager.PixelsPerMeter;
+                    }
                 }
 
                 if (proto.IsShaded)

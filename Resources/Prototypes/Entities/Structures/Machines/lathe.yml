@@ -912,6 +912,7 @@
     - GrenadeTriggersStatic
     # Einstein Engines Packs
     - SyringeCase
+    - TriageStatic # Dumont-triagem
     dynamicPacks:
     - Chemistry
     # Goobstation Packs
