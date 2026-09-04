@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 640,
+    "y": 365
+  },
+  "states": [
+    {
+      "name": "animated",
+	  "delays": [
+        [
+          0.1
+        ]
+      ]
+    }
+  ]
+}

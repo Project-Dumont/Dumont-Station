@@ -1,0 +1,47 @@
+- type: animatedLobbyScreen
+  id: Syndicate
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/syndicate.rsi
+  name: Syndicate
+  artist: Syndicate
+
+- type: animatedLobbyScreen
+  id: Cube
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/cube.rsi
+  name: Cube
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: MilkyWay
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/milkyway.rsi
+  name: Milky Way
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Native
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/native.rsi
+  name: Native
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Rocket
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/rocket.rsi
+  name: Rocket
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Sea
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/sea.rsi
+  name: Sea
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Sus
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/sus.rsi
+  name: Sus
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: VanGogh
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/vangogh.rsi
+  name: Van Gogh
+  artist: Unknown

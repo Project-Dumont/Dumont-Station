@@ -383,10 +383,18 @@ namespace Content.Client.Lobby
         // Goobstation - heavily modified to add credits for lobby backgrounds
         private void UpdateLobbyBackground()
         {
+            if (_gameTicker.AnimatedLobbyScreen != null)
+            {
+                var lobbyBackground = _protoMan.Index(_gameTicker.AnimatedLobbyScreen.Value);
+                Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(lobbyBackground.Path).RSI);
+
+                return;
+            }
+
             if (_gameTicker.LobbyBackground != null)
             {
                 var lobbyBackground = _protoMan.Index(_gameTicker.LobbyBackground.Value);
-                Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(lobbyBackground.Background);
+                Lobby!.Background.SetTexture(_resourceCache.GetResource<TextureResource>(lobbyBackground.Background).Texture);
 
                 var name = string.IsNullOrEmpty(lobbyBackground.Name)
                     ? Loc.GetString("lobby-state-background-unknown-title")
@@ -406,7 +414,7 @@ namespace Content.Client.Lobby
             }
 
             _sawmill.Warning("_gameTicker.LobbyBackground was null! No lobby background selected.");
-            Lobby!.Background.Texture = null;
+            Lobby!.Background.SetRSI(null);
             Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
         }
 

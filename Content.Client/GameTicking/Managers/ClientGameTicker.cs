@@ -58,6 +58,7 @@ using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Client.GameTicking.Managers
 {
@@ -76,6 +77,7 @@ namespace Content.Client.GameTicking.Managers
         [ViewVariables] public bool IsGameStarted { get; private set; }
         [ViewVariables] public ResolvedSoundSpecifier? RestartSound { get; private set; }
         [ViewVariables] public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; private set; }
+        [ViewVariables] public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; private set; }
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
         [ViewVariables] public string? InGameInfoBlob { get; private set; }
@@ -173,6 +175,7 @@ namespace Content.Client.GameTicking.Managers
             IsGameStarted = message.IsRoundStarted;
             AreWeReady = message.YouAreReady;
             LobbyBackground = message.LobbyBackground;
+            AnimatedLobbyScreen = message.AnimatedLobbyScreen;
             Paused = message.Paused;
 
             LobbyStatusUpdated?.Invoke();

@@ -13,6 +13,7 @@ using Content.Shared.GameTicking.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using Robust.Shared.Prototypes;
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Server.GameTicking;
 
@@ -23,9 +24,15 @@ public sealed partial class GameTicker
     public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; private set; }
 
     [ViewVariables]
+    public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; private set; }
+
+    [ViewVariables]
     private List<ProtoId<LobbyBackgroundPrototype>> _lobbyBackgrounds = [];
 
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp"};
+    [ViewVariables]
+    private List<ProtoId<AnimatedLobbyScreenPrototype>> _animatedLobbyScreens = [];
+
+    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp", "rsi"};
 
     private void InitializeLobbyBackground()
     {
@@ -40,10 +47,30 @@ public sealed partial class GameTicker
             _lobbyBackgrounds.Add(prototype.ID);
         }
 
+        foreach (var prototype in _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>())
+            _animatedLobbyScreens.Add(prototype.ID);
+
         RandomizeLobbyBackground();
     }
 
     private void RandomizeLobbyBackground() {
-        LobbyBackground = _lobbyBackgrounds.Any() ? _robustRandom.Pick(_lobbyBackgrounds) : (ProtoId<LobbyBackgroundPrototype>?) null;
+        var totalBackgrounds = _lobbyBackgrounds.Count + _animatedLobbyScreens.Count;
+        if (totalBackgrounds == 0)
+        {
+            LobbyBackground = null;
+            AnimatedLobbyScreen = null;
+            return;
+        }
+
+        if (_robustRandom.Next(totalBackgrounds) < _lobbyBackgrounds.Count)
+        {
+            LobbyBackground = _robustRandom.Pick(_lobbyBackgrounds);
+            AnimatedLobbyScreen = null;
+        }
+        else
+        {
+            LobbyBackground = null;
+            AnimatedLobbyScreen = _robustRandom.Pick(_animatedLobbyScreens);
+        }
     }
 }
