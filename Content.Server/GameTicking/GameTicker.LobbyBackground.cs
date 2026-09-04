@@ -57,6 +57,7 @@ public sealed partial class GameTicker
 
     private void RandomizeLobbyBackground() {
         // Tweak-Maid-start: Animated Lobby
+        // LobbyBackground = _lobbyBackgrounds.Any() ? _robustRandom.Pick(_lobbyBackgrounds) : (ProtoId<LobbyBackgroundPrototype>?) null;
         var totalBackgrounds = _lobbyBackgrounds.Count + _animatedLobbyScreens.Count;
         if (totalBackgrounds == 0)
         {
