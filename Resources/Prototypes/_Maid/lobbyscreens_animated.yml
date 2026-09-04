@@ -11,12 +11,6 @@
   artist: Unknown
 
 - type: animatedLobbyScreen
-  id: MilkyWay
-  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/milkyway.rsi
-  name: Milky Way
-  artist: Unknown
-
-- type: animatedLobbyScreen
   id: Native
   background: /Textures/_Maid/LobbyScreens/AnimatedScreens/native.rsi
   name: Native
@@ -32,18 +26,6 @@
   id: Sea
   background: /Textures/_Maid/LobbyScreens/AnimatedScreens/sea.rsi
   name: Sea
-  artist: Unknown
-
-- type: animatedLobbyScreen
-  id: Sus
-  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/sus.rsi
-  name: Sus
-  artist: Unknown
-
-- type: animatedLobbyScreen
-  id: VanGogh
-  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/vangogh.rsi
-  name: Van Gogh
   artist: Unknown
 
 - type: animatedLobbyScreen

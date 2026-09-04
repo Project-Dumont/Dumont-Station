@@ -9,3 +9,27 @@
   background: /Textures/_Maid/LobbyScreens/background.webp
   name: Background
   artist: Unknown
+
+- type: lobbyBackground
+  id: MilkyWay
+  background: /Textures/_Maid/LobbyScreens/milkyway.png
+  name: Milky Way
+  artist: Unknown
+
+- type: lobbyBackground
+  id: Sus
+  background: /Textures/_Maid/LobbyScreens/sus.png
+  name: Sus
+  artist: Unknown
+
+- type: lobbyBackground
+  id: VanGogh
+  background: /Textures/_Maid/LobbyScreens/vangogh.png
+  name: Van Gogh
+  artist: Unknown
+
+- type: lobbyBackground
+  id: Art-14
+  background: /Textures/_Maid/LobbyScreens/art-14.png
+  name: Art-14
+  artist: Unknown
