@@ -25,6 +25,7 @@ public sealed partial class GameTicker
 
     [ViewVariables]
     private List<ProtoId<LobbyBackgroundPrototype>> _lobbyBackgrounds = [];
+    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp", "rsi"}; // Tweak-Maid: Animated Lobby
 
     // Tweak-Maid-start: Animated Lobby
     [ViewVariables]
@@ -34,7 +35,6 @@ public sealed partial class GameTicker
     private List<ProtoId<AnimatedLobbyScreenPrototype>> _animatedLobbyScreens = [];
     // Tweak-Maid-end
 
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp", "rsi"};
 
     private void InitializeLobbyBackground()
     {
@@ -49,7 +49,7 @@ public sealed partial class GameTicker
             _lobbyBackgrounds.Add(prototype.ID);
         }
 
-        foreach (var prototype in _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>())
+        foreach (var prototype in _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>()) // Tweak-Maid: Animated Lobby
             _animatedLobbyScreens.Add(prototype.ID);
 
         RandomizeLobbyBackground();

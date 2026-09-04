@@ -43,6 +43,7 @@
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
@@ -174,8 +175,8 @@ namespace Content.Client.GameTicking.Managers
             IsGameStarted = message.IsRoundStarted;
             AreWeReady = message.YouAreReady;
             LobbyBackground = message.LobbyBackground;
-            AnimatedLobbyScreen = message.AnimatedLobbyScreen;
-            Paused = message.Paused; // Tweak-Maid: Animated Lobby
+            AnimatedLobbyScreen = message.AnimatedLobbyScreen; // Tweak-Maid: Animated Lobby
+            Paused = message.Paused;
 
             LobbyStatusUpdated?.Invoke();
         }
