@@ -391,6 +391,7 @@ namespace Content.Client.Lobby
                 return;
             }
 
+            //Lobby!.LobbyBackground.SetMarkup(markup);
             if (_gameTicker.LobbyBackground != null)
             {
                 var lobbyBackground = _protoMan.Index(_gameTicker.LobbyBackground.Value);
