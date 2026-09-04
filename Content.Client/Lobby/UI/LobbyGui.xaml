@@ -44,7 +44,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:maidControls="clr-namespace:Content.Client._Maid.Lobby.UI"
     xmlns:whiteButtons="clr-namespace:Content.Client._White.UserInterface.Buttons">
     <!-- Background -->
-    <animated:AnimatedBackgroundControl Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background" />
+    <animated:AnimatedBackgroundControl Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background" /> <!-- Tweak-Maid: Animated Lobby -->
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Horizontal"
                   Margin="10 10 10 10" SeparationOverride="2">
         <SplitContainer State="Auto" ResizeMode="NotResizable" HorizontalExpand="True">

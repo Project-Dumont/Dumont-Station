@@ -43,7 +43,6 @@
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
@@ -56,8 +55,8 @@ using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Client.GameTicking.Managers
@@ -77,7 +76,7 @@ namespace Content.Client.GameTicking.Managers
         [ViewVariables] public bool IsGameStarted { get; private set; }
         [ViewVariables] public ResolvedSoundSpecifier? RestartSound { get; private set; }
         [ViewVariables] public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; private set; }
-        [ViewVariables] public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; private set; }
+        [ViewVariables] public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; private set; } // Tweak-Maid: Animated Lobby
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
         [ViewVariables] public string? InGameInfoBlob { get; private set; }
@@ -176,7 +175,7 @@ namespace Content.Client.GameTicking.Managers
             AreWeReady = message.YouAreReady;
             LobbyBackground = message.LobbyBackground;
             AnimatedLobbyScreen = message.AnimatedLobbyScreen;
-            Paused = message.Paused;
+            Paused = message.Paused; // Tweak-Maid: Animated Lobby
 
             LobbyStatusUpdated?.Invoke();
         }

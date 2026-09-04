@@ -37,6 +37,6 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip3 install --ignore-installed --user pillow jsonschema
-      - name: Validate RSIs
+      - name: Validate RSIs # Tweak-Maid
         run: |
           python3 Tools/_Maid/validate_rsis.py Resources/
