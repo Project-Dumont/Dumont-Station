@@ -3971,3 +3971,11 @@ Entries:
       message: Corrige bug do RCD que spawnava as entidades na rotação incorreta.
   id: 467
   time: '2026-09-02T15:15:46.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Tweak
+      message: >-
+        Alteração nos sprites do portão blindado, cortina metálica, cortina
+        metálica com janela e cortina metálica contra radiação.
+  id: 468
+  time: '2026-09-04T11:43:18.0000000+00:00'
