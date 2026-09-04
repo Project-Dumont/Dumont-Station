@@ -3979,3 +3979,9 @@ Entries:
         metálica com janela e cortina metálica contra radiação.
   id: 468
   time: '2026-09-04T11:43:18.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Fix
+      message: concerta bug do ftl e dock.
+  id: 469
+  time: '2026-09-04T12:29:05.0000000+00:00'
