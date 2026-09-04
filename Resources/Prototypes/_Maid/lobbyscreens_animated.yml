@@ -45,3 +45,21 @@
   background: /Textures/_Maid/LobbyScreens/AnimatedScreens/vangogh.rsi
   name: Van Gogh
   artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Airlock
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/airlock.rsi
+  name: Airlock
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Clown
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/clown.rsi
+  name: Clown
+  artist: Unknown
+
+- type: animatedLobbyScreen
+  id: Neon
+  background: /Textures/_Maid/LobbyScreens/AnimatedScreens/neon.rsi
+  name: Neon
+  artist: Unknown
