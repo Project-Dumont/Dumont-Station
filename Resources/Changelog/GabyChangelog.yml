@@ -3985,3 +3985,9 @@ Entries:
       message: concerta bug do ftl e dock.
   id: 469
   time: '2026-09-04T12:29:05.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: A Segurança agora é um azul mais forte.
+  id: 470
+  time: '2026-09-04T22:48:45.0000000+00:00'
