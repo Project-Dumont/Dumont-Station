@@ -22,8 +22,24 @@ reagent-desc-ichor = Um químico regenerativo extremamente potente, aperfeiçoad
 reagent-name-fat = gordura
 reagent-desc-fat = Não importa como foi obtido, sua aplicação é importante.
 
-reagent-name-vomit = vomito
+reagent-name-vomit = vômito
 reagent-desc-vomit = Você pode ver alguns pedaços da última refeição de alguém nele.
 
-# reagent-name-gray-matter = grey matter
-# reagent-name-gray-matter = Suco de cérebro.
+reagent-name-grey-matter = matéria cinzenta
+reagent-desc-grey-matter = Suco de cérebro.
+
+reagent-name-alien-blood = sangue alienígena
+reagent-desc-alien-blood = A criatura da qual isso foi retirado não é desta galáxia. Talvez tenha sabor de uva.
+
+reagent-name-sap = seiva
+reagent-desc-sap = Sangue doce e pegajoso de árvore.
+
+reagent-name-sanguine-perniculate = sangue pernicioso
+reagent-desc-sanguine-perniculate = Sangue carmesim escuro que parece se contorcer com uma energia maligna. Tocá-lo causa uma sensação estranha.
+
+reagent-name-black-blood = sangue negro
+reagent-desc-black-blood = Um teor de ferro ridiculamente alto torna esse sangue alienígena quase totalmente negro.
+
+
+
+
