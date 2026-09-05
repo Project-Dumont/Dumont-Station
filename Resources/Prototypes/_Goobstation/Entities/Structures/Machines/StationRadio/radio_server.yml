@@ -8,7 +8,27 @@
     sprite: _Goobstation/Structures/Machines/StationRadio/stationradioserver.rsi
     layers:
     - state: icon
+    # Starlight - Radio host Rework - Start
+    - state: mic_on # Starlight
+      shader: unshaded
+      visible: false
+      map: ["micOn"]
+    - state: mic_off # Starlight
+      shader: unshaded
+      map: ["micOff"]
+    # Starlight - Radio host Rework - End
     drawdepth: SmallObjects
+  # Starlight - Radio host Rework - Start
+  - type: GenericVisualizer
+    visuals:
+      enum.RadioDeviceVisuals.Broadcasting: # Starlight
+        micOn:
+          True: { visible: true }
+          False: { visible: false }
+        micOff:
+          True: { visible: false }
+          False: { visible: true }
+  # Starlight - Radio host Rework - End
   - type: StationRadioServer
   - type: DeviceLinkSource
     ports:
