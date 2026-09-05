@@ -4001,3 +4001,11 @@ Entries:
         segundos!
   id: 471
   time: '2026-09-05T14:26:15.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Reformulado por completo requisitos de horas para diversas funções
+        antagonistas e da tripulação.
+  id: 472
+  time: '2026-09-05T14:53:46.0000000+00:00'
