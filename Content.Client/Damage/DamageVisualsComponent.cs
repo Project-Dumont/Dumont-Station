@@ -1,12 +1,8 @@
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-//
-// SPDX-License-Identifier: MIT
-
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.DisplacementMap;
+using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Damage;
 
@@ -122,6 +118,13 @@ public sealed partial class DamageVisualsComponent : Component
     ///     DamageVisualizerSprite for more information.
     /// </summary>
     [DataField("damageOverlay")] public  DamageVisualizerSprite? DamageOverlay;
+
+    /// <summary>
+    /// Applies a displacement map to the damage visuals.
+    /// Is set via <see cref="DamageableComponent.Displacement"/>.
+    /// </summary>
+    [DataField]
+    public DisplacementData? Displacement;
 
     public readonly List<Enum> TargetLayerMapKeys = new();
     public bool Disabled = false;
