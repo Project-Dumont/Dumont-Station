@@ -31,6 +31,8 @@
 
 using System.Numerics;
 using Content.Server.Forensics;
+using Content.Server.Stack;
+using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Prototypes;
@@ -62,6 +64,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
 
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
+
             var tSys = system.EntityManager.System<TransformSystem>();
             var position = tSys.GetMapCoordinates(owner);
 
