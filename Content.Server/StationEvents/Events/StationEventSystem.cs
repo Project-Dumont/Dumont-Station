@@ -29,6 +29,7 @@ using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.PDA;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -67,9 +68,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
-
-        if (stationEvent.StartAnnouncement != null)
-            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
+        // Dumont begin - Pda notification
+        if (stationEvent.StartAnnouncement != null) {
+            var ev = new PdaNotificationEvent(Loc.GetString(stationEvent.StartAnnouncement), "StationAlerts", true, StationSystem.GetOwningStation(uid));
+            RaiseLocalEvent(ev);
+        }
+        // Dumont end
 
         Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
     }

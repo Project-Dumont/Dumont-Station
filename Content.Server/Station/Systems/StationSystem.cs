@@ -106,6 +106,7 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.Station;
 using Content.Shared.Station.Components;
+using Content.Shared.PDA;
 using JetBrains.Annotations;
 using Robust.Server.GameStates;
 using Robust.Server.Player;
@@ -493,7 +494,8 @@ public sealed partial class StationSystem : SharedStationSystem
 
         if (loud)
         {
-            _chatSystem.DispatchStationAnnouncement(station, $"The station {oldName} has been renamed to {name}.");
+            var ev = new PdaNotificationEvent(Loc.GetString("station-rename", ("oldName", oldName), ("newName", name)), "GenericAll", false, station);
+            RaiseLocalEvent(ev);
         }
 
         RaiseLocalEvent(station, new StationRenamedEvent(oldName, name), true);

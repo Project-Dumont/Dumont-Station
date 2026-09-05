@@ -83,6 +83,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.NameIdentifier;
+using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
@@ -95,6 +96,7 @@ using Content.Shared.Paper;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
 using Content.Shared.Radio;
+using Content.Shared.PDA;
 using JetBrains.Annotations;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
@@ -191,14 +193,15 @@ public sealed partial class CargoSystem
 
         CargoBountyData bountyData = bounty.Value;
 
-        var ev = new TryGetIdentityShortInfoEvent(null, args.Actor);
-        RaiseLocalEvent(ev);
+        var InfoEv = new TryGetIdentityShortInfoEvent(null, args.Actor);
+        RaiseLocalEvent(InfoEv);
 
-        var message = Loc.GetString("bounty-skip-message", 
-            ("bounty", "ID#" + bountyData.Id), 
-            ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown")));
-        
-        _radio.SendRadioMessage(uid, message, CargoRadioChannel, uid, escapeMarkup: false);
+        var message = Loc.GetString("bounty-skip-message",
+            ("bounty", "ID#" + bountyData.Id),
+            ("user", InfoEv.Title ?? Loc.GetString("bounty-skip-unknown")));
+
+        var ev = new PdaNotificationEvent(message, "CargoSansSalvage", false, _station.GetOwningStation(uid)); // Dumont
+        RaiseLocalEvent(ev);
 
         FillBountyDatabase(station);
         db.NextSkipTime = Timing.CurTime + db.SkipDelay;

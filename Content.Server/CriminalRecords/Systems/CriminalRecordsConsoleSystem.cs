@@ -32,6 +32,7 @@ using Content.Shared.CriminalRecords.Components;
 using Content.Shared.CriminalRecords.Systems;
 using Content.Shared.Security;
 using Content.Shared.StationRecords;
+using Content.Shared.PDA;
 using Robust.Server.GameObjects;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.IdentityManagement;
@@ -220,8 +221,16 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             // this is impossible
             _ => "not-wanted"
         };
-        _radio.SendRadioMessage(ent, Loc.GetString($"criminal-records-console-{statusString}", args),
-            ent.Comp.SecurityChannel, ent);
+
+        var ev = new PdaNotificationEvent(
+            Loc.GetString($"criminal-records-console-{statusString}", args),
+            "SecurityAlerts", false,
+            _station.GetOwningStation(ent.Owner)); // Dumont
+
+        RaiseLocalEvent(ev);
+
+        // _radio.SendRadioMessage(ent, Loc.GetString($"criminal-records-console-{statusString}", args),
+        //     ent.Comp.SecurityChannel, ent);
 
         UpdateUserInterface(ent);
     }

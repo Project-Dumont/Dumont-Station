@@ -114,6 +114,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
 using Content.Shared.Paper;
+using Content.Shared.PDA;
 using Content.Shared.Station.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
@@ -794,6 +795,16 @@ namespace Content.Server.Cargo.Systems
                     _slots.TryInsert(item, label.LabelSlot, printed, null);
                 }
             }
+
+            // Dumont, notify via pda that the order was fulfilled
+            var message = Loc.GetString("cargo-notification",
+                ("amount", order.OrderQuantity),
+                ("order", order.ProductId),
+                ("person", order.Approver ?? "Unknown")
+            );
+
+            var ev = new PdaNotificationEvent(message, "CargoAlerts", false);
+            RaiseLocalEvent(ev);
 
             return true;
 
