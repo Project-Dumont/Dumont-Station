@@ -48,7 +48,11 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
 
     public void SetBloodType(EntityUid uid, BloodTypeComponent? uidBloodType = null, HumanoidAppearanceComponent? uidAppearence = null)
     {
-        if (!Resolve(uid, ref uidBloodType, ref uidAppearence, false))
+        if (!Resolve(uid, ref uidBloodType))
+            return;
+        if (uidBloodType.Type is not null)
+            return;
+        if (!Resolve(uid, ref uidAppearence, false))
             return;
         uidBloodType.Type = GenerateBloodType(uidAppearence);
     }

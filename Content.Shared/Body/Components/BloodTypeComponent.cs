@@ -9,7 +9,7 @@ namespace Content.Shared.Body.Components;
 [AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
 public sealed partial class BloodTypeComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField("ABOType"), AutoNetworkedField]
     public ProtoId<BloodTypePrototype>? Type;
 
     [DataField, AutoNetworkedField]
