@@ -23,6 +23,10 @@
     layers:
     - state: completed
       map: [ "enum.ParticleAcceleratorVisualLayers.Base" ]
+    - state: unlitp2
+      map: [ "enum.ParticleAcceleratorVisualLayers.Unlit" ]
+      shader: unshaded
+      visible: true
   - type: ParticleAcceleratorEndCap
   - type: Construction
     graph: ParticleAcceleratorEndCap

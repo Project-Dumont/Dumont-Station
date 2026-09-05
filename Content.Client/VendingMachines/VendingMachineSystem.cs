@@ -10,6 +10,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Client._Funkystation.VendingMachines; // Funky change
 using Content.Shared.VendingMachines;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -69,7 +70,7 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
             component.ContrabandInventory.Add(entry.Key, new(entry.Value));
         }
 
-        if (UISystem.TryGetOpenUi<VendingMachineBoundUserInterface>(uid, VendingMachineUiKey.Key, out var bui))
+        if (UISystem.TryGetOpenUi<BoundUserInterface>(uid, VendingMachineUiKey.Key, out var baseBui) && baseBui is IVendingMachineBoundUi bui) // Funky change
         {
             if (fullUiUpdate)
             {
@@ -87,9 +88,9 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
         if (!Resolve(entity, ref entity.Comp))
             return;
 
-        if (UISystem.TryGetOpenUi<VendingMachineBoundUserInterface>(entity.Owner,
+        if (UISystem.TryGetOpenUi<BoundUserInterface>(entity.Owner,
                 VendingMachineUiKey.Key,
-                out var bui))
+                out var baseBui) && baseBui is IVendingMachineBoundUi bui) // Funky change
         {
             bui.UpdateAmounts();
         }
