@@ -515,7 +515,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Dexalin
           Quantity: 10
@@ -548,7 +548,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Dylovene
           Quantity: 10
@@ -581,7 +581,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Hyronalin
           Quantity: 10
@@ -614,7 +614,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: PotassiumIodide
           Quantity: 10
@@ -647,7 +647,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Iron
           Quantity: 10
@@ -667,7 +667,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Copper
           Quantity: 10
@@ -713,7 +713,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Kelotane
           Quantity: 10
@@ -746,7 +746,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Dermaline
           Quantity: 10
@@ -792,7 +792,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Tricordrazine
           Quantity: 10
@@ -825,7 +825,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Bicaridine
           Quantity: 10
@@ -858,7 +858,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Charcoal
           Quantity: 10
@@ -884,7 +884,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: Romerol
           Quantity: 10
@@ -897,7 +897,7 @@
     - type: SolutionContainerManager
       solutions:
         food:
-          maxVol: 20
+          maxVol: 10
           reagents:
             - ReagentId: Ambuzol
               Quantity: 10
@@ -914,7 +914,7 @@
     - type: SolutionContainerManager
       solutions:
         food:
-          maxVol: 20
+          maxVol: 10
           reagents:
             - ReagentId: AmbuzolPlus
               Quantity: 5

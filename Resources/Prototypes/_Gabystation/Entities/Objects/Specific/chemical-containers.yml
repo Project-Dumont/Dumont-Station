@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: vacuum jug
+  parent: Jug
+  id: JugPreserving
+  description: A powerful vacuum-sealed jar that allows reagents to be stored inside without spoiling.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Chemistry/special-jug.rsi
+    layers:
+      - state: jug
+      - state: jug1
+        map: [ "enum.SolutionContainerLayers.Fill" ]
+        visible: false
+  - type: Item
+    sprite: _Gabystation/Objects/Specific/Chemistry/special-jug.rsi
+  - type: ReagentPreserver
+    reversalRate: 0 # no reverse.

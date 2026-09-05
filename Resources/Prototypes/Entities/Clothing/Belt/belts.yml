@@ -542,6 +542,8 @@
     sprite: Clothing/Belt/emt.rsi
   - type: Clothing
     sprite: Clothing/Belt/emt.rsi
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   parent: ClothingBeltStorageBase

@@ -168,3 +168,5 @@
     guides:
     - Chemicals
     - Chemist
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 1

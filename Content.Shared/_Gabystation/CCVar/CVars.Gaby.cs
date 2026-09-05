@@ -54,6 +54,16 @@ public sealed partial class GabyCVars
     public static readonly CVarDef<float> SurgeryCrowdingCheckRange =
         CVarDef.Create("gaby.surgery.crowding_check_range", 5f, CVar.SERVER | CVar.REPLICATED);
 
+    #region Chemical Spoilage
+
+    /// <summary>
+    /// How long takes to medicinal chems fully spoil into toxin.
+    /// </summary>
+    public static readonly CVarDef<TimeSpan> ChemSpoilageTime =
+        CVarDef.Create("gaby.chem_spoilage.time", TimeSpan.FromMinutes(20), CVar.SERVER | CVar.REPLICATED);
+
+    #endregion
+
     #region Server Economy
     public static readonly CVarDef<float> SCurrencyRotationCooldown =
         CVarDef.Create("servercurrency.rotation_cooldown", 7200f, CVar.SERVER);

@@ -51,6 +51,7 @@
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
   startingInventory:
+    JugPreserving: 5 # gabystation
     Jug: 8 #Goob edit
     JugAluminium: 2
     JugCarbon: 4

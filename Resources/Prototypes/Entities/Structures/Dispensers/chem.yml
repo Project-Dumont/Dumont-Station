@@ -94,6 +94,8 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   id: ChemDispenser
