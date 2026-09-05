@@ -6,6 +6,7 @@
     "x": 1000,
     "y": 557
   },
+  "metaAtlas": false,
   "states": [
     {
       "name": "animated",
