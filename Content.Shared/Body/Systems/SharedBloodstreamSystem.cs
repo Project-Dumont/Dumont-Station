@@ -624,10 +624,6 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         {
             typeData.Type = bloodTypeComp.Type;
         }
-        else
-        {
-            typeData.Type = Loc.GetString("forensics-blood-type-unknown");
-        }
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
         {
             dnaData.DNA = donorComp.DNA;
