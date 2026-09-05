@@ -19,5 +19,3 @@ reagent-desc-welding-fuel = Usado por soldadores para soldar.
 reagent-name-fluorosurfactant = fluorosurfactante
 reagent-desc-fluorosurfactant = Um ácido sulfônico perfluoronado que forma uma espuma quando misturado com água.
 
-reagent-name-blackpowder = black powder
-reagent-desc-blackpowder = A primitive yet powerful explosive. Explodes when heated to 474K!

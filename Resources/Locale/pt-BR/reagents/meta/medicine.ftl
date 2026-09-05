@@ -227,7 +227,7 @@ reagent-name-hercuri = hercuri
 reagent-desc-hercuri = Refrigerador potente, útil tanto para aplicação interna quanto externa, embora seja necessário ter cuidado para não congelar demais os pacientes.
 
 reagent-name-herignis = herignis
-reagent-desc-herignis = Pode descongelar a maioria dos lizards mais congelados. Recomenda-se usar apenas em pequenas doses, pois pode aquecer rapidamente o metabolizador a níveis perigosos.
+reagent-desc-herignis = Pode descongelar a maioria dos lagartos mais congelados. Recomenda-se usar apenas em pequenas doses, pois pode aquecer rapidamente o metabolizador a níveis perigosos.
 
 reagent-name-immurin = immurin
 reagent-desc-immurin = Uma substância química que fortalece o sistema imunológico, fazendo com que ele trabalhe mais rápido e com mais intensidade. O efeito permanece por algum tempo mesmo após a metabolização da substância. Tem um gosto terrível.
