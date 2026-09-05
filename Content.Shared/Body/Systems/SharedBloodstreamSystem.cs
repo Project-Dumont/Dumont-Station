@@ -619,6 +619,15 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();
+        var typeData = new BloodTypeData();
+        if (TryComp<BloodTypeComponent>(uid, out var bloodTypeComp) && bloodTypeComp.Type != null)
+        {
+            typeData.Type = bloodTypeComp.Type;
+        }
+        else
+        {
+            typeData.Type = Loc.GetString("forensics-blood-type-unknown");
+        }
         if (TryComp<DnaComponent>(uid, out var donorComp) && donorComp.DNA != null)
         {
             dnaData.DNA = donorComp.DNA;
@@ -627,6 +636,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         {
             dnaData.DNA = Loc.GetString("forensics-dna-unknown");
         }
+        bloodData.Add(typeData);
         bloodData.Add(dnaData);
         return bloodData;
     }
