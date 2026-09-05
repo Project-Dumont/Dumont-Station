@@ -96,7 +96,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
 
             if (BloodType.GetBloodType(uid) is null)
                 BloodType.SetBloodType(uid);
-            BloodType.SetBloodData(uid);
+            BloodType.SetBloodData(uid, ref bloodSolution);
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
             if (bloodstream.BleedAmount > 0)
@@ -107,7 +107,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 TryModifyBleedAmount((uid, bloodstream), -bloodstream.BleedReductionAmount);
             }
 
-            if (BloodType.GetForeignBloodAmount(uid) > 0)
+            if (BloodType.GetForeignBloodAmount(uid, bloodSolution) > 0)
                 BloodType.ApplyBloodTypeDamage(uid);
 
             // deal bloodloss damage if their blood level is below a threshold.

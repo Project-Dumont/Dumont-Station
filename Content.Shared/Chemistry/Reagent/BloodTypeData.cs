@@ -7,10 +7,13 @@ namespace Content.Shared.Chemistry.Reagent;
 [ImplicitDataDefinitionForInheritors, Serializable, NetSerializable]
 public sealed partial class BloodTypeData : ReagentData
 {
+    /// <summary>
+    /// The blood type of the reagent. This is used to determine compatibility.
+    /// </summary>
     [DataField]
     public ProtoId<BloodTypePrototype>? Type;
 
-    public BloodTypeData(){}
+    public BloodTypeData() { }
 
     public BloodTypeData(BloodTypeData other)
     {

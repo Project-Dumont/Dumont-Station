@@ -13,7 +13,6 @@ using Content.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
-using Robust.Shared.Toolshed.Syntax;
 
 namespace Content.Shared.Body.Systems;
 
@@ -25,6 +24,12 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
 
+    /// <summary>
+    /// Generates a random blood type for the entity based on its species. If the species does not have a defined blood type, it defaults to human blood types
+    /// and if the entity has a BloodTypeComponent, it will not generate a new blood type and will return the existing blood type.
+    /// </summary>
+    /// <param name="uidAppearence"></param>
+    /// <returns></returns>
     public string GenerateBloodType(HumanoidAppearanceComponent? uidAppearence)
     {
         ProtoId<WeightedRandomPrototype> bloodTypesWeights = uidAppearence!.Species.Id + "Types";
@@ -39,6 +44,11 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         }
     }
 
+    ///<summary>
+    /// Returns the blood type of the entity if it has a BloodTypeComponent, otherwise returns null.
+    ///</summary>
+    /// <param name="uid">The entity to check for a blood type.</param>
+    /// <returns>The blood type of the entity, or null if it does not have a BloodTypeComponent.</returns>
     public ProtoId<BloodTypePrototype>? GetBloodType(EntityUid uid)
     {
         if (!TryComp(uid, out BloodTypeComponent? comp))
@@ -46,6 +56,13 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         return comp.Type;
     }
 
+    /// <summary>
+    /// Sets the blood type of the entity bloodTypeComponent to a random blood type
+    /// based on its species, if it does not already have a blood type.
+    /// </summary>
+    /// <param name="uid">The entity to set the blood type for.</param>
+    /// <param name="uidBloodType">The blood type component of the entity.</param>
+    /// <param name="uidAppearence">The humanoid appearance component of the entity.</param>
     public void SetBloodType(EntityUid uid, BloodTypeComponent? uidBloodType = null, HumanoidAppearanceComponent? uidAppearence = null)
     {
         if (!Resolve(uid, ref uidBloodType))
@@ -57,7 +74,15 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         uidBloodType.Type = GenerateBloodType(uidAppearence);
     }
 
-    public void ApplyBloodTypeDamage (EntityUid uid, BloodTypeComponent? uidBloodType = null)
+    /// <summary>
+    /// Applies damage to the entity based on the amount of foreign blood in its bloodstream.
+    /// The damage is calculated based on the incompatibility damage of the entity's
+    /// blood type and the amount of foreign blood in its bloodstream.
+    /// The foreign blood is removed from the bloodstream after the damage is applied.
+    /// </summary>
+    /// <param name="uid">The entity to apply damage to.</param>
+    /// <param name="uidBloodType">The blood type component of the entity.</param>
+    public void ApplyBloodTypeDamage(EntityUid uid, BloodTypeComponent? uidBloodType = null)
     {
         if (!Resolve(uid, ref uidBloodType))
             return;
@@ -65,22 +90,29 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
             return;
         if (_prototypeManager.Index(uidBloodType.Type) is null || uidBloodType.Type is null)
             return;
-        if (!SolutionContainer.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution,out var Solution))
+        if (!SolutionContainer.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution,out var solution))
             return;
         var damage = _prototypeManager!.Index(uidBloodType.Type).IncompatibilityDamage;
-        FixedPoint2 foreignAmount = GetForeignBloodAmount(uid);
+        FixedPoint2 foreignAmount = GetForeignBloodAmount(uid, solution);
         if (foreignAmount > 0)
         {
             damage = damage * 10f * (foreignAmount / bloodstream.BloodMaxVolume);
             _damageableSystem.TryChangeDamage(uid, damage, ignoreResistances: false,
             interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
             targetPart: TargetBodyPart.All);
-            var internalBlood = GetForeignBloodList(uidBloodType, Solution);
-            internalBlood.ForEach(content => Solution.RemoveReagent(content.Reagent, uidBloodType.ForeignBloodDeducted));
+            var internalBlood = GetForeignBloodList(uidBloodType, solution);
+            internalBlood.ForEach(content => solution.RemoveReagent(content.Reagent, uidBloodType.ForeignBloodDeducted));
         }
     }
 
-    public List<ReagentQuantity> GetForeignBloodList(BloodTypeComponent comp, Solution? soln)
+    /// <summary>
+    /// Returns a list of all foreign blood in the entity's bloodstream that
+    ///  is incompatible with its blood type.
+    /// </summary>
+    /// <param name="comp">The blood type component of the entity.</param>
+    /// <param name="soln">The solution representing the bloodstream.</param>
+    /// <returns>A list of foreign blood reagents.</returns>
+    public List<ReagentQuantity> GetForeignBloodList(BloodTypeComponent comp, in Solution? soln)
     {
         List<ReagentQuantity> aux = new List<ReagentQuantity>();
         if (soln is null)
@@ -97,23 +129,29 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         }
         return aux;
     }
-    public FixedPoint2 GetForeignBloodAmount(EntityUid uid)
+
+    /// <summary>
+    /// Returns the total amount of foreign blood in the entity's bloodstream that is
+    /// incompatible with its blood type.
+    /// </summary>
+    /// <param name="uid">The entity uid.</param>
+    /// <param name="soln">The solution representing the bloodstream.</param>
+    /// <returns>The total amount of foreign blood.</returns>
+    public FixedPoint2 GetForeignBloodAmount(EntityUid uid, in Solution? soln)
     {
-        FixedPoint2 amount = 0;
-        if (!TryComp(uid,out BloodTypeComponent? bloodTypeComp ) || !TryComp<BloodstreamComponent>(uid,out var bloodstream))
+        FixedPoint2 amount = FixedPoint2.Zero;
+        if (!TryComp(uid, out BloodTypeComponent? bloodTypeComp))
             return amount;
-        if( !SolutionContainer.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution,out var Solution))
-            return amount;
-        if(bloodTypeComp.Type is null)
+        if (soln is null || bloodTypeComp.Type is null)
             return amount;
         var type = _prototypeManager!.Index(bloodTypeComp.Type);
-        foreach (var internalContent in Solution!.Contents)
+        foreach (var internalContent in soln!.Contents)
         {
-            foreach ( var data in internalContent.Reagent.EnsureReagentData())
+            foreach (var data in internalContent.Reagent.EnsureReagentData())
             {
-                if(data is BloodTypeData)
+                if (data is BloodTypeData)
                 {
-                    if(type!.Compatibilities!.Contains(((BloodTypeData) data)?.Type ?? "N/A"))
+                    if (type!.Compatibilities!.Contains(((BloodTypeData) data)?.Type ?? "N/A"))
                         continue;
                     amount += internalContent.Quantity;
                 }
@@ -122,50 +160,65 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         return amount;
     }
 
-    public void SetBloodData(EntityUid uid)
+    /// <summary>
+    /// Sets the blood type data for the reagents in the solution to the blood type
+    /// of the entity.
+    /// </summary>
+    /// <param name="uid">The entity uid.</param>
+    /// <param name="soln">The solution representing the bloodstream.</param>
+    public void SetBloodData(EntityUid uid, ref Solution soln)
     {
-        if (!TryComp(uid,out BloodstreamComponent? bloodstream))
+        if (!TryComp(uid, out BloodTypeComponent? bloodTypeCompo))
             return;
-        if (!TryComp(uid, out BloodTypeComponent? bloodTypeComp))
-            return;
-        if (!SolutionContainer.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var soln))
-            return;
-        BloodTypeData typeData = new BloodTypeData();
-        typeData.Type = bloodTypeComp.Type;
-        foreach(var internalContent in soln!.Contents)
+        BloodTypeData typeData = new BloodTypeData()
+        {
+            Type = bloodTypeCompo.Type
+        };
+        foreach (var internalContent in soln.Contents)
         {
             var data = internalContent.Reagent.EnsureReagentData();
-            if(!data.Exists(aux => aux is BloodTypeData))
+            if (!data.Exists(aux => aux is BloodTypeData))
                 data.Add(typeData);
         }
-
     }
 
-    public bool IsBloodDataSet(Solution? soln)
+    /// <summary>
+    /// Sets the blood type data for the reagents in the solution to the BloodComponent type
+    /// of the entity.
+    /// </summary>
+    /// <param name="type">The blood type.</param>
+    /// <param name="soln">The solution representing the internal reagent storage of the entity.</param>
+    public void SetBloodData(ProtoId<BloodTypePrototype>? type, ref Solution soln)
     {
+        BloodTypeData typeData = new BloodTypeData()
+        {
+            Type = type
+        };
+        foreach (var internalContent in soln!.Contents)
+        {
+            var data = internalContent.Reagent.EnsureReagentData();
+            if (!data.Exists(aux => aux is BloodTypeData))
+                data.Add(typeData);
+        }
+    }
+
+    /// <summary>
+    /// Checks if the solution contains any reagents with blood type data.
+    /// </summary>
+    /// <param name="soln">The solution to check.</param>
+    /// <returns>True if the solution contains blood type data, false otherwise.</returns>
+    public bool IsBloodDataSet(in Solution? soln)
+    {
+        if (soln is null)
+            return false;
         bool aux = false;
         foreach (var internalContent in soln!.Contents)
         {
             var data = internalContent.Reagent.EnsureReagentData();
-            if(!data.Exists(aux => aux is BloodTypeData) || data is null)
+            if (!data.Exists(aux => aux is BloodTypeData) || data is null)
                 continue;
             aux = true;
         }
         return aux;
-    }
-    public void SetBloodData(EntityUid uid,ProtoId<BloodTypePrototype>? type)
-    {
-        if (!TryComp(uid,out BloodstreamComponent? bloodstream) || type is null)
-            return;
-        if (!SolutionContainer.ResolveSolution(uid, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var soln))
-            return;
-        BloodTypeData typeData = new BloodTypeData();
-        typeData.Type = type;
-        foreach (var internalContent in soln!.Contents)
-        {
-            var data = internalContent.Reagent.EnsureReagentData();
-            if(!data.Exists(aux => aux is BloodTypeData))
-                data.Add(typeData);
-        }
     }
 }
