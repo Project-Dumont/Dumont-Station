@@ -28,7 +28,7 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
     /// Generates a random blood type for the entity based on its species. If the species does not have a defined blood type, it defaults to human blood types
     /// and if the entity has a BloodTypeComponent, it will not generate a new blood type and will return the existing blood type.
     /// </summary>
-    /// <param name="uidAppearence"></param>
+    /// <param name="uidAppearence"> The humanoid appearance component of the entity. </param>
     /// <returns></returns>
     public string GenerateBloodType(HumanoidAppearanceComponent? uidAppearence)
     {
@@ -168,11 +168,11 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
     /// <param name="soln">The solution representing the bloodstream.</param>
     public void SetBloodData(EntityUid uid, ref Solution soln)
     {
-        if (!TryComp(uid, out BloodTypeComponent? bloodTypeCompo))
+        if (!TryComp(uid, out BloodTypeComponent? bloodTypeComp))
             return;
         BloodTypeData typeData = new BloodTypeData()
         {
-            Type = bloodTypeCompo.Type
+            Type = bloodTypeComp.Type
         };
         foreach (var internalContent in soln.Contents)
         {
