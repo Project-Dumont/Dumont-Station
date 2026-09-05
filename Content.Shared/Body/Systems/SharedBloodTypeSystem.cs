@@ -67,12 +67,12 @@ public abstract partial class SharedBloodTypeSystem : EntitySystem
         FixedPoint2 foreignAmount = GetForeignBloodAmount(uid);
         if (foreignAmount > 0)
         {
-            var internalBlood = GetForeignBloodList(uidBloodType, Solution);
-            internalBlood.ForEach(content => Solution.RemoveReagent(content.Reagent, uidBloodType.ForeignBloodDeducted));
             damage = damage * 10f * (foreignAmount / bloodstream.BloodMaxVolume);
             _damageableSystem.TryChangeDamage(uid, damage, ignoreResistances: false,
             interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
             targetPart: TargetBodyPart.All);
+            var internalBlood = GetForeignBloodList(uidBloodType, Solution);
+            internalBlood.ForEach(content => Solution.RemoveReagent(content.Reagent, uidBloodType.ForeignBloodDeducted));
         }
     }
 
