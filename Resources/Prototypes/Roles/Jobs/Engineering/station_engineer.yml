@@ -73,10 +73,10 @@
   name: job-name-engineer
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 9000 #2.5 hrs
+      department: Engineering # Play intern first, players need to know if you are still new
+      time: 86400 #24 hrs
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

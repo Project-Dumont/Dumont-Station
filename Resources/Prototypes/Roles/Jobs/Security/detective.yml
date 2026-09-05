@@ -68,10 +68,13 @@
   name: job-name-detective
   description: job-description-detective
   playTimeTracker: JobDetective
-  requirements:
+  requirements: # Dumont edit
   - !type:RoleTimeRequirement
-    role: JobSecurityOfficer
-    time: 18000 #5 hrs
+    role: JobSecurityOfficer # Some time as proper Security to learn how to do things with autonomy
+    time: 43200 # 12 hrs
+  - !type:DepartmentTimeRequirement
+    department: Security # Enought time in the department to learn how antags work to properly investigate them
+    time: 144000 # 40 hrs
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

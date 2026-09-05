@@ -3,16 +3,10 @@
   name: job-name-geneticist
   description: job-description-geneticist
   playTimeTracker: JobGeneticist
-  requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 18000
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 42000
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 42000
+      department: Science # Know the department before moving on
+      time: 108000 #30 hrs
   startingGear: GeneticistGear
   icon: "JobIconGeneticist"
   supervisors: job-supervisors-rd # Dumont

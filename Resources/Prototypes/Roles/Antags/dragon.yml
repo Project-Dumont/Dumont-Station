@@ -9,3 +9,6 @@
   name: roles-antag-dragon-name
   antagonist: true
   objective: roles-antag-dragon-objective
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Simple antag
+    time: 43200 # 12 hrs

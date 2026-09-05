@@ -8,13 +8,13 @@
   name: job-name-brigmedic
   description: job-description-brigmedic
   playTimeTracker: JobBrigmedic
-  requirements:
+  requirements: # Dumont edit
   - !type:DepartmentTimeRequirement
-    department: Medical
-    time: 18000 # 5 hrs
+    department: Medical # Basics on treatment
+    time: 86400 # 24 hrs
   - !type:DepartmentTimeRequirement
-    department: Security
-    time: 18000 # 5 hrs
+    department: Security # Basics on how Sec works
+    time: 86400 # 24 hrs
   salary: 50 # Gaby content
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"

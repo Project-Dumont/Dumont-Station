@@ -3,6 +3,10 @@
   name: roles-antag-paradox-clone-name
   antagonist: true
   objective: roles-antag-paradox-clone-objective
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Some RP involved to pretend to be someone else
+    time: 180000 # 50 hrs
+
   setPreference: false
 
 # they need to be able to espace when spawning inside a locked room

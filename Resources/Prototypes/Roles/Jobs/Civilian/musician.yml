@@ -60,6 +60,9 @@
   name: job-name-musician
   description: job-description-musician
   playTimeTracker: JobMusician
+  requirements: # Dumont
+    - !type:OverallPlaytimeRequirement # light RP role, new players won't have MIDIs and there's a very limited amount of slots for the job
+      time: 21600 # 6 hrs
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire

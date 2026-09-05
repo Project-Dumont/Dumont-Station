@@ -124,6 +124,9 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
+  requirements: # Dumont
+    - !type:OverallPlaytimeRequirement # RP role, be funny and make people have fun. Also helps in stopping assholes.
+      time: 43200 # 12 hrs
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop

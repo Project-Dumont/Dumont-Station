@@ -3,21 +3,35 @@
   name: roles-antag-generic-solo-antagonist-name
   antagonist: true
   objective: never-shown
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Basic antag time
+    time: 43200 # 12 hrs
 
 - type: antag
   id: GenericTeamAntagonist
   name: roles-antag-generic-team-antagonist-name
   antagonist: true
   objective: never-shown
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Tends to need teamwork
+    time: 180000 # 50 hrs
 
 - type: antag
   id: GenericFreeAgent
   name: roles-antag-generic-free-agent-name
   antagonist: true
   objective: never-shown
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Some little game knowlege with free agents
+    time: 86400 # 24 hrs
+
 
 - type: antag
   id: GenericSiliconAntagonist
   name: roles-antag-generic-silicon-antagonist-name
   antagonist: true
   objective: never-shown
+  requirements: # Dumont
+  - !type:RoleTimeRequirement
+    role: JobBorg # Follow your goddamm LAWS
+    time: 43200  # 12 hrs

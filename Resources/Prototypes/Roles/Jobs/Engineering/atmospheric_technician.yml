@@ -64,10 +64,10 @@
   name: job-name-atmostech
   description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
-  requirements:
+  requirements: # Dumont Edit
   - !type:DepartmentTimeRequirement
-    department: Engineering
-    time: 9000 #2.5 hrs
+    department: Engineering # Have some experience, atmos can easily destroy the station
+    time: 144000 #40 hrs
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
