@@ -141,6 +141,14 @@ uplink-syndicate-access-config-name = Cybersun Configurator
 
 uplink-syndicate-access-config-desc = A Cybersun-branded access configurator, compatible with all non-NanoTrasen IDs. Now with quick-swap functionality!
 
+uplink-viscerators-delivery-grenade-name = Viscerator Delivery Grenade
+
+uplink-viscerators-delivery-grenade-desc = Grenade that deploys a swarm of viscerators upon activation, which will chase down and shred any non-agents in the area.
+
+uplink-viscerators-delivery-grenade-box-name = Viscerator Delivery Grenade Box
+
+uplink-viscerators-delivery-grenade-box-desc = A box containing unique grenades that deploys a swarm of viscerators upon activation, which will chase down and shred any non-operatives in the area.
+
 uplink-hyposhell-name = Box of Hyposhells
 
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.

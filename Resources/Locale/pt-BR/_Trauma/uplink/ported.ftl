@@ -144,6 +144,14 @@ uplink-syndicate-access-config-name = Configurador Cybersun
 
 uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun compatível com identificações que não sejam da Nanotrasen. Agora com troca rápida de cartões!
 
+uplink-viscerators-delivery-grenade-name = Granada de visceradores
+
+uplink-viscerators-delivery-grenade-desc = Libera um enxame de visceradores que persegue e retalha qualquer pessoa nas proximidades que não seja do Sindicato.
+
+uplink-viscerators-delivery-grenade-box-name = Caixa de granadas de visceradores
+
+uplink-viscerators-delivery-grenade-box-desc = Uma caixa de granadas que libera enxames de visceradores para perseguir e retalhar qualquer pessoa que não seja do Sindicato.
+
 uplink-hyposhell-name = Caixa de cartuchos hipodérmicos
 
 uplink-hyposhell-desc = Uma caixa com quatro cartuchos de escopeta que podem armazenar sete unidades de qualquer substância química.

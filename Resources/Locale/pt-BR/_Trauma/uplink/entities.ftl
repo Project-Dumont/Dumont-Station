@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+ent-BoxGrenadeViscerators = caixa de granadas de visceradores
+    .desc = Uma caixa de granadas que liberam um enxame de visceradores, capazes de perseguir e retalhar qualquer um que não seja um operativo.
+
 ent-BriefcaseWeaponBoxingGlovesFilled = maleta de luvas de boxe adulteradas
 
 ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
@@ -33,6 +36,9 @@ ent-ClothingHandsGlovesBoxingRiggedYellow = luvas de boxe amarelas
 
 ent-ClothingOuterArmorMonarchCoat = casaco monarca
     .desc = Uma réplica do traje mais icônico da estrela da Gorlex Entertainment. Sua tecnologia refletiva repele disparos de energia, mas oferece pouca proteção contra outros danos.
+
+ent-MobSyndieViscerator = viscerador
+    .desc = Uma pequena máquina com duas lâminas capaz de provocar lacerações fatais.
 
 ent-CigCartonSyndicate = pacote de Interdyne Herbals
     .desc = Um pacote com 5 maços de Interdyne Herbals.
@@ -79,6 +85,9 @@ ent-WeaponRifleFAL = Saive Automatique
 
 ent-Snakesfang = Presa da Serpente
     .desc = Uma espada preta e vermelha de curvatura peculiar. Extremamente afiada e cheia de estilo.
+
+ent-GrenadeViscerators = granada de visceradores
+    .desc = Libera um enxame de visceradores que persegue e retalha qualquer um que não seja um operativo.
 
 ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
     .desc = Seu uplink foi autorizado a fornecer um sinalizador de sequestro. Instale-o na Estação Comercial Automatizada e defenda-o até que o sequestro seja concluído.
