@@ -60,7 +60,7 @@ public sealed partial class AnnounceTTSSystem : EntitySystem
 			catch (Exception e)
 			{
 				played = false;
-			}				
+			}
 		}
 		else
 		{
@@ -81,7 +81,7 @@ public sealed partial class AnnounceTTSSystem : EntitySystem
 		{
 			ttsQueue.Enqueue(filename);
 		}
-		
+
 	}
 
 	public bool CanTTS(EntityUid user)
