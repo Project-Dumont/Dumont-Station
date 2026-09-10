@@ -25,6 +25,5 @@ public sealed partial class ConjureActionSystem : EntitySystem
         var user = args.Performer;
         var spawned = PredictedSpawnAtPosition(ent.Comp.Spawn, Transform(user).Coordinates);
         _hands.TryPickupAnyHand(user, spawned, animate: false);
-        // TODO admin log
     }
 }

@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
-using Content.Shared.Body;
 using Content.Shared.Polymorph;
+using Content.Shared.Tag;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.Actions;
 
@@ -10,11 +12,11 @@ namespace Content.Trauma.Shared.Actions;
 /// Action component for polymorphing an organ of the performer into a projectile and shooting it at the target.
 /// The projectile will have <see cref="ActionProjectileComponent"/> set to the action's container.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(ShootOrganActionSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedShootOrganActionSystem))]
 public sealed partial class ShootOrganActionComponent : Component
 {
     [DataField(required: true)]
-    public ProtoId<OrganCategoryPrototype> Organ;
+    public ProtoId<TagPrototype> Organ;
 
     [DataField(required: true)]
     public ProtoId<PolymorphPrototype> Polymorph;

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.GameStates;
 
 namespace Content.Trauma.Shared.Actions;
 
@@ -7,7 +8,7 @@ namespace Content.Trauma.Shared.Actions;
 /// Component that stores the action container for projectiles shot by certain actions.
 /// Currently used by <see cref="ShootOrganActionComponent"/>.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(ShootOrganActionSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedShootOrganActionSystem))]
 [AutoGenerateComponentState]
 public sealed partial class ActionProjectileComponent : Component
 {
