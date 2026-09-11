@@ -1,74 +1,42 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
-using Content.Shared.EntityConditions;
-using Content.Shared.EntityEffects;
-using Robust.Shared.Timing;
+using Content.Trauma.Shared.EntityEffects;
+using Robust.Shared.Network;
 
 namespace Content.Trauma.Shared.Actions;
 
 public sealed partial class EffectActionSystem : EntitySystem
 {
-    [Dependency] private SharedEntityEffectsSystem _effects = default!;
-    [Dependency] private SharedEntityConditionsSystem _conditions = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<EffectActionComponent, ActionPerformedEvent>(OnActionPerformed);
+        SubscribeLocalEvent<EffectActionComponent, EffectInstantActionEvent>(OnInstantAction);
+        SubscribeLocalEvent<EffectActionComponent, EffectTargetActionEvent>(OnTargetAction);
+    }
+
     private void OnActionPerformed(Entity<EffectActionComponent> ent, ref ActionPerformedEvent args)
     {
-        var user = args.Performer;
-        if (ent.Comp.OnPerformed)
-            _effects.ApplyEffects(user, ent.Comp.Effects, user: user);
+        if (ent.Comp.OnPerformed && _net.IsServer)
+            _effects.ApplyEffects(args.Performer, ent.Comp.Effects);
     }
 
-    [SubscribeLocalEvent]
     private void OnInstantAction(Entity<EffectActionComponent> ent, ref EffectInstantActionEvent args)
     {
-        var user = args.Performer;
-        _effects.ApplyEffects(user, ent.Comp.Effects, user: user);
+        if (_net.IsServer)
+            _effects.ApplyEffects(args.Performer, ent.Comp.Effects);
         args.Handled = true;
     }
 
-    [SubscribeLocalEvent]
     private void OnTargetAction(Entity<EffectActionComponent> ent, ref EffectTargetActionEvent args)
     {
-        var user = args.Performer;
-        _effects.ApplyEffects(args.Target, ent.Comp.Effects, user: user);
+        if (_net.IsServer)
+            _effects.ApplyEffects(args.Target, ent.Comp.Effects);
         args.Handled = true;
-    }
-
-    [SubscribeLocalEvent]
-    private void OnToggle(Entity<ToggleEffectActionComponent> ent, ref EffectToggleActionEvent args)
-    {
-        var user = args.Performer;
-        var targetState = !ent.Comp.Toggled;
-        if (targetState && ent.Comp.OnToggleConditions is { } conditions &&
-            !_conditions.TryConditions(user, conditions, sourceEnt: user))
-            return;
-
-        args.Handled = true;
-
-        // If you modify args.Toggle directly and use it to check the conditions,
-        // it will eventually lead to mispredicts (offEffects and onEffects getting applied constantly)
-        // Conditions, on the other hand, don't need this.
-        // So, storing a boolean on the component itself fixes those mispredicts.
-        ent.Comp.Toggled = targetState;
-        Dirty(ent);
-
-        args.Toggle = targetState;
-
-        if (ent.Comp.Toggled)
-        {
-            if (ent.Comp.OnToggle is not { } onEffects)
-                return;
-
-            _effects.ApplyEffects(user, onEffects, user: user);
-            return;
-        }
-
-        if (ent.Comp.OffToggle is not { } offToggleEffects)
-            return;
-
-        _effects.ApplyEffects(user, offToggleEffects, user: user);
     }
 }
