@@ -573,7 +573,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     /// Called when a windup is finished and an attack is tried.
     /// </summary>
     /// <returns>True if attack successful</returns>
-    private bool AttemptAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, AttackEvent attack, ICommonSession? session, EntityUid? attackerOverride = null) // Mono
+    public bool AttemptAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, AttackEvent attack, ICommonSession? session, EntityUid? attackerOverride = null) // Mono
     {
         var curTime = Timing.CurTime;
 
@@ -646,7 +646,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         DirtyField(weaponUid, weapon, nameof(MeleeWeaponComponent.NextAttack));
 
         // Do this AFTER attack so it doesn't spam every tick
-        var ev = new AttemptMeleeEvent(attacker, weaponUid, weapon, attack is HeavyAttackEvent); // Goob edit
+        var ev = new AttemptMeleeEvent(attacker, weaponUid, weapon, attack is HeavyAttackEvent, Attack: attack); // Goob edit
         RaiseLocalEvent(weaponUid, ref ev);
         RaiseLocalEvent(attacker, ref ev); // Shitmed Change
 
@@ -701,6 +701,22 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         return true;
     }
 
+    // Dumont start
+    public bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session, out EntityUid source)
+    {
+        source = user;
+        return InRange(user, target, range, session);
+    }
+
+    public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target, bool canRiposte)
+    {
+        if (!TryComp(target, out TransformComponent? xform))
+            return false;
+        var attack = new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(xform.Coordinates), canRiposte);
+        return AttemptAttack(user, weaponUid, weapon, attack, null);
+    }
+    // Dumont end
+
     public abstract bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session); // Goob edit
 
     // Goob edit
@@ -751,7 +767,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         }
 
         // Goobstation start
-        var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm);
+        var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm, meleeUid, ev.CanRiposte, target.Value);
         RaiseLocalEvent(target.Value, beforeEvent);
         if (beforeEvent.Cancelled)
             return;
@@ -911,7 +927,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 continue;
 
             // Goobstation start
-            var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm);
+            var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm, meleeUid, target: entity);
             RaiseLocalEvent(entity, beforeEvent);
             if (beforeEvent.Cancelled)
                 continue;

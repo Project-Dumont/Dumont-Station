@@ -1,0 +1,86 @@
+- type: Tag
+  id: AnchorHereticStructure
+
+- type: Tag
+  id: SpellIgnoreForestAdmonitions
+
+- type: Tag
+  id: HereticRitualArm
+
+- type: Tag
+  id: HereticRitualLeg
+
+- type: Tag
+  id: AnyGlassShard
+
+- type: Tag
+  id: Bonfire
+
+- type: Tag
+  id: CartridgeLionhunter
+
+- type: Tag
+  id: CircularSaw
+
+- type: Tag
+  id: CodexCicatrix
+
+- type: Tag
+  id: EldritchFlask
+
+- type: Tag
+  id: EmpoweredShatteredWeapon
+
+- type: Tag
+  id: FleshWormSegment
+
+- type: Tag
+  id: ForceHereticMinion
+
+- type: Tag
+  id: GlovesLatex
+
+- type: Tag
+  id: GlovesNitrile
+
+- type: Tag
+  id: GoldBar
+
+- type: Tag
+  id: GrenadeIgnoreCosmicField
+
+- type: Tag
+  id: HereticBladeLock
+
+- type: Tag
+  id: MansusGraspAction
+
+- type: Tag
+  id: Rag
+
+- type: Tag
+  id: RitualAscension
+
+- type: Tag
+  id: RitualBladeBlade
+
+- type: Tag
+  id: RitualFeastOfOwls
+
+- type: Tag
+  id: RitualImperfect
+
+- type: Tag
+  id: RitualKnowledge
+
+- type: Tag
+  id: RodMetal
+
+- type: Tag
+  id: SharpMedal
+
+- type: Tag
+  id: SilverBar
+
+- type: Tag
+  id: WoodPlank

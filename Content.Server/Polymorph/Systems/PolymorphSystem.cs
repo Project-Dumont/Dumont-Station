@@ -381,35 +381,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         // Goob edit end
 
         //Transfers all damage from the original to the new one
-        if (configuration.TransferDamage &&
-            TryComp<DamageableComponent>(child, out var damageChild) &&
-            _mobThreshold.GetScaledDamage(uid, child, out var damage, out var woundableDamage) &&
-            damage != null)
-        {
-            if (TryComp<BodyComponent>(child, out var childBody)
-                && childBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
-                && _body.TryGetRootPart(child, out var rootPart, childBody))
-            {
-                var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
-                var count = woundables.Count();
-                foreach (var woundable in woundables)
-                {
-                    var target = _body.GetTargetBodyPart(woundable);
-
-                    if (woundableDamage is not null)
-                    {
-                        if (woundableDamage.TryGetValue(target, out var wounds))
-                            _damageable.SetDamage(woundable, woundable.Comp2, wounds);
-                    }
-                    else
-                    {
-                        _damageable.SetDamage(woundable, woundable.Comp2, damage / count);
-                    }
-                }
-
-            }
-            _damageable.SetDamage(child, damageChild, damage);
-        }
+        // Dumont start
+        if (configuration.TransferDamage)
+            _mobThreshold.TransferDamage(uid, child);
+        // Dumont end
 
         // DeltaV - Drop MindContainer entities on polymorph
         var beforePolymorphedEv = new BeforePolymorphedEvent();
@@ -653,35 +628,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         _transform.SetParent(parent, parentXform, uidXform.ParentUid);
         _transform.SetCoordinates(parent, parentXform, uidXform.Coordinates, uidXform.LocalRotation);
 
-        if (component.Configuration.TransferDamage &&
-            TryComp<DamageableComponent>(parent, out var damageParent) &&
-            _mobThreshold.GetScaledDamage(uid, parent, out var damage, out var woundableDamage) &&
-            damage != null)
-        {
-            if (TryComp<BodyComponent>(parent, out var parentBody)
-                && parentBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
-                && _body.TryGetRootPart(parent, out var rootPart, parentBody))
-            {
-                var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
-                var count = woundables.Count();
-                foreach (var woundable in woundables)
-                {
-                    var target = _body.GetTargetBodyPart(woundable);
-
-                    if (woundableDamage is not null)
-                    {
-                        if (woundableDamage.TryGetValue(target, out var wounds))
-                            _damageable.SetDamage(woundable, woundable.Comp2, wounds);
-                    }
-                    else
-                    {
-                        _damageable.SetDamage(woundable, woundable.Comp2, damage / count);
-                    }
-                }
-
-            }
-            _damageable.SetDamage(parent, damageParent, damage);
-        }
+        // Dumont start
+        if (component.Configuration.TransferDamage)
+            _mobThreshold.TransferDamage(uid, parent);
+        // Dumont end
 
         if (component.Configuration.Inventory == PolymorphInventoryChange.Transfer)
         {

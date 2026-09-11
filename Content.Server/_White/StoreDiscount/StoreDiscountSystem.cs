@@ -19,7 +19,7 @@ public sealed class StoreDiscountSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    public void ApplyDiscounts(IEnumerable<ListingData> listings, StoreComponent store)
+    public void ApplyDiscounts(IEnumerable<ListingDataWithCostModifiers> listings, StoreComponent store)
     {
         if (!store.Sales.Enabled)
             return;
@@ -39,11 +39,9 @@ public sealed class StoreDiscountSystem : EntitySystem
             if (listing.Cost.All(x => x.Value.Int() == newCost[x.Key].Int()))
                 continue;
 
-            var key = listing.Cost.First(x => x.Value > 0).Key;
-            listing.OldCost = listing.Cost;
-            listing.DiscountValue = 100 - (newCost[key] / listing.Cost[key] * 100).Int();
-            listing.Cost = newCost;
-            listing.SaleCost = newCost;
+            // Dumont start
+            listing.AddCostModifier("DumontSales", newCost.ToDictionary(entry => entry.Key, entry => entry.Value - listing.Cost[entry.Key]));
+            // Dumont end
             listing.Categories = new() { store.Sales.SalesCategory };
         }
     }

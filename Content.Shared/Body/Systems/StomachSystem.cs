@@ -171,5 +171,13 @@ namespace Content.Shared.Body.Systems
         {
             component.SpecialDigestible = whitelist;
         }
+
+        // Dumont start
+        public void SetSpecialDigestibleExclusive(Entity<StomachComponent> ent, bool exclusive)
+        {
+            ent.Comp.IsSpecialDigestibleExclusive = exclusive;
+            Dirty(ent);
+        }
+        // Dumont end
     }
 }

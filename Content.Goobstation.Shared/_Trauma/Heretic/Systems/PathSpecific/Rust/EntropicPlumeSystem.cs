@@ -1,0 +1,199 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using Content.Shared._Goobstation.Wizard.TimeStop;
+
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Goobstation.Common.Religion;
+using Content.Shared.Administration;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.CombatMode;
+using Content.Shared.Examine;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Projectiles;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Stunnable;
+using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Ranged.Systems;
+using Content.Trauma.Shared.Heretic.Components.Ghoul;
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Rust;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Player;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Systems.PathSpecific.Rust;
+
+public sealed partial class EntropicPlumeSystem : EntitySystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private SharedGunSystem _gun = default!;
+    [Dependency] private SharedMeleeWeaponSystem _weapon = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private SharedCombatModeSystem _combat = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        UpdatesOutsidePrediction = true;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnStartCollide(Entity<EntropicPlumeComponent> ent, ref StartCollideEvent args)
+    {
+        if (ent.Comp.AffectedEntities.Contains(args.OtherEntity))
+            return;
+
+        if (!HasComp<MobStateComponent>(args.OtherEntity) || HasComp<GhoulComponent>(args.OtherEntity))
+            return;
+
+        var ev = new BeforeCastTouchSpellEvent(args.OtherEntity, false);
+        RaiseLocalEvent(args.OtherEntity, ev, true);
+        if (ev.Cancelled)
+            return;
+
+        ent.Comp.AffectedEntities.Add(args.OtherEntity);
+
+        var affected = EnsureComp<EntropicPlumeAffectedComponent>(args.OtherEntity);
+        affected.ExcludedEntity = CompOrNull<ProjectileComponent>(ent)?.Shooter ?? EntityUid.Invalid;
+        affected.Duration = affected.Duration is { } duration ? MathF.Max(duration, ent.Comp.Duration) : null;
+
+        var solution = new Solution();
+        foreach (var reagent in ent.Comp.Reagents)
+        {
+            solution.AddReagent(reagent.Key, reagent.Value);
+        }
+
+        if (!_solution.TryGetInjectableSolution(args.OtherEntity, out var targetSolution, out _))
+            return;
+
+        _solution.TryAddSolution(targetSolution.Value, solution);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<EntropicPlumeAffectedComponent, MobStateComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var affected, out var mobState, out var xform))
+        {
+            var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(uid));
+            Amok();
+
+            if (_net.IsClient)
+                continue;
+
+            if (affected.Duration == null)
+                continue;
+
+            affected.Duration -= frameTime;
+
+            if (affected.Duration > 0)
+                continue;
+
+            RemCompDeferred(uid, affected);
+
+            continue;
+
+            void Amok()
+            {
+                if (_net.IsClient && _player.LocalEntity != uid)
+                    return;
+
+                var curTime = _timing.CurTime;
+
+                if (curTime < affected.NextAttack)
+                    return;
+
+                if (!TryComp(uid, out CombatModeComponent? combat))
+                    return;
+
+                if (_mobState.IsIncapacitated(uid, mobState))
+                    return;
+
+                if (HasComp<StunnedComponent>(uid) || HasComp<FrozenComponent>(uid) ||
+                    HasComp<AdminFrozenComponent>(uid) || HasComp<Content.Shared._Goobstation.Wizard.Traps.IceCubeComponent>(uid))
+                    return;
+
+                var hasGun = _gun.TryGetGun(uid, out var gun, out var gunComp);
+                _weapon.TryGetWeapon(uid, out var weapon, out var meleeComp);
+
+                float range;
+                float attackRate;
+
+                if (hasGun)
+                {
+                    if (gunComp!.NextFire > curTime)
+                        return;
+
+                    attackRate = gunComp!.FireRate;
+                    range = 3f;
+                }
+                else if (meleeComp != null)
+                {
+                    if (meleeComp.NextAttack > curTime)
+                        return;
+
+                    attackRate = meleeComp.AttackRate;
+                    range = meleeComp.Range;
+                }
+                else
+                    return;
+
+                if (attackRate == 0f)
+                    return;
+
+                var targets = FindPotentialTargets((uid, xform), affected.ExcludedEntity, range);
+                if (targets.Count == 0)
+                    return;
+
+                affected.NextAttack = curTime + TimeSpan.FromSeconds(1f / attackRate);
+                Dirty(uid, affected);
+
+                _combat.SetInCombatMode(uid, true, combat);
+
+                var target = rand.Pick(targets);
+                var coords = Transform(target).Coordinates;
+
+                if (hasGun)
+                    _gun.AttemptShoot(uid, gun, gunComp!, coords, target);
+                else if (meleeComp != null)
+                    _weapon.AttemptLightAttack(uid, weapon, meleeComp, target);
+            }
+        }
+    }
+
+    private List<EntityUid> FindPotentialTargets(Entity<TransformComponent> attacker, EntityUid excluded, float range)
+    {
+        List<EntityUid> result = new();
+        var ents = _lookup.GetEntitiesInRange<MobStateComponent>(attacker.Comp.Coordinates, range, LookupFlags.Dynamic);
+        foreach (var ent in ents)
+        {
+            if (ent.Owner == attacker.Owner)
+                continue;
+
+            if (ent.Owner == excluded || HasComp<GhoulComponent>(ent.Owner))
+                continue;
+
+            if (_examine.InRangeUnOccluded(attacker, ent, range + 1f))
+                result.Add(ent);
+        }
+
+        return result;
+    }
+}

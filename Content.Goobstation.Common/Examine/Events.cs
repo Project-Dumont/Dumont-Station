@@ -22,3 +22,10 @@ public sealed class ExamineCompletedEvent : EntityEventArgs
         IsSecondaryInfo = isSecondaryInfo;
     }
 }
+// Dumont start
+[ByRefEvent]
+public record struct UserExaminedEvent(FormattedMessage Message, EntityUid Examined);
+
+[ByRefEvent]
+public record struct GetExamineNameEvent(Entity<MetaDataComponent> Ent, string? Result = null);
+// Dumont end

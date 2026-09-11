@@ -1,0 +1,86 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Shattered
+  name: species-name-shattered
+  roundStart: false
+  prototype: MobShattered
+  dollPrototype: AppearanceShattered
+  skinColoration: TintedHues
+  defaultSkinTone: "#FFFFFF"
+  sprites: MobShatteredSprites
+  markingLimits: MobHumanMarkingLimits
+
+- type: speciesBaseSprites
+  id: MobShatteredSprites
+  sprites:
+    Chest: MobShatteredChest
+    Head: MobShatteredHead
+    LArm: MobShatteredLArm
+    RArm: MobShatteredRArm
+    LHand: MobShatteredLHand
+    RHand: MobShatteredRHand
+    LLeg: MobShatteredLLeg
+    RLeg: MobShatteredRLeg
+    LFoot: MobShatteredLFoot
+    RFoot: MobShatteredRFoot
+
+- type: humanoidBaseSprite
+  id: MobShatteredChest
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobShatteredHead
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobShatteredLArm
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobShatteredRArm
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobShatteredLHand
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobShatteredRHand
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobShatteredLLeg
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobShatteredRLeg
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobShatteredLFoot
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobShatteredRFoot
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: r_foot

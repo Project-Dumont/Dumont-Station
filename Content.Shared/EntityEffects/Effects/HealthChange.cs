@@ -53,6 +53,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.EntityEffects;
@@ -67,10 +68,12 @@ using Content.Goobstation.Common.Temperature;
 using Content.Shared._Shitmed.EntityEffects.Effects;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared._Shitmed.Damage;
-using Content.Shared.Heretic;
 using Content.Shared.Temperature;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Temperature.Systems;
+
+using Content.Shared.Heretic;
+// Dumont end
 
 namespace Content.Shared.EntityEffects.Effects
 {
@@ -219,6 +222,12 @@ namespace Content.Shared.EntityEffects.Effects
                         }
                     }
                 }
+
+                // Dumont start
+                var healthEvent = new Content.Trauma.Common.Damage.OnHealthChangeEvent(damageSpec);
+                args.EntityManager.EventBus.RaiseLocalEvent(args.TargetEntity, ref healthEvent);
+                damageSpec = healthEvent.Damage;
+                // Dumont end
 
                 // Goobstation start
                 var ev = new ImmuneToPoisonDamageEvent();

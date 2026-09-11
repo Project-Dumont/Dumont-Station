@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: StatusEffectSpeed
+  id: VisualTearsStatusEffect
+  name: tears
+  components:
+  - type: ShowSpriteLayerStatusEffect
+    layer: enum.HumanoidVisualEmoteLayers.Cry

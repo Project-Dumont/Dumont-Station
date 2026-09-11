@@ -144,7 +144,7 @@ public abstract class SharedAirlockSystem : EntitySystem
         if (autoev.Cancelled)
             return;
 
-        DoorSystem.SetNextStateChange(uid, airlock.AutoCloseDelay * airlock.AutoCloseDelayModifier);
+        DoorSystem.SetNextStateChange(uid, airlock.AutoCloseDelay * airlock.AutoCloseDelayModifier * autoev.Modifier);
     }
 
     private void OnBeforePry(EntityUid uid, AirlockComponent component, ref BeforePryEvent args)

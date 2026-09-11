@@ -55,6 +55,9 @@
   name: gold bar
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - GoldBar
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -100,6 +103,9 @@
   name: silver bar
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - SilverBar
   - type: Material
   - type: PhysicalComposition
     materialComposition:

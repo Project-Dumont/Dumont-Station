@@ -393,6 +393,10 @@ namespace Content.Shared.Examine
             // Goobstation Change: I dont seem to have a way to get the event of examination to happen after EVERYTHING else, so fuck it.
             var examineCompletedEvent = new ExamineCompletedEvent(newMessage, entity, examiner.Value);
             RaiseLocalEvent(entity, examineCompletedEvent);
+            // Dumont start
+            var userEvent = new UserExaminedEvent(newMessage, entity);
+            RaiseLocalEvent(examiner.Value, ref userEvent);
+            // Dumont end
             // pop color tag
             newMessage.Pop();
 
