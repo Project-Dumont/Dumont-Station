@@ -41,3 +41,8 @@ public sealed class AreaFlashEvent(float range, float distance, EntityUid target
 
     public EntityUid Target = target;
 }
+
+// Dumont start
+[ByRefEvent]
+public record struct AfterFlashActivatedEvent(EntityUid? Target, EntityUid? User);
+// Dumont end

@@ -140,6 +140,9 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.OpenLanguageMenu); // Einstein Engines - Language
             human.AddFunction(ContentKeyFunctions.ActivateItemInWorld);
             human.AddFunction(ContentKeyFunctions.ThrowItemInHand);
+            // Dumont start
+            human.AddFunction(ContentKeyFunctions.Tackle);
+            // Dumont end
             human.AddFunction(ContentKeyFunctions.AltActivateItemInWorld);
             human.AddFunction(ContentKeyFunctions.TryPullObject);
             human.AddFunction(ContentKeyFunctions.MovePulledObject);

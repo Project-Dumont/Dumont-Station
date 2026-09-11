@@ -19,3 +19,8 @@ public sealed class BeforeCastTouchSpellEvent(EntityUid target, bool doEffects =
 
     public bool DoEffects = doEffects;
 }
+
+// Dumont start
+[ByRefEvent]
+public record struct UserShouldTakeHolyEvent(EntityUid Target, bool WeakToHoly = false, bool ShouldTakeHoly = false);
+// Dumont end

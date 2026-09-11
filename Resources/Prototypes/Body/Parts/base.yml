@@ -243,6 +243,9 @@
   id: BaseLeftArm
   name: "left arm"
   components:
+  - type: Tag
+    tags:
+    - HereticRitualArm
   - type: Sprite
     state: "l_arm"
   - type: Icon
@@ -280,6 +283,9 @@
   id: BaseRightArm
   name: "right arm"
   components:
+  - type: Tag
+    tags:
+    - HereticRitualArm
   - type: Sprite
     state: "r_arm"
   - type: Icon
@@ -383,6 +389,9 @@
   id: BaseLeftLeg
   name: "left leg"
   components:
+  - type: Tag
+    tags:
+    - HereticRitualLeg
   - type: Sprite
     state: "l_leg"
   - type: Icon
@@ -421,6 +430,9 @@
   id: BaseRightLeg
   name: "right leg"
   components:
+  - type: Tag
+    tags:
+    - HereticRitualLeg
   - type: Sprite
     state: "r_leg"
   - type: Icon

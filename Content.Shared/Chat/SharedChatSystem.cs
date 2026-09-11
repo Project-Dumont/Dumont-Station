@@ -285,6 +285,10 @@ public abstract class SharedChatSystem : EntitySystem
         return false;
     }
 
+    // Dumont start
+    public virtual void PlayEmote(EntityUid source, Robust.Shared.Prototypes.ProtoId<Content.Shared.Chat.Prototypes.EmotePrototype> emote) { }
+    // Dumont end
+
     public virtual void TrySendInGameICMessage(
         EntityUid source,
         string message,

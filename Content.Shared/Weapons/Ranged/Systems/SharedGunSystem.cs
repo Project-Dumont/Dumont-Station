@@ -591,6 +591,13 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         var projectile = EnsureComp<ProjectileComponent>(uid);
         projectile.Weapon = gunUid;
+        // Dumont start
+        if (gunUid is { } firingGun)
+        {
+            var shotEvent = new Content.Lavaland.Common.Weapons.Ranged.GunShotProjectileEvent(uid, user);
+            RaiseLocalEvent(firingGun, ref shotEvent);
+        }
+        // Dumont end
         var shooter = user ?? gunUid;
         if (shooter != null)
             Projectiles.SetShooter(uid, projectile, shooter.Value);

@@ -174,6 +174,9 @@ public sealed class CanSeeAttemptEvent : CancellableEntityEventArgs, IInventoryR
 
 public sealed class GetEyeProtectionEvent : EntityEventArgs, IInventoryRelayEvent
 {
+    // Dumont start
+    public EntityUid Target;
+    // Dumont end
     /// <summary>
     ///     Time to subtract from any temporary blindness sources.
     /// </summary>

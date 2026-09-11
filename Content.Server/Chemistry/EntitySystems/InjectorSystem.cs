@@ -53,6 +53,11 @@ public sealed class InjectorSystem : SharedInjectorSystem
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly IGameTiming _timing = default!; // Goobstation
 
+    // Dumont start
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly Robust.Shared.Audio.Systems.SharedAudioSystem _audio = default!;
+    // Dumont end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -111,8 +116,14 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
     private void OnInjectorAfterInteract(Entity<InjectorComponent> entity, ref AfterInteractEvent args)
     {
-        if (args.Handled || !args.CanReach)
+        // Dumont start
+        if (args.Handled)
             return;
+        if (!args.CanReach && (entity.Comp.InteractionRangeOverride is not { } range ||
+            args.Target is not { } rangedTarget ||
+            !_interaction.InRangeUnobstructed(args.User, rangedTarget, range)))
+            return;
+        // Dumont end
 
         //Make sure we have the attacking entity
         if (args.Target is not { Valid: true } target || !HasComp<SolutionContainerManagerComponent>(entity))
@@ -125,6 +136,14 @@ public sealed class InjectorSystem : SharedInjectorSystem
             if (entity.Comp.IgnoreMobs)
                 return;
 
+            // Dumont start
+            if (entity.Comp.InstantTransfer)
+            {
+                if (!HasComp<BlockInjectionComponent>(target))
+                    args.Handled = TryUseInjector(entity, target, args.User);
+                return;
+            }
+            // Dumont end
             InjectDoAfter(entity, target, args.User);
             args.Handled = true;
             return;
@@ -354,6 +373,12 @@ public sealed class InjectorSystem : SharedInjectorSystem
         {
             SetMode(injector, InjectorToggleMode.Inject);
         }
+
+        // Dumont start
+        _audio.PlayPvs(injector.Comp.DrawSound, injector);
+        if (injector.Comp.DrawPopupTarget is { } popup)
+            Popup.PopupEntity(Loc.GetString(popup), target, target);
+        // Dumont end
 
         // Leave some DNA from the drawee on it
         var ev = new TransferDnaEvent { Donor = target, Recipient = injector };

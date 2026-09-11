@@ -509,6 +509,7 @@
       delay: 1.5
     - type: Tag
       tags:
+        - Rag
         - Mop
         - DroneUsable # Goobstation
     - type: CleansForensics

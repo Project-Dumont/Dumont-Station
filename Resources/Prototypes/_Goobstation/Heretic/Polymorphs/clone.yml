@@ -1,15 +1,27 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: cloningSettings
   id: FleshMimic
+  blacklist:
+    components:
+    - AttachedClothing
+    - Implanter
+    - VirtualItem
   components:
+  - Pacified
+  - Paracusia
+  - LightweightDrunk
+  - BlackAndWhiteOverlay
+  - Narcolepsy
+  - PermanentBlindness
+  - Snoring
+  - Unrevivable
   # general
   - DetailExaminable
   - Dna
   - Fingerprint
   - RandomSprite
-  - EncryptionKeyHolder # Goobstation
-  # traits
-  - BlackAndWhiteOverlay
-  - LightweightDrunk
+  - EncryptionKeyHolder
   # job specific
   - MindShield
   # accents
@@ -29,10 +41,7 @@
   - OwOAccent
   - ParrotAccent
   - PirateAccent
-  # - ReplacementAccent
-  # Not supported at the moment because AddAccentClothingComponent will make it permanent when cloned.
-  # TODO: AddAccentClothingComponent should use an inventory relay event.
-  # Also ZombieComponent overwrites the old replacement accent, because you can only have one at a time.
+  - ReplacementAccent
   - RussianAccent
   - ScrambledAccent
   - SkeletonAccent
@@ -40,17 +49,9 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
-  # Einstein Engines - Language begin
   - LanguageSpeaker
-  - LanguageKnowledge
-  # Einstein Engines - Language end
-  blacklist:
-    components:
-    - AttachedClothing # helmets, which are part of the suit
-    - HumanoidAppearance # will cause problems for downstream felinids getting cloned as Urists
-    - Implanter # they will spawn full again, but you already get the implant. And we can't do item slot copying yet
-    - VirtualItem
-  forceCloning: true # Goob - IPC/Vox cloning for paradox ghostrole
+  - ForeignerTrait
+  forceCloning: true # IPC/Vox cloning for paradox ghostrole
   copyInternalStorage: false
   copyStorage: false
   makeEquipmentUnremoveable: true
