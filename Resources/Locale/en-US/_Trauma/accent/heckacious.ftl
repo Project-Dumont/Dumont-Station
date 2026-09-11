@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 accent-heckacious-words-1 = your
 accent-heckacious-words-replace-1 = youre
 accent-heckacious-words-2 = fucking

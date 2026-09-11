@@ -64,7 +64,6 @@
   - !type:PlaySoundEffect
     sound:
       path: /Audio/_Trauma/Effects/sear.ogg
-    positional: false
 
 # Spastic
 

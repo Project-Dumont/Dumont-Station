@@ -1,3 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+MutationElvis-popup-dance-1 = {$entity} busts out some swinging moves!
+MutationElvis-popup-dance-2 = {$entity} busts out some fancy moves!
+MutationElvis-popup-dance-3 = {$entity} busts out some stylish moves!
+MutationElvis-popup-dance-4 = {$entity} busts out some 20th century moves!
+MutationElvis-popup-dance-5 = {$entity} busts out some jivin' moves!
+MutationElvis-popup-dance-6 = {$entity} busts out some rock and roller moves!
+MutationElvis-popup-dance-7 = {$entity} busts out some cool moves!
+MutationElvis-popup-dance-8 = {$entity} busts out some salacious moves!
+MutationElvis-popup-dance-9 = {$entity} busts out some bashing moves!
+MutationElvis-popup-dance-10 = {$entity} busts out some smashing moves!
+MutationElvis-popup-move-1 = {$entity} jiggles {POSS-ADJ($entity)} hips!
+MutationElvis-popup-move-2 = {$entity} rotates {POSS-ADJ($entity)} hips!
+MutationElvis-popup-move-3 = {$entity} gyrates {POSS-ADJ($entity)} hips!
+MutationElvis-popup-move-4 = {$entity} taps {POSS-ADJ($entity)} foot!
+MutationElvis-popup-move-5 = {$entity} dances to an imaginary song!
+MutationElvis-popup-move-6 = {$entity} jiggles {POSS-ADJ($entity)} legs!
+MutationElvis-popup-move-7 = {$entity} snaps {POSS-ADJ($entity)} fingers!
 accent-elvis-words-1 = I'm not
 accent-elvis-words-replace-1 = I ain't
 accent-elvis-words-2 = girl
@@ -15,23 +34,3 @@ accent-elvis-words-7 = yes
 accent-elvis-words-replace-7 = yea
 accent-elvis-words-8 = muh valids
 accent-elvis-words-replace-8 = my kicks
-
-## technically not accent but mutations ftl is bad enough
-MutationElvis-popup-dance-1 = {$entity} busts out some swinging moves!
-MutationElvis-popup-dance-2 = {$entity} busts out some fancy moves!
-MutationElvis-popup-dance-3 = {$entity} busts out some stylish moves!
-MutationElvis-popup-dance-4 = {$entity} busts out some 20th century moves!
-MutationElvis-popup-dance-5 = {$entity} busts out some jivin' moves!
-MutationElvis-popup-dance-6 = {$entity} busts out some rock and roller moves!
-MutationElvis-popup-dance-7 = {$entity} busts out some cool moves!
-MutationElvis-popup-dance-8 = {$entity} busts out some salacious moves!
-MutationElvis-popup-dance-9 = {$entity} busts out some bashing moves!
-MutationElvis-popup-dance-10 = {$entity} busts out some smashing moves!
-
-MutationElvis-popup-move-1 = {$entity} jiggles {POSS-ADJ($entity)} hips!
-MutationElvis-popup-move-2 = {$entity} rotates {POSS-ADJ($entity)} hips!
-MutationElvis-popup-move-3 = {$entity} gyrates {POSS-ADJ($entity)} hips!
-MutationElvis-popup-move-4 = {$entity} taps {POSS-ADJ($entity)} foot!
-MutationElvis-popup-move-5 = {$entity} dances to an imaginary song!
-MutationElvis-popup-move-6 = {$entity} jiggles {POSS-ADJ($entity)} legs!
-MutationElvis-popup-move-7 = {$entity} snaps {POSS-ADJ($entity)} fingers!

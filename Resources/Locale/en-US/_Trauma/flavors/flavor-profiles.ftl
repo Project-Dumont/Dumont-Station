@@ -1,9 +1,3 @@
-flavor-base-deep-fried = deep fried
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 flavor-complex-tiredness = like tiredness
-
-flavor-complex-blood = like blood
-
-flavor-complex-apotheosis = like apotheosis
-
-flavor-complex-rich = rich

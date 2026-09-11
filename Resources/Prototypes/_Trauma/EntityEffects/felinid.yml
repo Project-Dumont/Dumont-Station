@@ -11,26 +11,10 @@
       components:
       - Felinid
   effects:
-  - !type:RelayOrgan
-    category: Ears
-    effects:
-    - !type:Delete # delete old ears, they're being mutated
-  - !type:RelayOrgan
-    category: Head
-    effects:
-    - !type:InsertNewOrgan
-      organ: OrganCatEars
-  - !type:RelayOrgan
-    category: Tail
-    effects:
-    - !type:DetachOrgan # remove lizard tail etc but drop it, it might be cybernetic or something
-  - !type:RelayOrgan
-    category: Torso
-    effects:
-    - !type:AddOrganSlot
-      category: Tail
-    - !type:InsertNewOrgan
-      organ: OrganCatTail
+  - !type:AddMarking
+    marking: FelinidEarsBasic
+  - !type:AddMarking
+    marking: FelinidTailBasic
   - !type:RelayOrgans
     whitelist:
       components:
@@ -60,24 +44,10 @@
       components:
       - Felinid
   effects:
-  - !type:RelayOrgan
-    category: Ears
-    effects:
-    - !type:Delete
-  - !type:RelayOrgan
-    category: Head
-    effects:
-    - !type:RegenerateOrgan
-      slot: Eyes # now give back the original ears
-  - !type:RelayOrgan
-    category: Tail
-    effects:
-    - !type:Delete
-  - !type:RelayOrgan
-    category: Torso
-    effects:
-    - !type:RemoveOrganSlot
-      slot: Tail # lizards will have to get surgery to add it back, unlucky
+  - !type:RemoveMarking
+    marking: FelinidEarsBasic
+  - !type:RemoveMarking
+    marking: FelinidTailBasic
   - !type:RelayOrgans
     whitelist:
       components:

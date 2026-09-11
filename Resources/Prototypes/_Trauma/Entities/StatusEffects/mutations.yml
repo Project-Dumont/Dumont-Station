@@ -1,46 +1,52 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: StatusEffectBase
-  id: DnaMeltingStatusEffect
-  name: DNA melting
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMutedMutation
+  name: muted
   components:
-  - type: StatusEffectEffectsApply
-    effectsOnRemoval:
-    - !type:NestedEffect
-      conditions: # don't do a bad thing if instability is fixed in time
-      - !type:DnaUnstableCondition
-      proto: SomethingHorrible
-    # not parity, always scramble dna when it's removed to prevent edging it every 9 minutes by removing and adding some mutation on the fly
-    - !type:ScrambleDna
+  - type: StatusEffectAlert
+    alert: Muted
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Muted
 
 - type: entity
-  parent: StatusEffectBase
-  id: DecloningStatusEffect
-  name: decloning
-  # TODO
+  parent: MobStatusEffectBase
+  id: StatusEffectPressureImmunityMutation
+  name: pressure immunity
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: PressureImmunity
 
 - type: entity
-  parent: StatusEffectBase
-  id: LookingUpStatusEffect
+  parent: MobStatusEffectBase
+  id: StatusEffectClumsyMutation
+  name: clumsy
   components:
-  - type: StatusEffectEffectsApply
-    effectsOnRemoval:
-    - !type:PopupMessage
-      type: Pvs
-      messages:
-      - entity-effect-popup-eyes-melt
-    - !type:RelayOrgan
-      category: Eyes
-      guidebookText: entity-effect-guidebook-melts-eyes
-      effects:
-      - !type:Delete
-    - !type:RelayOrgan
-      category: Brain
-      guidebookText: entity-effect-guidebook-melts-brain
-      effects:
-      - !type:AddComponents
-        guidebookText: entity-effect-guidebook-melts-brain
-        components:
-        - type: TimedDespawn
-          lifetime: 3
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: Clumsy
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectBlurryVision
+  name: blurry vision
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: BlurryVision
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectBlindness
+  name: temporary blindness
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - Blindable
+      requireAll: true
+  - type: TemporaryBlindness
