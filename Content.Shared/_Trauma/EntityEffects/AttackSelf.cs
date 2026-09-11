@@ -4,13 +4,14 @@ using Content.Shared.CombatMode;
 using Content.Shared.EntityEffects;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Weapons.Melee;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// Makes the target entity melee attack itself.
 /// </summary>
-public sealed partial class AttackSelf : EntityEffectBase<AttackSelf>
+public sealed partial class AttackSelf : EventEntityEffect<AttackSelf>
 {
     /// <summary>
     /// Try to use the held item instead of a punch attack.
@@ -18,31 +19,43 @@ public sealed partial class AttackSelf : EntityEffectBase<AttackSelf>
     [DataField]
     public bool UseHeld = true;
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-attack-self", ("chance", Probability), ("useHeld", UseHeld));
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
 }
 
-public sealed partial class AttackSelfEntityEvent : EntityEffectSystem<CombatModeComponent, AttackSelf>
+public sealed partial class AttackSelfEffectSystem : TraumaEntityEffectSystem<CombatModeComponent, AttackSelf>
 {
     [Dependency] private SharedCombatModeSystem _combatMode = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedMeleeWeaponSystem _melee = default!;
-    [Dependency] private EntityQuery<MeleeWeaponComponent> _query = default!;
 
-    protected override void Effect(Entity<CombatModeComponent> ent, ref EntityEffectEvent<AttackSelf> args)
+    protected override void Effect(Entity<CombatModeComponent> ent, AttackSelf effect, EntityEffectBaseArgs args)
     {
         var user = ent.Owner;
-        var weapon = user;
-        if (args.Effect.UseHeld)
-            weapon = _hands.GetActiveItemOrSelf(user);
-
-        if (!_query.TryComp(weapon, out var weaponComp))
+        var weapon = effect.UseHeld ? _hands.GetActiveItemOrSelf(user) : user;
+        if (!TryComp<MeleeWeaponComponent>(weapon, out var weaponComp))
             return;
 
-        var target = ent.Owner; // stop hitting yourself!
         var wasOn = ent.Comp.IsInCombatMode;
         _combatMode.SetInCombatMode(ent, true, ent.Comp); // need to turn on combat mode or it won't attack
-        _melee.AttemptLightAttack(user, weapon, weaponComp, target);
+        _melee.AttemptLightAttack(user, weapon, weaponComp, user); // stop hitting yourself!
         _combatMode.SetInCombatMode(ent, wasOn, ent.Comp); // restore it to last setting
     }
+}
+
+/// <summary>
+/// Makes the target entity attack a random mob nearby.
+/// </summary>
+/// <remarks>
+/// </remarks>
+public sealed partial class AttackOthers : EventEntityEffect<AttackOthers>
+{
+    /// <summary>
+    /// Try to use the held item instead of a punch attack.
+    /// </summary>
+    [DataField]
+    public bool UseHeld = true;
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
 }

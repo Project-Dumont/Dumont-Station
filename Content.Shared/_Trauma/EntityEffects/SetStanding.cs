@@ -2,13 +2,14 @@
 
 using Content.Shared.EntityEffects;
 using Content.Shared.Standing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// Tries to make the target stand, or downs the target.
 /// </summary>
-public sealed partial class SetStanding : EntityEffectBase<SetStanding>
+public sealed partial class SetStanding : EventEntityEffect<SetStanding>
 {
     /// <summary>
     /// Whether to stand or down the target.
@@ -20,22 +21,21 @@ public sealed partial class SetStanding : EntityEffectBase<SetStanding>
     /// Force the target to stand/be downed.
     /// </summary>
     [DataField]
-    public bool Force = false;
+    public bool Force;
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-set-standing", ("chance", Probability), ("standing", Standing));
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
 }
 
-public sealed partial class SetStandingEffectSystem : EntityEffectSystem<StandingStateComponent, SetStanding>
+public sealed partial class SetStandingEffectSystem : TraumaEntityEffectSystem<StandingStateComponent, SetStanding>
 {
     [Dependency] private StandingStateSystem _standing = default!;
 
-    protected override void Effect(Entity<StandingStateComponent> ent, ref EntityEffectEvent<SetStanding> args)
+    protected override void Effect(Entity<StandingStateComponent> ent, SetStanding effect, EntityEffectBaseArgs args)
     {
-        var force = args.Effect.Force;
-        if (args.Effect.Standing)
-            _standing.Stand(ent, force: force, standingState: ent.Comp);
+        if (effect.Standing)
+            _standing.Stand(ent, ent.Comp, force: effect.Force);
         else
-            _standing.Down(ent, force: force, standingState: ent.Comp);
+            _standing.Down(ent, force: effect.Force, standingState: ent.Comp);
     }
 }

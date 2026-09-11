@@ -1,25 +1,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.EntityConditions;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityConditions;
 
 /// <summary>
 /// Requires that the target entity is inside of any container.
 /// </summary>
-public sealed partial class InContainerCondition : EntityConditionBase<InContainerCondition>
+public sealed partial class InContainerCondition : TraumaEntityCondition<InContainerCondition>
 {
-    public override string EntityConditionGuidebookText(IPrototypeManager prototype)
-        => Loc.GetString("entity-condition-guidebook-standing");
+    public override string GuidebookExplanation(IPrototypeManager prototype)
+        => string.Empty;
 }
 
-public sealed partial class InContainerConditionSystem : EntityConditionSystem<MetaDataComponent, InContainerCondition>
+/// <summary>
+/// Handles <see cref="InContainerCondition"/>.
+/// </summary>
+public sealed partial class InContainerConditionSystem : TraumaEntityConditionSystem<MetaDataComponent, InContainerCondition>
 {
     [Dependency] private SharedContainerSystem _container = default!;
 
-    protected override void Condition(Entity<MetaDataComponent> ent, ref EntityConditionEvent<InContainerCondition> args)
-    {
-        args.Result = _container.TryGetContainingContainer((ent, null, ent.Comp), out _);
-    }
+    protected override bool Condition(Entity<MetaDataComponent> ent, InContainerCondition condition)
+        => _container.TryGetContainingContainer((ent, null, ent.Comp), out _);
 }

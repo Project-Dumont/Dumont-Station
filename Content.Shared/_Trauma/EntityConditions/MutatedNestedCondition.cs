@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.EntityConditions;
+using Content.Shared.EntityEffects;
+using Content.Trauma.Shared.EntityEffects;
 using Content.Trauma.Shared.Genetics.Mutations;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityConditions;
 
@@ -9,22 +11,22 @@ namespace Content.Trauma.Shared.EntityConditions;
 /// Checks the mutated mob against a nested condition.
 /// If this condition's target is not a mutation entity it always returns false.
 /// </summary>
-public sealed partial class MutatedNestedCondition : EntityConditionBase<MutatedNestedCondition>
+public sealed partial class MutatedNestedCondition : TraumaEntityCondition<MutatedNestedCondition>
 {
-    [DataField(required: true)]
-    public EntityCondition Condition = default!;
+    [DataField("condition", required: true)]
+    public EntityEffectCondition Nested = default!;
 
-    public override string EntityConditionGuidebookText(IPrototypeManager prototype)
-        => Condition.EntityConditionGuidebookText(prototype);
+    public override string GuidebookExplanation(IPrototypeManager prototype)
+        => Nested.GuidebookExplanation(prototype);
 }
 
-public sealed partial class MutatedNestedConditionSystem : EntityConditionSystem<MutationComponent, MutatedNestedCondition>
+/// <summary>
+/// Handles <see cref="MutatedNestedCondition"/>.
+/// </summary>
+public sealed partial class MutatedNestedConditionSystem : TraumaEntityConditionSystem<MutationComponent, MutatedNestedCondition>
 {
-    [Dependency] private SharedEntityConditionsSystem _conditions = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    protected override void Condition(Entity<MutationComponent> ent, ref EntityConditionEvent<MutatedNestedCondition> args)
-    {
-        if (ent.Comp.Target is {} target)
-            args.Result = _conditions.TryCondition(target, args.Condition.Condition, args.SourceEnt);
-    }
+    protected override bool Condition(Entity<MutationComponent> ent, MutatedNestedCondition condition)
+        => ent.Comp.Target is { } target && _effects.TryCondition(target, condition.Nested);
 }

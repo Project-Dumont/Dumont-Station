@@ -1,49 +1,22 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.EntityEffects;
-using Content.Shared.Random.Helpers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
-using System.Text;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
-/// Like <c>WeightedRandomPrototype</c> but for <see cref="EntityEffect"/>
-/// When ran it will activate a random effect.
+/// Like <c>WeightedRandomPrototype</c> but for <see cref="EntityEffect"/>.
+/// When ran it will activate one random child effect, which then checks its own probability and conditions.
 /// </summary>
-/// <remarks>
-/// NOT predicted until predicted random is in stable?
-/// </remarks>
-public sealed partial class WeightedRandomEffect : EntityEffectBase<WeightedRandomEffect>
+public sealed partial class WeightedRandomEffect : EventEntityEffect<WeightedRandomEffect>
 {
     [DataField(required: true)]
-    public List<WeightedEffect> Children;
+    public List<WeightedEffect> Children = new();
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-    {
-        // none of this is loc but this is only used by mutations rn
-        // if you add some chud ymlmaxxer reagent using this make this use loc!!!
-        var builder = new StringBuilder("Randomly chooses 1 of the following effects:");
-        var totalPercent = 100f / GetTotalWeights();
-        foreach (var child in Children)
-        {
-            var percent = child.Weight * totalPercent;
-            builder.Append("- ");
-            builder.Append((int) percent);
-            builder.Append("%: ");
-            if (child.Effect.EntityEffectGuidebookText(prototype, entSys) is not {} text)
-            {
-                builder.Append("???,");
-                continue;
-            }
-
-            builder.Append(text);
-            builder.Append(","); // and you also have to add logic for this being hidden at the end
-        }
-
-        return builder.ToString();
-    }
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
 
     public float GetTotalWeights()
     {
@@ -56,23 +29,21 @@ public sealed partial class WeightedRandomEffect : EntityEffectBase<WeightedRand
     }
 }
 
-public sealed partial class WeightedRandomEffectSystem : EntityEffectSystem<MetaDataComponent, WeightedRandomEffect>
+public sealed partial class WeightedRandomEffectSystem : TraumaEntityEffectSystem<MetaDataComponent, WeightedRandomEffect>
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedEntityEffectsSystem _effects = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    protected override void Effect(Entity<MetaDataComponent> ent, ref EntityEffectEvent<WeightedRandomEffect> args)
+    protected override void Effect(Entity<MetaDataComponent> ent, WeightedRandomEffect effect, EntityEffectBaseArgs args)
     {
         var total = 0f;
-        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent, ent.Comp));
-        var effect = args.Effect;
-        var target = rand.NextFloat() * effect.GetTotalWeights();
+        var target = _random.NextFloat() * effect.GetTotalWeights();
         foreach (var child in effect.Children)
         {
             total += child.Weight;
             if (total >= target)
             {
-                _effects.TryApplyEffect(ent, child.Effect, args.Scale, args.User, args.Predicted);
+                _effects.TryApplyEffect(ent, child.Effect);
                 return;
             }
         }

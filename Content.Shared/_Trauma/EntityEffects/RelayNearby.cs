@@ -2,6 +2,7 @@
 
 using Content.Shared.EntityEffects;
 using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
@@ -9,13 +10,15 @@ namespace Content.Trauma.Shared.EntityEffects;
 /// Relays an effect to every entity in some radius, matching some conditions.
 /// Does not apply it to this effect's target entity.
 /// </summary>
-public sealed partial class RelayNearby : EntityEffectBase<RelayNearby>
+public sealed partial class RelayNearby : EventEntityEffect<RelayNearby>
 {
     /// <summary>
     /// The effect to apply to found entities.
     /// </summary>
-    [DataField]
-    public EntityEffect Effect = default!;
+    /// <remarks>
+    /// </remarks>
+    [DataField("effect", required: true)]
+    public EntityEffect Relayed = default!;
 
     /// <summary>
     /// The component to use for lookups.
@@ -25,12 +28,6 @@ public sealed partial class RelayNearby : EntityEffectBase<RelayNearby>
     /// </summary>
     [DataField(required: true)]
     public string CompName = string.Empty;
-    // TODO: use CompName if plant holder is moved to shared
-
-    /// <summary>
-    /// Cached type for the component.
-    /// </summary>
-    internal Type? Comp;
 
     /// <summary>
     /// Radius to search around the target entity.
@@ -56,51 +53,36 @@ public sealed partial class RelayNearby : EntityEffectBase<RelayNearby>
     [DataField]
     public EntityWhitelist? Blacklist;
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Effect.EntityEffectGuidebookText(prototype, entSys); // lazy
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Relayed.GuidebookEffectDescription(prototype, entSys);
 }
 
-public sealed partial class RelayNearbyEffectSystem : EntityEffectSystem<TransformComponent, RelayNearby>
+public sealed partial class RelayNearbyEffectSystem : TraumaEntityEffectSystem<TransformComponent, RelayNearby>
 {
-    [Dependency] private EffectDataSystem _data = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private SharedEntityEffectsSystem _effects = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    private HashSet<Entity<IComponent>> _found = new();
+    private readonly HashSet<Entity<IComponent>> _found = new();
 
-    protected override void Effect(Entity<TransformComponent> ent, ref EntityEffectEvent<RelayNearby> args)
+    protected override void Effect(Entity<TransformComponent> ent, RelayNearby effect, EntityEffectBaseArgs args)
     {
-        var effect = args.Effect;
-        if (effect.Comp == null)
-        {
-            var reg = Factory.GetRegistration(effect.CompName);
-            effect.Comp = reg.Type;
-        }
-        var type = effect.Comp;
-
-        var relayed = effect.Effect;
-        var range = effect.Range;
-        var flags = effect.Flags;
-        var whitelist = effect.Whitelist;
-        var blacklist = effect.Blacklist;
-
+        var type = Factory.GetRegistration(effect.CompName).Type;
         var coords = _transform.GetMapCoordinates(ent, ent.Comp);
+
         _found.Clear();
-        _lookup.GetEntitiesInRange(type, coords, range, _found, flags);
+        _lookup.GetEntitiesInRange(type, coords, effect.Range, _found, effect.Flags);
         foreach (var found in _found)
         {
             var uid = found.Owner;
             if (uid == ent.Owner) // don't apply to itself
                 continue;
 
-            if (!_whitelist.CheckBoth(uid, blacklist: blacklist, whitelist: whitelist))
+            if (!_whitelist.CheckBoth(uid, blacklist: effect.Blacklist, whitelist: effect.Whitelist))
                 continue;
 
-            _data.CopyData(ent, uid);
-            _effects.TryApplyEffect(uid, relayed, args.Scale, args.User, args.Predicted);
-            _data.ClearData(uid);
+            _effects.TryApplyEffect(uid, effect.Relayed);
         }
     }
 }

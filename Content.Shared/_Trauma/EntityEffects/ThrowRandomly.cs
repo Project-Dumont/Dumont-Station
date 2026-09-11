@@ -1,35 +1,35 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.EntityEffects;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Throwing;
-using Content.Trauma.Shared.EntityEffects.Throw;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// Throws the target entity in a random direction, with a fixed speed.
 /// </summary>
-public sealed partial class ThrowRandomly : BaseThrowEntityEffect<ThrowRandomly>;
-
-public sealed partial class ThrowRandomlyEffectSystem : EntityEffectSystem<MetaDataComponent, ThrowRandomly>
+public sealed partial class ThrowRandomly : EventEntityEffect<ThrowRandomly>
 {
-    [Dependency] private IGameTiming _timing = default!;
+    /// <summary>
+    /// The speed at which the thrown entity will be thrown.
+    /// </summary>
+    [DataField]
+    public float Speed = 10f;
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => null;
+}
+
+public sealed partial class ThrowRandomlyEffectSystem : TraumaEntityEffectSystem<MetaDataComponent, ThrowRandomly>
+{
+    [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
 
-    protected override void Effect(Entity<MetaDataComponent> ent, ref EntityEffectEvent<ThrowRandomly> args)
+    protected override void Effect(Entity<MetaDataComponent> ent, ThrowRandomly effect, EntityEffectBaseArgs args)
     {
-        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent, ent.Comp));
-        var angle = rand.NextAngle();
-        var direction = angle.ToVec();
-
-        var effect = args.Effect;
-        _throwing.TryThrow(ent,
-            direction,
-            baseThrowSpeed: effect.Speed,
-            user: args.User,
-            predicted: args.Predicted);
+        var direction = _random.NextAngle().ToVec();
+        _throwing.TryThrow(ent, direction, baseThrowSpeed: effect.Speed);
     }
 }

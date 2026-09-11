@@ -1,19 +1,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.EntityEffects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// Removes components from the target entity.
 /// </summary>
-public sealed partial class RemoveComponents : EntityEffectBase<RemoveComponents>
+public sealed partial class RemoveComponents : EventEntityEffect<RemoveComponents>
 {
     /// <summary>
     /// Components to remove.
     /// </summary>
     [DataField(required: true)]
-    public ComponentRegistry Components;
+    public ComponentRegistry Components = new();
 
     /// <summary>
     /// Text to use for the guidebook entry for reagents.
@@ -21,14 +22,14 @@ public sealed partial class RemoveComponents : EntityEffectBase<RemoveComponents
     [DataField]
     public LocId? GuidebookText;
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => GuidebookText is {} loc ? Loc.GetString(loc, ("chance", Probability)) : null;
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => GuidebookText is { } loc ? Loc.GetString(loc, ("chance", Probability)) : null;
 }
 
-public sealed class RemoveComponentsEffectSystem : EntityEffectSystem<MetaDataComponent, RemoveComponents>
+public sealed partial class RemoveComponentsEffectSystem : TraumaEntityEffectSystem<MetaDataComponent, RemoveComponents>
 {
-    protected override void Effect(Entity<MetaDataComponent> ent, ref EntityEffectEvent<RemoveComponents> args)
+    protected override void Effect(Entity<MetaDataComponent> ent, RemoveComponents effect, EntityEffectBaseArgs args)
     {
-        EntityManager.RemoveComponents(ent, args.Effect.Components);
+        EntityManager.RemoveComponents(ent, effect.Components);
     }
 }

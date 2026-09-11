@@ -2,31 +2,38 @@
 
 using Content.Shared.EntityEffects;
 using Content.Trauma.Shared.Genetics.Mutations;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <summary>
 /// For a mutation target, relays an effect to the target mob.
+/// The relayed effect checks its own probability and conditions against the mob.
 /// </summary>
-public sealed partial class RelayMutated : EntityEffectBase<RelayMutated>
+public sealed partial class RelayMutated : EventEntityEffect<RelayMutated>
 {
     /// <summary>
-    /// Effect to apply to the implanted entity.
+    /// Effect to apply to the mutated mob.
     /// </summary>
-    [DataField(required: true)]
-    public EntityEffect Effect = default!;
+    /// <remarks>
+    /// </remarks>
+    [DataField("effect", required: true)]
+    public EntityEffect Relayed = default!;
 
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-relay-mutated", ("chance", Probability), ("effect", Effect.EntityEffectGuidebookText(prototype, entSys) ?? string.Empty));
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Relayed.GuidebookEffectDescription(prototype, entSys);
 }
 
-public sealed partial class RelayMutatedEffectSystem : EntityEffectSystem<MutationComponent, RelayMutated>
+/// <summary>
+/// Handles <see cref="RelayMutated"/>.
+/// </summary>
+public sealed partial class RelayMutatedEffectSystem : TraumaEntityEffectSystem<MutationComponent, RelayMutated>
 {
-    [Dependency] private SharedEntityEffectsSystem _effects = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    protected override void Effect(Entity<MutationComponent> ent, ref EntityEffectEvent<RelayMutated> args)
+    protected override void Effect(Entity<MutationComponent> ent, RelayMutated effect, EntityEffectBaseArgs args)
     {
-        if (ent.Comp.Target is {} mob)
-            _effects.TryApplyEffect(mob, args.Effect.Effect, args.Scale, args.User, args.Predicted);
+        if (ent.Comp.Target is { } mob)
+            _effects.TryApplyEffect(mob, effect.Relayed);
     }
 }
