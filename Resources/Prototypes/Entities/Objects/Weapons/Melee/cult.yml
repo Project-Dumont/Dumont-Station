@@ -41,6 +41,17 @@
   - type: Tag # Goobstation
     tags:
     - Knife
+  # <WhiteDream> - Blood Cult
+  - type: CultItem
+  - type: RuneDrawer
+  - type: ActivatableUI
+    key: enum.RuneDrawerBuiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.RuneDrawerBuiKey.Key:
+        type: AttachedRadialSelectorMenuBUI
+  # </WhiteDream>
 
 - type: entity
   name: eldritch blade

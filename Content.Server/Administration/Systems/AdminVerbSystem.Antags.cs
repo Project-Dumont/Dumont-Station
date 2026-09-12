@@ -107,6 +107,8 @@ using Robust.Shared.Utility;
 using Content.Server._Funkystation.GameTicking;
 using Content.Server.Antag.Components;
 
+using Content.Server.WhiteDream.BloodCult.Gamerule; // Dumont
+
 namespace Content.Server.Administration.Systems;
 
 public sealed partial class AdminVerbSystem
@@ -338,6 +340,22 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-malfai")
         };
         args.Verbs.Add(malfAi);
+
+        // Dumont changes start
+        Verb bloodCult = new()
+        {
+            Text = "Blood Cult",
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Dumont/BloodCult/Interface/cult_job_icons.rsi"), "Cultist"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<BloodCultRuleComponent>(targetPlayer, "BloodCult");
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-blood-cultist")
+        };
+        args.Verbs.Add(bloodCult);
+        // Dumont end
 
         Verb vampire = new()
         {
