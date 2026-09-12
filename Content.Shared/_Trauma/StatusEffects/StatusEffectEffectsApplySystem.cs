@@ -1,30 +1,35 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.EntityEffects;
 using Content.Shared.StatusEffectNew;
+using Content.Trauma.Shared.EntityEffects;
 
 namespace Content.Trauma.Shared.StatusEffects;
 
-public sealed partial class StatusEffectEffectsApplySystem : EntitySystem
+public sealed class StatusEffectEffectsApplySystem : EntitySystem
 {
-    [Dependency] private SharedEntityEffectsSystem _effects = default!;
+    [Dependency] private TraumaEntityEffectsSystem _effects = default!;
 
-    [SubscribeLocalEvent]
-    private void OnApplied(Entity<StatusEffectEffectsApplyComponent> ent, ref StatusEffectAppliedEvent args)
+    public override void Initialize()
     {
-        if (ent.Comp.EffectsOnApply is not { } effectsOnApply)
-            return;
+        base.Initialize();
 
-        _effects.ApplyEffects(args.Target, effectsOnApply);
+        SubscribeLocalEvent<StatusEffectEffectsApplyComponent, StatusEffectAppliedEvent>(OnApplied);
+        SubscribeLocalEvent<StatusEffectEffectsApplyComponent, StatusEffectRemovedEvent>(OnRemoval);
     }
 
-    [SubscribeLocalEvent]
-    private void OnRemoval(Entity<StatusEffectEffectsApplyComponent> ent, ref StatusEffectRemovedEvent args)
+    private void OnApplied(Entity<StatusEffectEffectsApplyComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        if (ent.Comp.EffectsOnRemoval is not { } effectsOnRemoval ||
-            TerminatingOrDeleted(args.Target))
+        if (ent.Comp.EffectsOnApply is not { } aoEntrar)
             return;
 
-        _effects.ApplyEffects(args.Target, effectsOnRemoval);
+        _effects.ApplyEffects(args.Target, aoEntrar);
+    }
+
+    private void OnRemoval(Entity<StatusEffectEffectsApplyComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        if (ent.Comp.EffectsOnRemoval is not { } aoSair || TerminatingOrDeleted(args.Target))
+            return;
+
+        _effects.ApplyEffects(args.Target, aoSair);
     }
 }

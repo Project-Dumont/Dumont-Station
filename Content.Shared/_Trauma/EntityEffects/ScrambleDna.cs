@@ -3,26 +3,22 @@
 using Content.Shared.EntityEffects;
 using Content.Shared.Humanoid;
 using Content.Shared.Trigger.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
-/// <summary>
-/// Scrambles the target entity's DNA.
-/// Does the same thing as the DNA scrambler implant etc.
-/// </summary>
-public sealed partial class ScrambleDna : EntityEffectBase<ScrambleDna>
+public sealed partial class ScrambleDna : EventEntityEffect<ScrambleDna>
 {
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("entity-effect-guidebook-scramble-dna", ("chance", Probability));
 }
 
-// fuck you mocho
-public sealed partial class ScrambleDnaEntityEffectSystem : EntityEffectSystem<HumanoidProfileComponent, ScrambleDna>
+public sealed partial class ScrambleDnaEntityEffectSystem : TraumaEntityEffectSystem<HumanoidAppearanceComponent, ScrambleDna>
 {
     [Dependency] private DnaScrambleOnTriggerSystem _scramble = default!;
 
-    protected override void Effect(Entity<HumanoidProfileComponent> ent, ref EntityEffectEvent<ScrambleDna> args)
+    protected override void Effect(Entity<HumanoidAppearanceComponent> ent, ScrambleDna effect, EntityEffectBaseArgs args)
     {
-        _scramble.Scramble(ent, ent.Comp);
+        _scramble.Scramble(ent.Owner, ent.Comp);
     }
 }
