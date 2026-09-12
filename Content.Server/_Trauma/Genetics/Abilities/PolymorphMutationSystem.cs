@@ -1,15 +1,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Trauma.Shared.Genetics.Abilities;
 using Content.Trauma.Shared.Genetics.Mutations;
+using Content.Trauma.Shared.Popups;
 using Content.Server.Polymorph.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Server.Genetics.Abilities;
 
 public sealed partial class PolymorphMutationSystem : EntitySystem
 {
     [Dependency] private PolymorphSystem _polymorph = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private TraumaPopupSystem _popup = default!;
     [Dependency] private EntityQuery<HumanoidAppearanceComponent> _humanoidQuery = default!;
 
     public override void Initialize()
@@ -27,9 +32,14 @@ public sealed partial class PolymorphMutationSystem : EntitySystem
             return;
 
         var target = args.Target.Owner;
-        if (!_humanoidQuery.TryComp(target, out var humanoid) ||
-            !ent.Comp.Prototypes.TryGetValue(humanoid.Species, out var proto))
-            return; // people/monkeys/kobolds only!
+        if (!_humanoidQuery.TryComp(target, out var humanoid))
+            return;
+
+        if (!ent.Comp.Prototypes.TryGetValue(humanoid.Species, out var proto))
+        {
+            Avisar(target, args.User, humanoid.Species);
+            return;
+        }
 
         if (_polymorph.PolymorphEntity(target, proto) == null)
             return;
@@ -44,10 +54,34 @@ public sealed partial class PolymorphMutationSystem : EntitySystem
 
         var target = args.Target.Owner;
         if (ent.Comp.Worked)
+        {
             _polymorph.Revert(target);
-        else if (_humanoidQuery.TryComp(target, out var humanoid) && ent.Comp.Reverts.TryGetValue(humanoid.Species, out var revert))
+            return;
+        }
+
+        if (!_humanoidQuery.TryComp(target, out var humanoid))
+            return;
+
+        if (ent.Comp.Reverts.TryGetValue(humanoid.Species, out var revert))
+        {
             _polymorph.PolymorphEntity(target, revert);
-        else if (ent.Comp.Fallback is {} fallback)
+            return;
+        }
+
+        if (ent.Comp.Incompatible.Contains(humanoid.Species))
+            return;
+
+        if (ent.Comp.Fallback is {} fallback)
             _polymorph.PolymorphEntity(target, fallback);
+    }
+
+    private void Avisar(EntityUid target, EntityUid? user, ProtoId<SpeciesPrototype> species)
+    {
+        var nome = _proto.TryIndex(species, out var prototype)
+            ? Loc.GetString(prototype.Name)
+            : species.Id;
+
+        _popup.PopupEntity(Loc.GetString("mutation-polymorph-incompatible", ("species", nome)),
+            target, user ?? target);
     }
 }

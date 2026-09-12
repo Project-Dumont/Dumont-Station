@@ -320,8 +320,10 @@ public sealed class GeneticsConsoleTest
             Assert.That(sequencia, Is.Not.Null, "o paciente escaneado ficou sem sequência nenhuma");
             var dados = mutacoes.GetRoundData(sequencia!.Mutation);
             Assert.That(dados, Is.Not.Null, "a mutação da sequência não tem dado de rodada");
+            Assert.That(dados!.Discovered, Is.False,
+                $"a mutação {sequencia.Mutation} já estava descoberta antes de medir, então o dado de rodada veio sujo");
 
-            sequencia.Bases = dados!.Bases;
+            sequencia.Bases = dados.Bases;
 
             var servidorComp = entMan.GetComponent<ResearchServerComponent>(servidor);
             pontos = servidorComp.Points;

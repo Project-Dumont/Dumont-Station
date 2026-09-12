@@ -1956,6 +1956,11 @@
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
   abstract: true
   components:
+  - type: Mutatable # Trauma
+    defaultMutations:
+      MutationMonkified: 1.0
+    dormant:
+    - MutationMonkified
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
@@ -2524,11 +2529,6 @@
   id: MobLizard
   description: A harmless dragon.
   components:
-  - type: Mutatable # Trauma
-    defaultMutations:
-      MutationMonkified: 1.0
-    dormant:
-    - MutationMonkified
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3

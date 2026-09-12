@@ -34,6 +34,9 @@ public sealed partial class PolymorphMutationComponent : Component
     [DataField]
     public ProtoId<PolymorphPrototype>? Fallback;
 
+    [DataField]
+    public HashSet<ProtoId<SpeciesPrototype>> Incompatible = new();
+
     /// <summary>
     /// If true, will try to revert if the mutation was removed.
     /// </summary>

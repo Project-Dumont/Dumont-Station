@@ -190,6 +190,37 @@
     prototypes:
       Human: MutationMonkey
       Reptilian: MutationKobold
+      Abductor: MutationMonkey
+      Arachnid: MutationMonkey
+      BananaMen: MutationMonkey
+      Chitinid: MutationMonkey
+      Daengati: MutationMonkey
+      Dwarf: MutationMonkey
+      Felinid: MutationMonkey
+      Feroxi: MutationMonkey
+      Harpy: MutationMonkey
+      Moth: MutationMonkey
+      Oni: MutationMonkey
+      Resomi: MutationMonkey
+      Rodentia: MutationMonkey
+      Scurret: MutationMonkey
+      SlimePerson: MutationMonkey
+      Tajaran: MutationMonkey
+      Vox: MutationMonkey
+      Vulpkanin: MutationMonkey
+      Waddler: MutationMonkey
+      Yowie: MutationMonkey
+    incompatible:
+    - Cyborg
+    - IPC
+    - Synth
+    - Skeleton
+    - Plasmaman
+    - Diona
+    - Gingerbread # massa de biscoito
+    - Shadow
+    - Shadowkin
+    - Shadowling
     reverts:
       Monkey: MutationHuman
       Kobold: MutationReptilian
