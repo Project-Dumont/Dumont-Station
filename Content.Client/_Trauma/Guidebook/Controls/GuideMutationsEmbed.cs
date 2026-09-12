@@ -1,16 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client.Guidebook.Controls;
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.Guidebook.Richtext;
 using Content.Trauma.Shared.Genetics.Mutations;
-using System.Diagnostics.CodeAnalysis;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Client.Guidebook.Controls;
 
-/// <summary>
-/// Lists all mutations and how to get them.
-/// </summary>
-public sealed partial class GuideMutationsEmbed : BoxContainer, IDocumentTag
+public sealed class GuideMutationsEmbed : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -23,7 +22,7 @@ public sealed partial class GuideMutationsEmbed : BoxContainer, IDocumentTag
 
         var mutation = _entMan.System<MutationSystem>();
 
-        var names = new List<string>(); // to reuse allocation of 2 strings instead of recreating it for every recipe
+        var names = new List<string>();
         var ids = new List<string>(mutation.AllMutations.Count);
         foreach (var id in mutation.AllMutations.Keys)
         {
