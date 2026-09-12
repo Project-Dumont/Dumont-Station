@@ -111234,7 +111234,7 @@ entities:
         25684:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-- proto: DnaModifierDisk
+- proto: GeneticsDisk
   entities:
   - uid: 15613
     components:

@@ -10,6 +10,8 @@ using Content.Server.Research.Systems;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Power.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Storage;
+using Robust.Shared.Containers;
 using Content.Shared.Materials;
 using Content.Trauma.Shared.Genetics.Mutations;
 using Content.Trauma.Shared.Genetics.Tools;
@@ -31,6 +33,7 @@ public sealed class GeneticsConsoleTest
     private const string Paciente = "MobHuman";
     private const string PacienteMutavel = "TestConsoleMob";
     private const string Disco = "GeneticsDiskUnstableDna";
+    private const string CaixaDeDiscos = "BoxDnaFisk";
     private static readonly EntProtoId<MutationComponent> Mutacao = "MutationUnstableDna";
 
     [TestPrototypes]
@@ -333,6 +336,121 @@ public sealed class GeneticsConsoleTest
                 Is.False, "deu para sequenciar a mesma mutação de novo");
             Assert.That(servidorComp.Points, Is.EqualTo(depois),
                 "sequenciar de novo a mesma mutação rendeu ponto outra vez");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task CaixaDeDiscosEntregaDiscoQueOConsoleAceita()
+    {
+        var (pair, map) = await Par();
+        var entMan = pair.Server.ResolveDependency<IEntityManager>();
+        var (console, _, _) = await Bancada(pair, map);
+        var caixa = await Spawn(pair, CaixaDeDiscos, map);
+
+        var dentro = new List<EntityUid>();
+        await pair.Server.WaitAssertion(() =>
+        {
+            var conteiner = entMan.System<SharedContainerSystem>()
+                .GetContainer(caixa, StorageComponent.ContainerId);
+            dentro.AddRange(conteiner.ContainedEntities);
+
+            Assert.That(dentro, Is.Not.Empty, "a caixa de discos veio vazia");
+            foreach (var item in dentro)
+            {
+                Assert.That(entMan.HasComponent<GeneticsDiskComponent>(item), Is.True,
+                    $"a caixa entregou {entMan.GetComponent<MetaDataComponent>(item).EntityPrototype?.ID}, que não é disco de genética");
+            }
+        });
+
+        await pair.Server.WaitPost(() =>
+        {
+            entMan.System<ItemSlotsSystem>().TryInsert(console, "genetics_disk", dentro[0], null);
+        });
+        await pair.Server.WaitRunTicks(1);
+
+        await pair.Server.WaitAssertion(() =>
+        {
+            var noConsole = entMan.System<GeneticsDiskSystem>().GetDisk(console);
+            Assert.That(noConsole, Is.Not.Null, "o console recusou o disco que veio da caixa");
+            Assert.That(noConsole!.Value.Owner, Is.EqualTo(dentro[0]), "entrou no console um disco que não é o da caixa");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task DiscoEmBrancoDaCaixaGravaAMutacaoEImprime()
+    {
+        var (pair, map) = await Par();
+        var entMan = pair.Server.ResolveDependency<IEntityManager>();
+        var (console, _, mob) = await Bancada(pair, map);
+        var usuario = await Spawn(pair, Paciente, map);
+        var caixa = await Spawn(pair, CaixaDeDiscos, map);
+        var genoma = entMan.System<ScannedGenomeSystem>();
+        var mutacoes = entMan.System<MutationSystem>();
+        var consoleSis = entMan.System<GeneticsConsoleSystem>();
+        var material = entMan.System<SharedMaterialStorageSystem>();
+
+        EntityUid disco = default;
+        await pair.Server.WaitPost(() =>
+        {
+            var conteiner = entMan.System<SharedContainerSystem>()
+                .GetContainer(caixa, StorageComponent.ContainerId);
+            disco = conteiner.ContainedEntities[0];
+            entMan.System<ItemSlotsSystem>().TryInsert(console, "genetics_disk", disco, null);
+            genoma.ScanGenome(mob);
+        });
+        await pair.Server.WaitRunTicks(1);
+
+        EntProtoId<MutationComponent> mutacao = default;
+        var antes = 0;
+        await pair.Server.WaitAssertion(() =>
+        {
+            var noConsole = entMan.System<GeneticsDiskSystem>().GetDisk(console);
+            Assert.That(noConsole, Is.Not.Null, "o disco da caixa não entrou no console");
+            Assert.That(noConsole!.Value.Comp.Mutation, Is.Null,
+                "o disco da caixa já veio gravado, então este teste não mede gravar nada");
+
+            var sequencia = genoma.GetSequence(mob, 0);
+            Assert.That(sequencia, Is.Not.Null, "o paciente escaneado ficou sem sequência");
+            var dados = mutacoes.GetRoundData(sequencia!.Mutation);
+            Assert.That(dados, Is.Not.Null, "a mutação da sequência não tem dado de rodada");
+
+            sequencia.Bases = dados!.Bases;
+            Assert.That(consoleSis.SequenceMutation((console, entMan.GetComponent<GeneticsConsoleComponent>(console)), mob, 0),
+                Is.True, "não deu para descobrir a mutação, e sem descobrir o console não grava no disco");
+
+            mutacao = sequencia.Mutation;
+            antes = material.GetMaterialAmount(console, entMan.GetComponent<GeneticsConsoleComponent>(console).Biomass);
+            Assert.That(antes, Is.GreaterThan(0), "o console nasceu sem biomassa, e o teste não mede nada assim");
+            Assert.That(entMan.EntityQuery<MutatorComponent>(true).Count(), Is.Zero, "já existia injetor antes de imprimir");
+        });
+
+        await pair.Server.WaitPost(() =>
+        {
+            var msg = new GeneticsConsoleWriteMutationMessage(0) { UiKey = GeneticsConsoleUiKey.Key, Actor = usuario };
+            entMan.EventBus.RaiseLocalEvent(console, msg);
+        });
+        await pair.Server.WaitRunTicks(2);
+
+        await pair.Server.WaitAssertion(() =>
+        {
+            var noConsole = entMan.System<GeneticsDiskSystem>().GetDisk(console);
+            Assert.That(noConsole!.Value.Comp.Mutation, Is.EqualTo(mutacao),
+                "o console não gravou no disco em branco a mutação que acabou de descobrir");
+        });
+
+        await Imprimir(pair, console, usuario);
+
+        await pair.Server.WaitAssertion(() =>
+        {
+            var injetores = entMan.EntityQuery<MutatorComponent>(true).ToList();
+            Assert.That(injetores, Has.Count.EqualTo(1), "o disco gravado na caixa não imprimiu injetor");
+            Assert.That(injetores[0].Mutations, Does.Contain(mutacao), "o injetor saiu com outra mutação");
+            Assert.That(material.GetMaterialAmount(console, entMan.GetComponent<GeneticsConsoleComponent>(console).Biomass),
+                Is.LessThan(antes), "imprimir não gastou biomassa");
         });
 
         await pair.CleanReturnAsync();

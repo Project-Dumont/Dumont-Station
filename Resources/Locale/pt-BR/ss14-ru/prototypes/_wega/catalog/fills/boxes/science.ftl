@@ -1,2 +1,2 @@
-ent-BoxDnaFisk = caixa de discos de DNA
-    .desc = Uma caixa de discos para o modificador de DNA.
+ent-BoxDnaFisk = caixa de discos de genética
+    .desc = Uma caixa de discos de genética em branco.

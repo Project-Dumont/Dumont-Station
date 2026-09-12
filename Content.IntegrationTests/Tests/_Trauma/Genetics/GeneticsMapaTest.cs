@@ -17,6 +17,8 @@ namespace Content.IntegrationTests.Tests._Trauma.Genetics;
 public sealed class GeneticsMapaTest
 {
     private const string Mapa = "Meta";
+    private const string MapaDoDisco = "Gamma";
+    private static readonly Vector2 LugarDoDisco = new(57.09404f, -30.340061f);
 
     private static readonly Dictionary<Vector2, Vector2> ConsoleParaScanner = new()
     {
@@ -75,6 +77,41 @@ public sealed class GeneticsMapaTest
                 Assert.That(entMan.GetComponent<MedicalScannerComponent>(scanner).ConnectedConsole, Is.EqualTo(console.Uid),
                     $"o scanner de {lugarScanner} não aponta de volta para o console de {lugarConsole}");
             }
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task DiscoDoMapaSobeComoDiscoDaGeneticaNova()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Dirty = true });
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var ticker = entMan.System<GameTicker>();
+
+        await server.WaitPost(() =>
+        {
+            var opts = DeserializationOptions.Default with { InitializeMaps = true };
+            ticker.LoadGameMap(protoMan.Index<GameMapPrototype>(MapaDoDisco), out _, opts);
+        });
+        await server.WaitRunTicks(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var achados = new List<Vector2>();
+            var busca = entMan.EntityQueryEnumerator<GeneticsDiskComponent, TransformComponent>();
+            while (busca.MoveNext(out _, out _, out var xform))
+            {
+                achados.Add(xform.LocalPosition);
+            }
+
+            Assert.That(achados.Exists(pos => pos.EqualsApprox(LugarDoDisco, 0.01)), Is.True,
+                $"{MapaDoDisco} não subiu com disco de genética em {LugarDoDisco}, que é onde o arquivo do mapa guarda um");
+
+            Assert.That(achados, Has.Count.GreaterThan(1),
+                "os armários de geneticista da Gamma deviam entregar disco de genética também");
         });
 
         await pair.CleanReturnAsync();
