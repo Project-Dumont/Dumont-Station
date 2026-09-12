@@ -34,7 +34,7 @@ public sealed partial class BloodCultRuleComponent : Component
     /// <summary>
     ///     Crew count captured when the round starts. Percentage requirements use it as the denominator.
     /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public int ProgressionCrewCount;
 
     /// <summary>
@@ -113,9 +113,6 @@ public sealed partial class BloodCultRuleComponent : Component
 
     #region Veil progression
 
-    /// <summary>
-    ///     Share of the crew required for the final chant. Zero keeps the flat count.
-    /// </summary>
     [DataField]
     public float VeilRitualCultistRatio;
 
@@ -166,7 +163,7 @@ public sealed partial class BloodCultRuleComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? RedEyesTime;
 
-    [ViewVariables(VVAccess.ReadOnly)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public bool RedEyesApplied;
 
     [DataField]
@@ -175,7 +172,7 @@ public sealed partial class BloodCultRuleComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? PentagramTime;
 
-    [ViewVariables(VVAccess.ReadOnly)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public bool PentagramApplied;
 
     /// <summary>
@@ -221,11 +218,11 @@ public sealed partial class BloodCultRuleComponent : Component
 
     public List<Entity<ConstructComponent>> Constructs = new();
 
-    /// <summary>
-    ///     Highest cultist count reached, kept for the round end summary.
-    /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public int PeakCultists;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public CultStage PeakStage;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public int TotalConstructs;

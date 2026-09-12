@@ -17,8 +17,8 @@ blood-cult-role-briefing-emergency-rending = Podemos desenhar mais {$amount} run
 
 objective-issuer-blood-cult = [color=red]A Geômetra de Sangue[/color]
 blood-cult-condition-win = O Culto de Sangue invocou com sucesso sua Deusa Eldritch!
-blood-cult-condition-draw = Ambos os lados foram destruídos.
-blood-cult-condition-failure = A tripulação conseguiu impedir o rasgo da realidade!
+blood-cult-condition-draw = Nenhum dos lados concluiu seu objetivo.
+blood-cult-condition-failure = O Culto de Sangue foi destruído!
 
 blood-cultists-list-start = Os membros do Culto de Sangue eram:
 blood-cultists-list-name = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])

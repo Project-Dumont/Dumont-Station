@@ -80,7 +80,7 @@
   - type: UserInterface
     interfaces:
       enum.ListViewSelectorUiKey.Key:
-        type: ListViewSelectorBUI
+        type: CultListSelectorBUI
       enum.NameSelectorUiKey.Key:
         type: NameSelectorBUI
 
@@ -127,7 +127,7 @@
   - type: UserInterface
     interfaces:
       enum.ListViewSelectorUiKey.Key:
-        type: ListViewSelectorBUI
+        type: CultListSelectorBUI
 
 - type: entity
   parent: CultRuneBase

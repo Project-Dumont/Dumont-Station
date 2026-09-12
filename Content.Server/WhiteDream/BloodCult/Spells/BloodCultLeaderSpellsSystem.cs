@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Goobstation.Shared.Religion;
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.DoAfter;
@@ -48,6 +49,7 @@ public sealed partial class BloodCultLeaderSpellsSystem : EntitySystem
     [Dependency] private ActionsSystem _actions = default!;
     [Dependency] private BloodCultRuleSystem _cultRule = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private DivineInterventionSystem _divineIntervention = default!;
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private DoAfterSystem _doAfter = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
@@ -297,6 +299,10 @@ public sealed partial class BloodCultLeaderSpellsSystem : EntitySystem
             return;
 
         var target = args.Target;
+
+        // Dumont
+        if (_divineIntervention.TouchSpellDenied(target))
+            return;
 
         if (HasComp<BloodCultistComponent>(target) || HasComp<ConstructComponent>(target))
         {

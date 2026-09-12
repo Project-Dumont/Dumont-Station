@@ -20,7 +20,7 @@ shuttle-curse-max-charges = Você tenta estilhaçar o orbe, mas ele continua só
 shuttle-curse-shuttle-arrived = A nave já chegou! Você não pode mais atrasá-la.
 shuttle-curse-shuttle-not-called = A nave ainda não foi chamada.
 
-shuttle-curse-system-failure = FALHA DE SISTEMA
+shuttle-curse-system-failure = Central de Comando
 shuttle-curse-success = O orbe se estilhaça em suas mãos!
 shuttle-curse-success-global = A nave será atrasada em {$time} minutos.
 

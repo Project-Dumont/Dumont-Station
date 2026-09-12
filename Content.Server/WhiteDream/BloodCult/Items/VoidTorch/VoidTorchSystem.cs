@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.WhiteDream.BloodCult.UI;
+using Content.Server.WhiteDream.BloodCult.UI;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared.Interaction;
@@ -15,6 +17,7 @@ namespace Content.Server.WhiteDream.BloodCult.Items.VoidTorch;
 
 public sealed partial class VoidTorchSystem : EntitySystem
 {
+    [Dependency] private DeferredUiOpenSystem _deferredUi = default!;
     [Dependency] private AppearanceSystem _appearance = default!;
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private HandsSystem _hands = default!;
@@ -64,8 +67,10 @@ public sealed partial class VoidTorchSystem : EntitySystem
         }
 
         torch.Comp.TargetItem = target;
-        _ui.SetUiState(torch.Owner, ListViewSelectorUiKey.Key, new ListViewSelectorState(cultist));
-        _ui.TryToggleUi(torch.Owner, ListViewSelectorUiKey.Key, args.User);
+        // Dumont
+        EnsureComp<CultListSelectorComponent>(torch.Owner).Entries = cultist;
+        Dirty(torch.Owner, Comp<CultListSelectorComponent>(torch.Owner));
+        _deferredUi.OpenNextTick(torch.Owner, ListViewSelectorUiKey.Key, args.User);
     }
 
     private void OnCultistSelected(Entity<VoidTorchComponent> torch, ref ListViewItemSelectedMessage args)

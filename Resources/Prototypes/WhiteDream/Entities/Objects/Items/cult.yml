@@ -113,7 +113,7 @@
   - type: UserInterface
     interfaces:
       enum.ListViewSelectorUiKey.Key:
-        type: ListViewSelectorBUI
+        type: CultListSelectorBUI
   - type: Appearance
   - type: GenericVisualizer
     visuals:

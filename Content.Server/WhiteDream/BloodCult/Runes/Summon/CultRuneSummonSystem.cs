@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.WhiteDream.BloodCult.UI;
+using Content.Server.WhiteDream.BloodCult.UI;
 using System.Linq;
 using Content.Server.Popups;
 using Content.Shared.Cuffs.Components;
@@ -13,6 +15,7 @@ namespace Content.Server.WhiteDream.BloodCult.Runes.Summon;
 
 public sealed partial class CultRuneSummonSystem : EntitySystem
 {
+    [Dependency] private DeferredUiOpenSystem _deferredUi = default!;
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private CultRuneBaseSystem _cultRune = default!;
     [Dependency] private TransformSystem _transform = default!;
@@ -59,8 +62,10 @@ public sealed partial class CultRuneSummonSystem : EntitySystem
             return;
         }
 
-        _ui.SetUiState(runeUid, ListViewSelectorUiKey.Key, new ListViewSelectorState(cultist));
-        _ui.TryToggleUi(runeUid, ListViewSelectorUiKey.Key, args.User);
+        // Dumont
+        EnsureComp<CultListSelectorComponent>(runeUid).Entries = cultist;
+        Dirty(runeUid, Comp<CultListSelectorComponent>(runeUid));
+        _deferredUi.OpenNextTick(runeUid, ListViewSelectorUiKey.Key, args.User);
     }
 
     private void OnCultistSelected(Entity<CultRuneSummonComponent> ent, ref ListViewItemSelectedMessage args)

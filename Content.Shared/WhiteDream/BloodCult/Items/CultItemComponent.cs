@@ -21,9 +21,6 @@ public sealed partial class CultItemComponent : Component
     [DataField]
     public TimeSpan StunDuration = TimeSpan.FromSeconds(1);
 
-    /// <summary>
-    ///     Deliberately weaker than the runed door, which repulses at 13000.
-    /// </summary>
     [DataField]
     public float BacklashForce = 6000f;
 

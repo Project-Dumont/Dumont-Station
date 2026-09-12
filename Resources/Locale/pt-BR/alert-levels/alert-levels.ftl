@@ -30,6 +30,7 @@ alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de
 alert-level-delta = Delta
 alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
+alert-level-deltacult = Delta
 alert-level-deltacult-instructions = Tripulantes devem se armar e seguir as orientações do Padre mais próximo.
 
 alert-level-epsilon = Epsilon

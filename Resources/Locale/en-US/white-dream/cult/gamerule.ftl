@@ -17,8 +17,8 @@ blood-cult-role-briefing-emergency-rending = We can draw {$amount} more rending 
 
 objective-issuer-blood-cult = [color=red]The Geometer of Blood[/color]
 blood-cult-condition-win = The Blood Cult has successfully summoned their Eldritch Goddess!
-blood-cult-condition-draw = Both parties were destroyed.
-blood-cult-condition-failure = The crew have managed to stop the rending of reality!
+blood-cult-condition-draw = Neither side completed its objective.
+blood-cult-condition-failure = The Blood Cult has been destroyed!
 
 blood-cultists-list-start = Members of the Blood Cult were:
 blood-cultists-list-name = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])

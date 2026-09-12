@@ -12,6 +12,9 @@ namespace Content.Client.WhiteDream.BloodCult.Runes.UI;
 [UsedImplicitly]
 public sealed partial class RuneDrawerBUI : BoundUserInterface
 {
+    private static readonly Color SectorColor = new(48, 12, 16, 205);
+    private static readonly Color SectorHoverColor = new(122, 22, 30, 225);
+
     [Dependency] private IPrototypeManager _protoManager = default!;
 
     private SimpleRadialMenu? _menu;
@@ -58,7 +61,9 @@ public sealed partial class RuneDrawerBUI : BoundUserInterface
             models.Add(new RadialMenuActionOption<ProtoId<RuneSelectorPrototype>>(OnRunePressed, runeSelector)
             {
                 ToolTip = runeProto.Name,
-                Sprite = new SpriteSpecifier.EntityPrototype(runeSelectorProto.Prototype)
+                Sprite = new SpriteSpecifier.EntityPrototype(runeSelectorProto.Prototype),
+                BackgroundColor = SectorColor,
+                HoverBackgroundColor = SectorHoverColor
             });
         }
 

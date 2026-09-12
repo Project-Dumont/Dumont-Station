@@ -64,9 +64,6 @@ public sealed partial class BloodCultRuleSystem
 
     #region Objectives
 
-    /// <summary>
-    ///     Keeps a valid offering target on the rule, picking a new one when the old one is gone.
-    /// </summary>
     private void EnsureOfferingTarget(BloodCultRuleComponent rule)
     {
         // Already given to Nar'Sie.

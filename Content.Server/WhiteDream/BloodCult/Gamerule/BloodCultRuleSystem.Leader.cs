@@ -134,9 +134,6 @@ public sealed partial class BloodCultRuleSystem
         ScheduleLeaderVote(rule, rule.LeaderRevoteDelay);
     }
 
-    /// <summary>
-    ///     Keeps the rule and the world agreeing on who the cult leader is.
-    /// </summary>
     private void ReconcileLeader(BloodCultRuleComponent rule)
     {
         // Nar'Sie is already through and the cult is being harvested.

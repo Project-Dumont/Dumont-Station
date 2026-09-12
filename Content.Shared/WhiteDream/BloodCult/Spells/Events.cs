@@ -244,3 +244,10 @@ public sealed partial class BloodGazeChargeDoAfterEvent : SimpleDoAfterEvent
 {
     public NetCoordinates AimCoordinates;
 }
+
+[Serializable, NetSerializable]
+public enum BloodCultSpellsUiKey : byte
+{
+    Prepare,
+    Remove
+}

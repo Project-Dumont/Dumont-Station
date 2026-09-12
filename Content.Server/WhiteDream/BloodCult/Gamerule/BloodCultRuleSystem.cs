@@ -2,6 +2,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Goobstation.Shared.Religion;
 using Content.Server.Actions;
 using Content.Server.Antag;
 using Content.Server.Antag.Components;
@@ -112,6 +113,15 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     )
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
+
+        // Dumont
+        if (component.WinCondition != CultWinCondition.Win)
+        {
+            component.WinCondition = component.PeakCultists > 0 && CountStandingCultists(component) == 0
+                ? CultWinCondition.Failure
+                : CultWinCondition.Draw;
+        }
+
         var winText = Loc.GetString($"blood-cult-condition-{component.WinCondition.ToString().ToLower()}");
         args.AddLine(winText);
 
@@ -121,7 +131,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         args.AddLine(Loc.GetString("blood-cult-roundend-stats-constructs",
             ("count", Math.Max(component.TotalConstructs, component.Constructs.Count))));
         args.AddLine(Loc.GetString("blood-cult-roundend-stats-stage",
-            ("stage", Loc.GetString(GetStageLocId(component.Stage)))));
+            ("stage", Loc.GetString(GetStageLocId(component.PeakStage)))));
 
         args.AddLine(Loc.GetString("blood-cultists-list-start"));
 
@@ -175,6 +185,13 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     {
         _language.AddLanguage(cultist.Owner, cultist.Comp.CultLanguageId);
 
+        // Dumont changes start
+        if (HasComp<WeakToHolyComponent>(cultist))
+            cultist.Comp.WasWeakToHoly = true;
+        else
+            EnsureComp<WeakToHolyComponent>(cultist).AlwaysTakeHoly = true;
+        // Dumont end
+
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var cult, out _))
         {
@@ -213,6 +230,10 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
         if (TerminatingOrDeleted(cultist.Owner))
             return;
+
+        // Dumont
+        if (!cultist.Comp.WasWeakToHoly)
+            RemComp<WeakToHolyComponent>(cultist);
 
         RemoveAllCultItems(cultist);
         RemoveCultistAppearance(cultist);
@@ -509,12 +530,19 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
             if (cult.WinCondition == CultWinCondition.Win)
                 continue;
 
-            var aliveCultists = cult.Cultists.Count(cultist => !_mobState.IsDead(cultist));
-            if (aliveCultists != 0)
-                return;
+            if (cult.PeakCultists == 0 || CountStandingCultists(cult) != 0)
+                continue;
 
             cult.WinCondition = CultWinCondition.Failure;
         }
+    }
+
+    private int CountStandingCultists(BloodCultRuleComponent cult)
+    {
+        return cult.Cultists.Count(cultist =>
+            !TerminatingOrDeleted(cultist.Owner) &&
+            HasComp<MobStateComponent>(cultist.Owner) &&
+            !_mobState.IsDead(cultist));
     }
 
     private void MakeCultist(EntityUid cultist, Entity<BloodCultRuleComponent> rule)
@@ -664,6 +692,10 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
             cultRule.Stage = CultStage.RedEyes;
         else
             cultRule.Stage = CultStage.Start;
+
+        // Dumont
+        if (cultRule.Stage > cultRule.PeakStage)
+            cultRule.PeakStage = cultRule.Stage;
 
         if (cultRule.Stage != prevStage)
             UpdateCultistsAppearance(cultRule, prevStage);

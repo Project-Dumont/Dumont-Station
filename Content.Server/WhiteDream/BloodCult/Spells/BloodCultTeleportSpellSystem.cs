@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.WhiteDream.BloodCult.UI;
+using Content.Server.WhiteDream.BloodCult.UI;
 using Content.Server.DoAfter;
 using Content.Server.WhiteDream.BloodCult.Runes;
 using Content.Server.WhiteDream.BloodCult.Runes.Teleport;
@@ -18,6 +20,7 @@ public sealed partial class BloodCultTeleportSpellSystem : EntitySystem
     private static readonly EntProtoId TeleportInEffect = "CultTeleportInEffect";
     private static readonly EntProtoId TeleportOutEffect = "CultTeleportOutEffect";
 
+    [Dependency] private DeferredUiOpenSystem _deferredUi = default!;
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private CultRuneBaseSystem _cultRune = default!;
     [Dependency] private CultRuneTeleportSystem _runeTeleport = default!;
@@ -37,14 +40,18 @@ public sealed partial class BloodCultTeleportSpellSystem : EntitySystem
         if (ev.Handled || !_runeTeleport.TryGetTeleportRunes(ev.Performer, out var runes))
             return;
 
-        var metaData = new Dictionary<string, object>
-        {
-            ["target"] = GetNetEntity(ev.Target),
-            ["duration"] = ev.DoAfterDuration
-        };
+        // Dumont changes start
+        if (!TryComp<BloodCultSpellsHolderComponent>(ev.Performer, out var holder))
+            return;
 
-        _ui.SetUiState(ev.Performer, ListViewSelectorUiKey.Key, new ListViewSelectorState(runes, metaData));
-        _ui.TryToggleUi(ev.Performer, ListViewSelectorUiKey.Key, ev.Performer);
+        holder.TeleportTarget = ev.Target;
+        holder.TeleportDuration = ev.DoAfterDuration;
+
+        EnsureComp<CultListSelectorComponent>(ev.Performer).Entries = runes;
+        Dirty(ev.Performer, Comp<CultListSelectorComponent>(ev.Performer));
+        _deferredUi.OpenNextTick(ev.Performer, ListViewSelectorUiKey.Key, ev.Performer);
+        // Dumont end
+
         ev.Handled = true;
     }
 
@@ -53,16 +60,23 @@ public sealed partial class BloodCultTeleportSpellSystem : EntitySystem
         ref ListViewItemSelectedMessage args
     )
     {
-        if (!args.MetaData.TryGetValue("target", out var rawTarget) || rawTarget is not NetEntity netTarget ||
-            !args.MetaData.TryGetValue("duration", out var rawDuration) || rawDuration is not TimeSpan duration)
+        // Dumont changes start
+        if (ent.Comp.TeleportTarget is not { } target || TerminatingOrDeleted(target))
             return;
 
-        var target = GetEntity(netTarget);
-        var teleportDoAfter = new TeleportActionDoAfterEvent
-        {
-            Rune = GetNetEntity(EntityUid.Parse(args.SelectedItem.Id))
-        };
-        var doAfterArgs = new DoAfterArgs(EntityManager, ent.Owner, duration, teleportDoAfter, target, target);
+        if (!EntityUid.TryParse(args.SelectedItem.Id, out var rune))
+            return;
+
+        ent.Comp.TeleportTarget = null;
+
+        var teleportDoAfter = new TeleportActionDoAfterEvent { Rune = GetNetEntity(rune) };
+        var doAfterArgs = new DoAfterArgs(EntityManager,
+            ent.Owner,
+            ent.Comp.TeleportDuration,
+            teleportDoAfter,
+            target,
+            target);
+        // Dumont end
 
         _doAfter.TryStartDoAfter(doAfterArgs);
     }

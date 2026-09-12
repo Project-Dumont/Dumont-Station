@@ -54,9 +54,10 @@ public sealed partial class BloodCultSpellsHolderComponent : Component
 
     public DoAfterId? DoAfterId;
 
-    /// <summary>
-    ///     Since radial selector menu doesn't have metadata, we use this to toggle between remove and
-    ///     add spells modes.
-    /// </summary>
-    public bool AddSpellsMode = true;
+    [ViewVariables]
+    public EntityUid? TeleportTarget;
+
+    [ViewVariables]
+    public TimeSpan TeleportDuration;
+
 }

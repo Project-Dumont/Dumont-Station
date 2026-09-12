@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Shared.Religion;
 using Content.Server.Actions;
 using Content.Server.Cuffs;
 using Content.Server.DoAfter;
@@ -52,6 +53,7 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
     [Dependency] private BloodCultRuleSystem _cultRule = default!; // Dumont
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private DivineInterventionSystem _divineIntervention = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!; // Dumont
     [Dependency] private SharedStunSystem _stun = default!;
@@ -65,7 +67,6 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<BaseCultSpellComponent, ActionAttemptEvent>(OnCultActionAttempt);
-        SubscribeLocalEvent<BaseCultSpellComponent, EntityTargetActionEvent>(OnCultTargetEvent);
         SubscribeLocalEvent<BaseCultSpellComponent, ActionGettingDisabledEvent>(OnActionGettingDisabled);
 
         SubscribeLocalEvent<BloodCultSpellsHolderComponent, ComponentStartup>(OnComponentStartup);
@@ -90,14 +91,17 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
             args.Cancelled = true;
     }
 
-    private void OnCultTargetEvent(Entity<BaseCultSpellComponent> spell, ref EntityTargetActionEvent args)
+    private bool IsSpellDenied(BaseActionEvent ev, EntityUid target)
     {
-        if (spell.Comp.BypassProtection)
-            return;
+        // Dumont changes start
+        if (_divineIntervention.TouchSpellDenied(target))
+            return true;
 
-        // WhiteDream - same story as the offering rune: ask the system, don't look for the component.
-        if (HasComp<MindShieldComponent>(args.Target))
-            args.Handled = true;
+        if (TryComp<BaseCultSpellComponent>(ev.Action.Owner, out var spell) && spell.BypassProtection)
+            return false;
+
+        return HasComp<MindShieldComponent>(target);
+        // Dumont end
     }
 
     private void OnActionGettingDisabled(Entity<BaseCultSpellComponent> spell, ref ActionGettingDisabledEvent args)
@@ -178,7 +182,8 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
 
     private void OnSpellSelected(Entity<BloodCultSpellsHolderComponent> cultist, ref RadialSelectorSelectedMessage args)
     {
-        if (!cultist.Comp.AddSpellsMode)
+        // Dumont
+        if (args.UiKey is BloodCultSpellsUiKey.Remove)
         {
             if (EntityUid.TryParse(args.SelectedItem, out var actionUid))
             {
@@ -251,6 +256,10 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
         if (ev.Handled)
             return;
 
+        // Dumont
+        if (IsSpellDenied(ev, ev.Target))
+            return;
+
         var decay = GetCultDecay(ev.DecayShare);
         var paralyze = Interpolate(ev.ParalyzeDuration, ev.MinParalyzeDuration, decay);
         var mute = Interpolate(ev.MuteDuration, ev.MinMuteDuration, decay);
@@ -297,6 +306,10 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
     private void OnShackles(BloodCultShacklesEvent ev)
     {
         if (ev.Handled)
+            return;
+
+        // Dumont
+        if (IsSpellDenied(ev, ev.Target))
             return;
 
         if (!TryComp<CuffableComponent>(ev.Target, out _))
@@ -412,7 +425,7 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
             radialList.Add(entry);
         }
 
-        ShowSpellSelector(cultist, true, new RadialSelectorState(radialList, true));
+        ShowSpellSelector(cultist, BloodCultSpellsUiKey.Prepare, new RadialSelectorState(radialList, true));
     }
 
     private void RemoveBloodSpells(Entity<BloodCultSpellsHolderComponent> cultist)
@@ -436,42 +449,50 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
             radialList.Add(entry);
         }
 
-        ShowSpellSelector(cultist, false, new RadialSelectorState(radialList, true));
+        ShowSpellSelector(cultist, BloodCultSpellsUiKey.Remove, new RadialSelectorState(radialList, true));
     }
 
     /// <summary>
-    ///     Opens the spell selector, closing it only when the same menu is already open.
+    ///     Opens one of the two spell menus, closing the other one and toggling this one.
     /// </summary>
     private void ShowSpellSelector(
         Entity<BloodCultSpellsHolderComponent> cultist,
-        bool addSpellsMode,
+        BloodCultSpellsUiKey key,
         RadialSelectorState state
     )
     {
-        var alreadyOpen = _ui.IsUiOpen(cultist.Owner, RadialSelectorUiKey.Key, cultist.Owner);
-        var sameMenu = cultist.Comp.AddSpellsMode == addSpellsMode;
+        // Dumont changes start
+        var other = key == BloodCultSpellsUiKey.Prepare
+            ? BloodCultSpellsUiKey.Remove
+            : BloodCultSpellsUiKey.Prepare;
 
-        cultist.Comp.AddSpellsMode = addSpellsMode;
+        _ui.CloseUi(cultist.Owner, other, cultist.Owner);
 
-        if (alreadyOpen && sameMenu)
+        if (_ui.IsUiOpen(cultist.Owner, key, cultist.Owner))
         {
-            CloseSpellSelector(cultist);
+            _ui.CloseUi(cultist.Owner, key, cultist.Owner);
             return;
         }
 
-        _ui.SetUiState(cultist.Owner, RadialSelectorUiKey.Key, state);
-        _ui.OpenUi(cultist.Owner, RadialSelectorUiKey.Key, cultist.Owner);
+        _ui.SetUiState(cultist.Owner, key, state);
+        _ui.OpenUi(cultist.Owner, key, cultist.Owner);
+        // Dumont end
     }
 
     private void EnsureCultUi(EntityUid uid)
     {
-        _ui.SetUi(uid, RadialSelectorUiKey.Key, new InterfaceData("AttachedRadialSelectorMenuBUI"));
-        _ui.SetUi(uid, ListViewSelectorUiKey.Key, new InterfaceData("ListViewSelectorBUI"));
+        // Dumont
+        _ui.SetUi(uid, BloodCultSpellsUiKey.Prepare, new InterfaceData("AttachedRadialSelectorMenuBUI"));
+        _ui.SetUi(uid, BloodCultSpellsUiKey.Remove, new InterfaceData("AttachedRadialSelectorMenuBUI"));
+
+        _ui.SetUi(uid, ListViewSelectorUiKey.Key, new InterfaceData("CultListSelectorBUI"));
     }
 
     private void CloseSpellSelector(Entity<BloodCultSpellsHolderComponent> cultist)
     {
-        _ui.CloseUi(cultist.Owner, RadialSelectorUiKey.Key, cultist.Owner);
+        // Dumont
+        _ui.CloseUi(cultist.Owner, BloodCultSpellsUiKey.Prepare, cultist.Owner);
+        _ui.CloseUi(cultist.Owner, BloodCultSpellsUiKey.Remove, cultist.Owner);
     }
 
     // Dumont changes start

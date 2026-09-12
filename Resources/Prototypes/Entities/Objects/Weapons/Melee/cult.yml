@@ -50,7 +50,7 @@
   - type: UserInterface
     interfaces:
       enum.RuneDrawerBuiKey.Key:
-        type: AttachedRadialSelectorMenuBUI
+        type: RuneDrawerBUI
   # </WhiteDream>
 
 - type: entity

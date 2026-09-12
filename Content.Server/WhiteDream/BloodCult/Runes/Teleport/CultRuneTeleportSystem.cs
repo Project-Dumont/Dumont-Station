@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server.WhiteDream.BloodCult.UI;
 using Content.Server.Popups;
 using Content.Shared.UserInterface;
 using Content.Shared.WhiteDream.BloodCult.UI;
@@ -18,6 +19,7 @@ public sealed partial class CultRuneTeleportSystem : EntitySystem
 
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private CultRuneBaseSystem _cultRune = default!;
+    [Dependency] private DeferredUiOpenSystem _deferredUi = default!;
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
@@ -31,6 +33,7 @@ public sealed partial class CultRuneTeleportSystem : EntitySystem
         SubscribeLocalEvent<CultRuneTeleportComponent, BoundUIClosedEvent>(OnNameSelectorClosed);
         SubscribeLocalEvent<CultRuneTeleportComponent, TryInvokeCultRuneEvent>(OnTeleportRuneInvoked);
         SubscribeLocalEvent<CultRuneTeleportComponent, ListViewItemSelectedMessage>(OnTeleportRuneSelected);
+        SubscribeLocalEvent<CultRuneTeleportComponent, BoundUIOpenedEvent>(OnTeleportUiOpened); // Dumont
     }
 
     private void OnAfterRunePlaced(Entity<CultRuneTeleportComponent> rune, ref AfterRunePlaced args)
@@ -66,8 +69,20 @@ public sealed partial class CultRuneTeleportSystem : EntitySystem
             return;
         }
 
-        _ui.SetUiState(runeUid, ListViewSelectorUiKey.Key, new ListViewSelectorState(runes));
-        _ui.TryToggleUi(runeUid, ListViewSelectorUiKey.Key, args.User);
+        // Dumont
+        EnsureComp<CultListSelectorComponent>(runeUid).Entries = runes;
+        Dirty(runeUid, Comp<CultListSelectorComponent>(runeUid));
+        _deferredUi.OpenNextTick(runeUid, ListViewSelectorUiKey.Key, args.User);
+    }
+
+    private void OnTeleportUiOpened(Entity<CultRuneTeleportComponent> rune, ref BoundUIOpenedEvent args)
+    {
+        // Dumont
+        if (args.UiKey is not ListViewSelectorUiKey)
+            return;
+
+        if (TryGetTeleportRunes(args.Actor, out var runes, rune.Owner))
+            _ui.SetUiState(rune.Owner, ListViewSelectorUiKey.Key, new ListViewSelectorState(runes));
     }
 
     private void OnTeleportRuneSelected(Entity<CultRuneTeleportComponent> origin, ref ListViewItemSelectedMessage args)
