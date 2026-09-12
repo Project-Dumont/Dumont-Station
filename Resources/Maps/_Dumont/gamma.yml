@@ -111218,38 +111218,22 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 57.5,-36.5
       parent: 2
-    - type: DnaServer
-      serverId: 100
     - type: DeviceLinkSource
       linkedPorts:
         25685:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 15611
-      connectedToServer: True
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 58.4624461
-      lastInjectorTime: 58.4624461
   - uid: 15612
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 57.5,-31.5
       parent: 2
-    - type: DnaServer
-      serverId: 101
     - type: DeviceLinkSource
       linkedPorts:
         25684:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 15612
-      connectedToServer: True
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 58.4624461
-      lastInjectorTime: 58.4624461
 - proto: DnaModifierDisk
   entities:
   - uid: 15613

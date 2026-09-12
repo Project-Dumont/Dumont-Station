@@ -93088,14 +93088,6 @@ entities:
         16567:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 10435
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 98
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 1674.6316887
-      lastInjectorTime: 1674.6316887
   - uid: 10436
     components:
     - type: Transform
@@ -93106,14 +93098,6 @@ entities:
         16566:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 10436
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 99
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 1674.6316887
-      lastInjectorTime: 1674.6316887
 - proto: DogBed
   entities:
   - uid: 10437

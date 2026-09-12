@@ -32474,14 +32474,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 23.5,-35.5
       parent: 2
-    - type: DnaClient
-      server: 4612
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 71
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 4730.9610446
-      lastInjectorTime: 4730.9610446
 - proto: DonkpocketBoxSpawner
   entities:
   - uid: 4613

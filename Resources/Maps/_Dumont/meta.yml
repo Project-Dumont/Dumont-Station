@@ -78312,14 +78312,6 @@ entities:
         19131:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 11983
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 85
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 4633.816758
-      lastInjectorTime: 4633.816758
   - uid: 11984
     components:
     - type: Transform
@@ -78331,14 +78323,6 @@ entities:
         19132:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 11984
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 86
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 4633.816758
-      lastInjectorTime: 4633.816758
   - uid: 11985
     components:
     - type: Transform
@@ -78350,14 +78334,6 @@ entities:
         19130:
         - - MedicalScannerSender
           - MedicalScannerReceiver
-    - type: DnaClient
-      server: 11985
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 87
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 4633.816758
-      lastInjectorTime: 4633.816758
 - proto: DogBed
   entities:
   - uid: 11986

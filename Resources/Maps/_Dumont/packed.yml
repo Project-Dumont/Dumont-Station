@@ -46523,14 +46523,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 77.5,9.5
       parent: 2
-    - type: DnaClient
-      server: 6982
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 86
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 539.2289035
-      lastInjectorTime: 539.2289035
     - type: DeviceLinkSource
       linkedPorts:
         10718:

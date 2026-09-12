@@ -19,6 +19,8 @@
       state: rd_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: DnaModifierComputerCircuitboard
   - type: PointLight
     radius: 1.5
     energy: 1.6
