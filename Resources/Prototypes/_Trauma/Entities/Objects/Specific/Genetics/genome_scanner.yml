@@ -9,7 +9,7 @@
   - type: Sprite
     sprite: Objects/Specific/Research/anomalyscanner.rsi
     layers:
-    - state: icon # TODO: custom sprite
+    - state: icon
   - type: GeneticsScanner
   - type: HandheldGeneticsScanner
   - type: GeneticsPrintout

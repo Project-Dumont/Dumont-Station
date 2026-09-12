@@ -16,11 +16,9 @@
     - map: ["computerLayerScreen"]
       state: dna
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: rd_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-  - type: Computer
-    board: GeneticsConsoleCircuitboard
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -33,7 +31,7 @@
     printSound: /Audio/Machines/printer.ogg
   - type: GeneticsConsoleEnzymes
   - type: GeneticsScanner
-  - type: DoAfter # to start the doafters
+  - type: DoAfter
   - type: GeneticsDiskSlot
   - type: ItemSlots
     slots:
@@ -55,6 +53,7 @@
     - MedicalScannerSender
   - type: ActivatableUI
     key: enum.GeneticsConsoleUiKey.Key
+  - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
       enum.GeneticsConsoleUiKey.Key:
@@ -63,6 +62,10 @@
         type: ResearchClientBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: AccessReader
+    access: [["Genetics"]]
   - type: ActiveRadio
     channels:
     - Science

@@ -21,7 +21,6 @@
     size: Tiny
   - type: GeneticsDisk
 
-# admin aboose
 - type: entity
   parent: GeneticsDisk
   id: GeneticsDiskUnstableDna
