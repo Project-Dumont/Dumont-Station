@@ -1,7 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# What happens to you if you mutate and stay at 100 instability for too long
-
 - type: entityEffect
   id: SomethingHorrible
   effects:
@@ -48,21 +46,16 @@
     - effect: !type:Gib
     - effect: !type:NestedEffect
         proto: Dust
-    # TODO: petrify permanently if someone ever makes that
     - effect: !type:NestedEffect
         proto: Skeletonize
     - effect: !type:NestedEffect
         proto: LookUp
-    # TODO: psykerize if someone ever makes that
-
-# Non-lethal
 
 - type: entityEffect
   id: Cripple
   effects:
   - !type:SpawnEntity
     entity: VehicleWheelchair
-  # TODO: change this to paraplegic brain trauma if anyone ever makes that
   - !type:AddComponents
     guidebookText: entity-effect-guidebook-paralyze-legs
     components:
@@ -84,10 +77,10 @@
     - effect: !type:NestedEffect
         proto: MakeFragile
     - effect: !type:Polymorph
-        prototype: Slime # CBF to make the reagent stuff, reuse it if xenobio ever makes it
+        prototype: Slime
     - effect: !type:ModifyStatusEffect
-        effectProto: DecloningStatusEffect # not using a disease because it doesnt exist :(
-        time: 5m
+        effectProto: DecloningStatusEffect
+        time: 300
 
 - type: entityEffect
   id: MakeFragile
@@ -101,20 +94,20 @@
   id: UltimateLifeform
   effects:
   - !type:PopupMessage
-    method: PopupCoordinates # need it to persist after the original mob is gone
+    method: PopupCoordinates
     messages:
     - entity-effect-popup-ultimate-lifeform
   - !type:Polymorph
     prototype: Crab
 
-# Lethal
+# Letais
 
 - type: entityEffect
   id: Dust
   effects:
   - !type:PopupMessage
     type: Pvs
-    method: PopupCoordinates # mob is deleted
+    method: PopupCoordinates
     messages:
     - entity-effect-popup-dusted
   - !type:SpawnEntity
@@ -126,12 +119,11 @@
   effects:
   - !type:PopupMessage
     type: Pvs
-    method: PopupCoordinates # mob is deleted
+    method: PopupCoordinates
     messages:
     - entity-effect-popup-skeletonized
   - !type:Polymorph
     prototype: Skeleton
-  # TODO: 90% chance of the skeleton dying in 3 seconds
 
 - type: entityEffect
   id: LookUp # I understand now
@@ -142,4 +134,4 @@
     - entity-effect-popup-look-up
   - !type:ModifyStatusEffect
     effectProto: LookingUpStatusEffect
-    time: 3s
+    time: 3
