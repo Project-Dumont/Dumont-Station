@@ -458,7 +458,7 @@
     - TapeRecorderStatic
     - MiscSignallersStatic
     # Funky # GabyStation - corrections
-    - BoomboxStatic
+    # - BoomboxStatic
     # Gabystation
     dynamicPacks:
     - MP3Players
