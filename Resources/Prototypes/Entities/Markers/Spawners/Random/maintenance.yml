@@ -470,7 +470,7 @@
       - id: DrinkMopwataBottleRandom
       - id: LidSalami
         weight: 0.05
-      - id: BoomboxSlav
+      # - id: BoomboxSlav
 
 - type: entity
   name: Maint Loot Spawner
