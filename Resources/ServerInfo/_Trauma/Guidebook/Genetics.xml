@@ -62,6 +62,22 @@ Algumas mutações reduzem a instabilidade, mas trazem efeitos indesejados. Remo
 
 Ao atingir 100 de instabilidade, o paciente entra em risco de derretimento genético. Reduza a instabilidade rapidamente. As consequências podem incluir alterações de identidade, perda de mutações, transformações, danos graves e morte.
 
+# Distúrbios genéticos e Mutadon
+
+Distúrbios genéticos são alterações tratáveis com Mutadon, como cegueira, surdez, mudez, gagueira, tosse e fraquezas ao frio ou ao calor.
+
+O [bold]Mutadon[/bold] remove um distúrbio por ciclo de metabolismo. Ele não remove todas as mutações. Para escolher uma mutação específica, grave-a em um disco e imprima um limpador.
+
+A radiação pode causar distúrbios. O [bold]mutagênico instável[/bold], em quantidade de 50u ou mais no sangue, também tenta aplicar um distúrbio a cada ciclo de metabolismo, além de causar dano de radiação.
+
+Quem possui o traço [bold]Genoma Defeituoso[/bold] começa com um ou dois distúrbios ativos que fazem parte do próprio genoma, sem custo de instabilidade.
+
+# Espécies e transformações
+
+Nem toda transformação funciona em todas as espécies. A mutação [bold]Macaqueado[/bold] transforma humanos e outras espécies compatíveis em macacos; reptilianos se tornam kobolds. Espécies incompatíveis recebem um aviso e não se transformam.
+
+Use o limpador correspondente para remover a mutação e reverter a transformação.
+
 # Embaralhar DNA
 
 A opção [bold]Embaralhar DNA[/bold] renova as mutações dormentes do paciente, permitindo procurar outras sequências.
