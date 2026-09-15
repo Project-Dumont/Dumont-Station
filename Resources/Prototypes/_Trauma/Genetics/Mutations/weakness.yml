@@ -20,6 +20,7 @@
   name: Cold Weakness
   description: A strange mutation that cripples the host's ability to raise its body temperature. Cold is far more dangerous.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: ThermalRegulatorMutation
     shivering: 0.05
     metabolism: 0.3 # lower metabolism idk
@@ -36,6 +37,7 @@
   name: Heat Weakness
   description: A strange mutation that cripples the host's ability to lower its body temperature. Heat is far more dangerous.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: ThermalRegulatorMutation
     sweating: 0.05
     metabolism: 1.5 # more heat too

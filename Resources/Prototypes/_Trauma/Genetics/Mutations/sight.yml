@@ -6,6 +6,7 @@
   name: Near Sightedness
   description: The holder of this mutation has poor eyesight.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -30
     # no free -70 chuddha
@@ -24,6 +25,7 @@
   name: Blindness
   description: Renders the subject completely blind.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -40
   - type: RemovesMutation
@@ -69,6 +71,7 @@
   name: Illiterate
   description: Causes a severe case of Aphasia that prevents reading or writing.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -40
   - type: ComponentMutation

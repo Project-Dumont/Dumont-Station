@@ -75,6 +75,9 @@ public sealed partial class MutationSystem : CommonMutationSystem
     /// </summary>
     public List<EntProtoId<MutationComponent>> NegativeMutations = new();
 
+    public List<EntProtoId<MutationComponent>> Disorders = new();
+    private readonly HashSet<EntProtoId<MutationComponent>> _disorderSet = new();
+
     private static readonly ProtoId<DamageTypePrototype> Cellular = "Cellular";
 
     private List<EntProtoId<MutationComponent>> _removing = new();
@@ -205,7 +208,10 @@ public sealed partial class MutationSystem : CommonMutationSystem
         AllMutations.Clear();
         UnlockedMutations.Clear();
         NegativeMutations.Clear();
+        Disorders.Clear();
+        _disorderSet.Clear();
         var name = Factory.CompName<MutationComponent>();
+        var disorder = Factory.CompName<GeneticDisorderComponent>();
         foreach (var proto in ProtoMan.EnumeratePrototypes<EntityPrototype>())
         {
             if (!proto.TryComp<MutationComponent>(name, out var comp))
@@ -219,6 +225,11 @@ public sealed partial class MutationSystem : CommonMutationSystem
             UnlockedMutations.Add(proto.ID);
             if (comp.Instability < 0)
                 NegativeMutations.Add(proto.ID);
+            if (proto.Components.ContainsKey(disorder))
+            {
+                Disorders.Add(proto.ID);
+                _disorderSet.Add(proto.ID);
+            }
         }
     }
 
@@ -548,6 +559,15 @@ public sealed partial class MutationSystem : CommonMutationSystem
         DirtyField(ent, ent.Comp, nameof(MutatableComponent.Dormant));
     }
 
+    public void AddDormant(Entity<MutatableComponent> ent, [ForbidLiteral] EntProtoId<MutationComponent> id)
+    {
+        if (ent.Comp.Dormant.Contains(id))
+            return;
+
+        ent.Comp.Dormant.Add(id);
+        DirtyField(ent, ent.Comp, nameof(MutatableComponent.Dormant));
+    }
+
     /// <summary>
     /// Removes all dormant mutations from a mob which are not activated.
     /// </summary>
@@ -745,6 +765,37 @@ public sealed partial class MutationSystem : CommonMutationSystem
             _status.TrySetStatusEffectDuration(ent.Owner, ent.Comp.MeltingEffect, ent.Comp.MeltDuration);
         else
             _status.TryRemoveStatusEffect(ent.Owner, ent.Comp.MeltingEffect);
+    }
+
+    public bool IsDisorder([ForbidLiteral] EntProtoId<MutationComponent> id)
+        => _disorderSet.Contains(id);
+
+    public bool AddRandomDisorder(Entity<MutatableComponent> ent, EntityUid? user = null)
+    {
+        if (Disorders.Count == 0)
+            return false;
+
+        var sorteio = new List<EntProtoId<MutationComponent>>(Disorders);
+        _random.Shuffle(sorteio);
+        foreach (var id in sorteio)
+        {
+            if (AddMutation(ent.AsNullable(), id, user))
+                return true;
+        }
+
+        return false;
+    }
+
+    public bool RemoveRandomDisorder(Entity<MutatableComponent> ent, EntityUid? user = null)
+    {
+        var tem = new List<EntProtoId<MutationComponent>>();
+        foreach (var id in ent.Comp.Mutations.Keys)
+        {
+            if (IsDisorder(id))
+                tem.Add(id);
+        }
+
+        return tem.Count > 0 && RemoveMutation(ent.AsNullable(), _random.Pick(tem), user);
     }
 
     /// <summary>

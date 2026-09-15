@@ -11,3 +11,11 @@ entity-effect-guidebook-melts-brain = {$chance ->
     [1] derrete
     *[other] derretem
 } o cérebro do alvo
+entity-effect-guidebook-cause-disorder = {$chance ->
+    [1] Provoca
+    *[other] Provocam
+} um distúrbio genético no alvo
+entity-effect-guidebook-cure-disorder = {$chance ->
+    [1] Cura
+    *[other] Curam
+} um distúrbio genético do alvo

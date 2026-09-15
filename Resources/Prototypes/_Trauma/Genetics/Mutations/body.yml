@@ -8,6 +8,7 @@
   name: Epilepsy
   description: A genetic defect that sporadically causes seizures.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -30
   - type: RandomTrigger
@@ -29,6 +30,7 @@
   name: Cough
   description: A chronic cough.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -30
   - type: RandomTrigger
@@ -48,6 +50,7 @@
   name: Paranoia
   description: Subject is easily terrified, and may suffer from hallucinations.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -30
   - type: RandomTrigger
@@ -134,6 +137,7 @@
   name: Clumsiness
   description: A genome that inhibits certain brain functions, causing the holder to appear clumsy. Honk!
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -40
   - type: StatusEffectsMutation
@@ -146,6 +150,7 @@
   name: Tourette's Syndrome
   description: A chronic twitch that forces the user to scream bad words.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: RandomTrigger
     prob: 0.05
   - type: EntityEffectOnTrigger
@@ -170,6 +175,7 @@
   name: Deafness
   description: The holder of this genome is completely deaf.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -40
   - type: ComponentMutation
@@ -357,6 +363,7 @@
   name: Acidic Flesh
   description: Subject has acidic chemicals building up underneath the skin. This is often lethal.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -40
     difficulty: 18
@@ -398,6 +405,7 @@
   name: Two Left Feet
   description: A mutation that replaces the right foot with another left foot. Symptoms include kissing the floor when taking a step.
   components:
+  - type: GeneticDisorder # Dumont: ver GeneticDisorderComponent
   - type: Mutation
     instability: -30
     difficulty: 16

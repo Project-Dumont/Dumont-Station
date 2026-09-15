@@ -373,7 +373,8 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ChemMutateDna
+      # Dumont
+      - !type:GeneticDisorder
         conditions:
         - !type:ReagentThreshold
           min: 50
