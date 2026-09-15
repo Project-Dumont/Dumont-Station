@@ -70,6 +70,27 @@ public sealed class MigracaoGeneticaAntigaTest
 ";
 
     [Test]
+    public async Task NenhumPrototypeCarregaAGeneticaAntiga()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var proto = pair.Server.ResolveDependency<IPrototypeManager>();
+
+        await pair.Server.WaitAssertion(() =>
+        {
+            var comOAntigo = proto.EnumeratePrototypes<EntityPrototype>()
+                .Where(p => p.Components.ContainsKey(Antigo))
+                .Select(p => p.ID)
+                .OrderBy(id => id)
+                .ToList();
+
+            Assert.That(comOAntigo, Is.Empty,
+                $"prototypes ainda carregam o componente da genética antiga: {string.Join(", ", comOAntigo.Take(10))}");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
     public async Task AListaDeDisturbiosEAQueFoiMarcada()
     {
         await using var pair = await PoolManager.GetServerClient();

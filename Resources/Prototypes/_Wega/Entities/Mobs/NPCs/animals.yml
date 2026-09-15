@@ -11,27 +11,6 @@
     noRot: true
     drawdepth: Mobs
     scale: 1, 0.75
-  - type: DnaModifier
-    upper: MobDwarf
-    lowest: MobMonkeyDwarf
-
-- type: entity
-  id: MobMonkeyOni
-  parent: MobMonkey
-  suffix: AI, Oni
-  components:
-  - type: DnaModifier
-    upper: MobOni
-    lowest: MobMonkeyOni
-
-- type: entity
-  id: MobMonkeyDaengati
-  parent: MobMonkey
-  suffix: AI, Daengati
-  components: 
-  - type: DnaModifier
-    upper: MobDaengati
-    lowest: MobMonkeyDaengati
 
 - type: entity
   name: gray slime
@@ -50,9 +29,6 @@
         Base: grey_adult_slime
       Dead:
         Base: grey_adult_slime_dead
-  - type: DnaModifier
-    upper: MobSlimePerson
-    lowest: MobAdultSlimesGrey
 
 - type: entity
   id: MobMouseRodentia
@@ -77,9 +53,6 @@
     noRot: true
     drawdepth: Mobs
     scale: 2, 2
-  - type: DnaModifier
-    upper: MobRodentia
-    lowest: MobMouseRodentia
 
 - type: entity
   id: MobMothroachMoth
@@ -104,9 +77,6 @@
     noRot: true
     drawdepth: Mobs
     scale: 2, 2
-  - type: DnaModifier
-    upper: MobMoth
-    lowest: MobMothroachMoth
 
 - type: entity
   id: MobCockroachChitinid
@@ -131,9 +101,6 @@
     noRot: true
     drawdepth: Mobs
     scale: 2, 2
-  - type: DnaModifier
-    upper: MobChitinid
-    lowest: MobCockroachChitinid
 
 - type: entity
   id: MobSquackroachHarpy
@@ -158,9 +125,6 @@
     noRot: true
     drawdepth: Mobs
     scale: 2, 2
-  - type: DnaModifier
-    upper: MobHarpy
-    lowest: MobSquackroachHarpy
 
 - type: entity
   name: genetic ancestor
@@ -392,9 +356,6 @@
     name: ghost-role-information-skrellkey-name
     description: ghost-role-information-skrellkey-description
     rules: ghost-role-information-nonantagonist-rules
-  - type: DnaModifier
-    upper: MobFeroxi
-    lowest: MobSkrellkey
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -479,18 +440,12 @@
     name: ghost-role-information-stokkey-name
     description: ghost-role-information-stokkey-description
     rules: ghost-role-information-nonantagonist-rules
-  - type: DnaModifier
-    upper: MobResomi
-    lowest: MobStokkey
 
 - type: entity
   id: MobStokkeyVox
   parent: MobStokkey
   suffix: AI, Vox
   components:
-  - type: DnaModifier
-    upper: MobVox
-    lowest: MobStokkeyVox
   - type: Body
     prototype: Stokkey
   - type: Bloodstream
@@ -548,9 +503,6 @@
         Burn: 3
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
-  - type: DnaModifier
-    upper: MobVulpkanin
-    lowest: MobWolfling
 
 - type: entity
   name: farwa
@@ -587,6 +539,3 @@
     rules: ghost-role-information-nonantagonist-rules
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-tajkey
-  - type: DnaModifier
-    upper: MobTajaran
-    lowest: MobTajkey
