@@ -9,8 +9,8 @@
     mutations:
     - MutationBlindness
     - MutationNearSightedness
-    - MutationMute            # mudez
-    - MutationClumsiness      # desajeitado
+    - MutationMute
+    - MutationClumsiness
     - MutationNervousness
     - MutationCough
     - MutationEpilepsy
