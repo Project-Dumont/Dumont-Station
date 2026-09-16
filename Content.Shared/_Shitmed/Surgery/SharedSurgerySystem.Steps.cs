@@ -1074,6 +1074,9 @@ public abstract partial class SharedSurgerySystem
             BodyPartType.Leg => SlotFlags.OUTERCLOTHING | SlotFlags.LEGS,
             BodyPartType.Foot => SlotFlags.FEET,
             BodyPartType.Tail => SlotFlags.NONE,
+            // Dumont changes start
+            BodyPartType.Wings => SlotFlags.NONE,
+            // Dumont end
             BodyPartType.Other => SlotFlags.NONE,
             _ => SlotFlags.NONE,
         };

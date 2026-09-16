@@ -11,17 +11,13 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Shitmed.Antags.Abductor;
 
 [Serializable, NetSerializable]
-public sealed partial class AbductorReturnDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class AbductorReturnDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class AbductorGizmoMarkDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class AbductorGizmoMarkDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class AbductorSendYourselfDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class AbductorSendYourselfDoAfterEvent : DoAfterEvent
 {
     [DataField("coordinates", required: true)]
     public NetCoordinates TargetCoordinates;
@@ -31,16 +27,19 @@ public sealed partial class AbductorSendYourselfDoAfterEvent : SimpleDoAfterEven
     }
 
     public AbductorSendYourselfDoAfterEvent(NetCoordinates coords) => TargetCoordinates = coords;
-    public override DoAfterEvent Clone() => this;
+
+    public override DoAfterEvent Clone() => new AbductorSendYourselfDoAfterEvent(TargetCoordinates);
 }
+
 [Serializable, NetSerializable]
-public sealed partial class AbductorAttractDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class AbductorAttractDoAfterEvent : DoAfterEvent
 {
     [DataField("coordinates", required: true)]
     public NetCoordinates TargetCoordinates;
 
-    [DataField("victim", required: true)]
+    [DataField(required: true)]
     public NetEntity Victim;
+
     private AbductorAttractDoAfterEvent()
     {
     }
@@ -51,5 +50,27 @@ public sealed partial class AbductorAttractDoAfterEvent : SimpleDoAfterEvent
         Victim = target;
     }
 
-    public override DoAfterEvent Clone() => this;
+    public override DoAfterEvent Clone() => new AbductorAttractDoAfterEvent(TargetCoordinates, Victim);
+}
+
+[Serializable, NetSerializable]
+public sealed partial class AbductorSendPadDoAfterEvent : DoAfterEvent
+{
+    [DataField("coordinates", required: true)]
+    public NetCoordinates TargetCoordinates;
+
+    [DataField(required: true)]
+    public NetEntity Agent;
+
+    private AbductorSendPadDoAfterEvent()
+    {
+    }
+
+    public AbductorSendPadDoAfterEvent(NetCoordinates coords, NetEntity agent)
+    {
+        TargetCoordinates = coords;
+        Agent = agent;
+    }
+
+    public override DoAfterEvent Clone() => new AbductorSendPadDoAfterEvent(TargetCoordinates, Agent);
 }

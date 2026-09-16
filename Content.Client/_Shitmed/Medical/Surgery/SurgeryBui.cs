@@ -148,7 +148,10 @@ public sealed class SurgeryBui : BoundUserInterface
                     BodyPartType.Hand => 5,
                     BodyPartType.Leg => 6,
                     BodyPartType.Foot => 7,
-                    // BodyPartType.Tail => 8, No tails yet!
+                    // Dumont changes start
+                    BodyPartType.Tail => 8,
+                    BodyPartType.Wings => 8,
+                    // Dumont end
                     BodyPartType.Other => 9,
                     _ => 10
                 };

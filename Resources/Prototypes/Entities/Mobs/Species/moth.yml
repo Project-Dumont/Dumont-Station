@@ -177,10 +177,12 @@
       Male: MaleMoth
       Female: FemaleMoth
       Unsexed: UnisexMoth
-  - type: MovementSpeedModifier
-    baseWeightlessAcceleration: 3 # Goobstation value
-    baseWeightlessFriction: 1
-    baseWeightlessModifier: 1
+  # Dumont changes start
+  #- type: MovementSpeedModifier
+  #  baseWeightlessAcceleration: 3 # Goobstation value
+  #  baseWeightlessFriction: 1
+  #  baseWeightlessModifier: 1
+  # Dumont end
   - type: Flammable
     damage:
       types:

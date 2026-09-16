@@ -60,6 +60,11 @@ public sealed partial class PartStatusControl : UIWidget
     {
         foreach (var (bodyPart, integrity) in state)
         {
+            // Dumont changes start
+            if (!_partStatusControls.ContainsKey(bodyPart))
+                continue;
+            // Dumont end
+
             string enumName = Enum.GetName(typeof(TargetBodyPart), bodyPart) ?? "Unknown";
             int enumValue = (int) integrity;
             var texture = new SpriteSpecifier.Rsi(new ResPath($"/Textures/_Shitmed/Interface/Targeting/Status/{enumName.ToLowerInvariant()}.rsi"), $"{enumName.ToLowerInvariant()}_{enumValue}");
