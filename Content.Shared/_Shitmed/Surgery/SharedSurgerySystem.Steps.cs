@@ -174,6 +174,9 @@ public abstract partial class SharedSurgerySystem
 
         if (!_ignoreQuery.HasComp(args.User)
             && !_ignoreQuery.HasComp(args.Tool)
+            // Dumont changes start
+            && args.TargetSlots != SlotFlags.NONE
+            // Dumont end
             && _inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
         {
             while (containerSlotEnumerator.MoveNext(out var containerSlot))
