@@ -42,7 +42,7 @@ public sealed partial class AnnounceTtsSystem : EntitySystem
             var filename = dequeued.Filename;
             ai = dequeued.Source;
 
-			filepath = (filename.StartsWith("/") ? filename : ("/Audio/Announcements/VoxFem/"+filename+".ogg"));
+			filepath = (filename.StartsWith("/") ? filename : ("/Audio/_Dumont/Announcements/voxclaudia/"+filename+".ogg"));
 			try
 			{
 				_audio.PlayGlobal(filepath, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
@@ -94,6 +94,29 @@ public sealed partial class AnnounceTtsSystem : EntitySystem
 	public static List<string> PrepareTtsMessage(string msg)
 	{
 		string lowered = msg.ToLower();
+		lowered = lowered.Replace("á", "a");
+		lowered = lowered.Replace("à", "a");
+		lowered = lowered.Replace("â", "a");
+		lowered = lowered.Replace("ã", "a");
+		lowered = lowered.Replace("ä", "a");
+		lowered = lowered.Replace("é", "e");
+		lowered = lowered.Replace("è", "e");
+		lowered = lowered.Replace("ê", "e");
+		lowered = lowered.Replace("ë", "e");
+		lowered = lowered.Replace("í", "i");
+		lowered = lowered.Replace("ì", "i");
+		lowered = lowered.Replace("î", "i");
+		lowered = lowered.Replace("ï", "i");
+		lowered = lowered.Replace("ó", "o");
+		lowered = lowered.Replace("ò", "o");
+		lowered = lowered.Replace("ô", "o");
+		lowered = lowered.Replace("õ", "o");
+		lowered = lowered.Replace("ö", "o");
+		lowered = lowered.Replace("ú", "u");
+		lowered = lowered.Replace("ù", "u");
+		lowered = lowered.Replace("û", "u");
+		lowered = lowered.Replace("ü", "u");
+		lowered = lowered.Replace("ç", "c");
 		lowered = lowered.Replace("&", " and ");
 		lowered = lowered.Replace("+", " plus ");
 		lowered = lowered.Replace("/", " or ");
