@@ -52,6 +52,17 @@ public sealed partial class FultonComponent : Component
         }
     };
 
+    // Dumont changes start
+    /// <summary>
+    /// Blacklist for entities it cannot fulton.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityWhitelist? Blacklist = new()
+    {
+        Components = ["FultonBlacklist"]
+    };
+    // Dumont end
+
     /// <summary>
     /// Sound that gets played when fulton is applied.
     /// </summary>
