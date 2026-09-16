@@ -4,7 +4,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Trauma.Nuclear;
 
-public abstract partial class SharedNuclearMachineSystem : EntitySystem
+public abstract partial class NuclearMachineSystem : EntitySystem
 {
     [Dependency] protected IGameTiming Timing = default!;
     [Dependency] protected EntityQuery<NuclearMachineComponent> Query = default!;
