@@ -203,13 +203,11 @@ public sealed class MesonVisionOverlay : Overlay
         }
     }
 
-    /// <summary>
-    /// só a planta da estação atravessa a parede: parede, porta e janela.
-    /// equipamento de engenharia fica de fora de propósito, é trabalho do t-ray
-    /// e assim cada óculos tem função própria.. porta e janela precisam de
-    /// identificação separada porque vidro não bloqueia visão, então não tem
-    /// oclusor e viraria buraco no cômodo revelado
-    /// </summary>
+    // só a planta da estação atravessa a parede: parede, porta e janela.
+    // equipamento de engenharia fica de fora de propósito, é trabalho do t-ray
+    // e assim cada óculos tem função própria.. porta e janela precisam de
+    // identificação separada porque vidro não bloqueia visão, então não tem
+    // oclusor e viraria buraco no cômodo revelado
     private bool IsStructure(EntityUid uid)
     {
         return _entity.HasComponent<OccluderComponent>(uid)
