@@ -64,19 +64,15 @@ public sealed class TrayScannerToggleSystem : EntitySystem
         Dirty(ent.Owner, scanner);
     }
 
-    /// <summary>
-    /// o clique do upstream ligava o Enabled direto, por fora do ItemToggle.
-    /// bloqueado pra sobrar um caminho só, senão os dois brigam pelo estado
-    /// </summary>
+    // o clique do upstream ligava o Enabled direto, por fora do ItemToggle.
+    // bloqueado pra sobrar um caminho só, senão os dois brigam pelo estado
     private void OnActivate(Entity<WornTrayScannerComponent> ent, ref ActivateInWorldEvent args)
     {
         args.Handled = true;
     }
 
-    /// <summary>
-    /// só liga no rosto. o scanner do upstream funciona na mão também, então
-    /// sem esse corte o óculos segurado revelaria o subsolo
-    /// </summary>
+    // só liga no rosto. o scanner do upstream funciona na mão também, então
+    // sem esse corte o óculos segurado revelaria o subsolo
     private void OnActivateAttempt(Entity<WornTrayScannerComponent> ent, ref ItemToggleActivateAttemptEvent args)
     {
         if (IsWorn(ent))

@@ -5,11 +5,9 @@ using Content.Shared.Inventory.Events;
 
 namespace Content.Shared._Dumont.Overlays;
 
-/// <summary>
-/// o refresh de hud só chega na roupa vestida se o relay do tipo estiver
-/// registrado à mão. o upstream registra os dele numa lista fechada, e o
-/// RelayEvent é público, então dá pra registrar o nosso aqui sem editar lá
-/// </summary>
+// o refresh de hud só chega na roupa vestida se o relay do tipo estiver
+// registrado à mão. o upstream registra os dele numa lista fechada, e o
+// RelayEvent é público, então dá pra registrar o nosso aqui sem editar lá
 public sealed class DumontHudRelaySystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
