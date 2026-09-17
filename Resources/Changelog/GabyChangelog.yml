@@ -4049,3 +4049,35 @@ Entries:
       message: Nova planta de café para os botanicos
   id: 478
   time: '2026-09-12T01:08:48.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Remove
+      message: boombox desativado
+  id: 479
+  time: '2026-09-13T01:27:47.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Animação fluida para portas
+  id: 480
+  time: '2026-09-15T00:59:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Alteradas algumas entradas no livro-guia das espécies.
+  id: 481
+  time: '2026-09-15T01:02:33.0000000+00:00'
+- author: RaposoG
+  changes:
+    - type: Add
+      message: >-
+        3 óculos novos de engenharia, o t-ray mostra cano e fio através da
+        parede, o meson mostra a planta da estação, e o de varredura faz os dois
+  id: 482
+  time: '2026-09-17T02:37:44.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Corrige UI das câmeras fotográficas e de vigilância.
+  id: 483
+  time: '2026-09-17T18:54:16.0000000+00:00'
