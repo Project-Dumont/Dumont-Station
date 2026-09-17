@@ -299,9 +299,9 @@ public abstract partial class SharedSurgerySystem
             || removedComp.Symmetry != null && partComp.Symmetry != removedComp.Symmetry)
             return;
 
-        var slotName = removedComp.Symmetry != null
-                ? $"{removedComp.Symmetry?.ToString().ToLower()} {removedComp.Part.ToString().ToLower()}"
-                : removedComp.Part.ToString().ToLower();
+        // Dumont changes start
+        var slotName = _body.GetSlotFromBodyPart(partComp);
+        // Dumont end
             _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, partComp.Symmetry, out var _);
             _body.AttachPart(args.Part, slotName, args.Tool);
             EnsureComp<BodyPartReattachedComponent>(args.Tool);
