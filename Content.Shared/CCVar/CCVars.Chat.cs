@@ -60,6 +60,18 @@ public sealed partial class CCVars
             CVar.CLIENTONLY | CVar.ARCHIVE,
             "Toggles displaying a background under the speaking character's name.");
 
+    public static readonly CVarDef<bool> ChatEnableRunechatBubbles =
+        CVarDef.Create("chat.enable_runechat_bubbles",
+            true,
+            CVar.CLIENTONLY | CVar.ARCHIVE,
+            "Toggles displaying SS13-style runechat speech bubbles.");
+
+    public static readonly CVarDef<float> ChatRunechatBubbleScale =
+        CVarDef.Create("chat.runechat_bubble_scale",
+            1f,
+            CVar.CLIENTONLY | CVar.ARCHIVE,
+            "Scales SS13-style runechat speech bubbles relative to the default size.");
+
     /// <summary>
     ///     A message broadcast to each player that joins the lobby.
     ///     May be changed by admins ingame through use of the "set-motd" command.

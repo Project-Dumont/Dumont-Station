@@ -46,6 +46,20 @@ namespace Content.Server.Chat.Systems;
 // emotes using emote prototype
 public partial class ChatSystem
 {
+    private const string ScreamEmoteId = "Scream";
+
+    private static readonly string[] RunechatScreamMessages =
+    [
+        "runechat-scream-1",
+        "runechat-scream-2",
+        "runechat-scream-3",
+        "runechat-scream-4",
+        "runechat-scream-5",
+        "runechat-scream-6",
+        "runechat-scream-7",
+        "runechat-scream-8",
+    ];
+
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
@@ -138,7 +152,10 @@ public partial class ChatSystem
             // not all emotes are loc'd, but for the ones that are we pass in entity
             var action = Loc.GetString(_random.Pick(emote.ChatMessages), ("entity", source));
             var language = _language.GetLanguage(source); // Einstein Engines - Language
-            SendEntityEmote(source, action, range, nameOverride, language, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker, forced: forceEmote); // Einstein Engines - Language
+            var speechBubbleMessage = emote.ID == ScreamEmoteId
+                ? Loc.GetString(_random.Pick(RunechatScreamMessages))
+                : null;
+            SendEntityEmote(source, action, range, nameOverride, language, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker, forced: forceEmote, speechBubbleMessage: speechBubbleMessage); // Einstein Engines - Language
         }
 
         return didEmote;

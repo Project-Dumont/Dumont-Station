@@ -1108,7 +1108,7 @@ entities:
           decals:
             3392: 10,-21
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteBox
           decals:
             3388: 10,-23
@@ -1185,7 +1185,7 @@ entities:
           decals:
             4056: 5,-62
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerNw
           decals:
             4267: 46,5
@@ -1211,7 +1211,7 @@ entities:
           decals:
             4054: 1,-59
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerSe
           decals:
             4268: 45,6
@@ -1584,7 +1584,7 @@ entities:
             135: 29,27
             136: 28,27
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: CheckerNWSE
           decals:
             9: -21,-83
@@ -1601,7 +1601,7 @@ entities:
             4434: 57,-61
         - node:
             cleanable: True
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: Diablo
           decals:
             367: -43,-72
@@ -2047,7 +2047,7 @@ entities:
             563: 46,44
             564: 45,44
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: FullTileOverlayGreyscale
           decals:
             542: 48,49
@@ -2652,7 +2652,7 @@ entities:
             2043: 4,1
             2044: -3,1
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelCornerNe
           decals:
             2598: 18,23
@@ -2728,7 +2728,7 @@ entities:
             2045: -1,1
             2046: -11,1
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelCornerNw
           decals:
             2599: 14,23
@@ -2785,7 +2785,7 @@ entities:
             2038: -3,0
             2039: 14,0
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelCornerSe
           decals:
             2590: 18,19
@@ -2858,7 +2858,7 @@ entities:
             2047: -11,0
             2048: -1,0
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelCornerSw
           decals:
             2591: 14,19
@@ -3294,7 +3294,7 @@ entities:
             3099: -39,-11
             3100: -39,-12
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelLineE
           decals:
             2600: 18,22
@@ -3571,7 +3571,7 @@ entities:
             3107: -38,-13
             3108: -37,-13
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelLineN
           decals:
             2592: 17,23
@@ -3836,7 +3836,7 @@ entities:
             3113: -38,-6
             3114: -37,-6
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelLineS
           decals:
             2595: 17,19
@@ -4158,7 +4158,7 @@ entities:
             3105: -36,-11
             3106: -36,-12
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileSteelLineW
           decals:
             2603: 14,22
@@ -4329,7 +4329,7 @@ entities:
             2106: -3,-1
             2107: -3,3
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteCornerNe
           decals:
             2537: 26,13
@@ -4522,7 +4522,7 @@ entities:
             2080: 11,-1
             2081: 5,-1
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteCornerNw
           decals:
             2536: 24,13
@@ -4705,7 +4705,7 @@ entities:
             2072: 3,2
             2075: 9,2
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteCornerSe
           decals:
             2538: 26,9
@@ -4898,7 +4898,7 @@ entities:
             2074: 11,2
             2108: -11,2
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteCornerSw
           decals:
             2539: 24,9
@@ -5004,7 +5004,7 @@ entities:
             2113: 9,-2
             2114: 3,-2
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteInnerNe
           decals:
             4261: 46,7
@@ -5137,7 +5137,7 @@ entities:
             2111: 3,3
             2112: 9,3
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteInnerSe
           decals:
             4306: 38,7
@@ -5494,7 +5494,7 @@ entities:
             2298: -46,-11
             2299: -46,-12
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteLineE
           decals:
             2530: 26,12
@@ -5883,7 +5883,7 @@ entities:
             2104: -9,-1
             2105: -10,-1
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteLineN
           decals:
             2525: 26,8
@@ -6240,7 +6240,7 @@ entities:
             2097: -9,2
             2098: -10,2
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteLineS
           decals:
             2528: 25,9
@@ -6593,7 +6593,7 @@ entities:
             2306: -48,-16
             2307: -48,-17
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: MiniTileWhiteLineW
           decals:
             2533: 24,12
@@ -7022,7 +7022,7 @@ entities:
             790: 61,-48
         - node:
             cleanable: True
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: Tunnel
           decals:
             366: -37,-81
@@ -7158,7 +7158,7 @@ entities:
             4353: 47,-60
             4355: 47,-62
         - node:
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: WarnLineGreyscaleE
           decals:
             1: -19,-78
@@ -7571,7 +7571,7 @@ entities:
             492: -8.806476,52.64177
         - node:
             cleanable: True
-            color: '#2b3447DE'
+            color: '#2B3EA1C8'
             id: revolution
           decals:
             365: -44,-83

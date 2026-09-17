@@ -181,7 +181,6 @@ public sealed class PrototypeSaveTest
                 }
             });
         });
-        await pair.CleanReturnAsync();
     }
 
     public sealed class TestEntityUidContext : ISerializationContext,

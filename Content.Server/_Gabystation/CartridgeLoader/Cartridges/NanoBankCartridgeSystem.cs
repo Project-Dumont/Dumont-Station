@@ -13,6 +13,7 @@ using Content.Server.Power.Components;
 using Content.Server.Radio;
 using Content.Server.Radio.Components;
 using Content.Server.Station.Systems;
+using Content.Server.PDA;
 using Content.Shared.Access.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
@@ -41,6 +42,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
+    [Dependency] private readonly PdaSystem _pda = default!;
 
     public override void Initialize()
     {
@@ -214,9 +216,9 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         if (arg is not null)
             args.Add(arg.Value);
 
-        string body = Loc.GetString(bodyLoc, args.ToArray());
-
-        _cartridge.SendNotification(pda.Owner, Loc.GetString(tittleLoc), body);
+        var body = Loc.GetString(bodyLoc, args.ToArray());
+        // fix meio merda mas vida que segue
+        _pda.NotifyPda(pda, body, false);
     }
 
     private void HandleToggleMute(Entity<NanoBankCardComponent> card)

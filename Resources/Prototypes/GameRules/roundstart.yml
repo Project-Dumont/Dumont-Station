@@ -272,7 +272,7 @@
   - type: GameRule
     minPlayers: 40 # Who decided 20 was a safe amount for Nukies?
   - type: LoadMapRule
-    mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml # goob edit
+    mapPath: /Maps/_Dumont/Nonstations/nukieplanet.yml # Dumont edit with nukedroppod!
   - type: NukieOperation
     operations: NukieOperations
   - type: AntagSelection

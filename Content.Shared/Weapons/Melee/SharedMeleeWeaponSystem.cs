@@ -650,6 +650,12 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(weaponUid, ref ev);
         RaiseLocalEvent(attacker, ref ev); // Shitmed Change
 
+        if (weapon.SwingBeverage)
+        {
+            weapon.SwingLeft = !weapon.SwingLeft;
+            DirtyField(weaponUid, weapon, nameof(MeleeWeaponComponent.SwingLeft));
+        }
+
         if (ev.Cancelled)
         {
             if (ev.Message != null)

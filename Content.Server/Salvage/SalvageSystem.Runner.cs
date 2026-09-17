@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+﻿// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
@@ -80,7 +80,13 @@ public sealed partial class SalvageSystem
     /// </summary>
     private void Announce(EntityUid mapUid, string text)
     {
-        var mapId = Comp<MapComponent>(mapUid).MapId;
+        if (!TryComp<MapComponent>(mapUid, out var map))
+            return;
+
+        var mapId = map.MapId;
+
+        if (!_mapSystem.TryGetMap(mapId, out var mapSource))
+            return;
 
         // I love TComms and chat!!!
         _chat.ChatMessageToManyFiltered(
@@ -88,7 +94,7 @@ public sealed partial class SalvageSystem
             ChatChannel.Radio,
             text,
             text,
-            _mapSystem.GetMap(mapId),
+            mapSource.Value,
             false,
             true,
             null);

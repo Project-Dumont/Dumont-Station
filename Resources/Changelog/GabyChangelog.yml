@@ -3959,3 +3959,125 @@ Entries:
       message: Blood Splatter
   id: 465
   time: '2026-08-16T05:02:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: A interface da maquina de venda foi retrabalhada.
+  id: 466
+  time: '2026-09-02T02:31:44.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Corrige bug do RCD que spawnava as entidades na rotação incorreta.
+  id: 467
+  time: '2026-09-02T15:15:46.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Tweak
+      message: >-
+        Alteração nos sprites do portão blindado, cortina metálica, cortina
+        metálica com janela e cortina metálica contra radiação.
+  id: 468
+  time: '2026-09-04T11:43:18.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Fix
+      message: concerta bug do ftl e dock.
+  id: 469
+  time: '2026-09-04T12:29:05.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: A Segurança agora é um azul mais forte.
+  id: 470
+  time: '2026-09-04T22:48:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado o Pod de Assalto para os nukes.
+    - type: Add
+      message: >-
+        ALERTA: Objeto de hipervelocidade em colisão com a estação em 5
+        segundos!
+  id: 471
+  time: '2026-09-05T14:26:15.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Reformulado por completo requisitos de horas para diversas funções
+        antagonistas e da tripulação.
+  id: 472
+  time: '2026-09-05T14:53:46.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: reagentes agora estão em português
+  id: 473
+  time: '2026-09-05T15:54:20.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Troca o chat do ss13 por uma versão mais estável
+  id: 474
+  time: '2026-09-06T18:22:53.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Goob merge até 08/06, verifique as mudanças do goob!
+  id: 475
+  time: '2026-09-08T04:52:13.0000000+00:00'
+- author: SukitaBR
+  changes:
+    - type: Add
+      message: Adicionado novo plushie
+  id: 476
+  time: '2026-09-08T05:23:23.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Add
+      message: adicionado a central de notificações do pda
+  id: 477
+  time: '2026-09-08T17:14:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado novas máquinas para o cozinheiro.
+    - type: Add
+      message: Adiciona máquina de café para o Barman (reagente)
+    - type: Add
+      message: Nova planta de café para os botanicos
+  id: 478
+  time: '2026-09-12T01:08:48.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Remove
+      message: boombox desativado
+  id: 479
+  time: '2026-09-13T01:27:47.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Animação fluida para portas
+  id: 480
+  time: '2026-09-15T00:59:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Alteradas algumas entradas no livro-guia das espécies.
+  id: 481
+  time: '2026-09-15T01:02:33.0000000+00:00'
+- author: RaposoG
+  changes:
+    - type: Add
+      message: >-
+        3 óculos novos de engenharia, o t-ray mostra cano e fio através da
+        parede, o meson mostra a planta da estação, e o de varredura faz os dois
+  id: 482
+  time: '2026-09-17T02:37:44.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Corrige UI das câmeras fotográficas e de vigilância.
+  id: 483
+  time: '2026-09-17T18:54:16.0000000+00:00'

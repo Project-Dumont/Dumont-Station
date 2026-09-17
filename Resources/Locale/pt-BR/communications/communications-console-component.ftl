@@ -41,7 +41,7 @@ comms-console-announcement-unknown-sender = Desconhecido
 # Comms console variant titles
 comms-console-announcement-title-station = Console de Comunicações
 comms-console-announcement-title-centcom = Central de Comando
-comms-console-announcement-title-nukie = Agente Nuclear do Sindicato
+comms-console-announcement-title-nukie = Agente Nuclear
 
 # footer
 comms-console-menu-footer-left = root@nanoOs
@@ -64,3 +64,6 @@ comms-yellow-alert = Amarelo
 comms-red-alert = Vermelho
 comms-violet-alert = Violeta
 comms-cyan-alert = Ciano
+
+# rename
+station-rename = A estação {$oldName} foi renomeada para {$newName}

@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: notificationGroup
+  id: GenericAll
+
+- type: notificationGroup
+  id: StationAlerts
+
+- type: notificationGroup
+  id: CaptainOnly
+  access:
+  - Captain
+
+# Futuramente fazer um cartucho que serve pra chamar o jani
+- type: notificationGroup
+  id: JanitorAlerts
+  access:
+  - Janitor
+
+# Com os cargo tendo acesso de Salvage isso não é possivel, atualmente.
+# - type: notificationGroup
+#   id: BountyAlert
+#   access:
+#   - CargoTechnician
+#   exclude:
+#   - Salvage
+
+- type: notificationGroup
+  id: MedicalDepartment
+  accessGroups:
+  - Medical
+
+- type: notificationGroup
+  id: CargoDepartment
+  accessGroups:
+  - Cargo
+
+- type: notificationGroup
+  id: ScienceDepartment
+  accessGroups:
+  - Research
+
+- type: notificationGroup
+  id: SecurityDepartment
+  accessGroups:
+  - Security
+
+- type: notificationGroup
+  id: ServiceDepartment
+  accessGroups:
+  - Service
