@@ -46,6 +46,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Once a target is immobilized you can use the [italic]gizmo[/italic] to implant them with a nano tracker, return to your ship using the [color=lightblue]return action[/color], then use the gizmo on your [color=#a149bf]Abductor Console[/color].
 
+  The gizmo has a second mode, switched by activating it in your hand:
+  - [color=yellow]{Mark}[/color] implants the nano tracker.
+  - [color=pink]{Brainwash}[/color] makes the victim obey you for 15 minutes. A mindshield blocks it.
+
   If you are being overwhelmed, always remember you can return to your ship at any point!
 
   ## Experimentation
@@ -69,6 +73,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Regardless of random tasks, you will have to replace the subject's heart with one of your glands.
   You don't need to remove their clothes to do surgery or wear PPE, unlike normal surgeons.
 
+  Some tasks ask for a tail or a pair of wings. Carve the joint first with [color=#a149bf]Create Tail Joint[/color] or [color=#a149bf]Create Wing Joints[/color], then attach the part. The freezer on the ship has spares.
+
   Finally, drag the victim whom you have completed your experiments on into the [color=#a149bf]Return Pod[/color] to confirm the results of the experiment on the [color=#a149bf]Abductor Console[/color] and send them back where you found them.
 
   ## Abductor Tools
@@ -82,6 +88,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Abductors have access to more advanced tools than normal surgeons or engineers. Their surgical tools are faster than advanced surgical tools, and from their normal tools, the multitool's alternative mode is able to be used to hijack doors.
 
   You also have access to a silencer, which prevents the crew from speaking when they are hit with it.
+
+  ## Blending in
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterArmorAbductor"/>
+    <GuideEntityEmbed Entity="RadioJammer"/>
+  </Box>
+
+  The agent vest has two modes. In [color=yellow]{Stealth}[/color] you look like an ordinary human, and it also lets you pick the name the crew hears when you speak. In [color=pink]{Combat}[/color] you drop the disguise for much better armor. The scientist switches your mode from the [color=#a149bf]Abductor Console[/color], and can lock it so nobody takes the vest off you.
+
+  The agent also carries a chameleon backpack to finish the disguise, and the scientist a radio jammer to keep the crew from calling for help mid abduction.
 
   ## Getting rid of an Abductor
   Like [textlink="Changelings" link="Changelings"], Abductors are not protected by [textlink="space law" link="SpaceLaw"] and are able to be executed freely.
