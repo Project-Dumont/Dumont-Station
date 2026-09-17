@@ -9,11 +9,6 @@ using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client._Trauma.Stylesheets;
-
-/// <summary>
-/// Stylesheet used by abductor UIs.
-/// It is the nano sheet with the alien rules on top, set directly on the window.
-/// </summary>
 public static class AlienStylesheet
 {
     public const string ClassHighlight = "highlight";
