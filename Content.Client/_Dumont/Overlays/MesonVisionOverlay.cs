@@ -32,7 +32,6 @@ public sealed class MesonVisionOverlay : Overlay
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IResourceCache _resource = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefs = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly SharedTransformSystem _transform;
@@ -157,7 +156,7 @@ public sealed class MesonVisionOverlay : Overlay
         var bounds = Box2.CenteredAround(mapPos.Position, new Vector2(Range * 2));
 
         _grids.Clear();
-        _mapManager.FindGridsIntersecting(mapPos.MapId, bounds, ref _grids);
+        _map.FindGridsIntersecting(mapPos.MapId, bounds, ref _grids);
 
         foreach (var grid in _grids)
         {
