@@ -21,16 +21,16 @@ public static class AlienStylesheet
 
     public static Stylesheet Create(IStylesheetManager man, IResourceCache cache)
     {
-        var bgColor      = new Color(37, 31, 27);
-        var textColor    = new Color(0, 255, 0);
-        var borderColor  = new Color(212, 0, 98);
-        var buttonBg     = new Color(60, 165, 68);
+        var bgColor = new Color(37, 31, 27);
+        var textColor = new Color(0, 255, 0);
+        var borderColor = new Color(212, 0, 98);
+        var buttonBg = new Color(60, 165, 68);
         var buttonBorder = new Color(55, 142, 64);
-        var hoverColor   = new Color(50, 128, 108);
+        var hoverColor = new Color(50, 128, 108);
         var pressedColor = borderColor;
         var warningColor = new Color(1f, 0.65f, 0f);
 
-        var asciiBorderBox = new StyleBoxFlat
+        var panelBox = new StyleBoxFlat
         {
             BackgroundColor = bgColor,
             BorderColor = borderColor,
@@ -65,7 +65,7 @@ public static class AlienStylesheet
         {
             // Window background panel
             Element<PanelContainer>().Class(StyleBase.ClassAngleRect)
-                .Prop(PanelContainer.StylePropertyPanel, asciiBorderBox),
+                .Prop(PanelContainer.StylePropertyPanel, panelBox),
 
             // Window title bar
             Element<Label>().Class("FancyWindowTitle") // hardcoded award
@@ -75,7 +75,7 @@ public static class AlienStylesheet
 
             // Other panels
             Element<PanelContainer>()
-                .Prop(PanelContainer.StylePropertyPanel, asciiBorderBox),
+                .Prop(PanelContainer.StylePropertyPanel, panelBox),
 
             // All Labels
             Element<Label>()
