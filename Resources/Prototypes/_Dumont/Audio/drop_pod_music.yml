@@ -1,0 +1,11 @@
+- type: soundCollection
+  id: DropPodMusic
+  files:
+    - /Audio/_Dumont/Eventos/Droppod/the_insurgency's_end.ogg
+    - /Audio/_Dumont/Eventos/Droppod/razormind.ogg
+    - /Audio/_Dumont/Eventos/Droppod/corporate_rats.ogg
+    - /Audio/_Dumont/Eventos/Droppod/shots_fired.ogg
+    - /Audio/_Dumont/Eventos/Droppod/colliding_stars.ogg
+    - /Audio/_Dumont/Eventos/Droppod/alpha_predator.ogg
+    #    - /Audio/_Dumont/Eventos/Droppod/frontal_attack.ogg // Removido temporariamente
+    # Irmão eu so quero que a nota sai dam inha PR, porfavor saia eu ja fiz tudo que eu pude...

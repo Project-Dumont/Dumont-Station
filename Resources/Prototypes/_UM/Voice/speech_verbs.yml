@@ -1,0 +1,49 @@
+- type: speechVerb
+  id: Clown
+  name: chat-speech-verb-name-default
+  speechVerbStrings:
+  - chat-speech-verb-default
+  fontId: PixelComicSans
+  fontSize: 14
+
+- type: speechVerb
+  id: ClownQuestion
+  name: chat-speech-verb-name-question
+  speechVerbStrings:
+  - chat-speech-verb-question
+  fontId: PixelComicSans
+  fontSize: 14
+
+- type: speechVerb
+  id: ClownStutter
+  name: chat-speech-verb-name-stutter
+  speechVerbStrings:
+  - chat-speech-verb-stutter
+  fontId: PixelComicSans
+  fontSize: 14
+
+- type: speechVerb
+  id: ClownMumble
+  name: chat-speech-verb-name-mumble
+  speechVerbStrings:
+  - chat-speech-verb-mumble
+  fontId: PixelComicSans
+  fontSize: 14
+
+- type: speechVerb
+  id: ClownExclamation
+  name: chat-speech-verb-name-exclamation
+  speechVerbStrings:
+  - chat-speech-verb-exclamation
+  fontId: PixelComicSans
+  fontSize: 14
+
+- type: speechVerb
+  id: ClownExclamationStrong
+  name: chat-speech-verb-name-exclamation-strong
+  bold: false
+  speechVerbStrings:
+  - chat-speech-verb-exclamation-strong
+  priority: 10
+  fontId: PixelComicSans
+  fontSize: 18

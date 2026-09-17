@@ -142,20 +142,16 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 18000 #5 hrs
+      role: JobSecurityOfficer # Be very familiar with law
+      time: 86400 # 24 hrs
     - !type:RoleTimeRequirement
-      role: JobBrigmedic
-      time: 18000 #5 hrs
+      role: JobPrisonGuard # Main job is to deal with prisoners, good to learn how to RP with them
+      time: 21600 # 6 hrs
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 54000 #15 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      department: Security # Be familiar with the entire workings of Sec, you're the 2nd in command
+      time: 216000 # 60 hrs
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"

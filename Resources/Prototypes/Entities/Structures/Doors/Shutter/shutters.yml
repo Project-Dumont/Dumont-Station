@@ -95,8 +95,8 @@
     bumpOpen: false
     clickOpen: false
     closeTimeOne: 0.2
-    closeTimeTwo: 1.2
-    openTimeOne: 1.2
+    closeTimeTwo: 1.4 # Dumont change
+    openTimeOne: 1.4 # Dumont change
     openTimeTwo: 0.2
     openingAnimationTime: 1.4
     closingAnimationTime: 1.4

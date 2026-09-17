@@ -3,3 +3,7 @@
   name: roles-antag-xenomorph-name
   antagonist: true
   objective: roles-antag-xenomorph-objective
+  requirements: # Dumont
+    - !type:OverallPlaytimeRequirement # Team work needed
+      time: 86400 # 24 hrs
+

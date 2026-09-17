@@ -3,6 +3,9 @@
   name: job-name-prisoner
   description: job-description-prisoner
   playTimeTracker: JobPermaPrisoner
+  requirements: # Dumont
+    - !type:OverallPlaytimeRequirement # Perma can limit your interactions a lot, play a bit to learn basics
+      time: 21600 # 6 hrs
   startingGear: PermaPrisonerGear
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security

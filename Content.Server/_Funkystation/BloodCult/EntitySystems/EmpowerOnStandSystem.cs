@@ -18,7 +18,6 @@ public sealed class EmpowerOnStandSystem : EntitySystem
 {
 	[Dependency] private readonly SharedTransformSystem _transform = default!;
 	[Dependency] private readonly MapSystem _mapSystem = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
 	[Dependency] private readonly SharedActionsSystem _action = default!;
 	[Dependency] private readonly PopupSystem _popup = default!;
 
@@ -84,7 +83,7 @@ public sealed class EmpowerOnStandSystem : EntitySystem
 	private bool IsStandingOnRune(EntityUid user, Entity<EmpowerOnStandComponent> rune)
 	{
 		var userCoords = Transform(user).Coordinates;
-		var userLocation = userCoords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+		var userLocation = userCoords.AlignWithClosestGridTile(entityManager: EntityManager);
 		var userGridUid = _transform.GetGrid(userLocation);
 		if (!TryComp<MapGridComponent>(userGridUid, out var userGrid))
 			return false;
@@ -93,7 +92,7 @@ public sealed class EmpowerOnStandSystem : EntitySystem
 
 		// Check if the rune is on the same tile
 		var runeCoords = Transform(rune).Coordinates;
-		var runeLocation = runeCoords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+		var runeLocation = runeCoords.AlignWithClosestGridTile(entityManager: EntityManager);
 		var runeGridUid = _transform.GetGrid(runeLocation);
 		if (!TryComp<MapGridComponent>(runeGridUid, out var runeGrid))
 			return false;

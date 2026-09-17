@@ -27,6 +27,9 @@ public sealed class SalvageJobBoardBoundUserInterface(EntityUid owner, Enum uiKe
     {
         base.UpdateState(message);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (message is not SalvageJobBoardConsoleState state)
             return;
 

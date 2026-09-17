@@ -26,6 +26,9 @@ public sealed class TurretControllerWindowBoundUserInterface(EntityUid owner, En
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not DeployableTurretControllerBoundInterfaceState { } castState)
             return;
 

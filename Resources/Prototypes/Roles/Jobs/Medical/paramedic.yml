@@ -80,10 +80,13 @@
   name: job-name-paramedic
   description: job-description-paramedic
   playTimeTracker: JobParamedic
-  requirements:
-  - !type:DepartmentTimeRequirement
-    department: Medical
-    time: 9000 #2.5 hrs
+  requirements: # Dumont edit
+    - !type:RoleTimeRequirement
+      role: JobMedicalDoctor # Emergency rescue, needs to be speedy and very familiar with fast treatments
+      time: 43200 #12 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical # Learn enought of Med
+      time: 86400 #40 hrs
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo

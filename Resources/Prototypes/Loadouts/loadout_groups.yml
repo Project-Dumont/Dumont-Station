@@ -271,6 +271,7 @@
   - PhotoCamera
   # End Gabystation
   - PlushieJanie # DumontStation
+  - PlushieIdiosoma #DumontStation
 
 - type: loadoutGroup
   id: Glasses

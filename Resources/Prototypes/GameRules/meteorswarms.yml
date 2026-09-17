@@ -297,7 +297,7 @@
     reoccurrenceDelay: 1
     duration: 1
     earliestStart: 30
-    minimumPlayers: 25
+    minimumPlayers: 30 # Dumont
     chaos: # Goobstation
       Power: 100
       Atmos: 100

@@ -75,7 +75,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: _NF/Structures/conveyor.rsi # Frontier
+    sprite: _ADT/Structures/conveyor.rsi # ADT-Tweak: Resprite
     state: conveyor_stopped_cw
     drawdepth: HighFloorObjects
   - type: ApcPowerReceiver
@@ -143,7 +143,7 @@
     tags:
     - ConveyorAssembly
   - type: Sprite
-    sprite: Structures/conveyor.rsi
+    sprite: _ADT/Structures/conveyor.rsi # ADT-Tweak: Resprite
     state: conveyor_loose
   - type: Construction
     graph: ConveyorGraph

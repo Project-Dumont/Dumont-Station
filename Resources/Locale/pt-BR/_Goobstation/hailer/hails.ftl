@@ -1,0 +1,10 @@
+hail-0 = Pare de quebrar a lei, cuzão!!
+hail-1 = Pare ou vai levar cassetada!!
+hail-2 = Pare em nome da lei!!
+hail-3 = Cooperar é do seu melhor interesse!!
+hail-4 = Não se mexa, verme!!
+hail-5 = EU SOU A LEI!!
+hail-6 = No chão, verme!!
+hail-7 = Parado aí, vagabundo!!
+hail-8 = ALTO LÁ! ALTO LÁ! ALTO LÁ!!
+hail-death-to-nt = Morte à NanoTrasen!!

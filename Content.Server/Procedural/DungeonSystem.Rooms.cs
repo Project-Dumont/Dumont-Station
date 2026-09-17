@@ -24,7 +24,6 @@ namespace Content.Server.Procedural;
 
 public sealed partial class DungeonSystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
 
     // Temporary caches.
     private readonly HashSet<EntityUid> _entitySet = new();
@@ -137,7 +136,7 @@ public sealed partial class DungeonSystem
     {
         // Ensure the underlying template exists.
         var roomMap = GetOrCreateTemplate(room);
-        var templateMapUid = _mapManager.GetMapEntityId(roomMap);
+        var templateMapUid = _maps.GetMap(roomMap);
         var templateGrid = Comp<MapGridComponent>(templateMapUid);
         var roomDimensions = room.Size;
 

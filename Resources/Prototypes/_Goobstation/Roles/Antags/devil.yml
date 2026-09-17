@@ -11,15 +11,12 @@
   setPreference: true
   objective: roles-antag-devil-description
   guides: [ Devil ]
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 108000 # 30h
-  - !type:DepartmentTimeRequirement
-    department: Command
-    time: 18000 # 5 hours
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Very RP dependent role
+    time: 180000 # 50 hrs
   - !type:RoleTimeRequirement
-    role: JobLawyer
-    time: 3600 # 1 Hour
+    role: JobLawyer # Deals need to be made, know how to negotiate
+    time: 21600 # 6 Hrs
   - !type:SpeciesRequirement
     inverted: true
     species:

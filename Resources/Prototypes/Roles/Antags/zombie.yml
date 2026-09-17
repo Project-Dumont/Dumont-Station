@@ -15,7 +15,9 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-initial-infected-objective
-  requirements:
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Just enought to know the basics of the game
+    time: 43200 # 12 hrs
   - !type:SpeciesRequirement
     inverted: true
     species:

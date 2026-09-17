@@ -132,6 +132,7 @@ namespace Content.Client.Examine
         [Dependency] private readonly IEyeManager _eyeManager = default!;
         [Dependency] private readonly VerbSystem _verbSystem = default!;
         [Dependency] private readonly SpriteSystem _sprite = default!;
+        [Dependency] private readonly IClyde _displayManager = default!;
 
         private List<Verb> _verbList = new();
 
@@ -198,9 +199,14 @@ namespace Content.Client.Examine
 
             if (examinerComp.CheckInRangeUnOccluded)
             {
-                // TODO fix this. This should be using the examiner's eye component, not eye manager.
-                var b = _eyeManager.GetWorldViewbounds();
-                if (!b.Contains(target.Position))
+                if (!TryComp<EyeComponent>(examiner, out var eyeComp))
+                    return false;
+
+                var eye = eyeComp.Eye;
+                eye.GetViewMatrix(out var matrix, eye.Scale);
+                var inEyePos = Vector2.Transform(target.Position, matrix);
+
+                if ((Vector2i) inEyePos > _displayManager.ScreenSize)
                     return false;
             }
 

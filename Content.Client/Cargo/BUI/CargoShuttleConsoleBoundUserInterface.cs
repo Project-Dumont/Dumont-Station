@@ -36,6 +36,10 @@ public sealed class CargoShuttleConsoleBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not CargoShuttleConsoleBoundUserInterfaceState cargoState) return;
         _menu?.SetAccountName(cargoState.AccountName);
         _menu?.SetShuttleName(cargoState.ShuttleName);

@@ -53,6 +53,9 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         switch (state)
         {
             case CrewMonitoringState st:

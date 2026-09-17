@@ -8,3 +8,6 @@
   name: roles-antag-slaughter-demon-name
   antagonist: true
   objective: roles-antag-slaughter-demon-objective
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Simple kill all EVIL antag
+    time: 86400 # 24 hrs

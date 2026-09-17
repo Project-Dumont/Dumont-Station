@@ -126,6 +126,9 @@ public sealed class MOTDSystem : EntitySystem
 
     public void ReplyMOTDBuletinRequest(MsgMOTDRequest msg)
     {
+        if (string.IsNullOrEmpty(_messageOfTheDay)) // Gabystation - motd
+            return;
+
         var motdMsg = new MsgMOTD
         {
             MOTD = _messageOfTheDay

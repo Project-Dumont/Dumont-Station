@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseGrenade
+  id: GrenadeLube
+  name: lube grenade round
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeLube
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: lubenade
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false

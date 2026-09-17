@@ -33,9 +33,9 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-wizard-description
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 126000 # 35h
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Enought to know the game and be creative with powers
+    time: 288000 # 80 hrs
   - !type:SpeciesRequirement
     inverted: true
     species:
@@ -48,6 +48,9 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-apprentice-description
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Just enought to not insta die when arriving at the station
+    time: 180000 # 50 hrs
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]

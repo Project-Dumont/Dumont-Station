@@ -19,7 +19,7 @@
 - type: weightedRandom
   id: GameDirector
   weights:
-    Traitor: 0.20
+    Traitor: 0.25
     Changeling: 0.10
     Nukeops: 0.05
     Revolutionary: 0.15 # GabyStation 0.05 -> 0.15
@@ -31,7 +31,12 @@
     CosmicCult: 0.05 # make it semi often so we can test it
     BloodCult: 0.05 # Gabystation change
     #HonkOps: 0.01 # this test fail was real holy shit it was only a preset the entire a time i was lied too by myself
-    Vampire: 0.15
+    #Vampire: 0.15 # Dumont
+    MalfAi: 0.10 # Dumont
+    Devil: 0.10 # Dumont
+    Thief: 0.2 # Dumont
+
+
 
 - type: incompatibleModes
   id: Nukeops
@@ -42,6 +47,7 @@
   - Revolutionary
   - BlobGameMode
   - CosmicCult
+  - BloodCult # Dumont
 
 - type: incompatibleModes
   id: HonkOps
@@ -52,6 +58,8 @@
   - Revolutionary
   - BlobGameMode
   - CosmicCult
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: Wizard
@@ -63,6 +71,8 @@
   modes:
   - Heretic
   - CosmicCult
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: BlobGameMode
@@ -71,6 +81,8 @@
   - Nukeops
   - CosmicCult
   - HonkOps
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: Zombie
@@ -78,6 +90,8 @@
   - Nukeops
   - CosmicCult
   - HonkOps
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: Revolutionary
@@ -85,6 +99,8 @@
   - Nukeops
   - CosmicCult
   - HonkOps
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: CosmicCult
@@ -96,6 +112,8 @@
   - BlobGameMode
   - CosmicCult
   - Heretic
+  - BloodCult # Dumont
+
 
 - type: incompatibleModes
   id: Vampire
@@ -108,3 +126,18 @@
   - BlobGameMode
   - CosmicCult
   - Heretic
+  - BloodCult # Dumont
+
+# Dumont
+- type: incompatibleModes
+  id: BloodCult
+  modes:
+  - Nukeops
+  - HonkOps
+  - Zombie
+  - Revolutionary
+  - BlobGameMode
+  - CosmicCult
+  - Heretic
+  - BloodCult
+  - Vampire

@@ -173,6 +173,7 @@
     - id: PlushieMoth
     - id: PlushieArachind
     - id: PlushiePenguin
+    - id: PlushieIdiosoma # Dumont
 
 - type: entityTable
   id: AllPottedPlantsTable

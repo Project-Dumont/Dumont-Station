@@ -40,7 +40,6 @@ public sealed class SummonOnTriggerSystem : EntitySystem
 	[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 	[Dependency] private readonly SharedHandsSystem _handsSystem = default!;
 	//[Dependency] private readonly IPrototypeManager _protoMan = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
 
 	private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
@@ -775,7 +774,7 @@ public sealed class SummonOnTriggerSystem : EntitySystem
 		foreach (var offset in offsets)
 		{
 			var candidateCoords = centerCoords.Offset(offset);
-			var candidateLocation = candidateCoords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+			var candidateLocation = candidateCoords.AlignWithClosestGridTile(entityManager: EntityManager);
 
 			// Check if this location is free (no anchored blocking structures)
 			// Use EntityUid.Invalid as the rune entity since we're checking a different location

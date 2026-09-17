@@ -1,0 +1,11 @@
+- type: font
+  id: KenneyMiniSquareMono
+  path: /Fonts/_Starfall/Kenney/Kenney_Mini_Square_Mono.ttf
+
+- type: font
+  id: KenneyMini
+  path: /Fonts/_Starfall/Kenney/Kenney_Mini.ttf
+
+- type: font
+  id: KenneyPixel
+  path: /Fonts/_Starfall/Kenney/Kenney_Pixel.ttf

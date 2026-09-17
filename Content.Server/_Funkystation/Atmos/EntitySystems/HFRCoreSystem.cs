@@ -24,7 +24,6 @@ namespace Content.Server._Funkystation.Atmos.Systems;
 public sealed class HFRCoreSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;

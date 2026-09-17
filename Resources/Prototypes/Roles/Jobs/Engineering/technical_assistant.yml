@@ -62,12 +62,12 @@
   name: job-name-technical-assistant
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 7200 # 2 hrs
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Needs to know absolute basics of the game, a bad job can be game ending
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 36000 #10 hrs
+      time: 108000 # 30 hrs
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"

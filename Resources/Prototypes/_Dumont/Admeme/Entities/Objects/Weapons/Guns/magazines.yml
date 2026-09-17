@@ -1,0 +1,21 @@
+- type: entity
+  id: MagazineMagnumHighCapacity
+  name: high capacity pistol magazine (.45 magnum)
+  parent: BaseMagazineMagnum
+  description: 15-round single stack pistol magazine. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnum
+    capacity: 15
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag

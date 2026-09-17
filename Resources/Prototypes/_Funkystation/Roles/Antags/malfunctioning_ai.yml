@@ -10,7 +10,7 @@
   setPreference: true
   objective: roles-antag-malfunctioning-ai-objective
   guides: [ MalfunctioningAI ]
-  requirements:
+  requirements: # Dumont edit
   - !type:RoleTimeRequirement
-    role: JobStationAi
-    time: 18000
+    role: JobStationAi # Know what a normal AI does and get used to AI powers
+    time: 43200 # 12 hrs

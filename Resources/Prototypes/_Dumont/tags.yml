@@ -52,4 +52,10 @@
   id: SpeedLoaderWatson
 
 - type: Tag
+  id: WeaponPistolChrysanthemum
+
+- type: Tag
+  id: WeaponPistolDahlia
+  
+- type: Tag
   id: XenoDungeon

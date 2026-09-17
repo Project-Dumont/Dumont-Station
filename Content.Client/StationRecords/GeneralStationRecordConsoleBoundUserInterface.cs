@@ -42,6 +42,9 @@ public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInt
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not GeneralStationRecordConsoleState cast)
             return;
 

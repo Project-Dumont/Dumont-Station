@@ -73,10 +73,10 @@
   name: job-name-scientist
   description: job-description-scientist
   playTimeTracker: JobScientist
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Science
-      time: 9000 #2.5 hrs
+      department: Science # Know the basics of Sci
+      time: 86400 #24 hrs
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd

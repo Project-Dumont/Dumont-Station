@@ -66,6 +66,9 @@ public sealed class FancyResearchConsoleBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_consoleMenu is not { Disposed: false })
+            return;
+
         if (state is not ResearchConsoleBoundInterfaceState castState)
             return;
 

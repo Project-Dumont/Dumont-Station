@@ -100,12 +100,12 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 36000 # 10 hours - Goobstation
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Very high impact antag, needs high mecanical knowledge about the game
+    time: 360000 # 100 hrs
   - !type:DepartmentTimeRequirement
-    department: Security
-    time: 36000 # 10h Goobstation
+    department: Security # SUPPOSEDLY the best of the Sindicate
+    time: 288000 # 80 hrs
   - !type:SpeciesRequirement
     inverted: true
     species:
@@ -118,19 +118,25 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 90000 # 25 hours - Goobstation
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 36000 # 10h Goobstation
-  - !type:RoleTimeRequirement
-    role: JobChemist
-    time: 18000 # 5h Goobstation
-  - !type:SpeciesRequirement
-    inverted: true
-    species:
-    - Plasmaman
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Very high impact antag, needs high mecanical knowledge about the game
+      time: 360000 # 100 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security # SUPPOSEDLY the best of the Sindicate
+      time: 180000 # 50 hrs
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic # Sindicate's best combat medic
+      time: 43200 # 12 hrs
+    - !type:RoleTimeRequirement
+      role: JobChemist # You're expected to create and supply all necessary chems
+      time: 43200 # 12 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical # Heavy knowledge to be the teams sole field medical agent
+      time: 180000 # 50 hrs
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+      - Plasmaman
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -139,15 +145,16 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 90000 # 25 hours - Goobstation
+  requirements: # Dumont edit
   - !type:DepartmentTimeRequirement
-    department: Security
-    time: 36000 # 10h Goobstation
+    department: Security # SUPPOSEDLY the best of the best of the Sindicate
+    time: 540000 # 150 hrs
   - !type:DepartmentTimeRequirement
-    department: Command
-    time: 18000 # 5h Goobstation
+    department: Command # Needs to know how to properly coordinate a team
+    time: 180000 # 50 hrs
+  - !type:RoleTimeRequirement
+    role: JobHeadOfSecurity # Sindicate's very own EVIL HoS
+    time: 86400 # 24 hrs
 # should be changed to nukie playtime when thats tracked (wyci)
   - !type:SpeciesRequirement
     inverted: true
@@ -253,5 +260,5 @@
   equipment:
     # Goobstation - Telecrystal rework
     pocket2: LoneOpsUplink350TC #Goobstation
-  inhand: 
+  inhand:
   - LoneOpsDeclarationOfWar # GabyStation

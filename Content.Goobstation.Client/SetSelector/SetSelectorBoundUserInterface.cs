@@ -25,6 +25,9 @@ public sealed class SetSelectorBoundUserInterface(EntityUid owner, Enum uiKey) :
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not SetSelectorBoundUserInterfaceState current)
             return;
 

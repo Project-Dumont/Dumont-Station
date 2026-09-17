@@ -2032,7 +2032,7 @@ entities:
             80: -4,-6
             6167: 38,42
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: CheckerNWSE
           decals:
             1608: 22,54
@@ -10974,7 +10974,7 @@ entities:
             3420: 35,30
             4634: 50,-37
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: FullTileOverlayGreyscale
           decals:
             1502: 10,45
@@ -12030,7 +12030,7 @@ entities:
             7074: -31,60
             7101: -27,59
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale
           decals:
             1402: -4,32
@@ -12506,7 +12506,7 @@ entities:
             6748: 66,51
             16404: 61,-15
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale180
           decals:
             1002: 21,13
@@ -13003,7 +13003,7 @@ entities:
             6746: 66,52
             6747: 65,52
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale270
           decals:
             1032: 20,11
@@ -13472,7 +13472,7 @@ entities:
             6666: 50,54
             16408: 64,-12
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale90
           decals:
             1029: 22,11
@@ -14169,7 +14169,7 @@ entities:
             250: 10,5
             251: 10,4
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: MonoOverlay
           decals:
             1035: 19,11
@@ -14940,7 +14940,7 @@ entities:
             6142: 38,38
             6362: 58,40
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale
           decals:
             1400: -3,32
@@ -15282,7 +15282,7 @@ entities:
             8981: -5,6
             8997: -5,1
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale180
           decals:
             1004: 20,13
@@ -15621,7 +15621,7 @@ entities:
             6303: 51,41
             6672: 56,53
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale270
           decals:
             1003: 22,13
@@ -16072,7 +16072,7 @@ entities:
             7339: -42,86
             16409: 64,-11
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale90
           decals:
             1454: -1,38
@@ -16610,7 +16610,7 @@ entities:
             17357: -57,-21
             17358: -56,-21
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             1404: -5,32
@@ -16769,7 +16769,7 @@ entities:
             6659: 50,55
             6741: 65,51
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             1406: -6,30
@@ -16905,7 +16905,7 @@ entities:
             6347: 63,41
             6740: 70,52
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             1403: -5,31
@@ -17055,7 +17055,7 @@ entities:
             6133: 31,36
             6658: 50,52
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             1405: -6,33
@@ -17206,7 +17206,7 @@ entities:
             6737: 70,55
             6742: 67,51
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnCornerNE
           decals:
             17237: 5,63
@@ -17268,7 +17268,7 @@ entities:
             17379: 129,-45
             17385: 130,-44
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnCornerNW
           decals:
             17236: 0,63
@@ -17325,7 +17325,7 @@ entities:
             17380: 123,-45
             17386: 122,-44
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnCornerSE
           decals:
             17218: 8,51
@@ -17386,7 +17386,7 @@ entities:
             17381: 129,-51
             17384: 130,-52
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnCornerSW
           decals:
             17234: 0,61
@@ -17547,14 +17547,14 @@ entities:
           decals:
             2851: -33,-27
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnFull
           decals:
             17225: 2,54
             17226: 3,54
             17227: 3,60
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnLineE
           decals:
             17219: 8,52
@@ -17844,7 +17844,7 @@ entities:
             15888: 108,-13
             15894: 108,-12
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnLineN
           decals:
             17212: 2,51
@@ -18073,7 +18073,7 @@ entities:
             17397: 125,-52
             17398: 127,-52
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnLineS
           decals:
             17238: 0,62
@@ -18253,7 +18253,7 @@ entities:
             17388: 122,-47
             17389: 122,-49
         - node:
-            color: '#2B344793'
+            color: '#2B3EA1C8'
             id: WarnLineW
           decals:
             17221: 2,53

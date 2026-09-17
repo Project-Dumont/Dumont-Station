@@ -16,7 +16,7 @@ reagent-desc-egg = Embrião de frango cozido, uma delícia.
 reagent-name-raw-egg = ovo cru
 reagent-desc-raw-egg = Usado para assar.
 
-reagent-name-sugar = sugar
+reagent-name-sugar = açúcar
 reagent-desc-sugar = Saboroso açucar do espaço!
 
 reagent-name-blackpepper = pimenta preta

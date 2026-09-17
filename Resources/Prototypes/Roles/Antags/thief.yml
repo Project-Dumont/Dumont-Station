@@ -88,6 +88,9 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-thief-objective
+  requirements: # Dumont
+    - !type:OverallPlaytimeRequirement # Just enought to know the basics of the game
+      time: 43200 # 12 hrs
   guides: [ Thieves ]
 
 - type: startingGear

@@ -122,6 +122,12 @@
       "name": "welded_open"
     },
     {
+      "name": "deny"
+    },
+    {
+      "name": "locked"
+    },
+    {
       "name": "emergency_unlit",
       "delays": [
         [

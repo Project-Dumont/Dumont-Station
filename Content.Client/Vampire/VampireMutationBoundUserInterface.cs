@@ -29,6 +29,10 @@ public sealed class VampireMutationBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not VampireMutationBoundUserInterfaceState st)
             return;
         _menu?.UpdateState(st.MutationList, st.SelectedMutation);

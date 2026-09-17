@@ -3,10 +3,10 @@
   name: job-name-bitrunner
   description: job-description-bitrunner
   playTimeTracker: JobBitrunner
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 9000 # 2.5 hrs
+      department: Cargo # Be familiar with what the department is about
+      time: 28800 # 8 hrs
   icon: "JobIconBitrunner"
   startingGear: BitrunnerGear
   guides:

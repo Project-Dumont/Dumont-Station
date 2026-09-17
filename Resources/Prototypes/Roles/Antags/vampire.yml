@@ -4,4 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-vampire-description
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Some little game knowlege since it's a more complex antag
+    time: 86400 # 24 hrs
 #  guides: [ Changelings ]

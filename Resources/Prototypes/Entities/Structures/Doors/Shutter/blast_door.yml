@@ -34,10 +34,10 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
   - type: Door
-    closeTimeOne: 0.4
-    closeTimeTwo: 0.4
-    openTimeOne: 0.4
-    openTimeTwo: 0.4
+    closeTimeOne: 0.6 # Dumont start
+    closeTimeTwo: 0.6
+    openTimeOne: 0.6
+    openTimeTwo: 0.6 # Dumont end
     openingAnimationTime: 1.0
     closingAnimationTime: 1.0
     canPry: false

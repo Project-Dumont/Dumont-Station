@@ -63,10 +63,12 @@
   name: job-name-intern
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
-  requirements:
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Can be very stressful for new players if they are still learning how to use hands and inventory, people can die and be round removed
+      time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 36000 # 10 hrs
+      time: 108000 # 30 hrs
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"

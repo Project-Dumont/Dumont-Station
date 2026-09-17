@@ -82,9 +82,12 @@
   name: job-name-chef
   description: job-description-chef
   playTimeTracker: JobChef
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 1800 # 30 Minutes
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # RP role, learn how to RP so you can chitchat with people and avoid akward silences
+      time: 86400 # 24 hrs
+    - !type:RoleTimeRequirement
+      role: JobServiceWorker # Basic knowledge on service and recipes should be obtained here
+      time: 43200 # 12 hrs
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
