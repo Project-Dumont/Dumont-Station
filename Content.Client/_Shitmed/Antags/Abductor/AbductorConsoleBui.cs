@@ -42,6 +42,9 @@ public sealed class AbductorConsoleBui : BoundUserInterface
 
     protected override void UpdateState(BoundUserInterfaceState? state)
     {
+        if (_window is { Disposed: true })
+            return;
+
         if (state is AbductorConsoleBuiState s)
             Update(s);
     }

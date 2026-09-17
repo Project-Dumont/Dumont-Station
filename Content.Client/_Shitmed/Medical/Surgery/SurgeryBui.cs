@@ -47,6 +47,9 @@ public sealed class SurgeryBui : BoundUserInterface
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
         if (_window is null
+            // Dumont changes start
+            || _window.Disposed
+            // Dumont end
             || message is not SurgeryBuiRefreshMessage)
             return;
 
@@ -57,6 +60,11 @@ public sealed class SurgeryBui : BoundUserInterface
     {
         if (state is not SurgeryBuiState s)
             return;
+
+        // Dumont changes start
+        if (_window is { Disposed: true })
+            return;
+        // Dumont end
 
         Update(s);
     }

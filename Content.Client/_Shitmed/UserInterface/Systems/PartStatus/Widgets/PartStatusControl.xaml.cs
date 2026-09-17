@@ -51,6 +51,10 @@ public sealed partial class PartStatusControl : UIWidget
             { TargetBodyPart.LeftFoot, DollLeftFoot },
             { TargetBodyPart.RightLeg, DollRightLeg },
             { TargetBodyPart.RightFoot, DollRightFoot },
+            // Dumont changes start
+            { TargetBodyPart.Tail, DollTail },
+            { TargetBodyPart.Wings, DollWings },
+            // Dumont end
         };
         MouseFilter = MouseFilterMode.Stop;
         OnKeyBindDown += OnClicked;
@@ -58,6 +62,14 @@ public sealed partial class PartStatusControl : UIWidget
 
     public void SetTextures(Dictionary<TargetBodyPart, WoundableSeverity> state)
     {
+        // Dumont changes start
+        foreach (var (bodyPart, control) in _partStatusControls)
+        {
+            if (!state.ContainsKey(bodyPart))
+                control.Texture = null;
+        }
+        // Dumont end
+
         foreach (var (bodyPart, integrity) in state)
         {
             // Dumont changes start
