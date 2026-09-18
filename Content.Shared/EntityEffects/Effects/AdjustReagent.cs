@@ -24,7 +24,6 @@ using Content.Shared.EntityEffects;
 using Content.Goobstation.Maths.FixedPoint;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Chemistry.Reaction;
 
 namespace Content.Shared.EntityEffects.Effects
@@ -34,16 +33,16 @@ namespace Content.Shared.EntityEffects.Effects
         /// <summary>
         ///     The reagent ID to remove. Only one of this and <see cref="Group"/> should be active.
         /// </summary>
-        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
-        public string? Reagent = null;
+        [DataField]
+        public ProtoId<ReagentPrototype>? Reagent = null;
         // TODO use ReagentId
 
         /// <summary>
         ///     The metabolism group to remove, if the reagent satisfies any.
         ///     Only one of this and <see cref="Reagent"/> should be active.
         /// </summary>
-        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MetabolismGroupPrototype>))]
-        public string? Group = null;
+        [DataField]
+        public ProtoId<MetabolismGroupPrototype>? Group = null;
 
         [DataField(required: true)]
         public FixedPoint2 Amount = default!;

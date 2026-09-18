@@ -10,7 +10,6 @@ using Robust.Shared.GameStates;
 using Content.Shared.Tools;
 using Content.Shared.Atmos;
 using Content.Shared.DeviceLinking;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using System.Numerics;
 
 namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
@@ -220,17 +219,17 @@ public sealed partial class TurbineComponent : Component
     public EntProtoId ArrowPrototype = "TurbineFlowArrow";
     #endregion
 
-    [DataField("speedHighPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedHighPort = "TurbineSpeedHigh";
+    [DataField]
+    public ProtoId<SourcePortPrototype> SpeedHighPort = "TurbineSpeedHigh";
 
-    [DataField("speedLowPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedLowPort = "TurbineSpeedLow";
+    [DataField]
+    public ProtoId<SourcePortPrototype> SpeedLowPort = "TurbineSpeedLow";
 
-    [DataField("statorLoadIncreasePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string StatorLoadIncreasePort = "IncreaseStatorLoad";
+    [DataField]
+    public ProtoId<SinkPortPrototype> StatorLoadIncreasePort = "IncreaseStatorLoad";
 
-    [DataField("statorLoadDecreasePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string StatorLoadDecreasePort = "DecreaseStatorLoad";
+    [DataField]
+    public ProtoId<SinkPortPrototype> StatorLoadDecreasePort = "DecreaseStatorLoad";
 
     #region Debug
     [ViewVariables(VVAccess.ReadOnly)]

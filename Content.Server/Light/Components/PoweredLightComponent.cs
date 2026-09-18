@@ -155,8 +155,8 @@ namespace Content.Server.Light.Components
         [DataField("turnOnSound")]
         public SoundSpecifier TurnOnSound = new SoundPathSpecifier("/Audio/Machines/light_tube_on.ogg");
 
-        [DataField("hasLampOnSpawn", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string? HasLampOnSpawn = null;
+        [DataField]
+        public EntProtoId? HasLampOnSpawn = null;
 
         [DataField("bulb")]
         public LightBulbType BulbType;
@@ -192,14 +192,14 @@ namespace Content.Server.Light.Components
         [ViewVariables]
         public TimeSpan? LastGhostBlink;
 
-        [DataField("onPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-        public string OnPort = "On";
+        [DataField("onPort")]
+        public ProtoId<SinkPortPrototype> OnPort = "On";
 
-        [DataField("offPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-        public string OffPort = "Off";
+        [DataField("offPort")]
+        public ProtoId<SinkPortPrototype> OffPort = "Off";
 
-        [DataField("togglePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-        public string TogglePort = "Toggle";
+        [DataField("togglePort")]
+        public ProtoId<SinkPortPrototype> TogglePort = "Toggle";
 
         /// <summary>
         /// How long it takes to eject a bulb from this

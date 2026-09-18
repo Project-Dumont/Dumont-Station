@@ -52,7 +52,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
@@ -90,7 +89,7 @@ namespace Content.Shared.Maps
         public string BaseTurf { get; private set; } = string.Empty;
 
         [DataField]
-        public PrototypeFlags<ToolQualityPrototype> DeconstructTools { get; set; } = new();
+        public HashSet<ProtoId<ToolQualityPrototype>> DeconstructTools { get; set; } = new();
 
         /// <summary>
         /// Goobstation
@@ -142,8 +141,8 @@ namespace Content.Shared.Maps
         // Heat capacity is opt-in, not opt-out.
         [DataField("heatCapacity")] public float HeatCapacity = Atmospherics.MinimumHeatCapacity;
 
-        [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
+        [DataField("itemDrop")]
+        public EntProtoId ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
         // TODO rename data-field in yaml
         /// <summary>
