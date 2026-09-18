@@ -49,13 +49,13 @@
   id: ShotgunSentinel
 
 - type: Tag
+  id: SpearTelescopicUpgradeMain
+
+- type: Tag
   id: SpeedLoaderWatson
 
 - type: Tag
   id: TerminusUpgradeMain
-
-- type: Tag
-  id: SpearTelescopicUpgradeMain
 
 - type: Tag
   id: WeaponPistolChrysanthemum
