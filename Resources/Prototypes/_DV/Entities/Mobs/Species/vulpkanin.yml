@@ -165,7 +165,9 @@
     - AnomalyHost
     - VulpEmotes
   # - type: FootPrints # WD EDIT
-  - type: Wagging # Einstein-Engine
+  # Dumont changes start
+  #- type: Wagging # Einstein-Engine
+  # Dumont end
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobVulpkanin

@@ -5,23 +5,37 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
-using Content.Shared._Shitmed.Body.Organ;
 
 namespace Content.Shared._Shitmed.Antags.Abductor;
 
-public abstract class SharedAbductorSystem : EntitySystem
+public abstract partial class SharedAbductorSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+
     public override void Initialize()
     {
+        base.Initialize();
+
+        InitializeGizmo();
+        InitializeVest();
+
+        SubscribeLocalEvent<AbductorScientistComponent, InteractionAttemptEvent>(OnInteractAttempt);
         SubscribeLocalEvent<AbductorExperimentatorComponent, EntInsertedIntoContainerMessage>(OnInsertedContainer);
         SubscribeLocalEvent<AbductorExperimentatorComponent, EntRemovedFromContainerMessage>(OnRemovedContainer);
         SubscribeLocalEvent<AbductorOrganComponent, TryRemoveOrganEvent>(OnTryRemoveOrgan);
-        base.Initialize();
+    }
+
+    private void OnInteractAttempt(Entity<AbductorScientistComponent> ent, ref InteractionAttemptEvent args)
+    {
+        // can't touch anything while viewing the station
+        args.Cancelled |= HasComp<StationAiOverlayComponent>(ent);
     }
 
     private void OnRemovedContainer(Entity<AbductorExperimentatorComponent> ent, ref EntRemovedFromContainerMessage args)
@@ -32,7 +46,7 @@ public abstract class SharedAbductorSystem : EntitySystem
         if (ent.Comp.Console == null)
         {
             var xform = EnsureComp<TransformComponent>(ent.Owner);
-            var console = _entityLookup.GetEntitiesInRange<AbductorConsoleComponent>(xform.Coordinates, 5, LookupFlags.Approximate | LookupFlags.Dynamic)
+            var console = _lookup.GetEntitiesInRange<AbductorConsoleComponent>(xform.Coordinates, 5, LookupFlags.Approximate | LookupFlags.Dynamic)
                 .FirstOrDefault().Owner;
             if (console != default)
                 ent.Comp.Console = GetNetEntity(console);
@@ -53,7 +67,7 @@ public abstract class SharedAbductorSystem : EntitySystem
         if (ent.Comp.Console == null)
         {
             var xform = EnsureComp<TransformComponent>(ent.Owner);
-            var console = _entityLookup.GetEntitiesInRange<AbductorConsoleComponent>(xform.Coordinates, 5, LookupFlags.Approximate | LookupFlags.Dynamic)
+            var console = _lookup.GetEntitiesInRange<AbductorConsoleComponent>(xform.Coordinates, 5, LookupFlags.Approximate | LookupFlags.Dynamic)
                 .FirstOrDefault().Owner;
             if (console != default)
                 ent.Comp.Console = GetNetEntity(console);
@@ -65,8 +79,11 @@ public abstract class SharedAbductorSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnTryRemoveOrgan(Entity<AbductorOrganComponent> ent, ref TryRemoveOrganEvent args) =>
-        args.Cancelled = true;
+    private void OnTryRemoveOrgan(Entity<AbductorOrganComponent> ent, ref TryRemoveOrganEvent args)
+    {
+        // can never remove abductor glands chud
+        args.Cancelled |= args.OrganId == ent.Owner;
+    }
 
     protected virtual void UpdateGui(NetEntity? target, Entity<AbductorConsoleComponent> computer)
     {

@@ -22,9 +22,6 @@ ent-CrowbarYellow = { ent-Crowbar }
 ent-CrowbarWizard = { ent-Crowbar }
      .desc = Uma ferramenta multifuncional para arrombar portas, combater invasores interdimensionais e destruir estações.
 
-ent-CrowbarAbductor = { ent-Crowbar } de alta tecnologia
-     .desc = Um { ent-Crowbar } feito de um metal mais resistente que qualquer coisa que a NanoTrasen poderia achar.
-
 ent-CrowbarRed = { ent-Crowbar } emergêncial
      .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais.
 

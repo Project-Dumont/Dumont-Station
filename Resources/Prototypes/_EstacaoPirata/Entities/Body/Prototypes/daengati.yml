@@ -32,10 +32,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganHumanStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
+    # Dumont changes start
+    tail:
+      part: TailDaengati
+    # Dumont end
     right arm:
       part: RightArmDaengati
       connections:

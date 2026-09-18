@@ -51,8 +51,10 @@ marking-LizardHornsBighorn-horns_bighorn_r = Right horn
 
 # TAILS
 marking-SnakeLargeTail = Lizard, large snake tail
-marking-SnakeLargeTail-tail_snakelarge = Inner
-marking-SnakeLargeTail-tail_snakelarge_overlay = Outer
+# Dumont changes start
+marking-SnakeLargeTail-snake_large = Inner
+marking-SnakeLargeTail-snake_large_overlay = Outer
+# Dumont end
 
 # SPINES
 marking-LizardChestSpinesAquatic = Lizard, chest, spines (Aquatic)
