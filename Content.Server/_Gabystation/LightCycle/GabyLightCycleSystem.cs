@@ -120,7 +120,13 @@ namespace Content.Server.Time
 
                     foreach (var light in comp.BulbList.ToList())
                     {
-                        var bulbUid = _lightSystem!.GetBulb(light, light.Comp);
+                        if (!EntityManager.TryGetComponent<PoweredLightComponent>(light, out var poweredLight))
+                        {
+                            comp.BulbList.Remove(light);
+                            continue;
+                        }
+
+                        var bulbUid = _lightSystem!.GetBulb(light, poweredLight);
 
                         if (bulbUid is null)
                         {
@@ -150,6 +156,7 @@ namespace Content.Server.Time
                             _pointLight.SetColor(light, GetCycleColor(comp, color), pointLight);
                             _pointLight.SetEnergy(light, (float) CalculateLightLevel(comp), pointLight);
                             Dirty(light, pointLight);
+
                             if (EntityManager.TryGetComponent<AppearanceComponent>(light, out var appearance))
                             {
                                 _appearance.SetData(light, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);

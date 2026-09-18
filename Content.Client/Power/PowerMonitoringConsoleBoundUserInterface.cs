@@ -31,6 +31,9 @@ public sealed class PowerMonitoringConsoleBoundUserInterface : BoundUserInterfac
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         var castState = (PowerMonitoringConsoleBoundInterfaceState) state;
 
         EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);

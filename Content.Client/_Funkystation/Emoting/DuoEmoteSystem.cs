@@ -100,6 +100,9 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
         var initiator = GetEntity(ev.Initiator);
         var partner = GetEntity(ev.Partner);
 
+        if (!initiator.IsValid() || !partner.IsValid())
+            return;
+
         // Base lunge animation
         PlayLunge(initiator, partner);
         PlayLunge(partner, initiator);

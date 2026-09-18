@@ -74,7 +74,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawGold: 100
+      RawGold: 200
   - type: Extractable
     grindableSolutionName: goldore
   - type: SolutionContainerManager
@@ -97,6 +97,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: GoldOre
+  id: GoldOre3
+  suffix: Three
+  components:
+  - type: Stack
+    count: 3
 
 - type: entity
   parent: OreBase
@@ -144,7 +152,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawIron: 80
+      RawIron: 100
   - type: Extractable
     grindableSolutionName: ironore
   - type: SolutionContainerManager
@@ -164,6 +172,15 @@
     - type: Stack
       count: 1
 
+#Dumont edit for bitrunning
+- type: entity
+  id: SteelOre5
+  parent: SteelOre
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
 - type: entity
   parent: OreBase
   id: PlasmaOre
@@ -177,7 +194,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawPlasma: 100
+      RawPlasma: 330
   - type: PointLight
     radius: 1.2
     energy: 0.6
@@ -205,6 +222,14 @@
   components:
     - type: Stack
       count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: PlasmaOre
+  id: PlasmaOre3
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
 
 - type: entity
   parent: OreBase
@@ -219,7 +244,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawSilver: 100
+      RawSilver: 330
   - type: Extractable
     grindableSolutionName: silverore
   - type: SolutionContainerManager
@@ -242,6 +267,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: SilverOre
+  id: SilverOre3
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
 
 - type: entity
   parent: OreBase
@@ -256,7 +289,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawQuartz: 70
+      RawQuartz: 100
   - type: Extractable
     grindableSolutionName: quartzore
   - type: SolutionContainerManager
@@ -275,6 +308,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: SpaceQuartz
+  id: SpaceQuartz5
+  suffix: Five
+  components:
+  - type: Stack
+    count: 5
 
 - type: entity
   parent: OreBase
@@ -320,6 +361,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: UraniumOre
+  id: UraniumOre3
+  suffix: Three
+  components:
+  - type: Stack
+    count: 3
 
 - type: entity
   parent: OreBase
@@ -334,7 +383,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawBananium: 80
+      RawBananium: 100
   - type: PointLight
     radius: 1.2
     energy: 1
@@ -396,7 +445,7 @@
           Quantity: 0.1
   - type: PhysicalComposition
     materialComposition:
-      Coal: 70
+      Coal: 100
   - type: Item
     heldPrefix: coal
 
@@ -445,7 +494,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawSalt: 80
+      RawSalt: 100
   - type: Extractable
     grindableSolutionName: saltore
   - type: SolutionContainerManager

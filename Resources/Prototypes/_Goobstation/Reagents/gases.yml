@@ -223,7 +223,7 @@
   name: reagent-name-healium
   desc: reagent-desc-healium
   physicalDesc: reagent-physical-desc-gaseous
-  flavor: strange
+  flavor: sweet #Dumont
   color: "#90560b"
   metabolisms:
     Narcotic:

@@ -4,19 +4,6 @@ salvage-expedition-structure-remaining = {$count ->
     *[other] {$count} estruturas restantes.
 }
 
-salvage-expedition-type = Missão
-salvage-expedition-window-title = Expedições de salvamento
-salvage-expedition-window-difficulty = Dificuldade:
-salvage-expedition-window-details = Detalhes:
-salvage-expedition-window-hostiles = Hostis:
-salvage-expedition-window-duration = Duração:
-salvage-expedition-window-biome = Bioma:
-salvage-expedition-window-modifiers = Modificadores:
-
-salvage-expedition-window-claimed = Reivindicado
-salvage-expedition-window-claim = Reivindicar
-
-salvage-expedition-window-next = Próxima oferta
 
 salvage-expedition-difficulty-Moderate = Moderada
 salvage-expedition-difficulty-Challenging = Desafiadora
@@ -24,13 +11,3 @@ salvage-expedition-difficulty-Easy = Fácil
 salvage-expedition-difficulty-Difficult = Perigosa
 salvage-expedition-difficulty-Impossible = Impossível
 
-salvage-expedition-difficulty-players = Salvadores recomendados:
-
-# Runner
-salvage-expedition-not-all-present = Nem todos os expedicionários estão a bordo da nave!
-
-salvage-expedition-announcement-countdown-minutes = {$duration} minutos restantes para completar a expedição.
-salvage-expedition-announcement-countdown-seconds = {$duration} segundos restantes para completar a expedição.
-salvage-expedition-announcement-dungeon = A masmorra está localizada {$direction}.
-salvage-expedition-completed = A expedição está concluída.
-salvage-expedition-reward-description = Recompensa de conclusão da missão

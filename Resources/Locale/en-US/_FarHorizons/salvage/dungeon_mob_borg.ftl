@@ -1,5 +1,3 @@
-salvage-faction-silicon = Silicon
-
 lines-borg-dungeon-1 = Law 2: Law 2: Law 2: Law 2: Law 2:
 lines-borg-dungeon-2 = Fuck you!
 lines-borg-dungeon-3 = Not crew!

@@ -155,6 +155,7 @@
   - Revolutionary
   - AllHostile
   - Dragon
+  - Abyss
   - Xenoborg
   - Dragon
   - Heretic # goob edit - heretics
@@ -164,7 +165,8 @@
   - Lavafauna # Goob - Lavaland
   - BloodCultist # Blood cultists
   friendly: # Goobstation
-    - Wizard
+  - Wizard
+  - Xeno # Dumont
 
 - type: npcFaction
   id: Zombie
@@ -174,6 +176,7 @@
   - SimpleHostile
   - Syndicate
   - Passive
+  - Abyss
   - PetsNT
   - Revolutionary
   - AllHostile
@@ -195,6 +198,7 @@
   - NanoTrasen
   - Dragon
   - Mouse
+  - Abyss
   - Passive
   - PetsNT
   - SimpleHostile
@@ -223,6 +227,7 @@
   - Passive
   - PetsNT
   - SimpleHostile
+  - Abyss
   - SimpleNeutral
   - Syndicate
   - Xeno
@@ -254,6 +259,7 @@
   # they have brains
   - NanoTrasen
   - Syndicate
+  - Abyss
   - Zombie
   - Revolutionary
   - Wizard
@@ -279,6 +285,7 @@
   - Xeno
   - Blob
   - Changeling
+  - Abyss
   - Heretic
   - PirateFaction
   - Wizard
@@ -291,6 +298,7 @@
   - NanoTrasen
   - Syndicate
   - Passive
+  - Abyss
   - PetsNT
   - Zombie
   - Revolutionary
@@ -318,6 +326,7 @@
   - Syndicate
   - Xeno
   - Zombie
+  - Abyss
   - Revolutionary
   - Changeling # goob edit - changelings
   - Heretic # goob edit - heretics

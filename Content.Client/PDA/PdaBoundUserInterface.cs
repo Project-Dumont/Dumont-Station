@@ -137,18 +137,24 @@ namespace Content.Client.PDA
                 return;
             }
 
+            if (_menu.Disposed)
+                return;
+
             _menu.UpdateState(updateState);
         }
 
         protected override void AttachCartridgeUI(Control cartridgeUIFragment, string? title)
         {
-            _menu?.ProgramView.AddChild(cartridgeUIFragment);
-            _menu?.ToProgramView(title ?? Loc.GetString("comp-pda-io-program-fallback-title"));
+            if (_menu is not { Disposed: false })
+                return;
+
+            _menu.ProgramView.AddChild(cartridgeUIFragment);
+            _menu.ToProgramView(title ?? Loc.GetString("comp-pda-io-program-fallback-title"));
         }
 
         protected override void DetachCartridgeUI(Control cartridgeUIFragment)
         {
-            if (_menu is null)
+            if (_menu is not { Disposed: false })
                 return;
 
             _menu.ToHomeScreen();
@@ -158,7 +164,10 @@ namespace Content.Client.PDA
 
         protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
-            _menu?.UpdateAvailablePrograms(programs);
+            if (_menu is not { Disposed: false })
+                return;
+
+            _menu.UpdateAvailablePrograms(programs);
         }
 
         private PdaBorderColorComponent? GetBorderColorComponent()

@@ -26,5 +26,10 @@ salvage-mission-objective-name-shutdown = Shutdown
 salvage-mission-objective-description-shutdown = Rogue devices detected on the ground. Shut them down.
 salvage-mission-objective-announcement-shutdown = Your mission is to find and destroy {$numTargets} suspicious devices. You will be paid extra for any additional devices you destroy.
 
+salvage-mission-objective-name-disarm = Disarm
+salvage-mission-objective-description-disarm = Disable self-destrust protocol on an automated factory.
+salvage-mission-objective-announcement-disarm = Your mission is to find disarm codes, then enter them into security consoles. There are {$numTargets} codes in total.
+salvage-mission-objective-disarm-paper = Your disarm code for the shift: #{$code}
+
 salvage-mission-objective-completed-message = Salvage mission completed. {$bonus}/{$maxBonus} bonus objectives completed. Total payout: {$totalReward} tickets and {$totalCash} spesos.
 salvage-mission-objective-failed-message = Salvage mission failed.

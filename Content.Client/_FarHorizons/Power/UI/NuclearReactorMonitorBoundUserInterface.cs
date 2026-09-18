@@ -49,6 +49,9 @@ public sealed class NuclearReactorMonitorBoundUserInterface : BoundUserInterface
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not NuclearReactorBuiState reactorState)
             return;
 

@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseBulletTrigger
+  id: BulletGrenadeLube
+  name: cleanade grenade round
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: lubenade
+  - type: SmokeOnTrigger
+    duration: 3.5
+    spreadAmount: 30
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceLube
+        Quantity: 30
+  - type: EmitSoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 0.01 # a little pop
+    intensitySlope: 1
+    maxIntensity: 0.01
+    tileBreakScale: 0.01
+  - type: SmartLinkBlacklist  # Goobstation

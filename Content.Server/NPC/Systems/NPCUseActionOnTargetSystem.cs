@@ -42,6 +42,7 @@
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Server.NPC.Systems;
@@ -49,6 +50,7 @@ namespace Content.Server.NPC.Systems;
 public sealed class NPCUseActionOnTargetSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -63,6 +65,22 @@ public sealed class NPCUseActionOnTargetSystem : EntitySystem
         ent.Comp.ActionEnt = _actions.AddAction(ent, ent.Comp.ActionId);
     }
 
+    public bool TryUseWorldTargetAction(Entity<NPCUseActionOnTargetComponent?> user, EntityUid target)
+    {
+        if (!Resolve(user, ref user.Comp, false))
+            return false;
+
+        if (_actions.GetAction(user.Comp.ActionEnt) is not {} action)
+            return false;
+
+        if (!_actions.ValidAction(action))
+            return false;
+
+        _actions.SetEventTarget(action, target);
+
+        _actions.PerformAction(user.Owner, action, predicted: false);
+        return true;
+    }
     public bool TryUseTentacleAttack(Entity<NPCUseActionOnTargetComponent?> user, EntityUid target)
     {
         if (!Resolve(user, ref user.Comp, false))
@@ -93,6 +111,7 @@ public sealed class NPCUseActionOnTargetSystem : EntitySystem
                 continue;
 
             TryUseTentacleAttack((uid, comp), target);
+            TryUseWorldTargetAction((uid, comp), target);
         }
     }
 }

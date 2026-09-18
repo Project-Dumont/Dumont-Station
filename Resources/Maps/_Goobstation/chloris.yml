@@ -132894,7 +132894,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 173.5,28.5
       parent: 2
-- proto: EnergyChemDispenser
+- proto: ChemDispenser
   entities:
   - uid: 10790
     components:
@@ -242291,7 +242291,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 141.5,115.5
       parent: 2
-    - type: Timer
   - uid: 37278
     components:
     - type: Transform
@@ -242314,7 +242313,6 @@ entities:
     - type: Transform
       pos: 137.5,113.5
       parent: 2
-    - type: Timer
   - uid: 37282
     components:
     - type: Transform
@@ -243324,7 +243322,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 86.5,104.5
       parent: 2
-    - type: Timer
   - uid: 37460
     components:
     - type: Transform
@@ -243395,7 +243392,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 90.5,106.5
       parent: 2
-    - type: Timer
   - uid: 37472
     components:
     - type: Transform
@@ -245752,7 +245748,6 @@ entities:
     - type: Transform
       pos: 88.5,107.5
       parent: 2
-    - type: Timer
   - uid: 37892
     components:
     - type: Transform

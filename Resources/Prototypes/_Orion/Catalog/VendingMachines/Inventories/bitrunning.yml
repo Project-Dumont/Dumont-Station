@@ -1,16 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: shopInventory
   id: BitrunningVendorInventory
   listings:
   - id: FoodSnackBoritos
-    cost: 65
+    cost: 50
   - id: DrinkSpaceMountainWindCan
-    cost: 65
+    cost: 50
   - id: DrinkPwrGameCan
-    cost: 130
+    cost: 100
   - id: MedkitBruteFilled
-    cost: 325
+    cost: 500
   - id: MedkitBurnFilled
-    cost: 325
+    cost: 500
   - id: ClothingEyesGlassesSunglasses
     cost: 650
   - id: ClothingOuterCoatJacketLeather
@@ -20,26 +24,28 @@
   - id: BitrunningExtensionPlayerAppearanceDisk
     cost: 100
   - id: BitrunningGearSimpleDisk
-    cost: 487
+    cost: 500
   - id: BitrunningGearComplexDisk
-    cost: 812
+    cost: 800
   - id: BitrunningGearAdvancedDisk
     cost: 1300
   - id: BitrunningProgramBasicDisk
-    cost: 487
+    cost: 500
   - id: BitrunningProgramComplexDisk
-    cost: 974
+    cost: 1000
   - id: BitrunningProgramEliteDisk
-    cost: 1625
+    cost: 1600
 #  - id: BitrunningGimmickSportsDisk # TODO
 #    cost: 487
 #  - id: BitrunningGimmickDungeonCrawlingDisk # TODO
 #    cost: 812
+  - id: BitrunningGearPKADisk
+    cost: 500
   - id: BitrunningGearPKAModsDisk
-    cost: 487
+    cost: 500
   - id: BitrunningGearPremiumPKAModsDisk
-    cost: 1040
+    cost: 1000
   - id: BitrunningGearCrusherModsDisk
-    cost: 487
-  - id: BitrunningGearPremiumCrusherModsDisk
-    cost: 1040
+    cost: 500
+#  - id: BitrunningGearPremiumCrusherModsDisk
+#    cost: 1000

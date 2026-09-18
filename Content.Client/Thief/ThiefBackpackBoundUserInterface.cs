@@ -34,6 +34,9 @@ public sealed class ThiefBackpackBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not ThiefBackpackBoundUserInterfaceState current)
             return;
 

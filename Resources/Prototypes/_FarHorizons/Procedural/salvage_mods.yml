@@ -1,10 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: salvageDungeonMod
   id: Reactor
   desc: salvage-dungeon-mod-reactor
   proto: Reactor
   biomes:
     - Grasslands
-  # - Abyss
+    - Abyss
     - Snow
     - Mountains
     - LowDesert
@@ -12,6 +16,21 @@
     - Challenging
   # - Moderate
   # - Easy
+
+- type: salvageDungeonMod
+  id: Factory
+  desc: salvage-dungeon-mod-factory
+  proto: Factory
+  biomes:
+    - Grasslands
+    - Abyss
+    - Snow
+    - Mountains
+    - LowDesert
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
 
 # Airs
 - type: salvageAirMod
@@ -41,7 +60,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageBiomeMod
   id: Mountains
@@ -51,7 +69,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 # Weathers
 - type: salvageWeatherMod
@@ -88,6 +105,7 @@
   biomes:
     - Grasslands
     - Caves
+    - DenseForest
 
 - type: salvageWeatherMod
   id: Storm
@@ -97,6 +115,7 @@
   biomes:
     - Grasslands
     - Caves
+    - DenseForest
 
 - type: salvageWeatherMod
   id: Sandstorm
@@ -121,6 +140,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallLight
@@ -129,6 +149,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallMedium
@@ -138,6 +159,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallHeavy
@@ -147,3 +169,4 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest

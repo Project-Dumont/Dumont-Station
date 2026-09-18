@@ -40,7 +40,7 @@
 - type: gameMap
   id: Packed
   mapName: 'Packed'
-  mapPath: /Maps/_Gabystation/packed.yml # Gabystation
+  mapPath: /Maps/_Dumont/packed.yml # Gabystation
   minPlayers: 7
   maxPlayers: 35
   stations:

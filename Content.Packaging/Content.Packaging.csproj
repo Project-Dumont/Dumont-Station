@@ -12,13 +12,13 @@ SPDX-License-Identifier: MIT
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <ServerGarbageCollection>True</ServerGarbageCollection>
   </PropertyGroup>
 
+  <Import Project="../MSBuild/Content.props" />
+
   <ItemGroup>
     <ProjectReference Include="..\Content.ModuleManager\Content.ModuleManager.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.Packaging\Robust.Packaging.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,4 +27,7 @@ SPDX-License-Identifier: MIT
   </ItemGroup>
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+
+  <Import Project="..\RobustToolbox\Imports\Shared.props" />
+  <Import Project="..\RobustToolbox\Imports\Packaging.props" />
 </Project>

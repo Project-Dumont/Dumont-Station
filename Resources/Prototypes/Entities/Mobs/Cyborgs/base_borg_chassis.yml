@@ -230,6 +230,8 @@
       Dead: BorgDead
     showOverlays: false
     allowRevives: true
+  - type: CritStateMovement # Orion
+    softCritMovement: false
   - type: HealthExaminable
     examinableTypes:
       - Blunt

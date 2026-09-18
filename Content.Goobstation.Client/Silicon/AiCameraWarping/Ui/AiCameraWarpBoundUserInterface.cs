@@ -6,7 +6,6 @@
 
 using Content.Goobstation.Shared.Silicon.AiCameraWarping;
 using Robust.Client.UserInterface;
-using Serilog;
 
 namespace Content.Goobstation.Client.Silicon.AiCameraWarping.Ui;
 
@@ -26,6 +25,9 @@ public sealed class AiCameraWarpBoundUserInterface(EntityUid owner, Enum uiKey) 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+
+        if (_menu is not { Disposed: false })
+            return;
 
         if (state is not CameraWarpBuiState msg)
             return;

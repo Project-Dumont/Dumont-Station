@@ -1,0 +1,257 @@
+- type: entity
+  name: comrade
+  parent: BaseMobHuman
+  id: MobSovietComrade
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DungeonSoviet
+    - type: Loadout
+      prototypes:
+        - SovietComradeGear
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+          
+#melee
+- type: entity
+  suffix: Combat Knife
+  parent: MobSovietComrade
+  id: MobSovietComradeCombatKnife
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietComradeGearCombatKnife
+
+- type: entity
+  suffix: Finka
+  parent: MobSovietComrade
+  id: MobSovietComradeFinka
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietComradeGearFinka
+
+#pistol
+- type: entity
+  suffix: Makarov
+  parent: MobSovietComrade
+  id: MobSovietComradeMakarov
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietComradeGearMakarov
+
+## Sargent Mob
+
+- type: entity
+  name: sargent
+  parent: BaseMobHuman
+  id: MobSovietSargent
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DungeonSoviet
+    - type: Loadout
+      prototypes:
+        - SovietSargentGear
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+
+#shotgun
+- type: entity
+  suffix: Sawn
+  parent: MobSovietSargent
+  id: MobSovietSargentSawn
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietSargentGearSawn
+
+#rifle
+- type: entity
+  suffix: Famas
+  parent: MobSovietSargent
+  id: MobSovietSargentFamas
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietSargentGearFamas
+
+## Tenent Mob
+
+- type: entity
+  name: tenent
+  parent: BaseMobHuman
+  id: MobSovietTenent
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DungeonSoviet
+    - type: Loadout
+      prototypes:
+        - SovietTenentGear
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+
+#laser
+- type: entity
+  suffix: Laser
+  parent: MobSovietTenent
+  id: MobSovietTenentLaser
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietTenentGearLaser
+
+#rifle
+- type: entity
+  suffix: Ak
+  parent: MobSovietTenent
+  id: MobSovietTenentAk
+  components:
+    - type: Loadout
+      prototypes:
+        - SovietTenentGearAk
+
+#miniboss  // Changed in Dumont, a boss bear is weak.
+- type: entity
+  name: soviet bear
+  id: MobBearSoviet
+  parent: SimpleSpaceMobBase
+  description: Smells like booze.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - DungeonSoviet
+  - type: Sprite
+    drawdepth: Mobs 
+    sprite: _Starlight/Mobs/Animals/bear.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: bear
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: bear
+      Critical:
+        Base: bear_dead
+      Dead:
+        Base: bear_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      300: Dead
+  - type: Stamina
+    critThreshold: 250
+  - type: MovementAlwaysTouching
+  - type: Bloodstream
+    bloodMaxVolume: 300
+    bloodReagent: Vodka
+  - type: CombatMode
+  - type: Temperature
+    heatDamageThreshold: 500
+    coldDamageThreshold: 0
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
+        Slash: 20
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: Puller
+    needsHands: false
+  - type: Speech
+    speechVerb: LargeMob
+  - type: Vocal
+    sounds:
+      Unsexed: Bear
+  - type: InteractionPopup
+    successChance: 0.25
+    interactSuccessString: petting-success-bear
+    interactFailureString: petting-failure-bear
+    interactSuccessSound:
+      path: /Audio/Animals/sloth_squeak.ogg
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatBear
+      amount: 6
+
+## Sub-Boss
+- type: entity
+  id: MobCombatMech
+  parent: BaseCombatMech
+  name: Combat Mech Soviet
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Goobstation/Objects/Specific/Mech/gygax.rsi
+    scale: 1.08, 1.08
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: molot
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: molot-unshaded
+      shader: unshaded
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0

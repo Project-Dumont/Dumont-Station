@@ -392,7 +392,7 @@ public sealed partial class ExplosionSystem
         spaceDirections = NeighborFlag.Invalid;
         for (var i = 0; i < NeighbourVectors.Length; i++)
         {
-            if (!grid.TryGetTileRef(index + NeighbourVectors[i], out var neighborTile) || neighborTile.Tile.IsEmpty)
+            if (!_mapSystem.TryGetTileRef(grid.Owner, grid, index + NeighbourVectors[i], out var neighborTile) || neighborTile.Tile.IsEmpty)
                 spaceDirections |= (NeighborFlag) (1 << i);
         }
 

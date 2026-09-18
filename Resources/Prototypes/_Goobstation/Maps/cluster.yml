@@ -44,7 +44,7 @@
 - type: gameMap
   id: Cluster
   mapName: 'Cluster'
-  mapPath: /Maps/_Gabystation/cluster.yml # Dumont Station
+  mapPath: /Maps/_Dumont/cluster.yml # Dumont Station
   minPlayers: 5
   maxPlayers: 35
   stations:

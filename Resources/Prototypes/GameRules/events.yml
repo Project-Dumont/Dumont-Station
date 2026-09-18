@@ -635,7 +635,7 @@
       path: /Audio/_Gabystation/Announcements/kudzu_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
-    weight: 7
+    weight: 3.5 # Not very interessting to be common
     duration: 240
     chaos:
       Hostile: 20

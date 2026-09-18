@@ -978,7 +978,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool checkEmote = true,
         bool ignoreActionBlocker = false,
         NetUserId? author = null,
-        bool forced = false // goobstation
+        bool forced = false, // goobstation
+        string? speechBubbleMessage = null
         )
     {
         if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
@@ -1000,7 +1001,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         SendInVoiceRange(
             ChatChannel.Emotes,
             name,
-            action,
+            speechBubbleMessage ?? action,
             wrappedMessage,
             obfuscated: "",
             obfuscatedWrappedMessage: "",

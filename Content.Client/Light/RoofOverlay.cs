@@ -22,7 +22,6 @@ namespace Content.Client.Light;
 public sealed class RoofOverlay : Overlay
 {
     private readonly IEntityManager _entManager;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IOverlayManager _overlay = default!;
 
     private readonly EntityLookupSystem _lookup;
@@ -63,7 +62,7 @@ public sealed class RoofOverlay : Overlay
         var target = lightoverlay.EnlargedLightTarget;
 
         _grids.Clear();
-        _mapManager.FindGridsIntersecting(args.MapId, bounds, ref _grids, approx: true, includeMap: true);
+        _mapSystem.FindGridsIntersecting(args.MapId, bounds, ref _grids, approx: true, includeMap: true);
         var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
         var scale = viewport.RenderScale / (Vector2.One / lightScale);
 

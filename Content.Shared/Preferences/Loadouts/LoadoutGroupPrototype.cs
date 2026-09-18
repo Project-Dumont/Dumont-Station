@@ -93,5 +93,5 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
 
     [ViewVariables]
     [AbstractDataField]
-    public bool Abstract { get; private set; } = false;
+    public bool Abstract { get; private set; }
 }

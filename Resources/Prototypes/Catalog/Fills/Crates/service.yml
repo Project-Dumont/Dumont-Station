@@ -268,7 +268,7 @@
   components:
     - type: StorageFill
       contents:
-      - id: BookSpaceEncyclopedia
+      # - id: BookSpaceEncyclopedia
       - id: BookTheBookOfControl
       - id: BookBartendersManual
       - id: BookHowToCookForFortySpaceman
@@ -456,4 +456,3 @@
     contents:
     - id: BoxLightbulbColorfulMixed
     - id: BoxLighttubeColorfulMixed
-

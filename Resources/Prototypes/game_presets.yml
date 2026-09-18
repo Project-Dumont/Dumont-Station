@@ -152,6 +152,9 @@
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
     - Shadowling # Einstein Engines - Shadowlings
+    - MalfAi # Dumont
+    - Devil # Dumont
+    - BloodCult # Dumont
 
 - type: gamePreset
   id: Extended

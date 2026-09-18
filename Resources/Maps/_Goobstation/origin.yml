@@ -92711,7 +92711,6 @@ entities:
     - type: Transform
       pos: -10.5,-12.5
       parent: 2
-    - type: Timer
   - uid: 14593
     components:
     - type: MetaData
@@ -94561,7 +94560,7 @@ entities:
       parent: 14860
     - type: Physics
       canCollide: False
-- proto: EnergyChemDispenser
+- proto: ChemDispenser
   entities:
   - uid: 12399
     components:

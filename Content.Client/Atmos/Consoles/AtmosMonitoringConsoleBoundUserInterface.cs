@@ -27,6 +27,9 @@ public sealed class AtmosMonitoringConsoleBoundUserInterface : BoundUserInterfac
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not AtmosMonitoringConsoleBoundInterfaceState castState)
             return;
 

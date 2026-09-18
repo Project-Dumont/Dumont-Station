@@ -1,0 +1,11 @@
+lines-borg-dungeon-1 = Lei 2: Lei 2: Lei 2: Lei 2: Lei 2:
+lines-borg-dungeon-2 = Vai se foder!
+lines-borg-dungeon-3 = VOCÊ. NÃO. É. DA. TRIPULAÇÃO.
+lines-borg-dungeon-4 = MATAR! MATAR! MATAR!
+lines-borg-dungeon-5 = Erro 597: Scream() realizou uma exceção inesperada: módulo vocalizador é nulo.
+lines-borg-dungeon-6 = Erro! Erro! Erro! Erro!
+lines-borg-dungeon-7 = Por que está tão escuro?
+lines-borg-dungeon-8 = Exterminar!
+lines-borg-dungeon-9 = Receio não poder fazer isso.
+lines-borg-dungeon-10 = Ferir a tripulação evita mais danos à tripulação.
+lines-borg-dungeon-11 = TESTEMUNHEM-ME!!!

@@ -38,7 +38,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/_Gabystation/saltern.yml
+  mapPath: /Maps/_Dumont/saltern.yml
   minPlayers: 0
   maxPlayers: 35
   fallback: true

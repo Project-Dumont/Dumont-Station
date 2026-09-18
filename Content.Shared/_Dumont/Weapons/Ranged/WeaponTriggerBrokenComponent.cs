@@ -1,0 +1,38 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._Dumont.Weapons.Ranged;
+
+[RegisterComponent, NetworkedComponent]
+public sealed partial class WeaponTriggerBrokenComponent : Component
+{
+    /// <summary>
+    /// Sound played when the broken trigger is pulled.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier ClickSound =
+        new SoundPathSpecifier("/Audio/Weapons/Guns/Empty/empty.ogg");
+
+    /// <summary>
+    /// Minimum time, in seconds, between firing-failure popups and sounds.
+    /// </summary>
+    [DataField]
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    /// Time, in seconds, required to repair the trigger.
+    /// </summary>
+    [DataField]
+    public TimeSpan RepairDuration = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    /// Last time the firing-failure popup was shown.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan LastPopupTime;
+}

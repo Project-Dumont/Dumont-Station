@@ -51,6 +51,10 @@
   - type: Tag
     tags:
     - GunCanAimShooter
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   categories: [ HideSpawnMenu ]

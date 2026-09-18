@@ -1,0 +1,24 @@
+- type: npcFaction
+  id: Abyss
+  hostile:
+  - Dragon
+  - NanoTrasen
+  - Mouse
+  - PetsNT
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+
+- type: npcFaction
+  id: DungeonSoviet
+  hostile:
+  - NanoTrasen
+  - SimpleHostile
+  - Xeno
+  - PetsNT
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Abyss

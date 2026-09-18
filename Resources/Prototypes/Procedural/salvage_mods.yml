@@ -26,7 +26,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageBiomeMod
   id: Grasslands
@@ -37,7 +36,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageBiomeMod
   id: Snow
@@ -49,7 +47,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageBiomeMod
   id: Lava
@@ -61,7 +58,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 #- type: salvageBiomeMod
 #  id: Space
@@ -115,6 +111,7 @@
     - Challenging
     - Moderate
     - Easy
+    - Impossible
 
 - type: salvageTemperatureMod
   id: Burning
@@ -153,6 +150,7 @@
     - Challenging
     - Moderate
     - Easy
+    - Impossible
 
 - type: salvageTemperatureMod
   id: Tundra
@@ -223,6 +221,7 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Impossible
  
 - type: salvageAirMod
   id: Poisoned
@@ -242,6 +241,7 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Impossible
  
 - type: salvageAirMod
   id: Poison
@@ -309,11 +309,11 @@
   biomes:
     - LowDesert # Far Horizons
     - Grasslands
+    - Abyss
   difficulties: 
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageDungeonMod
   id: LavaBrig
@@ -325,7 +325,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageDungeonMod
   id: Mineshaft
@@ -337,7 +336,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageDungeonMod
   id: SnowyLabs
@@ -350,7 +348,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageDungeonMod
   id: Haunted
@@ -362,4 +359,3 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult

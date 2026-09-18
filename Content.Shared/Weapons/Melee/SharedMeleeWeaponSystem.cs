@@ -179,7 +179,7 @@ namespace Content.Shared.Weapons.Melee;
 public abstract class SharedMeleeWeaponSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly IMapManager MapManager = default!;
+    [Dependency] protected readonly SharedMapSystem MapSystem = default!;
     [Dependency] private   readonly INetManager _netMan = default!;
     [Dependency] private   readonly IPrototypeManager _protoManager = default!;
     [Dependency] private   readonly IRobustRandom _random = default!;
@@ -649,6 +649,12 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var ev = new AttemptMeleeEvent(attacker, weaponUid, weapon, attack is HeavyAttackEvent); // Goob edit
         RaiseLocalEvent(weaponUid, ref ev);
         RaiseLocalEvent(attacker, ref ev); // Shitmed Change
+
+        if (weapon.SwingBeverage)
+        {
+            weapon.SwingLeft = !weapon.SwingLeft;
+            DirtyField(weaponUid, weapon, nameof(MeleeWeaponComponent.SwingLeft));
+        }
 
         if (ev.Cancelled)
         {

@@ -118,7 +118,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 {
     [Dependency] private   readonly ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly IMapManager MapManager = default!;
+    [Dependency] protected readonly SharedMapSystem MapSystem = default!;
     [Dependency] private   readonly INetManager _netManager = default!;
     [Dependency] protected readonly IPrototypeManager ProtoManager = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
@@ -276,6 +276,10 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         return true;
     }
+
+    //🌟Starlight🌟
+    public bool IsChamberClosed(EntityUid gunEntity)
+        => Appearance.TryGetData(gunEntity, AmmoVisuals.BoltClosed, out bool boltClosed) && boltClosed;
 
     public bool TryGetGun(EntityUid entity, out EntityUid gunEntity, [NotNullWhen(true)] out GunComponent? gunComp)
     {

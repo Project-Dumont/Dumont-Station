@@ -126,6 +126,10 @@
     sound:
       collection: SnipersDrop
   # Goobstation edit end
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   name: minigun

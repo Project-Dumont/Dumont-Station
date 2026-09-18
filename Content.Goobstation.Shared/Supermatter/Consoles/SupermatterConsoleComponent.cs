@@ -46,8 +46,9 @@ public struct SupermatterNavMapData
     }
 }
 
+[DataDefinition]
 [Serializable, NetSerializable]
-public struct SupermatterFocusData
+public partial struct SupermatterFocusData
 {
     /// <summary>
     /// Focus entity

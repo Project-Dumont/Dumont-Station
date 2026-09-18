@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
@@ -26,7 +26,7 @@ namespace Content.Client.Shuttles.UI;
 public sealed partial class ShuttleDockControl : BaseShuttleControl
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    private readonly SharedMapSystem _maps;
     private readonly DockingSystem _dockSystem;
     private readonly SharedShuttleSystem _shuttles;
     private readonly SharedTransformSystem _xformSystem;
@@ -67,6 +67,7 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
     public ShuttleDockControl() : base(2f, 32f, 8f)
     {
         RobustXamlLoader.Load(this);
+        _maps = EntManager.System<SharedMapSystem>();
         _dockSystem = EntManager.System<DockingSystem>();
         _shuttles = EntManager.System<SharedShuttleSystem>();
         _xformSystem = EntManager.System<SharedTransformSystem>();
@@ -127,7 +128,7 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         // Draw nearby grids
         var controlBounds = PixelSizeBox;
         _grids.Clear();
-        _mapManager.FindGridsIntersecting(gridXform.MapID, viewBoundsWorld, ref _grids);
+        _maps.FindGridsIntersecting(gridXform.MapID, viewBoundsWorld, ref _grids);
 
         // offset the dotted-line position to the bounds.
         Vector2? viewedDockPos = _viewedState != null ? MidPointVector : null;
@@ -311,11 +312,11 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         var invertedPosition = Vector2.Zero;
         invertedPosition.Y = -invertedPosition.Y;
         var rotation = Matrix3Helpers.CreateRotation(-_angle.Value + MathF.PI);
-        var ourDockConnection = new UIBox2(
+        var ourDockConnection = BoxFromCorners(
             ScalePosition(Vector2.Transform(new Vector2(-0.2f, -0.7f), rotation)),
             ScalePosition(Vector2.Transform(new Vector2(0.2f, -0.5f), rotation)));
 
-        var ourDock = new UIBox2(
+        var ourDock = BoxFromCorners(
             ScalePosition(Vector2.Transform(new Vector2(-0.5f, 0.5f), rotation)),
             ScalePosition(Vector2.Transform(new Vector2(0.5f, -0.5f), rotation)));
 
@@ -328,6 +329,15 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         // Draw the dock itself
         handle.DrawRect(ourDock, dockColor.WithAlpha(0.2f));
         handle.DrawRect(ourDock, dockColor, filled: false);
+    }
+
+    private static UIBox2 BoxFromCorners(Vector2 a, Vector2 b)
+    {
+        return new UIBox2(
+            MathF.Min(a.X, b.X),
+            MathF.Min(a.Y, b.Y),
+            MathF.Max(a.X, b.X),
+            MathF.Max(a.Y, b.Y));
     }
 
     private void HideDocks()

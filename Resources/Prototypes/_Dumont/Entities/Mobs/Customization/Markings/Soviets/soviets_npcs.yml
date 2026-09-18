@@ -1,0 +1,120 @@
+- type: entity
+  id: BaseCombatMech
+  abstract: true
+  parent: [ BaseMob, MobCombat ]
+  name: Combat Mech
+  description: Heavy combat platform.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - DungeonSoviet
+  - type: CombatMode
+  - type: NoSlip
+  - type: Fauna
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      1200: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: molot
+        BaseUnshaded: molot-unshaded
+      Critical:
+        Base: molot-broken
+      Dead:
+        Base: molot-broken
+  - type: Stamina
+    critThreshold: 9999
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: ProjectileBatteryAmmoProvider
+    proto: BaseBulletIncendiary
+    fireCost: 50
+  - type: Battery
+    maxCharge: 3000
+    startingCharge: 3000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 500
+  - type: Gun
+    projectileSpeed: 12
+    fireRate: 2
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/minotaur.ogg
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 1200
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Reflect
+    reflectProb: 0.4
+    spread: 360
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
+    reflects:
+    - NonEnergy
+    - Energy
+  - type: PointLight
+    enabled: true
+    autoRot: true
+    netsync: false
+    radius: 1.5
+    energy: 1.5
+    mask: /Textures/Effects/LightMasks/soft_cone.png
+    color: "#FFFF00"
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - Pickaxe
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          DiamondOre1Unprocessed:
+            min: 10
+            max: 30
+      - !type:DoActsBehavior
+        acts:
+        - Destruction
+      - !type:ExplodeBehavior
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 120
+    intensitySlope: 6
+    maxIntensity: 8

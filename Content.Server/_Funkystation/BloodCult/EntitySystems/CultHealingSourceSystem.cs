@@ -51,7 +51,7 @@ public sealed partial class CultHealingSourceSystem : EntitySystem
 
 	// Dependencies
 	[Dependency] private readonly SharedStackSystem _stack = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
+	[Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 	[Dependency] private readonly DamageableSystem _damageableSystem = default!;
@@ -268,7 +268,7 @@ public sealed partial class CultHealingSourceSystem : EntitySystem
 		// do a box intersection test between target and destination
 		var box = Box2.FromTwoPoints(sourceWorld, destWorld);
 		var grids = new List<Entity<MapGridComponent>>();
-		_mapManager.FindGridsIntersecting(mapId, box, ref grids, true);
+		_mapSystem.FindGridsIntersecting(mapId, box, ref grids, true);
 
 		// gridcast through each grid to check for radiation blockers
 		foreach (var grid in grids)

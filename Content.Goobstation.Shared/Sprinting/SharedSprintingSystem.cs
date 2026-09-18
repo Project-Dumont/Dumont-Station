@@ -8,6 +8,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.Movement;
 using Content.Shared.Damage.Events;
 using Content.Shared._EinsteinEngines.Flight.Events;
@@ -30,6 +31,7 @@ using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
@@ -50,8 +52,13 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedMoverController _moverController = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IConfigurationManager _configuration = default!;
+
+    private bool _sprintEnabled = true;
+
     public override void Initialize()
     {
+        Subs.CVar(_configuration, GoobCVars.SprintEnabled, OnSprintEnabledChanged, true);
         SubscribeLocalEvent<SprinterComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.Sprint, new SprintInputCmdHandler(this))
@@ -75,6 +82,25 @@ public abstract class SharedSprintingSystem : EntitySystem
     }
 
     #region Core Functions
+
+    private void OnSprintEnabledChanged(bool enabled)
+    {
+        _sprintEnabled = enabled;
+
+        if (enabled || !_net.IsServer)
+            return;
+
+        var sprinters = new List<(EntityUid Uid, SprinterComponent Comp)>();
+        var query = EntityQueryEnumerator<SprinterComponent>();
+        while (query.MoveNext(out var uid, out var sprinter))
+        {
+            if (sprinter.IsSprinting)
+                sprinters.Add((uid, sprinter));
+        }
+
+        foreach (var (uid, sprinter) in sprinters)
+            ToggleSprint(uid, sprinter, false);
+    }
 
     private sealed class SprintInputCmdHandler(SharedSprintingSystem system) : InputCmdHandler
     {
@@ -117,6 +143,9 @@ public abstract class SharedSprintingSystem : EntitySystem
 
     private void HandleSprintInput(ICommonSession? session, IFullInputCmdMessage message)
     {
+        if (!_sprintEnabled)
+            return;
+
         if (session?.AttachedEntity == null
             || !TryComp<SprinterComponent>(session.AttachedEntity, out var sprinterComponent)
             || !TryComp<InputMoverComponent>(session.AttachedEntity, out var inputMoverComponent)
@@ -146,7 +175,8 @@ public abstract class SharedSprintingSystem : EntitySystem
             return;
 
         if (newSprintState
-            && (!CanSprint(uid, component)
+            && (!_sprintEnabled
+            || !CanSprint(uid, component)
             || _timing.CurTime - component.LastSprint < component.TimeBetweenSprints))
             return;
 

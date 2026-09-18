@@ -1,0 +1,11 @@
+- type: lobbyBackground
+  id: gsoandntrart
+  background: /Textures/_Dumont/LobbyScreens/gsoandntr.webp
+  name: Greenshield and NTR
+  artist: gnomio
+
+- type: lobbyBackground
+  id: nukelatuffart
+  background: /Textures/_Dumont/LobbyScreens/nukelatuff.webp
+  name: Nuke Latuff
+  artist: Desconhecido

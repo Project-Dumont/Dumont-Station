@@ -39,6 +39,9 @@ public sealed class GatewayBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not GatewayBoundUserInterfaceState current)
             return;
 

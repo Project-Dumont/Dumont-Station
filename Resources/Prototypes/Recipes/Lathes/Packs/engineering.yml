@@ -79,6 +79,9 @@
   - PowerDrill
   - WelderExperimental
   - JawsOfLife
+  - ClothingEyesGlassesTray # Dumont-Oculos-TRay
+  - ClothingEyesGlassesMesonScanner # Dumont-Oculos-TRay
+  - ClothingEyesGlassesEngineeringScanner # Dumont-Oculos-TRay
 
 - type: latheRecipePack
   id: AtmosTools
@@ -99,6 +102,9 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - SolarControlComputerCircuitboard
+  - AlertsComputerCircuitboard # DumontStation
+  - AtmosMonitoringComputerCircuitboard # DumontStation
+  - PowerComputerCircuitboard # DumontStation
   - SolarTrackerElectronics
   - GasRecyclerMachineCircuitboard
   - PortableGeneratorPacmanMachineCircuitboard

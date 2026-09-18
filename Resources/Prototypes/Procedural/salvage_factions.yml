@@ -36,16 +36,11 @@
     - proto: CMMobXenoKing
       cost: 10
       prob: 0.05
-    - proto: CMMobXenoRogueKing
-      cost: 10
-      prob: 0.005
     - proto: WeaponTurretXeno
       prob: 0.1
   difficulties:
     - Challenging 
     - Moderate
-    - Difficult
-    - Impossible
   configs:
     DefenseStructure: XenoWardingTower
     Megafauna: CMMobXenoQueen
@@ -74,8 +69,6 @@
   difficulties: 
     - Moderate
     - Easy
-    - Difficult
-    - Impossible
   configs:
     DefenseStructure: CarpStatue
     Megafauna: MobDragonDungeon

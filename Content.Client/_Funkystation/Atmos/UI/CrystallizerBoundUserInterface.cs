@@ -64,6 +64,10 @@ namespace Content.Client._Funkystation.Atmos.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
+
+            if (_window is not { Disposed: false })
+                return;
+
             if (_window == null || state is not CrystallizerBoundUserInterfaceState cast)
                 return;
 

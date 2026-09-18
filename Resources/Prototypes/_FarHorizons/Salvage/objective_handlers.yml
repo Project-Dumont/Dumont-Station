@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: salvageMissionObjectiveHandler
   id: MissionObjectiveRecoverHandler
   handler: !type:SalvageMissionRecovery
@@ -17,3 +21,9 @@
 - type: salvageMissionObjectiveHandler
   id: MissionObjectiveShutdownHandler
   handler: !type:SalvageMissionShutdown
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveDisarmHandler
+  handler: !type:SalvageMissionDisarm
+    numBodies: 20
+    codeLength: 4

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Map
@@ -92791,7 +92795,7 @@ entities:
       parent: 10023
     - type: Physics
       canCollide: False
-- proto: EnergyChemDispenser
+- proto: ChemDispenser
   entities:
   - uid: 7800
     components:
@@ -144648,7 +144652,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 30.5,-5.5
       parent: 2
-    - type: Timer
   - uid: 16281
     components:
     - type: Transform
@@ -145098,7 +145101,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -29.5,39.5
       parent: 2
-    - type: Timer
   - uid: 16368
     components:
     - type: Transform

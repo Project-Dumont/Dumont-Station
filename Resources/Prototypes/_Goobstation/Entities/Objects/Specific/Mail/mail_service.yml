@@ -11,9 +11,9 @@
   components:
   - type: Mail
     contents:
-    - id: BookSpaceEncyclopedia
-      prob: 0.2
-      orGroup: bookguide
+    # - id: BookSpaceEncyclopedia Dumont
+    #   prob: 0.2
+    #   orGroup: bookguide
     - id: BookTheBookOfControl
       prob: 0.2
       orGroup: bookguide

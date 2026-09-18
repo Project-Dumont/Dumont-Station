@@ -156,6 +156,10 @@
         ents: []
   - type: Multishot # Goobstation
   - type: GunExecutionBlacklist # Goobstation
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   name: China Lake

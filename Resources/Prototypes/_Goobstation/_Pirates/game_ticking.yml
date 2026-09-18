@@ -16,7 +16,7 @@
   id: SpacePirates
   components:
   - type: StationEvent
-    weight: 1
+    weight: 2 # Dumont edit - We almost don't see them
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 60

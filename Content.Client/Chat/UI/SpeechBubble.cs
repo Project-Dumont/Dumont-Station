@@ -169,6 +169,9 @@ namespace Content.Client.Chat.UI
 
         public static SpeechBubble CreateSpeechBubble(SpeechType type, ChatMessage message, EntityUid senderEntity)
         {
+            if (IoCManager.Resolve<IConfigurationManager>().GetCVar(CCVars.ChatEnableRunechatBubbles))
+                return new RunechatSpeechBubble(type, message, senderEntity);
+
             switch (type)
             {
                 case SpeechType.Emote:
@@ -188,11 +191,12 @@ namespace Content.Client.Chat.UI
             }
         }
 
-        public SpeechBubble(ChatMessage message, EntityUid senderEntity, string speechStyleClass, Color? fontColor = null)
+        public SpeechBubble(ChatMessage message, EntityUid senderEntity, string speechStyleClass, Color? fontColor = null, TimeSpan? totalTime = null)
         {
             IoCManager.InjectDependencies(this);
             _senderEntity = senderEntity;
             _transformSystem = _entityManager.System<SharedTransformSystem>();
+            MouseFilter = MouseFilterMode.Ignore;
 
             // Use text clipping so new messages don't overlap old ones being pushed up.
             RectClipContent = true;
@@ -206,7 +210,7 @@ namespace Content.Client.Chat.UI
             bubble.Measure(Vector2Helpers.Infinity);
             ContentSize = bubble.DesiredSize;
             _verticalOffsetAchieved = -ContentSize.Y;
-            _deathTime = _timing.RealTime + TotalTime;
+            _deathTime = _timing.RealTime + (totalTime ?? TotalTime);
         }
 
         protected abstract Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null);

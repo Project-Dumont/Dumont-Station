@@ -69,6 +69,10 @@ public sealed class MalfAiBorgsBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is MalfAiBorgsUiState s)
         {
             _window?.UpdateState(s);
