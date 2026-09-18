@@ -220,10 +220,6 @@
     baseSprintSpeed: 4.5
   - type: Speech
     allowedEmotes: ['Mars', 'Wurble']
-  - type: CollectiveMind
-    defaultChannel: Empathy
-    channels:
-    - Empathy
   - type: Tag
     tags:
     - CanPilot
