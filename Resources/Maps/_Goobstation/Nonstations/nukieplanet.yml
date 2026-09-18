@@ -10282,6 +10282,8 @@ entities:
     - type: Transform
       pos: 6.5,-11.5
       parent: 2
+      - type: VendingMachine
+      paidItems: False
 - proto: VendingMachineDiscountFree
   entities:
   - uid: 2496
