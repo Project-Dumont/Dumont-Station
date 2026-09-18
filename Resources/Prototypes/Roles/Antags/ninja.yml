@@ -83,13 +83,12 @@
   setPreference: false
   objective: roles-antag-space-ninja-objective
   guides: [ SpaceNinja ]
-  requirements: # Dumont edit
-  - !type:OverallPlaytimeRequirement # Some little game knowlege is required
-    time: 86400 # 24 hrs
+  requirements:
   - !type:SpeciesRequirement
     inverted: true
     species:
     - Plasmaman
+    - Waddler  
 
 #Ninja Gear
 - type: startingGear

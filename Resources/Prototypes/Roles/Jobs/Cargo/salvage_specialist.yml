@@ -76,13 +76,10 @@
   name: job-name-salvagespec
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
-  requirements: # Dumont edit
+  requirements:
     - !type:DepartmentTimeRequirement
-      department: Cargo # Be familiar with cargo
-      time: 43200 # 12 hrs
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer # Be familiar with combat and Sec, you may be needed
-      time: 72000 # 20 hrs
+      department: Cargo
+      time: 9000 # 2.5 hrs
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   guides: # goobstation

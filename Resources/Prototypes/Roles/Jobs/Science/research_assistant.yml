@@ -54,10 +54,10 @@
   name: job-name-research-assistant
   description: job-description-research-assistant
   playTimeTracker: JobResearchAssistant
-  requirements: # Dumont edit
+  requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 108000 #30 hrs
+      time: 36000 #10 hrs
       inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"

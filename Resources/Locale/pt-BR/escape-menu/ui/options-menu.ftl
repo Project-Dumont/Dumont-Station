@@ -24,6 +24,7 @@ ui-options-general-cursor = Cursor
 ui-options-general-speech = Fala
 ui-options-general-storage = Armazenamento
 ui-options-general-accessibility = Acessibilidade
+ui-options-show-offer-mode-indicators = Mostrar indicador de ofertas de itens
 
 ## Audio menu
 
@@ -43,6 +44,8 @@ ui-options-volume-label = Volume
 # Goobstation - Highlight Volume
 ui-options-highlight-volume = Volume de ping em destaque no chat:
 
+ui-options-hear-self = Ouvir a própria voz
+
 ## Graphics menu
 
 ui-options-display-label = Mostrar
@@ -61,6 +64,8 @@ ui-options-show-ooc-patron-color = Mostrar cor do Patreon no OOC
 ui-options-show-looc-on-head = Mostrar chat LOOC acima da cabeça dos personagens
 ui-options-fancy-speech = Mostrar nomes nos balões de fala
 ui-options-fancy-name-background = Adicionar fundo aos nomes dos balões de fala
+ui-options-runechat-speech = Usar balões de fala no estilo SS13
+ui-options-runechat-speech-scale = Tamanho dos balões de fala no estilo SS13
 ui-options-vsync = VSync
 ui-options-fullscreen = Tela cheia
 ui-options-lighting-label = Qualidade da iluminação:
@@ -275,6 +280,8 @@ ui-options-function-shuttle-rotate-left = Rotacionar para esquerda
 ui-options-function-shuttle-rotate-right = Rotacionar para direita
 ui-options-function-shuttle-brake = Freiar
 
+ui-options-function-offer-item = Oferecer Item
+
 ## Network menu
 
 ui-options-net-predict = Predição no lado do cliente
@@ -294,7 +301,7 @@ ui-options-net-predict-tick-bias-tooltip = Aumentar isso geralmente torna o jogo
 ui-options-net-pvs-spawn = Orçamento de geração de entidades PVS
 ui-options-net-pvs-spawn-tooltip = Isso limita a taxa com que o servidor envia entidades recém-criadas ao cliente.
                                    Diminuir esse valor pode ajudar a reduzir travadas causadas pela geração de entidades,
-                                   mas pode resultar em pop-in.                              
+                                   mas pode resultar em pop-in.
 
 ui-options-net-pvs-entry = Orçamento de entrada de entidades PVS
 ui-options-net-pvs-entry-tooltip = Isso limita a taxa com que o servidor envia entidades que se tornaram visíveis ao cliente.

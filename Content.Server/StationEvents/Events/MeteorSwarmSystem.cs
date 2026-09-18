@@ -11,6 +11,7 @@ using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Random.Helpers;
+using Content.Shared.PDA;
 using Robust.Server.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
@@ -20,6 +21,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
 
+// Dumont - this should be moved under Station Events, or perhaps station traits.
 public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -36,9 +38,12 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
-        if (component.Announcement is { } locId)
-            _chat.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
-
+        // Dumont Begin
+        if (component.Announcement is { } locId) {
+            var ev = new PdaNotificationEvent(Loc.GetString(locId), "StationAlerts", true, _station.GetOwningStation(uid));
+            RaiseLocalEvent(ev);
+        }
+        // Dumont End
         _audio.PlayGlobal(component.AnnouncementSound, allPlayersInGame, true);
     }
 

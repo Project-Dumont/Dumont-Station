@@ -64,3 +64,6 @@ comms-yellow-alert = Amarelo
 comms-red-alert = Vermelho
 comms-violet-alert = Violeta
 comms-cyan-alert = Ciano
+
+# rename
+station-rename = A estação {$oldName} foi renomeada para {$newName}

@@ -27,6 +27,8 @@ comp-pda-ui-owner = Owner: [color=white]{$actualOwnerName}[/color]
 
 comp-pda-io-program-list-button = Programs
 
+comp-pda-io-notifications-list-button = Notifications
+
 comp-pda-io-settings-button = Settings
 
 comp-pda-io-program-fallback-title = Program
@@ -71,3 +73,5 @@ comp-pda-ui-unassigned = Unassigned
 
 pda-notification-message = [font size=12][bold]PDA[/bold] { $header }: [/font]
     "{ $message }"
+
+pda-new-notification = New notification

@@ -4,13 +4,15 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-shadowling-description
-  requirements: # Dumont edit
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 54000 # 15 hours
   - !type:DepartmentTimeRequirement
-      department: Command # Conversion antags need to know how to lead
-      time: 86400 # 24 hrs
+    department: Medical
+    time: 7200 # 2 hours
   - !type:DepartmentTimeRequirement
-    department: Security # Needs to know at least some combat
-    time: 21600 # 6 hrs
+    department: Security
+    time: 18000 # 5 hours
   guides: [ Shadowlings ]
 
 - type: antag

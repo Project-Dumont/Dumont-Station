@@ -3,10 +3,12 @@
   name: job-name-guard
   description: job-description-guard
   playTimeTracker: JobPrisonGuard
-  requirements: # Dumont edit
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
-      department: Security # Sec basics
-      time: 86400 # 24 hrs
+      department: Security
+      time: 14400 #4 hrs
   startingGear: PrisonGuardGear
   canBeAntag: false
   icon: "JobIconPrisonGuard"

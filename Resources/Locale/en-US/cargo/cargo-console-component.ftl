@@ -117,3 +117,5 @@ cargo-acquisition-slip-body = [head=3]Asset Detail[/head]
     {"[head=3]Purchase Detail[/head]"}
     {"[bold]Orderer:[/bold]"} {$orderer}
     {"[bold]Reason:[/bold]"} {$reason}
+
+cargo-notification = {$amount} of {$order} was bought by {$person} at a price of {$price}

@@ -100,9 +100,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-syndicate-agent-objective
-  requirements: # Dumont edit
-    - !type:OverallPlaytimeRequirement # Impactful role, have some basics of the game first
-      time: 43200 # 12 hrs
   guides: [ Traitors ]
 
 - type: antag
@@ -111,9 +108,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-syndicate-agent-sleeper-objective
-  requirements: # Dumont edit
-    - !type:OverallPlaytimeRequirement # Impactful role, have some basics of the game first
-      time: 43200 # 12 hrs
   guides: [ Traitors ]
 
 # Syndicate Operative Outfit - Monkey

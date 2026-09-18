@@ -7,10 +7,10 @@
   name: job-name-roboticist
   description: job-description-roboticist
   playTimeTracker: JobRoboticist
-  requirements: # Dumont edit
+  requirements:
     - !type:DepartmentTimeRequirement
-      department: Science # Know the department before moving on
-      time: 108000 #30 hrs
+      department: Science
+      time: 14400 #4 hrs
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd

@@ -17,13 +17,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-rev-head-objective
-  requirements: # Dumont edit
-  - !type:DepartmentTimeRequirement
-      department: Command # EVIL ass Captain
-      time: 86400 # 24 hrs
-  - !type:DepartmentTimeRequirement
-      department: Security # Needs to know at least some combat
-      time: 21600 # 6 hrs
+  requirements:
+  - !type:DepartmentTimeRequirement # was  - !type:OverallPlaytimeRequirement, Goob change
+      department: Command
+      time: 36000 # 10h
   guides: [ Revolutionaries ]
 
 - type: antag

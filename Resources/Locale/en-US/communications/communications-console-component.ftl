@@ -78,3 +78,6 @@ comms-yellow-alert = Yellow
 comms-red-alert = Red
 comms-violet-alert = Violet
 comms-cyan-alert = Cyan
+
+# rename
+station-rename = The station {$oldName} was renamed to {$newName}

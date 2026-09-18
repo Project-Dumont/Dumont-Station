@@ -8,11 +8,7 @@
   objective: roles-antag-heretic-description
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 5h
-  - !type:SpeciesRequirement
-    inverted: true
-    species:
-    - Decapoid # You need 2 hands to draw the rune...
+    time: 54000 # 15h
   guides: [ Heretics ]
   creditImage: /Textures/_Trauma/EndCredits/Antags/heretic.png
 

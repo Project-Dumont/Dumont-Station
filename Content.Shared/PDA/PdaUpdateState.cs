@@ -31,6 +31,7 @@ namespace Content.Shared.PDA
         public bool HasPai;
         public PdaIdInfoText PdaOwnerInfo;
         public string? StationName;
+        public List<Notification>? Notifications;
         public bool HasUplink;
         public bool CanPlayMusic;
         public string? Address;
@@ -43,6 +44,7 @@ namespace Content.Shared.PDA
             bool hasPai,
             PdaIdInfoText pdaOwnerInfo,
             string? stationName,
+            List<Notification>? notifications,
             bool hasUplink = false,
             bool canPlayMusic = false,
             string? address = null)
@@ -55,6 +57,7 @@ namespace Content.Shared.PDA
             HasUplink = hasUplink;
             CanPlayMusic = canPlayMusic;
             StationName = stationName;
+            Notifications = notifications;
             Address = address;
         }
     }
@@ -68,4 +71,7 @@ namespace Content.Shared.PDA
         public string? StationAlertLevel;
         public Color StationAlertColor;
     }
+
+    [Serializable, NetSerializable]
+    public record Notification(TimeSpan Time, string Message);
 }
