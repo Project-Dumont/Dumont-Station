@@ -37,9 +37,8 @@ public sealed partial class BlobCarrierComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float TransformationTimer = 0;
 
-    [ViewVariables(VVAccess.ReadWrite),
-     DataField("corePrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string CoreBlobPrototype = "CoreBlobTile";
+    [ViewVariables(VVAccess.ReadWrite), DataField("corePrototype")]
+    public EntProtoId CoreBlobPrototype = "CoreBlobTile";
 
     public EntityUid? TransformToBlob = null;
 }

@@ -18,8 +18,8 @@ namespace Content.Shared.EntityEffects.Effects;
 
 public sealed partial class AddReagentToBlood : EntityEffect // TODO Goobstation move this to goobmod
 {
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
-    public string? Reagent = null;
+    [DataField]
+    public ProtoId<ReagentPrototype>? Reagent = null;
 
     [DataField]
     public FixedPoint2 Amount = default!;

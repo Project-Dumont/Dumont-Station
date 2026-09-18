@@ -16,7 +16,9 @@ using Content.Shared.Explosion.EntitySystems;
 using Content.Shared.Maps;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
+using Content.Shared.Radio;
 using Content.Shared.Silicons.StationAi;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Server._Funkystation.Factory.Systems;
 
@@ -42,10 +44,10 @@ public sealed partial class MalfAiSystem
     private void OnRadioKeyUnlocked(Entity<MalfunctioningAiComponent> malf, ref RadioKeyUnlockedEvent args)
     {
         if (TryComp<IntrinsicRadioTransmitterComponent>(malf.Owner, out var transmitter))
-            transmitter.Channels.UnionWith(args.Channels);
+            transmitter.Channels.UnionWith(args.Channels.Select(x => (ProtoId<RadioChannelPrototype>) x));
 
         if (TryComp<ActiveRadioComponent>(malf.Owner, out var radio))
-            radio.Channels.UnionWith(args.Channels);
+            radio.Channels.UnionWith(args.Channels.Select(x => (ProtoId<RadioChannelPrototype>) x));
     }
 
     private void OnExplodeMachine(Entity<MalfunctioningAiComponent> malf, ref ExplodeMachineEvent args)
