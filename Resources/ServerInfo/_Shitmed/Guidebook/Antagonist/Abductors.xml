@@ -8,26 +8,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Abductors
+  # Abdutores
 
   <Box>
     <GuideEntityEmbed Entity="MobLoneAbductor"/>
     <GuideEntityEmbed Entity="MobAbductorAgent"/>
     <GuideEntityEmbed Entity="MobAbductorScientist"/>
   </Box>
-  Abductors are an alien society set on cataloging and experimenting on the sectors personnel.
-  Its important to note: Abductors, unlike most antagonists are [color=red]NOT set on killing people[/color] and are rather purely interested in completing their experiments.
+  Os abdutores são uma sociedade alienígena que cataloga e faz experimentos com o pessoal do setor.
+  Vale lembrar: abdutores, diferente da maioria dos antagonistas, [color=red]NÃO estão atrás de matar ninguém[/color], só querem concluir seus experimentos.
 
-  Abductors cannot be understood by humans, however they can communicate with eachother through telepathy.
+  Os humanos não entendem o que um abdutor fala, mas os abdutores conversam entre si por telepatia.
 
-  ## Abductors
-  There are three types of abductors; lone abductors, scientists, and agents.
-  - [color=#a4885c]Lone abductors[/color] are a solo abductor, and will not have support or allies.
-  - [color=#a4885c]Scientists[/color] are group abductors, and need to support the agent by toggling their armor and experimenting on crew.
-  - [color=#a4885c]Agents[/color] are group abductors, and work to kidnap crew for the scientist to experiment on.
-  - Any abductor can fill anothers role in the event of an unfortunate death.
+  ## Abdutores
+  Existem três tipos de abdutor: o solitário, o cientista e o agente.
+  - [color=#a4885c]Abdutores solitários[/color] trabalham sozinhos, sem apoio nem aliados.
+  - [color=#a4885c]Cientistas[/color] trabalham em dupla, e precisam dar apoio ao agente trocando o modo do colete dele e fazendo os experimentos na tripulação.
+  - [color=#a4885c]Agentes[/color] trabalham em dupla, e sequestram a tripulação para o cientista experimentar.
+  - Qualquer abdutor pode assumir o papel do outro se acontecer uma morte infeliz.
 
-  ## Abduction
+  ## Abdução
 
   <Box>
     <GuideEntityEmbed Entity="Wonderprod"/>
@@ -37,22 +37,22 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="AbductorGizmo"/>
   </Box>
 
-  Abductors begin on their ship. Once you are ready, FTL somewhere near the station.
-  Using the [color=#a149bf]"Human Observation Console"[/color] you can seek out victims who are alone and [color=lightblue]warp[/color] near them to begin abduction.
+  Os abdutores começam na sua nave. Quando estiver pronto, dê FTL até perto da estação.
+  No [color=#a149bf]"Console de Observação Humana"[/color] você procura vítimas que estejam sozinhas e [color=lightblue]se teletransporta[/color] perto delas para começar a abdução.
 
-  The wonderprod is the primary tool of an Abductor. It has two modes you will use for abduction:
-  - [color=yellow]{Stun}[/color] Stuns the victim for roughly 5 seconds, after being hit twice.
-  - [color=pink]{Restrain}[/color] binds the victims hands in wondercuffs that dissolve when removed.
+  O wonderprod é a ferramenta principal do abdutor. Ele tem dois modos que você vai usar na abdução:
+  - [color=yellow]{stun}[/color] atordoa a vítima por uns 5 segundos, depois de dois golpes.
+  - [color=pink]{cuffs}[/color] prende as mãos da vítima em algemas que se desfazem quando retiradas.
 
-  Once a target is immobilized you can use the [italic]gizmo[/italic] to implant them with a nano tracker, return to your ship using the [color=lightblue]return action[/color], then use the gizmo on your [color=#a149bf]Abductor Console[/color].
+  Com o alvo imobilizado, use o [italic]gizmo[/italic] nele para inserir um nano rastreador, volte para a nave pela [color=lightblue]ação de retorno[/color] e então use o gizmo no seu [color=#a149bf]Console do Abdutor[/color].
 
-  The gizmo has a second mode, switched by activating it in your hand:
-  - [color=yellow]{Mark}[/color] implants the nano tracker.
-  - [color=pink]{Brainwash}[/color] makes the victim obey you for 15 minutes. A mindshield blocks it.
+  O gizmo tem um segundo modo, trocado ao ativar ele na mão:
+  - [color=yellow]{Marcar}[/color] insere o nano rastreador.
+  - [color=pink]{Lavagem cerebral}[/color] faz a vítima te obedecer por 15 minutos. Mindshield bloqueia.
 
-  If you are being overwhelmed, always remember you can return to your ship at any point!
+  Se estiver apertado, lembre que você pode voltar para a nave a qualquer momento!
 
-  ## Experimentation
+  ## Experimentos
 
   <Box>
     <GuideEntityEmbed Entity="AbductorConsole"/>
@@ -60,24 +60,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="AbductorTaskTablet"/>
   </Box>
 
-  Once you have linked the most recent nano tracker to the console, select [bold]{ATTRACT}[/bold] to warp your victim to your ship.
+  Com o último nano rastreador ligado ao console, use [bold]{ATRAIR}[/bold] para trazer sua vítima até a nave.
 
-  Now that you have your victim aboard, its recommended you:
-  - Buckle them to your surgical table.
-  - Change out their cuffs for a higher grade of handcuffs provided on the ship.
-  - Remove any of their belongings that could damage you or the secrecy of the experiment.
+  Com a vítima a bordo, o recomendado é:
+  - Prender ela na mesa cirúrgica.
+  - Trocar as algemas dela pelas algemas melhores que ficam na nave.
+  - Tirar tudo que ela carrega e que possa te machucar ou revelar o experimento.
 
-  Once you are comfortable, scan the subject with your [color=#a149bf]experiment tablet[/color].
-  You will have a list of tasks to complete, work through them and once you do each step hit [bold]Submit[/bold].
+  Quando estiver tranquilo, escaneie a cobaia com o seu [color=#a149bf]tablet de experimentos[/color].
+  Você recebe uma lista de tarefas. Vá cumprindo elas e, a cada etapa concluída, aperte [bold]Enviar[/bold].
 
-  Regardless of random tasks, you will have to replace the subject's heart with one of your glands.
-  You don't need to remove their clothes to do surgery or wear PPE, unlike normal surgeons.
+  Independente das tarefas sorteadas, você sempre vai ter que trocar o coração da cobaia por uma das suas glândulas.
+  Para operar você não precisa tirar a roupa dela nem usar equipamento de proteção, diferente dos cirurgiões normais.
 
-  Some tasks ask for a tail or a pair of wings. Carve the joint first with [color=#a149bf]Create Tail Joint[/color] or [color=#a149bf]Create Wing Joints[/color], then attach the part. The freezer on the ship has spares.
+  Algumas tarefas pedem uma cauda ou um par de asas. Primeiro entalhe a junta com [color=#a149bf]Formar Junta da Cauda[/color] ou [color=#a149bf]Formar Juntas das Asas[/color], depois prenda a parte. O freezer da nave tem peças de reposição.
 
-  Finally, drag the victim whom you have completed your experiments on into the [color=#a149bf]Return Pod[/color] to confirm the results of the experiment on the [color=#a149bf]Abductor Console[/color] and send them back where you found them.
+  Por fim, arraste a vítima com os experimentos concluídos para dentro da [color=#a149bf]Cápsula de Retorno[/color], confirme o resultado no [color=#a149bf]Console do Abdutor[/color] e mande ela de volta para onde você a pegou.
 
-  ## Abductor Tools
+  ## Ferramentas do abdutor
 
   <Box>
     <GuideEntityEmbed Entity="Silencer"/>
@@ -85,23 +85,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="CrowbarAbductor"/>
   </Box>
 
-  Abductors have access to more advanced tools than normal surgeons or engineers. Their surgical tools are faster than advanced surgical tools, and from their normal tools, the multitool's alternative mode is able to be used to hijack doors.
+  Os abdutores têm ferramentas bem mais avançadas que as de um cirurgião ou engenheiro comum. As cirúrgicas são mais rápidas que as ferramentas cirúrgicas avançadas, e o modo alternativo da multiferramenta abre portas na marra.
 
-  You also have access to a silencer, which prevents the crew from speaking when they are hit with it.
+  Você também tem um silenciador, que impede a tripulação de falar quando acertada por ele.
 
-  ## Blending in
+  ## Se disfarçando
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterArmorAbductor"/>
     <GuideEntityEmbed Entity="RadioJammer"/>
   </Box>
 
-  The agent vest has two modes. In [color=yellow]{Stealth}[/color] you look like an ordinary human, and it also lets you pick the name the crew hears when you speak. In [color=pink]{Combat}[/color] you drop the disguise for much better armor. The scientist switches your mode from the [color=#a149bf]Abductor Console[/color], and can lock it so nobody takes the vest off you.
+  O colete do agente tem dois modos. No [color=yellow]{Stealth}[/color] você parece um humano comum, e ele também deixa você escolher o nome que a tripulação escuta quando você fala. No [color=pink]{Combat}[/color] você perde o disfarce e ganha uma armadura bem melhor. O cientista troca o seu modo pelo [color=#a149bf]Console do Abdutor[/color], e pode travar o colete para ninguém tirar ele de você.
 
-  The agent also carries a chameleon backpack to finish the disguise, and the scientist a radio jammer to keep the crew from calling for help mid abduction.
+  O agente carrega também uma mochila camaleão para completar o disfarce, e o cientista um bloqueador de rádio para a tripulação não pedir ajuda no meio da abdução.
 
-  ## Getting rid of an Abductor
-  Like [textlink="Changelings" link="Changelings"], Abductors are not protected by [textlink="space law" link="SpaceLaw"] and are able to be executed freely.
+  ## Se livrando de um abdutor
+  Igual aos [textlink="Changelings" link="Changelings"], os abdutores não são protegidos pela [textlink="lei espacial" link="SpaceLaw"] e podem ser executados sem problema.
 
-  Also, an abductor's ship is a physical object in the world, anyone with access to a space-faring ship such as [textlink="salvage" link="Salvage"] can bump into them in space and dismantle their ship.
+  Além disso, a nave do abdutor é um objeto físico no mundo, então qualquer um com acesso a uma nave, como a [textlink="salvagem" link="Salvage"], pode topar com ela no espaço e desmontar.
 </Document>
