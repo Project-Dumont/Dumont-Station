@@ -111,10 +111,6 @@
   - GroupSpeciesBreathTool
   - Survival
   - NanotrasenRepresentativeGloves
-  # Goobstation - EE Plasmeme Change.
-  - NanotrasenRepresentativeEnvirohelm
-  - NanotrasenRepresentativeEnvirosuit
-  - NanotrasenRepresentativeEnvirogloves
   # Civil loadout
   - CivilianJumpsuit
   - CivilianBackpack
@@ -124,6 +120,10 @@
   - CivilianGloves
   - CivilianOuterClothing
   - CivilianBelt
+  - NanotrasenRepresentativeEnvirohelmet # Dumont start
+  - NanotrasenRepresentativeEnvirosuit
+  - NanotrasenRepresentativeEnvirogloves
+  - NanotrasenRepresentativeEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -139,10 +139,6 @@
   - Animals
   - GroupSpeciesBreathTool
   - SurvivalSecurity
-  # Goobstation - EE Plasmeme Change.
-  - BlueshieldOfficerEnvirohelm
-  - BlueshieldOfficerEnvirosuit
-  - BlueshieldOfficerEnvirogloves
   - BlueshieldOfficerGloves
   # Civil loadout
   - CivilianJumpsuit
@@ -154,6 +150,11 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
+  # Goobstation - EE Plasmeme Change.
+  - GreenshieldOfficerEnvirohelmet
+  - GreenshieldOfficerEnvirosuit
+  - GreenshieldOfficerEnvirogloves
+  - GreenshieldOfficerEnviroboots
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -171,9 +172,9 @@
   - GroupSpeciesBreathTool
   - Survival
   # Goobstation - EE Plasmeme Change.
-  - CentComOfficerEnvirohelm
-  - CentComOfficerEnvirosuit
-  - CentComOfficerEnvirogloves
+  #- CentComOfficerEnvirohelm
+  #- CentComOfficerEnvirosuit
+  #- CentComOfficerEnvirogloves
   # Civil loadout
   - CivilianJumpsuit
   - CivilianBackpack
@@ -208,9 +209,10 @@
   - Trinkets
   - GroupSpeciesBreathTool
   # Plasmaman
-  - ScientistEnvirohelm
-  - ScientistEnvirosuit
-  - ScientistEnvirogloves
+  - RoboticistEnvirohelmet # Dumont start
+  - RoboticistEnvirosuit
+  - RoboticistEnvirogloves
+  - RoboticistEnviroboots # Dumont end
 
 - type: roleLoadout
   id: JobBrigmedic
@@ -231,10 +233,6 @@
   - GroupSpeciesBreathToolSecurity
   - WeaponsSecurityGun #DumontStation
   - TrinketsSecurity #Dumontstation
-  # Goobstation - EE Plasmeme Change.
-  - BrigmedicEnvirohelm
-  - BrigmedicEnvirosuit
-  - BrigmedicEnvirogloves
   # Civil loadout
   - CivilianJumpsuit
   - CivilianBackpack
@@ -245,20 +243,23 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
+  # Goobstation - EE Plasmeme Change.
+  - BrigmedicEnvirohelmet # Dumont
+  - BrigmedicEnvirosuit
+  - BrigmedicEnvirogloves
+  - BrigmedicEnviroboots # Dumont
 
 - type: roleLoadout
   id: JobRadioHost
   groups:
   - RadioHostJumpsuit
+  - RadioHostShoes
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
   - Glasses
   - GroupTankHarness
-  - ServiceWorkerEnvirohelm
-  - ServiceWorkerEnvirosuit
-  - ServiceWorkerEnvirogloves
   # Civil loadout
   - CivilianJumpsuit
   - CivilianBackpack
@@ -269,6 +270,10 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
+  - RadioHostEnvirohelmet
+  - RadioHostEnvirosuit
+  - RadioHostEnvirogloves
+  - RadioHostEnviroboots
 
 # gives plasmaman a plasma breathing tank
 # other species get nothing
@@ -316,6 +321,7 @@
    - SurvivalMedical
    - Trinkets
    - GroupSpeciesBreathToolMedical
-   - VirologyEnvirohelm
-   - VirologyEnvirosuit
-   - VirologyEnvirogloves
+   - VirologistEnvirohelmet # Dumont start
+   - VirologistEnvirosuit
+   - VirologistEnvirogloves
+   - VirologistEnviroboots # Dumont end

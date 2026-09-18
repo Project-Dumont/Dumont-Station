@@ -98,7 +98,7 @@
 - type: startingGear
   id: LawyerGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
+    #shoes: ClothingShoesBootsLaceup - Dumont, moved to loadouts
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
   inhand:

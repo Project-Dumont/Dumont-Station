@@ -83,7 +83,7 @@
   id: MusicianGear
   equipment:
     eyes: ClothingEyesGlassesSunglasses
-    shoes: ClothingShoesBootsLaceup
+    #shoes: ClothingShoesBootsLaceup - Dumont, moved to loadouts
     id: MusicianPDA
     ears: ClothingHeadsetService
   #storage:
@@ -120,4 +120,3 @@
 - type: jobAlternateTitle
   id: MusicianTitleAcordeon
   name: job-name-alt-musician-acordeon
-

@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: BartenderEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitBartender
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: BartenderEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetBartender
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: BartenderEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesBartender
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: BartenderEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsBartender
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

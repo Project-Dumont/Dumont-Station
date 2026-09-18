@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: MusicianEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitMusician
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: MusicianEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetMusician
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: MusicianEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesMusician
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: MusicianEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsMusician
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

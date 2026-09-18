@@ -76,7 +76,7 @@
   equipment:
     #jumpsuit: ClothingUniformJumpsuitSafari
     #head: ClothingHeadSafari
-    shoes: ClothingShoesColorWhite
+    #shoes: ClothingShoesColorWhite - Dumont, moved to loadouts
     id: ZookeeperPDA
     ears: ClothingHeadsetService
   #storage:
@@ -93,4 +93,3 @@
     neck: ClothingNeckScarfStripedBrown
     belt: ClothingBeltStorageWaistbag
     gloves: ClothingHandsGlovesColorBrown
-

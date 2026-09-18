@@ -231,7 +231,7 @@
 - type: startingGear
   id: HoPGear
   equipment:
-    shoes: ClothingShoesColorBrown
+    #shoes: ClothingShoesColorBrown - Dumont, moved to loadouts
     id: HoPPDA
     #gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand

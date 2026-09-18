@@ -8,18 +8,23 @@
   Elas respiram plasma, e oxigênio é altamente tóxico quando inalado.
   A exposição ao oxigênio as faz pegar fogo.
 
-  Para prevenir a ignição, vestem trajes selados feitos de Envirosuit (no slot de jumpsuit) e um capacete de Envirosuit [bold]adequado ao espaço[/bold].
-  Outros trajes como EVA, vacsuits, tacsuits e hardsuits também as protegerão da exposição ao oxigênio.
+  Para prevenir a ignição, é necessário que vistam um conjuto de trajes de contenção, conhecidos como trajes herméticos.
+  Um conjunto é composto por 4 tipos de vestimentas: O capacete hermético, traje hermético, luvas herméticas e botas herméticas.
+
+  É importante notar que [bold]apenas alguns[/bold] conjutos de trajes herméticos oferecem [bold]proteção contra a pressão do espaço[/bold].
+  Caso o seu conjunto não seja adequado ao espaço, utilize trajes como EVA e de Emergência, [color=red]mas cuidado[/color], a troca de vestimentas ainda poderá causar uma reação de combustão caso oxigênio esteja presente na atmosfera.
 
   [color=#ffa500]Não ficam com fome nem sede. Não têm sangue nem podem sangrar.[/color]
 
   <Box>
-    <GuideEntityEmbed Entity="DrinkCartonMilk" />
-    <GuideEntityEmbed Entity="SheetPlasma1" />
+    <GuideEntityEmbed Entity="DrinkCartonMilk" Caption="Caixinha de leite"/>
+    <GuideEntityEmbed Entity="DrinkMilkBottleFull" Caption="Garrafa de leite"/>
+    <GuideEntityEmbed Entity="SheetPlasma1" Caption="Plasma"/>
+    <GuideEntityEmbed Entity="FoodSnackPlasmabrickOpen" Caption="Plasmabrick"/>
   </Box>
 
-  - Por conta de seu corpo esquelético, podem usar Leite para um bônus no humor e para lentamente curar dano Bruto, de Calor, de Choque e Cáustico.
-  - Elas também podem consumir Plasma para ganhar um maior bônus no humor e curar qualquer tipo de dano mais rápido, exceto por dano Celular.
+  - Por conta de seu corpo esquelético, podem usar Leite para lentamente curar dano Bruto, de Calor, de Choque e Cáustico.
+  - Elas também podem consumir Plasma para curar qualquer tipo de dano mais rápido, exceto por dano Celular.
 
 
   Elas infundem seus punhos com pó de plasma que entra em combustão ao socar, causando [color=orange]5 de dano de Calor[/color] e [color=red]2.25 de dano Contundente[/color]. Porém, cada soco efetivo também causa [color=orange]1 de dano de Calor[/color] às suas mãos.
@@ -34,24 +39,36 @@
 
   ## Equipamento
   <Box>
-    <GuideEntityEmbed Entity="ClothingUniformEnvirosuit" Caption="envirosuit"/>
-    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="capacete de envirosuit"/>
-    <GuideEntityEmbed Entity="DoubleEmergencyPlasmaTankFilled" />
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelmet" Caption="Capacete hermético"/>
+    <GuideEntityEmbed Entity="ClothingOuterEnvirosuit" Caption="Traje hermético"/>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesEnvirogloves" Caption="Luvas herméticas"/>
+    <GuideEntityEmbed Entity="ClothingShoesEnviroboots" Caption="Botas herméticas"/>
+    <GuideEntityEmbed Entity="InternalsPlasmaTankFilled" />
   </Box>
 
-  Toda Pessoa Plasma começa com uma envirosuit, um capacete de envirosuit e um tanque de plasma.
+  Toda Pessoa Plasma começa com um capacete hermético, um traje hermético, luvas herméticas, botas herméticas e um tanque de plasma.
 
-  Suas envirosuits contêm um [color=#1e90ff]auto-extintor[/color] com cargas limitadas, que pode ser ativado quando estiverem pegando fogo
-  e vestindo o capacete de envirosuit. O auto-extintor precisa recarregar entre usos.
+  Alguns capacetes de contenção apresentam dois estados possíveis:
 
-  <Box HorizontalAlignment="Stretch">
-    Cartuchos de refill para o auto-extintor podem ser comprados em [bold]Loadouts[/bold], ou impressos no Techfab médico após pesquisados.
-    Um refill torna um auto-extintor imediatamente utilizável (sem precisar esperar a recarga).
+  - Aberto: Apresentam menor capacidade de proteção mas permitem a visualização da face da Pessoa Plasma.
+  - Fechado: Apresentam maior capacidade de proteção e oferecem [bold]proteção contra o vácuo[/bold].
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelmetSalvage" Caption="Capacete hermético da Logística"/>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelmetSecurityV1" Caption="Capacete hermetico da Segurança"/>
+  </Box>
+
+  Seus trajes de contenção contêm um [color=#1e90ff]auto-extintor[/color] com cargas limitadas, que pode ser ativado quando estiverem pegando fogo
+  e vestindo o capacete hermético. O auto-extintor precisa recarregar entre usos.
+
+  Cartuchos de refill para o auto-extintor podem impressos no Techfab médico após pesquisados.
+  Um refill torna um auto-extintor imediatamente utilizável (sem precisar esperar a recarga).
+
+  <Box>
     <GuideEntityEmbed Entity="EnvirosuitExtinguisherRefill" />
   </Box>
 
-  Seus capacetes de envirosuit são [bold]adequados ao espaço[/bold] e dão proteção para soldagem. O visor do capacete pode ser ligado como uma lanterna, usando uma power cell inserida como bateria.
-  Elas não podem comer ou beber sem tirar seu capacete de envirosuit.
+  Pessoas Plasma não podem comer ou beber sem tirar seu capacete hermético.
 
   O tanque de plasma dura por volta de uma hora antes de precisar ser substituído ou recarregado.
 
@@ -60,13 +77,13 @@
     <GuideEntityEmbed Entity="StasisBed" />
   </Box>
 
-  Antes de fazer uma cirurgia numa Pessoa Plasma, seu traje envirosuit precisa ser retirado primeiro, o que é desastroso num ambiente com oxigênio.
+  Antes de fazer uma cirurgia numa Pessoa Plasma, seu traje hermético precisa ser retirado primeiro, o que é desastroso num ambiente com oxigênio.
 
-  Para contornar isso, a Pessoa Plasma pode ser presa a uma [bold]stasis bed[/bold] antes de remover sua envirosuit
+  Para contornar isso, a Pessoa Plasma pode ser presa a uma [bold]stasis bed[/bold] antes de remover seu traje
   para a prevenir de pegar fogo durante o processo cirúrgico.
 
-  <Box HorizontalAlignment="Stretch">
-    Seus capacetes de envirosuit as previnem de ingerir pílulas, mas seus trajes ainda permitem que químicos sejam injetados através eles.
+  Seus capacetes herméticos as previnem de ingerir pílulas, mas seus trajes ainda permitem que químicos sejam injetados através eles.
+  <Box>
     <GuideEntityEmbed Entity="Syringe" Caption=""/>
   </Box>
 

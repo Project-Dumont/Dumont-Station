@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: ChefEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitChef
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChefEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetChef
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChefEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesChef
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ChefEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsChef
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

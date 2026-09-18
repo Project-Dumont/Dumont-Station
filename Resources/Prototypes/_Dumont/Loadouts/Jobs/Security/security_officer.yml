@@ -1,0 +1,90 @@
+# Plasmaman
+- type: loadout
+  id: SecurityV1Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitSecurityV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV2Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitSecurityV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV3Envirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitSecurityV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV1Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetSecurityV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV2Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetSecurityV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV3Envirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetSecurityV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV1Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesSecurityV1
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV2Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesSecurityV2
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityV3Envirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesSecurityV3
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SecurityEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsSecurity
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

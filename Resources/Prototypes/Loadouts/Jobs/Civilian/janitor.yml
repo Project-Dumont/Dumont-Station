@@ -125,6 +125,13 @@
   equipment:
     jumpsuit: UniformMaid
 
+# Shoes
+
+- type: loadout
+  id: JanitorShoes
+  equipment:
+    shoes: ClothingShoesGaloshes
+
 # Gloves
 - type: loadout
   id: JanitorRubberGloves

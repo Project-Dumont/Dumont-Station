@@ -110,6 +110,7 @@
     - CorgiWearable
     - WhitelistChameleon
     - Softsuit # OuterSlotClothingPenalty
+    - PlasmamanSafe # Dumont
 
 #Syndicate EVA
 - type: entity
@@ -156,6 +157,7 @@
     - ScurretWearable
     - MonkeyWearable
     - WhitelistChameleon
+    - PlasmamanSafe
     - Softsuit # OuterSlotClothingPenalty
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:

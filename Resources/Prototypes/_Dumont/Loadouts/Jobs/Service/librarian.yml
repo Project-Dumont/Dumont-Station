@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: LibrarianEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitAncient
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LibrarianEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetAncient
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LibrarianEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesAncient
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LibrarianEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsAncient
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

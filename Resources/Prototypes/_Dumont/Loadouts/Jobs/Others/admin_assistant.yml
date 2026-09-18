@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: AdminAssistantEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitAdminAssistant
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AdminAssistantEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetAdminAssistant
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AdminAssistantEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesAdminAssistant
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: AdminAssistantEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsAdminAssistant
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
