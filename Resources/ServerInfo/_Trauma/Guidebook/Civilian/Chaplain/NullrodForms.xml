@@ -1,13 +1,13 @@
 <Document>
-  # Nullrod Forms
-  Nullrods can be transformed to unique forms by using them on an altar.
+  # Formas do nullrod
+  O nullrod pode ser transformado em formas únicas ao ser usado em um altar.
 
-  ## Altar replacement
-  Altars can be set to fit your desired look by applying a required item to the base altar, you can remove the applied item to return the altar to base form using a crowbar.
-  WARNING: Nullrod transformation is a non-reversible process, so choose wisely.
+  ## Troca de altar
+  O altar base muda de aparência quando recebe o item exigido. Para voltar à forma base, tire o item aplicado com um pé de cabra.
+  ATENÇÃO: a transformação do nullrod não tem volta, então escolha bem.
 
   ## Nullrod
-  Old reliable, the nullrod you will arrive on station with. Typically changed out from instantly due to having no special ability, but using it is a real flex of how robust you are.
+  O velho de guerra, o nullrod com que você chega na estação. Costuma ser trocado na hora por não ter habilidade especial, mas lutar com ele é uma bela demonstração de robustez.
   <Box>
     <GuideEntityEmbed Entity="Nullrod"/>
     <GuideEntityEmbed Entity="AltarConvert"/>
@@ -15,7 +15,7 @@
   </Box>
 
   ## Arrythmic Knife
-  Provides the user with a randomized movespeed boost periodically. Could help you chase down an unholy enemy, but could also slow you to a crawl while you try to escape.
+  De tempos em tempos, dá ao usuário um bônus aleatório de velocidade. Pode ajudar a alcançar um inimigo profano, mas também pode te deixar se arrastando enquanto tenta fugir.
   <Box>
     <GuideEntityEmbed Entity="ArrythmicKnife"/>
     <GuideEntityEmbed Entity="AltarFangs"/>
@@ -23,7 +23,7 @@
   </Box>
 
   ## Atheist Fedora
-  Truely the thinking man's nullrod form. When thrown will recall to the user like an improved boomerang, but can still fail to get to you, so don't run off without a thought.
+  A forma de nullrod de quem pensa. Arremessado, volta para o usuário como um bumerangue melhorado, mas ainda pode não chegar até você, então não saia correndo sem pensar.
   <Box>
     <GuideEntityEmbed Entity="AtheistFedora"/>
     <GuideEntityEmbed Entity="AltarNanotrasen"/>
@@ -31,15 +31,15 @@
   </Box>
 
   ## Bulwark
-  Stand as the lord protector. A truely powerful shield capable of blocking all hostile attacks when positioned on a tile. Additonally can be used to dash a short distance periodically, which will knockback and harm anyone hit along the way.
+  Seja o lorde protetor. Um escudo poderoso de verdade, capaz de bloquear todo ataque hostil quando fincado no chão. Também serve para uma investida curta de tempos em tempos, que empurra e fere quem estiver no caminho.
   <Box>
     <GuideEntityEmbed Entity="Bulwark"/>
     <GuideEntityEmbed Entity="AltarConvertBlue"/>
     <GuideEntityEmbed Entity="MakeshiftShield"/>
   </Box>
 
-  ## Casul and Jackal
-  A pair of holy pistols and a snazzy belt to store them in. Can only be fired together. Pray to reload.
+  ## Casul e Jackal
+  Um par de pistolas sagradas e um cinto estiloso para guardá-las. Só disparam juntas. Reze para recarregar.
   <Box>
     <GuideEntityEmbed Entity="ClothingBeltHolsterFilledChaplain"/>
     <GuideEntityEmbed Entity="WeaponPistolCasul"/>
@@ -49,7 +49,7 @@
   </Box>
 
   ## Chain Sword
-  Purge the heresy. Pray to rev it up for 10 seconds, turning it into a sharp chainsaw that deals heavy slash and holy damage, tears into walls and can execute. It can only be revved once every 3 minutes. Fits on your belt.
+  Purgue a heresia. Reze para ligá-la por 10 segundos: ela vira uma motosserra afiada que causa muito dano cortante e sagrado, rasga paredes e pode executar. Só liga uma vez a cada 3 minutos. Cabe no cinto.
   <Box>
     <GuideEntityEmbed Entity="InquisitorChainSword"/>
     <GuideEntityEmbed Entity="AltarEmpire"/>
@@ -57,15 +57,15 @@
   </Box>
 
   ## Dragon's Tail
-  A dragon's tail impaled on a stick. Every hit sets the target on fire, on top of the holy damage.
+  Uma cauda de dragão espetada num bastão. Cada golpe põe fogo no alvo, além do dano sagrado.
   <Box>
     <GuideEntityEmbed Entity="DragonsTail"/>
     <GuideEntityEmbed Entity="AltarDragon"/>
     <GuideEntityEmbed Entity="PlushieCarp"/>
   </Box>
 
-  ## Faith
-  A dinky pistol that heals people with bullets, don't ask. Applies holy damage to unholy enemies with the same bullets. Pray to reload.
+  ## Fé
+  Uma pistolinha com dois modos. No de prata, as balas causam dano sagrado e põem fogo sagrado em inimigos profanos. No abençoado, as balas curam quem leva o tiro, não pergunte. Recarrega sozinha.
   <Box>
     <GuideEntityEmbed Entity="WeaponPistolFaith"/>
     <GuideEntityEmbed Entity="AltarConvertWhite"/>
@@ -73,7 +73,7 @@
   </Box>
 
   ## God Hand
-  God's blessing to his most trusted chaplain. Applies fire and holyfire stacks on attack. Has the same pry ability as a crowbar. Unremovable.
+  A bênção de Deus ao seu capelão de maior confiança. Cada ataque põe fogo comum e fogo sagrado no alvo. Força portas como um pé de cabra. Não sai da mão.
   <Box>
     <GuideEntityEmbed Entity="GodHand"/>
     <GuideEntityEmbed Entity="AltarChaos"/>
@@ -81,7 +81,7 @@
   </Box>
 
   ## Grey Emperor's Glove
-  Lead the tider's to gods light. An unremovable insulated hand with most every tool you would require to lead the greytide. Use item in-hand to cycle through tool selection.
+  Guie os tiders até a luz de Deus. Uma mão isolada que não sai do lugar e tem quase toda ferramenta de que você precisa para liderar a greytide. Use o item na mão para trocar de ferramenta.
   <Box>
     <GuideEntityEmbed Entity="UristHand"/>
     <GuideEntityEmbed Entity="AltarConvertMaint"/>
@@ -89,7 +89,7 @@
   </Box>
 
   ## Honkmother's Maw
-  HONK! A huge clown mask imbued with the power of the honkmother. Knocks down on hit. Don't be surprised if the clown steals this from you.
+  HONK! Uma máscara enorme de palhaço com o poder da Honkmother. Derruba quem acerta. Não se surpreenda se o palhaço roubar ela de você.
   <Box>
     <GuideEntityEmbed Entity="HonkmotherMaw"/>
     <GuideEntityEmbed Entity="AltarBananium"/>
@@ -97,15 +97,15 @@
   </Box>
 
   ## Holy Chainsaw
-  An unremovable chainsaw. Must be wielded to attack. I mean, it's a chainsaw that does holy damage.
+  Uma motosserra que não sai da mão. Precisa ser empunhada com as duas mãos para atacar. Enfim, é uma motosserra que causa dano sagrado.
   <Box>
     <GuideEntityEmbed Entity="HolyChainsaw"/>
     <GuideEntityEmbed Entity="AltarToolbox"/>
     <GuideEntityEmbed Entity="ToolboxEmergency"/>
   </Box>
 
-  ## Holy Claywmore
-  DEUS VULT! Can fire a marking projectile, which upon being attacked will heal brute, asphyxiation and blododloss of the wielder.
+  ## Holy Claymore
+  DEUS VULT! Dispara um projétil que marca o alvo, e atacar o alvo marcado cura o dano bruto, a asfixia e a perda de sangue de quem empunha.
   <Box>
     <GuideEntityEmbed Entity="HolyClaymore"/>
     <GuideEntityEmbed Entity="AltarHeaven"/>
@@ -113,7 +113,7 @@
   </Box>
 
   ## Iradomini
-  A powerful crossbow, must be weilded to fire. Fires a single VERY powerful holy arrow, which will disappear after a minute. Takes a long time to reload via prayer, position wisely.
+  Uma besta poderosa, que precisa ser empunhada com as duas mãos para disparar. Atira uma única flecha sagrada MUITO forte, que some depois de um minuto. A recarga pela oração demora, então se posicione bem.
   <Box>
     <GuideEntityEmbed Entity="WeaponPistolIradomini"/>
     <GuideEntityEmbed Entity="AltarConvertOrange"/>
@@ -121,7 +121,7 @@
   </Box>
 
   ## Monk Staff
-  In simple terms? A big stick. Launch a flurry of attacks to deal stamina damage on hit, very useful for chasing down the unholy.
+  Em termos simples? Um pau grande. Solte uma sequência de golpes que causam dano de estamina, muito útil para alcançar os profanos.
   <Box>
     <GuideEntityEmbed Entity="MonkStaff"/>
     <GuideEntityEmbed Entity="AltarDruid"/>
@@ -129,7 +129,7 @@
   </Box>
 
   ## Ratvarian Spear
-  Oh? Prefer the old gods? Well heres the nullrod for you. A one-handed spear imbued with the power of ratvar. Can store more chemicals than usual spears, and applies a large amount of holy damage when thrown.
+  Ah, prefere os deuses antigos? Então este é o seu nullrod. Uma lança de uma mão com o poder de Ratvar. Aceita química como uma lança comum e causa muito dano sagrado quando arremessada.
   <Box>
     <GuideEntityEmbed Entity="RatvarianSpear"/>
     <GuideEntityEmbed Entity="AltarClock"/>
@@ -137,7 +137,7 @@
   </Box>
 
   ## Rosary
-  Support Mains rejoice. Area of Effect heal on pray, but also harms the unholy who are also nearby.
+  O suporte agradece. Ao rezar, cura quem está em volta, e também fere os profanos que estiverem por perto.
   <Box>
     <GuideEntityEmbed Entity="Rosary"/>
     <GuideEntityEmbed Entity="AltarSpaceChristian"/>

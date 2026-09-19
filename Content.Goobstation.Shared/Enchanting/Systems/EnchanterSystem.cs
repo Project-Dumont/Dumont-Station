@@ -79,7 +79,7 @@ public sealed class EnchanterSystem : EntitySystem
         var user = args.User;
         if (_whitelist.IsWhitelistFail(ent.Comp.UserWhitelist, user))
         {
-            _popup.PopupEntity("Your spirit is too weak to use this holy book...", user, user, PopupType.MediumCaution);
+            _popup.PopupClient(Loc.GetString("enchanting-tool-user-too-weak"), user, user, PopupType.MediumCaution);
             return;
         }
 
