@@ -1,12 +1,11 @@
 using Content.Shared.EntityEffects;
 using Content.Trauma.Shared.Chaplain;
-using Content.Trauma.Shared.Chaplain.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Trauma.Shared.EntityEffects;
 
 /// <inheritdoc cref="EntityEffect"/>
-public sealed partial class HolyIgnite : EntityEffectBase<HolyIgnite>
+public sealed partial class HolyIgnite : EntityEffect
 {
     /// <summary>
     ///     Amount of FireStacks improved.
@@ -14,7 +13,15 @@ public sealed partial class HolyIgnite : EntityEffectBase<HolyIgnite>
     [DataField(required: true)]
     public float Stacks;
 
-    public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) =>
-        Loc.GetString("entity-effect-guidebook-extinguish-reaction", ("chance", Probability));
-}
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) =>
+        Loc.GetString("reagent-effect-guidebook-extinguish-reaction", ("chance", Probability));
 
+    public override void Effect(EntityEffectBaseArgs args)
+    {
+        var ev = new HolyIgniteEvent
+        {
+            FireStacksAdjustment = Stacks,
+        };
+        args.EntityManager.EventBus.RaiseLocalEvent(args.TargetEntity, ref ev);
+    }
+}
