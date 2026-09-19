@@ -19,11 +19,11 @@ namespace Content.Client.Traits.Assorted
     /// </summary>
     public sealed class MigraineSystem : EntitySystem
     {
-        [Dependency] private readonly IOverlayManager _overlayMan = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private IOverlayManager _overlayMan = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private SharedAudioSystem _audio = default!;
+        [Dependency] private IGameTiming _timing = default!;
 
         private MigraineOverlay _overlay = default!;
         private bool _playedStartSound = false;

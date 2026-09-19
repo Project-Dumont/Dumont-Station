@@ -14,8 +14,8 @@ namespace Content.Shared.Traits.Assorted;
 /// </summary>
 public abstract class SharedNeuroAversionSystem : EntitySystem
 {
-    [Dependency] protected readonly IRobustRandom Random = default!;
-    [Dependency] protected readonly MobStateSystem MobState = default!;
+    [Dependency] protected IRobustRandom Random = default!;
+    [Dependency] protected MobStateSystem MobState = default!;
 
     // Seizure build constants (using 0-100 scale instead of 0-1)
     protected const float MinRandomSpikePercent = 0.1f;  // Reduced spike size

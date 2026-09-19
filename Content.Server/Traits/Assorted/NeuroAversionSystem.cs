@@ -24,11 +24,11 @@ namespace Content.Server.Traits.Assorted;
 /// </summary>
 public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private readonly SeizureSystem _seizure = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private SeizureSystem _seizure = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     private EntityQuery<ImplantedComponent> _implantQuery;
     private EntityQuery<ChronicMigrainesComponent> _chronicMigrainesQuery;

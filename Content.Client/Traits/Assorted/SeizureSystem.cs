@@ -17,9 +17,9 @@ namespace Content.Client.Traits.Assorted;
 /// </summary>
 public sealed class SeizureSystem : EntitySystem
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private bool _playedProdromeSound = false;
     private bool _playedSeizureSound = false;

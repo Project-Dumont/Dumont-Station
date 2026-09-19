@@ -16,9 +16,9 @@ namespace Content.Server.Traits.Assorted;
 /// </summary>
 public sealed class ChronicMigrainesSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     private EntityQuery<NeuroAversionComponent> _neuroAversionQuery;
     private EntityQuery<ImplantedComponent> _implantQuery;

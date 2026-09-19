@@ -14,8 +14,8 @@ namespace Content.Shared.Traits.Assorted;
 /// </summary>
 public abstract class SharedSeizureSystem : EntitySystem
 {
-    [Dependency] protected readonly MovementSpeedModifierSystem MovementSpeed = default!;
-    [Dependency] protected readonly IRobustRandom Random = default!;
+    [Dependency] protected MovementSpeedModifierSystem MovementSpeed = default!;
+    [Dependency] protected IRobustRandom Random = default!;
 
     // Movement speed constants
     private const float ProdromeMinSpeed = 0.6f;
