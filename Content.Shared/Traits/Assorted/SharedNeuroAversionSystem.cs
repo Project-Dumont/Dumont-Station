@@ -12,7 +12,7 @@ namespace Content.Shared.Traits.Assorted;
 /// Shared system for Neuroaversion trait logic.
 /// Handles seizure build calculations and health-based modifiers.
 /// </summary>
-public abstract class SharedNeuroAversionSystem : EntitySystem
+public abstract partial class SharedNeuroAversionSystem : EntitySystem
 {
     [Dependency] protected IRobustRandom Random = default!;
     [Dependency] protected MobStateSystem MobState = default!;

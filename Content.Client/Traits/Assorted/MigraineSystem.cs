@@ -9,7 +9,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
-using Robust.Shared.GameObjects;
 using Content.Shared.Traits.Assorted;
 
 namespace Content.Client.Traits.Assorted
@@ -17,7 +16,7 @@ namespace Content.Client.Traits.Assorted
     /// <summary>
     /// Client system for migraine visual overlay and audio effects.
     /// </summary>
-    public sealed class MigraineSystem : EntitySystem
+    public sealed partial class MigraineSystem : EntitySystem
     {
         [Dependency] private IOverlayManager _overlayMan = default!;
         [Dependency] private IPlayerManager _playerManager = default!;

@@ -6,7 +6,6 @@
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.GameObjects;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Timing;
@@ -18,7 +17,7 @@ namespace Content.Client.Traits.Assorted
     /// Visual overlay for migraine and seizure effects.
     /// Handles both MigraineComponent and SeizureOverlayComponent rendering.
     /// </summary>
-    public sealed class MigraineOverlay : Overlay
+    public sealed partial class MigraineOverlay : Overlay
     {
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] private IPlayerManager _playerManager = default!;

@@ -12,7 +12,7 @@ namespace Content.Shared.Traits.Assorted;
 /// Shared system that handles seizure effects including prodrome warning phase
 /// and seizure with visual effects and movement impairment.
 /// </summary>
-public abstract class SharedSeizureSystem : EntitySystem
+public abstract partial class SharedSeizureSystem : EntitySystem
 {
     [Dependency] protected MovementSpeedModifierSystem MovementSpeed = default!;
     [Dependency] protected IRobustRandom Random = default!;

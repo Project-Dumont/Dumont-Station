@@ -11,7 +11,7 @@ namespace Content.Shared.Traits.Assorted;
 /// <summary>
 /// Handles visual effects and movement penalties for migraines.
 /// </summary>
-public sealed class MigraineSystem : EntitySystem
+public sealed partial class MigraineSystem : EntitySystem
 {
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private MobStateSystem _mobState = default!;

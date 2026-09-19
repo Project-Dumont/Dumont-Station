@@ -3,7 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System.Linq;
 using Content.Server.Jobs;
 using Content.Server.Mind;
 using Content.Shared.Damage;
@@ -22,7 +21,7 @@ namespace Content.Server.Traits.Assorted;
 /// Server-side system for Neuroaversion trait.
 /// Handles migraines, seizures, and implant interactions.
 /// </summary>
-public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
+public sealed partial class NeuroAversionSystem : SharedNeuroAversionSystem
 {
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private SeizureSystem _seizure = default!;
@@ -200,8 +199,8 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 
         foreach (var roleUid in mindComponent.MindRoles)
         {
-            if (!EntityManager.EntityExists(roleUid) ||
-                !EntityManager.TryGetComponent(roleUid, out MindRoleComponent? role) ||
+            if (!Exists(roleUid) ||
+                !TryComp(roleUid, out MindRoleComponent? role) ||
                 role.JobPrototype is not { } jobProtoId ||
                 !_prototypeManager.TryIndex(jobProtoId, out JobPrototype? jobProto))
                 continue;

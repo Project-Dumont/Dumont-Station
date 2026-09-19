@@ -9,12 +9,13 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+
 namespace Content.Server.Traits.Assorted;
 
 /// <summary>
 /// This handles chronic migraines, causing the affected to experience random debilitating migraine episodes.
 /// </summary>
-public sealed class ChronicMigrainesSystem : EntitySystem
+public sealed partial class ChronicMigrainesSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedPopupSystem _popup = default!;

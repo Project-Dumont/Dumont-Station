@@ -15,7 +15,7 @@ namespace Content.Client.Traits.Assorted;
 /// Client system for seizure audio effects.
 /// Plays sounds locally for the player experiencing the seizure.
 /// </summary>
-public sealed class SeizureSystem : EntitySystem
+public sealed partial class SeizureSystem : EntitySystem
 {
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
