@@ -14,3 +14,6 @@ construction-graph-tag-RocketFrame = a rocket frame
 construction-graph-tag-FlamethrowerTank = an empty fuel tank
 construction-graph-tag-QMBoard = the requisition digi-board
 construction-graph-tag-fusion-core = a fusion core
+
+# weapons
+construction-graph-tag-improvised-bow = an improvised bow

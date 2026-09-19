@@ -16,6 +16,12 @@ namespace Content.Shared.EntityEffects.Effects
         [DataField]
         public float FireStacksAdjustment = -1.5f;
 
+        /// <summary>
+        /// Trauma - true if extinguished by holy source, e.g. holy water
+        /// </summary>
+        [DataField]
+        public bool Holy;
+
         protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
             => Loc.GetString("reagent-effect-guidebook-extinguish-reaction", ("chance", Probability));
 
@@ -24,6 +30,7 @@ namespace Content.Shared.EntityEffects.Effects
             var ev = new ExtinguishEvent
             {
                 FireStacksAdjustment = FireStacksAdjustment,
+                Holy = Holy, // Trauma
             };
 
             if (args is EntityEffectReagentArgs reagentArgs)

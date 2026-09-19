@@ -12,6 +12,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -30,6 +31,7 @@ public sealed class EnchanterSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly SharedStackSystem _stack = default!;
 
     private List<EntProtoId<EnchantComponent>> _pool = new();
@@ -74,8 +76,14 @@ public sealed class EnchanterSystem : EntitySystem
 
         args.Handled = true;
 
-        // need an enchanter on the altar as well as the target
         var user = args.User;
+        if (_whitelist.IsWhitelistFail(ent.Comp.UserWhitelist, user))
+        {
+            _popup.PopupClient(Loc.GetString("enchanting-tool-user-too-weak"), user, user, PopupType.MediumCaution);
+            return;
+        }
+
+        // need an enchanter on the altar as well as the target
         if (_enchanting.FindEnchanter(item) is not {} enchanter)
         {
             _popup.PopupClient(Loc.GetString("enchanting-tool-no-enchanter"), user, user);

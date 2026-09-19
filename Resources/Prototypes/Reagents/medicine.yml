@@ -1423,6 +1423,8 @@
   metabolisms:
     Drink:
       effects:
+      - !type:HolyIgnite # Trauma
+        stacks: 3
       - !type:SatiateThirst
         factor: 3
       - !type:CleanseCult # DeltaV - Cosmic Cult
@@ -1477,6 +1479,12 @@
       methods: [ Touch ]
       effects:
       - !type:ExtinguishReaction
+        holy: true # Trauma - don't let it extinguish its own holy fire
+    Acidic: # Trauma
+      methods: [ Touch ]
+      effects:
+      - !type:HolyIgnite
+        stacks: 3
 #    Acidic:  # Goobstation - Removing holy water damage on touch pending rework.
 #      methods: [ Touch ]
 #      effects:
