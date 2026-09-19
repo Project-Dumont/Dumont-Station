@@ -5,7 +5,7 @@
   description: A powerful crossbow for the crusader with style.
   components:
   - type: Nullrod
-    damageOnUntrainedUse:
+    DamageOnUntrainedUse:
       types:
         Blunt: 20
     UntrainedUseString: nullrod-iradomini-untrained-usage-popup
@@ -61,7 +61,7 @@
   description: "`Cause you gotta have Faith."
   components:
   - type: Nullrod
-    damageOnUntrainedUse:
+    DamageOnUntrainedUse:
       types:
         Piercing: 20
     UntrainedUseString: nullrod-faith-untrained-usage-popup
