@@ -53,6 +53,8 @@ public sealed class HolyFlammableSystem : EntitySystem
         SubscribeLocalEvent<HolyIgniteOnCollideComponent, StartCollideEvent>(HolyIgniteOnCollide);
         SubscribeLocalEvent<HolyIgniteOnMeleeHitComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<IgniteOnHolyDamageComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<WeakToHolyComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<WeakToHolyComponent, ComponentRemove>(OnRemove);
     }
 
     private void OnExtinguishEvent(Entity<HolyFlammableComponent> ent, ref ExtinguishEvent args)
@@ -274,6 +276,19 @@ public sealed class HolyFlammableSystem : EntitySystem
         }
 
 
+    }
+
+    public void OnStartup(Entity<WeakToHolyComponent> ent, ref ComponentStartup args)
+    {
+        EnsureComp<HolyFlammableComponent>(ent);
+        EnsureComp<HolyIgniteOnCollideComponent>(ent);
+    }
+
+    public void OnRemove(Entity<WeakToHolyComponent> ent, ref ComponentRemove args)
+    {
+        HolyExtinguish(ent);
+        RemComp<HolyFlammableComponent>(ent);
+        RemComp<HolyIgniteOnCollideComponent>(ent);
     }
 
     public void Resist(EntityUid uid,
