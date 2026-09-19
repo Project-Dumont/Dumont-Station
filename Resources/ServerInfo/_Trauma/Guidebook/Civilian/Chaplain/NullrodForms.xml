@@ -48,6 +48,22 @@
     <GuideEntityEmbed Entity="MicroManipulatorStockPart"/>
   </Box>
 
+  ## Chain Sword
+  Purge the heresy. Pray to rev it up for 10 seconds, turning it into a sharp chainsaw that deals heavy slash and holy damage, tears into walls and can execute. It can only be revved once every 3 minutes. Fits on your belt.
+  <Box>
+    <GuideEntityEmbed Entity="InquisitorChainSword"/>
+    <GuideEntityEmbed Entity="AltarEmpire"/>
+    <GuideEntityEmbed Entity="BookRandom"/>
+  </Box>
+
+  ## Dragon's Tail
+  A dragon's tail impaled on a stick. Every hit sets the target on fire, on top of the holy damage.
+  <Box>
+    <GuideEntityEmbed Entity="DragonsTail"/>
+    <GuideEntityEmbed Entity="AltarDragon"/>
+    <GuideEntityEmbed Entity="PlushieCarp"/>
+  </Box>
+
   ## Faith
   A dinky pistol that heals people with bullets, don't ask. Applies holy damage to unholy enemies with the same bullets. Pray to reload.
   <Box>
