@@ -123,6 +123,12 @@
     containers:
       board: !type:Container
   - type: Door
+    closeTimeOne: 0.2
+    closeTimeTwo: 1.4
+    openTimeOne: 0.6
+    openTimeTwo: 1.0
+    openingAnimationTime: 1.65
+    closingAnimationTime: 1.65
     crushDamage:
       types:
         Blunt: 50
