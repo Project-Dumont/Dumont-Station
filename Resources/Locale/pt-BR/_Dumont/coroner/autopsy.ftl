@@ -20,6 +20,31 @@ autopsy-report-wounds-header = Feridas:
 autopsy-report-wound = - {$part}: {$wound}, {$severity}
 autopsy-report-wounds-none = Nenhuma ferida encontrada no corpo.
 
+autopsy-report-traumas-header = Traumas internos:
+autopsy-report-trauma = - {$part}: {$trauma}
+autopsy-report-traumas-none = Nenhum trauma interno no corpo.
+
+autopsy-bone-normal = osso sob esforço
+autopsy-bone-damaged = osso danificado
+autopsy-bone-cracked = osso trincado
+autopsy-bone-broken = osso quebrado
+
+autopsy-trauma-organ = órgão danificado: {$organ}
+autopsy-trauma-organ-unknown = órgão danificado
+autopsy-organ-heart = coração danificado
+autopsy-organ-lungs = pulmões danificados
+autopsy-organ-brain = cérebro danificado
+autopsy-organ-eyes = olhos danificados
+autopsy-organ-stomach = estômago danificado
+autopsy-organ-liver = fígado danificado
+autopsy-organ-kidneys = rins danificados
+autopsy-organ-pump = bomba danificada
+autopsy-organ-core = núcleo danificado
+autopsy-trauma-veinsdamage = veias rompidas
+autopsy-trauma-nervedamage = dano nos nervos
+autopsy-trauma-dismemberment = membro arrancado
+autopsy-trauma-bonedamage = osso danificado
+
 autopsy-severity-healed = cicatrizada
 autopsy-severity-minor = leve
 autopsy-severity-moderate = moderada

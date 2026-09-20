@@ -1,9 +1,13 @@
 using System.Linq;
 using System.Text;
 using Content.Shared._Dumont.Coroner;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
@@ -32,6 +36,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly TraumaSystem _traumas = default!;
     [Dependency] private readonly WoundSystem _wounds = default!;
 
     public override void Initialize()
@@ -78,6 +83,8 @@ public sealed class CoronerSystem : SharedCoronerSystem
         report.Append(GetDamage(target));
         report.Append('\n');
         report.Append(GetWounds(target));
+        report.Append('\n');
+        report.Append(GetTraumas(target));
         report.Append('\n');
         report.Append(GetChemicals(target));
         report.Append('\n');
@@ -179,6 +186,61 @@ public sealed class CoronerSystem : SharedCoronerSystem
         return report.ToString();
     }
 
+    private string GetTraumas(EntityUid target)
+    {
+        if (!_traumas.TryGetBodyTraumas(target, out var traumas))
+            return Loc.GetString("autopsy-report-traumas-none");
+
+        var report = new StringBuilder();
+        report.Append(Loc.GetString("autopsy-report-traumas-header"));
+
+        foreach (var trauma in traumas.OrderByDescending(trauma => trauma.Comp.TraumaSeverity))
+        {
+            report.Append('\n');
+            report.Append(Loc.GetString("autopsy-report-trauma",
+                ("part", GetTraumaPartName(trauma)),
+                ("trauma", GetTraumaName(trauma))));
+        }
+
+        return report.ToString();
+    }
+
+    private string GetTraumaPartName(Entity<TraumaComponent> trauma)
+    {
+        if (trauma.Comp.TraumaType == TraumaType.Dismemberment && trauma.Comp.TargetType is { } targetType)
+            return GetPartName(targetType.Item1, targetType.Item2);
+
+        return trauma.Comp.HoldingWoundable is { } woundable
+            ? GetPartName(woundable)
+            : Loc.GetString("autopsy-part-other");
+    }
+
+    private string GetTraumaName(Entity<TraumaComponent> trauma)
+    {
+        switch (trauma.Comp.TraumaType)
+        {
+            case TraumaType.BoneDamage:
+                var severity = trauma.Comp.TraumaTarget is { } bone && TryComp<BoneComponent>(bone, out var boneComp)
+                    ? boneComp.BoneSeverity
+                    : BoneSeverity.Damaged;
+
+                return Loc.GetString($"autopsy-bone-{severity.ToString().ToLowerInvariant()}");
+
+            case TraumaType.OrganDamage:
+                if (trauma.Comp.TraumaTarget is not { } organ)
+                    return Loc.GetString("autopsy-trauma-organ-unknown");
+
+                if (TryComp<OrganComponent>(organ, out var organComp)
+                    && Loc.TryGetString($"autopsy-organ-{organComp.SlotId.Replace('_', '-')}", out var organName))
+                    return organName;
+
+                return Loc.GetString("autopsy-trauma-organ", ("organ", Name(organ)));
+
+            default:
+                return Loc.GetString($"autopsy-trauma-{trauma.Comp.TraumaType.ToString().ToLowerInvariant()}");
+        }
+    }
+
     private string GetChemicals(EntityUid target)
     {
         if (!TryComp<BloodstreamComponent>(target, out var bloodstream)
@@ -243,14 +305,19 @@ public sealed class CoronerSystem : SharedCoronerSystem
         if (!TryComp<BodyPartComponent>(part, out var bodyPart))
             return Name(part);
 
-        var name = Loc.GetString($"autopsy-part-{bodyPart.PartType.ToString().ToLowerInvariant()}");
+        return GetPartName(bodyPart.PartType, bodyPart.Symmetry);
+    }
 
-        if (bodyPart.Symmetry == BodyPartSymmetry.None)
+    private string GetPartName(BodyPartType type, BodyPartSymmetry symmetry)
+    {
+        var name = Loc.GetString($"autopsy-part-{type.ToString().ToLowerInvariant()}");
+
+        if (symmetry == BodyPartSymmetry.None)
             return name;
 
         return Loc.GetString("autopsy-part-side",
             ("part", name),
-            ("side", Loc.GetString($"autopsy-side-{bodyPart.Symmetry.ToString().ToLowerInvariant()}")));
+            ("side", Loc.GetString($"autopsy-side-{symmetry.ToString().ToLowerInvariant()}")));
     }
 
     private string GetWoundName(EntityUid wound)

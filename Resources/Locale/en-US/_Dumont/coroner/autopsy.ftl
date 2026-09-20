@@ -20,6 +20,31 @@ autopsy-report-wounds-header = Wounds:
 autopsy-report-wound = - {$part}: {$wound}, {$severity}
 autopsy-report-wounds-none = No wounds found on the body.
 
+autopsy-report-traumas-header = Internal trauma:
+autopsy-report-trauma = - {$part}: {$trauma}
+autopsy-report-traumas-none = No internal trauma found.
+
+autopsy-bone-normal = bone under stress
+autopsy-bone-damaged = damaged bone
+autopsy-bone-cracked = cracked bone
+autopsy-bone-broken = broken bone
+
+autopsy-trauma-organ = damaged organ: {$organ}
+autopsy-trauma-organ-unknown = damaged organ
+autopsy-organ-heart = damaged heart
+autopsy-organ-lungs = damaged lungs
+autopsy-organ-brain = damaged brain
+autopsy-organ-eyes = damaged eyes
+autopsy-organ-stomach = damaged stomach
+autopsy-organ-liver = damaged liver
+autopsy-organ-kidneys = damaged kidneys
+autopsy-organ-pump = damaged pump
+autopsy-organ-core = damaged core
+autopsy-trauma-veinsdamage = torn veins
+autopsy-trauma-nervedamage = nerve damage
+autopsy-trauma-dismemberment = severed limb
+autopsy-trauma-bonedamage = damaged bone
+
 autopsy-severity-healed = healed
 autopsy-severity-minor = minor
 autopsy-severity-moderate = moderate
