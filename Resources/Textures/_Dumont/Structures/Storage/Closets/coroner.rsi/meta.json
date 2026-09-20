@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Ephemeral Space at https://github.com/EphemeralSpace/ephemeral-space, taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e8d7500bc7289325560b65210c81a1f6e0a29980, modified by EmoGarbage404. Lock, unlock and welded states taken from tgstation, the same as the base closet.rsi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "generic"
+    },
+    {
+      "name": "generic_door"
+    },
+    {
+      "name": "generic_open"
+    },
+    {
+      "name": "locked"
+    },
+    {
+      "name": "unlocked"
+    },
+    {
+      "name": "welded"
+    }
+  ]
+}

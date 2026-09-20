@@ -143,3 +143,14 @@
         Slash: 0.7
         Piercing: 0.7
         Heat: 0.8
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmCoroner
+  name: coroner envirosuit helmet
+  description: An envirohelmet designed for Plasmaman coroners, so the dead are not the only ones who stay cold.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Envirohelms/coroner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Envirohelms/coroner.rsi

@@ -18,3 +18,5 @@ loadout-group-coroner-jumpsuit = Roupa do legista
 loadout-group-coroner-outerclothing = Jaleco do legista
 loadout-group-coroner-gloves = Luvas do legista
 loadout-group-coroner-mask = Máscara do legista
+loadout-group-coroner-envirohelm = Capacete hermético do legista
+loadout-group-coroner-envirosuit = Traje hermético do legista

@@ -127,3 +127,19 @@
   minLimit: 1
   loadouts:
   - SterileMask
+
+- type: loadoutGroup
+  id: CoronerEnvirohelm
+  name: loadout-group-coroner-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CoronerEnvirohelm
+
+- type: loadoutGroup
+  id: CoronerEnvirosuit
+  name: loadout-group-coroner-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CoronerEnvirosuit

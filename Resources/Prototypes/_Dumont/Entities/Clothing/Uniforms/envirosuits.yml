@@ -105,3 +105,14 @@
         color: "#6e6f87"
       - state: soles-equipped-INNERCLOTHING
         color: "#384149"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCoroner
+  name: coroner's envirosuit
+  description: A suit designed for the station's more plasma-based coroners.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Uniforms/Envirosuits/coroner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Uniforms/Envirosuits/coroner.rsi

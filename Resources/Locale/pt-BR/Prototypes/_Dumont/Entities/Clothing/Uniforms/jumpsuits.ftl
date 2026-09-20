@@ -3,3 +3,6 @@ ent-ClothingUniformJumpsuitBitrunner = macacão do bitrunner
 
 ent-ClothingUniformJumpsuitCoroner = macacão de legista
     .desc = Um macacão azul-marinho com marcas médicas. Você queria que essas coisas fossem à prova de mancha.
+
+ent-ClothingUniformEnvirosuitCoroner = traje hermético de legista
+    .desc = Um traje feito para os legistas mais à base de plasma da estação.

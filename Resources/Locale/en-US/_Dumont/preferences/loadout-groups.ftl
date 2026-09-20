@@ -9,3 +9,5 @@ loadout-group-coroner-jumpsuit = Coroner jumpsuit
 loadout-group-coroner-outerclothing = Coroner outerclothing
 loadout-group-coroner-gloves = Coroner gloves
 loadout-group-coroner-mask = Coroner mask
+loadout-group-coroner-envirohelm = Coroner envirohelm
+loadout-group-coroner-envirosuit = Coroner envirosuit
