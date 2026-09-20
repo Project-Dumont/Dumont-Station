@@ -8,6 +8,8 @@ autopsy-sex-unsexed = unsexed
 
 autopsy-report-name = autopsy report ({$target})
 autopsy-report-identity = Body: {$target}, {$species}, {$sex}.
+autopsy-report-own-dna = DNA: {$dna}
+autopsy-report-own-dna-unknown = DNA: could not be read.
 autopsy-report-time = Time of death: {$time} into the shift.
 autopsy-report-time-unknown = Time of death: could not be determined.
 autopsy-report-cause = Probable cause: {$cause}.
@@ -51,3 +53,12 @@ autopsy-wound-cellular = cellular damage
 autopsy-wound-poison = poisoning
 autopsy-wound-holy = holy burn
 autopsy-wound-ion = ion damage
+
+autopsy-report-chemicals-header = Chemicals in the blood:
+autopsy-report-chemical = - {$reagent}: {$amount}u
+autopsy-report-chemicals-none = No chemicals left in the blood.
+autopsy-report-forensics-header = Forensic traces:
+autopsy-report-fingerprint = - fingerprint: {$print}
+autopsy-report-dna = - DNA: {$dna}
+autopsy-report-fiber = - {$fiber}
+autopsy-report-forensics-none = No forensic traces on the body.

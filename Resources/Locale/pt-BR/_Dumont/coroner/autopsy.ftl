@@ -8,6 +8,8 @@ autopsy-sex-unsexed = sem sexo
 
 autopsy-report-name = laudo de autópsia ({$target})
 autopsy-report-identity = Corpo: {$target}, {$species}, {$sex}.
+autopsy-report-own-dna = DNA: {$dna}
+autopsy-report-own-dna-unknown = DNA: não foi possível ler.
 autopsy-report-time = Hora do óbito: {$time} de turno.
 autopsy-report-time-unknown = Hora do óbito: não foi possível determinar.
 autopsy-report-cause = Causa provável: {$cause}.
@@ -51,3 +53,12 @@ autopsy-wound-cellular = dano celular
 autopsy-wound-poison = envenenamento
 autopsy-wound-holy = queimadura sagrada
 autopsy-wound-ion = dano de íon
+
+autopsy-report-chemicals-header = Químicos no sangue:
+autopsy-report-chemical = - {$reagent}: {$amount}u
+autopsy-report-chemicals-none = Nenhum químico restante no sangue.
+autopsy-report-forensics-header = Vestígios forenses:
+autopsy-report-fingerprint = - digital: {$print}
+autopsy-report-dna = - DNA: {$dna}
+autopsy-report-fiber = - {$fiber}
+autopsy-report-forensics-none = Nenhum vestígio forense no corpo.

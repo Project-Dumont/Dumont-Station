@@ -3,7 +3,11 @@ using System.Text;
 using Content.Shared._Dumont.Coroner;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Hands.EntitySystems;
@@ -27,6 +31,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly WoundSystem _wounds = default!;
 
     public override void Initialize()
@@ -66,11 +71,17 @@ public sealed class CoronerSystem : SharedCoronerSystem
             ("species", GetSpecies(target)),
             ("sex", GetSex(target))));
         report.Append('\n');
+        report.Append(GetOwnDna(target));
+        report.Append('\n');
         report.Append(GetTimeOfDeath(target));
         report.Append('\n');
         report.Append(GetDamage(target));
         report.Append('\n');
         report.Append(GetWounds(target));
+        report.Append('\n');
+        report.Append(GetChemicals(target));
+        report.Append('\n');
+        report.Append(GetForensics(target));
 
         return report.ToString();
     }
@@ -90,6 +101,14 @@ public sealed class CoronerSystem : SharedCoronerSystem
             return Loc.GetString("autopsy-unknown");
 
         return Loc.GetString($"autopsy-sex-{humanoid.Sex.ToString().ToLowerInvariant()}");
+    }
+
+    private string GetOwnDna(EntityUid target)
+    {
+        if (!TryComp<DnaComponent>(target, out var dna) || dna.DNA == null)
+            return Loc.GetString("autopsy-report-own-dna-unknown");
+
+        return Loc.GetString("autopsy-report-own-dna", ("dna", dna.DNA));
     }
 
     private string GetTimeOfDeath(EntityUid target)
@@ -147,7 +166,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
         report.Append(Loc.GetString("autopsy-report-wounds-header"));
 
         foreach (var wound in wounds
-                     .Where(wound => !wound.Comp.IsScar)
+                     .Where(wound => !wound.Comp.IsScar && wound.Comp.WoundSeverity != WoundSeverity.Healed)
                      .OrderByDescending(wound => wound.Comp.WoundSeverityPoint))
         {
             report.Append('\n');
@@ -158,6 +177,65 @@ public sealed class CoronerSystem : SharedCoronerSystem
         }
 
         return report.ToString();
+    }
+
+    private string GetChemicals(EntityUid target)
+    {
+        if (!TryComp<BloodstreamComponent>(target, out var bloodstream)
+            || !_solutionContainer.TryGetSolution(target, bloodstream.ChemicalSolutionName, out _, out var solution)
+            || solution.Contents.Count == 0)
+            return Loc.GetString("autopsy-report-chemicals-none");
+
+        var chemicals = new StringBuilder();
+        chemicals.Append(Loc.GetString("autopsy-report-chemicals-header"));
+
+        foreach (var reagent in solution.Contents.OrderByDescending(reagent => reagent.Quantity))
+        {
+            var name = _prototype.TryIndex<ReagentPrototype>(reagent.Reagent.Prototype, out var proto)
+                ? proto.LocalizedName
+                : reagent.Reagent.Prototype;
+
+            chemicals.Append('\n');
+            chemicals.Append(Loc.GetString("autopsy-report-chemical",
+                ("reagent", name),
+                ("amount", reagent.Quantity.Int())));
+        }
+
+        return chemicals.ToString();
+    }
+
+    private string GetForensics(EntityUid target)
+    {
+        if (!TryComp<ForensicsComponent>(target, out var forensics))
+            return Loc.GetString("autopsy-report-forensics-none");
+
+        var clues = new StringBuilder();
+        clues.Append(Loc.GetString("autopsy-report-forensics-header"));
+
+        var found = false;
+
+        foreach (var fingerprint in forensics.Fingerprints)
+        {
+            clues.Append('\n');
+            clues.Append(Loc.GetString("autopsy-report-fingerprint", ("print", fingerprint)));
+            found = true;
+        }
+
+        foreach (var (dna, _) in forensics.DNAs)
+        {
+            clues.Append('\n');
+            clues.Append(Loc.GetString("autopsy-report-dna", ("dna", dna)));
+            found = true;
+        }
+
+        foreach (var fiber in forensics.Fibers)
+        {
+            clues.Append('\n');
+            clues.Append(Loc.GetString("autopsy-report-fiber", ("fiber", fiber)));
+            found = true;
+        }
+
+        return found ? clues.ToString() : Loc.GetString("autopsy-report-forensics-none");
     }
 
     private string GetPartName(EntityUid part)
