@@ -121,7 +121,34 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, UseInHandEvent>(OnBallisticUse);
+
+        // Dumont changes start
+        SubscribeLocalEvent<BallisticAmmoInteractLoaderComponent, AfterInteractEvent>(OnBallisticAmmoLoad);
+        // Dumont end
     }
+
+    // Dumont changes start
+    private void OnBallisticAmmoLoad(Entity<BallisticAmmoInteractLoaderComponent> ent, ref AfterInteractEvent args)
+    {
+        if (args.Handled || args.Target == null || !TryComp<BallisticAmmoProviderComponent>(ent, out var provider))
+            return;
+
+        if (_whitelistSystem.IsWhitelistFailOrNull(provider.Whitelist, args.Target.Value))
+            return;
+
+        if (GetBallisticShots(provider) >= provider.Capacity)
+            return;
+
+        provider.Entities.Add(args.Target.Value);
+        Containers.Insert(args.Target.Value, provider.Container);
+        Audio.PlayPredicted(provider.SoundInsert, ent.Owner, args.User);
+        args.Handled = true;
+        UpdateBallisticAppearance(ent.Owner, provider);
+        UpdateAmmoCount(ent.Owner);
+        DirtyField(ent.Owner, provider, nameof(BallisticAmmoProviderComponent.Entities));
+    }
+
+    // Dumont end
 
     private void OnBallisticUse(EntityUid uid, BallisticAmmoProviderComponent component, UseInHandEvent args)
     {

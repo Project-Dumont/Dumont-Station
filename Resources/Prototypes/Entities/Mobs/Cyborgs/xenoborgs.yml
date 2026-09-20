@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder ]
+  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder, BaseXenoborgDestructible ]
   id: XenoborgEngi
   name: engi xenoborg
   suffix: with brain
@@ -8,41 +8,38 @@
   - type: BorgTransponder
     name: engi xenoborg
     sprite:
-      sprite: Mobs/Silicon/chassis.rsi
-      state: xenoborg_engi
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/engineer.rsi # Imp
+      state: engineer # Imp
   - type: Sprite
+    sprite: _Impstation/Mobs/Silicon/Xenoborgs/engineer.rsi # Imp
     layers:
-    - state: xenoborg_engi
-    - state: xenoborg_engi_e
+    - state: engineer # Imp
+    - state: engineer_e # Imp
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: xenoborg_engi_l
+    - state: engineer_l # Imp
       shader: unshaded
       map: ["light"]
       visible: false
   - type: BorgChassis
     maxModules: 7
-    hasMindState: xenoborg_engi_e
-    noMindState: xenoborg_engi_e_r
+    hasMindState: engineer_e # Imp
+    noMindState: engineer_e_r # Imp
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
       - XenoborgModuleEngi
-      - BorgModuleEngineering
-      - BorgModuleGeneric
   - type: ContainerFill
     containers:
       borg_brain:
       - MMIFilled
       borg_module:
       - XenoborgModuleBasic
-      - BorgModuleAdvancedTool
-      - BorgModuleConstruction
-      - BorgModuleRCD
-      - BorgModuleCable
+      - XenoborgModuleAdvancedTool
+      - XenoborgModuleConstruction
       - XenoborgModuleAccessBreaker
-      - XenoborgModuleFireExtinguisher
+      - XenoborgModuleTileGun
   - type: ShowHealthBars
     damageContainers:
     - Inorganic
@@ -54,7 +51,7 @@
         startingItem: PowerCellHigh
 
 - type: entity
-  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder ]
+  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder, BaseXenoborgDestructible ]
   id: XenoborgHeavy
   name: heavy xenoborg
   suffix: with brain
@@ -63,23 +60,24 @@
   - type: BorgTransponder
     name: heavy xenoborg
     sprite:
-      sprite: Mobs/Silicon/chassis.rsi
-      state: xenoborg_heavy
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/heavy.rsi # Imp
+      state: heavy # Imp
   - type: Sprite
+    sprite: _Impstation/Mobs/Silicon/Xenoborgs/heavy.rsi # Imp
     layers:
-    - state: xenoborg_heavy
-    - state: xenoborg_heavy_e
+    - state: heavy # Imp
+    - state: heavy_e # Imp
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: xenoborg_heavy_l
+    - state: heavy_l # Imp
       shader: unshaded
       map: ["light"]
       visible: false
   - type: BorgChassis
     maxModules: 4
-    hasMindState: xenoborg_heavy_e
-    noMindState: xenoborg_heavy_e_r
+    hasMindState: heavy_e # Imp
+    noMindState: heavy_e_r # Imp
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
@@ -141,7 +139,7 @@
         startingItem: PowerCellHigh
 
 - type: entity
-  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder ]
+  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder, BaseXenoborgDestructible ]
   id: XenoborgScout
   name: scout xenoborg
   suffix: with brain
@@ -150,16 +148,17 @@
   - type: BorgTransponder
     name: scout xenoborg
     sprite:
-      sprite: Mobs/Silicon/chassis.rsi
-      state: xenoborg_scout
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/scout.rsi # Imp
+      state: scout # Imp
   - type: Sprite
+    sprite: _Impstation/Mobs/Silicon/Xenoborgs/scout.rsi # Imp
     layers:
-      - state: xenoborg_scout
-      - state: xenoborg_scout_e
+      - state: scout # Imp
+      - state: scout_e # Imp
         map: ["enum.BorgVisualLayers.Light"]
         shader: unshaded
         visible: false
-      - state: xenoborg_scout_l
+      - state: scout_l # Imp
         shader: unshaded
         map: ["light"]
         visible: false
@@ -169,8 +168,8 @@
   - type: FlashImmunity
   - type: BorgChassis
     maxModules: 4
-    hasMindState: xenoborg_scout_e
-    noMindState: xenoborg_scout_e_r
+    hasMindState: scout_e # Imp
+    noMindState: scout_e_r # Imp
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
@@ -194,7 +193,7 @@
         startingItem: PowerCellHigh
 
 - type: entity
-  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder ]
+  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder, BaseXenoborgDestructible ]
   id: XenoborgStealth
   name: stealth xenoborg
   suffix: with brain
@@ -203,16 +202,17 @@
   - type: BorgTransponder
     name: stealth xenoborg
     sprite:
-      sprite: Mobs/Silicon/chassis.rsi
-      state: xenoborg_stealth
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/stealth.rsi # Imp
+      state: stealth # Imp
   - type: Sprite
+    sprite: _Impstation/Mobs/Silicon/Xenoborgs/stealth.rsi # Imp
     layers:
-      - state: xenoborg_stealth
-      - state: xenoborg_stealth_e
+      - state: stealth # Imp
+      - state: stealth_e # Imp
         map: ["enum.BorgVisualLayers.Light"]
         shader: unshaded
         visible: false
-      - state: xenoborg_stealth_l
+      - state: stealth_l # Imp
         shader: unshaded
         map: ["light"]
         visible: false
@@ -221,8 +221,8 @@
       collection: FootstepHoverXenoborg
   - type: BorgChassis
     maxModules: 5
-    hasMindState: xenoborg_stealth_e
-    noMindState: xenoborg_stealth_e_r
+    hasMindState: stealth_e # Imp
+    noMindState: stealth_e_r # Imp
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
@@ -260,12 +260,10 @@
       - MMI
       borg_module:
       - XenoborgModuleBasic
-      - BorgModuleAdvancedTool
-      - BorgModuleConstruction
-      - BorgModuleRCD
-      - BorgModuleCable
+      - XenoborgModuleAdvancedTool
+      - XenoborgModuleConstruction
       - XenoborgModuleAccessBreaker
-      - XenoborgModuleFireExtinguisher
+      - XenoborgModuleTileGun
   - type: ItemSlots
     slots:
       cell_slot:

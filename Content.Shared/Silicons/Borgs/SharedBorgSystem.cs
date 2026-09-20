@@ -48,6 +48,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
         SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
 
         InitializeRelay();
+        InitializeModule(); // Dumont
     }
 
     private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent args)

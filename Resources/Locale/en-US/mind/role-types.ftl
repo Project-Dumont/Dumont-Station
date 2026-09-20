@@ -35,3 +35,6 @@ role-subtype-survivor = Survivor
 role-subtype-subverted = Subverted
 role-subtype-paradox-clone = Paradox
 role-subtype-wizard = Wizard
+
+role-subtype-xenoborg = Xenoborg
+role-subtype-xenoborg-core = Xenoborg Core

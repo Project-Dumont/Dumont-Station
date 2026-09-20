@@ -11,6 +11,25 @@
 - type: latheRecipePack
   id: XenoborgUpgradeModules
   recipes:
+  # engi xenoborg
+  - XenoborgModuleDoorControlRecipe
+  - XenoborgModuleDeflectorFieldRecipe
+  - XenoborgModuleZapRecipe
+  - XenoborgModuleOilGunRecipe
+  - XenoborgModuleNaniteGunRecipe
+  # heavy xenoborg
   - XenoborgModuleHeavyLaserRecipe
+  - XenoborgModuleRocketRecipe
+  - XenoborgModuleBurstFireLaserRecipe
+  - XenoborgModuleHeavyRadioactiveRecipe
+  # scout xenoborg
   - XenoborgModuleEnergySwordRecipe
+  - XenoborgModuleJumpRecipe
+  - XenoborgModuleBioKinfeRecipe
+  # stealth xenoborg
   - XenoborgModuleSuperCloakDeviceRecipe
+
+- type: latheRecipePack
+  id: XenoborgMachines
+  recipes:
+  - XenoborgExtractorRecipe
