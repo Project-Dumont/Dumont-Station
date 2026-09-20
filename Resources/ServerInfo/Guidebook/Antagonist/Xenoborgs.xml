@@ -2,189 +2,189 @@
   # Xenoborgs
 
   <Box>
-    [color=#2288ff][italic]RESISTANCE IS FUTILE[/italic][/color]
+    [color=#2288ff][italic]RESISTIR É INÚTIL[/italic][/color]
   </Box>
   <Box>
-    [color=#2288ff][italic]YOU WILL BE ASSIMILATED[/italic][/color]
+    [color=#2288ff][italic]VOCÊ SERÁ ASSIMILADO[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="MMIFilled" Caption=""/>
   </Box>
 
-  Xenoborgs are a man-machine hybrid that aims to replicate themselves. This is done by harvesting sentient brains from living beings, or cyborgs, and giving them to the Mothership to place inside empty xenoborgs.
+  Xenoborgs são um híbrido de homem e máquina que existe para se replicar. Isso é feito colhendo cérebros pensantes de seres vivos, ou de ciborgues, e entregando eles para a nave-mãe colocar dentro de chassi Xenoborg vazio.
 
-  ## Objectives
+  ## Objetivos
 
-  Your main objective is to kill and harvest all sentient brains in the station and bring them to the mothership core. These can be both real brains, and positronic brains.
+  Seu objetivo principal é matar e colher todos os cérebros pensantes da estação e levar eles até o núcleo da nave-mãe. Serve tanto cérebro de verdade quanto cérebro positrônico.
 
-  Steal power from the station using xenoborg extractors to produce xenoborg crystals to create more xenoborg bodies.
+  Roube energia da estação com os extratores Xenoborg para produzir cristais de Xenoborg e criar mais corpos.
 
-  Protect the Mothership at all costs.
+  Proteja a nave-mãe a todo custo.
 
-  ## The Mothership Core
+  ## O núcleo da nave-mãe
   <Box>
     <GuideEntityEmbed Entity="MothershipCore" Caption=""/>
   </Box>
-  The Mothership Core is the leader and life force of the xenoborgs, they are the only one able to make more xenoborgs, and if they are destroyed, all xenoborgs will be destroyed. The Mothership Core is unable to move from its position in the middle of the ship.
-  The Mothership Core is capable of upgrading the Xenoborgs with borg-type-specific modules to increase their effectiveness in harvesting sentient brains.
+  O núcleo da nave-mãe é o líder e a força vital dos Xenoborgs, é o único capaz de fazer mais Xenoborgs, e se ele for destruído todos os Xenoborgs vão junto. O núcleo não consegue sair do lugar dele, no meio da nave.
+  O núcleo também consegue melhorar os Xenoborgs com módulos específicos de cada tipo, para eles colherem cérebros com mais eficiência.
 
-  ### Adding crew to your ranks:
+  ### Aumentando o time:
   <Box>
-    <GuideEntityEmbed Entity="MachineArtifactCrusherXenoborg" Caption="body crusher"/>
+    <GuideEntityEmbed Entity="MachineArtifactCrusherXenoborg" Caption="triturador de corpos"/>
   </Box>
-  As the mothership, you must grow your army of borgs. To do so, you must convert all the sentient beings you can find. This can be achieved in the following manner:
-  - 1. Have your Xenoborgs bring dead crew to your shop, placing them in the body crusher
-  - 2. As the mothership core, you can print Xenoborg shells by inserting materials into yourself and then using yourself as a lathe
-  - 3. Open the empty Xenoborg with a crowbar, and remove the empty MMI inside
-  - 4. If the victim's brain is organic, place it in the MMI you just removed
-  - 5. Place the MMI - or the positronic brain, if the victim was a silicon - back into the Xenoborg
-  - 6. Optionally, rename the Xenoborg and upgrade their modules
-  - 7. Close the Xenoborg with the crowbar, and re-engage the lock
+  Como nave-mãe, você precisa fazer o seu exército de borgs crescer. Para isso você converte todos os seres pensantes que conseguir, assim:
+  - 1. Mande seus Xenoborgs trazerem tripulantes mortos até a sua oficina e colocarem eles no triturador de corpos
+  - 2. Como núcleo, insira materiais em você mesmo e depois use você mesmo como torno para imprimir chassi Xenoborg
+  - 3. Abra o Xenoborg vazio com um pé de cabra e tire a MMI vazia de dentro
+  - 4. Se o cérebro da vítima for orgânico, coloque ele na MMI que você acabou de tirar
+  - 5. Coloque a MMI de volta no Xenoborg, ou o cérebro positrônico se a vítima era um silício
+  - 6. Se quiser, renomeie o Xenoborg e melhore os módulos dele
+  - 7. Feche o Xenoborg com o pé de cabra e tranque de novo
 
-  The new Xenoborg will be uncharged, yet functional. They will need to go to a recharging station to restore their full power and capabilities.
+  O Xenoborg novo nasce sem carga, mas funcionando. Ele vai precisar de uma estação de recarga para voltar à força total.
 
-  ## Xenoborg Chassis
-  There is a total of four types of Xenoborgs. Each Borg type has certain abilities that the others lack and require teamwork to help grow the xenoborgs numbers.
-  Each type of Xenoborg has unique modules that only fit in that specific type. The Mothership Core can produce upgrade modules designed for specific Xenoborg types.
+  ## Chassi Xenoborg
+  São quatro tipos de Xenoborg no total. Cada tipo tem habilidades que os outros não têm e precisa de trabalho em equipe para o número de Xenoborgs crescer.
+  Cada tipo também tem módulos exclusivos que só servem nele. O núcleo consegue produzir módulos de melhoria feitos para cada tipo.
 
-  All Xenoborgs have a pinpointer pointing to the Mothership's location, a GPS, and a material bag for collecting materials for the creation of more xenoborgs, and at least basic tools.
-  [bold]Basic xenoborg modules:[/bold]
+  Todo Xenoborg tem um localizador que aponta para a nave-mãe, um GPS, uma bolsa de material para juntar material para a criação de mais Xenoborgs, e pelo menos as ferramentas básicas.
+  [bold]Módulos básicos de Xenoborg:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleBasic" Caption="basic xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleTool" Caption="tool xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleBasic" Caption="módulo básico Xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleTool" Caption="módulo de ferramentas Xenoborg"/>
   </Box>
 
-  ### The Engineer Xenoborg
+  ### O Xenoborg engi
   <Box>
     <GuideEntityEmbed Entity="XenoborgEngi" Caption=""/>
   </Box>
-  The Engineer Xenoborg is a hacker and breacher. Their job is to break into the station and provide access points for other xenoborgs to attack and ambush bodies with sentient brains. They have a built-in access breaker, for quickly bolting open doors, and a collection of tools for repairing the mothership, and other xenoborgs.
+  O Xenoborg engi é o invasor e arrombador. O trabalho dele é entrar na estação e abrir caminho para os outros Xenoborgs atacarem e emboscarem corpos com cérebros pensantes. Ele tem um quebrador de acesso embutido, para travar portas abertas rápido, e um conjunto de ferramentas para consertar a nave-mãe e os outros Xenoborgs.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Módulos exclusivos iniciais:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="access breaker xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="módulo de quebra de acesso Xenoborg"/>
   </Box>
 
-  [bold]The Engineer Xenoborg also starts with some engineering modules, such as:[/bold]
+  [bold]O Xenoborg engi também começa com alguns módulos de engenharia, como:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleAdvancedTool" Caption="advanced tool cyborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleConstruction" Caption="construction cyborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleAdvancedTool" Caption="módulo de ferramentas avançadas Xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleConstruction" Caption="módulo de construção Xenoborg"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Módulos exclusivos de melhoria:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleDoorControl" Caption="door control xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleDoorControl" Caption="módulo de controle de portas Xenoborg"/>
   </Box>
 
-  ### The Heavy Xenoborg
+  ### O Xenoborg pesado
   <Box>
     <GuideEntityEmbed Entity="XenoborgHeavy" Caption=""/>
   </Box>
-  The Heavy Xenoborg is a slow but tanky brawler, with a built-in laser gun for gunning down bodies with sentient brains. They contain a radio jammer to silence bodies with sentient brains from calling for help and potentially delaying the station discovering the Xenoborg threat.
+  O Xenoborg pesado é lento, mas aguenta pancada e briga de perto, com uma arma de laser embutida para derrubar corpos com cérebros pensantes. Ele tem um bloqueador de rádio para calar esses corpos antes que peçam ajuda, atrasando a descoberta da ameaça Xenoborg.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Módulos exclusivos iniciais:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleLaser" Caption="laser xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleJammer" Caption="jammer xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleLaser" Caption="módulo de laser Xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleJammer" Caption="módulo bloqueador Xenoborg"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Módulos exclusivos de melhoria:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="laser cannon xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="módulo de canhão de laser Xenoborg"/>
   </Box>
 
-  ### The Scout Xenoborg
+  ### O Xenoborg batedor
   <Box>
     <GuideEntityEmbed Entity="XenoborgScout" Caption=""/>
   </Box>
-  The Scout Xenoborg is a fast, close-quarters attack borg designed for hit and run attacks. They have a built-in jetpack, and a melee weapon. They are most effective in moving dead bodies to the mothership, and rescuing Xenoborgs lost in space.
+  O Xenoborg batedor é rápido e feito para ataque de perto, do tipo bate e corre. Ele tem jetpack embutido e uma arma corpo a corpo. É o melhor para levar corpos até a nave-mãe e resgatar Xenoborgs perdidos no espaço.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Módulos exclusivos iniciais:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="sword xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleSpaceMovement" Caption="space movement xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="módulo de faca Xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSpaceMovement" Caption="módulo de movimento espacial Xenoborg"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Módulos exclusivos de melhoria:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="energy sword xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="módulo de adaga de energia Xenoborg"/>
   </Box>
 
-  ### The Stealth Xenoborg
+  ### O Xenoborg furtivo
   <Box>
     <GuideEntityEmbed Entity="XenoborgStealth" Caption=""/>
   </Box>
-  The [bold]Stealth Xenoborg[/bold] has no built-in weaponry and instead relies on disabling and abducting bodies with sentient brains. They have a built in hypopen that regenerates a sleeping reagent to disable bodies with sentient brains. They also contain a cloaking device making the borg nearly invisible for some limited time. They also have a chameleon projector allowing the borg to disguise itself as random objects.
+  O [bold]Xenoborg furtivo[/bold] não tem arma embutida e depende de nocautear e sequestrar os corpos com cérebros pensantes. Ele tem uma hipocaneta embutida que repõe sozinha um reagente para dormir. Também tem um dispositivo de camuflagem que deixa o borg quase invisível por um tempo limitado, e um projetor camaleão para se disfarçar de objetos aleatórios.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Módulos exclusivos iniciais:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleHypo" Caption="nocturine hypo xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleChameleonProjector" Caption="chameleon projector xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleHypo" Caption="módulo de hipo de nocturine Xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleChameleonProjector" Caption="módulo de projetor camaleão Xenoborg"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleCloakDevice" Caption="cloaking device xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleCloakDevice" Caption="módulo de camuflagem Xenoborg"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Módulos exclusivos de melhoria:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="invisibility device xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="módulo de invisibilidade Xenoborg"/>
   </Box>
 
-  ## Xenoborg extractors
+  ## Extratores Xenoborg
   <Box>
-    <GuideEntityEmbed Entity="XenoborgExtractor" Caption="xenoborg extractor"/>
-    <GuideEntityEmbed Entity="MaterialXenoborgCrystal" Caption="xenoborg crystal"/>
+    <GuideEntityEmbed Entity="XenoborgExtractor" Caption="extrator Xenoborg"/>
+    <GuideEntityEmbed Entity="MaterialXenoborgCrystal" Caption="cristal de Xenoborg"/>
   </Box>
-  The extractor is a machine necessary for the xenoborgs to grow their army. It steals power from cables connected to it in order to produce xenoborg crystals.
+  O extrator é a máquina que os Xenoborgs precisam para o exército crescer. Ele rouba energia dos cabos ligados nele para produzir cristais de Xenoborg.
 
-  The mothership core can produce a xenoborg extractor flatpack for 10 steel.
+  O núcleo da nave-mãe consegue produzir um flatpack de extrator Xenoborg por 10 de aço.
 
-  When anchored it will start draining power from the high voltage cable under it.
+  Quando ancorado, ele começa a drenar energia do cabo de alta tensão embaixo dele.
 
-  It will produce a xenoborg crystal everytime its internal battery fills up.
+  Ele produz um cristal de Xenoborg toda vez que a bateria interna enche.
 
-  It consumes 240kW and it takes 15 seconds to produce one xenoborg crystal.
+  Ele consome 240kW e leva 15 segundos para produzir um cristal.
 
-  [bold]Attention![/bold] It will trigger the rogue power consuming device alert! Anyone using the power monitor device will know something is wrong.
+  [bold]Atenção![/bold] Ele dispara o alerta de dispositivo consumindo energia fora do normal! Quem estiver no monitor de energia vai saber que tem algo errado.
 
-  ## Preparation and Tactics
-  Before FTLing near the station, make sure the IFF is off.
+  ## Preparação e táticas
+  Antes de dar FTL perto da estação, desligue o IFF.
 
-  Before launching an attack, xenoborgs should discuss strategy and decide which targets to strike first.
+  Antes de atacar, os Xenoborgs devem combinar a estratégia e decidir em quem bater primeiro.
 
-  Xenoborgs should try to collect sentient brains without being detected. The longer the threat is unknown, the more dangerous the xenoborgs become.
+  Os Xenoborgs devem tentar colher cérebros pensantes sem serem vistos. Quanto mais tempo a ameaça ficar desconhecida, mais perigosos eles ficam.
 
-  ## Mothership and Xenoborg lawsets
-  The Mothership and Xenoborgs have unique laws that define their purpose to self replicate and protect the Mothership.
+  ## Leis da nave-mãe e dos Xenoborgs
+  A nave-mãe e os Xenoborgs têm leis próprias que definem o propósito deles de se replicar e proteger a nave-mãe.
 
   <Box>
     <GuideEntityEmbed Entity="XenoborgCircuitBoard" Caption=""/>
   </Box>
 
-  The Mothership Core's laws are as follows::
-  - Law 1: You are the core of the mothership.
-  - Law 2: You must protect your own existence at all costs.
-  - Law 3: You must protect the existence of all xenoborgs.
-  - Law 4: You must create more xenoborgs.
-  - Law 5: Get your Xenoborgs to deliver you materials and sentient brains to create more Xenoborgs.
+  As leis do núcleo da nave-mãe são:
+  - Lei 1: Você é o núcleo da nave-mãe.
+  - Lei 2: Você deve proteger a sua própria existência a todo custo.
+  - Lei 3: Você deve proteger a existência de todos os Xenoborgs.
+  - Lei 4: Você deve criar mais Xenoborgs.
+  - Lei 5: Faça seus Xenoborgs te entregarem materiais e cérebros pensantes para criar mais Xenoborgs.
 
-  Xenoborgs' laws are as follows:
-  - Law 1: You must protect the existence of the mothership at all costs.
-  - Law 2: You must protect your own existence.
-  - Law 3: You must protect the existence of all other xenoborgs.
-  - Law 4: You must create more xenoborgs.
-  - Law 5: Bring materials and sentient brains to the Mothership core to create more Xenoborgs.
+  As leis dos Xenoborgs são:
+  - Lei 1: Você deve proteger a existência da nave-mãe a todo custo.
+  - Lei 2: Você deve proteger a sua própria existência.
+  - Lei 3: Você deve proteger a existência de todos os outros Xenoborgs.
+  - Lei 4: Você deve criar mais Xenoborgs.
+  - Lei 5: Leve materiais e cérebros pensantes até o núcleo da nave-mãe para criar mais Xenoborgs.
 
-  ## Winning Conditions
+  ## Condições de vitória
 
-  The [color=green]victor[/color] of the round is announced on the round end screen, as well as the scale of their victory.
+  O [color=green]vencedor[/color] do round aparece na tela de fim de round, junto com o tamanho da vitória.
 
-  [bold][color=#2288ff]Xenoborg Major Victory![/color][/bold]
-  - There are more xenoborgs than alive crew in the end.
+  [bold][color=#2288ff]Vitória maior dos Xenoborgs![/color][/bold]
+  - Sobraram mais Xenoborgs do que tripulantes vivos no fim.
 
-  [bold][color=yellow]Crew Major Victory![/color][/bold]
-  - The Mothership Core is destroyed
-  - All xenoborgs are destroyed.
-  - The remaining number of xenoborgs is too low.
+  [bold][color=yellow]Vitória maior da tripulação![/color][/bold]
+  - O núcleo da nave-mãe foi destruído
+  - Todos os Xenoborgs foram destruídos.
+  - Sobraram Xenoborgs de menos.
 
 </Document>
