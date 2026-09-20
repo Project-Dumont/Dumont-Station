@@ -240,6 +240,7 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
+  - Coroner # Dumont
   # - Geneticist # Corvax-Wega-Genetics # Dumont - Geneticist -> Sci only
   - MedicalDoctor
   - MedicalIntern

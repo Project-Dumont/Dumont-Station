@@ -22,3 +22,29 @@
   - BitrunnerEnvirohelm
   - BitrunnerEnvirosuit
   - BitrunnerEnvirogloves
+
+- type: roleLoadout
+  id: JobCoroner
+  groups:
+  - GroupTankHarness
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - MedicalEyewear
+  - SurvivalMedical
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathToolMedical
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianShoes
+  - CivilianOuterClothing

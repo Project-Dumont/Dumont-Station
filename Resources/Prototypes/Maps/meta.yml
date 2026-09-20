@@ -126,6 +126,7 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 5, 5 ]
+            Coroner: [ 1, 1 ] # Dumont
             MedicalIntern: [ 3, 6 ]
             Paramedic: [ 1, 1 ]
             Virologist: [ 2, 2 ]
