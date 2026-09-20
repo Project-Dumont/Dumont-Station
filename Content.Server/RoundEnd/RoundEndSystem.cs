@@ -110,6 +110,13 @@ namespace Content.Server.RoundEnd
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
 
+        // Dumont changes start
+        /// <summary>
+        /// If the shuttle that is on the way can't be recalled.
+        /// </summary>
+        public bool CantRecall = false;
+        // Dumont end
+
         public override void Initialize()
         {
             base.Initialize();
@@ -140,6 +147,7 @@ namespace Content.Server.RoundEnd
             ExpectedCountdownEnd = null;
             SetAutoCallTime();
             _autoCalledBefore = false;
+            CantRecall = false; // Dumont
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
 
@@ -167,7 +175,7 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
-            return _cooldownTokenSource == null;
+            return _cooldownTokenSource == null && !CantRecall; // Dumont
         }
 
         public bool IsRoundEndRequested()
@@ -175,7 +183,7 @@ namespace Content.Server.RoundEnd
             return _countdownTokenSource != null;
         }
 
-        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "")
+        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "", bool cantRecall = false)
         {
             var duration = DefaultCountdownDuration;
 
@@ -190,13 +198,15 @@ namespace Content.Server.RoundEnd
                 }
             }
 
-            RequestRoundEnd(duration, requester, checkCooldown, text, name, hasReason, reason);
+            RequestRoundEnd(duration, requester, checkCooldown, text, name, hasReason, reason, cantRecall);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "")
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "", bool cantRecall = false)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
+
+            CantRecall = cantRecall; // Dumont
 
             if (checkCooldown && _cooldownTokenSource != null)
                 return;
@@ -269,9 +279,10 @@ namespace Content.Server.RoundEnd
             }
         }
 
-        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, string name = "comms-console-announcement-title-centcom")
+        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, string name = "comms-console-announcement-title-centcom", bool forceRecall = false)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
+            if (!forceRecall && CantRecall) return; // Dumont
             if (checkCooldown && _cooldownTokenSource != null) return;
 
             if (_countdownTokenSource == null) return;

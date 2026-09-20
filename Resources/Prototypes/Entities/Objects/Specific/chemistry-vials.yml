@@ -269,3 +269,19 @@
         reagents:
           - ReagentId: Plasma
             Quantity: 30 # Goobstation
+
+- type: entity
+  parent: BaseChemistryEmptyVial
+  id: XenoborgOilChemistryAmpoule
+  suffix: xenoborg oil
+  components:
+  - type: Label
+    currentLabel: reagent-name-xenoborg-oil
+  - type: ThrowingAngle
+    angle: 90
+    angularVelocity: true
+  - type: Solution
+    solution:
+      reagents:
+        - ReagentId: XenoborgOil
+          Quantity: 30
