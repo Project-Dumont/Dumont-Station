@@ -121,6 +121,7 @@
     - Sheet
     - Metal
     - Steel
+    - ConstructionMaterial # Dumont
 
 - type: entity
   parent: SheetSteel

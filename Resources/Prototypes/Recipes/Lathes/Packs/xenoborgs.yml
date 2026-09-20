@@ -1,6 +1,11 @@
 ## Static
 
 - type: latheRecipePack
+  id: XenoborgMachines
+  recipes:
+  - XenoborgExtractorRecipe
+
+- type: latheRecipePack
   id: EmptyXenoborgs
   recipes:
   - XenoborgEngiRecipe
@@ -28,8 +33,3 @@
   - XenoborgModuleBioKinfeRecipe
   # stealth xenoborg
   - XenoborgModuleSuperCloakDeviceRecipe
-
-- type: latheRecipePack
-  id: XenoborgMachines
-  recipes:
-  - XenoborgExtractorRecipe

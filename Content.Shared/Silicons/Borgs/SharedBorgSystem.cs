@@ -111,7 +111,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
     private void OnUIOpenAttempt(EntityUid uid, BorgChassisComponent component, ActivatableUIOpenAttemptEvent args)
     {
         // borgs can't view their own ui
-        if (args.User == uid)
+        if (args.User == uid && !component.CanOpenSelfUi) // Dumont
             args.Cancel();
     }
 
