@@ -44,6 +44,7 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 3, 3 ]
             MedicalDoctor: [ 6, 7 ]
+            Coroner: [ 1, 1 ] # Dumont
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 5 ]
             Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
