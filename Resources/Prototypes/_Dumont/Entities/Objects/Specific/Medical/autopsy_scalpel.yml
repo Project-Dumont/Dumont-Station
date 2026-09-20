@@ -4,6 +4,12 @@
   name: autopsy scalpel
   description: A scalpel with a wider blade, meant for the dead. Reading a body with it takes time and training.
   components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Medical/autopsy_scalpel.rsi
+    state: icon
+  - type: Item
+    sprite: _Dumont/Objects/Specific/Medical/autopsy_scalpel.rsi
+    storedRotation: 90
   - type: Scalpel
   - type: SurgeryTool
     startSound:

@@ -4,7 +4,7 @@
   description: job-description-coroner
   playTimeTracker: JobCoroner
   startingGear: CoronerGear
-  icon: "JobIconMedicalDoctor"
+  icon: "JobIconCoroner"
   supervisors: job-supervisors-cmo
   access:
   - Medical
