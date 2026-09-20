@@ -36,6 +36,8 @@
     ClothingBackpackMessengerMedical: 4 # Frontier
     ClothingUniformJumpsuitMedicalDoctor: 4
     ClothingUniformJumpskirtMedicalDoctor: 4
+    ClothingUniformJumpsuitCoroner: 2 # Dumont
+    ClothingHeadHatCoroner: 2 # Dumont
     ClothingBeltMedical: 4
     ClothingHeadHatBeretMedic: 4
     ClothingHeadNurseHat: 4

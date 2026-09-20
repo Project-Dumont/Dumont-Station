@@ -27,12 +27,12 @@
   id: JobCoroner
   groups:
   - GroupTankHarness
-  - MedicalDoctorHead
-  - MedicalMask
-  - MedicalDoctorJumpsuit
-  - MedicalGloves
+  - CoronerHead
+  - CoronerMask
+  - CoronerJumpsuit
+  - CoronerGloves
   - MedicalBackpack
-  - MedicalDoctorOuterClothing
+  - CoronerOuterClothing
   - MedicalShoes
   - MedicalDoctorPDA
   - MedicalEyewear
@@ -48,3 +48,6 @@
   - CivilianGloves
   - CivilianShoes
   - CivilianOuterClothing
+  - MedicalDoctorEnvirohelm
+  - MedicalDoctorEnvirosuit
+  - MedicalDoctorEnvirogloves

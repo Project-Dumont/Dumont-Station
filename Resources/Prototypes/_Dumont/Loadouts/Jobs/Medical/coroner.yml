@@ -1,0 +1,9 @@
+- type: loadout
+  id: CoronerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCoroner
+
+- type: loadout
+  id: CoronerHat
+  equipment:
+    head: ClothingHeadHatCoroner

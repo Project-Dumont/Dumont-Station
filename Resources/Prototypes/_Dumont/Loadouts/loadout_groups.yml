@@ -80,3 +80,50 @@
   maxLimit: 1
   loadouts:
   - BlackEnvirogloves
+
+# Medical
+- type: loadoutGroup
+  id: CoronerJumpsuit
+  name: loadout-group-coroner-jumpsuit
+  minLimit: 1
+  exclusiveWith: INNERCLOTHING
+  loadouts:
+  - CoronerJumpsuit
+  - MedicalDoctorJumpsuit
+  - MedicalDoctorJumpskirt
+  - MedicalBlueScrubs
+  - MedicalGreenScrubs
+  - MedicalPurpleScrubs
+
+- type: loadoutGroup
+  id: CoronerHead
+  name: loadout-group-coroner-head
+  minLimit: 0
+  loadouts:
+  - CoronerHat
+  - BlueSurgeryCap
+  - GreenSurgeryCap
+  - PurpleSurgeryCap
+
+- type: loadoutGroup
+  id: CoronerOuterClothing
+  name: loadout-group-coroner-outerclothing
+  minLimit: 1
+  loadouts:
+  - RegularLabCoat
+  - MedicalDoctorWintercoat
+
+- type: loadoutGroup
+  id: CoronerGloves
+  name: loadout-group-coroner-gloves
+  minLimit: 1
+  loadouts:
+  - LatexGloves
+  - NitrileGloves
+
+- type: loadoutGroup
+  id: CoronerMask
+  name: loadout-group-coroner-mask
+  minLimit: 1
+  loadouts:
+  - SterileMask

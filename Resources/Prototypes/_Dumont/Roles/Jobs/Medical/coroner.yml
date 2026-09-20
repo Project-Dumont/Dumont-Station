@@ -28,7 +28,7 @@
   id: CoronerChameleonOutfit
   job: Coroner
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    jumpsuit: ClothingUniformJumpsuitCoroner
     outerClothing: ClothingOuterCoatLab
     gloves: ClothingHandsGlovesLatex
     mask: ClothingMaskSterile
