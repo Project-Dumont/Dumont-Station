@@ -39,6 +39,10 @@ public sealed class ChameleonProjectorSystem : SharedChameleonProjectorSystem
     private void OnHandleState(Entity<ChameleonDisguiseComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         CopyComp<SpriteComponent>(ent);
+        // Dumont changes start
+        if (_spriteQuery.TryComp(ent, out var copied))
+            _sprite.ClearPostShaders(copied);
+        // Dumont end
         CopyComp<GenericVisualizerComponent>(ent);
         CopyComp<SolutionContainerVisualsComponent>(ent);
         CopyComp<BurnStateVisualsComponent>(ent);

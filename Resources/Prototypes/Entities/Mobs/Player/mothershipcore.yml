@@ -9,6 +9,7 @@
   - type: InputMover # needs this to pilot the mothership
   - type: BlockMovement # they should never be moving
     blockInteraction: false
+    blockUse: false
   - type: Appearance
   - type: WiresVisuals
   - type: Damageable
@@ -136,6 +137,7 @@
     nameOverride: MOTHERSHIP CORE
   - type: TypingIndicator
     proto: xenoborg
+  - type: Emoting
   - type: Speech
     speechVerb: Robotic
     speechSounds: Xenoborg
@@ -183,6 +185,7 @@
     disableExplosionRecursion: true
     canBeStripped: false
   - type: BorgChassis
+    canOpenSelfUi: true
     maxModules: 2
     hasMindState: core-e
     noMindState: core-e
