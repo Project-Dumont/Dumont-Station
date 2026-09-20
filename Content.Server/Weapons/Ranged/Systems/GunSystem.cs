@@ -169,7 +169,6 @@ using Content.Shared._Lavaland.Weapons.Ranged.Events;
 using Content.Shared.Interaction.Events;
 using Content.Shared.DoAfter;
 using Content.Server.Spawners.Components;
-using MathNet.Numerics;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -194,7 +193,6 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     private const float DamagePitchVariation = 0.05f;
