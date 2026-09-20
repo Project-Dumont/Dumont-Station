@@ -573,6 +573,17 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             var playerXform = Transform(player);
             var pos = RobustRandom.Pick(getPosEv.Coordinates);
             _transform.SetMapCoordinates((player, playerXform), pos);
+
+            // Dumont changes start
+            if (!playerXform.Anchored
+                && playerXform.GridUid != null
+                && MetaData(player).EntityPrototype is { } antagProto
+                && antagProto.TryGetComponent<TransformComponent>(out var protoXform, EntityManager.ComponentFactory)
+                && protoXform.Anchored)
+            {
+                _transform.AnchorEntity((player, playerXform));
+            }
+            // Dumont end
         }
 
         // If we want to just do a ghost role spawner, set up data here and then return early.
