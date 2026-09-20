@@ -385,3 +385,8 @@ ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your ma
 
 ghost-role-information-emotional-support-scurret-name = Emotional Support Scurret
 ghost-role-information-emotional-support-scurret-description = Support the crew, be adorable, say "wa" a lot.
+
+ghost-role-information-mothership-core-name = Mothership Core
+ghost-role-information-mothership-core-desc = You are the core of the xenoborg mothership, help them multiply by borging any brain they bring to you.
+ghost-role-information-xenoborg-name = Xenoborg
+ghost-role-information-xenoborg-desc = A strange cyborg made to replicate itself and take over the station by turning any sentient being into xenoborgs.

@@ -38,6 +38,20 @@
     {
       "name": "equipped-BELT",
       "directions": 4
+    },
+    {
+      "name": "xorg_jaws_pry"
+    },
+    {
+      "name": "xorg_jaws_cutter"
+    },
+    {
+      "name": "xorg_inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "xorg_inhand-right",
+      "directions": 4
     }
   ]
 }
