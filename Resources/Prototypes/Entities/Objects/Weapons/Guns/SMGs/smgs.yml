@@ -169,9 +169,7 @@
     fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    fireOnDropChance: 0.3
-    averageShotsBeforeJamming: 44
-    timeToUnjam: 2
+    quality: 600 # Rare, therefore good
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -208,9 +206,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
-    averageShotsBeforeJamming: 37
-    timeToUnjam: 4
-    fireOnDropChance: 0.3
+    quality: 510 # Syndi weaponry pretty good
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -258,8 +254,7 @@
       - SemiAuto
       shotsPerBurst: 3
       burstCooldown: 0.375
-      averageShotsBeforeJamming: 50
-      timeToUnjam: 3
+      quality: 500 # Modern, high capacity
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -319,7 +314,7 @@
     availableModes:
     - FullAuto
     - SemiAuto
-    averageShotsBeforeJamming: 33
+    quality: 330 # High shoot, but somewhat low quality
     timeToUnjam: 2.6
   - type: ItemSlots
     slots:

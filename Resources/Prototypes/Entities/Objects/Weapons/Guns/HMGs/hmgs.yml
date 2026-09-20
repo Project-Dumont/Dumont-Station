@@ -147,7 +147,7 @@
     fireRate: 15
     minAngle: 80
     maxAngle: 200
-    averageShotsBeforeJamming: 60
+    quality: 1300 # Minigun is high firerate
     timeToUnjam: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/minigun.ogg

@@ -227,19 +227,6 @@ public abstract partial class SharedGunSystem : EntitySystem
             HasComp<ItemComponent>(user))
             return;
 
-        // This checks to see if a gun is jammed. If it is, send an event with the uid of the weapon
-        // the user that shot, and the component of the gun to the server; EA.
-        if (HasComp<JammedGunComponent>(ent))
-        {
-            RaiseLocalEvent(ent, new TryFireJammedWeapon(ent, user, gun));
-
-            // Need to do this, or else the RequestStopShootEvent doesn't work.
-            // The network tingy seems to reset the shot counter to 0 in the gun component.
-            gun.ShotCounter++;
-
-            return;
-        }
-
         if (ent != GetEntity(msg.Gun))
             return;
 
@@ -271,12 +258,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         if (ent != gunUid)
             return;
-
-        if (TryComp<JammedGunComponent>(gunUid, out JammedGunComponent? jamComp))
-        {
-            Log.Debug("Stopped firing jammed weapon");
-            jamComp.isNotHeldDown = true;
-        }
 
         StopShooting(gunUid, gun);
     }
@@ -464,10 +445,13 @@ public abstract partial class SharedGunSystem : EntitySystem
                 default:
                     throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.SelectedMode}!");
             }
-        } else
+        }
+        else
         {
             shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
         }
+
+
 
         var attemptEv = new AttemptShootEvent(user, null);
         RaiseLocalEvent(gunUid, ref attemptEv);

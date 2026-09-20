@@ -243,6 +243,9 @@
   - type: Sharp
     butcherDelayModifier: 2 #It's a bayonet
   - type: GunRequiresWield
+  - type: Gun
+    quality: 0 # Can't jam
+    timeToUnjam: 0
   - type: StaticPrice
     price: 500
   - type: Item  # Goob edit
@@ -271,8 +274,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     resetOnHandSelected: false # Goobstation - quickscope pro
-    averageShotsBeforeJamming: 29
-    timeToUnjam: 2
+    quality: 320 # Dumont - You don't shoot this much
+    timeToUnjam: 0.6
   #- type: BallisticAmmoProvider - Goobstation - Magazine Sniper
   #  whitelist:
   #    tags:
@@ -307,9 +310,6 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    fireOnDropChance: 1
-    averageShotsBeforeJamming: 100
-    timeToUnjam: 5
   - type: UseDelayOnShoot
   - type: UseDelay
     delay: 8 #it's a musket
@@ -331,7 +331,6 @@
   #   path: /Audio/Weapons/bladeslice.ogg
   - type: GunRequiresWield
 
-# Why the hell is this under snipers?? - SkySnowFlok
 - type: entity
   name: flintlock pistol
   parent: [BaseWeaponSniper, BaseMajorContraband]
@@ -341,9 +340,6 @@
   - type: Gun
     minAngle: 0
     maxAngle: 30 #miss him entirely because the barrel is smoothbore
-    averageShotsBeforeJamming: 7
-    timeToUnjam: 5.6
-    fireOnDropChance: 1
   - type: Item
     size: Small
     shape:

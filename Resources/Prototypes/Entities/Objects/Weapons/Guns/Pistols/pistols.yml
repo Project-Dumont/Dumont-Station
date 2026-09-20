@@ -252,9 +252,7 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
-    fireOnDropChance: 0.3
-    averageShotsBeforeJamming: 60
-    timeToUnjam: 1.7
+    quality: 600
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     layers:
@@ -300,8 +298,7 @@
       params:
         volume: -14
     projectileSpeed: 35 # Goobstation
-    averageShotsBeforeJamming: 80
-    timeToUnjam: 2.3
+    quality: 800
     availableModes:
     - SemiAuto
   - type: ItemSlots
@@ -379,8 +376,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg # Goob edit
-    fireOnDropChance: 0.6
-    averageShotsBeforeJamming: 120
+    quality: 1200 # Elite, also maybe an alusion to an m1911?
     timeToUnjam: 0.5
   - type: ItemSlots
     slots:

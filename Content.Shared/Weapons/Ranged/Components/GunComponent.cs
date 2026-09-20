@@ -48,13 +48,22 @@ public sealed partial class GunComponent : Component
 
     #region Jamming
 
+    /// <summary>
+    /// The quality of a weapon, determines how hard it is to jam.
+    /// Every shot, the weapon rolls with a change of 1/quality in order to jam.
+    /// 0 meaning that its impossible to jam, and 1 meaning that it always jam.
+    /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public int averageShotsBeforeJamming = 20;
+    public int Quality = 20;
 
+    /// <summary>
+    /// The time it takes to unjam a weapon, if applicable.
+    /// Quality must be > 1
+    /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public double timeToUnjam = 2;
+    public TimeSpan TimeToUnjam = TimeSpan.FromSeconds(0);
 
     #endregion
 
@@ -79,7 +88,7 @@ public sealed partial class GunComponent : Component
     /// <summary>
     /// Sound played when toggling the <see cref="SelectedMode"/> for this gun.
     /// </summary>
-
+    [DataField]
     public SoundSpecifier? SoundMode = new SoundPathSpecifier("/Audio/Weapons/Guns/Misc/selector.ogg");
 
     #endregion

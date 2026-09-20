@@ -176,8 +176,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    fireOnDropChance: 0.3
-    averageShotsBeforeJamming: 44
+    quality: 440 # Its pretty ok
     timeToUnjam: 2
   - type: Wieldable
   - type: ItemSlots
@@ -263,8 +262,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1.7 # Goobstation
-    averageShotsBeforeJamming: 100
-    timeToUnjam: 1
+    quality: 1000 # Premium
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -292,8 +290,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     # fireRate: 1 # goob
-    averageShotsBeforeJamming: 26
-    timeToUnjam: 2
+    quality: 260 # Old
+    timeToUnjam: 0.3
   - type: GunSpreadModifier
     spread: 0.6
   - type: Tag
@@ -319,10 +317,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
     fireRate: 4
-    fireOnDropChance: 0.5
-    shotgunSpreadMultiplier: 3
-    damageModifier: 1.5
-    averageShotsBeforeJamming: 24
+    quality: 240
     timeToUnjam: 0.6
   - type: GunSpreadModifier
     spread: 1.4
@@ -361,8 +356,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
-    fireOnDropChance: 1
-    averageShotsBeforeJamming: 12
+    quality: 120 # Shitty
     timeToUnjam: 1
   - type: BallisticAmmoProvider
     capacity: 1
@@ -389,9 +383,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
-    fireOnDropChance: 1
-    averageShotsBeforeJamming: 16
-    timeToUnjam: 4.1
+    quality: 160 # Shitty
+    timeToUnjam: 2.1 # Its a goddamn blunderbuss
   - type: BallisticAmmoProvider
     capacity: 1
   - type: StaticPrice
@@ -415,9 +408,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
-    fireOnDropChance: 1
-    averageShotsBeforeJamming: 10
-    timeToUnjam: 1.6
+    quality: 100 # Improvised
+    timeToUnjam: 1.1
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null

@@ -4,4 +4,4 @@ using Content.Shared.DoAfter;
 namespace Content.Shared.Weapons.Ranged.Events;
 
 [Serializable, NetSerializable]
-public sealed partial class UnjamDoAfterEvent : SimpleDoAfterEvent { }
+public sealed partial class UnjamDoAfterEvent : SimpleDoAfterEvent {}

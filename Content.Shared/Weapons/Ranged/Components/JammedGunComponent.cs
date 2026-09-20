@@ -12,7 +12,5 @@ namespace Content.Shared.Weapons.Ranged.Components;
 public sealed partial class JammedGunComponent : Component
 {
     [DataField]
-    public bool isNotHeldDown = false;
-    [DataField]
-    public SoundSpecifier? SoundEmpty = new SoundPathSpecifier("/Audio/Weapons/Guns/Empty/empty.ogg");
+    public SoundSpecifier? SoundJammed = new SoundPathSpecifier("/Audio/Weapons/Guns/Empty/empty.ogg");
 }

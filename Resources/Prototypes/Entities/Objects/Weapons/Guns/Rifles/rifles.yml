@@ -176,8 +176,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
-    fireOnDropChance: 0.5
-    averageShotsBeforeJamming: 100
+    quality: 890 # Its an AK
     timeToUnjam: 7
   - type: ChamberMagazineAmmoProvider
     boltClosed: null # Goobstation
@@ -211,6 +210,16 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: AKM
+  id: AKDebugQuality
+  parent: WeaponRifleAk
+  suffix: Low Quality, Debug
+  components:
+    - type: Gun
+      quality: 10
+      timeToUnjam: 2
 
 - type: entity
   name: M-90GL # Goobstation
@@ -257,8 +266,7 @@
   - type: Appearance
   - type: Gun
     fireRate: 6
-    averageShotsBeforeJamming: 57
-    timeToUnjam: 5
+    quality: 700 # Made by a s syndie corpo
 
 
 - type: entity
@@ -280,8 +288,7 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
-    fireOnDropChance: 0.2
-    averageShotsBeforeJamming: 43
+    quality: 570 # Military grade
     timeToUnjam: 4
   - type: ItemSlots
     slots:
@@ -404,19 +411,5 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    averageShotsBeforeJamming: 100
-    timeToUnjam: 2
     clumsyProof: true
   - type: PacifismAllowedGun
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 0 # Krillions must bubble-wrap the foam rifle
-    soundHit:
-      collection: ToySqueak
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 0
-  - type: DamageOtherOnHit
-    staminaCost: 3.5

@@ -142,8 +142,8 @@
       shader: unshaded
   - type: Gun
     fireRate: 2.5 # Goobstation
-    averageShotsBeforeJamming: 200
-    timeToUnjam: 10
+    quality: 2000 # The fanciest of revolvers
+    timeToUnjam: 2.8 # If this ever jams, good luck unjamming it
   - type: RevolverAmmoProvider
     capacity: 5
     chambers: [ True, True, True, True, True ]
@@ -171,8 +171,8 @@
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
   - type: Gun
-    averageShotsBeforeJamming: 40
-    timeToUnjam: 3
+    quality: 400 # Decent detective gun
+    timeToUnjam: 0.3
 
 - type: entity
   name: Mateba
@@ -188,8 +188,8 @@
     fireRate: 4 # Goob edit
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-    averageShotsBeforeJamming: 100
-    timeToUnjam: 1.4
+    quality: 1000 # Damn good reolver
+    timeToUnjam: 0.8
   - type: RevolverAmmoProvider
     whitelist:
       tags:
@@ -225,8 +225,8 @@
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2.5 # Goobstation
-    averageShotsBeforeJamming: 50
-    timeToUnjam: 1.3
+    quality: 500
+    timeToUnjam: 0.8
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -261,9 +261,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
   - type: Gun
     fireRate: 1
-    fireOnDropChance: 1
-    averageShotsBeforeJamming: 17
-    timeToUnjam: 2
+    quality: 170 # Shitty
   - type: ContainerContainer
     containers:
       revolver-ammo: !type:Container
