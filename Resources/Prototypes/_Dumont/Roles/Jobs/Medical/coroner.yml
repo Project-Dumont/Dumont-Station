@@ -6,6 +6,9 @@
   startingGear: CoronerGear
   icon: "JobIconCoroner"
   supervisors: job-supervisors-cmo
+  guides:
+  - Coroner
+  - Medical
   goobcoins: 20
   salary: 50
   access:

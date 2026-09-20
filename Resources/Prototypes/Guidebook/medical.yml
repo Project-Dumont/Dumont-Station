@@ -31,6 +31,7 @@
   - MedicalPatches # Fix for Medicine Patches
   - Genetic # Corvax-Wega-Genetics
   - Virology # Goobstation
+  - Coroner # Dumont
 
 - type: guideEntry
   id: MedicalDoctor
