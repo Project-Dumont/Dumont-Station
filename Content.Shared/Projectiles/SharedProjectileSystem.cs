@@ -54,6 +54,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Timing;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -64,6 +65,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 {
     public const string ProjectileFixture = "projectile";
 
+    [Dependency] private readonly IGameTiming _timing = default!; // Dumont
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
@@ -170,8 +172,10 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         EnsureComp<EmbeddedContainerComponent>(target, out var embeddedContainer);
 
-        //Assert that this entity not embed
-        DebugTools.AssertEqual(embeddedContainer.EmbeddedObjects.Contains(uid), false);
+        // Dumont changes start
+        if (embeddedContainer.EmbeddedObjects.Contains(uid) && _timing.IsFirstTimePredicted)
+            Log.Warning($"Entity {ToPrettyString(uid)} was not supposed to be embedded into {ToPrettyString(target)}!");
+        // Dumont end
 
         embeddedContainer.EmbeddedObjects.Add(uid);
     }
