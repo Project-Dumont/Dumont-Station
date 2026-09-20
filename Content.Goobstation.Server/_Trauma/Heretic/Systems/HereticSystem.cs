@@ -76,7 +76,9 @@ public sealed partial class HereticSystem : SharedHereticSystem
     [Dependency] private EntityQuery<HereticMinionComponent> _minionQuery = default!;
     [Dependency] private EntityQuery<HereticActionComponent> _hereticActionQuery = default!;
     [Dependency] private EntityQuery<ChangeUseDelayOnAscensionComponent> _changeUseDelayQuery = default!;
-    [Dependency] private EntityQuery<HumanoidProfileComponent> _humanoidQuery = default!;
+    // Dumont start
+    [Dependency] private EntityQuery<HumanoidAppearanceComponent> _humanoidQuery = default!;
+    // Dumont end
     [Dependency] private EntityQuery<HereticSacrificeTargetComponent> _targetQuery = default!;
 
     private float _timer;

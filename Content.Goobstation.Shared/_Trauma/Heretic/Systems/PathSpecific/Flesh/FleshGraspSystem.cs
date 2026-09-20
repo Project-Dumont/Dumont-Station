@@ -81,7 +81,7 @@ public sealed partial class FleshGraspSystem : EntitySystem
             return;
         }
 
-        if (!_actions.TryGetActionById(mind, MansusGraspAction, out var action))
+        if (!_actions.TryGetActionById(user, MansusGraspAction, out var action))
         {
             RefreshUi();
             return;

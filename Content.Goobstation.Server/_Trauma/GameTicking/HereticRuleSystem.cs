@@ -171,7 +171,10 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
                 continue;
 
             rule.HasAHereticAscended = true;
-            _ticker.StartGameRule(rule.ERTEvent);
+            // Dumont start
+            if (rule.ERTEvent is { } ertEvent)
+                _ticker.StartGameRule(ertEvent);
+            // Dumont end
             break;
         }
     }

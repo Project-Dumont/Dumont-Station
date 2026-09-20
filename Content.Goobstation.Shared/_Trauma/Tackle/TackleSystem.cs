@@ -44,6 +44,9 @@ namespace Content.Trauma.Shared.Tackle;
 
 public sealed partial class TackleSystem : EntitySystem
 {
+    // Dumont start
+    [Dependency] private InventorySystem _inventory = default!;
+    // Dumont end
     [Dependency] private ISerializationManager _serMan = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private StandingStateSystem _standing = default!;
@@ -77,6 +80,10 @@ public sealed partial class TackleSystem : EntitySystem
         SubscribeLocalEvent<TackleModifierComponent, BeingUnequippedAttemptEvent>(OnUnequipAttempt);
 
         Subs.SubscribeWithRelay<TackleModifierComponent, TackleEvent>(OnTackle, held: false);
+        // Dumont start
+        SubscribeLocalEvent<InventoryComponent, TackleEvent>(_inventory.RelayEvent);
+        SubscribeLocalEvent<InventoryComponent, CalculateTackleModifierEvent>(_inventory.RelayEvent);
+        // Dumont end
 
         InitializeModifiers();
     }

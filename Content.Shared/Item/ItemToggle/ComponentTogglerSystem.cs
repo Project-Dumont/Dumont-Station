@@ -9,6 +9,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Item.ItemToggle.Components;
+// Dumont start
+using Robust.Shared.Timing;
+// Dumont end
 
 namespace Content.Shared.Item.ItemToggle;
 
@@ -17,6 +20,9 @@ namespace Content.Shared.Item.ItemToggle;
 /// </summary>
 public sealed class ComponentTogglerSystem : EntitySystem
 {
+    // Dumont start
+    [Dependency] private readonly IGameTiming _timing = default!;
+    // Dumont end
     public override void Initialize()
     {
         base.Initialize();
@@ -32,6 +38,10 @@ public sealed class ComponentTogglerSystem : EntitySystem
     // Goobstation - Make this system more flexible
     public void ToggleComponent(EntityUid uid, bool activate)
     {
+        // Dumont start
+        if (_timing.ApplyingState)
+            return;
+        // Dumont end
         if (!TryComp<ComponentTogglerComponent>(uid, out var component))
             return;
 
@@ -45,6 +55,9 @@ public sealed class ComponentTogglerSystem : EntitySystem
 
             component.Target = target;
 
+            // Dumont start
+            EntityManager.RemoveComponents(target, component.DeactivateComponents);
+            // Dumont end
             EntityManager.AddComponents(target, component.Components);
         }
         else
@@ -56,6 +69,9 @@ public sealed class ComponentTogglerSystem : EntitySystem
                 return;
 
             EntityManager.RemoveComponents(component.Target.Value, component.RemoveComponents ?? component.Components);
+            // Dumont start
+            EntityManager.AddComponents(component.Target.Value, component.DeactivateComponents);
+            // Dumont end
         }
     }
 }

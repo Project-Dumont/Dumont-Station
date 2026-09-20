@@ -31,6 +31,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: ReflectiveSurface
   - type: Sprite
     sprite: Structures/Wallmounts/mirror.rsi
     state: mirror

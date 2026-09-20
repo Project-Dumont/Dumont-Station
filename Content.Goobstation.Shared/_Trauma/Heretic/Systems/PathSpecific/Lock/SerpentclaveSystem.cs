@@ -160,8 +160,10 @@ public sealed partial class SerpentclaveSystem : EntitySystem
 
         var status = EnsureComp<StatusEffectsComponent>(ent);
 
-        if (!status.AllowedEffects.Contains("Jitter"))
-            status.AllowedEffects.Add("Jitter");
+        // Dumont start
+        if (status.AllowedEffects is { } allowed && !allowed.Contains("Jitter"))
+            allowed.Add("Jitter");
+        // Dumont end
 
         _jitter.DoJitter(ent, ent.Comp.JitterTime, false, status: status);
     }
@@ -276,8 +278,10 @@ public sealed partial class SerpentclaveSystem : EntitySystem
             return;
         }
 
-        if (!_door.TryOpen(ent))
+        // Dumont start
+        if (door.State != DoorState.Opening && !_door.TryOpen(ent))
             return;
+        // Dumont end
 
         if (ent.Comp.GrappleTarget != null)
             return;

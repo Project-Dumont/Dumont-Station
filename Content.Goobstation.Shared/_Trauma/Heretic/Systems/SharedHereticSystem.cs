@@ -208,7 +208,9 @@ public abstract partial class SharedHereticSystem : EntitySystem
             if (ent.Comp.ChosenRitual == ritual)
                 ent.Comp.ChosenRitual = null;
 
-            Container.Remove(ritual, ent.Comp.RitualContainer);
+            // Dumont start
+            Container.Remove(ritual, ent.Comp.RitualContainer, reparent: false);
+            // Dumont end
             PredictedQueueDel(ritual);
         }
 

@@ -22,7 +22,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -149,10 +149,10 @@
         splitEntitiesKey: Split
         ingredients:
         - whitelist:
-            requireAll: true
             components:
             - Organ
-            - Edible
+            - BodyPart
+          requireFood: true
           name: heretic-ritual-ingredient-organ
         - whitelist:
             tags:
@@ -371,7 +371,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -533,7 +533,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -722,7 +722,7 @@
           - Ghoul
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -906,7 +906,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -1074,7 +1074,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -1235,7 +1235,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -1406,7 +1406,7 @@
         whitelist:
           requireAll: true
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
           - StarMark
       - !type:MobStateCondition
         mobstate: Alive
@@ -1712,7 +1712,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -2350,7 +2350,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
       - !type:MobStateCondition
         mobstate: Alive
         inverted: true
@@ -2447,7 +2447,7 @@
       - !type:WhitelistCondition
         whitelist:
           components:
-          - HumanoidProfile
+          - HumanoidAppearance
         blacklist:
           components:
           - Ghoul
@@ -2616,10 +2616,10 @@
             - Pda
           name: heretic-ritual-ingredient-pda
         - whitelist:
-            requireAll: true
             components:
             - Organ
-            - Edible
+            - BodyPart
+          requireFood: true
           name: heretic-ritual-ingredient-organ
     - !type:EffectsRitualEffect
       applyOn: Delete
@@ -2778,7 +2778,8 @@
         ingredients:
         - whitelist:
             components:
-            - HandOrgan
+            - BodyPart
+          partType: Hand
           name: heretic-ritual-ingredient-hand
           amount: 2
         - whitelist:

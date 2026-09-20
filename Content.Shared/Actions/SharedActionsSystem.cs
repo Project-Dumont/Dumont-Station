@@ -675,6 +675,11 @@ public abstract class SharedActionsSystem : EntitySystem
         if (!action.Comp.RaiseOnUser && action.Comp.Container is {} container && !_mindQuery.HasComp(container))
             target = container;
 
+        // Dumont start
+        if (action.Comp.RaiseOnAction)
+            target = action.Owner;
+        // Dumont end
+
         RaiseLocalEvent(target, (object) ev, broadcast: true);
         handled = ev.Handled;
 

@@ -248,7 +248,9 @@ public sealed partial class HereticCurseSystem : SharedHereticCurseSystem
         if (dnaDict.Count == 0)
             return set;
 
-        var query = EntityQueryEnumerator<DnaComponent, HumanoidProfileComponent, MobStateComponent>();
+    // Dumont start
+        var query = EntityQueryEnumerator<DnaComponent, HumanoidAppearanceComponent, MobStateComponent>();
+    // Dumont end
         while (query.MoveNext(out var uid, out var dna, out _, out var mobState))
         {
             if (uid == user || dna.DNA == null)

@@ -130,7 +130,7 @@
     - type: HereticArenaParticipant
     participantWhitelist:
       components:
-      - HumanoidProfile
+      - HumanoidAppearance
     participantBlacklist:
       components:
       - Ghoul

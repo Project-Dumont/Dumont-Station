@@ -138,18 +138,15 @@ public sealed partial class CarvingKnifeSystem : EntitySystem
 
         var netUser = GetNetEntity(ent.Comp.User.Value);
         var coords = GetNetCoordinates(Transform(ent).Coordinates);
-        var coordsLoc = Loc.GetString("alert-carving-trigger-message-coords",
-            ("uid", coords.NetEntity.Id),
-            ("x", coords.X),
-            ("y", coords.Y));
+        var coordsLoc = FormattableString.Invariant($"{coords.NetEntity.Id}, {coords.X:R}, {coords.Y:R}");
 
         var location = FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString(ent.Owner));
         var message = Loc.GetString("alert-carving-trigger-message",
             ("victim", args.Victim),
             ("location", location),
-            ("timer", ent.Comp.TeleportDelay),
+            ("timer", ent.Comp.TeleportDelay.ToString(System.Globalization.CultureInfo.InvariantCulture)),
             ("id", CarvingAlertedStatusEffectComponent.Id),
-            ("uid", netUser.Id),
+            ("uid", netUser.Id.ToString(System.Globalization.CultureInfo.InvariantCulture)),
             ("coords", coordsLoc));
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
         _chat.ChatMessageToOne(ChatChannel.Server,

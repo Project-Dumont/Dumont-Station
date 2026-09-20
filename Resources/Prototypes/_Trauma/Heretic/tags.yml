@@ -84,3 +84,9 @@
 
 - type: Tag
   id: WoodPlank
+
+- type: Tag
+  id: AirlockAssembly
+
+- type: Tag
+  id: Directional

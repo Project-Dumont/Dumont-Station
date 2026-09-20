@@ -33,6 +33,10 @@ public sealed class TileEntityEffectSystem : EntitySystem
 
         foreach (var effect in ent.Comp.Effects)
         {
+            // Dumont start
+            if (!effect.ShouldApply(effectArgs))
+                continue;
+            // Dumont end
             _effect.Effect(effect, effectArgs); // goob edit - use system instead
         }
     }

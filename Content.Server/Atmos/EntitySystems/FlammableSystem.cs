@@ -660,8 +660,15 @@ namespace Content.Server.Atmos.EntitySystems
                     // If we're in an oxygenless environment, put the fire out.
                     if (air == null || air.GetMoles(Gas.Oxygen) < 1f)
                     {
-                        Extinguish(uid, flammable);
-                        continue;
+                        // Dumont start
+                        var spaceEvent = new Content.Trauma.Common.Heretic.ShouldExtinguishInSpaceEvent();
+                        RaiseLocalEvent(uid, ref spaceEvent);
+                        if (!spaceEvent.Cancelled)
+                        {
+                            Extinguish(uid, flammable);
+                            continue;
+                        }
+                        // Dumont end
                     }
 
                     var source = EnsureComp<IgnitionSourceComponent>(uid);
@@ -684,7 +691,12 @@ namespace Content.Server.Atmos.EntitySystems
                     if (multiplier > 0f && !_spellblade.IsHoldingItemWithComponent<FireSpellbladeEnchantmentComponent>(uid)) // Goob edit
                         _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * multiplier, interruptsDoAfters: false, targetPart: TargetBodyPart.All, partMultiplier: 2f); // Lavaland: Nerf fire delimbing
 
-                    AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable, flammable.OnFire);
+                    // Dumont start
+                    var fadeEvent = new Content.Trauma.Common.Heretic.GetFirestackPassiveModifierEvent(
+                        flammable.OnFire, flammable.Resisting, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f));
+                    RaiseLocalEvent(uid, ref fadeEvent);
+                    AdjustFireStacks(uid, fadeEvent.Modifier, flammable, flammable.OnFire);
+                    // Dumont end
                 }
                 else
                 {

@@ -118,6 +118,6 @@
       components: []
     targetedEntityWhitelist:
       components:
-      - HumanoidProfile
+      - HumanoidAppearance
       - BorgChassis
   - type: AlertCarving

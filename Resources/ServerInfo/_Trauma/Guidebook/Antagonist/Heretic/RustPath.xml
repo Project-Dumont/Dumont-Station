@@ -23,67 +23,78 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### Blacksmith's Tale
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Blacksmith's Tale</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Trash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a rusty blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Trash
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Rust</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can destroy most things non-living. It can also rust tiles or walls.</Box></ColorBox>
+  Creates a rusty blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Rust</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the rust mark, making victims vomit uncontrollably.</Box></ColorBox>
+  ### Grasp of Rust
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aggressive Spread</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Spreads rust in a large area around you.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rust Construction</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Raises a wall of rust out of any rusted tile, knocking heathens away.</Box></ColorBox>
+  Your grasp can destroy most things non-living. It can also rust tiles or walls.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Entropic Plume</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sends out a wave of rust, blinding, poisoning, and forcing anyone caught in it to attack nearby non-heretics. Also spreads rust.</Box></ColorBox>
+  ### Mark of Rust
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Toxic Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now deals toxic damage and rots corpses it hits. Additionally, your grasp can now break reinforced walls.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rust Charge</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Charges from a rusted tile, rusting any tile you come across, destroying walls, and hurting people.</Box></ColorBox>
+  Your grasp will now apply the rust mark, making victims vomit uncontrollably.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rustbringer's Oath</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three rotten or silicon corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust spread from your ritual rune. Your rust healing is even stronger.</Box></ColorBox>
-  </Table>
+  ### Aggressive Spread
+
+  Ingredients/Type: Active Ability
+
+  Spreads rust in a large area around you.
+
+  ### Rust Construction
+
+  Ingredients/Type: Active Ability
+
+  Raises a wall of rust out of any rusted tile, knocking heathens away.
+
+  ### Entropic Plume
+
+  Ingredients/Type: Active Ability
+
+  Sends out a wave of rust, blinding, poisoning, and forcing anyone caught in it to attack nearby non-heretics. Also spreads rust.
+
+  ### Toxic Blade
+
+  Ingredients/Type: Passive Ability
+
+  Your blade now deals toxic damage and rots corpses it hits. Additionally, your grasp can now break reinforced walls.
+
+  ### Rust Charge
+
+  Ingredients/Type: Active Ability
+
+  Charges from a rusted tile, rusting any tile you come across, destroying walls, and hurting people.
+
+  ### Rustbringer's Oath
+
+  Ingredients/Type: Three rotten or silicon corpses
+
+  Rust spread from your ritual rune. Your rust healing is even stronger.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Standing on rust grants you regeneration, chem resistance, and stun resistance.</ColorBox>
+  Standing on rust grants you regeneration, chem resistance, and stun resistance.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Salvaged Remains</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Much greater resistances and tackle immunity when standing on rust.</Box></ColorBox>
+  ### Salvaged Remains
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust heals your bones. Healing increased.</Box></ColorBox>
+  Much greater resistances and tackle immunity when standing on rust.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust restores your lost body parts. Healing increased.</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Rust heals your bones. Healing increased.
+
+  ### T3 Passive
+
+  Rust restores your lost body parts. Healing increased.
 
 
   ## Tips

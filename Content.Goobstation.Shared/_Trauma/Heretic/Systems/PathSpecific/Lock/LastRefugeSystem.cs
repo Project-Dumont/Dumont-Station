@@ -45,7 +45,9 @@ public sealed partial class LastRefugeSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedStealthSystem _stealth = default!;
 
-    private readonly HashSet<Entity<HumanoidProfileComponent>> _lookupHumanoid = new();
+    // Dumont start
+    private readonly HashSet<Entity<HumanoidAppearanceComponent>> _lookupHumanoid = new();
+    // Dumont end
 
     public override void Initialize()
     {

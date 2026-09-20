@@ -28,7 +28,13 @@ public sealed partial class ReagentsEntityConditionSystem : EntityConditionSyste
         if (!_sol.TryGetSolution(entity.Owner, entity.Comp.SolutionName, out _, out var sol))
             return;
 
-        var quant = sol.GetTotalPrototypeQuantity(Array.ConvertAll(args.Condition.Reagents, reagent => reagent.Id));
+        // Dumont start
+        var reagents = new string[args.Condition.Reagents.Length];
+        for (var i = 0; i < reagents.Length; i++)
+            reagents[i] = args.Condition.Reagents[i].Id;
+
+        var quant = sol.GetTotalPrototypeQuantity(reagents);
+        // Dumont end
 
         args.Result = quant > args.Condition.Min && quant < args.Condition.Max;
     }

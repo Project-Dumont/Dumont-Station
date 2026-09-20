@@ -20,67 +20,78 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### Glimmer of Winter
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Glimmer of Winter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Cold atmosphere</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a void blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Cold atmosphere
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Void</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will mute and chill victims.</Box></ColorBox>
+  Creates a void blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Void</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the void mark, freezing, muting, and applying void chill your target when activated.</Box></ColorBox>
+  ### Grasp of Void
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Phase</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Teleports you to the target destination, damaging and muting nearby creatures.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Prison</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Locks your target in a frozen ball, making them unable to act, speak, or be damaged. Applies a void chill when they thaw.</Box></ColorBox>
+  Your grasp will mute and chill victims.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Pull</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Pulls nearby heathens towards you, knocking them over, damaging, and applying void chill to them.</Box></ColorBox>
+  ### Mark of Void
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Seeking Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now freezes and applies void chill to enemies, as well as allowing you to teleport next to them by clicking them.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Conduit</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a void conduit that periodically pulses; breaking airlocks and windows, applying void chill to heathens, and granting heretics immunity to low pressures. Has a maximum of 1 charge, rechargeable by breaking heretic blade.</Box></ColorBox>
+  Your grasp will now apply the void mark, freezing, muting, and applying void chill your target when activated.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Waltz at the End of Time</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three corpses in a cold atmosphere</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a winter storm on the station. Everything around you gets frozen and cursed by void chill. All your spell cooldowns are halved. You get full pressure and temperature immunity as well as thermal and night vision. You waltz in air at quickened speed.</Box></ColorBox>
-  </Table>
+  ### Void Phase
+
+  Ingredients/Type: Active Ability
+
+  Teleports you to the target destination, damaging and muting nearby creatures.
+
+  ### Void Prison
+
+  Ingredients/Type: Active Ability
+
+  Locks your target in a frozen ball, making them unable to act, speak, or be damaged. Applies a void chill when they thaw.
+
+  ### Void Pull
+
+  Ingredients/Type: Active Ability
+
+  Pulls nearby heathens towards you, knocking them over, damaging, and applying void chill to them.
+
+  ### Seeking Blade
+
+  Ingredients/Type: Passive Ability
+
+  Your blade now freezes and applies void chill to enemies, as well as allowing you to teleport next to them by clicking them.
+
+  ### Void Conduit
+
+  Ingredients/Type: Active Ability
+
+  Summons a void conduit that periodically pulses; breaking airlocks and windows, applying void chill to heathens, and granting heretics immunity to low pressures. Has a maximum of 1 charge, rechargeable by breaking heretic blade.
+
+  ### Waltz at the End of Time
+
+  Ingredients/Type: Three corpses in a cold atmosphere
+
+  Summons a winter storm on the station. Everything around you gets frozen and cursed by void chill. All your spell cooldowns are halved. You get full pressure and temperature immunity as well as thermal and night vision. You waltz in air at quickened speed.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to low temperatures.</Box></ColorBox>
+  Immunity to low temperatures.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Hollow Weave</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to space hazards. Getting melee attacked denies the attack and makes you invisible temporarily, after that ability goes on cooldown</Box></ColorBox>
+  ### Hollow Weave
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Breathing immunity</Box></ColorBox>
+  Immunity to space hazards. Getting melee attacked denies the attack and makes you invisible temporarily, after that ability goes on cooldown
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Slowdown resistance</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Breathing immunity
+
+  ### T3 Passive
+
+  Slowdown resistance
 
 
   ## Tips

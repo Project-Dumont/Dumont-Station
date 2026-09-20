@@ -29,5 +29,8 @@ public sealed partial class ToggleActionSystem : EntitySystem
     private void OnToggle(Entity<ToggleActionComponent> ent, ref ToggleActionEvent args)
     {
         _actions.SetToggled(args.Action.AsNullable(), !args.Action.Comp.Toggled);
+        // Dumont start
+        args.Handled = true;
+        // Dumont end
     }
 }

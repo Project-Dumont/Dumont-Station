@@ -551,6 +551,10 @@ public sealed partial class WoundSystem
             }
         }
 
+        // Dumont start
+        if (TerminatingOrDeleted(uid) || wound.HoldingWoundable != woundable.Owner)
+            return;
+        // Dumont end
         CheckSeverityThresholds(uid, wound.HoldingWoundable, wound, woundable);
         Dirty(uid, wound);
 

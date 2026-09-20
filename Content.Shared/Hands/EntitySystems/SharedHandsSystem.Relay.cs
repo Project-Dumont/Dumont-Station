@@ -61,7 +61,9 @@ public abstract partial class SharedHandsSystem
         CoreRelayEvent(entity, ref args);
     }
 
-    private void RefRelayEvent<T>(Entity<HandsComponent> entity, ref T args)
+    // Dumont start
+    public void RefRelayEvent<T>(Entity<HandsComponent> entity, ref T args)
+    // Dumont end
     {
         var ev = CoreRelayEvent(entity, ref args);
         args = ev.Args;

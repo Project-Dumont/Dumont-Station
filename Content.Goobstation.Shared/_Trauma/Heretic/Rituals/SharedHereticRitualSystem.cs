@@ -288,15 +288,25 @@ public abstract partial class SharedHereticRitualSystem : EntitySystem
 
     private void OnInteractUsing(Entity<HereticRitualRuneComponent> ent, ref InteractUsingEvent args)
     {
+        // Dumont start
+        if (args.Handled)
+            return;
+        // Dumont end
         if (!_heretic.TryGetHereticComponent(args.User, out var heretic, out var mind))
             return;
 
         if (!HasComp<MansusGraspComponent>(args.Used))
             return;
 
+        // Dumont start
+        args.Handled = true;
+        // Dumont end
+
         if (!TryComp(heretic.ChosenRitual, out HereticRitualComponent? ritual))
         {
-            _popup.PopupEntity(Loc.GetString("heretic-ritual-noritual"), args.User, args.User);
+            // Dumont start
+            _popup.PopupClient(Loc.GetString("heretic-ritual-noritual"), args.User, args.User);
+            // Dumont end
             return;
         }
 
@@ -312,8 +322,10 @@ public abstract partial class SharedHereticRitualSystem : EntitySystem
             if (ritual.PlaySuccessAnimation)
                 RitualSuccess(ent, args.User, true);
         }
-        else if (TryGetValue(ritEnt, CancelString, out string? cancelStr))
+        // Dumont start
+        else if (_net.IsServer && TryGetValue(ritEnt, CancelString, out string? cancelStr))
             _popup.PopupEntity(cancelStr, ent, args.User);
+        // Dumont end
 
         raiser.Blackboard.Clear();
         Dirty(ritEnt);
@@ -337,7 +349,12 @@ public abstract partial class SharedHereticRitualSystem : EntitySystem
             _audio.PlayPvs(RitualSuccessSound, coords);
 
         var popup = Loc.GetString("heretic-ritual-success");
-        _popup.PopupEntity(popup, ent, user);
+        // Dumont start
+        if (predicted)
+            _popup.PopupPredicted(popup, ent, user);
+        else
+            _popup.PopupEntity(popup, ent, user);
+        // Dumont end
         PredictedSpawnAttachedTo("HereticRuneRitualAnimation", ent.ToCoordinates());
     }
 

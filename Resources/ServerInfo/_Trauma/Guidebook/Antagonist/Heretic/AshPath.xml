@@ -21,67 +21,78 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### Nightwatcher's Secret
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Nightwatcher's Secret</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Matchstick</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates an ashen blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Matchstick
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Ash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will burn the eyes of victims, temporarily blinding them.</Box></ColorBox>
+  Creates an ashen blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Ash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the ashen mark, burning the target, reducing all your spell cooldowns, and hopping to a nearby target when activated.</Box></ColorBox>
+  ### Grasp of Ash
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ashen Shift</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Allows you to temporarily jaunt through walls. Has a very short range.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Volcano Blast</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Fires a flaming beam to a nearby target, burning and setting them ablaze, if they do not extinguish themself, it will spread to others.</Box></ColorBox>
+  Your grasp will burn the eyes of victims, temporarily blinding them.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Cracked Lantern</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Lantern, Flare, Ash, Lighter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates cracked lantern that acts as a flash which burns victims in area. Summons Hint when holding it in your hand.</Box></ColorBox>
+  ### Mark of Ash
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Fiery Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now sets targets ablaze.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Nightwatcher's Rebirth</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Extinguishes you, and intensifies nearby heathens flames, healing you for each victim.</Box></ColorBox>
+  Your grasp will now apply the ashen mark, burning the target, reducing all your spell cooldowns, and hopping to a nearby target when activated.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ashlord's Rite</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three burning corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Gives you full pressure, temperature and fire immunity as well as 2 spells that spread fires around you. Upgrades your Volcano Blast and Nightwatcher's Rebirth spells.</Box></ColorBox>
-  </Table>
+  ### Ashen Shift
+
+  Ingredients/Type: Active Ability
+
+  Allows you to temporarily jaunt through walls. Has a very short range.
+
+  ### Volcano Blast
+
+  Ingredients/Type: Active Ability
+
+  Fires a flaming beam to a nearby target, burning and setting them ablaze, if they do not extinguish themself, it will spread to others.
+
+  ### Cracked Lantern
+
+  Ingredients/Type: Lantern, Flare, Ash, Lighter
+
+  Creates cracked lantern that acts as a flash which burns victims in area. Summons Hint when holding it in your hand.
+
+  ### Fiery Blade
+
+  Ingredients/Type: Passive Ability
+
+  Your blade now sets targets ablaze.
+
+  ### Nightwatcher's Rebirth
+
+  Ingredients/Type: Active Ability
+
+  Extinguishes you, and intensifies nearby heathens flames, healing you for each victim.
+
+  ### Ashlord's Rite
+
+  Ingredients/Type: Three burning corpses
+
+  Gives you full pressure, temperature and fire immunity as well as 2 spells that spread fires around you. Upgrades your Volcano Blast and Nightwatcher's Rebirth spells.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to high temperatures. Having 3 fire stacks or more on yourself will empower your ash spells.</Box></ColorBox>
+  Immunity to high temperatures. Having 3 fire stacks or more on yourself will empower your ash spells.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Scorched Mantle</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to fire. Passive fire stack generation when already on fire.</Box></ColorBox>
+  ### Scorched Mantle
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Fire stacks speed you up when on fire.</Box></ColorBox>
+  Immunity to fire. Passive fire stack generation when already on fire.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Temporary blindness and vision blur immunity.</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Fire stacks speed you up when on fire.
+
+  ### T3 Passive
+
+  Temporary blindness and vision blur immunity.
 
 
   ## Tips

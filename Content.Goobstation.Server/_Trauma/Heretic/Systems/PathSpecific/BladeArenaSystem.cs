@@ -422,8 +422,11 @@ public sealed partial class BladeArenaSystem : SharedBladeArenaSystem
     {
         var spawned = Spawn(arena.OuterWall, _map.GridTileToLocal(grid, grid, indices));
         arena.SpawnedEntities.Add(spawned);
-        if (_map.CollidesWithGrid(grid, grid, indices))
-            _transform.AnchorEntity((spawned, Transform(spawned)), grid);
+        // Dumont start
+        var xform = Transform(spawned);
+        if (!xform.Anchored && _map.CollidesWithGrid(grid, grid, indices))
+            _transform.AnchorEntity((spawned, xform), grid);
+        // Dumont end
     }
 
     private void SpawnEntity(EntProtoId proto,

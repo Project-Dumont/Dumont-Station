@@ -21,67 +21,78 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### Eternal Gate
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Eternal Gate</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Glass sheet</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a cosmic blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Glass sheet
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Cosmos</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will give a star mark and create a cosmic field where you stand. Cosmic fields prevent starmarked from crossing.</Box></ColorBox>
+  Creates a cosmic blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Cosmos</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the comsic mark, teleporting them to the location the mark was placed when activated, and stunning them.</Box></ColorBox>
+  ### Grasp of Cosmos
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Cosmic Rune</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates two cosmic runes, allowing heretics to teleport between them and cursing heathens with a starmark.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Star Blast</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Fires a slow projectile that raises cosmic fields where it goes, if recasted, teleports you to the orb and generates cosmic fields.</Box></ColorBox>
+  Your grasp will give a star mark and create a cosmic field where you stand. Cosmic fields prevent starmarked from crossing.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Star Touch</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Starmarks and links you to the victim, blinding them and allowing you to stab them at range, puts them to sleep if the link is unbroken.</Box></ColorBox>
+  ### Mark of Cosmos
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Cosmic Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now starmarks victims and hits star marked people at higher range. You can perform combos by chaining your attacks between multiple people and dealing heavy damage.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Cosmic Expansion</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a 5x5 cosmic field and starmarks nearby heathens.</Box></ColorBox>
+  Your grasp will now apply the comsic mark, teleporting them to the location the mark was placed when activated, and stunning them.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Creator's Gift</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three starmarked corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a powerful Star Gazer loyal to you. Gives you full pressure and temperature immunity as well as x-ray vision.</Box></ColorBox>
-  </Table>
+  ### Cosmic Rune
+
+  Ingredients/Type: Active Ability
+
+  Creates two cosmic runes, allowing heretics to teleport between them and cursing heathens with a starmark.
+
+  ### Star Blast
+
+  Ingredients/Type: Active Ability
+
+  Fires a slow projectile that raises cosmic fields where it goes, if recasted, teleports you to the orb and generates cosmic fields.
+
+  ### Star Touch
+
+  Ingredients/Type: Active Ability
+
+  Starmarks and links you to the victim, blinding them and allowing you to stab them at range, puts them to sleep if the link is unbroken.
+
+  ### Cosmic Blade
+
+  Ingredients/Type: Passive Ability
+
+  Your blade now starmarks victims and hits star marked people at higher range. You can perform combos by chaining your attacks between multiple people and dealing heavy damage.
+
+  ### Cosmic Expansion
+
+  Ingredients/Type: Active Ability
+
+  Creates a 5x5 cosmic field and starmarks nearby heathens.
+
+  ### Creator's Gift
+
+  Ingredients/Type: Three starmarked corpses
+
+  Summons a powerful Star Gazer loyal to you. Gives you full pressure and temperature immunity as well as x-ray vision.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Cosmic fields speed you up and regenerate your stamina, and</ColorBox>
+  Cosmic fields speed you up and regenerate your stamina, and
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Starwoven Cloak</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to space hazards as well as free movement in no-grav environment. Allows user to [textlink="Tackle" link="Tackle"] when standing on cosmic field.</Box></ColorBox>
+  ### Starwoven Cloak
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your cosmic fields defuse bombs.</Box></ColorBox>
+  Immunity to space hazards as well as free movement in no-grav environment. Allows user to dash using Alt+Q (Tackle) when standing on cosmic field.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your cosmic fields slow projectiles down.</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Your cosmic fields defuse bombs.
+
+  ### T3 Passive
+
+  Your cosmic fields slow projectiles down.
 
 
   ## Tips

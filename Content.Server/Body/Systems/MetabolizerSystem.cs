@@ -246,6 +246,16 @@ namespace Content.Server.Body.Systems
                     if (!proto.Metabolisms.TryGetValue(group.Id, out var entry))
                         continue;
 
+                    // Dumont start
+                    if (entry.Conditions is { } conditions)
+                    {
+                        var conditionArgs = new EntityEffectReagentArgs(ent.Comp2?.Body ?? solutionEntityUid.Value,
+                            EntityManager, ent, solution, quantity, proto, null, 1f);
+                        if (conditions.Any(condition => !condition.Condition(conditionArgs)))
+                            continue;
+                    }
+                    // Dumont end
+
                     var rate = entry.MetabolismRate * group.MetabolismRateModifier;
 
                     // Remove $rate, as long as there's enough reagent there to actually remove that much

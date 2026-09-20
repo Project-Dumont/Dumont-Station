@@ -41,7 +41,7 @@
   flavor: eldritch
   color: "#1f8016"
   metabolisms:
-    Digestion:
+    Drink:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -82,7 +82,7 @@
         effectProto: StatusEffectDrowsiness
         time: 50
         type: Remove
-    Bloodstream:
+    Poison:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -114,7 +114,7 @@
   flavor: crucibleSoul
   color: "#fb793a"
   metabolisms:
-    Digestion:
+    Drink:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -138,7 +138,7 @@
         effectProto: StatusEffectCrucibleSoul
         time: 40
         type: Set
-    Bloodstream:
+    Poison:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -164,7 +164,7 @@
   flavor: clarity
   color: "#d5dc1d"
   metabolisms:
-    Digestion:
+    Drink:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -182,7 +182,7 @@
         effectProto: StatusEffectDuskAndDawn
         time: 90
         type: Set
-    Bloodstream:
+    Poison:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -209,7 +209,7 @@
   flavor: marshal
   color: "#5e718e"
   metabolisms:
-    Digestion:
+    Drink:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -233,7 +233,7 @@
         effectProto: StatusEffectWoundedSoldier
         time: 60
         type: Set
-    Bloodstream:
+    Poison:
       # Slash damage is split into all parts, which means vital damage is gonna be less, compensate high damage by high metabolism rate
       metabolismRate : 2.0
       conditions:
@@ -303,7 +303,7 @@
   flavor: ether
   color: "#92ca35"
   metabolisms:
-    Digestion:
+    Drink:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -324,7 +324,7 @@
         effectProto: StatusEffectNewbornEther
         time: 60
         type: Set
-    Bloodstream:
+    Poison:
       conditions:
       - !type:WhitelistCondition
         checkMind: true
@@ -358,7 +358,7 @@
   flavor: rust
   color: "#b18644"
   metabolisms:
-    Bloodstream:
+    Poison:
       conditions:
       - !type:WhitelistCondition
         checkMind: true

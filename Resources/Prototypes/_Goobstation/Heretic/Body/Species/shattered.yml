@@ -91,6 +91,9 @@
   - MobNightVision
   id: MobShattered
   components:
+  - type: Icon
+    sprite: _Goobstation/Heretic/abilities_heretic.rsi
+    state: ghoul_shattered
   - type: FootprintOwner
   - type: StunVisuals
   - type: FireVisuals

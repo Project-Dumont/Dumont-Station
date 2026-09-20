@@ -193,7 +193,7 @@
   - type: ThermalVision
     color: white
     toggleAction: null
-    useShader: false
+    thermalShader: null
     isActive: true
 
 - type: entity
@@ -298,6 +298,7 @@
   components:
   - type: Body
     prototype: HereticFleshSegment
+    bodyType: Simple
     requiredLegs: 0
   - type: Sprite
     sprite: _Goobstation/Heretic/eldritch_mobs.rsi
@@ -407,6 +408,7 @@
   components:
   - type: Body
     prototype: HereticFleshSegment
+    bodyType: Simple
     requiredLegs: 0
   - type: Sprite
     sprite: _Goobstation/Heretic/eldritch_mobs.rsi
@@ -499,6 +501,7 @@
   components:
   - type: Body
     prototype: HereticFleshSegment
+    bodyType: Simple
     requiredLegs: 0
   - type: Sprite
     sprite: _Goobstation/Heretic/eldritch_mobs.rsi
@@ -603,6 +606,7 @@
   components:
   - type: Body
     prototype: HereticFleshSegment
+    bodyType: Simple
     requiredLegs: 0
   - type: Sprite
     sprite: _Goobstation/Heretic/eldritch_mobs.rsi

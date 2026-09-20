@@ -84,3 +84,27 @@
   baseSprite:
     sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
     state: r_foot
+
+- type: humanoidBaseSprite
+  id: MobShatteredChestMale
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobShatteredChestFemale
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobShatteredHeadMale
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobShatteredHeadFemale
+  baseSprite:
+    sprite: _Goobstation/Heretic/Mobs/Shattered/parts.rsi
+    state: head

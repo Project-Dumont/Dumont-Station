@@ -24,67 +24,78 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### Principle of Hunger
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Principle of Hunger</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Blood</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a bloody blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Blood
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can raise the dead as loyal ghouls.</Box></ColorBox>
+  Creates a bloody blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the flesh mark, creating flesh mimic of the victim that attack them when triggered.</Box></ColorBox>
+  ### Grasp of Flesh
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Imperfect Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Corpse, Muzzle</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Raises the corpse as a Voiceless Dead, a strong, but silent minion.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Knitting of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Grants a spell that works as all surgical tools, heals minions, and provides health analysis and hud.</Box></ColorBox>
+  Your grasp can raise the dead as loyal ghouls.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Raw Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Eyes, Stomach, Blood</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a raw prophet, an entity that can link your summons minds via the mansus link. It is also a strong scout and heals heretics and monsters around it.</Box></ColorBox>
+  ### Mark of Flesh
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Bleeding Steel</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your bloody blades now cause heavy bleeding on attack.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lonely Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Heart, Stomach, Lung, Pen</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a flesh stalker, a strong combat summon with shapeshift and cleave.</Box></ColorBox>
+  Your grasp will now apply the flesh mark, creating flesh mimic of the victim that attack them when triggered.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Priest's Final Hymn</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Four corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">You can now shapeshift into extremely powerful creature. Ghoul limit increased. Knit Flesh can now be used in hand to heal ghouls in area.</Box></ColorBox>
-  </Table>
+  ### Imperfect Ritual
+
+  Ingredients/Type: Corpse, Muzzle
+
+  Raises the corpse as a Voiceless Dead, a strong, but silent minion.
+
+  ### Knitting of Flesh
+
+  Ingredients/Type: Active Ability
+
+  Grants a spell that works as all surgical tools, heals minions, and provides health analysis and hud.
+
+  ### Raw Ritual
+
+  Ingredients/Type: Eyes, Stomach, Blood
+
+  Summons a raw prophet, an entity that can link your summons minds via the mansus link. It is also a strong scout and heals heretics and monsters around it.
+
+  ### Bleeding Steel
+
+  Ingredients/Type: Passive Ability
+
+  Your bloody blades now cause heavy bleeding on attack.
+
+  ### Lonely Ritual
+
+  Ingredients/Type: Heart, Stomach, Lung, Pen
+
+  Summons a flesh stalker, a strong combat summon with shapeshift and cleave.
+
+  ### Priest's Final Hymn
+
+  Ingredients/Type: Four corpses
+
+  You can now shapeshift into extremely powerful creature. Ghoul limit increased. Knit Flesh can now be used in hand to heal ghouls in area.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"> You heal from eating raw meat and organs, as well as become immune to diseases and damage from poisons.</Box></ColorBox>
+  You heal from eating raw meat and organs, as well as become immune to diseases and damage from poisons.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Writhing Embrace</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Chance to split into loyal flesh mimic upon taking damage.</Box></ColorBox>
+  ### Writhing Embrace
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ghoul limit increased.</Box></ColorBox>
+  Chance to split into loyal flesh mimic upon taking damage.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Medical hud.</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Ghoul limit increased.
+
+  ### T3 Passive
+
+  Medical hud.
 
 
   ## Tips

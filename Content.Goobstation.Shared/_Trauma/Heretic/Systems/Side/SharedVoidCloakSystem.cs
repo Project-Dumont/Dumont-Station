@@ -2,6 +2,7 @@
 
 // Dumont start
 using System.Numerics;
+using Robust.Shared.Timing;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -23,6 +24,7 @@ namespace Content.Trauma.Shared.Heretic.Systems.Side;
 
 public abstract partial class SharedVoidCloakSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private ClothingSystem _clothing = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
 
@@ -45,7 +47,7 @@ public abstract partial class SharedVoidCloakSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnTerminating(Entity<VoidCloakHoodComponent> ent, ref EntityTerminatingEvent args)
     {
-        if (!TryComp(ent, out AttachedClothingComponent? attached))
+        if (_timing.ApplyingState || !TryComp(ent, out AttachedClothingComponent? attached))
             return;
 
         if (TerminatingOrDeleted(attached.AttachedUid))
@@ -60,7 +62,7 @@ public abstract partial class SharedVoidCloakSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnEntParentChanged(Entity<VoidCloakHoodComponent> ent, ref EntParentChangedMessage args)
     {
-        if (!TryComp(ent, out AttachedClothingComponent? attached))
+        if (_timing.ApplyingState || !TryComp(ent, out AttachedClothingComponent? attached))
             return;
 
         if (TerminatingOrDeleted(attached.AttachedUid))
@@ -78,6 +80,7 @@ public abstract partial class SharedVoidCloakSystem : EntitySystem
     private void MakeCloakTransparent(EntityUid cloak, VoidCloakComponent comp)
     {
         comp.Transparent = true;
+        Dirty(cloak, comp);
         _clothing.SetEquippedPrefix(cloak, "transparent-");
         _appearance.SetData(cloak, VoidCloakVisuals.Transparent, true);
 
@@ -90,6 +93,7 @@ public abstract partial class SharedVoidCloakSystem : EntitySystem
     private void MakeCloakVisible(EntityUid cloak, VoidCloakComponent comp)
     {
         comp.Transparent = false;
+        Dirty(cloak, comp);
         _clothing.SetEquippedPrefix(cloak, null);
         _appearance.SetData(cloak, VoidCloakVisuals.Transparent, false);
 

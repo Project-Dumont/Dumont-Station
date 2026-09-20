@@ -23,7 +23,9 @@ public sealed partial class HereticRuleComponent : Component
     public bool HasAHereticAscended;
 
     [DataField]
-    public EntProtoId ERTEvent = "SpawnERTSecurityDelayed";
+    // Dumont start
+    public EntProtoId? ERTEvent;
+    // Dumont end
 
     public readonly List<EntityUid> Minds = new();
 

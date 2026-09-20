@@ -18,6 +18,25 @@ public sealed partial class ScorchedMantleSystem : SharedScorchedMantleSystem
 {
     [Dependency] private FlammableSystem _flammable = default!;
 
+    // Dumont start
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<Content.Trauma.Shared.Heretic.Components.PathSpecific.Ash.ScorchedMantleComponent>();
+        while (query.MoveNext(out var mantle))
+        {
+            if (!TryComp(mantle.Action, out Content.Shared.Actions.Components.ActionComponent? action) ||
+                !action.Toggled || action.AttachedEntity is not { } wearer ||
+                !TryComp(wearer, out Content.Shared.Atmos.Components.FlammableComponent? flammable) ||
+                flammable.OnFire || flammable.Resisting)
+                continue;
+
+            var ev = new Content.Trauma.Common.Heretic.NoFirestacksUpdateEvent(wearer);
+            RaiseLocalEvent(wearer, ref ev);
+        }
+    }
+    // Dumont end
+
     protected override void UpdateFirestacks(EntityUid uid)
     {
         base.UpdateFirestacks(uid);

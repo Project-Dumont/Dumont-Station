@@ -23,63 +23,72 @@
 
   ## Knowledge
 
-  <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+  ### A Steward's Secret
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">A Steward's Secret</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Crowbar</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a key blade.</Box></ColorBox>
+  Ingredients/Type: Knife, Crowbar
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Lock</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can unlock anything.</Box></ColorBox>
+  Creates a key blade.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Key Keepers Burden</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Door, ID Card, Iron rod</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a Eldritch Card, allows you to link two doors to be portals for heretics, but randomly teleport heathens. It can also absorb access from id card by eating them.</Box></ColorBox>
+  ### Grasp of Lock
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Wrong Key</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Screwdriver, (budget) insulated gloves, wirecutter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">An item that traps doors causing them to pull and crush heathens.</Box></ColorBox>
+  Ingredients/Type: Passive Ability
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Burglar's Finesse</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Alt-click target with your blade in combat mode to steal their held item.</Box></ColorBox>
+  Your grasp can unlock anything.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Opening Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade is now better at wounding and can cause weeping avulsion on attack.</Box></ColorBox>
+  ### Key Keepers Burden
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Concierge's Rite</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Crayon, Wooden plank, Multitool</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a labyrinth handbook, a magic item that can materialize barricades that noone can pass.</Box></ColorBox>
+  Ingredients/Type: Door, ID Card, Iron rod
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Unlock the Labyrinth</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three corpses with removed hearts</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a labyrinth portal that rapidly summons creatures from Mansus, loyal to you. You get pressure and temperature immunity. Your blades are even deadlier. You can shapeshift into empowered creatures of Mansus.</Box></ColorBox>
-  </Table>
+  Creates a Eldritch Card, allows you to link two doors to be portals for heretics, but randomly teleport heathens. It can also absorb access from id card by eating them.
+
+  ### Wrong Key
+
+  Ingredients/Type: Screwdriver, (budget) insulated gloves, wirecutter
+
+  An item that traps doors causing them to pull and crush heathens.
+
+  ### Burglar's Finesse
+
+  Ingredients/Type: Passive Ability
+
+  Alt-click target with your blade in combat mode to steal their held item.
+
+  ### Opening Blade
+
+  Ingredients/Type: Passive Ability
+
+  Your blade is now better at wounding and can cause weeping avulsion on attack.
+
+  ### Concierge's Rite
+
+  Ingredients/Type: Crayon, Wooden plank, Multitool
+
+  Creates a labyrinth handbook, a magic item that can materialize barricades that noone can pass.
+
+  ### Unlock the Labyrinth
+
+  Ingredients/Type: Three corpses with removed hearts
+
+  Creates a labyrinth portal that rapidly summons creatures from Mansus, loyal to you. You get pressure and temperature immunity. Your blades are even deadlier. You can shapeshift into empowered creatures of Mansus.
 
 
   ## Armor and Passive Ability
 
-  <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+  ### T1 Passive
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Grants you one free side knowledge for every tier.</ColorBox>
+  Grants you one free side knowledge for every tier.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Shifting Guise</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Hides you from camera vision and from people far away, muffles footsteps and conceals your voice.</Box></ColorBox>
+  ### Shifting Guise
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp no longer goes on cooldown from opening locks.</Box></ColorBox>
+  Hides you from camera vision and from people far away, muffles footsteps and conceals your voice.
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">X-ray vision.</Box></ColorBox>
-  </Table>
+  ### T2 Passive
+
+  Your grasp no longer goes on cooldown from opening locks.
+
+  ### T3 Passive
+
+  X-ray vision.
 
 
   ## Tips

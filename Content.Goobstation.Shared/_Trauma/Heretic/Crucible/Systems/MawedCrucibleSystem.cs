@@ -2,6 +2,7 @@
 
 // Dumont start
 using Content.Shared.Body.Organ;
+using Content.Shared.Body.Part;
 
 using System.Numerics;
 using Robust.Shared.GameStates;
@@ -109,7 +110,8 @@ public sealed partial class MawedCrucibleSystem : EntitySystem
         if (!xform.Anchored)
             return;
 
-        if (HasComp<EdibleComponent>(args.Used) && HasComp<OrganComponent>(args.Used))
+        if ((HasComp<FoodComponent>(args.Used) || HasComp<EdibleComponent>(args.Used)) &&
+            (HasComp<OrganComponent>(args.Used) || HasComp<BodyPartComponent>(args.Used)))
         {
             RefuelCrucible(ent, ref args);
             return;

@@ -172,6 +172,15 @@ public abstract partial class SharedHereticRitualSystem
                 if (!_whitelist.CheckBoth(look, ritIng.Blacklist, ritIng.Whitelist))
                     continue;
 
+                // Dumont start
+                if (ritIng.RequireFood && !HasComp<Content.Shared.Nutrition.Components.FoodComponent>(look) &&
+                    !HasComp<Content.Shared.Nutrition.Components.EdibleComponent>(look))
+                    continue;
+                if (ritIng.PartType is { } partType &&
+                    (!TryComp<Content.Shared.Body.Part.BodyPartComponent>(look, out var part) || part.PartType != partType))
+                    continue;
+                // Dumont end
+
                 var stack = _stackQuery.CompOrNull(look);
                 var amount = stack == null ? 1 : Math.Min(stack.Count, ritIng.Amount - compAmount);
 

@@ -111,4 +111,14 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         _menu.PopulateStoreCategoryButtons(filteredListings);
         _menu.UpdateListing(filteredListings.ToList());
     }
+
+    // Dumont start
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+            _menu = null;
+
+        base.Dispose(disposing);
+    }
+    // Dumont end
 }

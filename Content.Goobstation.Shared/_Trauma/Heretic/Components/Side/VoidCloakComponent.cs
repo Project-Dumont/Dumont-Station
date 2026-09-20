@@ -11,10 +11,10 @@ using Robust.Shared.Serialization;
 
 namespace Content.Trauma.Shared.Heretic.Components.Side;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class VoidCloakComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField]
     public bool Transparent;
 }
 

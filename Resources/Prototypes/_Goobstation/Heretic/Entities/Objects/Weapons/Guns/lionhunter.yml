@@ -55,7 +55,7 @@
     components:
     - type: ThermalVision
       worksInHands: true
-      useShader: false
+      thermalShader: null
       isEquipment: true
       isActive: true
       color: white

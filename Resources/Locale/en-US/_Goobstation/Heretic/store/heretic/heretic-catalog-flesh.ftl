@@ -54,7 +54,7 @@ knowledge-path-flesh-armor-desc =
     With eyes-not-mine, they will witness. With teeth-not-mine, they will clench. With limbs-not-mine, they will break.
 
     Allows you to transmute a table (or a suit), a mask and a pool of blood to create a writhing embrace.
-    It grants you the ability to detect the health condition of other living (and non-living).
+    Detecting the health condition of living and non-living beings requires the tier 3 Flesh passive upgrade.
     Additionally, upon taking damage, it has a chance to spawn a loyal flesh mimic of yourself.
     Acts as a focus while hooded.
     Unlocks tier 2 passive ability upgrade when transmuted.

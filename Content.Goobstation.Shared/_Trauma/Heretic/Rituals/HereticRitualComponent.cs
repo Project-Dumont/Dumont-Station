@@ -74,6 +74,14 @@ public sealed partial class RitualIngredient : IEquatable<RitualIngredient>
     [DataField]
     public int Amount = 1;
 
+    // Dumont start
+    [DataField]
+    public Content.Shared.Body.Part.BodyPartType? PartType;
+
+    [DataField]
+    public bool RequireFood;
+    // Dumont end
+
     [DataField(required: true)]
     public EntityWhitelist Whitelist = new();
 

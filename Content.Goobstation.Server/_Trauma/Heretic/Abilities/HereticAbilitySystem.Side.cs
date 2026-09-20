@@ -6,6 +6,7 @@ using Content.Shared.Damage;
 // Dumont end
 
 using Content.Shared.Ghost;
+using Content.Shared.Mind;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 
 using System.Numerics;
@@ -53,7 +54,8 @@ public sealed partial class HereticAbilitySystem
     [SubscribeLocalEvent]
     private void OnGraspUpgrade(Entity<HereticComponent> ent, ref HereticGraspUpgradeEvent args)
     {
-        if (!_actions.TryGetActionById(ent.Owner, args.GraspAction, out var grasp))
+        if (!TryComp<MindComponent>(ent, out var mind) || mind.OwnedEntity is not { } body ||
+            !_actions.TryGetActionById(body, args.GraspAction, out var grasp))
             return;
 
         var upgrade = EnsureComp<MansusGraspUpgradeComponent>(grasp.Value);

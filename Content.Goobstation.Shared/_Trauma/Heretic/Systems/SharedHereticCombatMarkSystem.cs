@@ -29,7 +29,9 @@ public abstract partial class SharedHereticCombatMarkSystem : EntitySystem
 
     [Dependency] private EntityQuery<MobStateComponent> _mobQuery = new();
 
-    private readonly HashSet<Entity<HumanoidProfileComponent>> _lookupHumanoid = new();
+    // Dumont start
+    private readonly HashSet<Entity<HumanoidAppearanceComponent>> _lookupHumanoid = new();
+    // Dumont end
 
     public void ApplyMarkEffect(EntityUid target, HereticCombatMarkComponent mark, EntityUid user)
     {

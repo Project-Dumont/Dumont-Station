@@ -63,6 +63,7 @@
       body_organs: !type:Container
   - type: Body
     prototype: HereticFleshSegment
+    bodyType: Simple
     requiredLegs: 0
   - type: AlwaysTakeHoly
   - type: Damageable
@@ -84,6 +85,7 @@
   components:
   - type: Body
     prototype: HereticFleshAscend
+    bodyType: Simple
     requiredLegs: 0
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
@@ -182,7 +184,7 @@
   - type: ThermalVision
     color: white
     toggleAction: null
-    useShader: false
+    thermalShader: null
     isActive: true
 
 - type: entity
