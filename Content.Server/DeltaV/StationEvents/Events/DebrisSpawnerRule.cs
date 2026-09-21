@@ -44,7 +44,8 @@ public sealed class DebrisSpawnerRule : StationEventSystem<DebrisSpawnerRuleComp
         foreach (var gridId in args.Grids)
         {
             if (!TryComp<MapGridComponent>(gridId, out var grid))
-                continue
+                continue;
+
             var aabb = Transform(gridId).WorldMatrix.TransformBox(grid.LocalAABB);
             boxes.Add(aabb);
         }
