@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -31,4 +32,7 @@ public sealed partial class XenoborgComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Ambience/Antag/xenoborg_start.ogg");
+
+    [DataField]
+    public EntProtoId<ObjectiveComponent>? Objective = "XenoborgAssimilationObjective";
 }
