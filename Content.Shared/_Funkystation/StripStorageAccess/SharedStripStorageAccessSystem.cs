@@ -7,8 +7,11 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Popups;
+using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
+using Robust.Shared.Utility;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Strip.Components;
@@ -26,6 +29,8 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = null!;
     [Dependency] private SharedPopupSystem _popup = null!;
     [Dependency] private SharedAudioSystem _audio = null!;
+    [Dependency] private SharedContainerSystem _container = null!;
+    [Dependency] private SharedInteractionSystem _interaction = null!;
 
     public override void Initialize()
     {
@@ -35,6 +40,7 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 
         SubscribeLocalEvent<StorageComponent, StripStorageOpenDoAfterEvent>(OnOpenDoAfter);
         SubscribeLocalEvent<StorageComponent, StripStorageRemoveDoAfterEvent>(OnRemoveDoAfter);
+        SubscribeLocalEvent<StorageComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerbs);
     }
 
     private void OnOpenStorageButtonPressed(Entity<StrippableComponent> strippable, ref StrippingOpenStorageButtonPressed args)
@@ -67,7 +73,40 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
             return;
         }
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(5), new StripStorageOpenDoAfterEvent(), storageUid, strippable.Owner)
+        StartOpenStorageDoAfter(user, storageUid, strippable.Owner);
+    }
+
+    private void OnGetVerbs(Entity<StorageComponent> target, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        if (args.Hands == null || !args.CanInteract || args.Target == args.User)
+            return;
+
+        if (!_container.TryGetContainingContainer(target.Owner, out var container) || container.Owner == args.User)
+            return;
+
+        if (!HasComp<InventoryComponent>(container.Owner) && !HasComp<HandsComponent>(container.Owner))
+            return;
+
+        var user = args.User;
+        var holder = container.Owner;
+        var storageUid = target.Owner;
+
+        if (!_interaction.InRangeUnobstructed(user, holder))
+            return;
+
+        InteractionVerb verb = new()
+        {
+            Text = Loc.GetString("strip-storage-access-verb-text"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/open.svg.192dpi.png")),
+            Act = () => StartOpenStorageDoAfter(user, storageUid, holder),
+        };
+
+        args.Verbs.Add(verb);
+    }
+
+    private void StartOpenStorageDoAfter(EntityUid user, EntityUid storageUid, EntityUid holder)
+    {
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(5), new StripStorageOpenDoAfterEvent(), storageUid, holder)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
@@ -88,8 +127,8 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
             Loc.GetString("strip-storage-access-alert-target",
                 ("user", Identity.Entity(user, EntityManager)),
                 ("item", storageUid)),
-            strippable,
-            strippable.Owner,
+            holder,
+            holder,
             PopupType.Medium);
     }
 

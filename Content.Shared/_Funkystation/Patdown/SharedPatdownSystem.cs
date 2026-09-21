@@ -55,7 +55,7 @@ public sealed partial class SharedPatdownSystem : EntitySystem
         InteractionVerb verb = new()
         {
             Text = Loc.GetString("patdown-verb-text"),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/pickup.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/_Funkystation/Interface/VerbIcons/patdown.png")),
             Act = () => TryStartPatdown(user, target, target.Comp),
         };
 
