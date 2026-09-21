@@ -14,6 +14,9 @@ public sealed partial class AutopsyToolComponent : Component
     public TimeSpan Duration = TimeSpan.FromSeconds(30);
 
     [DataField]
+    public TimeSpan TableDuration = TimeSpan.FromSeconds(15);
+
+    [DataField]
     public SoundSpecifier? Sound = new SoundCollectionSpecifier("PaperScribbles");
 
     [DataField]

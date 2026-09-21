@@ -95,12 +95,12 @@ public sealed class CoronerSystem : SharedCoronerSystem
             ent.Comp.Records.RemoveAt(0);
     }
 
-    protected override void Autopsy(Entity<AutopsyToolComponent> ent, EntityUid user, EntityUid target)
+    protected override void Autopsy(Entity<AutopsyToolComponent> ent, EntityUid user, EntityUid target, bool onTable)
     {
         var report = Spawn(ent.Comp.Report, Transform(user).Coordinates);
 
         if (TryComp<PaperComponent>(report, out var paper))
-            _paper.SetContent((report, paper), GetReport(target));
+            _paper.SetContent((report, paper), GetReport(target, onTable));
 
         _metaData.SetEntityName(report, Loc.GetString("autopsy-report-name",
             ("target", Identity.Entity(target, EntityManager))));
@@ -108,7 +108,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
         _hands.PickupOrDrop(user, report);
     }
 
-    private string GetReport(EntityUid target)
+    private string GetReport(EntityUid target, bool onTable = true)
     {
         var report = new StringBuilder();
         report.Append(Loc.GetString("autopsy-report-identity",
@@ -123,12 +123,22 @@ public sealed class CoronerSystem : SharedCoronerSystem
         report.Append(GetDamage(target));
         report.Append('\n');
         report.Append(GetWounds(target));
-        report.Append('\n');
-        report.Append(GetTraumas(target));
-        report.Append('\n');
-        report.Append(GetHistory(target));
-        report.Append('\n');
-        report.Append(GetChemicals(target));
+
+        if (onTable)
+        {
+            report.Append('\n');
+            report.Append(GetTraumas(target));
+            report.Append('\n');
+            report.Append(GetHistory(target));
+            report.Append('\n');
+            report.Append(GetChemicals(target));
+        }
+        else
+        {
+            report.Append('\n');
+            report.Append(Loc.GetString("autopsy-report-field-exam"));
+        }
+
         report.Append('\n');
         report.Append(GetForensics(target));
 

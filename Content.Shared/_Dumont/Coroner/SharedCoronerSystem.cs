@@ -1,3 +1,4 @@
+using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -37,7 +38,9 @@ public abstract class SharedCoronerSystem : EntitySystem
             return;
         }
 
-        var doAfter = new DoAfterArgs(EntityManager, args.User, ent.Comp.Duration, new AutopsyDoAfterEvent(), ent, target, ent)
+        var duration = OnTable(target) ? ent.Comp.TableDuration : ent.Comp.Duration;
+
+        var doAfter = new DoAfterArgs(EntityManager, args.User, duration, new AutopsyDoAfterEvent(), ent, target, ent)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
@@ -59,10 +62,17 @@ public abstract class SharedCoronerSystem : EntitySystem
             return;
 
         args.Handled = true;
-        Autopsy(ent, args.User, target);
+        Autopsy(ent, args.User, target, OnTable(target));
     }
 
-    protected virtual void Autopsy(Entity<AutopsyToolComponent> ent, EntityUid user, EntityUid target)
+    protected bool OnTable(EntityUid target)
+    {
+        return TryComp<BuckleComponent>(target, out var buckle)
+               && buckle.BuckledTo is { } strap
+               && HasComp<AutopsyTableComponent>(strap);
+    }
+
+    protected virtual void Autopsy(Entity<AutopsyToolComponent> ent, EntityUid user, EntityUid target, bool onTable)
     {
     }
 }

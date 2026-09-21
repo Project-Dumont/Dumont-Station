@@ -20,6 +20,7 @@ autopsy-report-wounds-header = Feridas:
 autopsy-report-wound = - {$part}: {$wound}, {$severity}
 autopsy-report-wounds-none = Nenhuma ferida encontrada no corpo.
 
+autopsy-report-field-exam = Exame feito no campo: trauma interno, sequência das lesões e química do sangue precisam de mesa de autópsia.
 
 autopsy-report-history-header = Sequência das lesões:
 autopsy-report-history = - {$time}: {$type}, {$amount}
