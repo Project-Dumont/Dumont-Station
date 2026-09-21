@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Radio;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.GameTicking.Rules.Components;
@@ -45,4 +48,51 @@ public sealed partial class XenoborgsRuleComponent : Component
     /// </summary>
     [DataField]
     public bool XenoborgShuttleCalled = false;
+
+    [DataField]
+    public LocId ShuttleCallText = "xenoborg-shuttle-call";
+
+    [DataField]
+    public LocId MothershipAnnouncement = "xenoborg-mothership-announcement";
+
+    [DataField]
+    public LocId MothershipAnnouncementSender = "xenoborg-mothership-announcement-sender";
+
+    [DataField]
+    public Color MothershipAnnouncementColor = Color.FromHex("#2288ff");
+
+    [DataField]
+    public SoundSpecifier? MothershipAnnouncementSound = new SoundPathSpecifier("/Audio/_Dumont/Xenoborgs/security_breach.ogg");
+
+    [DataField]
+    public TimeSpan MothershipAnnouncementDelay = TimeSpan.FromSeconds(6);
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
+    public TimeSpan? MothershipAnnouncementTime;
+
+    [DataField]
+    public bool CommsBlackout;
+
+    [DataField]
+    public HashSet<ProtoId<RadioChannelPrototype>> BlackoutChannels = new()
+    {
+        "Common",
+        "Command",
+        "Engineering",
+        "Medical",
+        "Science",
+        "Security",
+        "Service",
+        "Supply",
+    };
+
+    [DataField]
+    public bool BlackoutOnlyHeadsets = true;
+
+    [DataField]
+    public bool BlackoutCommsConsoles = true;
+
+    [DataField]
+    public bool MothershipToCentcomm = true;
 }
