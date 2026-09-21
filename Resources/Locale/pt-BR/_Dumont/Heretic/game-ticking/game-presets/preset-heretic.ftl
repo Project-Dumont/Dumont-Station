@@ -14,7 +14,7 @@ roundend-prepend-heretic-knowledge-named = [color=white]{$name}[/color] pesquiso
 heretic-gamemode-title = Hereges
 heretic-gamemode-description = Anomalia dimensional detectada na estação. Não há mais informações.
 heretic-role-greeting-fluff =
-    Mais um dia em um trabalho sem sentido. Você percebe um brilho ao seu redor e começa a sentir algo estranho no ar. Olha para dentro de si e descobre algo que mudará sua vida.
+    Mais um dia em um trabalho sem sentido. Você percebe um brilho ao seu redor e começa a sentir algo estranho na realidade. Você olha para dentro de si e descobre algo que mudará sua vida, O Véu enfraquece.
 
     Os Portões do Mansus se abrem para sua mente.
 heretic-role-greeting =
