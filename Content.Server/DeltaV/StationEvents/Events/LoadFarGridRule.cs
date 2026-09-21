@@ -49,7 +49,8 @@ public sealed class LoadFarGridRule : StationEventSystem<LoadFarGridRuleComponen
             if (map == MapId.Nullspace)
                 map = Transform(gridId).MapID;
 
-            var stationGrid = Comp<MapGridComponent>(gridId);
+            if (!TryComp<MapGridComponent>(gridId, out var stationGrid))
+                continue
             var gridAabb = Transform(gridId).WorldMatrix.TransformBox(stationGrid.LocalAABB);
             aabb = aabb.Union(gridAabb);
         }
