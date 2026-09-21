@@ -3,7 +3,7 @@
 - type: guideEntry
   id: Heretics
   name: guide-entry-heretics
-  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Heretics.xml"
+  text: "/ServerInfo/_Dumont/Guidebook/Antagonist/Heretic/Heretics.xml"
   children:
   - AshPath
   - VoidPath
@@ -19,4 +19,4 @@
 - type: guideEntry
   id: HereticCurses
   name: guide-entry-heretic-curses
-  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/HereticCurses.xml"
+  text: "/ServerInfo/_Dumont/Guidebook/Antagonist/Heretic/HereticCurses.xml"

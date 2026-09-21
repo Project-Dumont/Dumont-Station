@@ -21,7 +21,7 @@ public sealed partial class VoidCurse : EntityEffectBase<VoidCurse>
     public int Stacks = 1;
 
     public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => "Inflicts void curse.";
+        => Loc.GetString("entity-effect-guidebook-void-curse");
 }
 
 public sealed partial class VoidCurseEffectSystem : EntityEffectSystem<TransformComponent, VoidCurse>
