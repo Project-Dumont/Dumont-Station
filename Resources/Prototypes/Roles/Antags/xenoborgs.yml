@@ -8,6 +8,8 @@
   objective: roles-antag-mothership-core-objective
   guides: [ Xenoborgs ]
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 144000 # 40 hrs
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 18000  # 5 hrs
@@ -20,6 +22,8 @@
   objective: roles-antag-xenoborg-objective
   guides: [ Xenoborgs ]
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 144000 # 40 hrs
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 18000  # 5 hrs

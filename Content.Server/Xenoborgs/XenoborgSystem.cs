@@ -19,6 +19,7 @@ public sealed partial class XenoborgSystem : EntitySystem
 {
     [Dependency] private AntagSelectionSystem _antag = default!;
     [Dependency] private BorgSystem _borg = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedRoleSystem _roles = default!;
     [Dependency] private XenoborgsRuleSystem _xenoborgsRule = default!;
 
@@ -85,6 +86,9 @@ public sealed partial class XenoborgSystem : EntitySystem
     {
         _roles.MindAddRole(args.Mind, comp.MindRole, silent: true);
 
+        if (comp.Objective != null)
+            _mind.TryAddObjective(args.Mind, args.Mind.Comp, comp.Objective);
+
         if (!TryComp<ActorComponent>(ent, out var actorComp))
             return;
 
@@ -98,5 +102,15 @@ public sealed partial class XenoborgSystem : EntitySystem
     private void OnXenoborgMindRemoved(EntityUid ent, XenoborgComponent comp, MindRemovedMessage args)
     {
         _roles.MindRemoveRole(args.Mind.Owner, comp.MindRole);
+
+        if (comp.Objective == null)
+            return;
+
+        var objectives = args.Mind.Comp.Objectives;
+        for (var i = objectives.Count - 1; i >= 0; i--)
+        {
+            if (Prototype(objectives[i])?.ID == comp.Objective)
+                _mind.TryRemoveObjective(args.Mind, args.Mind.Comp, i);
+        }
     }
 }

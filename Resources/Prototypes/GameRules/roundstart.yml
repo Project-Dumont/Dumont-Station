@@ -759,3 +759,4 @@
   components:
   - type: GameRule
     minPlayers: 30
+    chaosScore: 1500 # Dumont

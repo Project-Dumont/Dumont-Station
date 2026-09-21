@@ -125,6 +125,7 @@ namespace Content.Client.Communications.UI
 
         private ISawmill _sawMill;
         public bool CanAnnounce;
+        public bool NoSignal; // Dumont
         public bool CanBroadcast;
         public bool CanCall;
         public bool AlertLevelSelectable;
@@ -245,6 +246,18 @@ namespace Content.Client.Communications.UI
                 BroadcastButton.ToolTip = Loc.GetString("comms-console-menu-broadcast-button-tooltip");
                 AnnounceButton.ToolTip = Loc.GetString("comms-console-menu-announcement-button-tooltip");
             }
+
+            // Dumont changes start
+            MessageInput.Placeholder = new Rope.Leaf(_loc.GetString(NoSignal
+                ? "comms-console-menu-no-signal-placeholder"
+                : "comms-console-menu-announcement-placeholder"));
+
+            if (NoSignal)
+            {
+                AnnounceButton.Disabled = true;
+                AnnounceButton.ToolTip = Loc.GetString("comms-console-no-signal");
+            }
+            // Dumont end
         }
 
         public void DisableAllAnnounceButtons(string locale)

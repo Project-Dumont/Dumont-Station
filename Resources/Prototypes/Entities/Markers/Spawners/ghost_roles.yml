@@ -366,6 +366,12 @@
     rules: ghost-role-information-silicon-rules
     mindRoles:
     - MindRoleMothershipCore
+    requirements: # Dumont
+    - !type:OverallPlaytimeRequirement
+      time: 144000 # 40 hrs
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 18000 # 5 hrs
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -388,6 +394,12 @@
     rules: ghost-role-information-silicon-rules
     mindRoles:
     - MindRoleXenoborg
+    requirements: # Dumont
+    - !type:OverallPlaytimeRequirement
+      time: 144000 # 40 hrs
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 18000 # 5 hrs
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

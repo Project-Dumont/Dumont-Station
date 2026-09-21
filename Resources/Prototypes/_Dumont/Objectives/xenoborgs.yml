@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseObjective
+  id: XenoborgAssimilationObjective
+  name: ASSIMILATION
+  description: Assimilate 40% of the crew and begin the collective assimilation of every organic being in the universe, using Central Command as a bridge.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Objective
+    issuer: objective-issuer-xenoborg
+    difficulty: 1
+    icon:
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/mothership_core.rsi
+      state: core-idle
+  - type: XenoborgAssimilationCondition
