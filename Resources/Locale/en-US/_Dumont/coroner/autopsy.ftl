@@ -20,6 +20,11 @@ autopsy-report-wounds-header = Wounds:
 autopsy-report-wound = - {$part}: {$wound}, {$severity}
 autopsy-report-wounds-none = No wounds found on the body.
 
+
+autopsy-report-history-header = Sequence of injuries:
+autopsy-report-history = - {$time}: {$type}, {$amount}
+autopsy-report-history-none = The body kept no record of its injuries.
+
 autopsy-report-traumas-header = Internal trauma:
 autopsy-report-trauma = - {$part}: {$trauma}
 autopsy-report-traumas-none = No internal trauma found.

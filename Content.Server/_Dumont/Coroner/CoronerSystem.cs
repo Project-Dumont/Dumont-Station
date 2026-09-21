@@ -33,6 +33,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly MobStateSystem _mobStates = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -44,6 +45,7 @@ public sealed class CoronerSystem : SharedCoronerSystem
         base.Initialize();
 
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<DamageHistoryComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
     private void OnMobStateChanged(MobStateChangedEvent args)
@@ -53,6 +55,44 @@ public sealed class CoronerSystem : SharedCoronerSystem
 
         EnsureComp<TimeOfDeathComponent>(args.Target, out var timeOfDeath);
         timeOfDeath.Time = _timing.CurTime;
+    }
+
+    private void OnDamageChanged(Entity<DamageHistoryComponent> ent, ref DamageChangedEvent args)
+    {
+        if (!args.DamageIncreased || args.DamageDelta == null || _mobStates.IsDead(ent))
+            return;
+
+        var worst = args.DamageDelta.DamageDict
+            .Where(damage => damage.Value > 0)
+            .OrderByDescending(damage => damage.Value)
+            .FirstOrDefault();
+
+        if (worst.Key == null)
+            return;
+
+        var now = _timing.CurTime;
+
+        for (var i = ent.Comp.Records.Count - 1; i >= 0; i--)
+        {
+            var record = ent.Comp.Records[i];
+            if (record.Type != worst.Key || now - record.LastTime > ent.Comp.MergeWindow)
+                continue;
+
+            record.Amount += worst.Value;
+            record.LastTime = now;
+            return;
+        }
+
+        ent.Comp.Records.Add(new DamageRecord
+        {
+            Time = now,
+            LastTime = now,
+            Type = worst.Key,
+            Amount = worst.Value,
+        });
+
+        if (ent.Comp.Records.Count > ent.Comp.MaxRecords)
+            ent.Comp.Records.RemoveAt(0);
     }
 
     protected override void Autopsy(Entity<AutopsyToolComponent> ent, EntityUid user, EntityUid target)
@@ -85,6 +125,8 @@ public sealed class CoronerSystem : SharedCoronerSystem
         report.Append(GetWounds(target));
         report.Append('\n');
         report.Append(GetTraumas(target));
+        report.Append('\n');
+        report.Append(GetHistory(target));
         report.Append('\n');
         report.Append(GetChemicals(target));
         report.Append('\n');
@@ -186,6 +228,37 @@ public sealed class CoronerSystem : SharedCoronerSystem
         return report.ToString();
     }
 
+    private string GetHistory(EntityUid target)
+    {
+        if (!TryComp<DamageHistoryComponent>(target, out var history))
+            return Loc.GetString("autopsy-report-history-none");
+
+        var records = history.Records.Where(record => record.Amount >= history.MinDamage).ToList();
+        if (records.Count == 0)
+            return Loc.GetString("autopsy-report-history-none");
+
+        var report = new StringBuilder();
+        report.Append(Loc.GetString("autopsy-report-history-header"));
+
+        foreach (var record in records)
+        {
+            report.Append('\n');
+            report.Append(Loc.GetString("autopsy-report-history",
+                ("time", (record.Time - _gameTicker.RoundStartTimeSpan).ToString("hh\\:mm\\:ss")),
+                ("type", GetTypeName(record.Type)),
+                ("amount", record.Amount.Int())));
+        }
+
+        return report.ToString();
+    }
+
+    private string GetTypeName(string type)
+    {
+        return _prototype.TryIndex<DamageTypePrototype>(type, out var proto)
+            ? proto.LocalizedName
+            : type;
+    }
+
     private string GetTraumas(EntityUid target)
     {
         if (!_traumas.TryGetBodyTraumas(target, out var traumas))
@@ -194,7 +267,9 @@ public sealed class CoronerSystem : SharedCoronerSystem
         var report = new StringBuilder();
         report.Append(Loc.GetString("autopsy-report-traumas-header"));
 
-        foreach (var trauma in traumas.OrderByDescending(trauma => trauma.Comp.TraumaSeverity))
+        foreach (var trauma in traumas
+                     .Where(trauma => !IsHealthyBone(trauma))
+                     .OrderByDescending(trauma => trauma.Comp.TraumaSeverity))
         {
             report.Append('\n');
             report.Append(Loc.GetString("autopsy-report-trauma",
@@ -203,6 +278,14 @@ public sealed class CoronerSystem : SharedCoronerSystem
         }
 
         return report.ToString();
+    }
+
+    private bool IsHealthyBone(Entity<TraumaComponent> trauma)
+    {
+        return trauma.Comp.TraumaType == TraumaType.BoneDamage
+               && trauma.Comp.TraumaTarget is { } bone
+               && TryComp<BoneComponent>(bone, out var boneComp)
+               && boneComp.BoneSeverity == BoneSeverity.Normal;
     }
 
     private string GetTraumaPartName(Entity<TraumaComponent> trauma)
