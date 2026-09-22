@@ -49,12 +49,12 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
         SubscribeLocalEvent<RotaryPhoneComponent, PhoneHungUpEvent>(OnGotHungUp);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, EntInsertedIntoContainerMessage>(OnPhoneInsertHolder);
 
-        SubscribeLocalEvent<RotaryPhoneComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<RotaryPhoneHolderComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
 
     }
 
     // Dumont - get verbs for modifying name
-    private void OnGetVerbs(Entity<RotaryPhoneComponent> phone, ref GetVerbsEvent<Verb> args)
+    private void OnGetVerbs(Entity<RotaryPhoneHolderComponent> holder, ref GetVerbsEvent<Verb> args)
     {
         if (!_admin.IsAdmin(args.User))
             return;
@@ -63,6 +63,10 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
             return;
 
         if (!_player.TryGetSessionByEntity(args.User, out var session))
+            return;
+
+        if (holder.Comp.ConnectedPhone is not { } phoneUid ||
+            !TryComp<RotaryPhoneComponent>(phoneUid, out var phone))
             return;
 
         Verb verb = new()
@@ -74,7 +78,7 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
                     session,
                     Loc.GetString("phone-verb-text"),
                     Loc.GetString("phone-verb-prompt"),
-                    response => { phone.Comp.Name = response; Dirty(phone); });
+                    response => { phone.Name = response; Dirty(holder); });
             }
         };
 
