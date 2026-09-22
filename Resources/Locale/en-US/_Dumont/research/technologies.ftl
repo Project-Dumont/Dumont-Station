@@ -1,0 +1,1 @@
+research-technology-security-weapons-upgrade = Security Weapons Upgrades

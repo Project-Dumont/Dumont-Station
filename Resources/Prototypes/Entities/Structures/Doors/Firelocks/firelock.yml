@@ -126,8 +126,9 @@
           shader: unshaded
           map: ["enum.DoorVisualLayers.BaseBolted"]
           visible: false
-        - state: panel_open
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+        # Dumont change: firelocks dont need more maintenance panels
+        #- state: panel_open
+        #  map: ["enum.WiresVisualLayers.MaintenancePanel"]
         - state: pressure_unlit
           visible: false
           shader: unshaded
@@ -160,10 +161,10 @@
           - AirlockLayer
     - type: Door
       openDrawDepth: WallTops
-      closeTimeOne: 0.1
-      closeTimeTwo: 0.6
-      openTimeOne: 0.1
-      openTimeTwo: 0.6
+      closeTimeOne: 0.2
+      closeTimeTwo: 0.7
+      openTimeOne: 0.2
+      openTimeTwo: 0.7
       state: Open
       bumpOpen: false
       clickOpen: true
@@ -176,19 +177,20 @@
         path: /Audio/Machines/airlock_close.ogg
       denySound:
         path: /Audio/Machines/airlock_deny.ogg
-      openingAnimationTime: 0.6
-      closingAnimationTime: 0.6
+      openingAnimationTime: 0.7
+      closingAnimationTime: 0.7
     - type: Weldable
       fuel: 5
       time: 3
     - type: Firelock
     - type: Appearance
-    - type: WiresVisuals
-    - type: WiresPanel
-    - type: UserInterface
-      interfaces:
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
+    # Dumont change: firelocks dont need more maintenance panels
+    #- type: WiresVisuals
+    #- type: WiresPanel
+    #- type: UserInterface
+    #  interfaces:
+    #    enum.WiresUiKey.Key:
+    #      type: WiresBoundUserInterface
     - type: Physics
       canCollide: false
     - type: Airtight
