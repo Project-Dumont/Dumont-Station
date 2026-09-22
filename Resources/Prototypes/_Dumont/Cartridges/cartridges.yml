@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseItem
-  id: JaniCartridge
+  id: JaniCallerCartridge
   name: janicaller cartridge
   description: For when you need to call the sweepers.
   components:
