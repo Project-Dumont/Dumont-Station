@@ -24,6 +24,7 @@ gun-set-fire-mode = Set to {$mode}
 gun-magazine-whitelist-fail = That won't fit into the gun!
 gun-magazine-fired-empty = No ammo left!
 gun-jammed = The gun jams!
+gun-is-jammed = The gun is jammed...
 gun-unjammed = You unjam the gun.
 
 # SelectiveFire

@@ -6,6 +6,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Dumont.Weapons.Ranged.Systems;
 
@@ -16,6 +17,7 @@ public abstract partial class SharedWeaponJammingSystem : EntitySystem
     [Dependency] protected SharedAudioSystem _audio = default!;
     [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private ILogManager _log = default!;
+    [Dependency] private INetManager _net = default!;
 
 
 
@@ -41,6 +43,10 @@ public abstract partial class SharedWeaponJammingSystem : EntitySystem
             return;
         }
 
+        if (!_net.IsServer)
+            return;
+
+        // rola rng apenas no server pois em shared isso pode causar estado divergente
         if (_rand.Next(1, gun.Comp.Quality + 1) == 1)
             Jam(gun, ev.User);
     }
@@ -51,12 +57,14 @@ public abstract partial class SharedWeaponJammingSystem : EntitySystem
             return;
 
         var jammedComp = AddComp<JammedGunComponent>(gun.Owner);
+
+        // dirty na arma ja que tamo no server
+        Dirty(gun);
         GunJamEffect(gun.Owner, jammedComp, "gun-jammed", user);
     }
 
     private void AttemptUnjam(Entity<JammedGunComponent> jammedGun, ref UseInHandEvent args)
     {
-        // checks if there even is a gun, also, get the guncomp for time shit
         if (!TryComp<GunComponent>(jammedGun.Owner, out var gunComp)) { return; }
 
 
