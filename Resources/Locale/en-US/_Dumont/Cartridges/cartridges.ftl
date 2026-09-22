@@ -1,7 +1,7 @@
 ent-JaniCartridge = janicaller cartridge
     .desc = For when you need to call the sweepers
 
-jani-cart-program = JaniCaller
+jani-program-name = JaniCaller
 
 jani-cartridge-wait = Wait before sending again.
 jani-cartridge-message-sent = Message sent.
