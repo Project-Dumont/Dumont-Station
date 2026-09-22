@@ -1,6 +1,8 @@
 using Content.Shared.PDA;
 using Robust.Shared.Prototypes;
 
+namespace Content.Shared._Dumont.CartridgeLoader.Cartridges;
+
 [RegisterComponent]
 public sealed partial class JaniCartridgeComponent : Component
 {
@@ -8,7 +10,7 @@ public sealed partial class JaniCartridgeComponent : Component
     /// Jani notification group
     /// </summary>
     [DataField]
-    public ProtoId<NotificationGroupPrototype> NotificationGroup = "Janitor";
+    public ProtoId<NotificationGroupPrototype> NotificationGroup = "JanitorAlerts";
 
     /// <summary>
     /// Localized Message that appears on Jani's PDAs;

@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: JaniCartridge
+  name: janicaller cartridge
+  description: For when you need to call the sweepers.
+  components:
+    - type: Sprite
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-jani
+    - type: Icon
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-jani
+    - type: Cartridge
+      programName: jani-program-name
+      icon:
+        sprite: Objects/Specific/Janitorial/mop.rsi
+        state: mop
+    - type: JaniCartridge

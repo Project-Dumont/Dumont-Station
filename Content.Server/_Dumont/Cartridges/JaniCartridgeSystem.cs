@@ -2,6 +2,7 @@ using Content.Server.Pinpointer;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.PDA;
 using Content.Shared.Popups;
+using Content.Shared._Dumont.CartridgeLoader.Cartridges;
 using Robust.Shared.Timing;
 using Robust.Shared.Maths;
 
@@ -14,7 +15,7 @@ public sealed partial class JaniCartridgeSystem : EntitySystem {
     public override void Initialize() {
         base.Initialize();
 
-        SubscribeLocalEvent<JaniCartridgeComponent, CartridgeActivatedEvent>(OnActivate)
+        SubscribeLocalEvent<JaniCartridgeComponent, CartridgeActivatedEvent>(OnActivate);
     }
 
     private void OnActivate(Entity<JaniCartridgeComponent> cart, ref CartridgeActivatedEvent args) {
