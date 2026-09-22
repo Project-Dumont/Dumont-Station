@@ -2,7 +2,7 @@ using Content.Server.Pinpointer;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.PDA;
 using Content.Shared.Popups;
-using Content.Shared._Dumont.CartridgeLoader.Cartridges;
+using Content.Server._Dumont.CartridgeLoader.Cartridges;
 using Robust.Shared.Timing;
 using Robust.Shared.Maths;
 
@@ -12,13 +12,15 @@ public sealed partial class JaniCartridgeSystem : EntitySystem {
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
-    public override void Initialize() {
+    public override void Initialize()
+    {
         base.Initialize();
 
         SubscribeLocalEvent<JaniCartridgeComponent, CartridgeActivatedEvent>(OnActivate);
     }
 
-    private void OnActivate(Entity<JaniCartridgeComponent> cart, ref CartridgeActivatedEvent args) {
+    private void OnActivate(Entity<JaniCartridgeComponent> cart, ref CartridgeActivatedEvent args)
+    {
         if (!_navMapSystem.TryGetNearestBeacon(_xform.GetMapCoordinates(cart.Owner), out var beacon, out var _) || beacon is null)
             return;
 

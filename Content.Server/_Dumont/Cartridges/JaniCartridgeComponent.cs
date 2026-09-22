@@ -1,7 +1,7 @@
 using Content.Shared.PDA;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Dumont.CartridgeLoader.Cartridges;
+namespace Content.Server._Dumont.CartridgeLoader.Cartridges;
 
 [RegisterComponent]
 public sealed partial class JaniCartridgeComponent : Component
