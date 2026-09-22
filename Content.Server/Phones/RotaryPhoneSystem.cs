@@ -74,7 +74,7 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
                     session,
                     Loc.GetString("phone-verb-text"),
                     Loc.GetString("phone-verb-prompt"),
-                    response => { phone.Comp.Name = response; });
+                    response => { phone.Comp.Name = response; Dirty(phone); });
             }
         };
 
