@@ -58,7 +58,7 @@ public abstract class SharedCoronerSystem : EntitySystem
 
     private void OnDoAfter(Entity<AutopsyToolComponent> ent, ref AutopsyDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || args.Target is not { } target)
+        if (args.Cancelled || args.Handled || args.Target is not { } target || !_mobState.IsDead(target))
             return;
 
         args.Handled = true;
