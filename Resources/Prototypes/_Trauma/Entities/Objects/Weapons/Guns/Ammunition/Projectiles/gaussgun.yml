@@ -150,7 +150,7 @@
     damage:
       types:
         Piercing: 19
-        Slash: 11
+        Slash: 10
       armorPenetration: 0.15
   - type: Sprite
     state: disk
