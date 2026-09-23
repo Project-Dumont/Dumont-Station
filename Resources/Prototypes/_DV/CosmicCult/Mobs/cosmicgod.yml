@@ -93,7 +93,9 @@
   - type: CanMoveInAir
   - type: WarpPoint
     follow: true
-    location: location-the-unknown
+    # Dumont changes start
+    location: The Unknown
+    # Dumont end
   - type: CosmicGod
   - type: CosmicCultExamine
     cultistText: cosmic-examine-text-god
