@@ -8,7 +8,9 @@
   - type: LoadMapRule
     mapPath: /Maps/_DV/Nonstations/cosmicvoid.yml
   - type: GameRule
-    minPlayers: 25
+    # Dumont changes start
+    minPlayers: 20
+    # Dumont end
     chaosScore: 1200
     delay:
       min: 60
