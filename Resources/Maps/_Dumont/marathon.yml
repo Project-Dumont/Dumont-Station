@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/23/2026 16:43:00
-  entityCount: 23233
+  time: 09/23/2026 18:42:40
+  entityCount: 23234
 maps:
 - 1
 grids:
@@ -11469,7 +11469,7 @@ entities:
       pos: -1.5,18.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -23580.736
+      secondsUntilStateChange: -23613.725
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11973,7 +11973,7 @@ entities:
       pos: 40.5,11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -27326.56
+      secondsUntilStateChange: -27359.549
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12010,7 +12010,7 @@ entities:
       pos: 41.5,8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -24175.102
+      secondsUntilStateChange: -24208.09
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -65236,10 +65236,10 @@ entities:
       server: 9950
       connectedToServer: True
     - type: DnaServer
-      serverId: 116
+      serverId: 117
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 483.7379984
-      lastInjectorTime: 483.7379984
+      lastSubjectInjectTime: 981.0853248
+      lastInjectorTime: 981.0853248
     - type: DeviceLinkSource
       linkedPorts:
         15824:
@@ -68531,7 +68531,7 @@ entities:
       pos: 12.5,-12.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -22543.07
+      secondsUntilStateChange: -22576.059
     - type: Firelock
       emergencyCloseCooldown: 1795.33154
   - uid: 10365
@@ -102039,11 +102039,11 @@ entities:
       pos: -10.5,-19.5
 - proto: GunSafeDisabler
   entities:
-  - uid: 15181
+  - uid: 23234
     components:
     - type: Transform
       parent: 2
-      pos: -41.5,55.5
+      pos: -39.5,49.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 15182
@@ -102065,6 +102065,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.5,53.5
+- proto: GunSafePhaser
+  entities:
+  - uid: 15181
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.5,55.5
 - proto: GunSafeSurplus
   entities:
   - uid: 15185
