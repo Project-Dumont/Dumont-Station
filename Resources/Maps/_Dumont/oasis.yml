@@ -83188,7 +83188,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 49.5,-33.5
-- proto: CrateArmoryPhasers
+- proto: GunSafePhaser
   entities:
   - uid: 16122
     components:

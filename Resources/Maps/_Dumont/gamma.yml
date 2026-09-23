@@ -97671,7 +97671,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 48.677773,2.518083
-- proto: CrateArmoryPhasers
+- proto: GunSafePhaser
   entities:
   - uid: 1980
     components:

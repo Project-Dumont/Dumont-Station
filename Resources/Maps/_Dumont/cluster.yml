@@ -30959,7 +30959,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 51.523182,-26.587635
-- proto: CrateArmoryPhasers
+- proto: GunSafePhaser
   entities:
   - uid: 570
     components:
