@@ -87,7 +87,9 @@
     guides:
     - CosmicCult
   - type: WarpPoint
-    location: location-the-monument
+    # Dumont changes start
+    location: The Monument
+    # Dumont end
   - type: CosmicCultExamine
     cultistText: cosmic-examine-text-forthecult
   - type: CosmicCorrupting
