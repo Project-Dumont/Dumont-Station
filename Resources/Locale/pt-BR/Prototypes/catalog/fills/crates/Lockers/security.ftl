@@ -52,3 +52,6 @@ ent-ClosetBombFilled = armário de traje anti-bomba
 
 ent-GunSafeLauncherNonLethal = armário de lança-granadas anti-motim
  .desc = Um cofre com um lança granadas e algumas granadas menos-letais.
+
+ent-GunSafePhaser = cofre de phaser
+ .desc = Um cofre com 4 phasers.

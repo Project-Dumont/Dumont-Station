@@ -4,7 +4,7 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/12/2026 02:35:16
+  time: 09/23/2026 16:48:39
   entityCount: 14259
 maps:
 - 1
@@ -35889,6 +35889,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 9.464803,43.510174
+- proto: CrateArmoryPhasers
+  entities:
+  - uid: 9339
+    components:
+    - type: Transform
+      parent: 2
+      pos: -37.5,21.5
 - proto: CrateArtifactContainer
   entities:
   - uid: 5313
@@ -39974,10 +39981,10 @@ entities:
       server: 5949
       connectedToServer: True
     - type: DnaServer
-      serverId: 106
+      serverId: 107
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1999.8412874
-      lastInjectorTime: 1999.8412874
+      lastSubjectInjectTime: 810.2440624
+      lastInjectorTime: 810.2440624
     - type: DeviceLinkSource
       linkedPorts:
         9667:
@@ -63624,6 +63631,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -0.5,-56.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 9341
+    components:
+    - type: Transform
+      parent: 2
+      pos: -35.5,22.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 9336
@@ -63638,34 +63652,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.5,20.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 9338
-    components:
-    - type: Transform
-      parent: 2
-      pos: -37.5,21.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 9339
-    components:
-    - type: Transform
-      parent: 2
-      pos: -34.5,22.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafeMelee
   entities:
   - uid: 9340
     components:
     - type: Transform
       parent: 2
-      pos: -35.5,22.5
-- proto: GunSafeSubMachineGunDrozd
+      pos: -36.5,22.5
+- proto: GunSafeSurplus
   entities:
-  - uid: 9341
+  - uid: 9338
     components:
     - type: Transform
       parent: 2
-      pos: -36.5,22.5
+      pos: -34.5,22.5
 - proto: Handcuffs
   entities:
   - uid: 9342

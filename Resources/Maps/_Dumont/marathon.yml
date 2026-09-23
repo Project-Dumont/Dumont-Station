@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 20:11:03
-  entityCount: 23227
+  time: 09/23/2026 16:43:00
+  entityCount: 23233
 maps:
 - 1
 grids:
@@ -11469,7 +11469,7 @@ entities:
       pos: -1.5,18.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -23521.643
+      secondsUntilStateChange: -23580.736
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11973,7 +11973,7 @@ entities:
       pos: 40.5,11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -27267.467
+      secondsUntilStateChange: -27326.56
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12010,7 +12010,7 @@ entities:
       pos: 41.5,8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -24116.008
+      secondsUntilStateChange: -24175.102
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14557,6 +14557,28 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -4.5,-12.5
+- proto: BaseMagazineGaussgun
+  entities:
+  - uid: 22901
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.35501,54.616558
+  - uid: 22903
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.35501,54.530846
+  - uid: 23228
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.383583,54.416557
+  - uid: 23229
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.383583,54.31656
 - proto: Beaker
   entities:
   - uid: 922
@@ -15533,13 +15555,6 @@ entities:
       pos: -11.306907,18.807306
     - type: BallisticAmmoProvider
       unspawnedCount: 12
-  - uid: 1098
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.476646,54.757214
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
 - proto: BoxBodyBag
   entities:
   - uid: 1099
@@ -15756,15 +15771,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -15.855776,-18.39025
-- proto: BoxShotgunIncendiary
-  entities:
-  - uid: 1135
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.476646,54.61659
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
 - proto: BoxSterileMask
   entities:
   - uid: 1136
@@ -65230,10 +65236,10 @@ entities:
       server: 9950
       connectedToServer: True
     - type: DnaServer
-      serverId: 115
+      serverId: 116
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 704.7069293
-      lastInjectorTime: 704.7069293
+      lastSubjectInjectTime: 483.7379984
+      lastInjectorTime: 483.7379984
     - type: DeviceLinkSource
       linkedPorts:
         15824:
@@ -68525,7 +68531,7 @@ entities:
       pos: 12.5,-12.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -22483.977
+      secondsUntilStateChange: -22543.07
     - type: Firelock
       emergencyCloseCooldown: 1795.33154
   - uid: 10365
@@ -102052,20 +102058,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.5,55.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeMelee
   entities:
   - uid: 15184
     components:
     - type: Transform
       parent: 2
-      pos: -41.5,53.5
-- proto: GunSafeSubMachineGunDrozd
+      pos: -37.5,53.5
+- proto: GunSafeSurplus
   entities:
   - uid: 15185
     components:
     - type: Transform
       parent: 2
-      pos: -37.5,53.5
+      pos: -41.5,53.5
 - proto: Handcuffs
   entities:
   - uid: 15186
@@ -110394,6 +110400,28 @@ entities:
     - type: Transform
       parent: 2
       pos: 29.5,16.5
+- proto: PowerCellHigh
+  entities:
+  - uid: 23230
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.683586,54.659416
+  - uid: 23231
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.683586,54.559414
+  - uid: 23232
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.683586,54.44513
+  - uid: 23233
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.683586,54.330845
 - proto: PowerCellRecharger
   entities:
   - uid: 16264
@@ -149815,6 +149843,28 @@ entities:
     - type: Transform
       parent: 2
       pos: -5.5,78.5
+- proto: WeaponGaussgun
+  entities:
+  - uid: 1098
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.440727,54.716557
+  - uid: 1135
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.440727,54.487988
+  - uid: 22902
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.440727,54.330845
+  - uid: 22904
+    components:
+    - type: Transform
+      parent: 2
+      pos: -41.45501,54.630844
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 22900
@@ -149822,32 +149872,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -38.316597,60.345554
-- proto: WeaponShotgunKammerer
-  entities:
-  - uid: 22901
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.42977,54.350964
-    - type: BallisticAmmoProvider
-      unspawnedCount: 4
-  - uid: 22902
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.42977,54.507214
-    - type: BallisticAmmoProvider
-      unspawnedCount: 4
-  - uid: 22903
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.445473,54.20003
-  - uid: 22904
-    components:
-    - type: Transform
-      parent: 2
-      pos: -41.445473,54.621906
 - proto: Welder
   entities:
   - uid: 22905

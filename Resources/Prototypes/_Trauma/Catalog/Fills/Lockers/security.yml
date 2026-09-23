@@ -71,3 +71,20 @@
       amount: 2 
     - id: PowerCellHigh
       amount: 2
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafePhaser
+  name: phaser safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafePhaser
+
+- type: entityTable
+  id: FillGunSafePhaser
+  table: !type:AllSelector
+    children:
+    - id: WeaponEnergyGunPhaser
+      amount: 4

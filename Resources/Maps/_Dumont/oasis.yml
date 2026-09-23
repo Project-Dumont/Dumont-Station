@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 20:09:33
-  entityCount: 30635
+  time: 09/23/2026 16:47:36
+  entityCount: 30631
 maps:
 - 1
 grids:
@@ -12141,7 +12141,7 @@ entities:
       pos: -39.5,-14.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -17812.965
+      secondsUntilStateChange: -17977.455
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12527,7 +12527,7 @@ entities:
       pos: 27.5,14.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -36443.777
+      secondsUntilStateChange: -36608.27
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -13137,7 +13137,7 @@ entities:
       pos: 46.5,47.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -42527.027
+      secondsUntilStateChange: -42691.52
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -13847,7 +13847,7 @@ entities:
       pos: 0.5,48.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -89055.07
+      secondsUntilStateChange: -89219.56
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14483,7 +14483,7 @@ entities:
       pos: 27.5,-58.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -45849.16
+      secondsUntilStateChange: -46013.652
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14541,7 +14541,7 @@ entities:
       pos: -20.5,-41.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -27763.021
+      secondsUntilStateChange: -27927.512
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14633,7 +14633,7 @@ entities:
       pos: -3.5,-35.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -690699.94
+      secondsUntilStateChange: -690864.44
 - proto: AirlockMedicalGlassLocked
   entities:
   - uid: 459
@@ -14644,7 +14644,7 @@ entities:
       pos: -22.5,-39.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -33105.605
+      secondsUntilStateChange: -33270.098
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -36703,13 +36703,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -32.51034,-19.816336
-- proto: BoxBeanbag
-  entities:
-  - uid: 1249
-    components:
-    - type: Transform
-      parent: 2
-      pos: 33.700905,-26.47795
 - proto: BoxBodyBag
   entities:
   - uid: 1250
@@ -37053,18 +37046,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -28.464748,-17.253857
-- proto: BoxLethalshot
-  entities:
-  - uid: 1310
-    components:
-    - type: Transform
-      parent: 2
-      pos: 33.390736,-26.299541
-  - uid: 1311
-    components:
-    - type: Transform
-      parent: 2
-      pos: 33.40636,-26.471416
 - proto: BoxLightMixed
   entities:
   - uid: 1312
@@ -37130,13 +37111,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -18.657715,-3.2872367
-- proto: BoxShotgunSlug
-  entities:
-  - uid: 1320
-    components:
-    - type: Transform
-      parent: 2
-      pos: 33.640736,-26.283916
 - proto: BoxSyringe
   entities:
   - uid: 1321
@@ -80478,6 +80452,43 @@ entities:
     - type: Transform
       parent: 2
       pos: 32.48238,-25.449997
+    - type: GroupExamine
+      group:
+      - title: null
+        icon: /Textures/Interface/examine-star.png
+        hoverMessage: ""
+        entries:
+        - priority: 0
+          message: Diminui sua velocidade em [color=yellow]10%[/color].
+          component: ClothingSpeedModifier
+        - priority: 0
+          message: >-
+            Isso concede as seguintes proteções:
+
+            - Essa armadura protege [color=yellow]peito, virilha, braços, pernas, e cauda[/color].
+
+            - dano de [color=yellow]contundente[/color] reduzido em [color=lightblue]65%[/color].
+
+            - dano de [color=yellow]cortante[/color] reduzido em [color=lightblue]65%[/color].
+
+            - dano de [color=yellow]perfurante[/color] reduzido em [color=lightblue]40%[/color].
+
+            - dano de [color=yellow]calor[/color] reduzido em [color=lightblue]40%[/color].
+
+            - dano de [color=yellow]cáustico[/color] reduzido em [color=lightblue]25%[/color].
+
+            - dano de [color=lightyellow]stamina[/color] reduzido em [color=lightblue]40%[/color].
+
+            - [color=green]Aumenta[/color] o delay de knockdown do bastão de choque por [color=lightblue]2,5 segundos[/color].
+
+            - [color=green]Diminui[/color] o knockdown do bastão de choque por [color=lightblue]2,5 segundos[/color].
+
+            - Dano de [color=orange]explosão[/color] reduzido em [color=lightblue]10%[/color].
+          component: Armor
+        contextText: verb-examine-group-other
+        components:
+        - Armor
+        - ClothingSpeedModifier
     - type: SolutionContainerManager
       solutions:
         stain:
@@ -83177,6 +83188,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 49.5,-33.5
+- proto: CrateArmoryPhasers
+  entities:
+  - uid: 16122
+    components:
+    - type: Transform
+      parent: 2
+      pos: 32.5,-24.5
 - proto: CrateArtifactContainer
   entities:
   - uid: 8885
@@ -93080,10 +93098,10 @@ entities:
       server: 10426
       connectedToServer: True
     - type: DnaServer
-      serverId: 119
+      serverId: 121
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1130.0988999
-      lastInjectorTime: 1130.0988999
+      lastSubjectInjectTime: 639.7570081
+      lastInjectorTime: 639.7570081
   - uid: 10427
     components:
     - type: Transform
@@ -93098,10 +93116,10 @@ entities:
       server: 10427
       connectedToServer: True
     - type: DnaServer
-      serverId: 120
+      serverId: 122
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1130.0988999
-      lastInjectorTime: 1130.0988999
+      lastSubjectInjectTime: 639.7570081
+      lastInjectorTime: 639.7570081
 - proto: DogBed
   entities:
   - uid: 10428
@@ -97765,7 +97783,7 @@ entities:
       pos: -1.5,-16.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -57479.52
+      secondsUntilStateChange: -57644.01
     - type: DeviceNetwork
       deviceLists:
       - 10765
@@ -140014,6 +140032,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 38.5,-30.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 1320
+    components:
+    - type: Transform
+      parent: 2
+      pos: 32.5,-23.5
 - proto: GunSafeLauncherNonLethal
   entities:
   - uid: 16120
@@ -140021,34 +140046,20 @@ entities:
     - type: Transform
       parent: 2
       pos: 32.5,-21.5
-- proto: GunSafePistolMk58
+- proto: GunSafeMelee
+  entities:
+  - uid: 1311
+    components:
+    - type: Transform
+      parent: 2
+      pos: 35.5,-25.5
+- proto: GunSafeSurplus
   entities:
   - uid: 16121
     components:
     - type: Transform
       parent: 2
       pos: 35.5,-24.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 16122
-    components:
-    - type: Transform
-      parent: 2
-      pos: 32.5,-23.5
-- proto: GunSafeShotgunKammerer
-  entities:
-  - uid: 16123
-    components:
-    - type: Transform
-      parent: 2
-      pos: 35.5,-25.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 16124
-    components:
-    - type: Transform
-      parent: 2
-      pos: 32.5,-24.5
 - proto: GyroscopeMachineCircuitboard
   entities:
   - uid: 16125
@@ -172479,7 +172490,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 33.17645,-26.685741
+      pos: 33.34126,-26.348152
 - proto: TwoWayLever
   entities:
   - uid: 20723
@@ -194722,34 +194733,21 @@ entities:
       pos: -47.497086,-22.069218
 - proto: WeaponLaserCarbine
   entities:
+  - uid: 16124
+    components:
+    - type: Transform
+      parent: 2
+      pos: 34.643047,-26.505297
   - uid: 24135
     components:
     - type: Transform
       parent: 2
-      pos: 34.61336,-26.569357
-    - type: Gun
-      burstCooldownModified: 0.25
+      pos: 34.643047,-26.362438
   - uid: 24136
     components:
     - type: Transform
       parent: 2
-      pos: 34.597736,-26.850607
-    - type: Gun
-      burstCooldownModified: 0.25
-  - uid: 24137
-    components:
-    - type: Transform
-      parent: 2
-      pos: 34.55086,-26.381857
-    - type: Gun
-      burstCooldownModified: 0.25
-  - uid: 24138
-    components:
-    - type: Transform
-      parent: 2
-      pos: 34.67586,-26.647482
-    - type: Gun
-      burstCooldownModified: 0.25
+      pos: 34.643047,-26.448153
 - proto: WeaponLaserCellSMG
   entities:
   - uid: 16992
@@ -194778,6 +194776,31 @@ entities:
           ent: 16995
           showEnts: False
           occludes: True
+- proto: WeaponLaserRifle
+  entities:
+  - uid: 1249
+    components:
+    - type: Transform
+      parent: 2
+      pos: 33.601807,-26.320335
+    - type: Gun
+      burstCooldownModified: 1
+- proto: WeaponLaserSMG
+  entities:
+  - uid: 1310
+    components:
+    - type: Transform
+      parent: 2
+      pos: 33.53038,-26.448906
+    - type: Gun
+      burstCooldownModified: 1
+  - uid: 16123
+    components:
+    - type: Transform
+      parent: 2
+      pos: 33.544662,-26.648907
+    - type: Gun
+      burstCooldownModified: 1
 - proto: WeaponPistolMk58
   entities:
   - uid: 28949
@@ -194804,22 +194827,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -18.393879,-3.4822903
-- proto: WeaponShotgunEnforcer
-  entities:
-  - uid: 24140
-    components:
-    - type: Transform
-      parent: 2
-      pos: 32.5827,-26.357616
-    - type: Gun
-      burstCooldownModified: 0.25
-  - uid: 24141
-    components:
-    - type: Transform
-      parent: 2
-      pos: 32.5827,-26.591991
-    - type: Gun
-      burstCooldownModified: 0.25
 - proto: WeaponTemperatureGun
   entities:
   - uid: 24142
@@ -195321,7 +195328,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -114404.08
+      secondsUntilStateChange: -114568.57
     - type: Airlock
       autoClose: False
   - uid: 30595
@@ -196584,7 +196591,7 @@ entities:
       pos: -46.5,28.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -122787.84
+      secondsUntilStateChange: -122952.336
   - uid: 30609
     components:
     - type: Transform
@@ -196612,7 +196619,7 @@ entities:
       pos: 24.5,2.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -468831.5
+      secondsUntilStateChange: -468996
 - proto: WoodenBench
   entities:
   - uid: 24434
