@@ -40,6 +40,7 @@
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
             MedicalDoctor: [ 4, 5 ]
+            Coroner: [ 1, 1 ] # Dumont
             MedicalIntern: [ 3, 3 ]
             Psychologist: [ 1, 1 ]
             Paramedic: [ 2, 2 ]

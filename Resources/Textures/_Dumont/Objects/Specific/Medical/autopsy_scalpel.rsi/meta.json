@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Ephemeral Space at https://github.com/EphemeralSpace/ephemeral-space, made by Flareguy, inhand sprites taken and modified from tgstation at commit https://github.com/tgstation/tgstation/commit/041a62e0e31abbe9b4099f4768c0583cadeb50d2",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

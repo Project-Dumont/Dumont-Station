@@ -85,6 +85,7 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
+            Coroner: [ 1, 1 ] # Dumont
             MedicalIntern: [ 2, 2 ]
             Virologist: [ 1, 1 ]
             #science

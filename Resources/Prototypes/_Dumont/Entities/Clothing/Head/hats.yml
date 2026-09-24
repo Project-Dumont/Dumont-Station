@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCoroner
+  name: coroner's hat
+  description: A tall, blue-brimmed hat. Smells kinda funny.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Head/Hats/coroner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Head/Hats/coroner.rsi

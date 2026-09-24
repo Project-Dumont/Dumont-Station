@@ -1,0 +1,27 @@
+- type: loadout
+  id: CoronerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCoroner
+
+- type: loadout
+  id: CoronerHat
+  equipment:
+    head: ClothingHeadHatCoroner
+
+- type: loadout
+  id: CoronerEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCoroner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: CoronerEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmCoroner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

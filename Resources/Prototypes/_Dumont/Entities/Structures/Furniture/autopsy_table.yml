@@ -1,0 +1,20 @@
+- type: entity
+  id: AutopsyTable
+  parent: Bed
+  name: autopsy table
+  description: A steel table with a drain at the end. The patient has no say in the matter.
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/Tables/optable.rsi
+    state: operating_table
+    color: "#8f9ba6"
+    noRot: true
+  - type: Icon
+    sprite: Structures/Furniture/Tables/optable.rsi
+    state: operating_table
+  - type: AutopsyTable
+  - type: OperatingTable
+    speedModifier: 1.5
+  - type: Strap
+    position: Down
+    buckleOffset: "0,0"

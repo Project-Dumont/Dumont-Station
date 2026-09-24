@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseToolSurgery
+  id: ScalpelAutopsy
+  name: autopsy scalpel
+  description: A scalpel with a wider blade, meant for the dead. Reading a body with it takes time and training.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Medical/autopsy_scalpel.rsi
+    state: icon
+  - type: Item
+    sprite: _Dumont/Objects/Specific/Medical/autopsy_scalpel.rsi
+    storedRotation: 90
+  - type: Scalpel
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    swingLeft: true
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 8
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: AutopsyTool

@@ -14,3 +14,14 @@
       right:
       - state: inhand-right
         color: "#3f3f3f"
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCoroner
+  name: coroner jumpsuit
+  description: A navy blue jumpsuit with medical markings on it. You wish these things were stain-proof.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Uniforms/Jumpsuit/coroner.rsi
+  - type: Clothing
+    sprite: _Dumont/Clothing/Uniforms/Jumpsuit/coroner.rsi

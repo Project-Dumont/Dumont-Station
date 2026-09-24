@@ -71,6 +71,7 @@
             Chemist: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             MedicalDoctor: [ 6, 6 ]
+            Coroner: [ 1, 1 ] # Dumont
             Psychologist: [ 1, 1 ]
             MedicalIntern: [ 1, 2 ]
             Virologist: [ 1, 1 ]

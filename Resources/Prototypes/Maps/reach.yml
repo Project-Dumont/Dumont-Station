@@ -55,6 +55,7 @@
             Botanist: [ 1, 1 ]
             Chef: [ 1, 1 ]
             MedicalDoctor: [ 1, 2 ]
+            Coroner: [ 1, 1 ] # Dumont
             Chemist: [ 1, 1 ]
             Janitor: [ 1, 1 ]
             Musician: [ 1, 1 ]

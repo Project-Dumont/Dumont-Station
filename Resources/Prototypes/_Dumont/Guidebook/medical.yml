@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: Coroner
+  name: guide-entry-coroner
+  text: "/ServerInfo/_Dumont/Guidebook/Medical/Coroner.xml"

@@ -445,6 +445,7 @@
   - type: StandingState
   - type: Crawler
   - type: Dna
+  - type: DamageHistory # Dumont
   - type: Scent # Einstein Engines
   - type: DnaModifier
   - type: MindContainer

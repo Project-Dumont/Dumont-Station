@@ -1,0 +1,39 @@
+- type: job
+  id: Coroner
+  name: job-name-coroner
+  description: job-description-coroner
+  playTimeTracker: JobCoroner
+  startingGear: CoronerGear
+  icon: "JobIconCoroner"
+  supervisors: job-supervisors-cmo
+  guides:
+  - Coroner
+  - Medical
+  goobcoins: 20
+  salary: 50
+  access:
+  - Medical
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: AutopsyUser
+
+- type: startingGear
+  id: CoronerGear
+  equipment:
+    ears: ClothingHeadsetMedical
+    pocket1: ScalpelAutopsy
+  storage:
+    back:
+    - BodyBagFolded
+
+- type: chameleonOutfit
+  id: CoronerChameleonOutfit
+  job: Coroner
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCoroner
+    outerClothing: ClothingOuterCoatLab
+    gloves: ClothingHandsGlovesLatex
+    mask: ClothingMaskSterile
+    shoes: ClothingShoesColorWhite
+    id: MedicalPDA

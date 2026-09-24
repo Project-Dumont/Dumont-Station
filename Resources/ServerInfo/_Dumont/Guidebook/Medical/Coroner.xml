@@ -1,0 +1,46 @@
+<Document>
+# Legista
+
+O legista é quem cuida dos mortos. Enquanto o médico corre atrás de quem ainda dá para salvar, o legista abre quem já se foi para descobrir o que aconteceu, e entrega esse laudo para a segurança.
+
+## A autópsia
+
+Você começa a rodada com um bisturi de autópsia no bolso e um saco de corpo na mochila. O bisturi só funciona na mão de quem tem treino: um tripulante comum tenta e não sai do lugar.
+
+<Box>
+<GuideEntityEmbed Entity="ScalpelAutopsy"/>
+<GuideEntityEmbed Entity="BodyBagFolded"/>
+</Box>
+
+Para examinar, use o bisturi no corpo. O exame precisa que a pessoa esteja morta e não termina se você sair andando ou levar dano no meio. No fim sai um laudo em papel, pronto para ler, carimbar e entregar.
+
+## A mesa faz diferença
+
+Corpo deitado na mesa de autópsia do necrotério rende exame de quinze segundos e laudo inteiro. No chão do corredor o exame leva trinta segundos e sai só o que dá para ver por cima: nada de trauma interno, sequência das lesões ou química do sangue. Vale carregar o corpo.
+
+<Box>
+<GuideEntityEmbed Entity="AutopsyTable"/>
+</Box>
+
+## O que o laudo traz
+
+- Identidade, DNA e hora do óbito, contada a partir do começo da rodada.
+- Causa provável, tirada do dano que mais pesou.
+- Dano por tipo, na ordem do maior para o menor.
+- Ferida por parte do corpo, com a gravidade de cada uma.
+- Trauma interno: osso trincado ou quebrado, órgão danificado, veia rompida e membro arrancado.
+- Sequência das lesões, com a hora de cada uma, do primeiro golpe ao último.
+- O que sobrou de químico no sangue.
+- Pistas forenses: digitais, DNA de terceiros, fibras, resíduos e cheiro.
+
+Cicatriz e ferida já curada não entram: o laudo fala do que matou, não do que a pessoa carregava de outras rodadas.
+
+## O que fazer com o laudo
+
+O necrotério é seu escritório, e o saco de corpo é para trazer quem você achou pela estação. Com o laudo na mão, procure a segurança: digital e fibra em cima do corpo é prova, o DNA identifica quem ficou irreconhecível, e a sequência das lesões diz se a pessoa apanhou antes de morrer ou caiu de uma vez. O chefe da medicina carimba o laudo, e papel carimbado pesa mais no tribunal.
+
+<Box>
+<GuideEntityEmbed Entity="Paper"/>
+<GuideEntityEmbed Entity="RubberStampCMO"/>
+</Box>
+</Document>
