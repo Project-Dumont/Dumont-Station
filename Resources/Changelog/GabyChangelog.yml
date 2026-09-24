@@ -4125,3 +4125,9 @@ Entries:
       message: programa de chamar zelador via pda
   id: 490
   time: '2026-09-22T23:23:00.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Mapa Core de volta a pool, reformulado para desastres atuais!
+  id: 491
+  time: '2026-09-23T23:56:14.0000000+00:00'
