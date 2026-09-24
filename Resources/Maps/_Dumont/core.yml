@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/23/2026 18:24:20
-  entityCount: 23003
+  time: 09/24/2026 00:09:16
+  entityCount: 23001
 maps:
 - 17546
 grids:
@@ -894,6 +894,7 @@ entities:
             2835: -23,38
             2836: -10,38
             2837: -9,38
+            7961: 5,33
         - node:
             zIndex: 10
             id: Bot
@@ -17676,7 +17677,7 @@ entities:
       pos: 54.5,-3.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -37180.727
+      secondsUntilStateChange: -37359.047
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -22656,20 +22657,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 30.507017,-2.4499931
-- proto: BoxMagazinePistol
-  entities:
-  - uid: 5102
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.59252,33.57698
-- proto: BoxMagazineShotgun
-  entities:
-  - uid: 5101
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.34252,33.57698
 - proto: BoxMouthSwab
   entities:
   - uid: 6920
@@ -72190,10 +72177,10 @@ entities:
       server: 895
       connectedToServer: True
     - type: DnaServer
-      serverId: 91
+      serverId: 92
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 56.7749101
-      lastInjectorTime: 56.7749101
+      lastSubjectInjectTime: 57.5303855
+      lastInjectorTime: 57.5303855
     - type: DeviceLinkSource
       linkedPorts:
         8555:
@@ -106308,46 +106295,27 @@ entities:
     - type: Transform
       parent: 2
       pos: 16.5,-58.5
-- proto: GunSafePistolMk58
+- proto: GunSafeGauss
   entities:
   - uid: 1956
     components:
     - type: Transform
       parent: 2
-      pos: 6.5,33.5
-- proto: GunSafeRifleLecter
+      pos: 5.5,33.5
+- proto: GunSafeMelee
   entities:
-  - uid: 16915
+  - uid: 1957
+    components:
+    - type: Transform
+      parent: 2
+      pos: 6.5,33.5
+- proto: GunSafeSurplus
+  entities:
+  - uid: 5090
     components:
     - type: Transform
       parent: 2
       pos: 7.5,33.5
-    - type: EntityStorage
-      air:
-        temperature: 293.14673
-        volume: 200
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        immutable: False
 - proto: GyroscopeUnanchored
   entities:
   - uid: 15146
@@ -115382,12 +115350,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 3.5,33.5
-  - uid: 5090
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 5.5,33.5
   - uid: 5463
     components:
     - type: Transform
@@ -153855,6 +153817,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -8.829058,31.720768
+- proto: WeaponEnergyIonRifle
+  entities:
+  - uid: 7564
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5035143,33.63864
 - proto: WeaponEnergyTurretAI
   entities:
   - uid: 16757
@@ -154058,30 +154027,32 @@ entities:
     - type: Transform
       parent: 2
       pos: 3.53751,33.53506
-- proto: WeaponShotgunEnforcer
+- proto: WeaponLaserRifle
   entities:
-  - uid: 1957
+  - uid: 5085
     components:
     - type: Transform
       parent: 2
-      pos: 2.550524,33.364468
-- proto: WeaponShotgunKammerer
+      pos: 2.4928238,33.3815
+- proto: WeaponLaserSMG
   entities:
   - uid: 5091
     components:
     - type: Transform
       parent: 2
-      pos: 2.523613,33.586533
-  - uid: 7564
+      pos: 3.556909,33.35293
+  - uid: 5101
     components:
     - type: Transform
       parent: 2
-      pos: 2.5417395,33.683712
-  - uid: 20305
+      pos: 3.556909,33.43864
+- proto: WeaponTemperatureGun
+  entities:
+  - uid: 5075
     components:
     - type: Transform
       parent: 2
-      pos: 2.553135,33.488186
+      pos: 2.4749422,33.567215
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 20391
@@ -154523,11 +154494,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 4.5,33.5
-  - uid: 5085
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.5,33.5
 - proto: WindoorSecureAtmosphericsLocked
   entities:
   - uid: 3507
@@ -155304,17 +155270,17 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 80.5,-7.5
-  - uid: 5075
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 5.5,33.5
   - uid: 5079
     components:
     - type: Transform
       parent: 2
       pos: 2.5,32.5
+  - uid: 5102
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 5.5,33.5
   - uid: 5118
     components:
     - type: Transform
