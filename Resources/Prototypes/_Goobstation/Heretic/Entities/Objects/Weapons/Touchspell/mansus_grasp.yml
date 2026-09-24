@@ -25,12 +25,8 @@
       components:
       - MobState
   - type: MeleeWeapon
-    clickAttackWhitelist:
-      components:
-      - MobState
     resetOnHandSelected: false
-    altClickAttack: true
-    canMiss: false
+    altDisarm: false
     canBeParried: false
     damage:
       types:

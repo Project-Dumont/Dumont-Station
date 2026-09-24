@@ -113,6 +113,6 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ProjectileWaveRust
-      projectileSpeed: 2.8
+      speed: 2.8
   - type: SpeakOnAction
     sentence: heretic-speech-rust-wave

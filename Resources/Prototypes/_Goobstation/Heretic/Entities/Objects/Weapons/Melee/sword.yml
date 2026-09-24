@@ -36,7 +36,6 @@
   - type: Multihit
     damageMultiplier: 1
     multihitDelay: 1
-    delayPenalty: 1
     multihitWhitelist:
       tags:
       - HereticBlade

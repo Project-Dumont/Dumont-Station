@@ -10,11 +10,10 @@
         Blunt: 0.5
         Slash: 0.5
         Piercing: 0.5
-        Ballistic: 0.5
         Heat: 0.5
         Caustic: 0.8
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
     traumaDeductions:
       Dismemberment: 0.2
       OrganDamage: 0.2
@@ -75,11 +74,10 @@
         Blunt: 0.7
         Slash: 0.7
         Piercing: 0.7
-        Ballistic: 0.7
         Heat: 0.7
         Caustic: 0.7
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
   - type: ExplosionResistance
     damageCoefficient: 0.50
 
@@ -131,11 +129,10 @@
           Blunt: 0.4
           Slash: 0.4
           Piercing: 0.4
-          Ballistic: 0.4
           Heat: 0.4
           Caustic: 0.4
         flatReductions:
-          Ballistic: 3
+          Piercing: 3
       traumaDeductions:
         Dismemberment: 0.4
         OrganDamage: 0.4
@@ -160,11 +157,10 @@
           Blunt: 0.7
           Slash: 0.7
           Piercing: 0.7
-          Ballistic: 0.7
           Heat: 0.7
           Caustic: 0.7
         flatReductions:
-          Ballistic: 2
+          Piercing: 2
       traumaDeductions:
         Dismemberment: 0.2
         OrganDamage: 0.2
@@ -186,11 +182,10 @@
         Blunt: 0.6
         Slash: 0.6
         Piercing: 0.6
-        Ballistic: 0.5
         Heat: 0.6
         Caustic: 0.6
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
     traumaDeductions:
       Dismemberment: 0.3
       OrganDamage: 0.3
@@ -220,7 +215,8 @@
     lowPressureMultiplier: 1000
   - type: HollowWeave
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
 
 - type: entity
   abstract: true
@@ -233,11 +229,10 @@
         Blunt: 0.6
         Slash: 0.6
         Piercing: 0.6
-        Ballistic: 0.5
         Heat: 0.4
         Caustic: 0.8
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
   - type: ExplosionResistance
     damageCoefficient: 0
 
@@ -261,7 +256,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: ScorchedMantle
 
 - type: entity
@@ -275,11 +271,10 @@
         Blunt: 0.3
         Slash: 0.3
         Piercing: 0.3
-        Ballistic: 0.6
         Heat: 0.7
         Caustic: 0
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
 
 - type: entity
   parent: [ ArmorHereticFlesh, ClothingOuterArmorHeretic ]
@@ -327,11 +322,10 @@
         Blunt: 0.5
         Slash: 0.5
         Piercing: 0.5
-        Ballistic: 0.5
         Heat: 0.5
         Caustic: 0.5
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
     traumaDeductions:
       Dismemberment: 0.5
       OrganDamage: 0.5
@@ -374,11 +368,10 @@
         Blunt: 0.7
         Slash: 0.7
         Piercing: 0.7
-        Ballistic: 0.6
         Heat: 0.5
         Caustic: 0.8
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
 
 - type: entity
   parent: [ ArmorHereticCosmos, ClothingOuterArmorHeretic ]
@@ -399,7 +392,8 @@
     lowPressureMultiplier: 1000
   - type: MovementIgnoreGravityClothing
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: TackleModifier # Allows tackling on cosmic fields
     modifiers:
     - priority: 25
@@ -424,11 +418,10 @@
         Blunt: 0.6
         Slash: 0.6
         Piercing: 0.6
-        Ballistic: 0.6
         Heat: 0.6
         Caustic: 0.6
       flatReductions:
-        Ballistic: 2
+        Piercing: 2
     traumaDeductions:
       Dismemberment: 0.3
       OrganDamage: 0.3
@@ -472,7 +465,6 @@
         Blunt: 0.7
         Slash: 0.7
         Piercing: 0.7
-        Ballistic: 0.7
         Heat: 0.7
         Caustic: 0.7
     traumaDeductions:

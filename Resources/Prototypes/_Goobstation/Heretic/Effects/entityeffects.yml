@@ -214,7 +214,6 @@
   - !type:Emote
     emote: Flip
   - !type:PlaySoundEffect
-    positional: false
     sound: /Audio/_Goobstation/Heretic/cosmic_energy.ogg
   - !type:ModifyStatusEffect
     effectProto: StatusEffectProjectileImmunity

@@ -161,7 +161,6 @@
     sprite: _Goobstation/Heretic/eldritch_mobs.rsi
     state: stalker
   - type: FlashImmunity
-    showInExamine: false
   - type: MeleeWeapon
     animation: WeaponArcClaw
     damage:
@@ -311,7 +310,6 @@
     baseWalkSpeed: 5
     baseSprintSpeed: 5
   - type: FlashImmunity
-    showInExamine: false
   - type: NightVision
     color: aquamarine
     isActive: true
@@ -356,7 +354,6 @@
         Blunt: -1
         Slash: -1
         Piercing: -1
-        Ballistic: -1
         Heat: -1
         Cold: -1
         Shock: -1
@@ -445,10 +442,7 @@
   - type: Damageable
     damageModifierSet: FireShark
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Plasma
-        Quantity: 10
+    bloodReagent: Plasma
     bleedReductionAmount: 0.1
     maxBleedAmount: 0.5
     bloodlossDamage:
@@ -682,7 +676,6 @@
     - Blunt
     - Slash
     - Piercing
-    - Ballistic
     - Heat
     - Shock
     locPrefix: silicon
@@ -706,7 +699,6 @@
     baseWalkSpeed: 4.5
     baseSprintSpeed: 4.5
   - type: FlashImmunity
-    showInExamine: false
   - type: HTN
     rootTask:
       task: HereticSummonCompound

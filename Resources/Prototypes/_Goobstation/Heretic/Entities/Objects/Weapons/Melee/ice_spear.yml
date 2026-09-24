@@ -45,7 +45,6 @@
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     ignoreResistances: true
-    increaseOnly: true
     damage:
       types:
         Piercing: 5

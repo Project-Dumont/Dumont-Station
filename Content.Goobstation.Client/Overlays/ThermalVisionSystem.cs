@@ -26,6 +26,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     // Dumont start
     [Dependency] private SharedHereticSystem _heretic = default!;
+    [Dependency] private Robust.Client.Player.IPlayerManager _localPlayer = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     protected override bool WorksInHands => true;
 
@@ -66,8 +67,10 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     protected override void OnRefreshEquipmentHud(Entity<ThermalVisionComponent> ent,
         ref InventoryRelayedEvent<RefreshEquipmentHudEvent<ThermalVisionComponent>> args)
     {
-        if (ent.Comp.IsEquipment)
+        // Dumont start
+        if (ent.Comp.IsEquipment && (!ent.Comp.HereticOnly || (_localPlayer.LocalEntity is { } wearer && _heretic.IsHereticOrGhoul(wearer))))
             base.OnRefreshEquipmentHud(ent, ref args);
+        // Dumont end
     }
 
     private void OnToggle(Entity<ThermalVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

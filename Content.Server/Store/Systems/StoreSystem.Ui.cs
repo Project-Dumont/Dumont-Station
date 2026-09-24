@@ -51,6 +51,9 @@ public sealed partial class StoreSystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private StackSystem _stack = default!;
+    // Dumont start
+    [Dependency] private Content.Shared.Charges.Systems.SharedChargesSystem _charges = default!;
+    // Dumont end
     [Dependency] private MindShieldSystem _mindShield = default!;
 
     private void InitializeUi()
@@ -208,13 +211,31 @@ public sealed partial class StoreSystem
         //give action
         if (!string.IsNullOrWhiteSpace(listing.ProductAction))
         {
-            EntityUid? actionId;
-            // I guess we just allow duplicate actions?
-            // Allow duplicate actions and just have a single list buy for the buy-once ones.
-            if (listing.ApplyToMob || !Mind.TryGetMind(buyer, out var mind, out _))
-                actionId = _actions.AddAction(buyer, listing.ProductAction);
-            else
-                actionId = _actionContainer.AddAction(mind, listing.ProductAction);
+            // Dumont start
+            EntityUid? actionId = null;
+            var actionOwner = buyer;
+            var useMind = !listing.ApplyToMob && component.GrantActionsToMind && Mind.TryGetMind(buyer, out _, out _);
+            if (useMind && Mind.TryGetMind(buyer, out var buyerMind, out _))
+                actionOwner = buyerMind;
+
+            if (listing.ProductActionCharges is > 0 &&
+                TryComp<Content.Shared.Actions.Components.ActionsComponent>(actionOwner, out var ownedActions))
+            {
+                foreach (var existing in ownedActions.Actions)
+                {
+                    if (!Exists(existing) || MetaData(existing).EntityPrototype?.ID != listing.ProductAction.Value.Id)
+                        continue;
+
+                    _charges.AddCharges(existing, listing.ProductActionCharges.Value);
+                    actionId = existing;
+                    break;
+                }
+            }
+
+            actionId ??= useMind
+                ? _actionContainer.AddAction(actionOwner, listing.ProductAction)
+                : _actions.AddAction(buyer, listing.ProductAction);
+            // Dumont end
 
             // Add the newly bought action entity to the list of bought entities
             // And then add that action entity to the relevant product upgrade listing, if applicable
@@ -319,6 +340,10 @@ public sealed partial class StoreSystem
             $"{ToPrettyString(buyer):player} purchased listing \"{ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listing, ProtoMan)}\" from {ToPrettyString(uid)}{logExtraInfo}.");
 
         listing.PurchaseAmount++; //track how many times something has been purchased
+        // Dumont start
+        if (listing.SaleLimit > 0 && listing.PurchaseAmount >= listing.SaleLimit)
+            listing.RemoveCostModifier("DumontSales");
+        // Dumont end
         if (msg.SoundSource != null && GetEntity(msg.SoundSource) != null)
             _audio.PlayEntity(component.BuySuccessSound, msg.Actor, GetEntity(msg.SoundSource.Value)); //cha-ching!
 

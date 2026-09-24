@@ -49,8 +49,4 @@
     drawOverlay: false
     lightRadius: 0
     toggleAction: null
-    userWhitelist:
-      components:
-      - Heretic
-      - Ghoul
-    whitelistCheckMind: true
+    hereticOnly: true

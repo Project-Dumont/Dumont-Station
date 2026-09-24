@@ -172,4 +172,67 @@ public sealed class HereticRuntimeTests
         });
         await pair.CleanReturnAsync();
     }
+    [Test]
+    public async Task PaleFogRespectsNullrodProtection()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
+        await pair.Server.WaitAssertion(() =>
+        {
+            var entities = pair.Server.EntMan;
+            var body = entities.SpawnEntity("MobHuman", map.GridCoords);
+            var rod = entities.SpawnEntity("Nullrod", map.GridCoords);
+            Assert.That(entities.System<Content.Shared.Hands.EntitySystems.SharedHandsSystem>().TryPickup(body, rod), Is.True);
+            var fog = entities.SpawnEntity("HereticPaleFog", map.GridCoords);
+            var step = new StepTriggeredOffEvent(fog, body);
+            entities.EventBus.RaiseLocalEvent(fog, ref step);
+            Assert.That(entities.System<StatusEffectsSystem>().HasStatusEffect(body, "PaleFogAffectedStatusEffect"), Is.False);
+            entities.DeleteEntity(fog);
+            entities.DeleteEntity(body);
+        });
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task StorePreservesBodyActionsChargesAndSaleLimits()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
+        await pair.Server.WaitAssertion(() =>
+        {
+            var entities = pair.Server.EntMan;
+            var body = entities.SpawnEntity("MobHuman", map.GridCoords);
+            var minds = entities.System<SharedMindSystem>();
+            var mind = minds.CreateMind(null);
+            minds.TransferTo(mind, body, mind: mind.Comp);
+            var storeEntity = entities.SpawnEntity(null, map.GridCoords);
+            var store = entities.AddComponent<Content.Shared.Store.Components.StoreComponent>(storeEntity);
+            store.GrantActionsToMind = false;
+            store.Balance["CPU"] = 1000;
+            var prototype = pair.Server.ProtoMan.Index<Content.Shared.Store.ListingPrototype>("MalfAiOverloadMachine");
+            var listing = new Content.Shared.Store.ListingDataWithCostModifiers(prototype);
+            listing.SaleLimit = 1;
+            listing.AddCostModifier("DumontSales", new() { ["CPU"] = -25 });
+            store.FullListingsCatalog = new() { listing };
+            store.Categories = listing.Categories;
+            var buy = new Content.Shared.Store.StoreBuyListingMessage("MalfAiOverloadMachine", null) { Actor = body };
+            entities.EventBus.RaiseLocalEvent(storeEntity, buy);
+            Assert.That(listing.PurchaseAmount, Is.EqualTo(1));
+            Assert.That(listing.Cost["CPU"], Is.EqualTo(prototype.Cost["CPU"]));
+            var actions = entities.GetComponent<ActionsComponent>(body);
+            var action = actions.Actions.Single(uid => entities.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "ActionMalfAiOverloadMachine");
+            var charges = entities.System<Content.Shared.Charges.Systems.SharedChargesSystem>();
+            charges.SetCharges(action, 0);
+            entities.EventBus.RaiseLocalEvent(storeEntity, buy);
+            Assert.That(listing.PurchaseAmount, Is.EqualTo(2));
+            Assert.That(actions.Actions.Count(uid => entities.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "ActionMalfAiOverloadMachine"), Is.EqualTo(1));
+            Assert.That(charges.GetCurrentCharges(action), Is.EqualTo(2));
+            minds.WipeMind(mind, mind.Comp);
+            entities.DeleteEntity(body);
+            entities.DeleteEntity(mind);
+            entities.DeleteEntity(storeEntity);
+        });
+        await pair.CleanReturnAsync();
+    }
+
 }

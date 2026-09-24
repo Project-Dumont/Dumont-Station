@@ -230,7 +230,6 @@
   id: PlatingRoseStone
   name: tiles-plating-rose-stone
   sprite: /Textures/_Goobstation/Heretic/tiles/rose_stone.png
-  editorHidden: true
   indestructible: true
   footstepSounds:
     collection: FootstepPlating

@@ -122,7 +122,6 @@
         Blunt: -2
         Slash: -2
         Piercing: -2
-        Ballistic: -2
         Heat: -2
         Cold: -2
         Shock: -2
@@ -213,9 +212,6 @@
     factions:
     - Heretic
   - type: CreamPied
-    sprite:
-      sprite: Effects/creampie.rsi
-      state: creampie_human
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key:
@@ -232,8 +228,10 @@
     speechSounds: null
   - type: DamageForceSay
   - type: Vocal
-    emoteSounds: MaleHuman
+    sounds:
+      Unsexed: MaleHuman
   - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
     understands:
@@ -264,7 +262,6 @@
         volume: -8
   - type: Insulated
   - type: FlashImmunity
-    showInExamine: false
   - type: FlashSoundSuppression
     protectionRange: 0
   - type: CollectiveMind

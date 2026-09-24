@@ -30,7 +30,6 @@
   components:
   - type: Action
     icon: { sprite: _Goobstation/Heretic/abilities_heretic.rsi, state: ice_spear }
-    detachedItemAction: true
     checkCanInteract: true
     useDelay: 5
     itemIconStyle: NoItem

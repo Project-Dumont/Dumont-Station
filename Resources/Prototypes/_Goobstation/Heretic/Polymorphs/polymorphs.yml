@@ -67,7 +67,6 @@
     revertOnCrit: false
     revertOnDeath: false
     allowRepeatedMorphs: false
-    revertConfirmationPopup: false
     componentsToTransfer:
     - component: LanguageKnowledge
     - component: LanguageSpeaker
@@ -96,7 +95,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -112,7 +110,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -128,7 +125,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -144,7 +140,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -160,7 +155,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -176,7 +170,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -192,7 +185,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -208,7 +200,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -224,7 +215,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -240,7 +230,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -256,7 +245,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -272,7 +260,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -288,7 +275,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -304,7 +290,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -320,7 +305,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -336,7 +320,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -352,7 +335,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -369,7 +351,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -384,7 +365,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -399,7 +379,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -414,7 +393,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -429,7 +407,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -444,7 +421,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge
@@ -459,7 +435,6 @@
     transferDamage: true
     revertOnCrit: true
     revertOnDeath: true
-    revertConfirmationPopup: false
     allowRepeatedMorphs: true
     componentsToTransfer:
     - component: LanguageKnowledge

@@ -56,9 +56,6 @@
         armorPenetration: 0.3
         woundSeverityMultipliers:
           Slash: 1.5
-      soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
-      forceSound: true
     - type: ItemToggleOnTrigger
       keysIn: [deactivate]
       canActivate: false

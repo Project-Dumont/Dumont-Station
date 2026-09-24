@@ -286,8 +286,6 @@
   components:
   - type: ForcedStealthStatusEffect
     visibility: 0.05
-    revealOnAttack: false
-    revealOnDamage: false
   - type: BlockHereticActionsStatusEffect
   - type: RemoveOnAttackStatusEffect
     removeThreshold: 0.5
@@ -342,3 +340,9 @@
   name: x-ray vision
   components:
   - type: XRayVisionStatusEffect
+
+- type: entity
+  parent: StatusEffectBase
+  id: ReagentSpeedStatusEffect
+  components:
+  - type: MovementModStatusEffect

@@ -55,15 +55,8 @@
       components:
       - Ghoul
   - type: MeleeWeapon
-    clickAttackWhitelist:
-      components:
-      - Ghoul
-    altClickAttackWhitelist:
-      components:
-      - Ghoul
     resetOnHandSelected: false
-    altClickAttack: true
-    canMiss: false
+    altDisarm: false
     canBeParried: false
     damage:
       types:

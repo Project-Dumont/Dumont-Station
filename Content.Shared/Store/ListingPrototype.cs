@@ -35,6 +35,12 @@ public partial class ListingData : IEquatable<ListingData>
     // Dumont start
     [DataField]
     public bool SaleBlacklist;
+
+    [DataField]
+    public int SaleLimit = 1;
+
+    [DataField]
+    public int? ProductActionCharges;
     // Dumont end
     public ListingData()
     {
@@ -73,6 +79,8 @@ public partial class ListingData : IEquatable<ListingData>
     {
         // Dumont start
         SaleBlacklist = other.SaleBlacklist;
+        SaleLimit = other.SaleLimit;
+        ProductActionCharges = other.ProductActionCharges;
         // Dumont end
     }
 
@@ -151,7 +159,7 @@ public partial class ListingData : IEquatable<ListingData>
     /// Discount category for listing item. This marker describes chance of how often will item be discounted.
     /// </summary>
     [DataField]
-    public ProtoId<DiscountCategoryPrototype>? DiscountCategory = "autoDiscounts"; // Trauma - automatic discounts
+    public ProtoId<DiscountCategoryPrototype>? DiscountCategory;
 
     /// <summary>
     /// The description of the listing. If empty, uses the entity's description (if present)
@@ -278,6 +286,11 @@ public partial class ListingData : IEquatable<ListingData>
         if (Priority != listing.Priority ||
             Name != listing.Name ||
             Description != listing.Description ||
+            // Dumont start
+            SaleBlacklist != listing.SaleBlacklist ||
+            SaleLimit != listing.SaleLimit ||
+            ProductActionCharges != listing.ProductActionCharges ||
+            // Dumont end
             ProductEntity != listing.ProductEntity ||
             ProductComponents != listing.ProductComponents ||
             ProductAction != listing.ProductAction ||
@@ -407,6 +420,8 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
     {
         // Dumont start
         SaleBlacklist = listingData.SaleBlacklist;
+        SaleLimit = listingData.SaleLimit;
+        ProductActionCharges = listingData.ProductActionCharges;
         // Dumont end
     }
 

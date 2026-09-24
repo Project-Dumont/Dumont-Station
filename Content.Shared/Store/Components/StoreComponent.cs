@@ -37,6 +37,11 @@ public sealed partial class StoreComponent : Component
     [DataField]
     public LocId Name = "store-ui-default-title";
 
+    // Dumont start
+    [DataField]
+    public bool GrantActionsToMind = true;
+    // Dumont end
+
     /// <summary>
     /// All the listing categories that are available on this store.
     /// The available listings are partially based on the categories.

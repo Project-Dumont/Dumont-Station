@@ -22,10 +22,10 @@ public sealed partial class ShadowCloakEntityComponent : Component
     public EntityUid? User;
 
     [DataField]
-    public ProtoId<EmoteSoundsPrototype>? EmoteSounds = "ShadowCloak";
+    public ProtoId<EmoteSoundsPrototype>? EmoteSounds = "ShadowCloakEmoteSounds";
 
     [DataField]
-    public ProtoId<SpeechSoundsPrototype>? SpeechSounds = "ShadowCloak";
+    public ProtoId<SpeechSoundsPrototype>? SpeechSounds = "ShadowCloakSpeechSounds";
 
     [DataField]
     public ProtoId<SpeechVerbPrototype> SpeechVerb = "Hiss";

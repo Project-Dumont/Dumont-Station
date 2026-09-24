@@ -146,7 +146,6 @@
     solution: injector
   - type: SolutionTransfer
   - type: Forensics
-    canStoreDNA: false
   - type: UseDelay
     delay: 0.5
 
@@ -240,7 +239,6 @@
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     ignoreResistances: true
-    increaseOnly: true
     damage:
       types:
         Slash: 25

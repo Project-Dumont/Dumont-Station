@@ -180,7 +180,6 @@
   - type: Puller
     needsHands: false
   - type: Pullable
-    canBeGrabbed: false
   - type: ThermalVision
     color: white
     toggleAction: null

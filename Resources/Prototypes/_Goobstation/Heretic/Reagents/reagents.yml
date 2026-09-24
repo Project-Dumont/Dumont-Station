@@ -37,7 +37,6 @@
   name: reagent-name-eldritch
   desc: reagent-desc-eldritch
   physicalDesc: reagent-physical-desc-eldritch
-  contrabandSeverity: Magical
   flavor: eldritch
   color: "#1f8016"
   metabolisms:
@@ -110,7 +109,6 @@
   name: reagent-name-crucible-soul
   desc: reagent-desc-crucible-soul
   physicalDesc: reagent-physical-desc-crucible-soul
-  contrabandSeverity: Magical
   flavor: crucibleSoul
   color: "#fb793a"
   metabolisms:
@@ -160,7 +158,6 @@
   name: reagent-name-clarity
   desc: reagent-desc-clarity
   physicalDesc: reagent-physical-desc-clarity
-  contrabandSeverity: Magical
   flavor: clarity
   color: "#d5dc1d"
   metabolisms:
@@ -205,7 +202,6 @@
   name: reagent-name-marshal
   desc: reagent-desc-marshal
   physicalDesc: reagent-physical-desc-marshal
-  contrabandSeverity: Magical
   flavor: marshal
   color: "#5e718e"
   metabolisms:
@@ -299,7 +295,6 @@
   name: reagent-name-ether
   desc: reagent-desc-ether
   physicalDesc: reagent-physical-desc-ether
-  contrabandSeverity: Magical
   flavor: ether
   color: "#92ca35"
   metabolisms:
@@ -354,7 +349,6 @@
   name: reagent-name-eldritch-rust
   desc: reagent-desc-eldritch-rust
   physicalDesc: reagent-physical-desc-rusty
-  contrabandSeverity: Magical
   flavor: rust
   color: "#b18644"
   metabolisms:

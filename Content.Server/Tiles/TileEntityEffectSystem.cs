@@ -14,6 +14,10 @@ public sealed class TileEntityEffectSystem : EntitySystem
 {
     [Dependency] private readonly SharedEntityEffectSystem _effect = default!; // goob edit - use system instead
 
+    // Dumont start
+    [Dependency] private readonly Content.Shared.EntityConditions.SharedEntityConditionsSystem _conditions = default!;
+    // Dumont end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -29,6 +33,16 @@ public sealed class TileEntityEffectSystem : EntitySystem
     private void OnTileStepTriggered(Entity<TileEntityEffectComponent> ent, ref StepTriggeredOffEvent args)
     {
         var otherUid = args.Tripper;
+        // Dumont start
+        if (ent.Comp.Conditions != null)
+        {
+            foreach (var condition in ent.Comp.Conditions)
+            {
+                if (!_conditions.TryCondition(otherUid, condition))
+                    return;
+            }
+        }
+        // Dumont end
         var effectArgs = new EntityEffectBaseArgs(otherUid, EntityManager);
 
         foreach (var effect in ent.Comp.Effects)

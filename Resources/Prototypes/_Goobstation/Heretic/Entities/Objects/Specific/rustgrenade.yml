@@ -65,7 +65,6 @@
     wieldToggle: false
   - type: ItemToggleOnTrigger
     canDeactivate: false
-    consciousAction: false
     showPopup: false
   - type: ItemTogglePrefix
     prefixOn: primed

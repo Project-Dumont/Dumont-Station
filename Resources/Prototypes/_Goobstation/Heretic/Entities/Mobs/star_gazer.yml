@@ -81,7 +81,6 @@
     baseWalkSpeed: 4
     baseSprintSpeed: 4
   - type: FlashImmunity
-    showInExamine: false
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
