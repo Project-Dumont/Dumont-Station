@@ -42,7 +42,7 @@ public sealed partial class AnnounceTtsSystem : EntitySystem
             var filename = dequeued.Filename;
             ai = dequeued.Source;
 
-			filepath = (filename.StartsWith("/") ? filename : ("/Audio/_Dumont/Announcements/voxclaudia/"+filename+".ogg"));
+			filepath = (filename.StartsWith("/") ? filename : ("/Audio/_Dumont/Announcements/voxpt/"+filename+".ogg"));
 			try
 			{
 				_audio.PlayGlobal(filepath, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
