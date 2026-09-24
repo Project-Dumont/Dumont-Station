@@ -410,8 +410,8 @@
   - type: Appearance
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
-  - type: HitscanBatteryAmmoProvider
-    proto: RedLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserMainWeapon
     fireCost: 62.5
   - type: Battery
     maxCharge: 500
@@ -1154,7 +1154,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 1.5 # Dumont edit this gun is too damn good if you pair it with an inductor. 
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: ProjectileBatteryAmmoProvider

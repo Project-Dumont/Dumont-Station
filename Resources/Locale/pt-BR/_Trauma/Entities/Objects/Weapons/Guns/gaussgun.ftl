@@ -2,7 +2,7 @@
 ent-WeaponGaussgun = arma de Gauss
  .desc = Uma alternativa muito mais barata em comparisão a armas balísticas tradicionais. Atira pedaços de aço em alta velocidade impulsionados por um campo magnético. Precisa de munição de Gauss e uma célula de energia com bateria para atirar.
 
-ent-BaseMagazineGaussgun = carregador Gauss (cheio)
+ent-BaseMagazineGaussgun = carregador Gauss (esferas)
  .desc = Carregador de 10 tiros para uma arma de Gauss, pode conter uma variedade de tipos de munição.
 
 ent-MagazineGaussgun = carregador Gauss 
