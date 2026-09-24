@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/23/2026 16:51:12
-  entityCount: 15892
+  time: 09/24/2026 00:20:58
+  entityCount: 15896
 maps:
 - 1
 grids:
@@ -8209,7 +8209,7 @@ entities:
       pos: 29.5,36.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -17993.934
+      secondsUntilStateChange: -18045.107
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -9406,7 +9406,7 @@ entities:
       pos: 28.5,-21.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -46696.75
+      secondsUntilStateChange: -46747.926
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -46469,10 +46469,10 @@ entities:
       server: 6965
       connectedToServer: True
     - type: DnaServer
-      serverId: 110
+      serverId: 111
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 870.2450696
-      lastInjectorTime: 870.2450696
+      lastSubjectInjectTime: 248.9765263
+      lastInjectorTime: 248.9765263
     - type: DeviceLinkSource
       linkedPorts:
         10705:
@@ -73420,6 +73420,28 @@ entities:
     - type: Transform
       parent: 2
       pos: 24.5,-33.5
+- proto: LootSpawnerArmoryBallisticGunsOnly
+  entities:
+  - uid: 15643
+    components:
+    - type: Transform
+      parent: 2
+      pos: 41.5,28.5
+  - uid: 15644
+    components:
+    - type: Transform
+      parent: 2
+      pos: 41.5,28.5
+  - uid: 15645
+    components:
+    - type: Transform
+      parent: 2
+      pos: 41.5,28.5
+  - uid: 15646
+    components:
+    - type: Transform
+      parent: 2
+      pos: 41.5,28.5
 - proto: LuxuryPen
   entities:
   - uid: 10664
@@ -73433,22 +73455,22 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 41.488274,28.58942
+      pos: 41.782295,27.451725
   - uid: 774
     components:
     - type: Transform
       parent: 2
-      pos: 41.573986,28.575136
+      pos: 41.66354,27.508867
   - uid: 775
     components:
     - type: Transform
       parent: 2
-      pos: 41.645416,28.56085
+      pos: 41.79658,27.437439
   - uid: 776
     components:
     - type: Transform
       parent: 2
-      pos: 41.716843,28.503706
+      pos: 41.825153,27.437439
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 10665
