@@ -806,8 +806,9 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
-    #Gabystation
+    # Dumont
     - SecurityPowerguns
+    - SecurityWeaponUpgrades
     # Goobstation
     - SecurityWeaponsGoob
     - RestraintTechnology

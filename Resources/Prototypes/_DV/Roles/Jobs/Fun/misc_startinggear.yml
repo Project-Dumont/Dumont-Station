@@ -1,0 +1,15 @@
+#Syndicate Pirate Radio Listener
+
+- type: startingGear
+  id: SyndicateListenerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPyjamaSyndicateBlack
+    head: ClothingHeadPyjamaSyndicateBlack
+    ears: ClothingHeadsetAltSyndicateListening
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesSlippers
+    id: SyndiListeningPostPDA
+    back: ClothingBackpackSyndicate
+    pocket1: AgentIDCard
+    pocket2: AllTraitorCodesPaper
+#  innerClothingSkirt: ClothingUniformJumpsuitPyjamaSyndicatePink # I don't think loadouts work for ghost roles anyways

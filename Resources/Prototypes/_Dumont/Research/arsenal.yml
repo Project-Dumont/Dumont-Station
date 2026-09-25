@@ -1,0 +1,20 @@
+- type: technology
+  id: SecurityWeaponsUpgrade
+  name: research-technology-security-weapons-upgrade
+  icon:
+    sprite: _Lavaland/Objects/Weapons/upgrade.rsi
+    state: display
+  discipline: Arsenal
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - TerminusUpgradeHeatBlade
+  - TerminusUpgradeAttackSpeed
+  - TerminusUpgradeMeleeRange
+  - SpearTelescopicUpgradeAttackSpeed
+  - SpearTelescopicUpgradeMeleeRange
+  # Goobstation R&D Console rework start
+  position: 2, 1
+  technologyPrerequisites:
+  - WeaponLaserCellRevolverTech
+  # Goobstation R&D Console rework end

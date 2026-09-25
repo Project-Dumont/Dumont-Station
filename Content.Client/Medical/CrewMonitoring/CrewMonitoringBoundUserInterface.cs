@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._DV.Medical.CrewMonitoring; // DeltaV
 using Content.Shared.Medical.CrewMonitoring;
 using Robust.Client.UserInterface;
 
@@ -38,6 +39,13 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
         if (EntMan.TryGetComponent<TransformComponent>(Owner, out var xform))
         {
             gridUid = xform.GridUid;
+            // Begin DeltaV Additions - Find a station's grid instead of the current one for evil monitors
+            if (EntMan.HasComponent<LongRangeCrewMonitorComponent>(Owner))
+            {
+                gridUid = EntMan.System<LongRangeCrewMonitorSystem>().FindStationGridInMap(xform.MapID);
+                gridUid ??= xform.GridUid; // fall back to whatever grid this is on if it failed
+            }
+            // End DeltaV Additions
 
             if (EntMan.TryGetComponent<MetaDataComponent>(gridUid, out var metaData))
             {

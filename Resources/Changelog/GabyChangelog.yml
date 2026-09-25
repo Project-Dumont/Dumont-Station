@@ -4081,3 +4081,59 @@ Entries:
       message: Corrige UI das câmeras fotográficas e de vigilância.
   id: 483
   time: '2026-09-17T18:54:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterada a descrição do disco e bomba nuclear da estação.
+  id: 484
+  time: '2026-09-18T21:46:24.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Tweak
+      message: Resprite de algumas portas.
+  id: 485
+  time: '2026-09-19T00:06:07.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona as traits enxaquecas crônicas e neuroaversão.
+  id: 486
+  time: '2026-09-20T14:51:27.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: >-
+        Atenção, o sindicato tem alocado postos de escuta clandestinos em nossos
+        setores operacionais, mantenha-se vigilante.
+  id: 487
+  time: '2026-09-21T15:09:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Expie. Verifique markings de vulpkanin.
+  id: 488
+  time: '2026-09-22T07:29:36.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Add
+      message: Adiciona upgrades para a Terminus e Lança Telescópica pesquisáveis.
+  id: 489
+  time: '2026-09-22T11:55:38.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Add
+      message: programa de chamar zelador via pda
+  id: 490
+  time: '2026-09-22T23:23:00.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Mapa Core de volta a pool, reformulado para desastres atuais!
+  id: 491
+  time: '2026-09-23T23:56:14.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: His grace.
+  id: 492
+  time: '2026-09-24T23:11:40.0000000+00:00'

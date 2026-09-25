@@ -1,0 +1,25 @@
+#Delta-V - This file is licensed under AGPLv3
+# Copyright (c) 2024 Delta-V Contributors
+# See AGPLv3.txt for details.
+
+- type: startingGear
+  id: RadioGuardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    shoes: ClothingShoesBootsLaceup
+    id: SyndiListeningPostPDA
+    ears: ClothingHeadsetAltSyndicate
+    mask: ClothingMaskGasSyndicate
+    eyes: ClothingEyesHudSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVestWebDurathreadUnremoveable
+
+- type: entity
+  parent: ClothingOuterVestWebDurathread
+  id: ClothingOuterVestWebDurathreadUnremoveable
+  name: durathread web vest
+  suffix: Unremoveable
+  description: An improvised armored web vest made from durathread with plasteel plates. It's surprisingly light, despite formidable armor plating.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Unremoveable
