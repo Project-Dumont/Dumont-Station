@@ -14,7 +14,7 @@
       tags:
         - CartridgeGaussgun
     proto: CartridgeBallBearing
-    capacity: 10
+    capacity: 15
   - type: Item
     size: Small
   - type: ContainerContainer

@@ -112,7 +112,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 37
+        Piercing: 29
   - type: Sprite
     state: bullet
 
@@ -135,8 +135,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5.5
-      armorPenetration: -0.2
+        Piercing: 4
+      armorPenetration: -0.3
   - type: Sprite
     state: shard
 
@@ -149,8 +149,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
-        Slash: 10
+        Piercing: 13
+        Slash: 13
       armorPenetration: 0.15
   - type: Sprite
     state: disk

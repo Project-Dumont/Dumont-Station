@@ -96,7 +96,7 @@
     - Back
     - suitStorage
   - type: Gun
-    fireRate: 2
+    fireRate: 3
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -20
