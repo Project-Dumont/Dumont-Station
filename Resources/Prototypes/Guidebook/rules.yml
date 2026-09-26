@@ -670,6 +670,7 @@
     - audienciasumaria
     - audienciaformal
     - julgamentoprolongado
+    - cortemarcial
 
 - type: guideEntry
   id: audienciasumaria
@@ -688,6 +689,12 @@
   name: Julgamento prolongado
   priority: 3
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/julgamentoprolongado.xml"
+
+- type: guideEntry
+  id: cortemarcial
+  name: Corte marcial
+  priority: 3
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/cortemarcial.xml"
 
 
 - type: guideEntry
