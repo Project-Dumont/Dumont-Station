@@ -252,6 +252,7 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    quality: 600
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     layers:
@@ -297,6 +298,7 @@
       params:
         volume: -14
     projectileSpeed: 35 # Goobstation
+    quality: 800
     availableModes:
     - SemiAuto
   - type: ItemSlots
@@ -374,6 +376,8 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg # Goob edit
+    quality: 1200 # Elite, also maybe an alusion to an m1911?
+    timeToUnjam: 0.5
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -165,6 +165,9 @@ using Content.Shared.Decals;
 using Content.Server.Decals;
 using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Targeting;
+using Content.Goobstation.Common.Interactions;
+using Content.Shared.Interaction.Events;
+
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -208,6 +211,7 @@ public sealed partial class GunSystem : SharedGunSystem
         _bloodDecals = _proto.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("BloodSplatter")).Select(x => x.ID).ToArray();
     }
 
+
     private void OnBallisticPrice(EntityUid uid, BallisticAmmoProviderComponent component, ref PriceCalculationEvent args)
     {
         if (string.IsNullOrEmpty(component.Proto) || component.UnspawnedCount == 0)
@@ -229,6 +233,7 @@ public sealed partial class GunSystem : SharedGunSystem
     {
         userImpulse = true;
 
+
         if (user != null)
         {
             var selfEvent = new SelfBeforeGunShotEvent(user.Value, (gunUid, gun), ammo);
@@ -238,6 +243,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 userImpulse = false;
                 return;
             }
+
         }
 
         var fromMap = TransformSystem.ToMapCoordinates(fromCoordinates);
@@ -272,7 +278,6 @@ public sealed partial class GunSystem : SharedGunSystem
                 shotProjectiles.Add(ent.Value); // Goobstation
                 continue;
             }
-
             switch (shootable)
             {
                 //🌟Starlight🌟
@@ -322,6 +327,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 case CartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
                     {
+
                         var uid = Spawn(cartridge.Prototype, fromEnt);
                         CreateAndFireProjectiles(uid, cartridge);
 
