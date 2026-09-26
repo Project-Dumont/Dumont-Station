@@ -13,3 +13,11 @@
   components:
   - type: Contraband
     severity: RevMajor
+
+- type: entity
+  abstract: true
+  id: BaseChaplainContraband
+  parent: BaseRestrictedContraband
+  components:
+  - type: Contraband
+    allowedJobs: [ Chaplain ]
