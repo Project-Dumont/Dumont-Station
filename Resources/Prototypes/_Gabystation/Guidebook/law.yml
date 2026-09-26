@@ -5,6 +5,12 @@
   children:
   - SpaceLawCrimeList
   - MartialLaw
+  - 0-xx
+  - 1-xx
+  - 2-xx
+  - 3-xx
+  - 4-xx
+  - 5-xx
 
 - type: guideEntry
   id: MartialLaw

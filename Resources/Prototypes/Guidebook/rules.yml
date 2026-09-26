@@ -608,6 +608,42 @@
   - SpaceLawCrimeList
 
 - type: guideEntry
+  id: 0-xx
+  name: 0-XX - Infração leve
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/0-XX.xml"
+
+- type: guideEntry
+  id: 1-xx
+  name: 1-XX - Infração grave
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/1-XX.xml"
+
+- type: guideEntry
+  id: 2-xx
+  name: 2-XX - Delito
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/2-XX.xml"
+
+- type: guideEntry
+  id: 3-xx
+  name: 3-XX - Delito grave
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/3-XX.xml"
+
+- type: guideEntry
+  id: 4-xx
+  name: 4-XX - Crime capital
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/4-XX.xml"
+
+- type: guideEntry
+  id: 5-xx
+  name: 5-XX - Perigo crítico 
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/5-XX.xml"
+
+- type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
   priority: 5
