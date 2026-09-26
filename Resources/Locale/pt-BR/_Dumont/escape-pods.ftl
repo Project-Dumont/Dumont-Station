@@ -1,5 +1,5 @@
 comms-console-menu-escape-pods = Liberar cápsulas de fuga
-comms-console-menu-escape-pods-tooltip = Libera as cápsulas de fuga pra tripulação usar quando quiser. Só o Capitão pode, e só uma vez por turno.
+comms-console-menu-escape-pods-tooltip = Libera as cápsulas de fuga pra tripulação usar quando quiser. Disponível apenas para o Capitão.
 comms-console-menu-escape-pods-unlocked = Cápsulas liberadas
 comms-console-menu-dialog-escape-pods-title = Liberar cápsulas de fuga
 comms-console-menu-dialog-escape-pods-message = Motivo
