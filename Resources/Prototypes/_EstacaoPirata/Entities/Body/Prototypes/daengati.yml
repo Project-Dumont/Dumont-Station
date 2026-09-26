@@ -33,7 +33,7 @@
       - right leg
       - left leg
       organs:
-        stomach: OrganHumanStomach
+        stomach: OrganDaengatiStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right arm:
