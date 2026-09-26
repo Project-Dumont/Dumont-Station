@@ -231,8 +231,8 @@ public sealed partial class FaxPrintout
     [DataField(required: true)]
     public string Content { get; private set; } = default!;
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>), required: true)]
-    public string PrototypeId { get; private set; } = default!;
+    [DataField(required: true)]
+    public EntProtoId PrototypeId { get; private set; } = default!;
 
     [DataField("stampState")]
     public string? StampState { get; private set; }

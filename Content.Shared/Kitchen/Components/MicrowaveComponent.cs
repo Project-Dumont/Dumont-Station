@@ -24,8 +24,8 @@ namespace Content.Shared.Kitchen.Components
         [DataField("objectHeatMultiplier"), ViewVariables(VVAccess.ReadWrite)]
         public float ObjectHeatMultiplier = 100;
 
-        [DataField("failureResult", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string BadRecipeEntityId = "FoodBadRecipe";
+        [DataField("failureResult")]
+        public EntProtoId BadRecipeEntityId = "FoodBadRecipe";
 
         #region  audio
         [DataField("beginCookingSound")]

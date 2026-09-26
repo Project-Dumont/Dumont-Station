@@ -44,8 +44,8 @@ public sealed partial class AnomalyGeneratorComponent : Component
     /// <summary>
     /// The material needed to generate an anomaly
     /// </summary>
-    [DataField("requiredMaterial", customTypeSerializer: typeof(PrototypeIdSerializer<MaterialPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string RequiredMaterial = "Plasma";
+    [DataField("requiredMaterial"), ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<MaterialPrototype> RequiredMaterial = "Plasma";
 
     /// <summary>
     /// The amount of material needed to generate a single anomaly
@@ -56,14 +56,14 @@ public sealed partial class AnomalyGeneratorComponent : Component
     /// <summary>
     /// The random anomaly spawner entity
     /// </summary>
-    [DataField("spawnerPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string SpawnerPrototype = "RandomAnomalySpawner";
+    [DataField("spawnerPrototype"), ViewVariables(VVAccess.ReadWrite)]
+    public EntProtoId SpawnerPrototype = "RandomAnomalySpawner";
 
     /// <summary>
     /// The radio channel for science
     /// </summary>
-    [DataField("scienceChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
-    public string ScienceChannel = "Science";
+    [DataField("scienceChannel")]
+    public ProtoId<RadioChannelPrototype> ScienceChannel = "Science";
 
     /// <summary>
     /// The sound looped while an anomaly generates
