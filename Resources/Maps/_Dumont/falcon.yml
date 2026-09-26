@@ -17441,7 +17441,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -16.405638,-16.565228
-- proto: CableApcStackLingering10
+- proto: CableApcStack10
   entities:
   - uid: 1935
     components:

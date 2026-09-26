@@ -47253,8 +47253,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -60.42194,164.46962
       parent: 2
-- proto: CableApcStackLingering10
-  entities:
   - uid: 20889
     components:
     - type: Transform
