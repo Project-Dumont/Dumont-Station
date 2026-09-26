@@ -309,6 +309,9 @@
     - PowerDrill
     - JawsOfLife
     - BorgModuleAdvancedTool
+    - BorgUpgradeVtec # Dumont-Borg-Upgrades
+    - BorgUpgradeRepair # Dumont-Borg-Upgrades
+    - BorgUpgradeModuleBay # Dumont-Borg-Upgrades
     - SignallerAdvanced # Moved from explosives research
     - ClothingEyesGlassesTray # Dumont-Oculos-TRay
     - ClothingEyesGlassesMesonScanner # Dumont-Oculos-TRay
