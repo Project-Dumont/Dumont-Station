@@ -644,6 +644,35 @@
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/5-XX.xml"
 
 - type: guideEntry
+  id: courtprocedures
+  name: Sentenciamento e procedimentos judiciais
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/sentenciamentoeprocedimentosjudiciais.xml"
+  children:
+    - audienciasumaria
+    - audienciaformal
+    - julgamentoprolongado
+
+- type: guideEntry
+  id: audienciasumaria
+  name: Audiência sumária
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audenciasumaria.xml"
+
+- type: guideEntry
+  id: audienciaformal
+  name: Audiência formal
+  priority: 2
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audienciaformal.xml"
+
+- type: guideEntry
+  id: julgamentoprolongado
+  name: Julgamento prolongado
+  priority: 3
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/julgamentoprolongado.xml"
+
+
+- type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
   priority: 5
