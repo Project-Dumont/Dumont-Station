@@ -125,6 +125,7 @@
       shuttleTime: 600
     amber: #Dumont station
       announcement: alert-level-amber-announcement
+      sound: /Audio/Effects/alert.ogg
       color: Orangered
       emergencyLightColor: Orangered
       forceEnableEmergencyLights: true
