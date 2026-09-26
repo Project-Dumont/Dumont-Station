@@ -34,6 +34,7 @@ using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Starlight.Ninja; // Dumont
+using Content.Server.Shuttles.Components; // Dumont
 
 namespace Content.Server.Ninja.Systems;
 
@@ -184,6 +185,9 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
     // Dumont changes start
     private void OnPodCalledIn(Entity<SpaceNinjaComponent> ent, ref PodCalledInEvent args)
     {
+        if (!HasComp<EscapePodComponent>(Transform(args.Target).GridUid))
+            return;
+
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.ExtractObjective);
     }
     // Dumont end

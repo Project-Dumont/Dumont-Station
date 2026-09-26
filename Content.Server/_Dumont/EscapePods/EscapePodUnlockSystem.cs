@@ -4,7 +4,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.Popups;
 using Content.Shared._Starlight.Computers.PodConsole;
-using Content.Shared.Access.Components;
+using Content.Shared.Access;
 using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -13,6 +13,7 @@ using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Dumont.EscapePods;
 
@@ -25,6 +26,8 @@ public sealed partial class EscapePodUnlockSystem : EntitySystem
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private QuickDialogSystem _quickDialog = default!;
+
+    private static readonly ProtoId<AccessLevelPrototype> CaptainAccess = "Captain";
 
     public bool Unlocked { get; private set; }
 
@@ -45,7 +48,7 @@ public sealed partial class EscapePodUnlockSystem : EntitySystem
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
 
-        if (TryComp<AccessReaderComponent>(ent, out var reader) && !_accessReader.IsAllowed(user, ent, reader))
+        if (!_accessReader.FindAccessTags(user).Contains(CaptainAccess))
         {
             _popup.PopupEntity(Loc.GetString("comms-console-permission-denied"), ent, user);
             return;

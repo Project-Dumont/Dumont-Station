@@ -120,6 +120,12 @@ namespace Content.Client.Communications.UI
         }
 
         // Dumont changes start
+        private bool LocalPlayerIsCaptain()
+        {
+            var localEntity = _playerManager.LocalSession?.AttachedEntity;
+            return localEntity != null && _accessReader.FindAccessTags(localEntity.Value).Contains("Captain");
+        }
+
         public void EscapePodsButtonPressed()
         {
             SendMessage(new CommunicationsConsoleUnlockEscapePodsMessage());
@@ -189,7 +195,7 @@ namespace Content.Client.Communications.UI
                 }
 
                 // Dumont changes start
-                _menu.EscapePodsButton.Visible = commsState.CanUnlockEscapePods;
+                _menu.EscapePodsButton.Visible = commsState.CanUnlockEscapePods && LocalPlayerIsCaptain();
                 _menu.EscapePodsButton.Disabled = commsState.EscapePodsUnlocked;
                 _menu.EscapePodsButton.Text = Loc.GetString(commsState.EscapePodsUnlocked
                     ? "comms-console-menu-escape-pods-unlocked"

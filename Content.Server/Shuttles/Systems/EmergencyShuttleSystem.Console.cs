@@ -88,6 +88,12 @@ using Content.Shared.Parallax.Biomes;
 using Content.Shared.Procedural;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
+using System.Linq;
+using Content.Server.Ghost.Roles.Components;
+using Content.Shared.Physics;
+using Content.Shared.Random;
+using Content.Shared.Salvage.Expeditions;
+using Content.Shared.Salvage.Expeditions.Modifiers;
 // Dumont end
 
 namespace Content.Server.Shuttles.Systems;
@@ -104,6 +110,7 @@ public sealed partial class EmergencyShuttleSystem
     private EntityUid? _evacuationPlanetMap;
     private EntityCoordinates? _evacuationLandingZone;
     private const float PodSpreadRadius = 25f;
+    private const float EvacuationMobBudgetModifier = 1f;
     // Dumont end
 
     /// <summary>
@@ -570,32 +577,41 @@ public sealed partial class EmergencyShuttleSystem
         RemCompDeferred<EscapePodComponent>(uid);
     }
 
-    /// <summary>
-    /// Creates the evacuation planet for escape pods to land on with ores and ruins.
-    /// All pods will land on the same planet with random positions and rotations.
-    /// </summary>
     private void SetupEvacuationPlanet()
     {
         try
         {
-            var biomeOptions = new[]
+            var dungeonMods = _prototype.EnumeratePrototypes<SalvageDungeonModPrototype>().ToList();
+            if (dungeonMods.Count == 0)
             {
-                "Grasslands",
-                "Snow",
-                "Caves"
-            };
-
-            var selectedBiome = _random.Pick(biomeOptions);
-
-            if (!_prototype.TryIndex<BiomeTemplatePrototype>(selectedBiome, out var template))
-            {
-                Log.Error($"Failed to load biome template: {selectedBiome}");
+                Log.Error("No salvage dungeons to put on the evacuation planet.");
                 return;
             }
 
-            _evacuationPlanetMap = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+            var dungeonMod = _random.Pick(dungeonMods);
+            ProtoId<SalvageBiomeModPrototype> biomeModId = dungeonMod.Biomes is { Count: > 0 } biomes
+                ? _random.Pick(biomes)
+                : "Grasslands";
 
-            _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template);
+            if (!_prototype.TryIndex(biomeModId, out var biomeMod) ||
+                biomeMod.BiomePrototype == null ||
+                !_prototype.TryIndex<BiomeTemplatePrototype>(biomeMod.BiomePrototype, out var template))
+            {
+                Log.Error($"Failed to load biome {biomeModId} for the evacuation planet.");
+                return;
+            }
+
+            string? difficulty = dungeonMod.Difficulties is { Count: > 0 } difficulties
+                ? _random.Pick(difficulties).Id
+                : null;
+
+            var lights = _prototype.EnumeratePrototypes<SalvageLightMod>()
+                .Where(x => x.Biomes == null || x.Biomes.Contains(biomeMod.ID))
+                .ToList();
+            var mapLight = lights.Count > 0 ? _random.Pick(lights).Color : null;
+
+            _evacuationPlanetMap = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+            _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template, mapLight: mapLight);
 
             if (TryComp(_evacuationPlanetMap.Value, out BiomeComponent? biomeComp))
             {
@@ -619,56 +635,108 @@ public sealed partial class EmergencyShuttleSystem
                 }
             }
 
-            if (!TryComp<MapGridComponent>(_evacuationPlanetMap.Value, out var grid))
-                return;
-
-            var dungeonConfigs = new[]
-            {
-                "Experiment",
-                "SovietDungeonWeh",
-                "Mineshaft"
-            };
-
-            var numRuins = _random.Next(2, dungeonConfigs.Length + 1);
-            var selectedConfigs = _random.GetItems(dungeonConfigs, numRuins, allowDuplicates: false);
-            var seed = _random.Next();
-            var offsetDistance = 50f;
-
-            foreach (var configId in selectedConfigs)
-            {
-                if (!_prototype.TryIndex<DungeonConfigPrototype>(configId, out var dungeonProto))
-                {
-                    Log.Warning($"Could not load dungeon config {configId}");
-                    continue;
-                }
-
-                var angle = _random.NextAngle();
-                var offset = angle.ToVec() * offsetDistance;
-                var offsetPos = (Vector2i) (Vector2.Zero + offset);
-
-                try
-                {
-                    _dungeon.GenerateDungeon(dungeonProto, _evacuationPlanetMap.Value, grid, offsetPos, seed++);
-                }
-                catch (Exception e)
-                {
-                    Log.Warning($"Error generating ruin {configId}: {e.Message}");
-                }
-            }
-
             _evacuationLandingZone = new EntityCoordinates(_evacuationPlanetMap.Value, Vector2.Zero);
 
             _mapSystem.InitializeMap(mapId);
 
             _metaData.SetEntityName(_evacuationPlanetMap.Value, Loc.GetString("evacuation-planet-name"));
 
-            Log.Info($"Created evacuation planet with {selectedBiome} biome and {numRuins} ruins");
+            if (TryComp<MapGridComponent>(_evacuationPlanetMap.Value, out var grid))
+                SpawnEvacuationDungeon((_evacuationPlanetMap.Value, grid), dungeonMod, biomeMod.ID, difficulty);
+
+            Log.Info($"Created evacuation planet with {biomeMod.ID} biome and {dungeonMod.ID} dungeon");
         }
         catch (Exception ex)
         {
             Log.Error($"Failed to setup evacuation planet: {ex}");
             _evacuationPlanetMap = null;
             _evacuationLandingZone = null;
+        }
+    }
+
+    private async void SpawnEvacuationDungeon(Entity<MapGridComponent> planet, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty)
+    {
+        var seed = _random.Next();
+        var random = new System.Random(seed);
+        var offset = (Vector2i) (_random.NextAngle().ToVec() * _random.NextFloat(40f, 52f));
+
+        List<Dungeon> dungeons;
+        try
+        {
+            var config = _prototype.Index(dungeonMod.Proto);
+            dungeons = await _dungeon.GenerateDungeonAsync(config, planet, planet.Comp, offset, seed);
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Failed to generate {dungeonMod.ID} on the evacuation planet: {e}");
+            return;
+        }
+
+        if (TerminatingOrDeleted(planet) || planet.Owner != _evacuationPlanetMap)
+            return;
+
+        var tiles = dungeons.SelectMany(d => d.RoomTiles).ToList();
+        if (tiles.Count == 0)
+            tiles = dungeons.SelectMany(d => d.AllTiles).ToList();
+
+        if (tiles.Count == 0)
+            return;
+
+        var factions = _prototype.EnumeratePrototypes<SalvageFactionPrototype>()
+            .Where(x => (difficulty == null || x.Difficulties.Contains(difficulty)) &&
+                        (x.Biomes == null || x.Biomes.Contains(biome)))
+            .ToList();
+
+        if (factions.Count == 0 ||
+            difficulty == null ||
+            !_prototype.TryIndex<SalvageDifficultyPrototype>(difficulty, out var difficultyProto))
+        {
+            return;
+        }
+
+        var faction = _random.Pick(factions);
+        var budget = difficultyProto.MobBudget * EvacuationMobBudgetModifier;
+        var entries = new List<IBudgetEntry>();
+
+        foreach (var entry in faction.MobGroups)
+        {
+            if (!entry.Guaranteed)
+            {
+                entries.Add(entry);
+                continue;
+            }
+
+            budget -= entry.Cost;
+            SpawnEvacuationMob(planet, entry.Proto, tiles, random);
+        }
+
+        var probSum = entries.Sum(x => x.Prob);
+        var randomSystem = EntityManager.System<RandomSystem>();
+
+        while (budget > 0f)
+        {
+            var entry = randomSystem.GetBudgetEntry(ref budget, ref probSum, entries, random);
+            if (entry == null)
+                break;
+
+            SpawnEvacuationMob(planet, entry.Proto, tiles, random);
+        }
+
+        Log.Info($"Evacuation planet dungeon {dungeonMod.ID} populated with {faction.ID}");
+    }
+
+    private void SpawnEvacuationMob(Entity<MapGridComponent> planet, string proto, List<Vector2i> tiles, System.Random random)
+    {
+        for (var i = 0; i < 20; i++)
+        {
+            var tile = tiles[random.Next(tiles.Count)];
+            if (!_anchorable.TileFree(planet.Comp, tile, (int) CollisionGroup.MachineLayer, (int) CollisionGroup.MachineLayer))
+                continue;
+
+            var mob = Spawn(proto, _mapSystem.GridTileToLocal(planet, planet.Comp, tile));
+            RemComp<GhostRoleComponent>(mob);
+            RemComp<GhostTakeoverAvailableComponent>(mob);
+            return;
         }
     }
     // Dumont end

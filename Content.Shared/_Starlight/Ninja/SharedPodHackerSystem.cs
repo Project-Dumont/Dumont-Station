@@ -8,8 +8,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Content.Shared._Starlight.Ninja;
 using Content.Shared._Starlight.Computers.PodConsole;
-
-using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Ninja;
 
@@ -19,6 +18,7 @@ public sealed partial class SharedPodHackerSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedNinjaGlovesSystem _gloves = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -53,15 +53,19 @@ public sealed partial class SharedPodHackerSystem : EntitySystem
     }
 
     /// <summary>
-    /// delete the ninja.
+    /// launch the pod with the ninja inside.
     /// </summary>
     private void OnDoAfter(EntityUid uid, PodHackerComponent comp, ExtractDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null)
             return;
 
-        // despawn ninja
-        AddComp<TimedDespawnComponent>(uid);
+        if (!TryComp<PodConsoleComponent>(args.Target, out var console) || console.LaunchTime != null)
+            return;
+
+        console.Locked = true;
+        console.LaunchTime = _timing.CurTime;
+        Dirty(args.Target.Value, console);
 
         var ev = new PodCalledInEvent(uid, args.Target.Value);
         RaiseLocalEvent(args.User, ref ev);
