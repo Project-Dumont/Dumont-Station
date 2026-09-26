@@ -138,7 +138,7 @@ public sealed partial class BorgSystem
         if (command == RoboticsConsoleConstants.NET_DISABLE_COMMAND)
             Disable(ent);
         else if (command == RoboticsConsoleConstants.NET_DESTROY_COMMAND)
-            Destroy(ent);
+            Destroy(ent.AsNullable()); // Dumont
     }
 
     private void Disable(Entity<BorgTransponderComponent, BorgChassisComponent?> ent)
@@ -158,8 +158,17 @@ public sealed partial class BorgSystem
         ent.Comp1.NextDisable = _timing.CurTime + ent.Comp1.DisableDelay;
     }
 
-    private void Destroy(Entity<BorgTransponderComponent> ent)
+    // Dumont changes start
+    /// <summary>
+    /// Makes a borg with <see cref="BorgTransponderComponent"/> explode
+    /// </summary>
+    /// <param name="ent">the entity of the borg</param>
+    public void Destroy(Entity<BorgTransponderComponent?> ent)
     {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+        // Dumont end
+
         // this is stealthy until someone realises you havent exploded
         if (CheckEmagged(ent, "destroyed"))
         {

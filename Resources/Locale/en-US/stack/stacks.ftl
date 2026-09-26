@@ -240,3 +240,9 @@ stack-white-marble-floor = white marble floor
 stack-dark-marble-floor = dark marble floor
 stack-plasma-marble-floor = plasmarble floor
 stack-uranium-marble-floor = uranium marble floor
+
+stack-xenoborg-crystal = xenoborg {$amount ->
+    [1] crystal
+    *[other] crystals
+}
+stack-xenoborg = xenoborg tile

@@ -30,11 +30,10 @@
     - state: security
     - state: icon-patrol
   - type: ItemBorgModule
-    moduleId: Patrol
-    items:
-    - HoloprojectorSecurityRecharging
-    - FlashlightSecliteRecharging
-    - SecurityWhistle
+    hands:
+    - item: HoloprojectorSecurityRecharging
+    - item: FlashlightSecliteRecharging
+    - item: SecurityWhistle
   - type: BorgModuleIcon
     icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: patrol-module }
 
@@ -48,11 +47,10 @@
     - state: security
     - state: icon-hold
   - type: ItemBorgModule
-    moduleId: Bastion
-    items:
-    - WeaponLauncherNonLethalBorg
-    - FlashRecharging
-    - SecurityWhistle
+    hands:
+    - item: WeaponLauncherNonLethalBorg
+    - item: FlashRecharging
+    - item: SecurityWhistle
   - type: BorgModuleIcon
     icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: bastion-module }
 
@@ -66,23 +64,25 @@
     - state: security
     - state: icon-detain
   - type: ItemBorgModule
-    moduleId: Deescalate
-    items:
-    - StunbatonSelfCharging
-    - FlashRecharging
-    - FlashlightSecliteRecharging
-    - SecurityWhistle
-  - type: DroppableBorgModule
-    moduleId: Deescalate
-    items:
-    - id: Handcuffs
-      whitelist:
-        components:
-        - Handcuff
-    - id: Zipties
-      whitelist:
-        components:
-        - Handcuff
+    hands:
+    - item: StunbatonSelfCharging
+    - item: FlashRecharging
+    - item: FlashlightSecliteRecharging
+    - item: SecurityWhistle
+    - item: Handcuffs
+      hand:
+        emptyLabel: borg-slot-cuffs-empty
+        emptyRepresentative: Handcuffs
+        whitelist:
+          components:
+          - Handcuff
+    - item: Zipties
+      hand:
+        emptyLabel: borg-slot-cuffs-empty
+        emptyRepresentative: Zipties
+        whitelist:
+          components:
+          - Handcuff
   - type: BorgModuleIcon
     icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: deescalate-module }
 
@@ -97,12 +97,11 @@
     - state: security
     - state: icon-hurt
   - type: ItemBorgModule
-    moduleId: Escalate
-    items:
-    - WeaponRiotShotgunBorg
-    - Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
-    - CombatKnife # Anti-fauna for blunt resistant slimes
-    - SecurityWhistle
+    hands:
+    - item: WeaponRiotShotgunBorg
+    - item: Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
+    - item: CombatKnife # Anti-fauna for blunt resistant slimes
+    - item: SecurityWhistle
   - type: BorgModuleIcon
     icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: escalate-module }
 
@@ -116,10 +115,9 @@
     - state: security
     - state: icon-chase
   - type: ItemBorgModule
-    moduleId: Chase
-    items:
-    - WeaponDisablerRecharging
-    - FlashlightSecliteRecharging
-    - SecurityWhistle
+    hands:
+    - item: WeaponDisablerRecharging
+    - item: FlashlightSecliteRecharging
+    - item: SecurityWhistle
   - type: BorgModuleIcon
     icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: chase-module }

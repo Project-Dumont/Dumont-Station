@@ -694,6 +694,9 @@
   - type: Repairable
     doAfterDelay: 13 # 25% more HP, so 30% more time to heal
   - type: BorgChassis
+    brainWhitelist:
+      components:
+      - MMI # no infinite posibrain xenoborgs
     maxModules: 0
     hasMindState: robot_e
     noMindState: robot_e_r
@@ -733,6 +736,31 @@
   - type: NpcFactionMember
     factions:
     - Xenoborg
+  - type: PointLight
+    color: "#0033ff"
+  - type: GuideHelp
+    guides:
+    - Cyborgs
+    - Robotics
+    - Xenoborgs
+  - type: Access
+    enabled: false
+    tags:
+    - Xenoborg
+  - type: AccessReader
+    access: [["Xenoborg"]]
+  - type: ShowJobIcons # not sure if it is needed
+  - type: InteractionPopup
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Xenoborg
+
+- type: entity
+  abstract: true
+  id: BaseXenoborgDestructible
+  components:
+  - type: XenoborgDeathDrop # Dumont
+    proto: PinpointerMothershipPiece
   - type: Destructible
     thresholds:
     - trigger:
@@ -758,20 +786,3 @@
         - cell_slot
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: PointLight
-    color: "#0033ff"
-  - type: GuideHelp
-    guides:
-    - Cyborgs
-    - Robotics
-    # TODO: add Xenoborg guide (part 7 spoilers)
-  - type: Access
-    enabled: false
-    tags:
-    - Xenoborg
-  - type: AccessReader
-    access: [["Xenoborg"]]
-  - type: ShowJobIcons # not sure if it is needed
-  - type: InteractionPopup
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg

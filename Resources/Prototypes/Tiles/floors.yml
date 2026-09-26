@@ -2390,3 +2390,15 @@
   friction: 0.8
   itemDrop: FloorTileItemUraniumMarble
   heatCapacity: 10000
+
+- type: tile
+  id: FloorXenoborg
+  name: tiles-xenoborg-floor
+  sprite: /Textures/Tiles/exoborg.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemXenoborg
+  heatCapacity: 10000

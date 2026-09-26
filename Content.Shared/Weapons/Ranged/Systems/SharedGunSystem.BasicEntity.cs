@@ -81,6 +81,7 @@ public abstract partial class SharedGunSystem
         Appearance.SetData(uid, AmmoVisuals.HasAmmo, component.Count != 0, appearance);
         Appearance.SetData(uid, AmmoVisuals.AmmoCount, component.Count ?? int.MaxValue, appearance);
         Appearance.SetData(uid, AmmoVisuals.AmmoMax, component.Capacity ?? int.MaxValue, appearance);
+        Appearance.SetData(uid, AmmoVisuals.IsFull, component.Count == component.Capacity, appearance); // Dumont
     }
 
     #region Public API

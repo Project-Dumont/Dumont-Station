@@ -409,7 +409,7 @@
       "name": "xenoborg_heavy_l",
       "directions": 4
     },
-	  {
+    {
       "name": "xenoborg_scout",
       "directions": 4
     },
@@ -515,7 +515,7 @@
       "name": "xenoborg_engi",
       "directions": 4
     },
-	  {
+    {
       "name": "xenoborg_engi_e",
       "directions": 4
     },
@@ -685,6 +685,10 @@
     },
     {
       "name": "security_l",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_heavy_rad",
       "directions": 4
     }
   ]

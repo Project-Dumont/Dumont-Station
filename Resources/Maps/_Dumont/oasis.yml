@@ -131462,7 +131462,7 @@ entities:
       pos: -13.5,42.5
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: Gauze10Lingering
+- proto: Gauze
   entities:
   - uid: 14966
     components:

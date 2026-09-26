@@ -88,7 +88,8 @@
         Steel: 25
         Glass: 125
       chemicalComposition:
-        Silicon: 5
+        Silicon: 20
+    - type: Circuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -661,3 +662,25 @@
       state: cpu_science
     - type: ComputerBoard
       prototype: StationAiFixerComputer
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: XenoborgCameraMonitorCircuitboard
+  name: xenoborg camera monitor board
+  description: A computer printed circuit board for a xenoborg camera monitor.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerSurveillanceWirelessXenoborgCameraMonitor
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerXenoborgsControlCircuitboard
+  name: xenoborg control console board
+  description: A computer printed circuit board for a xenoborg control console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerXenoborgsControl

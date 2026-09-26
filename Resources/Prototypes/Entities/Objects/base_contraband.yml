@@ -286,3 +286,12 @@
     severity: Honkraband
     allowedJobs: [ Clown ]
     criminalPoints: 2
+
+- type: entity
+  id: BaseHighlyIllegalContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: HighlyIllegal
+
+# used by the unique items of xenoborgs (like modules and stuff)

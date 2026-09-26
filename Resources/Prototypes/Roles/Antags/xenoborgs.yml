@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: antag
+  id: MothershipCore
+  name: roles-antag-mothership-core-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-mothership-core-objective
+  guides: [ Xenoborgs ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 144000 # 40 hrs
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 18000  # 5 hrs
+
+- type: antag
+  id: Xenoborg
+  name: roles-antag-xenoborg-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-xenoborg-objective
+  guides: [ Xenoborgs ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 144000 # 40 hrs
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 18000  # 5 hrs
