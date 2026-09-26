@@ -22,6 +22,11 @@ using Robust.Server.Console;
 using Robust.Shared.Player;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Chat; // Einstein Engines - Languages
+using Content.Shared._ES.DeathCutscene;
+using Content.Shared._White.Xenomorphs.Infection;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Mobs;
 
@@ -36,6 +41,10 @@ public sealed partial class CritMobActionsSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private SharedSuicideSystem _suicide = default!;
+
+    private static readonly ProtoId<DamageTypePrototype> SuccumbDamageType = "Asphyxiation";
 
     private const int MaxLastWordsLength = 30;
 
@@ -59,8 +68,29 @@ public sealed partial class CritMobActionsSystem : EntitySystem
             return;
         // END
 
-        _host.ExecuteCommand(actor.PlayerSession, "ghost");
+        Succumb(uid, actor);
         args.Handled = true;
+    }
+
+    /// <summary>
+    /// Finish killing the mob who give up. This make the death cutscene play and turn him into ghost when it end.
+    /// If mob dont have cutscene or dont wanna die, it just become ghost like before.
+    /// its for the DeathCutscene :)
+    /// </summary>
+    private void Succumb(EntityUid uid, ActorComponent actor)
+    {
+        if (HasComp<DeathCutsceneComponent>(uid) && !HasComp<XenomorphPreventSuicideComponent>(uid))
+        {
+            if (TryComp<DamageableComponent>(uid, out var damageable))
+                _suicide.ApplyLethalDamage((uid, damageable), SuccumbDamageType);
+
+            _mobThreshold.ForceThresholdState(uid, MobState.Dead);
+
+            if (_mobState.IsDead(uid))
+                return;
+        }
+
+        _host.ExecuteCommand(actor.PlayerSession, "ghost");
     }
 
     private void OnFakeDeath(EntityUid uid, MobStateActionsComponent component, CritFakeDeathEvent args)
@@ -104,7 +134,7 @@ public sealed partial class CritMobActionsSystem : EntitySystem
                 lastWords += "...";
 
                 _chat.TrySendInGameICMessage(uid, lastWords, InGameICChatType.Whisper, ChatTransmitRange.Normal, checkRadioPrefix: false, ignoreActionBlocker: true);
-                _host.ExecuteCommand(actor.PlayerSession, "ghost");
+                Succumb(uid, actor);
             });
 
         args.Handled = true;

@@ -38,6 +38,7 @@
   - type: DeleteParentOnTrigger
   - type: SpawnOnTrigger
     proto: BluespaceLifelineSpawnCore
+  - type: BlocksDeathCutscene
   - type: Tag
     tags:
     - SubdermalImplant
