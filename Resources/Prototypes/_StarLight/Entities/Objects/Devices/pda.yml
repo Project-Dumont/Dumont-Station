@@ -20,10 +20,3 @@
     - type: Icon
       sprite: _Starlight/Objects/Devices/pda.rsi
       state: pda-salvagelead
-    - type: CartridgeLoader
-      uiKey: enum.PdaUiKey.Key
-      preinstalled:
-        - CrewManifestCartridge
-        - NotekeeperCartridge
-        - NewsReaderCartridge
-        - AstroNavCartridge
