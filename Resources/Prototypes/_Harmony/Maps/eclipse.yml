@@ -47,7 +47,7 @@
             MedicalDoctor: [ 6, 6 ]
             MedicalIntern: [ 3, 4 ]
             Paramedic: [ 2, 2 ]
-            Virologist: [2, 2 ]
+            Virologist: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
@@ -71,6 +71,7 @@
             SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 5, 5 ]
+            Bitrunner: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
