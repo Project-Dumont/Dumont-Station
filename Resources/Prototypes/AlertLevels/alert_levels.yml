@@ -123,6 +123,12 @@
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
+    amber: #Dumont station
+      announcement: alert-level-amber-announcement
+      color: Orangered
+      emergencyLightColor: Orangered
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
       sound: /Audio/_Gabystation/Misc/vermelho_saae.ogg
