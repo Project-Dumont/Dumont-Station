@@ -110,7 +110,7 @@ namespace Content.Server.Communications
         [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
-
+		[Dependency] private readonly AnnounceTtsSystem _announceTtsSystem = default!;
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -334,6 +334,7 @@ namespace Content.Server.Communications
             var maxLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
             var msg = SharedChatSystem.SanitizeAnnouncement(message.Message, maxLength);
             var author = Loc.GetString("comms-console-announcement-unknown-sender");
+			bool canTTS = false;
             if (message.Actor is { Valid: true } mob)
             {
                 if (!CanAnnounce(comp))
@@ -346,6 +347,8 @@ namespace Content.Server.Communications
                     _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
                     return;
                 }
+
+				canTTS = _announceTtsSystem.CanTTS(mob);
 
                 var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, mob);
                 RaiseLocalEvent(tryGetIdentityShortInfoEvent);
@@ -362,18 +365,21 @@ namespace Content.Server.Communications
             Loc.TryGetString(comp.Title, out var title);
             title ??= comp.Title;
 
-            if (comp.AnnounceSentBy)
-                msg += "\n" + Loc.GetString("comms-console-announcement-sent-by") + " " + author;
+			Console.WriteLine(comp.Title);
 
+			List<string> announcementWords = new List<string>{};
+			if (canTTS)
+				announcementWords = AnnounceTtsSystem.PrepareTtsMessage((string)msg);
+			msg += "\n" + Loc.GetString("comms-console-announcement-sent-by") + " " + author;
             if (comp.Global)
             {
-                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color);
+                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color, announcementWords: announcementWords);
 
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following global announcement: {msg}");
                 return;
             }
 
-            _chatSystem.DispatchStationAnnouncement(uid, msg, title, true, announcementSound: comp.Sound, colorOverride: comp.Color);
+            _chatSystem.DispatchStationAnnouncement(uid, msg, title, true, announcementSound: comp.Sound, colorOverride: comp.Color, announcementWords: announcementWords);
 
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following station announcement: {msg}");
 
