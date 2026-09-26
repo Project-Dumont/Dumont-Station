@@ -7,24 +7,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
-using Robust.Shared.GameStates;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Shitmed.Antags.Abductor;
 
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
+// RIP mocho fucking chud died fighting in ukraine
+
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem))]
 public sealed partial class AbductorHumanObservationConsoleComponent : Component
 {
-    [DataField(readOnly: true)]
-    public EntProtoId? RemoteEntityProto = "AbductorHumanObservationConsoleEye";
-
-    [DataField, AutoNetworkedField]
-    public NetEntity? RemoteEntity;
-
     [DataField]
-    public float MinStationDistance = 200f;
+    public EntProtoId RemoteEntityProto = "AbductorHumanObservationConsoleEye";
 }
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorConsoleComponent : Component
@@ -43,9 +39,7 @@ public sealed partial class AbductorConsoleComponent : Component
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem))]
-public sealed partial class AbductorAlienPadComponent : Component
-{
-}
+public sealed partial class AbductorAlienPadComponent : Component;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorExperimentatorComponent : Component
@@ -53,7 +47,7 @@ public sealed partial class AbductorExperimentatorComponent : Component
     [DataField, AutoNetworkedField]
     public NetEntity? Console;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public string ContainerId = "storage";
 }
 
@@ -62,17 +56,18 @@ public sealed partial class AbductorGizmoComponent : Component
 {
     [DataField, AutoNetworkedField]
     public NetEntity? Target;
+
+    [DataField, AutoNetworkedField]
+    public bool BrainwashMode = false;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem))]
-public sealed partial class AbductorComponent : Component
-{
-}
+public sealed partial class AbductorComponent : Component;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AbductorVictimComponent : Component
 {
-    [DataField("position"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public EntityCoordinates? Position;
 
     [DataField, AutoNetworkedField]
@@ -85,17 +80,14 @@ public sealed partial class AbductorVictimComponent : Component
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem))]
 public sealed partial class AbductorOrganComponent : Component;
 
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AbductorScientistComponent : Component
 {
-    [DataField("position"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public EntityCoordinates? SpawnPosition;
 
     [DataField, AutoNetworkedField]
     public EntityUid? Console;
-
-    [DataField]
-    public float ReturnToShipCooldown = 20f;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
@@ -114,8 +106,8 @@ public sealed partial class AbductorsAbilitiesComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? SendYourself;
 
-    [DataField]
-    public EntityUid? ReturnToShip;
+    [DataField, AutoNetworkedField]
+    public EntityUid? SendPad;
 
     [DataField]
     public EntityUid[] HiddenActions = [];
@@ -127,24 +119,11 @@ public sealed partial class AbductorVestComponent : Component
     [DataField, AutoNetworkedField]
     public AbductorArmorModeType CurrentState = AbductorArmorModeType.Stealth;
 }
-[RegisterComponent, Access(typeof(SharedAbductorSystem))]
-public sealed partial class AbductConditionComponent : Component
-{
-    [DataField("abducted"), ViewVariables(VVAccess.ReadWrite)]
-    public int Abducted;
-    [DataField("hashset"), ViewVariables(VVAccess.ReadWrite)]
-    public HashSet<NetEntity> AbductedHashs = [];
-}
 
-public sealed partial class ExitConsoleEvent : InstantActionEvent
-{
+public sealed partial class ExitConsoleEvent : InstantActionEvent;
 
-}
-public sealed partial class SendYourselfEvent : WorldTargetActionEvent
-{
+public sealed partial class SendYourselfEvent : WorldTargetActionEvent;
 
-}
-public sealed partial class AbductorReturnToShipEvent : InstantActionEvent
-{
+public sealed partial class AbductorReturnToShipEvent : InstantActionEvent;
 
-}
+public sealed partial class SendPadEvent : WorldTargetActionEvent;

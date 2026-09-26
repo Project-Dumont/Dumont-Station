@@ -571,8 +571,10 @@
 
 - type: marking
   id: LunaWings
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -627,8 +629,10 @@
 
 - type: marking
   id: MothGlasswing
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -640,8 +644,10 @@
 
 - type: marking
   id: MothRhinoBeetle
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -653,8 +659,10 @@
 
 - type: marking
   id: MothSnoth
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -664,8 +672,10 @@
 
 - type: marking
   id: MothTrueButterfly
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -677,8 +687,10 @@
 
 - type: marking
   id: WingsBackstabbed
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -686,8 +698,10 @@
 
 - type: marking
   id: WingsDragonfly
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -699,8 +713,10 @@
 
 - type: marking
   id: WingsFly
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi
@@ -712,8 +728,10 @@
 
 - type: marking
   id: WingsLanternfly
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [ Moth ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/tail.rsi

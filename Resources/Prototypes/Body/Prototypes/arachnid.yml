@@ -30,6 +30,13 @@
       - left arm
       - head # Shitmed
       - groin
+      # Dumont changes start
+      - wings
+      # Dumont end
+    # Dumont changes start
+    wings:
+      part: AppendagesArachnid
+    # Dumont end
     groin:
       part: GroinArachnid
       connections:

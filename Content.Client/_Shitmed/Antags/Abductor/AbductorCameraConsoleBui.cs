@@ -8,29 +8,54 @@
 
 using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Client._Shitmed.Choice.UI;
-using JetBrains.Annotations;
+using Robust.Client.UserInterface;
 using static Content.Shared.Pinpointer.SharedNavMapSystem;
 
 namespace Content.Client._Shitmed.Antags.Abductor;
 
-[UsedImplicitly]
 public sealed class AbductorCameraConsoleBui : BoundUserInterface
 {
     [ViewVariables]
     private AbductorCameraConsoleWindow? _window;
-
-    private NetEntity? _station;
+    private int? _station;
 
     public AbductorCameraConsoleBui(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
+
     protected override void Open()
     {
         base.Open();
 
-        _window = new AbductorCameraConsoleWindow();
+        UpdateState(State);
+    }
 
-        _window.OnClose += Close;
+    protected override void UpdateState(BoundUserInterfaceState? state)
+    {
+        if (_window is { Disposed: true })
+            return;
+
+        if (state is AbductorCameraConsoleBuiState s)
+            Update(s);
+    }
+
+    private void Update(AbductorCameraConsoleBuiState state)
+    {
+        TryInitWindow();
+
+        View(ViewType.Stations);
+
+        RefreshUI();
+
+        if (!_window!.IsOpen)
+            _window.OpenCentered();
+    }
+
+    private void TryInitWindow()
+    {
+        if (_window != null) return;
+
+        _window = this.CreateWindow<AbductorCameraConsoleWindow>();
         _window.Title = "Intercepted cameras.";
 
         _window.StationsButton.OnPressed += _ =>
@@ -40,23 +65,7 @@ public sealed class AbductorCameraConsoleBui : BoundUserInterface
         };
     }
 
-    protected override void UpdateState(BoundUserInterfaceState? state)
-    {
-        if (state is AbductorCameraConsoleBuiState s)
-            Update(s);
-    }
-
-    private void Update(AbductorCameraConsoleBuiState state)
-    {
-        View(ViewType.Stations);
-
-        RefreshUI(state);
-
-        if (!_window!.IsOpen)
-            _window.OpenCentered();
-    }
-
-    private void OnStationPressed(NetEntity station, List<NavMapBeacon> beacons)
+    private void OnStationPressed(int station, List<NavMapBeacon> beacons)
     {
         if (_window == null)
             return;
@@ -66,15 +75,13 @@ public sealed class AbductorCameraConsoleBui : BoundUserInterface
         foreach (var beacon in beacons)
         {
             var beaconButton = new ChoiceControl();
+            var target = beacon.NetEnt;
 
             beaconButton.Set(beacon.Text, null);
             beaconButton.Button.Modulate = beacon.Color;
             beaconButton.Button.OnPressed += _ =>
             {
-                SendMessage(new AbductorBeaconChosenBuiMsg()
-                {
-                    Beacon = beacon,
-                });
+                SendMessage(new AbductorBeaconChosenBuiMsg(target));
                 Close();
             };
             _window.Beacons.AddChild(beaconButton);
@@ -82,26 +89,24 @@ public sealed class AbductorCameraConsoleBui : BoundUserInterface
         View(ViewType.Beacons);
     }
 
-    private void RefreshUI(AbductorCameraConsoleBuiState state)
+    private void RefreshUI()
     {
-        if (_window == null)
+        if (_window == null || State is not AbductorCameraConsoleBuiState state)
             return;
 
-        _window!.Stations.DisposeAllChildren();
-        _window.Beacons.DisposeAllChildren();
+        _window!.Stations.RemoveAllChildren();
+        _window.Beacons.RemoveAllChildren();
 
         foreach (var station in state.Stations)
         {
             var stationButton = new ChoiceControl();
 
-            var tooltip = station.Value.IsEnabled ? "" : Loc.GetString("abductors-ui-out-of-range");
-
-            stationButton.Set(station.Value.Name, station.Value.IsEnabled, tooltip);
+            stationButton.Set(station.Value.Name, null);
             stationButton.Button.OnPressed += _ => OnStationPressed(station.Key, station.Value.Beacons);
 
             _window.Stations.AddChild(stationButton);
 
-            if (station.Key == _station && station.Value.IsEnabled) OnStationPressed(station.Key, station.Value.Beacons);
+            if (station.Key == _station) OnStationPressed(station.Key, station.Value.Beacons);
         }
     }
 
@@ -129,13 +134,5 @@ public sealed class AbductorCameraConsoleBui : BoundUserInterface
     {
         Stations,
         Beacons,
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (disposing)
-            _window?.Dispose();
     }
 }
