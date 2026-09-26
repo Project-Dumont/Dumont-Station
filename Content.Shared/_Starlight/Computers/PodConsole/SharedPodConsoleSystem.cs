@@ -27,7 +27,7 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
         if (args.Cancelled) return;
         ent.Comp.Locked = true;
         ent.Comp.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(10);
-        _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", TimeSpan.FromSeconds(10))), ent, args.User, PopupType.LargeCaution);
+        _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", 10)), ent, args.User, PopupType.LargeCaution);
     }
 
     private void OnActivation(Entity<PodConsoleComponent> ent, ref ActivateInWorldEvent args)
