@@ -27,7 +27,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
-using Content.Client._Shitcode.Heretic;
 using Content.Shared.IconSmoothing;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -35,6 +34,10 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map.Enumerators;
 using static Robust.Client.GameObjects.SpriteComponent;
+
+// Dumont start
+using Content.Trauma.Common.Heretic;
+// Dumont end
 
 namespace Content.Client.IconSmoothing
 {
@@ -88,7 +91,10 @@ namespace Content.Client.IconSmoothing
                 return;
 
             SetCornerLayers((uid, sprite), component);
-            RaiseLocalEvent(uid, new IconSmoothCornersInitializedEvent()); // Goobstation
+            // Dumont start
+            var initialized = new IconSmoothCornersInitializedEvent();
+            RaiseLocalEvent(uid, ref initialized);
+            // Dumont end
 
             if (component.Shader != null)
             {
@@ -106,7 +112,10 @@ namespace Content.Client.IconSmoothing
 
             component.StateBase = newState;
             SetCornerLayers((uid, sprite), component);
-            RaiseLocalEvent(uid, new IconSmoothCornersInitializedEvent()); // Goobstation
+            // Dumont start
+            var initialized = new IconSmoothCornersInitializedEvent();
+            RaiseLocalEvent(uid, ref initialized);
+            // Dumont end
         }
 
         private void SetCornerLayers(Entity<SpriteComponent?> sprite, IconSmoothComponent component)

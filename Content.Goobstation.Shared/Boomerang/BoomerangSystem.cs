@@ -30,6 +30,9 @@ public sealed class BoomerangSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<BoomerangComponent, LandEvent>(OnLanded);
         SubscribeLocalEvent<BoomerangComponent, ThrownEvent>(OnThrown);
+        // Dumont start
+        SubscribeLocalEvent<BoomerangComponent, ComponentStartup>(OnStartup);
+        // Dumont end
     }
 
     public override void Update(float frameTime)
@@ -50,6 +53,14 @@ public sealed class BoomerangSystem : EntitySystem
         if (ent.Comp.Thrower == null)
             SetThrower(ent, args.User);
     }
+
+    // Dumont start
+    private void OnStartup(Entity<BoomerangComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.Thrower == null && TryComp<ThrownItemComponent>(ent, out var thrown) && !thrown.Landed)
+            SetThrower(ent, thrown.Thrower);
+    }
+    // Dumont end
 
     private void OnLanded(Entity<BoomerangComponent> ent, ref LandEvent args)
     {

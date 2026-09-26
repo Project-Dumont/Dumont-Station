@@ -8,11 +8,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Rituals;
+
 using System.Linq;
 using Content.Goobstation.Common.Religion;
 using Content.Goobstation.Shared.Bible;
 using Content.Goobstation.Shared.Religion.Nullrod;
-using Content.Server.Heretic.EntitySystems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Heretic;
@@ -25,6 +27,11 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Timing; // Shitmed Change
 using Content.Shared._Shitmed.Damage; // Shitmed Change
+// Dumont end
+
+// Dumont start
+using Content.Trauma.Server.Heretic.Systems;
+// Dumont end
 
 namespace Content.Goobstation.Shared.Religion;
 
@@ -76,7 +83,12 @@ public sealed class WeakToHolySystem : EntitySystem
 
         var holyCoefficient = 0f; // Default resistance
 
-        if (unholyEvent.ShouldTakeHoly)
+        // Dumont start
+        var holyEvent = new UserShouldTakeHolyEvent(args.Target);
+        RaiseLocalEvent(args.Target, ref holyEvent, broadcast: true);
+        // Dumont end
+
+        if (unholyEvent.ShouldTakeHoly || holyEvent.ShouldTakeHoly || HasComp<AlwaysTakeHolyComponent>(args.Target))
             holyCoefficient = 1f; //Allow holy damage
 
         DamageModifierSet modifierSet = new()
@@ -87,17 +99,9 @@ public sealed class WeakToHolySystem : EntitySystem
             },
         };
 
-        if (!TryComp<BodyComponent>(ent, out var body))
-            return;
-
-        if (!_body.TryGetRootPart(ent, out var rootPart, body: body))
-            return;
-
-        foreach (var woundable in _wound.GetAllWoundableChildren(rootPart.Value))
-        {
-            if (HasComp<DamageableComponent>(woundable))
-                args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifierSet);
-        }
+        // Dumont start
+        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifierSet);
+        // Dumont end
     }
 
     private void OnUnholyItemDamage(Entity<WeakToHolyComponent> uid, ref DamageUnholyEvent args)
@@ -108,7 +112,7 @@ public sealed class WeakToHolySystem : EntitySystem
             return;
         }
 
-        if (_heretic.TryGetHereticComponent(uid, out var heretic, out _) && heretic.Ascended)
+        if (_heretic.TryGetHereticComponent(uid.Owner, out var heretic, out _) && heretic.Ascended)
         {
             args.ShouldTakeHoly = true;
             return;

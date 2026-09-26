@@ -7,3 +7,14 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 guide-entry-heretics = Heretics
+guide-entry-heretic-curses = Curses
+
+guide-entry-heretic-rituals = Rituals
+guide-entry-heretic-potions = Potions
+guide-entry-heretic-ash = Ash Path
+guide-entry-heretic-void = Void Path
+guide-entry-heretic-flesh = Flesh Path
+guide-entry-heretic-lock = Lock Path
+guide-entry-heretic-rust = Rust Path
+guide-entry-heretic-blade = Blade Path
+guide-entry-heretic-cosmos = Cosmos Path

@@ -300,6 +300,7 @@
   name: glass table
   description: A square piece of glass, standing on four metal legs.
   components:
+  - type: ReflectiveSurface
   - type: Sprite
     sprite: Structures/Furniture/Tables/glass.rsi
   - type: Icon
@@ -411,6 +412,7 @@
   name: reinforced glass table
   description: A square piece of glass, standing on four metal legs. Extra robust.
   components:
+  - type: ReflectiveSurface
   - type: Sprite
     sprite: Structures/Furniture/Tables/r_glass.rsi
   - type: Icon
@@ -470,6 +472,7 @@
   name: plasma glass table
   description: A square piece of plasma glass, standing on four metal legs. Pretty!
   components:
+  - type: ReflectiveSurface
   - type: Sprite
     sprite: Structures/Furniture/Tables/plasma.rsi
   - type: Icon

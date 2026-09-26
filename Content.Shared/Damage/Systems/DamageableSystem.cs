@@ -102,7 +102,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Damage
 {
-    public sealed class DamageableSystem : EntitySystem
+    public sealed partial class DamageableSystem : EntitySystem
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -264,6 +264,13 @@ namespace Content.Shared.Damage
                 _appearance.SetData(uid, DamageVisualizerKeys.DamageUpdateGroups, data, appearance);
             }
             RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, ignoreBlockers, uncappedDamage)); // Goob edit
+            // Dumont start
+            if (damageDelta != null)
+            {
+                var dealt = new DamageDealtEvent(damageDelta, origin, interruptsDoAfters, ignoreBlockers, uncappedDamage ?? damageDelta);
+                RaiseLocalEvent(uid, ref dealt);
+            }
+            // Dumont end
         }
 
         /// <summary>
@@ -309,7 +316,9 @@ namespace Content.Shared.Damage
             vitalDamage.TrimZeros();
             // Goobstation end
 
-            var before = new BeforeDamageChangedEvent(damage, origin, canBeCancelled, targetPart); // Shitmed Change
+            // Dumont start
+            var before = new BeforeDamageChangedEvent(damage, origin, canBeCancelled, targetPart, Target: uid.Value);
+            // Dumont end
             RaiseLocalEvent(uid.Value, ref before);
 
             if (before.Cancelled)
@@ -1051,7 +1060,13 @@ namespace Content.Shared.Damage
         EntityUid? Origin = null,
         bool CanBeCancelled = false, // Shitmed Change
         TargetBodyPart? TargetPart = null, // Shitmed Change
-        bool Cancelled = false);
+        // Dumont start
+        bool Cancelled = false,
+        EntityUid Target = default) : IInventoryRelayEvent
+    {
+        public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
+    }
+        // Dumont end
 
     /// <summary>
     ///     Raised on an entity when damage is about to be dealt,

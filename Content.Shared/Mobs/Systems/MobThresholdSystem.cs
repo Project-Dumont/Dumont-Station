@@ -305,11 +305,10 @@ public sealed partial class MobThresholdSystem : EntitySystem
             !TryComp<MobThresholdsComponent>(target2, out var threshold2))
             return false;
 
-        if (!TryGetThresholdForState(target1, MobState.Dead, out var ent1DeadThreshold, threshold1))
-            ent1DeadThreshold = 0;
-
-        if (!TryGetThresholdForState(target2, MobState.Dead, out var ent2DeadThreshold, threshold2))
-            ent2DeadThreshold = 0;
+        var ent1DeadThreshold = GetLowestThreshold(target1);
+        var ent2DeadThreshold = GetLowestThreshold(target2);
+        if (ent1DeadThreshold <= 0 || ent2DeadThreshold <= 0)
+            return false;
 
         // Shitmed Change Start
         Dictionary<TargetBodyPart, DamageSpecifier> entWoundablesDamage = new();
@@ -326,12 +325,12 @@ public sealed partial class MobThresholdSystem : EntitySystem
                 foreach (var woundable in _wound.GetAllWoundableChildren(parentRootPart.Value))
                 {
                     if (woundable.Comp.WoundableIntegrity >= woundable.Comp.IntegrityCap
-                        || !TryComp<DamageableComponent>(parentRootPart.Value, out var damageable)
+                        || !TryComp<DamageableComponent>(woundable.Owner, out var damageable)
                         || damageable.Damage.GetTotal() == 0)
                         continue;
 
                     var bodyPart = _body.GetTargetBodyPart(woundable);
-                    var modifiedDamage = damageable.Damage / ent1DeadThreshold.Value * ent2DeadThreshold.Value;
+                    var modifiedDamage = damageable.Damage * ent2DeadThreshold / ent1DeadThreshold;
                     if (!entWoundablesDamage.TryAdd(bodyPart, modifiedDamage))
                         entWoundablesDamage[bodyPart] += modifiedDamage;
                 }
@@ -339,7 +338,7 @@ public sealed partial class MobThresholdSystem : EntitySystem
             }
         }
 
-        damage = oldDamage.Damage / ent1DeadThreshold.Value * ent2DeadThreshold.Value;
+        damage = EntityManager.System<DamageableSystem>().GetAllDamage(target1) * ent2DeadThreshold / ent1DeadThreshold;
         // Shitmed Change End
         return true;
     }

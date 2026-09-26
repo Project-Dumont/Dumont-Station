@@ -107,6 +107,10 @@ using Robust.Shared.Utility;
 using Content.Server._Funkystation.GameTicking;
 using Content.Server.Antag.Components;
 
+// Dumont start
+using Content.Trauma.Server.Heretic.Components;
+// Dumont end
+
 namespace Content.Server.Administration.Systems;
 
 public sealed partial class AdminVerbSystem

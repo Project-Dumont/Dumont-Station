@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Globalization;
 using Content.Goobstation.UIKit.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.RichText;
@@ -43,8 +44,8 @@ public sealed class ButtonTag : IMarkupTagHandler
         {
             var split = coordsStr.Split(", ");
             if (split.Length > 2 && int.TryParse(split[0], out var relativeUid) &&
-                float.TryParse(split[1], out var x) &&
-                float.TryParse(split[2], out var y))
+                float.TryParse(split[1], NumberStyles.Float, CultureInfo.InvariantCulture, out var x) &&
+                float.TryParse(split[2], NumberStyles.Float, CultureInfo.InvariantCulture, out var y))
                 coords = new NetCoordinates(new NetEntity(relativeUid), new Vector2(x, y));
         }
 

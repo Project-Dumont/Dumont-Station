@@ -14,20 +14,63 @@ using Content.Goobstation.Shared.Emoting;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
+// Dumont start
+using Content.Server.Medical;
+using Content.Shared.Emoting;
+using Content.Shared.StatusEffectNew;
+using Content.Trauma.Shared.StatusEffects;
+// Dumont end
 
 namespace Content.Goobstation.Server.Emoting;
 
 public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
 {
+    // Dumont start
+    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private VomitSystem _vomit = default!;
+    private static readonly EntProtoId EmoteCounter = "EmoteVomitCounterStatusEffect";
+    private static readonly EntProtoId EmoteBlock = "BlockVomitEmotesStatusEffect";
+    // Dumont end
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<AnimatedEmotesComponent, EmoteEvent>(OnEmote);
+        // Dumont start
+        SubscribeLocalEvent<AnimatedEmotesComponent, BeforeEmoteEvent>(OnBeforeEmote);
+        // Dumont end
     }
+
+    // Dumont start
+    private void OnBeforeEmote(Entity<AnimatedEmotesComponent> ent, ref BeforeEmoteEvent args)
+    {
+        if (args.Emote.ID is "Flip" or "Spin" && _status.HasStatusEffect(ent, EmoteBlock))
+            args.Cancel();
+    }
+    // Dumont end
 
     private void OnEmote(EntityUid uid, AnimatedEmotesComponent component, ref EmoteEvent args)
     {
+        // Dumont start
+        if (args.Emote.ID is "Flip" or "Spin")
+        {
+            if (_status.HasStatusEffect(uid, EmoteBlock))
+                return;
+
+            if (_status.TryUpdateStatusEffectDuration(uid, EmoteCounter, out var effect, TimeSpan.FromSeconds(1)))
+            {
+                var counter = EnsureComp<CounterStatusEffectComponent>(effect.Value);
+                counter.Count++;
+                Dirty(effect.Value, counter);
+                if (counter.Count >= 5)
+                {
+                    _status.TryUpdateStatusEffectDuration(uid, EmoteBlock, TimeSpan.FromSeconds(10));
+                    _vomit.Vomit(uid, -8f, -8f);
+                    return;
+                }
+            }
+        }
+        // Dumont end
         PlayEmoteAnimation(uid, component, args.Emote.ID);
 
         if (args.Emote.TargetEvents is not null) // CorvaxGoob-PrototypedAnimations : Raise to play client prototyped animation if it's exist

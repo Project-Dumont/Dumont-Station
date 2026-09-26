@@ -2,16 +2,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Rust;
+
 using Content.Goobstation.Shared.Hastur.Components;
 using Content.Goobstation.Shared.Hastur.Events;
 using Content.Server.Chat.Systems;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+// Dumont end
 
 namespace Content.Goobstation.Server.Hastur.Systems
 {

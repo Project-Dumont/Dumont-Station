@@ -102,6 +102,11 @@ public abstract class SharedFlashSystem : EntitySystem
             return;
         }
 
+        // Dumont start
+        var ev = new AfterFlashActivatedEvent(args.HitEntities.First(), args.User);
+        RaiseLocalEvent(ent, ref ev);
+        // Dumont end
+
         args.Handled = true;
         foreach (var target in args.HitEntities)
         {
@@ -116,6 +121,10 @@ public abstract class SharedFlashSystem : EntitySystem
 
         args.Handled = true;
         FlashArea(ent.Owner, args.User, ent.Comp.Range, ent.Comp.AoeFlashDuration, ent.Comp.SlowTo, true, ent.Comp.Probability);
+        // Dumont start
+        var ev = new AfterFlashActivatedEvent(null, args.User);
+        RaiseLocalEvent(ent, ref ev);
+        // Dumont end
     }
 
     // needed for the flash lantern and interrogator lamp
@@ -126,6 +135,10 @@ public abstract class SharedFlashSystem : EntitySystem
             return;
 
         FlashArea(ent.Owner, null, ent.Comp.Range, ent.Comp.AoeFlashDuration, ent.Comp.SlowTo, true, ent.Comp.Probability);
+        // Dumont start
+        var ev = new AfterFlashActivatedEvent(null, null);
+        RaiseLocalEvent(ent, ref ev);
+        // Dumont end
     }
 
     /// <summary>
