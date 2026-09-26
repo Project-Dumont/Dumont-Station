@@ -54,8 +54,3 @@
   - type: InteractionPopup
     interactSuccessString: petting-success-cleanbot
     interactFailureString: petting-failure-cleanbot
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobMoth
-    lowest: MobMoproach
-  # Corvax-Wega-Genetics-end

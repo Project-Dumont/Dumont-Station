@@ -129,11 +129,6 @@
     - DoorBumpOpener
     - FelinidEmotes # Since we need to add this, we also need to rewrite all others
     - AnomalyHost
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobTajaran
-    lowest: MobTajkey
-  # Corvax-Wega-Genetics-end
   - type: TailDuoEmote # Funky Change
   # Gaby-Better-Tajara-start
   - type: NightVision

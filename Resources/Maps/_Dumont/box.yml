@@ -82714,42 +82714,18 @@ entities:
     - type: Transform
       parent: 2
       pos: 78.5,-23.5
-    - type: DnaClient
-      server: 12661
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 112
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 611.3659374
-      lastInjectorTime: 611.3659374
   - uid: 12662
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 82.5,-27.5
-    - type: DnaClient
-      server: 12662
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 113
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 611.3659374
-      lastInjectorTime: 611.3659374
   - uid: 12663
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 76.5,-28.5
-    - type: DnaClient
-      server: 12663
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 114
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 611.3659374
-      lastInjectorTime: 611.3659374
 - proto: DogBed
   entities:
   - uid: 12664

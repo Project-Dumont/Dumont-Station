@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseComputerCircuitboard
   id: DnaModifierComputerCircuitboard
-  name: DNA-modifier computer board
-  description: "The console board for the modifier console is DNA."
+  name: genetics computer board
+  description: A computer printed circuit board for a genetics console.
   components:
     - type: Sprite
       state: cpu_medical

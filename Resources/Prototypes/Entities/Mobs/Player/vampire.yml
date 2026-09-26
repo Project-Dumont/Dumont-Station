@@ -15,8 +15,3 @@
     factions:
     - PetsNT
   - type: Alerts
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobShadowkin
-    lowest: MobBatVampire
-  # Corvax-Wega-Genetics-end
