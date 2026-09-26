@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 20:17:49
-  entityCount: 32017
+  time: 09/23/2026 16:38:37
+  entityCount: 32020
 maps:
 - 1
 grids:
@@ -15692,7 +15692,7 @@ entities:
       pos: 26.5,17.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -82220.81
+      secondsUntilStateChange: -82294.945
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -16818,7 +16818,7 @@ entities:
       pos: 41.5,62.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -39487.5
+      secondsUntilStateChange: -39561.637
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -21579,6 +21579,23 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 19.5,7.5
+- proto: BaseMagazineGaussgun
+  entities:
+  - uid: 31530
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.519753,68.421234
+  - uid: 31531
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.519753,68.79266
+  - uid: 31532
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.519753,68.59266
 - proto: BeachBall
   entities:
   - uid: 1288
@@ -23366,18 +23383,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -1.4871819,-32.554222
-- proto: BoxLethalshot
-  entities:
-  - uid: 1575
-    components:
-    - type: Transform
-      parent: 2
-      pos: -32.393913,68.82584
-  - uid: 1576
-    components:
-    - type: Transform
-      parent: 2
-      pos: -32.22204,68.73209
 - proto: BoxLightbulb
   entities:
   - uid: 1577
@@ -23440,13 +23445,6 @@ entities:
       parent: 2
       rot: -18.84955592153876 rad
       pos: 12.796418,-35.638966
-- proto: BoxShotgunSlug
-  entities:
-  - uid: 1586
-    components:
-    - type: Transform
-      parent: 2
-      pos: -32.232918,68.52671
 - proto: BoxSterileMask
   entities:
   - uid: 1587
@@ -85220,6 +85218,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 37.5,-19.5
+- proto: GunSafePhaser
+  entities:
+  - uid: 22061
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.5,64.5
 - proto: CrateArtifactContainer
   entities:
   - uid: 13180
@@ -97366,10 +97371,10 @@ entities:
       server: 15215
       connectedToServer: True
     - type: DnaServer
-      serverId: 121
+      serverId: 123
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1479.4985505
-      lastInjectorTime: 1479.4985505
+      lastSubjectInjectTime: 231.129337
+      lastInjectorTime: 231.129337
     - type: DeviceLinkSource
       linkedPorts:
         22584:
@@ -97385,10 +97390,10 @@ entities:
       server: 15216
       connectedToServer: True
     - type: DnaServer
-      serverId: 122
+      serverId: 124
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1479.4985505
-      lastInjectorTime: 1479.4985505
+      lastSubjectInjectTime: 231.129337
+      lastInjectorTime: 231.129337
     - type: DeviceLinkSource
       linkedPorts:
         22585:
@@ -146790,27 +146795,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -34.5,68.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 22061
-    components:
-    - type: Transform
-      parent: 2
-      pos: -32.5,64.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 22062
-    components:
-    - type: Transform
-      parent: 2
-      pos: -37.5,66.5
-- proto: GunSafeSubMachineGunDrozd
+- proto: GunSafeMelee
   entities:
   - uid: 22063
     components:
     - type: Transform
       parent: 2
       pos: -37.5,64.5
+- proto: GunSafeSurplus
+  entities:
+  - uid: 22062
+    components:
+    - type: Transform
+      parent: 2
+      pos: -37.5,66.5
 - proto: GyroscopeMachineCircuitboard
   entities:
   - uid: 22064
@@ -154261,6 +154259,23 @@ entities:
     - type: Transform
       parent: 2
       pos: -35.5,-19.5
+- proto: PowerCellHigh
+  entities:
+  - uid: 32018
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.161438,68.821236
+  - uid: 32019
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.161438,68.52123
+  - uid: 32020
+    components:
+    - type: Transform
+      parent: 2
+      pos: -32.161438,68.306946
 - proto: PowerCellIonSniper
   entities:
   - uid: 23108
@@ -204676,6 +204691,23 @@ entities:
     - type: DeviceList
       devices:
       - 31524
+- proto: WeaponGaussgun
+  entities:
+  - uid: 1575
+    components:
+    - type: Transform
+      parent: 2
+      pos: -33.11975,68.821236
+  - uid: 1576
+    components:
+    - type: Transform
+      parent: 2
+      pos: -33.11975,68.63552
+  - uid: 1586
+    components:
+    - type: Transform
+      parent: 2
+      pos: -33.11975,68.421234
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 31526
@@ -204708,25 +204740,6 @@ entities:
       parent: 2
       rot: -18.84955592153876 rad
       pos: 12.486576,-35.1766
-- proto: WeaponShotgunEnforcer
-  entities:
-  - uid: 31530
-    components:
-    - type: Transform
-      parent: 2
-      pos: -33.29843,68.51334
-- proto: WeaponShotgunKammerer
-  entities:
-  - uid: 31531
-    components:
-    - type: Transform
-      parent: 2
-      pos: -33.29843,68.84147
-  - uid: 31532
-    components:
-    - type: Transform
-      parent: 2
-      pos: -33.11093,68.73209
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 31533

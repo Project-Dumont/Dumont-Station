@@ -823,6 +823,7 @@
     - BorgModulesSecurityDeltaV # DeltaV - Security Borg
     - SecurityModules # Gabystation
     - SecurityClothing # Gabystation
+    - MegaCells # Dumont lasersec
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic

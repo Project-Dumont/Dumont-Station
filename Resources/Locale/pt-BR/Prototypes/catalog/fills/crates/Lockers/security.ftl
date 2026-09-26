@@ -17,9 +17,17 @@ ent-LockerWardenFilled = armário do carcereiro
 ent-LockerWardenFilledHardsuit = armário do carcereiro
     .desc = Para quem precisa lidar com ser esfaqueado por prisoneiros diariamente.
 
+ent-GunSafeLaserCarbine = cofre de armas de energia
+ .desc = Um cofre com uma variedade de armas de energia.
 
-ent-GunSafeLaserCarbine = cofre de armas laser
- .desc = Uma caixa com 3 armas laser, 2 armas ion e 2 armas de temperatura para quando você quer derreter algo sem gastar recursos.
+ent-GunSafeMelee = cofre de armas corpo-a-corpo
+ .desc = Um cofre com uma variedade de armas corpo-a-corpo.
+
+ent-GunSafeSurplus = cofre de armas balísticas excedentes
+ .desc = Um cofre com algumas armas balísticas aleátorias, compradas em desconto.
+
+ent-GunSafeGauss = cofre de armas de Gauss
+ .desc = Um cofre com duas armas de Gauss.
 
 ent-GunSafeShotgunKammerer = cofre de kammerer
  .desc = Uma caixa com duas espingardas de ação por bombeamento e duas caixas de munição.
@@ -44,3 +52,6 @@ ent-ClosetBombFilled = armário de traje anti-bomba
 
 ent-GunSafeLauncherNonLethal = armário de lança-granadas anti-motim
  .desc = Um cofre com um lança granadas e algumas granadas menos-letais.
+
+ent-GunSafePhaser = cofre de phaser
+ .desc = Um cofre com 4 phasers.

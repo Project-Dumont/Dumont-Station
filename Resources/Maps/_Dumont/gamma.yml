@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/17/2026 20:35:18
-  entityCount: 38760
+  time: 09/23/2026 16:41:44
+  entityCount: 38759
 maps:
 - 1
 grids:
@@ -29069,7 +29069,7 @@ entities:
       pos: -26.5,11.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -20488.893
+      secondsUntilStateChange: -20584.684
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -29683,7 +29683,7 @@ entities:
       pos: 31.5,-47.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -39284.348
+      secondsUntilStateChange: -39380.14
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -35313,6 +35313,23 @@ entities:
     - type: Transform
       parent: 2
       pos: 47.5,-18.5
+- proto: BaseMagazineGaussgun
+  entities:
+  - uid: 1950
+    components:
+    - type: Transform
+      parent: 2
+      pos: 5.5224633,50.611645
+  - uid: 1952
+    components:
+    - type: Transform
+      parent: 2
+      pos: 5.5224633,50.49736
+  - uid: 1953
+    components:
+    - type: Transform
+      parent: 2
+      pos: 5.522463,50.268787
 - proto: Basketball
   entities:
   - uid: 1601
@@ -37146,18 +37163,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 50.47358,-65.399025
-- proto: BoxLethalshot
-  entities:
-  - uid: 1933
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.504377,50.564217
-  - uid: 1934
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.504377,50.698265
 - proto: BoxLightMixed
   entities:
   - uid: 1935
@@ -37241,26 +37246,11 @@ entities:
       pos: 2.5818946,64.763084
 - proto: BoxMagazineRifle
   entities:
-  - uid: 1950
-    components:
-    - type: Transform
-      parent: 2
-      pos: 4.493791,50.52501
   - uid: 1951
     components:
     - type: Transform
       parent: 2
       pos: 2.438992,64.74521
-  - uid: 1952
-    components:
-    - type: Transform
-      parent: 2
-      pos: 4.493259,50.475933
-  - uid: 1953
-    components:
-    - type: Transform
-      parent: 2
-      pos: 4.493259,50.475933
 - proto: BoxMousetrap
   entities:
   - uid: 1954
@@ -37324,16 +37314,6 @@ entities:
       pos: 18.456049,-56.353954
 - proto: BoxShotgunSlug
   entities:
-  - uid: 1979
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.4954453,50.483788
-  - uid: 1980
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.4954453,50.34974
   - uid: 1981
     components:
     - type: Transform
@@ -97691,6 +97671,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 48.677773,2.518083
+- proto: GunSafePhaser
+  entities:
+  - uid: 1980
+    components:
+    - type: Transform
+      parent: 2
+      pos: 3.5,50.5
 - proto: CrateArtifactContainer
   entities:
   - uid: 13282
@@ -111197,7 +111184,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 57.5,-36.5
     - type: DnaServer
-      serverId: 106
+      serverId: 109
     - type: DeviceLinkSource
       linkedPorts:
         25686:
@@ -111207,8 +111194,8 @@ entities:
       server: 15607
       connectedToServer: True
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 87.9315196
-      lastInjectorTime: 87.9315196
+      lastSubjectInjectTime: 377.6089044
+      lastInjectorTime: 377.6089044
   - uid: 15608
     components:
     - type: Transform
@@ -111216,7 +111203,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 57.5,-31.5
     - type: DnaServer
-      serverId: 107
+      serverId: 110
     - type: DeviceLinkSource
       linkedPorts:
         25685:
@@ -111226,8 +111213,8 @@ entities:
       server: 15608
       connectedToServer: True
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 87.9315196
-      lastInjectorTime: 87.9315196
+      lastSubjectInjectTime: 377.6089044
+      lastInjectorTime: 377.6089044
 - proto: DnaModifierDisk
   entities:
   - uid: 15609
@@ -180808,6 +180795,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 0.5,61.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 24891
+    components:
+    - type: Transform
+      parent: 2
+      pos: 9.5,52.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 24889
@@ -180815,34 +180809,20 @@ entities:
     - type: Transform
       parent: 2
       pos: 6.5,53.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 24890
-    components:
-    - type: Transform
-      parent: 2
-      pos: 3.5,50.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 24891
-    components:
-    - type: Transform
-      parent: 2
-      pos: 9.5,51.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafeMelee
   entities:
   - uid: 24892
     components:
     - type: Transform
       parent: 2
-      pos: 9.5,52.5
-- proto: GunSafeSubMachineGunDrozd
+      pos: 9.5,53.5
+- proto: GunSafeSurplus
   entities:
-  - uid: 24893
+  - uid: 24890
     components:
     - type: Transform
       parent: 2
-      pos: 9.5,53.5
+      pos: 9.5,51.5
 - proto: Handcuffs
   entities:
   - uid: 24894
@@ -190559,6 +190539,23 @@ entities:
     - type: Transform
       parent: 2
       pos: 78.5,-11.5
+- proto: PowerCellHigh
+  entities:
+  - uid: 1933
+    components:
+    - type: Transform
+      parent: 2
+      pos: 4.508177,50.483074
+  - uid: 1934
+    components:
+    - type: Transform
+      parent: 2
+      pos: 4.522463,50.59736
+  - uid: 1979
+    components:
+    - type: Transform
+      parent: 2
+      pos: 4.508177,50.311646
 - proto: PowerCellHighPrinted
   entities:
   - uid: 26354
@@ -203419,7 +203416,7 @@ entities:
       parent: 2
       pos: 54.5,-44.5
     - type: DnaServer
-      serverId: 108
+      serverId: 111
 - proto: ResearchDisk
   entities:
   - uid: 28731

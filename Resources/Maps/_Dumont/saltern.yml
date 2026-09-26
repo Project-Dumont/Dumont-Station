@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 19:49:45
-  entityCount: 12508
+  time: 09/23/2026 16:52:05
+  entityCount: 12505
 maps:
 - 1
 grids:
@@ -35211,10 +35211,10 @@ entities:
       server: 5495
       connectedToServer: True
     - type: DnaServer
-      serverId: 108
+      serverId: 109
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 420.3159543
-      lastInjectorTime: 420.3159543
+      lastSubjectInjectTime: 1020.1137054
+      lastInjectorTime: 1020.1137054
     - type: DeviceLinkSource
       linkedPorts:
         8450:
@@ -36606,7 +36606,7 @@ entities:
       pos: -7.5,2.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -25992.098
+      secondsUntilStateChange: -26032.758
     - type: Firelock
       emergencyCloseCooldown: 11320.0220152
   - uid: 5677
@@ -37003,7 +37003,7 @@ entities:
       pos: -26.5,4.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -25691.166
+      secondsUntilStateChange: -25731.826
   - uid: 5746
     components:
     - type: Transform
@@ -37460,7 +37460,7 @@ entities:
       pos: 40.5,-12.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -29134.193
+      secondsUntilStateChange: -29174.854
   - uid: 5833
     components:
     - type: Transform
@@ -53360,6 +53360,13 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 60.5,-12.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 8135
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,21.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 8133
@@ -53374,21 +53381,14 @@ entities:
     - type: Transform
       parent: 2
       pos: -14.5,19.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 8135
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,21.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafeMelee
   entities:
   - uid: 8136
     components:
     - type: Transform
       parent: 2
-      pos: -11.5,21.5
-- proto: GunSafeSubMachineGunDrozd
+      pos: -12.5,21.5
+- proto: GunSafeSurplus
   entities:
   - uid: 8137
     components:
@@ -55385,23 +55385,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 58.5,17.5
-- proto: MagazinePistol
-  entities:
-  - uid: 8397
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.297329,20.472649
-  - uid: 8398
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.297329,20.316399
-  - uid: 8399
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.250454,20.691399
 - proto: MailMetricsCartridge
   entities:
   - uid: 8400
@@ -79338,6 +79321,18 @@ entities:
     - type: Transform
       parent: 2
       pos: -14.594447,16.787762
+- proto: WeaponEnergyGunPhaser
+  entities:
+  - uid: 8397
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.496269,20.47565
+  - uid: 8398
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.510555,20.74708
 - proto: WeaponEnergyTurretAI
   entities:
   - uid: 12332
@@ -79592,18 +79587,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 60.41511,10.629564
-- proto: WeaponPistolMk58
-  entities:
-  - uid: 12354
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.641079,20.457024
-  - uid: 12355
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.625454,20.707024
 - proto: WeaponWaterBlaster
   entities:
   - uid: 12356
