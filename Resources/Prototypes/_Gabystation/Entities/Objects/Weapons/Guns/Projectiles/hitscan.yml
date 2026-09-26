@@ -3,23 +3,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: hitscan
-  id: PlasmaBeam
-  damage:
-    types:
-      Slash: 24
-      Heat: 6
-      Structural: 45
-  muzzleFlash:
-    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
-    state: muzzle_cutter
-  travelFlash:
-    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
-    state: beam_cutter
-  impactFlash:
-    sprite: _Gabystation/Objects/Weapons/Guns/Projectiles/PlasmaCutter.rsi
-    state: impact_cutter
-
-- type: hitscan
   id: HealingLaser
   damage:
     types:
@@ -92,8 +75,8 @@
   parent: BulletTrace
   damage:
     types:
-      Piercing: 40 
-    armorPenetration: 0.15 
+      Piercing: 40
+    armorPenetration: 0.15
 
 - type: hitscan
   id: BulletChesterRiflePracticeTrace
