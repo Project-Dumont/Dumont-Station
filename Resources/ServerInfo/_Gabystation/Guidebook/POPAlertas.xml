@@ -1,13 +1,14 @@
 <Document>
 ## Códigos de Alerta
 Indica em que situações diferentes códigos devem ser ativados e medidas de segurança a serem tomadas.
+O comando deveria gerenciar o nível de alerta atual da estação, garantindo que um alerta incorreto não seja mantido por longos períodos de tempo.
 
 <ColorBox Color="#388c34">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
     [bold][color=#ffffff]Código Verde[/color][/bold]
   </Box>
 </ColorBox>
-Indica condições boas e seguras de trabalho. Mandatos são necessários para execução de revistas. Porte de armas é estritamente proibido.
+Indica condições boas e seguras de trabalho. Mandatos são necessários para execução de revistas. 
 
 <ColorBox Color="#1b67a5">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
@@ -15,13 +16,30 @@ Indica condições boas e seguras de trabalho. Mandatos são necessários para e
   </Box>
 </ColorBox>
 Ativo caso haja recente suspeita ou pequena ameaça confirmada à segurança da tripulação presente a bordo. Seguranças podem executar revistas aleatórias sem a necessidade de mandatos.
+Estabelecido em casos de crimes de nível 2.
+
+<ColorBox Color="#ff5e00">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Âmbar[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo caso haja uma ameaça hostil e ativa a bordo. Seguranças podem executar revistas aleatórias sem a necessidade de mandatos. Porte de armas do arsenal é autorizada para o departamento de segurança combater a ameaça.
+Estabelecido em casos de crimes de nível 3.
 
 <ColorBox Color="#ba292c">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
     [bold][color=#ffffff]Código Vermelho[/color][/bold]
   </Box>
 </ColorBox>
-Ativo quando há uma grande ameaça confirmada à estrutura da estação e à vida da tripulação. Segurança deve se preparar para um conflito armado.
+Ativo quando há uma ameaça capaz de matar grande parte da tripulação. Oficiais de segurança podem cooperar com os outros tripulantes para tentar combater a ameaça, porém restrições de equipamento e a lei espacial ainda aplicam.
+Estabelecido em casos de crimes de nível 4 e 5.
+
+<ColorBox Color="#04c1c8">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Ciano[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo caso os siliconos da estação se tornarem hostis. Porte de armas é autorizada para o departamento de segurança. Todos os tripulantes devem evitar siliconos e tratar eles como uma ameaça.
 
 <ColorBox Color="#c8a404">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
@@ -44,12 +62,19 @@ Ativo quando á um patógeno ou organismo alienígena agressivo na estação. M�
 </ColorBox>
 A estação corre risco de ser completamente obliterada. Todos os tripulantes devem colaborar a neutralizar a ameaça. Porte de armas é permitido a todos.
 
+<ColorBox Color="#420000">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Lei marcial[/color][/bold]
+  </Box>
+</ColorBox>
+A Central de Comando, com solicitação do Comando, decretou Lei Marcial na estação. O departamento de segurança é a autoridade suprema na estação e todas as suas ordens devem ser seguidas sem questionar.
+
 <ColorBox Color="#db7093">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
     [bold][color=#ffffff]Código Gamma[/color][/bold]
   </Box>
 </ColorBox>
-A Central de Comando decretou estado de calamidade na estação. Todos os tripulantes devem se abrigar imediatamente. Porte de armas é permitido e aconselhado para seguranças.
+A Central de Comando decretou estado de calamidade total na estação, e autorizou a tripulação a fazer o que for necessário para sobreviver. Porte de armas é permitido para todos. Lei espacial é secundária a sobrevivência imediata.
 
 <ColorBox Color="#fffff0">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
@@ -57,6 +82,16 @@ A Central de Comando decretou estado de calamidade na estação. Todos os tripul
   </Box>
 </ColorBox>
 A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, os tripulantes devem ficar em seus departamentos enquanto aguardam as ordems da Central de Comando.
+
+
+## Alertas desconhecidos
+Você não entende esses alertas IC a não ser que explicitamente dito no metashield.
+<ColorBox Color="#500101">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Protocolo Doomsday[/color][/bold]
+  </Box>
+</ColorBox>
+A IA da estação ativou o protocolo doomsday. Os organismos orgânicos tem minutos para matar/remover a IA do núcleo ou morrer.
 
 <ColorBox Color="#5f9ea0">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
