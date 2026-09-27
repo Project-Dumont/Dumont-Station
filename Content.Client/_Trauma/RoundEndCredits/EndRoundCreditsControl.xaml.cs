@@ -24,7 +24,7 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
     [Dependency] private readonly IEntityManager _ent = default!;
     private readonly ClientGameTicker _ticker;
 
-    private static readonly ResPath Logo = new("/Textures/Logo/logo.png");
+    private static readonly ResPath Logo = new("/Textures/_Dumont/Logo/main_menu.png"); // Dumont
     private static readonly ResPath Pixellari = new("/Fonts/_Trauma/Pixellari.ttf");
     private static readonly ResPath GrandPixel = new("/Fonts/_Trauma/Grand9K_Pixel.ttf");
 
