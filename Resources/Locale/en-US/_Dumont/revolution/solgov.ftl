@@ -18,3 +18,5 @@ ghost-role-information-solgov-trooper-name = Sol Government Expeditionary Force
 ghost-role-information-solgov-trooper-description = A trainee of the Trans-Solar Federation sent to retake a station lost to the revolution.
 ghost-role-information-solgov-leader-name = Sol Government Expeditionary Force Leader
 ghost-role-information-solgov-leader-description = Lead the Trans-Solar Federation trainees and retake the station lost to the revolution.
+
+rev-forces-beacon-received = The station has fallen! You received a drop beacon to call in the soviet forces.

@@ -34,7 +34,7 @@
   name: soviet mech pod
   components:
   - type: SpawnOnDespawn
-    prototype: MobCombatMech
+    prototype: MobCombatMechRev
 
 - type: entity
   parent: SpawnSupplyEmpty
@@ -43,7 +43,7 @@
   name: soviet sargent pod
   components:
   - type: SpawnOnDespawn
-    prototype: MobSovietSargentFamas
+    prototype: MobSovietSargentFamasRev
 
 - type: entity
   parent: SpawnSupplyEmpty
@@ -52,7 +52,7 @@
   name: soviet sargent pod
   components:
   - type: SpawnOnDespawn
-    prototype: MobSovietSargentSawn
+    prototype: MobSovietSargentSawnRev
 
 - type: entity
   parent: SpawnSupplyEmpty
@@ -61,4 +61,32 @@
   name: soviet tenent pod
   components:
   - type: SpawnOnDespawn
-    prototype: MobSovietTenentAk
+    prototype: MobSovietTenentAkRev
+
+- type: entity
+  parent: MobCombatMech
+  id: MobCombatMechRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+
+- type: entity
+  parent: MobSovietSargentFamas
+  id: MobSovietSargentFamasRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+
+- type: entity
+  parent: MobSovietSargentSawn
+  id: MobSovietSargentSawnRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+
+- type: entity
+  parent: MobSovietTenentAk
+  id: MobSovietTenentAkRev
+  suffix: Rev
+  components:
+  - type: Revolutionary

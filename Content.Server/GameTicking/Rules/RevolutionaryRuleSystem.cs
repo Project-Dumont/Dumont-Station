@@ -85,6 +85,7 @@ using Robust.Shared.Timing;
 // Dumont changes start
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Hands.EntitySystems;
 // Dumont end
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Revolutionary;
@@ -123,7 +124,10 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!; // Dumont
+    // Dumont changes start
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    // Dumont end
 
     //Used in OnPostFlash, no reference to the rule component is available
     public readonly ProtoId<NpcFactionPrototype> RevolutionaryNpcFaction = "Revolutionary";
@@ -132,6 +136,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     private static readonly EntProtoId ErtSecurity = "SpawnSolGovExpedition";
     private static readonly SoundSpecifier RevWinMusic = new SoundPathSpecifier("/Audio/_Dumont/Revs/no_kings_in_orbit.ogg", AudioParams.Default.WithVolume(-10f));
     private static readonly Color AnnouncementColor = Color.FromHex("#DAA520");
+    private static readonly EntProtoId ForcesBeacon = "RevDropPodForces";
     // Dumont end
 
     public override void Initialize()
@@ -189,6 +194,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
                     component.HasRevAnnouncementPlayed = true;
                     component.SolGovArrival = _timing.CurTime + component.SolGovDelay;
+                    GiveForcesBeacons();
                     // Dumont end
                 }
 
@@ -215,6 +221,22 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             }
         }
     }
+
+    // Dumont changes start
+    private void GiveForcesBeacons()
+    {
+        var query = EntityQueryEnumerator<HeadRevolutionaryComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out _, out var mobState))
+        {
+            if (_mobState.IsDead(uid, mobState))
+                continue;
+
+            var beacon = Spawn(ForcesBeacon, Transform(uid).Coordinates);
+            _hands.PickupOrDrop(uid, beacon, checkActionBlocker: false);
+            _antag.SendBriefing(uid, Loc.GetString("rev-forces-beacon-received"), Color.Red, null);
+        }
+    }
+    // Dumont end
 
     protected override void AppendRoundEndText(EntityUid uid,
         RevolutionaryRuleComponent component,
