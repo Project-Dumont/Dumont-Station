@@ -39,6 +39,6 @@ ent-SolGovPDA = PDA SolGov
 ent-RevDropPodForces = sinalizador de desembarque (chamada das forças)
     .desc = Chama as forças soviéticas que aguardam em órbita para desembarcar na sua posição.
 ent-PosterSolGovFlag = bandeira da Federação Trans-Solar
-    .desc = A bandeira da Federação Trans-Solar. A estrela dourada representa a união de todas as colônias sob o Governo Sol.
+    .desc = A bandeira da Federação Trans-Solar. O Sol dourado representa a união de todas as colônias sob o Governo Sol.
 
 rev-forces-beacon-received = A estação caiu! Você recebeu um sinalizador de desembarque para chamar as forças soviéticas.
