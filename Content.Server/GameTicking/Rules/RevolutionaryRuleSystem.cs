@@ -136,6 +136,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     private static readonly EntProtoId ErtSecurity = "SpawnSolGovExpedition";
     private static readonly SoundSpecifier RevWinMusic = new SoundPathSpecifier("/Audio/_Dumont/Revs/no_kings_in_orbit.ogg", AudioParams.Default.WithVolume(-10f));
     private static readonly Color AnnouncementColor = Color.FromHex("#DAA520");
+    private static readonly Color SovietAnnouncementColor = Color.FromHex("#B0122B");
     private static readonly EntProtoId ForcesBeacon = "RevDropPodForces";
     // Dumont end
 
@@ -189,7 +190,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                     _chatSystem.DispatchGlobalAnnouncement(
                         Loc.GetString("revolutionaries-win-announcement"),
                         Loc.GetString("revolutionaries-win-sender"),
-                        colorOverride: AnnouncementColor);
+                        colorOverride: SovietAnnouncementColor);
                     _audio.PlayGlobal(RevWinMusic, Filter.Broadcast(), true);
 
                     component.HasRevAnnouncementPlayed = true;

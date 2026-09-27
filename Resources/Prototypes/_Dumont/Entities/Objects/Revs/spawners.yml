@@ -69,6 +69,10 @@
   suffix: Rev
   components:
   - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
 
 - type: entity
   parent: MobSovietSargentFamas
@@ -76,6 +80,10 @@
   suffix: Rev
   components:
   - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
 
 - type: entity
   parent: MobSovietSargentSawn
@@ -83,6 +91,10 @@
   suffix: Rev
   components:
   - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
 
 - type: entity
   parent: MobSovietTenentAk
@@ -90,3 +102,7 @@
   suffix: Rev
   components:
   - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound

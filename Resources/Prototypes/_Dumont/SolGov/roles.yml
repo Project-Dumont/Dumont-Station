@@ -69,6 +69,31 @@
 - type: randomHumanoidSettings
   id: SolGovTrooper
   parent: CentcommHumanoid
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  - Yowie
+  - IPC
+  - Diona
+  - Harpy
+  - Vox
+  - Tajaran
+  - Resomi
+  - Oni
+  - Gingerbread
+  - Plasmaman
+  - Reptilian
+  - Moth
+  - Shadowkin
+  - Arachnid
+  - Vulpkanin
+  - Rodentia
+  - SlimePerson
+  - Dwarf
+  - Feroxi
+  - Chitinid
+  - Synth
   components:
   - type: GhostRole
     name: ghost-role-information-solgov-trooper-name
