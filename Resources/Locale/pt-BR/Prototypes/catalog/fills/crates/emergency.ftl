@@ -18,8 +18,8 @@ ent-CratePlasmaInternals = caixa de internos (plasma)
 ent-CrateEmergencyRadiation = caixa de proteção de radiação
  .desc = Sobreviva um apocalipse radioativo e a supermatéria com dois kits de trajes anti-radiação. Cada kit inclui um capacete, traje e contador geiger. Até adicionamos um pouco de vodka, pois sabemos que quem tem que comprar isso não vai viver muito.
 
-ent-CratePlasmamanEnvirosuit = caixa de envirosuit de plasma
- .desc = Contém duas envirosuits e tanques de plasma. Feito para homens-plasma.
+ent-CratePlasmamanEnvirosuit = caixa de trajes herméticos de Pessoas Plasma
+ .desc = Contém dois conjuntos e tanques de plasma. Feito para Pessoas Plasma
 
 ent-CrateNitrogenInternals = caixa de internos (nitrogênio)
  .desc = Contém 4 kits de internos de nitrogênio, sem traje. Feito para Vox e pessoas-slime.

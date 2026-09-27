@@ -3,6 +3,9 @@
   parent: BriefcaseSyndie
   suffix: Syndicate, Spesos, Plasmaman
   components:
+  - type: Storage
+    grid:
+    - 0,0,6,4
   - type: StorageFill
     contents:
       - id: ClothingEyesGlassesSunglasses
@@ -11,10 +14,10 @@
       - id: EncryptionKeySyndie
       - id: RubberStampTrader
       - id: PhoneInstrumentSyndicate
-      - id: ClothingUniformEnvirosuitTacticool
-      - id: ClothingHeadEnvirohelmTacticool
-      - id: ClothingOuterCoatJensenFilled
-      - id: ClothingHandsGlovesCombat
+      - id: ClothingHeadEnvirohelmetTacticool
+      - id: ClothingOuterEnvirosuitTacticool
+      - id: ClothingHandsGlovesEnviroglovesTacticool
+      - id: ClothingShoesEnvirobootsTacticool
 
 - type: entity # No more space in briefcase due to envirohelm so put the syndicate flag in the jensen coat
   id: ClothingOuterCoatJensenFilled
@@ -30,13 +33,16 @@
   parent: BriefcaseSyndie
   suffix: Thief, Spesos, Plasmaman
   components:
+  - type: Storage
+    grid:
+    - 0,0,6,4
   - type: StorageFill
     contents:
       - id: ClothingEyesGlassesSunglasses
       - id: SpaceCash20000
         amount: 1
-      - id: ClothingUniformEnvirosuitTacticool
-      - id: ClothingHeadEnvirohelmTacticool
-      - id: ClothingOuterCoatJensen
-      - id: ClothingHandsGlovesCombat
+      - id: ClothingHeadEnvirohelmetTacticool
+      - id: ClothingOuterEnvirosuitTacticool
+      - id: ClothingHandsGlovesEnviroglovesTacticool
+      - id: ClothingShoesEnvirobootsTacticool
       - id: ToyFigurineThief

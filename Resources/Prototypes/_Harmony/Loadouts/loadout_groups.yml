@@ -13,3 +13,11 @@
   loadouts:
   - PermaPrisonerJumpsuit
   - PermaPrisonerJumpskirt
+
+- type: loadoutGroup
+  id: PermaPrisonerShoes
+  name: loadout-group-prisoner-shoes
+  exclusiveWith: FEET
+  minLimit: 1
+  loadouts:
+  - BlackShoes

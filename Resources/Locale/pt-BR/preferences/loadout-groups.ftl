@@ -46,9 +46,12 @@ loadout-group-captain-jumpsuit = Roupa do capitão
 loadout-group-captain-neck = Pescoço do capitão
 loadout-group-captain-backpack = Mochila do capitão
 loadout-group-captain-outerclothing = Casaco do capitão
+loadout-group-captain-shoes = Sapatos do capitão
 
 loadout-group-hop-head = Chapeu do chefe dos funcionarios
 loadout-group-hop-jumpsuit = Roupa do chefe dos funcionarios
+loadout-group-hop-shoes = Sapatos do chefe dos funcionarios
+loadout-group-hop-gloves = Luvas do chefe dos funcionarios
 loadout-group-hop-neck = Pescoço do chefe dos funcionarios
 loadout-group-hop-backpack = Mochila do chefe dos funcionarios
 loadout-group-hop-outerclothing = Casaco do chefe dos funcionarios
@@ -63,34 +66,41 @@ loadout-group-civilian-shoes = Calçados civis
 loadout-group-civilian-neck = Pescoços civis
 loadout-group-civilian-belt = Cintos civis
 
-loadout-group-bartender-head = Chapeu do barman
-loadout-group-bartender-jumpsuit = Roupa do barman
-loadout-group-bartender-outerclothing = Casaco do barman
+loadout-group-bartender-head = Chapeu do barista
+loadout-group-bartender-jumpsuit = Roupa do barista
+loadout-group-bartender-shoes = Sapatos do barista
+loadout-group-bartender-outerclothing = Casaco do barista
 
 loadout-group-chef-head = Chapeu do chef
 loadout-group-chef-mask = Máscara do chef
 loadout-group-chef-jumpsuit = Roupa do chef
+loadout-group-chef-shoes = Sapatos do chef
 loadout-group-chef-outerclothing = Casaco do chef
 
 loadout-group-librarian-jumpsuit = Roupa do bibliotecário
+loadout-group-librarian-shoes = Sapatos do bibliotecário
 
 loadout-group-lawyer-jumpsuit = Roupa do advogado
 loadout-group-lawyer-neck = Pescoço do advogado
+loadout-group-lawyer-shoes = Sapatos do advogado
 
 loadout-group-chaplain-head = Chapeu do capelão
 loadout-group-chaplain-mask = Máscara do capelão
 loadout-group-chaplain-jumpsuit = Roupa do capelão
+loadout-group-chaplain-shoes =  Sapatos do capelão
 loadout-group-chaplain-outerclothing = Casaco do capelão
 loadout-group-chaplain-neck = Pescoço do capelão
 
 loadout-group-janitor-head = Chapeu do zelador
 loadout-group-janitor-jumpsuit = Roupa do zelador
+loadout-group-janitor-shoes = Sapatos do zelador
 loadout-group-janitor-gloves = Luvas do zelador
 loadout-group-janitor-outerclothing = Casaco do zelador
 loadout-group-janitor-plunger = Desentupidor do zelador
 
 loadout-group-botanist-head = Chapeu do botânico
 loadout-group-botanist-jumpsuit = Roupa do botânico
+loadout-group-botanist-shoes = Sapatos do botânico
 loadout-group-botanist-backpack = Mochila do botânico
 loadout-group-botanist-outerclothing = Casaco do botânico
 
@@ -103,11 +113,13 @@ loadout-group-clown-shoes = Sapatos do palhaço
 loadout-group-mime-head = Chapeu do mímico
 loadout-group-mime-mask = Máscara do mímico
 loadout-group-mime-jumpsuit = Roupa do mímico
+loadout-group-mime-shoes = Sapatos do mímico
 loadout-group-mime-backpack = Mochila do mímico
 loadout-group-mime-outerclothing = Casaco do mímico
 loadout-group-mime-belt = Cinto do mímico
 
 loadout-group-musician-jumpsuit = Roupa do músico
+loadout-group-musician-shoes = Sapatos do músico
 loadout-group-musician-outerclothing = Casaco do músico
 
 # Cargo
@@ -135,6 +147,7 @@ loadout-group-chief-engineer-neck = Pescoço do engenheiro-chefe
 loadout-group-chief-engineer-shoes = Sapatos do engenheiro-chefe
 
 loadout-group-technical-assistant-jumpsuit = Roupa do assistente técnico
+loadout-group-technical-assistant-shoes = Sapatos do assistente técnico
 
 loadout-group-station-engineer-head = Chapeu do engenheiro de estação
 loadout-group-station-engineer-jumpsuit = Roupa do engenheiro de estação
@@ -225,8 +238,11 @@ loadout-group-medical-glasses = Óculos médicos
 
 # Wildcards
 loadout-group-reporter-jumpsuit = Roupa do repórter
+loadout-group-reporter-shoes = Sapatos do repórter
 
 loadout-group-psychologist-jumpsuit = Roupa do psicólogo
+loadout-group-psychologist-shoes = Sapatos do psicólogo
 
 loadout-group-boxer-jumpsuit = Roupa do pugilista
 loadout-group-boxer-gloves = Luvas do pugilista
+loadout-group-boxer-shoes = Sapatos do pugilista
