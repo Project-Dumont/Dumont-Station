@@ -12,7 +12,7 @@
     head: ClothingHeadHelmetSolGov
     outerClothing: ClothingOuterArmorSolGov
     suitstorage: WeaponEarthGovLaserRifle
-    shoes: ClothingShoesBootsMercFilled
+    shoes: ClothingShoesSpaceNinja
     id: SolGovPDA
     pocket1: WeaponEarthGovLaserPistol
     pocket2: DoubleEmergencyOxygenTankFilled
@@ -22,6 +22,7 @@
     - CombatMedipen
     - CombatMedipen
     - MedkitCombatFilled
+    - Crowbar
 
 - type: startingGear
   id: SolGovLeaderGear
@@ -35,6 +36,7 @@
     - CombatMedipen
     - CombatMedipen
     - MedkitCombatFilled
+    - Crowbar
 
 - type: entity
   id: SpawnerSolGovTrooper
@@ -74,7 +76,7 @@
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-    job: ERTSecurity
+    job: SolGovExpedition
   - type: RandomMetadata
     nameSegments:
     - NamesMilitaryFirst
@@ -96,7 +98,7 @@
     rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
-    job: ERTLeader
+    job: SolGovExpeditionLeader
   - type: RandomMetadata
     nameSegments:
     - NamesMilitaryFirstLeader
@@ -105,3 +107,51 @@
   - type: Loadout
     prototypes: [ SolGovLeaderGear ]
     roleLoadout: [ RoleSurvivalExtended ]
+
+- type: job
+  id: SolGovExpedition
+  name: job-name-solgov-expedition
+  description: job-description-solgov-expedition
+  playTimeTracker: JobSolGovExpedition
+  setPreference: false
+  startingGear: SolGovTrooperGear
+  icon: JobIconSolGov
+  supervisors: job-supervisors-solgov
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+
+- type: job
+  id: SolGovExpeditionLeader
+  name: job-name-solgov-expedition-leader
+  description: job-description-solgov-expedition-leader
+  playTimeTracker: JobSolGovExpeditionLeader
+  setPreference: false
+  startingGear: SolGovLeaderGear
+  icon: JobIconSolGov
+  supervisors: job-supervisors-solgov
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+
+- type: playTimeTracker
+  id: JobSolGovExpedition
+
+- type: playTimeTracker
+  id: JobSolGovExpeditionLeader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSolGov
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/job_icons.rsi
+    state: SolGov
+  jobName: job-name-solgov-expedition

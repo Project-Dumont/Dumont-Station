@@ -90,7 +90,7 @@
     isEquipment: true
 
 - type: entity
-  parent: [ ClothingBackpackRev, BaseSolGovContraband ]
+  parent: [ ClothingBackpackERTChaplain, BaseSolGovContraband ]
   id: ClothingBackpackSol
   name: SolGov MOLLE pack
   description: A combat backpack issued to the Sol Government Expeditionary Force.

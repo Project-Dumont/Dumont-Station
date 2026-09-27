@@ -6,9 +6,13 @@ revolutionaries-solgov-announcement =
 
     Boa sorte.
 
-contraband-examine-text-SolGov = [color=gold]Este item é Contrabando da Federação Solar![/color]
+contraband-examine-text-SolGov = [color=#DAA520]Este item é Contrabando da Federação Solar![/color]
 
-job-name-solgov-expedition = Força Expedicionária do Governo Sol
+job-name-solgov-expedition = Soldado da Força Expedicionária do Governo Sol
+job-name-solgov-expedition-leader = Líder da Força Expedicionária do Governo Sol
+job-description-solgov-expedition = Auxilie a estação a conter a revolução e garanta que a evacuação aconteça.
+job-description-solgov-expedition-leader = Comande os soldados da Força Expedicionária, contenha a revolução e garanta que a evacuação aconteça.
+job-supervisors-solgov = governo da Federação Trans-Solar
 
 ghost-role-information-solgov-trooper-name = Força Expedicionária do Governo Sol
 ghost-role-information-solgov-trooper-description = Um recruta da Federação Trans-Solar enviado para retomar uma estação perdida para a revolução.
@@ -34,3 +38,5 @@ ent-SolGovPDA = PDA SolGov
     .desc = PDA padrão da Força Expedicionária do Governo Sol.
 ent-RevDropPodForces = sinalizador de desembarque (chamada das forças)
     .desc = Chama as forças soviéticas que aguardam em órbita para desembarcar na sua posição.
+ent-PosterSolGovFlag = bandeira da Federação Trans-Solar
+    .desc = A bandeira da Federação Trans-Solar. A estrela dourada representa a união de todas as colônias sob o Governo Sol.

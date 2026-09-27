@@ -103,7 +103,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 03/31/2025 00:31:48
-  entityCount: 322
+  entityCount: 290
 maps: []
 grids:
 - 1
@@ -500,7 +500,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,-17.5
       parent: 1
-- proto: BannerNanotrasen
+- proto: BannerBlue
   entities:
   - uid: 46
     components:
@@ -551,26 +551,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-11.5
       parent: 1
-- proto: BoxMagazineLightRifle
-  entities:
-  - uid: 56
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 58
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: BSOManual
   entities:
   - uid: 60
@@ -1110,98 +1090,6 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: ClothingBackpackERTSecurity
-  entities:
-  - uid: 4
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 21
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingHandsGlovesCombat
-  entities:
-  - uid: 11
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 26
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingHeadHelmetERTSecurity
-  entities:
-  - uid: 22
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 24
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingShoesBootsMagEmergencyResponseTeam
-  entities:
-  - uid: 15
-    components:
-    - type: Transform
-      parent: 2
-    - type: InsideEntityStorage
-  - uid: 18
-    components:
-    - type: Transform
-      parent: 2
-    - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitERTSecurity
-  entities:
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 14
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ComfyChair
   entities:
   - uid: 158
@@ -1285,26 +1173,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,-13.5
       parent: 1
-- proto: ExGrenade
-  entities:
-  - uid: 7
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 8
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: FoodSnackLollypopWrappedCentComm
   entities:
   - uid: 148
@@ -1322,184 +1190,6 @@ entities:
     - type: Transform
       pos: 2.5,-8.5
       parent: 1
-- proto: GrenadeFlashBang
-  entities:
-  - uid: 23
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 25
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: GrenadeIncendiary
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: GrenadeStinger
-  entities:
-  - uid: 9
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 10
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: GunSafe
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
-      anchored: True
-      pos: -2.5,-4.5
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      bodyType: Static
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: AccessReader
-      access:
-      - - CentralCommand
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 9
-          - 10
-          - 11
-          - 3
-          - 6
-          - 7
-          - 8
-          - 4
-          - 5
-          - 12
-          - 13
-          - 14
-          - 15
-          - 18
-          - 21
-          - 22
-          - 23
-          - 24
-          - 25
-          - 26
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 53
-    components:
-    - type: Transform
-      anchored: True
-      pos: -2.5,-5.5
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      bodyType: Static
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: AccessReader
-      access:
-      - - CentralCommand
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 56
-          - 57
-          - 55
-          - 54
-          - 58
-          - 59
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: Gyroscope
   entities:
   - uid: 171
@@ -1654,46 +1344,6 @@ entities:
           ent: null
     - type: Pullable
       prevFixedRotation: True
-- proto: MagazineBoxLightRifleIncendiary
-  entities:
-  - uid: 54
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 57
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: MagazineLightRiflePkBox
-  entities:
-  - uid: 55
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 59
-    components:
-    - type: Transform
-      parent: 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: MedicalBed
   entities:
   - uid: 181
@@ -1737,7 +1387,7 @@ entities:
   - uid: 186
     components:
     - type: MetaData
-      name: paper (Mission Briefing)
+      name: papel (Ordens de Missão)
     - type: Transform
       pos: 0.4688274,1.4164677
       parent: 1
@@ -1746,12 +1396,12 @@ entities:
       stampedBy:
       - stampedColor: '#006600FF'
         stampedName: stamp-component-stamped-name-centcom
-      content: "[color=#1b67a5]░██░░░░██░║\r[italic][color=#D3D3D3] TOP SECRET [/color][/italic]\n░███░░░██░║\r[italic][color=#ac3a0d]Nanotrasen. The Devil's in the details.[/color][/italic]\n░██░██░██░║\r\n░██░░░███░║[head=2][italic] I. A. D [/italic][/head]\r\n▀▄▀▄▀▄▀ ▄▀▄[/color] [italic] Nanotrasen Internal Affairs Department[/italic]\r\n\r\n[head=2] Mission Briefing [/head]\r\n[color=#1b67a5 ]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]\r\n[italic] Courtesy of : Cecille Voltaire, Central Command Agent [/italic]\r\n\r\n[head=3][head=2]1. [/head]Mission Objective[/head]\r\n[italic][color=#D3D3D3] Primary Target[/color][/italic]\r\n\n[bold][color=Blue]Rescue[/color][/bold]\rall remaining crew members.\n════════════════════════════════════\r\n\r\n[head=3][head=2]2. [/head]Secondary Objective[/head]\r\n[italic][color=#D3D3D3]  Secondary Target[/color][/italic]\r\n\n\n[bold][color=#ac3a0d]Terminate[/color][/bold] any threats present. You are permitted to take over for the captain if needed.\n\n════════════════════════════════════\r\n\r\n[head=3][head=2]3. [/head]Additional Information[/head]\r\n[italic][color=#D3D3D3] Other Information [/color][/italic]\r\n\r\nN/A\n\n════════════════════════════════════\r\n \r\n \r\n [bold] Thank you for your co-operation. Nanotrasen sends its regards. [/bold]\r\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\r\n\r\n\n"
+      content: "[color=#DAA520]░░░░░★░░░░░║\r[italic][color=#D3D3D3] ULTRASSECRETO [/color][/italic]\n░░░░███░░░░║\r[italic][color=#DAA520]Unidos sob o Sol.[/color][/italic]\n░███████░░░║\r\n░░░█░░█░░░░║[head=2][italic] F. T. S [/italic][/head]\r\n▀▄▀▄▀▄▀ ▄▀▄[/color] [italic] Comando da Força Expedicionária da Federação Trans-Solar[/italic]\r\n\r\n[head=2] Ordens de Missão [/head]\r\n[color=#DAA520]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]\r\n[italic] Emitido por: Alto Comando do Governo Sol [/italic]\r\n\r\n[head=3][head=2]1. [/head]Objetivo Principal[/head]\r\n[italic][color=#D3D3D3] Evacuação[/color][/italic]\r\n\n[bold][color=#DAA520]Proteja[/color][/bold] a tripulação leal e garanta que ela embarque na nave de evacuação.\n════════════════════════════════════\r\n\r\n[head=3][head=2]2. [/head]Objetivo Secundário[/head]\r\n[italic][color=#D3D3D3] Contenção[/color][/italic]\r\n\n\n[bold][color=#ac3a0d]Neutralize[/color][/bold] os desertores da URSAL e os revolucionários a bordo. Prisioneiros são preferíveis, mas não obrigatórios.\n\n════════════════════════════════════\r\n\r\n[head=3][head=2]3. [/head]Informações Adicionais[/head]\r\n[italic][color=#D3D3D3] Observações [/color][/italic]\r\n\r\nEsta é uma força em treinamento. Não esperem reforços, o setor não é prioridade da Federação. A URSAL oficial é nossa aliada nesta operação.\n\n════════════════════════════════════\r\n \r\n \r\n [bold] Pela Federação. Pelo Sol. [/bold]\r\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\r\n\r\n\n"
     - type: Physics
       angularDamping: 0
       linearDamping: 0
     - type: Label
-      currentLabel: Mission Briefing
+      currentLabel: Ordens de Missão
     - type: NameModifier
       baseName: paper
 - proto: PlastitaniumWindow
@@ -1850,14 +1500,14 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: PosterLegitGoobNTRAdvert
+- proto: PosterMapDelta
   entities:
   - uid: 200
     components:
     - type: Transform
       pos: 1.5,-7.5
       parent: 1
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterSolGovFlag
   entities:
   - uid: 201
     components:
@@ -1945,6 +1595,30 @@ entities:
     - type: Transform
       pos: 2.5,-6.5
       parent: 1
+- proto: SignArmory
+  entities:
+  - uid: 220
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-3.5
+      parent: 1
+- proto: SignMedical
+  entities:
+  - uid: 221
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,-3.5
+      parent: 1
+- proto: SignSecureSmall
+  entities:
+  - uid: 222
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-17.5
+      parent: 1
 - proto: SpawnerSolGovLeader
   entities:
   - uid: 215
@@ -1973,50 +1647,6 @@ entities:
     components:
     - type: Transform
       pos: -0.54636186,-9.359989
-      parent: 1
-- proto: SarinGasGrenade
-  entities:
-  - uid: 5
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 12
-    components:
-    - type: Transform
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: SignArmory
-  entities:
-  - uid: 220
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-3.5
-      parent: 1
-- proto: SignMedical
-  entities:
-  - uid: 221
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.5,-3.5
-      parent: 1
-- proto: SignSecureSmall
-  entities:
-  - uid: 222
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,-17.5
       parent: 1
 - proto: StasisBed
   entities:
