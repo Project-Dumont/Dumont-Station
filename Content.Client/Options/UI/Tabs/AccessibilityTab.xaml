@@ -26,6 +26,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <!-- Goobstation start -->
                 <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
                 <CheckBox Name="HighlightSoundCheckBox" Text="{Loc 'ui-options-highlight-sound'}" /> <!-- Goobstation - Highlight chat sounds! -->
+                <!-- Dumont changes start -->
+                <CheckBox Name="MovieCreditsCheckBox" Text="{Loc 'round-end-credits-trauma-show-credits'}" />
+                <!-- Dumont end -->
                 <ui:OptionColorSlider Name="HighlightsColorSlider"
                     Title="{Loc 'ui-options-highlights-color'}"
                     Example="{Loc 'ui-options-highlights-color-example'}"/>
