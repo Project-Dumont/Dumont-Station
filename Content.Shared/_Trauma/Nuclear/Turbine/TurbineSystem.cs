@@ -24,6 +24,7 @@ public abstract partial class TurbineSystem : EntitySystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] protected SharedAudioSystem Audio = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDeviceLinkSystem _device = default!;
     [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] private SharedToolSystem _tool = default!;
@@ -57,6 +58,9 @@ public abstract partial class TurbineSystem : EntitySystem
     {
         _device.EnsureSourcePorts(ent.Owner, ent.Comp.SpeedPort, ent.Comp.SpeedHighPort, ent.Comp.SpeedLowPort);
         _device.EnsureSinkPorts(ent.Owner, ent.Comp.StatorLoadPort, ent.Comp.FlowRatePort);
+
+        ent.Comp.BladeSlot = _container.EnsureContainer<ContainerSlot>(ent.Owner, BladeContainer);
+        ent.Comp.StatorSlot = _container.EnsureContainer<ContainerSlot>(ent.Owner, StatorContainer);
     }
 
     private void OnExamined(Entity<TurbineComponent> ent, ref ExaminedEvent args)
@@ -181,33 +185,11 @@ public abstract partial class TurbineSystem : EntitySystem
 
     private void OnPartInserted(Entity<TurbineComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
-        switch (args.Container.ID)
-        {
-            case BladeContainer:
-                ent.Comp.CurrentBlade = args.Entity;
-                break;
-            case StatorContainer:
-                ent.Comp.CurrentStator = args.Entity;
-                break;
-            default:
-                return;
-        }
         UpdatePartValues(ent);
     }
 
     private void OnPartEjected(Entity<TurbineComponent> ent, ref EntRemovedFromContainerMessage args)
     {
-        switch (args.Container.ID)
-        {
-            case BladeContainer:
-                ent.Comp.CurrentBlade = null;
-                break;
-            case StatorContainer:
-                ent.Comp.CurrentStator = null;
-                break;
-            default:
-                return;
-        }
         UpdatePartValues(ent);
     }
 
