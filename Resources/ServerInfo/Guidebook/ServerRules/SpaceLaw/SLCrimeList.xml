@@ -75,7 +75,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox Color="#858650">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-        Arrombamento
+        Arrom\nbamento
       </Box>
     </ColorBox>
     <ColorBox Color="#858650">
@@ -163,7 +163,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox Color="#7c584d">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-        Aniquilação
+        Aniqui\nlação
       </Box>
     </ColorBox>
     <ColorBox>
@@ -194,7 +194,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#9e9738">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-      Grande sabotagem
+      Grande\nsabot\nagem
       </Box>
     </ColorBox>
     <ColorBox Color="#9e9738">
@@ -210,17 +210,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Conduta inadequeada
+      Conduta\ninade\nqueada
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-      Abuso de equipamento
+      Abuso\nde\nequipa\nmento
       </Box>
     </ColorBox>
     <ColorBox Color="#e99700">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Resistência
+        Resis\ntência
       </Box>
     </ColorBox>
     <ColorBox Color="#e99700">
@@ -251,7 +251,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Vigilantismo
+      Vigilan\ntismo
       </Box>
     </ColorBox>
     <ColorBox>
@@ -267,7 +267,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox Color="#700b62">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-        Deturpação biológica
+        Detur\npação biológica
       </Box>
     </ColorBox>
     <ColorBox Color="#700b62">
@@ -403,37 +403,48 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando departamental
+      Contra
+      bando 
+      departa\nmental
       </Box>
     </ColorBox>
   
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando restrito
+      Contra
+      bando 
+      restrito
       </Box>
     </ColorBox>
 
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando perigoso
+      Contra
+      bando 
+      perigoso
       </Box>
     </ColorBox>
 
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando letal
+      Contra
+      bando\nletal
       </Box>
     </ColorBox>
 
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando crítico
+      Contra
+      bando 
+      crítico
       </Box>
     </ColorBox>
 
     <ColorBox Color="#8b2121">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando especial
+      Contra
+      bando 
+      especial
       </Box>
     </ColorBox>
 
@@ -445,7 +456,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Perturbação
+      Pertur\nbação
       </Box>
     </ColorBox>
 
@@ -499,7 +510,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
     <ColorBox Color="#18337e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2" Background="#222222">
-       Negligência
+       Negli\ngência
       </Box>
     </ColorBox>
 
@@ -511,7 +522,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
     <ColorBox Color="#006900">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Desobedecer a Central
+      Desobe\ndecer a Central
       </Box>
     </ColorBox>
 
