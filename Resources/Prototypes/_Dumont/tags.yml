@@ -49,7 +49,13 @@
   id: ShotgunSentinel
 
 - type: Tag
+  id: SpearTelescopicUpgradeMain
+
+- type: Tag
   id: SpeedLoaderWatson
+
+- type: Tag
+  id: TerminusUpgradeMain
 
 - type: Tag
   id: WeaponPistolChrysanthemum
@@ -59,3 +65,10 @@
   
 - type: Tag
   id: XenoDungeon
+
+- type: Tag
+  id: FoodSnackPlasmabrick
+
+- type: Tag
+  id: DrinkBottleMilk
+

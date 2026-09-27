@@ -71,7 +71,7 @@
 - type: startingGear
   id: ResearchAssistantGear
   equipment:
-    shoes: ClothingShoesColorWhite
+    #shoes: ClothingShoesColorWhite # Dumont, moved to loadouts
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
     pocket2: BookScientistsGuidebook
