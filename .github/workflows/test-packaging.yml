@@ -52,7 +52,7 @@ jobs:
       - name: Checkout Master
         uses: actions/checkout@v7
         with:
-          persist-crendentials: false
+          persist-credentials: false
 
       - name: Setup Submodule
         run: |
