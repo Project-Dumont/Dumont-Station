@@ -155,7 +155,7 @@ public sealed class RevPropagandaSystem : EntitySystem
 
         if (!CanConvert(converter.AsNullable(), user, target))
         {
-            _popup.PopupClient("You can't convert them!", target, user);
+            _popup.PopupClient(Loc.GetString("rev-propaganda-cant-convert"), target, user); // Dumont
             return;
         }
 
