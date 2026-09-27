@@ -110,6 +110,10 @@ namespace Content.Server.RoundEnd
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
 
+        // Dumont changes start
+        public bool RecallLocked { get; set; }
+        // Dumont end
+
         public override void Initialize()
         {
             base.Initialize();
@@ -140,6 +144,7 @@ namespace Content.Server.RoundEnd
             ExpectedCountdownEnd = null;
             SetAutoCallTime();
             _autoCalledBefore = false;
+            RecallLocked = false; // Dumont
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
 
@@ -273,6 +278,7 @@ namespace Content.Server.RoundEnd
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             if (checkCooldown && _cooldownTokenSource != null) return;
+            if (checkCooldown && RecallLocked) return; // Dumont
 
             if (_countdownTokenSource == null) return;
             _countdownTokenSource.Cancel();

@@ -82,6 +82,7 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio; // Dumont
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Revolutionary;
 using Content.Server.Communications;
@@ -124,7 +125,8 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     public readonly ProtoId<NpcFactionPrototype> RevolutionaryNpcFaction = "Revolutionary";
     public readonly ProtoId<NpcFactionPrototype> RevPrototypeId = "Rev";
     // Dumont changes start
-    private static readonly EntProtoId ErtSecurity = "SpawnERTSecurityRevolution";
+    private static readonly EntProtoId ErtSecurity = "SpawnSolGovExpedition";
+    private static readonly SoundSpecifier RevWinMusic = new SoundPathSpecifier("/Audio/_Dumont/Revs/no_kings_in_orbit.ogg");
     // Dumont end
 
     public override void Initialize()
@@ -150,6 +152,20 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
 
+        // Dumont changes start
+        if (component.SolGovArrival is { } arrival && arrival <= _timing.CurTime)
+        {
+            component.SolGovArrival = null;
+            _chatSystem.DispatchGlobalAnnouncement(
+                Loc.GetString("revolutionaries-solgov-announcement"),
+                Loc.GetString("revolutionaries-solgov-sender"),
+                colorOverride: Color.Gold);
+            GameTicker.StartGameRule(ErtSecurity);
+            _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(10), checkCooldown: false);
+            _roundEnd.RecallLocked = true;
+        }
+        // Dumont end
+
         if (component.CommandCheck <= _timing.CurTime)
         {
             component.CommandCheck = _timing.CurTime + component.TimerWait;
@@ -159,19 +175,16 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             {
                 if (!component.HasRevAnnouncementPlayed)
                 {
+                    // Dumont changes start
                     _chatSystem.DispatchGlobalAnnouncement(
                         Loc.GetString("revolutionaries-win-announcement"),
                         Loc.GetString("revolutionaries-win-sender"),
+                        announcementSound: RevWinMusic,
                         colorOverride: Color.Gold);
 
                     component.HasRevAnnouncementPlayed = true;
-
-                    // <Trauma>
-                    GameTicker.StartGameRule(ErtSecurity);
-                    // Dumont changes start
-                    _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(10), checkCooldown: false);
+                    component.SolGovArrival = _timing.CurTime + component.SolGovDelay;
                     // Dumont end
-                    // </Trauma>
                 }
 
                 foreach (var ms in EntityQuery<MindShieldComponent, MobStateComponent>())

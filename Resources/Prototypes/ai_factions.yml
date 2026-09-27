@@ -217,6 +217,7 @@
   - BloodCultist # Blood cultists
   friendly: # Goobstation
   - Revolutionary
+  - DungeonSoviet # Dumont
 
 - type: npcFaction
   id: AllHostile

@@ -4,12 +4,16 @@ revolutionaries-lose-announcement = Com base em varreduras de nossos sensores de
 revolutionaries-win-announcement-shuttle-call =
     De acordo com os relatórios dos líderes, o comando corporativo foi derrubado e tomamos o controle da estação.
 
+    A partir de agora a URSAL volta à sua glória original. Segundo nossos relatórios, diversas estações da Nanotrasen, do Sindicato e vários outros assentamentos já estão sob nosso controle. A Federação Trans-Solar será a próxima.
+
     Viva la revolución!
 
 revolutionaries-win-announcement =
     De acordo com os relatórios dos líderes, o comando corporativo foi derrubado e tomamos o controle da estação.
 
+    A partir de agora a URSAL volta à sua glória original. Segundo nossos relatórios, diversas estações da Nanotrasen, do Sindicato e vários outros assentamentos já estão sob nosso controle. A Federação Trans-Solar será a próxima.
+
     Viva la revolución!
 
-revolutionaries-win-sender = Comunicações Cybersun
+revolutionaries-win-sender = Comunicações Soviéticas
 revolutionaries-sender-cc = Divisão de Lealdade da Nanotrasen
