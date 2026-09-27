@@ -123,6 +123,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     //Used in OnPostFlash, no reference to the rule component is available
     public readonly ProtoId<NpcFactionPrototype> RevolutionaryNpcFaction = "Revolutionary";
     public readonly ProtoId<NpcFactionPrototype> RevPrototypeId = "Rev";
+    private static readonly EntProtoId ErtSecurity = "SpawnERTSecurity"; // Trauma
 
     public override void Initialize()
     {
@@ -140,7 +141,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     protected override void Started(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
-        component.CommandCheck = _timing.CurTime + component.TimerWait;
+        component.CommandCheck = _timing.CurTime + TimeSpan.FromMinutes(10); // Trauma - 10 mins instead of TimerWait
     }
 
     protected override void ActiveTick(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule, float frameTime)
@@ -162,6 +163,13 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                         colorOverride: Color.Gold);
 
                     component.HasRevAnnouncementPlayed = true;
+
+                    // <Trauma>
+                    GameTicker.StartGameRule(ErtSecurity);
+                    // Dumont changes start
+                    _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(10), checkCooldown: false);
+                    // Dumont end
+                    // </Trauma>
                 }
 
                 foreach (var ms in EntityQuery<MindShieldComponent, MobStateComponent>())
@@ -324,11 +332,11 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     /// <summary>
     /// Checks if all of command is dead and if so will remove all sec and command jobs if there were any left.
     /// </summary>
-    private bool CheckCommandLose()
+    public bool CheckCommandLose() // Trauma - made public
     {
         var commandList = new List<EntityUid>();
 
-        var heads = AllEntityQuery<CommandStaffComponent>();
+        var heads = EntityQueryEnumerator<CommandStaffComponent>(); // Trauma - no reason to include paused cryo command members
         while (heads.MoveNext(out var id, out var commandComp)) // GoobStation - commandComp
         {
             // GoobStation - If mindshield was removed from head and he got converted - he won't count as command

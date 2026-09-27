@@ -177,6 +177,20 @@
     - MaterialSilo
   - type: MaterialStorage
     ignoreColor: true
+  # prevent lathe restricting it to just plasma and deleting everything else
+  - type: MaterialStorageWhitelist
+    whitelist:
+    - Steel
+    - Glass
+    - Plastic
+    - Gold
+    - Silver
+    - Plasma
+    - Uranium
+    - Diamond
+    - BSCrystal
+    - Cloth
+    - Durathread
   - type: Silo
 
 - type: entity
