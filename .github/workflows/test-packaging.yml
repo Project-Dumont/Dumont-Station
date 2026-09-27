@@ -13,7 +13,7 @@ name: Test Packaging
 
 on:
   push:
-    branches: [ master, staging, stable ]
+    branches: [ dumont ]
     paths:
       - '**.cs'
       - '**.csproj'
@@ -45,12 +45,14 @@ concurrency:
 jobs:
   build:
     name: Test Packaging
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Master
         uses: actions/checkout@v7
+        with:
+          persist-crendentials: false
 
       - name: Setup Submodule
         run: |
@@ -64,11 +66,11 @@ jobs:
           cd RobustToolbox/
           git submodule update --init --recursive
 
-      # ubuntu-latest has .NET 10
-      # - name: Setup .NET Core
-      #   uses: actions/setup-dotnet@v5
-      #   with:
-      #     dotnet-version: 10.0.x
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
 
       - name: Install dependencies
         run: dotnet restore
