@@ -415,7 +415,7 @@
 - type: soundCollection
   id: BigshotBark
   files:
-  - /Audio/_Dumont/Voice/Talk/bigshot/2.wav
+  - /Audio/_Dumont/Voice/Talk/bigshot/1.wav
 
 - type: bark
   id: Bigshot
