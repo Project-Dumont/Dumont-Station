@@ -4,27 +4,27 @@
 
 - type: antagCredits
   id: Traitor
-  creditImage: /Textures/_Trauma/EndCredits/Antags/traitor.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/traitor.png
 
 - type: antagCredits
   id: HeadRev
-  creditImage: /Textures/_Trauma/EndCredits/Antags/revolution.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/revolution.png
 
 - type: antagCredits
   id: Thief
-  creditImage: /Textures/_Trauma/EndCredits/Antags/thief.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/thief.png
 
 - type: antagCredits
   id: Nukeops
-  creditImage: /Textures/_Trauma/EndCredits/Antags/nukeops.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/nukeops.png
 
 - type: antagCredits
   id: Wizard
-  creditImage: /Textures/_Trauma/EndCredits/Antags/wizard.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/wizard.png
 
 - type: antagCredits
   id: Changeling
-  creditImage: /Textures/_Trauma/EndCredits/Antags/changeling.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/changeling.png
 
 - type: antagCredits
   id: Blob
@@ -32,39 +32,39 @@
 
 - type: antagCredits
   id: Devil
-  creditImage: /Textures/_Trauma/EndCredits/Antags/devil.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/devil.png
 
 - type: antagCredits
   id: AbductorAgentAntag
-  creditImage: /Textures/_Trauma/EndCredits/Antags/abductors.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/abductors.png
 
 - type: antagCredits
   id: CosmicAntagCultist
-  creditImage: /Textures/_Trauma/EndCredits/Antags/cosmiccult.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/cosmiccult.png
 
 - type: antagCredits
   id: Heretic
-  creditImage: /Textures/_Trauma/EndCredits/Antags/heretic.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/heretic.png
 
 - type: antagCredits
   id: SpaceNinja
-  creditImage: /Textures/_Trauma/EndCredits/Antags/ninja.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/ninja.png
 
 - type: antagCredits
   id: ParadoxClone
-  creditImage: /Textures/_Trauma/EndCredits/Antags/paradox.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/paradox.png
 
 - type: antagCredits
   id: Xenomorph
-  creditImage: /Textures/_Trauma/EndCredits/Antags/xenos.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/xenos.png
 
 - type: antagCredits
   id: Zombie
-  creditImage: /Textures/_Trauma/EndCredits/Antags/zombies.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/zombies.png
 
 - type: antagCredits
   id: BloodCultist
-  creditImage: /Textures/_Trauma/EndCredits/Antags/cult.png
+  creditImage: /Textures/_Dumont/EndCredits/Antags/cult.png
 
 - type: antagCredits
   id: NukeopsMedic
