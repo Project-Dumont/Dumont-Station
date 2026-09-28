@@ -174,6 +174,35 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
         return box;
     }
 
+    // Dumont changes start
+    private const int PlayersPerRow = 11;
+
+    private static BoxContainer MakeRows()
+    {
+        return new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Vertical,
+            HorizontalAlignment = HAlignment.Center,
+            SeparationOverride = 4,
+        };
+    }
+
+    private static void AddToRows(BoxContainer rows, BoxContainer item)
+    {
+        if (rows.ChildCount == 0 || rows.GetChild(rows.ChildCount - 1).ChildCount >= PlayersPerRow)
+        {
+            rows.AddChild(new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                HorizontalAlignment = HAlignment.Center,
+                SeparationOverride = 4,
+            });
+        }
+
+        rows.GetChild(rows.ChildCount - 1).AddChild(item);
+    }
+    // Dumont end
+
     private BoxContainer MakeDepartmentContainer(DepartmentPrototype department, VectorFont fontHeader, VectorFont smallFont, RoundEndMessageEvent.RoundEndPlayerInfo[] players, bool debug)
     {
         var text = new Label
@@ -184,11 +213,9 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
             FontColorOverride = department.Color,
         };
 
-        var boxH = new GridContainer
-        {
-            Columns = 11,
-            HorizontalAlignment = HAlignment.Center,
-        };
+        // Dumont changes start
+        var boxH = MakeRows();
+        // Dumont end
 
         var boxV = new BoxContainer
         {
@@ -206,13 +233,13 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
                 department.Roles.Contains(new ProtoId<JobPrototype>(jobId)));
 
             if (belongsToDepartment)
-                boxH.AddChild(MakePlayerInfoBox(playerInfo, smallFont, Color.White));
+                AddToRows(boxH, MakePlayerInfoBox(playerInfo, smallFont, Color.White)); // Dumont
 
             if (debug)
             {
                 for (var i = 0; i < 35; i++)
                 {
-                    boxH.AddChild(MakePlayerInfoBox(playerInfo, smallFont, Color.White));
+                    AddToRows(boxH, MakePlayerInfoBox(playerInfo, smallFont, Color.White)); // Dumont
                 }
             }
         }
@@ -228,11 +255,9 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
         var dontShowInCredits = antagCredits?.DontShowInCredits ?? false;
         // Dumont end
 
-        var boxH = new GridContainer
-        {
-            Columns = 11,
-            HorizontalAlignment = HAlignment.Center,
-        };
+        // Dumont changes start
+        var boxH = MakeRows();
+        // Dumont end
 
         var boxV = new BoxContainer
         {
@@ -273,7 +298,7 @@ public sealed partial class EndRoundCreditsControl : ScrollContainer
             {
                 if (playerAntag == antag.ID && !dontShowInCredits) // Dumont
                 {
-                    boxH.AddChild(MakePlayerInfoBox(player, smallfont, color)); // Dumont
+                    AddToRows(boxH, MakePlayerInfoBox(player, smallfont, color)); // Dumont
                     playersInSection = true;
                 }
             }
