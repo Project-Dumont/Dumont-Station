@@ -67,6 +67,10 @@
   creditImage: /Textures/_Dumont/EndCredits/Antags/cult.png
 
 - type: antagCredits
+  id: Xenoborg
+  creditImage: /Textures/_Dumont/EndCredits/Antags/xenoborgs.png
+
+- type: antagCredits
   id: NukeopsMedic
   dontShowInCredits: true
 
