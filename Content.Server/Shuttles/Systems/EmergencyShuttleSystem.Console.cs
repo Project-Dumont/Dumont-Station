@@ -649,6 +649,8 @@ public sealed partial class EmergencyShuttleSystem
         catch (Exception ex)
         {
             Log.Error($"Failed to setup evacuation planet: {ex}");
+            if (_evacuationPlanetMap is { } failedMap && !TerminatingOrDeleted(failedMap))
+                QueueDel(failedMap);
             _evacuationPlanetMap = null;
             _evacuationLandingZone = null;
         }
@@ -675,6 +677,18 @@ public sealed partial class EmergencyShuttleSystem
         if (TerminatingOrDeleted(planet) || planet.Owner != _evacuationPlanetMap)
             return;
 
+        try
+        {
+            PopulateEvacuationDungeon(planet, dungeons, dungeonMod, biome, difficulty, random);
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Failed to populate {dungeonMod.ID} on the evacuation planet: {e}");
+        }
+    }
+
+    private void PopulateEvacuationDungeon(Entity<MapGridComponent> planet, List<Dungeon> dungeons, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty, System.Random random)
+    {
         var tiles = dungeons.SelectMany(d => d.RoomTiles).ToList();
         if (tiles.Count == 0)
             tiles = dungeons.SelectMany(d => d.AllTiles).ToList();

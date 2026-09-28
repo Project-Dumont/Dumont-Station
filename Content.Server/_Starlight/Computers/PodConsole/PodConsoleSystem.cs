@@ -29,12 +29,21 @@ public sealed partial class PodConsoleSystem : SharedPodConsoleSystem
         while (escapePodsQuery.MoveNext(out var ent, out var podConsole))
         {
             if (podConsole.LaunchTime == null || podConsole.LaunchTime > _timing.CurTime) continue;
+            // Dumont changes start
+            if (CheckOvercrowded((ent, podConsole), null))
+            {
+                podConsole.LaunchTime = null;
+                podConsole.Locked = false;
+                Dirty(ent, podConsole);
+                continue;
+            }
+            // Dumont end
             var grid = Transform(ent).ParentUid;
             RemComp<PodConsoleComponent>(ent);
             if (!HasComp<EscapePodComponent>(grid) || !TryComp(grid, out ShuttleComponent? shuttle))
                 continue;
 
-            _emergencyShuttleSystem.LaunchEscapePod(grid, shuttle, 10f);
+            _emergencyShuttleSystem.LaunchEscapePod(grid, shuttle, 60f); // Dumont
         }
     }
 

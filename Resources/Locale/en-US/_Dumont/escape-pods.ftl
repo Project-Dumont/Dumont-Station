@@ -7,3 +7,6 @@ comms-console-escape-pods-announcement = Command has authorized escape pods to b
     Reason: {$reason}
 
 evacuation-planet-name = Evacuation Planet
+
+escape-pod-max-occupants = [color=red]This pod is only rated for a maximum of {$max} occupants, one per seat.[/color]
+escape-pod-overcrowded = The pod is overcrowded! ({$count}/{$max})

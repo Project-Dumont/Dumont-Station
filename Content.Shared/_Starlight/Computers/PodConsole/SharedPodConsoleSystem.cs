@@ -1,4 +1,5 @@
-﻿using Content.Shared.DoAfter;
+﻿using Content.Shared._Dumont.EscapePods; // Dumont
+using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Serialization;
@@ -12,6 +13,7 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private EscapePodCapacitySystem _capacity = default!; // Dumont
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -25,8 +27,13 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
     private void OnLaunch(Entity<PodConsoleComponent> ent, ref PodLaunchDoAfterEvent args)
     {
         if (args.Cancelled) return;
+        // Dumont changes start
+        if (CheckOvercrowded(ent, args.User))
+            return;
+        // Dumont end
         ent.Comp.Locked = true;
         ent.Comp.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(10);
+        Dirty(ent); // Dumont
         _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", 10)), ent, args.User, PopupType.LargeCaution);
     }
 
@@ -40,6 +47,14 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
             return;
         }
 
+        // Dumont changes start
+        if (CheckOvercrowded(ent, args.User))
+        {
+            args.Handled = true;
+            return;
+        }
+        // Dumont end
+
         args.Handled = _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User,
             TimeSpan.FromSeconds(10), new PodLaunchDoAfterEvent(), ent, ent, ent)
         {
@@ -50,6 +65,17 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
             MovementThreshold = 1f
         });
     }
+
+    // Dumont changes start
+    public bool CheckOvercrowded(Entity<PodConsoleComponent> ent, EntityUid? user)
+    {
+        if (!_capacity.IsOvercrowded(ent, out var occupants, out var max))
+            return false;
+
+        _popup.PopupPredicted(Loc.GetString("escape-pod-overcrowded", ("count", occupants), ("max", max)), ent, user, PopupType.MediumCaution);
+        return true;
+    }
+    // Dumont end
 }
 
 [Serializable, NetSerializable]

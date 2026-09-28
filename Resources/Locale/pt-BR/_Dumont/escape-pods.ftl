@@ -17,3 +17,6 @@ ent-WallmountPodConsole = console da cápsula de fuga
 
 ent-ExtractObjective = Sair da estação
     .desc = Use suas luvas no console de uma cápsula de fuga pra ir embora com ela!
+
+escape-pod-max-occupants = [color=red]Esta cápsula comporta no máximo {$max} pessoas, uma por assento.[/color]
+escape-pod-overcrowded = A cápsula está lotada! ({$count}/{$max})

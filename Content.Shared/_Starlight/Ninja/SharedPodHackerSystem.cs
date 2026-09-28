@@ -19,6 +19,7 @@ public sealed partial class SharedPodHackerSystem : EntitySystem
     [Dependency] private SharedNinjaGlovesSystem _gloves = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedPodConsoleSystem _podConsole = default!; // Dumont
 
     public override void Initialize()
     {
@@ -62,6 +63,11 @@ public sealed partial class SharedPodHackerSystem : EntitySystem
 
         if (!TryComp<PodConsoleComponent>(args.Target, out var console) || console.LaunchTime != null)
             return;
+
+        // Dumont changes start
+        if (_podConsole.CheckOvercrowded((args.Target.Value, console), uid))
+            return;
+        // Dumont end
 
         console.Locked = true;
         console.LaunchTime = _timing.CurTime;

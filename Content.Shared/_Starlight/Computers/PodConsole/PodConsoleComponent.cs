@@ -12,4 +12,9 @@ public sealed partial class PodConsoleComponent : Component
     [DataField(customTypeSerializer:typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan? LaunchTime;
+
+    // Dumont changes start
+    [DataField, AutoNetworkedField]
+    public int? MaxOccupants;
+    // Dumont end
 }

@@ -59,7 +59,7 @@ public sealed partial class EscapePodUnlockSystem : EntitySystem
             Loc.GetString("comms-console-menu-dialog-escape-pods-message"),
             (string reason) =>
             {
-                if (Unlocked || Deleted(ent))
+                if (Unlocked || Deleted(ent) || !ent.Comp.CanShuttle || !_accessReader.FindAccessTags(user).Contains(CaptainAccess))
                     return;
 
                 reason = SharedChatSystem.SanitizeAnnouncement(reason, _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength));
