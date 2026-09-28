@@ -447,7 +447,7 @@
 - type: soundCollection
   id: GamerBark
   files:
-  - /Audio/_Dumont/Voice/Talk/Gamer/1.wav
+  - /Audio/_Dumont/Voice/Talk/gamer/1.wav
 
 - type: bark
   id: Gamer
