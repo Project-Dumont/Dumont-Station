@@ -98,6 +98,9 @@ namespace Content.Shared.Doors
     /// </remarks>
     public sealed class BeforeDoorAutoCloseEvent : CancellableEntityEventArgs
     {
+        // Dumont start
+        public float Modifier = 1f;
+        // Dumont end
     }
 
 

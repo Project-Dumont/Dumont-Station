@@ -1,21 +1,26 @@
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
 
 using Content.Shared.Humanoid;
 using Content.Shared.Store;
 using Content.Shared.Humanoid.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Content.Shared.Mind;
+using Robust.Shared.Prototypes;
+// Dumont end
 
 namespace Content.Server.Store.Conditions;
 
@@ -28,14 +33,14 @@ public sealed partial class BuyerSpeciesCondition : ListingCondition
     /// <summary>
     /// A whitelist of species that can purchase this listing.
     /// </summary>
-    [DataField("whitelist", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<SpeciesPrototype>))]
-    public HashSet<string>? Whitelist;
+    [DataField]
+    public HashSet<ProtoId<SpeciesPrototype>>? Whitelist;
 
     /// <summary>
     /// A blacklist of species that cannot purchase this listing.
     /// </summary>
-    [DataField("blacklist", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<SpeciesPrototype>))]
-    public HashSet<string>? Blacklist;
+    [DataField]
+    public HashSet<ProtoId<SpeciesPrototype>>? Blacklist;
 
     public override bool Condition(ListingConditionArgs args)
     {
@@ -44,18 +49,18 @@ public sealed partial class BuyerSpeciesCondition : ListingCondition
         if (!ent.TryGetComponent<MindComponent>(args.Buyer, out var mind))
             return true; // needed to obtain body entityuid to check for humanoid appearance
 
-        if (!ent.TryGetComponent<HumanoidAppearanceComponent>(mind.OwnedEntity, out var appearance))
+        if (!ent.TryGetComponent<HumanoidProfileComponent>(mind.OwnedEntity, out var humanoid))
             return true; // inanimate or non-humanoid entities should be handled elsewhere, main example being surplus crates
 
         if (Blacklist != null)
         {
-            if (Blacklist.Contains(appearance.Species))
+            if (Blacklist.Contains(humanoid.Species))
                 return false;
         }
 
         if (Whitelist != null)
         {
-            if (!Whitelist.Contains(appearance.Species))
+            if (!Whitelist.Contains(humanoid.Species))
                 return false;
         }
 

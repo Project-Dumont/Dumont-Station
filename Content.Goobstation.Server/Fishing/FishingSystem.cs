@@ -146,6 +146,10 @@ public sealed class FishingSystem : SharedFishingSystem
     {
         var position = Transform(fishSpot).Coordinates;
         var fish = Spawn(fishId, position);
+        // Dumont start
+        var caught = new Content.Goobstation.Shared.Fishing.Events.FishCaughtEvent(fishId, target);
+        RaiseLocalEvent(fish, ref caught);
+        // Dumont end
         // Throw da fish back to the player because it looks funny
         var direction = Xform.GetWorldPosition(target) - Xform.GetWorldPosition(fish);
         var length = direction.Length();

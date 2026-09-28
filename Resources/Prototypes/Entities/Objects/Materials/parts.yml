@@ -62,6 +62,9 @@
   name: metal rod
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - RodMetal
   - type: PhysicalComposition
     materialComposition:
       Steel: 50 #Half of a regular steel sheet to reflect the crafting recipe

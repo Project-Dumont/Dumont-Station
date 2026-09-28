@@ -77,8 +77,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
 using System.Linq;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
 using Content.Shared.Cuffs;
@@ -98,6 +98,9 @@ using Content.Shared.Popups;
 using Content.Shared.Strip.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
+
+using Content.Trauma.Common.Heretic;
+// Dumont end
 
 namespace Content.Shared.Strip;
 

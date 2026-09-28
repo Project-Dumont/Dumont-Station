@@ -1,0 +1,10 @@
+alerts-parry-exhaustion-name = Parry Exhaustion
+alerts-parry-exhaustion-desc = The more exhausted you are, the less attacks you are able to parry.
+stack-brick = brick
+stack-whetstone = whetstone
+materials-brick = brick
+materials-whetstone = whetstone
+tool-quality-sharpening-name = Sharpening
+tool-quality-sharpening-tool-name = Sharpening Tool
+ui-options-function-tackle = Tackle
+entity-category-name-heretic-rituals = Heretic rituals

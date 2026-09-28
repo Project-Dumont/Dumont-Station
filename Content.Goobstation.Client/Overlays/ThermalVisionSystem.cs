@@ -11,12 +11,32 @@ using Content.Goobstation.Shared.Overlays;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Robust.Client.Graphics;
+// Dumont start
+using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
+using Content.Trauma.Shared.Heretic.Components.Side;
+using Content.Trauma.Shared.Heretic.Systems;
+// Dumont end
 
 namespace Content.Goobstation.Client.Overlays;
 
 public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionComponent>
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    // Dumont start
+    [Dependency] private SharedHereticSystem _heretic = default!;
+    [Dependency] private Robust.Client.Player.IPlayerManager _localPlayer = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    protected override bool WorksInHands => true;
+
+    protected override void OnRefreshEquipmentHud(Entity<ThermalVisionComponent> ent,
+        ref HeldRelayedEvent<RefreshEquipmentHudEvent<ThermalVisionComponent>> args)
+    {
+        if (ent.Comp.IsEquipment && HasComp<LionhunterRifleComponent>(ent) && _heretic.IsHereticOrGhoul(args.Holder))
+            base.OnRefreshEquipmentHud(ent, ref args);
+    }
+    // Dumont end
 
     private ThermalVisionOverlay _thermalOverlay = default!;
     private BaseSwitchableOverlay<ThermalVisionComponent> _overlay = default!;
@@ -26,6 +46,9 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
         base.Initialize();
 
         SubscribeLocalEvent<ThermalVisionComponent, SwitchableOverlayToggledEvent>(OnToggle);
+        // Dumont start
+        SubscribeLocalEvent<HandsComponent, RefreshEquipmentHudEvent<ThermalVisionComponent>>(_hands.RefRelayEvent);
+        // Dumont end
 
         _thermalOverlay = new ThermalVisionOverlay();
         _overlay = new BaseSwitchableOverlay<ThermalVisionComponent>
@@ -44,8 +67,10 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     protected override void OnRefreshEquipmentHud(Entity<ThermalVisionComponent> ent,
         ref InventoryRelayedEvent<RefreshEquipmentHudEvent<ThermalVisionComponent>> args)
     {
-        if (ent.Comp.IsEquipment)
+        // Dumont start
+        if (ent.Comp.IsEquipment && (!ent.Comp.HereticOnly || (_localPlayer.LocalEntity is { } wearer && _heretic.IsHereticOrGhoul(wearer))))
             base.OnRefreshEquipmentHud(ent, ref args);
+        // Dumont end
     }
 
     private void OnToggle(Entity<ThermalVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

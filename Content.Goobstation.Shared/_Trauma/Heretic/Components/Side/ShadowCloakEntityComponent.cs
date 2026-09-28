@@ -1,0 +1,65 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Shared.Chat.Prototypes;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Speech;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Components.Side;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class ShadowCloakEntityComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public EntityUid? User;
+
+    [DataField]
+    public ProtoId<EmoteSoundsPrototype>? EmoteSounds = "ShadowCloakEmoteSounds";
+
+    [DataField]
+    public ProtoId<SpeechSoundsPrototype>? SpeechSounds = "ShadowCloakSpeechSounds";
+
+    [DataField]
+    public ProtoId<SpeechVerbPrototype> SpeechVerb = "Hiss";
+
+    [DataField]
+    public bool DebuffOnEarlyReveal;
+
+    [DataField]
+    public TimeSpan KnockdownTime = TimeSpan.FromSeconds(0.5f);
+
+    [DataField]
+    public TimeSpan SlowdownTime = TimeSpan.FromSeconds(10f);
+
+    [DataField]
+    public EntProtoId SlowdownEffect = "ShadowCloakRevealStatusEffect";
+
+    [DataField]
+    public float DoAfterSlowdown = 3f;
+
+    [DataField]
+    public FixedPoint2 DamageBeforeReveal = 25;
+
+    [DataField]
+    public float RevealDamageMultiplier = 1f;
+
+    [DataField]
+    public FixedPoint2 SustainedDamage = 0f;
+
+    [DataField]
+    public TimeSpan RevealCooldown = TimeSpan.FromMinutes(1f);
+
+    [DataField]
+    public TimeSpan ForceRevealCooldown = TimeSpan.FromMinutes(2f);
+
+    [DataField]
+    public FixedPoint2 SustainedDamageReductionRate = 1;
+}

@@ -1,0 +1,41 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+// Dumont end
+
+using Content.Shared.EntityEffects;
+
+namespace Content.Trauma.Shared.EntityEffects;
+
+/// <summary>
+/// Deletes the target entity, be careful with this...
+/// </summary>
+public sealed partial class Delete : EntityEffectBase<Delete>
+{
+    [DataField]
+    public bool Queued;
+
+    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Loc.GetString("entity-effect-guidebook-delete-entity", ("chance", Probability));
+}
+
+public sealed class DeleteEffectSystem : EntityEffectSystem<MetaDataComponent, Delete>
+{
+    protected override void Effect(Entity<MetaDataComponent> ent, ref EntityEffectEvent<Delete> args)
+    {
+        if (TerminatingOrDeleted(ent, ent.Comp))
+            return;
+
+        var meta = ent.AsNullable();
+        if (args.Effect.Queued)
+            PredictedQueueDel(meta);
+        else
+            PredictedDel(meta);
+    }
+}

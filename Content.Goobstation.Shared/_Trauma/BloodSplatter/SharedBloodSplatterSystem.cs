@@ -1,3 +1,6 @@
+// Dumont start
+using Content.Trauma.Shared.BloodSplatter;
+
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Coordinates;
@@ -9,6 +12,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+// Dumont end
 
 namespace Content.Goobstation.Shared._Trauma.BloodSplatter;
 

@@ -579,7 +579,9 @@ public sealed partial class GoobCVars
     /// Should heretic ascension ritual be cancelled if heretic hasn't completed their objectives.
     /// </summary>
     public static readonly CVarDef<bool> AscensionRequiresObjectives =
-        CVarDef.Create("heretic.ascension_requires_objectives", true, CVar.SERVERONLY);
+        // Dumont start
+        CVarDef.Create("heretic.ascension_requires_objectives", true, CVar.SERVER | CVar.REPLICATED);
+        // Dumont end
 
     /// <summary>
     /// A multiplier for bloodloss damage and heal.

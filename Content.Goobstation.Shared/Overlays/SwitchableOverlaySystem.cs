@@ -191,6 +191,16 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
         args.Handled = true;
     }
 
+    // Dumont start
+    public void SetEnabled(EntityUid uid, bool active, EntityUid user)
+    {
+        if (!TryComp<TComp>(uid, out var component))
+            return;
+        Toggle(uid, component, active);
+        RaiseSwitchableOverlayToggledEvent(uid, user, active);
+    }
+    // Dumont end
+
     private void Toggle(EntityUid uid, TComp component, bool activate, bool playSound = true)
     {
         if (playSound && _net.IsClient && _timing.IsFirstTimePredicted)

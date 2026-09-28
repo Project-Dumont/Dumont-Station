@@ -1,15 +1,3 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
@@ -21,7 +9,7 @@
   components:
   - type: HereticRitualRune
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: FloorEffects
     sprite: _Goobstation/Heretic/ritual_rune.rsi
     layers:
     - state: overlay # Required so that you don't miss the rune when clicking on it
@@ -30,8 +18,12 @@
   - type: Clickable
   - type: UserInterface
     interfaces:
-       enum.HereticRitualRuneUiKey.Key:
+      enum.HereticRitualRuneUiKey.Key:
         type: HereticRitualRuneBoundUserInterface
+      enum.FeastOfOwlsUiKey.Key:
+        type: FeastOfOwlsBoundUserInterface
+      enum.HereticGhoulRecallKey.Key:
+        type: GhoulRecallBoundUserInterface
   - type: IgnoresFingerprints
   - type: Damageable
     damageContainer: Inorganic
@@ -58,7 +50,29 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/_Goobstation/Heretic/runebreak.ogg
-  - type: EnchantingTable # Goobstation
+  - type: EnchantingTable
+  - type: AtmosExposed
+  - type: TemperatureTracker
+  # Heal holy damage and recharge mansus grasp quickly when standing on rune
+  - type: EntityEffectContacts
+    id: heretic_rune
+    conditions:
+    - !type:WhitelistCondition
+      whitelist:
+        components:
+        - WeakToHoly
+    effects:
+    - !type:HealthChange
+      splitDamage: SplitEnsureAll
+      damage:
+        types:
+          Holy: -4
+    - !type:ReduceActionsCooldown
+      maxPercentReduction: 1
+      maxReduction: 4
+      actionWhitelist:
+        tags:
+        - MansusGraspAction
 
 - type: entity
   id: HereticRuneRitualDrawAnimation
@@ -69,20 +83,20 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: FloorEffects
     sprite: _Goobstation/Heretic/ritual_rune.rsi
     state: icon_drawanim
 
 - type: entity
   parent: HereticRuneRitualDrawAnimation
-  id: HereticRuneRitualDrawAnimationCicatrix
+  id: HereticRuneRitualDrawAnimationMorbus
   categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _Goobstation/Heretic/ritual_rune.rsi
-    state: icon_drawanim_cicatrix
+    state: icon_drawanim_morbus
 
 - type: entity
   id: HereticRuneRitualAnimation
@@ -95,6 +109,6 @@
   - type: TimedDespawn
     lifetime: 1
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: HighFloorObjects
     sprite: _Goobstation/Heretic/ritual_rune.rsi
     state: icon_ritualanim

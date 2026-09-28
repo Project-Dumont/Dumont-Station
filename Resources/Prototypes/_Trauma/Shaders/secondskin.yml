@@ -1,0 +1,8 @@
+- type: shader
+  id: SecondSkin
+  kind: source
+  path: "/Textures/_Trauma/Shaders/secondskin.swsl"
+  params:
+    pixelSize: 32.0
+    amount: 0.5
+    color: 1.0, 0.25, 0.0

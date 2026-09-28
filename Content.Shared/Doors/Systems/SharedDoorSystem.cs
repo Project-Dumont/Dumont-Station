@@ -429,6 +429,11 @@ public abstract partial class SharedDoorSystem : EntitySystem
 
         if (lastState == DoorState.Emagging && TryComp<DoorBoltComponent>(uid, out var doorBoltComponent))
             SetBoltsDown((uid, doorBoltComponent), !doorBoltComponent.BoltsDown, user, true);
+
+        // Dumont start
+        var opened = new Content.Trauma.Common.Doors.DoorOpenedEvent(uid, user);
+        RaiseLocalEvent(uid, ref opened);
+        // Dumont end
     }
 
     /// <summary>

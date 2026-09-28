@@ -273,6 +273,9 @@
   name: latex gloves
   description: Thin sterile latex gloves. Basic PPE for any doctor.
   components:
+  - type: Tag
+    tags:
+    - GlovesLatex
   - type: Sprite
     sprite: Clothing/Hands/Gloves/latex.rsi
   - type: Clothing
@@ -287,6 +290,9 @@
   name: nitrile gloves
   description: High-quality nitrile gloves. Expensive medical PPE.
   components:
+  - type: Tag
+    tags:
+    - GlovesNitrile
   - type: Sprite
     sprite: Clothing/Hands/Gloves/nitrile.rsi
   - type: Clothing

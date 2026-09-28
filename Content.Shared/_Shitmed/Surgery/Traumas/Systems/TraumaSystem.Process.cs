@@ -311,13 +311,16 @@ public partial class TraumaSystem
             if (!TryComp<ArmorComponent>(ent, out var armour))
                 continue;
 
-            if (!inflicter.Comp.AllowArmourDeduction.Contains(traumaType) && armour.TraumaDeductions[traumaType] >= 0)
+            // Dumont start
+            var armorDeduction = armour.TraumaDeductions.GetValueOrDefault(traumaType, FixedPoint2.Zero);
+            if (!inflicter.Comp.AllowArmourDeduction.Contains(traumaType) && armorDeduction >= 0)
                 continue;
 
             if (armour.ArmorCoverage.Contains(coverage))
             {
-                deduction += armour.TraumaDeductions[traumaType];
+                deduction += armorDeduction;
             }
+            // Dumont end
         }
 
         return deduction;
