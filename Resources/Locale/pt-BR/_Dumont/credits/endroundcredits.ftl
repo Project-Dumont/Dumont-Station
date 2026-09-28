@@ -15,9 +15,9 @@ round-end-credits-trauma-kojima = Hideo Kojima
 round-end-credits-trauma-jargon = Gravado em locação na {$station}
 
     Gravado com Tecnologia Robust ©
-    Imagens do espaço cedidas pela NASA
+    Imagens do espaço recuperadas da antiga NASA
 
-    Patrocínio não oficial da Força Aérea Brasileira
+    Patrocínio não oficial da Federação Trans-Solar
 
     Nenhuma cena de risco deste episódio deve ser repetida, nunca
     A Nanotrasen não se responsabiliza por ferimentos sofridos no set
