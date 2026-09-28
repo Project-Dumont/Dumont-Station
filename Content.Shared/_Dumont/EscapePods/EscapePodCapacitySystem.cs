@@ -2,16 +2,12 @@ using Content.Shared._Starlight.Computers.PodConsole;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Examine;
 using Content.Shared.Mobs.Components;
-using Robust.Shared.Containers;
 
 namespace Content.Shared._Dumont.EscapePods;
 
 public sealed class EscapePodCapacitySystem : EntitySystem
 {
-    [Dependency] private SharedContainerSystem _container = default!;
-
     private EntityQuery<MobStateComponent> _mobQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
     private EntityQuery<StrapComponent> _strapQuery;
 
     private readonly HashSet<EntityUid> _occupants = new();
@@ -21,7 +17,6 @@ public sealed class EscapePodCapacitySystem : EntitySystem
         base.Initialize();
 
         _mobQuery = GetEntityQuery<MobStateComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
         _strapQuery = GetEntityQuery<StrapComponent>();
 
         SubscribeLocalEvent<PodConsoleComponent, ExaminedEvent>(OnExamined);
@@ -87,20 +82,12 @@ public sealed class EscapePodCapacitySystem : EntitySystem
     private void AddOccupants(EntityUid uid)
     {
         if (_mobQuery.HasComp(uid))
-        {
             _occupants.Add(uid);
-            return;
-        }
 
-        if (!_containerQuery.TryComp(uid, out var manager))
-            return;
-
-        foreach (var container in _container.GetAllContainers(uid, manager))
+        var children = Transform(uid).ChildEnumerator;
+        while (children.MoveNext(out var child))
         {
-            foreach (var contained in container.ContainedEntities)
-            {
-                AddOccupants(contained);
-            }
+            AddOccupants(child);
         }
     }
 }

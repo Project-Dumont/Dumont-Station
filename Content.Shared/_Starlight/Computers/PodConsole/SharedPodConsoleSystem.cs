@@ -35,6 +35,7 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
         ent.Comp.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(10);
         Dirty(ent); // Dumont
         _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", 10)), ent, args.User, PopupType.LargeCaution);
+        OnLaunchCountdown(ent); // Dumont
     }
 
     private void OnActivation(Entity<PodConsoleComponent> ent, ref ActivateInWorldEvent args)
@@ -67,6 +68,10 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
     }
 
     // Dumont changes start
+    protected virtual void OnLaunchCountdown(Entity<PodConsoleComponent> ent)
+    {
+    }
+
     public bool CheckOvercrowded(Entity<PodConsoleComponent> ent, EntityUid? user)
     {
         if (!_capacity.IsOvercrowded(ent, out var occupants, out var max))
