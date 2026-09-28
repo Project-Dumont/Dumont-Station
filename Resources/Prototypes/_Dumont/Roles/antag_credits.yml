@@ -71,6 +71,10 @@
   creditImage: /Textures/_Dumont/EndCredits/Antags/xenoborgs.png
 
 - type: antagCredits
+  id: Slasher
+  creditImage: /Textures/_Dumont/EndCredits/Antags/slasher.png
+
+- type: antagCredits
   id: NukeopsMedic
   dontShowInCredits: true
 
