@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "trimline"
+    },
+    {
+      "name": "trimline_arrow_e_n"
+    },
+    {
+      "name": "trimline_arrow_e_s"
+    },
+    {
+      "name": "trimline_arrow_n_e"
+    },
+    {
+      "name": "trimline_arrow_n_w"
+    },
+    {
+      "name": "trimline_arrow_ne_s"
+    },
+    {
+      "name": "trimline_arrow_ne_w"
+    },
+    {
+      "name": "trimline_arrow_nw_e"
+    },
+    {
+      "name": "trimline_arrow_nw_s"
+    },
+    {
+      "name": "trimline_arrow_s_e"
+    },
+    {
+      "name": "trimline_arrow_s_w"
+    },
+    {
+      "name": "trimline_arrow_se_n"
+    },
+    {
+      "name": "trimline_arrow_se_w"
+    },
+    {
+      "name": "trimline_arrow_sw_e"
+    },
+    {
+      "name": "trimline_arrow_sw_n"
+    },
+    {
+      "name": "trimline_arrow_w_n"
+    },
+    {
+      "name": "trimline_arrow_w_s"
+    },
+    {
+      "name": "trimline_box"
+    },
+    {
+      "name": "trimline_corner_ne"
+    },
+    {
+      "name": "trimline_corner_nw"
+    },
+    {
+      "name": "trimline_corner_se"
+    },
+    {
+      "name": "trimline_corner_sw"
+    },
+    {
+      "name": "trimline_e"
+    },
+    {
+      "name": "trimline_end_e"
+    },
+    {
+      "name": "trimline_end_n"
+    },
+    {
+      "name": "trimline_end_s"
+    },
+    {
+      "name": "trimline_end_w"
+    },
+    {
+      "name": "trimline_fill_arrow_e_n"
+    },
+    {
+      "name": "trimline_fill_arrow_e_s"
+    },
+    {
+      "name": "trimline_fill_arrow_n_e"
+    },
+    {
+      "name": "trimline_fill_arrow_n_w"
+    },
+    {
+      "name": "trimline_fill_arrow_ne"
+    },
+    {
+      "name": "trimline_fill_arrow_nw"
+    },
+    {
+      "name": "trimline_fill_arrow_s_e"
+    },
+    {
+      "name": "trimline_fill_arrow_s_w"
+    },
+    {
+      "name": "trimline_fill_arrow_se"
+    },
+    {
+      "name": "trimline_fill_arrow_sw"
+    },
+    {
+      "name": "trimline_fill_arrow_w_n"
+    },
+    {
+      "name": "trimline_fill_arrow_w_s"
+    },
+    {
+      "name": "trimline_fill_box"
+    },
+    {
+      "name": "trimline_fill_corner_ne"
+    },
+    {
+      "name": "trimline_fill_corner_nw"
+    },
+    {
+      "name": "trimline_fill_corner_se"
+    },
+    {
+      "name": "trimline_fill_corner_sw"
+    },
+    {
+      "name": "trimline_fill_e"
+    },
+    {
+      "name": "trimline_fill_end_e"
+    },
+    {
+      "name": "trimline_fill_end_n"
+    },
+    {
+      "name": "trimline_fill_end_s"
+    },
+    {
+      "name": "trimline_fill_end_w"
+    },
+    {
+      "name": "trimline_fill_mid_e"
+    },
+    {
+      "name": "trimline_fill_mid_n"
+    },
+    {
+      "name": "trimline_fill_mid_s"
+    },
+    {
+      "name": "trimline_fill_mid_w"
+    },
+    {
+      "name": "trimline_fill_n"
+    },
+    {
+      "name": "trimline_fill_ne"
+    },
+    {
+      "name": "trimline_fill_nw"
+    },
+    {
+      "name": "trimline_fill_s"
+    },
+    {
+      "name": "trimline_fill_se"
+    },
+    {
+      "name": "trimline_fill_sw"
+    },
+    {
+      "name": "trimline_fill_w"
+    },
+    {
+      "name": "trimline_fill_warn_corner_ne"
+    },
+    {
+      "name": "trimline_fill_warn_corner_nw"
+    },
+    {
+      "name": "trimline_fill_warn_corner_se"
+    },
+    {
+      "name": "trimline_fill_warn_corner_sw"
+    },
+    {
+      "name": "trimline_fill_warn_e"
+    },
+    {
+      "name": "trimline_fill_warn_n"
+    },
+    {
+      "name": "trimline_fill_warn_ne"
+    },
+    {
+      "name": "trimline_fill_warn_nw"
+    },
+    {
+      "name": "trimline_fill_warn_s"
+    },
+    {
+      "name": "trimline_fill_warn_se"
+    },
+    {
+      "name": "trimline_fill_warn_sw"
+    },
+    {
+      "name": "trimline_fill_warn_w"
+    },
+    {
+      "name": "trimline_mid_e"
+    },
+    {
+      "name": "trimline_mid_n"
+    },
+    {
+      "name": "trimline_mid_s"
+    },
+    {
+      "name": "trimline_mid_w"
+    },
+    {
+      "name": "trimline_n"
+    },
+    {
+      "name": "trimline_ne"
+    },
+    {
+      "name": "trimline_nw"
+    },
+    {
+      "name": "trimline_s"
+    },
+    {
+      "name": "trimline_se"
+    },
+    {
+      "name": "trimline_shrink_e_n"
+    },
+    {
+      "name": "trimline_shrink_e_s"
+    },
+    {
+      "name": "trimline_shrink_n_e"
+    },
+    {
+      "name": "trimline_shrink_n_w"
+    },
+    {
+      "name": "trimline_shrink_s_e"
+    },
+    {
+      "name": "trimline_shrink_s_w"
+    },
+    {
+      "name": "trimline_shrink_w_n"
+    },
+    {
+      "name": "trimline_shrink_w_s"
+    },
+    {
+      "name": "trimline_sw"
+    },
+    {
+      "name": "trimline_w"
+    },
+    {
+      "name": "trimline_warn_e"
+    },
+    {
+      "name": "trimline_warn_n"
+    },
+    {
+      "name": "trimline_warn_ne"
+    },
+    {
+      "name": "trimline_warn_nw"
+    },
+    {
+      "name": "trimline_warn_s"
+    },
+    {
+      "name": "trimline_warn_se"
+    },
+    {
+      "name": "trimline_warn_sw"
+    },
+    {
+      "name": "trimline_warn_w"
+    }
+  ]
+}
