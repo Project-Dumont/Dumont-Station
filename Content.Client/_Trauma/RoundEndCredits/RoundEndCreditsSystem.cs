@@ -4,6 +4,7 @@
 
 using System.Numerics;
 using Content.Client._RMC14.LinkAccount;
+using Content.Client.UserInterface.Controls; // Dumont
 using Content.Shared.GameTicking;
 using Content.Shared.Random.Helpers;
 using Content.Trauma.Common.CCVar;
@@ -65,6 +66,13 @@ public sealed class RoundEndCreditsSystem : EntitySystem
         var scale = _uiScale == 0f ? _ui.DefaultUIScale : _uiScale;
         var credits = new EndRoundCreditsControl();
         credits.SetSize = _clyde.MainWindow.Size / scale;
+        // Dumont changes start
+        if (_ui.ActiveScreen != null && _ui.ActiveScreen.TryGetWidget<MainViewport>(out var viewport))
+        {
+            credits.SetSize = viewport.Size;
+            LayoutContainer.SetPosition(credits, viewport.GlobalPosition);
+        }
+        // Dumont end
         credits.Populate(message, _cache, ProtoMan, shoutout, Debug);
 
         var rand = new RobustRandom();
