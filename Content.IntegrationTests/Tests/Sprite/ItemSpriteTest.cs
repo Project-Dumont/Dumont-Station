@@ -41,7 +41,6 @@ public sealed class PrototypeSaveTest
         // The only prototypes that should get ignored are those that REQUIRE setup to get a sprite. At that point it is
         // the responsibility of the spawner to ensure that a valid sprite is set.
         "VirtualItem",
-        "HandPlaceholder" // Frontier
     };
 
     [Test]
