@@ -33,6 +33,7 @@ using Content.Shared.Explosion.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
+using Robust.Shared.Prototypes;
 using Content.Shared.Popups;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -68,12 +69,9 @@ public sealed class BlobCoreSystem : EntitySystem
     private EntityQuery<BlobFactoryComponent> _factory;
     private EntityQuery<BlobNodeComponent> _node;
 
-    [ValidatePrototypeId<AlertPrototype>]
-    private const string BlobHealth = "BlobHealth";
-    [ValidatePrototypeId<AlertPrototype>]
-    private const string BlobResource = "BlobResource";
-    [ValidatePrototypeId<CurrencyPrototype>]
-    private const string BlobMoney = "BlobPoint";
+    private static readonly ProtoId<AlertPrototype> BlobHealth = "BlobHealth";
+    private static readonly ProtoId<AlertPrototype> BlobResource = "BlobResource";
+    private static readonly ProtoId<CurrencyPrototype> BlobMoney = "BlobPoint";
 
     private readonly ReaderWriterLockSlim _pointsChange = new();
 

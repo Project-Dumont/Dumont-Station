@@ -74,14 +74,14 @@ public abstract partial class SharedGunSystem
         if (component.Proto == null)
             return;
 
-        var damageSpec = GetProjectileDamage(component.Proto);
+        var damageSpec = GetProjectileDamage(component.Proto.Value);
 
         if (damageSpec == null)
             return;
 
         _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), Loc.GetString("damage-projectile"));
 
-        var ap = GetProjectilePenetration(component.Proto);
+        var ap = GetProjectilePenetration(component.Proto.Value);
         if (ap == 0)
             return;
 

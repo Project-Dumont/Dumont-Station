@@ -9,6 +9,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CorvaxGoob.OfferItem;
@@ -19,8 +20,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    [ValidatePrototypeId<AlertPrototype>]
-    protected const string OfferAlert = "Offer";
+    protected static readonly ProtoId<AlertPrototype> OfferAlert = "Offer";
 
     public override void Initialize()
     {

@@ -77,7 +77,7 @@
 
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.NukeOps;
 
@@ -91,6 +91,6 @@ public sealed partial class NukeOperativeComponent : Component
     /// <summary>
     ///
     /// </summary>
-    [DataField("syndStatusIcon", customTypeSerializer: typeof(PrototypeIdSerializer<FactionIconPrototype>))]
-    public string SyndStatusIcon = "SyndicateFaction";
+    [DataField("syndStatusIcon")]
+    public ProtoId<FactionIconPrototype> SyndStatusIcon = "SyndicateFaction";
 }

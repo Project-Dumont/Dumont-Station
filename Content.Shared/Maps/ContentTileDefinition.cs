@@ -142,8 +142,8 @@ namespace Content.Shared.Maps
         // Heat capacity is opt-in, not opt-out.
         [DataField("heatCapacity")] public float HeatCapacity = Atmospherics.MinimumHeatCapacity;
 
-        [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
+        [DataField("itemDrop")]
+        public EntProtoId ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
         // TODO rename data-field in yaml
         /// <summary>

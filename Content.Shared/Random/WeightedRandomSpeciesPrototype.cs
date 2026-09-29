@@ -7,7 +7,6 @@
 
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.Random;
 
@@ -20,6 +19,6 @@ public sealed partial class WeightedRandomSpeciesPrototype : IWeightedRandomProt
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField("weights", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<float, SpeciesPrototype>))]
+    [DataField("weights")]
     public Dictionary<string, float> Weights { get; private set; } = new();
 }

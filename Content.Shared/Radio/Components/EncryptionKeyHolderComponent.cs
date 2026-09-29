@@ -11,7 +11,7 @@ using Content.Shared.Chat;
 using Content.Shared.Tools;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Radio.Components;
 
@@ -32,8 +32,8 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     ///     The tool required to extract the encryption keys from the headset.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("keysExtractionMethod", customTypeSerializer: typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
-    public string KeysExtractionMethod = "Screwing";
+    [DataField("keysExtractionMethod")]
+    public ProtoId<ToolQualityPrototype> KeysExtractionMethod = "Screwing";
 
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("keySlots")]
@@ -55,13 +55,13 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     ///     Combined set of radio channels provided by all contained keys.
     /// </summary>
     [ViewVariables]
-    public HashSet<string> Channels = new();
+    public HashSet<ProtoId<RadioChannelPrototype>> Channels = new();
 
     /// <summary>
     ///     This is the channel that will be used when using the default/department prefix (<see cref="SharedChatSystem.DefaultChannelKey"/>).
     /// </summary>
     [ViewVariables]
-    public string? DefaultChannel;
+    public ProtoId<RadioChannelPrototype>? DefaultChannel;
 
     /// <summary>
     ///     Goobstation: Whether or not the headset can be examined to see the encryption keys while the keys aren't accessible.

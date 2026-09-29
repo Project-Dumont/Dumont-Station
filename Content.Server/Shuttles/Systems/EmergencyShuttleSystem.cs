@@ -152,8 +152,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
 
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string MapsProto = "CentcommWeights"; // Gabystation change
+    private static readonly ProtoId<WeightedRandomPrototype> MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {

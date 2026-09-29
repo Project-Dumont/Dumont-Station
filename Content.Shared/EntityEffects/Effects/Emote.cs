@@ -33,8 +33,8 @@ public sealed partial class Emote : EventEntityEffect<Emote>
     /// <summary>
     ///     The emote the entity will preform.
     /// </summary>
-    [DataField("emote", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
-    public string EmoteId;
+    [DataField("emote", required: true)]
+    public ProtoId<EmotePrototype> EmoteId;
 
     /// <summary>
     ///     If the emote should be recorded in chat.

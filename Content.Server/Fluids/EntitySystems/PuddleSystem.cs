@@ -176,20 +176,15 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
 
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Blood = "Blood";
+    private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Slime = "Slime";
+    private static readonly ProtoId<ReagentPrototype> Slime = "Slime";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string CopperBlood = "CopperBlood";
+    private static readonly ProtoId<ReagentPrototype> CopperBlood = "CopperBlood";
 
-    [ValidatePrototypeId<ReagentPrototype>] // goobstation
-    private const string BloodChangeling = "BloodChangeling"; // goobstation
+    private static readonly ProtoId<ReagentPrototype> BloodChangeling = "BloodChangeling"; // goobstation
 
-    [ValidatePrototypeId<ReagentPrototype>] // goobstation
-    private const string BlackBlood = "BlackBlood"; // goobstation
+    private static readonly ProtoId<ReagentPrototype> BlackBlood = "BlackBlood"; // goobstation
 
     private static string[] _standoutReagents = [Blood, Slime, CopperBlood, BloodChangeling, BlackBlood]; // goobstation - added BloodChangeling, BlackBlood
 

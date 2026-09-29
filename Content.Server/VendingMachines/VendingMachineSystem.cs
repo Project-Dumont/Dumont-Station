@@ -588,7 +588,7 @@ namespace Content.Server.VendingMachines
             Dirty(uid, component);
         }
 
-        private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
+        private void AddInventoryFromPrototype(EntityUid uid, Dictionary<EntProtoId, uint>? entries,
             InventoryType type,
             VendingMachineComponent? component = null, float restockQuality = 1.0f)
         {

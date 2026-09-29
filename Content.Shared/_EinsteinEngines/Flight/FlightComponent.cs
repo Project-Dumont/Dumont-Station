@@ -26,8 +26,8 @@ namespace Content.Shared._EinsteinEngines.Flight;
 [RegisterComponent, NetworkedComponent(), AutoGenerateComponentState]
 public sealed partial class FlightComponent : Component
 {
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string? ToggleAction = "ActionToggleFlight";
+    [DataField]
+    public EntProtoId? ToggleAction = "ActionToggleFlight";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;

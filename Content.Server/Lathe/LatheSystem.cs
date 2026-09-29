@@ -322,7 +322,7 @@ namespace Content.Server.Lathe
 
                     if (comp.OutputToStorage && prototype.TryGetComponent<PhysicalCompositionComponent>(out var composition, _factory))
                     {
-                        _materialStorage.TryChangeMaterialAmount(uid, composition.MaterialComposition);
+                        _materialStorage.TryChangeMaterialAmount(uid, composition.MaterialComposition.ToDictionary(kv => (string) kv.Key, kv => kv.Value));
                     }
                     else
                     {

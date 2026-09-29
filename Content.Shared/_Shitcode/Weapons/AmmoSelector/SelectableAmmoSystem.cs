@@ -103,7 +103,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
             return _protoManager.TryIndex(basic.Proto, out var index) ? index.Name : null;
 
         if (TryComp(uid, out HitscanBatteryAmmoProviderComponent? hitscanBattery))
-            return _protoManager.TryIndex(hitscanBattery.Prototype, out var index) ? index.Name : null;
+            return _protoManager.TryIndex(hitscanBattery.Prototype, out var index) ? index.ID : null;
 
         if (TryComp(uid, out ProjectileBatteryAmmoProviderComponent? projectileBattery))
             return _protoManager.TryIndex(projectileBattery.Prototype, out var index) ? index.Name : null;

@@ -15,6 +15,8 @@ using Content.Goobstation.Shared.Religion.Nullrod;
 using Content.Server.Heretic.EntitySystems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Robust.Shared.Prototypes;
 using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -81,7 +83,7 @@ public sealed class WeakToHolySystem : EntitySystem
 
         DamageModifierSet modifierSet = new()
         {
-            Coefficients = new Dictionary<string, float>
+            Coefficients = new Dictionary<ProtoId<DamageTypePrototype>, float>
             {
                 { "Holy", holyCoefficient },
             },

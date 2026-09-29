@@ -45,6 +45,7 @@ using Content.Shared.Alert;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
@@ -316,10 +317,10 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         return new()
         {
             Coefficients = specifier.DamageDict
-                .Select(x => KeyValuePair.Create(x.Key, multiplier))
+                .Select(x => KeyValuePair.Create((ProtoId<DamageTypePrototype>) x.Key, multiplier))
                 .ToDictionary(),
             FlatReduction = specifier.DamageDict
-                .Select(x => KeyValuePair.Create(x.Key, -modifier)) // Minus mod because it subtracts values from damage
+                .Select(x => KeyValuePair.Create((ProtoId<DamageTypePrototype>) x.Key, -modifier)) // Minus mod because it subtracts values from damage
                 .ToDictionary(),
         };
     }

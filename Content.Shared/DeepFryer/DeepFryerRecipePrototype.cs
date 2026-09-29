@@ -2,7 +2,6 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.DeepFryer;
 
@@ -28,7 +27,6 @@ public sealed partial class DeepFryerRecipePrototype : IPrototype
     [DataField]
     public Dictionary<EntProtoId, int> Ingredients = new();
 
-    [DataField("reagents",
-        customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, ReagentPrototype>))]
-    public Dictionary<string, FixedPoint2> Reagents = new();
+    [DataField("reagents")]
+    public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> Reagents = new();
 }
