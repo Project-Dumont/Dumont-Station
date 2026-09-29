@@ -375,6 +375,9 @@
   id: FloralBark
   files:
   - /Audio/_Dumont/Voice/Talk/floral/1.wav
+  - /Audio/_Dumont/Voice/Talk/floral/2.wav
+  - /Audio/_Dumont/Voice/Talk/floral/3.wav
+  - /Audio/_Dumont/Voice/Talk/floral/4.wav
 
 - type: bark
   id: Floral
