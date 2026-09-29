@@ -148,6 +148,10 @@ uplink-viscerators-delivery-grenade-name = Granada de visceradores
 
 uplink-viscerators-delivery-grenade-desc = Libera um enxame de visceradores que persegue e retalha qualquer pessoa nas proximidades que não seja do Sindicato.
 
+uplink-cigar-gold-syndicate-name = Estojo de charutos explosivos
+
+uplink-cigar-gold-syndicate-desc = Aproveite o gosto da elite da Nanotrasen por charutos com este clássico certificado da Waffle Co.! Acenda, espere cerca de metade da nicotina acabar e... BUM! O sucesso de conspirações contra inimigos políticos não é garantido.
+
 uplink-viscerators-delivery-grenade-box-name = Caixa de granadas de visceradores
 
 uplink-viscerators-delivery-grenade-box-desc = Uma caixa de granadas que libera enxames de visceradores para perseguir e retalhar qualquer pessoa que não seja do Sindicato.
