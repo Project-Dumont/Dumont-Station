@@ -103,7 +103,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 03/31/2025 00:31:48
-  entityCount: 290
+  entityCount: 289
 maps: []
 grids:
 - 1
@@ -172,7 +172,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#008200FF'
+            color: '#DAA520FF'
             id: BrickTileSteelLineS
           decals:
             1: -1,-1
@@ -187,7 +187,7 @@ entities:
             10: -2,-6
             11: -2,-7
         - node:
-            color: '#008200FF'
+            color: '#DAA520FF'
             id: BrickTileWhiteLineN
           decals:
             20: -3,-9
@@ -551,16 +551,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-11.5
       parent: 1
-- proto: BSOManual
-  entities:
-  - uid: 60
-    components:
-    - type: Transform
-      pos: -0.7748628,-0.4398523
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: ButtonFrameCaution
   entities:
   - uid: 61

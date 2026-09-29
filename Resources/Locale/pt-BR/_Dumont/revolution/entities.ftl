@@ -275,8 +275,10 @@ ent-SmilingTylenol = tylenol sorridente
 
 ## Forças soviéticas
 
-ent-MobCombatMechRev = mecha de combate soviético
-    .desc = Plataforma de combate pesada.
+ent-MobCombatMech = mecha de combate soviético
+    .desc = Um mecha improvisado construído por desertores da USSP com sucata e tecnologia roubada. Apesar da aparência precária, seus sistemas militares lhe garantem desempenho superior ao de um Gygax padrão. Dispara munições incendiárias.
+ent-MobCombatMechRev = { ent-MobCombatMech }
+    .desc = { ent-MobCombatMech.desc }
     .suffix = Rev
 ent-MobSovietSargentFamasRev = sargento
     .desc = Um sargento das forças soviéticas.
