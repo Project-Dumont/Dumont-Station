@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityCategory
+  id: Areas
+  name: entity-category-name-areas
+  # could hide spawn menu if someone remakes strongdmm for ss14
