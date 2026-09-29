@@ -23,6 +23,7 @@
   children:
   - Forensics
   - CriminalRecords
+  - Defusal
 
 - type: guideEntry
   id: Forensics
@@ -33,3 +34,8 @@
   id: CriminalRecords
   name: guide-entry-criminal-records
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
+
+- type: guideEntry
+  id: Defusal
+  name: guide-entry-defusal
+  text: "/ServerInfo/Guidebook/Security/Defusal.xml"

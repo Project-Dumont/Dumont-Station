@@ -8,44 +8,46 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Modular Bomb Defusal
-  So, you found a modular explosive device and it's ticking. These devices cannot be defused by simply cutting random wires anymore. They use a randomized puzzle module system. Just keep talking, and nobody will explode.
+  # Manual de Desativação de Bomba Grande
+  Então, você achou um dispositivo explosivo modular e está bipando. Não é tão simples quanto cortar um cabo para desarmar! Eles utilizam um sistema de módulos aleatorizados no estilo de quebra-cabeças. Apenas continue falando, e ninguém irá explodir.
 
-  ## Cooperative Defusal
-  Defusing a modular bomb requires **two players** working together:
-  1. **The Defuser**: The player who interacts with the bomb. They can see the modules, strike indicators, and serial number, and perform actions.
-  2. **The Manual Reader**: Another player who reads the [color=yellow]Bomb Defusal Manual[/color] (found in the **Head of Security's locker**). They must give the Defuser the correct instructions.
+  ## Desarmamento Cooperativo
+  Para desativar uma bomba, você precisa de duas pessoas cooperando:
+- 1. O Desativador: A pessoa que interage com a bomba. Eles podem ver e interagir com os módulos, ver a quantidade de strikes restantes e o número de série da bomba. Eles utilizam o kit de defusão de bomba.
+- 2. O Especialista: A pessoa que lê as etapas para desativar a bomba para o desativador. Eles utilizam o escaner de bomba.
+  O Desativador não pode ver as etapas, e O Especialista não pode ver a bomba, então comunicação é a chave para o sucesso!
 
-  The Defuser cannot see the rules, and the Manual Reader cannot see the bomb. Communication is key!
-
-  ## Gear
-  No special tools (like wirecutters or screwdrivers) are required to open the interface, but a [color=yellow]bomb suit[/color] is highly recommended for safety.
+  ## Equipamento
+  Para começar a desarmar a bomba, O Especialista precisa do escaner de bomba e O Desativador precisa do kit de desarmamento de bomba, ambos encontrados no armário de desarmamento de bomba. Porém, é recomendado utilizar trajes anti-bombas para reduzir os danos em caso de falha.
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHelmetBombSuit"/>
     <GuideEntityEmbed Entity="ClothingOuterSuitBomb"/>
   </Box>
 
   ## Hardbombs
-  You will typically encounter the Syndicate Bomb and the Training Bomb:
+  As bombas grandes típicas são a Bomba do Sindicato e a Bomba de treinamento:
   <Box>
     <GuideEntityEmbed Entity="SyndicateBomb"/>
     <GuideEntityEmbed Entity="TrainingBomb"/>
   </Box>
 
-  ## The Strike System
-  Modular bombs have a strike system:
-  - **3 Strikes** (5 for Training Bombs) will cause **immediate detonation**!
-  - **Failing a module** (e.g. cutting the wrong wire, pressing buttons out of order) adds 1 strike.
-  - **Closing the defusal interface** while the bomb is active also counts as a strike. Do not step away once you start!
+  ## Strikes
+  Bombas grandes tem um sistema de strike:
+  - 3 strikes irá causar detonação imediata!
+  - Falhar um módulo irá adicionar 1 strike.
+  - Fechar a bomba depois de abrir-lá com o kit de desarmamento de bomba adiciona um strike. 
 
-  ## Module Count and Time
-  The number of modules is determined by the timer set on the bomb when armed: **1 module per minute** of time (e.g., 3 minutes = 3 modules, 8 minutes = 8 modules). All modules must be solved before the timer hits zero.
+  ## Tempo/Quantidade
+  O número de módulos para resolver é determinado pelo timer na bomba quando armado: 1 módulo por minuto. Se você chegou na bomba atrasado, é melhor ir rápido!
 
-  ## Puzzle Modules
-  You will encounter 5 types of modules:
-  - [color=yellow]Wires[/color]: A vertical set of 3-6 colored wires. Only one correct wire must be cut based on the rules in the manual (referencing wire count and the bomb's serial number).
-  - [color=yellow]Symbols[/color]: 4 buttons displaying mysterious glyphs. They must be pressed in the order they appear in the correct manual column.
-  - [color=yellow]The Button[/color]: A single colored button with a word. You must either tap it quickly or hold it down. If held, a colored strip appears, and you must release the button when the timer contains a specific digit.
-  - [color=yellow]Simon Says[/color]: A sequence of flashing colors. You must repeat the sequence using the color translation table in the manual, which changes depending on the serial number and current strikes.
-  - [color=yellow]Codewords[/color]: A list of 6 words. Find the category column in the manual that matches the displayed words to identify the single correct codeword.
+  ## Módulos
+  Os tipos de módulos diferentes são os seguintes:
+  - [color=yellow]Fios[/color]: 3-6 cabos coloridos. Apenas um cabo precisa ser cortado baseado nas regras escritas no escaner.
+  - [color=yellow]Teclados[/color]: 4 botões exibindo glifos misteriosos. Eles precisam ser apertados na ordem que aparecem no escaner.
+  - [color=yellow]O Botão[/color]: Um botão colorido com uma palavra. Você pode ter que apertar-lo ou segurar-lo. Se segurado, uma listra colorida aparece, e você deve soltar-lo em um momento definido pelo escaner.
+  - [color=yellow]Genius[/color]: Uma sequência de cores piscando. Você deve repetir a sequência com a tabela de tradução de cores no escaner, que muda dependendo da quantidade de strikes.
+  - [color=yellow]Quem está em primeiro[/color]: Leia a exibição e consulte o escaner para saber qual palavra ler, e usando a tabela daquela palavra aperte a primeira palavra na lista, repetindo até desarmar o módulo.
+  - [color=yellow]Labirintos[/color]: Utilize o caminho exibido pelo escaner para chegar ao destino. A bomba não mostra as paredes do labirinto. Se houver mais de um módulo, identifique qual labirinto é utilizando as posições iniciais do objetivo e a luz branca.
+  - [color=yellow]Memória[/color]: Siga as regras para cada etapa.
+  - [color=yellow]Senhas[/color]: Verifique as colunas e identifique qual das palavras no escaner são capazes de ser formadas.
 </Document>
