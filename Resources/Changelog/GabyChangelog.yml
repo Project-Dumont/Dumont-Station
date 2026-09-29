@@ -4179,3 +4179,41 @@ Entries:
         de atordoamento para headsets de combate.
   id: 496
   time: '2026-09-28T22:43:44.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Remove
+      message: Removido os objetivos do sindicato dos lings.
+  id: 497
+  time: '2026-09-28T23:58:33.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Entidades e equipamentos agora voltaram a funcionar novamente.
+  id: 498
+  time: '2026-09-29T00:20:30.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Vendinha de roupa do planeta nukie agora tem seus itens gratuitos.
+  id: 499
+  time: '2026-09-29T00:25:55.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Cutscene pôs morte
+  id: 500
+  time: '2026-09-29T04:09:21.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: >-
+        Mãos de cyborg agora têm whitelist e nome de slot, então cada slot só
+        aceita o tipo de item dele.
+  id: 501
+  time: '2026-09-29T10:29:47.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado diversos decalques novos.
+  id: 502
+  time: '2026-09-29T21:15:35.0000000+00:00'

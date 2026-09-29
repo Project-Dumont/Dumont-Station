@@ -42,6 +42,7 @@
     sprite: Objects/Materials/parts.rsi
   - type: Tag
     tags:
+      - ConstructionMaterial
       - DroneUsable # Goobstation
       - PartBase # Goobstation
   - type: Damageable
@@ -120,6 +121,7 @@
     tags:
     - RodMetal1
     - DroneUsable # Goobstation
+    - ConstructionMaterial
   - type: Sprite
     state: rods
   - type: Stack
@@ -135,43 +137,8 @@
     tags:
     - RodMetal1
     - DroneUsable # Goobstation
+    - ConstructionMaterial
   - type: Sprite
     state: rods
   - type: Stack
     count: 1
-
-- type: entity
-  parent: PartRodMetal
-  id: PartRodMetalLingering0
-  suffix: Lingering, 0
-  components:
-  - type: Stack
-    lingering: true
-    count: 0
-
-- type: entity
-  parent: FloorTileItemSteel
-  id: FloorTileItemSteelLingering0
-  suffix: Lingering, 0
-  components:
-  - type: Stack
-    lingering: true
-    count: 0
-
-- type: entity
-  parent: FloorTileItemWhite
-  id: FloorTileItemWhiteLingering0
-  suffix: Lingering, 0
-  components:
-  - type: Stack
-    lingering: true
-    count: 0
-
-- type: entity
-  parent: FloorTileItemDark
-  id: FloorTileItemDarkLingering0
-  suffix: Lingering, 0
-  components:
-  - type: Stack
-    lingering: true
-    count: 0
