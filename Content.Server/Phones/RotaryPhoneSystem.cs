@@ -67,6 +67,9 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
             return;
 
 
+        RotaryPhoneComponent? phone = null;
+        var isPhoneConnected = holder.Comp.ConnectedPhone is { } phoneUid && TryComp<RotaryPhoneComponent>(phoneUid, out phone);
+
         Verb verb = new()
         {
             Text = Loc.GetString("phone-verb-text"),
@@ -76,7 +79,12 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
                     session,
                     Loc.GetString("phone-verb-text"),
                     Loc.GetString("phone-verb-prompt"),
-                    response =>{ holder.Comp.Name = response; });
+                    response =>{ 
+                        if (isPhoneConnected && phone is not null)
+                            phone.Name = response;
+                        else    
+                            holder.Comp.Name = response; 
+                        });
             }
         };
 
