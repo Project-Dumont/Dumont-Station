@@ -86,6 +86,7 @@ public sealed partial class MapAreaSystem : EntitySystem
 
     private void OnGridStartup(Entity<AreaGridComponent> ent, ref ComponentStartup args)
     {
+        _badIds.Clear(); // Dumont
         var chunks = ent.Comp.Chunks.Count;
         if (chunks == 0)
             return; // empty...
@@ -132,12 +133,13 @@ public sealed partial class MapAreaSystem : EntitySystem
 
     private void LoadChunk(Entity<AreaGridComponent> ent, int size, Vector2 offset, AreaChunk chunk)
     {
+        // Dumont changes start
+        var area = size * size;
+        chunk.Areas = new EntityUid[area]; // it's null when loading from yml
         // only load areas if they were specified in the map
         if (string.IsNullOrEmpty(chunk.Data))
             return;
-
-        var area = size * size;
-        chunk.Areas = new EntityUid[area]; // it's null when loading from yml
+        // Dumont end
         var map = ent.Comp.AreaMap;
         byte[] bytes = Convert.FromBase64String(chunk.Data);
         if (bytes.Length != area)
