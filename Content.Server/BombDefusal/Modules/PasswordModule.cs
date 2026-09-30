@@ -10,11 +10,11 @@ public sealed class PasswordModule : BombModule
 {
     public static readonly string[] PredefinedWords = new[]
     {
-        "ABOUT", "AFTER", "AGAIN", "GREAT", "HOUSE",
-        "LARGE", "NEVER", "OTHER", "PLACE", "PLANT",
-        "POINT", "RIGHT", "SMALL", "SOUND", "STUDY",
-        "THEIR", "THERE", "THESE", "THING", "THINK",
-        "THREE", "WATER", "WHERE", "WHICH", "WORLD", "WRITE"
+        "ACESA", "AJUDA", "AMIGO", "ANTES", "CINTO",
+        "CRAVO", "CHEFE", "CHEIO", "ETAPA", "ETNIA",
+        "LEGAL", "LUGAR", "PARTE", "PARTO", "PORTA",
+        "PERTO", "REGRA", "RESTO", "SALVE", "SENTE",
+        "SETOR", "SEXTA", "LASER", "TECLA", "TOURO", "VALER"
     };
 
     public List<string> PoolWords = new();

@@ -37,10 +37,10 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
 
     private static readonly Dictionary<SimonColor, string> SimonColorNames = new()
     {
-        { SimonColor.Red, "RED" },
-        { SimonColor.Blue, "BLUE" },
-        { SimonColor.Green, "GREEN" },
-        { SimonColor.Yellow, "YELLOW" },
+        { SimonColor.Red, "VERMELHO" },
+        { SimonColor.Blue, "AZUL" },
+        { SimonColor.Green, "VERDE" },
+        { SimonColor.Yellow, "AMARELO" },
     };
 
     private readonly List<Button> _simonButtons = new();
@@ -52,7 +52,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
         // Stage indicator
         _stageLabel = new Label
         {
-            Text = "STAGE 1/3",
+            Text = "ETAPA 1/3",
             FontColorOverride = Color.FromHex("#8888aa"),
             Margin = new Thickness(0, 0, 0, 4),
         };
@@ -81,7 +81,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
 
         var sequenceTitle = new Label
         {
-            Text = "SEQUENCE:",
+            Text = "SEQUÊNCIA:",
             FontColorOverride = Color.FromHex("#666688"),
             Margin = new Thickness(0, 0, 0, 2),
         };
@@ -111,7 +111,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
         if (state is not SimonSaysModuleState simonState)
             return;
 
-        _stageLabel.Text = $"STAGE {simonState.CurrentStage + 1}/{simonState.TotalStages}";
+        _stageLabel.Text = $"ETAPA {simonState.CurrentStage + 1}/{simonState.TotalStages}";
 
         // Build sequence display as colored squares
         _sequenceRow.RemoveAllChildren();

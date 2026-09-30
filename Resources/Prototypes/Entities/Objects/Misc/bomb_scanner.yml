@@ -5,8 +5,8 @@
   description: A handheld scanner that detects the underlying logic of the bomb's systems.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Research/anomalyscanner.rsi
-    state: icon
+    sprite: _Dumont/Objects/Specific/Security/bombscanner.rsi
+    state: screen
   - type: BombScanner
   - type: Item
     size: Small
@@ -14,3 +14,6 @@
     interfaces:
       enum.BombScannerUiKey.Key:
         type: BombScannerBoundUserInterface
+  - type: GuideHelp
+    guides:
+    - Defusal

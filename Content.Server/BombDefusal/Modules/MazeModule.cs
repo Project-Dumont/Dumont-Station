@@ -106,28 +106,28 @@ public sealed class MazeModule : BombModule
             if ((cellWalls & 1) == 0 && cy - 1 >= 0 && !visited.Contains((cx, cy - 1)))
             {
                 visited.Add((cx, cy - 1));
-                var nPath = new List<string>(path) { "UP" };
+                var nPath = new List<string>(path) { "CIMA" };
                 queue.Enqueue((cx, cy - 1, nPath));
             }
             // Try South
             if ((cellWalls & 2) == 0 && cy + 1 < 6 && !visited.Contains((cx, cy + 1)))
             {
                 visited.Add((cx, cy + 1));
-                var nPath = new List<string>(path) { "DOWN" };
+                var nPath = new List<string>(path) { "BAIXO" };
                 queue.Enqueue((cx, cy + 1, nPath));
             }
             // Try West
             if ((cellWalls & 4) == 0 && cx - 1 >= 0 && !visited.Contains((cx - 1, cy)))
             {
                 visited.Add((cx - 1, cy));
-                var nPath = new List<string>(path) { "LEFT" };
+                var nPath = new List<string>(path) { "ESQUERDA" };
                 queue.Enqueue((cx - 1, cy, nPath));
             }
             // Try East
             if ((cellWalls & 8) == 0 && cx + 1 < 6 && !visited.Contains((cx + 1, cy)))
             {
                 visited.Add((cx + 1, cy));
-                var nPath = new List<string>(path) { "RIGHT" };
+                var nPath = new List<string>(path) { "DIREITA" };
                 queue.Enqueue((cx + 1, cy, nPath));
             }
         }

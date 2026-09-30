@@ -30,7 +30,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
         // Header: Stage progress label
         _stageLabel = new Label
         {
-            Text = "STAGE 1 OF 5",
+            Text = "ETAPA 1 DE 5",
             FontColorOverride = Color.FromHex("#8888aa"),
             HorizontalAlignment = HAlignment.Center,
             Margin = new Thickness(0, 0, 0, 4),
@@ -92,7 +92,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
         var stage = memoryState.CurrentStage;
         if (stage >= 5)
         {
-            _stageLabel.Text = "SOLVED";
+            _stageLabel.Text = "COMPLETO";
             _displayScreen.Text = "---";
             foreach (var btn in _buttons)
             {
@@ -102,7 +102,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
             return;
         }
 
-        _stageLabel.Text = $"STAGE {stage + 1} OF 5";
+        _stageLabel.Text = $"ETAPA {stage + 1} DE 5";
         _displayScreen.Text = memoryState.DisplayNumber.ToString();
 
         var solved = memoryState.IsSolved;

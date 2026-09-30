@@ -289,10 +289,14 @@
   table: !type:AllSelector
     children:
     - id: ClothingHeadHelmetBombSuit
+      amount: 2
     - id: ClothingOuterSuitBomb
-    - id: Wirecutter
-    - id: Screwdriver
-    - id: Multitool
+      amount: 2
+    - id: BombScanner
+    - id: BombDefusalKit #Dumont forky port bomb defusal 2.0
+#    - id: Wirecutter
+#    - id: Screwdriver
+#    - id: Multitool
       #prob: 0.5 # Goobstation
 
 - type: entity

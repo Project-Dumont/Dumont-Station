@@ -31,11 +31,16 @@
   - type: StorageFill
     contents:
       - id: ClothingHeadHelmetBombSuit
+        amount: 2
       - id: ClothingMaskGas
-      - id: Screwdriver
-      - id: Wirecutter
-      - id: Multitool
+        amount: 2
+#      - id: Screwdriver
+#      - id: Wirecutter
+#      - id: Multitool
       - id: ClothingOuterSuitBomb
+        amount: 2
+      - id: BombScanner
+      - id: BombDefusalKit
 
 - type: entity
   id: CrateEmergencyFire

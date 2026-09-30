@@ -133,25 +133,25 @@ public sealed class WiresModule : BombModule
 
             var condText = rule.ConditionType switch
             {
-                "NoColor" => $"there are no {rule.Color.ToString().ToUpper()} wires",
-                "LastColor" => $"the last wire is {rule.Color.ToString().ToUpper()}",
-                "MoreThanOneColor" => $"there is more than one {rule.Color.ToString().ToUpper()} wire",
-                "SerialOdd" => "the last digit of the serial number is odd",
-                "SerialEven" => "the last digit of the serial number is even",
-                "SerialVowel" => "the serial number contains a vowel",
-                "SerialNoVowel" => "the serial number does not contain a vowel",
+                "NoColor" => $"não há fios de cor {rule.Color.ToString().ToUpper()}",
+                "LastColor" => $"o último fio é {rule.Color.ToString().ToUpper()}",
+                "MoreThanOneColor" => $"tem mais de um fio {rule.Color.ToString().ToUpper()}",
+                "SerialOdd" => "o último digito do número de série é ímpar",
+                "SerialEven" => "o último digito do número de série é par",
+                "SerialVowel" => "o número de série contém uma vogal",
+                "SerialNoVowel" => "o número de série não contém uma vogal",
                 _ => ""
             };
 
             var resText = rule.ResultType switch
             {
-                "Index" => $"cut the {GetOrdinal(rule.ResultIndex + 1)} wire",
-                "LastColor" => $"cut the last {rule.ResultColor.ToString().ToUpper()} wire",
-                "FirstColor" => $"cut the first {rule.ResultColor.ToString().ToUpper()} wire",
+                "Index" => $"corte o {GetOrdinal(rule.ResultIndex + 1)} fio",
+                "LastColor" => $"corte o último fio {rule.ResultColor.ToString().ToUpper()}",
+                "FirstColor" => $"corte o primeiro fio {rule.ResultColor.ToString().ToUpper()}",
                 _ => ""
             };
 
-            rule.RuleText = $"If {condText}, {resText}.";
+            rule.RuleText = $"Se {condText}, {resText}.";
             rules.Add(rule);
         }
 
@@ -159,7 +159,7 @@ public sealed class WiresModule : BombModule
         fallback.ConditionType = "Always";
         fallback.ResultType = "Index";
         fallback.ResultIndex = random.Next(0, wireCount);
-        fallback.RuleText = $"Otherwise, cut the {GetOrdinal(fallback.ResultIndex + 1)} wire.";
+        fallback.RuleText = $"Se nenhuma das etapas acima aplicam, corte o {GetOrdinal(fallback.ResultIndex + 1)} fio.";
         rules.Add(fallback);
 
         return rules;
@@ -169,13 +169,13 @@ public sealed class WiresModule : BombModule
     {
         return val switch
         {
-            1 => "first",
-            2 => "second",
-            3 => "third",
-            4 => "fourth",
-            5 => "fifth",
-            6 => "sixth",
-            _ => $"{val}th"
+            1 => "primeiro",
+            2 => "segundo",
+            3 => "terceiro",
+            4 => "quarto",
+            5 => "quinto",
+            6 => "sexto",
+            _ => $"{val}o"
         };
     }
 

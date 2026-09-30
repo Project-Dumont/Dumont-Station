@@ -92,7 +92,7 @@ public sealed class PasswordModuleControl : BaseModuleControl
         // Submit button
         _btnSubmit = new Button
         {
-            Text = "SUBMIT",
+            Text = "ENVIAR",
             MinSize = new Vector2(80, 28),
             HorizontalAlignment = HAlignment.Center,
         };

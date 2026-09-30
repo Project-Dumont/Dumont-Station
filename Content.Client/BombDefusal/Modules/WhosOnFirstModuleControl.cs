@@ -30,7 +30,7 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
         // Stage label
         _stageLabel = new Label
         {
-            Text = "STAGE 1 OF 3",
+            Text = "ETAPA 1 DE 3",
             FontColorOverride = Color.FromHex("#8888aa"),
             HorizontalAlignment = HAlignment.Center,
             Margin = new Thickness(0, 0, 0, 4),
@@ -53,7 +53,7 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
 
         _displayScreen = new Label
         {
-            Text = "READY",
+            Text = "PRONTO",
             FontColorOverride = Color.FromHex("#00ff41"),
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,
@@ -92,7 +92,7 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
         var stage = wofState.CurrentStage;
         if (stage >= 3)
         {
-            _stageLabel.Text = "SOLVED";
+            _stageLabel.Text = "COMPLETO";
             _displayScreen.Text = "---";
             foreach (var btn in _buttons)
             {
@@ -102,7 +102,7 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
             return;
         }
 
-        _stageLabel.Text = $"STAGE {stage + 1} OF 3";
+        _stageLabel.Text = $"ETAPA {stage + 1} DE 3";
         _displayScreen.Text = wofState.DisplayWord;
 
         var solved = wofState.IsSolved;

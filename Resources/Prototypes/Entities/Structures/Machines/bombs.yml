@@ -112,7 +112,7 @@
       delay: 60 # Goobstation
       delayOptions: [60, 90, 120, 180, 300, 600, 900] # Goobstation
       initialBeepDelay: 0
-      beepSound: /Audio/Machines/timer.ogg
+      beepSound: /Audio/_Dumont/Machines/timer.ogg
     - type: Anchorable
       delay: 5
     - type: Fixtures

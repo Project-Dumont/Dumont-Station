@@ -541,8 +541,6 @@
     #- id: WeaponEnergyShotgun # Goobstation - security revamp
     - id: BookSpaceLaw
     - id: FlatpackSecurityComputerComms
-    - id: BombScanner
-    - id: BombDefusalKit
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
       prob: 0.50

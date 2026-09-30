@@ -36,11 +36,11 @@ public sealed class WiresModuleControl : BaseModuleControl
 
     private static readonly Dictionary<WireColor, string> WireColorNames = new()
     {
-        { WireColor.Red, "RED" },
-        { WireColor.Blue, "BLUE" },
-        { WireColor.Yellow, "YELLOW" },
-        { WireColor.White, "WHITE" },
-        { WireColor.Black, "BLACK" },
+        { WireColor.Red, "VERMELHO" },
+        { WireColor.Blue, "AZUL" },
+        { WireColor.Yellow, "AMARELO" },
+        { WireColor.White, "BRANCO" },
+        { WireColor.Black, "PRETO" },
     };
 
     private readonly List<Button> _wireButtons = new();

@@ -10,8 +10,8 @@ public sealed class WhosOnFirstModule : BombModule
 {
     public static readonly string[] WordPool = new[]
     {
-        "READY", "FIRST", "NO", "BLANK", "NOTHING", "YES", "WHAT",
-        "UHHH", "LEFT", "RIGHT", "MIDDLE", "OKAY", "WAIT", "PRESS", "YOU"
+        "PRONTO", "PRIMEIRO", "NÃO", "VAZIO", "NADA", "SIM", "O QUE",
+        "QUE", "ESQUERDA", "DIREITA", "CENTRO", "OKAY", "ESPERA", "APERTE", "VOCÊ"
     };
 
     public const int MaxStages = 3;

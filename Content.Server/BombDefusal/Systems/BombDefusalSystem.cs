@@ -74,7 +74,10 @@ public sealed class BombDefusalSystem : EntitySystem
         var moduleCount = comp.ModuleCountOverride ?? GetModuleCountFromTimer(uid);
         moduleCount = Math.Max(1, moduleCount); // At least 1 module
 
-        var availableTypes = Enum.GetValues<BombModuleType>();
+        var availableTypes = Enum.GetValues<BombModuleType>()
+            .Where(t => t != BombModuleType.Codewords && t != BombModuleType.MorseCode)
+            .ToArray();
+        // the above disables codewords and morsecode, codewords is disabled due to being bugged, morse code is disabled due to being morse code
 
         for (var i = 0; i < moduleCount; i++)
         {
@@ -300,17 +303,17 @@ public sealed class BombDefusalSystem : EntitySystem
                     break;
                 case MazeModule:
                     rules.ModuleName = Loc.GetString("bomb-defusal-module-maze");
-                    rules.RuleLines.Add("[color=yellow]MAZE NAVIGATION[/color]");
-                    rules.RuleLines.Add("Navigate the player (white circle) to the goal (red triangle).");
-                    rules.RuleLines.Add("Do not hit walls! The defuser does not see the walls.");
+                    rules.RuleLines.Add("[color=yellow]A RESPEITO DO LABIRINTO[/color]");
+                    rules.RuleLines.Add("Guie O Desativador (círculo branco) para o objetivo (tríangulo vermelho).");
+                    rules.RuleLines.Add("Não bata em paredes! O Desativador não vê paredes.");
                     rules.RuleLines.Add("");
 
                     var mazeIndex = 1;
                     foreach (var m in group.OfType<MazeModule>())
                     {
                         rules.RuleLines.Add($"[bold]Maze Module #{mazeIndex}:[/bold]");
-                        rules.RuleLines.Add($"  Start: ({m.PlayerX + 1}, {m.PlayerY + 1}) | Goal: ({m.GoalX + 1}, {m.GoalY + 1})");
-                        rules.RuleLines.Add($"  Path: {string.Join(" -> ", m.PathDirections)}");
+                        rules.RuleLines.Add($"  Início: ({m.PlayerX + 1}, {m.PlayerY + 1}) | Destino: ({m.GoalX + 1}, {m.GoalY + 1})");
+                        rules.RuleLines.Add($"  Caminho: {string.Join(" -> ", m.PathDirections)}");
                         rules.RuleLines.Add("");
                         mazeIndex++;
                     }
@@ -346,28 +349,28 @@ public sealed class BombDefusalSystem : EntitySystem
     /// <param name="rules"></param>
     private void GenerateWiresRules(WiresModule wires, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]WIRES RULE SHEET[/color]");
-        rules.RuleLines.Add("Verify the number of wires on the module and follow the rules below:");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DOS FIOS[/color]");
+        rules.RuleLines.Add("Verifique o número de fios no módulo e siga as regras abaixo:");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If there are 3 wires:[/bold]");
+        rules.RuleLines.Add("[bold]Se houver 3 fios:[/bold]");
         foreach (var r in wires.Rules3)
         {
             rules.RuleLines.Add($"- {r.RuleText}");
         }
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If there are 4 wires:[/bold]");
+        rules.RuleLines.Add("[bold]Se houver 4 fios:[/bold]");
         foreach (var r in wires.Rules4)
         {
             rules.RuleLines.Add($"- {r.RuleText}");
         }
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If there are 5 wires:[/bold]");
+        rules.RuleLines.Add("[bold]Se houver 5 fios:[/bold]");
         foreach (var r in wires.Rules5)
         {
             rules.RuleLines.Add($"- {r.RuleText}");
         }
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If there are 6 wires:[/bold]");
+        rules.RuleLines.Add("[bold]Se houver 6 fios:[/bold]");
         foreach (var r in wires.Rules6)
         {
             rules.RuleLines.Add($"- {r.RuleText}");
@@ -376,9 +379,9 @@ public sealed class BombDefusalSystem : EntitySystem
 
     private void GenerateSymbolsRules(SymbolsModule symbols, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]SYMBOL KEYPADS[/color]");
-        rules.RuleLines.Add("Only one column below will contain all four symbols displayed on the module.");
-        rules.RuleLines.Add("Press the buttons in order from top to bottom of that column.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DOS TECLADOS[/color]");
+        rules.RuleLines.Add("Apenas uma fila irá conter todos os símbolos apresentados no módulo."); 
+        rules.RuleLines.Add("Aperte os botões na ordem de esquerda para direita naquela fila.");
         rules.RuleLines.Add("");
         for (int i = 0; i < symbols.ModuleSymbolColumns.Length; i++)
         {
@@ -390,11 +393,11 @@ public sealed class BombDefusalSystem : EntitySystem
 
     private void GenerateSimonSaysRules(SimonSaysModule simon, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]SIMON SAYS RULES[/color]");
-        rules.RuleLines.Add("A light flashes in a sequence. Press the mapped colors below.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DO GENIUS[/color]");
+        rules.RuleLines.Add("Luzes piscam em uma sequência. Aperte as cores na sequência usando a tabela de tradução abaixo.");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If the serial number has a Vowel:[/bold]");
-        rules.RuleLines.Add("- No strikes:");
+        rules.RuleLines.Add("[bold]Se tiver uma vogal no número de série:[/bold]");
+        rules.RuleLines.Add("- Sem strikes:");
         foreach (var kvp in simon.VowelMappings[0])
             rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
         rules.RuleLines.Add("- 1 strike:");
@@ -405,8 +408,8 @@ public sealed class BombDefusalSystem : EntitySystem
             rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
 
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]If the serial number has NO Vowel:[/bold]");
-        rules.RuleLines.Add("- No strikes:");
+        rules.RuleLines.Add("[bold]Se NÃO tiver uma vogal no número de série:[/bold]");
+        rules.RuleLines.Add("- Sem strikes:");
         foreach (var kvp in simon.NoVowelMappings[0])
             rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
         rules.RuleLines.Add("- 1 strike:");
@@ -419,9 +422,9 @@ public sealed class BombDefusalSystem : EntitySystem
 
     private void GenerateCodewordsRules(CodewordsModule codewords, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]CODEWORDS LOOKUP[/color]");
-        rules.RuleLines.Add("Find a column category where [bold]two or more[/bold] of the displayed words appear.");
-        rules.RuleLines.Add("Press the first word in that column category that is displayed on the module.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DAS PALAVRAS[/color]");
+        rules.RuleLines.Add("Ache uma fila onde [bold]duas ou mais[/bold] das palavras exibidas aparecem.");
+        rules.RuleLines.Add("Aperte a primeira palavra naquela fila que é exibida no módulo.");
         rules.RuleLines.Add("");
         foreach (var kvp in codewords.ModuleWordColumns)
         {
@@ -432,21 +435,21 @@ public sealed class BombDefusalSystem : EntitySystem
 
     private void GenerateMazeRules(MazeModule maze, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]MAZE NAVIGATION[/color]");
-        rules.RuleLines.Add("Navigate the player (white circle) to the goal (red triangle).");
-        rules.RuleLines.Add("Do not hit walls! The defuser does not see the walls.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DO LABIRINTO[/color]");
+        rules.RuleLines.Add("Guie O Desativador (círculo branco) para o objetivo (tríangulo vermelho.)");
+        rules.RuleLines.Add("Não bata em paredes! O Desativador não vê paredes.");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add($"[bold]Player Start:[/bold] ({maze.PlayerX + 1}, {maze.PlayerY + 1})");
-        rules.RuleLines.Add($"[bold]Goal Position:[/bold] ({maze.GoalX + 1}, {maze.GoalY + 1})");
+        rules.RuleLines.Add($"[bold]Início:[/bold] ({maze.PlayerX + 1}, {maze.PlayerY + 1})");
+        rules.RuleLines.Add($"[bold]Objetivo:[/bold] ({maze.GoalX + 1}, {maze.GoalY + 1})");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]Correct Path:[/bold]");
+        rules.RuleLines.Add("[bold]Caminho:[/bold]");
         rules.RuleLines.Add(string.Join(" -> ", maze.PathDirections));
     }
 
     private void GenerateMemoryRules(MemoryModule memory, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]MEMORY MODULE RULES[/color]");
-        rules.RuleLines.Add("Follow the rules for the current stage. Buttons are ordered 1 to 4 from left to right.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DA MEMÓRIA[/color]");
+        rules.RuleLines.Add("Siga as regras para a etapa atual.");
         rules.RuleLines.Add("");
         for (int stage = 0; stage < 5; stage++)
         {
@@ -458,21 +461,21 @@ public sealed class BombDefusalSystem : EntitySystem
                 var val = stageRule.Values[display - 1];
                 var actionStr = type switch
                 {
-                    MemoryRuleType.Position => $"press the button in [bold]position {val + 1}[/bold].",
-                    MemoryRuleType.Label => $"press the button labeled [bold]{val}[/bold].",
-                    MemoryRuleType.SamePositionAsStage => $"press the button in the [bold]same position[/bold] as stage {val + 1}.",
-                    MemoryRuleType.SameLabelAsStage => $"press the button with the [bold]same label[/bold] as stage {val + 1}.",
+                    MemoryRuleType.Position => $"aperte o botão na [bold]posição {val + 1}[/bold].",
+                    MemoryRuleType.Label => $"aperte o botão rotulado [bold]{val}[/bold].",
+                    MemoryRuleType.SamePositionAsStage => $"aperte o botão na [bold]mesma posição[/bold] que etapa {val + 1}.",
+                    MemoryRuleType.SameLabelAsStage => $"aperte o botão com o [bold]mesmo rótulo[/bold] que etapa {val + 1}.",
                     _ => "press any button."
                 };
-                rules.RuleLines.Add($"  - If display is [bold]{display}[/bold]: {actionStr}");
+                rules.RuleLines.Add($"  - Se a tela exibe [bold]{display}[/bold]: {actionStr}");
             }
         }
     }
 
     private void GeneratePasswordRules(PasswordModule password, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]PASSWORD LOOKUP[/color]");
-        rules.RuleLines.Add("Cycle the columns on the module. Identify which word from the list below can be formed.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DA SENHA[/color]");
+        rules.RuleLines.Add("Identifique qual palavra da lista pode ser formada usando as letras no módulo.");
         rules.RuleLines.Add("");
         foreach (var word in password.PoolWords)
         {
@@ -482,10 +485,10 @@ public sealed class BombDefusalSystem : EntitySystem
 
     private void GenerateMorseRules(MorseCodeModule morse, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]MORSE CODE FREQUENCIES[/color]");
-        rules.RuleLines.Add("Decode the flashing light pattern and transmit on the correct frequency.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DE CÓDIGO MORSE[/color]");
+        rules.RuleLines.Add("Decifre o padrão de luzes piscando e encontre a frequência correta.");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]Word -> Frequency Table:[/bold]");
+        rules.RuleLines.Add("[bold]Palavra -> Tabela de frequências:[/bold]");
         foreach (var kvp in MorseCodeModule.WordFrequencies.OrderBy(k => k.Key))
         {
             rules.RuleLines.Add($"- {kvp.Key} -> {kvp.Value:F3} MHz");
@@ -503,33 +506,33 @@ public sealed class BombDefusalSystem : EntitySystem
     {
         return pos switch
         {
-            0 => "TOP-LEFT",
-            1 => "TOP-RIGHT",
-            2 => "MIDDLE-LEFT",
-            3 => "MIDDLE-RIGHT",
-            4 => "BOTTOM-LEFT",
-            5 => "BOTTOM-RIGHT",
-            _ => "TOP-LEFT"
+            0 => "SUPERIOR-ESQUERDO",
+            1 => "SUPERIOR-DIREITO",
+            2 => "CENTRO-ESQUERDO",
+            3 => "CENTRO-DIREITO",
+            4 => "INFERIOR-ESQUERDO",
+            5 => "INFERIOR-DIREITO",
+            _ => "SUPERIOR-ESQUERDO"
         };
     }
 
     private void GenerateWhosOnFirstRules(WhosOnFirstModule wof, BombModuleRules rules)
     {
-        rules.RuleLines.Add("[color=yellow]WHO'S ON FIRST LOOKUP[/color]");
-        rules.RuleLines.Add("[bold]Step 1:[/bold] Look at the display word and find its position below.");
-        rules.RuleLines.Add("Look at the label of the button in that position.");
+        rules.RuleLines.Add("[color=yellow]A RESPEITO DE QUEM ESTÁ EM PRIMEIRO[/color]");
+        rules.RuleLines.Add("[bold]Etapa 1:[/bold] Olhe a palavra exibida e ache sua posição abaixo.");
+        rules.RuleLines.Add("Olhe o rótulo do botão naquela posição.");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]Step 1 Mappings:[/bold]");
+        rules.RuleLines.Add("[bold]Mapeamento da etapa 1:[/bold]");
         foreach (var word in WhosOnFirstModule.WordPool.OrderBy(w => w))
         {
             var pos = wof.DisplayToPositionMap[word];
-            rules.RuleLines.Add($"- \"{word}\" -> check {GetPositionName(pos)}");
+            rules.RuleLines.Add($"- \"{word}\" -> verifique o botão {GetPositionName(pos)}");
         }
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]Step 2:[/bold] Look up the word label in the priority list below.");
-        rules.RuleLines.Add("Press the first word in that list that appears on any button on the module.");
+        rules.RuleLines.Add("[bold]Etapa 2:[/bold] Ache o rótulo da palavra na lista de prioridades abaixo.");
+        rules.RuleLines.Add("Aperte o primeiro botão da lista que aparece em qualquer botão no módulo.");
         rules.RuleLines.Add("");
-        rules.RuleLines.Add("[bold]Step 2 Priority Lists:[/bold]");
+        rules.RuleLines.Add("[bold]Lista de prioridades da etapa 2:[/bold]");
         foreach (var word in WhosOnFirstModule.WordPool.OrderBy(w => w))
         {
             var list = wof.WordPriorityLists[word];
