@@ -11,6 +11,7 @@ bomb-defusal-timer = {$time}
 bomb-defusal-module-wires = Fios
 bomb-defusal-module-symbols = Teclado
 bomb-defusal-module-simon = Genius
+bomb-defusal-module-simonsays = Genius
 bomb-defusal-module-codewords = Palavras
 bomb-defusal-module-maze = Labirinto
 bomb-defusal-module-memory = Memória
