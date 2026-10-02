@@ -131,10 +131,9 @@
   - type: StaticPrice
     price: 800
   - type: WarpPoint
-    location: Núcleo da Nave-Mãe
     follow: true
   - type: VoiceOverride
-    nameOverride: NÚCLEO DA NAVE-MÃE
+    nameOverride: xenoborg-mothership-core-voice-name
   - type: TypingIndicator
     proto: xenoborg
   - type: Emoting

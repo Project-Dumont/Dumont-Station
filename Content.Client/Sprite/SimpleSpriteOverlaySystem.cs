@@ -5,9 +5,9 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client.Sprite;
 
-public sealed class SimpleSpriteOverlaySystem : EntitySystem
+public sealed partial class SimpleSpriteOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
