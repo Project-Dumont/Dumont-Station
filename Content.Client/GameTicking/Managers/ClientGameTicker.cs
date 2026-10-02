@@ -56,8 +56,8 @@ using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
-using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Audio;
 using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Client.GameTicking.Managers
@@ -70,7 +70,7 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private readonly IClyde _clyde = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
 
-        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
+        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>> _jobsAvailable = new();
         private Dictionary<NetEntity, string> _stationNames = new();
 
         [ViewVariables] public bool AreWeReady { get; private set; }

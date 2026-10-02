@@ -124,8 +124,8 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IPrototypeManager _protoMan = default!; // Goobstation - credits
         [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
-        private ProtoId<AnimatedLobbyScreenPrototype>? _lastAnimatedScreen;
 
+        private ProtoId<AnimatedLobbyScreenPrototype>? _lastAnimatedScreen; // Tweak-Maid: Animated Lobby
         private ISawmill _sawmill = default!; // Goobstation
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -316,7 +316,7 @@ namespace Content.Client.Lobby
             else
             {
                 Lobby!.StartTime.Text = string.Empty;
-                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready": "lobby-state-player-status-not-ready");
+                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready" : "lobby-state-player-status-not-ready");
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
@@ -393,31 +393,29 @@ namespace Content.Client.Lobby
                     Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(lobbyBackground.Path).RSI);
                     _lastAnimatedScreen = _gameTicker.AnimatedLobbyScreen;
 
-                    // TODO: В будущем при рефакторе дизайна лобби можно добавить отображение имени и автора анимированного фона
-                    // var name = string.IsNullOrEmpty(lobbyBackground.Name)
-                    //     ? Loc.GetString("lobby-state-background-unknown-title")
-                    //     : lobbyBackground.Name;
+                    var name = string.IsNullOrEmpty(lobbyBackground.Name)
+                        ? Loc.GetString("lobby-state-background-unknown-title")
+                        : lobbyBackground.Name;
 
-                    // var artist = string.IsNullOrEmpty(lobbyBackground.Artist)
-                    //     ? Loc.GetString("lobby-state-background-unknown-artist")
-                    //     : lobbyBackground.Artist;
+                    var artist = string.IsNullOrEmpty(lobbyBackground.Artist)
+                        ? Loc.GetString("lobby-state-background-unknown-artist")
+                        : lobbyBackground.Artist;
 
-                    // var markup = Loc.GetString("lobby-state-background-text",
-                    //     ("backgroundName", name),
-                    //     ("backgroundArtist", artist));
+                    var markup = Loc.GetString("lobby-state-background-text",
+                        ("backgroundName", name),
+                        ("backgroundArtist", artist));
 
-                    // Lobby!.LobbyBackground.SetMarkup(markup);
+                    Lobby!.LobbyBackground.SetMarkup(markup);
                 }
                 return;
             }
 
             _lastAnimatedScreen = null;
 
-            //Lobby!.LobbyBackground.SetMarkup(markup);
             if (_gameTicker.LobbyBackground != null)
             {
                 var lobbyBackground = _protoMan.Index(_gameTicker.LobbyBackground.Value);
-                Lobby!.Background.SetTexture(_resourceCache.GetResource<TextureResource>(lobbyBackground.Background).Texture);
+                Lobby!.Background.SetTexture(_resourceCache.GetResource<TextureResource>(lobbyBackground.Background).Texture); // Tweak-Maid: Animated Lobby
 
                 var name = string.IsNullOrEmpty(lobbyBackground.Name)
                     ? Loc.GetString("lobby-state-background-unknown-title")
@@ -437,7 +435,7 @@ namespace Content.Client.Lobby
             }
 
             _sawmill.Warning("_gameTicker.LobbyBackground was null! No lobby background selected.");
-            Lobby!.Background.SetRSI(null);
+            Lobby!.Background.SetRSI(null); // Tweak-Maid: Animated Lobby
             Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
         }
 

@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Shared._Maid.GameTicking.Prototypes;
 using Robust.Client.Graphics;
-using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
@@ -9,9 +8,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Maid.UserInterface.AnimatedBackground;
 
-public sealed class AnimatedBackgroundControl : Control
+public sealed partial class AnimatedBackgroundControl : Control
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     private static readonly ResPath RSIFallback = new("/Textures/_Maid/LobbyScreens/AnimatedScreens/sea.rsi");
     private static readonly string DefaultState = "animated";
@@ -47,7 +46,7 @@ public sealed class AnimatedBackgroundControl : Control
 
     public void SetRSI(RSI? rsi)
     {
-        if(rsi is null)
+        if (rsi is null)
         {
             _rsiPath = null;
             _textureRect.Visible = false;

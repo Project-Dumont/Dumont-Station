@@ -9,11 +9,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
-using Content.Shared._Maid.GameTicking.Prototypes;
 using Content.Shared.GameTicking.Prototypes;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using System.Linq;
+using Robust.Shared.Prototypes;
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Server.GameTicking;
 
@@ -25,7 +25,7 @@ public sealed partial class GameTicker
 
     [ViewVariables]
     private List<ProtoId<LobbyBackgroundPrototype>> _lobbyBackgrounds = [];
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] {"png", "jpg", "jpeg", "webp", "rsi"}; // Tweak-Maid: Animated Lobby
+    private static readonly string[] WhitelistedBackgroundExtensions = new string[] { "png", "jpg", "jpeg", "webp", "rsi" }; // Tweak-Maid: Animated Lobby
 
     // Tweak-Maid-start: Animated Lobby
     [ViewVariables]
@@ -55,7 +55,8 @@ public sealed partial class GameTicker
         RandomizeLobbyBackground();
     }
 
-    private void RandomizeLobbyBackground() {
+    private void RandomizeLobbyBackground()
+    {
         // Tweak-Maid-start: Animated Lobby
         // LobbyBackground = _lobbyBackgrounds.Any() ? _robustRandom.Pick(_lobbyBackgrounds) : (ProtoId<LobbyBackgroundPrototype>?) null;
         var totalBackgrounds = _lobbyBackgrounds.Count + _animatedLobbyScreens.Count;
