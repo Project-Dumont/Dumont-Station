@@ -6,6 +6,7 @@
   id: BaseHereticRule
   components:
   - type: HereticRule
+    ertEvent: SpawnHereticInquisitorERT
   - type: GameRule
     minPlayers: 15
   - type: AntagObjectives

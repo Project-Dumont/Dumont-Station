@@ -22,9 +22,12 @@ public sealed partial class HereticRuleComponent : Component
     [DataField]
     public bool HasAHereticAscended;
 
-    [DataField]
     // Dumont start
+    [DataField("ertEvent")]
     public EntProtoId? ERTEvent;
+
+    [DataField]
+    public TimeSpan EvacuationDelay = TimeSpan.FromMinutes(10);
     // Dumont end
 
     public readonly List<EntityUid> Minds = new();

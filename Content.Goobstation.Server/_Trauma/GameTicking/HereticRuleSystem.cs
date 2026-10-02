@@ -13,6 +13,8 @@ using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
+using Content.Server.RoundEnd;
+using Content.Shared.GameTicking;
 using Content.Server.Objectives;
 using Content.Server.Roles;
 using Content.Shared.Mind;
@@ -39,6 +41,19 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private ObjectivesSystem _objective = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private GameTicker _ticker = default!;
+
+    // Dumont start
+    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
+
+    private bool _ascensionResponseCalled;
+
+    [SubscribeLocalEvent]
+    private void OnRoundRestart(RoundRestartCleanupEvent args)
+    {
+        _ascensionResponseCalled = false;
+    }
+    // Dumont end
 
     public static readonly SoundSpecifier BriefingSound =
         new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
@@ -162,20 +177,31 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
         args.Text = sb.ToString();
     }
 
+    // Dumont start
     public void SpawnERTOnAscension()
     {
+        if (_ascensionResponseCalled)
+            return;
+
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var rule, out _))
         {
-            if (rule.HasAHereticAscended)
-                continue;
-
+            _ascensionResponseCalled = true;
             rule.HasAHereticAscended = true;
-            // Dumont start
+
             if (rule.ERTEvent is { } ertEvent)
-                _ticker.StartGameRule(ertEvent);
-            // Dumont end
+            {
+                if (_prototypes.HasIndex(ertEvent))
+                    _ticker.StartGameRule(ertEvent);
+                else
+                    Log.Warning($"Heretic ascension ERT rule {ertEvent} does not exist.");
+            }
+
+            if (!_roundEnd.IsRoundEndRequested())
+                _roundEnd.RequestRoundEnd(rule.EvacuationDelay, checkCooldown: false,
+                    text: "heretic-ascension-evacuation");
             break;
         }
     }
+    // Dumont end
 }

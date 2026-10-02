@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: SpawnHereticInquisitorERT
+  components:
+  - type: StationEvent
+    startAnnouncement: heretic-ascension-ert-enroute
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    duration: 1
+    maxOccurrences: 1
+  - type: LoadMapRule
+    gridPath: /Maps/_Dumont/Shuttles/retort_inquisitor.yml
+
+- type: entity
+  parent: RandomHumanoidSpawnerERTChaplain
+  id: RandomHumanoidSpawnerHereticInquisitor
+  name: ERT inquisitor
+  components:
+  - type: RandomHumanoidSpawner
+    settings: HereticInquisitorERT
+
+- type: randomHumanoidSettings
+  parent: ERTChaplain
+  id: HereticInquisitorERT
+  components:
+  - type: GhostRole
+    name: heretic-inquisitor-ert-name
+    description: heretic-inquisitor-ert-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: ERTChaplain
+  - type: Loadout
+    prototypes: [ HereticInquisitorERTGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+
+- type: startingGear
+  parent: ERTChaplainGear
+  id: HereticInquisitorERTGear
+  equipment:
+    head: ClothingHeadHatHelmetInquisitor
+    neck: ClothingNeckCloakInquisitor
+    outerClothing: ClothingOuterArmorInquisitor

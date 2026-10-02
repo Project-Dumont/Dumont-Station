@@ -370,17 +370,19 @@ public sealed class HereticRegressionTests
     [TestCase(HereticPath.Blade)]
     [TestCase(HereticPath.Lock)]
     [TestCase(HereticPath.Cosmos)]
-    public async Task AscensionDoesNotRequireTraumaErt(HereticPath path)
+    public async Task AscensionAllowsDisabledErt(HereticPath path)
     {
-        await using var pair = await PoolManager.GetServerClient();
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Dirty = true });
         var map = await pair.CreateTestMap();
         await pair.Server.WaitAssertion(() =>
         {
             var em = pair.Server.EntMan;
+            em.EventBus.RaiseEvent(EventSource.Local, new Content.Shared.GameTicking.RoundRestartCleanupEvent());
             var body = em.SpawnEntity("MobHuman", map.GridCoords);
             var mind = AddHeretic(em, body);
             var rule = em.SpawnEntity("HereticRoundstart", Robust.Shared.Map.MapCoordinates.Nullspace);
             em.AddComponent<Content.Shared.GameTicking.Components.ActiveGameRuleComponent>(rule);
+            em.GetComponent<Content.Trauma.Server.Heretic.Components.HereticRuleComponent>(rule).ERTEvent = null;
             var heretic = em.GetComponent<HereticComponent>(mind);
             heretic.CurrentPath = path;
             em.EventBus.RaiseLocalEvent(mind, new EventHereticAscension());
