@@ -6,10 +6,10 @@ using Content.Shared.Popups;
 
 namespace Content.Server.Construction;
 
-public sealed class AnchorOnlyOnStationSystem : EntitySystem
+public sealed partial class AnchorOnlyOnStationSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private StationSystem _station = default!;
 
     public override void Initialize()
     {

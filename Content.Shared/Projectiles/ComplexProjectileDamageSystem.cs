@@ -4,9 +4,9 @@ using Content.Shared.Whitelist;
 
 namespace Content.Shared.Projectiles;
 
-public sealed class ComplexProjectileDamageSystem : EntitySystem
+public sealed partial class ComplexProjectileDamageSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()
     {

@@ -11,11 +11,11 @@ namespace Content.Server.Weapons.Ranged.Systems;
 /// <summary>
 /// Refills the ammo of a gun with <see cref="BallisticAmmoSelfRefillerComponent"/> over time.
 /// </summary>
-public sealed class BallisticAmmoSelfRefillerSystem : EntitySystem
+public sealed partial class BallisticAmmoSelfRefillerSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedGunSystem _gun = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedGunSystem _gun = default!;
 
     public override void Initialize()
     {

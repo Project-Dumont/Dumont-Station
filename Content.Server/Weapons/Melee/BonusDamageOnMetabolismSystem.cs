@@ -12,10 +12,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Weapons.Melee;
 
-public sealed class BonusDamageOnMetabolismSystem : EntitySystem
+public sealed partial class BonusDamageOnMetabolismSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedBodySystem _body = default!;
 
     public override void Initialize()
     {
