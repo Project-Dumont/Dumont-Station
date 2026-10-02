@@ -37,3 +37,5 @@ xenoborgs-list = - [color=White]{$name}[/color] ([color=gray]{$user}[/color])
 xenoborg-round-end-agent-name = Xenoborg
 
 guide-entry-xenoborgs = Xenoborgs
+
+xenoborg-mothership-core-voice-name = NÚCLEO DA NAVE-MÃE

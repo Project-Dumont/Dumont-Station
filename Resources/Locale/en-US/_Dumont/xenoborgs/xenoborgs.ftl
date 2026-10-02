@@ -10,3 +10,5 @@ xenoborg-mothership-announcement =
 
 comms-console-no-signal = No signal.
 comms-console-menu-no-signal-placeholder = No signal. Station communications are down.
+
+xenoborg-mothership-core-voice-name = MOTHERSHIP CORE
