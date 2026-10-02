@@ -6,6 +6,7 @@ using Content.Server.Antag;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Pinpointer;
 using Content.Server.Radio;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Components;
@@ -29,6 +30,7 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
     [Dependency] private ChatSystem _chatSystem = default!;
     [Dependency] private CommunicationsConsoleSystem _commsConsole = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
     [Dependency] private RoundEndSystem _roundEnd = default!;
     [Dependency] private SharedMindSystem _mindSystem = default!;
     [Dependency] private ShuttleSystem _shuttle = default!;
@@ -43,6 +45,15 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
         SubscribeLocalEvent<RadioReceiveAttemptEvent>(OnRadioReceiveAttempt);
         SubscribeLocalEvent<CommunicationsConsoleAnnounceAttemptEvent>(OnCommsAnnounceAttempt);
         SubscribeLocalEvent<EmergencyShuttleDepartingEvent>(OnEmergencyShuttleDeparting);
+        SubscribeLocalEvent<XenoborgsRuleComponent, RuleLoadedGridsEvent>(OnRuleLoadedGrids);
+    }
+
+    private void OnRuleLoadedGrids(Entity<XenoborgsRuleComponent> ent, ref RuleLoadedGridsEvent args)
+    {
+        foreach (var grid in args.Grids)
+        {
+            _navMap.EnsureNavMap(grid);
+        }
     }
 
     private void OnRadioReceiveAttempt(ref RadioReceiveAttemptEvent args)
