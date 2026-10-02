@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "techfloor_corner_ne"
+    },
+    {
+      "name": "techfloor_corner_nw"
+    },
+    {
+      "name": "techfloor_corner_se"
+    },
+    {
+      "name": "techfloor_corner_sw"
+    },
+    {
+      "name": "techfloor_e"
+    },
+    {
+      "name": "techfloor_n"
+    },
+    {
+      "name": "techfloor_ne"
+    },
+    {
+      "name": "techfloor_nw"
+    },
+    {
+      "name": "techfloor_orange_corner_ne"
+    },
+    {
+      "name": "techfloor_orange_corner_nw"
+    },
+    {
+      "name": "techfloor_orange_corner_se"
+    },
+    {
+      "name": "techfloor_orange_corner_sw"
+    },
+    {
+      "name": "techfloor_orange_e"
+    },
+    {
+      "name": "techfloor_orange_n"
+    },
+    {
+      "name": "techfloor_orange_ne"
+    },
+    {
+      "name": "techfloor_orange_nw"
+    },
+    {
+      "name": "techfloor_orange_s"
+    },
+    {
+      "name": "techfloor_orange_se"
+    },
+    {
+      "name": "techfloor_orange_sw"
+    },
+    {
+      "name": "techfloor_orange_w"
+    },
+    {
+      "name": "techfloor_s"
+    },
+    {
+      "name": "techfloor_se"
+    },
+    {
+      "name": "techfloor_sw"
+    },
+    {
+      "name": "techfloor_w"
+    }
+  ]
+}

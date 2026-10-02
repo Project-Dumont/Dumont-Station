@@ -1098,10 +1098,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Gabystation/Structures/Walls/shuttle_diagonal.rsi
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _Gabystation/Structures/Walls/shuttle_diagonal.rsi
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Reflect
     reflectProb: 1
@@ -1200,9 +1200,9 @@
   - type: RadiationBlocker
     resistance: 5
   - type: Sprite
-    sprite: _Gabystation/Structures/Walls/shuttle.rsi
+    sprite: Structures/Walls/shuttle.rsi
   - type: Icon
-    sprite: _Gabystation/Structures/Walls/shuttle.rsi
+    sprite: Structures/Walls/shuttle.rsi
     state: full
   - type: Construction
     graph: Girder
@@ -1933,6 +1933,6 @@
   - type: IconSmooth
     key: cards
     base: card
-  - type: Occluder 
+  - type: Occluder
   - type: BlockWeather
   - type: SunShadowCast

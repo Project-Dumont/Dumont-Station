@@ -88,7 +88,8 @@
         Steel: 25
         Glass: 125
       chemicalComposition:
-        Silicon: 5
+        Silicon: 20
+    - type: Circuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard

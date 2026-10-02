@@ -1,0 +1,1 @@
+construction-graph-tag-captain-sabre-golden-skin-kit = Kit de Skin de Sabre de Capitão Dourado

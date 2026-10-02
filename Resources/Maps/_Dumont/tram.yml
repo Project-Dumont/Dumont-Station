@@ -12377,6 +12377,11 @@ entities:
     - type: Transform
       pos: 47.34096,-2.231575
       parent: 2
+  - uid: 931
+    components:
+    - type: Transform
+      pos: 6.680978,-43.34154
+      parent: 2
 - proto: Bed
   entities:
   - uid: 777
@@ -13265,13 +13270,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 38.5,-39.5
-      parent: 2
-- proto: BorgBeaker
-  entities:
-  - uid: 931
-    components:
-    - type: Transform
-      pos: 6.680978,-43.34154
       parent: 2
 - proto: BorgCharger
   entities:
