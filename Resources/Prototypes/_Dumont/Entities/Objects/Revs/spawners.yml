@@ -1,0 +1,108 @@
+- type: entity
+  parent: RevDropPodTraps
+  id: RevDropPodForces
+  name: drop pod beacon (call of the forces)
+  description: Signals the soviet forces waiting in orbit to land at your location.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 2
+        spawn:
+          SpawnPodSovietMech:
+            min: 1
+            max: 1
+          SpawnPodSovietSargentFamas:
+            min: 2
+            max: 2
+          SpawnPodSovietSargentKammerer:
+            min: 2
+            max: 2
+          SpawnPodSovietTenentAk:
+            min: 2
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnPodSovietMech
+  categories: [ HideSpawnMenu ]
+  name: soviet mech pod
+  components:
+  - type: SpawnOnDespawn
+    prototype: MobCombatMechRev
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnPodSovietSargentFamas
+  categories: [ HideSpawnMenu ]
+  name: soviet sargent pod
+  components:
+  - type: SpawnOnDespawn
+    prototype: MobSovietSargentFamasRev
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnPodSovietSargentKammerer
+  categories: [ HideSpawnMenu ]
+  name: soviet sargent pod
+  components:
+  - type: SpawnOnDespawn
+    prototype: MobSovietSargentSawnRev
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnPodSovietTenentAk
+  categories: [ HideSpawnMenu ]
+  name: soviet tenent pod
+  components:
+  - type: SpawnOnDespawn
+    prototype: MobSovietTenentAkRev
+
+- type: entity
+  parent: MobCombatMech
+  id: MobCombatMechRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
+
+- type: entity
+  parent: MobSovietSargentFamas
+  id: MobSovietSargentFamasRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
+
+- type: entity
+  parent: MobSovietSargentSawn
+  id: MobSovietSargentSawnRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
+
+- type: entity
+  parent: MobSovietTenentAk
+  id: MobSovietTenentAkRev
+  suffix: Rev
+  components:
+  - type: Revolutionary
+  - type: RevForcesFollower
+  - type: HTN
+    rootTask:
+      task: HereticSummonCompound
