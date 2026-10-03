@@ -1,0 +1,70 @@
+
+<Document>
+# Contrabando
+
+Contrabando é qualquer item que é restrito ser utilizado por certos ou todos os membros da tripulação.
+A posessão de contrabando não autorizado é motivo para punição pelos crimes X-10. 
+
+Todo item definido como contrabando tem 2 classificações associadas a ele: Origem e nível.
+
+## Nível de Contrabando
+O nível de contrabando define o nível de severidade de crime que será aplicado caso for descoberto.
+
+### Departamental
+Contrabando que pertence a um departamento específico, porém que não mostra risco próprio a ativos ou tripulantes.
+
+Exemplos: Itens cosméticos, ferramentas.
+
+### Restrito
+Contrabando que pode mostrar perigoso nas mãos das pessoas erradas.
+
+Exemplos: Armadura, munição, chaves criptográficas de departamentos, algemas.
+
+### Perigoso
+Contrabando que possui capacidade considerável a causar danos aos ativos da estação.
+
+Exemplos: Drogas não letais, implantes, chaves criptográficas de segurança ou comando, armas brancas.
+
+### Letal
+Contrabando feito expressamente para causar dano aos ativos da estação.
+
+Exemplos: Armas laser, explosivos, mutações dedicadas ao combate.
+
+### Crítico
+Contrabando restrito a chefes departamentais ou de extremo perigo aos ativos da estação.
+
+Exemplos: Servidor de pesquisa, explosivos grandes, equipamento de alto valor.
+
+### Especial
+Contrabando desconhecido a NanoTrasen, ou que não é possível a remoção.
+
+Exemplos: Artes marciais, itens de interesse do vaticano.
+
+## Origem
+A origem do contrabando define se a posse dele pode ser autorizado por uma autoridade competente.
+
+### Equipamento 
+Equipamento que origina da estação ou de uma subsidiária da NanoTrasen, e formalmente legalizado.
+Todo equipamento pode ser autorizado pelo chefe do departamento do qual pertence.
+
+Exemplos: RCDs, armas de segurança.
+
+### Externo
+Contrabando improvisado ou do qual o seu uso não é formalmente permitido.
+Itens externos apenas podem ser autorizados pelo Chefe de Segurança ou Capitão caso absolutamente necessário para a função de um trabalho.
+
+Exemplos: Armas improvisadas, armas laser retrô.
+
+### Sindicalista
+Contrabando produzido diretamente pelo Sindicato.
+Itens do sindicato apenas podem ser utilizados caso absolutamente necessário e em Gamma, 
+Delta ou equivalente, e devem ser armazenados e entregados ao Representativo da NanoTrasen.
+
+Exemplos: Armas do sindicato, roupas do sindicato, equipamento do sindicato.
+
+### Desconhecido
+Contrabando cuja origem não pode ser decifrada.
+Contrabando desconhecido deve ser investigado e reportado para a Central ou o Representativo da NanoTrasen.
+
+Nenhum exemplo existe.
+</Document>

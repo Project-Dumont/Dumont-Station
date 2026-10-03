@@ -5,6 +5,16 @@
   children:
   - SpaceLawCrimeList
   - MartialLaw
+  - 0-xx
+  - 1-xx
+  - 2-xx
+  - 3-xx
+  - 4-xx
+  - 5-xx
+  - procedimentosjudiciais
+  - direitosdeprisoneiro
+  - modificadores
+  - contrabando
 
 - type: guideEntry
   id: MartialLaw

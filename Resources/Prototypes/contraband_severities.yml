@@ -44,4 +44,74 @@
 - type: contrabandSeverity
   id: Honkraband 
   examineText: contraband-examine-text-Clown
-  
+
+
+# Dumont spacelaw 2.0 - sub categories for contra
+# This item is not dangerous, but it belongs to a department in the station.
+- type: contrabandSeverity
+  id: DepartmentalEquipment
+  examineText: contraband-examine-text-Departmental
+
+# This item is not inherently dangerous unless you use it a specific way, and belongs to a department in the station.
+- type: contrabandSeverity
+  id: RestrictedEquipment
+  examineText: contraband-examine-text-Restricted-Equipment
+  showDepartmentsAndJobs: true
+
+# This contraband can be used for harm, and belongs to a department in the station
+- type: contrabandSeverity
+  id: DangerousEquipment
+  examineText: contraband-examine-text-Dangerous
+  showDepartmentsAndJobs: true
+
+# this contraband can be easily used to kill someone, and belongs to a department in the station
+- type: contrabandSeverity
+  id: LethalEquipment
+  examineText: contraband-examine-text-Lethal
+  showDepartmentsAndJobs: true
+
+# this contraband is incredibly important or dangerous, and belongs to someone in the station
+- type: contrabandSeverity
+  id: CriticalEquipment
+  examineText: contraband-examine-text-Critical
+  showDepartmentsAndJobs: true
+
+# this is not inherently dangerous and is not legalized
+- type: contrabandSeverity
+  id: RestrictedExternal
+  examineText: contraband-examine-text-External-Restricted
+
+# this is dangerous and is not legalized
+- type: contrabandSeverity
+  id: DangerousExternal
+  examineText: contraband-examine-text-External-Dangerous
+
+# this can be easily used to kill someone, and is not legalized
+- type: contrabandSeverity
+  id: LethalExternal
+  examineText: contraband-examine-text-External-Lethal
+
+# this is incredibly dangerous, and is not legalized
+- type: contrabandSeverity
+  id: CriticalExternal
+  examineText: contraband-examine-text-External-Critical
+
+# this is not inherently dangerous and is from the syndicate
+- type: contrabandSeverity
+  id: RestrictedSyndicate
+  examineText: contraband-examine-text-Syndicate-Restricted
+
+# this is dangerous and is from the syndicate
+- type: contrabandSeverity
+  id: DangerousSyndicate
+  examineText: contraband-examine-text-Syndicate-Dangerous
+
+# this can easily be used to kill someone and is from the syndicate
+- type: contrabandSeverity
+  id: LethalSyndicate
+  examineText: contraband-examine-text-Syndicate-Lethal
+
+# this is incredibly dangerous and is from the syndicate
+- type: contrabandSeverity
+  id: CriticalSyndicate
+  examineText: contraband-examine-text-Syndicate-Critical
