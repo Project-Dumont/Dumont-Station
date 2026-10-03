@@ -81,6 +81,12 @@
     path: /Audio/_Dumont/Jukebox/billie_jean.ogg
 
 - type: jukebox
+  id: blackholesun
+  name: Soundgarden - Black Hole Sun
+  path:
+    path: /Audio/_Dumont/Jukebox/black_hole_sun.ogg
+
+- type: jukebox
   id: Blue
   name: Eiffel 65 - Blue
   path:

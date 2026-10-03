@@ -67,6 +67,11 @@
   license: "Custom"
   source: "https://youtu.be/Zi_XLOBDo_Y?si=awhpLLTaPAkBbxpd"
 
+- files: [ black_hole_sun.ogg ]
+  copyright: "Black Hole Sun. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=3mbBbFH9fAg"
+
 - files: ["blue.ogg"]
   copyright: "Blue. Exported with cobalt.tools"
   license: "Custom"
