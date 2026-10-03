@@ -4,6 +4,11 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.RoundEnd;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Server.AlertLevel;
+using Content.Shared.Station.Components;
+using Robust.Shared.Prototypes;
 using Content.Trauma.Server.Heretic.Components;
 using Content.Trauma.Server.Heretic.Systems;
 using Robust.Shared.GameObjects;
@@ -28,7 +33,26 @@ public sealed class HereticAscensionResponseTests
 
             Assert.That(em.GetComponent<HereticRuleComponent>(rule).HasAHereticAscended, Is.True);
             var evacuation = em.System<RoundEndSystem>();
+            Assert.That(evacuation.IsRoundEndRequested(), Is.False);
+            Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
+                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.False);
+        });
+        await pair.RunSeconds(19);
+        await pair.Server.WaitAssertion(() =>
+            Assert.That(pair.Server.EntMan.System<RoundEndSystem>().IsRoundEndRequested(), Is.False));
+        await pair.RunSeconds(2);
+        await pair.Server.WaitAssertion(() =>
+        {
+            var em = pair.Server.EntMan;
+            var response = em.System<HereticRuleSystem>();
+            var evacuation = em.System<RoundEndSystem>();
             Assert.That(evacuation.IsRoundEndRequested(), Is.True);
+            var levels = em.EntityQuery<AlertLevelComponent, StationDataComponent>(true).ToArray();
+            Assert.That(levels, Is.Not.Empty);
+            Assert.That(levels.All(e => e.Item1.CurrentLevel == "cataclysm"), Is.True);
+            var species = pair.Server.ProtoMan.Index<RandomHumanoidSettingsPrototype>("HereticInquisitorERT").SpeciesBlacklist;
+            Assert.That(species, Does.Contain("Synth"));
+            Assert.That(species, Does.Contain("IPC"));
             var deadline = evacuation.ExpectedCountdownEnd;
             var ertRules = em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
                 .Where(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT").ToArray();
@@ -42,8 +66,15 @@ public sealed class HereticAscensionResponseTests
             {
                 if (transform.GridUid != grid || !inventory.TryGetSlotEntity(inv.Owner, "outerClothing", out var armor))
                     continue;
-                if (em.GetComponent<MetaDataComponent>(armor.Value).EntityPrototype?.ID == "ClothingOuterArmorInquisitor")
+                if (em.GetComponent<MetaDataComponent>(armor.Value).EntityPrototype?.ID == "ClothingModsuitChestplateInquisitory")
+                {
+                    Assert.That(em.GetComponent<HumanoidAppearanceComponent>(inv.Owner).Species.Id,
+                        Is.Not.EqualTo("Synth").And.Not.EqualTo("IPC"));
+                    Assert.That(inventory.TryGetSlotEntity(inv.Owner, "back", out var control), Is.True);
+                    Assert.That(em.GetComponent<MetaDataComponent>(control.Value).EntityPrototype?.ID,
+                        Is.EqualTo("ClothingModsuitInquisitory"));
                     inquisitors++;
+                }
             }
             Assert.That(inquisitors, Is.EqualTo(5));
 
@@ -51,6 +82,29 @@ public sealed class HereticAscensionResponseTests
             Assert.That(evacuation.ExpectedCountdownEnd, Is.EqualTo(deadline));
             Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
                 .Count(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.EqualTo(1));
+        });
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task RoundRestartCancelsPendingVaticanResponse()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { DummyTicker = false, Dirty = true });
+        await pair.Server.WaitAssertion(() =>
+        {
+            var em = pair.Server.EntMan;
+            var rule = em.SpawnEntity("HereticRoundstart", MapCoordinates.Nullspace);
+            em.AddComponent<ActiveGameRuleComponent>(rule);
+            em.System<HereticRuleSystem>().SpawnERTOnAscension();
+            em.EventBus.RaiseEvent(EventSource.Local, new Content.Shared.GameTicking.RoundRestartCleanupEvent());
+        });
+        await pair.RunSeconds(21);
+        await pair.Server.WaitAssertion(() =>
+        {
+            var em = pair.Server.EntMan;
+            Assert.That(em.System<RoundEndSystem>().IsRoundEndRequested(), Is.False);
+            Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
+                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.False);
         });
         await pair.CleanReturnAsync();
     }

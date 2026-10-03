@@ -27,6 +27,9 @@ public sealed partial class HereticRuleComponent : Component
     public EntProtoId? ERTEvent;
 
     [DataField]
+    public TimeSpan ResponseDelay = TimeSpan.FromSeconds(20);
+
+    [DataField]
     public TimeSpan EvacuationDelay = TimeSpan.FromMinutes(10);
     // Dumont end
 

@@ -5,9 +5,8 @@
   id: SpawnHereticInquisitorERT
   components:
   - type: StationEvent
-    startAnnouncement: heretic-ascension-ert-enroute
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: null
+    startAudio: null
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
@@ -16,7 +15,7 @@
 - type: entity
   parent: RandomHumanoidSpawnerERTChaplain
   id: RandomHumanoidSpawnerHereticInquisitor
-  name: ERT inquisitor
+  name: Vatican inquisitor
   components:
   - type: RandomHumanoidSpawner
     settings: HereticInquisitorERT
@@ -24,7 +23,19 @@
 - type: randomHumanoidSettings
   parent: ERTChaplain
   id: HereticInquisitorERT
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  - Waddler
+  - Yowie
+  - IPC
+  - Diona
+  - Harpy
+  - Plasmaman
+  - Synth
   components:
+  - type: VaticanInquisitor
   - type: GhostRole
     name: heretic-inquisitor-ert-name
     description: heretic-inquisitor-ert-description
@@ -37,9 +48,29 @@
     roleLoadout: [ RoleSurvivalExtended ]
 
 - type: startingGear
-  parent: ERTChaplainGear
   id: HereticInquisitorERTGear
   equipment:
-    head: ClothingHeadHatHelmetInquisitor
+    jumpsuit: ClothingUniformJumpsuitERTChaplain
+    back: ClothingModsuitInquisitory
+    eyes: ClothingEyesGlasses
     neck: ClothingNeckCloakInquisitor
-    outerClothing: ClothingOuterArmorInquisitor
+    id: ERTChaplainPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltStorageWaistbag
+    pocket1: WeaponPulsePistol
+    pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxCandle
+    - BoxBodyBag
+    - DrinkWaterMelonJuiceJug
+    - Lantern
+    - Lantern
+    - ChaplainUndeterminedBible
+    - CrowbarRed
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - Nullrod
+    - Lighter
+    - ExecutiveIDCard

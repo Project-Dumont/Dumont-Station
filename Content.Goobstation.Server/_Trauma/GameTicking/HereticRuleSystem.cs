@@ -14,6 +14,14 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.RoundEnd;
+using Content.Server.AlertLevel;
+using Content.Server.Chat.Systems;
+using Content.Shared.Inventory;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Clothing.EntitySystems;
+using Content.Goobstation.Shared.Clothing.Components;
+using Content.Goobstation.Shared.Clothing.Systems;
+using Robust.Shared.Player;
 using Content.Shared.GameTicking;
 using Content.Server.Objectives;
 using Content.Server.Roles;
@@ -28,6 +36,7 @@ using Content.Trauma.Shared.Heretic.Events;
 using Content.Trauma.Server.Objectives.Components;
 using Content.Trauma.Shared.Heretic.Systems;
 using Robust.Server.GameObjects;
+using Robust.Server.Audio;
 using Robust.Shared.Audio;
 // Dumont end
 
@@ -46,12 +55,26 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
 
+    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly AlertLevelSystem _alerts = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly ToggleableClothingSystem _toggleable = default!;
+    [Dependency] private readonly SharedSealableClothingSystem _sealable = default!;
+
+    private const string VaticanAlertSound = "/Audio/Announcements/Alerts/code_octarine.ogg";
+    private const string VaticanMusic = "/Audio/_Dumont/Heretic/bloodbeast.ogg";
     private bool _ascensionResponseCalled;
+    private EntityUid? _pendingResponse;
+    private TimeSpan _responseAt;
+    private TimeSpan? _musicAt;
 
     [SubscribeLocalEvent]
     private void OnRoundRestart(RoundRestartCleanupEvent args)
     {
         _ascensionResponseCalled = false;
+        _pendingResponse = null;
+        _musicAt = null;
     }
     // Dumont end
 
@@ -189,19 +212,66 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
             _ascensionResponseCalled = true;
             rule.HasAHereticAscended = true;
 
-            if (rule.ERTEvent is { } ertEvent)
-            {
-                if (_prototypes.HasIndex(ertEvent))
-                    _ticker.StartGameRule(ertEvent);
-                else
-                    Log.Warning($"Heretic ascension ERT rule {ertEvent} does not exist.");
-            }
-
-            if (!_roundEnd.IsRoundEndRequested())
-                _roundEnd.RequestRoundEnd(rule.EvacuationDelay, checkCooldown: false,
-                    text: "heretic-ascension-evacuation");
+            _pendingResponse = rule.Owner;
+            _responseAt = Timing.CurTime + rule.ResponseDelay;
             break;
         }
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (_pendingResponse is { } pending && Timing.CurTime >= _responseAt)
+        {
+            _pendingResponse = null;
+            if (_ticker.RunLevel == GameRunLevel.InRound && TryComp<HereticRuleComponent>(pending, out var rule))
+                SendVaticanResponse(rule);
+        }
+
+        if (_musicAt is { } musicAt && Timing.CurTime >= musicAt)
+        {
+            _musicAt = null;
+            if (_ticker.RunLevel == GameRunLevel.InRound)
+                _audio.PlayGlobal(VaticanMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-6f));
+        }
+    }
+
+    private void SendVaticanResponse(HereticRuleComponent rule)
+    {
+        if (rule.ERTEvent is { } ertEvent)
+        {
+            if (_prototypes.HasIndex(ertEvent))
+                _ticker.StartGameRule(ertEvent);
+            else
+                Log.Warning($"Heretic ascension ERT rule {ertEvent} does not exist.");
+        }
+
+        var stations = EntityQueryEnumerator<AlertLevelComponent, StationDataComponent>();
+        while (stations.MoveNext(out var station, out _, out _))
+            _alerts.SetLevel(station, "cataclysm", false, false, force: true, locked: true);
+
+        if (!_roundEnd.IsRoundEndRequested())
+            _roundEnd.RequestRoundEnd(rule.EvacuationDelay, checkCooldown: false, announce: false, playSound: false);
+
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("heretic-ascension-evacuation"),
+            Loc.GetString("heretic-vatican-sender"), playSound: false, colorOverride: Color.FromHex("#FDFFCF"));
+        _audio.PlayGlobal(VaticanAlertSound, Filter.Broadcast(), true);
+        _musicAt = Timing.CurTime + _audio.GetAudioLength(VaticanAlertSound);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnInquisitorEquipped(Entity<VaticanInquisitorComponent> ent, ref StartingGearEquippedEvent args)
+    {
+        if (!_inventory.TryGetSlotEntity(ent, "back", out var control)
+            || !TryComp<ToggleableClothingComponent>(control, out var toggleable))
+            return;
+
+        foreach (var (clothing, slot) in toggleable.ClothingUids)
+            _toggleable.EquipClothing(ent, (control.Value, toggleable), clothing, slot, silent: true);
+
+        if (TryComp<SealableClothingControlComponent>(control, out var sealable) && !sealable.IsCurrentlySealed)
+            _sealable.TryStartSealToggleProcess((control.Value, sealable));
     }
     // Dumont end
 }
