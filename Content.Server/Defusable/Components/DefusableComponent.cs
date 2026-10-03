@@ -70,19 +70,4 @@ public sealed partial class DefusableComponent : Component
     [DataField("delayTime")]
     public int DelayTime = 30;
 
-    #region Wires
-    // wires, this is so that they're one use
-    [ViewVariables(VVAccess.ReadWrite), Access(Other=AccessPermissions.ReadWrite)]
-    public bool DelayWireUsed;
-
-    [ViewVariables(VVAccess.ReadWrite), Access(Other=AccessPermissions.ReadWrite)]
-    public bool ProceedWireCut;
-
-    [ViewVariables(VVAccess.ReadWrite), Access(Other=AccessPermissions.ReadWrite)]
-    public bool ProceedWireUsed;
-
-    [ViewVariables(VVAccess.ReadWrite), Access(Other=AccessPermissions.ReadWrite)]
-    public bool ActivatedWireUsed;
-
-    #endregion
 }

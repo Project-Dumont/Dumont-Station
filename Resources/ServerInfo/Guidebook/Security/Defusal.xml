@@ -8,76 +8,46 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Desativação de Bomba Grande
-  Então, você encontrou uma bomba grande e ela está apitando. Essas bombas demoram muito para detonar e abrem um grande buraco no casco. Continue lendo e ninguém explodirá.
+  # Manual de Desativação de Bomba Grande
+  Então, você achou um dispositivo explosivo modular e está bipando. Não é tão simples quanto cortar um cabo para desarmar! Eles utilizam um sistema de módulos aleatorizados no estilo de quebra-cabeças. Apenas continue falando, e ninguém irá explodir.
 
+  ## Desarmamento Cooperativo
+  Para desativar uma bomba, você precisa de duas pessoas cooperando:
+- 1. O Desativador: A pessoa que interage com a bomba. Eles podem ver e interagir com os módulos, ver a quantidade de strikes restantes e o número de série da bomba. Eles utilizam o kit de defusão de bomba.
+- 2. O Especialista: A pessoa que lê as etapas para desativar a bomba para o desativador. Eles utilizam o escaner de bomba.
+  O Desativador não pode ver as etapas, e O Especialista não pode ver a bomba, então comunicação é a chave para o sucesso!
 
-  ## Engrenagem
-  Você precisa de duas ferramentas essenciais para realizar a desativação; no entanto, uma multiferramenta é extremamente útil em termos de identificação de fios.
+  ## Equipamento
+  Para começar a desarmar a bomba, O Especialista precisa do escaner de bomba e O Desativador precisa do kit de desarmamento de bomba, ambos encontrados no armário de desarmamento de bomba. Porém, é recomendado utilizar trajes anti-bombas para reduzir os danos em caso de falha.
   <Box>
-    <GuideEntityEmbed Entity="Wirecutter"/>
-    <GuideEntityEmbed Entity="Screwdriver"/>
-    <GuideEntityEmbed Entity="Multitool"/>
-  </Box>
-
-Para equipamento de proteção, um [color=yellow]traje anti-bomba[/color] ou qualquer outro equipamento de proteção pode ajudá-lo a não explodir em pedaços.  <Box>
-
     <GuideEntityEmbed Entity="ClothingHeadHelmetBombSuit"/>
     <GuideEntityEmbed Entity="ClothingOuterSuitBomb"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitAtmos"/>
   </Box>
 
-  ## Bombas Pesadas
-Listados abaixo estão os dois tipos comuns de bombas que você encontrará durante a desativação. Uma bomba de treinamento causará apenas pequenos danos ao casco e geralmente não matará você. Uma bomba sindicalizada, entretanto, fará um grande buraco no casco e o esfaqueará se você não estiver usando equipamento de proteção.
+  ## Hardbombs
+  As bombas grandes típicas são a Bomba do Sindicato e a Bomba de treinamento:
   <Box>
     <GuideEntityEmbed Entity="SyndicateBomb"/>
     <GuideEntityEmbed Entity="TrainingBomb"/>
   </Box>
 
-  ## Armando
-  Para armar uma bomba, você pode [color=yellow]clicar com o botão direito[/color] e clicar em [color=yellow]Iniciar contagem regressiva[/click] ou [color=yellow]alt-click[/color] na bomba. Ele começará a apitar.
+  ## Strikes
+  Bombas grandes tem um sistema de strike:
+  - 3 strikes irá causar detonação imediata!
+  - Falhar um módulo irá adicionar 1 strike.
+  - Fechar a bomba depois de abrir-lá com o kit de desarmamento de bomba adiciona um strike. 
 
-  ## Time
-  A bomb has a limited time, at a minimum of [protodata="SyndicateBomb" comp="TimerTrigger" member="ShortestDelayOption"/] seconds and a maximum of [protodata="SyndicateBomb" comp="TimerTrigger" member="LongestDelayOption"/] seconds. You can view the timer by examining it, unless the Proceed wire is cut. Once the timer hits zero, the bomb will detonate.
+  ## Tempo/Quantidade
+  O número de módulos para resolver é determinado pelo timer na bomba quando armado: 1 módulo por minuto. Se você chegou na bomba atrasado, é melhor ir rápido!
 
-  ## Parafusos
-  Por padrão, uma vez armada, uma bomba irá cair no chão. Você deve encontrar o fio do PARAFUSO e cortá-lo para desabilitar os parafusos, após o que você pode desapertá-lo e jogá-lo no espaço.
-
-  ## Fios
-  Você deve acessar a fiação para desarmar uma bomba. Você pode usar uma [color=yellow]chave de fenda[/color] para abrir o painel de acesso. Dentro você encontrará vários tipos de fios. Em uma bomba sindicalizada padrão, existem cerca de [color=yellow]10 fios[/color], 3 são fios fictícios, [color=red]3 causarão uma detonação[/color], e o restante que não foi mencionado pode ser encontrado abaixo (ao lado dos fios BOOM). Com cada fio, você pode realizar 3 ações. Você pode:
-  - [color=yellow]Pulse o fio[/color] com uma multiferramenta, isso pode ajudá-lo a identificar com segurança a maioria dos fios.
-  - [color=red]Corte o fio[/color] com um alicate, isso pode desencadear vários efeitos, tome cuidado para não cortar sem motivo!
-  - [color=green]Conserte o fio[/color] com um alicate, isso pode restaurar algumas funcionalidades da bomba se ela não for descartável.
-
-  Avante para os tipos de fios.
-
-  ## Tipos de fios
-  [color=#a4885c]Fio de ativação (AO VIVO)[/color]
-  - [color=yellow]Pulse o fio[/color]: Pulsar o fio fará o fio chiar e atrasará a bomba em 30 segundos.
-  - [color=red]Corte o fio[/color]: Cortar o fio desarmará a bomba se estiver ativa, caso contrário, iniciará o cronômetro.
-  - [color=green]Consertar o fio[/color]: Nada.
-
-  [color=#a4885c]Transferência de transferência (PRCD)[/color]
-  - [color=yellow]Pulsar o fio[/color]: Pulsar o fio avançará o tempo em 15 segundos.
-  - [color=red]Corte o fio[/color]: Cortar o fio desativará a exibição do cronômetro durante o exame.
-  - [color=green]Consertar o fio[/color]: Nada.
-
-  [color=#a4885c]Fio de atraso (DLAY)[/color]
-  - [color=yellow]Pulsar o fio[/color]: Pulsar o fio de atraso atrasará a bomba em 30 segundos.
-  - [color=red]Corte o fio[/color]: Nada.
-  - [color=green]Consertar o fio[/color]: Nada.
-
-  [color=#a4885c]Fio da lança (BOOM)[/color]
-  - [color=yellow]Pulse o fio[/color]: [color=red]A bomba explodirá se armada![/color]
-  - [color=red]Corte o fio[/color]: [color=red]A bomba explodirá se armada![/color] Caso contrário, a bomba será desativada.
-  - [color=green]Consertar o fio[/color]: Reativa a bomba se desativada anteriormente.
-
-  [color=#a4885c]Fio de parafuso (BOLT)[/color]
-  - [color=yellow]Pulse o fio[/color]: Pulsar o fio fará os parafusos girarem.
-  - [color=red]Corte o fio[/color]: Cortar o fio desativará os parafusos, jogue-o no espaço!
-  - [color=green]Consertar o fio[/color]: Remendar o fio reativará os parafusos.
-
-  [color=#a4885c]Fio fictício[/color]
-  - Fios falsos não fazem nada. Você pode pulsar, cortar e remenda-los livremente sem que eles afetem a bomba de forma alguma.
+  ## Módulos
+  Os tipos de módulos diferentes são os seguintes:
+  - [color=yellow]Fios[/color]: 3-6 cabos coloridos. Apenas um cabo precisa ser cortado baseado nas regras escritas no escaner.
+  - [color=yellow]Teclados[/color]: 4 botões exibindo glifos misteriosos. Eles precisam ser apertados na ordem que aparecem no escaner.
+  - [color=yellow]O Botão[/color]: Um botão colorido com uma palavra. Você pode ter que apertar-lo ou segurar-lo. Se segurado, uma listra colorida aparece, e você deve soltar-lo em um momento definido pelo escaner.
+  - [color=yellow]Genius[/color]: Uma sequência de cores piscando. Você deve repetir a sequência com a tabela de tradução de cores no escaner, que muda dependendo da quantidade de strikes.
+  - [color=yellow]Quem está em primeiro[/color]: Leia a exibição e consulte o escaner para saber qual palavra ler, e usando a tabela daquela palavra aperte a primeira palavra na lista, repetindo até desarmar o módulo.
+  - [color=yellow]Labirintos[/color]: Utilize o caminho exibido pelo escaner para chegar ao destino. A bomba não mostra as paredes do labirinto. Se houver mais de um módulo, identifique qual labirinto é utilizando as posições iniciais do objetivo e a luz branca.
+  - [color=yellow]Memória[/color]: Siga as regras para cada etapa.
+  - [color=yellow]Senhas[/color]: Verifique as colunas e identifique qual das palavras no escaner são capazes de ser formadas.
 </Document>

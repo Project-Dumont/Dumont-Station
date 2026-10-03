@@ -29,7 +29,6 @@ using Content.Shared.Trigger.Components;
 using Content.Shared.Trigger.Components.Effects;
 using Content.Shared.Trigger.Systems;
 using Content.Shared.Verbs;
-using Content.Shared.Wires;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 
@@ -45,7 +44,6 @@ public sealed class DefusableSystem : SharedDefusableSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly WiresSystem _wiresSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -165,8 +163,6 @@ public sealed class DefusableSystem : SharedDefusableSystem
 
         _appearance.SetData(uid, DefusableVisuals.Active, comp.Activated);
 
-        if (TryComp<WiresPanelComponent>(uid, out var wiresPanelComponent))
-            _wiresSystem.TogglePanel(uid, wiresPanelComponent, false);
     }
 
     public void TryDetonateBomb(EntityUid uid, EntityUid detonator, DefusableComponent comp)
@@ -206,10 +202,6 @@ public sealed class DefusableSystem : SharedDefusableSystem
 
         RaiseLocalEvent(uid, new BombDefusedEvent(uid));
 
-        comp.ActivatedWireUsed = false;
-        comp.DelayWireUsed = false;
-        comp.ProceedWireCut = false;
-        comp.ProceedWireUsed = false;
         comp.Bolted = false;
 
         if (xform.Anchored)
@@ -249,137 +241,6 @@ public sealed class DefusableSystem : SharedDefusableSystem
 
     #endregion
 
-    #region Wires
-
-    public void DelayWirePulse(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp is not { Activated: true, DelayWireUsed: false })
-            return;
-
-        _trigger.TryDelay(wire.Owner, TimeSpan.FromSeconds(30));
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-chirp", ("name", wire.Owner)), wire.Owner);
-        comp.DelayWireUsed = true;
-    }
-
-    public bool ProceedWireCut(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp is not { Activated: true, ProceedWireCut: false })
-            return true;
-
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-proceed-pulse", ("name", wire.Owner)), wire.Owner);
-        SetDisplayTime(comp, false);
-
-        comp.ProceedWireCut = true;
-        return true;
-    }
-
-    public void ProceedWirePulse(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp is { Activated: true, ProceedWireUsed: false })
-        {
-            comp.ProceedWireUsed = true;
-            _trigger.TryDelay(wire.Owner, TimeSpan.FromSeconds(-15));
-        }
-
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-proceed-pulse", ("name", wire.Owner)), wire.Owner);
-    }
-
-    public bool ActivateWireCut(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        // if you cut the wire it just defuses the bomb
-
-        if (comp.Activated)
-        {
-            TryDefuseBomb(wire.Owner, comp);
-
-            _adminLogger.Add(LogType.Explosion, LogImpact.High,
-                $"{ToPrettyString(user):user} has defused {ToPrettyString(wire.Owner):entity}!");
-        }
-
-        return true;
-    }
-
-    public void ActivateWirePulse(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        // if the component isnt active, just start the countdown
-        // if it is and it isn't already used then delay it
-
-        if (comp.Activated)
-        {
-            if (!comp.ActivatedWireUsed)
-            {
-                _trigger.TryDelay(wire.Owner, TimeSpan.FromSeconds(30));
-                _popup.PopupEntity(Loc.GetString("defusable-popup-wire-chirp", ("name", wire.Owner)), wire.Owner);
-                comp.ActivatedWireUsed = true;
-            }
-        }
-        else
-        {
-            TryStartCountdown(wire.Owner, user, comp);
-        }
-    }
-
-    public bool BoomWireCut(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp.Activated)
-        {
-            TryDetonateBomb(wire.Owner, user, comp);
-        }
-        else
-        {
-            SetUsable(comp, false);
-        }
-        return true;
-    }
-
-    public bool BoomWireMend(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp is { Activated: false, Usable: false })
-        {
-            SetUsable(comp, true);
-        }
-        // you're already dead lol
-        return true;
-    }
-
-    public void BoomWirePulse(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (comp.Activated)
-        {
-            TryDetonateBomb(wire.Owner, user, comp);
-        }
-    }
-
-    public bool BoltWireMend(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (!comp.Activated)
-            return true;
-
-        SetBolt(comp, true);
-        _audio.PlayPvs(comp.BoltSound, wire.Owner);
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-bolt-pulse", ("name", wire.Owner)), wire.Owner);
-
-        return true;
-    }
-
-    public bool BoltWireCut(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        if (!comp.Activated)
-            return true;
-
-        SetBolt(comp, false);
-        _audio.PlayPvs(comp.BoltSound, wire.Owner);
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-bolt-pulse", ("name", wire.Owner)), wire.Owner);
-
-        return true;
-    }
-
-    public void BoltWirePulse(EntityUid user, Wire wire, DefusableComponent comp)
-    {
-        _popup.PopupEntity(Loc.GetString("defusable-popup-wire-bolt-pulse", ("name", wire.Owner)), wire.Owner);
-    }
-
-    #endregion
 }
 
 public sealed class BombDefusedEvent : EntityEventArgs
