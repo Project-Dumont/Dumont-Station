@@ -1305,6 +1305,7 @@
     steps: 2
     zeroVisible: true
   - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 50
   # "remove" wield bonus and penalty so borgs can use it
   - type: GunWieldBonus

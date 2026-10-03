@@ -39,3 +39,6 @@ xenoborg-round-end-agent-name = Xenoborg
 guide-entry-xenoborgs = Xenoborgs
 
 xenoborg-mothership-core-voice-name = NÚCLEO DA NAVE-MÃE
+
+robotics-console-take-control = Assumir controle
+mothership-core-control-busy = Essa unidade não pode ser pilotada.

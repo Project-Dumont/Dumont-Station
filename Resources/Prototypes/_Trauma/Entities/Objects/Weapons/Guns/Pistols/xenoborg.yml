@@ -28,6 +28,7 @@
     proto: XenoborgDart
     fireCost: 5
   - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 0.5
   - type: Battery
     maxCharge: 15

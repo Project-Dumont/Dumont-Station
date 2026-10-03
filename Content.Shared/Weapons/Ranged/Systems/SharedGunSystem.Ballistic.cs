@@ -93,6 +93,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Stacks; // Dumont
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -106,6 +107,7 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedStackSystem _stack = default!; // Dumont
 
 
     protected virtual void InitializeBallistic()
@@ -139,13 +141,45 @@ public abstract partial class SharedGunSystem
         if (GetBallisticShots(provider) >= provider.Capacity)
             return;
 
-        provider.Entities.Add(args.Target.Value);
-        Containers.Insert(args.Target.Value, provider.Container);
-        Audio.PlayPredicted(provider.SoundInsert, ent.Owner, args.User);
-        args.Handled = true;
-        UpdateBallisticAppearance(ent.Owner, provider);
-        UpdateAmmoCount(ent.Owner);
-        DirtyField(ent.Owner, provider, nameof(BallisticAmmoProviderComponent.Entities));
+        args.Handled = InsertBallistic((ent.Owner, provider), args.Target.Value, args.User);
+    }
+
+    private bool InsertBallistic(Entity<BallisticAmmoProviderComponent> gun, EntityUid ammo, EntityUid user)
+    {
+        var provider = gun.Comp;
+        var isStack = TryComp<StackComponent>(ammo, out var stack);
+        var loaded = 0;
+
+        if (isStack)
+        {
+            var coordinates = Transform(ammo).Coordinates;
+            var room = Math.Min(stack!.Count, provider.Capacity - GetBallisticShots(provider));
+
+            for (var i = 0; i < room; i++)
+            {
+                if (_stack.Split(ammo, 1, coordinates) is not { } sheet)
+                    break;
+
+                provider.Entities.Add(sheet);
+                Containers.Insert(sheet, provider.Container);
+                loaded++;
+            }
+        }
+        else
+        {
+            provider.Entities.Add(ammo);
+            Containers.Insert(ammo, provider.Container);
+            loaded++;
+        }
+
+        if (loaded == 0)
+            return isStack;
+
+        Audio.PlayPredicted(provider.SoundInsert, gun.Owner, user);
+        UpdateBallisticAppearance(gun.Owner, provider);
+        UpdateAmmoCount(gun.Owner);
+        DirtyField(gun.Owner, provider, nameof(BallisticAmmoProviderComponent.Entities));
+        return true;
     }
 
     // Dumont end
@@ -170,14 +204,9 @@ public abstract partial class SharedGunSystem
         if (GetBallisticShots(component) >= component.Capacity)
             return;
 
-        component.Entities.Add(args.Used);
-        Containers.Insert(args.Used, component.Container);
-        // Not predicted so
-        Audio.PlayPredicted(component.SoundInsert, uid, args.User);
-        args.Handled = true;
-        UpdateBallisticAppearance(uid, component);
-        UpdateAmmoCount(args.Target); // Goob - Upstream
-        DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
+        // Dumont changes start
+        args.Handled = InsertBallistic((uid, component), args.Used, args.User);
+        // Dumont end
     }
 
     private void OnBallisticAfterInteract(EntityUid uid, BallisticAmmoProviderComponent component, AfterInteractEvent args)

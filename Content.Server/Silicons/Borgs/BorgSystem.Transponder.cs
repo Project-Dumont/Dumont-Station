@@ -27,6 +27,7 @@ using Robust.Shared.Utility;
 using Content.Shared._Imp.Drone; //Goobstation drone
 using Robust.Shared.Player; //Goobstation drone
 using Content.Shared._CorvaxNext.Silicons.Borgs.Components; // Corvax-Next-AiRemoteControl
+using Content.Shared.Xenoborgs.Components; // Dumont
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -70,7 +71,8 @@ public sealed partial class BorgSystem
                 hasBrain,
                 canDisable,
                 HasComp<AiRemoteControllerComponent>(uid), // Corvax-Next-AiRemoteControl
-                isEmagged); // Funkystation -> Malf Ai.
+                isEmagged, // Funkystation -> Malf Ai.
+                HasComp<XenoborgComponent>(uid) && !_mind.TryGetMind(uid, out _, out _)); // Dumont
 
             var payload = new NetworkPayload()
             {

@@ -3,6 +3,7 @@
 using Content.Server._Dumont.Communications;
 using Content.Server._Dumont.Shuttles;
 using Content.Server.Antag;
+using Content.Server.Antag.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
@@ -18,6 +19,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Radio.Components;
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Tag;
 using Content.Shared.Xenoborgs.Components;
 using Robust.Shared.Timing;
 
@@ -35,6 +37,8 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
     [Dependency] private SharedMindSystem _mindSystem = default!;
     [Dependency] private ShuttleSystem _shuttle = default!;
     [Dependency] private StationSystem _station = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private static readonly Color AnnouncmentColor = Color.Gold;
 
@@ -218,6 +222,42 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
         xenoborgsRuleComponent.MothershipAnnouncementTime = _timing.CurTime + xenoborgsRuleComponent.MothershipAnnouncementDelay;
     }
 
+    /// <summary>
+    /// Turns the core ghost role spawner nobody claimed into an empty core, so the xenoborgs still
+    /// have their lathe and a ghost can take it over later.
+    /// </summary>
+    private void PlaceEmptyMothershipCore(XenoborgsRuleComponent component)
+    {
+        component.MothershipCoreFallbackTime = null;
+
+        if (!component.AlwaysSpawnMothershipCore)
+            return;
+
+        var spawners = new List<EntityUid>();
+        var query = EntityQueryEnumerator<GhostRoleAntagSpawnerComponent>();
+        while (query.MoveNext(out var spawner, out _))
+        {
+            if (_tag.HasTag(spawner, component.MothershipCoreSpawnerTag))
+                spawners.Add(spawner);
+        }
+
+        foreach (var spawner in spawners)
+        {
+            var coordinates = Transform(spawner).Coordinates;
+
+            if (!coordinates.IsValid(EntityManager))
+                continue;
+
+            var core = Spawn(component.MothershipCore, coordinates);
+            var xform = Transform(core);
+
+            if (!xform.Anchored)
+                _transform.AnchorEntity((core, xform));
+
+            QueueDel(spawner);
+        }
+    }
+
     private void SendMothershipAnnouncement(XenoborgsRuleComponent component)
     {
         component.MothershipAnnouncementTime = null;
@@ -237,6 +277,7 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
         base.Started(uid, component, gameRule, args);
 
         component.NextRoundEndCheck = _timing.CurTime + component.EndCheckDelay;
+        component.MothershipCoreFallbackTime = _timing.CurTime + component.MothershipCoreFallbackDelay;
     }
 
     protected override void ActiveTick(EntityUid uid, XenoborgsRuleComponent component, GameRuleComponent gameRule, float frameTime)
@@ -245,6 +286,9 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
 
         if (component.MothershipAnnouncementTime <= _timing.CurTime)
             SendMothershipAnnouncement(component);
+
+        if (component.MothershipCoreFallbackTime <= _timing.CurTime)
+            PlaceEmptyMothershipCore(component);
 
         if (!component.NextRoundEndCheck.HasValue || component.NextRoundEndCheck > _timing.CurTime)
             return;

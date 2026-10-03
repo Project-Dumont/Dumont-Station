@@ -184,5 +184,7 @@ ent-ActionXenoborgControlMonitor = Console de Controle dos Xenoborgs
     .desc = Abre o console de controle dos Xenoborgs.
 ent-ActionXenoborgCameraMonitor = Monitor de Câmeras dos Xenoborgs
     .desc = Abre o monitor de câmeras dos Xenoborgs.
+ent-ActionReturnToMothershipCore = Voltar para o núcleo
+    .desc = Manda sua mente de volta para o núcleo da nave-mãe.
 ent-XenoborgAssimilationObjective = ASSIMILAÇÃO
     .desc = Assimile 40% da tripulação e inicie a assimilação coletiva de todos os seres orgânicos do universo, usando a Central de Comando como ponte.

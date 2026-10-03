@@ -29,6 +29,8 @@
   result: XenoborgExtractorFlatpack
   materials:
     Steel: 1000
+    Glass: 500
+    Plasma: 200
 
 # xenoborgs
 
@@ -38,6 +40,9 @@
   result: XenoborgEngiPrinted
   materials:
     XenoborgCrystal: 100
+    Steel: 1000
+    Glass: 300
+    Plastic: 200
 
 - type: latheRecipe
   parent: BaseXenoborgRecipe
@@ -45,6 +50,9 @@
   result: XenoborgHeavyPrinted
   materials:
     XenoborgCrystal: 100
+    Steel: 1200
+    Glass: 200
+    Plasma: 200
 
 - type: latheRecipe
   parent: BaseXenoborgRecipe
@@ -52,6 +60,9 @@
   result: XenoborgScoutPrinted
   materials:
     XenoborgCrystal: 100
+    Steel: 700
+    Plastic: 400
+    Silver: 100
 
 - type: latheRecipe
   parent: BaseXenoborgRecipe
@@ -59,6 +70,9 @@
   result: XenoborgStealthPrinted
   materials:
     XenoborgCrystal: 100
+    Steel: 700
+    Plastic: 200
+    Silver: 300
 
 # modules
 
@@ -70,6 +84,8 @@
   result: XenoborgModuleDoorControl
   materials:
     XenoborgCrystal: 200
+    Steel: 300
+    Glass: 200
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -77,6 +93,8 @@
   result: XenoborgModuleDeflectorField
   materials:
     XenoborgCrystal: 100
+    Glass: 300
+    Silver: 200
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -84,6 +102,8 @@
   result: XenoborgModuleZap
   materials:
     XenoborgCrystal: 100
+    Steel: 200
+    Gold: 150
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -91,6 +111,8 @@
   result: XenoborgModuleOilGun
   materials:
     XenoborgCrystal: 300
+    Steel: 300
+    Plastic: 400
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -98,6 +120,8 @@
   result: XenoborgModuleNaniteGun
   materials:
     XenoborgCrystal: 200
+    Glass: 200
+    Silver: 300
 
 ## heavy xenoborg modules
 
@@ -107,6 +131,8 @@
   result: XenoborgModuleHeavyLaser
   materials:
     XenoborgCrystal: 200
+    Glass: 400
+    Gold: 300
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -114,6 +140,8 @@
   result: XenoborgModuleRocket
   materials:
     XenoborgCrystal: 400
+    Steel: 800
+    Plasma: 300
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -121,6 +149,8 @@
   result: XenoborgModuleBurstFireLaser
   materials:
     XenoborgCrystal: 200
+    Glass: 500
+    Gold: 200
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -128,6 +158,8 @@
   result: XenoborgModuleHeavyRadioactive
   materials:
     XenoborgCrystal: 100
+    Steel: 200
+    Uranium: 400
 
 ## scout xenoborg modules
 
@@ -137,6 +169,8 @@
   result: XenoborgModuleEnergySword
   materials:
     XenoborgCrystal: 300
+    Gold: 200
+    Uranium: 200
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -144,6 +178,8 @@
   result: XenoborgModuleJump
   materials:
     XenoborgCrystal: 100
+    Steel: 400
+    Plasma: 150
 
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
@@ -151,6 +187,8 @@
   result: XenoborgModuleBioKinfe
   materials:
     XenoborgCrystal: 200
+    Steel: 200
+    Plasma: 300
 
 ## stealth xenoborg modules
 
@@ -160,3 +198,5 @@
   result: XenoborgModuleSuperCloakDevice
   materials:
     XenoborgCrystal: 300
+    Plasma: 200
+    Silver: 400
