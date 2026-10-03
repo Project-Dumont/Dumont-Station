@@ -63,5 +63,9 @@
       icon:
         sprite: _Goobstation/Clothing/OuterClothing/Misc/schema_monk.rsi
         state: icon
+    - prototype: SpawnArmamentsVenerator
+      icon:
+        sprite: _Trauma/Clothing/OuterClothing/Misc/venerator.rsi
+        state: icon
   - type: StaticPrice
     price: 500
