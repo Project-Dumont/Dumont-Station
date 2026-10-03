@@ -166,11 +166,6 @@
       - Shard
   - type: SpeedModifierImmunity
   - type: Rootable
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobDiona
-    lowest: MobDionaNymph
-  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

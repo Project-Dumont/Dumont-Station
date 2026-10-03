@@ -97362,14 +97362,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -27.5,-35.5
-    - type: DnaClient
-      server: 15215
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 121
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 1479.4985505
-      lastInjectorTime: 1479.4985505
     - type: DeviceLinkSource
       linkedPorts:
         22584:
@@ -97381,14 +97373,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -25.5,-36.5
-    - type: DnaClient
-      server: 15216
-      connectedToServer: True
-    - type: DnaServer
-      serverId: 122
-    - type: DnaModifierConsole
-      lastSubjectInjectTime: 1479.4985505
-      lastInjectorTime: 1479.4985505
     - type: DeviceLinkSource
       linkedPorts:
         22585:

@@ -446,7 +446,7 @@
   - type: Crawler
   - type: Dna
   - type: Scent # Einstein Engines
-  - type: DnaModifier
+  - type: Mutatable # Trauma
   - type: MindContainer
     showExamineInfo: true
   - type: CanEnterCryostorage

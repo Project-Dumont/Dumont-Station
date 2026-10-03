@@ -9,7 +9,9 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ChemCureDnaDisease
+      # Dumont
+      - !type:GeneticDisorder
+        remove: true
       - !type:HealthChange
         damage:
           types:

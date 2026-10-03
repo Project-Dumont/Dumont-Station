@@ -74,11 +74,6 @@
     - DoorBumpOpener
     - AnomalyHost
     - Oni
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobOni
-    lowest: MobMonkeyOni
-  # Corvax-Wega-Genetics-end
   - type: DashAction
     actionProto: ActionCharge
   - type: Charge

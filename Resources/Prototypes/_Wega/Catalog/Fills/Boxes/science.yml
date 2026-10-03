@@ -1,12 +1,12 @@
 - type: entity
-  name: DNA disk box
+  name: genetics disk box
   parent: BoxCardboard
   id: BoxDnaFisk
-  description: A box of DNA-modifier disk.
+  description: A box of blank genetics disks.
   components:
   - type: StorageFill
     contents:
-      - id: DnaModifierDisk
+      - id: GeneticsDisk
         amount: 3
   - type: Sprite
     layers:
