@@ -42,12 +42,16 @@
       map: [ "sealed" ]
   - type: Tag
     tags:
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
     - SyringeArmor
   - type: IgniteFromGasImmunity
-    parts:
-    - BodyMiddle
-    - Legs
+    parts: # Dumont change
+    - Chest
+    - Groin
+    - LeftArm
+    - RightArm
+    - LeftLeg
+    - RightLeg
   # GabyStation begin
   - type: UpgradeableWeapon # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
   - type: ContainerContainer

@@ -21,9 +21,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots

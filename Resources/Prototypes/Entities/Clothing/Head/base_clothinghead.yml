@@ -253,7 +253,7 @@
     tags:
     - WhitelistChameleon
     - HelmetEVA
-    - PlasmamanSafe # EE Plasmeme Change
+    - PlasmamanSafeOther # Dumont
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:
@@ -317,7 +317,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - PlasmamanSafe # EE Plasmeme Change
+    - PlasmamanSafeOther # Dumont
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:

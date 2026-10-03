@@ -65,7 +65,7 @@
 
 - type: Tag
   id: WeaponPistolDahlia
-  
+
 - type: Tag
   id: XenoDungeon
 
@@ -75,3 +75,5 @@
 - type: Tag
   id: DrinkBottleMilk
 
+- type: Tag
+  id: PlasmamanSafeOther
