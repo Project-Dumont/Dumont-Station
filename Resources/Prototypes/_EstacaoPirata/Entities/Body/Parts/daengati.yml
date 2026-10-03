@@ -67,6 +67,11 @@
   - type: Sprite
     sprite: Mobs/Species/Human/parts.rsi
     state: "l_hand"
+  - type: BodyPart
+    onAdd:
+    - type: Cautery
+      speed: 0.1
+    - type: AlwaysHot
 
 - type: entity
   id: RightHandDaengati
@@ -76,6 +81,11 @@
   - type: Sprite
     sprite: Mobs/Species/Human/parts.rsi
     state: "r_hand"
+  - type: BodyPart
+    onAdd:
+    - type: Cautery
+      speed: 0.1
+    - type: AlwaysHot
 
 - type: entity
   id: LeftLegDaengati
