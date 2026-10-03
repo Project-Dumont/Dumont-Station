@@ -221,6 +221,9 @@
   description: "Filters toxins from the bloodstream."
   categories: [ HideSpawnMenu ]
   components:
+  # Dumont changes start
+  - type: Kidneys
+  # Dumont end
   - type: Organ # Shitmed
     intCap: 21
     integrity: 21

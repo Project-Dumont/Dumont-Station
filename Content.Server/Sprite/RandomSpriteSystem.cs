@@ -7,6 +7,9 @@
 //
 // SPDX-License-Identifier: MIT
 
+// Dumont changes start
+using Content.Shared._Trauma.Sprite;
+// Dumont end
 using Content.Shared.Decals;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Sprite;
@@ -73,6 +76,10 @@ public sealed class RandomSpriteSystem: SharedRandomSpriteSystem
         }
 
         Dirty(uid, component);
+        // Dumont changes start
+        var ev = new RandomSpriteChangedEvent();
+        RaiseLocalEvent(uid, ref ev);
+        // Dumont end
     }
 
     private void OnGetState(EntityUid uid, RandomSpriteComponent component, ref ComponentGetState args)

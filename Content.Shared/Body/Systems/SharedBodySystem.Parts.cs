@@ -1271,6 +1271,10 @@ public partial class SharedBodySystem
             (BodyPartType.Leg, BodyPartSymmetry.Right) => TargetBodyPart.RightLeg,
             (BodyPartType.Foot, BodyPartSymmetry.Left) => TargetBodyPart.LeftFoot,
             (BodyPartType.Foot, BodyPartSymmetry.Right) => TargetBodyPart.RightFoot,
+            // Dumont changes start
+            (BodyPartType.Tail, _) => TargetBodyPart.Tail,
+            (BodyPartType.Wings, _) => TargetBodyPart.Wings,
+            // Dumont end
             _ => TargetBodyPart.Chest,
         };
     }
@@ -1293,6 +1297,10 @@ public partial class SharedBodySystem
             TargetBodyPart.LeftFoot => (BodyPartType.Foot, BodyPartSymmetry.Left),
             TargetBodyPart.RightLeg => (BodyPartType.Leg, BodyPartSymmetry.Right),
             TargetBodyPart.RightFoot => (BodyPartType.Foot, BodyPartSymmetry.Right),
+            // Dumont changes start
+            TargetBodyPart.Tail => (BodyPartType.Tail, BodyPartSymmetry.None),
+            TargetBodyPart.Wings => (BodyPartType.Wings, BodyPartSymmetry.None),
+            // Dumont end
             _ => (BodyPartType.Chest, BodyPartSymmetry.None)
         };
 

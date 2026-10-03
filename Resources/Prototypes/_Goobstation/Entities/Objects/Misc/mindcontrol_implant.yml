@@ -41,7 +41,9 @@
   showTo:
     components:
       - ShowAntagIcons
-      - Mindcontrolled
+      # Dumont changes start
+      # - Mindcontrolled
+      # Dumont end
   icon:
     sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: Mindcontrolled

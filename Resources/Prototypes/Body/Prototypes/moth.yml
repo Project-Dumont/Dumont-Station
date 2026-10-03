@@ -32,6 +32,13 @@
       - left arm
       - groin
       - head # Shitmed
+      # Dumont changes start
+      - wings
+      # Dumont end
+    # Dumont changes start
+    wings:
+      part: WingsMoth
+    # Dumont end
     groin:
       part: GroinMoth
       connections:

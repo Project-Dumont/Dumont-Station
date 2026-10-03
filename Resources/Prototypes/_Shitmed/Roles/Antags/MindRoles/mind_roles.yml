@@ -18,31 +18,26 @@
     antagPrototype: LoneAbductorAntag
     roleType: SoloAntagonist
     subtype: role-subtype-abductor
-  - type: Abductor
+  - type: Abductor # TODO: see if anything actually checks this...
+  - type: AbductorRole
 
 - type: entity
-  parent: BaseMindRoleAntag
+  parent: MindRoleLoneAbductor
   id: MindRoleAbductorAgent
-  name: Lone Abductor Role
+  name: Abductor Agent Role
   components:
   - type: MindRole
-    exclusiveAntag: true
     antagPrototype: AbductorAgentAntag
     roleType: TeamAntagonist
-    subtype: role-subtype-abductor
-  - type: Abductor
 
 - type: entity
-  parent: BaseMindRoleAntag
+  parent: MindRoleLoneAbductor
   id: MindRoleAbductorScientist
-  name: Lone Abductor Role
+  name: Abductor Scientist Role
   components:
   - type: MindRole
-    exclusiveAntag: true
     antagPrototype: AbductorScientistAntag
     roleType: TeamAntagonist
-    subtype: role-subtype-abductor
-  - type: Abductor
 
 - type: entity
   parent: BaseMindRoleAntag

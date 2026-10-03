@@ -49,3 +49,6 @@
     range: 200
   - type: Appearance
   - type: CollideOnAnchor
+  - type: Strap
+    position: Stand
+    buckleOffset: "0,0"

@@ -8,35 +8,41 @@
 
 using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Shared.Actions;
-using Content.Shared.DoAfter;
-using Content.Shared.Effects;
-using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Spawners;
-using Robust.Shared.Audio.Systems;
-using Content.Shared.Movement.Pulling.Systems;
-using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Actions.Components;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
+using Content.Shared.DoAfter;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Systems;
+using Content.Server.Buckle.Systems;
+using Content.Shared.Buckle.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Player;
+using Robust.Shared.Spawners;
+using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Shitmed.Antags.Abductor;
 
 public sealed partial class AbductorSystem : SharedAbductorSystem
 {
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly PullingSystem _pullingSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+    [Dependency] private BuckleSystem _buckle = default!;
 
     private static readonly EntProtoId<ActionComponent> SendYourself = "ActionSendYourself";
     private static readonly EntProtoId<ActionComponent> ExitAction = "ActionExitConsole";
-    private static readonly EntProtoId<InstantActionComponent> ReturnAction = "ActionReturnToShip";
+    private static readonly EntProtoId<ActionComponent> SendPadAction = "ActionSendPad";
     private static readonly EntProtoId TeleportationEffect = "EffectTeleportation";
     private static readonly EntProtoId TeleportationEffectEntity = "EffectTeleportationEntity";
+    private static readonly EntProtoId TeleportationEffectShort = "EffectTeleportationShort";
+    private static readonly EntProtoId TeleportationEffectEntityShort = "EffectTeleportationEntityShort";
 
-    public void InitializeActions()
+    public static readonly SoundSpecifier TeleportSound = new SoundPathSpecifier(new ResPath("/Audio/_Shitmed/Misc/alien_teleport.ogg"));
+
+    private void InitializeActions()
     {
         SubscribeLocalEvent<AbductorScientistComponent, ComponentStartup>(AbductorScientistComponentStartup);
-        SubscribeLocalEvent<AbductorsAbilitiesComponent, ComponentStartup>(AbductorsAbilitiesComponentStartup);
 
         SubscribeLocalEvent<ExitConsoleEvent>(OnExit);
 
@@ -45,45 +51,41 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         SubscribeLocalEvent<SendYourselfEvent>(OnSendYourself);
         SubscribeLocalEvent<AbductorScientistComponent, AbductorSendYourselfDoAfterEvent>(OnDoAfterSendYourself);
+
+        SubscribeLocalEvent<AbductorScientistComponent, SendPadEvent>(OnSendPad);
+        SubscribeLocalEvent<AbductorScientistComponent, AbductorSendPadDoAfterEvent>(OnDoAfterSendPad);
     }
 
     private void AbductorScientistComponentStartup(Entity<AbductorScientistComponent> ent, ref ComponentStartup args)
         => ent.Comp.SpawnPosition = EnsureComp<TransformComponent>(ent).Coordinates;
 
-    private void AbductorsAbilitiesComponentStartup(Entity<AbductorsAbilitiesComponent> ent, ref ComponentStartup args)
-    {
-        foreach (var (uid, _) in _actions.GetActions(ent))
-        {
-            if (!_entityManager.TryGetComponent<MetaDataComponent>(uid, out var metadata)
-                || metadata.EntityPrototype is not { } proto
-                || proto.ID != ReturnAction.Id)
-                continue;
-
-            ent.Comp.ReturnToShip = uid;
-            return;
-        }
-    }
-
     private void OnReturn(AbductorReturnToShipEvent ev)
     {
-        EnsureComp<AbductorScientistComponent>(ev.Performer, out var abductorScientistComponent);
-        AddTeleportationEffect(ev.Performer, 3.0f, TeleportationEffectEntity, out var effectEnt, true, true);
-
-        if (abductorScientistComponent.SpawnPosition.HasValue)
-        {
-            var effect = _entityManager.SpawnEntity(TeleportationEffect, abductorScientistComponent.SpawnPosition.Value);
-            EnsureComp<TimedDespawnComponent>(effect, out var despawnComp);
-            despawnComp.Lifetime = 3.0f;
-            _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effect);
-        }
+        var user = ev.Performer;
+        if (!TryComp<AbductorScientistComponent>(user, out var comp))
+            return;
 
         var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer)
         {
             MultiplyDelay = false,
         };
-        _doAfter.TryStartDoAfter(doAfter);
+        if (!_doAfter.TryStartDoAfter(doAfter))
+        {
+            Log.Error($"Couldn't start return doafter for {ToPrettyString(user)}!");
+            return;
+        }
+
+        AddTeleportationEffect(user, TeleportationEffectEntityShort);
+
+        if (comp.SpawnPosition is {} pos)
+        {
+            var effect = Spawn(TeleportationEffectShort, pos);
+            _audio.PlayPvs(TeleportSound, effect);
+        }
+
         ev.Handled = true;
     }
+
     private void OnDoAfterAbductorReturn(Entity<AbductorScientistComponent> ent, ref AbductorReturnDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled)
@@ -91,87 +93,166 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { ent }, Filter.Pvs(ent, entityManager: EntityManager));
         StopPulls(ent);
-        if (ent.Comp.SpawnPosition is not null)
-            _xformSys.SetCoordinates(ent, ent.Comp.SpawnPosition.Value);
+        if (ent.Comp.SpawnPosition is {} pos)
+            _xform.SetCoordinates(ent, pos);
         OnCameraExit(ent);
     }
 
     private void OnSendYourself(SendYourselfEvent ev)
     {
-        AddTeleportationEffect(ev.Performer, 5.0f, TeleportationEffectEntity, out var effectEnt, true, false);
-        var effect = _entityManager.SpawnEntity(TeleportationEffect, ev.Target);
-        EnsureComp<TimedDespawnComponent>(effect, out var _);
-
+        var user = ev.Performer;
         var @event = new AbductorSendYourselfDoAfterEvent(GetNetCoordinates(ev.Target));
-        var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(5), @event, ev.Performer);
-        _doAfter.TryStartDoAfter(doAfter);
+        var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(5), @event, user)
+        {
+            RequireCanInteract = false, // CANNOT WORK WITHOUT THIS, the abductor eye is usually prevented from interacting.
+        };
+        if (!_doAfter.TryStartDoAfter(doAfter))
+        {
+            Log.Error($"Couldn't start send doafter for {ToPrettyString(user)}!");
+            return;
+        }
+
+        // no sound so you can jump people
+        AddTeleportationEffect(user, TeleportationEffectEntity, playAudio: false);
+        SpawnAttachedTo(TeleportationEffect, ev.Target);
+
         ev.Handled = true;
     }
+
     private void OnDoAfterSendYourself(Entity<AbductorScientistComponent> ent, ref AbductorSendYourselfDoAfterEvent args)
     {
-        _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { ent }, Filter.Pvs(ent, entityManager: EntityManager));
-        StopPulls(ent);
-        _xformSys.SetCoordinates(ent, GetCoordinates(args.TargetCoordinates));
-        OnCameraExit(ent);
-
-        if (!_entityManager.TryGetComponent<AbductorsAbilitiesComponent>(ent, out var comp))
+        if (args.Handled || args.Cancelled)
             return;
 
-        _actions.SetCooldown(comp.ReturnToShip, TimeSpan.FromSeconds(ent.Comp.ReturnToShipCooldown));
+        _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { ent }, Filter.Pvs(ent, entityManager: EntityManager));
+        StopPulls(ent);
+        _xform.SetCoordinates(ent, GetCoordinates(args.TargetCoordinates));
+        OnCameraExit(ent);
+    }
+
+    private void OnSendPad(Entity<AbductorScientistComponent> ent, ref SendPadEvent ev)
+    {
+        var user = ent.Owner;
+
+        if (ent.Comp.Console is not {} consoleUid)
+        {
+            ev.Handled = true;
+            return;
+        }
+
+        var consoleGrid = _xform.GetGrid(consoleUid);
+        EntityUid padFound = default;
+        var padQuery = EntityQueryEnumerator<AbductorAlienPadComponent>();
+        while (padQuery.MoveNext(out var padUid, out _))
+        {
+            if (_xform.GetGrid(padUid) != consoleGrid)
+                continue;
+            padFound = padUid;
+            break;
+        }
+
+        if (!TryComp<StrapComponent>(padFound, out var strap) || strap.BuckledEntities.Count == 0)
+        {
+            _popup.PopupEntity(Loc.GetString("abductor-send-agent-not-buckled"), user, user);
+            ev.Handled = true;
+            return;
+        }
+
+        EntityUid agent = default;
+        foreach (var buckled in strap.BuckledEntities)
+        {
+            agent = buckled;
+            break;
+        }
+
+        var @event = new AbductorSendPadDoAfterEvent(GetNetCoordinates(ev.Target), GetNetEntity(agent));
+        var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(3), @event, user)
+        {
+            MultiplyDelay = false,
+            RequireCanInteract = false,
+        };
+
+        if (!_doAfter.TryStartDoAfter(doAfter))
+        {
+            Log.Error($"Couldn't start send pad doafter for {ToPrettyString(user)}!");
+            return;
+        }
+
+        AddTeleportationEffect(agent, TeleportationEffectEntityShort);
+        var padEffect = Spawn(TeleportationEffectShort, Transform(padFound).Coordinates);
+        _audio.PlayPvs(TeleportSound, padEffect);
+        SpawnAttachedTo(TeleportationEffect, ev.Target);
+
+        ev.Handled = true;
+    }
+
+    private void OnDoAfterSendPad(Entity<AbductorScientistComponent> ent, ref AbductorSendPadDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        var agent = GetEntity(args.Agent);
+
+        if (TryComp<BuckleComponent>(agent, out var buckle))
+            _buckle.Unbuckle((agent, buckle), null);
+
+        _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { agent }, Filter.Pvs(agent, entityManager: EntityManager));
+        StopPulls(agent);
+        _xform.SetCoordinates(agent, GetCoordinates(args.TargetCoordinates));
+
+        args.Handled = true;
     }
 
     private void OnExit(ExitConsoleEvent ev) => OnCameraExit(ev.Performer);
 
-    private void AddActions(AbductorBeaconChosenBuiMsg args)
+    private void AddActions(EntityUid user)
     {
-        EnsureComp<AbductorsAbilitiesComponent>(args.Actor, out var comp);
-        comp.HiddenActions = _actions.HideActions(args.Actor);
-        _actions.AddAction(args.Actor, ref comp.ExitConsole, ExitAction);
-        _actions.AddAction(args.Actor, ref comp.SendYourself, SendYourself);
+        EnsureComp<AbductorsAbilitiesComponent>(user, out var comp);
+        comp.HiddenActions = _actions.HideActions(user);
+        _actions.AddAction(user, ref comp.ExitConsole, ExitAction);
+        _actions.AddAction(user, ref comp.SendYourself, SendYourself);
+        _actions.AddAction(user, ref comp.SendPad, SendPadAction);
     }
 
     private void RemoveActions(EntityUid actor)
     {
-        EnsureComp<AbductorsAbilitiesComponent>(actor, out var comp);
+        if (!TryComp<AbductorsAbilitiesComponent>(actor, out var comp))
+            return;
+
         _actions.RemoveAction(actor, comp.ExitConsole);
         _actions.RemoveAction(actor, comp.SendYourself);
+        _actions.RemoveAction(actor, comp.SendPad);
         _actions.UnHideActions(actor, comp.HiddenActions);
     }
 
     private void StopPulls(EntityUid ent)
     {
-        if (_pullingSystem.IsPulling(ent))
+        if (_pulling.IsPulling(ent))
         {
             if (!TryComp<PullerComponent>(ent, out var pullerComp)
-                || pullerComp.Pulling == null
-                || !TryComp<PullableComponent>(pullerComp.Pulling.Value, out var pullableComp)
-                || !_pullingSystem.TryStopPull(pullerComp.Pulling.Value, pullableComp)) return;
+                || pullerComp.Pulling is not {} pulling
+                || !TryComp<PullableComponent>(pulling, out var pullableComp)
+                || !_pulling.TryStopPull(pulling, pullableComp)) return;
         }
 
-        if (_pullingSystem.IsPulled(ent))
+        if (_pulling.IsPulled(ent))
         {
             if (!TryComp<PullableComponent>(ent, out var pullableComp)
-                || !_pullingSystem.TryStopPull(ent, pullableComp)) return;
+                || !_pulling.TryStopPull(ent, pullableComp)) return;
         }
     }
 
-    private void AddTeleportationEffect(EntityUid performer,
-        float lifetime,
-        EntProtoId effectEntity,
-        out EntityUid effectEnt,
+    private void AddTeleportationEffect(EntityUid target,
+        EntProtoId proto,
         bool applyColor = true,
         bool playAudio = true)
     {
         if (applyColor)
-            _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { performer }, Filter.Pvs(performer, entityManager: EntityManager));
+            _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { target }, Filter.Pvs(target, entityManager: EntityManager));
 
-        EnsureComp<TransformComponent>(performer, out var xform);
-        effectEnt = SpawnAttachedTo(effectEntity, xform.Coordinates);
-        _xformSys.SetParent(effectEnt, performer);
-        EnsureComp<TimedDespawnComponent>(effectEnt, out var despawnComp);
-        despawnComp.Lifetime = lifetime;
+        var effect = SpawnAttachedTo(proto, new EntityCoordinates(target, 0, 0));
 
         if (playAudio)
-            _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effectEnt);
+            _audio.PlayPvs(TeleportSound, effect);
     }
 }
