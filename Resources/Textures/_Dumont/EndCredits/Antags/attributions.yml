@@ -1,0 +1,9 @@
+- files: ["xenoborgs.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made with the xenoborg and mothership core sprites by DVDPlayerOfDiscordFame (GitHub) for Impstation"
+  source: "https://github.com/impstation/imp-station-14"
+
+- files: ["slasher.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Made with the slasher mask, apron and machete sprites by Assripper, plus the human body, grey jumpsuit, black gloves and leather shoes sprites from tgstation and Paradise"
+  source: "https://github.com/Goob-Station/Goob-Station"
