@@ -2,13 +2,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.StationRadio.Components;
-using Content.Goobstation.Shared.StationRadio.Events;
+using Content.Shared._Starlight.StationRadio.Components;
+using Content.Shared._Starlight.StationRadio.Events;
 using Content.Server.GameTicking;
 using Content.Server.Station.Systems;
 using Content.Shared.Communications;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.DeviceLinking;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Random;
@@ -19,51 +18,41 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
-using Content.Server.Radio.Components;
 using Content.Server.Chat.Systems;
-using Content.Goobstation.Shared.StationRadio.Systems;
-using Content.Shared._Starlight.StationRadio.Events;
 
-namespace Content.Goobstation.Server.StationRadio;
+namespace Content.Server._Starlight.StationRadio.Systems;
 
 /// <summary>
 /// System that handles spawning game rules when vinyl disks finish playing.
 /// </summary>
-public sealed class VinylSummonRuleSystem : EntitySystem
+public sealed partial class VinylSummonRuleSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly SharedPopupSystem _popups = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private SharedContainerSystem _containers = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private StationSystem _stationSystem = default!;
+    [Dependency] private SharedPowerReceiverSystem _power = default!;
+    [Dependency] private ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private SharedPopupSystem _popups = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private StationRadioReceiverSystem _stationRadio = default!;
 
     private record struct TrackingData(EntityUid VinylPlayerUid, TimeSpan EndTime);
     private readonly Dictionary<EntityUid, TrackingData> _trackingVinyls = new();
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<VinylPlayerComponent, VinylInsertedEvent>(OnVinylInserted);
-        SubscribeLocalEvent<VinylPlayerComponent, VinylRemovedEvent>(OnVinylRemoved);
-        SubscribeLocalEvent<VinylSummonRuleComponent, VinylFinishedEvent>(OnVinylFinished);//Starlight: Eventify vinyl finishing.
-    }
-
+    [SubscribeLocalEvent]
     private void OnVinylInserted(EntityUid uid, VinylPlayerComponent player, ref VinylInsertedEvent args)
     {
         var playerUid = uid;
         var vinylUid = args.Vinyl;
 
-        void QueueSafeEject() => Timer.Spawn(0, () => EjectVinyl(playerUid, vinylUid)); //starlight edit: one-liner, and moved above the Validation
+        void QueueSafeEject() => Timer.Spawn(0, () => EjectVinyl(playerUid, vinylUid));
 
         // Check if the inserted entity has the summon rule component / A song
-        if (!TryComp<VinylComponent>(vinylUid, out var vinylComp) //starlight edit: Track any vinyl playing.
+        if (!TryComp<VinylComponent>(vinylUid, out var vinylComp)
             || vinylComp.Song == null)
         {
             QueueSafeEject();
@@ -87,7 +76,7 @@ public sealed class VinylSummonRuleSystem : EntitySystem
         }
 
         // Check if vinyl player is connected to the radio system
-        if (!CheckForRadioConnection(playerUid))
+        if (!_stationRadio.TryGetLinkedPoweredServer(playerUid, out _)) // Starlight - Station Radio Check oved to StationRadioReceiverSystem
         {
             _popups.PopupPredicted(Loc.GetString("vinyl-popout-no-radio-connection"), playerUid, null, PopupType.Medium);
             QueueSafeEject();
@@ -103,13 +92,14 @@ public sealed class VinylSummonRuleSystem : EntitySystem
         _trackingVinyls[vinylUid] = new TrackingData(playerUid, endTime);
     }
 
+    [SubscribeLocalEvent]
     private void OnVinylRemoved(EntityUid uid, VinylPlayerComponent player, ref VinylRemovedEvent args)
     {
         // Stop tracking if the vinyl is removed
         _trackingVinyls.Remove(args.Vinyl);
     }
 
-    public override void Update(float frameTime)
+    public override void Update(float frameTime) //TODO Pretty sure most of this can be checked once in OnVinylFinished
     {
         base.Update(frameTime);
 
@@ -144,7 +134,7 @@ public sealed class VinylSummonRuleSystem : EntitySystem
             }
 
             // Check if vinyl player is still connected to the radio system
-            if (!CheckForRadioConnection(data.VinylPlayerUid))
+            if (!_stationRadio.TryGetPoweredGridServer(data.VinylPlayerUid, out _))
             {
                 _trackingVinyls.Remove(vinylUid);
                 _popups.PopupPredicted(Loc.GetString("vinyl-popout-no-radio-connection"), data.VinylPlayerUid, null, PopupType.Medium);
@@ -155,10 +145,8 @@ public sealed class VinylSummonRuleSystem : EntitySystem
             // Check if playback has finished
             if (currentTime >= data.EndTime)
             {
-                #region Starlight lets just... make this a event?
                 var ev = new VinylFinishedEvent(data.VinylPlayerUid);
                 RaiseLocalEvent(vinylUid, ref ev);
-                #endregion
                 _trackingVinyls.Remove(vinylUid);
             }
         }
@@ -180,7 +168,7 @@ public sealed class VinylSummonRuleSystem : EntitySystem
             }
     }
 
-    #region Starlight: Eventify Vinyl finishing.
+    [SubscribeLocalEvent]
     private void OnVinylFinished(Entity<VinylSummonRuleComponent> entity, ref VinylFinishedEvent _)
     {
         // Resolve the game rule ID and get the threat prototype if available
@@ -203,14 +191,13 @@ public sealed class VinylSummonRuleSystem : EntitySystem
             _containers.Remove(entity.Owner, container);
 
         // Play sound effect
-        _audio.PlayPvs(entity.Comp.BurnSound, vinylCoords, entity.Comp.BurnSoundParams);  // Starlight - Dehardcode BurnSoundParams
+        _audio.PlayPvs(entity.Comp.BurnSound, vinylCoords, entity.Comp.BurnSoundParams);
 
         // Spawn ash at the vinyl's location
-        Spawn(entity.Comp.AshPrototype, vinylCoords); // Starlight - Dehardcode ash prototype
+        Spawn(entity.Comp.AshPrototype, vinylCoords);
 
         // Delete the vinyl
         QueueDel(entity);
-        #endregion
     }
 
     private string? ResolveGameRule(string gameRuleIdentifier, out NinjaHackingThreatPrototype? threat)
@@ -232,31 +219,5 @@ public sealed class VinylSummonRuleSystem : EntitySystem
 
         // Assume it's a direct game rule entity ID
         return gameRuleIdentifier;
-    }
-
-    private bool CheckForRadioConnection(EntityUid uid)
-    {
-        if (!TryComp<DeviceLinkSourceComponent>(uid, out var source))
-            return false;
-
-        foreach (var linkedRig in source.LinkedPorts.Keys)
-        {
-            // Check if the radio rig is connected.
-            if (!HasComp<RadioRigComponent>(linkedRig)
-                || !TryComp<DeviceLinkSinkComponent>(linkedRig, out var sink))
-                continue;
-
-            // Check if the radio server is connected.
-            foreach (var linkedServer in sink.LinkedSources)
-            {
-                if (!TryComp<StationRadioServerComponent>(linkedServer, out var _)
-                    || !_power.IsPowered(linkedServer))
-                    continue;
-
-                return true;
-            }
-        }
-
-        return false;
     }
 }

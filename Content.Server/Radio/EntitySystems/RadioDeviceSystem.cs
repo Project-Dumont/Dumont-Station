@@ -59,6 +59,7 @@ using Content.Server._EinsteinEngines.Language;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio.Components;
+using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
@@ -277,6 +278,16 @@ public sealed class RadioDeviceSystem : EntitySystem
         var name = Loc.GetString("speech-name-relay",
             ("speaker", Name(uid)),
             ("originalName", nameEv.VoiceName));
+
+        // Starlight - Start - Radio Host
+        var chatType = InGameICChatType.Whisper; // Default, messages from radios are sent as whispers.
+        var transmitRange = ChatTransmitRange.GhostRangeLimit; // Default, all ghosts can hear whispers from radios.
+        if (TryComp<StationRadioReceiverComponent>(uid, out var receiverComp))
+        {
+            transmitRange = ChatTransmitRange.HideChat; // Message hidden from chat if from a Station Radio.
+            chatType = !receiverComp.BoostVolume ? InGameICChatType.Whisper : InGameICChatType.Speak; // Radios will talk loudly if at full volume.
+        }
+        // Starlight - End
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
         var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.
