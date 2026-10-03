@@ -453,7 +453,7 @@
     - SpiderChargeObjective
     - TerrorObjective
     - MassArrestObjective
-    - NinjaSurviveObjective
+    - ExtractObjective # Dumont
   - type: AntagSelection
     agentName: ninja-round-end-agent-name
     definitions:

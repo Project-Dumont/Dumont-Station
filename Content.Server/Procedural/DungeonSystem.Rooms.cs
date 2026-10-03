@@ -227,6 +227,11 @@ public sealed partial class DungeonSystem
                 if (!clearExisting && reservedTiles?.Contains(position.Floored()) == true)
                     continue;
 
+                // Dumont changes start
+                if (!_prototype.HasIndex<DecalPrototype>(decal.Id))
+                    continue;
+                // Dumont end
+
                 // Umm uhh I love decals so uhhhh idk what to do about this
                 var angle = (decal.Angle + finalRoomRotation).Reduced();
 

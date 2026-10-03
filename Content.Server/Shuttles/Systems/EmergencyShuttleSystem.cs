@@ -112,6 +112,11 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+// Dumont changes start
+using Content.Server.Parallax;
+using Content.Server.Procedural;
+using Content.Shared.Construction.EntitySystems;
+// Dumont end
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -145,6 +150,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
     [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
+    // Dumont changes start
+    [Dependency] private readonly BiomeSystem _biomes = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
+    [Dependency] private readonly AnchorableSystem _anchorable = default!;
+    // Dumont end
 
     private const float ShuttleSpawnBuffer = 1f;
 
