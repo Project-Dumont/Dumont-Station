@@ -165,6 +165,20 @@
     mindRole: MindRoleMothershipCore
     briefingText: mothership-welcome
   - type: MothershipCore
+  - type: MothershipCoreControl
+  - type: GhostRole
+    name: ghost-role-information-mothership-core-name
+    description: ghost-role-information-mothership-core-desc
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleMothershipCore
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 144000 # 40 hrs
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 18000 # 5 hrs
+  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - SiliconEmotes
@@ -253,6 +267,8 @@
   description: View the Xenoborgs Control Console
   components:
   - type: Action
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-control-computer }
+    iconOn: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-control-computer }
     keywords: [ "Mothership Core", "console", "interface" ]
     priority: -6
   - type: Sprite
@@ -269,6 +285,8 @@
   description: View the Xenoborgs Camera Monitor
   components:
   - type: Action
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-camera-computer }
+    iconOn: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-camera-computer }
     keywords: [ "Mothership Core", "console", "interface" ]
     priority: -6
   - type: Sprite

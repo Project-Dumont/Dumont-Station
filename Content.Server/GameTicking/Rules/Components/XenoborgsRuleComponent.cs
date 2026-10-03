@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Radio;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -95,4 +96,26 @@ public sealed partial class XenoborgsRuleComponent : Component
 
     [DataField]
     public bool MothershipToCentcomm = true;
+
+    /// <summary>
+    /// If a mothership core should be placed even when no player took the role.
+    /// </summary>
+    [DataField]
+    public bool AlwaysSpawnMothershipCore = true;
+
+    /// <summary>
+    /// How long after the rule starts the leftover core spawner is turned into an empty core.
+    /// </summary>
+    [DataField]
+    public TimeSpan MothershipCoreFallbackDelay = TimeSpan.FromSeconds(20);
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
+    public TimeSpan? MothershipCoreFallbackTime;
+
+    [DataField]
+    public ProtoId<TagPrototype> MothershipCoreSpawnerTag = "MothershipCoreGhostrole";
+
+    [DataField]
+    public EntProtoId MothershipCore = "MothershipCore";
 }

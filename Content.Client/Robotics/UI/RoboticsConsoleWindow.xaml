@@ -41,6 +41,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <Button Name="DestroyButton" Text="{Loc 'robotics-console-destroy'}" StyleClasses="OpenLeft"/>
                     <!-- Funkystation -> Malf AI -->
                     <Button Name="ImposeLawButton" Text="{Loc 'malfai-robotics-impose-law-button'}" Margin="10 0 0 0"/>
+                    <!-- Dumont -->
+                    <Button Name="TakeControlButton" Text="{Loc 'robotics-console-take-control'}" Margin="10 0 0 0"/>
                 </BoxContainer>
                 <Label Name="LockedMessage" Text="{Loc 'robotics-console-locked-message'}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </controls:StripeBack>
