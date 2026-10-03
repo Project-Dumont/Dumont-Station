@@ -243,6 +243,9 @@
   - type: Sharp
     butcherDelayModifier: 2 #It's a bayonet
   - type: GunRequiresWield
+  - type: Gun
+    quality: 0 # Can't jam
+    timeToUnjam: 0
   - type: StaticPrice
     price: 500
   - type: Item  # Goob edit
@@ -271,6 +274,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     resetOnHandSelected: false # Goobstation - quickscope pro
+    quality: 320 # Dumont - You don't shoot this much
+    timeToUnjam: 0.6
   #- type: BallisticAmmoProvider - Goobstation - Magazine Sniper
   #  whitelist:
   #    tags:

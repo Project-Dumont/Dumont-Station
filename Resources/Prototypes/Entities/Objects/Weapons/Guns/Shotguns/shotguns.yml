@@ -176,6 +176,9 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    quality: 440 # Its pretty ok
+    timeToUnjam: 2
+  - type: Wieldable
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -221,6 +224,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 3
+    timeToUnjam: 0.5
+  - type: Wieldable
   - type: GunSpreadModifier
     spread: 0.6
   - type: BallisticAmmoProvider
@@ -257,6 +262,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1.7 # Goobstation
+    quality: 1000 # Premium
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -284,6 +290,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     # fireRate: 1 # goob
+    quality: 260 # Old
+    timeToUnjam: 0.3
   - type: GunSpreadModifier
     spread: 0.6
   - type: Tag
@@ -308,7 +316,9 @@
     - 0,0,2,0
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 4
+    quality: 240
+    timeToUnjam: 0.6
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider
@@ -346,6 +356,8 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
+    quality: 120 # Shitty
+    timeToUnjam: 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
@@ -371,6 +383,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
+    quality: 160 # Shitty
+    timeToUnjam: 2.1 # Its a goddamn blunderbuss
   - type: BallisticAmmoProvider
     capacity: 1
   - type: StaticPrice
@@ -394,6 +408,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
+    quality: 100 # Improvised
+    timeToUnjam: 1.1
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null

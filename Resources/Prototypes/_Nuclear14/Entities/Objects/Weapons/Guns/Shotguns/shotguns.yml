@@ -27,7 +27,6 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    fireOnDropChance: 0.2
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
