@@ -63,7 +63,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
   - type: BasicEntityAmmoProvider
-    proto: BulletPistolSilver
+    proto: VaticanDueProcessBullet
     capacity: 12
     count: 12
   - type: AmmoCounter
@@ -75,6 +75,17 @@
     prayDoAfterDuration: 3.5
   - type: Tag
     tags: [ Sidearm ]
+
+- type: entity
+  parent: BulletPistolSilver
+  id: VaticanDueProcessBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Holy: 10
 
 - type: entity
   parent: BaseItem
@@ -118,6 +129,12 @@
   name: consecrated bolt
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: "#FDFFCF"
   - type: Projectile
     damage:
       types:
