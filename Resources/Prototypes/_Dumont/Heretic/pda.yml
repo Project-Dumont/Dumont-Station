@@ -38,7 +38,7 @@
 - type: entity
   parent: VaticanPDA
   id: VaticanLeaderPDA
-  name: chief inquisitor PDA
+  name: lord inquisitor PDA
   components:
   - type: Pda
     id: VaticanLeaderIDCard
@@ -54,7 +54,7 @@
 - type: entity
   parent: VaticanIDCard
   id: VaticanLeaderIDCard
-  name: chief inquisitor ID card
+  name: lord inquisitor ID card
   components:
   - type: PresetIdCard
     job: VaticanInquisitorLeader

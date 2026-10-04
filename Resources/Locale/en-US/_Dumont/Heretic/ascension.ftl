@@ -17,18 +17,18 @@ ent-RandomHumanoidSpawnerHereticInquisitor = Vatican Inquisitor
 alert-level-cataclysm = Cataclysm
 alert-level-cataclysm-announcement = The Veil has been torn. Seek shelter, follow the clergy's instructions and prepare to evacuate.
 
-vatican-inquisitor-leader-name = Chief Inquisitor
+vatican-inquisitor-leader-name = Lord Inquisitor
 vatican-inquisitor-leader-description = Lead the Inquisition. Coordinate the rescue of survivors and containment of the supernatural threat. Follow your orders.
-vatican-inquisitor-supervisors = the Vatican and the Chief Inquisitor
+vatican-inquisitor-supervisors = the Vatican and the Lord Inquisitor
 vatican-rank-1 = Father
 vatican-rank-2 = Friar
 vatican-rank-3 = Deacon
-vatican-chief-rank-1 = Chief Inquisitor
+vatican-chief-rank-1 = Lord Inquisitor
 
 ent-VaticanDawnbreaker = Dawnbreaker
-    .desc = The Chief Inquisitor's consecrated blade.
+    .desc = The Lord Inquisitor's consecrated blade.
 ent-VaticanDueProcess = Due Process
     .desc = An inquisitorial pistol. Hold it and use Pray in the interaction menu to restore its 12 charges in 3.5 seconds.
 ent-VaticanThemis = Themis
-    .desc = A consecrated energy crossbow. Hold it and use Pray in the interaction menu to restore its 5 charges in 3.5 seconds.
+    .desc = A consecrated energy crossbow. Hold it and use Pray in the interaction menu to restore its 20 charges in 3.5 seconds.
 ent-VaticanThemisBolt = consecrated bolt

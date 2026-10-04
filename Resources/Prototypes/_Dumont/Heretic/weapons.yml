@@ -4,7 +4,7 @@
   parent: BaseSword
   id: VaticanDawnbreaker
   name: Dawnbreaker
-  description: The Chief Inquisitor's consecrated blade.
+  description: The Lord Inquisitor's consecrated blade.
   components:
   - type: Sprite
     sprite: _Dumont/Objects/Weapons/Melee/dawnbreaker.rsi
@@ -99,11 +99,11 @@
     angleDecay: 4
     availableModes: [ SemiAuto ]
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BasicEntityAmmoProvider
     proto: VaticanThemisBolt
-    capacity: 5
-    count: 5
+    capacity: 20
+    count: 20
   - type: AmmoCounter
   - type: ContainerContainer
     containers:
@@ -121,5 +121,5 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Holy: 15
+        Piercing: 25
+        Holy: 25
