@@ -28,10 +28,7 @@ public abstract partial class SharedMoverController
     {
         if (!_player.TryGetSessionById(args.Mind.Comp.UserId, out var session)) return;
 
-        if (session.Channel is not { } channel) return;
-
-        ent.Comp.DefaultSprinting = _netConfig.GetClientCVar(channel, CCVars.DefaultWalk);
-        RaiseLocalEvent(ent, new SprintingInputEvent(ent)); // WD EDIT
+        ApplyWalkPreference(ent, session); // Dumont
     }
 
     private void OnMindRemoved(Entity<InputMoverComponent> ent, ref MindRemovedMessage args)
@@ -39,6 +36,21 @@ public abstract partial class SharedMoverController
         // If it's an ai-controlled mob, we probably want them sprinting by default.
         ent.Comp.DefaultSprinting = true;
     }
+
+    // Dumont changes start
+    /// <summary>
+    /// Takes the walk preference of whoever is driving the entity. Needed for mobs taken over without
+    /// a mind of their own, which never get <see cref="MindAddedMessage"/>.
+    /// </summary>
+    public void ApplyWalkPreference(Entity<InputMoverComponent> ent, ICommonSession session)
+    {
+        if (session.Channel is not { } channel)
+            return;
+
+        ent.Comp.DefaultSprinting = _netConfig.GetClientCVar(channel, CCVars.DefaultWalk);
+        RaiseLocalEvent(ent, new SprintingInputEvent(ent));
+    }
+    // Dumont end
 
     private void OnUpdateCVars(UpdateInputCVarsMessage msg, EntitySessionEventArgs args)
     {
