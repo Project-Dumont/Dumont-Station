@@ -10,10 +10,13 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Robotics;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Xenoborgs.Components;
+using Robust.Shared.Player;
 
 namespace Content.Server._Dumont.Xenoborgs;
 
@@ -24,6 +27,7 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private SharedMoverController _mover = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
@@ -70,6 +74,10 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
 
         if (TryComp<BorgChassisComponent>(target, out var chassis))
             _borg.BorgActivate(target, chassis);
+
+        // a visit never raises MindAddedMessage, so the mover keeps the mindless default and walks
+        if (TryComp<ActorComponent>(target, out var actor) && TryComp<InputMoverComponent>(target, out var mover))
+            _mover.ApplyWalkPreference((target, mover), actor.PlayerSession);
 
         SetGhostRolesTaken(target, true);
 
@@ -127,6 +135,9 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
 
         if (TryComp<BorgChassisComponent>(uid, out var chassis))
             _borg.BorgDeactivate(uid, chassis);
+
+        if (TryComp<InputMoverComponent>(uid, out var mover))
+            mover.DefaultSprinting = true;
 
         SetGhostRolesTaken(uid, false);
 
