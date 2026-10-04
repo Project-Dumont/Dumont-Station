@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "State based copyright | Ported from https://github.com/ss14Starlight/space-station-14/tree/main/Resources/Textures/_Starlight/Objects/Weapons/Melee/dawnbreaker.rsi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon",
+      "copyright": "Made by Killer Tamashi (Discord), edited by Conflee"
+    },
+    {
+      "name": "welder_flame",
+      "copyright": "Made by Killer Tamashi (Discord)",
+      "delays": [
+        [
+          0.3,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4,
+      "copyright": "Made by Killer Tamashi (Discord), edited by Conflee"
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4,
+      "copyright": "Made by Killer Tamashi (Discord), edited by Conflee"
+    },
+    {
+      "name": "inhand-left-flame",
+      "directions": 4,
+      "copyright": "Made by Killer Tamashi (Discord)",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "inhand-right-flame",
+      "directions": 4,
+      "copyright": "Made by Killer Tamashi (Discord)",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "equipped-BACKPACK",
+      "directions": 4,
+      "copyright": "Made by Killer Tamashi (Discord), edited by Conflee"
+    }
+  ]
+}

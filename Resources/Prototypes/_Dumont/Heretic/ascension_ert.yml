@@ -59,7 +59,8 @@
     id: VaticanPDA
     ears: ClothingHeadsetVatican
     belt: ClothingBeltVatican
-    pocket1: WeaponPulsePistol
+    suitstorage: VaticanThemis
+    pocket1: VaticanDueProcess
     pocket2: DrinkWaterBottleFull
   storage:
     back:
@@ -109,6 +110,8 @@
   equipment:
     neck: ClothingNeckCloakInquisitor
     id: VaticanLeaderPDA
+  inhand:
+  - VaticanDawnbreaker
 
 - type: job
   id: VaticanInquisitor

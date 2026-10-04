@@ -39,3 +39,22 @@ ent-ClothingBeltVatican = bolsa da Inquisição
     .desc = Uma bolsa prática para os suprimentos da Inquisição.
 ent-ClothingHeadsetVatican = rádio da Inquisição
     .desc = Um rádio do Vaticano com acesso ao canal da Central de Comando.
+
+ent-VaticanDawnbreaker = Dawnbreaker
+    .desc = A lâmina consagrada do Inquisidor Chefe. Seu fio pune a carne e o profano.
+ent-VaticanDueProcess = Due Process
+    .desc = Uma pistola a serviço da Inquisição. Segure-a e use Rezar no menu de interação para restaurar suas 12 cargas em 3,5 segundos.
+ent-VaticanThemis = Themis
+    .desc = Uma besta energética consagrada à Inquisição. Segure-a e use Rezar no menu de interação para restaurar suas 5 cargas em 3,5 segundos.
+ent-VaticanThemisBolt = virote consagrado
+
+ent-ClothingModsuitInquisitory = unidade de controle da MODsuit da Inquisição
+    .desc = O núcleo de uma armadura modular destinada aos Inquisidores do Vaticano.
+ent-ClothingModsuitHelmetInquisitory = capacete da MODsuit da Inquisição
+    .desc = Um capacete pressurizado com visor tático integrado.
+ent-ClothingModsuitChestplateInquisitory = couraça da MODsuit da Inquisição
+    .desc = Uma couraça reforçada com servos que auxiliam os movimentos do inquisidor.
+ent-ClothingModsuitGauntletsInquisitory = manoplas da MODsuit da Inquisição
+    .desc = Manoplas blindadas que integram o traje da Inquisição.
+ent-ClothingModsuitBootsInquisitory = botas da MODsuit da Inquisição
+    .desc = Botas magnéticas que integram o traje da Inquisição.

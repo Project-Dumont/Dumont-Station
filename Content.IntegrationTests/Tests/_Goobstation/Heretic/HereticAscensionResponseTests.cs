@@ -79,6 +79,10 @@ public sealed class HereticAscensionResponseTests
                         leaders++;
                     Assert.That(inventory.TryGetSlotEntity(inv.Owner, "ears", out var headset), Is.True);
                     Assert.That(em.GetComponent<MetaDataComponent>(headset.Value).EntityPrototype?.ID, Is.EqualTo("ClothingHeadsetVatican"));
+                    Assert.That(inventory.TryGetSlotEntity(inv.Owner, "pocket1", out var pistol), Is.True);
+                    Assert.That(em.GetComponent<MetaDataComponent>(pistol.Value).EntityPrototype?.ID, Is.EqualTo("VaticanDueProcess"));
+                    Assert.That(inventory.TryGetSlotEntity(inv.Owner, "suitstorage", out var themis), Is.True);
+                    Assert.That(em.GetComponent<MetaDataComponent>(themis.Value).EntityPrototype?.ID, Is.EqualTo("VaticanThemis"));
                     inquisitors++;
                 }
             }

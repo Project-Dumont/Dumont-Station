@@ -30,6 +30,5 @@ public sealed partial class ReloadOnPraySystem : EntitySystem
             return;
 
         _audioSystem.PlayPvs(comp.ReloadSoundPath, uid);
-        Dirty(uid, comp);
     }
 }

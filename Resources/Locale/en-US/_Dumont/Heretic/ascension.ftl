@@ -24,3 +24,11 @@ vatican-rank-1 = Father
 vatican-rank-2 = Friar
 vatican-rank-3 = Deacon
 vatican-chief-rank-1 = Chief Inquisitor
+
+ent-VaticanDawnbreaker = Dawnbreaker
+    .desc = The Chief Inquisitor's consecrated blade.
+ent-VaticanDueProcess = Due Process
+    .desc = An inquisitorial pistol. Hold it and use Pray in the interaction menu to restore its 12 charges in 3.5 seconds.
+ent-VaticanThemis = Themis
+    .desc = A consecrated energy crossbow. Hold it and use Pray in the interaction menu to restore its 5 charges in 3.5 seconds.
+ent-VaticanThemisBolt = consecrated bolt
