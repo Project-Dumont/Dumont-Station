@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by AgentePanela (Github), resprite by probably_mason",
+  "size": {
+    "x": 128,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "screen"
+    }
+  ]
+}
