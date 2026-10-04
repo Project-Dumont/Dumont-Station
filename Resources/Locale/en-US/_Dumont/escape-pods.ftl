@@ -10,3 +10,7 @@ evacuation-planet-name = Evacuation Planet
 
 escape-pod-max-occupants = [color=red]This pod is only rated for a maximum of {$max} occupants, one per seat.[/color]
 escape-pod-overcrowded = The pod is overcrowded! ({$count}/{$max})
+
+escape-pod-launch-radio = An escape pod is launching in {$time} seconds.
+escape-pod-launch-radio-location = The escape pod near {$location} is launching in {$time} seconds.
+escape-pods-pda-notification = The escape pods have been unlocked by the Captain.

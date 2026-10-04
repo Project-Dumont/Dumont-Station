@@ -8,20 +8,28 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Verbs;
-using Robust.Shared.Audio.Systems; // Dumont
+// Dumont changes start
+using Content.Server.Pinpointer;
+using Content.Server.Radio.EntitySystems;
+using Robust.Shared.Audio.Systems;
+// Dumont end
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Computers.PodConsole;
 
 /// <summary>
-/// This handles...
+/// Launches escape pods when their console countdown ends.
 /// </summary>
 public sealed partial class PodConsoleSystem : SharedPodConsoleSystem
 {
 
     [Dependency] private EmergencyShuttleSystem _emergencyShuttleSystem = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedAudioSystem _audio = default!; // Dumont
+    // Dumont changes start
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    // Dumont end
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -30,6 +38,16 @@ public sealed partial class PodConsoleSystem : SharedPodConsoleSystem
 
         while (escapePodsQuery.MoveNext(out var ent, out var podConsole))
         {
+            // Dumont changes start
+            if (podConsole.LaunchTime is { } launchTime &&
+                podConsole.LaunchStream == null &&
+                launchTime > _timing.CurTime &&
+                launchTime - _timing.CurTime <= podConsole.LaunchSoundLead)
+            {
+                PlayLaunchSound((ent, podConsole));
+            }
+            // Dumont end
+
             if (podConsole.LaunchTime == null || podConsole.LaunchTime > _timing.CurTime) continue;
             // Dumont changes start
             if (CheckOvercrowded((ent, podConsole), null))
@@ -58,6 +76,19 @@ public sealed partial class PodConsoleSystem : SharedPodConsoleSystem
 
     // Dumont changes start
     protected override void OnLaunchCountdown(Entity<PodConsoleComponent> ent)
+    {
+        var time = (int) ent.Comp.LaunchDelay.TotalSeconds;
+        var message = _navMap.TryGetNearestBeacon(ent.Owner, out var beacon, out _) && beacon.Value.Comp.Text is { } location
+            ? Loc.GetString("escape-pod-launch-radio-location", ("location", location), ("time", time))
+            : Loc.GetString("escape-pod-launch-radio", ("time", time));
+
+        _radio.SendRadioMessage(ent, message, ent.Comp.LaunchChannel, ent);
+    }
+
+    /// <summary>
+    /// Plays the launch sound on the pod grid so everyone inside hears it.
+    /// </summary>
+    private void PlayLaunchSound(Entity<PodConsoleComponent> ent)
     {
         if (Transform(ent).GridUid is not { } grid)
             return;

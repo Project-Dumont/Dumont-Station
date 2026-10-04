@@ -7,6 +7,9 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Computers.PodConsole;
 
+/// <summary>
+/// Handles using the escape pod console to start a launch.
+/// </summary>
 public abstract partial class SharedPodConsoleSystem : EntitySystem
 {
 
@@ -32,9 +35,9 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
             return;
         // Dumont end
         ent.Comp.Locked = true;
-        ent.Comp.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(10);
+        ent.Comp.LaunchTime = _timing.CurTime + ent.Comp.LaunchDelay; // Dumont
         Dirty(ent); // Dumont
-        _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", 10)), ent, args.User, PopupType.LargeCaution);
+        _popup.PopupPredicted(Loc.GetString("pod-launching", ("time", (int) ent.Comp.LaunchDelay.TotalSeconds)), ent, args.User, PopupType.LargeCaution); // Dumont
         OnLaunchCountdown(ent); // Dumont
     }
 
@@ -68,10 +71,16 @@ public abstract partial class SharedPodConsoleSystem : EntitySystem
     }
 
     // Dumont changes start
+    /// <summary>
+    /// Called when a launch countdown starts on the console.
+    /// </summary>
     protected virtual void OnLaunchCountdown(Entity<PodConsoleComponent> ent)
     {
     }
 
+    /// <summary>
+    /// Returns true and shows a popup when the pod has more people than it can carry.
+    /// </summary>
     public bool CheckOvercrowded(Entity<PodConsoleComponent> ent, EntityUid? user)
     {
         if (!_capacity.IsOvercrowded(ent, out var occupants, out var max))

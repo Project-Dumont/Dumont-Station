@@ -109,7 +109,10 @@ public sealed partial class EmergencyShuttleSystem
     // Dumont changes start
     private EntityUid? _evacuationPlanetMap;
     private EntityCoordinates? _evacuationLandingZone;
+    private readonly List<Vector2> _evacuationLandingSpots = new();
     private const float PodSpreadRadius = 25f;
+    private const float PodLandingSpacing = 6f;
+    private const int PodLandingAttempts = 15;
     private const float EvacuationMobBudgetModifier = 1f;
     // Dumont end
 
@@ -441,6 +444,7 @@ public sealed partial class EmergencyShuttleSystem
         // Dumont changes start
         _evacuationPlanetMap = null;
         _evacuationLandingZone = null;
+        _evacuationLandingSpots.Clear();
         // Dumont end
     }
 
@@ -541,6 +545,10 @@ public sealed partial class EmergencyShuttleSystem
         return true;
     }
     // Dumont changes start
+    /// <summary>
+    /// Sends an escape pod to the evacuation planet, creating the planet if this is the first pod of the round.
+    /// The pod keeps the rotation it had on the station.
+    /// </summary>
     public void LaunchEscapePod(EntityUid uid, ShuttleComponent shuttle, float travelTime)
     {
         if (_evacuationPlanetMap == null || _evacuationLandingZone == null)
@@ -552,19 +560,10 @@ public sealed partial class EmergencyShuttleSystem
             return;
         }
 
-        var angle = _random.NextAngle();
-        var distance = _random.NextFloat(0, PodSpreadRadius);
-        var offset = angle.ToVec() * distance;
+        var offset = PickLandingOffset();
+        _evacuationLandingSpots.Add(offset);
         var landingCoords = evacuationLandingZone.Offset(offset);
-
-        var rotations = new[]
-        {
-            Angle.Zero,
-            Angle.FromDegrees(90),
-            Angle.FromDegrees(180),
-            Angle.FromDegrees(270)
-        };
-        var podRotation = _random.Pick(rotations);
+        var podRotation = _transformSystem.GetWorldRotation(uid);
 
         _shuttle.FTLToCoordinates(
             uid,
@@ -577,6 +576,25 @@ public sealed partial class EmergencyShuttleSystem
         RemCompDeferred<EscapePodComponent>(uid);
     }
 
+    /// <summary>
+    /// Picks a random spot around the landing zone, trying to stay away from pods that already landed.
+    /// </summary>
+    private Vector2 PickLandingOffset()
+    {
+        var offset = Vector2.Zero;
+        for (var i = 0; i < PodLandingAttempts; i++)
+        {
+            offset = _random.NextAngle().ToVec() * _random.NextFloat(0, PodSpreadRadius);
+            if (_evacuationLandingSpots.All(spot => (spot - offset).Length() >= PodLandingSpacing))
+                break;
+        }
+
+        return offset;
+    }
+
+    /// <summary>
+    /// Creates the evacuation planet with one random salvage dungeon on it.
+    /// </summary>
     private void SetupEvacuationPlanet()
     {
         try
@@ -656,6 +674,9 @@ public sealed partial class EmergencyShuttleSystem
         }
     }
 
+    /// <summary>
+    /// Generates the dungeon away from the landing zone and fills it with its enemies once it is done.
+    /// </summary>
     private async void SpawnEvacuationDungeon(Entity<MapGridComponent> planet, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty)
     {
         var seed = _random.Next();
@@ -687,6 +708,9 @@ public sealed partial class EmergencyShuttleSystem
         }
     }
 
+    /// <summary>
+    /// Spawns mobs from a faction that fits the dungeon, using the expedition mob budget.
+    /// </summary>
     private void PopulateEvacuationDungeon(Entity<MapGridComponent> planet, List<Dungeon> dungeons, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty, System.Random random)
     {
         var tiles = dungeons.SelectMany(d => d.RoomTiles).ToList();
@@ -739,6 +763,9 @@ public sealed partial class EmergencyShuttleSystem
         Log.Info($"Evacuation planet dungeon {dungeonMod.ID} populated with {faction.ID}");
     }
 
+    /// <summary>
+    /// Spawns one mob on a free dungeon tile and removes its ghost role.
+    /// </summary>
     private void SpawnEvacuationMob(Entity<MapGridComponent> planet, string proto, List<Vector2i> tiles, System.Random random)
     {
         for (var i = 0; i < 20; i++)

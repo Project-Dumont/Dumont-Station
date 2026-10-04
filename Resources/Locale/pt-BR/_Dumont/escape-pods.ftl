@@ -20,3 +20,7 @@ ent-ExtractObjective = Sair da estação
 
 escape-pod-max-occupants = [color=red]Esta cápsula comporta no máximo {$max} pessoas, uma por assento.[/color]
 escape-pod-overcrowded = A cápsula está lotada! ({$count}/{$max})
+
+escape-pod-launch-radio = Uma cápsula de fuga vai decolar em {$time} segundos.
+escape-pod-launch-radio-location = A cápsula de fuga perto de {$location} vai decolar em {$time} segundos.
+escape-pods-pda-notification = O Capitão liberou as cápsulas de fuga.

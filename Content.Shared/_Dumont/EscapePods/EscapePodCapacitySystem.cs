@@ -5,6 +5,9 @@ using Content.Shared.Mobs.Components;
 
 namespace Content.Shared._Dumont.EscapePods;
 
+/// <summary>
+/// Stops escape pods from launching with more people than they can carry.
+/// </summary>
 public sealed class EscapePodCapacitySystem : EntitySystem
 {
     private EntityQuery<MobStateComponent> _mobQuery;
@@ -33,6 +36,9 @@ public sealed class EscapePodCapacitySystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Counts every mob on the pod grid, including buckled, carried and stored ones.
+    /// </summary>
     public int CountOccupants(EntityUid console)
     {
         if (Transform(console).GridUid is not { } grid)
@@ -48,6 +54,9 @@ public sealed class EscapePodCapacitySystem : EntitySystem
         return _occupants.Count;
     }
 
+    /// <summary>
+    /// Returns the pod limit, or null when the pod has no limit.
+    /// </summary>
     public int? GetMaxOccupants(Entity<PodConsoleComponent> console)
     {
         if (console.Comp.MaxOccupants is { } max)
@@ -67,6 +76,9 @@ public sealed class EscapePodCapacitySystem : EntitySystem
         return seats > 0 ? seats : null;
     }
 
+    /// <summary>
+    /// Returns true when the pod has more occupants than its limit.
+    /// </summary>
     public bool IsOvercrowded(Entity<PodConsoleComponent> console, out int occupants, out int max)
     {
         occupants = 0;
