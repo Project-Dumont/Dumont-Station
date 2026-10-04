@@ -2,10 +2,10 @@
 
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
+using Content.Server.Silicons.Borgs;
 using Content.Shared._Dumont.Xenoborgs;
 using Content.Shared.Actions;
 using Content.Shared.DeviceNetwork.Components;
-using Content.Shared.Item.ItemToggle;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -19,8 +19,8 @@ namespace Content.Server._Dumont.Xenoborgs;
 
 public sealed partial class MothershipCoreControlSystem : EntitySystem
 {
+    [Dependency] private BorgSystem _borg = default!;
     [Dependency] private GhostRoleSystem _ghostRole = default!;
-    [Dependency] private ItemToggleSystem _toggle = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedMindSystem _mind = default!;
@@ -41,20 +41,23 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
 
     private void OnTakeControl(Entity<MothershipCoreControlComponent> ent, ref RoboticsConsoleTakeControlMessage args)
     {
-        if (ent.Comp.Controlled != null)
-            return;
-
         if (!TryGetXenoborg(args.Address, out var target))
             return;
 
-        if (!CanControl(target))
-        {
+        if (!TryTakeControl(ent, target))
             _popup.PopupEntity(Loc.GetString("mothership-core-control-busy"), ent, args.Actor);
-            return;
-        }
+    }
+
+    /// <summary>
+    /// Moves the core's player into a xenoborg that nobody is using, leaving the core itself behind.
+    /// </summary>
+    public bool TryTakeControl(Entity<MothershipCoreControlComponent> ent, EntityUid target)
+    {
+        if (ent.Comp.Controlled != null || !CanControl(target))
+            return false;
 
         if (!_mind.TryGetMind(ent.Owner, out var mindId, out _))
-            return;
+            return false;
 
         _mind.Visit(mindId, target);
 
@@ -65,10 +68,13 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
         _actions.AddAction(target, ref action, ent.Comp.ReturnAction);
         controlled.ReturnActionEntity = action;
 
-        _toggle.TryActivate(target);
+        if (TryComp<BorgChassisComponent>(target, out var chassis))
+            _borg.BorgActivate(target, chassis);
+
         SetGhostRolesTaken(target, true);
 
         ent.Comp.Controlled = target;
+        return true;
     }
 
     private void OnCoreMindRemoved(Entity<MothershipCoreControlComponent> ent, ref MindRemovedMessage args)
@@ -118,7 +124,10 @@ public sealed partial class MothershipCoreControlSystem : EntitySystem
             _mind.UnVisit(mindId);
 
         _actions.RemoveAction(uid, controlled.ReturnActionEntity);
-        _toggle.TryDeactivate(uid);
+
+        if (TryComp<BorgChassisComponent>(uid, out var chassis))
+            _borg.BorgDeactivate(uid, chassis);
+
         SetGhostRolesTaken(uid, false);
 
         RemCompDeferred<MothershipControlledComponent>(uid);
