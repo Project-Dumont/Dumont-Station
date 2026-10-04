@@ -16,3 +16,11 @@ heretic-inquisitor-ert-description = Contain the supernatural threat and its ser
 ent-RandomHumanoidSpawnerHereticInquisitor = Vatican Inquisitor
 alert-level-cataclysm = Cataclysm
 alert-level-cataclysm-announcement = The Veil has been torn. Seek shelter, follow the clergy's instructions and prepare to evacuate.
+
+vatican-inquisitor-leader-name = Chief Inquisitor
+vatican-inquisitor-leader-description = Lead the Inquisition. Coordinate the rescue of survivors and containment of the supernatural threat. Follow your orders.
+vatican-inquisitor-supervisors = the Vatican and the Chief Inquisitor
+vatican-rank-1 = Father
+vatican-rank-2 = Friar
+vatican-rank-3 = Deacon
+vatican-chief-rank-1 = Chief Inquisitor

@@ -122,8 +122,11 @@ namespace Content.Server.RoundEnd
             AutoCallStartTime = _gameTiming.CurTime;
         }
 
+        public bool RecallLocked { get; set; }
+
         private void Reset()
         {
+            RecallLocked = false;
             if (_countdownTokenSource != null)
             {
                 _countdownTokenSource.Cancel();
@@ -167,7 +170,7 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
-            return _cooldownTokenSource == null;
+            return _cooldownTokenSource == null && !RecallLocked;
         }
 
         public bool IsRoundEndRequested()
@@ -278,7 +281,7 @@ namespace Content.Server.RoundEnd
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             if (checkCooldown && _cooldownTokenSource != null) return;
 
-            if (_countdownTokenSource == null) return;
+            if (RecallLocked || _countdownTokenSource == null) return;
             _countdownTokenSource.Cancel();
             _countdownTokenSource = null;
 

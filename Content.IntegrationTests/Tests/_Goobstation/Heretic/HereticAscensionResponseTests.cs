@@ -62,6 +62,7 @@ public sealed class HereticAscensionResponseTests
             var grid = ertRules[0].Item2.MapGrids.Single();
             var inventory = em.System<InventorySystem>();
             var inquisitors = 0;
+            var leaders = 0;
             foreach (var (inv, transform) in em.EntityQuery<InventoryComponent, TransformComponent>(true))
             {
                 if (transform.GridUid != grid || !inventory.TryGetSlotEntity(inv.Owner, "outerClothing", out var armor))
@@ -73,10 +74,20 @@ public sealed class HereticAscensionResponseTests
                     Assert.That(inventory.TryGetSlotEntity(inv.Owner, "back", out var control), Is.True);
                     Assert.That(em.GetComponent<MetaDataComponent>(control.Value).EntityPrototype?.ID,
                         Is.EqualTo("ClothingModsuitInquisitory"));
+                    if (inventory.TryGetSlotEntity(inv.Owner, "neck", out var cloak)
+                        && em.GetComponent<MetaDataComponent>(cloak.Value).EntityPrototype?.ID == "ClothingNeckCloakInquisitor")
+                        leaders++;
+                    Assert.That(inventory.TryGetSlotEntity(inv.Owner, "ears", out var headset), Is.True);
+                    Assert.That(em.GetComponent<MetaDataComponent>(headset.Value).EntityPrototype?.ID, Is.EqualTo("ClothingHeadsetVatican"));
                     inquisitors++;
                 }
             }
             Assert.That(inquisitors, Is.EqualTo(5));
+            Assert.That(leaders, Is.EqualTo(1));
+            Assert.That(evacuation.RecallLocked, Is.True);
+            evacuation.CancelRoundEndCountdown(checkCooldown: false);
+            Assert.That(evacuation.IsRoundEndRequested(), Is.True);
+            Assert.That(evacuation.ExpectedCountdownEnd, Is.EqualTo(deadline));
 
             response.SpawnERTOnAscension();
             Assert.That(evacuation.ExpectedCountdownEnd, Is.EqualTo(deadline));

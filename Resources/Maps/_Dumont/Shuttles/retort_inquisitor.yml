@@ -1649,23 +1649,23 @@ entities:
   - uid: 186
     components:
     - type: MetaData
-      name: paper (Mission Briefing)
+      name: ordens da Inquisição
     - type: Transform
       pos: 0.4688274,1.4164677
       parent: 1
     - type: Paper
       stampState: paper_stamp-centcom
       stampedBy:
-      - stampedColor: '#006600FF'
-        stampedName: stamp-component-stamped-name-centcom
-      content: "[color=#1b67a5]░██░░░░██░║\r[italic][color=#D3D3D3] TOP SECRET [/color][/italic]\n░███░░░██░║\r[italic][color=#ac3a0d]Nanotrasen. The Devil's in the details.[/color][/italic]\n░██░██░██░║\r\n░██░░░███░║[head=2][italic] I. A. D [/italic][/head]\r\n▀▄▀▄▀▄▀ ▄▀▄[/color] [italic] Nanotrasen Internal Affairs Department[/italic]\r\n\r\n[head=2] Mission Briefing [/head]\r\n[color=#1b67a5 ]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]\r\n[italic] Courtesy of : Cecille Voltaire, Central Command Agent [/italic]\r\n\r\n[head=3][head=2]1. [/head]Mission Objective[/head]\r\n[italic][color=#D3D3D3] Primary Target[/color][/italic]\r\n\n[bold][color=Blue]Rescue[/color][/bold]\rall remaining crew members.\n════════════════════════════════════\r\n\r\n[head=3][head=2]2. [/head]Secondary Objective[/head]\r\n[italic][color=#D3D3D3]  Secondary Target[/color][/italic]\r\n\n\n[bold][color=#ac3a0d]Terminate[/color][/bold] any threats present. You are permitted to take over for the captain if needed.\n\n════════════════════════════════════\r\n\r\n[head=3][head=2]3. [/head]Additional Information[/head]\r\n[italic][color=#D3D3D3] Other Information [/color][/italic]\r\n\r\nN/A\n\n════════════════════════════════════\r\n \r\n \r\n [bold] Thank you for your co-operation. Nanotrasen sends its regards. [/bold]\r\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\r\n\r\n\n"
+      - stampedColor: '#D6BB45FF'
+        stampedName: O Vaticano
+      content: "[head=1]SANTA SÉ[/head]\n[head=2]Ordens da Inquisição[/head]\n[italic]Documento reservado aos Inquisidores do Vaticano.[/italic]\n\n[head=3]1. Resgate[/head]\nLocalizem os sobreviventes, prestem socorro e garantam sua evacuação. Procurem o Capelão e coordenem a retirada com a tripulação.\n\n[head=3]2. Contenção[/head]\nContenham a ameaça sobrenatural e seus servos. Evitem perdas desnecessárias e não permitam que a entidade alcance os evacuados. Não negociem com ela.\n\n[head=3]3. Comando[/head]\nO Inquisidor Chefe, identificado pelo manto da Inquisição, coordenará a operação. Sigam as ordens recebidas e mantenham contato entre si.\n\n[head=3]4. Evacuação[/head]\nA evacuação foi autorizada pelo Vaticano e não poderá ser cancelada. Os Fuzileiros Navais têm previsão de chegada em duas horas. Não aguardem reforços para retirar os sobreviventes.\n\n[bold]Que a luz do Altíssimo vos acompanhe.[/bold]"
     - type: Physics
       angularDamping: 0
       linearDamping: 0
     - type: Label
-      currentLabel: Mission Briefing
+      currentLabel: Ordens da Inquisição
     - type: NameModifier
-      baseName: paper
+      baseName: ordens da Inquisição
 - proto: PlastitaniumWindow
   entities:
   - uid: 187
@@ -1844,13 +1844,15 @@ entities:
     - type: Transform
       pos: 2.5,-6.5
       parent: 1
-- proto: RandomHumanoidSpawnerHereticInquisitor
+- proto: RandomHumanoidSpawnerVaticanLeader
   entities:
   - uid: 214
     components:
     - type: Transform
       pos: 0.52580804,0.50548494
       parent: 1
+- proto: RandomHumanoidSpawnerHereticInquisitor
+  entities:
   - uid: 215
     components:
     - type: Transform

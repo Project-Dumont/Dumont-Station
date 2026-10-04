@@ -233,7 +233,7 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
         {
             _musicAt = null;
             if (_ticker.RunLevel == GameRunLevel.InRound)
-                _audio.PlayGlobal(VaticanMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-6f));
+                _audio.PlayGlobal(VaticanMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-13f));
         }
     }
 
@@ -251,11 +251,12 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
         while (stations.MoveNext(out var station, out _, out _))
             _alerts.SetLevel(station, "cataclysm", false, false, force: true, locked: true);
 
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("heretic-ascension-evacuation"),
+            Loc.GetString("heretic-vatican-sender"), playSound: false, colorOverride: Color.FromHex("#FDFFCF"));
+        _roundEnd.RecallLocked = true;
         if (!_roundEnd.IsRoundEndRequested())
             _roundEnd.RequestRoundEnd(rule.EvacuationDelay, checkCooldown: false, announce: false, playSound: false);
 
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("heretic-ascension-evacuation"),
-            Loc.GetString("heretic-vatican-sender"), playSound: false, colorOverride: Color.FromHex("#FDFFCF"));
         _audio.PlayGlobal(VaticanAlertSound, Filter.Broadcast(), true);
         _musicAt = Timing.CurTime + _audio.GetAudioLength(VaticanAlertSound);
     }
