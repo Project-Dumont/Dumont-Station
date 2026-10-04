@@ -100,6 +100,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Grab;
+using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -136,6 +137,9 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Throwing;
+using Content.Shared.Construction.Components;
 
 namespace Content.Shared.Movement.Pulling.Systems;
 
@@ -158,6 +162,7 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedVirtualItemSystem _virtualSystem = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
+    [Dependency] private readonly ThrownItemSystem _thrown = default!; // Dumont
 
     public override void Initialize()
     {
@@ -241,7 +246,7 @@ public sealed class PullingSystem : EntitySystem
         // and clear it.
         foreach (var held in _handsSystem.EnumerateHeld((uid, component)))
         {
-            if (!TryComp(held, out VirtualItemComponent? virtualItem) || virtualItem.BlockingEntity != args.PulledUid)
+            if (!TryComp(held, out VirtualItemComponent? virtualItem) || GetRelayedEntity(virtualItem.BlockingEntity) != args.PulledUid) // Goob edit
                 continue;
 
             _handsSystem.TryDrop((args.PullerUid, component), held);
@@ -310,10 +315,10 @@ public sealed class PullingSystem : EntitySystem
     private void OnVirtualItemDeleted(Entity<PullerComponent> ent, ref VirtualItemDeletedEvent args)
     {
         // If client deletes the virtual hand then stop the pull.
-        if (ent.Comp.Pulling == null || ent.Comp.Pulling != args.BlockingEntity)
+        if (ent.Comp.Pulling == null || ent.Comp.Pulling != GetRelayedEntity(args.BlockingEntity)) // Goob edit
             return;
 
-        if (TryComp(args.BlockingEntity, out PullableComponent? pullableComp))
+        if (TryComp(ent.Comp.Pulling, out PullableComponent? pullableComp)) // Goob edit
             TryStopPull(ent.Comp.Pulling.Value, pullableComp, ent.Owner);
     }
 
@@ -359,6 +364,9 @@ public sealed class PullingSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (!_blocker.CanInteract(ent, null))
+            return;
+
         args.Handled = TryStopPull(ent, ent, ent);
     }
 
@@ -378,7 +386,9 @@ public sealed class PullingSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        if (args.User == args.Target)
+        var target = GetRelayedEntity(args.Target); // Trauma
+
+        if (args.User == target) // Trama - args.Target -> target
             return;
 
         //TODO VERB ICONS add pulling icon
@@ -392,12 +402,12 @@ public sealed class PullingSystem : EntitySystem
             };
             args.Verbs.Add(verb);
         }
-        else if (CanPull(args.User, args.Target))
+        else if (CanPull(args.User, target)) // Trauma - args.Target -> target
         {
             Verb verb = new()
             {
                 Text = Loc.GetString("pulling-verb-get-data-text"),
-                Act = () => TryStartPull(args.User, args.Target),
+                Act = () => TryStartPull(args.User, target), // Trauma - args.Target -> target
                 DoContactInteraction = false // pulling handle its own contact interaction.
             };
             args.Verbs.Add(verb);
@@ -545,7 +555,8 @@ public sealed class PullingSystem : EntitySystem
 
         if (physics.BodyType == BodyType.Static)
         {
-            return false;
+            if (!HasComp<AnchorableComponent>(pullableUid) || !TryComp<MovedByPressureComponent>(puller, out var moved) || !moved.Throwing) // Dumont - Allows you to pull anchored objects while being caught by the space wind.
+                return false;
         }
 
         if (puller == pullableUid)
@@ -579,7 +590,7 @@ public sealed class PullingSystem : EntitySystem
         if (pullable.Comp.Puller != pullerUid)
             return TryStartPull(pullerUid, pullable, pullableComp: pullable.Comp);
 
-        var grabAttemptEv = new GrabAttemptEvent( pullerUid);
+        var grabAttemptEv = new GrabAttemptEvent(pullerUid);
         RaiseLocalEvent(pullable, ref grabAttemptEv);
         if (grabAttemptEv.Grabbed)
             return true;
@@ -695,7 +706,8 @@ public sealed class PullingSystem : EntitySystem
             var joint = _joints.CreateDistanceJoint(pullableUid, pullerUid,
                     pullablePhysics.LocalCenter, pullerPhysics.LocalCenter,
                     id: pullableComp.PullJointId);
-            joint.CollideConnected = false;
+            joint.CollideConnected = pullablePhysics.BodyType == BodyType.Static; // Dumont - Add collision only to static pull object.
+
             // This maximum has to be there because if the object is constrained too closely, the clamping goes backwards and asserts.
             // Internally, the joint length has been set to the distance between the pivots.
             // Add an additional 15cm (pretty arbitrary) to the maximum length for the hard limit.
@@ -771,5 +783,15 @@ public sealed class PullingSystem : EntitySystem
         if (stopPuller && TryComp<PullerComponent>(uid, out var puller) &&
             TryComp(puller.Pulling, out PullableComponent? pullableEnt))
             TryStopPull(puller.Pulling.Value, pullableEnt);
+    }
+
+    // Goobstation
+    public EntityUid GetRelayedEntity(EntityUid uid)
+    {
+        if (TryComp(uid, out TargetInteractionRelayComponent? relay) && relay.RelayPulls &&
+            Exists(relay.RelayEntity))
+            return relay.RelayEntity.Value;
+
+        return uid;
     }
 }

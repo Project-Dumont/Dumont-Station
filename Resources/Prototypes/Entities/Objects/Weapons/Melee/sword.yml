@@ -264,6 +264,10 @@
   - type: PirateAccent
     # not putting a BlockMovement component here cause that's funny.
 
+  - type: Construction # Dumont | Sabre skins
+    graph: CaptainSabreSkinChange
+    node: start
+
 - type: entity
   name: katana
   parent: [ BaseSword, BaseMajorContraband ]

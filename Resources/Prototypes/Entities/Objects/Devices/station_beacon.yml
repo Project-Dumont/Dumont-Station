@@ -737,6 +737,7 @@
   - type: ConditionalSpawner # Gabystation - bananilson spawn
     prototypes:
        - MobCapivaraRonilson # Gabystation - Ronilson spawn
+  - type: ElectionScreenSpawner # Dumont - eleictions
 
 - type: entity
   parent: DefaultStationBeaconService

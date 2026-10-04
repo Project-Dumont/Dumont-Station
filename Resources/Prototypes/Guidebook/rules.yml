@@ -608,6 +608,96 @@
   - SpaceLawCrimeList
 
 - type: guideEntry
+  id: 0-xx
+  name: 0-XX - Infração leve
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/0-XX.xml"
+
+- type: guideEntry
+  id: 1-xx
+  name: 1-XX - Infração grave
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/1-XX.xml"
+
+- type: guideEntry
+  id: 2-xx
+  name: 2-XX - Delito
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/2-XX.xml"
+
+- type: guideEntry
+  id: 3-xx
+  name: 3-XX - Delito grave
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/3-XX.xml"
+
+- type: guideEntry
+  id: 4-xx
+  name: 4-XX - Crime capital
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/4-XX.xml"
+
+- type: guideEntry
+  id: 5-xx
+  name: 5-XX - Perigo crítico 
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/5-XX.xml"
+
+- type: guideEntry
+  id: prisonerrights
+  name: Direitos de prisioneiro
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/direitosdeprisoneiro.xml"
+
+- type: guideEntry
+  id: modifiers
+  name: Modificadores
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/modificadores.xml"
+
+- type: guideEntry
+  id: contraband
+  name: Manual de Contrabando
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/contrabando.xml"
+
+- type: guideEntry
+  id: courtprocedures
+  name: Sentenciamento e procedimentos judiciais
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/sentenciamentoeprocedimentosjudiciais.xml"
+  children:
+    - summaryhearing
+    - formalhearing
+    - trial
+    - courtmartial
+
+- type: guideEntry
+  id: summaryhearing
+  name: Audiência sumária
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audenciasumaria.xml"
+
+- type: guideEntry
+  id: formalhearing
+  name: Audiência formal
+  priority: 2
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audienciaformal.xml"
+
+- type: guideEntry
+  id: trial
+  name: Julgamento prolongado
+  priority: 3
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/julgamentoprolongado.xml"
+
+- type: guideEntry
+  id: courtmartial
+  name: Corte marcial
+  priority: 3
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/cortemarcial.xml"
+
+
+- type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
   priority: 5
@@ -628,7 +718,7 @@
     - insurreicao
     - usurpacao
     - invasao
-    - contrabando
+    - contraband
     - falsidadeIdeologica
     - ocultismo
     - producaoProibida
@@ -761,12 +851,12 @@
   priority: 1
   text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/invasao.xml"
 
-- type: guideEntry
-  id: contrabando
-  name: guide-entry-space-law-contraband
-  ruleEntry: true
-  priority: 1
-  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/contrabando.xml"
+#- type: guideEntry Dumont spacelaw 2.0 - isso não é usado e está causando conflict.
+#  id: contrabando
+#  name: guide-entry-space-law-contraband
+#  ruleEntry: true
+#  priority: 1
+#  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/contrabando.xml"
 
 - type: guideEntry
   id: falsidadeIdeologica

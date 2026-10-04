@@ -4211,3 +4211,87 @@ Entries:
         aceita o tipo de item dele.
   id: 501
   time: '2026-09-29T10:29:47.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado diversos decalques novos.
+  id: 502
+  time: '2026-09-29T21:15:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Skin dourada para o sabre de capitão, pode ser liberado no loadout com
+        150 horas no cargo.
+  id: 503
+  time: '2026-10-01T15:20:03.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Consertou o bug de Central não spawnar em alguns rounds.
+  id: 504
+  time: '2026-10-01T21:17:31.0000000+00:00'
+- author: ProjectAoff
+  changes:
+    - type: Fix
+      message: Corrigido fone de ouvido do salvage líder.
+  id: 505
+  time: '2026-10-03T02:43:11.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: Who's Ready For Tomorrow a Jukebox
+  id: 506
+  time: '2026-10-03T05:54:08.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado 12 vozes novas para customização de personagem.
+  id: 507
+  time: '2026-10-03T06:00:39.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Corrigido monitor de coordenadas de mão .
+  id: 508
+  time: '2026-10-03T15:32:31.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Goob merge até 08/06, verifique as mudanças do goob! (de novo)
+  id: 509
+  time: '2026-10-04T18:57:30.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Remove
+      message: Wraith foram desativados temporáriamente.
+  id: 510
+  time: '2026-10-04T19:00:03.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: >-
+        Créditos de fim de rodada no estilo de filme, com elenco, antagonistas e
+        últimas palavras.
+  id: 511
+  time: '2026-10-04T19:15:34.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Lei espacial 2.0!
+    - type: Add
+      message: Alerta Âmbar. Substitui o alerta vermelho atual.
+    - type: Tweak
+      message: Alerta vermelho agora é um meio termo entre gamma e âmbar.
+  id: 512
+  time: '2026-10-04T19:43:42.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Agora você pode agarrar em objetos ancorados caso seja pego pelo vento
+        espacial.
+    - type: Tweak
+      message: O vento espacial foi retrabalhado.
+  id: 513
+  time: '2026-10-04T19:51:24.0000000+00:00'

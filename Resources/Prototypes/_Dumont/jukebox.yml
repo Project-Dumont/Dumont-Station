@@ -915,6 +915,12 @@
     path: /Audio/_Dumont/Jukebox/who_can_it_be_now.ogg
 
 - type: jukebox
+  id: WhosReadyForTomorrow
+  name: Ratboy & IDBY - Who's Ready For Tommorow?
+  path:
+    path: /Audio/_Dumont/Jukebox/whos_ready_for_tomorrow.ogg
+
+- type: jukebox
   id: WouldntItBeNice
   name: The Beach Boys - Wouldn't It Be Nice
   path:
