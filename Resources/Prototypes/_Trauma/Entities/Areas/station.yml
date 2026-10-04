@@ -35,3 +35,13 @@
   components:
   - type: Sprite
     state: loot_room
+
+# Dumont changes start
+- type: entity
+  parent: BaseAreaStation
+  id: AreaExterior
+  name: exterior
+  components:
+  - type: Sprite
+    state: exterior
+# Dumont end
