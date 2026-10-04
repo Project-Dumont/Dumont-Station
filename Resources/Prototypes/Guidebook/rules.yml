@@ -644,54 +644,54 @@
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/5-XX.xml"
 
 - type: guideEntry
-  id: direitosdeprisoneiro
+  id: prisonerrights
   name: Direitos de prisioneiro
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/direitosdeprisoneiro.xml"
 
 - type: guideEntry
-  id: modificadores
+  id: modifiers
   name: Modificadores
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/modificadores.xml"
 
 - type: guideEntry
-  id: contrabando
+  id: contraband
   name: Manual de Contrabando
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/contrabando.xml"
 
 - type: guideEntry
-  id: procedimentosjudiciais
+  id: courtprocedures
   name: Sentenciamento e procedimentos judiciais
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/sentenciamentoeprocedimentosjudiciais.xml"
   children:
-    - audienciasumaria
-    - audienciaformal
-    - julgamentoprolongado
-    - cortemarcial
+    - summaryhearing
+    - formalhearing
+    - trial
+    - courtmartial
 
 - type: guideEntry
-  id: audienciasumaria
+  id: summaryhearing
   name: Audiência sumária
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audenciasumaria.xml"
 
 - type: guideEntry
-  id: audienciaformal
+  id: formalhearing
   name: Audiência formal
   priority: 2
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/audienciaformal.xml"
 
 - type: guideEntry
-  id: julgamentoprolongado
+  id: trial
   name: Julgamento prolongado
   priority: 3
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/julgamentoprolongado.xml"
 
 - type: guideEntry
-  id: cortemarcial
+  id: courtmartial
   name: Corte marcial
   priority: 3
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/cortemarcial.xml"
@@ -718,7 +718,7 @@
     - insurreicao
     - usurpacao
     - invasao
-    - contrabando
+    - contraband
     - falsidadeIdeologica
     - ocultismo
     - producaoProibida
