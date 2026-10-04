@@ -21,6 +21,8 @@ using Robust.Shared.Player;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Robust.Server.Player;
+using Content.Shared.Storage;
+using Content.Shared._Lavaland.Megafauna.Events;
 
 namespace Content.Server.Phones;
 
@@ -50,7 +52,6 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
         SubscribeLocalEvent<RotaryPhoneHolderComponent, EntInsertedIntoContainerMessage>(OnPhoneInsertHolder);
 
         SubscribeLocalEvent<RotaryPhoneHolderComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
-
     }
 
     // Dumont - get verbs for modifying name
@@ -65,9 +66,9 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
         if (!_player.TryGetSessionByEntity(args.User, out var session))
             return;
 
-        if (holder.Comp.ConnectedPhone is not { } phoneUid ||
-            !TryComp<RotaryPhoneComponent>(phoneUid, out var phone))
-            return;
+
+        RotaryPhoneComponent? phone = null;
+        var isPhoneConnected = holder.Comp.ConnectedPhone is { } phoneUid && TryComp<RotaryPhoneComponent>(phoneUid, out phone);
 
         Verb verb = new()
         {
@@ -78,7 +79,12 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
                     session,
                     Loc.GetString("phone-verb-text"),
                     Loc.GetString("phone-verb-prompt"),
-                    response => { phone.Name = response; Dirty(holder); });
+                    response =>{ 
+                        if (isPhoneConnected && phone is not null)
+                            phone.Name = response;
+                        else    
+                            holder.Comp.Name = response; 
+                        });
             }
         };
 

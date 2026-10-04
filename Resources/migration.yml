@@ -1076,3 +1076,6 @@ RotaryPhoneStand: RotaryPhoneStandNoRot
 
 # 2026-07-03 Dumont Change Mapped Energy Chem to Normal Chem by default
 EnergyChemDispenser: ChemDispenser # Dumont edit
+
+# 2026-10-09 Dumont victor total sprite death
+FloorSewageWaterEntity: FloorWaterEntity

@@ -229,3 +229,18 @@
   id: CaptainWintercoat
   equipment:
     outerClothing: ClothingOuterWinterCapArmored # Goob edit
+
+# Other
+# Dumont
+
+- type: loadout
+  id: CaptainSabreSkin
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 540000 # 150 hrs
+  storage:
+    back:
+    - ChangeCaptainSabreSkinKit

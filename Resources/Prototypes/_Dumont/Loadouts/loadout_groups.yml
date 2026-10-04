@@ -1768,3 +1768,13 @@
   maxLimit: 1
   loadouts:
   - AdminAssistantEnviroboots
+
+  # Captain
+
+- type: loadoutGroup
+  id: CaptainSabreSkins
+  name: loadout-group-captain-sabre-skins
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CaptainSabreSkin

@@ -4,6 +4,9 @@
 
 # ORDEM ALFABÉTICA!
 - type: Tag
+  id: CaptainSabreGoldenSkinKit
+
+- type: Tag
   id: CartridgeLightRifleImprovised
 
 - type: Tag
