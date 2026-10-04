@@ -13,7 +13,6 @@
     collection: FootstepCarpet
   itemDrop: FloorTileItemCanvas
   heatCapacity: 10000
-  tileRipResistance: 175
   protectDecals: true
 
 - type: entity
