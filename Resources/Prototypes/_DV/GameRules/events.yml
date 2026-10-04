@@ -62,7 +62,7 @@
     duration: null
   - type: RuleGrids
   - type: LoadFarGridRule
-    path: /Maps/Shuttles/listening_post.yml
+    path: /Maps/Nonstations/listening_post.yml
     distanceModifier: 13
   - type: DebrisSpawnerRule
     count: 6

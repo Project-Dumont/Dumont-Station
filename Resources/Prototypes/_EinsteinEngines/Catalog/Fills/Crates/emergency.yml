@@ -1,6 +1,6 @@
 - type: entity
   id: CratePlasmaInternals
-  parent: CrateInternals
+  parent: CratePlasmaman # Dumont edit
   name: internals crate (plasma)
   description: Contains four breath masks and four plasma internals tanks. Intended for Plasmamen.
   components:
@@ -15,17 +15,19 @@
 
 - type: entity
   id: CratePlasmamanEnvirosuit
-  parent: CrateInternals
+  parent: CratePlasmaman # Dumont edit
   name: plasma envirosuit crate
   description: Contains two full sets of envirosuits, two breath masks, and two plasma internals tanks. Intended for Plasmamen.
   components:
   - type: StorageFill
     contents:
-      - id: ClothingUniformEnvirosuit
+      - id: ClothingOuterEnvirosuit
         amount: 2
-      - id: ClothingHeadEnvirohelmEmpty
+      - id: ClothingHeadEnvirohelmet
         amount: 2
       - id: ClothingHandsGlovesEnvirogloves
+        amount: 2
+      - id: ClothingShoesEnviroboots
         amount: 2
       - id: ClothingMaskBreath
         amount: 2

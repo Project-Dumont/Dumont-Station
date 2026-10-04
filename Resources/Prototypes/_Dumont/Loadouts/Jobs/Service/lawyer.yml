@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: LawyerEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitLawyer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LawyerEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetLawyer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LawyerEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesLawyer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: LawyerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsLawyer
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

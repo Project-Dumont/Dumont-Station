@@ -236,11 +236,13 @@ namespace Content.Shared.GameTicking
 
             public string Role;
 
-            [DataField, NonSerialized]
+            // Dumont changes start
+            [DataField]
             public string[] JobPrototypes;
 
-            [DataField, NonSerialized]
+            [DataField]
             public string[] AntagPrototypes;
+            // Dumont end
 
             public NetEntity? PlayerNetEntity;
 

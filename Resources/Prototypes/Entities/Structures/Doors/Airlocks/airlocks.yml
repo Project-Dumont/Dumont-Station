@@ -185,6 +185,15 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/chemistry.rsi
 
+# Dumont - Adds unique sprites for the morgue door
+- type: entity
+  parent: AirlockMedical
+  id: AirlockMorgue
+  suffix: Morgue
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/morgue.rsi
+
 - type: entity
   parent: Airlock
   id: AirlockScience
@@ -347,6 +356,15 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/chemistry.rsi
+
+# Dumont - Adds unique sprites for the morgue door
+- type: entity
+  parent: AirlockMedicalGlass
+  id: AirlockMorgueGlass
+  suffix: Morgue
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/morgue.rsi
 
 - type: entity
   parent: AirlockMedicalGlass

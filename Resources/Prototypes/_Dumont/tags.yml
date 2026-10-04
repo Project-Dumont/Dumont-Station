@@ -4,6 +4,9 @@
 
 # ORDEM ALFABÉTICA!
 - type: Tag
+  id: CaptainSabreGoldenSkinKit
+
+- type: Tag
   id: CartridgeLightRifleImprovised
 
 - type: Tag
@@ -65,3 +68,10 @@
   
 - type: Tag
   id: XenoDungeon
+
+- type: Tag
+  id: FoodSnackPlasmabrick
+
+- type: Tag
+  id: DrinkBottleMilk
+

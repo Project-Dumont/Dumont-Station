@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "arrows_red"
+    },
+    {
+      "name": "ast_warn_box"
+    },
+    {
+      "name": "ast_warn_corner_ne"
+    },
+    {
+      "name": "ast_warn_corner_nw"
+    },
+    {
+      "name": "ast_warn_corner_se"
+    },
+    {
+      "name": "ast_warn_corner_sw"
+    },
+    {
+      "name": "ast_warn_e"
+    },
+    {
+      "name": "ast_warn_end_e"
+    },
+    {
+      "name": "ast_warn_end_n"
+    },
+    {
+      "name": "ast_warn_end_s"
+    },
+    {
+      "name": "ast_warn_end_w"
+    },
+    {
+      "name": "ast_warn_full"
+    },
+    {
+      "name": "ast_warn_n"
+    },
+    {
+      "name": "ast_warn_ne"
+    },
+    {
+      "name": "ast_warn_nw"
+    },
+    {
+      "name": "ast_warn_s"
+    },
+    {
+      "name": "ast_warn_se"
+    },
+    {
+      "name": "ast_warn_sw"
+    },
+    {
+      "name": "ast_warn_w"
+    },
+    {
+      "name": "bot_left_red"
+    },
+    {
+      "name": "bot_red"
+    },
+    {
+      "name": "bot_right_red"
+    },
+    {
+      "name": "box_ne"
+    },
+    {
+      "name": "box_ne_greyscale"
+    },
+    {
+      "name": "box_ne_red"
+    },
+    {
+      "name": "box_nw"
+    },
+    {
+      "name": "box_nw_greyscale"
+    },
+    {
+      "name": "box_nw_red"
+    },
+    {
+      "name": "box_red"
+    },
+    {
+      "name": "box_se"
+    },
+    {
+      "name": "box_se_greyscale"
+    },
+    {
+      "name": "box_se_red"
+    },
+    {
+      "name": "box_sw"
+    },
+    {
+      "name": "box_sw_greyscale"
+    },
+    {
+      "name": "box_sw_red"
+    },
+    {
+      "name": "caution_red"
+    },
+    {
+      "name": "delivery_red"
+    },
+    {
+      "name": "evac_big_e"
+    },
+    {
+      "name": "evac_big_n"
+    },
+    {
+      "name": "evac_big_s"
+    },
+    {
+      "name": "evac_big_w"
+    },
+    {
+      "name": "evac_e"
+    },
+    {
+      "name": "evac_n"
+    },
+    {
+      "name": "evac_s"
+    },
+    {
+      "name": "evac_w"
+    },
+    {
+      "name": "loading_area_red"
+    },
+    {
+      "name": "standclear_red"
+    },
+    {
+      "name": "warn_box_red"
+    },
+    {
+      "name": "warn_corner_ne_red"
+    },
+    {
+      "name": "warn_corner_nw_red"
+    },
+    {
+      "name": "warn_corner_se_red"
+    },
+    {
+      "name": "warn_corner_small_ne_red"
+    },
+    {
+      "name": "warn_corner_small_nw_red"
+    },
+    {
+      "name": "warn_corner_small_se_red"
+    },
+    {
+      "name": "warn_corner_small_sw_red"
+    },
+    {
+      "name": "warn_corner_sw_red"
+    },
+    {
+      "name": "warn_end_e_red"
+    },
+    {
+      "name": "warn_end_n_red"
+    },
+    {
+      "name": "warn_end_s_red"
+    },
+    {
+      "name": "warn_end_w_red"
+    },
+    {
+      "name": "warn_full_red"
+    },
+    {
+      "name": "warn_line_e_red"
+    },
+    {
+      "name": "warn_line_n_red"
+    },
+    {
+      "name": "warn_line_w_red"
+    },
+    {
+      "name": "warningline_red"
+    }
+  ]
+}

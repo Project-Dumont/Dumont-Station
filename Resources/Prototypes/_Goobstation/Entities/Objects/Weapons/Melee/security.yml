@@ -130,7 +130,7 @@
   - type: Tag
     tags:
     - SecBeltEquip
-  - type: UpgradeableWeapon
+  - type: ItemUpgradeable
   - type: ContainerContainer
     containers:
       upgrade_slot_main: !type:ContainerSlot
