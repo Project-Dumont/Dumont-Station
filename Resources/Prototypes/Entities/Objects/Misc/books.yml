@@ -508,7 +508,7 @@
       color: "#f7d61a"
   - type: GuideHelp
     guides:
-    - SpaceLaw
+    - mainSpaceLaw
 
 - type: entity
   parent: BookBase
