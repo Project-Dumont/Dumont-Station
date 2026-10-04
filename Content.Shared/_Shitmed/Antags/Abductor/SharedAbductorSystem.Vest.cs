@@ -23,8 +23,11 @@ public abstract partial class SharedAbductorSystem
 
     private void OnEquipped(Entity<AbductorVestComponent> ent, ref GotEquippedEvent args)
     {
-        if (TryComp<ClothingComponent>(ent, out var clothingComponent))
-            _clothing.SetEquippedPrefix(ent, "stealth", clothingComponent);
+        if (!TryComp<ClothingComponent>(ent, out var clothingComponent))
+            return;
+
+        var prefix = ent.Comp.CurrentState == AbductorArmorModeType.Combat ? "combat" : "stealth";
+        _clothing.SetEquippedPrefix(ent, prefix, clothingComponent);
     }
 
     private void OnUnequipped(Entity<AbductorVestComponent> ent, ref GotUnequippedEvent args)
@@ -36,16 +39,11 @@ public abstract partial class SharedAbductorSystem
         if (Enum.TryParse<AbductorArmorModeType>(args.State, ignoreCase: true, out var state))
             component.CurrentState = state;
 
-        if (state == AbductorArmorModeType.Combat)
-        {
-            if (TryComp<ClothingComponent>(uid, out var clothingComponent))
-                _clothing.SetEquippedPrefix(uid, "combat", clothingComponent);
-        }
-        else
-        {
-            if (TryComp<ClothingComponent>(uid, out var clothingComponent))
-                _clothing.SetEquippedPrefix(uid, "stealth", clothingComponent);
-        }
+        if (!TryComp<ClothingComponent>(uid, out var clothingComponent))
+            return;
+
+        var prefix = component.CurrentState == AbductorArmorModeType.Combat ? "combat" : "stealth";
+        _clothing.SetEquippedPrefix(uid, prefix, clothingComponent);
     }
 
     private void OnVestInteract(Entity<AbductorVestComponent> ent, ref AfterInteractEvent args)

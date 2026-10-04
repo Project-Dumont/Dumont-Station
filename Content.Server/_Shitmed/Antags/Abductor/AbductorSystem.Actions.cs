@@ -191,16 +191,32 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         if (args.Handled || args.Cancelled)
             return;
 
-        var agent = GetEntity(args.Agent);
+        args.Handled = true;
 
-        if (TryComp<BuckleComponent>(agent, out var buckle))
-            _buckle.Unbuckle((agent, buckle), null);
+        TrySendFromPad(ent, GetEntity(args.Agent), GetCoordinates(args.TargetCoordinates));
+    }
+
+    /// <summary>
+    /// Teleports whoever is strapped to the pad, as long as they are still there once the charge finishes.
+    /// </summary>
+    public void TrySendFromPad(EntityUid user, EntityUid agent, EntityCoordinates target)
+    {
+        if (TerminatingOrDeleted(agent))
+            return;
+
+        if (!TryComp<BuckleComponent>(agent, out var buckle)
+            || buckle.BuckledTo is not { } pad
+            || !HasComp<AbductorAlienPadComponent>(pad))
+        {
+            _popup.PopupEntity(Loc.GetString("abductor-send-agent-not-buckled"), user, user);
+            return;
+        }
+
+        _buckle.Unbuckle((agent, buckle), null);
 
         _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { agent }, Filter.Pvs(agent, entityManager: EntityManager));
         StopPulls(agent);
-        _xform.SetCoordinates(agent, GetCoordinates(args.TargetCoordinates));
-
-        args.Handled = true;
+        _xform.SetCoordinates(agent, target);
     }
 
     private void OnExit(ExitConsoleEvent ev) => OnCameraExit(ev.Performer);

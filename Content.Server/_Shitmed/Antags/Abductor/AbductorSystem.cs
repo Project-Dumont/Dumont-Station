@@ -37,6 +37,10 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     [Dependency] private SharedStationSystem _station = default!;
     [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
 
+    private static readonly TimeSpan RangeCheckInterval = TimeSpan.FromSeconds(1);
+
+    private TimeSpan _nextRangeCheck;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -62,12 +66,13 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         if (!HasComp<NavMapBeaconComponent>(beacon))
             return; // malf client trying to teleport to arbitrary entities
 
-        var xform = Transform(beacon);
-        if (xform.MapID != Transform(ent).MapID)
+        if (!CanReachBeacon(ent, beacon, out var reason))
         {
-            _popup.PopupEntity(Loc.GetString("abductor-console-ftl-to-station"), user, user);
+            _popup.PopupEntity(Loc.GetString(reason), user, user);
             return;
         }
+
+        var xform = Transform(beacon);
 
         var eye = SpawnAtPosition(ent.Comp.RemoteEntityProto, xform.Coordinates);
 
@@ -143,32 +148,98 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
 
         abductorComp.Console = ent.Owner;
-        var stations = _station.GetStations();
+
+        _ui.SetUiState(ent.Owner, AbductorCameraConsoleUIKey.Key, new AbductorCameraConsoleBuiState() { Stations = BuildStations(ent) });
+    }
+
+    private Dictionary<int, StationBeacons> BuildStations(Entity<AbductorHumanObservationConsoleComponent> ent)
+    {
         var result = new Dictionary<int, StationBeacons>();
 
-        foreach (var station in stations)
+        foreach (var station in _station.GetStations())
         {
             if (_station.GetLargestGrid(station) is not { } grid)
-                return;
+                continue;
 
             if (!TryComp<NavMapComponent>(grid, out var navMap))
-                return;
+                continue;
 
             result.Add(station.Id, new StationBeacons
             {
                 Name = Name(station),
                 StationId = station.Id,
                 Beacons = [.. navMap.Beacons.Values],
+                IsEnabled = InStationRange(ent, grid),
             });
         }
 
-        _ui.SetUiState(ent.Owner, AbductorCameraConsoleUIKey.Key, new AbductorCameraConsoleBuiState() { Stations = result });
+        return result;
     }
 
     private void OnActivatableUIOpenAttempt(Entity<AbductorHumanObservationConsoleComponent> ent, ref ActivatableUIOpenAttemptEvent args)
     {
         if (!HasComp<AbductorScientistComponent>(args.User))
             args.Cancel();
+    }
+
+    private bool InStationRange(Entity<AbductorHumanObservationConsoleComponent> ent, EntityUid grid)
+    {
+        return _xform.InRange((ent.Owner, Transform(ent)), (grid, Transform(grid)), ent.Comp.MinStationDistance);
+    }
+
+    /// <summary>
+    /// The ship has to be on the same map as the beacon and close enough to its station to use it.
+    /// </summary>
+    public bool CanReachBeacon(Entity<AbductorHumanObservationConsoleComponent> ent, EntityUid beacon, out LocId reason)
+    {
+        reason = "abductor-console-ftl-to-station";
+
+        var xform = Transform(beacon);
+        if (xform.MapID != Transform(ent).MapID)
+            return false;
+
+        reason = "abductors-ui-out-of-range";
+
+        return _xform.GetGrid((beacon, xform)) is { } grid && InStationRange(ent, grid);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (Timing.CurTime < _nextRangeCheck)
+            return;
+
+        _nextRangeCheck = Timing.CurTime + RangeCheckInterval;
+
+        var query = EntityQueryEnumerator<AbductorHumanObservationConsoleComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!_ui.IsUiOpen(uid, AbductorCameraConsoleUIKey.Key)
+                || !_ui.TryGetUiState<AbductorCameraConsoleBuiState>(uid, AbductorCameraConsoleUIKey.Key, out var state))
+                continue;
+
+            var stations = BuildStations((uid, comp));
+
+            if (!RangesChanged(state.Stations, stations))
+                continue;
+
+            _ui.SetUiState(uid, AbductorCameraConsoleUIKey.Key, new AbductorCameraConsoleBuiState() { Stations = stations });
+        }
+    }
+
+    private static bool RangesChanged(Dictionary<int, StationBeacons> old, Dictionary<int, StationBeacons> current)
+    {
+        if (old.Count != current.Count)
+            return true;
+
+        foreach (var (id, station) in current)
+        {
+            if (!old.TryGetValue(id, out var previous) || previous.IsEnabled != station.IsEnabled)
+                return true;
+        }
+
+        return false;
     }
 
 }

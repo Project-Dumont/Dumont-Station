@@ -100,13 +100,15 @@ public sealed class AbductorCameraConsoleBui : BoundUserInterface
         foreach (var station in state.Stations)
         {
             var stationButton = new ChoiceControl();
+            var tooltip = station.Value.IsEnabled ? "" : Loc.GetString("abductors-ui-out-of-range");
 
-            stationButton.Set(station.Value.Name, null);
+            stationButton.Set(station.Value.Name, station.Value.IsEnabled, tooltip);
             stationButton.Button.OnPressed += _ => OnStationPressed(station.Key, station.Value.Beacons);
 
             _window.Stations.AddChild(stationButton);
 
-            if (station.Key == _station) OnStationPressed(station.Key, station.Value.Beacons);
+            if (station.Key == _station && station.Value.IsEnabled)
+                OnStationPressed(station.Key, station.Value.Beacons);
         }
     }
 

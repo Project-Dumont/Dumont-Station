@@ -37,6 +37,7 @@ public sealed class StationBeacons
     public required int StationId { get; init; }
     public required string Name { get; init; }
     public required List<NavMapBeacon> Beacons { get; init; }
+    public required bool IsEnabled { get; init; }
 }
 [Serializable, NetSerializable]
 public sealed class AbductorBeaconChosenBuiMsg(NetEntity target) : BoundUserInterfaceMessage

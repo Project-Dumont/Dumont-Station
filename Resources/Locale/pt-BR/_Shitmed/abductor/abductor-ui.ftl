@@ -13,6 +13,7 @@ abductors-ui-stealth-mode = Modo furtivo
 abductors-ui-lock-armor = Travar colete
 abductors-ui-unlock-armor = Destravar colete
 abductors-ui-vest-linked = Colete conectado
+abductors-ui-out-of-range = A nave está longe demais da estação
 
 abductors-title = Abdutores
 abductors-description = Abdutores escolheram a estação. Não deixe eles te sequestrarem!

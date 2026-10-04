@@ -21,6 +21,12 @@ public sealed partial class AbductorHumanObservationConsoleComponent : Component
 {
     [DataField]
     public EntProtoId RemoteEntityProto = "AbductorHumanObservationConsoleEye";
+
+    /// <summary>
+    /// How far the ship can be from a station before its beacons stop working.
+    /// </summary>
+    [DataField]
+    public float MinStationDistance = 200f;
 }
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorConsoleComponent : Component

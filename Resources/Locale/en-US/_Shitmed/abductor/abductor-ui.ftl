@@ -22,6 +22,7 @@ abductors-ui-stealth-mode = Stealth Mode
 abductors-ui-lock-armor = Lock Armor
 abductors-ui-unlock-armor = Unlock Armor
 abductors-ui-vest-linked = Vest linked
+abductors-ui-out-of-range = The ship is too far from the station
 
 abductors-title = Abductors
 abductors-description = Abductors have targeted the station. Avoid getting kidnapped by them!
