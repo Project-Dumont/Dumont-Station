@@ -147,15 +147,24 @@ public abstract partial class SharedGunSystem
     private bool InsertBallistic(Entity<BallisticAmmoProviderComponent> gun, EntityUid ammo, EntityUid user)
     {
         var provider = gun.Comp;
-        var isStack = TryComp<StackComponent>(ammo, out var stack);
+        var room = provider.Capacity - GetBallisticShots(provider);
+
+        if (room <= 0)
+            return false;
+
         var loaded = 0;
 
-        if (isStack)
+        // Splitting only happens on the server, so the client still plays the sound and eats the
+        // interaction while it waits for the real state.
+        if (TryComp<StackComponent>(ammo, out var stack))
         {
             var coordinates = Transform(ammo).Coordinates;
-            var room = Math.Min(stack!.Count, provider.Capacity - GetBallisticShots(provider));
+            var wanted = Math.Min(stack.Count, room);
 
-            for (var i = 0; i < room; i++)
+            if (wanted <= 0)
+                return false;
+
+            for (var i = 0; i < wanted; i++)
             {
                 if (_stack.Split(ammo, 1, coordinates) is not { } sheet)
                     break;
@@ -172,10 +181,11 @@ public abstract partial class SharedGunSystem
             loaded++;
         }
 
-        if (loaded == 0)
-            return isStack;
-
         Audio.PlayPredicted(provider.SoundInsert, gun.Owner, user);
+
+        if (loaded == 0)
+            return true;
+
         UpdateBallisticAppearance(gun.Owner, provider);
         UpdateAmmoCount(gun.Owner);
         DirtyField(gun.Owner, provider, nameof(BallisticAmmoProviderComponent.Entities));
