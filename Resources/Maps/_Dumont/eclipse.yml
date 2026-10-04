@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/26/2026 16:48:05
-  entityCount: 44887
+  time: 10/04/2026 21:25:31
+  entityCount: 44886
 maps:
 - 1
 grids:
@@ -20998,7 +20998,7 @@ entities:
       pos: 16.5,-9.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -1267693.1
+      secondsUntilStateChange: -1267855.9
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -23609,7 +23609,7 @@ entities:
       pos: -40.5,-18.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -396898.6
+      secondsUntilStateChange: -397061.3
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -23665,7 +23665,7 @@ entities:
       pos: -66.5,139.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -345635.62
+      secondsUntilStateChange: -345798.34
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -23866,7 +23866,7 @@ entities:
       pos: -46.5,155.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -348784.7
+      secondsUntilStateChange: -348947.4
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -24260,7 +24260,7 @@ entities:
       pos: 5.5,2.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -352596.06
+      secondsUntilStateChange: -352758.78
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -129484,10 +129484,10 @@ entities:
       server: 18696
       connectedToServer: True
     - type: DnaServer
-      serverId: 39
+      serverId: 41
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 733.5313999
-      lastInjectorTime: 733.5313999
+      lastSubjectInjectTime: 102.740544
+      lastInjectorTime: 102.740544
   - uid: 18697
     components:
     - type: Transform
@@ -129498,10 +129498,10 @@ entities:
       server: 18697
       connectedToServer: True
     - type: DnaServer
-      serverId: 40
+      serverId: 42
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 733.5313999
-      lastInjectorTime: 733.5313999
+      lastSubjectInjectTime: 102.740544
+      lastInjectorTime: 102.740544
 - proto: DogBed
   entities:
   - uid: 18698
@@ -199989,13 +199989,6 @@ entities:
     - type: Transform
       parent: 42397
       pos: 3.5,-3.5
-- proto: GunSafeDisabler
-  entities:
-  - uid: 28204
-    components:
-    - type: Transform
-      parent: 2
-      pos: 44.5,176.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 28205
@@ -200008,40 +200001,48 @@ entities:
     - type: Transform
       parent: 2
       pos: 47.5,174.5
-- proto: GunSafePistolMk58
+- proto: GunSafeMelee
   entities:
+  - uid: 28211
+    components:
+    - type: Transform
+      parent: 2
+      pos: 51.5,174.5
+  - uid: 28212
+    components:
+    - type: Transform
+      parent: 2
+      pos: 51.5,176.5
+- proto: GunSafePhaser
+  entities:
+  - uid: 28204
+    components:
+    - type: Transform
+      parent: 2
+      pos: 44.5,176.5
   - uid: 28207
     components:
     - type: Transform
       parent: 2
       pos: 43.5,176.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeSurplus
   entities:
   - uid: 28208
     components:
     - type: Transform
       parent: 2
-      pos: 51.5,176.5
+      pos: 50.5,173.5
   - uid: 28209
     components:
     - type: Transform
       parent: 2
-      pos: 51.5,174.5
-- proto: GunSafeShotgunKammerer
-  entities:
+      pos: 48.5,177.5
   - uid: 28210
     components:
     - type: Transform
       parent: 2
-      pos: 48.5,177.5
-  - uid: 28211
-    components:
-    - type: Transform
-      parent: 2
       pos: 50.5,177.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 28212
+  - uid: 28984
     components:
     - type: Transform
       parent: 2
@@ -201087,7 +201088,7 @@ entities:
       pos: -24.5,-48.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -651603.06
+      secondsUntilStateChange: -651765.75
   - uid: 28329
     components:
     - type: Transform
@@ -205995,13 +205996,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -35.5,-26.5
-- proto: MobSlimeXenobioBabyGrey
-  entities:
-  - uid: 28984
-    components:
-    - type: Transform
-      parent: 2
-      pos: -49.5,-6.5
 - proto: MonkeyCubeBox
   entities:
   - uid: 28985
@@ -208418,11 +208412,6 @@ entities:
       pos: 30.420044,-18.501652
 - proto: PortableFlasher
   entities:
-  - uid: 29333
-    components:
-    - type: Transform
-      parent: 2
-      pos: 50.5,173.5
   - uid: 29334
     components:
     - type: Transform
@@ -281499,7 +281488,6 @@ entities:
       pos: -62.486332,16.58201
     missingComponents:
     - Gun
-    - HitscanBatteryAmmoProvider
     - BatterySelfRecharger
     - StealTarget
     - SentienceTarget
@@ -282436,7 +282424,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -356424.03
+      secondsUntilStateChange: -356586.75
     - type: Airlock
       autoClose: False
 - proto: WindoorKitchenHydroponicsLocked
@@ -282663,7 +282651,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -737147.1
+      secondsUntilStateChange: -737309.8
     - type: Airlock
       autoClose: False
   - uid: 41242
@@ -287896,7 +287884,7 @@ entities:
       pos: 10.5,6.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -847594.56
+      secondsUntilStateChange: -847757.25
   - uid: 43585
     components:
     - type: Transform

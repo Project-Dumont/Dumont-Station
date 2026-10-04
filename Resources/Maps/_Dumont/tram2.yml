@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/03/2026 20:27:51
-  entityCount: 26668
+  time: 10/04/2026 21:16:57
+  entityCount: 26665
 maps:
 - 1
 grids:
@@ -13,6 +13,9 @@ grids:
 - 26432
 orphans: []
 nullspace:
+- 25873
+- 25874
+- 25877
 - 26606
 - 26607
 - 26608
@@ -73,9 +76,6 @@ nullspace:
 - 26663
 - 26664
 - 26665
-- 26666
-- 26667
-- 26668
 tilemap:
   0: Space
   44: FloorArcadeBlue
@@ -3410,6 +3410,9 @@ entities:
     - type: ImplicitRoof
     - type: ChunkContainer
       chunkEntities:
+      - 25873
+      - 25874
+      - 25877
       - 26606
       - 26607
       - 26608
@@ -3469,9 +3472,6 @@ entities:
       - 26662
       - 26663
       - 26664
-      - 26665
-      - 26666
-      - 26667
     - type: FTLDrive
     - type: DecalGrid
       chunkCollection:
@@ -7021,7 +7021,7 @@ entities:
     - type: ImplicitRoof
     - type: ChunkContainer
       chunkEntities:
-      - 26668
+      - 26665
     - type: FTLDrive
     - type: DecalGrid
       chunkCollection:
@@ -7051,6 +7051,46 @@ entities:
     - type: Transform
       parent: 2
       pos: -44.534996,-59.392654
+- proto: ActionToggleInternals
+  entities:
+  - uid: 18008
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17840
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17840
+  - uid: 25872
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17841
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17841
+- proto: ActionToggleJetpack
+  entities:
+  - uid: 18007
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17840
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17840
+  - uid: 18160
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17841
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17841
 - proto: ActionToggleLight
   entities:
   - uid: 5
@@ -57789,316 +57829,316 @@ entities:
       pos: 38.601997,5.28884
 - proto: ChunkEntity
   entities:
-  - uid: 26606
+  - uid: 25873
     components:
     - type: ChunkEntity
       root: 2
       chunk: -1,0
-  - uid: 26607
+  - uid: 25874
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,1
-  - uid: 26608
+  - uid: 25877
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,0
-  - uid: 26609
+  - uid: 26606
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,-2
-  - uid: 26610
+  - uid: 26607
     components:
     - type: ChunkEntity
       root: 2
       chunk: 3,0
-  - uid: 26611
+  - uid: 26608
     components:
     - type: ChunkEntity
       root: 2
       chunk: 4,0
-  - uid: 26612
+  - uid: 26609
     components:
     - type: ChunkEntity
       root: 2
       chunk: 4,-1
-  - uid: 26613
+  - uid: 26610
     components:
     - type: ChunkEntity
       root: 2
       chunk: 3,-1
-  - uid: 26614
+  - uid: 26611
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,-4
-  - uid: 26615
+  - uid: 26612
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,-4
-  - uid: 26616
+  - uid: 26613
     components:
     - type: ChunkEntity
       root: 2
       chunk: -2,-3
-  - uid: 26617
+  - uid: 26614
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,-1
-  - uid: 26618
+  - uid: 26615
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,0
-  - uid: 26619
+  - uid: 26616
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,-1
-  - uid: 26620
+  - uid: 26617
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,-1
-  - uid: 26621
+  - uid: 26618
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,-2
-  - uid: 26622
+  - uid: 26619
     components:
     - type: ChunkEntity
       root: 2
       chunk: 3,-2
-  - uid: 26623
+  - uid: 26620
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,-2
-  - uid: 26624
+  - uid: 26621
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,-1
-  - uid: 26625
+  - uid: 26622
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,-3
-  - uid: 26626
+  - uid: 26623
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,-3
-  - uid: 26627
+  - uid: 26624
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,-4
-  - uid: 26628
+  - uid: 26625
     components:
     - type: ChunkEntity
       root: 2
       chunk: -1,-3
-  - uid: 26629
+  - uid: 26626
     components:
     - type: ChunkEntity
       root: 2
       chunk: -2,1
-  - uid: 26630
+  - uid: 26627
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,-3
-  - uid: 26631
+  - uid: 26628
     components:
     - type: ChunkEntity
       root: 2
       chunk: -2,-4
-  - uid: 26632
+  - uid: 26629
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,-4
-  - uid: 26633
+  - uid: 26630
     components:
     - type: ChunkEntity
       root: 2
       chunk: -4,-3
-  - uid: 26634
+  - uid: 26631
     components:
     - type: ChunkEntity
       root: 2
       chunk: -1,-2
-  - uid: 26635
+  - uid: 26632
     components:
     - type: ChunkEntity
       root: 2
       chunk: -3,1
-  - uid: 26636
+  - uid: 26633
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,-3
-  - uid: 26637
+  - uid: 26634
     components:
     - type: ChunkEntity
       root: 2
       chunk: -1,-4
-  - uid: 26638
+  - uid: 26635
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,0
-  - uid: 26639
+  - uid: 26636
     components:
     - type: ChunkEntity
       root: 2
       chunk: 4,-2
-  - uid: 26640
+  - uid: 26637
     components:
     - type: ChunkEntity
       root: 2
       chunk: -2,-2
-  - uid: 26641
+  - uid: 26638
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,-2
-  - uid: 26642
+  - uid: 26639
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,-2
-  - uid: 26643
+  - uid: 26640
     components:
     - type: ChunkEntity
       root: 2
       chunk: 3,-3
-  - uid: 26644
+  - uid: 26641
     components:
     - type: ChunkEntity
       root: 2
       chunk: 5,-2
-  - uid: 26645
+  - uid: 26642
     components:
     - type: ChunkEntity
       root: 2
       chunk: -6,-1
-  - uid: 26646
+  - uid: 26643
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,-2
-  - uid: 26647
+  - uid: 26644
     components:
     - type: ChunkEntity
       root: 2
       chunk: -6,-2
-  - uid: 26648
+  - uid: 26645
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,-1
-  - uid: 26649
+  - uid: 26646
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,1
-  - uid: 26650
+  - uid: 26647
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,1
-  - uid: 26651
+  - uid: 26648
     components:
     - type: ChunkEntity
       root: 2
-  - uid: 26652
+  - uid: 26649
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,-4
-  - uid: 26653
+  - uid: 26650
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,-4
-  - uid: 26654
+  - uid: 26651
     components:
     - type: ChunkEntity
       root: 2
       chunk: 4,-4
-  - uid: 26655
+  - uid: 26652
     components:
     - type: ChunkEntity
       root: 2
       chunk: 3,-4
-  - uid: 26656
+  - uid: 26653
     components:
     - type: ChunkEntity
       root: 2
       chunk: 5,-1
-  - uid: 26657
+  - uid: 26654
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,-3
-  - uid: 26658
+  - uid: 26655
     components:
     - type: ChunkEntity
       root: 2
       chunk: 4,-3
-  - uid: 26659
+  - uid: 26656
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,2
-  - uid: 26660
+  - uid: 26657
     components:
     - type: ChunkEntity
       root: 2
       chunk: 2,2
-  - uid: 26661
+  - uid: 26658
     components:
     - type: ChunkEntity
       root: 2
       chunk: -2,0
-  - uid: 26662
+  - uid: 26659
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,0
-  - uid: 26663
+  - uid: 26660
     components:
     - type: ChunkEntity
       root: 2
       chunk: -5,1
-  - uid: 26664
+  - uid: 26661
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,0
-  - uid: 26665
+  - uid: 26662
     components:
     - type: ChunkEntity
       root: 2
       chunk: 1,-1
-  - uid: 26666
+  - uid: 26663
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,1
-  - uid: 26667
+  - uid: 26664
     components:
     - type: ChunkEntity
       root: 2
       chunk: 0,-5
-  - uid: 26668
+  - uid: 26665
     components:
     - type: ChunkEntity
       root: 26432
@@ -73213,10 +73253,10 @@ entities:
       server: 11822
       connectedToServer: True
     - type: DnaServer
-      serverId: 6
+      serverId: 7
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 289.9927611
-      lastInjectorTime: 289.9927611
+      lastSubjectInjectTime: 52.8115491
+      lastInjectorTime: 52.8115491
 - proto: DogBed
   entities:
   - uid: 11823
@@ -114995,30 +115035,30 @@ entities:
     - type: Transform
       parent: 2
       pos: -42.5,10.5
-- proto: GunSafePistolMk58
+- proto: GunSafeGauss
   entities:
-  - uid: 17642
-    components:
-    - type: Transform
-      parent: 2
-      pos: -49.5,24.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 17643
+  - uid: 17645
     components:
     - type: Transform
       parent: 2
       pos: -46.5,23.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafeLaserCarbine
   entities:
   - uid: 17644
     components:
     - type: Transform
       parent: 2
       pos: -44.5,23.5
-- proto: GunSafeSubMachineGunDrozd
+- proto: GunSafePhaser
   entities:
-  - uid: 17645
+  - uid: 17642
+    components:
+    - type: Transform
+      parent: 2
+      pos: -49.5,24.5
+- proto: GunSafeSurplus
+  entities:
+  - uid: 17643
     components:
     - type: Transform
       parent: 2
@@ -116353,12 +116393,34 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -48.813904,20.833128
+      pos: -45.504307,22.560335
+    - type: GasTank
+      toggleActionEntity: 18008
+    - type: Jetpack
+      toggleActionEntity: 18007
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 18007
+          - 18008
   - uid: 17841
     components:
     - type: Transform
       parent: 2
-      pos: -48.563904,20.530834
+      pos: -45.519028,22.47462
+    - type: GasTank
+      toggleActionEntity: 25872
+    - type: Jetpack
+      toggleActionEntity: 18160
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 18160
+          - 25872
 - proto: Jukebox
   entities:
   - uid: 17842
@@ -117667,18 +117729,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -7.5,5.5
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 18007
-    components:
-    - type: Transform
-      parent: 2
-      pos: -40.708973,27.464558
-  - uid: 18008
-    components:
-    - type: Transform
-      parent: 2
-      pos: -40.636223,27.824562
 - proto: MailBag
   entities:
   - uid: 18009
@@ -118568,13 +118618,6 @@ entities:
       pos: -8.5,-66.5
     - type: Fixtures
       fixtures: {}
-- proto: MobSlimeXenobioBabyGrey
-  entities:
-  - uid: 18160
-    components:
-    - type: Transform
-      parent: 2
-      pos: 54.5,-56.5
 - proto: MonkeyCubeBox
   entities:
   - uid: 18161
@@ -162817,23 +162860,6 @@ entities:
       devices:
       - 25870
       - 25869
-- proto: WeaponLaserCarbine
-  entities:
-  - uid: 25872
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.577026,22.29928
-  - uid: 25873
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.514526,22.51803
-  - uid: 25874
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.46765,22.689905
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 25875
@@ -162848,15 +162874,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 44.388454,-41.279987
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 25877
-    components:
-    - type: Transform
-      parent: 2
-      pos: -40.49005,27.667683
-    - type: Gun
-      burstCooldownModified: 0.25
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 25878
