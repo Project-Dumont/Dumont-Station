@@ -297,3 +297,12 @@ ent-SpawnPodSovietSargentKammerer = cápsula do sargento soviético
     .desc = { ent-SpawnPodSovietMech.desc }
 ent-SpawnPodSovietTenentAk = cápsula do tenente soviético
     .desc = { ent-SpawnPodSovietMech.desc }
+
+## Caixas de munição da prensa de balas
+
+ent-MagazineBoxTurret = caixa de munição (.22 curto)
+    .desc = Uma caixa de papelão com munição .22 curto. Barata e fraca, mas vem bastante.
+ent-BoxLethalshot = caixa de munição (.50)
+    .desc = Caixa com 16 cartuchos .50 de escopeta.
+ent-BoxShotgunSlug = caixa de munição (.50 slug)
+    .desc = Caixa com 16 cartuchos .50 slug de escopeta.

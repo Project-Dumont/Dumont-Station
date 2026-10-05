@@ -1384,8 +1384,8 @@ entities:
     - type: Paper
       stampState: paper_stamp-centcom
       stampedBy:
-      - stampedColor: '#006600FF'
-        stampedName: stamp-component-stamped-name-centcom
+      - stampedColor: '#DAA520FF'
+        stampedName: stamp-component-stamped-name-solgov
       content: "[color=#DAA520]░░░░░★░░░░░║\r[italic][color=#D3D3D3] ULTRASSECRETO [/color][/italic]\n░░░░███░░░░║\r[italic][color=#DAA520]Unidos sob o Sol.[/color][/italic]\n░███████░░░║\r\n░░░█░░█░░░░║[head=2][italic] F. T. S [/italic][/head]\r\n▀▄▀▄▀▄▀ ▄▀▄[/color] [italic] Comando da Força Expedicionária da Federação Trans-Solar[/italic]\r\n\r\n[head=2] Ordens de Missão [/head]\r\n[color=#DAA520]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]\r\n[italic] Emitido por: Alto Comando do Governo Sol [/italic]\r\n\r\n[head=3][head=2]1. [/head]Objetivo Principal[/head]\r\n[italic][color=#D3D3D3] Evacuação[/color][/italic]\r\n\n[bold][color=#DAA520]Proteja[/color][/bold] a tripulação leal e garanta que ela embarque na nave de evacuação.\n════════════════════════════════════\r\n\r\n[head=3][head=2]2. [/head]Objetivo Secundário[/head]\r\n[italic][color=#D3D3D3] Contenção[/color][/italic]\r\n\n\n[bold][color=#ac3a0d]Neutralize[/color][/bold] os desertores da URSAL e os revolucionários a bordo. Prisioneiros são preferíveis, mas não obrigatórios.\n\n════════════════════════════════════\r\n\r\n[head=3][head=2]3. [/head]Informações Adicionais[/head]\r\n[italic][color=#D3D3D3] Observações [/color][/italic]\r\n\r\nEsta é uma força em treinamento. Não esperem reforços, o setor não é prioridade da Federação. A URSAL oficial é nossa aliada nesta operação.\n\n════════════════════════════════════\r\n \r\n \r\n [bold] Pela Federação. Pelo Sol. [/bold]\r\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\r\n\r\n\n"
     - type: Physics
       angularDamping: 0
