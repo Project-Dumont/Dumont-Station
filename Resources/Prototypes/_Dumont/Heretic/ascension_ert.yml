@@ -2,7 +2,7 @@
 
 - type: entity
   parent: BaseUnknownShuttleRule
-  id: SpawnHereticInquisitorERT
+  id: SpawnVatican
   components:
   - type: StationEvent
     startAnnouncement: null

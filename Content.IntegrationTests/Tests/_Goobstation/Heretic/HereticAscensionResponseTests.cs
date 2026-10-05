@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.RoundEnd;
+using Content.Server.Power.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Humanoid;
@@ -35,7 +36,7 @@ public sealed class HereticAscensionResponseTests
             var evacuation = em.System<RoundEndSystem>();
             Assert.That(evacuation.IsRoundEndRequested(), Is.False);
             Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
-                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.False);
+                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnVatican"), Is.False);
         });
         await pair.RunSeconds(19);
         await pair.Server.WaitAssertion(() =>
@@ -55,7 +56,7 @@ public sealed class HereticAscensionResponseTests
             Assert.That(species, Does.Contain("IPC"));
             var deadline = evacuation.ExpectedCountdownEnd;
             var ertRules = em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
-                .Where(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT").ToArray();
+                .Where(e => e.Item1.EntityPrototype?.ID == "SpawnVatican").ToArray();
             Assert.That(ertRules, Has.Length.EqualTo(1));
             Assert.That(ertRules[0].Item2.MapGrids, Has.Count.EqualTo(1));
 
@@ -96,8 +97,32 @@ public sealed class HereticAscensionResponseTests
             response.SpawnERTOnAscension();
             Assert.That(evacuation.ExpectedCountdownEnd, Is.EqualTo(deadline));
             Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
-                .Count(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.EqualTo(1));
+                .Count(e => e.Item1.EntityPrototype?.ID == "SpawnVatican"), Is.EqualTo(1));
         });
+        // Let the ship's electrical network settle, then check beyond the APC trip delay.
+        for (var sample = 0; sample < 4; sample++)
+        {
+            await pair.RunSeconds(30);
+            await pair.Server.WaitAssertion(() =>
+            {
+                var em = pair.Server.EntMan;
+                var grid = em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
+                    .Single(e => e.Item1.EntityPrototype?.ID == "SpawnVatican").Item2.MapGrids.Single();
+                var apcs = em.EntityQuery<ApcComponent, TransformComponent>(true)
+                    .Where(e => e.Item2.GridUid == grid).ToArray();
+                Assert.That(apcs.Length, Is.GreaterThan(1));
+                Assert.That(apcs.All(e => e.Item1.MainBreakerEnabled && !e.Item1.TripFlag), Is.True,
+                    "The Drakon's APCs must stay on after startup.");
+                var equipment = em.EntityQuery<MetaDataComponent, ApcPowerReceiverComponent, TransformComponent>(true)
+                    .Where(e => e.Item3.GridUid == grid &&
+                        (e.Item1.EntityPrototype?.ID.StartsWith("Thruster") == true ||
+                         e.Item1.EntityPrototype?.ID == "ComputerShuttle")).ToArray();
+                Assert.That(equipment, Is.Not.Empty);
+                foreach (var (meta, power, transform) in equipment)
+                    Assert.That(power.Powered, Is.True,
+                        $"{meta.EntityPrototype?.ID} at {transform.Coordinates} has no power.");
+            });
+        }
         await pair.CleanReturnAsync();
     }
 
@@ -119,7 +144,7 @@ public sealed class HereticAscensionResponseTests
             var em = pair.Server.EntMan;
             Assert.That(em.System<RoundEndSystem>().IsRoundEndRequested(), Is.False);
             Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
-                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnHereticInquisitorERT"), Is.False);
+                .Any(e => e.Item1.EntityPrototype?.ID == "SpawnVatican"), Is.False);
         });
         await pair.CleanReturnAsync();
     }
