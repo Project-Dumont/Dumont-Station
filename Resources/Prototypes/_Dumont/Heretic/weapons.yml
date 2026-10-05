@@ -103,7 +103,7 @@
     quickEquip: false
     slots: [ suitStorage ]
   - type: Gun
-    fireRate: 1
+    fireRate: 1.5
     minAngle: 1
     maxAngle: 5
     angleIncrease: 1

@@ -9,6 +9,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Server.AlertLevel;
 using Content.Shared.Station.Components;
+using Content.Shared.Storage;
 using Robust.Shared.Prototypes;
 using Content.Trauma.Server.Heretic.Components;
 using Content.Trauma.Server.Heretic.Systems;
@@ -61,6 +62,7 @@ public sealed class HereticAscensionResponseTests
             Assert.That(ertRules[0].Item2.MapGrids, Has.Count.EqualTo(1));
 
             var grid = ertRules[0].Item2.MapGrids.Single();
+            Assert.That(em.GetComponent<MetaDataComponent>(grid).EntityName, Is.EqualTo("Judgement"));
             var inventory = em.System<InventorySystem>();
             var inquisitors = 0;
             var leaders = 0;
@@ -75,6 +77,9 @@ public sealed class HereticAscensionResponseTests
                     Assert.That(inventory.TryGetSlotEntity(inv.Owner, "back", out var control), Is.True);
                     Assert.That(em.GetComponent<MetaDataComponent>(control.Value).EntityPrototype?.ID,
                         Is.EqualTo("ClothingModsuitInquisitory"));
+                    var supplies = em.GetComponent<StorageComponent>(control.Value).Container.ContainedEntities;
+                    Assert.That(supplies.Count(item => em.GetComponent<MetaDataComponent>(item).EntityPrototype?.ID
+                        == "MedkitCombatFilled"), Is.EqualTo(2));
                     if (inventory.TryGetSlotEntity(inv.Owner, "neck", out var cloak)
                         && em.GetComponent<MetaDataComponent>(cloak.Value).EntityPrototype?.ID == "ClothingNeckCloakInquisitor")
                         leaders++;
@@ -112,7 +117,7 @@ public sealed class HereticAscensionResponseTests
                     .Where(e => e.Item2.GridUid == grid).ToArray();
                 Assert.That(apcs.Length, Is.GreaterThan(1));
                 Assert.That(apcs.All(e => e.Item1.MainBreakerEnabled && !e.Item1.TripFlag), Is.True,
-                    "The Drakon's APCs must stay on after startup.");
+                    "Judgement's APCs must stay on after startup.");
                 var equipment = em.EntityQuery<MetaDataComponent, ApcPowerReceiverComponent, TransformComponent>(true)
                     .Where(e => e.Item3.GridUid == grid &&
                         (e.Item1.EntityPrototype?.ID.StartsWith("Thruster") == true ||

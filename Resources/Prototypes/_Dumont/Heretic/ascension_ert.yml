@@ -66,16 +66,11 @@
     back:
     - BoxCandle
     - BoxBodyBag
-    - DrinkWaterMelonJuiceJug
-    - Lantern
-    - Lantern
+    - MedkitCombatFilled
+    - MedkitCombatFilled
     - ChaplainUndeterminedBible
     - CrowbarRed
-    - FoodBakedBunHotX
-    - FoodBakedBunHotX
-    - FoodBakedBunHotX
     - Nullrod
-    - Lighter
     - VaticanIDCard
 
 - type: entity
