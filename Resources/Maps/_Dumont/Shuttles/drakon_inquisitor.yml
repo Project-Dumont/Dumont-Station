@@ -10,7 +10,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/28/2025 20:59:20
-  entityCount: 685
+  entityCount: 702
 maps: []
 grids:
 - 1
@@ -1674,6 +1674,61 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-2.5
+      parent: 1
+  - uid: 728
+    components:
+    - type: Transform
+      pos: 0.5,11.5
+      parent: 1
+  - uid: 729
+    components:
+    - type: Transform
+      pos: -1.5,11.5
+      parent: 1
+  - uid: 730
+    components:
+    - type: Transform
+      pos: 5.5,-3.5
+      parent: 1
+  - uid: 731
+    components:
+    - type: Transform
+      pos: 5.5,-2.5
+      parent: 1
+  - uid: 732
+    components:
+    - type: Transform
+      pos: -5.5,-2.5
+      parent: 1
+  - uid: 733
+    components:
+    - type: Transform
+      pos: -6.5,-2.5
+      parent: 1
+  - uid: 734
+    components:
+    - type: Transform
+      pos: -5.5,-8.5
+      parent: 1
+  - uid: 735
+    components:
+    - type: Transform
+      pos: 4.5,-8.5
+      parent: 1
+  - uid: 736
+    components:
+    - type: Transform
+      pos: 4.5,-9.5
+      parent: 1
+  - uid: 737
+    components:
+    - type: Transform
+      pos: -2.5,-12.5
+      parent: 1
+  - uid: 738
+    components:
+    - type: Transform
+      pos: 3.5,-12.5
       parent: 1
 - proto: CableHV
   entities:
@@ -3473,54 +3528,6 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: Thruster
-  entities:
-  - uid: 383
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,-2.5
-      parent: 1
-  - uid: 384
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -6.5,-2.5
-      parent: 1
-- proto: ThrusterHuge
-  entities:
-  - uid: 385
-    components:
-    - type: Transform
-      rot: 0 rad
-      pos: -0.5,12.5
-      parent: 1
-  - uid: 388
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,-12.5
-      parent: 1
-  - uid: 391
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,-12.5
-      parent: 1
-- proto: ThrusterLarge
-  entities:
-  - uid: 393
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -6.5,-9.5
-      parent: 1
-  - uid: 395
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,-8.5
-      parent: 1
 - proto: ToiletDirtyWater
   entities:
   - uid: 397
@@ -4516,4 +4523,86 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-3.5
+      parent: 1
+- proto: Thruster
+  entities:
+  - uid: 715
+    components:
+    - type: Transform
+      rot: 0 rad
+      pos: 0.5,11.5
+      parent: 1
+  - uid: 716
+    components:
+    - type: Transform
+      rot: 0 rad
+      pos: -0.5,11.5
+      parent: 1
+  - uid: 717
+    components:
+    - type: Transform
+      rot: 0 rad
+      pos: -1.5,11.5
+      parent: 1
+  - uid: 718
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,-2.5
+      parent: 1
+  - uid: 719
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -6.5,-2.5
+      parent: 1
+  - uid: 720
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-8.5
+      parent: 1
+  - uid: 721
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-9.5
+      parent: 1
+  - uid: 722
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-8.5
+      parent: 1
+  - uid: 723
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-9.5
+      parent: 1
+  - uid: 724
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-12.5
+      parent: 1
+  - uid: 725
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-12.5
+      parent: 1
+- proto: ThrusterLarge
+  entities:
+  - uid: 726
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -3.5,-12.5
+      parent: 1
+  - uid: 727
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,-12.5
       parent: 1
