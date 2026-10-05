@@ -276,7 +276,7 @@ ent-SmilingTylenol = tylenol sorridente
 ## Forças soviéticas
 
 ent-MobCombatMech = mecha de combate soviético
-    .desc = Um mecha improvisado construído por desertores da USSP com sucata e tecnologia roubada. Apesar da aparência precária, seus sistemas militares lhe garantem desempenho superior ao de um Gygax padrão. Dispara munições incendiárias.
+    .desc = Um mecha improvisado construído por desertores da URSAL com sucata e tecnologia roubada. Apesar da aparência precária, seus sistemas militares lhe garantem desempenho superior ao de um Gygax padrão. Dispara munições incendiárias.
 ent-MobCombatMechRev = { ent-MobCombatMech }
     .desc = { ent-MobCombatMech.desc }
     .suffix = Rev
