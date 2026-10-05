@@ -23,50 +23,50 @@
   parent: BaseRevBullet
   id: RevTurretBullet
   result: MagazineBoxTurret
-  completetime: 10
+  completetime: 30
   materials:
-    Steel: 300
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevPistolBullet
   result: MagazineBoxPistol
-  completetime: 10
+  completetime: 30
   materials:
-    Steel: 300
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevRifleBullet
   result: MagazineBoxLightRifle
-  completetime: 10
+  completetime: 30
   materials:
-    Steel: 300
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevBuckShell
   materials:
-    Steel: 320
+    Steel: 1000
   result: BoxLethalshot
-  completetime: 10
+  completetime: 30
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevSlugShell
   materials:
-    Steel: 240
+    Steel: 1000
     Plastic: 80
   result: BoxShotgunSlug
-  completetime: 10
+  completetime: 30
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevMagnumBullet
   result: MagazineBoxMagnum
-  completetime: 10
+  completetime: 30
   materials:
-    Steel: 240
+    Steel: 1000
 # Dumont end
 
 - type: latheRecipe
