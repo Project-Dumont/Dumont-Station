@@ -10,7 +10,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    gridPath: /Maps/_Dumont/Shuttles/retort_inquisitor.yml
+    gridPath: /Maps/_Dumont/Shuttles/drakon_inquisitor.yml
 
 - type: entity
   parent: RandomHumanoidSpawnerERTChaplain
