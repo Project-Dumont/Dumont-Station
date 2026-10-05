@@ -1,0 +1,149 @@
+
+
+# items made for dumont's MRP rules
+# these items are meant to be used together for a very specific situation where there's no central command members or chaplain on the station and the captain NEEDS to know how to deal with a certain antag
+- type: entity
+  parent: BaseWallmount
+  id: VaultLockerGlass
+  name: confidential information locker
+  suffix: Intact
+  description: A locker containing top-secret NanoTrasen secrets. Only smash the glass and open in case of emergency and no available authority able to disclose the information themselves.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Lockers/vault_locker.rsi
+    state: lockerglass
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior # still needs to spawn the book
+        spawn:
+          BookCorporateSecrets:
+            min: 1
+            max: 1
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 2
+            max: 3
+          ShardGlass:
+            min: 1
+            max: 2
+          PartRodMetal1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction 
+    graph: ConfidentialLockerGlassSmash
+    node: start
+
+- type: entity
+  parent: VaultLockerGlass
+  id: VaultLockerGlassSmashed
+  name: confidential information locker
+  suffix: Smashed
+  description: A locker containing top-secret NanoTrasen secrets. The glass is smashed.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 2
+            max: 3
+          ShardGlass:
+            min: 1
+            max: 2
+          PartRodMetal1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Dumont/Structures/Wallmounts/Lockers/vault_locker.rsi
+    state: base
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Lock
+  - type: UserInterface
+    interfaces:
+     enum.StorageUiKey.Key:
+      type: StorageBoundUserInterface
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+  - type: AccessReader
+  - type: Storage
+    grid:
+    - 0,0,0,1
+  - type: StorageFill
+    contents:
+      - id: BookCorporateSecrets
+
+- type: constructionGraph
+  id: ConfidentialLockerGlassSmash
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: smashed
+          steps:
+            - tool: Hammering
+              doAfter: 1
+    - node: smashed
+      entity: VaultLockerGlassSmashed
+
+- type: entity
+  id: BookCorporateSecrets
+  parent: [BaseGuidebook, BaseGrandTheftContraband]
+  name: command training manual
+  description: There's a big red stamp that says "CONFIDENTIAL" on it. Probably should keep this locked up.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Misc/books.rsi
+    layers:
+    - state: corporate-secrets
+#  - type: GuideHelp
+#    guides:
+#    - CommandSOP
+#    - CommandTrainingManual
+#    - OrderOfSuccession
