@@ -69,7 +69,6 @@
     soundGunshot:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/heavy_shot_suppressed.ogg
   - type: BallisticAmmoProvider
-    autoEject: false
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
     soundRack: #Mono start
