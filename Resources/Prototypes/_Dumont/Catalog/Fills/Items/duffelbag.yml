@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpackDuffelSalvage
+  id: ClothingBackpackDuffelMaximBundle
+  name: Plasmaman Maxim Bundle
+  description: A duffel bag containing a Maxim bundle for plasmamen and an extra plasma tank.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadEnvirohelmetMaxim
+    - id: ClothingOuterEnvirosuitMaxim
+    - id: ClothingHandsGlovesEnviroglovesMaxim
+    - id: ClothingShoesEnvirobootsMaxim
+    - id: ExtendedEmergencyPlasmaTankFilled

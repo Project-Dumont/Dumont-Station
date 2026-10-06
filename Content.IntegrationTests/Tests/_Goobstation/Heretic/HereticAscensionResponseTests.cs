@@ -128,6 +128,8 @@ public sealed class HereticAscensionResponseTests
                         $"{meta.EntityPrototype?.ID} at {transform.Coordinates} has no power.");
             });
         }
+        // Reset with the deployed MODsuits still equipped, including their attached parts.
+        await pair.Server.WaitAssertion(() => pair.Server.EntMan.System<GameTicker>().RestartRound());
         await pair.CleanReturnAsync();
     }
 

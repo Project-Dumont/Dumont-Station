@@ -6,16 +6,34 @@
 - type: loadout
   id: PermaPrisonerEnvirosuit
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitPrisoner
+    outerClothing: ClothingOuterEnvirosuitPrisoner
   effects:
   - !type:SpeciesLoadoutEffect
     species:
     - Plasmaman
 
 - type: loadout
-  id: PermaPrisonerEnvirohelm
+  id: PermaPrisonerEnvirohelmet
   equipment:
-    head: ClothingHeadEnvirohelmPrisoner
+    head: ClothingHeadEnvirohelmetPrisoner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PermaPrisonerEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesPrisoner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PermaPrisonerEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsPrisoner
   effects:
   - !type:SpeciesLoadoutEffect
     species:

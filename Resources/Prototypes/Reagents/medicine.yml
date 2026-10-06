@@ -909,6 +909,7 @@
     Medicine:
       effects:
         - !type:CureZombieInfection
+          cureCriticalZombies: true # Goob
           conditions:
             - !type:ReagentThreshold
               min: 10
@@ -926,6 +927,7 @@
       effects:
         - !type:CureZombieInfection
           innoculate: true
+          cureCriticalZombies: true # Goob
           conditions:
             - !type:ReagentThreshold
               min: 5
@@ -1749,6 +1751,9 @@
         - "psicodine-effect-anxieties-wash-away"
         - "psicodine-effect-at-peace"
         probability: 0.2
+      - !type:ReduceSeizureBuild
+        reductionAmount: 0.1
+        probability: 1.0
 
 - type: reagent
   id: PotassiumIodide

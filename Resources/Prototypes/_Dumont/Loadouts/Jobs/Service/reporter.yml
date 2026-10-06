@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: ReporterEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitReporter
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ReporterEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetReporter
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ReporterEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesReporter
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ReporterEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsReporter
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

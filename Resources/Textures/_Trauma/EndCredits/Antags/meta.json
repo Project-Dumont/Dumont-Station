@@ -6,5 +6,66 @@
     "x": 300,
     "y": 200
   },
-  "states": []
+  "states": [
+    {
+      "name": ""
+    },
+    {
+      "name": "blob"
+    },
+    {
+      "name": "abductors"
+    },
+    {
+      "name": "nukeops"
+    },
+    {
+      "name": "flukeops"
+    },
+    {
+      "name": "revolution"
+    },
+    {
+      "name": "cult"
+    },
+    {
+      "name": "changeling"
+    },
+    {
+      "name": "extended"
+    },
+    {
+      "name": "extended_white"
+    },
+    {
+      "name": "wizard"
+    },
+    {
+      "name": "gang"
+    },
+    {
+      "name": "meteor"
+    },
+    {
+      "name": "traitorchan"
+    },
+    {
+      "name": "traitor"
+    },
+    {
+      "name": "vampires"
+    },
+    {
+      "name": "raginmages"
+    },
+    {
+      "name": "devil"
+    },
+    {
+      "name": "clockcult"
+    },
+    {
+      "name": "darkspawn"
+    }
+  ]
 }

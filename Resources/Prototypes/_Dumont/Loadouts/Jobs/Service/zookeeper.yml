@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: ZookeeperEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitZookeeper
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ZookeeperEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetZookeeper
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ZookeeperEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesZookeeper
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: ZookeeperEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsZookeeper
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

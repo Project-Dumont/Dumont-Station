@@ -13,7 +13,6 @@
   access:
   - Captain
 
-# Futuramente fazer um cartucho que serve pra chamar o jani
 - type: notificationGroup
   id: JanitorAlerts
   access:

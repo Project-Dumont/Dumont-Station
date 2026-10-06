@@ -1,0 +1,3 @@
+ghost-role-information-listeningop-name = Operativo do Posto de Escuta
+ghost-role-information-listeningop-description = Você é um operativo do Posto de Escuta. Entre no alcance, observe a estação, intercepte comunicações e auxilie quaisquer operativos na área!
+ghost-role-information-listeningop-rules = Você é um Operativo do Sindicato encarregado de reportar e monitorar continuamente a estação e suas atividades, além de auxiliar quaisquer companheiros que possam estar a bordo. Como antagonista, faça o que for necessário para concluir esta tarefa. Garanta que seu posto não caia nas mãos do inimigo e NÃO abandone seu posto! Oculte sua existência a qualquer custo!

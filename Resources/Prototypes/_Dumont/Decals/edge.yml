@@ -1,0 +1,55 @@
+- type: decal
+  id: EdgeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_e
+
+- type: decal
+  id: EdgeN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_n
+
+- type: decal
+  id: EdgeNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_ne
+
+- type: decal
+  id: EdgeNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_nw
+
+- type: decal
+  id: EdgeS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_s
+
+- type: decal
+  id: EdgeSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_se
+
+- type: decal
+  id: EdgeSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_sw
+
+- type: decal
+  id: EdgeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/edge.rsi
+    state: edge_w

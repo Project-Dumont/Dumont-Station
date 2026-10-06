@@ -1,0 +1,65 @@
+- type: entity
+  parent: BaseMachinePowered
+  id: ElectionScreen
+  name: election screen
+  description: Broadcasts the sector's general election count, live from Central Command.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Machines/election_screen.rsi
+    noRot: true
+    drawdepth: Mobs
+    offset: 0.5,1
+    layers:
+    - state: base
+    - state: screen
+      shader: unshaded
+      map: [ "screen" ]
+  - type: SpriteFade
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        screen:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ElectionScreen
+    screenPosition: 5,6
+    screenSize: 118,82
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.5,2.5,0.6"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: BaseFlatpack
+  id: ElectionScreenFlatpack
+  name: election screen flatpack
+  description: A flatpack used for constructing an election screen.
+  components:
+  - type: Flatpack
+    entity: ElectionScreen
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnPodElectionScreen
+  name: election screen drop pod
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnTableOnDespawn
+    table: !type:AllSelector
+      children:
+      - id: ElectionScreenFlatpack
+      - id: Multitool
+      - id: ChairFoldingSpawnFolded
+        amount: 15

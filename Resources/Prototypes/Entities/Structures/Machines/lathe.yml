@@ -299,7 +299,7 @@
 
 - type: entity
   id: BaseLathe
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseAutomatedMachine ] # Goob: Automation
   abstract: true
   name: lathe
   components:
@@ -806,8 +806,9 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
-    #Gabystation
+    # Dumont
     - SecurityPowerguns
+    - SecurityWeaponUpgrades
     # Goobstation
     - SecurityWeaponsGoob
     - RestraintTechnology

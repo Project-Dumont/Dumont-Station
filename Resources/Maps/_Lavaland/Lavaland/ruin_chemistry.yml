@@ -192,6 +192,8 @@ entities:
             78: 5,5
             79: 5,6
     - type: GridAtmosphere
+      simulatedTurf: false
+      spaceWindSimulation: false
       version: 2
       data:
         tiles:
@@ -317,7 +319,7 @@ entities:
     - type: Transform
       pos: 8.5,10.5
       parent: 1
-- proto: BorgBeaker
+- proto: Beaker
   entities:
   - uid: 38
     components:
