@@ -846,7 +846,7 @@
       - Belt
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 62.5
+    fireCost: 20 # Dumont edit, 25 shots, more than the phaser at the cost of no lethal setting
   - type: GuideHelp
     guides:
     - Security
@@ -857,6 +857,10 @@
     tags:
     - Sidearm
     - WeaponDisabler
+  # Dumont edit lasersec
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
   # Goobstation end
 
 - type: entity

@@ -77,7 +77,7 @@
 
 - type: entity
   name: laser submachine gun
-  parent: [BaseWeaponBattery, BaseSecurityContraband]
+  parent: [WeaponLaserCarbine, BaseSecurityContraband]
   id: WeaponLaserSMG
   description: Designed for maximum damage output, suffers from a small battery.
   components:
@@ -114,8 +114,6 @@
     availableModes:
     - FullAuto
     - Burst
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
   - type: GunWieldBonus
     minAngle: -19
     maxAngle: -16
