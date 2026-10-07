@@ -40,9 +40,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-    xmlns:animated="clr-namespace:Content.Client._Maid.UserInterface.AnimatedBackground"
-    xmlns:maidControls="clr-namespace:Content.Client._Maid.Lobby.UI"
-    xmlns:whiteButtons="clr-namespace:Content.Client._White.UserInterface.Buttons">
+    xmlns:animated="clr-namespace:Content.Client._Maid.UserInterface.AnimatedBackground">
     <!-- Background -->
     <animated:AnimatedBackgroundControl Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background" /> <!-- Tweak-Maid: Animated Lobby -->
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Horizontal"

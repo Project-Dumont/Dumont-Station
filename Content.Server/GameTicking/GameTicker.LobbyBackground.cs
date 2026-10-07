@@ -25,7 +25,8 @@ public sealed partial class GameTicker
 
     [ViewVariables]
     private List<ProtoId<LobbyBackgroundPrototype>> _lobbyBackgrounds = [];
-    private static readonly string[] WhitelistedBackgroundExtensions = new string[] { "png", "jpg", "jpeg", "webp", "rsi" }; // Tweak-Maid: Animated Lobby
+
+    private static readonly string[] WhitelistedBackgroundExtensions = new string[] { "png", "jpg", "jpeg", "webp" };
 
     // Tweak-Maid-start: Animated Lobby
     [ViewVariables]
@@ -34,7 +35,6 @@ public sealed partial class GameTicker
     [ViewVariables]
     private List<ProtoId<AnimatedLobbyScreenPrototype>> _animatedLobbyScreens = [];
     // Tweak-Maid-end
-
 
     private void InitializeLobbyBackground()
     {

@@ -382,24 +382,24 @@ namespace Content.Client.Lobby
             }
         }
 
-        // Goobstation - heavily modified to add credits for lobby backgrounds
-        private void UpdateLobbyBackground() // Tweak-Maid: Animated Lobby
+        // Goobstation - heavily modified to add credits for lobby backgrounds & Tweak-Maid: Animated Lobby
+        private void UpdateLobbyBackground()
         {
             if (_gameTicker.AnimatedLobbyScreen != null)
             {
                 if (_gameTicker.AnimatedLobbyScreen != _lastAnimatedScreen)
                 {
-                    var lobbyBackground = _protoMan.Index(_gameTicker.AnimatedLobbyScreen.Value);
-                    Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(lobbyBackground.Path).RSI);
+                    var animatedBackground = _protoMan.Index(_gameTicker.AnimatedLobbyScreen.Value);
+                    Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(animatedBackground.Background).RSI);
                     _lastAnimatedScreen = _gameTicker.AnimatedLobbyScreen;
 
-                    var name = string.IsNullOrEmpty(lobbyBackground.Name)
+                    var name = string.IsNullOrEmpty(animatedBackground.Name)
                         ? Loc.GetString("lobby-state-background-unknown-title")
-                        : lobbyBackground.Name;
+                        : animatedBackground.Name;
 
-                    var artist = string.IsNullOrEmpty(lobbyBackground.Artist)
+                    var artist = string.IsNullOrEmpty(animatedBackground.Artist)
                         ? Loc.GetString("lobby-state-background-unknown-artist")
-                        : lobbyBackground.Artist;
+                        : animatedBackground.Artist;
 
                     var markup = Loc.GetString("lobby-state-background-text",
                         ("backgroundName", name),
