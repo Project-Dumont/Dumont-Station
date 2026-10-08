@@ -63,7 +63,7 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private readonly SharedSealableClothingSystem _sealable = default!;
 
     private const string VaticanAlertSound = "/Audio/Announcements/Alerts/code_octarine.ogg";
-    private const string VaticanMusic = "/Audio/_Dumont/Heretic/bloodbeast.ogg";
+    private const string VaticanMusic = "/Audio/_Dumont/Heretic/cadiastands_inspection.ogg";
     private bool _ascensionResponseCalled;
     private EntityUid? _pendingResponse;
     private TimeSpan _responseAt;
