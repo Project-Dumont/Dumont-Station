@@ -356,7 +356,7 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     # Gabystation
-    - id: HandheldPowerMonitorGs
+#   - id: HandheldPowerMonitorGs Dumont edit goob already made one
     - id: RCDProtoCE
     - id: InducerEngineeringWhiteBattery # Orion
 
