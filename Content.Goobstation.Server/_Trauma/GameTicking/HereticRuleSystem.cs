@@ -233,7 +233,7 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
         {
             _musicAt = null;
             if (_ticker.RunLevel == GameRunLevel.InRound)
-                _audio.PlayGlobal(VaticanMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-13f));
+                _audio.PlayGlobal(VaticanMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-4f));
         }
     }
 
