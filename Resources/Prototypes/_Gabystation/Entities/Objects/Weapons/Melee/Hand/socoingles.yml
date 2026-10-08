@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, BaseSecurityBartenderContraband]
   id: SocoIngles
   name: soco inglês
   description: Nada melhor do que resolver a confusão do bar com mais violência!
@@ -14,7 +14,7 @@
       soundHit:
         path: "/Audio/Weapons/smash.ogg"
       autoAttack: true
-      attackRate: 2
+      attackRate: 1.5 # 2 is too fast for a melee service weapon
       damage:
         types:
           Blunt: 5
