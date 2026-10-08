@@ -15,6 +15,11 @@
   components:
   #- type: Speech # O valor não pode ser nulo, vai ficar assim até ter um valor
   #  speechVerb:  #No momento que estou fazendo isso acredito que não tenha um modo de falar especifico dos daengatis
+  - type: Vocal
+    sounds:
+      Male: MaleDaengati
+      Female: FemaleDaengati
+      Unsexed: MaleDaengati
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
@@ -60,6 +65,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - DaengatiEmotes
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobDaengati
