@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/25/2026 05:52:22
-  entityCount: 32646
+  time: 10/04/2026 21:28:14
+  entityCount: 32642
 maps:
 - 1
 grids:
@@ -82470,7 +82470,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -10.776614,43.48699
-- proto: ClothingNeckMantleCE
+- proto: ClothingNeckMantleWhiteCE
   entities:
   - uid: 12785
     components:
@@ -87069,7 +87069,7 @@ entities:
       pos: -36.5,-19.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -15936.447
+      secondsUntilStateChange: -16020.257
 - proto: d10Dice
   entities:
   - uid: 13263
@@ -96142,10 +96142,10 @@ entities:
       server: 14830
       connectedToServer: True
     - type: DnaServer
-      serverId: 7
+      serverId: 9
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 111.6493294
-      lastInjectorTime: 111.6493294
+      lastSubjectInjectTime: 328.1863009
+      lastInjectorTime: 328.1863009
     - type: DeviceLinkSource
       linkedPorts:
         22133:
@@ -96161,10 +96161,10 @@ entities:
       server: 14831
       connectedToServer: True
     - type: DnaServer
-      serverId: 8
+      serverId: 10
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 111.6493294
-      lastInjectorTime: 111.6493294
+      lastSubjectInjectTime: 328.1863009
+      lastInjectorTime: 328.1863009
     - type: DeviceLinkSource
       linkedPorts:
         22134:
@@ -144823,6 +144823,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 26.5,27.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 21582
+    components:
+    - type: Transform
+      parent: 2
+      pos: 27.5,32.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 21578
@@ -144837,74 +144844,27 @@ entities:
     - type: Transform
       parent: 2
       pos: 26.5,28.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 21580
-    components:
-    - type: Transform
-      parent: 2
-      pos: 26.5,29.5
-- proto: GunSafeRifleLecter
-  entities:
-  - uid: 21581
-    components:
-    - type: Transform
-      parent: 2
-      pos: 32.5,32.5
-- proto: GunSafeShotgunEnforcer
-  entities:
-  - uid: 21582
-    components:
-    - type: Transform
-      parent: 2
-      pos: 26.5,32.5
-- proto: GunSafeSubMachineGunDrozd
+- proto: GunSafeMelee
   entities:
   - uid: 21583
     components:
     - type: Transform
       parent: 2
-      pos: 27.5,32.5
-    - type: EntityStorage
-      air:
-        temperature: 293.14673
-        volume: 200
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        immutable: False
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          ents:
-          - 21585
-          - 21584
-          - 21587
-          - 21586
-          showEnts: False
-          occludes: True
-        paper_label: !type:ContainerSlot
-          ent: null
-          showEnts: False
-          occludes: True
+      pos: 26.5,32.5
+- proto: GunSafePhaser
+  entities:
+  - uid: 21581
+    components:
+    - type: Transform
+      parent: 2
+      pos: 26.5,29.5
+- proto: GunSafeSurplus
+  entities:
+  - uid: 21580
+    components:
+    - type: Transform
+      parent: 2
+      pos: 32.5,32.5
 - proto: GyroscopeMachineCircuitboard
   entities:
   - uid: 21588
@@ -148696,26 +148656,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -77.5,-35.5
-- proto: MagazinePistolSubMachineGun
-  entities:
-  - uid: 21584
-    components:
-    - type: Transform
-      parent: 21583
-    - type: Physics
-      linearDamping: 0
-      canCollide: False
-      angularDamping: 0
-    - type: InsideEntityStorage
-  - uid: 21585
-    components:
-    - type: Transform
-      parent: 21583
-    - type: Physics
-      linearDamping: 0
-      canCollide: False
-      angularDamping: 0
-    - type: InsideEntityStorage
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
   - uid: 22020
@@ -210704,26 +210644,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 23.425875,-35.26169
-- proto: WeaponSubMachineGunDrozd
-  entities:
-  - uid: 21586
-    components:
-    - type: Transform
-      parent: 21583
-    - type: Physics
-      linearDamping: 0
-      canCollide: False
-      angularDamping: 0
-    - type: InsideEntityStorage
-  - uid: 21587
-    components:
-    - type: Transform
-      parent: 21583
-    - type: Physics
-      linearDamping: 0
-      canCollide: False
-      angularDamping: 0
-    - type: InsideEntityStorage
 - proto: WeaponSubMachineGunWt550
   entities:
   - uid: 32010

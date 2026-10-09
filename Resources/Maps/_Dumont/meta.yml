@@ -4,7 +4,7 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 20:10:06
+  time: 09/23/2026 16:44:24
   entityCount: 28224
 maps:
 - 1
@@ -11428,7 +11428,7 @@ entities:
       pos: 44.5,39.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -18159.984
+      secondsUntilStateChange: -18222.982
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11710,7 +11710,7 @@ entities:
       pos: -7.5,32.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -28935.338
+      secondsUntilStateChange: -28998.336
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11916,7 +11916,7 @@ entities:
       pos: 63.5,0.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -48159.18
+      secondsUntilStateChange: -48222.176
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -12064,7 +12064,7 @@ entities:
       pos: 98.5,-4.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -51874.344
+      secondsUntilStateChange: -51937.34
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12377,7 +12377,7 @@ entities:
       pos: -43.5,29.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -51021.344
+      secondsUntilStateChange: -51084.34
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -12390,7 +12390,7 @@ entities:
       pos: -42.5,29.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -78740.805
+      secondsUntilStateChange: -78803.805
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -13114,7 +13114,7 @@ entities:
       pos: -2.5,-60.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -33816.207
+      secondsUntilStateChange: -33879.203
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -78337,10 +78337,10 @@ entities:
       server: 11997
       connectedToServer: True
     - type: DnaServer
-      serverId: 116
+      serverId: 119
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 556.9562212
+      lastInjectorTime: 556.9562212
   - uid: 11998
     components:
     - type: Transform
@@ -78356,10 +78356,10 @@ entities:
       server: 11998
       connectedToServer: True
     - type: DnaServer
-      serverId: 117
+      serverId: 120
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 556.9562212
+      lastInjectorTime: 556.9562212
   - uid: 11999
     components:
     - type: Transform
@@ -78375,10 +78375,10 @@ entities:
       server: 11999
       connectedToServer: True
     - type: DnaServer
-      serverId: 118
+      serverId: 121
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 556.9562212
+      lastInjectorTime: 556.9562212
 - proto: DogBed
   entities:
   - uid: 12000
@@ -125316,6 +125316,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -4.5,45.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 18671
+    components:
+    - type: Transform
+      parent: 2
+      pos: -5.5,36.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 18667
@@ -125330,27 +125337,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -4.5,40.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeMelee
   entities:
   - uid: 18669
     components:
     - type: Transform
       parent: 2
-      pos: -4.5,36.5
-- proto: GunSafeShotgunKammerer
+      pos: -5.5,40.5
+- proto: GunSafeSurplus
   entities:
   - uid: 18670
     components:
     - type: Transform
       parent: 2
-      pos: -5.5,40.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 18671
-    components:
-    - type: Transform
-      parent: 2
-      pos: -5.5,36.5
+      pos: -4.5,36.5
 - proto: Handcuffs
   entities:
   - uid: 18672
@@ -180001,7 +180001,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -47833.78
+      secondsUntilStateChange: -47896.777
     - type: Airlock
       autoClose: False
   - uid: 27640
