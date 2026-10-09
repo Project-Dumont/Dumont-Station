@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprited by kipdotnet (github) for Impstation",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/machines/coffeemaker.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -9,11 +9,11 @@
   "states": [
     {
       "name": "coffeemachine",
-      "directions": 4
+	  "directions": 1
     },
     {
       "name": "unshaded",
-      "directions": 4
+	  "directions": 1
     }
   ]
 }

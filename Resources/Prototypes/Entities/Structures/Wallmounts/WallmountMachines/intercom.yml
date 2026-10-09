@@ -256,6 +256,9 @@
   suffix: Command
   description: An intercom. It's been reinforced with metal.
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-com.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -269,6 +272,9 @@
   parent: Intercom
   suffix: Engineering
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-eng.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -282,6 +288,9 @@
   parent: Intercom
   suffix: Medical
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-med.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -295,6 +304,9 @@
   parent: Intercom
   suffix: Science
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-sci.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -309,6 +321,9 @@
   suffix: Security
   description: An intercom. It's been reinforced with metal from security helmets, making it a bitch-and-a-half to open.
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-sec.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -322,6 +337,9 @@
   parent: Intercom
   suffix: Service
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-ser.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -335,6 +353,9 @@
   parent: Intercom
   suffix: Supply
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-sup.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -348,6 +369,9 @@
   parent: Intercom
   suffix: All
   components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-all.rsi
+    state: intercom
   - type: ContainerFill
     containers:
       board:
@@ -368,3 +392,19 @@
       key_slots:
       - EncryptionKeyCommon
       - EncryptionKeyFreelance
+
+- type: entity #DumontStation
+  id: IntercomPrison
+  parent: Intercom
+  suffix: Prison
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Intercoms/intercom-pri.rsi
+    state: intercom
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyPrison
