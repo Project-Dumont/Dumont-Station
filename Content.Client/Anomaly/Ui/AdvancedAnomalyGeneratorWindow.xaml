@@ -1,0 +1,59 @@
+<!--
+SPDX-FileCopyrightText: 2026 Dumont Station Contributors
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:ui="clr-namespace:Content.Client.Anomaly.Ui"
+                      Title="{Loc 'advanced-anomaly-generator-ui-title'}"
+                      MinSize="980 620"
+                      Resizable="True">
+    <!-- Why this is so dificult please help -->                  
+    <!-- All the colors are handled by AdvancedAnomalyGeneratorTheme -->
+    <PanelContainer PanelOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Background}">
+        <BoxContainer Orientation="Horizontal" Margin="8" SeparationOverride="8">
+
+            <PanelContainer PanelOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Panel}"
+                            MinWidth="420" HorizontalExpand="True" VerticalExpand="True">
+                <ui:AdvancedAnomalyGeneratorNavMapControl Name="StationMap"
+                                                          HorizontalExpand="True"
+                                                          VerticalExpand="True" />
+            </PanelContainer>
+
+            <BoxContainer Orientation="Vertical" MinWidth="310" SeparationOverride="5">
+                <Label Text="{Loc 'advanced-anomaly-generator-ui-anomaly'}"
+                       StyleClasses="LabelKeyText"
+                       FontColorOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Header}" />
+
+                <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                    <BoxContainer Name="AnomalyCardContainer"
+                                  Orientation="Vertical"
+                                  SeparationOverride="4"
+                                  HorizontalExpand="True" />
+                </ScrollContainer>
+
+                <PanelContainer PanelOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Panel}">
+                    <BoxContainer Orientation="Vertical" Margin="8 5" SeparationOverride="2">
+                        <Label Text="{Loc 'advanced-anomaly-generator-ui-resources'}"
+                               StyleClasses="LabelKeyText"
+                               FontColorOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Header}" />
+                        <RichTextLabel Name="ResourceLabel" />
+                        <Button Name="ServerButton"
+                                Text="{Loc 'research-console-menu-server-selection-button'}"
+                                ModulateSelfOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Accent}" />
+                    </BoxContainer>
+                </PanelContainer>
+
+                <Button Name="GenerateButton"
+                        Text="{Loc 'advanced-anomaly-generator-ui-generate'}"
+                        HorizontalExpand="True"
+                        MinSize="0 36"
+                        ModulateSelfOverride="{x:Static ui:AdvancedAnomalyGeneratorTheme.Accent}" />
+            </BoxContainer>
+
+        </BoxContainer>
+    </PanelContainer>
+</controls:FancyWindow>

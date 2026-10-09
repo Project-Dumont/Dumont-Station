@@ -72,3 +72,4 @@ research-technology-advanced-spray = Spray Avançado
 research-technology-bluespace-cargo-transport = Bluespace Transporte de Cargas
 research-technology-quantum-fiber-weaving = Tecelagem de fibra quântica
 research-technology-bluespace-chemistry = Química Bluespace
+research-technology-advanced-anomaly-generation = Geração Avançada de Anomalias

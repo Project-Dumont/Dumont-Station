@@ -94,3 +94,4 @@ wire-name-bomb-bolt = BOLT
 wire-name-speech = SPKR
 wire-name-listen = MIC
 wire-name-log = LOG
+wires-board-name-advancedanomalygenerator = AdvancedAnomalyGenerator

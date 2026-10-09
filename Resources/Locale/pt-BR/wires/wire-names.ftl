@@ -67,3 +67,4 @@ wire-name-bomb-boom = BOOM
 wire-name-bomb-bolt = PINO
 wire-name-speech = SOM
 wire-name-listen = MIC
+wires-board-name-advancedanomalygenerator = GeradorAvancadoDeAnomalia

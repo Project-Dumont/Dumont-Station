@@ -552,3 +552,15 @@
   id: WashingMachineCircuitboard
   icon: { sprite:  Structures/Furniture/washing_machine.rsi, state: base }
   result: WashingMachineCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
+  id: AdvancedAnomalyGeneratorCircuitboard
+  icon: { sprite: _Gabystation/Structures/Machines/Anomaly/advanced_anomaly_generator.rsi, state: base }
+  result: AdvancedAnomalyGeneratorCircuitboard
+  materials:
+    Steel: 2000
+    Glass: 1500
+    Gold: 1000
+    Uranium: 500
+    BSCrystal: 100
