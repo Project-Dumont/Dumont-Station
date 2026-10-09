@@ -74,9 +74,6 @@
     cancel: true
   - type: StaminaResistance
     damageCoefficient: 0.4
-  - type: Tag
-    tags:
-    - SyringeArmor
   - type: HideClothingLayerClothing
     hiddenSlots:
     - jumpsuit
