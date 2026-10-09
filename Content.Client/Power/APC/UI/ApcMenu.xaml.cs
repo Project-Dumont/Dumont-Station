@@ -72,14 +72,7 @@ namespace Content.Client.Power.APC.UI
 
             if (PowerLabel != null)
             {
-                if (castState.Tripped)
-                {
-                    PowerLabel.Text = Loc.GetString("apc-menu-power-state-label-tripped");
-                }
-                else
-                {
-                    PowerLabel.Text = Loc.GetString("apc-menu-power-state-label-text", ("power", castState.Power), ("maxLoad", castState.MaxLoad));
-                }
+                PowerLabel.Text = castState.Power + " W";
             }
 
             if (ExternalPowerStateLabel != null)
@@ -108,7 +101,7 @@ namespace Content.Client.Power.APC.UI
                 ChargeBar.Value = castState.Charge;
                 UpdateChargeBarColor(castState.Charge);
                 var chargePercentage = (castState.Charge / ChargeBar.MaxValue);
-                ChargePercentage.Text = Loc.GetString("apc-menu-charge-label", ("percent", chargePercentage.ToString("P0")));
+                ChargePercentage.Text = Loc.GetString("apc-menu-charge-label",("percent",  chargePercentage.ToString("P0")));
             }
 
             // Funkystation -> Malf AI
@@ -124,7 +117,7 @@ namespace Content.Client.Power.APC.UI
 
         public void SetAccessEnabled(bool hasAccess)
         {
-            if (hasAccess)
+            if(hasAccess)
             {
                 BreakerButton.Disabled = false;
                 BreakerButton.ToolTip = null;
