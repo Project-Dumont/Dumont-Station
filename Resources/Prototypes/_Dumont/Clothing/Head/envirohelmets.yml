@@ -83,6 +83,7 @@
     tags:
     - WhitelistChameleon
     - PlasmamanSafe
+  - type: FaceHuggerBlocker
 
 - type: entity
   parent: BaseAction
@@ -276,8 +277,7 @@
         Blunt: 0.65
         Slash: 0.65
         Piercing: 0.55
-        Heat: 0.35
-        Radiation: 0.01
+        Heat: 0.3
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCargoContraband]
@@ -312,9 +312,11 @@
       coefficients:
         Blunt: 0.65
         Slash: 0.65
-        Piercing: 0.7
-        Heat: 0.65
-        Caustic: 0.65
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.85
+  - type: FireProtection
+    reduction: 0.4
   - type: PressureArmorChange
   - type: EnvirohelmetToggle
     isActive: false
@@ -333,11 +335,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.65
-            Slash: 0.65
-            Piercing: 0.7
-            Heat: 0.65
-            Caustic: 0.65
+            Blunt: 0.8
+            Slash: 0.8
+            Piercing: 0.85
+            Heat: 0.8
+            Caustic: 0.9
       - type: PressureArmorChange
     closedComponents:
       - type: PressureProtection
@@ -356,10 +358,12 @@
           coefficients:
             Blunt: 0.65
             Slash: 0.65
-            Piercing: 0.7
-            Heat: 0.65
-            Caustic: 0.65
+            Piercing: 0.6
+            Heat: 0.5
+            Caustic: 0.85
       - type: PressureArmorChange
+      - type: FireProtection
+        reduction: 0.4
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCargoContraband]
@@ -392,11 +396,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.75
-        Piercing: 0.85
-        Heat: 0.85
-        Radiation: 0.1
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.75
+        Heat: 0.8
         Caustic: 0.7
   - type: EnvirohelmetToggle
     isActive: false
@@ -415,12 +418,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
-            Radiation: 0.95
-            Caustic: 0.90
+            Blunt: 0.9
+            Slash: 0.9
+            Piercing: 0.9
+            Heat: 0.9
+            Caustic: 0.9
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.5
@@ -436,11 +438,10 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.85
-            Slash: 0.75
-            Piercing: 0.85
-            Heat: 0.85
-            Radiation: 0.1
+            Blunt: 0.8
+            Slash: 0.8
+            Piercing: 0.75
+            Heat: 0.8
             Caustic: 0.7
 
 - type: entity
@@ -474,11 +475,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.65
+        Blunt: 0.7
+        Slash: 0.7
         Piercing: 0.75
-        Heat: 0.75
-        Radiation: 0.1
+        Heat: 0.7
         Caustic: 0.7
   - type: EnvirohelmetToggle
     isActive: false
@@ -497,12 +497,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
-            Radiation: 0.95
-            Caustic: 0.90
+            Blunt: 0.9
+            Slash: 0.9
+            Piercing: 0.9
+            Heat: 0.9
+            Caustic: 0.9
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.5
@@ -518,11 +517,10 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.75
-            Slash: 0.65
+            Blunt: 0.7
+            Slash: 0.7
             Piercing: 0.75
-            Heat: 0.75
-            Radiation: 0.1
+            Heat: 0.7
             Caustic: 0.7
 
 #region Dignitary
@@ -558,11 +556,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.7
-        Heat: 0.7
-        Radiation: 0.6
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.6
         Caustic: 0.6
   - type: FlashImmunity
   - type: FlashSoundSuppression
@@ -590,7 +587,6 @@
             Slash: 0.85
             Piercing: 0.85
             Heat: 0.85
-            Radiation: 0.70
             Caustic: 0.85
     closedComponents:
       - type: PressureProtection
@@ -607,11 +603,10 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.65
-            Slash: 0.65
-            Piercing: 0.7
-            Heat: 0.7
-            Radiation: 0.6
+            Blunt: 0.55
+            Slash: 0.55
+            Piercing: 0.55
+            Heat: 0.6
             Caustic: 0.6
       - type: FlashImmunity
       - type: FlashSoundSuppression
@@ -676,12 +671,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.8
-        Radiation: 0.15
-        Caustic: 0.7
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.75
+        Caustic: 0.8
+  - type: FireProtection
+    reduction: 0.2
   - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
@@ -712,7 +708,6 @@
             Slash: 0.9
             Piercing: 0.9
             Heat: 0.9
-            Radiation: 0.95
             Caustic: 0.9
     closedComponents:
       - type: PressureProtection
@@ -723,15 +718,16 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.9
-            Slash: 0.9
-            Piercing: 0.9
-            Heat: 0.8
-            Radiation: 0.15
-            Caustic: 0.7
+            Blunt: 0.85
+            Slash: 0.85
+            Piercing: 0.85
+            Heat: 0.75
+            Caustic: 0.8
       - type: TemperatureProtection
         heatingCoefficient: 0.005
         coolingCoefficient: 0.005
+      - type: FireProtection
+        reduction: 0.2
 
 - type: entity
   parent: ClothingHeadEnvirohelmetAtmosV1
@@ -822,13 +818,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.8
         Shock: 0.5
         Caustic: 0.7
-        Radiation: 0.05
   - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
@@ -855,12 +850,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
-            Radiation: 0.95
-            Caustic: 0.90
+            Blunt: 0.9
+            Slash: 0.9
+            Piercing: 0.9
+            Heat: 0.9
+            Caustic: 0.9
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.1
@@ -870,13 +864,12 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
+            Blunt: 0.85
+            Slash: 0.85
+            Piercing: 0.85
+            Heat: 0.8
             Shock: 0.5
             Caustic: 0.7
-            Radiation: 0.05
 
 - type: entity
   parent: ClothingHeadEnvirohelmetEngineerV1
@@ -1031,13 +1024,12 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
         Shock: 0.65
         Caustic: 0.7
-        Radiation: 0.15
 
 #region Heads
 
@@ -1065,12 +1057,11 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.75
-        Heat: 0.65
-        Radiation: 0.15
-        Caustic: 0.65
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.55
+        Caustic: 0.6
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetToggleableBase, BaseCommandContraband]
@@ -1098,12 +1089,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
         Heat: 0.4
         Radiation: 0.0
         Caustic: 0.7
+        Shock: 0.5
   - type: EyeProtection
   - type: PointLight
     enabled: false
@@ -1125,12 +1117,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
-            Radiation: 0.95
-            Caustic: 0.90
+            Blunt: 0.9
+            Slash: 0.9
+            Piercing: 0.9
+            Heat: 0.9
+            Caustic: 0.9
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.08
@@ -1142,12 +1133,13 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.8
-            Slash: 0.8
-            Piercing: 0.8
+            Blunt: 0.75
+            Slash: 0.75
+            Piercing: 0.75
             Heat: 0.4
             Radiation: 0.0
             Caustic: 0.7
+            Shock: 0.5
       - type: EyeProtection
 
 - type: entity
@@ -1206,8 +1198,7 @@
         Blunt: 0.45
         Slash: 0.45
         Piercing: 0.35
-        Heat: 0.6
-        Radiation: 0.5
+        Heat: 0.4
         Caustic: 0.5
   - type: FlashImmunity
   - type: FlashSoundSuppression
@@ -1235,8 +1226,7 @@
             Slash: 0.55
             Piercing: 0.55
             Heat: 0.55
-            Radiation: 0.6
-            Caustic: 0.60
+            Caustic: 0.6
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.45
@@ -1255,8 +1245,7 @@
             Blunt: 0.45
             Slash: 0.45
             Piercing: 0.35
-            Heat: 0.6
-            Radiation: 0.5
+            Heat: 0.4
             Caustic: 0.5
 
 - type: entity
@@ -1300,11 +1289,11 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.9
-        Piercing: 0.95
-        Heat: 0.45
-        Radiation: 0.05
+        Blunt: 0.6
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.4
+        Shock: 0.85
         Caustic: 0.4
   - type: EyeProtection
   - type: FlashImmunity
@@ -1349,11 +1338,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.7
-            Slash: 0.9
-            Piercing: 0.95
-            Heat: 0.45
-            Radiation: 0.05
+            Blunt: 0.6
+            Slash: 0.8
+            Piercing: 0.9
+            Heat: 0.4
+            Shock: 0.85
             Caustic: 0.4
       - type: EyeProtection
       - type: FlashImmunity
@@ -1425,11 +1414,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
         Heat: 0.9
-        Radiation: 0.75
         Caustic: 0.5
   - type: PointLight
     enabled: false
@@ -1451,12 +1439,11 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.90
-            Slash: 0.90
-            Piercing: 0.90
-            Heat: 0.90
-            Radiation: 0.95
-            Caustic: 0.90
+            Blunt: 0.9
+            Slash: 0.9
+            Piercing: 0.9
+            Heat: 0.9
+            Caustic: 0.9
     closedComponents:
       - type: PressureProtection
         highPressureMultiplier: 0.525
@@ -1470,7 +1457,6 @@
             Slash: 0.90
             Piercing: 0.90
             Heat: 0.9
-            Radiation: 0.75
             Caustic: 0.5
 
 - type: entity
@@ -1585,12 +1571,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.7
-        Heat: 0.9
-        Radiation: 0.4
-        Caustic: 0.4
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.65
+        Heat: 0.65
+        Caustic: 0.55
   - type: FlashImmunity
   - type: FlashSoundSuppression
   - type: PointLight
@@ -1617,7 +1602,6 @@
             Slash: 0.90
             Piercing: 0.90
             Heat: 0.90
-            Radiation: 0.95
             Caustic: 0.90
     closedComponents:
       - type: PressureProtection
@@ -1628,12 +1612,11 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.9
-            Slash: 0.9
-            Piercing: 0.7
-            Heat: 0.9
-            Radiation: 0.4
-            Caustic: 0.4
+            Blunt: 0.7
+            Slash: 0.7
+            Piercing: 0.65
+            Heat: 0.65
+            Caustic: 0.55
       - type: FlashImmunity
       - type: FlashSoundSuppression
       - type: DiseaseProtection
@@ -1653,12 +1636,11 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
-        Radiation: 0.95
-        Caustic: 0.90
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.70
+        Caustic: 0.9
   - type: PointLight
     enabled: false
     color: "#dadde0"
@@ -1667,7 +1649,7 @@
   parent: [ClothingHeadEnvirohelmetBase, BaseSecurityContraband]
   id: ClothingHeadEnvirohelmetDetective
   name: detective envirohelmet
-  description: An armored security containment helmet designed to handle threats to the station. It does not protect the user against pressure. It has a strong smell of cigarettes and whiskey.
+  description: An armored security containment helmet designed to handle threats to the station, with a built in toolkit. It does not protect the user against pressure. It has a strong smell of cigarettes and whiskey.
   components:
   - type: Sprite
     sprite: _Dumont/Clothing/Head/Envirohelms/Security/detective.rsi
@@ -1678,15 +1660,36 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
-        Radiation: 0.95
-        Caustic: 0.90
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.65
+        Caustic: 0.9
   - type: PointLight
     enabled: false
     color: "#dadde0"
+  - type: TriggerOnVoice
+    keyPhrase: "go go gadget"
+    listenRange: 0
+  - type: ActiveListener
+    range: 0
+  - type: StorageVoiceControl
+    allowedSlots:
+    - HEAD
+  - type: Storage
+    showVerb: false
+    grid:
+    - 0,0,3,2
+    maxItemSize: Small
+    blacklist:
+      tags:
+      - HighRiskItem
+      - FakeNukeDisk
+      - QuantumSpinInverter
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
 
 - type: entity
   parent: [ClothingHeadEnvirohelmetBase, BaseSecurityContraband]
@@ -1703,12 +1706,11 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
-        Radiation: 0.95
-        Caustic: 0.90
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.65
+        Caustic: 0.9
   - type: PointLight
     enabled: false
     color: "#dadde0"
@@ -1778,10 +1780,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.8
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.65
         Caustic: 0.7
   - type: FlashImmunity
   - type: FlashSoundSuppression
@@ -1815,7 +1817,6 @@
             Slash: 0.90
             Piercing: 0.90
             Heat: 0.90
-            Radiation: 0.95
             Caustic: 0.90
     closedComponents:
       - type: PressureProtection
@@ -1826,10 +1827,10 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.65
-            Slash: 0.65
-            Piercing: 0.65
-            Heat: 0.8
+            Blunt: 0.55
+            Slash: 0.55
+            Piercing: 0.55
+            Heat: 0.65
             Caustic: 0.7
       - type: FlashImmunity
       - type: FlashSoundSuppression
@@ -1952,10 +1953,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.45
-        Slash: 0.55
-        Piercing: 0.65
-        Heat: 0.8
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.45
+        Heat: 0.7
         Caustic: 0.7
   - type: FlashImmunity
   - type: FlashSoundSuppression
@@ -1979,9 +1980,9 @@
           NerveDamage: 0
         modifiers:
           coefficients:
-            Blunt: 0.45
-            Slash: 0.55
-            Piercing: 0.65
+            Blunt: 0.75
+            Slash: 0.75
+            Piercing: 0.7
             Heat: 0.8
             Caustic: 0.7
     closedComponents:
@@ -1993,12 +1994,11 @@
         - Head
         modifiers:
           coefficients:
-            Blunt: 0.9
-            Slash: 0.9
-            Piercing: 0.7
-            Heat: 0.9
-            Radiation: 0.4
-            Caustic: 0.4
+            Blunt: 0.5
+            Slash: 0.5
+            Piercing: 0.45
+            Heat: 0.7
+            Caustic: 0.7
       - type: FlashImmunity
       - type: FlashSoundSuppression
 

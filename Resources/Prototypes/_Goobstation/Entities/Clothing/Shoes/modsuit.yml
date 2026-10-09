@@ -26,7 +26,7 @@
       map: [ "sealed" ]
   - type: Tag
     tags:
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
     - WhitelistChameleon
   - type: IgniteFromGasImmunity
     parts:
@@ -66,9 +66,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+ #- type: Tag - Dumont - It had to be from Goob.
+ #  tags:
+ #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -95,9 +95,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -146,9 +146,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -197,9 +197,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -210,6 +210,7 @@
       - state: equipped-FEET-sealed
       shoes-vox:
       - state: equipped-FEET-sealed-vox
+
 - type: entity
   parent: ClothingShoesModsuitBase # GabyStation
   id: ClothingModsuitBootsEngineer
@@ -228,9 +229,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -260,9 +261,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -294,9 +295,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
@@ -325,9 +326,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: [ feet ]
-  - type: Tag
-    tags:
-    - WhitelistChameleon
+  #- type: Tag - Dumont - It had to be from Goob.
+  #  tags:
+  #  - WhitelistChameleon
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots

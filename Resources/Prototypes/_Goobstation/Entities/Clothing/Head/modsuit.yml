@@ -55,7 +55,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
   - type: IgniteFromGasImmunity
     parts:
     - Head
@@ -217,7 +217,7 @@
     autoRechargeRate: 2
   - type: Tag
     tags:
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
     - Envirohelm
   - type: IgniteFromGasImmunity
     parts:

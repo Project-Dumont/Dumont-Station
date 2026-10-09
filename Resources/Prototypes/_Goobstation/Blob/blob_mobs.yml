@@ -45,6 +45,10 @@
       tags:
         - HidesHair
         - BlobMob
+        - PlasmamanSafeOther # Dumont
+    - type: IgniteFromGasImmunity # Dumont
+      parts:
+      - Head
     - type: CollectiveMind
       defaultChannel: Blobmind
       channels:

@@ -8,7 +8,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Caustic: 0.95
+        Caustic: 0.90
   - type: TemperatureProtection
     heatingCoefficient: 0.5
     coolingCoefficient: 0.2
@@ -113,12 +113,12 @@
         Slash: 0.7
         Piercing: 0.6
         Heat: 0.3
-        Radiation: 0.01
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
+  - type: Insulated
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -146,13 +146,13 @@
         Slash: 0.85
         Piercing: 0.8
         Heat: 0.85
-        Radiation: 0.1
         Caustic: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
+  - type: Insulated
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -180,13 +180,13 @@
         Slash: 0.75
         Piercing: 0.8
         Heat: 0.75
-        Radiation: 0.1
         Caustic: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
+  - type: Insulated
 
 - type: entity
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCargoContraband]
@@ -214,12 +214,13 @@
         Slash: 0.7
         Piercing: 0.6
         Heat: 0.3
-        Radiation: 0.01
+        Caustic: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: FireProtection
     reduction: 0.4
   - type: PressureArmorChange
+  - type: Insulated
 
 #region Dignitary
 
@@ -253,10 +254,10 @@
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.65
-        Heat: 0.65
-        Radiation: 0.6
+        Piercing: 0.55
+        Heat: 0.6
         Caustic: 0.6
+  - type: Insulated
 
 - type: entity
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseCentcommCommandContraband]
@@ -270,6 +271,7 @@
     sprite: _Dumont/Clothing/Hands/Envirogloves/Dignitary/ntr.rsi
   - type: Fiber
     fiberColor: fibers-black
+  - type: Insulated
 
 #region Engineering
 
@@ -307,8 +309,9 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.8
-        Radiation: 0.15
-        Caustic: 0.7
+        Caustic: 0.8
+  - type: FireProtection
+    reduction: 0.8
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
@@ -373,10 +376,9 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
-        Heat: 0.90
+        Heat: 0.9
         Shock: 0.5
         Caustic: 0.7
-        Radiation: 0.05
   - type: ExplosionResistance
     damageCoefficient: 0.5
 
@@ -450,10 +452,9 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
-        Heat: 0.90
+        Heat: 0.9
         Shock: 0.5
         Caustic: 0.7
-        Radiation: 0.15
 
 #region Heads
 
@@ -476,11 +477,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
+        Blunt: 0.7
+        Slash: 0.7
         Piercing: 0.65
         Heat: 0.6
-        Radiation: 0.15
         Caustic: 0.6
 
 - type: entity
@@ -563,11 +563,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.60
-        Slash: 0.60
-        Piercing: 0.60
-        Heat: 0.6
-        Radiation: 0.5
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.4
         Caustic: 0.5
 
 - type: entity
@@ -603,7 +602,6 @@
         Piercing: 0.95
         Heat: 0.4
         Shock: 0.85
-        Radiation: 0.05
         Caustic: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.15
@@ -672,7 +670,6 @@
         Slash: 0.90
         Piercing: 0.90
         Heat: 0.9
-        Radiation: 0.75
         Caustic: 0.5
 
 - type: entity
@@ -720,6 +717,7 @@
       coefficients:
         Heat: 0.85
         Radiation: 0.01
+        Caustic: 0.9
 
 - type: entity
   parent: [ClothingHandsGlovesEnviroglovesBase, BaseScienceContraband]
@@ -782,9 +780,8 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.7
-        Heat: 0.75
-        Radiation: 0.4
-        Caustic: 0.4
+        Heat: 0.7
+        Caustic: 0.6
   - type: Insulated
 
 - type: entity
@@ -802,12 +799,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
-        Radiation: 0.95
-        Caustic: 0.90
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.75
+        Caustic: 0.9
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -828,7 +824,6 @@
         Slash: 0.65
         Piercing: 0.65
         Heat: 0.70
-        Radiation: 0.85
         Caustic: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.90
@@ -848,12 +843,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
-        Radiation: 0.85
-        Caustic: 0.4
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.90
 
@@ -904,7 +898,7 @@
         Blunt: 0.6
         Slash: 0.6
         Piercing: 0.6
-        Heat: 0.8
+        Heat: 0.7
         Caustic: 0.7
 
 - type: entity
