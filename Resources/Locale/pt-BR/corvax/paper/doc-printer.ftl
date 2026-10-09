@@ -32,7 +32,7 @@ doc-text-printer-ReportOnEliminationOfViolations =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], relato a eliminação das violações no trabalho identificadas por (NOME), no cargo de (nome completo do cargo).
+    Eu, [signature], relato a eliminação das violações no trabalho identificadas por [form], no cargo de [form].
     Violações apresentadas: [form]
 
     Razão das violações: [form]
@@ -111,9 +111,9 @@ doc-text-printer-ReportOnTheChaptersMeeting =
     [signature]
     Número de abstenções: [form]
     Abstencionistas:
-    [form]
-    [form]
-    [form]
+    [signature]
+    [signature]
+    [signature]
 
     Decisão da Reunião dos Chefes: [form]
     =============================================
