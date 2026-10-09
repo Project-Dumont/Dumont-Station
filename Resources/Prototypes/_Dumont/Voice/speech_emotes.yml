@@ -1,0 +1,20 @@
+- type: emote
+  id: DaengatiGrowl
+  name: chat-emote-name-growl
+  category: Vocal
+  icon: _Dumont/Interface/Misc/scream.rsi/scream.png
+  whitelist:
+    tags:
+    - DaengatiEmotes
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-growl"]
+  chatTriggers:
+   - growl
+   - growls
+   - growled
+   - rosna
+   - rosnar
