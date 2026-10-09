@@ -2,7 +2,7 @@
   id: DaengatiGrowl
   name: chat-emote-name-growl
   category: Vocal
-  icon: _Goobstation/Interface/Emotes/scream.png
+  icon: _Dumont/Interface/Misc/scream.rsi/scream.png
   whitelist:
     tags:
     - DaengatiEmotes

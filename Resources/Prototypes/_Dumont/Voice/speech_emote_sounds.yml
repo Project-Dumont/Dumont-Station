@@ -2,7 +2,7 @@
   id: MaleDaengati
   params:
     variation: 0.125
-    volume: -4S
+    volume: -4.5
   sounds:
     Scream:
       collection: MaleScreams
@@ -51,7 +51,7 @@
   id: FemaleDaengati
   params:
     variation: 0.125
-    volume: -4
+    volume: -4.5
   sounds:
     Scream:
       collection: FemaleScreams
