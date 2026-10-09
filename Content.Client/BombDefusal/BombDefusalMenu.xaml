@@ -1,0 +1,58 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               Title="{Loc 'bomb-defusal-title'}"
+                MinSize="640 360"
+                SetSize="680 460">
+    <BoxContainer Orientation="Vertical"
+                  HorizontalExpand="True"
+                  VerticalExpand="True">
+        <!-- Header Panel -->
+        <PanelContainer Margin="0 0 0 4">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1a0a0a"
+                                  BorderColor="#8b0000"
+                                  BorderThickness="0 0 0 2" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Orientation="Vertical" Margin="6 4">
+                <!-- Top row: Serial + Timer -->
+                <BoxContainer Orientation="Horizontal" Margin="0 0 0 2">
+                    <Label Name="SerialLabel"
+                           Text="SERIAL: ------"
+                           FontColorOverride="#d0d0d0"
+                           HorizontalExpand="True" />
+                    <Label Name="TimerLabel"
+                           Text="--:--"
+                           FontColorOverride="#d0d0d0"
+                           HorizontalAlignment="Right" />
+                </BoxContainer>
+                <!-- Bottom row: Strikes markers -->
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="STRIKES: "
+                           FontColorOverride="#d0d0d0" />
+                    <Label Name="StrikesLabel"
+                           Text="○ ○ ○"
+                           FontColorOverride="#cc3333" />
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+        <!-- Status label -->
+        <PanelContainer Name="StatusPanel" Margin="0 0 0 2" Visible="False">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1a2a1a"
+                                  BorderColor="#33cc33"
+                                  BorderThickness="1" />
+            </PanelContainer.PanelOverride>
+            <Label Name="StatusLabel"
+                   Text=""
+                   FontColorOverride="#33cc33"
+                   Align="Center"
+                   Margin="8 4" />
+        </PanelContainer>
+        <!-- Module Grid -->
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <GridContainer Name="ModuleGrid"
+                           Columns="2"
+                           HorizontalExpand="True" />
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>
