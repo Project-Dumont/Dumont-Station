@@ -25,10 +25,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganShadowkinStomach
         liver:  OrganShadowkinLiver
         kidneys: OrganShadowkinKidneys
+    # Dumont changes start
+    tail:
+      part: TailShadowkin
+    # Dumont end
     right arm:
       part: RightArmShadowkin
       connections:

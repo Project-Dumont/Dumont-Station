@@ -141,8 +141,10 @@
 #    - HeadTop # WWDP - Because visible horns its cool
     - HeadSide
   - type: Hunger
-  - type: Puller
-    needsHands: false
+  # Dumont changes start
+  #- type: Puller
+  #  needsHands: false
+  # Dumont end
   - type: Thirst
   - type: Icon
     sprite: Mobs/Species/Reptilian/parts.rsi
@@ -203,7 +205,9 @@
       301: 0.9
       295: 0.8
       285: 0.7
-  - type: Wagging
+  # Dumont changes start
+  #- type: Wagging
+  # Dumont end
   - type: Inventory
     speciesId: reptilian
     # WWDP-Edit-Start

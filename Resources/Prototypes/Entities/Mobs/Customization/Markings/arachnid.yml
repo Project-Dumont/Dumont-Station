@@ -27,8 +27,10 @@
 # Appendages
 - type: marking
   id: ArachnidAppendagesDefault
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -38,8 +40,10 @@
 
 - type: marking
   id: ArachnidAppendagesSharp
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -49,8 +53,10 @@
 
 - type: marking
   id: ArachnidAppendagesStingers
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -60,8 +66,10 @@
 
 - type: marking
   id: ArachnidAppendagesZigZag
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -71,8 +79,10 @@
 
 - type: marking
   id: ArachnidAppendagesCurled
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -82,8 +92,10 @@
 
 - type: marking
   id: ArachnidAppendagesChipped
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -93,8 +105,10 @@
 
 - type: marking
   id: ArachnidAppendagesHarvest
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -104,8 +118,10 @@
 
 - type: marking
   id: ArachnidAppendagesShort
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi
@@ -115,8 +131,10 @@
 
 - type: marking
   id: ArachnidAppendagesFreaky
-  bodyPart: Tail
-  markingCategory: Tail
+  # Dumont changes start
+  bodyPart: Wings
+  markingCategory: Wings
+  # Dumont end
   speciesRestriction: [Arachnid]
   sprites:
   - sprite: Mobs/Customization/Arachnid/appendages.rsi

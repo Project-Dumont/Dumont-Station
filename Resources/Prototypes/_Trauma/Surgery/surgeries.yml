@@ -1,0 +1,96 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Tail
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryOpenTailSlot
+  name: Create Tail Joint
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepCreateJoint
+    - SurgeryStepStitchJoint
+    - SurgeryStepOpenPartSlot
+  - type: SurgeryPartCondition
+    parts: [ Groin ]
+  - type: SurgeryPartSlotCondition
+    slot: tail
+    partType: Tail
+    inverse: true
+  - type: SurgeryBodyCondition
+    accepted: [ IPC, Synth ]
+    inverse: true
+
+# Wings
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryOpenWingsSlot
+  name: Create Wing Joints
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepCreateJoint
+    - SurgeryStepStitchJoint
+    - SurgeryStepOpenPartSlot
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryPartSlotCondition
+    slot: wings
+    partType: Wings
+    inverse: true
+  - type: SurgeryBodyCondition
+    accepted: [ IPC, Synth ]
+    inverse: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachWings
+  name: Attach Wings
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryPartRemovedCondition
+    connection: wings
+    part: Wings
+    symmetry: None
+
+# Kidneys
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneys
+  name: Remove Kidneys
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Groin ]
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Kidneys
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneys
+  name: Insert Kidneys
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidneys
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    parts: [ Groin ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: kidneys
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Kidneys
