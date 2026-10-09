@@ -117,7 +117,7 @@ doc-text-printer-ReportOnTheChaptersMeeting =
 
     Decisão da Reunião dos Chefes: [form]
     =============================================
-                                ⠀[italic]Espaço para carimbos[/italic]
+                                [italic]Espaço para carimbos[/italic]
 doc-text-printer-InternalAffairsAgentsReport =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
