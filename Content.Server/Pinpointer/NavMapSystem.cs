@@ -82,6 +82,17 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         RefreshGrid(ev.GridId, comp, Comp<MapGridComponent>(ev.GridId));
     }
 
+    // Dumont changes start
+    public void EnsureNavMap(EntityUid grid)
+    {
+        if (!_gridQuery.TryComp(grid, out var mapGrid))
+            return;
+
+        var comp = EnsureComp<NavMapComponent>(grid);
+        RefreshGrid(grid, comp, mapGrid);
+    }
+    // Dumont end
+
     #region: Grid change event handling
 
     private void OnNavMapSplit(ref GridSplitEvent args)

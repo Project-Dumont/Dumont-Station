@@ -61,4 +61,9 @@ public sealed partial class SurveillanceCameraComponent : Component
 
     [DataField]
     public bool Mobile { get; set; } = false; // Goobstation - a value to differentiate stationary cameras from mobile like bodycams
+
+    // Dumont changes start
+    [DataField]
+    public bool UseEntityNameAsCameraId { get; set; }
+    // Dumont end
 }

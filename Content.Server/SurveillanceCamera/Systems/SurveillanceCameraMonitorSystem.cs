@@ -121,6 +121,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
             subs.Event<SurveillanceCameraRefreshSubnetsMessage>(OnRefreshSubnetsMessage);
             subs.Event<SurveillanceCameraDisconnectMessage>(OnDisconnectMessage);
             subs.Event<SurveillanceCameraMonitorSwitchMessage>(OnSwitchMessage);
+            subs.Event<BoundUIOpenedEvent>(OnBoundUiOpen); // Dumont
             subs.Event<BoundUIClosedEvent>(OnBoundUiClose);
         });
     }
@@ -386,6 +387,16 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     {
         DisconnectCamera(uid, false, monitor);
     }
+
+    // Dumont changes start
+    private void OnBoundUiOpen(EntityUid uid, SurveillanceCameraMonitorComponent component, BoundUIOpenedEvent args)
+    {
+        if (component.KnownSubnets.Count == 0)
+            RefreshSubnets(uid, component);
+        else if (component.KnownCameras.Count == 0 && component.KnownMobileCameras.Count == 0)
+            RefreshCameras(uid, component);
+    }
+    // Dumont end
 
     private void OnBoundUiClose(EntityUid uid, SurveillanceCameraMonitorComponent component, BoundUIClosedEvent args)
     {

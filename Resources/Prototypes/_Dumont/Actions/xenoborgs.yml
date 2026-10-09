@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionReturnToMothershipCore
+  name: Back to the core
+  description: Sends your mind back to the mothership core.
+  components:
+  - type: Action
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -9
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Impstation/Mobs/Silicon/Xenoborgs/mothership_core.rsi
+      state: core-idle
+  - type: InstantAction
+    event: !type:ReturnToMothershipCoreEvent

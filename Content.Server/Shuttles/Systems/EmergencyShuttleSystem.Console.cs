@@ -82,6 +82,7 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
+using Content.Server._Dumont.Shuttles; // Dumont
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -264,6 +265,11 @@ public sealed partial class EmergencyShuttleSystem
             {
                 pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 0.75f));
             }
+
+            // Dumont changes start
+            var departingEv = new EmergencyShuttleDepartingEvent(ConsoleAccumulator, TransitTime);
+            RaiseLocalEvent(ref departingEv);
+            // Dumont end
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();

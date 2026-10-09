@@ -93,6 +93,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Stacks; // Dumont
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -106,6 +107,7 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedStackSystem _stack = default!; // Dumont
 
 
     protected virtual void InitializeBallistic()
@@ -121,7 +123,76 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, UseInHandEvent>(OnBallisticUse);
+
+        // Dumont changes start
+        SubscribeLocalEvent<BallisticAmmoInteractLoaderComponent, AfterInteractEvent>(OnBallisticAmmoLoad);
+        // Dumont end
     }
+
+    // Dumont changes start
+    private void OnBallisticAmmoLoad(Entity<BallisticAmmoInteractLoaderComponent> ent, ref AfterInteractEvent args)
+    {
+        if (args.Handled || args.Target == null || !TryComp<BallisticAmmoProviderComponent>(ent, out var provider))
+            return;
+
+        if (_whitelistSystem.IsWhitelistFailOrNull(provider.Whitelist, args.Target.Value))
+            return;
+
+        if (GetBallisticShots(provider) >= provider.Capacity)
+            return;
+
+        args.Handled = InsertBallistic((ent.Owner, provider), args.Target.Value, args.User);
+    }
+
+    private bool InsertBallistic(Entity<BallisticAmmoProviderComponent> gun, EntityUid ammo, EntityUid user)
+    {
+        var provider = gun.Comp;
+        var room = provider.Capacity - GetBallisticShots(provider);
+
+        if (room <= 0)
+            return false;
+
+        var loaded = 0;
+
+        // Splitting only happens on the server, so the client still plays the sound and eats the
+        // interaction while it waits for the real state.
+        if (TryComp<StackComponent>(ammo, out var stack))
+        {
+            var coordinates = Transform(ammo).Coordinates;
+            var wanted = Math.Min(stack.Count, room);
+
+            if (wanted <= 0)
+                return false;
+
+            for (var i = 0; i < wanted; i++)
+            {
+                if (_stack.Split(ammo, 1, coordinates) is not { } sheet)
+                    break;
+
+                provider.Entities.Add(sheet);
+                Containers.Insert(sheet, provider.Container);
+                loaded++;
+            }
+        }
+        else
+        {
+            provider.Entities.Add(ammo);
+            Containers.Insert(ammo, provider.Container);
+            loaded++;
+        }
+
+        Audio.PlayPredicted(provider.SoundInsert, gun.Owner, user);
+
+        if (loaded == 0)
+            return true;
+
+        UpdateBallisticAppearance(gun.Owner, provider);
+        UpdateAmmoCount(gun.Owner);
+        DirtyField(gun.Owner, provider, nameof(BallisticAmmoProviderComponent.Entities));
+        return true;
+    }
+
+    // Dumont end
 
     private void OnBallisticUse(EntityUid uid, BallisticAmmoProviderComponent component, UseInHandEvent args)
     {
@@ -143,14 +214,9 @@ public abstract partial class SharedGunSystem
         if (GetBallisticShots(component) >= component.Capacity)
             return;
 
-        component.Entities.Add(args.Used);
-        Containers.Insert(args.Used, component.Container);
-        // Not predicted so
-        Audio.PlayPredicted(component.SoundInsert, uid, args.User);
-        args.Handled = true;
-        UpdateBallisticAppearance(uid, component);
-        UpdateAmmoCount(args.Target); // Goob - Upstream
-        DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
+        // Dumont changes start
+        args.Handled = InsertBallistic((uid, component), args.Used, args.User);
+        // Dumont end
     }
 
     private void OnBallisticAfterInteract(EntityUid uid, BallisticAmmoProviderComponent component, AfterInteractEvent args)

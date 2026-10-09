@@ -44,6 +44,7 @@ public sealed class RoboticsConsoleBoundUserInterface : BoundUserInterface
             SendMessage(new RoboticsConsoleDestroyMessage(address));
         };
         _window.OnImposeLawPressed += addr => SendMessage(new RoboticsConsoleImposeLawMessage(addr)); // Funkystation -> Malf AI
+        _window.OnTakeControlPressed += addr => SendMessage(new RoboticsConsoleTakeControlMessage(addr)); // Dumont
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
