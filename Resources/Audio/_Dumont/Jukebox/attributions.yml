@@ -87,6 +87,11 @@
   license: "Custom"
   source: "https://youtu.be/B4c_SkROzzo?si=G0Wy53_Xe50Nrc6m"
 
+- files: ["bring_me_to_life.ogg"]
+  copyright: "Bring Me To Life. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/3YxaaGgTQYM?is=ISJLRRDx7CAhNpYq"
+
 - files: ["brother_louie.ogg"]
   copyright: "Brother Louie. Exported with cobalt.tools"
   license: "Custom"
@@ -206,6 +211,11 @@
   copyright: "Dragostea Din Tei. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/YnopHCL1Jk8?si=vtShHKus-K2atBmv"
+
+- files: ["dreamscape.ogg"]
+  copyright: "Dreamscape. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=TKfS5zVfGBc"
 
 - files: ["elenore.ogg"]
   copyright: "Elenore. Exported with cobalt.tools"
@@ -452,6 +462,11 @@
   license: "Custom"
   source: "https://youtu.be/08saJgLmytU?si=fwKHN0uIi1Ja-fXu"
 
+- files: ["macintosh_plus.ogg"]
+  copyright: "Macintosh Plus. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/bAgmGZ9iQ2Y?is=MmuUz4Qk3MDBSpBQ"
+
 - files: ["maria_izabel.ogg"]
   copyright: "Maria Izabel. Exported with cobalt.tools"
   license: "Custom"
@@ -656,6 +671,11 @@
   copyright: "Tempo Perdido. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/YPLQHeUSX2g?si=vwVlQfM0OTJLUreB"
+
+- files: ["the_chain.ogg"]
+  copyright: "The Chain. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/xwTPvcPYaOo?is=5pJxJ7zXvYrdrHx0"
 
 - files: ["there_is_a_light_that_never_goes_out.ogg"]
   copyright: "There Is A Light That Never Goes Out. Exported with cobalt.tools"

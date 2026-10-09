@@ -154,7 +154,7 @@
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
     #- /Audio/Lobby/horn.ogg
-    # Dumont Station - musicas do lobby
+    # Gaby Station - musicas do lobby
     - /Audio/_Gabystation/Lobby/astronauta.ogg
     - /Audio/_Gabystation/Lobby/marciano.ogg
     - /Audio/_Gabystation/Lobby/marmore.ogg
@@ -185,3 +185,5 @@
     - /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
     - /Audio/_Gabystation/Lobby/Still_Alive.ogg # Dumont - Recompensa de Catarse do @LUMINOUS
     - /Audio/_Gabystation/Lobby/life_goes_on.ogg
+    # Dumont Station - musicas do lobby
+    - /Audio/_Dumont/Lobby/macintosh_plus.ogg

@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["macintosh_plus.ogg"]
+  copyright: "Macintosh Plus. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/bAgmGZ9iQ2Y?is=MmuUz4Qk3MDBSpBQ"

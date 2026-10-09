@@ -105,6 +105,12 @@
     path: /Audio/_Dumont/Jukebox/break_my_stride.ogg
 
 - type: jukebox
+  id: BringMeToLife
+  name: Evanescence & Paul McCoy - Bring Me To Life
+  path:
+    path: /Audio/_Dumont/Jukebox/bring_me_to_life.ogg
+
+- type: jukebox
   id: Brother_Louie
   name: Modern Talking - Brother Louie
   path:
@@ -247,6 +253,12 @@
   name: O-Zone - Dragostea Din Tei
   path:
     path: /Audio/_Dumont/Jukebox/dragostea_din_tei.ogg
+
+- type: jukebox
+  id: Dreamscape
+  name: 009 Sound System - Dreamscape
+  path:
+    path: /Audio/_Dumont/Jukebox/dreamscape.ogg
 
 - type: jukebox
   id: Elenore
@@ -543,6 +555,12 @@
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
 
 - type: jukebox
+  id: MacintoshPlus
+  name: Vektroid - Macintosh Plus
+  path:
+    path: /Audio/_Dumont/Jukebox/macintosh_plus.ogg
+
+- type: jukebox
   id: MariaIzabel
   name: Marcus Pitter - Maria Izabel
   path:
@@ -787,6 +805,12 @@
   name: Legião Urbana - Tempo Perdido
   path:
     path: /Audio/_Dumont/Jukebox/tempo_perdido.ogg
+
+- type: jukebox
+  id: TheChain
+  name: Fleetwood Mac - The Chain
+  path:
+    path: /Audio/_Dumont/Jukebox/the_chain.ogg
 
 - type: jukebox
   id: ThereIsALightThatNeverGoesOut
