@@ -82,6 +82,7 @@
 using Content.Client.Actions;
 using Content.Client.Markers;
 using Content.Client.SubFloor;
+using Content.Trauma.Client.Areas; // Dumont
 using Robust.Client.Graphics;
 using Robust.Shared.Console;
 
@@ -93,6 +94,7 @@ internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
     [Dependency] private readonly ActionsSystem _actionSystem = default!;
     [Dependency] private readonly MarkerSystem _markerSystem = default!;
     [Dependency] private readonly SubFloorHideSystem _subfloorSystem = default!;
+    [Dependency] private readonly AreaVisibilitySystem _areaVisibility = default!; // Dumont
 
     public override string Command => "mappingclientsidesetup";
 
@@ -101,6 +103,7 @@ internal sealed class MappingClientSideSetupCommand : LocalizedEntityCommands
         if (_lightManager.LockConsoleAccess)
             return;
 
+        _areaVisibility.SetVisible(true); // Dumont
         _markerSystem.MarkersVisible = true;
         _lightManager.Enabled = false;
         _subfloorSystem.ShowAll = true;
