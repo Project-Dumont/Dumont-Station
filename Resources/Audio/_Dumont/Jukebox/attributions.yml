@@ -762,6 +762,11 @@
   license: "Custom"
   source: "https://youtu.be/SECVGN4Bsgg?si=xcJYV1U5doifYNzZ"
 
+- files: ["whos_ready_for_tomorrow.ogg"]
+  copyright: "Who's Ready For Tomorrow?. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/yk9X4WceY64?is=bIUhgioshh8H36Mt"
+
 - files: ["wouldnt_it_be_nice.ogg"]
   copyright: "Wouldn't It Be Nice. Exported with cobalt.tools"
   license: "Custom"

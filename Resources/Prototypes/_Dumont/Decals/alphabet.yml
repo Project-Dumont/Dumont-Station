@@ -1,0 +1,832 @@
+- type: decal
+  id: AlphabetALarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: a_large
+
+- type: decal
+  id: AlphabetALargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: a_large_e
+
+- type: decal
+  id: AlphabetALargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: a_large_w
+
+- type: decal
+  id: AlphabetBLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: b_large
+
+- type: decal
+  id: AlphabetBLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: b_large_e
+
+- type: decal
+  id: AlphabetBLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: b_large_w
+
+- type: decal
+  id: AlphabetCLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: c_large
+
+- type: decal
+  id: AlphabetCLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: c_large_e
+
+- type: decal
+  id: AlphabetCLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: c_large_w
+
+- type: decal
+  id: AlphabetColonLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: colon_large
+
+- type: decal
+  id: AlphabetColonLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: colon_large_e
+
+- type: decal
+  id: AlphabetColonLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: colon_large_w
+
+- type: decal
+  id: AlphabetDLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: d_large
+
+- type: decal
+  id: AlphabetDLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: d_large_e
+
+- type: decal
+  id: AlphabetDLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: d_large_w
+
+- type: decal
+  id: AlphabetDashLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: dash_large
+
+- type: decal
+  id: AlphabetDashLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: dash_large_e
+
+- type: decal
+  id: AlphabetDashLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: dash_large_w
+
+- type: decal
+  id: AlphabetDotE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: dot_e
+
+- type: decal
+  id: AlphabetDotW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: dot_w
+
+- type: decal
+  id: AlphabetELarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: e_large
+
+- type: decal
+  id: AlphabetELargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: e_large_e
+
+- type: decal
+  id: AlphabetELargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: e_large_w
+
+- type: decal
+  id: AlphabetEightLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: eight_large
+
+- type: decal
+  id: AlphabetEightLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: eight_large_e
+
+- type: decal
+  id: AlphabetEightLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: eight_large_w
+
+- type: decal
+  id: AlphabetFLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: f_large
+
+- type: decal
+  id: AlphabetFLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: f_large_e
+
+- type: decal
+  id: AlphabetFLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: f_large_w
+
+- type: decal
+  id: AlphabetFiveLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: five_large
+
+- type: decal
+  id: AlphabetFiveLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: five_large_e
+
+- type: decal
+  id: AlphabetFiveLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: five_large_w
+
+- type: decal
+  id: AlphabetFourLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: four_large
+
+- type: decal
+  id: AlphabetFourLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: four_large_e
+
+- type: decal
+  id: AlphabetFourLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: four_large_w
+
+- type: decal
+  id: AlphabetGLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: g_large
+
+- type: decal
+  id: AlphabetGLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: g_large_e
+
+- type: decal
+  id: AlphabetGLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: g_large_w
+
+- type: decal
+  id: AlphabetHLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: h_large
+
+- type: decal
+  id: AlphabetHLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: h_large_e
+
+- type: decal
+  id: AlphabetHLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: h_large_w
+
+- type: decal
+  id: AlphabetILarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: i_large
+
+- type: decal
+  id: AlphabetILargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: i_large_e
+
+- type: decal
+  id: AlphabetILargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: i_large_w
+
+- type: decal
+  id: AlphabetJLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: j_large
+
+- type: decal
+  id: AlphabetJLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: j_large_e
+
+- type: decal
+  id: AlphabetJLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: j_large_w
+
+- type: decal
+  id: AlphabetKLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: k_large
+
+- type: decal
+  id: AlphabetKLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: k_large_e
+
+- type: decal
+  id: AlphabetKLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: k_large_w
+
+- type: decal
+  id: AlphabetLLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: l_large
+
+- type: decal
+  id: AlphabetLLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: l_large_e
+
+- type: decal
+  id: AlphabetLLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: l_large_w
+
+- type: decal
+  id: AlphabetMLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: m_large
+
+- type: decal
+  id: AlphabetMLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: m_large_e
+
+- type: decal
+  id: AlphabetMLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: m_large_w
+
+- type: decal
+  id: AlphabetNLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: n_large
+
+- type: decal
+  id: AlphabetNLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: n_large_e
+
+- type: decal
+  id: AlphabetNLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: n_large_w
+
+- type: decal
+  id: AlphabetNineLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: nine_large
+
+- type: decal
+  id: AlphabetNineLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: nine_large_e
+
+- type: decal
+  id: AlphabetNineLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: nine_large_w
+
+- type: decal
+  id: AlphabetOLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: o_large
+
+- type: decal
+  id: AlphabetOLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: o_large_e
+
+- type: decal
+  id: AlphabetOLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: o_large_w
+
+- type: decal
+  id: AlphabetOneLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: one_large
+
+- type: decal
+  id: AlphabetOneLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: one_large_e
+
+- type: decal
+  id: AlphabetOneLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: one_large_w
+
+- type: decal
+  id: AlphabetPLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: p_large
+
+- type: decal
+  id: AlphabetPLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: p_large_e
+
+- type: decal
+  id: AlphabetPLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: p_large_w
+
+- type: decal
+  id: AlphabetPlusLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: plus_large
+
+- type: decal
+  id: AlphabetPlusLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: plus_large_e
+
+- type: decal
+  id: AlphabetPlusLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: plus_large_w
+
+- type: decal
+  id: AlphabetQLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: q_large
+
+- type: decal
+  id: AlphabetQLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: q_large_e
+
+- type: decal
+  id: AlphabetQLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: q_large_w
+
+- type: decal
+  id: AlphabetRLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: r_large
+
+- type: decal
+  id: AlphabetRLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: r_large_e
+
+- type: decal
+  id: AlphabetRLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: r_large_w
+
+- type: decal
+  id: AlphabetSLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: s_large
+
+- type: decal
+  id: AlphabetSLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: s_large_e
+
+- type: decal
+  id: AlphabetSLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: s_large_w
+
+- type: decal
+  id: AlphabetSevenLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: seven_large
+
+- type: decal
+  id: AlphabetSevenLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: seven_large_e
+
+- type: decal
+  id: AlphabetSevenLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: seven_large_w
+
+- type: decal
+  id: AlphabetSixLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: six_large
+
+- type: decal
+  id: AlphabetSixLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: six_large_e
+
+- type: decal
+  id: AlphabetSixLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: six_large_w
+
+- type: decal
+  id: AlphabetTLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: t_large
+
+- type: decal
+  id: AlphabetTLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: t_large_e
+
+- type: decal
+  id: AlphabetTLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: t_large_w
+
+- type: decal
+  id: AlphabetThreeLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: three_large
+
+- type: decal
+  id: AlphabetThreeLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: three_large_e
+
+- type: decal
+  id: AlphabetThreeLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: three_large_w
+
+- type: decal
+  id: AlphabetTwoLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: two_large
+
+- type: decal
+  id: AlphabetTwoLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: two_large_e
+
+- type: decal
+  id: AlphabetTwoLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: two_large_w
+
+- type: decal
+  id: AlphabetULarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: u_large
+
+- type: decal
+  id: AlphabetULargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: u_large_e
+
+- type: decal
+  id: AlphabetULargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: u_large_w
+
+- type: decal
+  id: AlphabetVLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: v_large
+
+- type: decal
+  id: AlphabetVLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: v_large_e
+
+- type: decal
+  id: AlphabetVLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: v_large_w
+
+- type: decal
+  id: AlphabetWLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: w_large
+
+- type: decal
+  id: AlphabetWLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: w_large_e
+
+- type: decal
+  id: AlphabetWLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: w_large_w
+
+- type: decal
+  id: AlphabetXLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: x_large
+
+- type: decal
+  id: AlphabetXLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: x_large_e
+
+- type: decal
+  id: AlphabetXLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: x_large_w
+
+- type: decal
+  id: AlphabetYLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: y_large
+
+- type: decal
+  id: AlphabetYLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: y_large_e
+
+- type: decal
+  id: AlphabetYLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: y_large_w
+
+- type: decal
+  id: AlphabetZLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: z_large
+
+- type: decal
+  id: AlphabetZLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: z_large_e
+
+- type: decal
+  id: AlphabetZLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: z_large_w
+
+- type: decal
+  id: AlphabetZeroLarge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: zero_large
+
+- type: decal
+  id: AlphabetZeroLargeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: zero_large_e
+
+- type: decal
+  id: AlphabetZeroLargeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/alphabet.rsi
+    state: zero_large_w

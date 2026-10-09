@@ -736,8 +736,8 @@
     defaultText: station-beacon-bar
   - type: ConditionalSpawner # Gabystation - bananilson spawn
     prototypes:
-       - MobTucanoBananilson
        - MobCapivaraRonilson # Gabystation - Ronilson spawn
+  - type: ElectionScreenSpawner # Dumont - eleictions
 
 - type: entity
   parent: DefaultStationBeaconService

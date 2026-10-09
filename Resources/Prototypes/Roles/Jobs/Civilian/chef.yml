@@ -116,7 +116,7 @@
 - type: startingGear
   id: ChefGear
   equipment:
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack Dumont, moved to loadouts
     id: ChefPDA
     ears: ClothingHeadsetService
     belt: ClothingBeltChefFilled

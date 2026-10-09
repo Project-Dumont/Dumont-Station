@@ -61,34 +61,53 @@
   layers:
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Parallaxes/layer1.png"
+        path: "/Textures/_ES/Parallaxes/layer1.png"
       slowness: 0.5
       scale: "3, 3"
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: "hq_wizard_stars"
-        configPath: "/Prototypes/Parallaxes/parallax_config_stars.toml"
-      slowness: 0.25
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer2.png"
+      scale: "0.5, 0.5"
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: "hq_wizards_star_slower"
-        configPath: "/Prototypes/Parallaxes/parallax_config_stars-2.toml"
-      slowness: 0.15
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer3.png"
+      scale: "0.5, 0.5"
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: "hq_wizard_stars_dim"
-        configPath: "/Prototypes/Parallaxes/parallax_config_stars_dim.toml"
-      slowness: 0.375
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer4.png"
+      scale: "0.5, 0.5"
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: "hq_wizard_stars_dim_faster"
-        configPath: "/Prototypes/Parallaxes/parallax_config_stars_dim-2.toml"
-      slowness: 0.125
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer5.png"
+      scale: "0.5, 0.5"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer6.png"
+      scale: "0.5, 0.5"
   layersLQ:
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: ""
-        configPath: "/Prototypes/Parallaxes/parallax_config.toml"
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer1.png"
       slowness: 0.5
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer2.png"
+      slowness: 0.25
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer3.png"
+      slowness: 0.15
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer4.png"
+      slowness: 0.375
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer5.png"
+      slowness: 0.125
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_ES/Parallaxes/layer6.png"
+      slowness: 0.100
   layersLQUseHQ: false
 

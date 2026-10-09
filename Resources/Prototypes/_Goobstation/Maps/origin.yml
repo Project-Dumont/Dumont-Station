@@ -25,87 +25,91 @@
 # SPDX-FileCopyrightText: 2024 terezi <147006836+terezi-station@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
-#
+
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: gameMap
-  id: Origin
-  mapName: 'Origin'
-  mapPath: /Maps/_Dumont/origin.yml # Dumont
-  minPlayers: 50
-  maxPlayers: 85
-  stations:
-    Origin:
-      stationProto: StandardNanotrasenStation
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: '{0} Origin {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
-        - type: StationJobs
-          availableJobs:
-            #service
-            StationAi: [ 1, 1 ]
-            NanotrasenRepresentative: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1 ]
-            Captain: [ 1, 1 ]
-            HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 2, 2 ]
-            Botanist: [ 3, 3 ]
-            Chef: [ 3, 3 ]
-            Janitor: [ 3, 3 ]
-            Chaplain: [ 1, 1 ]
-            Librarian: [ 2, 2 ]
-            Lawyer: [ 2, 2 ]
-            ServiceWorker: [ 3, 4 ]
-            #engineering
-            ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 6, 6 ]
-            TechnicalAssistant: [ 2, 3 ]
-            #medical
-            ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 2, 2 ]
-            Paramedic: [ 1, 1 ]
-            MedicalDoctor: [ 6, 6 ]
-            Psychologist: [ 1, 1 ]
-            MedicalIntern: [ 1, 2 ]
-            Virologist: [ 1, 1 ]
-            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
-            #science
-            ResearchDirector: [ 1, 1 ]
-            Scientist: [ 6, 6 ]
-            ResearchAssistant: [ 4, 4 ]
-            Borg: [ 2, 2 ]
-            #security
-            HeadOfSecurity: [ 1, 1 ]
-            Warden: [ 1, 1 ]
-            Detective: [ 1, 1 ]
-            SecurityOfficer: [ 7, 7 ]
-            SecurityCadet: [ 2, 4 ]
-            PermaPrisoner: [ 4, 4 ] # Gaby
-            PrisonGuard: [ 1, 1 ] # Gaby
-            Brigmedic: [ 1, 1 ]
-            #supply
-            Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
-            SalvageLead: [ 1, 1 ]
-            ShaftMiner: [ 3, 3 ]
-            CargoTechnician: [ 5, 5 ]
-            #civillian
-            Passenger: [ -1, -1 ]
-            Clown: [ 1, 1 ]
-            Mime: [ 1, 1 ]
-            Musician: [ 2, 2 ]
-            Boxer: [ 1, 1 ]
-            Reporter: [ 1, 1 ]
+# - type: gameMap
+  # id: Origin
+  # mapName: 'Origin'
+  # mapPath: /Maps/_Dumont/origin.yml # Dumont
+  # minPlayers: 50
+  # maxPlayers: 85
+  # stations:
+    # Origin:
+      # stationProto: StandardNanotrasenStation
+      # components:
+        # - type: StationNameSetup
+          # mapNameTemplate: '{0} Origin {1}'
+          # nameGenerator:
+            # !type:NanotrasenNameGenerator
+            # prefixCreator: '14'
+        # - type: StationEmergencyShuttle
+          # emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+        # - type: StationJobs
+          # availableJobs:
+            # service
+            # StationAi: [ 1, 1 ]
+            # NanotrasenRepresentative: [ 1, 1 ]
+            # AdministrativeAssistant: [ 1, 1 ]
+            # BlueshieldOfficer: [ 1, 1 ]
+            # Captain: [ 1, 1 ]
+            # HeadOfPersonnel: [ 1, 1 ]
+            # Bartender: [ 2, 2 ]
+            # Botanist: [ 3, 3 ]
+            # Chef: [ 3, 3 ]
+            # Janitor: [ 3, 3 ]
+            # Chaplain: [ 1, 1 ]
+            # Librarian: [ 2, 2 ]
+            # Lawyer: [ 2, 2 ]
+            # ServiceWorker: [ 3, 4 ]
+            # engineering
+            # ChiefEngineer: [ 1, 1 ]
+            # AtmosphericTechnician: [ 3, 3 ]
+            # StationEngineer: [ 6, 6 ]
+            # TechnicalAssistant: [ 2, 3 ]
+            # medical
+            # ChiefMedicalOfficer: [ 1, 1 ]
+            # Chemist: [ 2, 2 ]
+            # Paramedic: [ 1, 1 ]
+            # MedicalDoctor: [ 6, 6 ]
+            # Psychologist: [ 1, 1 ]
+            # MedicalIntern: [ 1, 2 ]
+            # Virologist: [ 1, 1 ]
+            # science
+            # ResearchDirector: [ 1, 1 ]
+            # Scientist: [ 6, 6 ]
+            # ResearchAssistant: [ 4, 4 ]
+            # Geneticist: [ 1, 1 ]
+            # Roboticist: [ 2, 2 ]
+            # Borg: [ 2, 2 ]
+            # security
+            # HeadOfSecurity: [ 1, 1 ]
+            # Warden: [ 1, 1 ]
+            # Detective: [ 1, 1 ]
+            # SecurityOfficer: [ 7, 7 ]
+            # SecurityCadet: [ 2, 4 ]
+            # PermaPrisoner: [ 4, 4 ] # Dumont
+            # PrisonGuard: [ 1, 1 ] # Dumont
+            # Brigmedic: [ 1, 1 ]
+            # supply
+            # Quartermaster: [ 1, 1 ]
+            # SalvageSpecialist: [ 3, 3 ]
+            # SalvageLead: [ 1, 1 ]
+            # ShaftMiner: [ 3, 3 ]
+            # CargoTechnician: [ 5, 5 ]
+            # Bitrunner: [ 3, 3 ]
+            # civillian
+            # Passenger: [ -1, -1 ]
+            # Clown: [ 1, 1 ]
+            # Mime: [ 1, 1 ]
+            # Musician: [ 2, 2 ]
+            # Boxer: [ 1, 1 ]
+            # Reporter: [ 1, 1 ]
+            # RadioHost: [ 1, 1 ]
 
         # Goobstation blob-config-start HUGE
-        - type: StationBlobConfig
-          stageBegin: 40
-          stageCritical: 450
-          stageTheEnd: 900
+        # - type: StationBlobConfig
+          # stageBegin: 40
+          # stageCritical: 450
+          # stageTheEnd: 900
         # Goobstation blob-config-end

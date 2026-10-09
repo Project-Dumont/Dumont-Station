@@ -1,0 +1,3 @@
+layer1.png, layer2.png, layer3.png, layer4.png, layer5.png, and layer6.png made by Flareguy & modified by Sadie-silly for Ephemeral Space and licensed under CC-BY-SA-3.0. Adapted from tgstation space sprites at https://github.com/tgstation/tgstation/commit/d464fd04d7d37b97f5a0c4793b3939ecff747956.
+layer6-bluetint, purpletint, redtint, yellowtint made by mirrorcult, adapted from original layer6.png and licensed under CC-BY-SA-3.0.
+writhing.png created by mirrorcult for Ephemeral Space and licensed under CC-BY-SA-3.0.

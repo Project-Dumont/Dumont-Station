@@ -320,6 +320,16 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: VendorClothingOuterEnvirosuitMaxim
+  productEntity: ClothingBackpackDuffelMaximBundle
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: VendorN14SledgeHammer
   productEntity: N14SledgeHammer
   cost:

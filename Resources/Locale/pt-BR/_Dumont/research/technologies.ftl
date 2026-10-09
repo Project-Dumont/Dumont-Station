@@ -1,0 +1,1 @@
+research-technology-security-weapons-upgrade = Melhoria de Armas da Segurança

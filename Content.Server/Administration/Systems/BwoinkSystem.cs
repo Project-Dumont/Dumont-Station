@@ -149,6 +149,7 @@ namespace Content.Server.Administration.Systems
     public sealed partial class BwoinkSystem : SharedBwoinkSystem
     {
         private const string RateLimitKey = "AdminHelp";
+        private const int MaxBwoinkLength = 1000; // Dumont - exploit hot fix
 
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
@@ -683,6 +684,39 @@ namespace Content.Server.Administration.Systems
             _processingChannels.Remove(userId);
         }
 
+        // Dumont - plain text alert for invalid ahelps
+        private async void SendInvalidMessageWebhook(string username, NetUserId userId, string? text)
+        {
+            if (string.IsNullOrEmpty(_webhookUrl))
+                return;
+
+            var preview = text ?? string.Empty;
+            if (preview.Length > 999)
+                preview = preview[..999] + "...";
+
+            try
+            {
+                var payload = new WebhookPayload
+                {
+                    Content = Loc.GetString("bwoink-system-invalid-message-webhook",
+                        ("username", username),
+                        ("userId", userId.ToString()),
+                        ("length", text?.Length.ToString() ?? "null"),
+                        ("text", preview.Replace("`", "'"))),
+                };
+
+                var request = await _httpClient.PostAsync(_webhookUrl,
+                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
+
+                if (!request.IsSuccessStatusCode)
+                    _sawmill.Error($"Failed to send invalid ahelp webhook: {request.StatusCode}");
+            }
+            catch (Exception e)
+            {
+                _sawmill.Error($"Error sending invalid ahelp webhook: {e}");
+            }
+        }
+
         private WebhookPayload GeneratePayload(string messages, string username, Guid userId, string? characterName = null) // Frontier: added Guid
         {
             // Add character name
@@ -788,6 +822,14 @@ namespace Content.Server.Administration.Systems
             if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
                 return;
 
+            // Dumont fix this bullshit
+            if (message.Text is not { } text || text.Length > MaxBwoinkLength)
+            {
+                Log.Warning($"{senderSession.Name} ({senderSession.Channel.RemoteEndPoint}) sent an invalid ahelp message (length {message.Text?.Length}).");
+                SendInvalidMessageWebhook(senderSession.Name, senderSession.UserId, message.Text);
+                return;
+            }
+
             var bwoinkParams = new BwoinkParams(message,
                 eventArgs.SenderSession.UserId,
                 senderAdmin,
@@ -796,7 +838,14 @@ namespace Content.Server.Administration.Systems
                 false,
                 true,
                 false);
-            OnBwoinkInternal(bwoinkParams);
+            try
+            {
+                OnBwoinkInternal(bwoinkParams);
+            }
+            catch (AccessViolationException ex)
+            {
+                Log.Error($"boink access violation (${senderSession.Channel.RemoteEndPoint}):\n{ex}");
+            }
         }
 
         /// <summary>

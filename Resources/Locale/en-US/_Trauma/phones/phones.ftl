@@ -40,3 +40,6 @@ signal-port-description-phone-pickup = Called whenever someone picks up the phon
 
 signal-port-name-phone-hangup = On phone hangup
 signal-port-description-phone-hangup = Called whenever someone hands up the phone.
+
+phone-verb-prompt = Name
+phone-verb-text = Change name

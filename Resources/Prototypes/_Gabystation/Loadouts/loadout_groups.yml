@@ -103,27 +103,27 @@
   - PrisonGuardDuffel
   - PrisonGuardMessenger
 
-#Plasmaman
-- type: loadoutGroup
-  id: PrisonGuardEnvirohelm
-  name: loadout-group-prison-guard-envirohelm
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - PrisonGuardEnvirohelm
-
-- type: loadoutGroup
-  id: PrisonGuardEnvirosuit
-  name: loadout-group-prison-guard-envirosuit
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - PrisonGuardEnvirosuit
-
-- type: loadoutGroup
-  id: PrisonGuardEnvirogloves
-  name: loadout-group-prison-guard-envirogloves
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - BlackEnvirogloves
+##Plasmaman
+#- type: loadoutGroup
+#  id: PrisonGuardEnvirohelm
+#  name: loadout-group-prison-guard-envirohelm
+#  minLimit: 1
+#  maxLimit: 1
+#  loadouts:
+#  - PrisonGuardEnvirohelm
+#
+#- type: loadoutGroup
+#  id: PrisonGuardEnvirosuit
+#  name: loadout-group-prison-guard-envirosuit
+#  minLimit: 1
+#  maxLimit: 1
+#  loadouts:
+#  - PrisonGuardEnvirosuit
+#
+#- type: loadoutGroup
+#  id: PrisonGuardEnvirogloves
+#  name: loadout-group-prison-guard-envirogloves
+#  minLimit: 1
+#  maxLimit: 1
+#  loadouts:
+#  - BlackEnvirogloves

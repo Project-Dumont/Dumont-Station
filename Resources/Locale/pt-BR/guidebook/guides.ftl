@@ -53,6 +53,7 @@ guide-entry-defusal = Desativação de Bomba Grande
 guide-entry-criminal-records = Registros Criminais
 guide-entry-species = Espécies
 guide-entry-xenobiology = Xenobiologia
+guide-entry-rules-sl-crime-list = Lista de crimes
 
 guide-entry-thermomachies = Máquinas térmicas
 

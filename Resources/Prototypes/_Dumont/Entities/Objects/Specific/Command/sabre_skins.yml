@@ -1,0 +1,12 @@
+- type: entity
+  name: golden captain's sabre automod
+  parent: BaseItem
+  id: ChangeCaptainSabreSkinKit
+  description: An automatic cosmetic modifier for the captain's sabre, enveloping it in pure gold. Gifted only to the most robust captains who survived the endless torture that is their job.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/sabreskinkit.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - CaptainSabreGoldenSkinKit
