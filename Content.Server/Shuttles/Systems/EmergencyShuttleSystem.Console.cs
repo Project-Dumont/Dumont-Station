@@ -82,6 +82,19 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
+// Dumont changes start
+using System.Numerics;
+using Content.Shared.Parallax.Biomes;
+using Content.Shared.Procedural;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Random;
+using System.Linq;
+using Content.Server.Ghost.Roles.Components;
+using Content.Shared.Physics;
+using Content.Shared.Random;
+using Content.Shared.Salvage.Expeditions;
+using Content.Shared.Salvage.Expeditions.Modifiers;
+// Dumont end
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -92,6 +105,16 @@ public sealed partial class EmergencyShuttleSystem
     /*
      * Handles the emergency shuttle's console and early launching.
      */
+
+    // Dumont changes start
+    private EntityUid? _evacuationPlanetMap;
+    private EntityCoordinates? _evacuationLandingZone;
+    private readonly List<Vector2> _evacuationLandingSpots = new();
+    private const float PodSpreadRadius = 25f;
+    private const float PodLandingSpacing = 6f;
+    private const int PodLandingAttempts = 15;
+    private const float EvacuationMobBudgetModifier = 1f;
+    // Dumont end
 
     /// <summary>
     /// Has the emergency shuttle arrived?
@@ -267,22 +290,20 @@ public sealed partial class EmergencyShuttleSystem
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
+        var timeDelay = 0; // Dumont
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
-            var stationUid = _station.GetOwningStation(uid);
-
-            if (!TryComp<StationCentcommComponent>(stationUid, out var centcomm) ||
-                Deleted(centcomm.Entity) ||
-                pod.LaunchTime == null ||
+            // Dumont changes start
+            if (pod.LaunchTime == null ||
                 pod.LaunchTime > _timing.CurTime)
             {
                 continue;
             }
 
-            // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime);
-            RemCompDeferred<EscapePodComponent>(uid);
+            LaunchEscapePod(uid, shuttle, TransitTime + 1 + timeDelay);
+            timeDelay++;
+            // Dumont end
         }
 
         // Departed
@@ -419,6 +440,12 @@ public sealed partial class EmergencyShuttleSystem
         TransitTime = MinimumTransitTime + (MaximumTransitTime - MinimumTransitTime) * _random.NextFloat();
         // Round to nearest 10
         TransitTime = MathF.Round(TransitTime / 10f) * 10f;
+
+        // Dumont changes start
+        _evacuationPlanetMap = null;
+        _evacuationLandingZone = null;
+        _evacuationLandingSpots.Clear();
+        // Dumont end
     }
 
     private void UpdateAllEmergencyConsoles()
@@ -517,4 +544,241 @@ public sealed partial class EmergencyShuttleSystem
         _roundEndCancelToken = null;
         return true;
     }
+    // Dumont changes start
+    /// <summary>
+    /// Sends an escape pod to the evacuation planet, creating the planet if this is the first pod of the round.
+    /// The pod keeps the rotation it had on the station.
+    /// </summary>
+    public void LaunchEscapePod(EntityUid uid, ShuttleComponent shuttle, float travelTime)
+    {
+        if (_evacuationPlanetMap == null || _evacuationLandingZone == null)
+            SetupEvacuationPlanet();
+
+        if (_evacuationPlanetMap == null || _evacuationLandingZone is not { } evacuationLandingZone)
+        {
+            Log.Error($"Evacuation pod {ToPrettyString(uid)} failed to setup evacuation planet destination.");
+            return;
+        }
+
+        var offset = PickLandingOffset();
+        _evacuationLandingSpots.Add(offset);
+        var landingCoords = evacuationLandingZone.Offset(offset);
+        var podRotation = _transformSystem.GetWorldRotation(uid);
+
+        _shuttle.FTLToCoordinates(
+            uid,
+            shuttle,
+            landingCoords,
+            podRotation,
+            startupTime: 0f,
+            hyperspaceTime: travelTime);
+
+        RemCompDeferred<EscapePodComponent>(uid);
+    }
+
+    /// <summary>
+    /// Picks a random spot around the landing zone, trying to stay away from pods that already landed.
+    /// </summary>
+    private Vector2 PickLandingOffset()
+    {
+        var offset = Vector2.Zero;
+        for (var i = 0; i < PodLandingAttempts; i++)
+        {
+            offset = _random.NextAngle().ToVec() * _random.NextFloat(0, PodSpreadRadius);
+            if (_evacuationLandingSpots.All(spot => (spot - offset).Length() >= PodLandingSpacing))
+                break;
+        }
+
+        return offset;
+    }
+
+    /// <summary>
+    /// Creates the evacuation planet with one random salvage dungeon on it.
+    /// </summary>
+    private void SetupEvacuationPlanet()
+    {
+        try
+        {
+            var dungeonMods = _prototype.EnumeratePrototypes<SalvageDungeonModPrototype>().ToList();
+            if (dungeonMods.Count == 0)
+            {
+                Log.Error("No salvage dungeons to put on the evacuation planet.");
+                return;
+            }
+
+            var dungeonMod = _random.Pick(dungeonMods);
+            ProtoId<SalvageBiomeModPrototype> biomeModId = dungeonMod.Biomes is { Count: > 0 } biomes
+                ? _random.Pick(biomes)
+                : "Grasslands";
+
+            if (!_prototype.TryIndex(biomeModId, out var biomeMod) ||
+                biomeMod.BiomePrototype == null ||
+                !_prototype.TryIndex<BiomeTemplatePrototype>(biomeMod.BiomePrototype, out var template))
+            {
+                Log.Error($"Failed to load biome {biomeModId} for the evacuation planet.");
+                return;
+            }
+
+            string? difficulty = dungeonMod.Difficulties is { Count: > 0 } difficulties
+                ? _random.Pick(difficulties).Id
+                : null;
+
+            var lights = _prototype.EnumeratePrototypes<SalvageLightMod>()
+                .Where(x => x.Biomes == null || x.Biomes.Contains(biomeMod.ID))
+                .ToList();
+            var mapLight = lights.Count > 0 ? _random.Pick(lights).Color : null;
+
+            _evacuationPlanetMap = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+            _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template, mapLight: mapLight);
+
+            if (TryComp(_evacuationPlanetMap.Value, out BiomeComponent? biomeComp))
+            {
+                var oreMarkers = new[]
+                {
+                    "OreIron",
+                    "OreCoal",
+                    "OreQuartz",
+                    "OreSalt",
+                    "OreGold",
+                    "OreSilver",
+                    "OrePlasma",
+                    "OreUranium",
+                    "OreDiamond",
+                    "OreArtifactFragment"
+                };
+
+                foreach (var oreId in oreMarkers)
+                {
+                    _biomes.AddMarkerLayer(_evacuationPlanetMap.Value, biomeComp, oreId);
+                }
+            }
+
+            _evacuationLandingZone = new EntityCoordinates(_evacuationPlanetMap.Value, Vector2.Zero);
+
+            _mapSystem.InitializeMap(mapId);
+
+            _metaData.SetEntityName(_evacuationPlanetMap.Value, Loc.GetString("evacuation-planet-name"));
+
+            if (TryComp<MapGridComponent>(_evacuationPlanetMap.Value, out var grid))
+                SpawnEvacuationDungeon((_evacuationPlanetMap.Value, grid), dungeonMod, biomeMod.ID, difficulty);
+
+            Log.Info($"Created evacuation planet with {biomeMod.ID} biome and {dungeonMod.ID} dungeon");
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to setup evacuation planet: {ex}");
+            if (_evacuationPlanetMap is { } failedMap && !TerminatingOrDeleted(failedMap))
+                QueueDel(failedMap);
+            _evacuationPlanetMap = null;
+            _evacuationLandingZone = null;
+        }
+    }
+
+    /// <summary>
+    /// Generates the dungeon away from the landing zone and fills it with its enemies once it is done.
+    /// </summary>
+    private async void SpawnEvacuationDungeon(Entity<MapGridComponent> planet, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty)
+    {
+        var seed = _random.Next();
+        var random = new System.Random(seed);
+        var offset = (Vector2i) (_random.NextAngle().ToVec() * _random.NextFloat(40f, 52f));
+
+        List<Dungeon> dungeons;
+        try
+        {
+            var config = _prototype.Index(dungeonMod.Proto);
+            dungeons = await _dungeon.GenerateDungeonAsync(config, planet, planet.Comp, offset, seed);
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Failed to generate {dungeonMod.ID} on the evacuation planet: {e}");
+            return;
+        }
+
+        if (TerminatingOrDeleted(planet) || planet.Owner != _evacuationPlanetMap)
+            return;
+
+        try
+        {
+            PopulateEvacuationDungeon(planet, dungeons, dungeonMod, biome, difficulty, random);
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Failed to populate {dungeonMod.ID} on the evacuation planet: {e}");
+        }
+    }
+
+    /// <summary>
+    /// Spawns mobs from a faction that fits the dungeon, using the expedition mob budget.
+    /// </summary>
+    private void PopulateEvacuationDungeon(Entity<MapGridComponent> planet, List<Dungeon> dungeons, SalvageDungeonModPrototype dungeonMod, string biome, string? difficulty, System.Random random)
+    {
+        var tiles = dungeons.SelectMany(d => d.RoomTiles).ToList();
+        if (tiles.Count == 0)
+            tiles = dungeons.SelectMany(d => d.AllTiles).ToList();
+
+        if (tiles.Count == 0)
+            return;
+
+        var factions = _prototype.EnumeratePrototypes<SalvageFactionPrototype>()
+            .Where(x => (difficulty == null || x.Difficulties.Contains(difficulty)) &&
+                        (x.Biomes == null || x.Biomes.Contains(biome)))
+            .ToList();
+
+        if (factions.Count == 0 ||
+            difficulty == null ||
+            !_prototype.TryIndex<SalvageDifficultyPrototype>(difficulty, out var difficultyProto))
+        {
+            return;
+        }
+
+        var faction = _random.Pick(factions);
+        var budget = difficultyProto.MobBudget * EvacuationMobBudgetModifier;
+        var entries = new List<IBudgetEntry>();
+
+        foreach (var entry in faction.MobGroups)
+        {
+            if (!entry.Guaranteed)
+            {
+                entries.Add(entry);
+                continue;
+            }
+
+            budget -= entry.Cost;
+            SpawnEvacuationMob(planet, entry.Proto, tiles, random);
+        }
+
+        var probSum = entries.Sum(x => x.Prob);
+        var randomSystem = EntityManager.System<RandomSystem>();
+
+        while (budget > 0f)
+        {
+            var entry = randomSystem.GetBudgetEntry(ref budget, ref probSum, entries, random);
+            if (entry == null)
+                break;
+
+            SpawnEvacuationMob(planet, entry.Proto, tiles, random);
+        }
+
+        Log.Info($"Evacuation planet dungeon {dungeonMod.ID} populated with {faction.ID}");
+    }
+
+    /// <summary>
+    /// Spawns one mob on a free dungeon tile and removes its ghost role.
+    /// </summary>
+    private void SpawnEvacuationMob(Entity<MapGridComponent> planet, string proto, List<Vector2i> tiles, System.Random random)
+    {
+        for (var i = 0; i < 20; i++)
+        {
+            var tile = tiles[random.Next(tiles.Count)];
+            if (!_anchorable.TileFree(planet.Comp, tile, (int) CollisionGroup.MachineLayer, (int) CollisionGroup.MachineLayer))
+                continue;
+
+            var mob = Spawn(proto, _mapSystem.GridTileToLocal(planet, planet.Comp, tile));
+            RemComp<GhostRoleComponent>(mob);
+            RemComp<GhostTakeoverAvailableComponent>(mob);
+            return;
+        }
+    }
+    // Dumont end
 }

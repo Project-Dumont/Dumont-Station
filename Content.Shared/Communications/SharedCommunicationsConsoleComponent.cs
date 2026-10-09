@@ -41,8 +41,12 @@ namespace Content.Shared.Communications
         public float CurrentAlertDelay;
         public string StationName;
         public readonly bool RenameOnCooldown;
+        // Dumont changes start
+        public readonly bool CanUnlockEscapePods;
+        public readonly bool EscapePodsUnlocked;
+        // Dumont end
 
-        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false)
+        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false, bool canUnlockEscapePods = false, bool escapePodsUnlocked = false) // Dumont
         {
             IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
@@ -54,6 +58,10 @@ namespace Content.Shared.Communications
             CurrentAlertDelay = currentAlertDelay;
             StationName = stationName;
             RenameOnCooldown = renameOnCooldown;
+            // Dumont changes start
+            CanUnlockEscapePods = canUnlockEscapePods;
+            EscapePodsUnlocked = escapePodsUnlocked;
+            // Dumont end
         }
     }
 
@@ -111,6 +119,11 @@ namespace Content.Shared.Communications
     }
 
     #endregion
+
+    // Dumont changes start
+    [Serializable, NetSerializable]
+    public sealed class CommunicationsConsoleUnlockEscapePodsMessage : BoundUserInterfaceMessage { }
+    // Dumont end
 
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleCallEmergencyShuttleMessage : BoundUserInterfaceMessage
