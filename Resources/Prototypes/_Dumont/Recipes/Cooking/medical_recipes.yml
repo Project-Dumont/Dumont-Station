@@ -1,0 +1,100 @@
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeEpinephrine
+  name: adrenaline autoinjector cartridge recipe
+  result: CartridgeEpinephrine
+  time: 5
+  group: Medicinal
+  reagents:
+    Epinephrine: 7
+    TranexamicAcid: 3
+  recipeType: MedicalAssembler # Delta V - Frontier cooking port
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeSaline
+  name: airloss autoinjector cartridge recipe
+  result: CartridgeSaline
+  time: 5
+  group: Medicinal
+  reagents:
+    Saline: 7
+    DexalinPlus: 3
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeBicaridine
+  name: brute autoinjector cartridge recipe
+  result: CartridgeBicaridine
+  time: 5
+  group: Medicinal
+  reagents:
+    Bicaridine: 6
+    SalicylicAcid: 2
+    TranexamicAcid: 3
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeDermaline
+  name: burn autoinjector cartridge recipe
+  result: CartridgeDermaline
+  time: 5
+  group: Medicinal
+  reagents:
+    Kelotane: 5
+    Dermaline: 4
+    Leporazine: 1
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeAtropine
+  name: emergency autoinjector cartridge recipe
+  result: CartridgeAtropine
+  time: 5
+  group: Medicinal
+  reagents:
+    Atropine: 10
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgePuncturase
+  name: piercing autoinjector cartridge recipe
+  result: CartridgePuncturase
+  time: 5
+  group: Medicinal
+  reagents:
+    Puncturase: 10
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeEphedrine
+  name: stimulant autoinjector cartridge recipe
+  result: CartridgeEphedrine
+  time: 5
+  group: Medicinal
+  reagents:
+    Ephedrine: 10
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeTirizene
+  name: sedative autoinjector cartridge recipe
+  result: CartridgeTirizene
+  time: 5
+  group: Medicinal
+  reagents:
+    Tirizene: 4
+    Impedrezene: 3
+    Haloperidol: 3
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCartridgeToxin
+  name: toxin autoinjector cartridge recipe
+  result: CartridgeToxin
+  time: 5
+  group: Medicinal
+  reagents:
+    Dylovene: 7
+    Stellibinin: 3
+  recipeType: MedicalAssembler
+
