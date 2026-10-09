@@ -877,8 +877,9 @@ namespace Content.Shared.Interaction
             if (!Resolve(other, ref other.Comp))
                 return false;
 
-            var ev = new InRangeOverrideEvent(origin, other);
+            var ev = new InRangeOverrideEvent(origin, other, range); // Trauma - added range
             RaiseLocalEvent(origin, ref ev);
+            range = ev.Range; // Trauma - potentially update the range if it was changed
 
             if (ev.Handled)
             {
@@ -1721,10 +1722,12 @@ namespace Content.Shared.Interaction
     /// Override event raised directed on a user to check InRangeUnoccluded AND InRangeUnobstructed to the target if you require custom logic.
     /// </summary>
     [ByRefEvent]
-    public record struct InRangeOverrideEvent(EntityUid User, EntityUid Target)
+    // Trauma - added range, which systems like extra reach can grow before the check
+    public record struct InRangeOverrideEvent(EntityUid User, EntityUid Target, float Range)
     {
         public readonly EntityUid User = User;
         public readonly EntityUid Target = Target;
+        public float Range = Range; // Trauma
 
         public bool Handled;
         public bool InRange = false;
