@@ -49,7 +49,7 @@
 # SPDX-FileCopyrightText: 2025 yavuz <58685802+yahay505@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
+#
 - type: entity
   id: BaseShutter
   parent: BaseStructure
@@ -90,6 +90,7 @@
     tags:
     - ForceNoFixRotations # Don't want the fixrotations command to target these
   - type: Door
+    canPry: false
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
     bumpOpen: false
@@ -173,6 +174,8 @@
     endingOffset: 0.5, -0.5
   - type: SoundBlocker # Trauma
     soundBlockPercent: 0.5
+  - type: AccessReader # Dumont edit
+    containerAccessProvider: board
 
 - type: entity
   id: ShuttersNormal
