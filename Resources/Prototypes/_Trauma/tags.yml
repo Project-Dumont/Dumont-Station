@@ -15,6 +15,9 @@
   id: EncryptionRevolutionary
 
 - type: Tag
+  id: FaithGun
+
+- type: Tag
   id: FlamethrowerBackpack
 
 - type: Tag
@@ -34,6 +37,9 @@
 
 - type: Tag
   id: HandTeleporter
+
+- type: Tag
+  id: Iradomini
 
 - type: Tag
   id: MagazineTurret
@@ -85,6 +91,9 @@
 
 - type: Tag
   id: T45Chest
+
+- type: Tag
+  id: BowImprovised
 
 - type: Tag
   id: T45Helmet

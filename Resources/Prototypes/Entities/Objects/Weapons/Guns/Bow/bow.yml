@@ -71,6 +71,11 @@
   id: BowImprovised
   parent: BaseBow
   components:
+  # <Trauma>
+  - type: Tag
+    tags:
+    - BowImprovised
+  # </Trauma>
   - type: Sprite
     layers:
     - state: unwielded
