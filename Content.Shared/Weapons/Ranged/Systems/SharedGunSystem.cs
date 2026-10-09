@@ -241,7 +241,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
-        Log.Debug("Stopped firing weapon");
 
         var gunUid = GetEntity(ev.Gun);
 

@@ -48,8 +48,4 @@ gun-revolver-spin = Girar revólver
 gun-revolver-spun = Girou
 gun-speedloader-empty = Carregador rápido vazio
 
-# Jammed gun
 
-gun-jammed = A arma trava!
-gun-is-jammed = A arma está travada...
-gun-unjammed = Você destravou a arma.

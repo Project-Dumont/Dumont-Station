@@ -46,7 +46,7 @@ public abstract partial class SharedWeaponJammingSystem : EntitySystem
         if (!_net.IsServer)
             return;
 
-        // rola rng apenas no server pois em shared isso pode causar estado divergente
+        // roll rng only on the server since otherwise it can create a divergent state
         if (_rand.Next(1, gun.Comp.Quality + 1) == 1)
             Jam(gun, ev.User);
     }
@@ -58,7 +58,7 @@ public abstract partial class SharedWeaponJammingSystem : EntitySystem
 
         var jammedComp = AddComp<JammedGunComponent>(gun.Owner);
 
-        // dirty na arma ja que tamo no server
+        // dirty on the weapon since we're on the server
         Dirty(gun);
         GunJamEffect(gun.Owner, jammedComp, "gun-jammed", user);
     }

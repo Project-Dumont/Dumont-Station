@@ -176,7 +176,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    quality: 440 # Its pretty ok
+    quality: 440 # Dumont Change: Weapon Jamming - Its pretty ok
     timeToUnjam: 2
   - type: Wieldable
   - type: ItemSlots
@@ -262,7 +262,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1.7 # Goobstation
-    quality: 1000 # Premium
+    quality: 1000 # Dumont Change: Weapon Jamming - Premium
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -290,7 +290,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     # fireRate: 1 # goob
-    quality: 260 # Old
+    quality: 260 # Dumont Change: Weapon Jamming - Old
     timeToUnjam: 0.3
   - type: GunSpreadModifier
     spread: 0.6
@@ -317,7 +317,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
     fireRate: 4
-    quality: 240
+    quality: 240 # Dumont Change: Weapon Jamming
     timeToUnjam: 0.6
   - type: GunSpreadModifier
     spread: 1.4
@@ -356,7 +356,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
-    quality: 120 # Shitty
+    quality: 120 # Dumont Change: Weapon Jamming - Shitty
     timeToUnjam: 1
   - type: BallisticAmmoProvider
     capacity: 1
@@ -383,8 +383,8 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
-    quality: 160 # Shitty
-    timeToUnjam: 2.1 # Its a goddamn blunderbuss
+    quality: 160 # Dumont Change: Weapon Jamming - Shitty
+    timeToUnjam: 2.1 # # Dumont Change: Weapon Jamming - Its a goddamn blunderbuss
   - type: BallisticAmmoProvider
     capacity: 1
   - type: StaticPrice
@@ -408,7 +408,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
-    quality: 100 # Improvised
+    quality: 100 # Dumont Change: Weapon Jamming - Improvised
     timeToUnjam: 1.1
   - type: BallisticAmmoProvider
     capacity: 1
