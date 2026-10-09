@@ -287,6 +287,11 @@ namespace Content.Server.Communications
             if (_emergency.EmergencyShuttleArrived || !_roundEndSystem.CanCallOrRecall())
                 return false;
 
+            // Dumont changes start
+            if (_roundEndSystem.RecallLocked && _roundEndSystem.IsRoundEndRequested())
+                return false;
+            // Dumont end
+
             // Ensure that we can communicate with the shuttle (either call or recall)
             if (!comp.CanShuttle)
                 return false;

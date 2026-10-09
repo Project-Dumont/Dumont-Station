@@ -232,6 +232,9 @@
   id: CalmRevs # For Dual Antag Gamemodes
   parent: BaseGameRule
   components:
+  # Dumont changes start
+  - type: MindshieldRemovingAntag
+  # Dumont end
   - type: GameRule
     minPlayers: 30
   - type: RevolutionaryRule
@@ -252,6 +255,11 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      # Dumont changes start
+      - type: AutoImplant
+        implants:
+        - RadioImplantHeadrev
+      # Dumont end
       mindRoles:
       - MindRoleHeadRevolutionary
   - type: Tag

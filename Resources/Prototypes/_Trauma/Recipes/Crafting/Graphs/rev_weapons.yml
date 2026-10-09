@@ -13,7 +13,7 @@
       steps:
       - material: WoodPlank
         amount: 1
-        doAfter: 10
+        doAfter: 2
   - node: finished
     entity: RevSword
 
@@ -27,7 +27,7 @@
       steps:
       - material: WoodPlank
         amount: 1
-        doAfter: 10
+        doAfter: 2
   - node: finished
     entity: RevMace
 
@@ -41,7 +41,7 @@
       steps:
       - material: WoodPlank
         amount: 1
-        doAfter: 10
+        doAfter: 2
   - node: finished
     entity: RevKnife
 
@@ -55,7 +55,7 @@
       steps:
       - material: WoodPlank
         amount: 1
-        doAfter: 10
+        doAfter: 2
   - node: finished
     entity: RevPitchfork
 
@@ -69,12 +69,13 @@
       steps:
       - material: WoodPlank
         amount: 1
-        doAfter: 10
+        doAfter: 2
   - node: finished
     entity: RevTorch
 
 - type: constructionGraph
   id: RevMaul
+  start: start
   graph:
   - node: start
     edges:
@@ -88,6 +89,7 @@
 
 - type: constructionGraph
   id: RevKunai
+  start: start
   graph:
   - node: start
     edges:
@@ -109,7 +111,7 @@
       steps:
       - material: Steel
         amount: 3
-        doAfter: 5
+        doAfter: 1
       - tag: Pipe
         name: construction-graph-tag-pipe
         icon:
@@ -123,36 +125,34 @@
       - material: RevBolt
       - material: RevNut
       - tool: Anchoring
-        doAfter: 2
+        doAfter: 1
       - material: RevGunParts
       - tag: ModularReceiver
         name: construction-graph-tag-modular-receiver
         icon:
           sprite: Objects/Misc/modular_receiver.rsi
           state: icon
-      - tool: Welding
-        doAfter: 2
       - tool: Screwing
         doAfter: 1
     - to: resistance
       steps:
-      - tool: Welding
-        doAfter: 2
+      - tool: Screwing
+        doAfter: 1
       - material: RevBolt
+        amount: 2
       - material: RevNut
+        amount: 2
       - tool: Anchoring
-        doAfter: 2
+        doAfter: 1
       - material: RevGunParts
       - tag: ModularReceiver
         name: construction-graph-tag-modular-receiver
         icon:
           sprite: Objects/Misc/modular_receiver.rsi
           state: icon
-      - material: RevBolt
-      - material: RevNut
       - tool: Anchoring
-        doAfter: 2
-      - tool: Welding
+        doAfter: 1
+      - tool: Screwing
     - to: RPG2
       steps:
       - tool: Hammering
@@ -161,54 +161,26 @@
         doAfter: 0.5
       - tool: Hammering
         doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
       - tool: Screwing
-        doAfter: 3
+        doAfter: 1
       - tool: Welding
-        doAfter: 5
+        doAfter: 1
       - material: RevBolt
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - material: RevNut
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - tool: Anchoring
-        doAfter: 3
+        doAfter: 1
       - material: WoodPlank
         amount: 3
-        doAfter: 3
+        doAfter: 1
       - tool: Slicing
-        doAfter: 10
+        doAfter: 1
       - material: Steel
         amount: 3
-        doAfter: 3
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
+        doAfter: 1
       - tool: Hammering
         doAfter: 0.5
       - tool: Hammering
@@ -216,46 +188,32 @@
       - tool: Hammering
         doAfter: 0.5
       - tool: Welding
-        doAfter: 5
+        doAfter: 1
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - material: RevBolt
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - tool: Screwing
         doAfter: 3
       - material: RevNut
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - tool: Anchoring
-        doAfter: 3
+        doAfter: 1
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - tool: Screwing
-        doAfter: 3
+        doAfter: 1
     - to: Flamethrower
       steps:
       - tool: Screwing
-        doAfter: 3
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
+        doAfter: 1
       - tool: Hammering
         doAfter: 0.5
       - tool: Hammering
@@ -263,39 +221,25 @@
       - tool: Hammering
         doAfter: 0.5
       - tool: Screwing
-        doAfter: 3
+        doAfter: 1
       - tool: Welding
-        doAfter: 5
+        doAfter: 1
       - material: RevBolt
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - material: RevNut
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - tool: Anchoring
-        doAfter: 3
+        doAfter: 1
       - material: WoodPlank
         amount: 3
-        doAfter: 3
+        doAfter: 1
       - tool: Slicing
-        doAfter: 10
+        doAfter: 1
       - material: Steel
         amount: 3
-        doAfter: 3
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
+        doAfter: 1
       - tool: Hammering
         doAfter: 0.5
       - tool: Hammering
@@ -306,25 +250,25 @@
         doAfter: 5
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - material: RevBolt
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - tool: Screwing
-        doAfter: 3
+        doAfter: 1
       - material: RevNut
         amount: 7
-        doAfter: 10
+        doAfter: 1
       - tool: Anchoring
-        doAfter: 3
+        doAfter: 1
       - material: RevGunParts
         amount: 5
-        doAfter: 10
+        doAfter: 1
       - tool: Screwing
-        doAfter: 3
+        doAfter: 1
     - to: Devastator
       steps:
       - tag: Pipe
@@ -376,27 +320,7 @@
         doAfter: 1
       - tool: Hammering
         doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Anchoring
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Hammering
-        doAfter: 0.5
-      - tool: Slicing
+      - tool: Screwing
         doAfter: 1
     - to: Proletariat
       steps:
@@ -414,7 +338,7 @@
       - tool: Hammering
         doAfter: 0.5
       - material: RevGunParts
-        amount: 5
+        amount: 3
         doAfter: 1
       - tool: Screwing
         doAfter: 1
@@ -435,8 +359,6 @@
         doAfter: 1
       - material: WoodPlank
         amount: 5
-        doAfter: 1
-      - tool: Screwing
         doAfter: 1
       - tool: Screwing
         doAfter: 1
@@ -467,7 +389,7 @@
         icon:
           sprite: Objects/Consumable/Drinks/cola.rsi
           state: icon_open
-        doAfter: 10
+        doAfter: 1
       - tag: Igniter
         name: construction-graph-tag-igniter
         icon:
