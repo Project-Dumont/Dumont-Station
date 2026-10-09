@@ -1,0 +1,120 @@
+<Document>
+  # O véu do Mansus enfraquece
+
+  Então você é um herege. Prepare-se para magia e combate: recolha influências, faça sacrifícios, realize rituais e ascenda à divindade.
+
+  Seu objetivo final é ascender, mas para isso você precisa de conhecimento. Cumpra seus objetivos, pesquise o conhecimento final do seu caminho e realize o ritual de ascensão numa runa de transmutação.
+
+  Comece escolhendo um dos sete caminhos:
+  - [textlink="Caminho das Cinzas" link="AshPath"]: fogo, dano contínuo e mobilidade desde cedo. Bom para iniciantes.
+  - [textlink="Caminho do Vazio" link="VoidPath"]: frio, silêncio e furtividade. Também é uma boa opção para começar.
+  - [textlink="Caminho da Carne" link="FleshPath"]: necromancia e invocações. Para quem quer aliados.
+  - [textlink="Caminho da Fechadura" link="LockPath"]: acessos, artefatos e discrição.
+  - [textlink="Caminho da Ferrugem" link="RustPath"]: controle de território e cura rápida. Para quem quer resistir a muito dano.
+  - [textlink="Caminho da Lâmina" link="BladePath"]: força em combate corpo a corpo. Para quem quer um banho de sangue.
+  - [textlink="Caminho do Cosmos" link="CosmosPath"]: teleporte, barreiras e confusão. Difícil de dominar.
+
+  [textlink="Veja os conhecimentos iniciais e laterais" link="HereticRituals"]
+
+  Você obtém conhecimento sacrificando os alvos desejados pelo Mansus, recebendo um ponto automaticamente a cada 20 minutos e drenando influências que surgem após sacrifícios.
+
+  ## Influências sobrenaturais
+  <Box>
+    <GuideEntityEmbed Entity="EldritchInfluence" Caption="Influência sobrenatural"/>
+  </Box>
+
+  Quando um herege completa um sacrifício, influências surgem em locais aleatórios da estação. A tripulação não as vê a olho nu, mas elas ficam visíveis depois de drenadas e mudam de cor.
+
+  Uma influência concede um ponto de conhecimento. Drená-la com um [color=green]Codex Cicatrix[/color] ou [color=green]Codex Morbus[/color] também concede um ponto lateral.
+
+  <Box>
+    <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Influência drenada. Observe o brilho."/>
+  </Box>
+
+  Cada influência só pode ser drenada uma vez. Tente chegar antes dos outros hereges.
+
+  ## Transmutação
+
+  Para desenhar uma runa de transmutação, use uma ferramenta de escrita, como caneta ou giz de cera. Ative o [color=green]Aperto do Mansus[/color] na outra mão e clique no chão.
+
+  A runa é chamativa e ocupa uma área de 3 por 3. Você pode apagá-la com a ferramenta de escrita enquanto mantém o aperto ativo. Também pode usar runas desenhadas por outros hereges.
+
+  Clique na runa com a mão vazia para escolher um ritual. Examine-a para conferir qual está selecionado. Use o Aperto do Mansus nela para tentar realizar o ritual e conferir os ingredientes que faltam.
+
+  Rituais criam artefatos, criaturas e ferramentas que ajudam você a ganhar poder.
+
+  ## Sacrifícios
+
+  O Mansus deseja apenas alguns infiéis por vez. Seus alvos incluem membros do comando, da segurança e outros tripulantes. Chefes e membros da segurança valem mais conhecimento que alvos comuns. Você não pode sacrificar qualquer tripulante fora da lista.
+
+  Outros hereges são uma exceção: você sempre pode sacrificá-los.
+
+  Use o [color=red]Coração Vivo[/color] para localizar um alvo e deixe-o em estado crítico ou pior. Arraste o corpo até uma runa de transmutação, selecione [color=yellow]Sacrifício[/color] com a mão vazia e use o Aperto do Mansus na runa.
+
+  O ritual [color=yellow]Pulsação Implacável[/color] sorteia novos alvos, mas pode escolher as mesmas pessoas.
+
+  ## Aperto do Mansus
+
+  Essa magia embaralha a fala da vítima, derruba e causa 40 de dano de vigor. Seus efeitos adicionais dependem do caminho escolhido.
+
+  Não é possível aplicá-la a uma criatura pelo menu de contexto. No [color=red]modo de combate[/color], o botão esquerdo afeta criaturas e o direito também permite atingir outros objetos. O aperto não erra o alvo.
+
+  ## Lâminas de herege
+
+  A lâmina é sua primeira pesquisa. Para criá-la, transmute uma faca e o ingrediente específico do seu caminho. Até facas improvisadas feitas de caco de vidro e tecido servem.
+
+  Cada caminho tem sua própria lâmina, aprimorada por pesquisas posteriores. A maioria permite manter duas ao mesmo tempo; o Caminho da Lâmina permite quatro.
+
+  Enquanto essa opção estiver disponível, ative a lâmina na mão para quebrá-la e se teleportar a um local aleatório geralmente seguro. É melhor perder uma arma que morrer.
+
+  Você perde essa fuga ao criar a armadura do caminho, alcançar 10 pontos de conhecimento ou pesquisar o aprimoramento da lâmina, o que acontecer primeiro.
+
+  ## Armaduras e habilidades passivas
+
+  A armadura do seu caminho aparece na aba [bold]Conhecimentos Especiais[/bold] conforme você progride. O ritual usa uma mesa ou uniforme com sensores, uma máscara e um ingrediente ou condição do caminho. Confira a receita na loja.
+
+  Cada armadura tem efeitos próprios. Criá-la aprimora sua passiva para o nível 2 e libera o Ritual do Conhecimento. Esse ritual exige três itens diferentes, concede 2 pontos de conhecimento e 2 pontos laterais e libera o último aprimoramento da passiva.
+
+  ## Pesquisas
+
+  Abra a Loja de Conhecimento pelo botão de ação. A primeira escolha define seu caminho e sua ascensão. Conhecimentos laterais ficam disponíveis para todos os caminhos e complementam suas habilidades.
+
+  ## Foco mágico
+
+  Magias avançadas exigem um foco. O [color=orange]Foco de Âmbar[/color] é um colar criado por ritual. Códices e vários equipamentos heréticos também servem como foco, conforme suas descrições.
+
+  A [color=yellow]ascensão[/color] remove essa exigência.
+
+  ## A aura do herege
+
+  Criar a armadura do caminho, alcançar 10 pontos de conhecimento ou pesquisar o aprimoramento da lâmina marca um ponto sem volta. Além de perder a fuga ao quebrar a lâmina, você ganha uma aura visível que denuncia sua natureza.
+
+  O [color=purple]Caminho da Fechadura[/color] e o [color=yellow]Banquete das Corujas[/color] evitam essa aura. O banquete concede conhecimento em troca de abandonar a ascensão.
+
+  ## O capelão
+
+  O bastão nulo do capelão e suas variantes bloqueiam magia e causam dano sagrado enquanto você usa equipamentos heréticos. Evite enfrentá-lo sem preparo.
+
+  Você pode recuperar dano sagrado de algumas formas:
+  - Ficar sobre uma runa de transmutação.
+  - Ficar sobre ferrugem como herege da Ferrugem.
+  - Ficar perto de Profetas Crus como herege da Carne.
+  - Beber do Frasco Sobrenatural.
+  - Usar Renascimento do Vigia Noturno.
+  - Atacar seres vivos com suas lâminas após ascender pelo Caminho da Lâmina.
+
+  ## Dicas
+
+  - Lâminas de herege ignoram parte da armadura e ativam marcas. Enquanto a fuga estiver disponível, use-as na mão para escapar.
+  - O aperto embaralha a fala e desativa temporariamente os sensores do uniforme da vítima, ocultando-a dos monitores da tripulação.
+  - A lâmina e o aperto também servem em cirurgias. Use-os para retirar órgãos ou tentar se curar quando necessário.
+  - Se já atingiu o limite de lâminas, repetir o ritual de criação traz uma lâmina perdida de volta à runa.
+  - Precisa de vômito? Gire ou dê cambalhotas várias vezes em sequência.
+  - O Codex Cicatrix e a runa permitem encantar objetos. [textlink="Saiba mais sobre encantamentos" link="Enchanting"].
+  - Outros hereges podem sacrificar você, e você pode fazer o mesmo com eles. Que vença o deus mais forte.
+  - Profetas Crus usam o Elo do Mansus para criar uma rede telepática. Use o prefixo +m para conversar nela.
+  - Influências podem surgir em corredores, banheiros, escritórios do comando e áreas restritas da segurança. Procure em todos os locais acessíveis.
+  - Macacos e outros animais são fontes úteis de órgãos e corpos para rituais.
+  - Muitas criaturas invocadas deixam órgãos ao morrer. Recupere-os para invocar outra.
+  - O Frasco Sobrenatural comporta 100 unidades e funciona como um béquer de criostase, permitindo armazenar misturas reativas.
+</Document>

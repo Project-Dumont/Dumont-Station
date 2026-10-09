@@ -131,9 +131,21 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (session is { } pSession)
         {
             (targetCoordinates, targetLocalAngle) = _lag.GetCoordinatesAngle(target, pSession);
+            // Dumont start
+            var rangeEvent = new Content.Goobstation.Common.Weapons.MeleeInRangeEvent(user, target, range, targetCoordinates, targetLocalAngle);
+            RaiseLocalEvent(user, ref rangeEvent);
+            if (rangeEvent.Handled)
+                return rangeEvent.InRange;
+            // Dumont end
             return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
         }
 
+        // Dumont start
+        var directRangeEvent = new Content.Goobstation.Common.Weapons.MeleeInRangeEvent(user, target, range, null, null);
+        RaiseLocalEvent(user, ref directRangeEvent);
+        if (directRangeEvent.Handled)
+            return directRangeEvent.InRange;
+        // Dumont end
         return Interaction.InRangeUnobstructed(user, target, range);
     }
 

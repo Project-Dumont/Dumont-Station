@@ -176,6 +176,11 @@ public sealed partial class ActionComponent : Component
     [DataField, AutoNetworkedField]
     public bool RaiseOnUser;
 
+    // Dumont start
+    [DataField, AutoNetworkedField]
+    public bool RaiseOnAction;
+    // Dumont end
+
     /// <summary>
     ///     Whether or not to automatically add this action to the action bar when it becomes available.
     /// </summary>

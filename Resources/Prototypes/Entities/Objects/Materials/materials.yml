@@ -400,6 +400,7 @@
     tags:
     - Wooden
     - RawMaterial
+    - WoodPlank
     - DroneUsable # Goobstation
     - ConstructionMaterial
   - type: Extractable

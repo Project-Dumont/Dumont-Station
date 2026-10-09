@@ -57,6 +57,7 @@
     snap:
     - Window
   components:
+  - type: ReflectiveSurface
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -198,11 +199,13 @@
     snap:
     - Window
   components:
+  - type: ReflectiveSurface
   - type: WallMount
     arc: 360 # interact despite grilles
   - type: Tag
     tags:
       - Window
+      - Directional
   - type: MeleeSound
     soundGroups:
       Brute:

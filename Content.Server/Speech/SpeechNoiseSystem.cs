@@ -35,20 +35,19 @@ namespace Content.Server.Speech
 {
     public sealed class SpeechSoundSystem : EntitySystem
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!; // Goob
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-        private bool _barksEnabled; // Goob
+        // Goobs tation
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<SpeechComponent, EntitySpokeEvent>(OnEntitySpoke);
-            Subs.CVar(_cfg, GoobCVars.BarksEnabled, x => _barksEnabled = x, true); // Goob
         }
 
         public SoundSpecifier? GetSpeechSound(Entity<SpeechComponent> ent, string message)
@@ -56,14 +55,8 @@ namespace Content.Server.Speech
             // Goobstation start
             var getSpeechSoundEv = new GetSpeechSoundEvent();
             RaiseLocalEvent(ent, ref getSpeechSoundEv);
-            SpeechSoundsPrototype? prototype;
-            if (getSpeechSoundEv.Handled)
-            {
-                if (getSpeechSoundEv.SpeechSoundProtoId is not { } protoId ||
-                    !_protoManager.TryIndex(protoId, out prototype))
-                    return null;
-            }
-            else
+            if (getSpeechSoundEv.SpeechSoundProtoId == null ||
+                !_protoManager.TryIndex<SpeechSoundsPrototype>(getSpeechSoundEv.SpeechSoundProtoId, out var prototype))
             {
                 if (ent.Comp.SpeechSounds == null)
                     return null;
@@ -104,16 +97,10 @@ namespace Content.Server.Speech
         {
             // Goob station - Barks
             if (component.SpeechSounds == null
-                || !args.Language.SpeechOverride.RequireSpeech)
+                || !args.Language.SpeechOverride.RequireSpeech
+                || _cfg.GetCVar(GoobCVars.BarksEnabled) // Goob Station - Barks
+                && HasComp<SpeechSynthesisComponent>(uid))
                 return;
-
-            if (_barksEnabled)
-            {
-                var ev = new GetBarkSourceEntityEvent();
-                RaiseLocalEvent(uid, ref ev);
-                if (HasComp<SpeechSynthesisComponent>(ev.Ent ?? uid))
-                    return;
-            }
             // END
 
             var currentTime = _gameTiming.CurTime;

@@ -9,19 +9,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Blade;
+
 using Content.Goobstation.Common.Weapons.DelayedKnockdown;
 using Content.Goobstation.Shared.Clothing;
-using Content.Server.Heretic.Components.PathSpecific;
-using Content.Shared.Heretic.EntitySystems.PathSpecific;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Shitcode.Weapons.Misc;
 using Content.Shared.Armor;
 using Content.Shared.Damage.Events;
-using Content.Shared.Heretic.Components.PathSpecific;
 using Content.Shared.Inventory;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Timing;
+// Dumont end
 
 namespace Content.Goobstation.Shared.Weapons.DelayedKnockdown;
 
@@ -30,7 +30,6 @@ public sealed class DelayedKnockdownOnHitSystem : EntitySystem
     [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly UseDelaySystem _delay = default!;
-    [Dependency] private readonly ChampionStanceSystem _champion = default!;
 
     public override void Initialize()
     {
@@ -43,22 +42,12 @@ public sealed class DelayedKnockdownOnHitSystem : EntitySystem
             OnInventoryAttempt);
         SubscribeLocalEvent<ModifyDelayedKnockdownComponent, ArmorExamineEvent>(OnExamine);
 
-        SubscribeLocalEvent<ChampionStanceComponent, DelayedKnockdownAttemptEvent>(OnChampionDelayedKnockdownAttempt);
         SubscribeLocalEvent<SilverMaelstromComponent, DelayedKnockdownAttemptEvent>(OnMaelstromDelayedKnockdownAttempt);
     }
 
     private void OnMaelstromDelayedKnockdownAttempt(Entity<SilverMaelstromComponent> ent,
         ref DelayedKnockdownAttemptEvent args)
     {
-        args.Cancel();
-    }
-
-    private void OnChampionDelayedKnockdownAttempt(Entity<ChampionStanceComponent> ent,
-        ref DelayedKnockdownAttemptEvent args)
-    {
-        if (!_champion.Condition(ent))
-            return;
-
         args.Cancel();
     }
 

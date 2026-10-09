@@ -1,0 +1,121 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Shared.Damage;
+using Robust.Shared.Audio;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Components.PathSpecific.Ash;
+
+[RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentPause, AutoGenerateComponentState]
+public sealed partial class FireBlastedComponent : BaseSpriteOverlayComponent
+{
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan NextUpdate;
+
+    [DataField]
+    public TimeSpan UpdateDelay = TimeSpan.FromMilliseconds(200);
+
+    [DataField]
+    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/Magic/fireball.ogg");
+
+    [DataField]
+    public int BouncesForBonusEffect = 4;
+
+    [DataField]
+    public bool ShouldBounce = true;
+
+    [DataField]
+    public int MaxBounces = 4;
+
+    [DataField]
+    public TimeSpan BeamTime = TimeSpan.FromSeconds(2);
+
+    [DataField]
+    public float Damage = 1f;
+
+    [DataField, AutoNetworkedField]
+    public HashSet<EntityUid> HitEntities = new();
+
+    [DataField]
+    public float StaminaDamageMultiplier = 2f;
+
+    [DataField]
+    public float FireBlastRange = 5f;
+
+    [DataField]
+    public float BonusRange = 1f;
+
+    [DataField]
+    public EntProtoId BonusEffect = "EffectVolcanoExplosion";
+
+    [DataField]
+    public TimeSpan BonusKnockdownTime = TimeSpan.FromSeconds(0.8f);
+
+    [DataField]
+    public float FireStacks = 4f;
+
+    [DataField]
+    public float BonusFireStacks = 3f;
+
+    [DataField]
+    public float CollisionFireStacks = 0.5f;
+
+    [DataField]
+    public float FireProtectionPenetration = 0.35f;
+
+    [DataField]
+    public DamageSpecifier FireBlastDamage = new()
+    {
+        DamageDict =
+        {
+            { "Heat", 20f },
+        },
+    };
+
+    [DataField]
+    public DamageSpecifier FireBlastBonusDamage = new()
+    {
+        DamageDict =
+        {
+            { "Heat", 25f },
+        },
+    };
+
+    [DataField]
+    public DamageSpecifier FireBlastBeamCollideDamage = new()
+    {
+        DamageDict =
+        {
+            { "Heat", 2.5f },
+        },
+    };
+
+
+    [DataField]
+    public string FireBlastBeamDataId = "fireblast";
+
+    [DataField]
+    public SpriteSpecifier FireBlastBeamSprite =
+        new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Heretic/Effects/effects.rsi"), "solar_beam");
+
+    public override Enum Key { get; set; } = FireBlastedKey.Key;
+
+    [DataField]
+    public override SpriteSpecifier? Sprite { get; set; } =
+        new SpriteSpecifier.Rsi(new ResPath("_Goobstation/Heretic/Effects/effects.rsi"), "blessed");
+}
+
+public enum FireBlastedKey : byte
+{
+    Key,
+}

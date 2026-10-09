@@ -78,5 +78,8 @@ public enum StatusEffectMetabolismType
 {
     Add,
     Remove,
-    Set
+    Set,
+    // Dumont start
+    Update
+    // Dumont end
 }

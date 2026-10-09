@@ -117,6 +117,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Goobstation.Wizard;
@@ -127,7 +128,6 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
-using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mind;
@@ -140,6 +140,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Trauma.Shared.Heretic.Events;
+// Dumont end
+
 namespace Content.Shared.Actions;
 
 // Shitmed Change
@@ -671,6 +674,11 @@ public abstract class SharedActionsSystem : EntitySystem
 
         if (!action.Comp.RaiseOnUser && action.Comp.Container is {} container && !_mindQuery.HasComp(container))
             target = container;
+
+        // Dumont start
+        if (action.Comp.RaiseOnAction)
+            target = action.Owner;
+        // Dumont end
 
         RaiseLocalEvent(target, (object) ev, broadcast: true);
         handled = ev.Handled;

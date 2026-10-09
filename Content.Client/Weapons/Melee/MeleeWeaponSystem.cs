@@ -62,7 +62,6 @@ using System.Numerics;
 using Content.Client.Gameplay;
 using Content.Goobstation.Common.Weapons;
 using Content.Goobstation.Common.Weapons.MeleeDash;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._White.Blink;
 using Content.Shared.CombatMode;
 using Content.Shared.Effects;
@@ -82,6 +81,10 @@ using Robust.Client.State;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Rust;
+// Dumont end
 
 namespace Content.Client.Weapons.Melee;
 
@@ -265,7 +268,13 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         var targetCoordinates = xform.Coordinates;
         var targetLocalAngle = xform.LocalRotation;
 
-        return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
+        // Dumont start
+            var rangeEvent = new Content.Goobstation.Common.Weapons.MeleeInRangeEvent(user, target, range, targetCoordinates, targetLocalAngle);
+            RaiseLocalEvent(user, ref rangeEvent);
+            if (rangeEvent.Handled)
+                return rangeEvent.InRange;
+            // Dumont end
+            return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
     }
 
     protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)

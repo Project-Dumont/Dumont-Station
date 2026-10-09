@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: body
+  id: Shattered
+  name: shattered
+  root: chest
+  slots:
+    chest:
+      part: OrganShatteredTorso
+      connections:
+      - head
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    head:
+      part: OrganShatteredHead
+      organs:
+        brain: OrganHumanBrain
+    left arm:
+      part: OrganShatteredArmLeft
+      connections:
+      - left hand
+    left hand:
+      part: OrganShatteredHandLeft
+    left leg:
+      part: OrganShatteredLegLeft
+      connections:
+      - left foot
+    left foot:
+      part: OrganShatteredFootLeft
+    right arm:
+      part: OrganShatteredArmRight
+      connections:
+      - right hand
+    right hand:
+      part: OrganShatteredHandRight
+    right leg:
+      part: OrganShatteredLegRight
+      connections:
+      - right foot
+    right foot:
+      part: OrganShatteredFootRight

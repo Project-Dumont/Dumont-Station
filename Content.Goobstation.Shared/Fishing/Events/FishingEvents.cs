@@ -16,7 +16,7 @@ public sealed partial class PullFishingLureActionEvent : InstantActionEvent;
 
 // Orion-Start
 [ByRefEvent]
-public readonly record struct FishCaughtEvent(EntProtoId FishId);
+public readonly record struct FishCaughtEvent(EntProtoId FishId, EntityUid User = default);
 // Orion-End
 
 [Serializable, NetSerializable]

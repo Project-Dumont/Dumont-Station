@@ -8,6 +8,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Events;
+
 using Content.Goobstation.Shared.Changeling;
 using Content.Goobstation.Shared.Chemistry;
 using Content.Goobstation.Shared.Clothing;
@@ -25,6 +28,7 @@ using Content.Shared.Flash;
 using Content.Shared.Heretic;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+// Dumont end
 
 namespace Content.Goobstation.Shared.Inventory;
 

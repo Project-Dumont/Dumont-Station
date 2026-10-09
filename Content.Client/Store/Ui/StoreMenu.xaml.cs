@@ -1,39 +1,25 @@
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2024 J. Brown <DrMelon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 TGRCDev <tgrc@tgrc.dev>
-// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
-// SPDX-FileCopyrightText: 2025 LuciferEOS <stepanteliatnik2022@gmail.com>
-// SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 LuciferMkshelter <stepanteliatnik2022@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// <Trauma>
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
 
+using Content.Client.Stylesheets;
+// </Trauma>
 using System.Linq;
-using Content.Client.Actions;
+using System.Text;
 using Content.Client.Message;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store;
@@ -43,33 +29,22 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Prototypes;
-using Robust.Client.ResourceManagement;
-using Content.Client._Funkystation.MalfAI.Theme;
-using Content.Client._Funkystation.Store.Ui;
+// Dumont end
 
 namespace Content.Client.Store.Ui;
 
-// goob edit - fuck newstore
-// do not touch unless you want to shoot yourself in the leg
 [GenerateTypedNameReferences]
 public sealed partial class StoreMenu : DefaultWindow
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
-    [Dependency] private readonly IResourceCache _resCache = default!; // Funkystation -> Malf AI.
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     private StoreWithdrawWindow? _withdrawWindow;
 
-    // Funkystation -> Malf AI.
-    private Font? _malfFont;
-    private bool _malfThemeApplied;
-    private static readonly Color MalfGreen = MalfUiTheme.Accent;
-    private StyleBox? _malfButtonStyle;
-
     public event EventHandler<string>? SearchTextUpdated;
-    public event Action<BaseButton.ButtonEventArgs, ListingData>? OnListingButtonPressed;
+    public event Action<BaseButton.ButtonEventArgs, ListingDataWithCostModifiers>? OnListingButtonPressed;
     public event Action<BaseButton.ButtonEventArgs, string>? OnCategoryButtonPressed;
     public event Action<BaseButton.ButtonEventArgs, string, int>? OnWithdrawAttempt;
     public event Action<BaseButton.ButtonEventArgs>? OnRefundAttempt;
@@ -77,7 +52,7 @@ public sealed partial class StoreMenu : DefaultWindow
     public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Balance = new();
     public string CurrentCategory = string.Empty;
 
-    private List<ListingData> _cachedListings = new();
+    private List<ListingDataWithCostModifiers> _cachedListings = new();
 
     public StoreMenu()
     {
@@ -87,54 +62,6 @@ public sealed partial class StoreMenu : DefaultWindow
         WithdrawButton.OnButtonDown += OnWithdrawButtonDown;
         RefundButton.OnButtonDown += OnRefundButtonDown;
         SearchBar.OnTextChanged += _ => SearchTextUpdated?.Invoke(this, SearchBar.Text);
-    }
-
-    // Funkystation -> Malf AI.
-    public void ApplyMalfTheme()
-    {
-        if (_malfThemeApplied)
-            return;
-
-        _malfThemeApplied = true;
-
-        // Load font
-        _malfFont ??= MalfUiTheme.GetFont(_resCache, 12);
-
-        // Backdrop goes black for Malf shop (no static - will be added as overlay)
-        RootBackdrop.PanelOverride = MalfUiTheme.CreateBackdropStyle();
-
-        // Add scrolling error backdrop behind all UI elements - insert at beginning so it appears behind
-        var errorBackdrop = MalfEffectOverlay.CreateErrorBackdrop();
-        RootBackdrop.AddChild(errorBackdrop);
-        errorBackdrop.SetPositionInParent(0);
-
-        // Add CRT static overlay using AI statics fog of war shader - this stays on top
-        var staticOverlay = MalfEffectOverlay.CreateStaticOverlay();
-        RootBackdrop.AddChild(staticOverlay);
-
-        // Apply green-outlined black panels
-        var borderMain = MalfUiTheme.CreateMainPanelStyle(MalfUiTheme.Accent);
-        MainPanel.PanelOverride = borderMain;
-
-        var borderCat = MalfUiTheme.CreateCategoryPanelStyle(MalfUiTheme.Accent);
-        CategoryPanel.PanelOverride = borderCat;
-
-        // Apply color to common controls
-        BalanceInfo.Modulate = MalfGreen;
-
-        // Apply Malf stylesheet
-        RootBackdrop.Stylesheet = MalfUiTheme.GetCachedStylesheet(_resCache, 12);
-
-        // Apply specific styling for the search bar
-        SearchBar.StyleBoxOverride = MalfUiTheme.CreateButtonStyle(MalfUiTheme.Accent);
-
-        // Create and apply green-bordered black style for buttons WITHOUT static (static comes from backdrop overlay)
-        _malfButtonStyle ??= MalfUiTheme.CreateButtonStyle(MalfUiTheme.Accent);
-
-        // Hide withdraw in the CPU/Malf store.
-        WithdrawButton.Visible = false;
-
-        RefundButton.StyleBoxOverride = _malfButtonStyle;
     }
 
     public void UpdateBalance(Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> balance)
@@ -166,7 +93,7 @@ public sealed partial class StoreMenu : DefaultWindow
         WithdrawButton.Disabled = disabled;
     }
 
-    public void UpdateListing(List<ListingData> listings)
+    public void UpdateListing(List<ListingDataWithCostModifiers> listings)
     {
         _cachedListings = listings;
 
@@ -175,7 +102,9 @@ public sealed partial class StoreMenu : DefaultWindow
 
     public void UpdateListing()
     {
-        var sorted = _cachedListings.OrderBy(l => l.Priority).ThenBy(l => l.Cost.Values.Sum()).ThenBy(l => l.Name == null ? string.Empty : Loc.GetString(l.Name)); // Goob edit
+        var sorted = _cachedListings.OrderBy(l => l.Priority)
+            .ThenBy(l => l.Cost.Values.Sum())
+            .ThenBy(l => l.Name == null ? string.Empty : Loc.GetString(l.Name)); // Trauma
 
         // should probably chunk these out instead. to-do if this clogs the internet tubes.
         // maybe read clients prototypes instead?
@@ -213,14 +142,12 @@ public sealed partial class StoreMenu : DefaultWindow
         OnRefundAttempt?.Invoke(args);
     }
 
-    private void AddListingGui(ListingData listing)
+    private void AddListingGui(ListingDataWithCostModifiers listing)
     {
-        // Funkystation -> Malf AI. Apply category filtering for both Malf and normal shops.
         if (!listing.Categories.Contains(CurrentCategory))
             return;
 
-        var listingPrice = listing.Cost;
-        var hasBalance = HasListingPrice(Balance, listingPrice);
+        var hasBalance = listing.CanBuyWith(Balance);
 
         var spriteSys = _entityManager.EntitySysManager.GetEntitySystem<SpriteSystem>();
 
@@ -235,61 +162,35 @@ public sealed partial class StoreMenu : DefaultWindow
         }
         else if (listing.ProductAction != null)
         {
-            if (texture == null)
-            {
-                var actionId = _entityManager.Spawn(listing.ProductAction);
-                if (_entityManager.System<ActionsSystem>().GetAction(actionId) is { } action &&
-                    action.Comp.Icon != null)
-                {
-                    texture = spriteSys.Frame0(action.Comp.Icon);
-                }
-            }
+            var actionId = _entityManager.Spawn(listing.ProductAction);
+            if (_entityManager.TryGetComponent(actionId, out SpriteComponent? actionSprite))
+                texture = actionSprite.Icon?.GetFrame(RsiDirection.South, 0);
         }
 
-        if (_malfThemeApplied && _malfFont != null)
-        {
-            var malfListing = new MalfStoreListingControl(listing, GetListingPriceString(listing), hasBalance, texture, _malfFont, MalfGreen);
+        var listingInStock = GetListingPriceString(listing);
+        var discount = GetDiscountString(listing);
 
-            // Apply sale-red first so theming can respect it.
-            if (listing.DiscountValue > 0) // WD EDIT
-                malfListing.StoreItemBuyButton.AddStyleClass("ButtonColorRed");
+        var newListing = new StoreListingControl(listing, listingInStock, discount, hasBalance, texture);
 
-            malfListing.StoreItemBuyButton.OnButtonDown += args
-                => OnListingButtonPressed?.Invoke(args, listing);
+        // <Trauma>
+        if (discount != string.Empty)
+            newListing.StoreItemBuyButton.AddStyleClass(StyleBase.ButtonCaution);
+        // </Trauma>
 
-            StoreListingsContainer.AddChild(malfListing);
-        }
-        else
-        {
-            var newListing = new StoreListingControl(listing, GetListingPriceString(listing), hasBalance, texture);
+        newListing.StoreItemBuyButton.OnButtonDown += args
+            => OnListingButtonPressed?.Invoke(args, listing);
 
-            // Apply sale-red first so theming can respect it.
-            if (listing.DiscountValue > 0) // WD EDIT
-                newListing.StoreItemBuyButton.AddStyleClass("ButtonColorRed");
-
-            newListing.StoreItemBuyButton.OnButtonDown += args
-                => OnListingButtonPressed?.Invoke(args, listing);
-
-            StoreListingsContainer.AddChild(newListing);
-        }
+        StoreListingsContainer.AddChild(newListing);
     }
 
-    public bool HasListingPrice(Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> currency, Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> price)
-    {
-        foreach (var type in price)
-        {
-            if (!currency.ContainsKey(type.Key))
-                return false;
-
-            if (currency[type.Key] < type.Value)
-                return false;
-        }
-        return true;
-    }
-
-    private string GetListingPriceString(ListingData listing)
+    private string GetListingPriceString(ListingDataWithCostModifiers listing)
     {
         var text = string.Empty;
+
+        // <Trauma>
+        if (GetListingAltPriceString(listing) is { } altText)
+            return altText;
+        // </Trauma>
 
         if (listing.Cost.Count < 1)
             text = Loc.GetString("store-currency-free");
@@ -310,57 +211,61 @@ public sealed partial class StoreMenu : DefaultWindow
         return text.TrimEnd();
     }
 
+    private string GetDiscountString(ListingDataWithCostModifiers listingDataWithCostModifiers)
+    {
+        string discountMessage;
+
+        if (!listingDataWithCostModifiers.IsCostModified)
+        {
+            return string.Empty;
+        }
+
+        var relativeModifiersSummary = listingDataWithCostModifiers.GetModifiersSummaryRelative();
+        if (relativeModifiersSummary.Count > 1)
+        {
+            var sb = new StringBuilder();
+            sb.Append('(');
+            foreach (var (currency, amount) in relativeModifiersSummary)
+            {
+                var currencyPrototype = _prototypeManager.Index(currency);
+                if (sb.Length > 1) // Trauma: "!= 0" -> "> 1"
+                {
+                    sb.Append(", ");
+                }
+                var currentDiscountMessage = Loc.GetString(
+                    "store-ui-discount-display-with-currency",
+                    ("amount", amount.ToString("P0")),
+                    ("currency", Loc.GetString(currencyPrototype.DisplayName))
+                );
+                sb.Append(currentDiscountMessage);
+            }
+
+            sb.Append(')');
+            discountMessage = sb.ToString();
+        }
+        else
+        {
+            // if cost was modified - it should have diff relatively to original cost in 1 or more currency
+            // ReSharper disable once GenericEnumeratorNotDisposed Dictionary enumerator doesn't require dispose
+            var enumerator = relativeModifiersSummary.GetEnumerator();
+            enumerator.MoveNext();
+            var amount = enumerator.Current.Value;
+            discountMessage = Loc.GetString(
+                "store-ui-discount-display",
+                ("amount", (amount.ToString("P0")))
+            );
+        }
+
+        return discountMessage;
+    }
+
     private void ClearListings()
     {
         StoreListingsContainer.Children.Clear();
     }
 
-    public void PopulateStoreCategoryButtons(HashSet<ListingData> listings)
+    public void PopulateStoreCategoryButtons(HashSet<ListingDataWithCostModifiers> listings)
     {
-        // Funkystation -> Malf AI. Malf shop: show only the requested categories.
-        if (_malfThemeApplied)
-        {
-            var malfCats = new[] { "Deception", "Factory", "Disruption" };
-
-            // Default selection for Malf shop
-            if (!malfCats.Contains(CurrentCategory))
-                CurrentCategory = "Deception";
-
-            CategoryListContainer.Children.Clear();
-
-            var group = new ButtonGroup();
-            foreach (var id in malfCats)
-            {
-                // Localize the visible label for each Malf category
-                var textKey = id switch
-                {
-                    "Deception" => "malf-store-category-deception",
-                    "Factory" => "malf-store-category-factory",
-                    "Disruption" => "malf-store-category-disruption",
-                    _ => "malf-store-category-deception"
-                };
-
-                var catButton = new StoreCategoryButton
-                {
-                    Text = Loc.GetString(textKey),
-                    Id = id,
-                    Pressed = id == CurrentCategory,
-                    Group = group,
-                    ToggleMode = true,
-                    StyleClasses = { "OpenBoth" }
-                };
-
-                if (_malfButtonStyle != null)
-                    catButton.StyleBoxOverride = _malfButtonStyle;
-
-                catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, catButton.Id);
-                CategoryListContainer.AddChild(catButton);
-            }
-
-            return;
-        }
-
-        // Normal shop: original behavior, collect categories from listings.
         var allCategories = new List<StoreCategoryPrototype>();
         foreach (var listing in listings)
         {
@@ -385,7 +290,7 @@ public sealed partial class StoreMenu : DefaultWindow
         if (allCategories.Count < 1)
             return;
 
-        var normalGroup = new ButtonGroup();
+        var group = new ButtonGroup();
         foreach (var proto in allCategories)
         {
             var catButton = new StoreCategoryButton
@@ -393,13 +298,13 @@ public sealed partial class StoreMenu : DefaultWindow
                 Text = Loc.GetString(proto.Name),
                 Id = proto.ID,
                 Pressed = proto.ID == CurrentCategory,
-                Group = normalGroup,
+                Group = group,
                 ToggleMode = true,
                 StyleClasses = { "OpenBoth" }
             };
 
             if (proto.Evil) // Goobstation
-                catButton.AddStyleClass("ButtonColorRed");
+                catButton.AddStyleClass(StyleBase.ButtonCaution);
 
             catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, catButton.Id);
             CategoryListContainer.AddChild(catButton);
@@ -417,7 +322,7 @@ public sealed partial class StoreMenu : DefaultWindow
         RefundButton.Visible = allowRefund;
     }
 
-    private sealed class StoreCategoryButton : Button
+    private sealed partial class StoreCategoryButton : Button
     {
         public string? Id;
     }

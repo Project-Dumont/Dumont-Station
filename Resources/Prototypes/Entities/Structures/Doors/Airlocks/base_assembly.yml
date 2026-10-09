@@ -21,6 +21,9 @@
   name: porta inacabada
   description: Ela não abre, ela não fecha, mas é um começo.
   components:
+  - type: Tag
+    tags:
+    - AirlockAssembly
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite

@@ -1,0 +1,58 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectPressureImmunity
+  name: pressure immunity
+  components:
+  - type: PressureImmunityStatusEffect
+
+# Prevents speaking and vocal emotes.
+
+- type: entity
+  abstract: true
+  parent: MobStatusEffectBase
+  id: MutedStatusEffectBase
+  name: muted
+  components:
+  - type: StatusEffectAlert
+    alert: Muted
+  - type: MutedStatusEffect
+
+- type: entity
+  parent: MutedStatusEffectBase
+  id: StatusEffectMuted
+
+- type: entity
+  parent: StatusEffectMuted
+  id: StatusEffectMutedGhoul
+
+- type: entity
+  parent: StatusEffectMuted
+  id: StatusEffectMutedJaunt
+
+- type: entity
+  parent: StatusEffectPressureImmunity
+  id: StatusEffectPressureImmunityArena
+
+- type: entity
+  parent: StatusEffectPressureImmunity
+  id: StatusEffectPressureImmunityHeretic
+
+- type: entity
+  parent: StatusEffectBase
+  id: StatusEffectProjectileImmunity
+  name: dodge bullets
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: ProjectileImmunity
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectBlurryVision
+  name: blurry vision
+  components:
+  - type: GrantComponentsStatusEffect
+    components:
+    - type: BlurryVision

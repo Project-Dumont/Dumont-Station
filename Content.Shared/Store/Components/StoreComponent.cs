@@ -1,24 +1,25 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
 
-using Content.Shared._White.StoreDiscount;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+// Dumont end
 
 namespace Content.Shared.Store.Components;
 
@@ -26,13 +27,20 @@ namespace Content.Shared.Store.Components;
 /// This component manages a store which players can use to purchase different listings
 /// through the ui. The currency, listings, and categories are defined in yaml.
 /// </summary>
-// goob edit - fuck newstore
-// do not touch unless you want to shoot yourself in the leg
 [RegisterComponent, NetworkedComponent]
 public sealed partial class StoreComponent : Component
 {
+    // Dumont start
+    [DataField]
+    public Content.Shared._White.StoreDiscount.SalesSpecifier Sales { get; private set; } = new();
+    // Dumont end
     [DataField]
     public LocId Name = "store-ui-default-title";
+
+    // Dumont start
+    [DataField]
+    public bool GrantActionsToMind = true;
+    // Dumont end
 
     /// <summary>
     /// All the listing categories that are available on this store.
@@ -56,6 +64,13 @@ public sealed partial class StoreComponent : Component
     public HashSet<ProtoId<CurrencyPrototype>> CurrencyWhitelist = new();
 
     /// <summary>
+    /// The expected Faction to use this store. (Optional)
+    /// Used to increase the severity of the admin log upon purchase if the purchaser is not a member of one of the listed factions.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<NpcFactionPrototype>>? ExpectedFaction = new ();
+
+    /// <summary>
     /// The person/mind who "owns" the store/account. Used if you want the listings to be fixed
     /// regardless of who activated it. I.E. role specific items for uplinks.
     /// </summary>
@@ -63,16 +78,16 @@ public sealed partial class StoreComponent : Component
     public EntityUid? AccountOwner = null;
 
     /// <summary>
-    /// All listings, including those that aren't available to the buyer
+    /// Cached list of listings items with modifiers.
     /// </summary>
     [DataField]
-    public HashSet<ListingData> Listings = new();
+    public HashSet<ListingDataWithCostModifiers> FullListingsCatalog = new();
 
     /// <summary>
     /// All available listings from the last time that it was checked.
     /// </summary>
     [ViewVariables]
-    public HashSet<ListingData> LastAvailableListings = new();
+    public HashSet<ListingDataWithCostModifiers> LastAvailableListings = new();
 
     /// <summary>
     ///     All current entities bought from this shop. Useful for keeping track of refunds and upgrades.
@@ -93,12 +108,6 @@ public sealed partial class StoreComponent : Component
     public bool RefundAllowed;
 
     /// <summary>
-    /// DeltaV: Should the store grant actions to the mind?
-    /// </summary>
-    [DataField]
-    public bool GrantActionsToMind = true;
-
-    /// <summary>
     ///     Checks if store can be opened by the account owner only.
     ///     Not meant to be used with uplinks.
     /// </summary>
@@ -110,10 +119,6 @@ public sealed partial class StoreComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? StartingMap;
-
-    // WD EDIT START
-    [DataField] public SalesSpecifier Sales { get; private set; } = new();
-    // WD EDIT END
 
     #region audio
     /// <summary>

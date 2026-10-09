@@ -1,0 +1,174 @@
+// <Trauma>
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
+
+using Content.Shared.Eye.Blinding.Systems;
+// </Trauma>
+using Content.Shared.Administration.Logs;
+using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.Reaction;
+using Content.Shared.EntityConditions;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Random.Helpers;
+using Robust.Shared.Timing;
+// Dumont end
+
+namespace Content.Shared.EntityEffects;
+
+/// <summary>
+/// This handles entity effects.
+/// Specifically it handles the receiving of events for causing entity effects, and provides
+/// public API for other systems to take advantage of entity effects.
+/// </summary>
+public sealed partial class SharedEntityEffectsSystem : EntitySystem, IEntityEffectRaiser
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private SharedEntityConditionsSystem _condition = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<EntityEffectOnMapInitComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<EntityEffectOnMapInitComponent> entity, ref MapInitEvent args)
+    {
+        ApplyEffects(entity, entity.Comp.Effects);
+    }
+
+    /// <inheritdoc cref="ApplyEffects(EntityUid,EntityEffect[],float,EntityUid?)"/>
+    public void ApplyEffects(EntityUid target, EntityEffect[] effects, FixedPoint2 scale, EntityUid? user = null,
+        bool predicted = true) // Trauma
+    {
+        ApplyEffects(target, effects, scale.Float(),
+            user: user, predicted: predicted); // Trauma
+    }
+
+    /// <summary>
+    /// Applies a list of entity effects to a target entity.
+    /// </summary>
+    /// <param name="target">Entity being targeted by the effects</param>
+    /// <param name="effects">Effects we're applying to the entity</param>
+    /// <param name="scale">Optional scale multiplier for the effects</param>
+    /// <param name="user">The entity causing the effect.</param>
+    public void ApplyEffects(EntityUid target, EntityEffect[] effects, float scale = 1f, EntityUid? user = null,
+        bool predicted = true) // Trauma
+    {
+        // do all effects, if conditions apply
+        foreach (var effect in effects)
+        {
+            TryApplyEffect(target, effect, scale, user,
+                predicted: predicted); // Trauma
+        }
+    }
+
+    /// <summary>
+    /// Applies an entity effect to a target if all conditions pass.
+    /// </summary>
+    /// <param name="target">Target we're applying an effect to</param>
+    /// <param name="effect">Effect we're applying</param>
+    /// <param name="scale">Optional scale multiplier for the effect.</param>
+    /// <param name="user">The entity causing the effect.</param>
+    /// <returns>True if all conditions pass!</returns>
+    public bool TryApplyEffect(EntityUid target, EntityEffect effect, float scale = 1f, EntityUid? user = null,
+        bool predicted = true) // Trauma
+    {
+        if (scale < effect.MinScale)
+            return false;
+
+        var prob = effect.Probability * (effect.ScaleProbability ? scale : 1f); // Trauma - multiply by scale if ScaleProbability is true
+        if (prob <= 1f && !SharedRandomExtensions.PredictedProb(_timing, prob, GetNetEntity(target), GetNetEntity(user))) // Trauma - use prob
+                return false;
+
+        // See if conditions apply
+        if (!TryConditions(target, effect.Conditions, user)) // Trauma - pass user
+            return false;
+
+        ApplyEffect(target, effect, scale, user,
+            predicted: predicted); // Trauma
+        return true;
+    }
+
+    /// <summary>
+    /// Applies an <see cref="EntityEffect"/> to a given target.
+    /// This doesn't check conditions so you should only call this if you know what you're doing!
+    /// </summary>
+    /// <param name="target">Target we're applying an effect to</param>
+    /// <param name="effect">Effect we're applying</param>
+    /// <param name="scale">Optional scale multiplier for the effect.</param>
+    /// <param name="user">The entity causing the effect.</param>
+    public void ApplyEffect(EntityUid target, EntityEffect effect, float scale = 1f, EntityUid? user = null,
+        bool predicted = true) // Trauma
+    {
+        // Clamp the scale if the effect doesn't allow scaling.
+        if (!effect.Scaling)
+            scale = Math.Min(scale, 1f);
+
+        if (effect.Impact is { } level)
+        {
+            _adminLog.Add(
+                effect.LogType,
+                level,
+                $"Entity effect {effect.GetType().Name:effect}"
+                + $" applied on entity {target:entity}"
+                + $" at {Transform(target).Coordinates:coordinates}"
+                + $" with a scale multiplier of {scale}"
+            );
+        }
+
+        effect.RaiseEvent(target, this, scale, user,
+            predicted: predicted); // Trauma
+    }
+
+    /// <summary>
+    /// Raises an effect to an entity. You should not be calling this unless you know what you're doing.
+    /// </summary>
+    public void RaiseEffectEvent<T>(EntityUid target, T effect, float scale, EntityUid? user, bool predicted = true) where T : EntityEffectBase<T> // Trauma - added predicted
+    {
+        var effectEv = new EntityEffectEvent<T>(effect, scale, user,
+            predicted); // Trauma
+        RaiseLocalEvent(target, ref effectEv);
+    }
+}
+
+/// <summary>
+/// This is a basic abstract entity effect containing all the data an entity effect needs to affect entities with effects...
+/// </summary>
+/// <typeparam name="T">The Component that is required for the effect</typeparam>
+/// <typeparam name="TEffect">The Entity Effect itself</typeparam>
+public abstract partial class EntityEffectSystem<T, TEffect> : EntitySystem where T : Component where TEffect : EntityEffectBase<TEffect>
+{
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<T, EntityEffectEvent<TEffect>>(Effect);
+    }
+
+    protected abstract void Effect(Entity<T> entity, ref EntityEffectEvent<TEffect> args);
+}
+
+/// <summary>
+/// Used to raise an EntityEffect without losing the type of effect.
+/// </summary>
+public interface IEntityEffectRaiser
+{
+    // Dumont start
+    void RaiseLegacyEffect(EntityUid target, EntityEffect effect, float scale, EntityUid? user, bool predicted);
+    // Dumont end
+    void RaiseEffectEvent<T>(EntityUid target, T effect, float scale, EntityUid? user, bool predicted = true) where T : EntityEffectBase<T>; // Trauma - added predicted
+}

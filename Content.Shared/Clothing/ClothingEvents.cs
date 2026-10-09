@@ -31,6 +31,9 @@ public sealed class GetEquipmentVisualsEvent : EntityEventArgs
     ///     Note that the actual ordering of the layers depends on the order in which they are added to this list;
     /// </remarks>
     public List<(string, PrototypeLayerData)> Layers = new();
+    // Dumont start
+    public Dictionary<string, float> LayersAnimationTime = new();
+    // Dumont end
 
     public GetEquipmentVisualsEvent(EntityUid equipee, string slot)
     {

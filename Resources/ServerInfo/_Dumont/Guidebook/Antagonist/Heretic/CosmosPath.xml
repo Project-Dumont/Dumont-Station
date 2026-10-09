@@ -1,0 +1,130 @@
+<Document>
+# Caminho do Cosmos
+
+Dificuldade: [color=red]Difícil[/color]
+
+O Caminho do Cosmos usa barreiras, teleporte e domínio do espaço. Escolha-o se gosta de se adaptar ao ambiente e encontrar soluções pouco óbvias.
+
+## Vantagens
+- Controla o movimento dos inimigos com campos cósmicos.
+- Permite se teleportar rapidamente pela estação.
+- Confunde adversários com sucessivas barreiras.
+
+## Desvantagens
+- Precisa espalhar marcas estelares para que os campos afetem os inimigos.
+- Causa relativamente pouco dano.
+- Tem pouca defesa direta e depende do bom uso das habilidades.
+
+## Conhecimentos
+
+### Portão Eterno
+
+Uma nebulosa surgiu no céu. Seu nascimento infernal brilhou sobre mim. Era o começo de uma grande transcendência.
+
+Abre o Caminho do Cosmos.
+Permite transmutar uma chapa de vidro e uma faca em uma Lâmina Cósmica.
+Você só pode manter duas por vez.
+
+### Aperto do Cosmos
+
+Algumas estrelas perderam o brilho; outras ficaram mais intensas. Com essa nova força, pude canalizar o poder da nebulosa para dentro de mim.
+
+Seu Aperto do Mansus aplica uma marca estelar, visível como um anel cósmico, e cria um campo cósmico onde você está.
+Pessoas com marca estelar não podem atravessar campos cósmicos.
+
+### Marca do Cosmos
+
+A Fera passou a sussurrar para mim de vez em quando, revelando pequenos fragmentos de sua situação. Posso ajudá-la. Preciso ajudá-la.
+
+Seu Aperto do Mansus passa a aplicar a Marca do Cosmos. Um ataque com sua Lâmina Cósmica ativa a marca.
+Ao ser ativada, a vítima volta ao local onde recebeu a marca, deixando um campo cósmico para trás.
+Em seguida, fica paralisada por 2 segundos.
+
+### Runas Cósmicas
+
+As estrelas distantes invadiam meus sonhos, rugindo e gritando sem razão. Eu falava e ouvia minhas palavras ecoarem de volta.
+
+Concede Runas Cósmicas, que cria duas runas conectadas para facilitar o teleporte.
+Apenas quem ativa a runa é transportado. Qualquer pessoa sem marca estelar pode usá-la.
+Pessoas com marca estelar podem ser transportadas junto de outra pessoa que ative a runa.
+Infiéis que usam as runas recebem uma marca estelar ao chegar.
+
+### Rajada Estelar
+
+A Fera agora estava sempre atrás de mim. A cada sacrifício, suas palavras de aprovação percorriam meu corpo.
+
+Dispara um projétil muito lento, que ergue uma parede temporária de campos cósmicos por onde passa.
+Ao conjurar novamente, você se teleporta até o projétil. Campos cósmicos surgem no ponto de partida e nos locais do teleporte, puxando os infiéis próximos.
+
+### Toque Estelar
+
+Acordei em um suor frio e senti uma palma sobre minha cabeça. Um símbolo foi queimado em mim. Minhas veias emitiam um brilho roxo estranho. A Fera sabe que superarei suas expectativas.
+
+Concede Toque Estelar, que aplica uma marca estelar ao alvo e cria campos cósmicos sob seus pés e nos pisos ao lado.
+Alvos já marcados ficam ligados a você por um raio cósmico. Eles ficam cegos, recebem um rastro cósmico e podem ser atingidos à distância pela sua Lâmina Cósmica.
+Vítimas conectadas não podem se teleportar por nenhum meio.
+Se a conexão durar 8 segundos, elas adormecem, recebem uma marca estelar e são teleportadas até você.
+
+### Lâmina Cósmica
+
+A Fera tomou minhas lâminas nas mãos. Ajoelhei-me e senti uma dor aguda. As lâminas brilhavam com um poder fragmentado. Caí ao chão e chorei aos pés da Fera.
+
+Sua lâmina passa a aplicar marcas estelares e permite atacar infiéis marcados de mais longe.
+Seus ataques propagam dano adicional a até duas vítimas anteriores.
+A sequência se encerra após dois segundos sem atacar ou ao atingir alguém que já esteja marcado.
+Após encadear mais de dois ataques, você recebe um rastro cósmico e o prazo para continuar a sequência aumenta para até dez segundos.
+
+### Expansão Cósmica
+
+O chão tremia sob meus pés. A Fera habitava meu corpo, e sua voz era inebriante.
+
+Concede Expansão Cósmica, que cria campos cósmicos em uma área de 5x5 ao seu redor.
+Seres próximos também recebem uma marca estelar.
+
+### Dádiva do Criador
+
+O ritual de ascensão do Caminho do Cosmos.
+Traga 3 cadáveres com marca estelar para uma runa de transmutação.
+Ao concluir o ritual, você recebe um Observador de Estrelas.
+Esse aliado poderoso é capaz de destruir até paredes reforçadas.
+Sua aura cura você.
+Ativar Toque Estelar na mão passa a teleportar você até o Observador de Estrelas.
+Sua Expansão Cósmica e suas lâminas também ficam muito mais fortes.
+Você recebe visão de raios X e imunidade aos perigos do espaço.
+
+## Armadura e habilidades passivas
+
+### Manto Tecido de Estrelas
+
+Como fios radiantes, as estrelas brilhavam em conjunto sobre a forma sedosa de um manto esvoaçante, que ao mesmo tempo cobria e não cobria meus ombros.
+Os olhos da Fera pousaram sobre mim e me atravessaram.
+
+Permite transmutar uma mesa ou um uniforme, uma máscara e uma chapa de vidro em um Manto Tecido de Estrelas.
+Protege dos perigos do espaço e permite se mover livremente sem gravidade.
+Sobre campos cósmicos, permite dar uma investida curta para desviar de projéteis.
+Funciona como foco mágico com o capuz erguido.
+Sua criação desbloqueia a melhoria passiva de nível 2.
+
+### Passiva de nível 1
+
+Campos cósmicos aumentam sua velocidade e recuperam seu vigor.
+
+### Passiva de nível 2
+
+Campos cósmicos passam a bloquear explosões, impedir a ativação de granadas e sinalizadores e desativar granadas já armadas.
+
+### Passiva de nível 3
+
+Campos cósmicos passam a desacelerar projéteis.
+
+## Dicas
+
+- O aperto aplica uma marca estelar e uma marca de combate. Ativar a segunda teleporta o inimigo ao ponto onde ela foi aplicada e o paralisa brevemente.
+- Pessoas que não são hereges também podem viajar pelas runas. Elas recebem uma marca estelar ao sair. Aproveite isso para preparar armadilhas.
+- Sobre uma runa cósmica, clique em si mesmo com a mão vazia para ativá-la.
+- Inimigos com marca estelar não atravessam os campos por vontade própria, mas podem ser arrastados através deles.
+- A Rajada Estelar serve para se teleportar e prender inimigos nos campos cósmicos.
+- O Toque Estelar impede o alvo de se teleportar. Se ele não romper a ligação, adormecerá e será levado até seus pés.
+- Deixe uma runa cósmica perto da runa de rituais para levar alvos de sacrifício até lá rapidamente.
+- Com o Manto Tecido de Estrelas, use Alt + Q sobre um campo cósmico para executar a investida.
+</Document>

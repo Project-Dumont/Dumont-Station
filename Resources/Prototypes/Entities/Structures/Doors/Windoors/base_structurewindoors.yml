@@ -68,6 +68,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: ReflectiveSurface
   - type: MeleeSound
     soundGroups:
       Brute:

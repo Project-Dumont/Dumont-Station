@@ -1,0 +1,35 @@
+<Document>
+  # Poções de herege
+
+  ## Cadinho Devorador
+  <Box>
+    <GuideEntityEmbed Entity="MawedCrucible"/>
+  </Box>
+
+  Clique no cadinho e escolha uma das três poções para preparar. Usar um Frasco Sobrenatural nele reabastece o frasco.
+
+  O cadinho consome uma reserva de massa que se recupera lentamente. Alimente-o com órgãos ou partes do corpo para reabastecê-lo mais depressa.
+
+  Use o Aperto do Mansus ou um códice para ancorar e desancorar o cadinho. Ele precisa estar ancorado para funcionar.
+
+  ## Alma do Cadinho
+  <Box>
+    <GuideEntityEmbed Entity="PotionCrucibleSoul"/>
+  </Box>
+
+  Permite atravessar paredes. Quando o efeito acaba, você volta ao local de origem. Clique no alerta para encerrar o efeito antes do tempo. Possui um intervalo entre usos.
+
+  ## Ocaso e Aurora
+  <Box>
+    <GuideEntityEmbed Entity="PotionDuskDawn"/>
+  </Box>
+
+  Concede visão de raios X temporariamente.
+
+  ## Soldado Ferido
+  <Box>
+    <GuideEntityEmbed Entity="PotionWoundedSoldier"/>
+  </Box>
+
+  Aumenta sua força física e reduz o dano recebido conforme seus ferimentos aumentam. Seus ataques corpo a corpo recuperam saúde e vigor, mas você sofre dano contínuo. Quanto melhor estiver sua saúde, maior será esse dano.
+</Document>

@@ -1,0 +1,6 @@
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectBlindness
+  name: blindness
+  components:
+  - type: TemporaryBlindness

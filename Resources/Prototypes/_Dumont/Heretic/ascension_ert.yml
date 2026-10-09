@@ -1,0 +1,210 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: SpawnVatican
+  components:
+  - type: StationEvent
+    startAnnouncement: null
+    startAudio: null
+    duration: 1
+    maxOccurrences: 1
+  - type: LoadMapRule
+    gridPath: /Maps/_Dumont/Shuttles/drakon_inquisitor.yml
+
+- type: entity
+  parent: RandomHumanoidSpawnerERTChaplain
+  id: RandomHumanoidSpawnerHereticInquisitor
+  name: Vatican inquisitor
+  components:
+  - type: RandomHumanoidSpawner
+    settings: HereticInquisitorERT
+
+- type: randomHumanoidSettings
+  parent: ERTChaplain
+  id: HereticInquisitorERT
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  - Waddler
+  - Yowie
+  - IPC
+  - Diona
+  - Harpy
+  - Plasmaman
+  - Synth
+  components:
+  - type: VaticanInquisitor
+  - type: RandomMetadata
+    nameSegments: [ VaticanRanks, NamesMilitaryLast ]
+    nameFormat: name-format-standard
+  - type: GhostRole
+    name: heretic-inquisitor-ert-name
+    description: heretic-inquisitor-ert-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: VaticanInquisitor
+  - type: Loadout
+    prototypes: [ HereticInquisitorERTGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+
+- type: startingGear
+  id: HereticInquisitorERTGear
+  equipment:
+    jumpsuit: ClothingUniformVatican
+    back: ClothingModsuitInquisitory
+    eyes: ClothingEyesGlasses
+    id: VaticanPDA
+    ears: ClothingHeadsetVatican
+    belt: ClothingBeltVatican
+    suitstorage: VaticanThemis
+    pocket1: VaticanDueProcess
+    pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxCandle
+    - BoxBodyBag
+    - MedkitCombatFilled
+    - MedkitCombatFilled
+    - ChaplainUndeterminedBible
+    - CrowbarRed
+    - Nullrod
+    - VaticanIDCard
+
+- type: entity
+  parent: RandomHumanoidSpawnerHereticInquisitor
+  id: RandomHumanoidSpawnerVaticanLeader
+  name: Vatican inquisitor leader
+  components:
+  - type: RandomHumanoidSpawner
+    settings: VaticanInquisitorLeader
+
+- type: randomHumanoidSettings
+  parent: HereticInquisitorERT
+  id: VaticanInquisitorLeader
+  components:
+  - type: RandomMetadata
+    nameSegments: [ VaticanLeaderRanks, NamesMilitaryLast ]
+    nameFormat: name-format-standard
+  - type: GhostRole
+    name: vatican-inquisitor-leader-name
+    description: vatican-inquisitor-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: VaticanInquisitorLeader
+  - type: Loadout
+    prototypes: [ VaticanInquisitorLeaderGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+
+- type: startingGear
+  parent: HereticInquisitorERTGear
+  id: VaticanInquisitorLeaderGear
+  equipment:
+    neck: ClothingNeckCloakInquisitor
+    id: VaticanLeaderPDA
+  inhand:
+  - VaticanDawnbreaker
+
+- type: job
+  id: VaticanInquisitor
+  name: heretic-inquisitor-ert-name
+  description: heretic-inquisitor-ert-description
+  playTimeTracker: JobVaticanInquisitor
+  setPreference: false
+  startingGear: HereticInquisitorERTGear
+  icon: "JobIconVatican"
+  supervisors: vatican-inquisitor-supervisors
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: BibleUser
+    - type: CanEnchant
+    - type: CultResistant
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+
+- type: job
+  id: VaticanInquisitorLeader
+  name: vatican-inquisitor-leader-name
+  description: vatican-inquisitor-leader-description
+  playTimeTracker: JobVaticanInquisitorLeader
+  setPreference: false
+  startingGear: VaticanInquisitorLeaderGear
+  icon: "JobIconVatican"
+  supervisors: vatican-inquisitor-supervisors
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: BibleUser
+    - type: CanEnchant
+    - type: CultResistant
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVatican
+  icon:
+    sprite: /Textures/_Dumont/Interface/vatican.rsi
+    state: vatican
+  jobName: heretic-inquisitor-ert-name
+
+- type: localizedDataset
+  id: VaticanRanks
+  values:
+    prefix: vatican-rank-
+    count: 3
+
+- type: localizedDataset
+  id: VaticanLeaderRanks
+  values:
+    prefix: vatican-chief-rank-
+    count: 1
+
+- type: entity
+  parent: ClothingUniformJumpsuitERTChaplain
+  id: ClothingUniformVatican
+  name: inquisitor uniform
+  description: A uniform worn by the Vatican's inquisitors.
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: ClothingBeltVatican
+  name: inquisitor satchel
+  description: A practical bag for the Inquisition's supplies.
+
+- type: entity
+  parent: ClothingHeadsetAltCentCom
+  id: ClothingHeadsetVatican
+  name: inquisitor headset
+  description: A Vatican headset with access to the command network.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Clothing/Ears/vatican.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Dumont/Clothing/Ears/vatican.rsi
+    equippedPrefix: null
+
+- type: playTimeTracker
+  id: JobVaticanInquisitor
+
+- type: playTimeTracker
+  id: JobVaticanInquisitorLeader

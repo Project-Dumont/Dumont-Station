@@ -57,7 +57,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
-using Content.Server.Damage.Components;
+using Content.Shared.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Camera;

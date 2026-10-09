@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: alert
+  id: ParryExhaustion
+  icons:
+  - sprite: /Textures/_Trauma/Interface/Alerts/parry.rsi
+    state: parry1
+  - sprite: /Textures/_Trauma/Interface/Alerts/parry.rsi
+    state: parry2
+  - sprite: /Textures/_Trauma/Interface/Alerts/parry.rsi
+    state: parry3
+  - sprite: /Textures/_Trauma/Interface/Alerts/parry.rsi
+    state: parry4
+  name: alerts-parry-exhaustion-name
+  description: alerts-parry-exhaustion-desc
+  minSeverity: 1
+  maxSeverity: 4

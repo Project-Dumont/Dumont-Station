@@ -58,14 +58,33 @@ public sealed class LegsParalyzedSystem : EntitySystem
 
     public override void Initialize()
     {
+        // Dumont start
+        SubscribeLocalEvent<LegsParalyzedComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
+        // Dumont end
         SubscribeLocalEvent<LegsParalyzedComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<LegsParalyzedComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<LegsParalyzedComponent, ThrowPushbackAttemptEvent>(OnThrowPushbackAttempt);
         SubscribeLocalEvent<LegsParalyzedComponent, StandUpAttemptEvent>(OnStandTry);
     }
 
+    // Dumont start
+    private void OnRefreshSpeed(EntityUid uid, LegsParalyzedComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        if (!component.Permanent)
+            args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
+    }
+    // Dumont end
+
     private void OnStartup(EntityUid uid, LegsParalyzedComponent component, ComponentStartup args)
     {
+        // Dumont start
+        if (!component.Permanent)
+        {
+            _stunSystem.TryCrawling(uid);
+            _movementSpeedModifierSystem.RefreshMovementSpeedModifiers(uid);
+            return;
+        }
+        // Dumont end
         if (!TryComp<StandingStateComponent>(uid, out var standing) || !HasComp<CrawlerComponent>(uid))
             return;
         if (standing.Standing)
@@ -84,6 +103,9 @@ public sealed class LegsParalyzedSystem : EntitySystem
     {
 
 
+        // Dumont start
+        _movementSpeedModifierSystem.RefreshMovementSpeedModifiers(uid);
+        // Dumont end
         if (!TryComp<KnockedDownComponent>(uid, out var knockedDown))
             return; // if you don't have knockdown and you are in fact 'knocked down' god help you cause this code can't
                     // That shit should never happen.
