@@ -75,9 +75,3 @@
         mask: []
         layer:
         - HighImpassable
-  - type: AmbientSound
-    enabled: false
-    sound:
-      path: /Audio/_Dumont/Machines/grillsizzle.ogg
-    range: 4
-    volume: -6
