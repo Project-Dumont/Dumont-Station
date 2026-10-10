@@ -3,9 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._LP.Mobs.Events;
 
-public sealed partial class TryCatchBreathAlertEvent : BaseAlertEvent
+public sealed partial class CatchBreathAlertEvent : BaseAlertEvent
 {
-    public TryCatchBreathAlertEvent(EntityUid user, ProtoId<AlertPrototype> alertId) : base(user, alertId)
+    public CatchBreathAlertEvent(EntityUid user, ProtoId<AlertPrototype> alertId) : base(user, alertId)
     {
     }
 }
