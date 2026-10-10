@@ -1,0 +1,102 @@
+- type: entity
+  parent: BaseHeaterMachine
+  id: KitchenGriddle
+  name: griddle
+  description: A microwave? No, a real man cooks steaks on a grill!
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Machines/griddle.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: icon
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      visible: false
+    - map: ["griddleGlowOn"]
+      state: unshaded-on
+      shader: unshaded
+      visible: false
+    - map: ["griddleGlowLow"]
+      state: unshaded-low
+      shader: unshaded
+      visible: false
+    - map: ["griddleGlowMedium"]
+      state: unshaded-medium
+      shader: unshaded
+      visible: false
+    - map: ["griddleGlowHigh"]
+      state: unshaded-high
+      shader: unshaded
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 0
+  - type: EntityHeater
+    settingSound:
+      path: /Audio/Weapons/click.ogg
+      params:
+        volume: -6
+  - type: ItemPlacer
+    maxEntities: 6
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: Machine
+    board: ElectricGrillMachineCircuitboard
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: low }
+          Medium: { visible: true, state: medium }
+          High: { visible: true, state: high }
+        griddleGlowLow:
+          Off: { visible: false }
+          Low: { visible: true }
+          Medium: { visible: false }
+          High: { visible: false }
+        griddleGlowMedium:
+          Off: { visible: false }
+          Low: { visible: false }
+          Medium: { visible: true }
+          High: { visible: false }
+        griddleGlowHigh:
+          Off: { visible: false }
+          Low: { visible: false }
+          Medium: { visible: false }
+          High: { visible: true }
+      enum.PowerDeviceVisuals.Powered:
+        griddleGlowOn:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+  - type: GuideHelp
+    guides:
+    - Chef
+  - type: Fixtures
+    fixtures:
+      griddleBody:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.40,-0.40,0.40,0.40"
+        density: 190
+        mask: []
+        layer:
+        - MachineLayer
+      griddleSensor:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        hard: false
+        mask: []
+        layer:
+        - HighImpassable

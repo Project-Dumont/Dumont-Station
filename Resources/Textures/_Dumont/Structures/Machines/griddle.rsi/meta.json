@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/machines/kitchen.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "low"
+    },
+    {
+      "name": "medium"
+    },
+    {
+      "name": "high"
+    },
+	{
+      "name": "unshaded-on"
+    },
+	{
+      "name": "unshaded-low"
+    },
+	{
+      "name": "unshaded-medium"
+    },
+	{
+      "name": "unshaded-high"
+    }
+  ]
+}
