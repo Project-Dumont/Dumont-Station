@@ -4,13 +4,15 @@ using Content.Shared.Movement.Systems;
 
 namespace Content.Shared._Orion.Mobs.Critical;
 
-public sealed class SharedCritStateSystem : EntitySystem
+public sealed partial class SharedCritStateSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private MovementSpeedModifierSystem _movement = default!;
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<CritStateMovementComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<CritStateMovementComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovement);
     }

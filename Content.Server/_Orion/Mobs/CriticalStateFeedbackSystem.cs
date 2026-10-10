@@ -9,12 +9,14 @@ using Content.Shared.Mobs.Components;
 
 namespace Content.Server._Orion.Mobs;
 
-public sealed class CriticalStateFeedbackSystem : EntitySystem
+public sealed partial class CriticalStateFeedbackSystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private PopupSystem _popup = default!;
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<MobStateComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 

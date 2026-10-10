@@ -26,6 +26,8 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<TryCatchBreathAlertEvent>(OnAlertClicked);
         SubscribeLocalEvent<TryCatchBreathDoAfterEvent>(OnDoAfter);
     }
@@ -55,18 +57,16 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
             BreakOnDamage = true,
             NeedHand = false,
             RequireCanInteract = false,
-
             CancelDuplicate = true,
             BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(args);
-
-        _popup.PopupEntity(Loc.GetString("catch-breath-try"), uid);
+        _popup.PopupEntity(Loc.GetString("catch-breath-try"), uid, uid);
 
         var audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-try.ogg");
-        _audio.PlayEntity(audio, uid, uid);
 
+        _audio.PlayEntity(audio, uid, uid);
         _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} start trying catch breath");
     }
 
@@ -87,10 +87,10 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
             return;
 
         var roll = _random.NextFloat();
+
         _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} got roll result {roll}");
 
         var damage = new DamageSpecifier();
-
         var audio = new SoundPathSpecifier("");
 
         if (roll < 0.03f)
@@ -100,34 +100,32 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
             damage.DamageDict.Add("Piercing", -2);
             damage.DamageDict.Add("Asphyxiation", -10);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got BLUNT SUCCESS!");
-            _popup.PopupEntity(Loc.GetString("catch-breath-blunt-success"), uid);
+            _popup.PopupEntity(Loc.GetString("catch-breath-blunt-success"), uid, uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-bluntsuccess.ogg");
         }
         else if (roll < 0.63f)
         {
             damage.DamageDict.Add("Asphyxiation", -7);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got SUCCESS!");
-            _popup.PopupEntity(Loc.GetString("catch-breath-success"), uid);
+            _popup.PopupEntity(Loc.GetString("catch-breath-success"), uid, uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-success.ogg");
         }
         else if (roll < 0.78f)
         {
             damage.DamageDict.Add("Asphyxiation", 5);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got FAILURE!");
-            _popup.PopupEntity(Loc.GetString("catch-breath-failure"), uid);
+            _popup.PopupEntity(Loc.GetString("catch-breath-failure"), uid, uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-failure.ogg");
         }
         else
         {
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got NOTHING!");
-            _popup.PopupEntity(Loc.GetString("catch-breath-nothing"), uid);
+            _popup.PopupEntity(Loc.GetString("catch-breath-nothing"), uid, uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-nothing.ogg");
         }
 
         _audio.PlayEntity(audio, uid, uid);
-
         _damage.TryChangeDamage(uid, damage);
-
         ev.Repeat = false;
     }
 }

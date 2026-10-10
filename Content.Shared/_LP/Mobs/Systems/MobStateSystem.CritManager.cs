@@ -1,28 +1,53 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 
-namespace Content.Shared.Mobs.Systems;
+namespace Content.Shared._LP.Mobs.Systems;
 
-public partial class MobStateSystem
+public sealed partial class CritManager : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
     private readonly Dictionary<EntityUid, EntityUid> _stateAudio = new();
 
-    private static readonly Dictionary<MobState, (string sound, bool loop, float volume)> StateAudio
-        = new()
+    private static readonly Dictionary<MobState, (string sound, bool loop, float volume)> StateAudio = new()
     {
+        { MobState.Alive, ("/Audio/_LP/Effects/backtolife.ogg", false, -4f) },
         { MobState.SoftCritical, ("/Audio/_LP/Effects/soft_critical.ogg", true, -6f) },
         { MobState.HardCritical, ("/Audio/_LP/Effects/critical.ogg", true, -8f) },
-        { MobState.Alive, ("/Audio/_LP/Effects/backtolife.ogg", false, -4f) },
     };
 
-    private void PlayStateAudio(EntityUid uid, MobState state)
+    public override void Initialize()
     {
-        if (!_timing.IsFirstTimePredicted)
+        base.Initialize();
+
+        SubscribeLocalEvent<MobStateComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<MobStateComponent, ComponentShutdown>(OnComponentShutdown);
+    }
+
+    private void OnMobStateChanged(Entity<MobStateComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.OldMobState == args.NewMobState)
             return;
 
-        if (!StateAudio.TryGetValue(state, out var data))
+        StopStateAudio(ent.Owner);
+
+        if (StateAudio.TryGetValue(args.NewMobState, out var data))
+            PlayStateAudio(ent.Owner, data.sound, data.Loop, data.Volume);
+    }
+
+    private void OnComponentShutdown(Entity<MobStateComponent> ent, ref ComponentShutdown args)
+    {
+        StopStateAudio(ent.Owner);
+    }
+
+    private void PlayStateAudio(EntityUid uid, string sound, bool loop, float volume)
+    {
+        if (!_timing.IsFirstTimePredicted)
             return;
 
         if (!TryComp<ActorComponent>(uid, out var actor))
@@ -30,30 +55,16 @@ public partial class MobStateSystem
 
         StopStateAudio(uid);
 
-        var spec = new SoundPathSpecifier(data.sound);
-
-        var audioParams = new AudioParams
-        {
-            Loop = data.loop,
-            Volume = data.volume
-        };
-
         var audio = _audio.PlayEntity(
-            spec,
-            Filter.SinglePlayer(actor.PlayerSession),
+            new SoundPathSpecifier(sound),
+            actor.PlayerSession,
             uid,
-            false,
-            audioParams);
+            new AudioParams { Loop = loop, Volume = volume });
 
         if (audio == null)
-        {
-            _sawmill.Error("Audio NULL");
             return;
-        }
 
         _stateAudio[uid] = audio.Value.Entity;
-
-        _sawmill.Info($"Audio started {audio.Value.Entity}");
     }
 
     private void StopStateAudio(EntityUid uid)
