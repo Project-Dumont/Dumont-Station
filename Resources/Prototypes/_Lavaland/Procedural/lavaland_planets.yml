@@ -54,6 +54,7 @@
     whitelist: # TODO fix shuttles FTLing on planets and remove this whitelist
       components:
       - MiningShuttle
+      - LaborShuttle
   - type: WeatherScheduler # Regular ash storms
     stages:
     - duration: # 10-15 minutes of calm

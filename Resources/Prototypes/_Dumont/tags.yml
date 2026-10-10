@@ -75,3 +75,6 @@
 - type: Tag
   id: DrinkBottleMilk
 
+- type: Tag
+  id: DockLabor
+

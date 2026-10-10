@@ -74,6 +74,14 @@
   - type: AccessReader
     access: [["BrigMedic"]]
 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLabor
+  suffix: Labor, Locked
+  components:
+  - type: AccessReader
+    access: [["Security"]]
+
 # Service
 - type: entity
   parent: DoorElectronics
