@@ -20,7 +20,16 @@
       "name": "high"
     },
 	{
-      "name": "unshaded"
+      "name": "unshaded-on"
+    },
+	{
+      "name": "unshaded-low"
+    },
+	{
+      "name": "unshaded-medium"
+    },
+	{
+      "name": "unshaded-high"
     }
   ]
 }
