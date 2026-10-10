@@ -4,4 +4,4 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._LP.Mobs.Events;
 
 [Serializable, NetSerializable]
-public sealed partial class TryCatchBreathDoAfterEvent : SimpleDoAfterEvent;
+public sealed partial class CatchBreathDoAfterEvent : SimpleDoAfterEvent;

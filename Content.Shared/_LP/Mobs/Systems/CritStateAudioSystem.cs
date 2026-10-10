@@ -7,7 +7,7 @@ using Content.Shared.Mobs.Components;
 
 namespace Content.Shared._LP.Mobs.Systems;
 
-public sealed partial class CritManager : EntitySystem
+public sealed partial class CritStateAudioSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -37,7 +37,7 @@ public sealed partial class CritManager : EntitySystem
         StopStateAudio(ent.Owner);
 
         if (StateAudio.TryGetValue(args.NewMobState, out var data))
-            PlayStateAudio(ent.Owner, data.sound, data.Loop, data.Volume);
+            PlayStateAudio(ent.Owner, data.sound, data.loop, data.volume);
     }
 
     private void OnComponentShutdown(Entity<MobStateComponent> ent, ref ComponentShutdown args)

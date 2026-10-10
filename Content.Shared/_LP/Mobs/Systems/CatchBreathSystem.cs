@@ -9,10 +9,11 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared._LP.Mobs.Events;
 
-namespace Content.Shared._LP.Mobs.Events;
+namespace Content.Shared._LP.Mobs.Systems;
 
-public sealed partial class TryCatchBreathSystem : EntitySystem
+public sealed partial class CatchBreathSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private DamageableSystem _damage = default!;
@@ -28,11 +29,11 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TryCatchBreathAlertEvent>(OnAlertClicked);
-        SubscribeLocalEvent<TryCatchBreathDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<CatchBreathAlertEvent>(OnAlertClicked);
+        SubscribeLocalEvent<CatchBreathDoAfterEvent>(OnDoAfter);
     }
 
-    private void OnAlertClicked(TryCatchBreathAlertEvent ev)
+    private void OnAlertClicked(CatchBreathAlertEvent ev)
     {
         if (!_net.IsServer)
             return;
@@ -49,7 +50,7 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
             EntityManager,
             uid,
             DoAfterTime,
-            new TryCatchBreathDoAfterEvent(),
+            new CatchBreathDoAfterEvent(),
             uid)
         {
             Broadcast = true,
@@ -70,7 +71,7 @@ public sealed partial class TryCatchBreathSystem : EntitySystem
         _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} start trying catch breath");
     }
 
-    private void OnDoAfter(TryCatchBreathDoAfterEvent ev)
+    private void OnDoAfter(CatchBreathDoAfterEvent ev)
     {
         if (!_net.IsServer)
             return;
