@@ -18,7 +18,7 @@ public sealed partial class CritStateMovementComponent : Component
     public float SoftCritBreathChance = 0.5f;
 
     [DataField]
-    public float SoftCritSuffocationRecoveryMultiplier;
+    public float SoftCritSuffocationRecoveryMultiplier = 0f;
 
     [DataField]
     public float HardCritSuffocationRecoveryMultiplier = -1f;

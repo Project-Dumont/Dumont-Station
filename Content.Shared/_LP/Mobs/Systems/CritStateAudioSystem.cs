@@ -47,19 +47,12 @@ public sealed partial class CritStateAudioSystem : EntitySystem
 
     private void PlayStateAudio(EntityUid uid, string sound, bool loop, float volume)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
-        if (!TryComp<ActorComponent>(uid, out var actor))
+        if (!_timing.IsFirstTimePredicted || !TryComp<ActorComponent>(uid, out var actor))
             return;
 
         StopStateAudio(uid);
 
-        var audio = _audio.PlayEntity(
-            new SoundPathSpecifier(sound),
-            actor.PlayerSession,
-            uid,
-            new AudioParams { Loop = loop, Volume = volume });
+        var audio = _audio.PlayEntity(new SoundPathSpecifier(sound), actor.PlayerSession, uid, new AudioParams { Loop = loop, Volume = volume });
 
         if (audio == null)
             return;
