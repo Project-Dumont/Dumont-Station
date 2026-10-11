@@ -24,10 +24,11 @@
   - type: AntagSpawner
     prototype: MobXenomorphLarva
   - type: XenomorphsRule
+    sender: xenomorphs-announcement-sender
     xenomorphInfestationSound:
-      collection: xeno_start #Goobstation
+      path: /Audio/_Dumont/Eventos/Xenostation.ogg
       params: # Dumont
-        volume: -16
+        volume: -4
   - type: AntagObjectives
     objectives:
     - XenomorphSurviveObjective

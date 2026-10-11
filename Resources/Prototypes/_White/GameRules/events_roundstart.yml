@@ -11,10 +11,11 @@
   - type: XenomorphsRule # Goobstation - Required for Evolution Logic
     minTimeToAnnouncement: 900 # Dumont
     maxTimeToAnnouncement: 900 # Dumont
+    sender: xenomorphs-announcement-sender
     xenomorphInfestationSound:
-      collection: xeno_start
+      path: /Audio/_Dumont/Eventos/Xenostation.ogg
       params: # Dumont
-        volume: -16
+        volume: -4
   - type: MaintsSpawnRule # Dumont
     fallbackToVents: true
   - type: AntagSpawner
