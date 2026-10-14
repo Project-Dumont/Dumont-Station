@@ -424,7 +424,7 @@
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
-    - id: CMOAutoinjectorGun
+    - id: CMOAutoinjectorGun # dumont
     - id: ClothingBeltMilitaryWebbingCMOFilled
     - id: MedicalBiofabricatorFlatpack
     # Virology
