@@ -184,7 +184,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: airloss autoinjector cartridge
@@ -219,7 +219,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: brute autoinjector cartridge
@@ -261,7 +261,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 
 - type: entity
@@ -301,7 +301,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 #what were they cooking here before, 114 total possible dmg heal was crazyyy
 #~21 dmg healed/dmg type (unless its cold, then its a lil more), doesnt heal caustic all that well
 
@@ -334,7 +334,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: piercing autoinjector cartridge
@@ -365,7 +365,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: stimulant autoinjector cartridge
@@ -396,7 +396,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: sedative autoinjector cartridge
@@ -435,7 +435,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 # Q - Why is this edible?
 # A - Because the dispenser reminded me of a pez dispenser, and it'd be funny if you could eat them.
@@ -464,7 +464,7 @@
         reagents:
         - ReagentId: Amnestizine
           Quantity: 10
-      ammo:
+      ammo: # dumont - RB-18
         reagents:
         - ReagentId: Amnestizine
           Quantity: 10
@@ -477,12 +477,12 @@
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: [ ]
-  - type: CartridgeAmmo
+  - type: CartridgeAmmo # dumont RB-18 start
     deleteOnSpawn: true
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 # Medipens
 
