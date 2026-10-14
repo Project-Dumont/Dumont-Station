@@ -435,7 +435,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 # Q - Why is this edible?
 # A - Because the dispenser reminded me of a pez dispenser, and it'd be funny if you could eat them.
