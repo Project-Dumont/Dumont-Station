@@ -365,7 +365,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: stimulant autoinjector cartridge
