@@ -301,7 +301,7 @@
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 #what were they cooking here before, 114 total possible dmg heal was crazyyy
 #~21 dmg healed/dmg type (unless its cold, then its a lil more), doesnt heal caustic all that well
 
