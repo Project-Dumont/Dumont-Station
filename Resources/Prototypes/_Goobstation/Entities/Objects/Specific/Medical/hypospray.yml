@@ -477,12 +477,12 @@
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: [ ]
-  - type: CartridgeAmmo
+  - type: CartridgeAmmo # dumont RB-18 start
     deleteOnSpawn: true
     proto: BulletHypospray
   - type: ChemicalAmmo
   - type: SolutionTransfer
-    maxTransferAmount: 10
+    maxTransferAmount: 10 # dumont end
 
 # Medipens
 
