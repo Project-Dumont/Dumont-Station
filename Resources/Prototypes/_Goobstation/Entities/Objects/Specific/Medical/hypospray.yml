@@ -464,7 +464,7 @@
         reagents:
         - ReagentId: Amnestizine
           Quantity: 10
-      ammo:
+      ammo: # dumont - RB-18
         reagents:
         - ReagentId: Amnestizine
           Quantity: 10
