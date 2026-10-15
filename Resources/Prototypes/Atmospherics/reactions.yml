@@ -38,7 +38,7 @@
 - type: gasReaction
   id: TritiumFire
   priority: -1  
-  minimumTemperature: 700 # Same as Atmospherics.FireMinimumTemperatureToExist
+  minimumTemperature: 700 # Dumont
   minimumRequirements: # In this case, same as minimum mole count.
     - 0.01  # oxygen
     - 0     # nitrogen
