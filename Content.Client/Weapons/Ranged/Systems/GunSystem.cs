@@ -137,6 +137,7 @@ public sealed partial class GunSystem : SharedGunSystem
     {
         base.Initialize();
         UpdatesOutsidePrediction = true;
+
         SubscribeLocalEvent<AmmoCounterComponent, ItemStatusCollectMessage>(OnAmmoCounterCollect);
         SubscribeLocalEvent<AmmoCounterComponent, UpdateClientAmmoEvent>(OnUpdateClientAmmo);
         SubscribeAllEvent<MuzzleFlashEvent>(OnMuzzleFlash);
@@ -158,7 +159,6 @@ public sealed partial class GunSystem : SharedGunSystem
     private void OnMuzzleFlash(MuzzleFlashEvent args)
     {
         var gunUid = GetEntity(args.Uid);
-
         CreateEffect(gunUid, args, gunUid);
     }
 

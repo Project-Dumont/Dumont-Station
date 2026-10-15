@@ -1985,7 +1985,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Suits/eva_syndicate.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEVABundle
   cost:
-    Telecrystal: 20 # goob - Meh protection no slowdown. Can definitely take a hit or two extra however.
+    Telecrystal: 10 # Dumont - overpriced EVA, made it cost 10
   categories:
   - UplinkWearables
 
@@ -2176,8 +2176,9 @@
   name: uplink-syndicate-stamp-name
   description: uplink-syndicate-stamp-desc
   productEntity: RubberStampSyndicate
-  cost:
-    Telecrystal: 8 # goob - Has some gimmicky use, can't be 5 TC. Not on 10 TC level so it takes 8 TC.
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
   categories:
   - UplinkPointless
 

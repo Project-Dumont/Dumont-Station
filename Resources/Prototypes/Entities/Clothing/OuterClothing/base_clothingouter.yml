@@ -375,7 +375,6 @@
   - type: Tag
     tags:
     - Hardsuit
-    - SyringeArmor
     - WhitelistChameleon
     - PlasmamanSafe # EE Plasmeme Change
   - type: ProtectedFromStepTriggers

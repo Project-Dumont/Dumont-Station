@@ -47,6 +47,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+    quality: 0 # Dumont Change: Weapon Jamming - Laser gun, doesn't jamm
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:

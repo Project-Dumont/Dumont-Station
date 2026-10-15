@@ -64,7 +64,7 @@
     color: "#ba7fba"
     radius: 4
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
   - type: GuideHelp
@@ -225,7 +225,7 @@
     color: "#cfe8d7"
     radius: 4
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
 
@@ -2041,7 +2041,7 @@
     color: "#79cf6b"
     radius: 4
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
 
@@ -2130,7 +2130,7 @@
     color: "#79cf6b"
     radius: 4
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
 
@@ -2193,7 +2193,7 @@
     color: "#f5cb4c"
     radius: 4
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
 
