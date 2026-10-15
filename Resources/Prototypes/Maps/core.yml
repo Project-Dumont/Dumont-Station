@@ -71,9 +71,11 @@
             Chemist: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 2 ]
+            Virologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ]
+            Roboticist: [ 1, 2 ]
             Geneticist: [ 1, 1 ]
             ResearchAssistant: [ 3, 3 ]
             #security
