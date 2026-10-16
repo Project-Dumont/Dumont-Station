@@ -3,7 +3,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client.Graphics;
 using Content.Goobstation.Shared.Wraith.Aura;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -20,9 +19,6 @@ public sealed class AuraSystem : EntitySystem
     private static readonly ProtoId<ShaderPrototype> Shader = "Aura";
 
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-
-    private const string PostShaderId = "aura";
 
     private ShaderInstance _shader = default!;
     /// <inheritdoc/>
@@ -51,25 +47,13 @@ public sealed class AuraSystem : EntitySystem
         if (!Resolve(ent.Owner, ref ent.Comp, ref sprite, false))
             return;
 
-        if (!enabled)
-        {
-            _sprite.RemovePostShader((ent.Owner, sprite), PostShaderId);
-            return;
-        }
-
-        _sprite.SetPostShader((ent.Owner, sprite), new SpriteComponent.PostShaderArgs(PostShaderId, _shader)
-        {
-            GetScreenTexture = true,
-            RaiseShaderEvent = true,
-            Before = ContentPostShaderIds.BeforeOutlines,
-        });
+        sprite.PostShader = enabled ? _shader : null;
+        sprite.GetScreenTexture = enabled;
+        sprite.RaiseShaderEvent = enabled;
     }
 
     private void OnShaderRender(Entity<AuraComponent> ent, ref BeforePostShaderRenderEvent args)
     {
-        if (args.Id != PostShaderId)
-            return;
-
         _shader.SetParameter("distortion", ent.Comp.Distortion);
         _shader.SetParameter("auraColor", new Vector3(ent.Comp.AuraColor.A, ent.Comp.AuraColor.R, ent.Comp.AuraColor.G));
         _shader.SetParameter("mango", ent.Comp.AuraFarm);

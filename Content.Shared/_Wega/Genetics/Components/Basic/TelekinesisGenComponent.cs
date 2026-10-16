@@ -6,8 +6,8 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class TelekinesisGenComponent : Component
 {
-    [DataField("itemPrototype"), ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId ItemPrototype = "HandTelekinesisGun";
+    [ValidatePrototypeId<EntityPrototype>, DataField("itemPrototype"), ViewVariables(VVAccess.ReadWrite)]
+    public string ItemPrototype = "HandTelekinesisGun";
 
     [DataField("handId"), ViewVariables(VVAccess.ReadWrite)]
     public string HandId = "telekinesis-hand";

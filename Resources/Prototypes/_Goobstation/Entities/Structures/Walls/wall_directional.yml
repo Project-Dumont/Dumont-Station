@@ -81,11 +81,7 @@
     graph: WallDirectional
     node: wallDirectional
   - type: Occluder
-    polygon:
-    - "-0.5,-0.28125"
-    - "0.5,-0.28125"
-    - "0.5,-0.5"
-    - "-0.5,-0.5"
+    boundingBox: "-0.5,-0.5,0.5,-0.28125"
   - type: StaticPrice
     price: 37
   - type: BlockWeather

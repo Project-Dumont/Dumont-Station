@@ -22,8 +22,8 @@ namespace Content.Shared.EntityEffects.EffectConditions;
 
 public sealed partial class HasTag : EntityEffectCondition
 {
-    [DataField]
-    public ProtoId<TagPrototype> Tag = default!;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>))]
+    public string Tag = default!;
 
     [DataField]
     public bool Invert = false;

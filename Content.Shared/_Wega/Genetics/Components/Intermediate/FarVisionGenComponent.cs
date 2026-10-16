@@ -7,7 +7,8 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class FarVisionGenComponent : Component
 {
-    public EntProtoId ActionId = "ActionFarVisionGen";
+    [ValidatePrototypeId<EntityPrototype>]
+    public string ActionId = "ActionFarVisionGen";
 
     [DataField]
     public EntityUid? ActionEntity;

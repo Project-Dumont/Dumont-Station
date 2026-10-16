@@ -74,7 +74,7 @@ public abstract partial class SharedGunSystem
         if (component.Proto == null)
             return;
 
-        var damageSpec = GetProjectileDamage(component.Proto.Value);
+        var damageSpec = GetProjectileDamage(component.Proto);
 
         if (damageSpec == null)
             return;

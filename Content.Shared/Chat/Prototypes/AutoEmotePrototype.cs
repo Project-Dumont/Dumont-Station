@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: MIT
 
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Chat.Prototypes;
 
@@ -18,8 +19,8 @@ public sealed partial class AutoEmotePrototype : IPrototype
     /// <summary>
     /// The ID of the emote prototype.
     /// </summary>
-    [DataField("emote", required: true)]
-    public ProtoId<EmotePrototype> EmoteId = string.Empty;
+    [DataField("emote", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
+    public string EmoteId = String.Empty;
 
     /// <summary>
     /// How often an attempt at the emote will be made.

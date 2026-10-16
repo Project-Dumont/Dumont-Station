@@ -55,9 +55,11 @@ public sealed class BlobCarrierSystem : SharedBlobCarrierSystem
         SubscribeLocalEvent<BlobCarrierComponent, MindRemovedMessage>(OnMindRemove);
     }
 
-    private static readonly EntProtoId ActionTransformToBlob = "ActionTransformToBlob";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string ActionTransformToBlob = "ActionTransformToBlob";
 
-    private static readonly ProtoId<LanguagePrototype> BlobLang = "Blob";
+    [ValidatePrototypeId<LanguagePrototype>]
+    private const string BlobLang = "Blob";
 
     private void OnApplyLang(Entity<BlobCarrierComponent> ent, ref DetermineEntityLanguagesEvent args)
     {

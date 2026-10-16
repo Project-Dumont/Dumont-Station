@@ -10,6 +10,7 @@ using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Holopad;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
 using System.Numerics;
@@ -17,10 +18,11 @@ using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
 namespace Content.Client.Holopad;
 
-public sealed partial class HolopadSystem : SharedHolopadSystem
+public sealed class HolopadSystem : SharedHolopadSystem
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {

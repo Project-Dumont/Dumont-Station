@@ -317,7 +317,7 @@ namespace Content.Shared.Examine
                     continue;
                 }
 
-                var bBox = o.LocalBounds;
+                var bBox = o.BoundingBox;
                 bBox = bBox.Translated(_transform.GetWorldPosition(result.HitEntity));
 
                 if (bBox.Contains(origin.Position) || bBox.Contains(other.Position))

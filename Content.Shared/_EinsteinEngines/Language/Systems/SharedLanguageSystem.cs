@@ -10,17 +10,20 @@ public abstract class SharedLanguageSystem : EntitySystem
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a Language Speaker (e.g. the usage of make-sentient).
     /// </summary>
-    public static readonly ProtoId<LanguagePrototype> FallbackLanguagePrototype = "TauCetiBasic";
+    [ValidatePrototypeId<LanguagePrototype>]
+    public static readonly string FallbackLanguagePrototype = "TauCetiBasic";
 
     /// <summary>
     ///     The language whose speakers are assumed to understand and speak every language. Should never be added directly.
     /// </summary>
-    public static readonly ProtoId<LanguagePrototype> UniversalPrototype = "Universal";
+    [ValidatePrototypeId<LanguagePrototype>]
+    public static readonly string UniversalPrototype = "Universal";
 
     /// <summary>
     ///     Language used for Xenoglossy, should have same effects as Universal but with different language prototype.
     /// </summary>
-    public static readonly ProtoId<LanguagePrototype> PsychomanticPrototype = "Psychomantic";
+    [ValidatePrototypeId<LanguagePrototype>]
+    public static readonly string PsychomanticPrototype = "Psychomantic";
 
     /// <summary>
     /// A cached instance of <see cref="PsychomanticPrototype"/>.

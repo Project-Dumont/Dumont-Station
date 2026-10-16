@@ -6,6 +6,7 @@
 
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Construction.NodeEntities;
 
@@ -13,9 +14,9 @@ namespace Content.Shared.Construction.NodeEntities;
 [DataDefinition]
 public sealed partial class StaticNodeEntity : IGraphNodeEntity
 {
-    [DataField("id")]
+    [DataField("id", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
     [ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId? Id { get; private set; }
+    public string? Id { get; private set; }
 
     public StaticNodeEntity()
     {

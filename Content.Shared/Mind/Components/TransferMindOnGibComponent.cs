@@ -7,13 +7,12 @@
 
 using Content.Shared.Tag;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Mind.Components;
 
 [RegisterComponent]
 public sealed partial class TransferMindOnGibComponent : Component
 {
-    [DataField("targetTag")]
-    public ProtoId<TagPrototype> TargetTag = "MindTransferTarget";
+    [DataField("targetTag", customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>))]
+    public string TargetTag = "MindTransferTarget";
 }

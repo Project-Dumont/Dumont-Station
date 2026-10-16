@@ -153,46 +153,41 @@ public static class ServerPackaging
         }
 
         // Good variable naming right here.
-        string? builtTargetOs = null; // Goobstation
         foreach (var platform in Platforms)
         {
             if (!platforms.Contains(platform.Rid))
                 continue;
 
-            await BuildPlatform(platform, skipBuild, hybridAcz, configuration, logger, builtTargetOs == platform.TargetOs); // Goobstation
-            builtTargetOs = platform.TargetOs; // Goobstation
+            await BuildPlatform(platform, skipBuild, hybridAcz, configuration, logger);
         }
     }
 
-    private static async Task BuildPlatform(PlatformReg platform, bool skipBuild, bool hybridAcz, string configuration, IPackageLogger logger, bool reuseContentBuild) // Goobstation
+    private static async Task BuildPlatform(PlatformReg platform, bool skipBuild, bool hybridAcz, string configuration, IPackageLogger logger)
     {
-        logger.Info(reuseContentBuild ? $"Reusing {platform.TargetOs} build..." : $"Building project for {platform.TargetOs}..."); // Goobstation
+        logger.Info($"Building project for {platform.TargetOs}...");
 
         if (!skipBuild)
         {
-            if (!reuseContentBuild) // Goobstation
-            {
-                var serverModules = FindServerModules();
+            var serverModules = FindServerModules();
 
-                foreach (var module in serverModules)
+            foreach (var module in serverModules)
+            {
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
                 {
-                    await ProcessHelpers.RunCheck(new ProcessStartInfo
+                    FileName = "dotnet",
+                    ArgumentList =
                     {
-                        FileName = "dotnet",
-                        ArgumentList =
-                        {
-                            "build",
-                            Path.Combine(module, $"{module}.csproj"),
-                            "-c", configuration,
-                            "--nologo",
-                            "/v:m",
-                            $"/p:TargetOs={platform.TargetOs}",
-                            "/t:Rebuild",
-                            "/p:FullRelease=true",
-                            "/m"
-                        }
-                    });
-                }
+                        "build",
+                        Path.Combine(module, $"{module}.csproj"),
+                        "-c", configuration,
+                        "--nologo",
+                        "/v:m",
+                        $"/p:TargetOs={platform.TargetOs}",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
             }
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);

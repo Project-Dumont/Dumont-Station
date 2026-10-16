@@ -15,7 +15,6 @@ using Robust.UnitTesting;
 
 namespace Content.IntegrationTests.Tests.PrototypeTests;
 
-[Category("PrototypeSweepTests")]
 public sealed class PrototypeTests
 {
     /// <summary>

@@ -97,7 +97,7 @@ namespace Content.Client.Outline;
 /// <summary>
 ///     System used to indicate whether an entity is a valid target based on some criteria.
 /// </summary>
-public sealed partial class TargetOutlineSystem : EntitySystem
+public sealed class TargetOutlineSystem : EntitySystem
 {
     private static readonly ProtoId<ShaderPrototype> ShaderTargetValid = "SelectionOutlineInrange";
     private static readonly ProtoId<ShaderPrototype> ShaderTargetInvalid = "SelectionOutline";
@@ -168,8 +168,8 @@ public sealed partial class TargetOutlineSystem : EntitySystem
     {
         base.Initialize();
 
-        _shaderTargetValid = ProtoMan.Index(ShaderTargetValid).InstanceUnique();
-        _shaderTargetInvalid = ProtoMan.Index(ShaderTargetInvalid).InstanceUnique();
+        _shaderTargetValid = _prototypeManager.Index(ShaderTargetValid).InstanceUnique();
+        _shaderTargetInvalid = _prototypeManager.Index(ShaderTargetInvalid).InstanceUnique();
     }
 
     public void Disable()
@@ -216,10 +216,11 @@ public sealed partial class TargetOutlineSystem : EntitySystem
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition).Position;
         var bounds = new Box2(mousePos - LookupVector, mousePos + LookupVector);
         var pvsEntities = _lookup.GetEntitiesIntersecting(_eyeManager.CurrentEye.Position.MapId, bounds, LookupFlags.Approximate | LookupFlags.Static);
+        var spriteQuery = GetEntityQuery<SpriteComponent>();
 
         foreach (var entity in pvsEntities)
         {
-            if (!_spriteQuery.TryGetComponent(entity, out var sprite) || !sprite.Visible)
+            if (!spriteQuery.TryGetComponent(entity, out var sprite) || !sprite.Visible)
                 continue;
 
             // Check the predicate

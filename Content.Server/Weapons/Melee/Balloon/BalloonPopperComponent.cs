@@ -6,7 +6,7 @@
 
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Weapons.Melee.Balloon;
 
@@ -19,8 +19,8 @@ public sealed partial class BalloonPopperComponent : Component
     /// <summary>
     /// The tag that marks something as a balloon.
     /// </summary>
-    [DataField("balloonTag")]
-    public ProtoId<TagPrototype> BalloonTag = "Balloon";
+    [DataField("balloonTag", customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>))]
+    public string BalloonTag = "Balloon";
 
     /// <summary>
     /// The sound played when a balloon is popped.

@@ -40,6 +40,7 @@
 
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.DeviceLinking;

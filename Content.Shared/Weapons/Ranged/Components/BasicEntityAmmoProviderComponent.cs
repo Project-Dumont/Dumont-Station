@@ -8,6 +8,7 @@
 using Content.Shared.Random;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Weapons.Ranged.Components;
 
@@ -19,8 +20,8 @@ namespace Content.Shared.Weapons.Ranged.Components;
 public sealed partial class BasicEntityAmmoProviderComponent : AmmoProviderComponent
 {
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("proto")]
-    public EntProtoId? Proto; // Goob edit
+    [DataField("proto", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? Proto; // Goob edit
 
     // Goobstation
     [DataField]

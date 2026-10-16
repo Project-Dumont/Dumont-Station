@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.DeviceLinking;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.DeviceLinking.Components
 {
@@ -24,7 +24,7 @@ namespace Content.Server.DeviceLinking.Components
         /// <summary>
         ///     The port that gets signaled when the switch turns on.
         /// </summary>
-        [DataField("port")]
-        public ProtoId<SourcePortPrototype> Port = "Pressed";
+        [DataField("port", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+        public string Port = "Pressed";
     }
 }

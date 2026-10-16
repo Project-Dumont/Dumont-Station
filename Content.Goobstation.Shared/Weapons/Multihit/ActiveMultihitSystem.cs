@@ -7,8 +7,6 @@ using System.Linq;
 using Content.Shared.Damage;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Network;
-using Content.Shared.Damage.Prototypes;
-using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.Weapons.Multihit;
 
@@ -33,7 +31,8 @@ public sealed class ActiveMultihitSystem : EntitySystem
             var modifierSet = new DamageModifierSet
             {
                 Coefficients = args.BaseDamage.DamageDict
-                    .ToDictionary(x => (ProtoId<DamageTypePrototype>) x.Key, _ => ent.Comp.DamageMultiplier),
+                    .Select(x => new KeyValuePair<string, float>(x.Key, ent.Comp.DamageMultiplier))
+                    .ToDictionary(),
             };
 
             args.ModifiersList.Add(modifierSet);

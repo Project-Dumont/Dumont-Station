@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Radio;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Server.Radio.Components;
 
@@ -20,8 +20,8 @@ public sealed partial class ActiveRadioComponent : Component
     /// <summary>
     ///     The channels that this radio is listening on.
     /// </summary>
-    [DataField("channels")]
-    public HashSet<ProtoId<RadioChannelPrototype>> Channels = new();
+    [DataField("channels", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<RadioChannelPrototype>))]
+    public HashSet<string> Channels = new();
 
     /// <summary>
     /// A toggle for globally receiving all radio channels.

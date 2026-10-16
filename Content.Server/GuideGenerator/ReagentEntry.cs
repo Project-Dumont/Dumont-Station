@@ -83,10 +83,12 @@ public sealed class ReactionEntry
         Name = proto.Name;
         Reactants =
             proto.Reactants
-                .ToDictionary(x => x.Key.Id, x => new ReactantEntry(x.Value.Amount.Float(), x.Value.Catalyst));
+                .Select(x => KeyValuePair.Create(x.Key, new ReactantEntry(x.Value.Amount.Float(), x.Value.Catalyst)))
+                .ToDictionary(x => x.Key, x => x.Value);
         Products =
             proto.Products
-                .ToDictionary(x => x.Key.Id, x => x.Value.Float());
+                .Select(x => KeyValuePair.Create(x.Key, x.Value.Float()))
+                .ToDictionary(x => x.Key, x => x.Value);
         Effects = proto.Effects;
     }
 }

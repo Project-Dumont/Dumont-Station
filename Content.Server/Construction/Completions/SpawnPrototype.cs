@@ -22,6 +22,7 @@ using Content.Shared.Prototypes;
 using Content.Shared.Stacks;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Construction.Completions
 {
@@ -29,8 +30,8 @@ namespace Content.Server.Construction.Completions
     [DataDefinition]
     public sealed partial class SpawnPrototype : IGraphAction
     {
-        [DataField("prototype")]
-        public EntProtoId Prototype { get; private set; } = string.Empty;
+        [DataField("prototype", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
+        public string Prototype { get; private set; } = string.Empty;
         [DataField("amount")]
         public int Amount { get; private set; } = 1;
 

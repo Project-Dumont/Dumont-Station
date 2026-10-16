@@ -16,7 +16,6 @@
 
 using Content.Server._Gabystation.Speech.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Gabystation.Speech.Components;
 
@@ -26,8 +25,8 @@ namespace Content.Server._Gabystation.Speech.Components;
 [RegisterComponent]
 public sealed partial class ProfanityFilterAccentComponent : Component
 {
-    [DataField(required: true)]
-    public ProtoId<ProfanityFilterAccentPrototype> Words = default!;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ProfanityFilterAccentPrototype>), required: true)]
+    public string Words = default!;
 
     [DataField]
     public string WordReplacement;

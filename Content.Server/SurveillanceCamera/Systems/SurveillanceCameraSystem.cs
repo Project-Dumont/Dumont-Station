@@ -346,7 +346,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
         {
             if (deviceNet.ReceiveFrequencyId != null)
             {
-                camera.AvailableNetworks.Add(deviceNet.ReceiveFrequencyId.Value);
+                camera.AvailableNetworks.Add(deviceNet.ReceiveFrequencyId);
             }
             else if (!camera.NetworkSet)
             {

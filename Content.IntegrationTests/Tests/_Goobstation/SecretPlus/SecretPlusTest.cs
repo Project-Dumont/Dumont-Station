@@ -21,7 +21,6 @@ using System.Linq;
 namespace Content.IntegrationTests.Tests._Goobstation.SecretPlus;
 
 [TestFixture]
-[Category("GameRuleTests")]
 public sealed class SecretPlusTest
 {
     [Test]

@@ -6,7 +6,8 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class JumpGenComponent : Component
 {
-    public readonly EntProtoId ActionId = "ActionJumpGen";
+    [ValidatePrototypeId<EntityPrototype>]
+    public readonly string ActionId = "ActionJumpGen";
 
     [DataField]
     public EntityUid? ActionEntity;

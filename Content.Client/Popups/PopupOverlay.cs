@@ -111,7 +111,7 @@ public sealed class PopupOverlay : Overlay
                     e => e == popup.InitialPos.EntityId || e == ourEntity, entMan: _entManager))
                 continue;
 
-            var pos = Vector2.Transform(mapPos.Position, matrix).Rounded(); // Goob
+            var pos = Vector2.Transform(mapPos.Position, matrix);
             _controller.DrawPopup(popup, worldHandle, pos, scale);
         }
     }

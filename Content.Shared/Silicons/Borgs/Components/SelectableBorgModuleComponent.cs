@@ -17,8 +17,8 @@ namespace Content.Shared.Silicons.Borgs.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedBorgSystem))]
 public sealed partial class SelectableBorgModuleComponent : Component
 {
-    [DataField("moduleSwapAction")]
-    public EntProtoId? ModuleSwapActionId = "ActionBorgSwapModule";
+    [DataField("moduleSwapAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? ModuleSwapActionId = "ActionBorgSwapModule";
 
     /// <summary>
     /// The sidebar action for swapping to this module.

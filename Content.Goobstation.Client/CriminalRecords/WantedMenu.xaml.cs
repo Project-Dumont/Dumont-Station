@@ -33,7 +33,8 @@ public sealed partial class WantedMenu : FancyWindow
     private readonly IRobustRandom _random;
     private readonly SpriteSystem _spriteSystem;
 
-    private static readonly ProtoId<LocalizedDatasetPrototype> ReasonPlaceholders = "CriminalRecordsWantedReasonPlaceholders";
+    [ValidatePrototypeId<LocalizedDatasetPrototype>]
+    private const string ReasonPlaceholders = "CriminalRecordsWantedReasonPlaceholders";
 
     public Action<SecurityStatus>? OnStatusSelected;
     public Action<SecurityStatus, string>? OnDialogConfirmed;

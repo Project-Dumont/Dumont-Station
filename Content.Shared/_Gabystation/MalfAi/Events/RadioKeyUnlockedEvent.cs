@@ -1,5 +1,3 @@
-using Content.Shared.Radio;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Gabystation.MalfAi.Events;
@@ -8,9 +6,9 @@ namespace Content.Shared._Gabystation.MalfAi.Events;
 public sealed partial class RadioKeyUnlockedEvent : EntityEventArgs
 {
     [DataField(required: true)]
-    public List<ProtoId<RadioChannelPrototype>> Channels = new();
+    public List<string> Channels = new();
 
-    public RadioKeyUnlockedEvent(List<ProtoId<RadioChannelPrototype>> channels)
+    public RadioKeyUnlockedEvent(List<string> channels)
     {
         Channels = channels;
     }

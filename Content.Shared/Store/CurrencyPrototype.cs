@@ -8,6 +8,7 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.Store;
 
@@ -35,8 +36,8 @@ public sealed partial class CurrencyPrototype : IPrototype
     /// <summary>
     /// The physical entity of the currency
     /// </summary>
-    [DataField("cash")]
-    public Dictionary<FixedPoint2, EntProtoId>? Cash { get; private set; }
+    [DataField("cash", customTypeSerializer: typeof(PrototypeIdValueDictionarySerializer<FixedPoint2, EntityPrototype>))]
+    public Dictionary<FixedPoint2, string>? Cash { get; private set; }
 
     /// <summary>
     /// Whether or not this currency can be withdrawn from a shop by a player. Requires a valid entityId.

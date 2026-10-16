@@ -25,9 +25,9 @@ public sealed partial class BankATMComponent : Component
     [DataField]
     public ItemSlot CardSlot = new();
 
-    [DataField("cashPrototype"),
+    [DataField("cashPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)),
         ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId CashPrototype = "SpaceCash";
+    public string CashPrototype = "SpaceCash";
 
     [DataField]
     public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");

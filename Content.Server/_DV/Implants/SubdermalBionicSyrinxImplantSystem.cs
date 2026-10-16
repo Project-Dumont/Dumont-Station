@@ -40,7 +40,8 @@ public sealed class SubdermalBionicSyrinxImplantSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
 
-    public static readonly ProtoId<TagPrototype> BionicSyrinxImplant = "BionicSyrinxImplant";
+    [ValidatePrototypeId<TagPrototype>]
+    public const string BionicSyrinxImplant = "BionicSyrinxImplant";
 
     private const string MaskSlot = "mask";
 

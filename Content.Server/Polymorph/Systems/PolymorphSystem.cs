@@ -358,7 +358,7 @@ public sealed partial class PolymorphSystem : EntitySystem
                     return null;
             }
 
-            proto = entities.Pick(_random).Id;
+            proto = entities.Pick(_random);
         }
         var child = Spawn(proto, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
 

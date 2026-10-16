@@ -9,6 +9,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Body.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Shared.EntityEffects.EffectConditions;
@@ -21,8 +22,8 @@ public sealed partial class BloodReagentThreshold : EntityEffectCondition // TOD
     [DataField]
     public FixedPoint2 Max = FixedPoint2.MaxValue;
 
-    [DataField]
-    public ProtoId<ReagentPrototype>? Reagent = null;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
+    public string? Reagent = null;
     public override bool Condition(EntityEffectBaseArgs args)
     {
         if (Reagent is null) return true;
@@ -30,7 +31,7 @@ public sealed partial class BloodReagentThreshold : EntityEffectCondition // TOD
         {
             if (args.EntityManager.System<SharedSolutionContainerSystem>().ResolveSolution(args.TargetEntity, blood.ChemicalSolutionName, ref blood.ChemicalSolution, out var chemSolution))
             {
-                var reagentID = new ReagentId(Reagent.Value, null);
+                var reagentID = new ReagentId(Reagent, null);
                 if (chemSolution.TryGetReagentQuantity(reagentID, out var quant))
                 {
                     return quant > Min && quant < Max;

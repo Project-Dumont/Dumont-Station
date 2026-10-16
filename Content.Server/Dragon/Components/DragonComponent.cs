@@ -21,6 +21,7 @@ using Content.Shared.Damage;
 using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Dragon
 {
@@ -56,8 +57,8 @@ namespace Content.Server.Dragon
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("maxAccumulator")] public float RiftMaxAccumulator = 300f;
 
-        [DataField("spawnRiftAction")]
-        public EntProtoId SpawnRiftAction = "ActionSpawnRift";
+        [DataField("spawnRiftAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        public string SpawnRiftAction = "ActionSpawnRift";
 
         /// <summary>
         /// Spawns a rift which can summon more mobs.
@@ -65,8 +66,8 @@ namespace Content.Server.Dragon
         [DataField("spawnRiftActionEntity")]
         public EntityUid? SpawnRiftActionEntity;
 
-        [ViewVariables(VVAccess.ReadWrite), DataField("riftPrototype")]
-        public EntProtoId RiftPrototype = "CarpRift";
+        [ViewVariables(VVAccess.ReadWrite), DataField("riftPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+        public string RiftPrototype = "CarpRift";
 
         [ViewVariables(VVAccess.ReadWrite), DataField("soundDeath")]
         public SoundSpecifier? SoundDeath = new SoundPathSpecifier("/Audio/Animals/space_dragon_roar.ogg");

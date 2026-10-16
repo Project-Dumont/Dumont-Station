@@ -39,7 +39,7 @@ public sealed partial class XenoArtifactSystem
     {
         var triggerPool = new List<XenoArchTriggerPrototype>(size);
         var weightsProto = PrototypeManager.Index(ent.Comp.TriggerWeights);
-        var weightsByTriggersLeft = weightsProto.Weights.ToDictionary(x => x.Key.Id, x => x.Value);
+        var weightsByTriggersLeft = new Dictionary<string, float>(weightsProto.Weights);
 
         while (triggerPool.Count < size)
         {

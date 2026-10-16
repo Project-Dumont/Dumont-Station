@@ -6,7 +6,8 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class PolymorphismGenComponent : Component
 {
-    public readonly EntProtoId PolymorphismAction = "ActionGenPolymorphism";
+    [ValidatePrototypeId<EntityPrototype>]
+    public readonly string PolymorphismAction = "ActionGenPolymorphism";
 
     public EntityUid? PolymorphismActionEntity { get; set; }
 }

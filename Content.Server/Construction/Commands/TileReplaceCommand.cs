@@ -84,15 +84,15 @@ public sealed class TileReplaceCommand : IConsoleCommand
         var mapSystem = _entManager.System<SharedMapSystem>();
 
         var changed = 0;
-        var changes = new List<(Vector2i GridIndices, Tile Tile)>();
         foreach (var tile in mapSystem.GetAllTiles(gridId.Value, grid))
         {
-            if (tile.Tile.TypeId == tileA.TileId)
-                changes.Add((tile.GridIndices, new Tile(tileB.TileId)));
+            var tileContent = tile.Tile;
+            if (tileContent.TypeId == tileA.TileId)
+            {
+                mapSystem.SetTile(gridId.Value, grid, tile.GridIndices, new Tile(tileB.TileId));
+                changed++;
+            }
         }
-
-        mapSystem.SetTiles(gridId.Value, grid, changes);
-        changed = changes.Count;
 
         shell.WriteLine($"Changed {changed} tiles.");
     }

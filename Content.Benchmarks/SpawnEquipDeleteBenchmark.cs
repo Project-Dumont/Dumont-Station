@@ -21,7 +21,6 @@ using Robust.Shared.Analyzers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using System.IO;
 
 namespace Content.Benchmarks;
 
@@ -49,7 +48,7 @@ public class SpawnEquipDeleteBenchmark
     {
         ProgramShared.PathOffset = "../../../../";
         PoolManager.Startup();
-        _pair = await PoolManager.GetServerClient(testContext: new ExternalTestContext("Benchmark", StreamWriter.Null));
+        _pair = await PoolManager.GetServerClient();
         var server = _pair.Server;
 
         var mapData = await _pair.CreateTestMap();

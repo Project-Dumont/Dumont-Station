@@ -25,8 +25,6 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Timing; // Shitmed Change
 using Content.Shared._Shitmed.Damage; // Shitmed Change
-using Robust.Shared.Prototypes;
-using Content.Shared.Damage.Prototypes;
 
 namespace Content.Goobstation.Shared.Religion;
 
@@ -83,7 +81,7 @@ public sealed class WeakToHolySystem : EntitySystem
 
         DamageModifierSet modifierSet = new()
         {
-            Coefficients = new Dictionary<ProtoId<DamageTypePrototype>, float>
+            Coefficients = new Dictionary<string, float>
             {
                 { "Holy", holyCoefficient },
             },

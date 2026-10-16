@@ -13,8 +13,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.AlertLevel;
 
@@ -32,8 +31,8 @@ public sealed partial class AlertLevelComponent : Component
     public AlertLevelPrototype? AlertLevels;
 
     // Once stations are a prototype, this should be used.
-    [DataField("alertLevelPrototype", required: true)]
-    public ProtoId<AlertLevelPrototype> AlertLevelPrototype = default!;
+    [DataField("alertLevelPrototype", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<AlertLevelPrototype>))]
+    public string AlertLevelPrototype = default!;
 
     /// <summary>
     /// The current level on the station.

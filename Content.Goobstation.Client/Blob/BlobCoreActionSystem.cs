@@ -29,7 +29,8 @@ public sealed class BlobCoreActionSystem : SharedBlobCoreActionSystem
         SubscribeNetworkEvent<BlobAttackEvent>(OnBlobAttack);
     }
 
-    private static readonly EntProtoId Animation = "WeaponArcPunch";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string Animation = "WeaponArcPunch";
 
     private void OnBlobAttack(BlobAttackEvent ev)
     {

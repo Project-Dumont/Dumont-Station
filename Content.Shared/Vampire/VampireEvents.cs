@@ -10,7 +10,6 @@ using Content.Shared.DoAfter;
 using Content.Shared.Vampire.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Vampire;
 
@@ -29,18 +28,18 @@ public sealed partial class VampireHypnotiseEvent : VampireTargetedPowerEvent { 
 
 public abstract partial class VampireSelfPowerEvent : InstantActionEvent
 {
-    [DataField]
-    public ProtoId<VampirePowerPrototype> DefinitionName = default!;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<VampirePowerPrototype>))]
+    public string DefinitionName = default!;
 };
 public abstract partial class VampireTargetedPowerEvent : EntityTargetActionEvent
 {
-    [DataField]
-    public ProtoId<VampirePowerPrototype> DefinitionName = default!;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<VampirePowerPrototype>))]
+    public string DefinitionName = default!;
 };
 public sealed partial class VampirePassiveActionEvent : BaseActionEvent
 {
-    [DataField]
-    public ProtoId<VampirePowerPrototype> DefinitionName = default!;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<VampirePowerPrototype>))]
+    public string DefinitionName = default!;
 };
 
 //Purchase passive events

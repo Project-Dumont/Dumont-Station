@@ -6,6 +6,7 @@
 
 using Content.Shared._Gabystation.Economy;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Server._Gabystation.Economy;
 

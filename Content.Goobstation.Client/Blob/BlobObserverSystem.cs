@@ -41,7 +41,8 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(RoundRestartCleanup);
     }
 
-    private static readonly ProtoId<FactionIconPrototype> BlobFaction = "BlobFaction";
+    [ValidatePrototypeId<FactionIconPrototype>]
+    private const string BlobFaction = "BlobFaction";
 
     private void OnShowBlobIcon<T>(Entity<T> ent, ref GetStatusIconsEvent args) where T : Component
     {

@@ -40,5 +40,7 @@ public sealed class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeComponent>
         if (!layerExists)
             return;
         spriteComp.LayerSetShader(layerKey, newShader);
+        spriteComp.GetScreenTexture = true;
+        spriteComp.RaiseShaderEvent = true;
     }
 }

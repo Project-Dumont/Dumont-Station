@@ -21,26 +21,26 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.DeviceLinking;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.DeviceLinking.Components
 {
     [RegisterComponent]
     public sealed partial class DoorSignalControlComponent : Component
     {
-        [DataField("openPort")]
-        public ProtoId<SinkPortPrototype> OpenPort = "Open";
+        [DataField("openPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string OpenPort = "Open";
 
-        [DataField("closePort")]
-        public ProtoId<SinkPortPrototype> ClosePort = "Close";
+        [DataField("closePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string ClosePort = "Close";
 
-        [DataField("togglePort")]
-        public ProtoId<SinkPortPrototype> TogglePort = "Toggle";
+        [DataField("togglePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string TogglePort = "Toggle";
 
-        [DataField("boltPort")]
-        public ProtoId<SinkPortPrototype> InBolt = "DoorBolt";
+        [DataField("boltPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string InBolt = "DoorBolt";
 
-        [DataField("onOpenPort")]
-        public ProtoId<SourcePortPrototype> OutOpen = "DoorStatus";
+        [DataField("onOpenPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+        public string OutOpen = "DoorStatus";
     }
 }

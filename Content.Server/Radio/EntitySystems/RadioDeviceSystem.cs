@@ -343,9 +343,9 @@ public sealed class RadioDeviceSystem : EntitySystem
         }
 
         if (TryComp<RadioMicrophoneComponent>(ent, out var mic))
-            mic.BroadcastChannel = channel.Value;
+            mic.BroadcastChannel = channel;
         if (TryComp<RadioSpeakerComponent>(ent, out var speaker))
-            speaker.Channels = new() { channel.Value };
+            speaker.Channels = new() { channel };
         Dirty(ent);
     }
 }

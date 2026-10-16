@@ -44,6 +44,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Containers.ItemSlots
 {
@@ -138,10 +139,10 @@ namespace Content.Shared.Containers.ItemSlots
         ///     property of that component (e.g., cell slot size category), and this can lead to unnecessary changes
         ///     when mapping.
         /// </remarks>
-        [DataField(readOnly: true)]
+        [DataField(readOnly: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         [Access(typeof(ItemSlotsSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
         [NonSerialized]
-        public EntProtoId? StartingItem;
+        public string? StartingItem;
 
         /// <summary>
         ///     Whether or not an item can currently be ejected or inserted from this slot.
