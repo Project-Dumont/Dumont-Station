@@ -7,11 +7,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._DV.Forensics;
 
-public sealed class DVItemSlotVisualsSystem : EntitySystem
+public sealed partial class DVItemSlotVisualsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
 
     private static readonly ResPath TextureRoot = new("/Textures");
 

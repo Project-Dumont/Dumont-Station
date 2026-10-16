@@ -7,12 +7,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._DV.Forensics;
 
-public sealed class DVSeenInsertedItemSystem : EntitySystem
+public sealed partial class DVSeenInsertedItemSystem : EntitySystem
 {
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedItemSystem _item = default!;
+    [Dependency] private NameModifierSystem _nameModifier = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedItemSystem _item = default!;
 
     public override void Initialize()
     {
