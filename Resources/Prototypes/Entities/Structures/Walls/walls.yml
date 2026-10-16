@@ -182,6 +182,7 @@
     snap:
     - Wall
   components:
+  - type: Wall
   - type: RangedDamageSound
     soundGroups:
       Brute:

@@ -1,0 +1,121 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
+
+using Robust.Shared.Map;
+// Dumont end
+
+namespace Content.Goobstation.Shared.SpaceWhale;
+
+/// <summary>
+/// When given to an entity, creates X tailed entities that try to follow the entity with the component.
+/// </summary>
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+public sealed partial class TailedEntityComponent : Component
+{
+    /// <summary>
+    /// amount of entities in between the tail and the head
+    /// </summary>
+    [DataField]
+    public int Amount = 3;
+
+    /// <summary>
+    /// the entity/entities that should be spawned after the head
+    /// </summary>
+    [DataField(required: true)]
+    public EntProtoId<TailedEntitySegmentComponent> Prototype;
+
+    /// <summary>
+    /// How much space between entities
+    /// </summary>
+    [DataField]
+    public float Spacing = 1f;
+
+    /// <summary>
+    /// Set to true if head should collide with segments
+    /// This controls <see cref="PreventSegmentCollide"/>.
+    /// To make head being able to collide/not collide with segments, use PreventCollide component or adjust Fixtures
+    /// </summary>
+    [DataField]
+    public bool ShouldCollideWithSegments;
+
+    /// <summary>
+    /// If above 0, head won't collide with specified amount of segments, starting from the head
+    /// Used to prevent contacting segments from pushing head
+    /// </summary>
+    [DataField]
+    public int PreventFirstSegmentsCollideAmount;
+
+    /// <summary>
+    /// If true, melee attack range will be extended from head to segments
+    /// </summary>
+    [DataField]
+    public bool MeleeAttackWithSegments = true;
+
+    /// <summary>
+    /// If true, head rotation will be automatically updated to match its segments
+    /// Additionally, NoRotateOnMove will be added/removed from entity depending on segment count
+    /// </summary>
+    [DataField]
+    public bool HeadFollowSegmentRotation = true;
+
+    /// <summary>
+    /// Used in entity lookup to check if head is touching any of its segments
+    /// Uses lookup instead of physics checks because it also uses PreventCollideEvent
+    /// </summary>
+    [DataField]
+    public float HeadRadius = 0.4f;
+
+    /// <summary>
+    /// If <see cref="ShouldCollideWithSegments"/> is true, this will prevent collision temporarily on map init and on forced contract
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public bool PreventSegmentCollide = true;
+
+    /// <summary>
+    /// List of tail segments
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<SegmentData> TailSegments = new();
+
+    [DataField]
+    public NetCoordinates? LastPos;
+
+    /// <summary>
+    /// allows the user to offset the tails position on the head entity
+    /// </summary>
+    [DataField]
+    public Vector2 TailOffset;
+}
+
+[Serializable, NetSerializable, DataRecord]
+public sealed partial class SegmentData(NetEntity segment, NetCoordinates? coords)
+{
+    public SegmentData() : this(NetEntity.Invalid, null) { }
+
+    public NetEntity Segment = segment;
+
+    public NetCoordinates? Coords = coords;
+}
+
+[Serializable, NetSerializable]
+public enum TailedEntitySegmentLayer
+{
+    Base
+}

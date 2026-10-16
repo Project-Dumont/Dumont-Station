@@ -87,7 +87,7 @@ using Robust.Shared.Random;
 
 namespace Content.Shared.Random.Helpers
 {
-    public static class SharedRandomExtensions
+    public static partial class SharedRandomExtensions
     {
         public static string Pick(this IRobustRandom random, DatasetPrototype prototype)
         {

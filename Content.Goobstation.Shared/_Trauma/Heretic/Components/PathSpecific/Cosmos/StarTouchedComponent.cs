@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Components.PathSpecific.Cosmos;
+
+[RegisterComponent, NetworkedComponent]
+public sealed partial class StarTouchedComponent : Component
+{
+    [DataField]
+    public float TickInterval = 0.2f;
+
+    [DataField]
+    public bool ApplyEffects;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float Accumulator;
+}

@@ -47,7 +47,6 @@ using Content.Client.UserInterface.Systems.Hands.Controls;
 using Content.Client.Verbs.UI;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Content.Shared._EstacaoPirata.Cards.Hand;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Ensnaring.Components;
@@ -66,6 +65,10 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using static Content.Client.Inventory.ClientInventorySystem;
 using static Robust.Client.UserInterface.Control;
+
+// Dumont start
+using Content.Trauma.Common.Heretic;
+// Dumont end
 
 namespace Content.Client.Inventory
 {

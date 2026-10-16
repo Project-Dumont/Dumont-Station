@@ -45,6 +45,10 @@ namespace Content.Shared.Weapons.Melee;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
 public sealed partial class MeleeWeaponComponent : Component
 {
+    // Dumont start
+    [DataField]
+    public bool CanBeParried = true;
+    // Dumont end
     // TODO: This is becoming bloated as shit.
     // This should just be its own component for alt attacks.
     /// <summary>

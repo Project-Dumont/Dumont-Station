@@ -21,7 +21,9 @@ namespace Content.Server.Speech.EntitySystems
 {
     public sealed class StutteringSystem : SharedStutteringSystem
     {
-        [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
+        // Dumont start
+        [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+        // Dumont end
         [Dependency] private readonly IRobustRandom _random = default!;
 
         // Regex of characters to stutter.
@@ -41,7 +43,9 @@ namespace Content.Server.Speech.EntitySystems
             if (Terminating(uid))
                 return;
 
-            _statusEffectsSystem.TryAddStatusEffect(uid, StutterKey.Id, out _, time); //todo goobstation migrate stutter.
+            // Dumont start
+            _statusEffectsSystem.TryAddStatusEffect<StutteringAccentComponent>(uid, StutterKey, time, refresh, status);
+            // Dumont end
         }
 
         private void OnAccent(EntityUid uid, StutteringAccentComponent component, AccentGetEvent args)

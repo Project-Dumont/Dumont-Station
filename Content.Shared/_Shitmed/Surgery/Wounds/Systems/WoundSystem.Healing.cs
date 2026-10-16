@@ -419,13 +419,18 @@ public partial class WoundSystem
 
         var holdingWoundable = comp.HoldingWoundable;
 
+        // Dumont start
+        if (TerminatingOrDeleted(wound) || !TryComp<WoundableComponent>(holdingWoundable, out var woundable))
+            return false;
+        // Dumont end
+
         var ev = new WoundHealAttemptOnWoundableEvent((wound, comp));
         RaiseLocalEvent(holdingWoundable, ref ev);
 
         if (ev.Cancelled)
             return false;
 
-        var ev1 = new WoundHealAttemptEvent((holdingWoundable, Comp<WoundableComponent>(holdingWoundable)), ignoreBlockers);
+        var ev1 = new WoundHealAttemptEvent((holdingWoundable, woundable), ignoreBlockers);
         RaiseLocalEvent(wound, ref ev1);
 
         return !ev1.Cancelled;

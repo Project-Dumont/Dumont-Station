@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: soundCollection
+  id: ShadowDemonPunch
+  files:
+  - /Audio/_Trauma/Mobs/ShadowDemon/shadowattack1.ogg
+  - /Audio/_Trauma/Mobs/ShadowDemon/shadowattack2.ogg
+  - /Audio/_Trauma/Mobs/ShadowDemon/shadowattack3.ogg
+  - /Audio/_Trauma/Mobs/ShadowDemon/shadowattack4.ogg
+
+- type: soundCollection
+  id: ShadowDemonLaugh
+  files:
+  - /Audio/_Trauma/Mobs/ShadowDemon/vocal/shadowlaugh1.ogg
+  - /Audio/_Trauma/Mobs/ShadowDemon/vocal/shadowlaugh2.ogg
+  - /Audio/_Trauma/Mobs/ShadowDemon/vocal/shadowlaugh3.ogg
+

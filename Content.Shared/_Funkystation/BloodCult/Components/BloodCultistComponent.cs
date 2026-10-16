@@ -5,7 +5,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
-using Content.Shared.Heretic.Prototypes;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.GameStates;
@@ -115,8 +114,8 @@ public sealed partial class BloodCultistComponent : Component
 
     #endregion
 
-    [DataField, AutoNetworkedField] public List<ProtoId<HereticRitualPrototype>> KnownRituals = new();
-    [DataField] public ProtoId<HereticRitualPrototype>? ChosenRitual;
+    [DataField, AutoNetworkedField] public List<EntProtoId> KnownRituals = new();
+    [DataField] public EntProtoId? ChosenRitual;
 
     /// <summary>
     ///     Contains the list of targets that are eligible for sacrifice.

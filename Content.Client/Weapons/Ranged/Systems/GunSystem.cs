@@ -51,7 +51,6 @@ using Content.Client.DisplacementMap;
 using Content.Client.Gameplay;
 using Content.Client.Items;
 using Content.Client.Weapons.Ranged.Components;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Starlight.Effects;
 using Content.Shared._Starlight.Weapon.Components;
 using Content.Shared.Camera;
@@ -78,6 +77,10 @@ using Robust.Shared.Utility;
 using static Content.Shared.Fax.AdminFaxEuiMsg;
 using SharedGunSystem = Content.Shared.Weapons.Ranged.Systems.SharedGunSystem;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
+
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Rust;
+// Dumont end
 
 namespace Content.Client.Weapons.Ranged.Systems;
 

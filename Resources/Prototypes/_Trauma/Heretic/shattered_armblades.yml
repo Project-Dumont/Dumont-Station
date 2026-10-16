@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ArmBladeChangeling
+  id: ArmBladeShattered
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Heretic/Entities/arm_blade.rsi
+    state: icon
+  - type: Item
+    sprite: _Goobstation/Heretic/Entities/arm_blade.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+        Structural: 10
+      woundSeverityMultipliers:
+        Slash: 2.5
+    soundHit:
+      collection: GlassBreak
+
+- type: entity
+  parent: ArmBladeShattered
+  id: ArmBladeShatteredEmpowered
+  components:
+  - type: Tag
+    tags:
+    - EmpoweredShatteredWeapon
+  - type: Multihit
+    multihitWhitelist:
+      tags:
+      - EmpoweredShatteredWeapon
+
+- type: entity
+  parent: ArmHammerChangeling
+  id: ArmHammerShattered
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Heretic/Entities/hammer.rsi
+    state: icon
+  - type: Item
+    sprite: _Goobstation/Heretic/Entities/hammer.rsi
+  - type: MeleeWeapon
+    soundHit:
+      collection: GlassBreak
+
+- type: entity
+  parent: ArmHammerShattered
+  id: ArmHammerShatteredEmpowered
+  components:
+  - type: Tag
+    tags:
+    - EmpoweredShatteredWeapon
+  - type: Multihit
+    multihitWhitelist:
+      tags:
+      - EmpoweredShatteredWeapon

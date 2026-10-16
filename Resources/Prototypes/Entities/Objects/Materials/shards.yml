@@ -103,6 +103,7 @@
     sound: /Audio/Weapons/bladeslice.ogg
   - type: Tag
     tags:
+    - AnyGlassShard
     - Trash
   - type: SpaceGarbage
   - type: Damageable
@@ -161,6 +162,7 @@
         Piercing: 4.5
   - type: Tag
     tags:
+      - AnyGlassShard
       - GlassShard
       - Trash
   - type: Extractable
@@ -200,6 +202,7 @@
         Piercing: 5.5
   - type: Tag
     tags:
+      - AnyGlassShard
       - ReinforcedGlassShard
       - Trash
   - type: Extractable
@@ -240,6 +243,7 @@
         Piercing: 6.5
   - type: Tag
     tags:
+      - AnyGlassShard
       - PlasmaGlassShard
       - Trash
   - type: Extractable
@@ -284,6 +288,7 @@
         Radiation: 2.5
   - type: Tag
     tags:
+      - AnyGlassShard
       - UraniumGlassShard
       - Trash
   - type: Extractable

@@ -1,0 +1,352 @@
+<Document>
+
+  ## Side knowledge store.
+
+  By progressing as your main path, you gradually unlock more side knowledge to purchase.
+  At the beginning you get access to tier 1 side knowledge and you can also select one of 3 random tier 1 side knowledge for free.
+  Tier 1 and 2 side knowledge cost 1 point, and tier 3 cost 2 points.
+  All side knowledge can either be purchased by either Main Points or Side Points.
+  By collecting influences using codex get one extra Side Point.
+
+  ## Heretic Knowledge
+
+  ### Heartbeat of Mansus
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Target's corpse
+
+  Sacrifice your target (or another heretic) for knowledge points.
+
+  ### Phylactery of Damnation
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Blood, Beaker
+
+  Creates a cursed beaker capable of stealing blood from a distance for curses.
+
+  ### Feast of Owls
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Your soul
+
+  Grants you five knowledge points, but locks you out of ascension.
+
+  ### Codex Cicatrix
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Book, Pen, organ or limb
+
+  Creates the Codex Cicatrix, a book used to harvest eldritch influences more effectively or to draw and clear transmutation runes. Also acts as a focus.
+
+  ### Relentless Heartbeat
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Heart, Book, Pen, Jumpsuit
+
+  Grants you a new set of ritual targets, up to five.
+
+  ### Amber Focus
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Glass sheet, Eyes
+
+  Grants you a focus that can be worn on the neck slot. Focuses let you cast advanced spells.
+
+  ### Living Heart
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Active Ability
+
+  Locates your sacrifice targets, but is loud. Be careful about when you use it.
+
+  ### Cloak of Shadow
+
+  Cost: 0
+
+  Tier: Roundstart
+
+  Ingredients/Type: Active Ability
+
+  Hides your identity and makes you move faster, but your actions proceed slower. Can be removed by damage.
+
+  ### Ether of the Newborn
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Vomit puddle, Glass shard
+
+  Creates a single use potion that cures disease, wounds, and fully restores health, at the cost of a minute of sleep.
+
+  ### Void Cloak
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Bedsheet, Glass shard, Winter coat
+
+  Creates a weak armor that is invisible while the hood is up, and provides focus and space immunity while the hood is down.
+
+  ### Ashen Eyes
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Eyes, Glass shard, Flare
+
+  Creates an eldritch medallion that provides thermal vision and acts as a focus.
+
+  ### Priest's Ritual
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Glass shard, Water tank
+
+  Creates a flask of eldritch essence, a potent healing mixture for heretics.
+
+  ### Scorching Shark
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Three Ash, Liver, Three Plasma
+
+  Summons three fire sharks, fast but weak swarm monsters that ignite those who they bite and are resistant to fire.
+
+  ### Realignment
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Active Ability
+
+  Removes stuns, knockdowns, and restraints from you, as well as giving you resistance to stuns, temporarily makes you unable to attack.
+
+  ### Mask of Madness
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Mask, Stun Baton, Liver
+
+  Provides flash immunity and eye protection, instills great fear in heathens. Can be toggled to give night vision instead.
+
+  ### Eldritch Coin
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: 1 Gold or 1 Silver
+
+  Toggles door bolts or opens/closes doors when flipped.
+
+  ### Mysteries of Creation
+
+  Cost: 1
+
+  Tier: T1 Side
+
+  Ingredients/Type: Spear, cold temperature
+
+  Creates a glacial spear, a throwing weapon that shatters and freezes targets that it hits, can be freely recalled unless destroyed.
+
+  ### Unfathomable Curio
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Utility belt, 3 Rods, Lungs
+
+  Provides a lot of storage space, focus and recharging shield.
+
+  ### Carving Knife
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Knife, Glass shard, Paper
+
+  Creates a carving knife, a knife that allows you to etch traps that activate when a heathen walks over them.
+
+  ### Codex Morbus
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Codex Cicatrix, Corpse
+
+  Creates a codex morbus, an upgraded and faster Codex Cicatrix that can draw runes faster and curse other crewmembers.
+
+  ### Greaves of the Prophet
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Magboots, Combat boots, Two Silver bars
+
+  Creates a pair of armored greaves; shoes that act as no-slips, magboots, and jackboots.
+
+  ### Mawed Crucible
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Table, Water tank
+
+  Creates a mawed crucible; a cauldron that can brew potions, but must be refilled with body parts or organs.
+
+  ### Through the Boundary
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Two heretic blades, Two ID cards, and Two Bars of gold
+
+  Creates a ragged sword, a melee weapon that inflicts targets with random marks and hits from a long range.
+
+  ### Rusted Ritual
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Pool of Vomit, 15 Cable coil, 5 Sheets of steel
+
+  Summons a rust walker, a creature that can spread rust and heals on it.
+
+  ### Shattered Ritual
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Corpse, Latex gloves, Armor
+
+  Summons a shattered risen, a creature that has high health and regeneration, has two strong melee weapons, but cannot use items or clothes.
+
+  ### Lionhunter's Rifle
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Wood plank, PDA, organ or limb
+
+  Creates a lionhunter's rifle, a weak ballistic gun that can be aimed at targets by right clicking them in Combat Mode, which causes projectile to be greatly empowered.
+
+  ### Rust Sower Grenade
+
+  Cost: 1
+
+  Tier: T2 Side
+
+  Ingredients/Type: Grenade casing, rag, 2 trash
+
+  Creates an eldritch rust grenade that spread smoke, obliterating silicons and blinding organics caught in it.
+
+  ### Crimson Cleave
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Active Ability
+
+  Causes heavy bleeding to targets in a moderate area, heals you for every target.
+
+  ### Forest Abomination
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Active Ability
+
+  Upgrades most aspects of cloak of shadow, and spreads a disorienting fog wherever you go.
+
+  ### Mind Grasp
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Active Ability
+
+  Upgrades your Mansus grasp, it can now be channeled to effect everyone in a large area around you.
+
+  ### Space Phase
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Active Ability
+
+  A spell that allows you to move freely through space, can only be used outdoors in low pressure environments.
+
+  ### Maid in the Mirror
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Five Glass sheets, Jumpsuit, Lungs
+
+  Summons a maid in the mirror, a dangerous creature that can freeze targets it hits and go incorporeal.
+
+  ### Sharp Medal
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: 2 hands, eyes, knife
+
+  Amulet that gives focus and allows you to throw your blades like boomerangs.
+
+  ### Ashen Ritual
+
+  Cost: 2
+
+  Tier: T3 Side
+
+  Ingredients/Type: Bonfire, book
+
+  Summons ash spirit, a powerful summon with long range jaunt and deadly solar beam attack.
+</Document>
