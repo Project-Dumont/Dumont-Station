@@ -8,6 +8,9 @@ comms-console-escape-pods-announcement = Command has authorized escape pods to b
 
 evacuation-planet-name = Evacuation Planet
 
+pod-locked = Escape pod is locked
+pod-launching = Escape pod is launching in {$time} seconds
+
 escape-pod-max-occupants = [color=red]This pod is only rated for a maximum of {$max} occupants, one per seat.[/color]
 escape-pod-overcrowded = The pod is overcrowded! ({$count}/{$max})
 

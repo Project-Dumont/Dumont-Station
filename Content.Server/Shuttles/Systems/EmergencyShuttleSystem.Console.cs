@@ -82,7 +82,6 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
-// Dumont changes start
 using System.Numerics;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Procedural;
@@ -94,7 +93,6 @@ using Content.Shared.Physics;
 using Content.Shared.Random;
 using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Salvage.Expeditions.Modifiers;
-// Dumont end
 
 namespace Content.Server.Shuttles.Systems;
 

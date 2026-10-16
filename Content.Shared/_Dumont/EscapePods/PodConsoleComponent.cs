@@ -1,12 +1,10 @@
-﻿// Dumont changes start
 using Content.Shared.Radio;
 using Robust.Shared.Audio;
-using Robust.Shared.Prototypes;
-// Dumont end
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._Starlight.Computers.PodConsole;
+namespace Content.Shared._Dumont.EscapePods;
 
 /// <summary>
 /// Wall console inside an escape pod that launches it once unlocked.
@@ -23,16 +21,21 @@ public sealed partial class PodConsoleComponent : Component
     /// <summary>
     /// When the pod leaves, null if no launch is pending.
     /// </summary>
-    [DataField(customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan? LaunchTime;
 
-    // Dumont changes start
     /// <summary>
     /// How many people the pod can carry. When null the number of anchored seats on the pod is used.
     /// </summary>
     [DataField, AutoNetworkedField]
     public int? MaxOccupants;
+
+    /// <summary>
+    /// How long someone has to hold the console to start the launch.
+    /// </summary>
+    [DataField]
+    public TimeSpan UseDelay = TimeSpan.FromSeconds(10);
 
     /// <summary>
     /// Time between finishing the launch on the console and the pod actually leaving.
@@ -58,7 +61,9 @@ public sealed partial class PodConsoleComponent : Component
     [DataField]
     public SoundSpecifier LaunchSound = new SoundPathSpecifier("/Audio/_Moffstation/Effects/Shuttle/hyperspace_begin.ogg", AudioParams.Default.WithVolume(-5f));
 
+    /// <summary>
+    /// The launch sound that is playing, if any.
+    /// </summary>
     [ViewVariables]
     public EntityUid? LaunchStream;
-    // Dumont end
 }

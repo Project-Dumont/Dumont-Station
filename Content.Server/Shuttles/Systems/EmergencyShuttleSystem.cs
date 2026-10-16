@@ -112,11 +112,9 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
-// Dumont changes start
 using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Shared.Construction.EntitySystems;
-// Dumont end
 
 namespace Content.Server.Shuttles.Systems;
 

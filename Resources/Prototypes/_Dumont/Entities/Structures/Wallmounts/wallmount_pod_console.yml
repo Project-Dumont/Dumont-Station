@@ -10,7 +10,7 @@
       arc: 360
     - type: Appearance
     - type: Sprite
-      sprite: _Starlight/Structures/Wallmounts/pod_console.rsi
+      sprite: _Dumont/Structures/Wallmounts/pod_console.rsi
       layers:
       - state: base
     - type: Destructible

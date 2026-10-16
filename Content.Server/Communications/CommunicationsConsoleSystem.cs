@@ -88,12 +88,11 @@ using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
 using System.Reflection.Metadata;
 using Robust.Shared.Prototypes; // para checar se o console é sindicato ou não
-using Content.Server._Dumont.EscapePods; // Dumont
 
 
 namespace Content.Server.Communications
 {
-    public sealed class CommunicationsConsoleSystem : EntitySystem
+    public sealed partial class CommunicationsConsoleSystem : EntitySystem // Dumont
     {
         [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
         [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
@@ -111,7 +110,6 @@ namespace Content.Server.Communications
         [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
-        [Dependency] private readonly EscapePodUnlockSystem _escapePods = default!; // Dumont
 
 
         private const float UIUpdateInterval = 5.0f;
@@ -145,6 +143,8 @@ namespace Content.Server.Communications
             _maintDoorPrototypeList.Add("AirlockMaintGlassLocked");
             _maintDoorPrototypeList.Add("AirlockMaintLocked");
             _maintDoorPrototypeList.Add("AirlockMaintCommonLocked");
+
+            InitializeDumont(); // Dumont
         }
         public override void Update(float frameTime)
         {
@@ -267,7 +267,7 @@ namespace Content.Server.Communications
                 stationName,
                 renameOnCooldown,
                 comp.CanShuttle, // Dumont
-                _escapePods.Unlocked // Dumont
+                EscapePodsUnlocked // Dumont
             ));
         }
 

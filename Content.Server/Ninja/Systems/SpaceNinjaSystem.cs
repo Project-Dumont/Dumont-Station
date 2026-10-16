@@ -33,8 +33,8 @@ using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Starlight.Ninja; // Dumont
-using Content.Server.Shuttles.Components; // Dumont
+using Content.Shared._Dumont.EscapePods;
+using Content.Server.Shuttles.Components;
 
 namespace Content.Server.Ninja.Systems;
 
