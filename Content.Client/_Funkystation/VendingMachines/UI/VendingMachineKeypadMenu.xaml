@@ -8,6 +8,8 @@
 
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" MinWidth="460">
 
+            <LineEdit Name="SearchBar" PlaceHolder="{Loc 'vending-machine-component-search-filter'}" HorizontalExpand="True" Margin="0 0 0 4" />
+
             <PanelContainer Name="GlassBackground" VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
                     <gfx:StyleBoxFlat BackgroundColor="#111115" />
