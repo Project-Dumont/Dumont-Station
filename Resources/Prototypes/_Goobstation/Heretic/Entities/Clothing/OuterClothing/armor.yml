@@ -62,6 +62,17 @@
     containers:
       storagebase: !type:Container
       toggleable-clothing: !type:Container
+  - type: IgniteFromGasImmunity # Dumont - Allow plasmamen to wear heretic armor
+    parts:
+    - Chest
+    - Groin
+    - LeftArm
+    - RightArm
+    - LeftLeg
+    - RightLeg
+  - type: Tag
+    tags:
+    - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
 
 - type: entity
   abstract: true

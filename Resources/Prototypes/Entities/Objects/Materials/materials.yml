@@ -963,6 +963,7 @@
   name: gunpowder
   description: An explosive compound.
   components:
+  - type: Material
   - type: Stack
     stackType: Gunpowder
     count: 1
@@ -980,6 +981,12 @@
       Gunpowder: 100
   - type: Item
     size: Tiny
+  - type: Tag # Goobstation
+    tags:
+    - Gunpowder
+    - RawMaterial
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   parent: MaterialBase

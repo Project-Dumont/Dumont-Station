@@ -38,10 +38,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganResomiStomach # Goobstation - classic furries can eat everything except chocolate :)
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
+    # Dumont changes start
+    tail:
+      part: TailResomi
+    # Dumont end
     right arm:
       part: RightArmResomi
       connections:

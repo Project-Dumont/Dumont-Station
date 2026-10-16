@@ -27,7 +27,7 @@
       map: [ "sealed" ]
   - type: Tag
     tags:
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
   - type: IgniteFromGasImmunity
     parts:
     - LeftHand
