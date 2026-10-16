@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/16/2026 13:50:30
-  entityCount: 17558
+  time: 10/16/2026 17:27:00
+  entityCount: 17555
 maps:
 - 1
 grids:
@@ -78328,7 +78328,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 8.5,-337.5
-- proto: GunSafePistolMk58
+- proto: GunSafePhaser
   entities:
   - uid: 11494
     components:
@@ -78869,7 +78869,7 @@ entities:
       pos: 8.5,-176.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -155872.73
+      secondsUntilStateChange: -155923.1
   - uid: 11574
     components:
     - type: Transform
@@ -80136,18 +80136,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 31.5,-260.5
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 11751
-    components:
-    - type: Transform
-      parent: 2
-      pos: -3.4042985,-346.5812
-  - uid: 11752
-    components:
-    - type: Transform
-      parent: 2
-      pos: -3.380387,-346.629
 - proto: MagicDiceBag
   entities:
   - uid: 11753
@@ -111244,15 +111232,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 16998
-    components:
-    - type: Transform
-      parent: 2
-      pos: -3.43618,-346.40598
-    - type: Gun
-      burstCooldownModified: 0.25
 - proto: WeaponWaterBlaster
   entities:
   - uid: 16999
