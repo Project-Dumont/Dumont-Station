@@ -64,17 +64,11 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  #- Atlas # Dumont Station - não está sendo mantido
-  #- Amber # Dumont Station - não está sendo mantido s/2
-  #- Bagel # Dumont Station - não está sendo mantido
   - Box
   - Cluster
   - Core # Dumont Station - Reativado
   #- Fland # Dumont Station - não está sendo mantido
   - Cog # those who forget to clear their multitool
-  #- Serpentcrest # Dumont Station - Retirado por doação de 1.5k de GC
-  #- Gate # Dumont Station - Desatualizado, e se caísse, seria um mapa odiado
-  #- Loop Goobstation - I love maintenance!!!
   - Marathon
   - Meta
   - Oasis
@@ -82,21 +76,8 @@
   - Origin
   - Saltern
   - Packed
-  #- Reach # Goobstation, removed from map pool
-  #- Train # Goobstation - all my friends hate train
-  #- FlandHighPop # Dumont Station - não está sendo mantido
-  #- OasisHighPop # Dumont Station - isso nem faz sentido.
-  # Goob Station Maps
-  #- Barratry # Dumont Station - Retirado do vote por doação de 1K de GC
-  #- Kettle # Dumont Station - não está sendo mantido # Goobstation - Re-add kettle (before it was gemini!)
-  #- Leonid # Dumont Station - não está sendo mantido # Goobstation - for goob by goob
-  #- Delta # Dumont Station - não está sendo mantido # Goobstation - ported from Corvax
-  #- Chloris # Dumont Station - não está sendo mantido # Goobstation - also Corvax because we love goidamaps
   # Dumont Station Maps
   - Gamma
-  #- Falcon # Dumont Station - Everyone hated my map so I nuked it
   - Eclipse # Dumont Station - Harmony port
-  #- Gax
   - Tram
-  #- Glacier # Dumont Station - Retirado da rotação por 2k de GC
   # End of Dumont Station Maps
