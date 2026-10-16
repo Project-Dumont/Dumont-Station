@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stack
+  id: XenoborgCrystal
+  name: stack-xenoborg-crystal
+  icon:
+    sprite: "/Textures/Objects/Materials/xenoborg_crystal.rsi"
+    state: crystal-3
+  spawn: MaterialXenoborgCrystal1
+  maxCount: 10

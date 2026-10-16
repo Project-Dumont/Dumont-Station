@@ -620,8 +620,18 @@
 - type: entity
   parent: [ EnergyDaggerLoud, BaseXenoborgContraband ]
   id: EnergyDaggerLoudBlue
-  suffix: blue
+  suffix: xenoborg
   components:
+  - type: Sprite # Imp
+    sprite: _Impstation/Objects/Weapons/Melee/xenoborg_energy_blade.rsi
+    layers:
+    - state: e-sword
+    - state: e-sword-blade
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: MeleeWeapon # Imp
+    wideAnimationRotation: -135
   - type: EnergySword
     colorOptions:
-    - "#2288ff" # can only be blue
+    - "#ebb1ff" # Imp

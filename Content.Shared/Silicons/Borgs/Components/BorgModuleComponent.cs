@@ -31,6 +31,15 @@ public sealed partial class BorgModuleComponent : Component
     [DataField]
     [AutoNetworkedField]
     public bool DefaultModule;
+
+    // Dumont changes start
+    /// <summary>
+    /// List of types of borgs this module fits into.
+    /// This only affects examine text. The actual whitelist for modules that can be inserted into a borg is defined in its <see cref="BorgChassisComponent"/>.
+    /// </summary>
+    [DataField]
+    public List<LocId>? BorgFitTypes;
+    // Dumont end
 }
 
 /// <summary>

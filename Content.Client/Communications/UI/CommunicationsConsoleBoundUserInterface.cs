@@ -150,6 +150,7 @@ namespace Content.Client.Communications.UI
             if (_menu != null)
             {
                 _menu.CanAnnounce = commsState.CanAnnounce;
+                _menu.NoSignal = commsState.NoSignal; // Dumont
                 _menu.CanBroadcast = commsState.CanBroadcast;
                 _menu.CanCall = commsState.CanCall;
                 _menu.CountdownStarted = commsState.CountdownStarted;

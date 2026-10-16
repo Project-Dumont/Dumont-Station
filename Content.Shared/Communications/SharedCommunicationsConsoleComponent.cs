@@ -41,6 +41,7 @@ namespace Content.Shared.Communications
         public float CurrentAlertDelay;
         public string StationName;
         public readonly bool RenameOnCooldown;
+        public bool NoSignal; // Dumont
 
         public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false)
         {

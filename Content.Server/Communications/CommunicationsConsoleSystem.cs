@@ -88,6 +88,7 @@ using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
 using System.Reflection.Metadata;
 using Robust.Shared.Prototypes; // para checar se o console é sindicato ou não
+using Content.Server._Dumont.Communications; // Dumont
 
 
 namespace Content.Server.Communications
@@ -254,9 +255,11 @@ namespace Content.Server.Communications
             var stationName = stationUid != null ? MetaData(stationUid.Value).EntityName : string.Empty;
             var renameOnCooldown = (_timing.CurTime.TotalSeconds - comp.RenameTimer) < comp.RenameDelay;
 
+            var hasSignal = HasSignal(uid); // Dumont
+
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 isSyndie,
-                CanAnnounce(comp),
+                CanAnnounce(comp) && hasSignal, // Dumont
                 CanCallOrRecall(comp),
                 levels,
                 currentLevel,
@@ -264,13 +267,27 @@ namespace Content.Server.Communications
                 _roundEndSystem.ExpectedCountdownEnd,
                 stationName,
                 renameOnCooldown
-            ));
+            )
+            // Dumont changes start
+            {
+                NoSignal = !hasSignal,
+            });
+            // Dumont end
         }
 
         private static bool CanAnnounce(CommunicationsConsoleComponent comp)
         {
             return comp.AnnouncementCooldownRemaining <= 0f;
         }
+
+        // Dumont changes start
+        private bool HasSignal(EntityUid uid)
+        {
+            var ev = new CommunicationsConsoleAnnounceAttemptEvent(uid);
+            RaiseLocalEvent(ref ev);
+            return !ev.Cancelled;
+        }
+        // Dumont end
 
         private bool CanUse(EntityUid user, EntityUid console)
         {
@@ -340,6 +357,14 @@ namespace Content.Server.Communications
                 {
                     return;
                 }
+
+                // Dumont changes start
+                if (!HasSignal(uid))
+                {
+                    _popupSystem.PopupEntity(Loc.GetString("comms-console-no-signal"), uid, message.Actor);
+                    return;
+                }
+                // Dumont end
 
                 if (!CanUse(mob, uid))
                 {
