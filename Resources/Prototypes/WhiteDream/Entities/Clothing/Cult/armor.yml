@@ -70,9 +70,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 1.05
-        Slash: 1.05
-        Piercing: 1.05
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
         Heat: 0.2 # WhiteDream - 80% heat resist
   - type: FireProtection # WhiteDream - 80% less fire damage
     reduction: 0.8
@@ -127,14 +127,11 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-  # WhiteDream - Nar'Sie guides you through the darkness, literally.
+  # WhiteDream
   - type: NightVision
     isEquipment: true
     color: "#c99a9a"
 
-
-# WhiteDream - summoned variant of the upstream acolyte armour.
-# Kept separate so the Lavaland necropolis loot version stays untouched.
 - type: entity
   parent: ClothingOuterArmorCult
   id: ClothingOuterArmorCultSummoned
@@ -148,16 +145,14 @@
     sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
   - type: Armor
     modifiers:
-      coefficients: # 40% resist across the board
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.6
+      coefficients: # 20% resist
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
   - type: StaminaResistance # 25% stamina resist
     damageCoefficient: 0.75
   - type: CultItem
 
-# WhiteDream - summoned variant of the upstream cult helmet, original left alone.
 - type: entity
   parent: ClothingHeadHelmetCult
   id: ClothingHeadHelmetCultSummoned
@@ -171,14 +166,12 @@
     sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
   - type: Armor
     modifiers:
-      coefficients: # 40% resist across the board
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.6
+      coefficients: # 20% resist
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
   - type: CultItem
 
-# WhiteDream - summoned boots. The chapel's ClothingShoesCult is left untouched.
 - type: entity
   parent: ClothingShoesCult
   id: ClothingShoesCultSummoned
