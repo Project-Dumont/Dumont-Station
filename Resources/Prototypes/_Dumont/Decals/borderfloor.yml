@@ -1,0 +1,251 @@
+- type: decal
+  id: BorderfloorBlackCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_corner_ne
+
+- type: decal
+  id: BorderfloorBlackCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_corner_nw
+
+- type: decal
+  id: BorderfloorBlackCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_corner_se
+
+- type: decal
+  id: BorderfloorBlackCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_corner_sw
+
+- type: decal
+  id: BorderfloorBlackE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_e
+
+- type: decal
+  id: BorderfloorBlackN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_n
+
+- type: decal
+  id: BorderfloorBlackNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_ne
+
+- type: decal
+  id: BorderfloorBlackNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_nw
+
+- type: decal
+  id: BorderfloorBlackS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_s
+
+- type: decal
+  id: BorderfloorBlackSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_se
+
+- type: decal
+  id: BorderfloorBlackSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_sw
+
+- type: decal
+  id: BorderfloorBlackW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_black_w
+
+- type: decal
+  id: BorderfloorCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_corner_ne
+
+- type: decal
+  id: BorderfloorCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_corner_nw
+
+- type: decal
+  id: BorderfloorCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_corner_se
+
+- type: decal
+  id: BorderfloorCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_corner_sw
+
+- type: decal
+  id: BorderfloorE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_e
+
+- type: decal
+  id: BorderfloorN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_n
+
+- type: decal
+  id: BorderfloorNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_ne
+
+- type: decal
+  id: BorderfloorNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_nw
+
+- type: decal
+  id: BorderfloorS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_s
+
+- type: decal
+  id: BorderfloorSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_se
+
+- type: decal
+  id: BorderfloorSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_sw
+
+- type: decal
+  id: BorderfloorW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_w
+
+- type: decal
+  id: BorderfloorWhiteCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_corner_ne
+
+- type: decal
+  id: BorderfloorWhiteCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_corner_nw
+
+- type: decal
+  id: BorderfloorWhiteCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_corner_se
+
+- type: decal
+  id: BorderfloorWhiteCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_corner_sw
+
+- type: decal
+  id: BorderfloorWhiteE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_e
+
+- type: decal
+  id: BorderfloorWhiteN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_n
+
+- type: decal
+  id: BorderfloorWhiteNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_ne
+
+- type: decal
+  id: BorderfloorWhiteNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_nw
+
+- type: decal
+  id: BorderfloorWhiteS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_s
+
+- type: decal
+  id: BorderfloorWhiteSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_se
+
+- type: decal
+  id: BorderfloorWhiteSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_sw
+
+- type: decal
+  id: BorderfloorWhiteW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/borderfloor.rsi
+    state: borderfloor_white_w

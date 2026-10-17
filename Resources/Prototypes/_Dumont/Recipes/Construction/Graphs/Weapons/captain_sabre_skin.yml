@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: CaptainSabreSkinChange
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: upgraded
+          steps:
+            - tag: CaptainSabreGoldenSkinKit
+              name: construction-graph-tag-captain-sabre-golden-skin-kit
+              doAfter: 5
+
+    - node: upgraded
+      entity: CaptainSabreGolden

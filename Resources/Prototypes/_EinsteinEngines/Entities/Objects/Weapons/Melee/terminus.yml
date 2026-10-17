@@ -65,7 +65,7 @@
   - type: Prying
   - type: UseDelay # Omu
     delay: 0.9
-  - type: UpgradeableWeapon # Start dumont change
+  - type: ItemUpgradeable # Start dumont change
   - type: ContainerContainer
     containers:
       upgrade_slot_main: !type:ContainerSlot

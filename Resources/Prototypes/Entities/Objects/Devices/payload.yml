@@ -128,8 +128,9 @@
       state: payload-flash-armed
     - type: DeleteOnTrigger
     - type: FlashOnTrigger
-      range: 6
+      range: 7 # same as flashbang
     - type: Flashbang # Goobstation
+      minProtectionRange: 7 # Can't stun/knockdown people wearing any ear protection
     - type: EmitSoundOnTrigger
       sound:
         path: "/Audio/Effects/flash_bang.ogg"

@@ -1,0 +1,6 @@
+- type: decal
+  id: Plaque
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/plaque.rsi
+    state: plaque

@@ -81,6 +81,12 @@
     path: /Audio/_Dumont/Jukebox/billie_jean.ogg
 
 - type: jukebox
+  id: blackholesun
+  name: Soundgarden - Black Hole Sun
+  path:
+    path: /Audio/_Dumont/Jukebox/black_hole_sun.ogg
+
+- type: jukebox
   id: Blue
   name: Eiffel 65 - Blue
   path:
@@ -103,6 +109,12 @@
   name: Matthew Wilder - Break My Stride
   path:
     path: /Audio/_Dumont/Jukebox/break_my_stride.ogg
+
+- type: jukebox
+  id: BringMeToLife
+  name: Evanescence & Paul McCoy - Bring Me To Life
+  path:
+    path: /Audio/_Dumont/Jukebox/bring_me_to_life.ogg
 
 - type: jukebox
   id: Brother_Louie
@@ -247,6 +259,12 @@
   name: O-Zone - Dragostea Din Tei
   path:
     path: /Audio/_Dumont/Jukebox/dragostea_din_tei.ogg
+
+- type: jukebox
+  id: Dreamscape
+  name: 009 Sound System - Dreamscape
+  path:
+    path: /Audio/_Dumont/Jukebox/dreamscape.ogg
 
 - type: jukebox
   id: Elenore
@@ -543,6 +561,12 @@
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
 
 - type: jukebox
+  id: MacintoshPlus
+  name: Vektroid - Macintosh Plus
+  path:
+    path: /Audio/_Dumont/Jukebox/macintosh_plus.ogg
+
+- type: jukebox
   id: MariaIzabel
   name: Marcus Pitter - Maria Izabel
   path:
@@ -789,6 +813,12 @@
     path: /Audio/_Dumont/Jukebox/tempo_perdido.ogg
 
 - type: jukebox
+  id: TheChain
+  name: Fleetwood Mac - The Chain
+  path:
+    path: /Audio/_Dumont/Jukebox/the_chain.ogg
+
+- type: jukebox
   id: ThereIsALightThatNeverGoesOut
   name: The Smiths - There Is A Light That Never Goes Out
   path:
@@ -913,6 +943,12 @@
   name: Men At Work - Who Can It Be Now?
   path:
     path: /Audio/_Dumont/Jukebox/who_can_it_be_now.ogg
+
+- type: jukebox
+  id: WhosReadyForTomorrow
+  name: Ratboy & IDBY - Who's Ready For Tommorow?
+  path:
+    path: /Audio/_Dumont/Jukebox/whos_ready_for_tomorrow.ogg
 
 - type: jukebox
   id: WouldntItBeNice

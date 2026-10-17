@@ -353,3 +353,207 @@
   frequency: 0.7
   soundCollection:
     collection: Aviu4Bark
+
+# comic
+- type: soundCollection
+  id: ComicBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/comic/1.wav
+
+- type: bark
+  id: Comic
+  name: Comic
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.0
+  soundCollection:
+    collection: ComicBark
+
+# floral
+- type: soundCollection
+  id: FloralBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/floral/1.wav
+  - /Audio/_Dumont/Voice/Talk/floral/2.wav
+  - /Audio/_Dumont/Voice/Talk/floral/3.wav
+  - /Audio/_Dumont/Voice/Talk/floral/4.wav
+
+- type: bark
+  id: Floral
+  name: Floral
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 0.7
+  soundCollection:
+    collection: FloralBark
+
+# crt
+- type: soundCollection
+  id: CrtBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/crt/1.wav
+  - /Audio/_Dumont/Voice/Talk/crt/2.wav
+  - /Audio/_Dumont/Voice/Talk/crt/3.wav
+  - /Audio/_Dumont/Voice/Talk/crt/4.wav
+  - /Audio/_Dumont/Voice/Talk/crt/5.wav
+  - /Audio/_Dumont/Voice/Talk/crt/6.wav
+  - /Audio/_Dumont/Voice/Talk/crt/7.wav
+  - /Audio/_Dumont/Voice/Talk/crt/8.wav
+  - /Audio/_Dumont/Voice/Talk/crt/9.wav
+  - /Audio/_Dumont/Voice/Talk/crt/10.wav
+
+- type: bark
+  id: Crt
+  name: CRT
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 0.8
+  soundCollection:
+    collection: CrtBark
+
+# bigshot
+- type: soundCollection
+  id: BigshotBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/bigshot/1.wav
+
+- type: bark
+  id: Bigshot
+  name: BIGSHOT
+  volume: 1
+  minPitch: 1.2
+  maxPitch: 1.2
+  frequency: 1.2
+  soundCollection:
+    collection: BigshotBark
+
+# magnificent
+- type: soundCollection
+  id: MagnificentBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/magnificent/1.wav
+
+- type: bark
+  id: Magnificent
+  name: Magnificent
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.3
+  soundCollection:
+    collection: MagnificentBark
+
+# gamer
+- type: soundCollection
+  id: GamerBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/gamer/1.wav
+
+- type: bark
+  id: Gamer
+  name: Gamer
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.7
+  soundCollection:
+    collection: GamerBark
+
+# Tough
+- type: soundCollection
+  id: ToughBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/tough/1.wav
+
+- type: bark
+  id: Tough
+  name: Tough
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.2
+  soundCollection:
+    collection: ToughBark
+
+# bouncy
+- type: soundCollection
+  id: BouncyBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/bouncy/1.wav
+
+- type: bark
+  id: Bouncy
+  name: Bouncy
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.8
+  soundCollection:
+    collection: BouncyBark
+
+# Innocent
+- type: soundCollection
+  id: InnocentBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/innocent/1.wav
+
+- type: bark
+  id: Innocent
+  name: Innocent
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.5
+  soundCollection:
+    collection: InnocentBark
+
+# pacifist
+- type: soundCollection
+  id: PacifistBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/pacifist/1.wav
+
+- type: bark
+  id: Pacifist
+  name: Pacifist
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.4
+  soundCollection:
+    collection: PacifistBark
+
+# welcoming
+- type: soundCollection
+  id: WelcomingBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/welcoming/1.wav
+
+- type: bark
+  id: Welcoming
+  name: Welcoming
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.3
+  soundCollection:
+    collection: WelcomingBark
+
+# lonely
+- type: soundCollection
+  id: LonelyBark
+  files:
+  - /Audio/_Dumont/Voice/Talk/lonely/1.wav
+
+- type: bark
+  id: Lonely
+  name: Lonely
+  volume: 1
+  minPitch: 1.0
+  maxPitch: 1.0
+  frequency: 1.3
+  soundCollection:
+    collection: LonelyBark

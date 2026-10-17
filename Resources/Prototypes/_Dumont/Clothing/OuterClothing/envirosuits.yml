@@ -45,7 +45,7 @@
     whitelist:
       tags:
       - GasTank
-  - type: HideClothingLayerClothing # Goobstation
+  - type: HideClothingLayerClothing
     hiddenSlots:
     - jumpsuit
   - type: GuideHelp
@@ -99,7 +99,7 @@
   - type: LimitedCharges
     maxCharges: 4
   - type: AllowSuitStorage
-  - type: HideClothingLayerClothing # Goobstation
+  - type: HideClothingLayerClothing
     hiddenSlots:
     - jumpsuit
   - type: GuideHelp
@@ -195,8 +195,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -210,7 +210,6 @@
         Slash: 0.7
         Piercing: 0.6
         Heat: 0.3
-        Radiation: 0.01
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
@@ -223,7 +222,7 @@
     knockdownTimeDelta: -3
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
+  parent: [ClothingOuterEnvirosuitBaseCombat, BaseCargoContraband]
   id: ClothingOuterEnvirosuitSalvage
   name: salvage envirosuit
   description: A special containment suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
@@ -239,8 +238,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: Armor
     traumaDeductions:
@@ -255,7 +254,6 @@
         Slash: 0.85
         Piercing: 0.8
         Heat: 0.85
-        Radiation: 0.1
         Caustic: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.80
@@ -266,7 +264,7 @@
     knockdownTimeDelta: -2.5
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
+  parent: [ClothingOuterEnvirosuitBaseCombat, BaseCargoContraband]
   id: ClothingOuterEnvirosuitSalvageLead
   name: salvage lead envirosuit
   description: A special containment suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
@@ -298,7 +296,6 @@
         Slash: 0.75
         Piercing: 0.8
         Heat: 0.75
-        Radiation: 0.1
         Caustic: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.6
@@ -309,7 +306,7 @@
     knockdownTimeDelta: -2.5
 
 - type: entity
-  parent: [ClothingOuterEnvirosuitBase, BaseCargoContraband]
+  parent: [ClothingOuterEnvirosuitBaseCombat, BaseCargoContraband]
   id: ClothingOuterEnvirosuitExplorer
   name: explorer envirosuit
   description: An armoured containment suit for exploring harsh environments.
@@ -331,7 +328,8 @@
         Slash: 0.7
         Piercing: 0.6
         Heat: 0.3
-        Radiation: 0.01
+        Caustic: 0.9
+  - type: PressureArmorChange
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
@@ -342,6 +340,11 @@
   - type: ModifyDelayedKnockdown
     delayDelta: 3
     knockdownTimeDelta: -3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: FireProtection
+    reduction: 0.4
 
 #region Dignitary
 
@@ -376,9 +379,8 @@
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.65
-        Heat: 0.65
-        Radiation: 0.6
+        Piercing: 0.55
+        Heat: 0.6
         Caustic: 0.6
   - type: ClothingSpeedModifier
     sprintModifier: 0.9
@@ -452,12 +454,13 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.8
-        Radiation: 0.15
-        Caustic: 0.7
+        Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
+  - type: FireProtection
+    reduction: 0.8
 
 - type: entity
   parent: ClothingOuterEnvirosuitAtmosV1
@@ -526,10 +529,9 @@
         Heat: 0.90
         Shock: 0.5
         Caustic: 0.7
-        Radiation: 0.05
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
 
 - type: entity
@@ -625,10 +627,9 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
-        Heat: 0.90
+        Heat: 0.9
         Shock: 0.5
         Caustic: 0.7
-        Radiation: 0.15
 
 #region Heads
 
@@ -661,11 +662,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
+        Blunt: 0.7
+        Slash: 0.7
         Piercing: 0.65
         Heat: 0.6
-        Radiation: 0.15
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.9
@@ -710,8 +710,8 @@
         Caustic: 0.7
         Shock: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: ClothingGrantComponent
     component:
@@ -783,11 +783,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.60
-        Slash: 0.60
-        Piercing: 0.60
-        Heat: 0.6
-        Radiation: 0.5
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.4
         Caustic: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.9
@@ -798,6 +797,9 @@
     knockdownTimeDelta: -2.5
   - type: StaminaResistance
     damageCoefficient: 0.5
+  - type: ClothingAutoInject
+    reagents:
+      Milk: 15
 
 - type: entity
   parent: [ClothingOuterEnvirosuitBase, BaseCommandContraband]
@@ -834,7 +836,6 @@
         Piercing: 0.95
         Heat: 0.4
         Shock: 0.85
-        Radiation: 0.05
         Caustic: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.15
@@ -912,8 +913,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.95
+    sprintModifier: 0.95
   - type: HeldSpeedModifier
   - type: TemperatureProtection
     heatingCoefficient: 0.1
@@ -925,7 +926,6 @@
         Slash: 0.90
         Piercing: 0.90
         Heat: 0.9
-        Radiation: 0.75
         Caustic: 0.5
 
 - type: entity
@@ -982,6 +982,7 @@
       coefficients:
         Heat: 0.85
         Radiation: 0.01
+        Caustic: 0.9
 
 - type: entity
   parent: [ClothingOuterEnvirosuitBase, BaseScienceContraband]
@@ -1054,9 +1055,8 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.7
-        Heat: 0.75
-        Radiation: 0.4
-        Caustic: 0.4
+        Heat: 0.7
+        Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -1085,12 +1085,14 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
-        Radiation: 0.95
-        Caustic: 0.90
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.75
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
@@ -1109,7 +1111,6 @@
         Slash: 0.65
         Piercing: 0.65
         Heat: 0.70
-        Radiation: 0.85
         Caustic: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.90
@@ -1118,6 +1119,9 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance
     damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: [ClothingOuterEnvirosuitBaseCombat, BaseSecurityContraband]
@@ -1132,12 +1136,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
-        Radiation: 0.85
-        Caustic: 0.4
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: ModifyDelayedKnockdown
@@ -1145,6 +1148,9 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance
     damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: ClothingOuterEnvirosuitBase
@@ -1204,11 +1210,11 @@
         Blunt: 0.6
         Slash: 0.6
         Piercing: 0.6
-        Heat: 0.8
+        Heat: 0.7
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: StaminaResistance
     damageCoefficient: 0.6
@@ -1288,8 +1294,8 @@
         Heat: 0.7
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: StaminaResistance
     damageCoefficient: 0.5

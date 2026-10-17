@@ -4,6 +4,9 @@
 
 # ORDEM ALFABÉTICA!
 - type: Tag
+  id: CaptainSabreGoldenSkinKit
+
+- type: Tag
   id: CartridgeLightRifleImprovised
 
 - type: Tag
@@ -14,6 +17,9 @@
 
 - type: Tag
   id: CartridgeWatson
+
+- type: Tag
+  id: DaengatiEmotes
 
 - type: Tag
   id: EletricRadiation
@@ -62,7 +68,7 @@
 
 - type: Tag
   id: WeaponPistolDahlia
-  
+
 - type: Tag
   id: XenoDungeon
 
@@ -72,3 +78,8 @@
 - type: Tag
   id: DrinkBottleMilk
 
+- type: Tag
+  id: PlasmamanSafeOther
+
+- type: Tag
+  id: CurseBomb

@@ -637,7 +637,7 @@
   description: uplink-emp-grenade-desc
   productEntity: EmpGrenade
   cost:
-    Telecrystal: 4 # goob - implanter is 10 and infintely better lmao
+    Telecrystal: 10
   categories:
   - UplinkExplosives
   conditions: # Goob, two times cheaper for nukies
@@ -1471,7 +1471,7 @@
   icon: { sprite: /Textures/Objects/Misc/guardian_info.rsi, state: icon }
   productEntity: BoxHoloparasite
   cost:
-    Telecrystal: 70 # goob
+    Telecrystal: 60 # goob
   categories:
   - UplinkAllies
   conditions:
@@ -1698,7 +1698,7 @@
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   productEntity: EmpImplanter
   cost:
-    Telecrystal: 10 # goob
+    Telecrystal: 20 # Dumont - Lasersec
   categories:
     - UplinkImplants
 
@@ -1985,7 +1985,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Suits/eva_syndicate.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEVABundle
   cost:
-    Telecrystal: 20 # goob - Meh protection no slowdown. Can definitely take a hit or two extra however.
+    Telecrystal: 10 # Dumont - overpriced EVA, made it cost 10
   categories:
   - UplinkWearables
 
@@ -2050,7 +2050,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   cost:
-    Telecrystal: 75 # goob
+    Telecrystal: 90 # Dumont LaserSec
   categories:
   - UplinkWearables
   #Goobstation
@@ -2176,8 +2176,9 @@
   name: uplink-syndicate-stamp-name
   description: uplink-syndicate-stamp-desc
   productEntity: RubberStampSyndicate
-  cost:
-    Telecrystal: 8 # goob - Has some gimmicky use, can't be 5 TC. Not on 10 TC level so it takes 8 TC.
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
   categories:
   - UplinkPointless
 

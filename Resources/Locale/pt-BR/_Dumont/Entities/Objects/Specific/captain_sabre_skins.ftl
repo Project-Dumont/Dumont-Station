@@ -1,0 +1,2 @@
+ent-ChangeCaptainSabreSkinKit = AutoMod Sabre de Capitão Dourado
+    .desc = Um modificadorc cosmético automático para o sabre de capitão, envelopando-o em ouro puro. Presenteado apenas para os capitães mais robustos que sobreviveram a tortura sem fim que é seu trabalho.

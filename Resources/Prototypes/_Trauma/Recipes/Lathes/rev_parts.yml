@@ -6,7 +6,7 @@
   abstract: true
   id: BaseRevComponent
   categories: [ Parts ]
-  completetime: 15
+  completetime: 12 # 5 Parts per minute instead of 4
   materials:
     Steel: 10
 
@@ -29,10 +29,19 @@
   parent: BaseRevComponent
   id: RevBallBearings
   result: RevBallBearings
+  materials:
+    Steel: 300
 
 - type: latheRecipe
   parent: BaseRevComponent
   id: RevArmorPlate
   result: RevArmorPlate
   materials:
-    Steel: 500
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevCuffs
+  result: RevHandcuffs
+  materials:
+    Steel: 200

@@ -9,7 +9,7 @@
     sprite: _Lavaland/Objects/Weapons/upgrade.rsi
   - type: Item
     size: Small
-  - type: GunUpgrade
+  - type: ItemUpgrade
   - type: StaticPrice
     price: 75
   - type: Tag
@@ -31,7 +31,7 @@
       color: "#a47dab"
     - state: overlay-3
       color: "#ff355e"
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: gun-upgrade-heat
   - type: WeaponUpgradeDamage
     bonusDamage:
@@ -54,7 +54,7 @@
       color: "#a47dab"
     - state: overlay-3
       color: "#ba8e23"
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: gun-upgrade-attack-speed
   - type: WeaponUpgradeSpeed
     attackRateMultiplier: 1.3 # 30% faster
@@ -74,7 +74,7 @@
       color: "#a47dab"
     - state: overlay-3
       color: "#e65100"
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: gun-upgrade-melee-range
   - type: WeaponUpgradeRange
     rangeMultiplier: 1.35 # 35% more range

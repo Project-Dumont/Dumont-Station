@@ -42897,8 +42897,6 @@ entities:
     - type: Transform
       pos: 47.320854,40.58717
       parent: 2
-- proto: Bloodpack10Lingering
-  entities:
   - uid: 37024
     components:
     - type: Transform
@@ -98529,7 +98527,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckCloakCe
+- proto: ClothingNeckCloakWhiteCe
   entities:
   - uid: 15161
     components:
@@ -98613,7 +98611,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckMantleCE
+- proto: ClothingNeckMantleWhiteCE
   entities:
   - uid: 15162
     components:
@@ -158791,8 +158789,6 @@ entities:
     - type: Transform
       pos: 47.545647,40.521706
       parent: 2
-- proto: Gauze10Lingering
-  entities:
   - uid: 37019
     components:
     - type: Transform

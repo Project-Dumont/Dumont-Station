@@ -1,0 +1,454 @@
+- type: decal
+  id: ArrowsRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: arrows_red
+
+- type: decal
+  id: AstWarnBox
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_box
+
+- type: decal
+  id: AstWarnCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_corner_ne
+
+- type: decal
+  id: AstWarnCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_corner_nw
+
+- type: decal
+  id: AstWarnCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_corner_se
+
+- type: decal
+  id: AstWarnCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_corner_sw
+
+- type: decal
+  id: AstWarnE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_e
+
+- type: decal
+  id: AstWarnEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_end_e
+
+- type: decal
+  id: AstWarnEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_end_n
+
+- type: decal
+  id: AstWarnEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_end_s
+
+- type: decal
+  id: AstWarnEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_end_w
+
+- type: decal
+  id: AstWarnFull
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_full
+
+- type: decal
+  id: AstWarnN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_n
+
+- type: decal
+  id: AstWarnNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_ne
+
+- type: decal
+  id: AstWarnNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_nw
+
+- type: decal
+  id: AstWarnS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_s
+
+- type: decal
+  id: AstWarnSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_se
+
+- type: decal
+  id: AstWarnSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_sw
+
+- type: decal
+  id: AstWarnW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: ast_warn_w
+
+- type: decal
+  id: BotLeftRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: bot_left_red
+
+- type: decal
+  id: BotRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: bot_red
+
+- type: decal
+  id: BotRightRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: bot_right_red
+
+- type: decal
+  id: BoxNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_ne
+
+- type: decal
+  id: BoxNeGreyscale
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_ne_greyscale
+
+- type: decal
+  id: BoxNeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_ne_red
+
+- type: decal
+  id: BoxNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_nw
+
+- type: decal
+  id: BoxNwGreyscale
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_nw_greyscale
+
+- type: decal
+  id: BoxNwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_nw_red
+
+- type: decal
+  id: BoxRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_red
+
+- type: decal
+  id: BoxSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_se
+
+- type: decal
+  id: BoxSeGreyscale
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_se_greyscale
+
+- type: decal
+  id: BoxSeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_se_red
+
+- type: decal
+  id: BoxSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_sw
+
+- type: decal
+  id: BoxSwGreyscale
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_sw_greyscale
+
+- type: decal
+  id: BoxSwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: box_sw_red
+
+- type: decal
+  id: CautionRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: caution_red
+
+- type: decal
+  id: DeliveryRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: delivery_red
+
+- type: decal
+  id: EvacBigE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_big_e
+
+- type: decal
+  id: EvacBigN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_big_n
+
+- type: decal
+  id: EvacBigS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_big_s
+
+- type: decal
+  id: EvacBigW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_big_w
+
+- type: decal
+  id: EvacE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_e
+
+- type: decal
+  id: EvacN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_n
+
+- type: decal
+  id: EvacS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_s
+
+- type: decal
+  id: EvacW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: evac_w
+
+- type: decal
+  id: LoadingAreaRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: loading_area_red
+
+- type: decal
+  id: StandclearRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: standclear_red
+
+- type: decal
+  id: WarnBoxRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_box_red
+
+- type: decal
+  id: WarnCornerNeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_ne_red
+
+- type: decal
+  id: WarnCornerNwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_nw_red
+
+- type: decal
+  id: WarnCornerSeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_se_red
+
+- type: decal
+  id: WarnCornerSmallNeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_small_ne_red
+
+- type: decal
+  id: WarnCornerSmallNwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_small_nw_red
+
+- type: decal
+  id: WarnCornerSmallSeRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_small_se_red
+
+- type: decal
+  id: WarnCornerSmallSwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_small_sw_red
+
+- type: decal
+  id: WarnCornerSwRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_corner_sw_red
+
+- type: decal
+  id: WarnEndERed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_end_e_red
+
+- type: decal
+  id: WarnEndNRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_end_n_red
+
+- type: decal
+  id: WarnEndSRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_end_s_red
+
+- type: decal
+  id: WarnEndWRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_end_w_red
+
+- type: decal
+  id: WarnFullRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_full_red
+
+- type: decal
+  id: WarnLineERed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_line_e_red
+
+- type: decal
+  id: WarnLineNRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_line_n_red
+
+- type: decal
+  id: WarnLineWRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warn_line_w_red
+
+- type: decal
+  id: WarninglineRed
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/markings.rsi
+    state: warningline_red

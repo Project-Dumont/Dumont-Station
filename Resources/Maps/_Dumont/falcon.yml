@@ -4,7 +4,7 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/12/2026 02:06:18
+  time: 10/16/2026 13:35:53
   entityCount: 14139
 maps:
 - 1
@@ -17441,7 +17441,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -16.405638,-16.565228
-- proto: CableApcStackLingering10
+- proto: CableApcStack10
   entities:
   - uid: 1935
     components:
@@ -32527,10 +32527,10 @@ entities:
       server: 4639
       connectedToServer: True
     - type: DnaServer
-      serverId: 89
+      serverId: 91
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 57.7442635
-      lastInjectorTime: 57.7442635
+      lastSubjectInjectTime: 1173.0038755
+      lastInjectorTime: 1173.0038755
 - proto: DonkpocketBoxSpawner
   entities:
   - uid: 4640
@@ -53861,34 +53861,34 @@ entities:
     - type: Transform
       parent: 2
       pos: 22.5,0.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 7415
+    components:
+    - type: Transform
+      parent: 2
+      pos: 25.5,-5.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 7412
     components:
     - type: Transform
       parent: 2
-      pos: 23.5,-6.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 7413
-    components:
-    - type: Transform
-      parent: 2
       pos: 25.5,-4.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeMelee
   entities:
   - uid: 7414
     components:
     - type: Transform
       parent: 2
-      pos: 25.5,-5.5
-- proto: GunSafeShotgunKammerer
+      pos: 24.5,-6.5
+- proto: GunSafeSurplus
   entities:
-  - uid: 7415
+  - uid: 7413
     components:
     - type: Transform
       parent: 2
-      pos: 24.5,-6.5
+      pos: 23.5,-6.5
 - proto: Handcuffs
   entities:
   - uid: 7416
@@ -75176,7 +75176,7 @@ entities:
       parent: 2
       pos: 26.5,-22.5
     - type: DnaServer
-      serverId: 90
+      serverId: 92
 - proto: RMCRotaryPhoneWallmount
   entities:
   - uid: 11338

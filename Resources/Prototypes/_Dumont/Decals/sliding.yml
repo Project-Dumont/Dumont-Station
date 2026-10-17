@@ -1,0 +1,342 @@
+- type: decal
+  id: SlidingBox
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_box
+
+- type: decal
+  id: SlidingCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_corner_ne
+
+- type: decal
+  id: SlidingCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_corner_nw
+
+- type: decal
+  id: SlidingCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_corner_se
+
+- type: decal
+  id: SlidingCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_corner_sw
+
+- type: decal
+  id: SlidingE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_e
+
+- type: decal
+  id: SlidingEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_end_e
+
+- type: decal
+  id: SlidingEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_end_n
+
+- type: decal
+  id: SlidingEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_end_s
+
+- type: decal
+  id: SlidingEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_end_w
+
+- type: decal
+  id: SlidingN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_n
+
+- type: decal
+  id: SlidingNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_ne
+
+- type: decal
+  id: SlidingNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_nw
+
+- type: decal
+  id: SlidingS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_s
+
+- type: decal
+  id: SlidingSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_se
+
+- type: decal
+  id: SlidingSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_sw
+
+- type: decal
+  id: SlidingThinplatingCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_corner_ne
+
+- type: decal
+  id: SlidingThinplatingCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_corner_nw
+
+- type: decal
+  id: SlidingThinplatingCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_corner_se
+
+- type: decal
+  id: SlidingThinplatingCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_corner_sw
+
+- type: decal
+  id: SlidingThinplatingE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_e
+
+- type: decal
+  id: SlidingThinplatingEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_end_e
+
+- type: decal
+  id: SlidingThinplatingEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_end_n
+
+- type: decal
+  id: SlidingThinplatingEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_end_s
+
+- type: decal
+  id: SlidingThinplatingEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_end_w
+
+- type: decal
+  id: SlidingThinplatingN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_n
+
+- type: decal
+  id: SlidingThinplatingNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_ne
+
+- type: decal
+  id: SlidingThinplatingNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_nw
+
+- type: decal
+  id: SlidingThinplatingS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_s
+
+- type: decal
+  id: SlidingThinplatingSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_se
+
+- type: decal
+  id: SlidingThinplatingSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_sw
+
+- type: decal
+  id: SlidingThinplatingW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_thinplating_w
+
+- type: decal
+  id: SlidingW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_w
+
+- type: decal
+  id: SlidingWideplatingCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_corner_ne
+
+- type: decal
+  id: SlidingWideplatingCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_corner_nw
+
+- type: decal
+  id: SlidingWideplatingCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_corner_se
+
+- type: decal
+  id: SlidingWideplatingCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_corner_sw
+
+- type: decal
+  id: SlidingWideplatingE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_e
+
+- type: decal
+  id: SlidingWideplatingEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_end_e
+
+- type: decal
+  id: SlidingWideplatingEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_end_n
+
+- type: decal
+  id: SlidingWideplatingEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_end_s
+
+- type: decal
+  id: SlidingWideplatingEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_end_w
+
+- type: decal
+  id: SlidingWideplatingN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_n
+
+- type: decal
+  id: SlidingWideplatingNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_ne
+
+- type: decal
+  id: SlidingWideplatingNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_nw
+
+- type: decal
+  id: SlidingWideplatingS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_s
+
+- type: decal
+  id: SlidingWideplatingSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_se
+
+- type: decal
+  id: SlidingWideplatingSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_sw
+
+- type: decal
+  id: SlidingWideplatingW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/sliding.rsi
+    state: sliding_wideplating_w
