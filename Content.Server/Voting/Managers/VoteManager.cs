@@ -40,7 +40,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
-using Content.Shared._DV.CosmicCult.Components; // DeltaV - Cosmic Cult
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -491,12 +490,6 @@ namespace Content.Server.Voting.Managers
             if (eligibility == VoterEligibility.BloodCult &&
                 !_entityManager.HasComponent<BloodCultistComponent>(player.AttachedEntity))
                 return false;
-
-            // Begin DeltaV - Cosmic Cult
-            if (eligibility == VoterEligibility.CosmicCult)
-                if (!_entityManager.HasComponent<CosmicCultComponent>(player.AttachedEntity))
-                    return false;
-            // End DeltaV - Cosmic Cult
 
             return true;
         }

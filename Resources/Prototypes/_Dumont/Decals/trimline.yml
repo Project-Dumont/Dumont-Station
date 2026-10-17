@@ -1,0 +1,692 @@
+- type: decal
+  id: Trimline
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline
+
+- type: decal
+  id: TrimlineArrowEN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_e_n
+
+- type: decal
+  id: TrimlineArrowES
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_e_s
+
+- type: decal
+  id: TrimlineArrowNE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_n_e
+
+- type: decal
+  id: TrimlineArrowNW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_n_w
+
+- type: decal
+  id: TrimlineArrowNeS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_ne_s
+
+- type: decal
+  id: TrimlineArrowNeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_ne_w
+
+- type: decal
+  id: TrimlineArrowNwE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_nw_e
+
+- type: decal
+  id: TrimlineArrowNwS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_nw_s
+
+- type: decal
+  id: TrimlineArrowSE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_s_e
+
+- type: decal
+  id: TrimlineArrowSW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_s_w
+
+- type: decal
+  id: TrimlineArrowSeN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_se_n
+
+- type: decal
+  id: TrimlineArrowSeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_se_w
+
+- type: decal
+  id: TrimlineArrowSwE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_sw_e
+
+- type: decal
+  id: TrimlineArrowSwN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_sw_n
+
+- type: decal
+  id: TrimlineArrowWN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_w_n
+
+- type: decal
+  id: TrimlineArrowWS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_arrow_w_s
+
+- type: decal
+  id: TrimlineBox
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_box
+
+- type: decal
+  id: TrimlineCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_corner_ne
+
+- type: decal
+  id: TrimlineCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_corner_nw
+
+- type: decal
+  id: TrimlineCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_corner_se
+
+- type: decal
+  id: TrimlineCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_corner_sw
+
+- type: decal
+  id: TrimlineE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_e
+
+- type: decal
+  id: TrimlineEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_end_e
+
+- type: decal
+  id: TrimlineEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_end_n
+
+- type: decal
+  id: TrimlineEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_end_s
+
+- type: decal
+  id: TrimlineEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_end_w
+
+- type: decal
+  id: TrimlineFillArrowEN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_e_n
+
+- type: decal
+  id: TrimlineFillArrowES
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_e_s
+
+- type: decal
+  id: TrimlineFillArrowNE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_n_e
+
+- type: decal
+  id: TrimlineFillArrowNW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_n_w
+
+- type: decal
+  id: TrimlineFillArrowNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_ne
+
+- type: decal
+  id: TrimlineFillArrowNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_nw
+
+- type: decal
+  id: TrimlineFillArrowSE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_s_e
+
+- type: decal
+  id: TrimlineFillArrowSW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_s_w
+
+- type: decal
+  id: TrimlineFillArrowSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_se
+
+- type: decal
+  id: TrimlineFillArrowSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_sw
+
+- type: decal
+  id: TrimlineFillArrowWN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_w_n
+
+- type: decal
+  id: TrimlineFillArrowWS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_arrow_w_s
+
+- type: decal
+  id: TrimlineFillBox
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_box
+
+- type: decal
+  id: TrimlineFillCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_corner_ne
+
+- type: decal
+  id: TrimlineFillCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_corner_nw
+
+- type: decal
+  id: TrimlineFillCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_corner_se
+
+- type: decal
+  id: TrimlineFillCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_corner_sw
+
+- type: decal
+  id: TrimlineFillE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_e
+
+- type: decal
+  id: TrimlineFillEndE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_end_e
+
+- type: decal
+  id: TrimlineFillEndN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_end_n
+
+- type: decal
+  id: TrimlineFillEndS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_end_s
+
+- type: decal
+  id: TrimlineFillEndW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_end_w
+
+- type: decal
+  id: TrimlineFillMidE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_mid_e
+
+- type: decal
+  id: TrimlineFillMidN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_mid_n
+
+- type: decal
+  id: TrimlineFillMidS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_mid_s
+
+- type: decal
+  id: TrimlineFillMidW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_mid_w
+
+- type: decal
+  id: TrimlineFillN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_n
+
+- type: decal
+  id: TrimlineFillNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_ne
+
+- type: decal
+  id: TrimlineFillNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_nw
+
+- type: decal
+  id: TrimlineFillS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_s
+
+- type: decal
+  id: TrimlineFillSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_se
+
+- type: decal
+  id: TrimlineFillSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_sw
+
+- type: decal
+  id: TrimlineFillW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_w
+
+- type: decal
+  id: TrimlineFillWarnCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_corner_ne
+
+- type: decal
+  id: TrimlineFillWarnCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_corner_nw
+
+- type: decal
+  id: TrimlineFillWarnCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_corner_se
+
+- type: decal
+  id: TrimlineFillWarnCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_corner_sw
+
+- type: decal
+  id: TrimlineFillWarnE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_e
+
+- type: decal
+  id: TrimlineFillWarnN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_n
+
+- type: decal
+  id: TrimlineFillWarnNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_ne
+
+- type: decal
+  id: TrimlineFillWarnNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_nw
+
+- type: decal
+  id: TrimlineFillWarnS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_s
+
+- type: decal
+  id: TrimlineFillWarnSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_se
+
+- type: decal
+  id: TrimlineFillWarnSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_sw
+
+- type: decal
+  id: TrimlineFillWarnW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_fill_warn_w
+
+- type: decal
+  id: TrimlineMidE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_mid_e
+
+- type: decal
+  id: TrimlineMidN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_mid_n
+
+- type: decal
+  id: TrimlineMidS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_mid_s
+
+- type: decal
+  id: TrimlineMidW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_mid_w
+
+- type: decal
+  id: TrimlineN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_n
+
+- type: decal
+  id: TrimlineNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_ne
+
+- type: decal
+  id: TrimlineNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_nw
+
+- type: decal
+  id: TrimlineS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_s
+
+- type: decal
+  id: TrimlineSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_se
+
+- type: decal
+  id: TrimlineShrinkEN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_e_n
+
+- type: decal
+  id: TrimlineShrinkES
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_e_s
+
+- type: decal
+  id: TrimlineShrinkNE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_n_e
+
+- type: decal
+  id: TrimlineShrinkNW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_n_w
+
+- type: decal
+  id: TrimlineShrinkSE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_s_e
+
+- type: decal
+  id: TrimlineShrinkSW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_s_w
+
+- type: decal
+  id: TrimlineShrinkWN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_w_n
+
+- type: decal
+  id: TrimlineShrinkWS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_shrink_w_s
+
+- type: decal
+  id: TrimlineSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_sw
+
+- type: decal
+  id: TrimlineW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_w
+
+- type: decal
+  id: TrimlineWarnE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_e
+
+- type: decal
+  id: TrimlineWarnN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_n
+
+- type: decal
+  id: TrimlineWarnNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_ne
+
+- type: decal
+  id: TrimlineWarnNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_nw
+
+- type: decal
+  id: TrimlineWarnS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_s
+
+- type: decal
+  id: TrimlineWarnSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_se
+
+- type: decal
+  id: TrimlineWarnSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_sw
+
+- type: decal
+  id: TrimlineWarnW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/trimline.rsi
+    state: trimline_warn_w

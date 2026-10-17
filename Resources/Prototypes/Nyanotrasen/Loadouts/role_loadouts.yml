@@ -14,11 +14,12 @@
   - SecurityMelee
   - SurvivalSecurity
   - TrinketsSecurity
-  - WeaponsSecurityGun # Dumontstation
+#  - WeaponsSecurityGun # Dumontstation
   - SecurityStar
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolSecurity
-  - PrisonGuardEnvirohelm
+  - PrisonGuardEnvirohelmet # Dumont
   - PrisonGuardEnvirosuit
   - PrisonGuardEnvirogloves
+  - PrisonGuardEnviroboots # Dumont

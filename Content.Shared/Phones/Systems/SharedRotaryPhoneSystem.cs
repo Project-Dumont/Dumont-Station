@@ -54,7 +54,7 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
         SubscribeLocalEvent<RotaryPhoneComponent, BoundUIClosedEvent>(OnUiClosed);
         SubscribeLocalEvent<RotaryPhoneComponent, EntGotRemovedFromContainerMessage>(OnPickup);
         SubscribeLocalEvent<RotaryPhoneComponent, EntGotInsertedIntoContainerMessage>(OnHangUp);
-        SubscribeLocalEvent<RotaryPhoneComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
+        SubscribeLocalEvent<RotaryPhoneComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
         SubscribeLocalEvent<RotaryPhoneComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RotaryPhoneComponent, InteractUsingEvent>(OnInteract);
         SubscribeLocalEvent<RotaryPhoneComponent, DestructionEventArgs>(OnPhoneDestroy);
@@ -161,7 +161,7 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
     }
 
 
-    private void OnGetVerbs(Entity<RotaryPhoneComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+    private void OnGetAltVerbs(Entity<RotaryPhoneComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanComplexInteract
             || !args.CanAccess

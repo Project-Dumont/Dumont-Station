@@ -87,7 +87,7 @@
 - type: startingGear
   id: LibrarianGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
+    #shoes: ClothingShoesBootsLaceup - Dumont, moved to loadouts
     id: LibrarianPDA
     ears: ClothingHeadsetService
     pocket1: d20Dice
@@ -119,4 +119,3 @@
 - type: jobAlternateTitle
   id: LibrarianTitleTech
   name: job-name-alt-librarian-tech
-

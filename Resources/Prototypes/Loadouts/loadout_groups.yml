@@ -402,6 +402,14 @@
   - CaptainJacket # Goobstation
 
 - type: loadoutGroup
+  id: CaptainShoes
+  name: loadout-group-captain-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
+
+- type: loadoutGroup
   id: HoPHead
   name: loadout-group-hop-head
   minLimit: 0
@@ -418,6 +426,14 @@
   - HoPJumpskirt
   - HoPJumpsuitMilitary # goob
   - HoPSummerShirt # goob
+
+- type: loadoutGroup
+  id: HoPShoes
+  name: loadout-group-hop-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - BrownShoes
 
 - type: loadoutGroup
   id: HoPNeck
@@ -459,6 +475,7 @@
   - AncientJumpsuit
   - RainbowJumpsuit
   - RainbowJumpskirt
+  - OverallsJumpsuit
   # Goobstation Loadout Rework Start
   - AssymetricDress #EE
   - EveningDress #EE
@@ -765,6 +782,14 @@
   - WaitressUniform # EE
 
 - type: loadoutGroup
+  id: BartenderShoes
+  name: loadout-group-bartender-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - BlackShoes
+
+- type: loadoutGroup
   id: BartenderOuterClothing
   name: loadout-group-bartender-outerclothing
   minLimit: 0
@@ -798,6 +823,14 @@
   - ServiceMJ # goob
 
 - type: loadoutGroup
+  id: ChefShoes
+  name: loadout-group-chef-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - BlackShoes
+
+- type: loadoutGroup
   id: ChefOuterClothing
   name: loadout-group-chef-outerclothing
   minLimit: 0
@@ -819,6 +852,14 @@
   - ServiceMJ # goob
 
 - type: loadoutGroup
+  id: LibrarianShoes
+  name: loadout-group-librarian-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
+
+- type: loadoutGroup
   id: LawyerJumpsuit
   name: loadout-group-lawyer-jumpsuit
   minLimit: 1
@@ -835,6 +876,14 @@
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
   - ServiceMJ # goob
+
+- type: loadoutGroup
+  id: LawyerShoes
+  name: loadout-group-lawyer-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
 
 - type: loadoutGroup
   id: LawyerNeck
@@ -874,6 +923,14 @@
   - ServiceMJ # goob
 
 - type: loadoutGroup
+  id: ChaplainShoes
+  name: loadout-group-chaplain-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - BlackShoes
+
+- type: loadoutGroup
   id: ChaplainOuterClothing
   name: loadout-group-chaplain-outerclothing
   minLimit: 0
@@ -908,6 +965,14 @@
   - JanitorJumpskirt
   - ServiceMJ # goob
   - MaidOutfitJanitor
+
+- type: loadoutGroup
+  id: JanitorShoes
+  name: loadout-group-janitor-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - JanitorShoes
 
 - type: loadoutGroup
   id: JanitorGloves
@@ -952,6 +1017,14 @@
   - BotanistOveralls
   - ServiceMJ # goob
   - HydroMJ # goob
+
+- type: loadoutGroup
+  id: BotanistShoes
+  name: loadout-group-botanist-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - BrownShoes
 
 - type: loadoutGroup
   id: BotanistBackpack
@@ -1056,6 +1129,14 @@
   - MimeJumpskirt
 
 - type: loadoutGroup
+  id: MimeShoes
+  name: loadout-group-mime-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - WhiteShoes
+
+- type: loadoutGroup
   id: MimeBackpack
   name: loadout-group-mime-backpack
   exclusiveWith: BACK # Goobstation
@@ -1104,6 +1185,14 @@
   - MusicianJumpsuit
   - MusicianJumpskirt
   - ServiceMJ # goob
+
+- type: loadoutGroup
+  id: MusicianShoes
+  name: loadout-group-musician-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
 
 - type: loadoutGroup
   id: MusicianOuterClothing
@@ -1290,9 +1379,12 @@
   name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
-  - ChiefEngineerCloak
-  - ChiefEngineerMantle
-  - ChiefEngineerEnsemble # goob
+  - ClothingNeckCloakWhiteCe # goob
+  - ClothingNeckCloakGreenCe # goob
+  - ClothingNeckMantleWhiteCE # goob
+  - ClothingNeckMantleOrangeCE # goob
+  - ClothingNeckEnsembleChiefEngineerWhite # goob
+  - ClothingNeckEnsembleChiefEngineerGreen # goob
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1307,6 +1399,7 @@
   minLimit: 1
   exclusiveWith: FEET #Goostation
   loadouts: [BrownShoes, EngineeringWinterBoots]
+
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
   name: loadout-group-technical-assistant-jumpsuit
@@ -1316,6 +1409,15 @@
   - YellowJumpsuit
   - YellowJumpskirt
   - EngiMJ # goob
+
+# Dumont start
+- type: loadoutGroup
+  id: TechnicalAssistantShoes
+  name: loadout-group-technical-assistant-shoes
+  minLimit: 1
+  exclusiveWith: FEET #Goostation
+  loadouts: [WorkBoots, EngineeringWinterBoots]
+# Dumont end
 
 - type: loadoutGroup
   id: StationEngineerHead
@@ -2003,6 +2105,14 @@
   - ReporterDress
 
 - type: loadoutGroup
+  id: ReporterShoes
+  name: loadout-group-reporter-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LaceupShoes
+
+- type: loadoutGroup
   id: PsychologistJumpsuit
   name: loadout-group-psychologist-jumpsuit
   minLimit: 1
@@ -2010,6 +2120,14 @@
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
+
+- type: loadoutGroup
+  id: PsychologistShoes
+  name: loadout-group-psychologist-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - LeatherShoes
 
 - type: loadoutGroup
   id: BoxerJumpsuit
@@ -2030,6 +2148,14 @@
   - BlueBoxingGloves
   - GreenBoxingGloves
   - YellowBoxingGloves
+
+- type: loadoutGroup
+  id: BoxerShoes
+  name: loadout-group-boxer-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - WhiteShoes
 
 # Other
 - type: loadoutGroup

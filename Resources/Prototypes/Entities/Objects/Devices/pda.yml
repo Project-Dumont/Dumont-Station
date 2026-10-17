@@ -263,6 +263,7 @@
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
 #      - SOSCartridge # Imp Dumont edit, make the PDA something you have to request
+      - JaniCallerCartridge
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge

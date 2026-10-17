@@ -152,7 +152,7 @@
   id: MimeGear
   equipment:
     #gloves: ClothingHandsGlovesColorWhite - Goobstation, moved to loadouts
-    shoes: ClothingShoesColorWhite
+    #shoes: ClothingShoesColorWhite - Dumont, moved to loadouts
     id: MimePDA
     pocket1: CrayonMime
     ears: ClothingHeadsetService
@@ -212,4 +212,3 @@
 - type: jobAlternateTitle
   id: MimeTitleChaplin
   name: job-name-alt-mime-chaplin
-

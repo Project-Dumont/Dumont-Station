@@ -26,6 +26,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
   - type: HideLayerClothing
     slots:
     - Hair
@@ -51,7 +52,10 @@
   - type: FireProtection
     reduction: 0.1
   - type: FaceHuggerBlocker
-    
+  - type: IgniteFromGasImmunity # Dumont - Allow plasmamen to wear heretic armor
+    parts:
+    - Head
+
 - type: entity
   parent: ClothingHeadHatHoodHeretic
   id: ClothingHeadHatHoodHereticVoid

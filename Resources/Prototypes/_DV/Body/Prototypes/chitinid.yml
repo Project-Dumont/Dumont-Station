@@ -31,10 +31,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganChitinidStomach
         liver: OrganChitinidLiver
         kidneys: OrganHumanKidneys
+    # Dumont changes start
+    tail:
+      part: TailChitinid
+    # Dumont end
     right arm:
       part: RightArmChitinid
       connections:

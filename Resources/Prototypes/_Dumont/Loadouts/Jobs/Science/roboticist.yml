@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: RoboticistEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitRoboticist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: RoboticistEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetRoboticist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: RoboticistEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesRoboticist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: RoboticistEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsRoboticist
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

@@ -1,0 +1,16 @@
+borg-slot-cables-empty = Cabos
+borg-slot-construction-empty = Materiais de construção
+borg-slot-circuitboards-empty = Placas de circuito
+borg-slot-flatpacks-empty = Flatpacks
+borg-slot-tiles-empty = Pisos
+borg-slot-topicals-empty = Tópicos
+borg-slot-small-containers-empty = Recipientes pequenos
+borg-slot-chemical-containers-empty = Recipientes de química
+borg-slot-documents-empty = Livros e papéis
+borg-slot-soap-empty = Sabão
+borg-slot-instruments-empty = Instrumentos
+borg-slot-beakers-empty = Béqueres
+borg-slot-cuffs-empty = Algemas
+borg-slot-seeds-empty = Sementes
+borg-slot-pka-empty = PKA
+borg-slot-organ-empty = Órgão ou membro

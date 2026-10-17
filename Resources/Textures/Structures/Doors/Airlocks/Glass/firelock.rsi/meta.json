@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/tgstation/tgstation at 04e43d8c1d5097fdb697addd4395fb849dd341bd",
+  "copyright": "Taken from https://github.com/tgstation/tgstation at 04e43d8c1d5097fdb697addd4395fb849dd341bd, resprited by Crenissis (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -24,10 +24,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
         ]
       ]
@@ -37,10 +39,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
         ]
       ]
@@ -49,7 +53,6 @@
       "name": "deny_unlit",
       "delays": [
         [
-          0.1,
           0.1,
           0.1
         ]
@@ -63,10 +66,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
         ]
       ]
@@ -76,10 +81,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
         ]
       ]
@@ -88,13 +95,14 @@
       "name": "panel_closing",
       "delays": [
         [
+          0.2,
           0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
           0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.07,
-          0.27
+          0.2
         ]
       ]
     },
@@ -106,11 +114,12 @@
       "delays": [
         [
           0.2,
+          0.1,
           0.07,
           0.07,
           0.07,
           0.07,
-          0.07,
+          0.1,
           0.2
         ]
       ]
@@ -120,12 +129,6 @@
     },
     {
       "name": "welded_open"
-    },
-    {
-      "name": "deny"
-    },
-    {
-      "name": "locked"
     },
     {
       "name": "emergency_unlit",
@@ -146,7 +149,7 @@
       ]
     },
     {
-      "name": "base_pressure_unlit",
+      "name": "pressure_unlit_flat",
       "delays": [
         [
           0.8,
@@ -155,7 +158,7 @@
       ]
     },
     {
-      "name": "pressure_unlit_flat",
+      "name": "base_pressure_unlit",
       "delays": [
         [
           0.8,
@@ -173,7 +176,7 @@
       ]
     },
     {
-      "name": "base_temperature_unlit",
+      "name": "temperature_unlit_flat",
       "delays": [
           [
               0.8,
@@ -182,7 +185,7 @@
       ]
     },
     {
-      "name": "temperature_unlit_flat",
+      "name": "base_temperature_unlit",
       "delays": [
           [
               0.8,

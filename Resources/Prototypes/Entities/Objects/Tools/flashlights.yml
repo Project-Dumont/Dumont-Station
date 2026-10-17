@@ -128,7 +128,7 @@
     storedRotation: -90
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     radius: 6
     netsync: false
@@ -148,7 +148,7 @@
       Steel: 25
       Glass: 25
   # Lavaland Change start
-  - type: GunUpgrade
+  - type: ItemUpgrade
     name: gun-upgrade-flashlight-name
     examineTextType: gun-upgrade-examine-type-can-use
     insertedTextType: gun-upgrade-inserted-examine-type-attached

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 pharmacy version made by CRISOOOOO (github) for Dumont Station 14",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 pharmacy version made by CRISOOOOO (github) for Dumont Station 14, resprited by Crenissis (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -53,18 +53,12 @@
           0.1,
           0.1,
           0.1,
-          0.1,
           0.1
         ]
       ]
     },
     {
-      "name": "open",
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "name": "open"
     },
     {
       "name": "opening",
@@ -106,14 +100,6 @@
       ]
     },
     {
-      "name": "panel_open",
-      "delays": [
-        [
-          1
-        ]
-      ]
-    },
-    {
       "name": "panel_opening",
       "delays": [
         [
@@ -125,6 +111,10 @@
           0.2
         ]
       ]
+    },
+
+    {
+      "name": "panel_open"
     },
     {
       "name": "sparks",
@@ -148,7 +138,8 @@
           0.1,
           0.1,
           0.1,
-          0.1
+          0.1,
+          1.7
         ]
       ]
     },
@@ -161,8 +152,7 @@
           0.1,
           0.1,
           0.1,
-          0.1,
-          1.7
+          0.1
         ]
       ]
     },
@@ -186,8 +176,8 @@
       "name": "emergency_unlit",
       "delays": [
         [
-          0.4,
-          0.4
+          0.6,
+          0.6
         ]
       ]
     }

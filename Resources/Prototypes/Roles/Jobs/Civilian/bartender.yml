@@ -106,7 +106,7 @@
 - type: startingGear
   id: BartenderGear
   equipment:
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack - Dumont, moved to loadouts
     id: BartenderPDA
     ears: ClothingHeadsetService
   #storage:

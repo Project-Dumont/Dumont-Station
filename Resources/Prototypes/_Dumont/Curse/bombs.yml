@@ -1,0 +1,30 @@
+- type: entity
+  parent: C4
+  id: CurseC4
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - CurseBomb
+  - type: RandomTimerTrigger
+    min: 600
+    max: 1200
+  - type: TimerTrigger
+    beepInterval: 30
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: CurseC4
+  id: CurseC4Dud
+  components:
+  - type: ExplodeOnTrigger
+    keysIn:
+    - dud # never explodes
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound: /Audio/Items/brokenbikehorn.ogg
+  - type: DeleteOnTrigger
+    keysIn:
+    - timer

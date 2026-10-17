@@ -1,0 +1,36 @@
+# Plasmaman
+- type: loadout
+  id: PrisonGuardEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PrisonGuardEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PrisonGuardEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PrisonGuardEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

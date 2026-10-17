@@ -99,6 +99,7 @@
     - HelmetEVA
     - WhitelistChameleon
     - CorgiWearable
+    - PlasmamanSafeOther # Dumont
 
 #Large EVA Helmet
 - type: entity
@@ -116,6 +117,7 @@
     - HelmetEVA
     - WhitelistChameleon
     - CorgiWearable
+    - PlasmamanSafeOther # Dumont
 
 #Syndicate EVA Helmet
 - type: entity

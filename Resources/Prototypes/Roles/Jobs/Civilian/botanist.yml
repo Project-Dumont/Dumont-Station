@@ -94,7 +94,7 @@
 - type: startingGear
   id: BotanistGear
   equipment:
-    shoes: ClothingShoesColorBrown
+    #shoes: ClothingShoesColorBrown - Dumont, moved to loadouts
     id: BotanistPDA
     ears: ClothingHeadsetService
     belt: ClothingBeltPlantFilled
@@ -125,4 +125,3 @@
 - type: jobAlternateTitle
   id: BotanistTitleFarmer
   name: job-name-alt-botanist-farmer
-

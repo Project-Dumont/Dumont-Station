@@ -76,7 +76,7 @@
   equipment:
     id: BoxerPDA
     ears: ClothingHeadsetService
-    shoes: ClothingShoesColorRed
+    #shoes: ClothingShoesColorRed - Dumont, moved to loadouts
     belt: ClothingBeltChampion
   #storage:
     #back:

@@ -1,0 +1,368 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "a_large"
+    },
+    {
+      "name": "a_large_e"
+    },
+    {
+      "name": "a_large_w"
+    },
+    {
+      "name": "b_large"
+    },
+    {
+      "name": "b_large_e"
+    },
+    {
+      "name": "b_large_w"
+    },
+    {
+      "name": "c_large"
+    },
+    {
+      "name": "c_large_e"
+    },
+    {
+      "name": "c_large_w"
+    },
+    {
+      "name": "colon_large"
+    },
+    {
+      "name": "colon_large_e"
+    },
+    {
+      "name": "colon_large_w"
+    },
+    {
+      "name": "d_large"
+    },
+    {
+      "name": "d_large_e"
+    },
+    {
+      "name": "d_large_w"
+    },
+    {
+      "name": "dash_large"
+    },
+    {
+      "name": "dash_large_e"
+    },
+    {
+      "name": "dash_large_w"
+    },
+    {
+      "name": "dot_e"
+    },
+    {
+      "name": "dot_w"
+    },
+    {
+      "name": "e_large"
+    },
+    {
+      "name": "e_large_e"
+    },
+    {
+      "name": "e_large_w"
+    },
+    {
+      "name": "eight_large"
+    },
+    {
+      "name": "eight_large_e"
+    },
+    {
+      "name": "eight_large_w"
+    },
+    {
+      "name": "f_large"
+    },
+    {
+      "name": "f_large_e"
+    },
+    {
+      "name": "f_large_w"
+    },
+    {
+      "name": "five_large"
+    },
+    {
+      "name": "five_large_e"
+    },
+    {
+      "name": "five_large_w"
+    },
+    {
+      "name": "four_large"
+    },
+    {
+      "name": "four_large_e"
+    },
+    {
+      "name": "four_large_w"
+    },
+    {
+      "name": "g_large"
+    },
+    {
+      "name": "g_large_e"
+    },
+    {
+      "name": "g_large_w"
+    },
+    {
+      "name": "h_large"
+    },
+    {
+      "name": "h_large_e"
+    },
+    {
+      "name": "h_large_w"
+    },
+    {
+      "name": "i_large"
+    },
+    {
+      "name": "i_large_e"
+    },
+    {
+      "name": "i_large_w"
+    },
+    {
+      "name": "j_large"
+    },
+    {
+      "name": "j_large_e"
+    },
+    {
+      "name": "j_large_w"
+    },
+    {
+      "name": "k_large"
+    },
+    {
+      "name": "k_large_e"
+    },
+    {
+      "name": "k_large_w"
+    },
+    {
+      "name": "l_large"
+    },
+    {
+      "name": "l_large_e"
+    },
+    {
+      "name": "l_large_w"
+    },
+    {
+      "name": "m_large"
+    },
+    {
+      "name": "m_large_e"
+    },
+    {
+      "name": "m_large_w"
+    },
+    {
+      "name": "n_large"
+    },
+    {
+      "name": "n_large_e"
+    },
+    {
+      "name": "n_large_w"
+    },
+    {
+      "name": "nine_large"
+    },
+    {
+      "name": "nine_large_e"
+    },
+    {
+      "name": "nine_large_w"
+    },
+    {
+      "name": "o_large"
+    },
+    {
+      "name": "o_large_e"
+    },
+    {
+      "name": "o_large_w"
+    },
+    {
+      "name": "one_large"
+    },
+    {
+      "name": "one_large_e"
+    },
+    {
+      "name": "one_large_w"
+    },
+    {
+      "name": "p_large"
+    },
+    {
+      "name": "p_large_e"
+    },
+    {
+      "name": "p_large_w"
+    },
+    {
+      "name": "plus_large"
+    },
+    {
+      "name": "plus_large_e"
+    },
+    {
+      "name": "plus_large_w"
+    },
+    {
+      "name": "q_large"
+    },
+    {
+      "name": "q_large_e"
+    },
+    {
+      "name": "q_large_w"
+    },
+    {
+      "name": "r_large"
+    },
+    {
+      "name": "r_large_e"
+    },
+    {
+      "name": "r_large_w"
+    },
+    {
+      "name": "s_large"
+    },
+    {
+      "name": "s_large_e"
+    },
+    {
+      "name": "s_large_w"
+    },
+    {
+      "name": "seven_large"
+    },
+    {
+      "name": "seven_large_e"
+    },
+    {
+      "name": "seven_large_w"
+    },
+    {
+      "name": "six_large"
+    },
+    {
+      "name": "six_large_e"
+    },
+    {
+      "name": "six_large_w"
+    },
+    {
+      "name": "t_large"
+    },
+    {
+      "name": "t_large_e"
+    },
+    {
+      "name": "t_large_w"
+    },
+    {
+      "name": "three_large"
+    },
+    {
+      "name": "three_large_e"
+    },
+    {
+      "name": "three_large_w"
+    },
+    {
+      "name": "two_large"
+    },
+    {
+      "name": "two_large_e"
+    },
+    {
+      "name": "two_large_w"
+    },
+    {
+      "name": "u_large"
+    },
+    {
+      "name": "u_large_e"
+    },
+    {
+      "name": "u_large_w"
+    },
+    {
+      "name": "v_large"
+    },
+    {
+      "name": "v_large_e"
+    },
+    {
+      "name": "v_large_w"
+    },
+    {
+      "name": "w_large"
+    },
+    {
+      "name": "w_large_e"
+    },
+    {
+      "name": "w_large_w"
+    },
+    {
+      "name": "x_large"
+    },
+    {
+      "name": "x_large_e"
+    },
+    {
+      "name": "x_large_w"
+    },
+    {
+      "name": "y_large"
+    },
+    {
+      "name": "y_large_e"
+    },
+    {
+      "name": "y_large_w"
+    },
+    {
+      "name": "z_large"
+    },
+    {
+      "name": "z_large_e"
+    },
+    {
+      "name": "z_large_w"
+    },
+    {
+      "name": "zero_large"
+    },
+    {
+      "name": "zero_large_e"
+    },
+    {
+      "name": "zero_large_w"
+    }
+  ]
+}

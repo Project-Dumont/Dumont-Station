@@ -4,13 +4,19 @@
   name: Urist McPlasma
   abstract: true
   components:
+  # Dumont edit start
+  - type: DiseaseCarrier
+    effectImmune: true
+  - type: Immunity
+    affectedTypes:
+    - Debug
+  # Dumont edit end
   - type: ZombieImmune
   - type: Icon
     sprite: _EinsteinEngines/Mobs/Species/Plasmaman/parts.rsi
     state: full
   - type: Sprite
     layers:
-    - map: [ "enum.HumanoidVisualLayers.Groin" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -20,6 +26,7 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.Groin" ]
     - shader: StencilClear
       sprite: Mobs/Species/Human/parts.rsi
       state: l_leg

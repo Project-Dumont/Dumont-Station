@@ -5,20 +5,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Shitmed.Antags.Abductor;
-using JetBrains.Annotations;
-using Robust.Client.UserInterface.Controls;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.RichText;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 using static Content.Shared.Pinpointer.SharedNavMapSystem;
 using static Robust.Client.UserInterface.Control;
 
 namespace Content.Client._Shitmed.Antags.Abductor;
 
-[UsedImplicitly]
 public sealed class AbductorConsoleBui : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-
     [ViewVariables]
     private AbductorConsoleWindow? _window;
 
@@ -35,9 +32,19 @@ public sealed class AbductorConsoleBui : BoundUserInterface
     {
 
     }
-    protected override void Open() => UpdateState(State);
+
+    protected override void Open()
+    {
+        base.Open();
+
+        UpdateState(State);
+    }
+
     protected override void UpdateState(BoundUserInterfaceState? state)
     {
+        if (_window is { Disposed: true })
+            return;
+
         if (state is AbductorConsoleBuiState s)
             Update(s);
     }
@@ -57,8 +64,7 @@ public sealed class AbductorConsoleBui : BoundUserInterface
     private void TryInitWindow()
     {
         if (_window != null) return;
-        _window = new AbductorConsoleWindow();
-        _window.OnClose += Close;
+        _window = this.CreateWindow<AbductorConsoleWindow>();
         _window.Title = "console";
 
         _window.TeleportTabButton.OnPressed += _ => View(ViewType.Teleport);
@@ -219,13 +225,5 @@ public sealed class AbductorConsoleBui : BoundUserInterface
         Teleport,
         Experiment,
         ArmorControl
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (disposing)
-            _window?.Dispose();
     }
 }

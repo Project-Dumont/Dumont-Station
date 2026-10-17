@@ -13,5 +13,5 @@
   id: PermaPrisonerGear
   equipment:
     id: PrisonerPDA
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack # Dumont, moved to loadouts
     ears: ClothingHeadsetPrison #deltaV

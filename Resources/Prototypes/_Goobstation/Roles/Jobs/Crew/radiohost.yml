@@ -17,7 +17,7 @@
     ears: ClothingHeadsetAltRadioHost
     eyes: ClothingEyesGlassesSunglasses
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack - Dumont, moved to loadouts
     id: RadioHostPDA
 
 - type: chameleonOutfit
@@ -29,4 +29,3 @@
     jumpsuit: ClothingUniformJumpsuitHawaiBlack
     shoes: ClothingShoesColorBlack
     id: RadioHostPDA
-

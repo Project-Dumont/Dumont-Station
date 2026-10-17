@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Translated to pt-BR from the Trauma-Station end credits title cards. Originals taken from Monkestation2.0 at https://github.com/Monkestation/Monkestation2.0/blob/d6e2e57a69504185150e5097182549f1f8ee9908/monkestation/code/modules/and_roll_credits/icons/title_cards.dmi, thief made by Joel, cosmic cult made by NoElkaTheGod",
+  "size": {
+    "x": 300,
+    "y": 200
+  },
+  "states": [
+    {
+      "name": "abductors"
+    },
+    {
+      "name": "changeling"
+    },
+    {
+      "name": "cosmiccult"
+    },
+    {
+      "name": "cult"
+    },
+    {
+      "name": "devil"
+    },
+    {
+      "name": "heretic"
+    },
+    {
+      "name": "ninja"
+    },
+    {
+      "name": "nukeops"
+    },
+    {
+      "name": "paradox"
+    },
+    {
+      "name": "revolution"
+    },
+    {
+      "name": "thief"
+    },
+    {
+      "name": "traitor"
+    },
+    {
+      "name": "wizard"
+    },
+    {
+      "name": "xenos"
+    },
+    {
+      "name": "zombies"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ServiceElectionScreen
+  icon:
+    sprite: _Dumont/Structures/Machines/election_screen.rsi
+    state: base
+  product: ElectionScreenFlatpack
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: market

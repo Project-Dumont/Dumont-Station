@@ -10,6 +10,8 @@ fibers-nitrile = nitrilo
 fibers-nanomachines = nano máquina isolante
 fibers-chameleon = camaleão holográfico
 fibers-rubber = borracha
+fibers-metal = metal
+fibers-cardboard = papelão
 
 fibers-purple = roxo
 fibers-red = vermelho

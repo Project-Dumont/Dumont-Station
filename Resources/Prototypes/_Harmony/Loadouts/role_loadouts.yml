@@ -12,13 +12,15 @@
   id: JobPermaPrisoner
   groups:
   - PermaPrisonerJumpsuit
+  - PermaPrisonerShoes
   - CivilianBackpackRequired #Gabystation
   - GroupTankHarness
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
   # Plasmaman
-  - PrisonerEnvirohelm
+  - PrisonerEnvirohelmet
   - PrisonerEnvirosuit
   - PrisonerEnvirogloves
+  - PrisonerEnviroboots # Dumont
   # No civilian clotches to a prisoner
