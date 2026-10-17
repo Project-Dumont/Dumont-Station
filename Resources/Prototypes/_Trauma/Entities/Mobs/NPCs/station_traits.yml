@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobCarp
+  id: MobCarpMigrating
+  suffix: Migration AI
+  components:
+  - type: HTN
+    rootTask:
+      task: DragonCarpCompound
+
+- type: entity
+  parent: MobMonkeyPunpun
+  id: MobMonkeyPunpunPrisoner
+  suffix: Prisoner
+  components:
+  - type: Loadout
+    prototypes: [ PunpunPrisoner ]
+
+- type: startingGear
+  parent: MobMonkeyGear # what an amazing name for pun pun's starting gear
+  id: PunpunPrisoner
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    mask: CigaretteSpent
+    id: PrisonerIDCard # Dumont

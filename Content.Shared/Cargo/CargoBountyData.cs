@@ -31,9 +31,16 @@ public readonly partial record struct CargoBountyData
     [DataField(required: true)]
     public ProtoId<CargoBountyPrototype> Bounty { get; init; } = string.Empty;
 
-    public CargoBountyData(CargoBountyPrototype bounty, int uniqueIdentifier)
+    // Dumont changes start
+    [DataField]
+    public int Reward { get; init; }
+    // Dumont end
+
+    public CargoBountyData(CargoBountyPrototype bounty, int uniqueIdentifier,
+        int reward) // Dumont
     {
         Bounty = bounty.ID;
         Id = $"{bounty.IdPrefix}{uniqueIdentifier:D3}";
+        Reward = reward; // Dumont
     }
 }

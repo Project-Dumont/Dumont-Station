@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: SpawnSupplyEmpty
+  id: DropPodPlayer
+  name: crew drop pod
+  components:
+  - type: ContainerContainer
+    containers:
+      contents: !type:Container
+  - type: DropPod
+    container: contents
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnPointExtraAiCore
+  name: extra AI core spawnpoint
+  description: Needed by the Triple AI station trait
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: ai
+  - type: ExtraAiCoreTarget
+
+- type: entity
+  parent: SpawnSupplyEmpty
+  id: SpawnSupplyLuckyWinner
+  name: bar snacks
+  components:
+  - type: SpawnTableOnDespawn
+    table: !type:AllSelector
+      children:
+      - !type:NestedSelector
+        tableId: RandomPizza
+      - id: DrinkBeerBottleFull
+        amount: 6

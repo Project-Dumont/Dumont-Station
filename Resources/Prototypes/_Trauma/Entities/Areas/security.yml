@@ -106,6 +106,7 @@
   id: AreaPrison
   name: prison
   components:
+  - type: PrisonArea # Dumont
   - type: Sprite
     state: sec_prison
 

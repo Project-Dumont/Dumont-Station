@@ -105,6 +105,7 @@
   components:
   - type: Sprite
     state: hallway
+  - type: CarpMigrationTarget # Dumont
 
 - type: entity
   parent: AreaHallway
