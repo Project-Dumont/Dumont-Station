@@ -1,0 +1,147 @@
+<Document>
+  # Formas do nullrod
+  O nullrod pode ser transformado em formas únicas ao ser usado em um altar.
+
+  ## Troca de altar
+  O altar base muda de aparência quando recebe o item exigido. Para voltar à forma base, tire o item aplicado com um pé de cabra.
+  ATENÇÃO: a transformação do nullrod não tem volta, então escolha bem.
+
+  ## Nullrod
+  O velho de guerra, o nullrod com que você chega na estação. Costuma ser trocado na hora por não ter habilidade especial, mas lutar com ele é uma bela demonstração de robustez.
+  <Box>
+    <GuideEntityEmbed Entity="Nullrod"/>
+    <GuideEntityEmbed Entity="AltarConvert"/>
+    <GuideEntityEmbed Entity="Crowbar"/>
+  </Box>
+
+  ## Arrythmic Knife
+  De tempos em tempos, dá ao usuário um bônus aleatório de velocidade. Pode ajudar a alcançar um inimigo profano, mas também pode te deixar se arrastando enquanto tenta fugir.
+  <Box>
+    <GuideEntityEmbed Entity="ArrythmicKnife"/>
+    <GuideEntityEmbed Entity="AltarFangs"/>
+    <GuideEntityEmbed Entity="FoodMeatBacon"/>
+  </Box>
+
+  ## Atheist Fedora
+  A forma de nullrod de quem pensa. Arremessado, volta para o usuário como um bumerangue melhorado, mas ainda pode não chegar até você, então não saia correndo sem pensar.
+  <Box>
+    <GuideEntityEmbed Entity="AtheistFedora"/>
+    <GuideEntityEmbed Entity="AltarNanotrasen"/>
+    <GuideEntityEmbed Entity="SheetPlasteel1"/>
+  </Box>
+
+  ## Bulwark
+  Seja o lorde protetor. Um escudo poderoso de verdade, capaz de bloquear todo ataque hostil quando fincado no chão. Também serve para uma investida curta de tempos em tempos, que empurra e fere quem estiver no caminho.
+  <Box>
+    <GuideEntityEmbed Entity="Bulwark"/>
+    <GuideEntityEmbed Entity="AltarConvertBlue"/>
+    <GuideEntityEmbed Entity="MakeshiftShield"/>
+  </Box>
+
+  ## Casul e Jackal
+  Um par de pistolas sagradas e um cinto estiloso para guardá-las. Só disparam juntas. Reze para recarregar.
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBeltHolsterFilledChaplain"/>
+    <GuideEntityEmbed Entity="WeaponPistolCasul"/>
+    <GuideEntityEmbed Entity="WeaponPistolJackal"/>
+    <GuideEntityEmbed Entity="AltarTechnology"/>
+    <GuideEntityEmbed Entity="MicroManipulatorStockPart"/>
+  </Box>
+
+  ## Chain Sword
+  Purgue a heresia. Reze para ligá-la por 10 segundos: ela vira uma motosserra afiada que causa muito dano cortante e sagrado, rasga paredes e pode executar. Só liga uma vez a cada 3 minutos. Cabe no cinto.
+  <Box>
+    <GuideEntityEmbed Entity="InquisitorChainSword"/>
+    <GuideEntityEmbed Entity="AltarEmpire"/>
+    <GuideEntityEmbed Entity="BookRandom"/>
+  </Box>
+
+  ## Dragon's Tail
+  Uma cauda de dragão espetada num bastão. Cada golpe põe fogo no alvo, além do dano sagrado.
+  <Box>
+    <GuideEntityEmbed Entity="DragonsTail"/>
+    <GuideEntityEmbed Entity="AltarDragon"/>
+    <GuideEntityEmbed Entity="PlushieCarp"/>
+  </Box>
+
+  ## Fé
+  Uma pistolinha com dois modos. No de prata, as balas causam dano sagrado e põem fogo sagrado em inimigos profanos. No abençoado, as balas curam quem leva o tiro, não pergunte. Recarrega sozinha.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolFaith"/>
+    <GuideEntityEmbed Entity="AltarConvertWhite"/>
+    <GuideEntityEmbed Entity="IngotSilver1"/>
+  </Box>
+
+  ## God Hand
+  A bênção de Deus ao seu capelão de maior confiança. Cada ataque põe fogo comum e fogo sagrado no alvo. Força portas como um pé de cabra. Não sai da mão.
+  <Box>
+    <GuideEntityEmbed Entity="GodHand"/>
+    <GuideEntityEmbed Entity="AltarChaos"/>
+    <GuideEntityEmbed Entity="SheetPlasma1"/>
+  </Box>
+
+  ## Grey Emperor's Glove
+  Guie os tiders até a luz de Deus. Uma mão isolada que não sai do lugar e tem quase toda ferramenta de que você precisa para liderar a greytide. Use o item na mão para trocar de ferramenta.
+  <Box>
+    <GuideEntityEmbed Entity="UristHand"/>
+    <GuideEntityEmbed Entity="AltarConvertMaint"/>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesColorYellowBudget"/>
+  </Box>
+
+  ## Honkmother's Maw
+  HONK! Uma máscara enorme de palhaço com o poder da Honkmother. Derruba quem acerta. Não se surpreenda se o palhaço roubar ela de você.
+  <Box>
+    <GuideEntityEmbed Entity="HonkmotherMaw"/>
+    <GuideEntityEmbed Entity="AltarBananium"/>
+    <GuideEntityEmbed Entity="MaterialBananium1"/>
+  </Box>
+
+  ## Holy Chainsaw
+  Uma motosserra que não sai da mão. Precisa ser empunhada com as duas mãos para atacar. Enfim, é uma motosserra que causa dano sagrado.
+  <Box>
+    <GuideEntityEmbed Entity="HolyChainsaw"/>
+    <GuideEntityEmbed Entity="AltarToolbox"/>
+    <GuideEntityEmbed Entity="ToolboxEmergency"/>
+  </Box>
+
+  ## Holy Claymore
+  DEUS VULT! Dispara um projétil que marca o alvo, e atacar o alvo marcado cura o dano bruto, a asfixia e a perda de sangue de quem empunha.
+  <Box>
+    <GuideEntityEmbed Entity="HolyClaymore"/>
+    <GuideEntityEmbed Entity="AltarHeaven"/>
+    <GuideEntityEmbed Entity="ClothingHeadHelmetTemplar"/>
+  </Box>
+
+  ## Iradomini
+  Uma besta poderosa, que precisa ser empunhada com as duas mãos para disparar. Atira uma única flecha sagrada MUITO forte, que some depois de um minuto. A recarga pela oração demora, então se posicione bem.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolIradomini"/>
+    <GuideEntityEmbed Entity="AltarConvertOrange"/>
+    <GuideEntityEmbed Entity="BowImprovised"/>
+  </Box>
+
+  ## Monk Staff
+  Em termos simples? Um pau grande. Solte uma sequência de golpes que causam dano de estamina, muito útil para alcançar os profanos.
+  <Box>
+    <GuideEntityEmbed Entity="MonkStaff"/>
+    <GuideEntityEmbed Entity="AltarDruid"/>
+    <GuideEntityEmbed Entity="MaterialWoodPlank1"/>
+  </Box>
+
+  ## Ratvarian Spear
+  Ah, prefere os deuses antigos? Então este é o seu nullrod. Uma lança de uma mão com o poder de Ratvar. Aceita química como uma lança comum e causa muito dano sagrado quando arremessada.
+  <Box>
+    <GuideEntityEmbed Entity="RatvarianSpear"/>
+    <GuideEntityEmbed Entity="AltarClock"/>
+    <GuideEntityEmbed Entity="PowerCellSmallPrinted"/>
+  </Box>
+
+  ## Rosary
+  O suporte agradece. Ao rezar, cura quem está em volta, e também fere os profanos que estiverem por perto.
+  <Box>
+    <GuideEntityEmbed Entity="Rosary"/>
+    <GuideEntityEmbed Entity="AltarSpaceChristian"/>
+    <GuideEntityEmbed Entity="ClothingHeadHatHoodNunHood"/>
+  </Box>
+
+</Document>

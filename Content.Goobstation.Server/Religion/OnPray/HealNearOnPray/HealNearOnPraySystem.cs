@@ -12,10 +12,10 @@ using Content.Goobstation.Shared.Religion.Nullrod;
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Body.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Revenant.Components;
 using Robust.Shared.Audio;
@@ -51,7 +51,7 @@ public sealed partial class HealNearOnPraySystem : EntitySystem
             .Where(entity => entity != null && _occlusion.InRangeUnOccluded(uid, entity, comp.Range))
             .Select(entity => entity));
 
-        foreach (var entity in canTarget.Where(HasComp<MobStateComponent>))
+        foreach (var entity in canTarget.Where(HasComp<BodyComponent>))
         {
             if (_mobState.IsDead(entity)
                 || HasComp<SiliconComponent>(entity))
