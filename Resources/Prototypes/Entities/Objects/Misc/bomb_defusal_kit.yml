@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseItem
+  id: BombDefusalKit
+  name: bomb defusal kit
+  description: A large, heavy set of specialized tools for defusing modular bombs. You hope you never have to use this.
+  components:
+    - type: Sprite
+      sprite: _Dumont/Objects/Specific/Security/bombdefusalkit.rsi
+      state: icon
+    - type: BombDefusalKit
+    - type: Wieldable
+    - type: Item
+      size: Large
+      inhandVisuals:
+        left:
+        - state: inhand-left
+        right:
+        - state: inhand-right
+    - type: GuideHelp
+      guides:
+      - Defusal

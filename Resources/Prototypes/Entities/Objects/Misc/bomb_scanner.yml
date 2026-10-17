@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseItem
+  id: BombScanner
+  name: bomb scanner
+  description: A handheld scanner that detects the underlying logic of the bomb's systems.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Security/bombscanner.rsi
+    state: screen
+  - type: BombScanner
+  - type: Item
+    size: Small
+  - type: UserInterface
+    interfaces:
+      enum.BombScannerUiKey.Key:
+        type: BombScannerBoundUserInterface
+  - type: GuideHelp
+    guides:
+    - Defusal

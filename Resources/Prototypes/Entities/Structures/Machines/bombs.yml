@@ -90,16 +90,13 @@
   name: hardbomb
   components:
     - type: Appearance
-    - type: WiresVisuals
     - type: InteractionOutline
     - type: UserInterface
       interfaces:
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
-    - type: Wires
-      layoutId: Defusable
-      alwaysRandomize: true
-    - type: Defusable
+        enum.BombDefusalUiKey.Key:
+          type: BombDefusalBoundUserInterface
+    - type: BombDefusal
+      maxStrikes: 3
     - type: Rotatable
     - type: Explosive
       explosionType: Default
@@ -115,7 +112,7 @@
       delay: 60 # Goobstation
       delayOptions: [60, 90, 120, 180, 300, 600, 900] # Goobstation
       initialBeepDelay: 0
-      beepSound: /Audio/Machines/timer.ogg
+      beepSound: /Audio/_Dumont/Machines/timer.ogg
     - type: Anchorable
       delay: 5
     - type: Fixtures
@@ -129,11 +126,6 @@
             - MachineMask
           layer:
             - MachineLayer
-    - type: WiresPanel
-    - type: GuideHelp
-      openOnActivation: true
-      guides:
-      - Defusal
 
 - type: entity
   parent: BaseHardBomb
@@ -141,9 +133,8 @@
   name: training bomb
   description: A bomb for dummies, manual not included.
   components:
-    - type: Wires
-      layoutId: Defusable
-      alwaysRandomize: true
+    - type: BombDefusal
+      maxStrikes: 3
     - type: Sprite
       sprite: Structures/Machines/bomb.rsi
       layers:
@@ -151,17 +142,10 @@
         - state: training-bomb-active
           visible: false
           map: [ "primed" ]
-        - state: training-bomb-wires
-          visible: false
-          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
     - type: GenericVisualizer
       visuals:
         enum.DefusableVisuals.Active:
           primed:
-            True: { visible: true }
-            False: { visible: false }
-        enum.WiresVisualLayers.MaintenancePanel:
-          enum.WiresVisualLayers.MaintenancePanel:
             True: { visible: true }
             False: { visible: false }
     - type: PointLight
@@ -174,8 +158,6 @@
       intensitySlope: 5
       maxIntensity: 4
       canCreateVacuum: false
-    - type: Defusable
-      disposable: false
 
 - type: entity
   parent: [BaseHardBomb, BaseSyndicateAnchoredContraband]
@@ -190,17 +172,10 @@
         - state: syndicate-bomb-active
           visible: false
           map: [ "primed" ]
-        - state: syndicate-bomb-wires
-          visible: false
-          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
     - type: GenericVisualizer
       visuals:
         enum.DefusableVisuals.Active:
           primed:
-            True: { visible: true }
-            False: { visible: false }
-        enum.WiresVisualLayers.MaintenancePanel:
-          enum.WiresVisualLayers.MaintenancePanel:
             True: { visible: true }
             False: { visible: false }
     - type: PointLight
@@ -234,8 +209,8 @@
   suffix: DEBUG
   description: Holy shit this is gonna explode.
   components:
-    - type: Defusable
-      disposable: true
+    - type: BombDefusal
+      maxStrikes: 3
     - type: TimerTrigger
       delay: 10
       delayOptions: [10, 20, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300]
