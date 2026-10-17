@@ -241,7 +241,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
-
         var gunUid = GetEntity(ev.Gun);
 
         var user = args.SenderSession.AttachedEntity;
@@ -444,13 +443,10 @@ public abstract partial class SharedGunSystem : EntitySystem
                 default:
                     throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.SelectedMode}!");
             }
-        }
-        else
+        } else
         {
             shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
         }
-
-
 
         var attemptEv = new AttemptShootEvent(user, null);
         RaiseLocalEvent(gunUid, ref attemptEv);
