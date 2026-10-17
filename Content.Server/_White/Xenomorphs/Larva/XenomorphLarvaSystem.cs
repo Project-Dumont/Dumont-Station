@@ -7,6 +7,8 @@ using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mind.Components;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Popups;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
@@ -29,7 +31,7 @@ public sealed class XenomorphLarvaSystem : EntitySystem
     {
         SubscribeLocalEvent<XenomorphLarvaComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<XenomorphLarvaComponent, EntGotRemovedFromContainerMessage>(OnGotRemovedFromContainer);
-        SubscribeLocalEvent<XenomorphLarvaComponent, TakeGhostRoleEvent>(OnTakeGhostRole);
+        SubscribeLocalEvent<XenomorphLarvaComponent, MindAddedMessage>(OnMindAdded); // Dumont
         SubscribeLocalEvent<XenomorphLarvaComponent, LarvaBurstDoAfterEvent>(OnLarvaBurstDoAfter);
     }
 
@@ -45,7 +47,17 @@ public sealed class XenomorphLarvaSystem : EntitySystem
             RemComp<XenomorphLarvaVictimComponent>(component.Victim.Value);
     }
 
-    private void OnTakeGhostRole(EntityUid uid, XenomorphLarvaComponent component, TakeGhostRoleEvent args)
+    // Dumont start
+    private void OnMindAdded(EntityUid uid, XenomorphLarvaComponent component, MindAddedMessage args)
+    {
+        if (!component.Victim.HasValue || !_container.TryGetContainingContainer(uid, out _))
+            return;
+
+        StartBurst(uid, component);
+    }
+    // Dumont end
+
+    private void StartBurst(EntityUid uid, XenomorphLarvaComponent component)
     {
         if (component.Victim is not {} victim)
             return;
@@ -72,10 +84,15 @@ public sealed class XenomorphLarvaSystem : EntitySystem
 
     private void OnLarvaBurstDoAfter(EntityUid uid, XenomorphLarvaComponent component, LarvaBurstDoAfterEvent args)
     {
-        if (!_container.TryGetContainingContainer((uid, null, null), out var container)
+        if (args.Cancelled || args.Handled
+            || !_container.TryGetContainingContainer((uid, null, null), out var container)
             || component.Victim is not { } victim)
             return;
 
+        // Dumont start
+        args.Handled = true;
+        EnsureComp<UnrevivableComponent>(victim);
+        // Dumont end
         _container.Remove(uid, container);
         var damage = new DamageSpecifier(); // Omu start
         damage.DamageDict.Add("Blunt", 120);

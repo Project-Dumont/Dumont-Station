@@ -1,6 +1,7 @@
 using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.Body.Events;
+using Content.Shared.Mind;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Containers;
@@ -16,6 +17,10 @@ public sealed class XenomorphInfectionSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedEntityEffectSystem _effect = default!;
+
+    // Dumont start
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    // Dumont end
 
     public override void Initialize()
     {
@@ -61,7 +66,10 @@ public sealed class XenomorphInfectionSystem : EntitySystem
             if (!infection.Infected.HasValue || infection.GrowthStage >= infection.MaxGrowthStage || time < infection.NextPointsAt)
                 continue;
 
-            infection.NextPointsAt = time + infection.GrowTime;
+            // Dumont start
+            var growTime = _mobState.IsCritical(infection.Infected.Value) ? infection.GrowTime * 2 : infection.GrowTime;
+            infection.NextPointsAt = time + growTime;
+            // Dumont end
 
             if (_mobState.IsDead(infection.Infected.Value) || !_random.Prob(infection.GrowProb))
                 continue;
@@ -103,6 +111,11 @@ public sealed class XenomorphInfectionSystem : EntitySystem
 
             _container.Remove(uid, container);
             _container.Insert(larva, container);
+
+            // Dumont start
+            if (infection.SourceMindId is { } mindId && HasComp<MindComponent>(mindId))
+                _mind.TransferTo(mindId, larva);
+            // Dumont end
 
             QueueDel(uid);
         }

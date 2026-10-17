@@ -127,6 +127,11 @@ namespace Content.Shared.Buckle.Components;
 [Access(typeof(SharedBuckleSystem))]
 public sealed partial class StrapComponent : Component
 {
+    // Dumont start
+    [DataField, AutoNetworkedField]
+    public bool ModifyBuckleDrawDepth = true;
+    // Dumont end
+
     /// <summary>
     /// The entities that are currently buckled to this strap.
     /// </summary>

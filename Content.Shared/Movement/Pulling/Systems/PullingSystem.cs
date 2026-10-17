@@ -740,7 +740,7 @@ public sealed class PullingSystem : EntitySystem
             LogImpact.Low,
             $"{ToPrettyString(pullerUid):user} started pulling {ToPrettyString(pullableUid):target}");
 
-        var ev = new GrabAttemptEvent(pullerUid, GrabStageOverride: grabStageOverride, EscapeAttemptModifier: escapeAttemptModifier);
+        var ev = new GrabAttemptEvent(pullerUid, GrabStageOverride: grabStageOverride ?? pullerComp.StartingGrabStage, EscapeAttemptModifier: escapeAttemptModifier);
         RaiseLocalEvent(pullableUid, ref ev);
         return true;
     }

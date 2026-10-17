@@ -24,6 +24,7 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.Chat; // Einstein Engines - Languages
 using Content.Shared._ES.DeathCutscene;
 using Content.Shared._White.Xenomorphs.Infection;
+using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Prototypes;
@@ -59,14 +60,8 @@ public sealed partial class CritMobActionsSystem : EntitySystem
 
     private void OnSuccumb(EntityUid uid, MobStateActionsComponent component, CritSuccumbEvent args)
     {
-        if (!TryComp<ActorComponent>(uid, out var actor) || !_mobState.IsCritical(uid))
+        if (!TryComp<ActorComponent>(uid, out var actor) || !_mobState.IsCritical(uid) || HasComp<XenomorphLarvaVictimComponent>(uid))
             return;
-
-        // Goobstation
-        PreventLarvaHostDeath(uid, actor, args);
-        if (args.Handled)
-            return;
-        // END
 
         Succumb(uid, actor);
         args.Handled = true;

@@ -101,10 +101,13 @@ public sealed class ActionsSystem : EntitySystem
         if (!_plasmaCost.HasEnoughPlasma(args.User, args.PlasmaCost))
             return;
 
-        _plasmaCost.DeductPlasma(args.User, args.PlasmaCost);
+        // Dumont start
+        if (!CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+            return;
 
-        if (CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
-            args.Handled = true;
+        _plasmaCost.DeductPlasma(args.User, args.PlasmaCost);
+        args.Handled = true;
+        // Dumont end
     }
 
     #region Helpers

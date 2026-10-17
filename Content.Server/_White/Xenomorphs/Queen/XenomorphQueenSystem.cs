@@ -8,6 +8,7 @@ using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Queen;
 using Content.Shared._White.Xenomorphs.Xenomorph;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 
 namespace Content.Server._White.Xenomorphs.Queen;
@@ -20,6 +21,8 @@ public sealed class XenomorphQueenSystem : EntitySystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly XenomorphEvolutionSystem _xenomorphEvolution = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    [Dependency] private readonly MobStateSystem _mobState = default!; // Dumont
 
     public override void Initialize()
     {
@@ -97,4 +100,17 @@ public sealed class XenomorphQueenSystem : EntitySystem
         args.Handled = true;
         // Goobstation end
     }
+    // Dumont start
+    public bool IsQueenAlive()
+    {
+        var query = EntityQueryEnumerator<XenomorphQueenComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            if (!_mobState.IsDead(uid))
+                return true;
+        }
+        return false;
+    }
+    // Dumont end
+
 }

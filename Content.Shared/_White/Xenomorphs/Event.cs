@@ -32,6 +32,17 @@ public sealed partial class XenomorphEvolutionDoAfterEvent : DoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class LarvaBurstDoAfterEvent : SimpleDoAfterEvent;
 
+// Dumont start
+[Serializable, NetSerializable]
+public sealed partial class QueenRoarDoAfterEvent : SimpleDoAfterEvent;
+
+public sealed partial class ToggleAcidSpitEvent : InstantActionEvent;
+
+public sealed partial class FaceHuggerLeapActionEvent : WorldTargetActionEvent;
+
+public sealed partial class QueenRoarActionEvent : InstantActionEvent;
+// Dumont end
+
 public sealed partial class TransferPlasmaActionEvent : EntityTargetActionEvent
 {
     [DataField]

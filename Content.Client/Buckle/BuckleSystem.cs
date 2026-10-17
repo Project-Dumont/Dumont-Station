@@ -96,7 +96,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         // Give some of the sprite rotations their own drawdepth, maybe as an offset within the rsi, or something like this
         // And we won't ever need to set the draw depth manually
 
-        if (args.NewRotation == args.OldRotation)
+        if (!component.ModifyBuckleDrawDepth || args.NewRotation == args.OldRotation) // Dumont
             return;
 
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
@@ -135,6 +135,9 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
     {
+        if (TryComp<StrapComponent>(args.Strap, out var strap) && !strap.ModifyBuckleDrawDepth) // Dumont
+            return;
+
         if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite))
             return;
 

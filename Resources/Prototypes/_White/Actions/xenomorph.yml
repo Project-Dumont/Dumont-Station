@@ -117,6 +117,7 @@
       blockedCollisionLayer:
       - WallLayer
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 50 # Goobstation
 
 # TODO: delete it # Goobstation - removed
@@ -164,6 +165,7 @@
       - TableLayer
       - BulletImpassable
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 75
 
 # TODO: delete it
@@ -176,7 +178,7 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon: { sprite : _White/Structures/Windows/resin_membrane.rsi, state: full }
+    icon: { sprite: _White/Structures/Furniture/resin_nest.rsi, state: full } # Dumont
   - type: TargetAction
     range: 2
   - type: WorldTargetAction
@@ -189,6 +191,7 @@
       - TableLayer
       - BulletImpassable
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 50 # Goobstation
 
 # Tail lash action
@@ -207,26 +210,74 @@
   - type: WorldTargetAction
     event: !type:TailLashActionEvent
 
-# Acid action - Goob Commented out until future fix
-#- type: entity
-#  id: ActionAcid
-#  parent: BaseAction
-#  name: Corrosive acid (200)
-#  description: Drench an object in acid, destroying it over time.
-#  components:
-#  - type: Action
-#    useDelay: 11
-#    itemIconStyle: BigAction # Goobstation
-#    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid } # Goobstation
-#  - type: TargetAction
-#    interactOnMiss: false
-#    range: 2
-#    targetingIndicator: true # Goobstation
-#    checkCanAccess: true # Goobstation
-#  - type: EntityTargetAction
-#    event: !type:AcidActionEvent
-#  - type: PlasmaCostAction
-#    plasmaCost: 200
+# Dumont start
+- type: entity
+  id: ActionAcid
+  parent: BaseAction
+  name: Corrosive acid (100)
+  description: Drench a structure in acid, destroying it over time.
+  components:
+  - type: Action
+    useDelay: 11
+    raiseOnUser: true
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid }
+  - type: TargetAction
+    interactOnMiss: false
+    range: 2
+    targetingIndicator: true
+    checkCanAccess: true
+  - type: EntityTargetAction
+    event: !type:AcidActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 100
+    shouldChangePlasma: false
+
+- type: entity
+  id: ActionAcidSpit
+  parent: BaseAction
+  name: Neurotoxin spit (20)
+  description: Toggle neurotoxin spit. Use secondary attack to spit while enabled.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid }
+  - type: InstantAction
+    event: !type:ToggleAcidSpitEvent
+
+- type: entity
+  id: ActionFaceHuggerLeap
+  parent: BaseAction
+  name: Leap
+  description: Leap onto a victim's face to infect them.
+  components:
+  - type: Action
+    useDelay: 5
+    priority: 0
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: leap_off }
+    iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: leap_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:FaceHuggerLeapActionEvent
+
+- type: entity
+  id: ActionQueenroar
+  parent: BaseAction
+  name: Roar
+  description: Unleash a deafening roar that stuns nearby enemies.
+  components:
+  - type: Action
+    useDelay: 60
+    priority: 5
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: screech }
+  - type: InstantAction
+    event: !type:QueenRoarActionEvent
+# Dumont end
 
 # Jump action
 - type: entity
@@ -241,7 +292,8 @@
     icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_off }
     iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_on }
   - type: TargetAction
-    range: 10
+    range: 15
+    checkCanAccess: false # Dumont
   - type: WorldTargetAction
     event: !type:JumpActionEvent
 
@@ -253,6 +305,7 @@
   description: Passes plasma to your friend.
   components:
   - type: Action
+    raiseOnUser: true # Dumont
     priority: 0
     icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_off }
     iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_on }
@@ -281,7 +334,8 @@
     whitelist:
       requireAll: true
       components:
-        - XenomorphComponent # Goobstation end
+        - Xenomorph # Dumont
     event: !type:PromotionActionEvent
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 500
