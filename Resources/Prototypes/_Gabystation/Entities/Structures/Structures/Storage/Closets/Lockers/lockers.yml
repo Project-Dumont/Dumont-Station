@@ -5,6 +5,25 @@
   components:
   - type: AccessReader
     access: [["Genetics"]] # Dumont edit
+  - type: Appearance
+  - type: Sprite
+    sprite: _Dumont/Structures/Storage/Closets/genetics.rsi
+    layers:
+    - state: genetics
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: genetics_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      sprite: Structures/Storage/closet.rsi
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: genetics
+    stateDoorOpen: genetics_door_open
+    stateDoorClosed: genetics_door
 
 - type: entity
   id: UniqueLockerGeneticistFilled
@@ -14,4 +33,3 @@
   - type: ConditionalSpawner
     prototypes:
     - UniqueMarkerGeneticist
-
