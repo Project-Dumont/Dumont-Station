@@ -79,6 +79,9 @@
   id: DrinkBottleMilk
 
 - type: Tag
+  id: DockLabor
+
+- type: Tag
   id: PlasmamanSafeOther
 
 - type: Tag

@@ -42,7 +42,7 @@
   - type: PriorityDock
     tag: DockMining
   - type: GridFill
-    path: /Maps/_Lavaland/mining.yml # Gaby - Revertido para a shuttle padrão.
+    path: /Maps/_Dumont/Shuttles/mining.yml # Dumont - Alterado para uma versão mais bonita
     addComponents:
     - type: IFF
       flags:
