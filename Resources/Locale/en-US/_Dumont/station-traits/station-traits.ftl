@@ -41,7 +41,7 @@ station-trait-deathrattled-security-name = Deathrattled Security
 station-trait-deathrattled-security-report = All members of Security have received an implant to notify each other if one of them dies. This should help improve job-safety!
 
 station-trait-cybernetic-revolution-name = Cybernetic Revolution
-station-trait-cybernetic-revolution-report = Your crew volunteered for a cybernetics trial, so everyone came aboard with a brand new augment suited to their job. Electromagnetic pulse equipment is getting harder to find in this sector.
+station-trait-cybernetic-revolution-report = Your crew volunteered for a cybernetics trial, so everyone came aboard with a cybernetic prosthesis and a brand new augment suited to their job. Electromagnetic pulse equipment is getting harder to find in this sector.
 
 station-trait-clean-pipes-name = Clean Pipes
 station-trait-clean-pipes-report = Your station's piping was recently cleaned and pressure tested. Vents should not be spitting anything unpleasant this shift.

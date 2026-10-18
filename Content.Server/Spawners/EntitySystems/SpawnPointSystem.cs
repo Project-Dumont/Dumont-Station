@@ -51,6 +51,9 @@ public sealed class SpawnPointSystem : EntitySystem
 
         while ( points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
+            if (EntityManager.IsQueuedForDeletion(uid)) // Dumont
+                continue;
+
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 

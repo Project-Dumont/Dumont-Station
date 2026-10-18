@@ -22,8 +22,8 @@
   id: NightfallRule
   components:
   - type: StationModifierRule
-    lightEnergy: 0.45
-    lightRadius: 0.75
+    lightEnergy: 0.20
+    lightRadius: 0.35
 
 - type: entity
   parent: BaseGameRule
@@ -193,6 +193,26 @@
     modifiers:
       UplinkEmpGrenade: 1.5
       UplinkEmpImplanter: 1.5
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    - Civilian
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    effects:
+    - !type:ReplaceRandomLimb
+      limbs:
+      - part: LeftArmCybernetic
+        child: LeftHandCybernetic
+      - part: RightArmCybernetic
+        child: RightHandCybernetic
+      - part: LeftLegCybernetic
+        child: LeftFootCybernetic
+      - part: RightLegCybernetic
+        child: RightFootCybernetic
 
 - type: entity
   parent: BaseGameRule

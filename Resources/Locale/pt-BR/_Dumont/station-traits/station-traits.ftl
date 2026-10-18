@@ -41,7 +41,7 @@ station-trait-deathrattled-security-name = Segurança com Death Rattle
 station-trait-deathrattled-security-report = Todos os membros da Segurança receberam um implante que avisa os outros se algum deles morrer. Isso deve ajudar na segurança do trabalho!
 
 station-trait-cybernetic-revolution-name = Revolução Cibernética
-station-trait-cybernetic-revolution-report = A tripulação se voluntariou para um teste de cibernéticos, então todo mundo chegou com um implante novo adequado ao próprio cargo. Equipamentos de pulso eletromagnético estão mais difíceis de achar neste setor.
+station-trait-cybernetic-revolution-report = A tripulação se voluntariou para um teste de cibernéticos, então todo mundo chegou com uma prótese cibernética e um implante novo adequado ao próprio cargo. Equipamentos de pulso eletromagnético estão mais difíceis de achar neste setor.
 
 station-trait-clean-pipes-name = Limpeza de Canos em Dia
 station-trait-clean-pipes-report = A tubulação da estação foi limpa e testada há pouco tempo. As saídas de ar não devem cuspir nada desagradável neste turno.
