@@ -128,7 +128,7 @@
   - !type:StationQueryEffects
     compName: SpawnPoint
     effects:
-    - !type:DeleteTarget # Dumont
+    - !type:DeleteSelfEntityEffect # Dumont
       conditions:
       # only keep latejoin, observer etc
       - !type:SpawnPointHasJob
@@ -177,11 +177,10 @@
       - !type:SpawnPointHasJob # leave latejoin, observer, etc alone
       components:
       - type: DropPodSpawnPoint
-    - !type:RemoveComponents
+    - !type:RemoveComponentEffect
       conditions:
       - !type:SpawnPointHasJob
-      components:
-      - type: SpawnPoint
+      component: SpawnPoint
     # Dumont end
 
 - type: stationTrait
