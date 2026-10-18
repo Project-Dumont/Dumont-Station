@@ -124,6 +124,11 @@
   name: station-trait-late-arrivals-name # Dumont
   report: station-trait-late-arrivals-report # Dumont
   conflicts: [ RandomSpawns, HellishInterpolation ] # Dumont
+  # Dumont changes start
+  effects:
+  - !type:StartGameRule
+    rule: ArrivalsSpawnRule
+  # Dumont end
   mapEffects:
   - !type:StationQueryEffects
     compName: SpawnPoint

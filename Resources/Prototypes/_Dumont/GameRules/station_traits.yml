@@ -13,6 +13,12 @@
 
 - type: entity
   parent: BaseGameRule
+  id: ArrivalsSpawnRule
+  components:
+  - type: ArrivalsSpawnRule
+
+- type: entity
+  parent: BaseGameRule
   id: LavalandSpawnRule
   components:
   - type: LavalandSpawnRule
