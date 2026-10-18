@@ -33,7 +33,7 @@ public sealed partial class TraumaCVars
     /// Displayed in the station report and PDAs.
     /// </summary>
     public static readonly CVarDef<int> YearOffset =
-        CVarDef.Create("game.current_year_offset", 739, CVar.SERVERONLY);
+        CVarDef.Create("game.current_year_offset", 542, CVar.SERVERONLY); // Dumont
 
     #endregion
 

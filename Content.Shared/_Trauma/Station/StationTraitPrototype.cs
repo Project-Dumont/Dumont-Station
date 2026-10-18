@@ -27,14 +27,14 @@ public sealed partial class StationTraitPrototype : IPrototype, IInheritingProto
     /// Name of this trait
     /// </summary>
     [DataField(required: true)]
-    public string Name = string.Empty;
+    public LocId Name = string.Empty; // Dumont
 
     /// <summary>
     /// Description shown in the station report.
     /// If this is set to null, it will not be shown in the report.
     /// </summary>
     [DataField(required: true)]
-    public string? Report;
+    public LocId? Report; // Dumont
 
     [DataField]
     public StationTraitGroup Group = StationTraitGroup.Neutral;

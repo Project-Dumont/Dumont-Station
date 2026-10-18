@@ -3,8 +3,8 @@
 - type: stationTrait
   id: BountifulBounties
   group: Positive
-  name: "Bountiful bounties"
-  report: "It seems collectors in this system are extra keen to on bounties, and will pay more to see their completion."
+  name: station-trait-bountiful-bounties-name # Dumont
+  report: station-trait-bountiful-bounties-report # Dumont
   effects:
   - !type:AddComponents
     components:
@@ -14,8 +14,8 @@
 - type: stationTrait
   id: FilledMaint
   group: Positive
-  name: "Filled up maintenance"
-  report: "Our workers accidentally forgot more of their personal belongings in the maintenace areas."
+  name: station-trait-filled-maint-name # Dumont
+  report: station-trait-filled-maint-report # Dumont
   conflicts: [ EmptyMaint ]
   startEffects: # has to run before the map inits so it can change the spawners
   - !type:StationQueryEffects
@@ -36,8 +36,8 @@
 - type: stationTrait
   id: FreeScarves
   group: Positive
-  name: "Free scarves"
-  report: "The station is definitely not under attack by neck grappling aliens masquerading as wool. Definitely not."
+  name: station-trait-free-scarves-name # Dumont
+  report: station-trait-free-scarves-report # Dumont
   effects:
   - !type:StartGameRule
     rule: FreeScarvesRule
@@ -45,8 +45,8 @@
 - type: stationTrait
   id: GalacticGrant
   group: Positive
-  name: "Galactic grant"
-  report: "Your station has been selected for a special grant. Some extra funds has been made available to your cargo department."
+  name: station-trait-galactic-grant-name # Dumont
+  report: station-trait-galactic-grant-report # Dumont
   effects:
   - !type:StationModifyBank
     account: Cargo
@@ -57,8 +57,8 @@
   id: LuckyWinner
   group: Positive
   chance: 0.2
-  name: "Lucky winner"
-  report: "Your station has won the grand prize of the annual station charity event. Free snacks will be delivered to the bar every now and then."
+  name: station-trait-lucky-winner-name # Dumont
+  report: station-trait-lucky-winner-report # Dumont
   # Dumont changes start
   requiredComponents:
   - LuckyWinnerTarget
@@ -70,8 +70,8 @@
 - type: stationTrait
   id: StrongSupplyLines
   group: Positive
-  name: "Strong supply lines"
-  report: "Prices are low in this system, BUY BUY BUY!"
+  name: station-trait-strong-supply-lines-name # Dumont
+  report: station-trait-strong-supply-lines-report # Dumont
   conflicts: [ DistantSupplyLines ]
   effects:
   - !type:AddComponents
@@ -82,8 +82,8 @@
 - type: stationTrait
   id: EvilPunPun
   group: Positive # crew is safer
-  name: "Perma prisoner"
-  report: "Pun Pun has been locked up in the brig for crimes against humanity. Do not let him escape, but try to keep him alive too."
+  name: station-trait-evil-pun-pun-name # Dumont
+  report: station-trait-evil-pun-pun-report # Dumont
   # Dumont changes start
   requiredComponents:
   - PunPunSpawner

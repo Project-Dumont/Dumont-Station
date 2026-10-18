@@ -231,7 +231,7 @@ public sealed partial class StationTraitsSystem : EntitySystem
         {
             var trait = ProtoMan.Index(id);
             if (trait.Report is { } report) // should always be true...
-                sb.AppendLine($"[italic]{trait.Name}[/italic] - {report}");
+                sb.AppendLine($"[italic]{Loc.GetString(trait.Name)}[/italic] - {Loc.GetString(report)}"); // Dumont
         }
     }
 

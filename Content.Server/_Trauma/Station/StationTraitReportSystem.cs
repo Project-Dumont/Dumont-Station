@@ -74,7 +74,7 @@ public sealed partial class StationTraitReportSystem : EntitySystem // Dumont
     public string CreateReport(EntityUid station)
     {
         _sb.Clear();
-        var date = DateTime.UtcNow.AddYears(_years).ToString("ddd, MMM dd, yyyy");
+        var date = DateTime.UtcNow.AddYears(_years).ToString(Loc.GetString("station-traits-report-date-format")); // Dumont
         // Dumont changes start
         _sb.AppendLine(Loc.GetString("station-traits-report-title", ("date", date)));
         _sb.AppendLine();

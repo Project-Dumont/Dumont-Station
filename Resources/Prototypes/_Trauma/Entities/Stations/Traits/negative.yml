@@ -4,8 +4,8 @@
   id: AnomalyStorm
   group: Negative # you're gonna have a lot more than you can probably make use of
   chance: 0.4
-  name: "Anomaly Storm"
-  report: "Anomalous readings in your region are off the charts! Keep a few locators handy..."
+  name: station-trait-anomaly-storm-name # Dumont
+  report: station-trait-anomaly-storm-report # Dumont
   effects:
   - !type:StartGameRule
     rule: AnomalyStormRule
@@ -13,8 +13,8 @@
 - type: stationTrait
   id: Blackout
   group: Negative
-  name: "Blackout"
-  report: "Station lights seem to be damaged, be safe when starting your shift today."
+  name: station-trait-blackout-name # Dumont
+  report: station-trait-blackout-report # Dumont
   mapEffects:
   # TODO: change it to overload lighting channel on APCs if anyone ever implements channels (lol)
   - !type:StationQueryEffects
@@ -27,8 +27,8 @@
   id: BotLanguages
   group: Negative
   chance: 0.8
-  name: "Bot Language Matrix Malfunction"
-  report: "Your station's friendly bots have had their language matrix fried due to an ion storm, resulting in some strange and unfamiliar speech patterns."
+  name: station-trait-bot-languages-name # Dumont
+  report: station-trait-bot-languages-report # Dumont
   mapEffects:
   - !type:StationQueryEffects
     compName: LanguageSpeaker
@@ -44,8 +44,8 @@
   id: MachineLanguages
   group: Negative
   chance: 0.4
-  name: "Machine Language Matrix Malfunction"
-  report: "Your station's machines have had their language matrix fried due to an ion storm, resulting in some strange and unfamiliar speech patterns."
+  name: station-trait-machine-languages-name # Dumont
+  report: station-trait-machine-languages-report # Dumont
   mapEffects:
   - !type:StationQueryEffects
     compName: LanguageSpeaker
@@ -63,8 +63,8 @@
   id: CarpInfestation
   group: Negative
   minPlayers: 15
-  name: "Carp infestation"
-  report: "Dangerous fauna is present in the area of this station."
+  name: station-trait-carp-infestation-name # Dumont
+  report: station-trait-carp-infestation-report # Dumont
   # Dumont changes start
   requiredComponents:
   - CarpMigrationTarget
@@ -76,8 +76,8 @@
 - type: stationTrait
   id: EmptyMaint
   group: Negative
-  name: "Cleared out maintenance"
-  report: "Our workers cleaned out most of the junk in the maintenace areas."
+  name: station-trait-empty-maint-name # Dumont
+  report: station-trait-empty-maint-report # Dumont
   conflicts: [ FilledMaint ]
   startEffects: # has to run before the map inits so it can change the spawners
   - !type:StationQueryEffects
@@ -98,8 +98,8 @@
   id: DistantSupplyLines
   group: Negative
   chance: 0.6
-  name: "Distant supply lines"
-  report: "Due to the distance to our normal supply lines, cargo orders are more expensive."
+  name: station-trait-distant-supply-lines-name # Dumont
+  report: station-trait-distant-supply-lines-report # Dumont
   conflicts: [ StrongSupplyLines ]
   effects:
   - !type:AddComponents
@@ -111,8 +111,8 @@
   id: IonicStormfront
   group: Negative
   chance: 0.6
-  name: "Ionic Stormfront"
-  report: "An ionic stormfront is passing over your station's system. Expect an increased likelihood of ion storms afflicting your station's silicon units."
+  name: station-trait-ionic-stormfront-name # Dumont
+  report: station-trait-ionic-stormfront-report # Dumont
   effects:
   - !type:StartGameRule
     rule: IonStormTraitScheduler # Dumont
@@ -121,8 +121,8 @@
   id: LateArrivals
   group: Negative
   chance: 0.4
-  name: "Late Arrivals"
-  report: "Sorry for that, we didn't expect to fly into that vomiting goose while bringing you to your new station."
+  name: station-trait-late-arrivals-name # Dumont
+  report: station-trait-late-arrivals-report # Dumont
   conflicts: [ RandomSpawns ]
   mapEffects:
   - !type:StationQueryEffects
@@ -137,8 +137,8 @@
   id: MeteorSwarm
   group: Negative
   chance: 0.4
-  name: "Meteor Swarm"
-  report: "The space around your station has an unusual number of asteroids orbiting your star."
+  name: station-trait-meteor-swarm-name # Dumont
+  report: station-trait-meteor-swarm-report # Dumont
   effects:
   - !type:StartGameRule
     rule: MeteorSwarmScheduler # double the fun
@@ -147,13 +147,25 @@
     parallax: MeteorSwarm
   # Dumont end
 
+# Dumont changes start
+- type: stationTrait
+  id: SpaceDust
+  group: Negative
+  chance: 0.4
+  name: station-trait-space-dust-name
+  report: station-trait-space-dust-report
+  mapEffects:
+  - !type:StationSetWeather
+    weather: Sandstorm
+# Dumont end
+
 - type: stationTrait
   id: RandomSpawns
   group: Negative
   chance: 0.4
   minPlayers: 30 # more fun with more people + getting stuck in a room on deadpop is bad
-  name: "Drive-by landing"
-  report: "Sorry for that, we missed your station by a few miles, so we just launched you towards your station in pods. Hope you don't mind!"
+  name: station-trait-random-spawns-name # Dumont
+  report: station-trait-random-spawns-report # Dumont
   conflicts: [ LateArrivals ]
   mapEffects:
   - !type:StationQueryEffects
@@ -175,8 +187,8 @@
 - type: stationTrait
   id: OverflowJobMistake
   group: Negative
-  name: "Overflow bureaucracy mistake"
-  report: "It seems for some reason we put out the wrong job-listing for the overflow role this shift..." # the job is left as a surprise
+  name: station-trait-overflow-job-mistake-name # Dumont
+  report: station-trait-overflow-job-mistake-report # Dumont
   mapEffects: # need this after station jobs are loaded but before job spawn
   - !type:StationRandomOverflowJob
     ignoredJobs:
@@ -189,8 +201,8 @@
   id: PostRevolutionaryFervor
   group: Negative
   chance: 0.4
-  name: "Post-Revolutionary Fervor"
-  report: "Your station was recently reclaimed from a revolutionary commune. We couldn't clean up after them in time."
+  name: station-trait-post-revolutionary-fervor-name # Dumont
+  report: station-trait-post-revolutionary-fervor-report # Dumont
   effects:
   - !type:StartGameRule
     rule: RevolutionaryFervorVariation
