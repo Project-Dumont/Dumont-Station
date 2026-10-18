@@ -3,6 +3,7 @@
   id: GiantSpidersRule
   components:
   - type: GiantSpidersRule
+    scale: 1.4
     whitelist:
       components:
       - IgnoreSpiderWeb
