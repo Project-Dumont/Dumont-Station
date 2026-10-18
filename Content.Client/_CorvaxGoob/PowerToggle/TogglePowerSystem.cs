@@ -13,7 +13,7 @@ namespace Content.Client._CorvaxGoob.PowerToggle;
 
 public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private AccessReaderSystem _accessReader = default!;
 
     public override void Initialize()
@@ -50,7 +50,7 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         var verb = new Verb
         {
             Text = Loc.GetString("power-toggle-verb"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Act = () => VerbPowerToggle(entity, target, user)
         };
 
@@ -77,7 +77,7 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         var verb = new AlternativeVerb
         {
             Text = Loc.GetString("power-toggle-verb"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Act = () => VerbPowerToggle(entity, target, user),
             Priority = -100
         };

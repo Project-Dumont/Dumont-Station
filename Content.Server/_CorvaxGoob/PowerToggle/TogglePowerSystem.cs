@@ -11,18 +11,17 @@ using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Timing;
-using Robust.Shared.Player;
 using Content.Shared.Access.Systems;
 
 namespace Content.Server._CorvaxGoob.PowerToggle;
 
 public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedEmitSoundSystem _emitSoundSystem = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedEmitSoundSystem _emitSoundSystem = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private AccessReaderSystem _accessReader = default!;
 
     public override void Initialize()
