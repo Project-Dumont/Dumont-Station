@@ -193,6 +193,26 @@
     modifiers:
       UplinkEmpGrenade: 1.5
       UplinkEmpImplanter: 1.5
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    - Civilian
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    effects:
+    - !type:ReplaceRandomLimb
+      limbs:
+      - part: LeftArmCybernetic
+        child: LeftHandCybernetic
+      - part: RightArmCybernetic
+        child: RightHandCybernetic
+      - part: LeftLegCybernetic
+        child: LeftFootCybernetic
+      - part: RightLegCybernetic
+        child: RightFootCybernetic
 
 - type: entity
   parent: BaseGameRule
