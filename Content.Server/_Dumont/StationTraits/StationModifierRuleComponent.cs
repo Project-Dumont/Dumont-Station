@@ -6,6 +6,9 @@ public sealed partial class StationModifierRuleComponent : Component
     public float LightEnergy = 1f;
 
     [DataField]
+    public float LightRadius = 1f;
+
+    [DataField]
     public float SolarPower = 1f;
 
     [DataField]

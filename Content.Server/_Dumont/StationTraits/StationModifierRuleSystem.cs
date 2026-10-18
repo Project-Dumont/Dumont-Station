@@ -11,6 +11,7 @@ namespace Content.Server._Dumont.StationTraits;
 public sealed partial class StationModifierRuleSystem : GameRuleSystem<StationModifierRuleComponent>
 {
     public float LightEnergy { get; private set; } = 1f;
+    public float LightRadius { get; private set; } = 1f;
     public float SolarPower { get; private set; } = 1f;
     public float ResearchPoints { get; private set; } = 1f;
     public bool HeatAlert { get; private set; }
@@ -40,6 +41,7 @@ public sealed partial class StationModifierRuleSystem : GameRuleSystem<StationMo
     private void OnRoundRestart(RoundRestartCleanupEvent args)
     {
         LightEnergy = 1f;
+        LightRadius = 1f;
         SolarPower = 1f;
         ResearchPoints = 1f;
         HeatAlert = false;
@@ -62,6 +64,7 @@ public sealed partial class StationModifierRuleSystem : GameRuleSystem<StationMo
     private void Refresh()
     {
         LightEnergy = 1f;
+        LightRadius = 1f;
         SolarPower = 1f;
         ResearchPoints = 1f;
         HeatAlert = false;
@@ -70,6 +73,7 @@ public sealed partial class StationModifierRuleSystem : GameRuleSystem<StationMo
         while (query.MoveNext(out _, out var comp, out _))
         {
             LightEnergy *= comp.LightEnergy;
+            LightRadius *= comp.LightRadius;
             SolarPower *= comp.SolarPower;
             ResearchPoints *= comp.ResearchPoints;
             HeatAlert |= comp.HeatAlert;

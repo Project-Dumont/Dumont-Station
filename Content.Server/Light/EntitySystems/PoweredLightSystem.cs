@@ -535,7 +535,7 @@ namespace Content.Server.Light.EntitySystems
                 if (color != null)
                     _pointLight.SetColor(uid, color.Value, pointLight);
                 if (light.ChangeLightRadius && radius != null) // CorvaxGoob-FloorTileLight : added check
-                    _pointLight.SetRadius(uid, (float) radius, pointLight);
+                    _pointLight.SetRadius(uid, (float) radius * _stationModifiers.LightRadius, pointLight); // Dumont
                 if (light.ChangeLightEnergy && energy != null) // CorvaxGoob-FloorTileLight : added check
                     _pointLight.SetEnergy(uid, (float) energy * _stationModifiers.LightEnergy, pointLight); // Dumont
                 if (softness != null)
