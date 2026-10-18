@@ -28,6 +28,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     private int _rowCount;
     private char? _bufferLetter;
     private int? _bufferNumber;
+    private (char Letter, int Number)? _lastCode;
 
     // timers & state
     private float _blinkTimer;
@@ -282,6 +283,22 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         if (_showingFeedback)
             return;
 
+        if (_bufferLetter == null && _bufferNumber == null)
+        {
+            if (_lastCode is not { } last)
+            {
+                ShowFeedback(false);
+                return;
+            }
+
+            (_bufferLetter, _bufferNumber) = (last.Letter, last.Number);
+            _inactivityTimer = 0f;
+            _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/Nuke/general_beep.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f).WithPitchScale(1f));
+            OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Beep, 1f);
+            UpdateBufferLabel();
+            return;
+        }
+
         if (_bufferLetter is not { } letter || _bufferNumber is not { } number)
         {
             ShowFeedback(false);
@@ -308,6 +325,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
                 return;
             }
 
+            _lastCode = (letter, number);
             ShowFeedback(true);
 
             _chuteRattleDelay = 0.55f;
