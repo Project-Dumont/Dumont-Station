@@ -11,6 +11,8 @@ using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Timing;
+using Robust.Shared.Player;
+using Content.Shared.Access.Systems;
 
 namespace Content.Server._CorvaxGoob.PowerToggle;
 
@@ -21,6 +23,7 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private AccessReaderSystem _accessReader = default!;
 
     public override void Initialize()
     {
@@ -54,15 +57,20 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
             SetPower(entity, entity.Comp.IsTurnedOn, false);
     }
 
-    private void OnTogglePowerMessage(TogglePowerMessage args)
+    private void OnTogglePowerMessage(TogglePowerMessage args, EntitySessionEventArgs eventArgs)
     {
+        if (eventArgs.SenderSession.AttachedEntity is not { } user)
+            return;
+
         var entity = GetEntity(args.Entity);
-        var user = GetEntity(args.User);
 
         if (!_interaction.InRangeUnobstructed(user, entity) || !_actionBlocker.CanInteract(user, entity))
             return;
 
         if (!TryComp<TogglePowerComponent>(entity, out var togglePower))
+            return;
+
+        if (!_accessReader.IsAllowed(user, entity))
             return;
 
         if (_timing.CurTime < togglePower.NextToggle)
