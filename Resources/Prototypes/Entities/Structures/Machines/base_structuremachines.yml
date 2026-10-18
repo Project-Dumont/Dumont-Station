@@ -113,7 +113,8 @@
     - machine_board
   - type: LightningTarget
     priority: 1
-  - type: TogglePower
+  - type: TogglePower # CorvaxGoob-TogglingPower
+    altMode: false
 
 - type: entity
   abstract: true
