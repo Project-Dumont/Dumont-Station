@@ -18,6 +18,11 @@ public sealed partial class PlayerEffectsRuleComponent : Component
     [DataField]
     public HashSet<ProtoId<JobPrototype>>? Jobs;
 
+    // Dumont changes start
+    [DataField]
+    public HashSet<ProtoId<DepartmentPrototype>>? Departments;
+    // Dumont end
+
     /// <summary>
     /// The effects to run on the player's attached entity.
     /// </summary>

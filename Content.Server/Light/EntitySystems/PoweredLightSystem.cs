@@ -153,6 +153,7 @@ using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Power;
 using Content.Server.Time;
 using Content.Shared.Coordinates;
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Server.Light.EntitySystems
 {
@@ -174,6 +175,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly DamageOnInteractSystem _damageOnInteractSystem = default!;
 
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private StationModifierRuleSystem _stationModifiers = default!; // Dumont
 
         private static readonly TimeSpan ThunkDelay = TimeSpan.FromSeconds(2);
         public const string LightBulbContainer = "light_bulb";
@@ -535,7 +537,7 @@ namespace Content.Server.Light.EntitySystems
                 if (light.ChangeLightRadius && radius != null) // CorvaxGoob-FloorTileLight : added check
                     _pointLight.SetRadius(uid, (float) radius, pointLight);
                 if (light.ChangeLightEnergy && energy != null) // CorvaxGoob-FloorTileLight : added check
-                    _pointLight.SetEnergy(uid, (float) energy, pointLight);
+                    _pointLight.SetEnergy(uid, (float) energy * _stationModifiers.LightEnergy, pointLight); // Dumont
                 if (softness != null)
                     _pointLight.SetSoftness(uid, (float) softness, pointLight);
             }

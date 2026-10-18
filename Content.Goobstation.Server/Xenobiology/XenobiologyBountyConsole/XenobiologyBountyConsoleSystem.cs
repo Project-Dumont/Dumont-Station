@@ -18,6 +18,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Goobstation.Server.Xenobiology.XenobiologyBountyConsole;
 
@@ -35,6 +36,7 @@ public sealed class XenobiologyBountyConsoleSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ResearchSystem _research = default!;
     [Dependency] private readonly StationXenobiologyBountyDatabaseSystem _xenoDatabase = default!;
+    [Dependency] private StationModifierRuleSystem _stationModifiers = default!; // Dumont
 
     private EntityQuery<StackComponent> _stackQuery;
 
@@ -85,7 +87,7 @@ public sealed class XenobiologyBountyConsoleSystem : EntitySystem
             Del(bountyEnt);
 
         var pointsToAward = !_proto.TryIndex(bounty.Bounty, out var bp) ? 0 : bp.PointsAwarded;
-        _research.ModifyServerPoints(server.Value, (int) pointsToAward, serverComponent);
+        _research.ModifyServerPoints(server.Value, _stationModifiers.ModifyResearchPoints((int) pointsToAward), serverComponent); // Dumont
         _xenoDatabase.TryRemoveBounty(station, bounty, false, args.Actor);
 
         _audio.PlayPvs(console.Comp.FulfillSound, console);

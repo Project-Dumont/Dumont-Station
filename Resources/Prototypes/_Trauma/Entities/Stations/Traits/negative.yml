@@ -123,7 +123,7 @@
   chance: 0.4
   name: station-trait-late-arrivals-name # Dumont
   report: station-trait-late-arrivals-report # Dumont
-  conflicts: [ RandomSpawns ]
+  conflicts: [ RandomSpawns, HellishInterpolation ] # Dumont
   mapEffects:
   - !type:StationQueryEffects
     compName: SpawnPoint
@@ -166,7 +166,7 @@
   minPlayers: 30 # more fun with more people + getting stuck in a room on deadpop is bad
   name: station-trait-random-spawns-name # Dumont
   report: station-trait-random-spawns-report # Dumont
-  conflicts: [ LateArrivals ]
+  conflicts: [ LateArrivals, HellishInterpolation ] # Dumont
   mapEffects:
   - !type:StationQueryEffects
     compName: SpawnPoint

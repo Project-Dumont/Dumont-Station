@@ -4,6 +4,7 @@ using Content.Shared.Popups;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.Equipment.Components;
 using Robust.Shared.Audio.Systems;
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Server.Xenoarchaeology.Equipment;
 
@@ -14,6 +15,7 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ResearchSystem _research = default!;
     [Dependency] private readonly XenoArtifactSystem _xenoArtifact = default!;
+    [Dependency] private StationModifierRuleSystem _stationModifiers = default!; // Dumont
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -43,7 +45,7 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
         if (sumResearch <= 0)
             return;
 
-        _research.ModifyServerPoints(server.Value, sumResearch, serverComponent);
+        _research.ModifyServerPoints(server.Value, _stationModifiers.ModifyResearchPoints(sumResearch), serverComponent); // Dumont
         _audio.PlayPvs(ent.Comp.ExtractSound, artifact.Value);
         _popup.PopupEntity(Loc.GetString("analyzer-artifact-extract-popup"), artifact.Value, PopupType.Large);
     }
