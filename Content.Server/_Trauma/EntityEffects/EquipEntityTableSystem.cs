@@ -28,10 +28,9 @@ public sealed partial class EquipEntityTableSystem : EntitySystem
             return;
 
         var e = args.Effect;
-        var coords = Transform(uid).Coordinates;
         foreach (var id in _table.GetSpawns(e.Table))
         {
-            var item = SpawnAtPosition(id, coords);
+            var item = SpawnNextToOrDrop(id, uid); // Dumont
             if (!_inventory.TryEquip(uid, item, e.Slot, silent: e.Silent, inventory: inventory))
                 _hands.TryPickupAnyHand(uid, item);
         }

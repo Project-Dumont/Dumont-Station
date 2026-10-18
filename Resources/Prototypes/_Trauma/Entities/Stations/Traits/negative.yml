@@ -142,6 +142,10 @@
   effects:
   - !type:StartGameRule
     rule: MeteorSwarmScheduler # double the fun
+  # Dumont changes start
+  - !type:StationAddParallax
+    parallax: MeteorSwarm
+  # Dumont end
 
 - type: stationTrait
   id: RandomSpawns
