@@ -22,8 +22,8 @@
   id: NightfallRule
   components:
   - type: StationModifierRule
-    lightEnergy: 0.45
-    lightRadius: 0.75
+    lightEnergy: 0.20
+    lightRadius: 0.35
 
 - type: entity
   parent: BaseGameRule
