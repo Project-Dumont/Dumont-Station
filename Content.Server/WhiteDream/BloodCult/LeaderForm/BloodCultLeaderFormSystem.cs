@@ -1,43 +1,37 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Shitcode.Heretic.Components;
-using Content.Shared.Coordinates;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Rotation;
-using Content.Shared.Standing;
+using Content.Shared.Interaction.Components;
+using Content.Shared.Inventory;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.LeaderForm;
 
 public sealed class BloodCultLeaderFormSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
+    private const string SuitSlot = "outerClothing";
+    private const string HeadSlot = "head";
+
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<PentagramComponent, ComponentStartup>(OnPentagramStartup);
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramShutdown);
-        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentStartup>(OnLeaderStartup);
-        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentShutdown>(OnLeaderShutdown);
+        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentInit>(OnLeaderInit);
+        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentRemove>(OnLeaderRemove);
 
         SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentShutdown>(OnFormShutdown);
-        SubscribeLocalEvent<BloodCultLeaderFormComponent, MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<BloodCultLeaderFormComponent, DownedEvent>(OnDowned);
-        SubscribeLocalEvent<BloodCultLeaderFormComponent, StoodEvent>(OnStood);
     }
 
     private void OnPentagramStartup(Entity<PentagramComponent> ent, ref ComponentStartup args) => Refresh(ent);
 
-    private void OnPentagramShutdown(Entity<PentagramComponent> ent, ref ComponentShutdown args) =>
-        RemComp<BloodCultLeaderFormComponent>(ent);
+    private void OnPentagramShutdown(Entity<PentagramComponent> ent, ref ComponentShutdown args) => Clear(ent);
 
-    private void OnLeaderStartup(Entity<BloodCultLeaderComponent> ent, ref ComponentStartup args) => Refresh(ent);
+    private void OnLeaderInit(Entity<BloodCultLeaderComponent> ent, ref ComponentInit args) => Refresh(ent);
 
-    private void OnLeaderShutdown(Entity<BloodCultLeaderComponent> ent, ref ComponentShutdown args) =>
-        RemComp<BloodCultLeaderFormComponent>(ent);
+    private void OnLeaderRemove(Entity<BloodCultLeaderComponent> ent, ref ComponentRemove args) => Clear(ent);
 
     private void Refresh(EntityUid uid)
     {
@@ -48,49 +42,51 @@ public sealed class BloodCultLeaderFormSystem : EntitySystem
             return;
 
         var comp = AddComp<BloodCultLeaderFormComponent>(uid);
-        var form = SpawnAttachedTo(comp.Form, uid.ToCoordinates());
-        comp.FormEntity = form;
 
-        var relay = EnsureComp<TargetInteractionRelayComponent>(form);
-        relay.RelayEntity = uid;
-        Dirty(form, relay);
+        comp.Suit = Dress(uid, comp.SuitProto, SuitSlot);
+        comp.Head = Dress(uid, comp.HeadProto, HeadSlot);
+    }
 
-        SetRotation(uid, comp);
-        SetMobState(uid, comp);
+    private EntityUid? Dress(EntityUid uid, EntProtoId proto, string slot)
+    {
+        _inventory.TryUnequip(uid, slot, force: true);
+
+        var piece = Spawn(proto, Transform(uid).Coordinates);
+
+        if (_inventory.TryEquip(uid, piece, slot, silent: true, force: true))
+            return piece;
+
+        QueueDel(piece);
+        return null;
+    }
+
+    private void Clear(EntityUid uid)
+    {
+        if (TerminatingOrDeleted(uid))
+            return;
+
+        RemComp<BloodCultLeaderFormComponent>(uid);
     }
 
     private void OnFormShutdown(Entity<BloodCultLeaderFormComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.FormEntity is { } form)
-            QueueDel(form);
+        Undress(ent, ent.Comp.Suit, SuitSlot);
+        Undress(ent, ent.Comp.Head, HeadSlot);
 
-        ent.Comp.FormEntity = null;
+        ent.Comp.Suit = null;
+        ent.Comp.Head = null;
     }
 
-    private void OnMobStateChanged(Entity<BloodCultLeaderFormComponent> ent, ref MobStateChangedEvent args) =>
-        SetMobState(ent, ent.Comp);
-
-    private void OnDowned(Entity<BloodCultLeaderFormComponent> ent, ref DownedEvent args) =>
-        SetRotation(ent, ent.Comp);
-
-    private void OnStood(Entity<BloodCultLeaderFormComponent> ent, ref StoodEvent args) =>
-        SetRotation(ent, ent.Comp);
-
-    private void SetRotation(EntityUid uid, BloodCultLeaderFormComponent comp)
+    private void Undress(EntityUid uid, EntityUid? piece, string slot)
     {
-        if (comp.FormEntity is not { } form)
+        if (piece is not { } item)
             return;
 
-        _appearance.SetData(form,
-            RotationVisuals.RotationState,
-            _standing.IsDown(uid) ? RotationState.Horizontal : RotationState.Vertical);
-    }
+        RemComp<UnremoveableComponent>(item);
 
-    private void SetMobState(EntityUid uid, BloodCultLeaderFormComponent comp)
-    {
-        if (comp.FormEntity is not { } form || !TryComp<MobStateComponent>(uid, out var mobState))
-            return;
+        if (!TerminatingOrDeleted(uid))
+            _inventory.TryUnequip(uid, slot, force: true);
 
-        _appearance.SetData(form, MobStateVisuals.State, mobState.CurrentState);
+        QueueDel(item);
     }
 }

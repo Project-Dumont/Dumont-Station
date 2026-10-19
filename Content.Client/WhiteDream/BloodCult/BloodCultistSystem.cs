@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
+using System.Numerics;
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;
@@ -18,10 +20,26 @@ namespace Content.Client.WhiteDream.BloodCult;
 
 public sealed partial class BloodCultistSystem : EntitySystem
 {
+    private static readonly ResPath LeaderBodyRsi =
+        new("/Textures/_Dumont/BloodCult/Mobs/bloodcultleech.rsi");
+
+    private static readonly ResPath LeaderAuraRsi =
+        new("/Textures/WhiteDream/BloodCult/Effects/leader_aura.rsi");
+
+    private static readonly ResPath LeaderHaloRsi =
+        new("/Textures/_Dumont/BloodCult/Effects/halo.rsi"); // Dumont
+
+    private const string LeaderBodyState = "leech";
+    private const string LeaderAuraState = "leader_aura";
+    private const string LeaderHaloState = "halo"; // Dumont
+
+    private static readonly Vector2 LeaderHaloOffset = new(0f, 0.2f); // Dumont
+
+    private readonly Dictionary<EntityUid, List<int>> _hiddenLayers = new();
+
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IPlayerManager _player = default!;
-    [Dependency] private SpriteSystem _sprite = default!; // Dumont
 
     public override void Initialize()
     {
@@ -29,11 +47,6 @@ public sealed partial class BloodCultistSystem : EntitySystem
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramRemoved);
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentStartup>(OnLeaderAdded);
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentShutdown>(OnLeaderRemoved);
-
-        // Dumont changes start
-        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentStartup>(OnLeaderFormAdded);
-        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentShutdown>(OnLeaderFormRemoved);
-        // Dumont end
 
         SubscribeLocalEvent<ConstructComponent, GetStatusIconsEvent>(GetCultStatusIcon);
         SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultistStatusIcon);
@@ -75,9 +88,11 @@ public sealed partial class BloodCultistSystem : EntitySystem
         if (HasComp<BloodCultLeaderComponent>(uid))
         {
             RemovePentagram(uid);
+            AddLeaderGlow(uid);
             return;
         }
 
+        RemoveLeaderGlow(uid);
         AddPentagram(uid, component);
     }
 
@@ -97,8 +112,11 @@ public sealed partial class BloodCultistSystem : EntitySystem
         }
     }
 
-    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args) =>
+    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args)
+    {
         RemovePentagram(uid);
+        RemoveLeaderGlow(uid); // Dumont
+    }
 
     private void OnLeaderAdded(EntityUid uid, BloodCultLeaderComponent component, ComponentStartup args)
     {
@@ -108,6 +126,8 @@ public sealed partial class BloodCultistSystem : EntitySystem
 
     private void OnLeaderRemoved(EntityUid uid, BloodCultLeaderComponent component, ComponentShutdown args)
     {
+        RemoveLeaderGlow(uid); // Dumont
+
         if (!TerminatingOrDeleted(uid) && TryComp<PentagramComponent>(uid, out var pentagram))
             AddPentagram(uid, pentagram); // Dumont
     }
@@ -122,19 +142,83 @@ public sealed partial class BloodCultistSystem : EntitySystem
     }
 
     // Dumont changes start
-    private void OnLeaderFormAdded(Entity<BloodCultLeaderFormComponent> ent, ref ComponentStartup args)
+    public override void Update(float frameTime)
     {
-        if (!TryComp(ent, out SpriteComponent? sprite))
-            return;
+        var query = EntityQueryEnumerator<BloodCultLeaderComponent, SpriteComponent>();
 
-        ent.Comp.WasVisible = sprite.Visible;
-        _sprite.SetVisible((ent, sprite), false);
+        while (query.MoveNext(out _, out var sprite))
+        {
+            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out var body))
+                continue;
+
+            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out var aura))
+                aura = -1;
+
+            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out var halo))
+                halo = -1;
+
+            for (var i = 0; i < sprite.AllLayers.Count(); i++)
+            {
+                if (i == body || i == aura || i == halo)
+                    continue;
+
+                if (sprite.TryGetLayer(i, out var layer) && layer.Visible)
+                    sprite.LayerSetVisible(i, false);
+            }
+        }
     }
 
-    private void OnLeaderFormRemoved(Entity<BloodCultLeaderFormComponent> ent, ref ComponentShutdown args)
+    private void AddLeaderGlow(EntityUid uid)
     {
-        if (TryComp(ent, out SpriteComponent? sprite))
-            _sprite.SetVisible((ent, sprite), ent.Comp.WasVisible);
+        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
+            sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out _))
+            return;
+
+        var restore = new List<int>();
+
+        for (var i = 0; i < sprite.AllLayers.Count(); i++)
+        {
+            if (sprite.TryGetLayer(i, out var existing) && existing.Visible)
+                restore.Add(i);
+
+            sprite.LayerSetVisible(i, false);
+        }
+
+        _hiddenLayers[uid] = restore;
+
+        var body = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderBodyRsi, LeaderBodyState));
+        sprite.LayerMapSet(BloodCultVisualLayers.LeaderBody, body);
+
+        var aura = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderAuraRsi, LeaderAuraState));
+        sprite.LayerMapSet(BloodCultVisualLayers.LeaderAura, aura);
+
+        var halo = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderHaloRsi, LeaderHaloState));
+        sprite.LayerMapSet(BloodCultVisualLayers.LeaderHalo, halo);
+        sprite.LayerSetOffset(halo, LeaderHaloOffset);
+    }
+
+    private void RemoveLeaderGlow(EntityUid uid)
+    {
+        if (!TryComp<SpriteComponent>(uid, out var sprite))
+        {
+            _hiddenLayers.Remove(uid);
+            return;
+        }
+
+        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out var halo))
+            sprite.RemoveLayer(halo);
+
+        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out var aura))
+            sprite.RemoveLayer(aura);
+
+        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out var body))
+            sprite.RemoveLayer(body);
+
+        if (!_hiddenLayers.Remove(uid, out var restore))
+            return;
+
+        foreach (var index in restore)
+            sprite.LayerSetVisible(index, true);
     }
     // Dumont end
 
@@ -159,4 +243,11 @@ public sealed partial class BloodCultistSystem : EntitySystem
 
         return visibleToGhost && HasComp<GhostComponent>(uid);
     }
+}
+
+internal enum BloodCultVisualLayers : byte
+{
+    LeaderBody, // Dumont
+    LeaderAura,
+    LeaderHalo // Dumont
 }

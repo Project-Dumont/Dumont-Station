@@ -1,19 +1,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.WhiteDream.BloodCult.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class BloodCultLeaderFormComponent : Component
 {
     [DataField]
-    public EntProtoId Form = "BloodCultLeaderForm";
+    public EntProtoId SuitProto = "ClothingOuterBloodCultLeaderForm";
+
+    [DataField]
+    public EntProtoId HeadProto = "ClothingHeadBloodCultLeaderForm";
 
     [ViewVariables]
-    public EntityUid? FormEntity;
+    public EntityUid? Suit;
 
     [ViewVariables]
-    public bool WasVisible = true;
+    public EntityUid? Head;
 }

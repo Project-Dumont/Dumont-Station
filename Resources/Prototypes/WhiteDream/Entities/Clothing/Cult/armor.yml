@@ -60,9 +60,20 @@
   description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_robe.rsi # Dumont
   - type: Clothing
-    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_robe.rsi # Dumont
+    # Dumont changes start
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - sprite: _Dumont/BloodCult/Clothing/cult_force_field.rsi
+        state: equipped-BELT
+        shader: unshaded
+  - type: Reflect
+    reflectProb: 0.1
+    spread: 90
+    # Dumont end
   - type: CultItem
   - type: ClothingSpeedModifier
     walkModifier: 1.25
@@ -92,9 +103,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_helmet.rsi # Dumont
   - type: Clothing
-    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_helmet.rsi # Dumont
     equipSound: /Audio/Effects/rustle1.ogg
     unequipSound: /Audio/Effects/rustle2.ogg
   - type: ClothingSpeedModifier
@@ -102,11 +113,31 @@
     sprintModifier: 1.25
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 1.4
-        Slash: 1.4
-        Piercing: 1.4
-        Heat: 1.4
+      coefficients: # 10% resist
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.2
+  - type: FireProtection
+    reduction: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingMaskGasExplorer
+  id: ClothingMaskCultJanitor
+  name: flagellant's mask
+  description: A close-fitting breath mask stitched into the same blood-soaked weave.
+  components:
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_mask.rsi
+  - type: Clothing
+    sprite: _Dumont/BloodCult/Clothing/cult_janitor_mask.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: CultItem
 
 - type: entity
   parent: ClothingEyesBase
@@ -139,10 +170,10 @@
   description: Heavy robes woven for those who answered the call. They still reek of the rite that summoned them.
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_robes.rsi # Dumont
     state: icon
   - type: Clothing
-    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_robes.rsi # Dumont
   - type: Armor
     modifiers:
       coefficients: # 20% resist
@@ -152,18 +183,31 @@
   - type: StaminaResistance # 25% stamina resist
     damageCoefficient: 0.75
   - type: CultItem
+  # Dumont changes start
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetCultSummoned
+    verbText: toggle-clothing-verb-hood
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container { }
+  # Dumont end
 
 - type: entity
   parent: ClothingHeadHelmetCult
   id: ClothingHeadHelmetCultSummoned
   name: zealot's hood
   description: A hood of the same dark weave, called straight out of the veil.
+  categories: [ HideSpawnMenu ] # Dumont
   components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_hood.rsi # Dumont
     state: icon
   - type: Clothing
-    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_hood.rsi # Dumont
+  - type: HideLayerClothing # Dumont
+    slots:
+    - Hair
   - type: Armor
     modifiers:
       coefficients: # 20% resist
@@ -178,9 +222,88 @@
   name: zealot's boots
   description: Boots of the same dark weave. Sure-footed, whatever the floor is covered in.
   components:
+  - type: CultItem
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterBloodCultLeaderForm
+  name: Nar'Sien husk
+  description: The shape Nar'Sie wears Her chosen in. It does not come off.
+  categories: [ HideSpawnMenu ]
+  components:
   - type: Sprite
-    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_leader_form.rsi
     state: icon
   - type: Clothing
-    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
+    sprite: _Dumont/BloodCult/Clothing/cult_leader_form.rsi
+  - type: Unremoveable
+  - type: CultItem
+  - type: HideLayerClothing
+    slots:
+    - Tail
+    - Wings
+    - Hair
+    - FacialHair
+    - Face
+    - Chest
+    - Underwear
+    - Undershirt
+    - Groin
+    - Head
+    - Snout
+    - HeadSide
+    - HeadTop
+    - Eyes
+    - RArm
+    - LArm
+    - RHand
+    - LHand
+    - RLeg
+    - LLeg
+    - RFoot
+    - LFoot
+    clothingSlots:
+    - head
+    - eyes
+    - ears
+    - mask
+    - jumpsuit
+    - neck
+    - back
+    - belt
+    - gloves
+    - shoes
+    - id
+    - pocket1
+    - pocket2
+    - suitstorage
+  - type: Armor
+    modifiers:
+      coefficients: # 50% resist
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Cold: 0.5
+        Shock: 0.5
+        Caustic: 0.5
+        Poison: 0.5
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBloodCultLeaderForm
+  name: Nar'Sien husk
+  description: The shape Nar'Sie wears Her chosen in. It does not come off.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Clothing/cult_leader_form.rsi
+    state: icon-head
+  - type: Clothing
+    sprite: _Dumont/BloodCult/Clothing/cult_leader_form.rsi
+  - type: Unremoveable
   - type: CultItem

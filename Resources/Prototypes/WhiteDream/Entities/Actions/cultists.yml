@@ -203,8 +203,8 @@
       speech: "Wur d'dai leev'mai k'sagan!"
       prototypes:
         outerClothing: ClothingOuterArmorCultSummoned
-        head: ClothingHeadHelmetCultSummoned
         shoes: ClothingShoesCultSummoned
+        belt: ClothingBeltCultWebbing # Dumont
         hand1: EldritchBlade
         hand2: CultBola
   - type: LimitedCharges
