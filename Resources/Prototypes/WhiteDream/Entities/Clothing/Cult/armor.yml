@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ BaseMagicalContraband, ClothingOuterHardsuitBase ]
   id: ClothingOuterCultArmor
   name: true nar'sien hardened armor
   description: heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
@@ -36,7 +36,7 @@
   - type: CultItem
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ BaseMagicalContraband, ClothingHeadHardsuitBase ]
   id: ClothingHeadHelmetCultArmor
   categories: [ HideSpawnMenu ]
   name: true nar'sien hardened helmet
@@ -54,7 +54,7 @@
     lowPressureMultiplier: 1000
 
 - type: entity
-  parent: ClothingOuterRobesCult
+  parent: [ BaseMagicalContraband, ClothingOuterRobesCult ]
   id: ClothingOuterRobesCultTrue
   name: flagellant's robe
   description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
@@ -96,7 +96,7 @@
       toggleable-clothing: !type:Container { }
 
 - type: entity
-  parent: ClothingHeadHatHoodCulthood
+  parent: [ BaseMagicalContraband, ClothingHeadHatHoodCulthood ]
   id: ClothingHeadHatHoodCultHoodTrue
   name: flagellant's hood
   description: A blood-soaked hood infused with dark magic.
@@ -125,7 +125,7 @@
     - Hair
 
 - type: entity
-  parent: ClothingMaskGasExplorer
+  parent: [ BaseMagicalContraband, ClothingMaskGasExplorer ]
   id: ClothingMaskCultJanitor
   name: flagellant's mask
   description: A close-fitting breath mask stitched into the same blood-soaked weave.
@@ -140,7 +140,7 @@
   - type: CultItem
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ BaseMagicalContraband, ClothingEyesBase ]
   id: ClothingEyeCultBlindfold
   name: zealot's blindfold
   description: May Nar'Sie guide you through the darkness and shield you from the light
@@ -164,7 +164,7 @@
     color: "#c99a9a"
 
 - type: entity
-  parent: ClothingOuterArmorCult
+  parent: [ BaseMagicalContraband, ClothingOuterArmorCult ]
   id: ClothingOuterArmorCultSummoned
   name: zealot's robes
   description: Heavy robes woven for those who answered the call. They still reek of the rite that summoned them.
@@ -194,7 +194,7 @@
   # Dumont end
 
 - type: entity
-  parent: ClothingHeadHelmetCult
+  parent: [ BaseMagicalContraband, ClothingHeadHelmetCult ]
   id: ClothingHeadHelmetCultSummoned
   name: zealot's hood
   description: A hood of the same dark weave, called straight out of the veil.
@@ -217,7 +217,7 @@
   - type: CultItem
 
 - type: entity
-  parent: ClothingShoesCult
+  parent: [ BaseMagicalContraband, ClothingShoesCult ]
   id: ClothingShoesCultSummoned
   name: zealot's boots
   description: Boots of the same dark weave. Sure-footed, whatever the floor is covered in.

@@ -1,5 +1,5 @@
 - type: entity
-  parent: SheetOtherBase
+  parent: [ BaseMagicalContraband, SheetOtherBase ]
   id: RunedMetal
   name: runic metal
   description: An unusual sheet of metal with a pulsating rune.

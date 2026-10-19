@@ -1,7 +1,7 @@
 - type: entity
   name: soul shard
   description: Mysterious glowing shard.
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: SoulShard
   components:
   - type: LagCompensation

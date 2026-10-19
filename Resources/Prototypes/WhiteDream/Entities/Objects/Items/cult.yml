@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: ShuttleCurse
   name: cursed orb
   description: You peer within this smokey orb and glimpse terrible fates befalling the emergency escape shuttle.
@@ -11,7 +11,7 @@
   - type: ShuttleCurse
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: WhetstoneCult
   name: eldritch whetstone
   description: A block, empowered by dark magic. Sharp weapons will be enhanced when used on the stone.
@@ -38,7 +38,7 @@
           False: { state: icon_off }
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: VeilShifter
   name: veil shifter
   description: This relic instantly teleports you, and anything you're pulling, forward by a moderate distance.
@@ -59,7 +59,7 @@
           False: { state: icon_off }
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: VoidTorch
   name: void torch
   description: Used by veteran cultists to instantly transport items to their needful brethren
@@ -126,7 +126,7 @@
     - Torch
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: ShadowShackles
   name: shadow shackles
   description: Shackles that bind the wrists with sinister magic.
@@ -146,7 +146,7 @@
     state: cuff
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: MirrorShieldCult
   name: mirror shield
   description: An infamous shield used by Nar'Sien sects to confuse and disorient their enemies. Its edges are weighted for use as a throwing weapon - capable of disabling multiple foes with preternatural accuracy.

@@ -1,7 +1,7 @@
 
 - type: entity
   id: CrossbowBloodCult
-  parent: BaseBow
+  parent: [ BaseMagicalContraband, BaseBow ]
   name: blood cult crossbow
   description: A cruel crossbow shaped by a daemon forge for Nar'Sie's faithful.
   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   id: CrossbowBoltCult
-  parent: BaseArrow
+  parent: [ BaseMagicalContraband, BaseArrow ]
   name: cult crossbow bolt
   description: A heavy, razor-sharp bolt made for a daemon-forged crossbow.
   components:

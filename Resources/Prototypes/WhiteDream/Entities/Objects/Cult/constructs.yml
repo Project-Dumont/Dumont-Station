@@ -2,7 +2,7 @@
   id: ConstructShell
   name: construct shell
   description: empty construct shell
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Items/construct_shell.rsi

@@ -1,6 +1,6 @@
 - type: entity
   name: eldritch longsword
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: EldritchLongsword
   description: A sword humming with unholy energy. It glows with a dim red light.
   components:
@@ -39,7 +39,7 @@
     softness: 1
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMagicalContraband, BaseItem ]
   id: BloodSpear
   name: blood halberd
   description: A sickening spear composed entirely of crystallized blood.

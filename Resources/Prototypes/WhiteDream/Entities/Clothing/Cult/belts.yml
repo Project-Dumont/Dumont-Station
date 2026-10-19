@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ BaseMagicalContraband, ClothingBeltStorageBase ]
   id: ClothingBeltCultWebbing
   name: cult webbing
   description: A webbing of blood-soaked straps, pockets lined against the damp.
