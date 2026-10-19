@@ -755,6 +755,7 @@
     - LeatherShoes #Gabystation
     - Slippers #Gabystation
     - NanotrasenRepresentativeHeels #Gabystation
+    - Clothwrap #Dumont
 
 - type: loadoutGroup
   id: CivilianShoesRequired
