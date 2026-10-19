@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;
@@ -19,18 +18,10 @@ namespace Content.Client.WhiteDream.BloodCult;
 
 public sealed partial class BloodCultistSystem : EntitySystem
 {
-    private static readonly ResPath LeaderAuraRsi =
-        new("/Textures/WhiteDream/BloodCult/Effects/leader_aura.rsi");
-
-    private static readonly ResPath LeaderHaloRsi =
-        new("/Textures/_Dumont/BloodCult/Effects/halo.rsi"); // Dumont
-
-    private const string LeaderAuraState = "leader_aura";
-    private const string LeaderHaloState = "halo"; // Dumont
-
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private SpriteSystem _sprite = default!; // Dumont
 
     public override void Initialize()
     {
@@ -38,6 +29,11 @@ public sealed partial class BloodCultistSystem : EntitySystem
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramRemoved);
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentStartup>(OnLeaderAdded);
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentShutdown>(OnLeaderRemoved);
+
+        // Dumont changes start
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentStartup>(OnLeaderFormAdded);
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentShutdown>(OnLeaderFormRemoved);
+        // Dumont end
 
         SubscribeLocalEvent<ConstructComponent, GetStatusIconsEvent>(GetCultStatusIcon);
         SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultistStatusIcon);
@@ -79,13 +75,9 @@ public sealed partial class BloodCultistSystem : EntitySystem
         if (HasComp<BloodCultLeaderComponent>(uid))
         {
             RemovePentagram(uid);
-            AddLeaderHalo(uid);
-            RefreshLeaderAura(uid);
             return;
         }
 
-        RemoveLeaderHalo(uid);
-        RemoveLeaderAura(uid);
         AddPentagram(uid, component);
     }
 
@@ -105,12 +97,8 @@ public sealed partial class BloodCultistSystem : EntitySystem
         }
     }
 
-    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args)
-    {
-        RemovePentagram(uid); // Dumont
-        RemoveLeaderHalo(uid); // Dumont
-        RemoveLeaderAura(uid);
-    }
+    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args) =>
+        RemovePentagram(uid);
 
     private void OnLeaderAdded(EntityUid uid, BloodCultLeaderComponent component, ComponentStartup args)
     {
@@ -120,9 +108,6 @@ public sealed partial class BloodCultistSystem : EntitySystem
 
     private void OnLeaderRemoved(EntityUid uid, BloodCultLeaderComponent component, ComponentShutdown args)
     {
-        RemoveLeaderHalo(uid); // Dumont
-        RemoveLeaderAura(uid);
-
         if (!TerminatingOrDeleted(uid) && TryComp<PentagramComponent>(uid, out var pentagram))
             AddPentagram(uid, pentagram); // Dumont
     }
@@ -136,49 +121,22 @@ public sealed partial class BloodCultistSystem : EntitySystem
         sprite.RemoveLayer(layer);
     }
 
-    private void AddLeaderHalo(EntityUid uid)
+    // Dumont changes start
+    private void OnLeaderFormAdded(Entity<BloodCultLeaderFormComponent> ent, ref ComponentStartup args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
-            sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out _))
+        if (!TryComp(ent, out SpriteComponent? sprite))
             return;
 
-        var layer = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderHaloRsi, LeaderHaloState));
-        sprite.LayerMapSet(BloodCultVisualLayers.LeaderHalo, layer);
+        ent.Comp.WasVisible = sprite.Visible;
+        _sprite.SetVisible((ent, sprite), false);
     }
 
-    private void RemoveLeaderHalo(EntityUid uid)
+    private void OnLeaderFormRemoved(Entity<BloodCultLeaderFormComponent> ent, ref ComponentShutdown args)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
-            !sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out var layer))
-            return;
-
-        sprite.RemoveLayer(layer);
+        if (TryComp(ent, out SpriteComponent? sprite))
+            _sprite.SetVisible((ent, sprite), ent.Comp.WasVisible);
     }
-
-    private void RefreshLeaderAura(EntityUid uid)
-    {
-        if (!HasComp<BloodCultLeaderComponent>(uid) || !HasComp<PentagramComponent>(uid))
-        {
-            RemoveLeaderAura(uid);
-            return;
-        }
-
-        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
-            sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out _))
-            return;
-
-        var layer = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderAuraRsi, LeaderAuraState));
-        sprite.LayerMapSet(BloodCultVisualLayers.LeaderAura, layer);
-    }
-
-    private void RemoveLeaderAura(EntityUid uid)
-    {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
-            !sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out var layer))
-            return;
-
-        sprite.RemoveLayer(layer);
-    }
+    // Dumont end
 
     /// <summary>
     /// Determine whether a client should display the cult icon.
@@ -201,10 +159,4 @@ public sealed partial class BloodCultistSystem : EntitySystem
 
         return visibleToGhost && HasComp<GhostComponent>(uid);
     }
-}
-
-internal enum BloodCultVisualLayers : byte
-{
-    LeaderHalo, // Dumont
-    LeaderAura,
 }

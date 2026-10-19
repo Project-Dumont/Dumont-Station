@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Created by Paradise Station and imported from Funky Station at commit 1d33e834c087ba7d481e600de9a45dbbc7684042",
+  "copyright": "Taken from Frontier Station at commit df5fc295c5475110e6cbff46e79677df14566536. Original sprite taken from nebula station (A general purpose SS13/Baystation12 fork) https://github.com/NebulaSS13/Nebula/blob/dev/icons/mob/simple_animal/shade.dmi | sprite for crit state made by erhardsteinhauer",
   "size": {
     "x": 32,
     "y": 32
@@ -9,7 +9,43 @@
   "states": [
     {
       "name": "shade",
-      "directions": 4
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "unshaded",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "crit"
+    },
+    {
+      "name": "dead"
     }
   ]
 }

@@ -1,0 +1,31 @@
+- type: entity
+  id: BloodCultLeaderForm
+  save: false
+  name: blood cult leader
+  description: A shape pulled through the veil, wearing the leader of the cult like a husk.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    layers:
+    - sprite: WhiteDream/BloodCult/Effects/leader_aura.rsi
+      state: leader_aura
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      sprite: _Dumont/BloodCult/Mobs/bloodcultleech.rsi
+      state: leech
+    - sprite: _Dumont/BloodCult/Effects/halo.rsi
+      state: halo
+      offset: 0, 0.2
+  - type: Clickable
+  - type: InteractionOutline
+  - type: RotationVisuals
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: leech
+      Critical:
+        Base: crit
+      Dead:
+        Base: dead
