@@ -14,6 +14,14 @@
         {
             "name": "l_leg",
             "directions": 4
+        },
+        {
+            "name": "chest_f",
+            "directions": 4
+        },
+        {
+            "name": "chest_m",
+            "directions": 4
         }
     ]
 }

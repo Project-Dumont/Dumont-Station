@@ -48,7 +48,7 @@
   - type: Hunger
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
-    femaleDisplacements: # Goob-Feroxi-Resprite-Start
+    femaleDisplacements: 
       jumpsuit:
         sizeMaps:
           32:
@@ -209,7 +209,7 @@
     species: Vulpkanin
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
-    femaleDisplacements: # Goob-Feroxi-Resprite-Start
+    femaleDisplacements: 
       jumpsuit:
         sizeMaps:
           32:
