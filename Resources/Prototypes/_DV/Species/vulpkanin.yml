@@ -46,10 +46,10 @@
     RArm: MobVulpkaninRArm
     LHand: MobVulpkaninLHand
     RHand: MobVulpkaninRHand
-    LLeg: MobVulpkaninLLeg
-    RLeg: MobVulpkaninRLeg
-    LFoot: MobVulpkaninLFoot
-    RFoot: MobVulpkaninRFoot
+    LLeg: MobVulpkaninLLegDigi  # Starlight digitgrade legs port - TODO - recolor feroxi legs to replace the leg sprites, keep foot sprites as is, use feroxi displacement
+    RLeg: MobVulpkaninRLegDigi
+    LFoot: MobVulpkaninLFootDigi
+    RFoot: MobVulpkaninRFootDigi
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
