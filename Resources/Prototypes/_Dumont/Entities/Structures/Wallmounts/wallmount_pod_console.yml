@@ -8,11 +8,23 @@
     - type: PodConsole
     - type: WallMount
       arc: 360
+    - type: ApcPowerReceiver
+      powerLoad: 200
     - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.PowerDeviceVisuals.Powered:
+          enum.PowerDeviceVisualLayers.Powered:
+            True: { visible: true }
+            False: { visible: false }
     - type: Sprite
       sprite: _Dumont/Structures/Wallmounts/pod_console.rsi
       layers:
       - state: base
+      - state: unshaded
+        shader: unshaded
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+        visible: false
     - type: Destructible
       thresholds:
       - trigger: # Excess damage, don't spawn entities
