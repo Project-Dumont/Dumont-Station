@@ -111,4 +111,5 @@
   - type: GuideHelp
     guides:
     - MedicalDoctor
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
