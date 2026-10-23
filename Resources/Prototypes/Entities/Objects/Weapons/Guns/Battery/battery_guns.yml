@@ -166,7 +166,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/_Trauma/Weapons/Guns/Gunshots/laser2.ogg
-    quality: 0 # Dumont Change: Weapon Jamming - Laser gun, doesn't jamm
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
@@ -224,7 +223,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-    quality: 0 # Dumont Change: Weapon Jamming - Laser gun, doesn't jamm
   - type: HitscanBatteryAmmoProvider
     proto: RedLightLaser
     fireCost: 50

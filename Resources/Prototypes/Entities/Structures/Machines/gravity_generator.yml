@@ -100,7 +100,6 @@
   - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5
-    activeRadiation: 1 # Dumont
     spriteMap:
       broken: "broken"
       unpowered: "off"
@@ -126,8 +125,6 @@
     tags:
     - Structure
     - IgnoreImmovableRod
-  - type: RadiationSource # Dumont
-    intensity: 0
 
 - type: entity
   id: GravityGeneratorMini
@@ -186,11 +183,8 @@
   - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5
-    activeRadiation: 0.2 # Dumont
   - type: StaticPrice
     price: 2000
   - type: Tag # Goobstation
     tags:
     - Structure
-  - type: RadiationSource # Dumont
-    intensity: 0
