@@ -1,0 +1,71 @@
+#Labor rock
+- type: entity
+  id: LaborRock
+  parent: BaseWall
+  name: Rocha Vulcânica
+  suffix: Labor
+  description: Uma rocha.
+  components:
+  - type: Transform
+    noRot: true
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: SmoothEdge
+  - type: Icon
+    sprite: _Dumont/Structures/Walls/rock.rsi
+    state: rock_red
+  - type: Sprite
+    sprite: _Dumont/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_red
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_red_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_red_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_red_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_red_west
+  - type: MiningScannerViewable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 240
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 2000
+  - type: Gatherable # Lavaland Change
+    toolWhitelist:
+      tags: []
+
+- type: entity
+  id: LaborRockMining
+  parent: LaborRock
+  name: Rocha Vulcânica
+  suffix: higher ore yield .33, Labor
+  description: Uma rocha.
+  components:
+  - type: OreVein
+    oreChance: 0.33
+    oreRarityPrototypeId: RandomOreDistributionStandard
