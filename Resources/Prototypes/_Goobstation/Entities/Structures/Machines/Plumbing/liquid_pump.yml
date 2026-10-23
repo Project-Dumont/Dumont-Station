@@ -53,7 +53,8 @@
   # Power
   - type: ApcPowerReceiver
     powerLoad: 2000 # constant power usage when switched on
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
   - type: SignalPowerSwitch
   # UI
   - type: ActivatableUI

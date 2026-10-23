@@ -62,7 +62,8 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: {visible: true}
           False: {visible: false}
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
   - type: Machine
     board: MailTeleporterMachineCircuitboard
   - type: AccessReader
