@@ -46,10 +46,10 @@
     RArm: MobVulpkaninRArm
     LHand: MobVulpkaninLHand
     RHand: MobVulpkaninRHand
-    LLeg: MobVulpkaninLLeg
-    RLeg: MobVulpkaninRLeg
-    LFoot: MobVulpkaninLFoot
-    RFoot: MobVulpkaninRFoot
+    LLeg: MobVulpkaninLLegDigi 
+    RLeg: MobVulpkaninRLegDigi
+    LFoot: MobVulpkaninLFootDigi
+    RFoot: MobVulpkaninRFootDigi
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
@@ -135,7 +135,7 @@
 - type: humanoidBaseSprite
   id: MobVulpkaninChestFemale
   baseSprite:
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _Dumont/Mobs/Species/Vulpkanin/parts.rsi
     state: chest_f
 
 - type: humanoidBaseSprite
