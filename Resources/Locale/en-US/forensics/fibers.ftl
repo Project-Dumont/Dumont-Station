@@ -28,6 +28,8 @@ fibers-nanomachines = insulative mysterious
 fibers-chameleon = mysterious
 fibers-rubber = rubber
 fibers-kinetic = kinetic
+fibers-metal = metal
+fibers-cardboard = cardboard
 
 fibers-purple = purple
 fibers-red = red

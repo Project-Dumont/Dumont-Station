@@ -100,7 +100,7 @@
 - type: startingGear
   id: JanitorGear
   equipment:
-    shoes: ClothingShoesGaloshes
+    #shoes: ClothingShoesGaloshes - Dumont, moved to loadouts
     id: JanitorPDA
     ears: ClothingHeadsetService
     belt: ClothingBeltJanitorFilled

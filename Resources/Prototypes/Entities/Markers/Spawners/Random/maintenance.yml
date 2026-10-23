@@ -374,7 +374,7 @@
         - !type:EntSelector
           id: PlasmaTankFilled
         - !type:EntSelector
-          id: DoubleEmergencyPlasmaTankFilled
+          id: InternalsPlasmaTankFilled # Dumont edit
       - !type:GroupSelector
         weight: 3
         children:
@@ -450,8 +450,8 @@
         - id: DrinkSpaceLube
       - !type:GroupSelector
         children:
-        - id: BoomboxPink
-        - id: BoomboxPurple
+        # - id: BoomboxPink
+        # - id: BoomboxPurple
         - id: MP3PlayerRed # Gabystation
       # Rare Group
     - !type:GroupSelector
@@ -470,7 +470,7 @@
       - id: DrinkMopwataBottleRandom
       - id: LidSalami
         weight: 0.05
-      - id: BoomboxSlav
+      # - id: BoomboxSlav
 
 - type: entity
   name: Maint Loot Spawner
@@ -496,7 +496,7 @@
     - !type:GroupSelector
       weight: 95
       children:
-      - id: Machete
+     # - id: Machete Dumont edit - armory weapon now.
       - id: BaseBallBat
       - id: CombatKnife
       - id: Spear

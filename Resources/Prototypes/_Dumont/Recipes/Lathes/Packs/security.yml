@@ -1,0 +1,8 @@
+- type: latheRecipePack
+  id: SecurityWeaponUpgrades
+  recipes:
+  - TerminusUpgradeHeatBlade
+  - TerminusUpgradeAttackSpeed
+  - TerminusUpgradeMeleeRange
+  - SpearTelescopicUpgradeAttackSpeed
+  - SpearTelescopicUpgradeMeleeRange

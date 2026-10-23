@@ -141,40 +141,44 @@ public abstract class SharedTeslaBlastSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed partial class TeslaBlastDoAfterEvent(
-    TimeSpan delay,
-    float range,
-    int boltCount,
-    int arcDepth,
-    Vector2 damage,
-    Vector2 stunTime,
-    string lightningPrototype,
-    NetEntity action) : DoAfterEvent
+public sealed partial class TeslaBlastDoAfterEvent : DoAfterEvent
 {
-    public TimeSpan Delay = delay;
+    public TimeSpan Delay = TimeSpan.FromSeconds(10);
 
-    public float Range = range;
+    public float Range = 7f;
 
-    public int BoltCount = boltCount;
+    public int BoltCount = 1;
 
-    public int ArcDepth = arcDepth;
+    public int ArcDepth = 5;
 
-    public Vector2 MinMaxDamage = damage;
+    public Vector2 MinMaxDamage = new(15f, 50f);
 
-    public Vector2 MinMaxStunTime = stunTime;
+    public Vector2 MinMaxStunTime = new(1f, 8f);
 
-    public string LightningPrototype = lightningPrototype;
+    public string LightningPrototype = "SuperchargedLightning";
 
-    public NetEntity Action = action;
+    public NetEntity Action = NetEntity.Invalid;
 
-    public TeslaBlastDoAfterEvent() : this(TimeSpan.FromSeconds(10),
-        7f,
-        1,
-        5,
-        new(15f, 50f),
-        new(1f, 8f),
-        "SuperchargedLightning",
-        NetEntity.Invalid)
+    public TeslaBlastDoAfterEvent(TimeSpan delay,
+        float range,
+        int boltCount,
+        int arcDepth,
+        Vector2 damage,
+        Vector2 stunTime,
+        string lightningPrototype,
+        NetEntity action)
+    {
+        Delay = delay;
+        Range = range;
+        BoltCount = boltCount;
+        ArcDepth = arcDepth;
+        MinMaxDamage = damage;
+        MinMaxStunTime = stunTime;
+        LightningPrototype = lightningPrototype;
+        Action = action;
+    }
+
+    public TeslaBlastDoAfterEvent()
     {
     }
 

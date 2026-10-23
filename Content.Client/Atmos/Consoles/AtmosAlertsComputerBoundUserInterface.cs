@@ -30,6 +30,9 @@ public sealed class AtmosAlertsComputerBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         var castState = (AtmosAlertsComputerBoundInterfaceState) state;
 
         EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);

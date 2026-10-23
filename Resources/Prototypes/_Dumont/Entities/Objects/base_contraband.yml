@@ -1,0 +1,116 @@
+
+# Dumont spacelaw 2.0 - subcategories for contras
+# Station
+- type: entity
+  id: BaseDepartmentalEquipmentContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DepartmentalEquipment
+    criminalPoints: 0 
+
+- type: entity
+  id: BaseRestrictedEquipmentContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: RestrictedEquipment
+    criminalPoints: 2
+
+- type: entity
+  id: BaseDangerousEquipmentContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DangerousEquipment
+    criminalPoints: 3
+
+- type: entity
+  id: BaseLethalEquipmentContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: LethalEquipment
+    criminalPoints: 4
+
+- type: entity
+  id: BaseCriticalEquipmentContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CriticalEquipment
+    criminalPoints: 4.9
+
+# syndie
+- type: entity
+  id: BaseRestrictedSyndicateContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: RestrictedSyndicate
+    criminalPoints: 3
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 3
+
+- type: entity
+  id: BaseDangerousSyndicateContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DangerousSyndicate
+    criminalPoints: 4
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 4
+
+- type: entity
+  id: BaseLethalSyndicateContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: LethalSyndicate
+    criminalPoints: 4.9
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 5
+
+- type: entity
+  id: BaseCriticalSyndicateContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CriticalSyndicate
+    criminalPoints: 4.9
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 4.9
+
+# external
+- type: entity
+  id: BaseRestrictedExternalContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: RestrictedExternal
+    criminalPoints: 2
+
+- type: entity
+  id: BaseDangerousExternalContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DangerousExternal
+    criminalPoints: 3
+
+- type: entity
+  id: BaseLethalExternalContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: LethalExternal
+    criminalPoints: 4
+
+- type: entity
+  id: BaseCriticalExternalContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CriticalExternal
+    criminalPoints: 4.9

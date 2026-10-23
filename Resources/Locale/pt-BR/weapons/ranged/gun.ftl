@@ -46,4 +46,6 @@ gun-revolver-full = Revólver carregado
 gun-revolver-insert = Inserido
 gun-revolver-spin = Girar revólver
 gun-revolver-spun = Girou
-gun-speedloader-empty = Carregador rapido vazio
+gun-speedloader-empty = Carregador rápido vazio
+
+

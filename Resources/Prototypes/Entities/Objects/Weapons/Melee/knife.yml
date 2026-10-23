@@ -139,6 +139,10 @@
   id: BaseKnife
   abstract: true
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: SwordCosmicCult
+  # Dumont end
   - type: Tag
     tags:
     - Knife
@@ -280,7 +284,7 @@
   - type: ThrowingAngle
     angle: 225
   - type: ThrowableBlocked # Goobstation
-  - type: GunUpgrade # Lavaland Change
+  - type: ItemUpgrade # Lavaland Change
     name: gun-upgrade-bayonet-name
     examineTextType: gun-upgrade-examine-type-can-use
     insertedTextType: gun-upgrade-inserted-examine-type-attached
@@ -372,7 +376,7 @@
     sprite: Clothing/Head/Hats/brownflatcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/brownflatcap.rsi
-  
+
 - type: entity
   name: shiv
   parent: [BaseKnife, BaseMinorContraband]

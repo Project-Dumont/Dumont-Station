@@ -46,8 +46,9 @@ public struct SupermatterNavMapData
     }
 }
 
+[DataDefinition]
 [Serializable, NetSerializable]
-public struct SupermatterFocusData
+public partial struct SupermatterFocusData
 {
     /// <summary>
     /// Focus entity
@@ -97,7 +98,6 @@ public struct SupermatterFocusData
     /// <summary>
     /// The supermatter's gas storage
     /// </summary>
-    [DataField]
     public Dictionary<Gas, float> GasStorage;
 
     /// <summary>

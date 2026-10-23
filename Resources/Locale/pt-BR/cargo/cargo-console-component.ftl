@@ -47,3 +47,5 @@ cargo-shuttle-console-station-unknown = Desconhecido
 cargo-shuttle-console-shuttle-not-found = Não encontrado
 cargo-shuttle-console-organics = Formas de vida orgânicas detectadas na shuttle
 cargo-no-shuttle = Nenhuma shuttle encontrada!
+
+cargo-notification = {$amount} de {$order} foi comprada por {$person} por um preço de {$price}

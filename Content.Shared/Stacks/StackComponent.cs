@@ -31,6 +31,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Stacks
 {
@@ -38,8 +39,8 @@ namespace Content.Shared.Stacks
     public sealed partial class StackComponent : Component
     {
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("stackType", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
-        public string StackTypeId { get; private set; } = default!;
+        [DataField("stackType", required: true)]
+        public ProtoId<StackPrototype> StackTypeId { get; private set; } = default!;
 
         /// <summary>
         ///     Current stack count.
@@ -63,13 +64,6 @@ namespace Content.Shared.Stacks
         [DataField("unlimited")]
         [ViewVariables(VVAccess.ReadOnly)]
         public bool Unlimited { get; set; }
-
-        /// <summary>
-        /// Lingering stacks will remain present even when there are no items.
-        /// Instead, they will become transparent.
-        /// </summary>
-        [DataField("lingering"), ViewVariables(VVAccess.ReadWrite)]
-        public bool Lingering;
 
         [DataField("throwIndividually"), ViewVariables(VVAccess.ReadWrite)]
         public bool ThrowIndividually { get; set; } = false;
@@ -123,13 +117,10 @@ namespace Content.Shared.Stacks
         public int Count { get; }
         public int? MaxCount { get; }
 
-        public bool Lingering;
-
-        public StackComponentState(int count, int? maxCount, bool lingering)
+        public StackComponentState(int count, int? maxCount)
         {
             Count = count;
             MaxCount = maxCount;
-            Lingering = lingering;
         }
     }
 

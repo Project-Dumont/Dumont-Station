@@ -119,6 +119,9 @@ public sealed partial class PullerComponent : Component
     ///     Does this entity need hands to be able to pull something?
     /// </summary>
     [DataField]
+    // Dumont changes start
+    [AutoNetworkedField]
+    // Dumont end
     public bool NeedsHands = true;
 
     [DataField]

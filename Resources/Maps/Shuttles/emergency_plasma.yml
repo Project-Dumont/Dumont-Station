@@ -166,7 +166,7 @@ entities:
           decals:
             20: 1,-10
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileInnerOverlayNE
           decals:
             70: 1,-2
@@ -181,7 +181,7 @@ entities:
           decals:
             17: 5,-10
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileInnerOverlayNW
           decals:
             69: 5,-2
@@ -196,7 +196,7 @@ entities:
           decals:
             19: 1,-8
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileInnerOverlaySE
           decals:
             71: 1,0
@@ -216,7 +216,7 @@ entities:
           decals:
             18: 5,-8
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileInnerOverlaySW
           decals:
             72: 5,0
@@ -267,7 +267,7 @@ entities:
             12: 3,-10
             13: 4,-10
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileLineOverlayN
           decals:
             63: 2,-2
@@ -308,7 +308,7 @@ entities:
             15: 3,-8
             16: 4,-8
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileLineOverlayS
           decals:
             66: 2,0
@@ -339,7 +339,7 @@ entities:
             119: 13,9
             120: 13,8
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: MiniTileOverlay
           decals:
             115: 3,10

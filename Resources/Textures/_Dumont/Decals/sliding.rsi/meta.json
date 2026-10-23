@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "sliding_box"
+    },
+    {
+      "name": "sliding_corner_ne"
+    },
+    {
+      "name": "sliding_corner_nw"
+    },
+    {
+      "name": "sliding_corner_se"
+    },
+    {
+      "name": "sliding_corner_sw"
+    },
+    {
+      "name": "sliding_e"
+    },
+    {
+      "name": "sliding_end_e"
+    },
+    {
+      "name": "sliding_end_n"
+    },
+    {
+      "name": "sliding_end_s"
+    },
+    {
+      "name": "sliding_end_w"
+    },
+    {
+      "name": "sliding_n"
+    },
+    {
+      "name": "sliding_ne"
+    },
+    {
+      "name": "sliding_nw"
+    },
+    {
+      "name": "sliding_s"
+    },
+    {
+      "name": "sliding_se"
+    },
+    {
+      "name": "sliding_sw"
+    },
+    {
+      "name": "sliding_thinplating_corner_ne"
+    },
+    {
+      "name": "sliding_thinplating_corner_nw"
+    },
+    {
+      "name": "sliding_thinplating_corner_se"
+    },
+    {
+      "name": "sliding_thinplating_corner_sw"
+    },
+    {
+      "name": "sliding_thinplating_e"
+    },
+    {
+      "name": "sliding_thinplating_end_e"
+    },
+    {
+      "name": "sliding_thinplating_end_n"
+    },
+    {
+      "name": "sliding_thinplating_end_s"
+    },
+    {
+      "name": "sliding_thinplating_end_w"
+    },
+    {
+      "name": "sliding_thinplating_n"
+    },
+    {
+      "name": "sliding_thinplating_ne"
+    },
+    {
+      "name": "sliding_thinplating_nw"
+    },
+    {
+      "name": "sliding_thinplating_s"
+    },
+    {
+      "name": "sliding_thinplating_se"
+    },
+    {
+      "name": "sliding_thinplating_sw"
+    },
+    {
+      "name": "sliding_thinplating_w"
+    },
+    {
+      "name": "sliding_w"
+    },
+    {
+      "name": "sliding_wideplating_corner_ne"
+    },
+    {
+      "name": "sliding_wideplating_corner_nw"
+    },
+    {
+      "name": "sliding_wideplating_corner_se"
+    },
+    {
+      "name": "sliding_wideplating_corner_sw"
+    },
+    {
+      "name": "sliding_wideplating_e"
+    },
+    {
+      "name": "sliding_wideplating_end_e"
+    },
+    {
+      "name": "sliding_wideplating_end_n"
+    },
+    {
+      "name": "sliding_wideplating_end_s"
+    },
+    {
+      "name": "sliding_wideplating_end_w"
+    },
+    {
+      "name": "sliding_wideplating_n"
+    },
+    {
+      "name": "sliding_wideplating_ne"
+    },
+    {
+      "name": "sliding_wideplating_nw"
+    },
+    {
+      "name": "sliding_wideplating_s"
+    },
+    {
+      "name": "sliding_wideplating_se"
+    },
+    {
+      "name": "sliding_wideplating_sw"
+    },
+    {
+      "name": "sliding_wideplating_w"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+- type: decal
+  id: TechfloorCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_corner_ne
+
+- type: decal
+  id: TechfloorCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_corner_nw
+
+- type: decal
+  id: TechfloorCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_corner_se
+
+- type: decal
+  id: TechfloorCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_corner_sw
+
+- type: decal
+  id: TechfloorE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_e
+
+- type: decal
+  id: TechfloorN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_n
+
+- type: decal
+  id: TechfloorNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_ne
+
+- type: decal
+  id: TechfloorNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_nw
+
+- type: decal
+  id: TechfloorOrangeCornerNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_corner_ne
+
+- type: decal
+  id: TechfloorOrangeCornerNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_corner_nw
+
+- type: decal
+  id: TechfloorOrangeCornerSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_corner_se
+
+- type: decal
+  id: TechfloorOrangeCornerSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_corner_sw
+
+- type: decal
+  id: TechfloorOrangeE
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_e
+
+- type: decal
+  id: TechfloorOrangeN
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_n
+
+- type: decal
+  id: TechfloorOrangeNe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_ne
+
+- type: decal
+  id: TechfloorOrangeNw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_nw
+
+- type: decal
+  id: TechfloorOrangeS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_s
+
+- type: decal
+  id: TechfloorOrangeSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_se
+
+- type: decal
+  id: TechfloorOrangeSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_sw
+
+- type: decal
+  id: TechfloorOrangeW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_orange_w
+
+- type: decal
+  id: TechfloorS
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_s
+
+- type: decal
+  id: TechfloorSe
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_se
+
+- type: decal
+  id: TechfloorSw
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_sw
+
+- type: decal
+  id: TechfloorW
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/techfloor.rsi
+    state: techfloor_w

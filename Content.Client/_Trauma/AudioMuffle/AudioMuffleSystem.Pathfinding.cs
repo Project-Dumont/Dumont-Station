@@ -5,6 +5,7 @@
 using System.Numerics;
 using System.Linq;
 using Content.Trauma.Shared.AudioMuffle;
+using Robust.Shared.Map; // Dumont
 using Robust.Shared.Utility;
 
 namespace Content.Trauma.Client.AudioMuffle;
@@ -18,6 +19,7 @@ public sealed partial class AudioMuffleSystem
     private readonly PriorityQueue<MuffleTileData> _frontier = new();
     private readonly Dictionary<MuffleTileData, float> _expansionNodes = new();
     private readonly Dictionary<MuffleTileData, float> _innerExpansionNodes = new();
+    private bool _rebuildPending; // Dumont
 
     public static int ManhattanDistance(Vector2i start, Vector2i end)
     {
@@ -77,7 +79,7 @@ public sealed partial class AudioMuffleSystem
 
         newData.TotalCost = 0f;
         _reExpand.Clear();
-        if (!ExpandNode(newData, 0f, false, _reExpand, out _))
+        if (!ExpandNode(newData, 0f, _reExpand, out _))
         {
             if (_reExpand.Contains(newData))
             {
@@ -129,12 +131,12 @@ public sealed partial class AudioMuffleSystem
         // This determines the side of already expanded area that we are expanding into.
         var vecX = new Vector2i(Math.Sign(signX - 1), Math.Sign(1 - signX)) * signX;
         var vecY = new Vector2i(Math.Sign(signY - 1), Math.Sign(1 - signY)) * signY;
-        Expand(_frontier, newPos, _passed, vecX, vecY, false, PathfindingRange * distance);
+        Expand(_frontier, newPos, _passed, vecX, vecY, PathfindingRange * distance);
         _frontier.Clear();
         _passed.Clear();
     }
 
-    private void Expand(Vector2i start, bool updateAudio = false)
+    private void Expand(Vector2i start)
     {
         var newNode = new MuffleTileData(start);
 
@@ -149,10 +151,7 @@ public sealed partial class AudioMuffleSystem
             start,
             new HashSet<Vector2i> { start },
             vec,
-            vec,
-            updateAudio);
-        if (updateAudio)
-            ResetAudioOnPos(start);
+            vec);
         _frontier.Clear();
     }
 
@@ -161,7 +160,6 @@ public sealed partial class AudioMuffleSystem
         HashSet<Vector2i> passed,
         Vector2i minMaxXDir,
         Vector2i minMaxYDir,
-        bool updateAudio = false,
         int amount = PathfindingRange)
     {
         if (PlayerGrid is not { } grid || grid.Comp.Deleted)
@@ -219,7 +217,7 @@ public sealed partial class AudioMuffleSystem
                         next.Previous = node;
                         node.Next.Add(next);
 
-                        UpdateTotalCostOfNextTileData(next, diff, false, PathfindingRange - count);
+                        UpdateTotalCostOfNextTileData(next, diff, PathfindingRange - count);
 
                         frontier.Add(next);
                     }
@@ -244,19 +242,16 @@ public sealed partial class AudioMuffleSystem
             }
         }
 
-        if (updateAudio)
-            ReCalculateAllAudio(null, AudioProcessBehavior.None, AudioProcessBehavior.Reset);
         _passed.Clear();
     }
 
     private void RewriteAndReExpand(MuffleTileData first,
         HashSet<Vector2i> invalidated,
-        bool updateAudio = false,
         int amount = PathfindingRange)
     {
         if (first.Previous == null)
         {
-            Expand(first.Indices, updateAudio);
+            Expand(first.Indices);
             return;
         }
 
@@ -327,8 +322,6 @@ public sealed partial class AudioMuffleSystem
             }
         }
 
-        if (updateAudio)
-            ReCalculateAllAudio(null, AudioProcessBehavior.None, AudioProcessBehavior.Reset);
         _rewritePassed.Clear();
         _frontier.Clear();
     }
@@ -370,7 +363,6 @@ public sealed partial class AudioMuffleSystem
 
     private bool ExpandNode(MuffleTileData node,
         float delta,
-        bool resetAudio,
         HashSet<MuffleTileData> nodesToReExpand,
         out HashSet<MuffleTileData> nextNodesToExpand,
         bool firstIteration = true,
@@ -428,7 +420,7 @@ public sealed partial class AudioMuffleSystem
         if (iteration <= 1)
         {
             if (firstIteration)
-                UpdateTotalCostOfNextTileData(node, toUpdate, resetAudio, iteration, true);
+                UpdateTotalCostOfNextTileData(node, toUpdate, iteration, true);
             return true;
         }
 
@@ -445,7 +437,7 @@ public sealed partial class AudioMuffleSystem
             var next = _frontier.Take();
             count++;
 
-            if (!ExpandNode(next, 0f, resetAudio, nodesToReExpand, out var nodes, false, 1))
+            if (!ExpandNode(next, 0f, nodesToReExpand, out var nodes, false, 1))
                 result = false;
 
             foreach (var toAdd in nodes)
@@ -459,7 +451,7 @@ public sealed partial class AudioMuffleSystem
 
         _frontier.Clear();
 
-        UpdateTotalCostOfNextTileData(node, toUpdate, resetAudio, iteration, true);
+        UpdateTotalCostOfNextTileData(node, toUpdate, iteration, true);
 
         return result;
     }
@@ -539,7 +531,6 @@ public sealed partial class AudioMuffleSystem
 
     private void UpdateTotalCostOfNextTileData(MuffleTileData data,
         float delta,
-        bool resetAudio,
         int iteration = PathfindingRange,
         bool reCalculate = false,
         bool firstIteration = true)
@@ -554,9 +545,6 @@ public sealed partial class AudioMuffleSystem
 
         data.TotalCost = newCost;
 
-        if (resetAudio)
-            ResetAudioOnPos(data.Indices);
-
         _updatedData.Add(data);
 
         if (iteration <= 0)
@@ -565,15 +553,14 @@ public sealed partial class AudioMuffleSystem
         var nextDelta = reCalculate ? newCost + 1f : delta;
         foreach (var next in data.Next)
         {
-            UpdateTotalCostOfNextTileData(next, nextDelta, resetAudio, iteration - 1, reCalculate, false);
+            UpdateTotalCostOfNextTileData(next, nextDelta, iteration - 1, reCalculate, false);
         }
     }
 
     private void AddOrRemoveBlocker(Entity<SoundBlockerComponent> blocker,
         Vector2i indices,
         bool add,
-        bool modifyCost,
-        bool resetAudio = false)
+        bool modifyCost)
     {
         if (add)
         {
@@ -599,29 +586,36 @@ public sealed partial class AudioMuffleSystem
         var cost = GetBlockerCost(blocker.Comp);
         var sign = add ? 1 : -1;
 
-        ModifyBlockerAmount(data, sign * cost, resetAudio);
+        ModifyBlockerAmount(data, sign * cost);
     }
 
-    private void ModifyBlockerAmount(MuffleTileData data, float delta, bool resetAudio = false)
+    // Dumont changes start
+    private void ModifyBlockerAmount(MuffleTileData data, float delta)
     {
-        if (delta < 0 && delta < -data.TotalCost)
-            delta = -data.TotalCost;
+        _rebuildPending = true;
+    }
 
-        _reExpand.Clear();
-        if (ExpandNode(data, delta, resetAudio, _reExpand, out _, true, 1))
+    private void ProcessPendingRebuild()
+    {
+        if (!_rebuildPending)
             return;
 
-        _passed.Clear();
-        foreach (var node in _reExpand)
-        {
-            if (_passed.Contains(node.Indices))
-                continue;
+        _rebuildPending = false;
 
-            RewriteAndReExpand(node, _passed);
-        }
-        _reExpand.Clear();
-        _passed.Clear();
+        if (!_pathfindingEnabled || ResolvePlayer() is not { } player)
+            return;
+
+        var pos = _xform.GetMapCoordinates(player);
+        if (pos == MapCoordinates.Nullspace || ResolvePlayerGrid(pos) is not { } grid)
+            return;
+
+        var tile = _map.TileIndicesFor(grid, pos);
+        if (!_map.CollidesWithGrid(grid, grid, tile))
+            return;
+
+        Expand(tile);
     }
+    // Dumont end
 
     public sealed class MuffleTileData(Vector2i indices) : IEquatable<MuffleTileData>, IComparable<MuffleTileData>
     {

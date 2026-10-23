@@ -22,7 +22,6 @@
         - sprite: Mobs/Species/Human/parts.rsi
           state: full
         - state: ai
-    - type: Timer
     - type: TimedSpawner
       prototypes:
         - MobSpirate
@@ -43,7 +42,6 @@
         - sprite: Mobs/Animals/mouse.rsi
           state: icon-2
         - state: timed
-    - type: Timer
     - type: TimedSpawner
       prototypes:
         - SpawnMobMouse # Goobstation

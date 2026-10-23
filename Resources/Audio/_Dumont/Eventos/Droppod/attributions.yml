@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["the_insurgency's_end.ogg"]
+  license: "Custom"
+  copyright: "ampersand"
+  source: "https://www.youtube.com/watch?v=eJQ6-wP0RPY"
+
+- files: ["razormind.ogg"]
+  license: "Custom"
+  copyright: "Simon Viklund"
+  source: "https://www.youtube.com/watch?v=_Fl_LJBixfg"
+
+- files: ["frontal_attack.ogg"]
+  license: "Custom"
+  copyright: "Gaijin Entertainment, Jimmie Asche & Nikita Mokrov"
+  source: "https://youtu.be/dFaKHADB0_Y?si=wuuS5MTVwyZYGI8u"
+
+- files: ["corporate_rats.ogg"]
+  license: "Custom"
+  copyright: "Bolgarich"
+  source: "https://www.youtube.com/watch?v=F4OkYAPaqeI"
+
+- files: ["shots_fired.ogg"]
+  license: "Custom"
+  copyright: "Camelidea"
+  source: "https://www.youtube.com/watch?v=XSYUcrsx2X0"
+
+- files: ["colliding_stars.ogg"]
+  license: "Custom"
+  copyright: "Marzuku"
+  source: "https://www.youtube.com/watch?v=zidDFA0oDFI"
+
+- files: ["alpha_predator.ogg"]
+  license: "Custom"
+  copyright: "Aaron F. Bianchi Jupiter · Proctomancer · Adolfo Aarón Figueroa Bianchi · Christian Ryan Martin · Adolfo Aarón Figueroa Bianchi"
+  source: "https://www.youtube.com/watch?v=d8JcKd9NiJs"

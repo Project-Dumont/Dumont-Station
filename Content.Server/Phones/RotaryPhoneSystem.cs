@@ -9,6 +9,8 @@ using Content.Shared.Speech;
 using Content.Shared.Phones.Components;
 using Content.Shared.Phones.Events;
 using Content.Shared.Phones.Systems;
+using Content.Shared.Verbs;
+using Content.Shared.Administration;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -16,6 +18,11 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Player;
+using Content.Server.Administration;
+using Content.Server.Administration.Managers;
+using Robust.Server.Player;
+using Content.Shared.Storage;
+using Content.Shared._Lavaland.Megafauna.Events;
 
 namespace Content.Server.Phones;
 
@@ -25,7 +32,11 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-
+    // Dumont - verb for changing name
+    [Dependency] private QuickDialogSystem _dialog = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    // Dumont end
     public override void Initialize()
     {
         base.Initialize();
@@ -39,7 +50,47 @@ public sealed class RotaryPhoneSystem : SharedRotaryPhoneSystem
         SubscribeLocalEvent<RotaryPhoneComponent, BoundUIOpenedEvent>(OnOpen);
         SubscribeLocalEvent<RotaryPhoneComponent, PhoneHungUpEvent>(OnGotHungUp);
         SubscribeLocalEvent<RotaryPhoneHolderComponent, EntInsertedIntoContainerMessage>(OnPhoneInsertHolder);
+
+        SubscribeLocalEvent<RotaryPhoneHolderComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
     }
+
+    // Dumont - get verbs for modifying name
+    private void OnGetVerbs(Entity<RotaryPhoneHolderComponent> holder, ref GetVerbsEvent<Verb> args)
+    {
+        if (!_admin.IsAdmin(args.User))
+            return;
+
+        if (!_admin.HasAdminFlag(args.User, AdminFlags.VarEdit))
+            return;
+
+        if (!_player.TryGetSessionByEntity(args.User, out var session))
+            return;
+
+
+        RotaryPhoneComponent? phone = null;
+        var isPhoneConnected = holder.Comp.ConnectedPhone is { } phoneUid && TryComp<RotaryPhoneComponent>(phoneUid, out phone);
+
+        Verb verb = new()
+        {
+            Text = Loc.GetString("phone-verb-text"),
+            Act = () =>
+            {
+                _dialog.OpenDialog<string>(
+                    session,
+                    Loc.GetString("phone-verb-text"),
+                    Loc.GetString("phone-verb-prompt"),
+                    response =>{ 
+                        if (isPhoneConnected && phone is not null)
+                            phone.Name = response;
+                        else    
+                            holder.Comp.Name = response; 
+                        });
+            }
+        };
+
+        args.Verbs.Add(verb);
+    }
+    // Dumont end
 
     private void OnGotHungUp(Entity<RotaryPhoneComponent> ent, ref PhoneHungUpEvent args)
     {

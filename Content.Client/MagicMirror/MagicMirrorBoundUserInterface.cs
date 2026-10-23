@@ -66,6 +66,9 @@ public sealed class MagicMirrorBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not MagicMirrorUiState data || _window == null)
         {
             return;

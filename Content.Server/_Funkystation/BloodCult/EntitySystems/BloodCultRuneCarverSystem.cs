@@ -52,7 +52,6 @@ public sealed partial class BloodCultRuneCarverSystem : EntitySystem
 	[Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 	[Dependency] private readonly SharedTransformSystem _transform = default!;
 	[Dependency] private readonly MapSystem _mapSystem = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
 	[Dependency] private readonly IPrototypeManager _protoMan = default!;
 	[Dependency] private readonly DamageableSystem _damageableSystem = default!;
 	[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
@@ -528,7 +527,7 @@ public sealed partial class BloodCultRuneCarverSystem : EntitySystem
 
 	private bool CanPlaceRuneAt(EntityCoordinates clickedAt, out EntityCoordinates location)
 	{
-		location = clickedAt.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+		location = clickedAt.AlignWithClosestGridTile(entityManager: EntityManager);
 		var gridUid = _transform.GetGrid(location);
 		if (!TryComp<MapGridComponent>(gridUid, out var grid))
         {

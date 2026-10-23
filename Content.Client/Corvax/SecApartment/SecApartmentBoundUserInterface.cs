@@ -56,6 +56,9 @@ public sealed class SecApartmentBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (_window == null)
             return;
 

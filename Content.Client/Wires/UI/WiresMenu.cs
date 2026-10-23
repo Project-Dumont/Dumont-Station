@@ -262,10 +262,10 @@ namespace Content.Client.Wires.UI
             var random = new Random(state.WireSeed);
             foreach (var wire in state.WiresList)
             {
-                var mirror = random.Next(2) == 0;
-                var flip = random.Next(2) == 0;
+                random.Next(2);
+                random.Next(2);
                 var type = random.Next(2);
-                var control = new WireControl(wire.Color, wire.Letter, wire.IsCut, flip, mirror, type, _resourceCache)
+                var control = new WireControl(wire.Color, wire.Letter, wire.IsCut, type, _resourceCache)
                 {
                     VerticalAlignment = VAlignment.Bottom
                 };
@@ -322,7 +322,7 @@ namespace Content.Client.Wires.UI
             public event Action? WireClicked;
             public event Action? ContactsClicked;
 
-            public WireControl(WireColor color, WireLetter letter, bool isCut, bool flip, bool mirror, int type,
+            public WireControl(WireColor color, WireLetter letter, bool isCut, int type,
                 IResourceCache resourceCache)
             {
                 _resourceCache = resourceCache;
@@ -369,7 +369,7 @@ namespace Content.Client.Wires.UI
                 layout.AddChild(contact2);
                 LayoutContainer.SetPosition(contact2, new Vector2(0, 60));
 
-                var wire = new WireRender(color, isCut, flip, mirror, type, _resourceCache);
+                var wire = new WireRender(color, isCut, type, _resourceCache);
 
                 layout.AddChild(wire);
                 LayoutContainer.SetPosition(wire, new Vector2(2, 16));
@@ -406,8 +406,6 @@ namespace Content.Client.Wires.UI
             {
                 private readonly WireColor _color;
                 private readonly bool _isCut;
-                private readonly bool _flip;
-                private readonly bool _mirror;
                 private readonly int _type;
 
                 private static readonly string[] TextureNormal =
@@ -430,14 +428,11 @@ namespace Content.Client.Wires.UI
 
                 private readonly IResourceCache _resourceCache;
 
-                public WireRender(WireColor color, bool isCut, bool flip, bool mirror, int type,
-                    IResourceCache resourceCache)
+                public WireRender(WireColor color, bool isCut, int type, IResourceCache resourceCache)
                 {
                     _resourceCache = resourceCache;
                     _color = color;
                     _isCut = isCut;
-                    _flip = flip;
-                    _mirror = mirror;
                     _type = type;
 
                     SetSize = new Vector2(16, 50);
@@ -448,27 +443,7 @@ namespace Content.Client.Wires.UI
                     var colorValue = _color.ColorValue();
                     var tex = _resourceCache.GetTexture(_isCut ? TextureCut[_type] : TextureNormal[_type]);
 
-                    var l = 0f;
-                    var r = tex.Width + l;
-                    var t = 0f;
-                    var b = tex.Height + t;
-
-                    if (_flip)
-                    {
-                        (t, b) = (b, t);
-                    }
-
-                    if (_mirror)
-                    {
-                        (l, r) = (r, l);
-                    }
-
-                    l *= UIScale;
-                    r *= UIScale;
-                    t *= UIScale;
-                    b *= UIScale;
-
-                    var rect = new UIBox2(l, t, r, b);
+                    var rect = UIBox2.FromDimensions(0, 0, tex.Width * UIScale, tex.Height * UIScale);
                     if (_isCut)
                     {
                         var copper = Color.Orange;

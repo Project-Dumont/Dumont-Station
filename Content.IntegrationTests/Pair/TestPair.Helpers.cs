@@ -44,7 +44,7 @@ public sealed partial class TestPair
         await Server.WaitPost(() =>
         {
             mapData.MapUid = Server.System<SharedMapSystem>().CreateMap(out mapData.MapId, runMapInit: initialized);
-            mapData.Grid = Server.MapMan.CreateGridEntity(mapData.MapId);
+            mapData.Grid = Server.System<SharedMapSystem>().CreateGridEntity(mapData.MapId);
             mapData.GridCoords = new EntityCoordinates(mapData.Grid, 0, 0);
             var plating = tileDefinitionManager[tile];
             var platingTile = new Tile(plating.TileId);

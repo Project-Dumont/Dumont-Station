@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "borderfloor_black_corner_ne"
+    },
+    {
+      "name": "borderfloor_black_corner_nw"
+    },
+    {
+      "name": "borderfloor_black_corner_se"
+    },
+    {
+      "name": "borderfloor_black_corner_sw"
+    },
+    {
+      "name": "borderfloor_black_e"
+    },
+    {
+      "name": "borderfloor_black_n"
+    },
+    {
+      "name": "borderfloor_black_ne"
+    },
+    {
+      "name": "borderfloor_black_nw"
+    },
+    {
+      "name": "borderfloor_black_s"
+    },
+    {
+      "name": "borderfloor_black_se"
+    },
+    {
+      "name": "borderfloor_black_sw"
+    },
+    {
+      "name": "borderfloor_black_w"
+    },
+    {
+      "name": "borderfloor_corner_ne"
+    },
+    {
+      "name": "borderfloor_corner_nw"
+    },
+    {
+      "name": "borderfloor_corner_se"
+    },
+    {
+      "name": "borderfloor_corner_sw"
+    },
+    {
+      "name": "borderfloor_e"
+    },
+    {
+      "name": "borderfloor_n"
+    },
+    {
+      "name": "borderfloor_ne"
+    },
+    {
+      "name": "borderfloor_nw"
+    },
+    {
+      "name": "borderfloor_s"
+    },
+    {
+      "name": "borderfloor_se"
+    },
+    {
+      "name": "borderfloor_sw"
+    },
+    {
+      "name": "borderfloor_w"
+    },
+    {
+      "name": "borderfloor_white_corner_ne"
+    },
+    {
+      "name": "borderfloor_white_corner_nw"
+    },
+    {
+      "name": "borderfloor_white_corner_se"
+    },
+    {
+      "name": "borderfloor_white_corner_sw"
+    },
+    {
+      "name": "borderfloor_white_e"
+    },
+    {
+      "name": "borderfloor_white_n"
+    },
+    {
+      "name": "borderfloor_white_ne"
+    },
+    {
+      "name": "borderfloor_white_nw"
+    },
+    {
+      "name": "borderfloor_white_s"
+    },
+    {
+      "name": "borderfloor_white_se"
+    },
+    {
+      "name": "borderfloor_white_sw"
+    },
+    {
+      "name": "borderfloor_white_w"
+    }
+  ]
+}

@@ -109,6 +109,7 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
 
         _window = this.CreateWindow<PaperWindow>();
         _window.OnSaved += InputOnTextEntered;
+        _window.OnSignatureRequested += OnSignatureRequested; // Starlight-edit
 
         if (EntMan.TryGetComponent<PaperComponent>(Owner, out var paper))
         {
@@ -123,7 +124,11 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
-        _window?.Populate((PaperBoundUserInterfaceState) state);
+
+        if (_window is not { Disposed: false })
+            return;
+
+        _window.Populate((PaperBoundUserInterfaceState) state);
     }
 
     private void InputOnTextEntered(string text)
@@ -136,4 +141,7 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
             _window.Input.CursorPosition = new TextEdit.CursorPos(0, TextEdit.LineBreakBias.Top);
         }
     }
+
+    // Starlight
+    private void OnSignatureRequested(int signatureIndex) => SendMessage(new PaperSignatureRequestMessage(signatureIndex));
 }

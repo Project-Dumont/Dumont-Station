@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasePlushie
+  id: Plushie_Ellen
+  name: Ellen plushie
+  description: Clearly a custom Janie plush, which goes against the NanoTrasen rules.
+  components:
+    - type: Sprite
+      sprite: _Dumont/Objects/Fun/Ellen_plush.rsi
+      state: icon
+    - type: UseDelay
+      delay: 1.5
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_DV/Voice/Vulpkanin/dog_whine.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Effects/silence.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+        params:
+          volume: 1
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/_EinsteinEngines/Voice/Vulpkanin/vulpscream4.ogg
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/_DV/Voice/Vulpkanin/dog_snarl2.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_DV/Voice/Vulpkanin/dog_snarl2.ogg
+    - type: Clothing
+      quickEquip: false
+      sprite: _Dumont/Objects/Fun/Ellen_plush.rsi
+      slots:
+      - HEAD

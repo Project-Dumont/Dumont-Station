@@ -273,6 +273,7 @@
       - Gauze
       - RawMaterial
       - DroneUsable # Goobstation
+      - ConstructionMaterial
   - type: Construction
     graph: WebObjects # not sure if I should either keep this here or just make another prototype. Will keep it here just in case.
     node: cloth
@@ -344,6 +345,7 @@
       - ClothMade
       - RawMaterial
       - DroneUsable # Goobstation
+      - ConstructionMaterial
   - type: Item
     heldPrefix: durathread
 
@@ -399,6 +401,7 @@
     - Wooden
     - RawMaterial
     - DroneUsable # Goobstation
+    - ConstructionMaterial
   - type: Extractable
     grindableSolutionName: wood
   - type: SolutionContainerManager
@@ -959,6 +962,7 @@
   name: gunpowder
   description: An explosive compound.
   components:
+  - type: Material
   - type: Stack
     stackType: Gunpowder
     count: 1
@@ -976,6 +980,12 @@
       Gunpowder: 100
   - type: Item
     size: Tiny
+  - type: Tag # Goobstation
+    tags:
+    - Gunpowder
+    - RawMaterial
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   parent: MaterialBase

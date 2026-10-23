@@ -41,6 +41,9 @@ public sealed class StationTeleporterConsoleBoundUserInterface(EntityUid owner, 
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not StationTeleporterState st)
             return;
 

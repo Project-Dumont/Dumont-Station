@@ -88,6 +88,7 @@
 
 using System.Numerics;
 using Content.Client.StatusIcon;
+using Content.Shared._Dumont.Triage; // Dumont-triagem
 using Content.Client.UserInterface.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components; // Shitmed Change
 using Content.Shared.Damage;
@@ -208,6 +209,16 @@ public sealed class EntityHealthBarOverlay : Overlay
             var pixelDarken = new Box2(new Vector2(startX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 3f) / EyeManager.PixelsPerMeter);
             pixelDarken = pixelDarken.Translated(position);
             handle.DrawRect(pixelDarken, Black.WithAlpha(128));
+
+            // Dumont-triagem
+            if (_entManager.TryGetComponent<TriageTagComponent>(uid, out var triage) &&
+                _prototype.TryIndex(triage.Level, out var triageIcon) &&
+                triageIcon.DrawOnHealthBar)
+            {
+                var boxTriage = new Box2(new Vector2(startX, 3f) / EyeManager.PixelsPerMeter, new Vector2(endX, 5f) / EyeManager.PixelsPerMeter);
+                boxTriage = boxTriage.Translated(position);
+                handle.DrawRect(boxTriage, triageIcon.Color);
+            }
         }
 
         handle.SetTransform(Matrix3x2.Identity);

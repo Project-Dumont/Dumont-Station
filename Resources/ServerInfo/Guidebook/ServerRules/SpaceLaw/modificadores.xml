@@ -1,0 +1,144 @@
+
+<Document>
+# Modificadores
+Modificadores são feitos para reduzir/aumentar a duração de uma pena em caso de circustâncias especiais.
+
+## Agravantes
+### M-01 - Cúmplice  
+Propositalmente auxiliar o autor de um crime, de forma direta ou indireta.
+Auxiliar ou ter relação em crime ou fuga de indiciado, direta ou indiretamente, de forma proposital. Caso a
+pessoa seja apenas suspeita, sem confirmação dos crimes ou tenha dado ajuda mínima, mesmo que acidental
+após aviso da Segurança ainda podem ser acusados de Negligência caso o alerta atual se encontre em azul ou
+superior. Esse agravante pode ser aplicado sozinho sem dependência de crimes.
+- Modificação: Adicionar a mesma pena do autor após agravantes.
+
+### M-02 - Resistência 
+Após detido, antes ou durante processamento, agir de forma não cooperativa que
+atrapalhe o trabalho da Segurança.
+Demonstrar resistência após detido, tentando repetidas vezes fugir, desalgemar, desrespeitar, agredir, danificar
+ou destruir evidências enquanto é processada sua sentença, mesmo após aviso.
+- Modificação: Adicional de até 10min ou 1000 spessos, o tempo de processamento não será reduzido da pena
+final.
+
+### M-03 - Recusa de implante 
+Recusar um implante obrigatório conforme definido em POP ou Lei Espacial.
+Durante alertas Azul ou inferior, define-se confinamento permanente sem julgamento até que aceite o
+implante. Em Âmbar, equivalente ou superior, define-se implantação forçada ou execução sem julgamento
+caso não seja possível a implantação. A pena para remoção proposital direta ou indireta de um implante
+obrigatório deve ser julgada para execução, com pena mínima de confinamento permanente. Em caso de
+Comando, Segurança ou Dignitários, enquadra-se como Lesa-Trasen.
+Recusa de implante de psicoproteção durante promoção para Comando interino ou Segurança NÃO se qualifica
+como crime, porém impede a promoção.
+- Modificação: Perma, implantação forçada ou execução.
+
+### M-04 - Reincidência 
+Repetir a mesma ofensa após já ter sido advertido e punido.
+Em infrações leves, o primeiro aviso dado nunca deve contar para reincidências e nunca devem resultar em
+confinamento permanente. A primeira e segunda reincidências, devem ocorrer acréscimos de 50% e então
+100% na pena. Em caso de terceira reincidência a pena deve receber acréscimo de 200% sem direito a fiança em
+caso de prisão.
+- Modificação: Acréscimo de 50%; acréscimo de 100%; acréscimo de 200% sem direito a fiança em caso de prisão.
+
+### M-05 – Múltiplos crimes 
+Realizar vários crimes ao mesmo tempo.
+Casos em que o indivíduo cometa múltiplos crimes pertencentes a níveis iguais ou inferiores, dos quais não sejam
+anulados ou sobrepostos pelo processamento de pena. CADA crime adicional deverá impor um acréscimo de
+10% na pena final. 
+A pena máxima/miníma é definida pelo crime de maior nível.
+- Modificação: Adicional de 10% na pena para cada crime extra cometido em uma mesma categoria.
+
+### M-06 – Figura de autoridade 
+Realizar um crime sendo uma figura de autoridade na estação.
+Quando o autor do crime é indivíduo normalmente considerado como de poder e autoridade na estação,
+exemplos sendo membros da Segurança, Comando ou Dignitários. Todo e qualquer crime de categoria Delito ou
+superior cometido por autoridade deve ser notificado a Central de Comando.
+- Modificação: Adicional de 50% na pena final e envio de aviso a Central de Comando.
+
+## Atenuantes
+### A-01 - Cooperação 
+Se render ou demonstrar-se útil para segurança.
+Em caso de rendição não violenta, delação de outros crimes de relevância ou outra forma de cooperação que a
+Segurança considere de utilidade, a pena deve ser reduzida pela metade. Em caso de delação, o Segurança
+Chefe pode autorizar reduções superiores à 50% e até mesmo liberação imediata para qualquer sentença que
+não envolva crimes capitais ou superior, esses podendo apenas com autorização da Central, caso a informação
+adquirida seja considerada valiosa para os interesses da estação e corporação. Em delações o atenuante pode
+ser apenas aplicado caso se provem verdadeiras.
+- Modificação: Redução de 50% da pena; Superior em caso de delações com autorização do Segurança Chefe.
+
+### A-02 - Fora de si 
+Realizar ações forçadamente por meio de controle mental.
+Se verificado que há alguma forma de influência externa forçando a pessoa a agir de tal forma, deve ser aplicado
+o implante de psicoproteção, feita avaliação médica e psicológica, e então o indivíduo deve ser liberado sem
+aplicação de penas.
+- Modificação: Liberação após tratamento.
+
+### A-03 - Risco imediato a vida 
+Realizar ação para salvar a outro ainda vivo ou a si mesmo de morte iminente.
+Infrações leves, infrações graves e delitos, devem ser perdoados em caso de salvamento legal desde que feitos
+em boa fé e dentro dos limites da razão. Essa proteção não se estende a delitos graves ou acima que devem ser
+julgados se a ação foi realmente necessária. Caso a pessoa ponha-se em risco excessivamente ou nunca procure
+anteriormente ajuda do Comando e Segurança a pena de Impulsos auto destrutivos deve ser considerada. Caso
+o autor possua histórico com Impulsos auto destrutivos, o atenuante não se aplica.
+- Modificação: Liberação em casos 0-XX, 1-XX e 2-XX. Julgamento para 3-XX ou superior. Exceto na presença de
+Impulsos auto destrutivos.
+
+### A-04 - Auto defesa 
+Realizar ação, dentro dos limites razoáveis, para defender a si mesmo ou ambiente de
+trabalho.
+Infrações leves, infrações graves e delitos, devem ser perdoados em caso de auto defesa legal desde que feitos
+em boa fé e dentro dos limites da razão. Essa proteção não se estende a delitos graves ou acima que devem ser
+julgados se a ação foi realmente necessária. Caso a pessoa ponha-se em risco excessivamente ou nunca procure
+anteriormente ajuda do Comando e Segurança a pena de Impulsos auto destrutivos deve ser considerada. Caso
+o autor possua histórico com Impulsos auto destrutivos, o atenuante não se aplica.
+- Modificação: Liberação em casos 0-XX, 1-XX e 2-XX. Julgamento para 3-XX ou superior. Exceto na presença de
+Impulsos auto destrutivos.
+
+### A-05 - Acidente 
+Realizar ação de forma genuinamente não intencional e acidental.
+Em casos assim a pena deve ser reduzida em até metade caso investigação demonstre que a falha foi realmente
+acidental sem intenção de cometer o ato ou houve esforço real em remediar o erro. Se a falha teve ligação com
+a função o chefe departamental relevante pode escolher aplicar ou não a pena de Negligência, mesmo que
+outra pena da categoria já tenha sido aplicada. Esse atenuante não se aplica para casos de crimes capitais ou
+acima, ou em casos envolvendo Alta Negligência.
+- Modificação: Redução da pena de 25% a 50%. Exceto em casos de Alta Negligência.
+
+### A-06 – Arrependimento 
+Demonstrar-se genuinamente arrependido de cometer um crime.
+Quando o autor do crime demonstra remorso, arrependimento, melancolia, vontade de mudar ou outras
+formas de demonstrar possuir peso na consciência consequente das ações realizadas. Requer avaliação
+realizada por Psicólogo ou Médico Chefe. Se verificado arrependimento real a pena pode ser reduzida de 25% a
+50% com o limite de 10min de redução.
+- Modificação: Redução de 25% a 50% da pena, com limite de 10min.
+
+### A-07 – Bom comportamento 
+Possuir comportamento exemplar e respeitável enquanto preso.
+Cooperação com autoridades, respeito a oficiais, convivência amigável com outros detentos e manutenção da
+limpeza e organização da cela são todos exemplos de bom comportamento. Caso a Segurança acredite que o
+indivíduo não apresenta risco significativo para a estação e esteja reformado, fica à disposição do Carcereiro, e
+somente dele escolher ou não a aplicação desse atenuante, resultando na liberação adiantada quando o tempo
+restante da pena for inferior a 10min e possibilidade de condicional em casos de confinamento permanente.
+- Modificação: Liberação adiantada caso faltem menos de 10min de pena. Possibilidade de condicional em caso
+de perma.
+
+### A-08 – Tentativa 
+Tentar, planejar ou preparar a execução de um crime ou atividade ilegal futura ou presente.
+Tentativa ou execução de conspiração, idealização, equipagem, coordenação, preparação, planejamento ou
+ação de qualquer forma para um crime com a intenção de seguir em frente com o mesmo, seja sozinho, em
+grupo ou indiretamente por meio de ação ou inanição. Se demonstrada e comprovada como além do simples
+acaso, o crime conspirado deve ter sua pena aplicada como se o mesmo fosse uma categoria abaixo de sua real.
+Esse atenuante pode ser aplicado sozinho independente de outros crimes. Tentativa de homicídio é o seu
+próprio crime.
+- Modificação: Aplicar pena como se todos os crimes fossem uma categoria abaixo.
+
+### A-09 – Perdão do Capitão 
+Receber perdão incondicional do Capitão da estação.
+O Capitão possui o poder de a todo momento perdoar qualquer indivíduo na estação independentemente do
+crime cometido EXCETO Lesa-Trasen. Esse perdão é válido apenas por documento oficial do Capitão assinado e
+carimbado, com uma cópia sendo deixada com o Segurança Chefe e outra enviada a Central. O mesmo
+sobrescreve demais penas, ordens e julgamentos podendo ser retirado somente via ordem da Central,
+Magistrado presente, comprovação de que o Capitão não está em pleno estado mental ou por meio de devida
+demoção do capitão caso se prove inapto para função.
+- Modificação: Liberação imediata.
+
+
+</Document>

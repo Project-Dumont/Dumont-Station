@@ -1,0 +1,6 @@
+- type: decal
+  id: Recharge
+  tags: ["station", "overlay"]
+  sprite:
+    sprite: _Dumont/Decals/recharge.rsi
+    state: recharge

@@ -440,7 +440,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
 
         private void PlayersAllocation()
         {
-            _alivePlayers = _playerWarps.Where(warp => warp.IsAlive).ToList();
+            _alivePlayers = _playerWarps.Where(warp => warp.IsAlive && !warp.IsLeft).ToList();
             _deadPlayers = _playerWarps.Where(warp => warp.IsDead).ToList();
             _leftPlayers = _playerWarps.Where(warp => warp.IsLeft).ToList();
             _ghostPlayers = _playerWarps.Where(warp => warp.IsGhost).ToList();

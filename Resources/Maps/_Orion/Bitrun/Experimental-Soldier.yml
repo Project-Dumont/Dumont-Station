@@ -3231,18 +3231,18 @@ entities:
     - type: Transform
       pos: 9.372097,9.261433
       parent: 1
-- proto: AshBush
-  entities:
-  - uid: 590
-    components:
-    - type: Transform
-      pos: 8.5,9.5
-      parent: 1
-  - uid: 591
-    components:
-    - type: Transform
-      pos: 7.5,7.5
-      parent: 1
+#- proto: AshBush Dumont why did this break
+#  entities:
+#  - uid: 590
+#    components:
+#    - type: Transform
+#      pos: 8.5,9.5
+#      parent: 1
+#  - uid: 591
+#    components:
+#    - type: Transform
+#      pos: 7.5,7.5
+#      parent: 1
 - proto: FloraRockSolid
   entities:
   - uid: 583
@@ -4634,7 +4634,6 @@ entities:
     - type: Transform
       pos: -5.5,15.5
       parent: 1
-    - type: Timer
   - uid: 667
     components:
     - type: Transform
@@ -4652,7 +4651,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -8.5,14.5
       parent: 1
-    - type: Timer
   - uid: 786
     components:
     - type: Transform

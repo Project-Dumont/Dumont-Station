@@ -31,6 +31,9 @@ public sealed class QuantumConsoleBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is QuantumConsoleBoundUiState cast)
             _window?.UpdateState(cast);
     }

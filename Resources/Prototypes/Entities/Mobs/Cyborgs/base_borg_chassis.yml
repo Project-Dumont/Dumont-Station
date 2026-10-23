@@ -230,6 +230,8 @@
       Dead: BorgDead
     showOverlays: false
     allowRevives: true
+  - type: CritStateMovement # Orion
+    softCritMovement: false
   - type: HealthExaminable
     examinableTypes:
       - Blunt
@@ -420,7 +422,7 @@
     spriteLayer: light
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     radius: 4
     netsync: false

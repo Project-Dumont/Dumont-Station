@@ -46,8 +46,12 @@ public sealed class MechBoundUserInterface : BoundUserInterface
         if (state is not MechBoundUiState msg)
             return;
         UpdateEquipmentControls(msg);
-        _menu?.UpdateMechStats();
-        _menu?.UpdateEquipmentView();
+
+        if (_menu is not { Disposed: false })
+            return;
+
+        _menu.UpdateMechStats();
+        _menu.UpdateEquipmentView();
     }
 
     public void UpdateEquipmentControls(MechBoundUiState state)

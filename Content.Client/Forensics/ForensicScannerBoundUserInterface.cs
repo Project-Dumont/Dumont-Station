@@ -38,6 +38,8 @@ namespace Content.Client.Forensics
             _window = this.CreateWindow<ForensicScannerMenu>();
             _window.Print.OnPressed += _ => Print();
             _window.Clear.OnPressed += _ => Clear();
+
+            Update<ForensicScannerBoundUserInterfaceState>();
         }
 
         private void Print()

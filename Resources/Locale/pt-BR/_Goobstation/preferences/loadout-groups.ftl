@@ -14,6 +14,7 @@ loadout-group-ntr-head = Chapeu do Representante
 loadout-group-ntr-backpack = Mochila do Representante
 loadout-group-ntr-neck = Pescoço do Representante
 loadout-group-ntr-jumpsuit = Roupa do Representante
+loadout-group-ntr-gloves = Luvas do Rpresentante
 loadout-group-ntr-belt = Cinto do Representante
 loadout-group-ntr-shoes = Sapatos do Representante
 
@@ -53,4 +54,3 @@ loadout-group-brigmedic-backpack = Mochila do Médico da Prisão
 loadout-group-security-melee = Arma corpo a corpo da Segurança
 
 loadout-group-animals = Animais
-

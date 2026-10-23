@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by 20kdc & AJCM-git",
+  "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by 20kdc & AJCM-git, resprited by Crenissis (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -14,22 +14,28 @@
       "name": "bolted_unlit"
     },
     {
+      "name": "bolted_open_unlit"
+    },
+    {
       "name": "closed"
     },
     {
       "name": "closed_unlit"
     },
     {
+      "name": "open_unlit"
+    },
+    {
       "name": "closing",
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -39,12 +45,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -54,12 +60,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -72,12 +78,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -87,27 +93,30 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
+    },
+    {
+      "name": "panel_closed"
     },
     {
       "name": "panel_closing",
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -120,12 +129,12 @@
       "delays": [
         [
           0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.07,
+          0.1,
           0.2
       ]
     ]
@@ -141,6 +150,9 @@
           0.4
         ]
       ]
+    },
+    {
+      "name": "emergency_open_unlit"
     }
   ]
 }

@@ -34,6 +34,9 @@ public sealed class DnaModifierBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         _window?.UpdateState((DnaModifierBoundUserInterfaceState)state);
     }
 }

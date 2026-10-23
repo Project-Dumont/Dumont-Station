@@ -77,7 +77,17 @@ public sealed class ParticleData
 
     public void Reset()
     {
+        LocalOffset = default;
+        SpawnOrigin = default;
+        Velocity = default;
         Age = TimeSpan.Zero;
+        Lifetime = TimeSpan.FromSeconds(1);
+        SpawnSpeed = 0f;
+        SpawnIntensity = 1f;
+        Rotation = 0f;
+        RotationSpeed = 0f;
         Alive = false;
+        SizeMultiplier = 1f;
+        NoiseOffset = default;
     }
 }

@@ -109,12 +109,14 @@
 
 - type: entity
   id: KitchenMicrowave
-  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  parent: [ BaseMachinePowered, SmallConstructibleMachine, BaseAutomatedMachine ] # Goob: Automation
   name: microwave
   description: It's magic.
   components:
   - type: Microwave
     capacity: 10
+    validRecipeTypes: Microwave
+    recipeDebug: true #DeltaV - temporary stopgap as part of implementing Frontier recipe split
     canMicrowaveIdsSafely: false # Goobstation
     explosionChance: .25 # Goobstation
   - type: Appearance

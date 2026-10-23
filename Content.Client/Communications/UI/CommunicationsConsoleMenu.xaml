@@ -81,10 +81,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
                 <Button Name="MaintEmergencyButton"
                     Text="{Loc 'comms-console-menu-emergency-maint'}"
+                    StyleClasses="OpenBoth"
+                    Access="Public"
+                    VerticalExpand="True"
+                    />
+
+                <!-- Dumont changes start -->
+                <Button Name="EscapePodsButton"
+                    Text="{Loc 'comms-console-menu-escape-pods'}"
+                    ToolTip="{Loc 'comms-console-menu-escape-pods-tooltip'}"
                     StyleClasses="OpenRight"
                     Access="Public"
                     VerticalExpand="True"
                     />
+                <!-- Dumont end -->
             </BoxContainer>
 
         </BoxContainer>

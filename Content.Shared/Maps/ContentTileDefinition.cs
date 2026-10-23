@@ -52,7 +52,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
@@ -90,7 +89,7 @@ namespace Content.Shared.Maps
         public string BaseTurf { get; private set; } = string.Empty;
 
         [DataField]
-        public PrototypeFlags<ToolQualityPrototype> DeconstructTools { get; set; } = new();
+        public HashSet<ProtoId<ToolQualityPrototype>> DeconstructTools { get; set; } = new();
 
         /// <summary>
         /// Goobstation
@@ -142,8 +141,8 @@ namespace Content.Shared.Maps
         // Heat capacity is opt-in, not opt-out.
         [DataField("heatCapacity")] public float HeatCapacity = Atmospherics.MinimumHeatCapacity;
 
-        [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
+        [DataField("itemDrop")]
+        public EntProtoId ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
         // TODO rename data-field in yaml
         /// <summary>
@@ -156,6 +155,13 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField("mobFriction")]
         public float? MobFriction { get; private set; }
+
+        /// <summary>
+        ///     "Average" static coefficient of friction for assuming a steel tile. This is only used as a fallback for a fallback for a fallback,
+        ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
+        /// </summary>
+        [DataField]
+        public float? MobFrictionNoInput;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
@@ -180,10 +186,21 @@ namespace Content.Shared.Maps
             TileId = id;
         }
 
+        /// <summary>
+        ///     For optionally handling per-tile behavior of airflow simulation. Which is useful for ZAS-like air sim, and for MAS.
+        ///     Intentionally public because I want entities to be able to mess with this, such as ship shielding that prevents air from flowing across a shielded tile.
+        ///     For planet maps, you can instead mark the GridAtmosphere as !Simulated. Which will make the entire atmos system not run on a given grid.
+        /// </summary>
         [DataField]
-        public bool Reinforced = false;
+        public bool Reinforced;
 
         [DataField]
-        public float TileRipResistance = 125f;
+        public bool SimulatedTurf = true;
+
+        /// <summary>
+        /// If true, decals on this tile cannot be cleaned by mops or space cleaner.
+        /// </summary>
+        [DataField]
+        public bool ProtectDecals = false; // Goob
     }
 }

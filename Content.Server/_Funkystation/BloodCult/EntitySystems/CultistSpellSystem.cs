@@ -76,7 +76,6 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	[Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 	[Dependency] private readonly SharedTransformSystem _transform = default!;
 	[Dependency] private readonly MapSystem _mapSystem = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
 	//[Dependency] private readonly IEntityManager _entMan = default!;
 	[Dependency] private readonly SharedStunSystem _stun = default!;
 	//[Dependency] private readonly ConstructionSystem _construction = default!;
@@ -262,7 +261,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	private bool IsStandingOnEmpoweringRune(EntityUid uid)
 	{
 		var coords = new EntityCoordinates(uid, default);
-		var location = coords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+		var location = coords.AlignWithClosestGridTile(entityManager: EntityManager);
 		var gridUid = _transform.GetGrid(location);
 		if (!TryComp<MapGridComponent>(gridUid, out var grid))
 			return false;

@@ -12,7 +12,7 @@
   suffix: Janitor
   components:
   - type: Sprite
-    sprite: _Goobstation/Structures/Doors/Airlocks/Standard/janitor.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/janitor.rsi ## Dumont edit
   - type: Wires
     layoutId: AirlockService
 
@@ -22,7 +22,7 @@
   suffix: Janitor
   components:
   - type: Sprite
-    sprite: _Goobstation/Structures/Doors/Airlocks/Glass/janitor.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/janitor.rsi ## Dumont
   - type: Wires
     layoutId: AirlockService
 

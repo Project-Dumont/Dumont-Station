@@ -71,6 +71,9 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_consoleMenu is not { Disposed: false })
+            return;
+
         if (state is not ResearchConsoleBoundInterfaceState castState)
             return;
         _consoleMenu?.UpdatePanels(castState);

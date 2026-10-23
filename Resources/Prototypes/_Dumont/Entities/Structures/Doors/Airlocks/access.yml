@@ -191,14 +191,14 @@
   id: AirlockMaintVirologyLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_viro.rsi # # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockPsychologyLocked
   id: AirlockMaintPsychologyLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_psychologist.rsi # # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockPharmacyLocked
@@ -213,21 +213,21 @@
   id: AirlockMaintGeneticsLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_genetics.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockMedicalScienceLocked
   id: AirlockMaintMedicalScienceLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_medsci.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockRoboticsLocked
   id: AirlockMaintRoboticsLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_robotics.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 # Cargo
 - type: entity
@@ -235,28 +235,28 @@
   id: AirlockMaintMailLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_mail.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockSalvMineLocked
   id: AirlockMaintSalvMineLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_salvmine.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockMiningDumontLocked
   id: AirlockMaintMiningDumontLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_mining.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 - type: entity
   parent: AirlockBitrunnerLocked
   id: AirlockMaintBitrunnerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_bitrunner.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 # Sec
 - type: entity
@@ -264,7 +264,7 @@
   id: AirlockMaintBrigMedicLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/maint_brigmedic.rsi # Dumont - Adds unique sprites for maintenance airlocks
 
 # Service
 - type: entity

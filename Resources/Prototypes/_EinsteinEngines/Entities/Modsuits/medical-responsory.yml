@@ -163,9 +163,9 @@
     - type: Appearance
     - type: Sprite
       sprite: _EinsteinEngines/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
-    - type: Tag
-      tags:
-        - WhitelistChameleon
+    #- type: Tag - Dumont - It had to be from Goob.
+    #  tags:
+    #  - WhitelistChameleon
     - type: SealableClothingVisuals
       spriteLayer: sealed
       clothingVisuals:

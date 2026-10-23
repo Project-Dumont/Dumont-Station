@@ -516,6 +516,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: BloodSplatterer # Trauma
   - type: Targeting # Shitmed Change
   - type: CanEscapeInventory # GoobStation - Escape being picked up by players
   - type: Consciousness
@@ -618,6 +619,7 @@
     - Viral
     - Bacterial
     - Parasite
+  - type: ObraDinnBody # Goobstation
   # </Goobstation>
 
 - type: entity

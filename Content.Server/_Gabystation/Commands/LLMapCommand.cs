@@ -16,7 +16,6 @@ namespace Content.Server._Gabystation.Commands;
 public sealed class LLMapCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
     public override string Command => "llmap";
@@ -47,7 +46,7 @@ public sealed class LLMapCommand : LocalizedEntityCommands
                 _mapSystem.IsInitialized(mapUid),
                 _mapSystem.IsPaused(mapId),
                 _entManager.GetNetEntity(mapUid),
-                string.Join(",", _map.GetAllGrids(mapId).Select(grid => grid.Owner)));
+                string.Join(",", _mapSystem.GetAllGrids(mapId).Select(grid => grid.Owner)));
         }
 
         shell.WriteLine(msg.ToString());

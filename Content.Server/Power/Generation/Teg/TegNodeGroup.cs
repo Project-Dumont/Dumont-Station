@@ -142,7 +142,9 @@ public sealed partial class TegNodeGenerator : Node
         if (!xform.Anchored || grid == null)
             yield break;
 
-        var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+        var mapSystem = entMan.System<SharedMapSystem>();
+
+        var gridIndex = mapSystem.TileIndicesFor(grid.Owner, grid, xform.Coordinates);
 
         var dir = xform.LocalRotation.GetDir();
         var a = FindCirculator(dir);
@@ -158,7 +160,7 @@ public sealed partial class TegNodeGenerator : Node
         {
             var targetIdx = gridIndex.Offset(searchDir);
 
-            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, grid, targetIdx))
+            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, mapSystem, grid, targetIdx))
             {
                 if (node is not TegNodeCirculator circulator)
                     continue;
@@ -194,13 +196,15 @@ public sealed partial class TegNodeCirculator : Node
         if (!xform.Anchored || grid == null)
             yield break;
 
-        var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+        var mapSystem = entMan.System<SharedMapSystem>();
+
+        var gridIndex = mapSystem.TileIndicesFor(grid.Owner, grid, xform.Coordinates);
 
         var dir = xform.LocalRotation.GetDir();
         var searchDir = dir.GetClockwise90Degrees();
         var targetIdx = gridIndex.Offset(searchDir);
 
-        foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, grid, targetIdx))
+        foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, mapSystem, grid, targetIdx))
         {
             if (node is not TegNodeGenerator generator)
                 continue;

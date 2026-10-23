@@ -174,7 +174,6 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
-    - id: NecromorphSpawn # Gabystation add
     - id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
@@ -200,7 +199,7 @@
     - id: ZombieOutbreak
     - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
-    - id: WraithMidround # Unchuddified version | no evolution | no absorbing corpses
+#    - id: WraithMidround # Unchuddified version | no evolution | no absorbing corpses
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
@@ -210,12 +209,14 @@
     - id: XenomorphsInfestation # WD EDIT
     - id: SlasherSpawn # Goobstation - The Slasher
     - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
-    - id: GreyTideAntagMidround # Goobstation - New Midrounds
     - id: SingulothKnightsMidround # Goobstation - New Midrounds
     #- id: DarkLordMidround # Goobstation - New Midrounds
     - id: MimeAssassinMidround # Goobstation - New Midrounds
     - id: DarkPriestMidround # Goobstation - New Midrounds
     - id: VoxRaidersMidround # Goobstation - New Midrounds
+    # Dumont changes start
+    - id: ColossusSpawn
+    # Dumont end
     #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
     #TODO when midrounds are "reviewed" by the chudmins add them back
@@ -454,7 +455,7 @@
     - SpiderChargeObjective
     - TerrorObjective
     - MassArrestObjective
-    - NinjaSurviveObjective
+    - ExtractObjective # Dumont
   - type: AntagSelection
     agentName: ninja-round-end-agent-name
     definitions:
@@ -635,7 +636,7 @@
       path: /Audio/_Gabystation/Announcements/kudzu_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
-    weight: 7
+    weight: 3.5 # Not very interessting to be common
     duration: 240
     chaos:
       Hostile: 20
@@ -720,6 +721,10 @@
   - type: GameRule
     chaosScore: 240 #Dumont edit distracting and fucks up combat
   - type: VentClogRule
+    weakReagents:
+    - Slime
+    - SpaceGlue
+    - SpaceLube
 
 - type: entity
   id: SlimesSpawn

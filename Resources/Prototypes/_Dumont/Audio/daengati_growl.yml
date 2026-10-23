@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: DaengatiGrowl
+  files:
+    - /Audio/_Dumont/Voice/Daengati/daengati_growl_1.ogg
+    - /Audio/_Dumont/Voice/Daengati/daengati_growl_2.ogg
+    - /Audio/_Dumont/Voice/Daengati/daengati_growl_3.ogg
+    - /Audio/_Dumont/Voice/Daengati/daengati_growl_4.ogg

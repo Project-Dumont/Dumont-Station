@@ -4,7 +4,7 @@
   id: NukieOperations
   weights:
     NukieOperationDestroyStation: 1
-    NukieOperationKidnapHeads: 1
+    NukieOperationKidnapHeads: 0 # Dumont - Objetivo de hostage ops Retirado da rotação.
 
 - type: nukieOperation
   id: NukieOperationDestroyStation

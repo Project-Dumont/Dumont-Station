@@ -86,6 +86,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Orion.Mobs.Critical;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CombatMode.Pacification;
@@ -265,8 +266,15 @@ public partial class MobStateSystem
             // Orion-End
             // Orion-Edit-Start
             case MobState.SoftCritical:
-                if (args is not UpdateCanMoveEvent)
+                if (args is UpdateCanMoveEvent)
+                {
+                    if (TryComp<CritStateMovementComponent>(target, out var critComp) && !critComp.SoftCritMovement)
+                        args.Cancel();
+                }
+                else
+                {
                     args.Cancel();
+                }
                 break;
             // Orion-Edit-End
         }

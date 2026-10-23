@@ -21,7 +21,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.Doors.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Doors.Components;
 
@@ -99,8 +99,8 @@ public sealed partial class AirlockComponent : Component
     /// <summary>
     /// The receiver port for turning off automatic closing.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string AutoClosePort = "AutoClose";
+    [DataField]
+    public ProtoId<SinkPortPrototype> AutoClosePort = "AutoClose";
 
     #region Graphics
 
@@ -133,6 +133,13 @@ public sealed partial class AirlockComponent : Component
     /// </summary>
     [DataField]
     public string OpeningPanelSpriteState = "panel_opening";
+
+    /// <summary>
+    /// The sprite state to use for the wire panel when the airlock is open. The
+    /// first frame will be used for when the airlock is closed.
+    /// </summary>
+    [DataField]
+    public string OpenPanelSpriteState = "panel_open";
 
     /// <summary>
     /// The sprite state used to animate the airlock frame when the airlock closes.

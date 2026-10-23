@@ -29366,7 +29366,7 @@ entities:
     - type: Transform
       pos: 101.46009,28.48259
       parent: 1
-- proto: Brutepack10Lingering
+- proto: Brutepack
   entities:
   - uid: 17677
     components:
@@ -192677,7 +192677,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 152.5,92.5
       parent: 1
-    - type: Timer
   - uid: 18432
     components:
     - type: Transform

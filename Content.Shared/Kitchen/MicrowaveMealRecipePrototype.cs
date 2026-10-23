@@ -21,8 +21,8 @@
 using Content.Shared.Chemistry.Reagent;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Frontier
+using Robust.Shared.Serialization; // Frontier
 
 namespace Content.Shared.Kitchen
 {
@@ -42,23 +42,27 @@ namespace Content.Shared.Kitchen
         [DataField]
         public string Group = "Other";
 
-        [DataField("reagents", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<FixedPoint2, ReagentPrototype>))]
-        private Dictionary<string, FixedPoint2> _ingsReagents = new();
+        [DataField("reagents")]
+        private Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> _ingsReagents = new();
 
-        [DataField("solids", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
-        private Dictionary<string, FixedPoint2> _ingsSolids = new ();
+        [DataField("solids")]
+        private Dictionary<EntProtoId, FixedPoint2> _ingsSolids = new ();
 
-        [DataField("result", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string Result { get; private set; } = string.Empty;
+        [DataField("result")]
+        public EntProtoId Result { get; private set; } = string.Empty;
 
         [DataField("time")]
         public uint CookTime { get; private set; } = 5;
 
+        // Frontier: separate microwave recipe types.
+        [DataField("recipeType", customTypeSerializer: typeof(FlagSerializer<MicrowaveRecipeTypeFlags>))]
+        public int RecipeType = (int)MicrowaveRecipeType.Microwave; // DeltaV - keeping this around so if type is not specified, it defaults to being a microwave recipe
+
         public string Name => Loc.GetString(_name);
 
         // TODO Turn this into a ReagentQuantity[]
-        public IReadOnlyDictionary<string, FixedPoint2> IngredientsReagents => _ingsReagents;
-        public IReadOnlyDictionary<string, FixedPoint2> IngredientsSolids => _ingsSolids;
+        public IReadOnlyDictionary<ProtoId<ReagentPrototype>, FixedPoint2> IngredientsReagents => _ingsReagents;
+        public IReadOnlyDictionary<EntProtoId, FixedPoint2> IngredientsSolids => _ingsSolids;
 
         /// <summary>
         /// Is this recipe unavailable in normal circumstances?
@@ -82,4 +86,18 @@ namespace Content.Shared.Kitchen
             return n;
         }
     }
+
+    // Frontier: microwave recipe types, to limit certain recipes to certain machines
+    [Flags, FlagsFor(typeof(MicrowaveRecipeTypeFlags))]
+    [Serializable, NetSerializable]
+    public enum MicrowaveRecipeType : int
+    {
+        Microwave = 1,
+        Oven = 2,
+        Assembler = 4,
+        MedicalAssembler = 8,
+    }
+
+    public sealed class MicrowaveRecipeTypeFlags { }
+    // end Frontier
 }

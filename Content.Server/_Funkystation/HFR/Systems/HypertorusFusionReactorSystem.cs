@@ -68,7 +68,6 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
         [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
         [Dependency] private readonly GasTileOverlaySystem _gasOverlaySystem = default!;
-        [Dependency] private readonly IMapManager _mapManager = default!;
 
         public static readonly Vector2i[] DiagonalOffsets = [new(1, 1), new(-1, 1), new(-1, -1), new(1, -1)];
 
@@ -746,14 +745,14 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
             // Gas emission - currently does not double for critical explosions as I feel this scales horribly. Someone please make this more workable.
             var transform = _entityManager.GetComponent<TransformComponent>(coreUid);
             var coords = transform.Coordinates;
-            if (_transformSystem.IsValid(coords) && _mapManager.TryFindGridAt(_transformSystem.ToMapCoordinates(coords), out var gridUid, out var gridComp))
+            if (_transformSystem.IsValid(coords) && _mapSystem.TryFindGridAt(_transformSystem.ToMapCoordinates(coords), out var gridUid, out var gridComp))
             {
                 var gridEntity = new Entity<GridAtmosphereComponent?, GasTileOverlayComponent?>(
                     gridUid,
                     _entityManager.GetComponent<GridAtmosphereComponent>(gridUid),
                     _entityManager.GetComponent<GasTileOverlayComponent>(gridUid)
                 );
-                var mapUid = _mapManager.GetMapEntityId(transform.MapID);
+                var mapUid = _mapSystem.GetMap(transform.MapID);
                 var mapEntity = new Entity<MapAtmosphereComponent?>(
                     mapUid,
                     _entityManager.TryGetComponent<MapAtmosphereComponent>(mapUid, out var mapAtmos) ? mapAtmos : null

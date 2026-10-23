@@ -130,11 +130,11 @@
     species:
     - Plasmaman
 
-- type: loadout
-  id: LeatherEnvirogloves
-  equipment:
-    gloves: ClothingHandsGlovesEnviroglovesLeather
-  effects:
-  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
-    species:
-    - Plasmaman
+#- type: loadout
+#  id: LeatherEnvirogloves
+#  equipment:
+#    gloves: ClothingHandsGlovesEnviroglovesLeather
+#  effects:
+#  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+#    species:
+#    - Plasmaman

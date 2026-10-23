@@ -167,6 +167,8 @@ namespace Content.Client.Lobby
 
             UpdateLobbyUi();
 
+            Lobby.MOTDBuletin.RequestMOTD(); // Gabystation - motd
+
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             Lobby.CharacterPreview.PatronPerks.OnPressed += OnPatronPerksPressed;
             Lobby.ManifestButton.OnPressed += OnManifestPressed; // Harmony
@@ -327,7 +329,6 @@ namespace Content.Client.Lobby
 
 
             UpdatePlayerBalance(); // Goobstation - Goob Coin
-            Lobby!.MOTDBuletin.RequestMOTD();
 
             var minutesToday = _playtimeTracking.PlaytimeMinutesToday;
             if (minutesToday > 60)

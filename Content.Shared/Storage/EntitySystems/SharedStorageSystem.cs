@@ -315,15 +315,19 @@ public abstract class SharedStorageSystem : EntitySystem
     {
         // GabyStation start
         var uid = entity.Owner;
-        var coordinates = TransformSystem.GetMoverCoordinates(uid);
 
-        if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+        if (entity.Comp.Container != null)
         {
-            ContainerSystem.EmptyContainer(entity.Comp.Container, force: true, destination: coordinates, reparent: false);
-        }
-        else
-        {
-            ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
+            var coordinates = TransformSystem.GetMoverCoordinates(uid);
+
+            if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+            {
+                ContainerSystem.EmptyContainer(entity.Comp.Container, force: true, destination: coordinates, reparent: false);
+            }
+            else
+            {
+                ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
+            }
         }
         // GabyStation end
 

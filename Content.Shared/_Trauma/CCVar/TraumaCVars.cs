@@ -12,16 +12,20 @@ public sealed partial class TraumaCVars
     #region AudioMuffle
 
     /// <summary>
-    /// Is audio muffle raycast behavior enabled?
-    /// </summary>
-    public static readonly CVarDef<bool> AudioMuffleRaycast =
-        CVarDef.Create("trauma.audio_muffle_raycast", true, CVar.SERVER | CVar.REPLICATED);
-
-    /// <summary>
     /// Is audio muffle pathfinding behavior enabled?
     /// </summary>
     public static readonly CVarDef<bool> AudioMufflePathfinding =
         CVarDef.Create("trauma.audio_muffle_pathfinding", true, CVar.SERVER | CVar.REPLICATED);
+
+    #endregion
+
+    #region EndCredits
+
+    /// <summary>
+    /// Whether to play the cool end credits.
+    /// </summary>
+    public static readonly CVarDef<bool> PlayMovieEndCredits =
+        CVarDef.Create("trauma.play_credits", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     #endregion
 }

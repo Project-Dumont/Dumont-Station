@@ -12,8 +12,8 @@ alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja
 alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
 
 alert-level-red = Vermelho
-alert-level-red-announcement = Ameaça perigosa na estação. Os seguranças devem se equipar e utilizar força letal caso necessário, e os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
-alert-level-red-instructions = os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
+alert-level-red-announcement = Há uma ameaça extrema que ameaça a vida de todos da tripulação. Todas os tripulantes são aconselhados a desviar seus esforços para ajudar o departamento de segurança. Tripulantes capazes são permitidos se alistarem para ajudar combater a ameaça. Continuem seguindo as ordens das autoridades.
+alert-level-red-instructions = os tripulantes devem seguir as ordens das autoridades e cooperar para garantir a sobrevivência da tripulação.
 
 alert-level-violet = Violeta
 alert-level-violet-announcement = Foram relatadas ameaças virais na estação. Acionando a equipe médica para isolar os tripulantes com quaisquer sintomas. Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
@@ -61,3 +61,8 @@ alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os
 alert-level-honk = Honk
 alert-level-honk-announcement = Um palhaço perigoso está à solta e pode causar danos catastróficos se não for eliminado! Todos os tripulantes devem colaborar para executá-lo, se possível, ou então evacuar.
 alert-level-honk-instructions = Tripulantes são encorajados a executar o palhaço.
+
+## Dumont station
+alert-level-amber = Âmbar
+alert-level-amber-announcement = Há uma ameaça perigosa na estação. Os seguranças devem se equipar e utilizar força letal caso necessário, e os demais tripulantes devem procurar um local seguro e seguir ordens das autoridades.
+alert-level-amber-instructions = os demais tripulantes procurarem um local seguro, evitar a ameaça e seguir ordens das autoridades.

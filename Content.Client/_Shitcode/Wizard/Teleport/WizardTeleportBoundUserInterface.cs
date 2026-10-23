@@ -35,6 +35,10 @@ public sealed class WizardTeleportBoundUserInterface : BoundUserInterface
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
+
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not WizardTeleportState teleportState)
             return;
 

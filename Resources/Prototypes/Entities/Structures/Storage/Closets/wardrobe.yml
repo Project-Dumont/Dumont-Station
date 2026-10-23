@@ -142,7 +142,7 @@
   - type: EntityStorageVisuals
     stateBaseClosed: generic
     stateDoorOpen: generic_open
-    stateDoorClosed: red_door
+    stateDoorClosed: blue_door
 
 - type: entity
   id: WardrobeAtmospherics

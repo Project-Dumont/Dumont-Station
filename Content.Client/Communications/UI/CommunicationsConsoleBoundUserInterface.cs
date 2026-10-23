@@ -68,6 +68,7 @@ namespace Content.Client.Communications.UI
             _menu.OnCentcomm += CentCommButtonPressed;
             _menu.OnMartial += MartialButtonPressed;
             _menu.OnRenameStation += RenameStationPressed;
+            _menu.OnEscapePods += EscapePodsButtonPressed; // Dumont
         }
 
         public void AlertLevelSelected(string level)
@@ -118,6 +119,19 @@ namespace Content.Client.Communications.UI
             SendMessage(new CommunicationsConsoleStationRenameMessage(newName));
         }
 
+        // Dumont changes start
+        private bool LocalPlayerIsCaptain()
+        {
+            var localEntity = _playerManager.LocalSession?.AttachedEntity;
+            return localEntity != null && _accessReader.FindAccessTags(localEntity.Value).Contains("Captain");
+        }
+
+        public void EscapePodsButtonPressed()
+        {
+            SendMessage(new CommunicationsConsoleUnlockEscapePodsMessage());
+        }
+        // Dumont end
+
         private bool LocalPlayerCanRename()
         {
             var localEntity = _playerManager.LocalSession?.AttachedEntity;
@@ -140,6 +154,9 @@ namespace Content.Client.Communications.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
+
+            if (_menu is not { Disposed: false })
+                return;
 
             if (state is not CommunicationsConsoleInterfaceState commsState)
                 return;
@@ -176,6 +193,14 @@ namespace Content.Client.Communications.UI
                         _menu.StationNameLoaded = true;
                     }
                 }
+
+                // Dumont changes start
+                _menu.EscapePodsButton.Visible = commsState.CanUnlockEscapePods && LocalPlayerIsCaptain();
+                _menu.EscapePodsButton.Disabled = commsState.EscapePodsUnlocked;
+                _menu.EscapePodsButton.Text = Loc.GetString(commsState.EscapePodsUnlocked
+                    ? "comms-console-menu-escape-pods-unlocked"
+                    : "comms-console-menu-escape-pods");
+                // Dumont end
 
                 var canRename = LocalPlayerCanRename();
                 _menu.RenameButton.Visible = canRename;

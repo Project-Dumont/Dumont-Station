@@ -23,7 +23,6 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly GasTileOverlaySystem _gasOverlaySystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
@@ -52,13 +51,13 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
         if (mapCoords.MapId == MapId.Nullspace)
             return;
 
-        if (!_mapManager.TryFindGridAt(mapCoords, out var gridUid, out var grid))
+        if (!_mapSystem.TryFindGridAt(mapCoords, out var gridUid, out var grid))
             return;
 
         var gridEntity = new Entity<GridAtmosphereComponent?, GasTileOverlayComponent?>(gridUid, CompOrNull<GridAtmosphereComponent>(gridUid), CompOrNull<GasTileOverlayComponent>(gridUid));
 
         Entity<MapAtmosphereComponent?>? mapEntity = null;
-        var mapUid = _mapManager.GetMapEntityId(mapCoords.MapId);
+        var mapUid = _mapSystem.GetMap(mapCoords.MapId);
         if (mapUid != EntityUid.Invalid)
         {
             mapEntity = new Entity<MapAtmosphereComponent?>(mapUid, CompOrNull<MapAtmosphereComponent>(mapUid));

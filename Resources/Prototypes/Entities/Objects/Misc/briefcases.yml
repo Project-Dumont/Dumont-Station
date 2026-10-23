@@ -56,5 +56,5 @@
   suffix: Syndicate, Empty
   components:
   - type: Item
-    size: Huge
+    size: Ginormous # Dumont
   - type: HideContrabandContent #Goobstation-Contraband detector

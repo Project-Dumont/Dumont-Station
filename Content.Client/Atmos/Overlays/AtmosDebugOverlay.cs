@@ -43,7 +43,6 @@ namespace Content.Client.Atmos.Overlays;
 public sealed class AtmosDebugOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IInputManager _input = default!;
     [Dependency] private readonly IUserInterfaceManager _ui = default!;
     [Dependency] private readonly IResourceCache _cache = default!;
@@ -163,16 +162,7 @@ public sealed class AtmosDebugOverlay : Overlay
         CheckAndShowBlockDir(data, handle, AtmosDirection.South, tileCentre);
         CheckAndShowBlockDir(data, handle, AtmosDirection.East, tileCentre);
         CheckAndShowBlockDir(data, handle, AtmosDirection.West, tileCentre);
-
-        // -- Pressure Direction --
-        if (data.PressureDirection != AtmosDirection.Invalid)
-        {
-            DrawPressureDirection(handle, data.PressureDirection, tileCentre, Color.Blue);
-        }
-        else if (data.LastPressureDirection != AtmosDirection.Invalid)
-        {
-            DrawPressureDirection(handle, data.LastPressureDirection, tileCentre, Color.LightGray);
-        }
+        DrawPressureDirection(handle, data.LastPressureDirection, tileCentre, Color.Blue);
 
         // -- Excited Groups --
         if (data.InExcitedGroup is {} grp)
@@ -217,17 +207,8 @@ public sealed class AtmosDebugOverlay : Overlay
         handle.DrawLine(basisA, basisB, Color.Azure);
     }
 
-    private void DrawPressureDirection(
-        DrawingHandleWorld handle,
-        AtmosDirection d,
-        Vector2 center,
-        Color color)
-    {
-        // Account for South being 0.
-        var atmosAngle = d.ToAngle() - Angle.FromDegrees(90);
-        var atmosAngleOfs = atmosAngle.ToVec() * 0.4f;
-        handle.DrawLine(center, center + atmosAngleOfs, color);
-    }
+    private void DrawPressureDirection(DrawingHandleWorld handle, Vector2 lastPressureDirection, Vector2 center, Color color) =>
+        handle.DrawLine(center, center + lastPressureDirection, color);
 
     private void DrawTooltip(in OverlayDrawArgs args)
     {
@@ -239,7 +220,7 @@ public sealed class AtmosDebugOverlay : Overlay
         if (_ui.MouseGetControl(mousePos) is not IViewportControl viewport)
             return;
 
-        var coords= viewport.PixelToMap(mousePos.Position);
+        var coords = viewport.PixelToMap(mousePos.Position);
         var box = Box2.CenteredAround(coords.Position, 3 * Vector2.One);
         GetGrids(coords.MapId, new Box2Rotated(box));
 
@@ -284,7 +265,7 @@ public sealed class AtmosDebugOverlay : Overlay
     private void GetGrids(MapId mapId, Box2Rotated box)
     {
         _grids.Clear();
-        _mapManager.FindGridsIntersecting(
+        _map.FindGridsIntersecting(
             mapId,
             box,
             ref _grids,

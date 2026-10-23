@@ -61,7 +61,7 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-        if (state is not SalvageMagnetBoundUserInterfaceState current || _window == null)
+        if (state is not SalvageMagnetBoundUserInterfaceState current || _window is not { Disposed: false })
             return;
 
         _window.ClearOptions();

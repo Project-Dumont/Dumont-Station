@@ -28,7 +28,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -87,8 +87,8 @@ public sealed class MalfAiViewportSystem : EntitySystem
 
         // Enforce same-grid constraint: target must be on the same grid as the AI.
         var aiCoords = _xform.GetMapCoordinates(uid);
-        if (!_map.TryFindGridAt(aiCoords, out var aiGridUid, out _)
-            || !_map.TryFindGridAt(target, out var targetGridUid, out _)
+        if (!_mapSystem.TryFindGridAt(aiCoords, out var aiGridUid, out _)
+            || !_mapSystem.TryFindGridAt(target, out var targetGridUid, out _)
             || aiGridUid != targetGridUid)
         {
             args.Handled = true;
@@ -127,7 +127,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
 
         // Apply grid north rotation to the anchor entity's transform so viewport faces grid north
         float anchorRotation = 0f;
-        if (_map.TryFindGridAt(aiCoords, out var gridForRotation, out _))
+        if (_mapSystem.TryFindGridAt(aiCoords, out var gridForRotation, out _))
         {
             anchorRotation = (float) _xform.GetWorldRotation(gridForRotation).Theta;
         }
@@ -150,7 +150,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
         if (TryComp<ActorComponent>(uid, out var actor) && actor.PlayerSession != null)
         {
             float rotation = 0f;
-            if (_map.TryFindGridAt(aiCoords, out var aiGridUid2, out _))
+            if (_mapSystem.TryFindGridAt(aiCoords, out var aiGridUid2, out _))
             {
                 rotation = (float) _xform.GetWorldRotation(aiGridUid2).Theta;
             }
@@ -194,7 +194,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
             var title = comp.Title;
             float rotation = 0f;
             var aiCoords = _xform.GetMapCoordinates(uid);
-            if (_map.TryFindGridAt(aiCoords, out var aiGridUid, out _))
+            if (_mapSystem.TryFindGridAt(aiCoords, out var aiGridUid, out _))
             {
                 rotation = (float) _xform.GetWorldRotation(aiGridUid).Theta;
             }

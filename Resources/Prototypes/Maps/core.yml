@@ -28,9 +28,9 @@
 - type: gameMap
   id: Core
   mapName: 'Core'
-  mapPath: /Maps/_Goobstation/core.yml # Goobstation
+  mapPath: /Maps/_Dumont/core.yml # Dumont
   minPlayers: 35
-  maxPlayers: 70
+  maxPlayers: 80
   stations:
     Core:
       stationProto: StandardNanotrasenStation
@@ -57,6 +57,7 @@
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             HeadOfPersonnel: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Dumont
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 3, 3 ]
             #engineering
@@ -73,7 +74,8 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ]
-            ResearchAssistant: [ 1, 1 ]
+            Geneticist: [ 1, 1 ]
+            ResearchAssistant: [ 3, 3 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 4, 4 ]
@@ -82,11 +84,15 @@
             SecurityCadet: [ 1, 1 ]
             Detective: [ 1, 1 ]
             PermaPrisoner: [ 3, 3 ] # HARMONY
+            PrisonGuard: [ 1, 1 ] # Dumont
+            Brigmedic: [ 1, 1 ] # Dumont
             #supply
             CargoTechnician: [ 3, 3 ]
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]
             SalvageLead: [ 1, 1 ]
+            ShaftMiner: [ 3, 3 ]
+            Bitrunner: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]

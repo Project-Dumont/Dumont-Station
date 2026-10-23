@@ -143,6 +143,8 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(GoobCVars.LockActionBarDrag, LockActionBarDragCheckBox); // Goobstation
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);
+        Control.AddOptionCheckBox(CCVars.ChatEnableRunechatBubbles, RunechatSpeechBubblesCheckBox);
+        Control.AddOptionPercentSlider(CCVars.ChatRunechatBubbleScale, RunechatSpeechBubbleScaleSlider, 0.5f, 2f);
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
 
         Control.AddOptionCheckBox(CCCVars.OfferModeIndicatorsPointShow, ShowOfferModeIndicatorsCheckBox); // CorvaxGoob-Offer

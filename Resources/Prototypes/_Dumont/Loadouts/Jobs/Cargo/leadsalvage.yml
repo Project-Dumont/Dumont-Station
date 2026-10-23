@@ -15,10 +15,10 @@
 
 # Neck
 
-- type: loadout
-  id: ClothingNeckCloakHelldiver
-  equipment:
-    neck: ClothingNeckCloakHelldiver
+# - type: loadout
+#   id: ClothingNeckCloakHelldiver
+#   equipment:
+#     neck: ClothingNeckCloakHelldiver
 
 - type: loadout
   id: ClothingNeckMantleDecoratedSalvager
@@ -27,12 +27,49 @@
 
 # PDA
 
-- type: loadout
-  id: HelldiverPDA
-  equipment:
-    id: HelldiverPDA
+# - type: loadout
+#   id: HelldiverPDA
+#   equipment:
+#     id: HelldiverPDA
 
 - type: loadout
   id: SalvageLeadPDA
   equipment:
     id: SalvageLeadPDA
+
+# Plasmaman
+- type: loadout
+  id: SalvageLeadEnvirosuit
+  equipment:
+    outerClothing: ClothingOuterEnvirosuitSalvageLead
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SalvageLeadEnvirohelmet
+  equipment:
+    head: ClothingHeadEnvirohelmetSalvageLead
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SalvageLeadEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesSalvageLead
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: SalvageLeadEnviroboots
+  equipment:
+    shoes: ClothingShoesEnvirobootsSalvageLead
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

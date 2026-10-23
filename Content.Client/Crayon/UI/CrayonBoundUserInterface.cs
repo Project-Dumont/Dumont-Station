@@ -76,6 +76,9 @@ namespace Content.Client.Crayon.UI
         {
             base.UpdateState(state);
 
+            if (_menu is not { Disposed: false })
+                return;
+
             _menu?.UpdateState((CrayonBoundUserInterfaceState) state);
         }
 

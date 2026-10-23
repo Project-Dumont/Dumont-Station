@@ -1,0 +1,1 @@
+loadout-group-captain-sabre-skins = Sabre Cosmético

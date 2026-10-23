@@ -10,6 +10,7 @@
   id: WeaponTurretSyndicate
   suffix: Syndicate
   components:
+  - type: Appearance
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -20,6 +21,7 @@
   name: disposable ballistic turret
   suffix: Syndicate, Disposable
   components:
+  - type: Appearance
   - type: NpcFactionMember
     factions:
     - Syndicate

@@ -33,9 +33,11 @@ namespace Content.Server.Power.Nodes
             if (!xform.Anchored || grid == null)
                 yield break;
 
-            var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+            var mapSystem = entMan.System<SharedMapSystem>();
 
-            var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, grid, gridIndex, includeSameTile: false);
+            var gridIndex = mapSystem.TileIndicesFor(grid.Owner, grid, xform.Coordinates);
+
+            var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, mapSystem, grid, gridIndex, includeSameTile: false);
             foreach (var (dir, node) in nodes)
             {
                 if (node is CableTerminalNode

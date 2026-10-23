@@ -431,7 +431,7 @@ entities:
           decals:
             183: 8,-6
         - node:
-            color: '#2b3447DE'
+            color: '#2b3ea193'
             id: WarnLineGreyscaleS
           decals:
             182: 2,-6

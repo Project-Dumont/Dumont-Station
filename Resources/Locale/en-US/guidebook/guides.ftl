@@ -138,6 +138,7 @@ guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
+guide-entry-xenobiology = Xenobiology
 
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
@@ -219,6 +220,8 @@ guide-entry-rules-r6 = R6
 guide-entry-rules-r7 = R7
 guide-entry-rules-r8 = R8
 guide-entry-rules-r9 = R9
+guide-entry-rules-r9-1 = R9-1
+guide-entry-rules-r9-2 = R9-2
 guide-entry-rules-r10 = R10
 guide-entry-rules-r11 = R11
 guide-entry-rules-r11-1 = R11-1
@@ -253,5 +256,107 @@ guide-entry-rules-sl-restricted-weapons = Restricted Weapons
 guide-entry-rules-ban-types = Ban Types
 guide-entry-rules-ban-durations = Ban Durations
 
+# New Rules
+
+guide-entry-rules-x1 = X1
+guide-entry-rules-x2 = X2
+guide-entry-rules-sl0 = SL10
+guide-entry-rules-sl1 = SL11
+guide-entry-rules-sl2 = SL12
+guide-entry-rules-sl3 = SL13
+guide-entry-rules-sl4 = SL14
+guide-entry-rules-sl5 = SL15
+guide-entry-rules-sl6 = SL16
+guide-entry-rules-sl7 = SL17
+guide-entry-rules-sl8 = SL18
+guide-entry-rules-sl9 = SL19
+guide-entry-rules-sl10 = SL10
+guide-entry-rules-sl11 = SL11
+guide-entry-rules-sl12 = SL12
+guide-entry-rules-sl13 = SL13
+guide-entry-rules-sl14 = SL14
+guide-entry-rules-sl15 = SL15
+guide-entry-rules-sl16 = SL16
+guide-entry-rules-a1 = A1
+guide-entry-rules-a2 = A2
+guide-entry-rules-a3 = A3
+guide-entry-rules-a4 = A4
+guide-entry-rules-a5 = A5
+guide-entry-rules-a6 = A6
+guide-entry-rules-a7 = A7
+guide-entry-rules-a8 = A8
+guide-entry-rules-a9 = A9
+guide-entry-rules-a10 = A10
+guide-entry-rules-a11 = A11
+guide-entry-rules-a12 = A12
+guide-entry-rules-a13 = A13
+guide-entry-rules-a14 = A14
+
+
+guide-entry-rules-sandbox = Sandbox
+guide-entry-rules-antag = Antagônista
+
+# New Space Law
+
+guide-entry-space-law-homicide = Homicide
+guide-entry-space-law-corporal-lesion = Bodily Injury
+guide-entry-space-law-help-omission = Failure to Assist
+guide-entry-space-law-kidnapping = Kidnapping
+guide-entry-space-law-theft = Theft
+guide-entry-space-law-robbery = Robbery
+guide-entry-space-law-fraud = Fraud
+guide-entry-space-law-vandalism = Vandalism
+guide-entry-space-law-possession = Possession
+guide-entry-space-law-corporate-treason = Corporate Treason
+guide-entry-space-law-sabotage = Sabotage
+guide-entry-space-law-insurrection = Insurrection
+guide-entry-space-law-usurpation = Usurpation
+guide-entry-space-law-invasion = Invasion
+guide-entry-space-law-contraband = Smuggling
+guide-entry-space-law-ideological-falsehood = Ideological Falsehood
+guide-entry-space-law-occultism = Occultism
+guide-entry-space-law-forbidden-production = Forbidden Production
+guide-entry-space-law-power-abuse = Abuse of Power
+guide-entry-space-law-abandonment = Abandonment
+guide-entry-space-law-malfeasance = Malfeasance
+guide-entry-space-law-administrative-omission = Administrative Omission
+guide-entry-space-law-incompetence = Incompetence
+guide-entry-space-law-inadequate-conduct = Inadequate Conduct
+guide-entry-space-law-insubordination = Insubordination
+guide-entry-space-law-defamation = Defamation
+guide-entry-space-law-slander = Slander
+guide-entry-space-law-disrespect-authority = Disrespect for Authority
+guide-entry-space-law-disturbance = Disturbance
+guide-entry-space-law-resistance = Resistance
+guide-entry-space-law-justice-obstruction = Obstruction of Justice
+guide-entry-space-law-prison-evasion = Prison Escape
+guide-entry-space-law-criminal-association = Criminal Association
+guide-entry-space-law-nano-treason = High Treason
+guide-entry-space-law-crime-anteriority = Criminal Anteriority
+guide-entry-space-law-crime-intention = Criminal Intent
+guide-entry-space-law-consummation = Consummation
+guide-entry-space-law-attempt = Attempt
+guide-entry-space-law-exercising-function = Exercise of Function
+guide-entry-space-law-accessory = Accomplice
+guide-entry-space-law-impossible-crime = Impossible Crime
+guide-entry-space-law-irrelevance = Irrelevance
+guide-entry-space-law-causality = Causality
+guide-entry-space-law-legitimate-defence = Self-Defense
+guide-entry-space-law-recidivism = Recidivism
+guide-entry-space-law-application = Application
+guide-entry-space-law-carry-artefact = Possession of an Artifact
+guide-entry-space-law-omission = Omission
+
+
+
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-corporate-agent = Corporate Agent
+guide-entry-bingle = Bingle
+guide-entry-changeling = Changeling
+guide-entry-changeling-abilities = Changeling Abilities
+guide-entry-devil = Devil
+guide-entry-devil-clause = Devil Clauses
+guide-entry-slasher = Slasher
+guide-entry-slasher-demon = Slasher Demon
