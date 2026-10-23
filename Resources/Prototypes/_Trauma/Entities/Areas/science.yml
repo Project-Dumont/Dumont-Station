@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaScience
   name: science
+  suffix: AreaScience
   components:
   - type: DepartmentArea
     department: Science
@@ -13,6 +14,7 @@
   parent: BaseAreaScience
   id: AreaScience
   name: science
+  suffix: AreaScience
   components:
   - type: Sprite
     state: science
@@ -21,6 +23,7 @@
   parent: BaseAreaScience
   id: AreaScienceBreak
   name: science breakroom
+  suffix: AreaScience
   components:
   - type: Sprite
     state: science_break
@@ -29,6 +32,7 @@
   parent: BaseAreaScience
   id: AreaScienceLobby
   name: science lobby
+  suffix: AreaScience
   components:
   - type: Sprite
     state: science_lobby
@@ -37,6 +41,7 @@
   parent: BaseAreaScience
   id: AreaScienceServer
   name: server room
+  suffix: AreaScience
   components:
   - type: Sprite
     state: server
@@ -45,6 +50,7 @@
   parent: BaseAreaScience
   id: AreaTeleSci
   name: TeleSci
+  suffix: AreaScience
   components:
   - type: Sprite
     state: telesci
@@ -55,6 +61,7 @@
   parent: BaseAreaScience
   id: AreaAnomalyLab
   name: anomaly lab
+  suffix: AreaScience
   components:
   - type: Sprite
     state: anomaly_lab
@@ -63,6 +70,7 @@
   parent: BaseAreaScience
   id: AreaArtifactLab
   name: artifact lab
+  suffix: AreaScience
   components:
   - type: Sprite
     state: artifact_lab
@@ -71,6 +79,7 @@
   parent: BaseAreaScience
   id: AreaCytology
   name: cytology
+  suffix: AreaScience
   components:
   - type: Sprite
     state: cytology
@@ -79,6 +88,7 @@
   parent: BaseAreaScience
   id: AreaGenetics
   name: genetics
+  suffix: AreaScience
   components:
   - type: Sprite
     state: genetics
@@ -87,6 +97,7 @@
   parent: BaseAreaScience
   id: AreaXenobio
   name: xenobio
+  suffix: AreaScience
   components:
   - type: Sprite
     state: xenobio
@@ -95,6 +106,7 @@
   parent: BaseAreaScience
   id: AreaRobotics
   name: robotics
+  suffix: AreaScience
   components:
   - type: Sprite
     state: robo
@@ -103,6 +115,7 @@
   parent: AreaRobotics
   id: AreaRoboticsMechBay
   name: mech bay
+  suffix: AreaScience
   components:
   - type: Sprite
     state: mech_bay

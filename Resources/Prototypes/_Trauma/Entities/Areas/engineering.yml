@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaEngineering
   name: engineering
+  suffix: AreaEngineering
   components:
   - type: DepartmentArea
     department: Engineering
@@ -15,6 +16,7 @@
   parent: BaseAreaEngineering
   id: AreaEngineering
   name: engineering
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engie
@@ -23,6 +25,7 @@
   parent: AreaEngineering
   id: AreaEngine
   name: engine room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine
@@ -31,6 +34,7 @@
   parent: AreaEngineering
   id: AreaEngineBreak
   name: engi break room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_break
@@ -39,6 +43,7 @@
   parent: AreaEngineering
   id: AreaEngineControl
   name: engine control room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_control
@@ -47,6 +52,7 @@
   parent: AreaEngineering
   id: AreaEngineLobby
   name: engi lobby
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_lobby
@@ -55,6 +61,7 @@
   parent: AreaEngineering
   id: AreaEngineMonitor
   name: engine monitor room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_monitor
@@ -63,6 +70,7 @@
   parent: AreaEngineering
   id: AreaEngineSM
   name: supermatter engine
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_sm
@@ -71,6 +79,7 @@
   parent: AreaEngineering
   id: AreaEngineSMRoom
   name: engi supermatter room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_sm_room
@@ -79,6 +88,7 @@
   parent: AreaEngineering
   id: AreaEngineSmes
   name: engi smes room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_smes
@@ -87,6 +97,7 @@
   parent: AreaEngineering
   id: AreaEngineStorage
   name: engi storage room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: engine_storage
@@ -97,6 +108,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmos
   name: atmos
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: atmos
@@ -105,7 +117,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmosEngine
   name: atmos engine
-  suffix: TEG
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: atmos_engine
@@ -114,6 +126,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmosOffice
   name: atmos office
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: atmos_office
@@ -122,6 +135,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmosGasStorage
   name: atmos gas storage
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: atmos_gas_storage
@@ -130,6 +144,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmosBurnChamber
   name: burn chamber
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: burn_chamber
@@ -139,6 +154,7 @@
   parent: BaseAreaEngineering
   id: AreaAtmosGasMiner
   name: gas miner
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: gas_miner
@@ -150,6 +166,7 @@
   parent: BaseAreaEngineering
   id: AreaSubstation
   name: substation locker
+  suffix: AreaEngineering, AreaCommand, AreaMedical, AreaScience, AreaSecurity, AreaService, AreaSupply, AreaGeneral, AreaAI, AreaShuttle, AreaDepartures, AreaExternal, AreaHallway, AreaMaint
   components:
   - type: Sprite
     state: substation
@@ -158,6 +175,7 @@
   parent: BaseAreaEngineering
   id: AreaGravGen
   name: grav gen
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: grav_gen
@@ -167,6 +185,7 @@
   id: AreaSolarPanels
   name: solar panels
   description: For the solars airlocks, counts as inside engi.
+  suffix: AreaEngineering, AreaExterior
   components:
   - type: Sprite
     state: solar_panels
@@ -175,6 +194,7 @@
   parent: BaseAreaEngineering
   id: AreaStationAnchor
   name: station anchor
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: anchor
@@ -183,6 +203,7 @@
   parent: BaseAreaEngineering
   id: AreaTechStorage
   name: tech storage
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: tech_storage
@@ -191,6 +212,7 @@
   parent: BaseAreaEngineering
   id: AreaTelecomms
   name: telecomms
+  suffix: AreaCommand, AreaEngineering
   components:
   - type: Sprite
     state: tcom_sat
@@ -199,6 +221,7 @@
   parent: AreaEngineering
   id: AreaShuttleBuilding
   name: shuttle building room
+  suffix: AreaEngineering
   components:
   - type: Sprite
     state: shuttle_build
