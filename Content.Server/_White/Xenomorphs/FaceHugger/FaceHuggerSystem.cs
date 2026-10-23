@@ -1,4 +1,7 @@
 using Content.Server.Body.Systems;
+using Content.Server.Mind;
+using Content.Server._White.Xenomorphs.Infection;
+using Content.Shared.Mind.Components;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared.Clothing.Components;
@@ -54,6 +57,10 @@ public sealed class FaceHuggerSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StunSystem _stun = default!;
 
+    // Dumont start
+    [Dependency] private readonly MindSystem _mind = default!;
+    // Dumont end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -68,10 +75,18 @@ public sealed class FaceHuggerSystem : EntitySystem
         // Goobstation - Throwing behavior
         SubscribeLocalEvent<ThrowableFacehuggerComponent, ThrownEvent>(OnThrown);
         SubscribeLocalEvent<ThrowableFacehuggerComponent, ThrowDoHitEvent>(OnThrowDoHit);
+        // Dumont start
+        SubscribeLocalEvent<FaceHuggerLeapComponent, ThrowDoHitEvent>(OnLeapHit);
+        // Dumont end
     }
 
     private void OnCollideEvent(EntityUid uid, FaceHuggerComponent component, StartCollideEvent args)
-        => TryEquipFaceHugger(uid, args.OtherEntity, component);
+    {
+        // Dumont start
+        if (!IsSentient(uid))
+            TryEquipFaceHugger(uid, args.OtherEntity, component);
+        // Dumont end
+    }
 
     private void OnMeleeHit(EntityUid uid, FaceHuggerComponent component, MeleeHitEvent args)
     {
@@ -82,11 +97,16 @@ public sealed class FaceHuggerSystem : EntitySystem
     }
 
     private void OnPickedUp(EntityUid uid, FaceHuggerComponent component, GotEquippedHandEvent args)
-        => TryEquipFaceHugger(uid, args.User, component);
+    {
+        // Dumont start
+        if (!IsSentient(uid))
+            TryEquipFaceHugger(uid, args.User, component);
+        // Dumont end
+    }
 
     private void OnStepTriggered(EntityUid uid, FaceHuggerComponent component, ref StepTriggeredOffEvent args)
     {
-        if (component.Active)
+        if (component.Active && !IsSentient(uid)) // Dumont
             TryEquipFaceHugger(uid, args.Tripper, component);
     }
 
@@ -177,7 +197,7 @@ public sealed class FaceHuggerSystem : EntitySystem
             // Goobstaion end
 
             // Check for nearby entities to latch onto
-            if (faceHugger.Active && clothing?.InSlot == null)
+            if (faceHugger.Active && clothing?.InSlot == null && !IsSentient(uid)) // Dumont
             {
                 foreach (var entity in _entityLookup.GetEntitiesInRange<InventoryComponent>(Transform(uid).Coordinates,
                              1.5f))
@@ -188,6 +208,21 @@ public sealed class FaceHuggerSystem : EntitySystem
             }
         }
     }
+
+    // Dumont start
+    private bool IsSentient(EntityUid uid) => TryComp<MindContainerComponent>(uid, out var mind) && mind.HasMind;
+
+    private void OnLeapHit(Entity<FaceHuggerLeapComponent> ent, ref ThrowDoHitEvent args)
+    {
+        if (!ent.Comp.IsLeaping)
+            return;
+
+        ent.Comp.IsLeaping = false;
+        Dirty(ent);
+        if (HasComp<MobStateComponent>(args.Target) && TryComp<FaceHuggerComponent>(ent.Owner, out var faceHugger))
+            TryEquipFaceHugger(ent.Owner, args.Target, faceHugger);
+    }
+    // Dumont end
 
     private void Infect(EntityUid uid, FaceHuggerComponent component)
     {
@@ -213,12 +248,21 @@ public sealed class FaceHuggerSystem : EntitySystem
             return;
         }
 
+        // Dumont start
+        if (_mind.TryGetMind(uid, out var mindId, out var mind)
+            && TryComp<XenomorphInfectionComponent>(organ, out var infection))
+        {
+            infection.SourceMindId = mindId;
+            _mind.TransferTo(mindId, organ, mind: mind);
+        }
+        // Dumont end
+
         _damageable.TryChangeDamage(uid, component.DamageOnInfect, true);
     }
 
     public bool TryEquipFaceHugger(EntityUid uid, EntityUid target, FaceHuggerComponent component)
     {
-        if (!component.Active || _mobState.IsDead(uid) || _entityWhitelist.IsBlacklistPass(component.Blacklist, target))
+        if (!component.Active || _mobState.IsDead(uid) || _mobState.IsDead(target) || _entityWhitelist.IsBlacklistPass(component.Blacklist, target))
             return false;
 
         // Check for any blocking masks or equipment
@@ -292,6 +336,9 @@ public sealed class FaceHuggerSystem : EntitySystem
     /// </summary>
     public bool CanInject(EntityUid uid, FaceHuggerComponent component, EntityUid target)
     {
+        if (component.SleepChem == null) // Dumont
+            return false;
+
         // Check if facehugger is properly equipped
         if (!TryComp<ClothingComponent>(uid, out var clothingComp) || clothingComp.InSlot == null)
         {
@@ -317,7 +364,8 @@ public sealed class FaceHuggerSystem : EntitySystem
     public Solution CreateSleepChemicalSolution(FaceHuggerComponent component, float amount)
     {
         var solution = new Solution();
-        solution.AddReagent(component.SleepChem, amount);
+        if (component.SleepChem is { } reagent) // Dumont
+            solution.AddReagent(reagent, amount);
         return solution;
     }
 
@@ -344,11 +392,11 @@ public sealed class FaceHuggerSystem : EntitySystem
     /// </summary>
     public void InjectChemicals(EntityUid uid, FaceHuggerComponent component, EntityUid target)
     {
-        if (!CanInject(uid, component, target))
+        if (component.SleepChem is not { } reagent || !CanInject(uid, component, target))
             return;
 
         var sleepChem = CreateSleepChemicalSolution(component, component.SleepChemAmount);
-        TryInjectIntoBloodstream(target, sleepChem, component.SleepChem, component.SleepChemAmount);
+        TryInjectIntoBloodstream(target, sleepChem, reagent, component.SleepChemAmount);
     }
     #endregion
 

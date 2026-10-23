@@ -10,6 +10,9 @@ using System.Linq;
 using Content.Server._White.GameTicking.Rules.Components;
 using Content.Server.Antag;
 using Content.Server.Chat.Systems;
+using Content.Server.Audio;
+using Content.Shared.Audio;
+using Robust.Shared.Audio;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Nuke;
@@ -52,7 +55,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly AudioSystem _audioSystem = default!; // Goobstation - Play music on announcement
+    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!; // Dumont
 
     public override void Initialize()
     {
@@ -77,7 +80,8 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         if (args.Session == null || !Exists(args.EntityUid))
             return;
 
-        component.Xenomorphs.Add(args.EntityUid);
+        if (!component.Xenomorphs.Contains(args.EntityUid)) // Dumont
+            component.Xenomorphs.Add(args.EntityUid);
     }
 
     private void OnXenomorphInit(EntityUid uid, XenomorphComponent component, ComponentInit args)
@@ -104,8 +108,8 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             if (!xenomorphsRule.Xenomorphs.Contains(uid))
                 continue;
 
-            if (GetXenomorphs(xenomorphsRule, args.Caste).Count >= cast.MaxCount
-                || cast.NeedCasteDeath != null && GetXenomorphs(xenomorphsRule, cast.NeedCasteDeath).Count > 0)
+            if (xenomorphsRule.TotalCastes.GetValueOrDefault(args.Caste) >= cast.MaxCount
+                || args.CheckNeedCasteDeath && cast.NeedCasteDeath != null && GetXenomorphs(xenomorphsRule, cast.NeedCasteDeath).Count > 0)
             {
                 _popup.PopupEntity(Loc.GetString("xenomorphs-evolution-no-cast-slot", ("caste", Loc.GetString(cast.Name))), uid, uid);
                 args.Cancel();
@@ -123,8 +127,14 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out _, out var xenomorphsRule, out _))
         {
-            if (xenomorphsRule.Xenomorphs.Remove(uid))
+            // Dumont start
+            if (!xenomorphsRule.Xenomorphs.Remove(uid))
+                continue;
+
+            if (!xenomorphsRule.Xenomorphs.Contains(args.EvolvedInto))
                 xenomorphsRule.Xenomorphs.Add(args.EvolvedInto);
+            xenomorphsRule.TotalCastes[args.Caste] = xenomorphsRule.TotalCastes.GetValueOrDefault(args.Caste) + 1;
+            // Dumont end
         }
     }
 
@@ -257,7 +267,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             if (!string.IsNullOrEmpty(component.Announcement))
                 _chat.DispatchGlobalAnnouncement(Loc.GetString(component.Announcement), component.Sender != null ? Loc.GetString(component.Sender) : null, colorOverride: component.AnnouncementColor);
 
-            _audioSystem.PlayGlobal(component.XenomorphInfestationSound, Filter.Broadcast(), true); // Goobstation - Play music on announcement
+            PlayXenomorphMusic(component.XenomorphInfestationSound); // Dumont
         }
 
         CheckRoundEnd(uid, component, gameRule);
@@ -290,6 +300,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             component.WinType = WinType.CrewMajor;
             component.WinConditions.Add(WinCondition.AllReproduceXenoDead);
             ForceEndSelf(uid, gameRule);
+            return; // Dumont
         }
 
         if (xenomorphs.Count / (float) (xenomorphs.Count + GetHumans(stationGrids, true).Count) >= 1)
@@ -312,7 +323,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             component.RoundEndTextShuttleCall,
             component.RoundEndTextAnnouncement
         );
-        _audioSystem.PlayGlobal(component.XenomorphTakeoverSound, Filter.Broadcast(), true); // Goobstation - Play music on announcement
+        PlayXenomorphMusic(component.XenomorphTakeoverSound); // Dumont
 
         component.WinType = WinType.XenoMinor;
         component.WinConditions.Add(WinCondition.XenoTakeoverStation);
@@ -323,6 +334,17 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
 
         _nukeCodePaper.SendNukeCodes(station.Value);
     }
+
+    // Dumont start
+    private void PlayXenomorphMusic(SoundSpecifier sound)
+    {
+        foreach (var grid in GetStationGrids())
+        {
+            _sound.StopStationEventMusic(grid, StationEventMusicType.Xenomorph);
+            _sound.DispatchStationEventMusic(grid, sound, StationEventMusicType.Xenomorph, sound.Params);
+        }
+    }
+    // Dumont end
 
     private List<EntityUid> GetHumans(HashSet<EntityUid>? stationGrids = null, bool includeOffStation = false)
     {

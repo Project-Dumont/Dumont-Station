@@ -50,7 +50,7 @@ public sealed partial class FaceHuggerComponent : Component
 
     // Goobstation start
     [DataField]
-public string SleepChem = "Nocturine";
+    public string? SleepChem = "Nocturine"; // Dumont
 
     [DataField]
     public float SleepChemAmount = 10f;

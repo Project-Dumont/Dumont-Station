@@ -16,6 +16,7 @@ public sealed class PlasmaCostActionSystem : EntitySystem
     {
         SubscribeLocalEvent<PlasmaCostActionComponent, ActionRelayedEvent<PlasmaAmountChangeEvent>>(OnPlasmaAmountChange);
         SubscribeLocalEvent<PlasmaCostActionComponent, ActionAttemptEvent>(OnActionAttempt); // Goobstation
+        SubscribeLocalEvent<PlasmaCostActionComponent, ActionPerformedEvent>(OnActionPerformed); // Dumont
     }
 
     /// <summary>
@@ -55,6 +56,14 @@ public sealed class PlasmaCostActionSystem : EntitySystem
     {
         _actions.SetEnabled(uid, component.PlasmaCost <= args.Args.Amount);
     }
+
+    // Dumont start
+    private void OnActionPerformed(Entity<PlasmaCostActionComponent> ent, ref ActionPerformedEvent args)
+    {
+        if (ent.Comp.ShouldChangePlasma)
+            DeductPlasma(args.Performer, ent.Comp.PlasmaCost);
+    }
+    // Dumont end
 
     private void OnActionAttempt(Entity<PlasmaCostActionComponent> ent, ref ActionAttemptEvent args)
     {
