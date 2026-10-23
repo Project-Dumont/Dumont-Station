@@ -1,0 +1,213 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stationTrait
+  id: AnomalyStorm
+  group: Negative # you're gonna have a lot more than you can probably make use of
+  chance: 0.4
+  name: station-trait-anomaly-storm-name # Dumont
+  report: station-trait-anomaly-storm-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: AnomalyStormRule
+
+- type: stationTrait
+  id: Blackout
+  group: Negative
+  name: station-trait-blackout-name # Dumont
+  report: station-trait-blackout-report # Dumont
+  mapEffects:
+  # TODO: change it to overload lighting channel on APCs if anyone ever implements channels (lol)
+  - !type:StationQueryEffects
+    compName: PoweredLight
+    effects:
+    - !type:DestroyLightBulb
+      probability: 0.6
+
+- type: stationTrait
+  id: BotLanguages
+  group: Negative
+  chance: 0.8
+  name: station-trait-bot-languages-name # Dumont
+  report: station-trait-bot-languages-report # Dumont
+  mapEffects:
+  - !type:StationQueryEffects
+    compName: LanguageSpeaker
+    effects:
+    - !type:AddRandomLanguage
+      conditions:
+      - !type:WhitelistCondition
+        whitelist:
+          tags:
+          - Bot
+
+- type: stationTrait
+  id: MachineLanguages
+  group: Negative
+  chance: 0.4
+  name: station-trait-machine-languages-name # Dumont
+  report: station-trait-machine-languages-report # Dumont
+  mapEffects:
+  - !type:StationQueryEffects
+    compName: LanguageSpeaker
+    effects:
+    - !type:AddRandomLanguage
+      conditions:
+      - !type:WhitelistCondition
+        whitelist:
+          components:
+          - Computer
+          - Machine
+          - VendingMachine
+
+- type: stationTrait
+  id: CarpInfestation
+  group: Negative
+  minPlayers: 15
+  name: station-trait-carp-infestation-name # Dumont
+  report: station-trait-carp-infestation-report # Dumont
+  # Dumont changes start
+  requiredComponents:
+  - CarpMigrationTarget
+  # Dumont end
+  effects:
+  - !type:StartGameRule
+    rule: CarpInfestationRule
+
+- type: stationTrait
+  id: EmptyMaint
+  group: Negative
+  name: station-trait-empty-maint-name # Dumont
+  report: station-trait-empty-maint-report # Dumont
+  conflicts: [ FilledMaint ]
+  startEffects: # has to run before the map inits so it can change the spawners
+  - !type:StationQueryEffects
+    compName: MaintsClosetSpawner
+    includePaused: true
+    effects:
+    # Dumont changes start
+    - !type:AddComponents
+      components:
+      - type: EntityTableContainerFill
+        containers:
+          entity_storage: !type:NestedSelector
+            tableId: MaintenanceLockerLoot
+            prob: 0.5 # 0.5x loot on average...
+    # Dumont end
+
+- type: stationTrait
+  id: DistantSupplyLines
+  group: Negative
+  chance: 0.6
+  name: station-trait-distant-supply-lines-name # Dumont
+  report: station-trait-distant-supply-lines-report # Dumont
+  conflicts: [ StrongSupplyLines ]
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CargoPriceModifier
+      modifier: 1.2
+
+- type: stationTrait
+  id: IonicStormfront
+  group: Negative
+  chance: 0.6
+  name: station-trait-ionic-stormfront-name # Dumont
+  report: station-trait-ionic-stormfront-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: IonStormTraitScheduler # Dumont
+
+- type: stationTrait
+  id: LateArrivals
+  group: Negative
+  chance: 0.4
+  name: station-trait-late-arrivals-name # Dumont
+  report: station-trait-late-arrivals-report # Dumont
+  conflicts: [ RandomSpawns, HellishInterpolation ] # Dumont
+  # Dumont changes start
+  effects:
+  - !type:StartGameRule
+    rule: ArrivalsSpawnRule
+  # Dumont end
+  mapEffects:
+  - !type:StationQueryEffects
+    compName: SpawnPoint
+    effects:
+    - !type:DeleteSelfEntityEffect # Dumont
+      conditions:
+      # only keep latejoin, observer etc
+      - !type:SpawnPointHasJob
+
+- type: stationTrait
+  id: MeteorSwarm
+  group: Negative
+  chance: 0.4
+  name: station-trait-meteor-swarm-name # Dumont
+  report: station-trait-meteor-swarm-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: MeteorSwarmScheduler # double the fun
+  # Dumont changes start
+  - !type:StationAddParallax
+    parallax: MeteorSwarm
+  # Dumont end
+
+# Dumont changes start
+- type: stationTrait
+  id: SpaceDust
+  group: Negative
+  chance: 0.4
+  name: station-trait-space-dust-name
+  report: station-trait-space-dust-report
+  mapEffects:
+  - !type:StationSetWeather
+    weather: Sandstorm
+# Dumont end
+
+- type: stationTrait
+  id: RandomSpawns
+  group: Negative
+  chance: 0.4
+  minPlayers: 30 # more fun with more people + getting stuck in a room on deadpop is bad
+  name: station-trait-random-spawns-name # Dumont
+  report: station-trait-random-spawns-report # Dumont
+  conflicts: [ LateArrivals, HellishInterpolation ] # Dumont
+  mapEffects:
+  - !type:StationQueryEffects
+    compName: SpawnPoint
+    effects: # any job can spawn at any spawn point, in drop pods.
+    # Dumont changes start
+    - !type:AddComponents
+      conditions:
+      - !type:SpawnPointHasJob # leave latejoin, observer, etc alone
+      components:
+      - type: DropPodSpawnPoint
+    - !type:RemoveComponentEffect
+      conditions:
+      - !type:SpawnPointHasJob
+      component: SpawnPoint
+    # Dumont end
+
+- type: stationTrait
+  id: OverflowJobMistake
+  group: Negative
+  name: station-trait-overflow-job-mistake-name # Dumont
+  report: station-trait-overflow-job-mistake-report # Dumont
+  mapEffects: # need this after station jobs are loaded but before job spawn
+  - !type:StationRandomOverflowJob
+    ignoredJobs:
+    - StationAi # broken as fuck and has a dedicated trait
+  - !type:StationModifyJobs
+    set:
+      Passenger: 5 # no unlimited assistants, replace them with the picked job.
+
+- type: stationTrait
+  id: PostRevolutionaryFervor
+  group: Negative
+  chance: 0.4
+  name: station-trait-post-revolutionary-fervor-name # Dumont
+  report: station-trait-post-revolutionary-fervor-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: RevolutionaryFervorVariation
+  # TODO: maybe add a forge or something randomly in maints..?

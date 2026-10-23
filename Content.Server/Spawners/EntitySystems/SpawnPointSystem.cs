@@ -51,6 +51,9 @@ public sealed class SpawnPointSystem : EntitySystem
 
         while ( points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
+            if (EntityManager.IsQueuedForDeletion(uid)) // Dumont
+                continue;
+
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
@@ -66,6 +69,18 @@ public sealed class SpawnPointSystem : EntitySystem
                 possiblePositions.Add(xform.Coordinates);
             }
         }
+
+        // Dumont changes start
+        if (possiblePositions.Count == 0)
+        {
+            var latejoin = EntityQueryEnumerator<SpawnPointComponent>();
+            while (latejoin.MoveNext(out var uid, out var spawnPoint))
+            {
+                if (spawnPoint.SpawnType == SpawnPointType.LateJoin)
+                    possiblePositions.Add(Transform(uid).Coordinates);
+            }
+        }
+        // Dumont end
 
         if (possiblePositions.Count == 0)
         {

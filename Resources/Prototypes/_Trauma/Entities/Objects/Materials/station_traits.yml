@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MaterialBananium
+  id: MaterialBananium5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5

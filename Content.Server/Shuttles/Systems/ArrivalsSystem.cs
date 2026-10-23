@@ -106,6 +106,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -131,6 +132,7 @@ public sealed class ArrivalsSystem : EntitySystem
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private ArrivalsSpawnRuleSystem _arrivalsRule = default!; // Dumont
 
     private EntityQuery<PendingClockInComponent> _pendingQuery;
     private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery;
@@ -408,7 +410,7 @@ public sealed class ArrivalsSystem : EntitySystem
         // We use arrivals as the default spawn so don't check for job prio.
 
         // Only works on latejoin even if enabled.
-        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
+        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound && !_arrivalsRule.IsActive()) // Dumont
             return;
 
         if (!HasComp<StationArrivalsComponent>(ev.Station))

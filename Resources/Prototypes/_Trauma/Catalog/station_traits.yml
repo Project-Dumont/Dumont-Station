@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# mfw nobody made a pizza table
+- type: entityTable
+  id: RandomPizza
+  table: !type:GroupSelector
+    children:
+    - id: FoodPizzaArnold
+      weight: 1.5
+    - id: FoodPizzaSassysage
+      weight: 1.5
+    - id: FoodPizzaMargherita
+      weight: 1.5
+    - id: FoodPizzaMeat
+      weight: 1.5
+    - id: FoodPizzaMushroom
+      weight: 1.5
+    - id: FoodPizzaPineapple
+      weight: 1.5
+    - id: FoodPizzaVegetable
+      weight: 1.5
+    - id: FoodPizzaDank
+    - id: FoodPizzaDonkpocket
+    - id: FoodPizzaCotton
+    - id: FoodPizzaWorldpeas
+      weight: 0.5
+
+- type: entityTable
+  id: RandomScarf
+  table: !type:GroupSelector
+    children:
+    - id: ClothingNeckScarfStripedRed
+    - id: ClothingNeckScarfStripedBlue
+    - id: ClothingNeckScarfStripedGreen
+    - id: ClothingNeckScarfStripedBlack
+    - id: ClothingNeckScarfStripedBrown
+    - id: ClothingNeckScarfStripedLightBlue
+    - id: ClothingNeckScarfStripedOrange
+    - id: ClothingNeckScarfStripedPurple
+    # rare special scarves
+    - id: ClothingNeckScarfStripedSyndieGreen
+      weight: 0.1
+    - id: ClothingNeckScarfStripedSyndieRed
+      weight: 0.1
+    - id: ClothingNeckScarfStripedCentcom
+      weight: 0.05

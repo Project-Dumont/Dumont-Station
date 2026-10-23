@@ -99,6 +99,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Trauma.Common.Cargo; // Dumont
 using System.Diagnostics.CodeAnalysis;
 using Content.Goobstation.Common.Pirates;
 using System.Linq;
@@ -320,6 +321,11 @@ namespace Content.Server.Cargo.Systems
 
             var cost = order.Price * order.OrderQuantity;
             var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
+            // Dumont changes start
+            var modifyEv = new ModifyCargoPriceEvent(cost);
+            RaiseLocalEvent(station.Value, ref modifyEv);
+            cost = modifyEv.Price;
+            // Dumont end
 
             // Not enough balance
             if (cost > accountBalance)

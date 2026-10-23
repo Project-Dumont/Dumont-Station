@@ -1,0 +1,27 @@
+- type: radioChannel
+  id: Deathrattle
+  name: chat-radio-deathrattle
+  keycode: 'd'
+  frequency: 1203
+  color: "#a33f3f"
+  longRange: true
+
+- type: entity
+  parent: DeathRattleImplant
+  id: DeathRattleImplantCrew
+  name: crew death rattle implant
+  description: This implant will inform every other implanted crewmember should the user die.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: RattleOnTrigger
+    targetUser: true
+    radioChannel: Deathrattle
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: ActiveRadio
+      channels:
+      - Deathrattle
+    - type: IntrinsicRadioReceiver
