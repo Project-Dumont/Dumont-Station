@@ -12,6 +12,7 @@ using Content.Shared.Sound.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Timing;
 using Content.Shared.Access.Systems;
+using Content.Shared.Power;
 
 namespace Content.Server._CorvaxGoob.PowerToggle;
 
@@ -31,6 +32,7 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         SubscribeNetworkEvent<TogglePowerMessage>(OnTogglePowerMessage);
         SubscribeLocalEvent<TogglePowerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<TogglePowerComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<TogglePowerComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     private void OnExamined(Entity<TogglePowerComponent> entity, ref ExaminedEvent args)
@@ -54,6 +56,18 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 
         if (entity.Comp.ApplyPowerOnSpawn)
             SetPower(entity, entity.Comp.IsTurnedOn, false);
+
+        entity.Comp.IsTurnedOn = !apcPowerReceiver.PowerDisabled;
+        Dirty(entity);
+    }
+
+    private void OnPowerChanged(Entity<TogglePowerComponent> entity, ref PowerChangedEvent args)
+    {
+        if (!TryComp<ApcPowerReceiverComponent>(entity, out var apcPowerReceiver))
+            return;
+
+        entity.Comp.IsTurnedOn = !apcPowerReceiver.PowerDisabled;
+        Dirty(entity);
     }
 
     private void OnTogglePowerMessage(TogglePowerMessage args, EntitySessionEventArgs eventArgs)
