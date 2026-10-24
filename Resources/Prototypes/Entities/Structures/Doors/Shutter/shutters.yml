@@ -63,7 +63,7 @@
   - type: ApcPowerReceiver
     load: 20
   - type: ExtensionCableReceiver
-  - type: PoweredDoor # no Airlock so copy this 1 thing
+  - type: PoweredDoor
   - type: PryUnpowered
     pryModifier: 0.6 # it's not hard to raise shutters
   - type: SoundBlocker
@@ -100,7 +100,6 @@
     tags:
     - ForceNoFixRotations # Don't want the fixrotations command to target these
   - type: Door
-    canPry: false
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
     bumpOpen: false
@@ -176,8 +175,8 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
-  - type: SoundBlocker # Trauma
-    soundBlockPercent: 0.5
+  - type: AccessReader # Dumont edit
+    containerAccessProvider: board
 
 - type: entity
   id: ShuttersNormal
