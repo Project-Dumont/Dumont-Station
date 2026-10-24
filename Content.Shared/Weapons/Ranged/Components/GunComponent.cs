@@ -55,7 +55,7 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public int Quality = 20;
+    public int Quality = 0;
 
     /// <summary>
     /// The time it takes to unjam a weapon, if applicable.
