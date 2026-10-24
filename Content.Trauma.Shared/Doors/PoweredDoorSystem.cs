@@ -4,6 +4,7 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Prying.Components;
 using Content.Shared.Prying.Systems;
+using Robust.Shared;
 
 namespace Content.Trauma.Shared.Doors;
 
