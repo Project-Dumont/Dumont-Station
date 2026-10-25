@@ -1,0 +1,5 @@
+# Prototypes/Loadouts/loadout_groups.yml
+- type: !PartialOnly loadoutGroup
+  id: Trinkets
+  loadouts:
+    - RadioHandheldStation

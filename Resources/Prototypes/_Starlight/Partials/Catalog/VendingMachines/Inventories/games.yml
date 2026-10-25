@@ -1,0 +1,4 @@
+- type: !PartialOnly vendingMachineInventory
+  id: GoodCleanFunInventory
+  startingInventory: !Clear
+    RadioHandheldStation: 3
