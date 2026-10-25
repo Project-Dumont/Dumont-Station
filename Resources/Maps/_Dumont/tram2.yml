@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 286.0.0
+  engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/20/2026 03:11:21
-  entityCount: 26740
+  time: 10/25/2026 23:54:13
+  entityCount: 26741
 maps:
 - 1
 grids:
@@ -13,7 +13,6 @@ grids:
 - 26504
 orphans: []
 nullspace:
-- 26678
 - 26679
 - 26680
 - 26681
@@ -76,6 +75,7 @@ nullspace:
 - 26738
 - 26739
 - 26740
+- 26741
 tilemap:
   0: Space
   44: FloorArcadeBlue
@@ -3654,7 +3654,6 @@ entities:
     - type: ImplicitRoof
     - type: ChunkContainer
       chunkEntities:
-      - 26678
       - 26679
       - 26680
       - 26681
@@ -3716,6 +3715,7 @@ entities:
       - 26737
       - 26738
       - 26739
+      - 26740
     - type: FTLDrive
     - type: DecalGrid
       chunkCollection:
@@ -7268,7 +7268,7 @@ entities:
     - type: ImplicitRoof
     - type: ChunkContainer
       chunkEntities:
-      - 26740
+      - 26741
     - type: FTLDrive
     - type: DecalGrid
       chunkCollection:
@@ -58376,316 +58376,316 @@ entities:
       pos: 38.601997,5.28884
 - proto: ChunkEntity
   entities:
-  - uid: 26678
-    components:
-    - type: ChunkEntity
-      root: 2
-      chunk: -1,0
   - uid: 26679
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,1
+      chunk: -1,0
   - uid: 26680
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,0
+      chunk: -4,1
   - uid: 26681
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,-2
+      chunk: -4,0
   - uid: 26682
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 3,0
+      chunk: -4,-2
   - uid: 26683
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 4,0
+      chunk: 3,0
   - uid: 26684
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 4,-1
+      chunk: 4,0
   - uid: 26685
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 3,-1
+      chunk: 4,-1
   - uid: 26686
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,-4
+      chunk: 3,-1
   - uid: 26687
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,-4
+      chunk: -5,-4
   - uid: 26688
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -2,-3
+      chunk: -4,-4
   - uid: 26689
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,-1
+      chunk: -2,-3
   - uid: 26690
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,0
+      chunk: -4,-1
   - uid: 26691
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,-1
+      chunk: -3,0
   - uid: 26692
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,-1
+      chunk: 0,-1
   - uid: 26693
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,-2
+      chunk: -5,-1
   - uid: 26694
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 3,-2
+      chunk: -3,-2
   - uid: 26695
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,-2
+      chunk: 3,-2
   - uid: 26696
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,-1
+      chunk: 0,-2
   - uid: 26697
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,-3
+      chunk: -3,-1
   - uid: 26698
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,-3
+      chunk: 1,-3
   - uid: 26699
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,-4
+      chunk: 0,-3
   - uid: 26700
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -1,-3
+      chunk: 0,-4
   - uid: 26701
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -2,1
+      chunk: -1,-3
   - uid: 26702
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,-3
+      chunk: -2,1
   - uid: 26703
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -2,-4
+      chunk: -3,-3
   - uid: 26704
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,-4
+      chunk: -2,-4
   - uid: 26705
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -4,-3
+      chunk: -3,-4
   - uid: 26706
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -1,-2
+      chunk: -4,-3
   - uid: 26707
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -3,1
+      chunk: -1,-2
   - uid: 26708
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,-3
+      chunk: -3,1
   - uid: 26709
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -1,-4
+      chunk: -5,-3
   - uid: 26710
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,0
+      chunk: -1,-4
   - uid: 26711
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 4,-2
+      chunk: 2,0
   - uid: 26712
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -2,-2
+      chunk: 4,-2
   - uid: 26713
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,-2
+      chunk: -2,-2
   - uid: 26714
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,-2
+      chunk: 1,-2
   - uid: 26715
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 3,-3
+      chunk: 2,-2
   - uid: 26716
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 5,-2
+      chunk: 3,-3
   - uid: 26717
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -6,-1
+      chunk: 5,-2
   - uid: 26718
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,-2
+      chunk: -6,-1
   - uid: 26719
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -6,-2
+      chunk: -5,-2
   - uid: 26720
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,-1
+      chunk: -6,-2
   - uid: 26721
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,1
+      chunk: 2,-1
   - uid: 26722
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,1
+      chunk: 2,1
   - uid: 26723
     components:
     - type: ChunkEntity
       root: 2
+      chunk: 1,1
   - uid: 26724
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,-4
   - uid: 26725
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,-4
+      chunk: 2,-4
   - uid: 26726
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 4,-4
+      chunk: 1,-4
   - uid: 26727
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 3,-4
+      chunk: 4,-4
   - uid: 26728
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 5,-1
+      chunk: 3,-4
   - uid: 26729
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,-3
+      chunk: 5,-1
   - uid: 26730
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 4,-3
+      chunk: 2,-3
   - uid: 26731
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,2
+      chunk: 4,-3
   - uid: 26732
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 2,2
+      chunk: 1,2
   - uid: 26733
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -2,0
+      chunk: 2,2
   - uid: 26734
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,0
+      chunk: -2,0
   - uid: 26735
     components:
     - type: ChunkEntity
       root: 2
-      chunk: -5,1
+      chunk: -5,0
   - uid: 26736
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,0
+      chunk: -5,1
   - uid: 26737
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 1,-1
+      chunk: 1,0
   - uid: 26738
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,1
+      chunk: 1,-1
   - uid: 26739
     components:
     - type: ChunkEntity
       root: 2
-      chunk: 0,-5
+      chunk: 0,1
   - uid: 26740
+    components:
+    - type: ChunkEntity
+      root: 2
+      chunk: 0,-5
+  - uid: 26741
     components:
     - type: ChunkEntity
       root: 26504
@@ -73860,10 +73860,10 @@ entities:
       server: 11892
       connectedToServer: True
     - type: DnaServer
-      serverId: 124
+      serverId: 125
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1798.1316218
-      lastInjectorTime: 1798.1316218
+      lastSubjectInjectTime: 53.5336678
+      lastInjectorTime: 53.5336678
 - proto: DogBed
   entities:
   - uid: 11893
@@ -137858,6 +137858,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -59.5,-60.5
+- proto: SpawnPointTramDriver
+  entities:
+  - uid: 26678
+    components:
+    - type: Transform
+      parent: 26504
+      pos: -39.5,-22.5
 - proto: SpawnPointVirologist
   entities:
   - uid: 21323
