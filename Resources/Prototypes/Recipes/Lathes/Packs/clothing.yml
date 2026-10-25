@@ -145,6 +145,8 @@
   - ClothingUniformJumpsuitMusician
   - ClothingUniformJumpsuitTramDriver
   - ClothingUniformJumpskirtTramDriver
+  - ClothingOuterSuitTramDriver
+  - ClothingHeadHatTramDriver
   - ClothingUniformJumpsuitReporterGoob # goob change
   - ClothingUniformJumpskirtReporterGoob # goob change
 
