@@ -244,6 +244,11 @@ loadout-group-reporter-shoes = Reporter shoes
 loadout-group-psychologist-jumpsuit = Psychologist jumpsuit
 loadout-group-psychologist-shoes = Psychologist shoes
 
+loadout-group-tramdriver-jumpsuit = Tram driver jumpsuit
+loadout-group-tramdriver-outerclothing = Tram driver suit
+loadout-group-tramdriver-hat = Tram driver hat
+loadout-group-tramdriver-gloves = Tram driver gloves
+
 loadout-group-boxer-jumpsuit = Boxer jumpsuit
 loadout-group-boxer-gloves = Boxer gloves
 loadout-group-boxer-shoes = Boxer shoes
