@@ -30,6 +30,6 @@
     eyes: ClothingEyesGlasses
     mask: ClothingMaskBreath
     outerClothing: ClothingOuterSuitTramDriver
-    neck: ClothingNeckTieSerious
+#    neck: ClothingNeckTieSerious
     belt: ClothingBeltUtility
     gloves: ClothingHandsGlovesColorWhite
