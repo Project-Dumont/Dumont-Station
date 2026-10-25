@@ -47,6 +47,7 @@ job-name-paramedic = Paramedic
 job-name-cmo = Chief Medical Officer
 job-name-chemist = Chemist
 job-name-technical-assistant = Technical Assistant
+job-name-tram-driver = Tram Driver
 job-name-engineer = Station Engineer
 job-name-atmostech = Atmospheric Technician
 job-name-hop = Head of Personnel

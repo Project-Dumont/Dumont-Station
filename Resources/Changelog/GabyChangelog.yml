@@ -4592,3 +4592,35 @@ Entries:
       message: Soldado Experimental em bitrunning pode ser selecionado denovo.
   id: 544
   time: '2026-10-21T20:12:01.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Tram driver!
+  id: 545
+  time: '2026-10-25T20:01:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas berserker do HOS buffadas.
+    - type: Tweak
+      message: SMG laser é menos precisa.
+    - type: Tweak
+      message: Indutores de sec podem ser colocados em cintos de sec.
+    - type: Tweak
+      message: Agora pode imprimir rifles e SMGs laser.
+    - type: Tweak
+      message: >-
+        Agora pode imprimir carregadores preenchidos com shardshots e discos
+        afiados.
+    - type: Tweak
+      message: Sprite de bala de Gauss. É mais fácil de ver agora.
+    - type: Tweak
+      message: Receita de pólvora. Verifique a entrada do livro guia de químico.
+    - type: Tweak
+      message: Rajadas do rifle laser são mais lentas.
+    - type: Tweak
+      message: Modo letal da justice consome menos energia.
+    - type: Remove
+      message: Multihit da machete *de salv*. Machete de sec ainda tem.
+  id: 546
+  time: '2026-10-25T20:05:14.0000000+00:00'
