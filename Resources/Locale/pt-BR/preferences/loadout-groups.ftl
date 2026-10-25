@@ -243,10 +243,10 @@ loadout-group-reporter-shoes = Sapatos do repórter
 loadout-group-psychologist-jumpsuit = Roupa do psicólogo
 loadout-group-psychologist-shoes = Sapatos do psicólogo
 
-loadout-group-tram-driver-jumpsuit = Roupa do maquinista
-loadout-group-tram-driver-outer-clothing = Casaco do maquinista
-loadout-group-tram-driver-head = Chapéu do maquinista
-loadout-group-tram-driver-shoes = Sapatos do maquinista
+loadout-group-tram-driver-jumpsuit = Roupa do Condutor
+loadout-group-tram-driver-outer-clothing = Casaco do Condutor
+loadout-group-tram-driver-head = Chapéu do Condutor
+loadout-group-tram-driver-shoes = Sapatos do Condutor
 
 loadout-group-boxer-jumpsuit = Roupa do pugilista
 loadout-group-boxer-gloves = Luvas do pugilista
