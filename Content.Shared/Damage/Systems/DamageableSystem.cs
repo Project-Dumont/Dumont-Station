@@ -697,10 +697,6 @@ namespace Content.Shared.Damage
                     TryComp<ConsciousnessRequiredComponent>(part.Id, out var consciousness)
                     && consciousness.CausesDeath == true).ToList();
 
-                    // Dumont changes start
-                    if (vitalParts.Count == 0)
-                        return newDamage / parts.Count;
-                    // Dumont end
                     return newDamage / vitalParts.Count;
                 case SplitDamageBehavior.SplitEnsureAllDamaged:
                     var damagedParts = parts.Where(part =>
