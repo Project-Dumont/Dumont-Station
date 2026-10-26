@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._CMU14.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Caste;
 using Content.Shared.Humanoid.Prototypes;

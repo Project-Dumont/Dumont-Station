@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._Dumont.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Xenomorph;
 using Content.Shared.Damage;
