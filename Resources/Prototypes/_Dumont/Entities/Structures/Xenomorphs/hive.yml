@@ -324,10 +324,12 @@
     state: idle
     noRot: true
   - type: XenomorphAcidPillar
+  - type: Damageable
+    damageModifierSet: DumontFragileResin
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTrigger
-        damage: 300
+        damage: 40
       behaviors:
       - !type:DoActsBehavior
         acts: [Destruction]

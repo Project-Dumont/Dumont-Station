@@ -161,7 +161,7 @@ public sealed partial class XenomorphSpitterSystem : EntitySystem
         args.Handled = CreateSpray(ent, args.Target, ent.Comp.SprayRange, ent.Comp.StrongSpray, ent.Comp.StackingSpray);
     }
 
-    public bool CreateSpray(EntityUid user, EntityCoordinates targetCoordinates, float range, bool strong = false, bool stacking = false, double spreadDelay = .2)
+    public bool CreateSpray(EntityUid user, EntityCoordinates targetCoordinates, float range, bool strong = false, bool stacking = false, double spreadDelay = .2, float? firstDamage = null, float? repeatDamage = null)
     {
         if (Transform(user).GridUid is not { } grid) return false;
         var target = _transform.ToMapCoordinates(targetCoordinates);
@@ -184,8 +184,8 @@ public sealed partial class XenomorphSpitterSystem : EntitySystem
             Strong = strong,
             Stacking = stacking,
             Range = range,
-            FirstDamage = spitter?.SprayDamage ?? (strong ? 36 : stacking ? 24 : 30),
-            RepeatDamage = spitter?.SprayRepeatDamage ?? 10,
+            FirstDamage = firstDamage ?? spitter?.SprayDamage ?? (strong ? 36 : stacking ? 24 : 30),
+            RepeatDamage = repeatDamage ?? spitter?.SprayRepeatDamage ?? 10,
         };
         var previous = from;
         var barricades = new HashSet<Entity<XenomorphSprayAcidableComponent>>();

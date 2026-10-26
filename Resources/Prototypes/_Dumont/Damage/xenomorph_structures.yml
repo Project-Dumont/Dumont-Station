@@ -1,0 +1,8 @@
+- type: damageModifierSet
+  id: DumontFragileResin
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
+    Heat: 1.5
+    Shock: 0
