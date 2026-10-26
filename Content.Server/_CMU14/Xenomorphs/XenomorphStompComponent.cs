@@ -10,8 +10,8 @@ public sealed partial class XenomorphStompComponent : Component
 {
     [DataField] public float Range = 4;
     [DataField] public Angle Angle = Angle.FromDegrees(90);
-    [DataField] public float Damage = 65;
-    [DataField] public float MinDamage = 40;
+    [DataField] public float Damage = 35;
+    [DataField] public float MinDamage = 25;
     [DataField] public float PlasmaCost = 30;
     [DataField] public TimeSpan ParalyzeTime = TimeSpan.FromSeconds(1);
     [DataField] public TimeSpan SlowTime = TimeSpan.FromSeconds(2.5);

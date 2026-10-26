@@ -11,7 +11,7 @@ namespace Content.Server._CMU14.Xenomorphs;
 public sealed partial class XenomorphCrusherComponent : Component
 {
     [DataField] public float ChargeRange = 5;
-    [DataField] public float ChargeDamage = 65;
+    [DataField] public float ChargeDamage = 35;
     [DataField] public float StructuralDamage = 750;
     [DataField] public TimeSpan ChargeDelay = TimeSpan.FromSeconds(1.2);
     [DataField] public float SoakDamageGoal = 240;

@@ -111,7 +111,7 @@ public sealed partial class XenomorphVampireSystem : EntitySystem
     private void OnRushHit(Entity<XenomorphVampireComponent> ent, ref XenomorphLeapHitEvent args)
     {
         if (!Victim(args.Target)) return;
-        Hit(ent, args.Target, 13.33f, 13.33f, 13.34f, "DumontXenomorphVampireSlash");
+        Hit(ent, args.Target, 11.66f, 11.67f, 11.67f, "DumontXenomorphVampireSlash");
         _jitter.DoJitter(args.Target, TimeSpan.FromSeconds(1), false);
         var target = args.Target;
         _camera.KickCamera(target, _random.NextVector2Box(-1, 1));
@@ -132,7 +132,7 @@ public sealed partial class XenomorphVampireSystem : EntitySystem
         foreach (var victim in _area.Where(Victim).OrderBy(uid => (_transform.GetWorldPosition(uid) - origin.Position).LengthSquared()))
         {
             if (!_interaction.InRangeUnobstructed(ent.Owner, victim, range: 2.5f)) continue;
-            Hit(ent, victim, 11.66f, 11.67f, 11.67f, "DumontXenomorphVampireSlash", true);
+            Hit(ent, victim, 10, 10, 10, "DumontXenomorphVampireSlash", true);
             if (hits == 0) Lunge(ent, victim);
             _audio.PlayPvs(new SoundCollectionSpecifier("AlienClaw"), victim);
             Spawn("DumontXenomorphVampireFlurryHeal", new EntityCoordinates(ent, Vector2.Zero));
@@ -154,7 +154,7 @@ public sealed partial class XenomorphVampireSystem : EntitySystem
     private void OnJab(Entity<XenomorphVampireComponent> ent, ref XenomorphTailJabActionEvent args)
     {
         if (args.Handled || !Ready(ent) || (!Victim(args.Target) && !(HasComp<DamageableComponent>(args.Target) && !HasComp<MobStateComponent>(args.Target))) || !_interaction.InRangeUnobstructed(ent.Owner, args.Target, range: 2.5f)) return;
-        Hit(ent, args.Target, 16.66f, 16.67f, 16.67f, "DumontXenomorphTailHit", true);
+        Hit(ent, args.Target, 10, 10, 10, "DumontXenomorphTailHit", true);
         if (TryComp<XenomorphRavagerObstacleComponent>(args.Target, out var obstacle) && obstacle.Scissor)
             _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Structural"] = 100 } }, origin: ent);
         if (!TerminatingOrDeleted(args.Target)) Lunge(ent, args.Target);

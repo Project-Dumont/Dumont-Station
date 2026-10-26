@@ -141,7 +141,7 @@ public sealed partial class XenomorphVanguardSystem : EntitySystem
             var along = Vector2.Dot(offset, direction);
             var across = Math.Abs(offset.X * direction.Y - offset.Y * direction.X);
             if (along < 0 || along > 3 || across > 0.6f || !_interaction.InRangeUnobstructed(ent.Owner, mob.Owner, range: 3.6f)) continue;
-            Hit(ent, mob, 45, 0.2f);
+            Hit(ent, mob, 25, 0.2f);
             if (++hits >= 4) break;
         }
         if (hits >= 2) Regen(ent);
@@ -218,7 +218,7 @@ public sealed partial class XenomorphVanguardSystem : EntitySystem
         foreach (var mob in _nearby)
         {
             if (!Victim(mob) || !_interaction.InRangeUnobstructed(ent.Owner, mob.Owner, range: 1.5f)) continue;
-            Hit(ent, mob, 40);
+            Hit(ent, mob, 30);
             hits++;
         }
         if (hits > 0)

@@ -7,7 +7,7 @@ namespace Content.Server._CMU14.Xenomorphs;
 public sealed partial class XenomorphHeadbuttComponent : Component
 {
     [DataField] public float Range = 3.5f;
-    [DataField] public int Damage = 30;
+    [DataField] public int Damage = 25;
     [DataField] public int CrestedDamage = 20;
     [DataField] public float ThrowDistance = 1;
     [DataField] public float CrestedThrowDistance = 3;

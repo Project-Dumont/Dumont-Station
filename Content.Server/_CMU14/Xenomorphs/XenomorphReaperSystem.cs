@@ -212,7 +212,7 @@ public sealed partial class XenomorphReaperSystem : EntitySystem
     {
         if (args.Handled || !CanUse(ent) || !_blocker.CanAttack(ent) || !Enemy(args.Target)
             || !_interaction.InRangeUnobstructed(ent.Owner, args.Target, 3)) return;
-        _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Blunt"] = 20, ["Cellular"] = 15 } }, origin: ent);
+        _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Blunt"] = 15, ["Cellular"] = 5 } }, origin: ent);
         AddFlesh(ent, 60);
         _audio.PlayPvs(new SoundCollectionSpecifier("AlienClaw"), ent);
         Spawn("DumontXenomorphRaptureEffect", new EntityCoordinates(args.Target, Vector2.Zero));
@@ -377,7 +377,7 @@ public sealed partial class XenomorphReaperSystem : EntitySystem
                     continue;
                 }
                 if (!Enemy(target)) continue;
-                _damage.TryChangeDamage(target, new DamageSpecifier { DamageDict = { ["Poison"] = field.Bloom ? 8 : 5 }, ArmorPenetration = 0.1f }, origin: field.Reaper);
+                _damage.TryChangeDamage(target, new DamageSpecifier { DamageDict = { ["Poison"] = field.Bloom ? 4 : 2 }, ArmorPenetration = 0.1f }, origin: field.Reaper);
                 if (field.Bloom && TryComp<MovementSpeedModifierComponent>(target, out var speed))
                     _slow.TryUpdateMovementSpeedModDuration(target, "XenomorphStompSlowdown", TimeSpan.FromSeconds(1.5),
                         1 / (1 + Math.Max(speed.CurrentSprintSpeed, speed.BaseSprintSpeed) * 0.2f));

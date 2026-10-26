@@ -78,9 +78,9 @@ public sealed partial class XenomorphChargeSystem : SharedXenomorphChargeSystem
         var mode = ent.Comp.Mode;
         var amount = mode switch
         {
-            XenomorphChargeMode.Headbutt => 14,
-            XenomorphChargeMode.Gore => 24,
-            _ => 8,
+            XenomorphChargeMode.Headbutt => 20,
+            XenomorphChargeMode.Gore => 30,
+            _ => 15,
         };
         var type = mode == XenomorphChargeMode.Gore ? "Piercing" : "Blunt";
         _damage.TryChangeDamage(target, new DamageSpecifier

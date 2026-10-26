@@ -9,9 +9,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
   - type: Sprite
     sprite: _CMU14/Mobs/Xenomorphs/drone.rsi
@@ -20,8 +20,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -29,9 +29,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -55,9 +55,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 10
   - type: Sprite
@@ -67,8 +67,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '270': Critical
-      '360': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -76,9 +76,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
     attackRate: 1.4
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
@@ -107,9 +107,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
     hitEffect: DumontXenomorphTailSlam
     hitSound:
       collection: Punch
@@ -148,8 +148,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -157,9 +157,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9.16
-        Slash: 9.17
-        Piercing: 9.17
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -182,9 +182,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 10
   - type: Sprite
@@ -194,8 +194,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -203,9 +203,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -228,9 +228,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 14
-        Slash: 14
-        Piercing: 14
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 20
   - type: Sprite
@@ -240,8 +240,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '450': Critical
-      '550': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -249,9 +249,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.66
-        Slash: 11.67
-        Piercing: 11.67
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
     attackRate: 0.75
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.7
@@ -280,9 +280,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 20
     explosionArmor: 40
@@ -293,8 +293,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -302,9 +302,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.66
-        Slash: 11.67
-        Piercing: 11.67
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -332,8 +332,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '550': Critical
-      '650': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -357,13 +357,14 @@
     - ActionXenomorphSprayAcid
     - ActionXenomorphCorrosiveTail
   - type: XenomorphSpitter
+    sprayDamage: 20
   - type: XenomorphTailStab
     corrosive: true
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
 - type: entity
   id: MobXenomorphCMUBull
   parent: BaseMobXenomorphCMU
@@ -372,9 +373,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 15
     frontalArmor: 15
@@ -386,8 +387,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '450': Critical
-      '550': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -395,9 +396,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 8
-        Slash: 8
-        Piercing: 8
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 5.2
@@ -424,9 +425,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 10
   - type: Sprite
@@ -436,8 +437,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '550': Critical
-      '650': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -445,9 +446,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.66
     baseSprintSpeed: 3
@@ -470,9 +471,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 14
-        Slash: 14
-        Piercing: 14
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 20
   - type: Sprite
@@ -502,8 +503,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -511,9 +512,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9.16
-        Slash: 9.17
-        Piercing: 9.17
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3.5
@@ -543,9 +544,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 40
@@ -556,8 +557,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -565,9 +566,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9.16
-        Slash: 9.17
-        Piercing: 9.17
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3.5
@@ -593,9 +594,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 10
     explosionArmor: 20
@@ -606,8 +607,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -615,9 +616,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.66
-        Slash: 11.67
-        Piercing: 11.67
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.8
     baseSprintSpeed: 3.25
@@ -639,9 +640,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     frontalArmor: 10
@@ -655,8 +656,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '800': Critical
-      '900': Dead
+      '400': Critical
+      '415': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -666,9 +667,9 @@
     maxTargets: 2
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.66
     baseSprintSpeed: 3
@@ -698,9 +699,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 18
-        Slash: 18
-        Piercing: 18
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 80
@@ -711,8 +712,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -720,9 +721,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
-        Slash: 15
-        Piercing: 15
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
     attackRate: 1.05
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
@@ -742,13 +743,15 @@
   components:
   - type: XenomorphTailStab
     corrosive: true
-    acidAmount: 6
+    acidAmount: 3
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphSpitter
+    sprayDamage: 30
+    sprayRepeatDamage: 5
     strongSpray: true
   - type: XenomorphBoiler
   - type: XenomorphLongRangeSight
@@ -762,8 +765,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -771,9 +774,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3.5
@@ -808,8 +811,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -817,10 +820,10 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 6
-        Slash: 6
-        Piercing: 6
-        Heat: 7
+        Blunt: 7.2
+        Slash: 7.2
+        Piercing: 7.2
+        Heat: 8.4
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.4
     baseSprintSpeed: 4.8
@@ -858,9 +861,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 40
@@ -871,8 +874,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -880,9 +883,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -907,9 +910,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 18
-        Slash: 18
-        Piercing: 18
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 35
     explosionArmor: 100
@@ -938,7 +941,7 @@
     thresholds:
       '0': Alive
       '500': Critical
-      '600': Dead
+      '515': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -946,9 +949,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 16.66
+        Slash: 16.67
+        Piercing: 16.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.4
     baseSprintSpeed: 2.5
@@ -1000,9 +1003,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 8.33
-        Slash: 8.33
-        Piercing: 8.34
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
   - type: Sprite
     sprite: _CMU14/Mobs/Xenomorphs/healer_drone.rsi
@@ -1022,8 +1025,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1031,9 +1034,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 5.83
-        Slash: 5.83
-        Piercing: 5.84
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1064,9 +1067,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
   - type: Sprite
     sprite: _CMU14/Mobs/Xenomorphs/gardener_drone.rsi
@@ -1086,8 +1089,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1095,9 +1098,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1122,9 +1125,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
     hitEffect: DumontXenomorphTailSlam
     hitSound:
       collection: Punch
@@ -1153,8 +1156,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1162,9 +1165,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9.16
-        Slash: 9.17
-        Piercing: 9.17
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.75
     baseSprintSpeed: 3.1
@@ -1192,9 +1195,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 15
     explosionArmor: 10
@@ -1205,8 +1208,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '345': Critical
-      '445': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1214,9 +1217,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
     attackRate: 1.4
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
@@ -1246,8 +1249,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '200': Critical
+      '215': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1255,9 +1258,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 8.33
-        Slash: 8.33
-        Piercing: 8.34
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1278,9 +1281,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 12
-        Slash: 12
-        Piercing: 12
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 20
@@ -1291,8 +1294,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '400': Critical
-      '500': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1300,9 +1303,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.8
     baseSprintSpeed: 3.2
@@ -1331,9 +1334,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 14
-        Slash: 14
-        Piercing: 14
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 20
   - type: Sprite
@@ -1353,8 +1356,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1362,9 +1365,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9.16
-        Slash: 9.17
-        Piercing: 9.17
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3.5
@@ -1385,9 +1388,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 20
     flatReduction: false
@@ -1399,8 +1402,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '500': Critical
-      '600': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1408,9 +1411,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.66
-        Slash: 11.67
-        Piercing: 11.67
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1445,8 +1448,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '390': Critical
-      '490': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1454,9 +1457,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
     attackRate: 0.93
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
@@ -1490,9 +1493,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 10
   - type: Sprite
@@ -1502,8 +1505,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '550': Critical
-      '650': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1511,9 +1514,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.66
     baseSprintSpeed: 3
@@ -1546,9 +1549,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     explosionArmor: 10
   - type: Sprite
@@ -1558,8 +1561,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '550': Critical
-      '650': Dead
+      '250': Critical
+      '265': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1567,9 +1570,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7.5
-        Slash: 7.5
-        Piercing: 7.5
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.15
     baseSprintSpeed: 3.9
@@ -1596,9 +1599,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 100
@@ -1609,8 +1612,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1618,9 +1621,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.66
-        Slash: 11.67
-        Piercing: 11.67
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
     attackRate: 0.9
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.8
@@ -1642,9 +1645,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 18
-        Slash: 18
-        Piercing: 18
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 30
     explosionArmor: 80
@@ -1655,8 +1658,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '590': Critical
-      '690': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1664,9 +1667,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
-        Slash: 15
-        Piercing: 15
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
     attackRate: 1.05
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
@@ -1688,9 +1691,9 @@
     missCooldown: 0.7
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphDancer
   - type: XenomorphArmor
     armor: 20
@@ -1702,8 +1705,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1711,9 +1714,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1740,9 +1743,9 @@
   - type: XenomorphTailStab
     damage:
       types:
-        Blunt: 16
-        Slash: 16
-        Piercing: 16
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
   - type: XenomorphArmor
     armor: 25
     explosionArmor: 40
@@ -1753,8 +1756,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '590': Critical
-      '690': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1762,9 +1765,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1793,8 +1796,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1835,8 +1838,8 @@
   - type: MobThresholds
     thresholds:
       '0': Alive
-      '650': Critical
-      '750': Dead
+      '350': Critical
+      '365': Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
@@ -1844,9 +1847,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 13.33
-        Slash: 13.33
-        Piercing: 13.34
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 3.5

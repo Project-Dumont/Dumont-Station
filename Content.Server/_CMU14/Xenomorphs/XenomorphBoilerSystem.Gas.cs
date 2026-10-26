@@ -163,8 +163,8 @@ public sealed partial class XenomorphBoilerSystem
                         var exposure = EnsureComp<XenomorphBoilerGasExposureComponent>(victim);
                         if (_timing.CurTime < exposure.NextAcid) continue;
                         exposure.NextAcid = _timing.CurTime + TimeSpan.FromSeconds(1);
-                        _damage.TryChangeDamage(victim, new DamageSpecifier { DamageDict = { ["Caustic"] = 35 } }, origin: cloud.Shooter);
-                        _damage.TryChangeDamage(victim, new DamageSpecifier { DamageDict = { ["Caustic"] = 20, ["Asphyxiation"] = 3 }, ArmorPenetration = 1 }, origin: cloud.Shooter);
+                        _damage.TryChangeDamage(victim, new DamageSpecifier { DamageDict = { ["Caustic"] = 7 } }, origin: cloud.Shooter);
+                        _damage.TryChangeDamage(victim, new DamageSpecifier { DamageDict = { ["Asphyxiation"] = 3 }, ArmorPenetration = 1 }, origin: cloud.Shooter);
                         _spitter.ShowAcidSplash(victim);
                     }
                 }

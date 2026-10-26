@@ -11,7 +11,7 @@ public sealed partial class XenomorphTailSweepComponent : Component
 {
     [DataField] public float Range = 1.5f;
     [DataField] public int PlasmaCost = 10;
-    [DataField] public DamageSpecifier Damage = new() { DamageDict = { ["Slash"] = 30 } };
+    [DataField] public DamageSpecifier Damage = new() { DamageDict = { ["Slash"] = 20 } };
     [DataField] public float KnockbackDistance = 1;
     [DataField] public TimeSpan ParalyzeTime = TimeSpan.FromSeconds(2);
     [DataField] public SoundSpecifier Sound = new SoundCollectionSpecifier("XenoTailSwipe");
