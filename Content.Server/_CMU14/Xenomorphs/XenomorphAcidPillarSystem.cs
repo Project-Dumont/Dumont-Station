@@ -54,7 +54,7 @@ public sealed partial class XenomorphAcidPillarSystem : EntitySystem
                 distance = length;
             }
             if (closest is not { } victim) continue;
-            if (!_spray.CreateSpray(uid, Transform(victim).Coordinates, pillar.Range, spreadDelay: pillar.AcidSpreadDelay.TotalSeconds)) continue;
+            if (!_spray.CreateSpray(uid, Transform(victim).Coordinates, pillar.Range, spreadDelay: pillar.AcidSpreadDelay.TotalSeconds, firstDamage: pillar.Damage, repeatDamage: pillar.RepeatDamage)) continue;
             pillar.FiringUntil = now + TimeSpan.FromSeconds(.6);
             pillar.Next = now + pillar.Cooldown;
             Dirty(uid, pillar);
