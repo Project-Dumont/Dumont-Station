@@ -37,16 +37,20 @@ public sealed partial class XenomorphCorruptedEvacSystem : EntitySystem
     {
         _enabled = true;
         _emergency.TransitTime = 200f;
+        PrepareCorruptedCentcomm();
     }
 
     private void OnRestart(RoundRestartCleanupEvent args)
     {
         _enabled = false;
         ResetTransmissions();
+        ResetCorruptedCentcomm();
     }
 
     private void OnPreparing(ref EmergencyShuttlePreDockEvent args)
     {
+        if (_enabled)
+            PrepareCorruptedCentcomm();
         var shuttle = args.Shuttle;
         if (!_enabled || HasComp<XenomorphCorruptedEvacComponent>(shuttle)
             || !TryComp<MapGridComponent>(shuttle, out var grid))
