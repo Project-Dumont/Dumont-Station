@@ -45,6 +45,9 @@
     Eyes: MobArachnidEyes
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
+    # Dumont changes start
+    Wings: MobHumanoidAnyMarking
+    # Dumont end
     LArm: MobArachnidLArm
     RArm: MobArachnidRArm
     LHand: MobArachnidLHand
@@ -67,10 +70,15 @@
     Hair:
       points: 1
       required: false
-    Tail:
+    # Dumont changes start
+    Wings:
       points: 1
       required: true
       defaultMarkings: [ ArachnidAppendagesDefault ]
+    Tail:
+      points: 1
+      required: false
+    # Dumont end
     HeadTop:
       points: 6
       required: false

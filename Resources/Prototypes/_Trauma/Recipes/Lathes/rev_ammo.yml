@@ -18,35 +18,56 @@
   materials:
     Steel: 200
 
+# Dumont changes start
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevTurretBullet
-  result: CartridgeTurret
+  result: MagazineBoxTurret
+  completetime: 30
+  materials:
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevPistolBullet
-  result: CartridgePistol
+  result: MagazineBoxPistol
+  completetime: 30
+  materials:
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevRifleBullet
-  result: CartridgeLightRifle
+  result: MagazineBoxLightRifle
+  completetime: 30
+  materials:
+    Steel: 1000
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevBuckShell
   materials:
-    Steel: 20
-  result: ShellShotgun
+    Steel: 1000
+  result: BoxLethalshot
+  completetime: 30
 
 - type: latheRecipe
   parent: BaseRevBullet
   id: RevSlugShell
   materials:
-    Steel: 15
-    Plastic: 5
-  result: ShellShotgunSlug
+    Steel: 1000
+    Plastic: 80
+  result: BoxShotgunSlug
+  completetime: 30
+
+- type: latheRecipe
+  parent: BaseRevBullet
+  id: RevMagnumBullet
+  result: MagazineBoxMagnum
+  completetime: 30
+  materials:
+    Steel: 1000
+# Dumont end
 
 - type: latheRecipe
   parent: BaseRevMagazine

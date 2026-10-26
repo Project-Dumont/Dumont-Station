@@ -1,0 +1,177 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Special
+
+- type: abductorTask
+  id: InstallGland
+  random: false # always given at the end
+  valid:
+  # some species have no heart slot
+  - !type:HasOrganSlot
+    slot: heart
+    partType: Chest
+  completed:
+  - !type:HasOrgan
+    slot: heart
+    conditions:
+    - !type:WhitelistCondition
+      whitelist:
+        components:
+        - AbductorOrgan
+
+# Organ manipulation
+
+- type: abductorTask
+  id: RemoveWings
+  valid:
+  - !type:SpeciesCondition
+    species: Moth
+  - !type:HasPart
+    partType: Wings
+  completed: # no moth check here
+  - !type:HasPart
+    inverted: true
+    partType: Wings
+
+- type: abductorTask
+  id: FixWings
+  valid:
+  - !type:SpeciesCondition
+    species: Moth
+  - !type:HasPart
+    inverted: true
+    partType: Wings
+  completed:
+  - !type:HasPart
+    partType: Wings
+
+- type: abductorTask
+  id: RemoveTail
+  valid:
+  - !type:HasPart
+    partType: Tail
+
+- type: abductorTask
+  id: EndRacism # lizard lives matter
+  valid:
+  - !type:SpeciesCondition
+    species: Human # must be racist
+  - !type:HasPart
+    inverted: true # must not already have a tail...
+    partType: Tail
+  completed:
+  - !type:HasPart
+    partType: Tail
+    conditions:
+    - !type:WhitelistCondition
+      whitelist:
+        components:
+        - PullerTail # lizard tail is best
+
+- type: abductorTask
+  id: CyberEyes
+  valid:
+  - !type:HasOrgan
+    inverted: true # no automatic completion
+    slot: eyes
+    conditions:
+    - !type:WhitelistCondition
+      whitelist:
+        components:
+        - Cybernetics
+
+- type: abductorTask
+  id: InsertCavity
+  valid:
+  - !type:HasPart
+    partType: Chest
+    conditions:
+    - !type:HasCavity # just incase some species has no cavity...
+    - !type:CavityHasItem
+      inverted: true # no automatic completion
+  completed:
+  - !type:HasPart
+    partType: Chest
+    conditions:
+    - !type:CavityHasItem
+
+# Damage
+
+- type: abductorTask
+  id: FullyHeal # how kind of you
+  valid:
+  - !type:VitalDamageCondition
+    min: 10 # from having a boo boo to being a rotting corpse
+  completed:
+  - !type:VitalDamageCondition
+    max: 5 # in case some annoying shit like genetic damage is left over
+
+- type: abductorTask
+  id: Beating
+  valid:
+  - !type:VitalDamageCondition
+    max: 90 # don't kick a man while hes down
+  completed:
+  - !type:TypedDamageCondition
+    damage:
+      Blunt: 30 # fuck him up good
+
+- type: abductorTask
+  id: BurnMoth
+  valid:
+  - !type:SpeciesCondition
+    species: Moth
+  completed:
+  - !type:TypedDamageCondition
+    damage:
+      Heat: 30
+
+# Abuse
+
+- type: abductorTask
+  id: RemoveArms
+  chance: 0.05 # rare
+  valid:
+  - !type:HasPart
+    partType: Arm
+    symmetry: Left
+  - !type:HasPart
+    partType: Arm
+    symmetry: Right
+
+- type: abductorTask
+  id: RemoveLegs
+  chance: 0.05 # rare
+  valid:
+  - !type:HasPart
+    partType: Leg
+    symmetry: Left
+  - !type:HasPart
+    partType: Leg
+    symmetry: Right
+
+- type: abductorTask
+  id: RemoveKidneys
+  valid:
+  - !type:HasOrgan
+    slot: kidneys
+
+- type: abductorTask
+  id: RemoveStomach
+  valid:
+  - !type:SpeciesCondition
+    inverted: true
+    species: SlimePerson # thats debraining...
+  - !type:HasOrgan
+    slot: stomach
+  completed:
+  - !type:HasOrgan
+    inverted: true
+    slot: stomach
+
+- type: abductorTask
+  id: RemoveHair # use your high-tech retractor
+  valid:
+  - !type:HasAnyMarking
+    partType: Head
+    layer: Hair

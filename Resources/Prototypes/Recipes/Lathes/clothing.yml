@@ -1055,3 +1055,24 @@
   parent: BaseNeckClothingRecipe
   id: ClothingNeckScarfStripedPurple
   result: ClothingNeckScarfStripedPurple
+
+## Tram Driver
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitTramDriver
+  result: ClothingUniformJumpsuitTramDriver
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpskirtTramDriver
+  result: ClothingUniformJumpskirtTramDriver
+
+- type: latheRecipe
+  parent: BaseCoatRecipe
+  id: ClothingOuterSuitTramDriver
+  result: ClothingOuterSuitTramDriver
+
+- type: latheRecipe
+  parent: BaseHatRecipe
+  id: ClothingHeadHatTramDriver
+  result: ClothingHeadHatTramDriver

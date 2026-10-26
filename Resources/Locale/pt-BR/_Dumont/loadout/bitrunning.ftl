@@ -11,8 +11,6 @@ loadout-bitrunneravatarsecurityofficerplasmamangear = {loadout-bitrunneravatarse
 loadout-bitrunneravatarcargotechnicianplasmamangear = {loadout-bitrunneravatarcargotechniciangear}
 loadout-bitrunneravatarsalvagespecialistplasmamangear = {loadout-bitrunneravatarsalvagespecialistgear}
 loadout-bitrunneravatarshaftminerplasmamangear = {loadout-bitrunneravatarshaftminergear}
-loadout-bitrunneravatarsecurityofficermodplasmamangear = {loadout-bitrunneravatarsecurityofficermodgear}
-loadout-bitrunneravatarxenonautenplasmamangear = {loadout-bitrunneravatarxenonautengear}
 
 # Vox
 loadout-bitrunneravatarvoxgear = {loadout-bitrunneravatargear}
