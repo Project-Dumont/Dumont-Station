@@ -142,7 +142,7 @@
         outerClothing:
         - state: equipped-OUTERCLOTHING-sealed
         outerClothing-vox:
-        - state: equipped-OUTERCLOTHING-sealed-vox    
+        - state: equipped-OUTERCLOTHING-sealed-vox
     - type: StaminaResistance
       damageCoefficient: 0.5 # 50%
     - type: FireProtection
@@ -161,9 +161,9 @@
     - type: Appearance
     - type: Sprite
       sprite: _EinsteinEngines/Clothing/NanoTrasen/Modsuits/engineering-responsory.rsi
-    - type: Tag
-      tags:
-        - WhitelistChameleon
+    #- type: Tag - Dumont - It had to be from Goob.
+    #  tags:
+    #  - WhitelistChameleon
     - type: SealableClothingVisuals
       spriteLayer: sealed
       clothingVisuals:

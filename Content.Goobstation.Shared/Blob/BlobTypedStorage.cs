@@ -27,9 +27,7 @@ public abstract class BlobTypedStorage<T> : IEnumerable<KeyValuePair<BlobTileTyp
     public virtual T Strong  { get; set; } = default!;
     public virtual T Normal { get; set; } = default!;
     /*
-    [DataField]
     public virtual T Storage  { get; set; }
-    [DataField]
     public virtual T Turret { get; set; }
 */
     // Method for accessing fields through the indexer

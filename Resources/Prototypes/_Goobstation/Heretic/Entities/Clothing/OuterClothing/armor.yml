@@ -71,6 +71,17 @@
   - type: TemperatureProtection
     heatingCoefficient: 0.5
     coolingCoefficient: 0.5
+  - type: IgniteFromGasImmunity # Dumont - Allow plasmamen to wear heretic armor
+    parts:
+    - Chest
+    - Groin
+    - LeftArm
+    - RightArm
+    - LeftLeg
+    - RightLeg
+  - type: Tag
+    tags:
+    - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
 
 - type: entity
   parent: ClothingOuterArmorHeretic

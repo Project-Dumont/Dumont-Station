@@ -47,4 +47,12 @@ public sealed partial class RevolutionaryRuleComponent : Component
     [DataField] public bool HasAnnouncementPlayed = false;
     [DataField] public bool HasRevAnnouncementPlayed = false;
     // gobo edit end
+
+    // Dumont changes start
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    public TimeSpan? SolGovArrival;
+
+    [DataField]
+    public TimeSpan SolGovDelay = TimeSpan.FromMinutes(2);
+    // Dumont end
 }

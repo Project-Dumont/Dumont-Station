@@ -59,6 +59,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 Name="DollRightFoot"
                 Stretch="KeepAspectCentered"
                 SetSize="64 64"/>
+            <!-- Dumont changes start -->
+            <TextureRect
+                Name="DollTail"
+                Stretch="KeepAspectCentered"
+                SetSize="64 64"/>
+            <TextureRect
+                Name="DollWings"
+                Stretch="KeepAspectCentered"
+                SetSize="64 64"/>
+            <!-- Dumont end -->
         </PanelContainer>
     </Control>
 </widgets:PartStatusControl>

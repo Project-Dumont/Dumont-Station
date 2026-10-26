@@ -20,5 +20,8 @@
   - PetsNT
   - Syndicate
   - Zombie
-  - Revolutionary
+  # Dumont changes start
   - Abyss
+  friendly:
+  - Revolutionary
+  # Dumont end

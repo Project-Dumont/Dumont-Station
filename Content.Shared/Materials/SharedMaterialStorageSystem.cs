@@ -277,6 +277,11 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     /// <param name="entity"></param>
     /// <param name="materials"></param>
     /// <returns>If the amount can be changed</returns>
+    public bool TryChangeMaterialAmount(Entity<MaterialStorageComponent?> entity, Dictionary<ProtoId<MaterialPrototype>, int> materials)
+    {
+        return TryChangeMaterialAmount(entity, materials.ToDictionary(p => p.Key.Id, p => p.Value));
+    }
+
     public bool TryChangeMaterialAmount(Entity<MaterialStorageComponent?> entity, Dictionary<string,int> materials)
     {
         if (!Resolve(entity, ref entity.Comp))

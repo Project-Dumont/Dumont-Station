@@ -55,6 +55,9 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
+    # Dumont changes start
+    Wings: MobHumanoidAnyMarking
+    # Dumont end
     Eyes: MobMothEyes
     LArm: MobMothLArm
     RArm: MobMothRArm
@@ -80,10 +83,15 @@
     FacialHair:
       points: 1
       required: false
-    Tail:
+    # Dumont changes start
+    Wings:
       points: 1
       required: true
       defaultMarkings: [ MothWingsDefault ]
+    Tail:
+      points: 1
+      required: false
+    # Dumont end
     Snout:
       points: 1
       required: false

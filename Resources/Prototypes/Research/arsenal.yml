@@ -133,13 +133,17 @@
   id: WeaponizedLaserManipulation
   name: research-technology-weaponized-laser-manipulation
   icon:
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/laser.rsi
     state: icon
   discipline: Arsenal
   tier: 1
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+# dumont lasersec
+  - WeaponLaserSMG
+  - WeaponLaserRifle
+# dumont lasersec end
   - WeaponTemperatureGun # Goobstation
   - WeaponMechCombatFiredartLaser # Goobstation
   - WeaponEnergyIonRifle # Goobstation - CR second energy bolt update(and ion)
@@ -288,8 +292,8 @@
   - AntiMindControlDevice # Goobstation
   # Goobstation R&D Console rework start
   technologyPrerequisites:
-  - WeaponizedLaserManipulation
-  position: 2,0
+  - EnergyBoltBasedWeaponry # Dumont edit
+  position: 1,0
   # Goobstation R&D Console rework end
 
 - type: technology
