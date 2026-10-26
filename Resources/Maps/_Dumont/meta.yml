@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2026 20:10:06
-  entityCount: 28224
+  time: 10/16/2026 13:41:26
+  entityCount: 28223
 maps:
 - 1
 grids:
@@ -11428,7 +11428,7 @@ entities:
       pos: 44.5,39.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -18159.984
+      secondsUntilStateChange: -18246.916
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11710,7 +11710,7 @@ entities:
       pos: -7.5,32.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -28935.338
+      secondsUntilStateChange: -29022.27
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -11916,7 +11916,7 @@ entities:
       pos: 63.5,0.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -48159.18
+      secondsUntilStateChange: -48246.11
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: DeviceLinkSource
@@ -12064,7 +12064,7 @@ entities:
       pos: 98.5,-4.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -51874.344
+      secondsUntilStateChange: -51961.273
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12377,7 +12377,7 @@ entities:
       pos: -43.5,29.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -51021.344
+      secondsUntilStateChange: -51108.273
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -12390,7 +12390,7 @@ entities:
       pos: -42.5,29.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -78740.805
+      secondsUntilStateChange: -78827.734
     - type: DeviceLinkSink
       invokeCounter: 2
     - type: DeviceLinkSource
@@ -13114,7 +13114,7 @@ entities:
       pos: -2.5,-60.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -33816.207
+      secondsUntilStateChange: -33903.137
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -17961,15 +17961,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -50.525597,-45.2616
-- proto: BoxLethalshot
-  entities:
-  - uid: 1215
-    components:
-    - type: Transform
-      parent: 2
-      pos: -7.4380465,39.459373
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
 - proto: BoxLightMixed
   entities:
   - uid: 1216
@@ -18018,24 +18009,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -14.519806,-23.287313
-- proto: BoxShotgunIncendiary
-  entities:
-  - uid: 1224
-    components:
-    - type: Transform
-      parent: 2
-      pos: -7.5474215,39.646873
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
-- proto: BoxShotgunSlug
-  entities:
-  - uid: 1225
-    components:
-    - type: Transform
-      parent: 2
-      pos: -7.5005465,39.56875
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
 - proto: BoxSterileMask
   entities:
   - uid: 1226
@@ -78337,10 +78310,10 @@ entities:
       server: 11997
       connectedToServer: True
     - type: DnaServer
-      serverId: 116
+      serverId: 119
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 1411.3976929
+      lastInjectorTime: 1411.3976929
   - uid: 11998
     components:
     - type: Transform
@@ -78356,10 +78329,10 @@ entities:
       server: 11998
       connectedToServer: True
     - type: DnaServer
-      serverId: 117
+      serverId: 120
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 1411.3976929
+      lastInjectorTime: 1411.3976929
   - uid: 11999
     components:
     - type: Transform
@@ -78375,10 +78348,10 @@ entities:
       server: 11999
       connectedToServer: True
     - type: DnaServer
-      serverId: 118
+      serverId: 121
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 838.3658583
-      lastInjectorTime: 838.3658583
+      lastSubjectInjectTime: 1411.3976929
+      lastInjectorTime: 1411.3976929
 - proto: DogBed
   entities:
   - uid: 12000
@@ -125316,13 +125289,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -4.5,45.5
-- proto: GunSafeLaserCarbine
+- proto: GunSafeGauss
   entities:
-  - uid: 18667
+  - uid: 1215
     components:
     - type: Transform
       parent: 2
-      pos: -2.5,40.5
+      pos: -5.5,36.5
+- proto: GunSafeLaserCarbine
+  entities:
+  - uid: 20345
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.5,36.5
 - proto: GunSafeLauncherNonLethal
   entities:
   - uid: 18668
@@ -125330,27 +125310,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -4.5,40.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeMelee
   entities:
-  - uid: 18669
-    components:
-    - type: Transform
-      parent: 2
-      pos: -4.5,36.5
-- proto: GunSafeShotgunKammerer
-  entities:
-  - uid: 18670
+  - uid: 1224
     components:
     - type: Transform
       parent: 2
       pos: -5.5,40.5
-- proto: GunSafeSubMachineGunDrozd
+- proto: GunSafeSurplus
   entities:
-  - uid: 18671
+  - uid: 1225
     components:
     - type: Transform
       parent: 2
-      pos: -5.5,36.5
+      pos: -2.5,40.5
 - proto: Handcuffs
   entities:
   - uid: 18672
@@ -126859,7 +126832,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -5.452459,38.543087
+      pos: -5.380411,38.45104
     - type: GasTank
       toggleActionEntity: 8
     - type: Jetpack
@@ -126875,7 +126848,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -5.618979,38.728043
+      pos: -5.580411,38.45104
     - type: GasTank
       toggleActionEntity: 11
     - type: Jetpack
@@ -138438,11 +138411,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -1.5,39.5
-  - uid: 20345
-    components:
-    - type: Transform
-      parent: 2
-      pos: -7.5,39.5
   - uid: 20346
     components:
     - type: Transform
@@ -154967,6 +154935,11 @@ entities:
       pos: -23.465425,-29.499996
 - proto: Table
   entities:
+  - uid: 18671
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.5,39.5
   - uid: 22972
     components:
     - type: Transform
@@ -179109,6 +179082,23 @@ entities:
     - type: Transform
       parent: 2
       pos: 18.538572,39.67288
+- proto: WeaponEnergyGunPhaser
+  entities:
+  - uid: 18667
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.489691,39.93675
+  - uid: 18669
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.489691,39.59389
+  - uid: 18670
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.489691,39.808178
 - proto: WeaponEnergyTurretAI
   entities:
   - uid: 27516
@@ -179435,11 +179425,6 @@ entities:
       pos: 18.527746,39.344753
 - proto: WeaponShotgunDoubleBarreled
   entities:
-  - uid: 27551
-    components:
-    - type: Transform
-      parent: 2
-      pos: -7.4472475,39.429634
   - uid: 27552
     components:
     - type: Transform
@@ -180001,7 +179986,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -47833.78
+      secondsUntilStateChange: -47920.71
     - type: Airlock
       autoClose: False
   - uid: 27640

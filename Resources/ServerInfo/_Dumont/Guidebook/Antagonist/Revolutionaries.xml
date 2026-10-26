@@ -1,0 +1,198 @@
+<!--
+SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Revolucionários
+
+  <Box>
+    [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
+  </Box>
+
+  Os Revolucionários são antagonistas de conversão formados por desertores da URSAL. Eles precisam tomar o controle da estação construindo enormes fábricas de guerra.
+
+  ## A coisa mais importante de todas!
+  Como Chefe Revolucionário, você é um líder e não um soldado da linha de frente. Distribua tarefas entre os seus revolucionários ou eles não vão saber o que fazer.
+
+  ## Objetivos
+  Você precisa matar, converter ou exilar todo o [textlink="Comando" link="Command"] da estação, em qualquer ordem.
+
+  O objetivo não é destruir a estação e sim [italic]tomar o controle dela[/italic], então tente causar o mínimo de estrago possível.
+
+  [bold]A revolução fracassa[/bold] se todos os [bold][color=#5e9cff]Chefes Revolucionários[/color][/bold] morrerem. Se isso acontecer, todos os [color=red]Revolucionários[/color] são desconvertidos.
+
+  ## Chefes Revolucionários e conversão
+  Os [bold][color=#5e9cff]Chefes Revolucionários[/color][/bold] são escolhidos no começo do turno e começam com uma [color=cyan]maça forjada[/color], [color=cyan]dois panfletos de propaganda avançados[/color], [color=cyan]algemas[/color], um [color=cyan]megafone[/color] e algumas [color=cyan]engrenagens[/color] para as primeiras máquinas.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevMace"/>
+    <GuideEntityEmbed Entity="Handcuffs"/>
+    <GuideEntityEmbed Entity="RevPropagandaAdvanced"/>
+    <GuideEntityEmbed Entity="RevGear"/>
+  </Box>
+
+  Para converter alguém, atordoe a pessoa com a [color=#ff0000]maça[/color], algeme e leia a [color=#ff0000]propaganda[/color] para ela (clique nela com o panfleto na mão). Você precisa conseguir falar para ler o panfleto. O panfleto comum leva um tempo para converter e só pode ser usado uma vez, já o avançado converte na hora. Tire o fone da pessoa antes, senão ela pode pedir ajuda!
+
+  Outro obstáculo no seu caminho são os [color=cyan]implantadores de mindshield[/color]. Eles:
+  - Impedem que a pessoa implantada seja convertida em [color=red]Revolucionário[/color]
+  - Desconvertem Revolucionários, que deixam de ser leais à sua causa
+  - Mudam a aparência de um [bold][color=#5e9cff]Chefe Revolucionário[/color][/bold] quando implantados nele, entregando o disfarce e desativando a conversão
+
+  Considere que toda a [color=#cb0000]Segurança[/color] e todo o [color=#1b67a5]Comando[/color] já têm mindshield.
+
+  Você consegue remover mindshields com o [color=red]Estripador de Mindshield[/color] depois de desbloquear ele.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevShieldRipper"/>
+  </Box>
+
+  ## Rádio
+  Todo Chefe Revolucionário recebe um [color=cyan]implante de rádio[/color] que dá acesso a dois canais:
+  - [bold]:j[/bold] fala no canal dos [color=red]Chefes Revolucionários[/color], que só os chefes escutam e que funciona a longa distância. Use ele para combinar os planos com os outros chefes.
+  - [bold]:r[/bold] fala no canal [color=red]Revolucionário[/color], onde você dá ordens para as suas tropas.
+
+  <Box>
+    <GuideEntityEmbed Entity="RadioImplantHeadrev"/>
+    <GuideEntityEmbed Entity="EncryptionKeyRev"/>
+    <GuideEntityEmbed Entity="ClothingHeadsetRevolutionary"/>
+  </Box>
+
+  Os revolucionários comuns não têm o implante. Para eles escutarem o canal [bold]:r[/bold], fabrique [color=cyan]chaves de criptografia revolucionárias[/color] ou [color=cyan]fones revolucionários[/color] e distribua para as tropas.
+
+  ## Construção das fábricas e tecnologia
+
+  A [bold][color=red]parte mais importante[/color][/bold] de ser um Chefe Revolucionário é montar boas fábricas. Elas liberam novos ramos de tecnologia e itens mais [color=red]perigosos[/color] e poderosos para armar os seus revolucionários. Lembre que as máquinas da revolução são [color=red][bold]muito barulhentas[/bold][/color], então logo você vai precisar de um lugar isolado e de defesas!
+
+  ### Forja industrial
+
+  Você deve [bold][color=red]SEMPRE[/color][/bold] começar construindo uma forja, e mais de uma se der. Boas bases têm de 4 a 5 forjas produzindo peças o tempo todo.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevForge"/>
+  </Box>
+
+  Ela [color=cyan]fabrica peças[/color] para as outras máquinas, além de algumas armaduras e armas básicas, incluindo itens importantes como a maça, que é a sua principal arma de atordoamento.
+
+  Alguns exemplos do que ela produz:
+  <Box>
+    <GuideEntityEmbed Entity="RevGear"/>
+    <GuideEntityEmbed Entity="RevNut"/>
+    <GuideEntityEmbed Entity="RevBolt"/>
+    <GuideEntityEmbed Entity="ClothingOuterArmorRev"/>
+    <GuideEntityEmbed Entity="RevSwordBlade"/>
+  </Box>
+
+  ### Prensa de impressão
+
+  A prensa de impressão é a segunda construção mais importante da revolução. Ela [color=cyan]fabrica a propaganda[/color], o seu item de conversão. Como ela demora bastante para produzir, vale a pena construir mais de uma.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevPrintingPress"/>
+  </Box>
+
+  Para conseguir papel, peça para os seus revolucionários imprimirem nanotarefas pelo PDA e transformarem elas em papel para a prensa. Não tenha medo de delegar!
+
+  <Box>
+    <GuideEntityEmbed Entity="PaperNanoTaskItem"/>
+    <GuideEntityEmbed Entity="SheetPaper"/>
+    <GuideEntityEmbed Entity="RevPropaganda"/>
+  </Box>
+
+  ### Isolamento acústico
+
+  Como as máquinas fazem muito barulho, isole a base com [color=cyan]isolamento acústico[/color]. Ele é montado pelo menu de construção, na categoria de estruturas, e custa só um pano.
+
+  <Box>
+    <GuideEntityEmbed Entity="WallInsulation"/>
+  </Box>
+
+  Cada peça bloqueia quase todo o som que passa pelo tile onde ela está, mas o som contorna se achar outro caminho livre. Para isolar uma sala de verdade, cubra todas as passagens: a parte de dentro das paredes e as portas. Uma peça solta no meio de um corredor largo não adianta nada. Ele quebra fácil, então fique de olho.
+
+  ### Tecnologia de nível 2
+
+  Depois de montar as fábricas básicas, você pode avançar na árvore de tecnologia e conseguir tecnologia de nível 2.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevPrinter"/>
+    <GuideEntityEmbed Entity="RevRadioBench"/>
+    <GuideEntityEmbed Entity="RevMicroelectronicsAssembler"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="RevUniformPrinter"/>
+    <GuideEntityEmbed Entity="RevBulletPress"/>
+  </Box>
+
+  Cada uma dessas construções pede algo específico para ser montada, como uma chave de criptografia da segurança para a oficina de telecomunicações, um RCD para a impressora 3D ou uma placa de techfab para a montadora de microeletrônicos. Consiga esses itens e use eles para construir as máquinas.
+
+  Essas construções dão acesso a itens únicos e poderosos. Alguns exemplos:
+
+  <Box>
+    <GuideEntityEmbed Entity="PinpointerCommand"/>
+    <GuideEntityEmbed Entity="RevGunParts"/>
+    <GuideEntityEmbed Entity="ClothingBeltRevWebbing"/>
+    <GuideEntityEmbed Entity="EncryptionKeyRev"/>
+  </Box>
+
+  ### Tecnologia de nível 3
+
+  A tecnologia de nível 3 é o melhor que os revolucionários conseguem juntar. Ela dá acesso aos itens mais fortes disponíveis para a revolução.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevTelesphere"/>
+    <GuideEntityEmbed Entity="RevTechAnalyzer"/>
+    <GuideEntityEmbed Entity="RevPlasmaFoundry"/>
+  </Box>
+
+  Cada uma pede um item difícil de conseguir:
+  - A [color=cyan]telesfera[/color] precisa de uma chave de criptografia revolucionária, feita na oficina de telecomunicações.
+  - O [color=cyan]analisador de tecnologia[/color] precisa de um cartão de acesso revolucionário e da prancheta digital de requisição do Intendente.
+  - A [color=cyan]fundição de plasma[/color] precisa das botas magnéticas avançadas do Engenheiro Chefe.
+
+  <Box>
+    <GuideEntityEmbed Entity="EncryptionKeyRev"/>
+    <GuideEntityEmbed Entity="BoxFolderQmClipboard"/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv"/>
+  </Box>
+
+  Pense em mandar um esquadrão de revolucionários para pegar os itens dos chefes de departamento. Qualquer um deles pode virar o jogo!
+
+  Alguns itens de nível 3:
+
+  <Box>
+    <GuideEntityEmbed Entity="RevCircuitBoard"/>
+    <GuideEntityEmbed Entity="Killdozer"/>
+    <GuideEntityEmbed Entity="CartridgeRocketRPG2HE"/>
+  </Box>
+
+  ## Vitória
+  A revolução vence quando todo o Comando estiver morto, algemado, fora da estação ou convertido. Essa checagem só começa 10 minutos depois do início da revolução.
+
+  Quando a estação cai, as [color=#b0122b]Comunicações Soviéticas[/color] anunciam a vitória e cada Chefe Revolucionário vivo recebe um [color=cyan]sinalizador de desembarque (chamada das forças)[/color]. Ele chama um mecha de combate, quatro sargentos e dois tenentes soviéticos, que seguem o Chefe Revolucionário mais próximo e atacam quem for hostil.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevDropPodForces"/>
+  </Box>
+
+  Dois minutos depois, a [color=#daa520]Federação Trans-Solar[/color] envia a Força Expedicionária do Governo Sol para retomar a estação, junto com a nave de evacuação, que não pode ser chamada de volta. Segure a estação até o fim!
+
+  ## Revolucionário
+  Um [bold][color=red]Revolucionário[/color][/bold] é um tripulante que foi convertido por um [bold][color=#5e9cff]Chefe Revolucionário[/color][/bold].
+
+  [bold]Os [color=red]Revolucionários[/color] não conseguem converter ninguém,[/bold] mas são mais do que capazes de fazer o trabalho sujo e cumprir ordens.
+
+  Como [bold][color=red]Revolucionário[/color][/bold], escute os seus Chefes Revolucionários!
+
+</Document>

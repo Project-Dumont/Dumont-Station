@@ -116,6 +116,7 @@
   - AnomalyVesselCircuitboard
   - AnomalyVesselExperimentalCircuitboard
   - AnomalySynchronizerCircuitboard
+  - AdvancedAnomalyGeneratorCircuitboard
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard

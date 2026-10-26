@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
+#
 
 - type: entity
   id: MedicalLaserGunCMO
@@ -39,6 +39,81 @@
     proto: HealingProjectile
     fireCost: 50 #30 tiros
   - type: PacifismAllowedGun
+  - type: StealTarget
+    stealGroup: CMOweapon
+  - type: Tag
+    tags:
+    - HighRiskItem
+    - GunCanAimShooter
+
+
+- type: entity
+  name: chief medical officer's autoinjector gun
+  parent: [BaseGrandTheftContraband, BaseGunWieldable, BaseItem]
+  id: CMOAutoinjectorGun
+  description: Shoots autoinjector cartridges. Must be hand loaded.
+  components:
+  - type: AmmoCounter
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Medical/cmo_sniper_icon_48x.rsi
+    state: icon
+  - type: PacifismAllowedGun
+  - type: Item
+    sprite: _Dumont/Objects/Specific/Medical/cmo_sniper.rsi
+    size: Large
+  - type: Gun
+    fireRate: 0.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/heavy_shot_suppressed.ogg
+  - type: BallisticAmmoProvider
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    soundRack: #Mono start
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+      params:
+        volume: -3 #Mono end
+    whitelist:
+      tags:
+      - AutoinjectorCartridge
+    capacity: 5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: StaticPrice
+    price: 1000
+  - type: Clothing
+    sprite: _Dumont/Objects/Specific/Medical/cmo_sniper.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - outerClothing # so the cmo doesn't have to wear hardsuit 24/7
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SnipersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SnipersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SnipersDrop
+  - type: AltFireMelee 
+    attackType: Heavy
+  - type: MeleeWeapon
+    damage:
+      types:
+       Blunt: 12
+    angle: 0
+    wideAnimationRotation: 90 
+    soundHit:
+      collection: MetalThud 
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 1.2
+    pvsIncrease: 0.2
   - type: StealTarget
     stealGroup: CMOweapon
   - type: Tag

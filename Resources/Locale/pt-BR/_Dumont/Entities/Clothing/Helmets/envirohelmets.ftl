@@ -107,7 +107,7 @@ ent-ClothingHeadEnvirohelmetCadet = Capacete hermético do Cadete de Segurança
     .desc = Um capacete de contenção e segurança blindado, projetado para lidar com ameaças à estação. Projetado para cadetes de segurança, oferece proteção reduzida e não protege o usuário contra pressão.
 
 ent-ClothingHeadEnvirohelmetDetective = Capacete hermético do Detetive
-    .desc = Um capacete de contenção e segurança blindado, projetado para lidar com ameaças à estação. Não protege o usuário contra pressão. Tem um forte cheiro de cigarro e uísque.
+    .desc = Um capacete de contenção e segurança blindado, projetado para lidar com ameaças à estação, com um compartimento secreto para esconder alguns objetos. Não protege o usuário contra pressão. Tem um forte cheiro de cigarro e uísque.
 
 ent-ClothingHeadEnvirohelmetPrisonGuard = Capacete hermético do Guarda Prisional
     .desc = Um capacete de contenção e segurança blindado, projetado para lidar com ameaças à estação. Projetado para o guarda prisional. Não protege o usuário contra pressão.

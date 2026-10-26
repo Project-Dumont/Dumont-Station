@@ -85,7 +85,7 @@
     netsync: false
     radius: 1.5
     energy: 1.5
-    mask: /Textures/Effects/LightMasks/soft_cone.png
+    lightMask: ConeSingle # Era pra ser o sprite soft_cone.png mas ele é identico a cone.png
     color: "#FFFF00"
   - type: FootstepModifier
     footstepSoundCollection:

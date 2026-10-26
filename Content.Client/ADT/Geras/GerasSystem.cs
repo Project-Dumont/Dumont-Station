@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client.ADT.Geras.Component;
 using Content.Shared.ADT.Geras;
 using Robust.Client.GameObjects;
 using Content.Shared.Item;

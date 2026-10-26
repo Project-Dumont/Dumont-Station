@@ -13,24 +13,27 @@
   name: abductor-lone-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
+  guides: [ Abductors ]
 
 - type: antag
   id: AbductorAgentAntag
   name: abductor-agent-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
+  guides: [ Abductors ]
 
 - type: antag
   id: AbductorScientistAntag
   name: abductor-scientist-ghost-role-name
   antagonist: true
   objective: roles-antag-abductor-objective
+  guides: [ Abductors ]
 
 - type: antag
   id: AbductorVictimAntag
   name: abductor-victim-role-name
   antagonist: true
-  objective: roles-antag-abductor-victim
+  objective: abductor-victim-role-desc
 
 - type: roleType
   id: AbductorVictimRole

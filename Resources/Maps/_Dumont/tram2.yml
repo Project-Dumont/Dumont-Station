@@ -4,7 +4,7 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/03/2026 20:27:51
+  time: 10/16/2026 13:51:25
   entityCount: 26668
 maps:
 - 1
@@ -7051,6 +7051,46 @@ entities:
     - type: Transform
       parent: 2
       pos: -44.534996,-59.392654
+- proto: ActionToggleInternals
+  entities:
+  - uid: 17644
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17840
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17840
+  - uid: 18160
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17841
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17841
+- proto: ActionToggleJetpack
+  entities:
+  - uid: 17643
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17840
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17840
+  - uid: 17645
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 17841
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 17841
 - proto: ActionToggleLight
   entities:
   - uid: 5
@@ -73213,10 +73253,10 @@ entities:
       server: 11822
       connectedToServer: True
     - type: DnaServer
-      serverId: 6
+      serverId: 7
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 289.9927611
-      lastInjectorTime: 289.9927611
+      lastSubjectInjectTime: 2017.5454803
+      lastInjectorTime: 2017.5454803
 - proto: DogBed
   entities:
   - uid: 11823
@@ -114995,34 +115035,34 @@ entities:
     - type: Transform
       parent: 2
       pos: -42.5,10.5
-- proto: GunSafePistolMk58
+- proto: GunSafeGauss
+  entities:
+  - uid: 25874
+    components:
+    - type: Transform
+      parent: 2
+      pos: -44.5,23.5
+- proto: GunSafeLaserCarbine
+  entities:
+  - uid: 25872
+    components:
+    - type: Transform
+      parent: 2
+      pos: -49.5,22.5
+- proto: GunSafeMelee
   entities:
   - uid: 17642
     components:
     - type: Transform
       parent: 2
       pos: -49.5,24.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeSurplus
   entities:
-  - uid: 17643
+  - uid: 25873
     components:
     - type: Transform
       parent: 2
       pos: -46.5,23.5
-- proto: GunSafeShotgunKammerer
-  entities:
-  - uid: 17644
-    components:
-    - type: Transform
-      parent: 2
-      pos: -44.5,23.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 17645
-    components:
-    - type: Transform
-      parent: 2
-      pos: -49.5,22.5
 - proto: Gyroscope
   entities:
   - uid: 26538
@@ -116353,12 +116393,34 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -48.813904,20.833128
+      pos: -45.50288,22.563549
+    - type: GasTank
+      toggleActionEntity: 17644
+    - type: Jetpack
+      toggleActionEntity: 17643
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 17643
+          - 17644
   - uid: 17841
     components:
     - type: Transform
       parent: 2
-      pos: -48.563904,20.530834
+      pos: -45.345737,22.477835
+    - type: GasTank
+      toggleActionEntity: 18160
+    - type: Jetpack
+      toggleActionEntity: 17645
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 17645
+          - 18160
 - proto: Jukebox
   entities:
   - uid: 17842
@@ -118568,13 +118630,6 @@ entities:
       pos: -8.5,-66.5
     - type: Fixtures
       fixtures: {}
-- proto: MobSlimeXenobioBabyGrey
-  entities:
-  - uid: 18160
-    components:
-    - type: Transform
-      parent: 2
-      pos: 54.5,-56.5
 - proto: MonkeyCubeBox
   entities:
   - uid: 18161
@@ -162817,23 +162872,6 @@ entities:
       devices:
       - 25870
       - 25869
-- proto: WeaponLaserCarbine
-  entities:
-  - uid: 25872
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.577026,22.29928
-  - uid: 25873
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.514526,22.51803
-  - uid: 25874
-    components:
-    - type: Transform
-      parent: 2
-      pos: -45.46765,22.689905
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 25875
