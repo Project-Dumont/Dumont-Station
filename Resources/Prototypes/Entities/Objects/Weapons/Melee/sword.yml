@@ -308,7 +308,7 @@
     - Back
     - Belt
   - type: DisarmMalus
-#
+
 - type: entity
   name: energy katana
   parent: Katana
