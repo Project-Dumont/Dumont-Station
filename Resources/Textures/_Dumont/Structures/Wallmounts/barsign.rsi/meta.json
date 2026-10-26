@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Edit this later",
+  "copyright": "Taken from tgstation, paradise station and beestation at https://github.com/tgstation/tgstation/blob/master/icons/obj/machines/barsigns.dmi, https://github.com/ParadiseSS13/Paradise/blob/master/icons/obj/barsigns.dmi, https://github.com/BeeStation/BeeStation-Hornet/blob/master/icons/obj/barsigns.dmi",
   "size": { "x": 64, "y": 32 },
   "states": [
     {
