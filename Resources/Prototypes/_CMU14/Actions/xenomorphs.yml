@@ -350,7 +350,6 @@
     range: 2.5
     checkCanAccess: false
   - type: EntityTargetAction
-    targetCheckCanInteract: false
   - type: WorldTargetAction
     event: !type:XenomorphTailStabActionEvent
   - type: XenomorphActionArea
@@ -427,7 +426,6 @@
     range: 5.4
     checkCanAccess: false
   - type: EntityTargetAction
-    targetCheckCanInteract: false
   - type: WorldTargetAction
     event: !type:XenomorphVomitBileActionEvent
   - type: PlasmaCostAction
@@ -1618,13 +1616,13 @@
   id: ActionXenomorphHide
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xenohide }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xenohide }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 0.5
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphHideActionEvent
 
 - type: entity
@@ -2068,13 +2066,13 @@
   id: ActionXenomorphWatch
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: watch_xeno }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: watch_xeno }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 0.33
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphWatchActionEvent
 
 - type: entity
@@ -2082,13 +2080,13 @@
   id: ActionXenomorphPheromones
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 0.33
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphPheromonesActionEvent
 
 - type: entity
@@ -2096,6 +2094,7 @@
   id: ActionXenomorphBoneChips
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: runner_bonespur }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: runner_bonespur }
@@ -2104,7 +2103,6 @@
   - type: TargetAction
     range: 15
   - type: WorldTargetAction
-    raiseOnUser: true
     event: !type:XenomorphSpitActionEvent
       bone: true
 
@@ -2113,13 +2111,13 @@
   id: ActionXenomorphCripplingStrike
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 10
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphPreparedStrikeActionEvent
 
 - type: entity
@@ -2127,12 +2125,12 @@
   id: ActionXenomorphParalyzingSlash
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 12
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphPreparedStrikeActionEvent
 

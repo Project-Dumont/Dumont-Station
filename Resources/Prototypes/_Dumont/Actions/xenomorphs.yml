@@ -89,10 +89,10 @@
   id: ActionXenomorphRadioJammer
   components:
   - type: Action
+    raiseOnUser: true
     itemIconStyle: NoItem
     icon: { sprite: _Dumont/Actions/xeno_jammer.rsi, state: jammer }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
     useDelay: 0.5
   - type: InstantAction
-    raiseOnUser: true
     event: !type:XenomorphRadioJammerActionEvent

@@ -11,7 +11,7 @@
       metabolismRate: 0.4
       effects:
       - !type:SuppressPain
-        identifier: XenomorphPainToxin
+        modifierIdentifier: XenomorphPainToxin
         amount: -8
         time: 5
       - !type:Jitter

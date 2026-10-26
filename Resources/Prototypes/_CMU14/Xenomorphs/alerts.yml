@@ -270,7 +270,9 @@
 
 - type: alert
   id: DumontXenomorphIntoxicated
-  icons: [ /Textures/Interface/Alerts/Intoxicated/intoxicated.png ]
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_toxins.rsi
+    state: intoxicated
   name: dumont-xenomorph-intoxicated-name
   description: dumont-xenomorph-intoxicated-desc
   clickEvent: !type:XenomorphIntoxicatedResistAlertEvent
