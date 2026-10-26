@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
@@ -173,25 +175,25 @@ namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IRobustRandom _rand = default!; // 🌟Starlight🌟
-    [Dependency] private readonly BatterySystem _battery = default!;
-    [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
-    [Dependency] private readonly PricingSystem _pricing = default!;
-    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly DecalSystem _decals = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private IComponentFactory _factory = default!;
+    [Dependency] private IRobustRandom _rand = default!; // 🌟Starlight🌟
+    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private DamageExamineSystem _damageExamine = default!;
+    [Dependency] private PricingSystem _pricing = default!;
+    [Dependency] private SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private IPrototypeManager _proto = default!;  // 🌟Starlight🌟
+    [Dependency] private DecalSystem _decals = default!;  // 🌟Starlight🌟
+    [Dependency] private AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
+    [Dependency] private PowerCellSystem _powerCell = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     // Goobstation
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private FlammableSystem _flammable = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private const float DamagePitchVariation = 0.05f;
     private string[] _bloodDecals = []; // 🌟Starlight🌟

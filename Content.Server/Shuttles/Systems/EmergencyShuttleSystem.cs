@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
@@ -124,34 +126,34 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
      * Handles the escape shuttle + CentCom.
      */
 
-    [Dependency] private readonly IAdminLogManager _logger = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly AccessReaderSystem _reader = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly CommunicationsConsoleSystem _commsConsole = default!;
-    [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-    [Dependency] private readonly DockingSystem _dock = default!;
-    [Dependency] private readonly IdCardSystem _idSystem = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
-    [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
+    [Dependency] private IAdminLogManager _logger = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private AccessReaderSystem _reader = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private CommunicationsConsoleSystem _commsConsole = default!;
+    [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
+    [Dependency] private DockingSystem _dock = default!;
+    [Dependency] private IdCardSystem _idSystem = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+    [Dependency] private MapLoaderSystem _loader = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private TransformSystem _transformSystem = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private IPrototypeManager _prototype = default!; // Gabystation change
+    [Dependency] private ExplosionSystem _explosion = default!; // Goob edit
     // Dumont changes start
-    [Dependency] private readonly BiomeSystem _biomes = default!;
-    [Dependency] private readonly DungeonSystem _dungeon = default!;
-    [Dependency] private readonly AnchorableSystem _anchorable = default!;
+    [Dependency] private BiomeSystem _biomes = default!;
+    [Dependency] private DungeonSystem _dungeon = default!;
+    [Dependency] private AnchorableSystem _anchorable = default!;
     // Dumont end
 
     private const float ShuttleSpawnBuffer = 1f;

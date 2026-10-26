@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.Shuttles.Components;
 using Content.Shared._CMU14.Xenomorphs;

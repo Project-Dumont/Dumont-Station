@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client._Dumont.Xenomorphs.UI;
 using Content.Shared._CMU14.Xenomorphs.Watch;
 using JetBrains.Annotations;

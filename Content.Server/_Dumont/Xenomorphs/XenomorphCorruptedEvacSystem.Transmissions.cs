@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._CMU14.Xenomorphs;
 using Content.Server.Chat.Systems;
 using Content.Server.Shuttles.Events;

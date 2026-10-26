@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 namespace Content.Server.RoundEnd;
 
 /// <summary>Allows game modes to reject an evacuation request before its timer starts.</summary>
