@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Plasma;
@@ -7,10 +9,10 @@ using Content.Shared.Actions.Events;
 
 namespace Content.Shared._White.Actions;
 
-public sealed class PlasmaCostActionSystem : EntitySystem
+public sealed partial class PlasmaCostActionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedPlasmaSystem _plasma = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedPlasmaSystem _plasma = default!;
 
     public override void Initialize()
     {

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Ghost.Roles.Components;
@@ -18,14 +20,14 @@ using Content.Shared._Shitmed.Targeting; // Omu
 
 namespace Content.Server._White.Xenomorphs.Larva;
 
-public sealed class XenomorphLarvaSystem : EntitySystem
+public sealed partial class XenomorphLarvaSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly JitteringSystem _jitter = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Omu
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private JitteringSystem _jitter = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!; // Omu
 
     public override void Initialize()
     {

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.DoAfter;
 using Content.Shared._White.Actions;
 using Content.Shared._White.Actions.Events;
@@ -15,17 +17,17 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._White.Actions;
 
-public sealed class ActionsSystem : EntitySystem
+public sealed partial class ActionsSystem : EntitySystem
 {
-    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
+    [Dependency] private ITileDefinitionManager _tileDef = default!;
 
-    [Dependency] private readonly AnchorableSystem _anchorable = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly PlasmaCostActionSystem _plasmaCost = default!; // Goobstation=
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private AnchorableSystem _anchorable = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+    [Dependency] private PlasmaCostActionSystem _plasmaCost = default!; // Goobstation=
+    [Dependency] private TransformSystem _transform = default!;
 
     public override void Initialize()
     {
