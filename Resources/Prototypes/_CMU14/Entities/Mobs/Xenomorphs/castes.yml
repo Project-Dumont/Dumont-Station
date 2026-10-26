@@ -664,7 +664,6 @@
       Dead: XenomorphDead
   - type: MeleeWeapon
     angle: 60
-    maxTargets: 2
     damage:
       types:
         Blunt: 10
