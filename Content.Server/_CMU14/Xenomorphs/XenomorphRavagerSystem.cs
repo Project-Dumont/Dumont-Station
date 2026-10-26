@@ -202,7 +202,7 @@ public sealed partial class XenomorphRavagerSystem : EntitySystem
     private void OnLeapHit(Entity<XenomorphRavagerComponent> ent, ref XenomorphLeapHitEvent args)
     {
         if (!Enemy(args.Target) || _timing.CurTime >= ent.Comp.SuperUntil) return;
-        _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Blunt"] = 15, ["Slash"] = 15, ["Piercing"] = 15 } }, origin: ent);
+        _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Blunt"] = 10, ["Slash"] = 10, ["Piercing"] = 10 } }, origin: ent);
         _stun.TryUpdateParalyzeDuration(args.Target, TimeSpan.FromSeconds(3.2));
         var direction = _transform.GetMapCoordinates(args.Target).Position - _transform.GetMapCoordinates(ent).Position;
         if (direction.LengthSquared() > 0.0001f)
@@ -254,7 +254,7 @@ public sealed partial class XenomorphRavagerSystem : EntitySystem
                 continue;
             }
             if (!Enemy(uid)) continue;
-            _damage.TryChangeDamage(uid, new DamageSpecifier { DamageDict = { ["Slash"] = 75 } }, origin: ent);
+            _damage.TryChangeDamage(uid, new DamageSpecifier { DamageDict = { ["Slash"] = 35 } }, origin: ent);
             Spawn("DumontXenomorphRaptureEffect", new EntityCoordinates(uid, Vector2.Zero));
             _flash.RaiseEffect(Color.Red, new List<EntityUid> { uid }, Filter.Pvs(uid, entityManager: EntityManager));
             if (_timing.CurTime < ent.Comp.SuperUntil)

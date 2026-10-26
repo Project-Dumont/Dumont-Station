@@ -16,6 +16,8 @@ public sealed partial class XenomorphSpitterComponent : Component
     [DataField] public bool StackingSpray;
     [DataField] public float SprayRange = 6;
     [DataField] public int SprayCost = 40;
+    [DataField] public float? SprayDamage;
+    [DataField] public float SprayRepeatDamage = 10;
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan ExpiresAt;
 }

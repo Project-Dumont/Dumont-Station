@@ -142,7 +142,7 @@ public sealed partial class XenomorphDancerSystem
 
     private void Impale(EntityUid uid, EntityUid target)
     {
-        _damage.TryChangeDamage(target, new DamageSpecifier { DamageDict = { ["Blunt"] = 20, ["Slash"] = 20, ["Piercing"] = 20 }, ArmorPenetration = 0.3f }, origin: uid);
+        _damage.TryChangeDamage(target, new DamageSpecifier { DamageDict = { ["Blunt"] = 10, ["Slash"] = 10, ["Piercing"] = 10 }, ArmorPenetration = 0.3f }, origin: uid);
         Spawn("DumontXenomorphTailHit", new EntityCoordinates(target, Vector2.Zero));
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_tail_attack.ogg"), uid);
         Lunge(uid, Transform(target).Coordinates);

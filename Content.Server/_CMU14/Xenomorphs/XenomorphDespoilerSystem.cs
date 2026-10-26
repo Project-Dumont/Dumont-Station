@@ -42,6 +42,7 @@ public sealed partial class XenomorphDespoilerSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private ActionBlockerSystem _blocker = default!;
     [Dependency] private MobStateSystem _mobs = default!;
+    [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private DamageableSystem _damage = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -118,13 +119,13 @@ public sealed partial class XenomorphDespoilerSystem : EntitySystem
     }
     public DamageSpecifier TailBonus(Entity<XenomorphDespoilerComponent> ent, EntityUid target)
     {
-        var amount = ent.Comp.Stacks * 20;
+        var amount = Math.Clamp(ent.Comp.Stacks, 0, 4) * 2.5f;
         if (TryComp<XenomorphAcidedComponent>(target, out var acid) && acid.FinishingTier > 0)
         {
-            amount += Math.Clamp(acid.FinishingTier, 1, 4) * 10;
+            amount += Math.Clamp(acid.FinishingTier, 1, 4) * 2.5f;
             acid.FinishingTier--;
         }
-        return new DamageSpecifier { DamageDict = { ["Caustic"] = amount } };
+        return new DamageSpecifier { DamageDict = { ["Caustic"] = Math.Min(amount, 20) } };
     }
     public void ApplyAcid(EntityUid target, int tier)
     {
@@ -303,7 +304,8 @@ public sealed partial class XenomorphDespoilerSystem : EntitySystem
     {
         if (args.Handled || !Ready(ent) || !_plasma.HasPlasma(ent, 50))
             return;
-        var health = TryComp<DamageableComponent>(ent, out var damage) ? 1 - Math.Clamp(damage.TotalDamage.Float() / 750, 0, 1) : 1;
+        var maximum = _thresholds.TryGetDeadThreshold(ent, out var threshold) ? Math.Max(1, threshold.Value.Float()) : 1;
+        var health = TryComp<DamageableComponent>(ent, out var damage) ? 1 - Math.Clamp(damage.TotalDamage.Float() / maximum, 0, 1) : 1;
         var severity = (health <= 0.7 ? 1 : 0) + (health <= 0.3 ? 1 : 0);
         ent.Comp.Stacks = Math.Max(0, ent.Comp.Stacks - (severity == 0 ? ent.Comp.Stacks : severity == 1 ? 2 : 1));
         var radius = 1 + severity;

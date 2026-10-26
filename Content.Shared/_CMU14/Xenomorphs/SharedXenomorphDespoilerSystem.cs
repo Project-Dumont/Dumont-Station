@@ -25,5 +25,5 @@ public sealed partial class SharedXenomorphDespoilerSystem : EntitySystem
     private void OnState(Entity<XenomorphDespoilerComponent> ent, ref AfterAutoHandleStateEvent args)
         => _movement.RefreshMovementSpeedModifiers(ent);
     private void OnDamage(Entity<XenomorphDespoilerComponent> ent, ref GetMeleeDamageEvent args)
-        => args.Damage += new DamageSpecifier { DamageDict = { ["Heat"] = ent.Comp.Stacks * 20 } };
+        => args.Damage += new DamageSpecifier { DamageDict = { ["Heat"] = Math.Clamp(ent.Comp.Stacks * 10, 0, 20) } };
 }

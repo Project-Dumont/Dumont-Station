@@ -298,7 +298,7 @@
     impactEffect: null
     damage:
       types:
-        Slash: 40
+        Slash: 30
   - type: XenomorphOppressorHookProjectile
   - type: TimedDespawn
     lifetime: 3
