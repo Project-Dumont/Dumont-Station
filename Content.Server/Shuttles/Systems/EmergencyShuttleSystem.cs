@@ -349,6 +349,9 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return null;
         }
 
+        var preparing = new EmergencyShuttlePreDockEvent(stationShuttle.EmergencyShuttle.Value);
+        RaiseLocalEvent(ref preparing);
+
         var targetGrid = _station.GetLargestGrid(stationUid);
 
         // UHH GOOD LUCK
@@ -474,6 +477,9 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+
+        var arrived = new EmergencyShuttleArrivedAtStationEvent(shuttle.Value);
+        RaiseLocalEvent(ref arrived);
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)
@@ -515,7 +521,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
+        ConsoleAccumulator = DockTimeOverride ?? _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
 
         var query = AllEntityQuery<StationEmergencyShuttleComponent>();
@@ -543,11 +549,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             _ => 1,
         };
 
-        ConsoleAccumulator *= multiplier;
+        if (DockTimeOverride == null) ConsoleAccumulator *= multiplier;
 
         foreach (var shuttleDockResult in dockResults)
         {
-            AnnounceShuttleDock(shuttleDockResult, multiplier > 1);
+            AnnounceShuttleDock(shuttleDockResult, DockTimeOverride == null && multiplier > 1);
         }
 
         _commsConsole.UpdateCommsConsoleInterface();

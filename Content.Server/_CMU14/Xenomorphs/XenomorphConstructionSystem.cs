@@ -143,7 +143,7 @@ public sealed partial class XenomorphConstructionSystem : EntitySystem
         var weed = false;
         foreach (var uid in _lookup.GetEntitiesIntersecting(coordinates, LookupFlags.All))
         {
-            if (HasComp<XenomorphAcidPillarComponent>(uid)) return false;
+            if (HasComp<XenomorphHiveStructureComponent>(uid) || HasComp<XenomorphAcidPillarComponent>(uid)) return false;
             if (HasComp<XenomorphWeedWallSpreadComponent>(uid)) weed = true;
             if (HasComp<XenomorphStickyResinComponent>(uid) || HasComp<XenomorphResinFloorComponent>(uid)) return false;
         }

@@ -148,6 +148,8 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var xenomorphs, out _))
         {
+            if (xenomorphs.WinConditions.Contains(WinCondition.HiveContactEstablished)
+                || EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphShuttleHijackSystem>().Invaded) continue;
             foreach (var grid in GetStationGrids())
             {
                 if (ev.OwningStation != grid)
@@ -179,10 +181,26 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
 
     private void OnRoundEnd(XenomorphsRuleComponent component)
     {
-        if (GetXenomorphs(component).Count != 0) return;
-        component.WinType = WinType.CrewMajor;
-        if (!component.WinConditions.Contains(WinCondition.AllReproduceXenoDead))
-            component.WinConditions.Add(WinCondition.AllReproduceXenoDead);
+        if (component.WinConditions.Contains(WinCondition.HiveContactEstablished)) return;
+        var invasion = EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphShuttleHijackSystem>();
+        if (GetXenomorphs(component).Count == 0)
+        {
+            component.WinType = WinType.CrewMajor;
+            if (!component.WinConditions.Contains(WinCondition.AllReproduceXenoDead))
+                component.WinConditions.Add(WinCondition.AllReproduceXenoDead);
+        }
+        else if (invasion.Invaded)
+        {
+            component.WinType = WinType.XenoMinor;
+            if (!component.WinConditions.Contains(WinCondition.XenoInfiltratedOnCentCom))
+                component.WinConditions.Add(WinCondition.XenoInfiltratedOnCentCom);
+        }
+        else if (invasion.CrewArrived && invasion.CrewEscaped)
+        {
+            component.WinType = WinType.CrewMinor;
+            if (!component.WinConditions.Contains(WinCondition.CrewEscaped))
+                component.WinConditions.Add(WinCondition.CrewEscaped);
+        }
     }
 
     protected override void AppendRoundEndText(
@@ -211,6 +229,7 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
     {
         base.Started(uid, component, gameRule, args);
 
+        EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphHiveCaptureSystem>().StartInfestation();
         component.NextCheck = _timing.CurTime + component.CheckDelay;
         component.AnnouncementTime = _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
     }
@@ -236,7 +255,8 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
             if (!string.IsNullOrEmpty(component.Announcement))
                 _chat.DispatchGlobalAnnouncement(Loc.GetString(component.Announcement), component.Sender != null ? Loc.GetString(component.Sender) : null, colorOverride: component.AnnouncementColor);
 
-            PlayXenomorphMusic(component.XenomorphInfestationSound); // Dumont
+            if (EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphHiveObjectivesSystem>().HijackingQueen == null)
+                PlayXenomorphMusic(component.XenomorphInfestationSound); // Dumont
         }
 
         CheckRoundEnd(uid, component, gameRule);
@@ -244,6 +264,8 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
 
     private void CheckRoundEnd(EntityUid uid, XenomorphsRuleComponent component, GameRuleComponent gameRule)
     {
+        var invasion = EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphShuttleHijackSystem>();
+        if (component.WinConditions.Contains(WinCondition.HiveContactEstablished) || invasion.Invaded) return;
         var stationGrids = GetStationGrids();
 
         var xenomorphs = GetXenomorphs(component);
@@ -271,6 +293,7 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
             return; // Dumont
         }
 
+        if (invasion.CommsLocked) return;
 
         if (xenomorphs.Count / (float) (xenomorphs.Count + GetHumans(stationGrids, true).Count) >= 1)
         {
@@ -282,6 +305,30 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
         }
     }
 
+    public void CompleteShuttleInvasion()
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var rule, out _))
+        {
+            rule.WinType = WinType.XenoMinor;
+            rule.Announced = true;
+            if (!rule.WinConditions.Contains(WinCondition.XenoInfiltratedOnCentCom))
+                rule.WinConditions.Add(WinCondition.XenoInfiltratedOnCentCom);
+        }
+    }
+
+    public void CompleteHiveContact()
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var rule, out _))
+        {
+            rule.WinType = WinType.XenoMajor;
+            rule.Announced = true;
+            if (!rule.WinConditions.Contains(WinCondition.HiveContactEstablished)) rule.WinConditions.Add(WinCondition.HiveContactEstablished);
+        }
+    }
+
+    // Dumont start
     private void PlayXenomorphMusic(SoundSpecifier sound)
     {
         foreach (var grid in GetStationGrids())
@@ -290,6 +337,7 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
             _sound.DispatchStationEventMusic(grid, sound, StationEventMusicType.Xenomorph, sound.Params);
         }
     }
+    // Dumont end
 
     private List<EntityUid> GetHumans(HashSet<EntityUid>? stationGrids = null, bool includeOffStation = false)
     {

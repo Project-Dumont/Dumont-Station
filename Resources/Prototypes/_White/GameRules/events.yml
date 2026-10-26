@@ -32,6 +32,8 @@
   - type: AntagObjectives
     objectives:
     - XenomorphSurviveObjective
+    - XenomorphEstablishPylonObjective
+    - XenomorphCorruptCommsObjective
   - type: AntagSelection
     agentName: xenomorph-round-end-agent-name
     definitions:

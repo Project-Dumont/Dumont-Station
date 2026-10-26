@@ -244,9 +244,9 @@ public sealed class DropPodConsoleSystem : EntitySystem
     /// Copies pod tiles onto the station grid and reparents all pod entities, correcting for any
     /// pod rotation so everything lands axis-aligned with the station grid.
     /// </summary>
-    private void MergeIntoStation(
+    public void MergeIntoStation(
         EntityUid podGrid, MapGridComponent podComp,
-        EntityUid stationGrid, MapGridComponent stationComp)
+        EntityUid stationGrid, MapGridComponent stationComp, bool preserveMobs = false)
     {
         // Build matrices BEFORE any rotation changes so world positions of children are still valid.
         var podWorldMatrix = _transform.GetWorldMatrix(podGrid);
@@ -270,7 +270,10 @@ public sealed class DropPodConsoleSystem : EntitySystem
         {
             var stationTileIdx = baseTile + tileRef.GridIndices;
             foreach (var stale in _mapSystem.GetAnchoredEntities(stationGrid, stationComp, stationTileIdx).ToList())
+            {
+                if (preserveMobs && HasComp<Content.Shared.Mobs.Components.MobStateComponent>(stale)) continue;
                 QueueDel(stale);
+            }
             tilesToSet.Add((stationTileIdx, tileRef.Tile));
         }
         _mapSystem.SetTiles((stationGrid, stationComp), tilesToSet);

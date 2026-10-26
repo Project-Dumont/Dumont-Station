@@ -8,6 +8,8 @@
   - type: AntagObjectives
     objectives:
     - XenomorphSurviveObjective
+    - XenomorphEstablishPylonObjective
+    - XenomorphCorruptCommsObjective
   - type: XenomorphsRule # Goobstation - Required for Evolution Logic
     minTimeToAnnouncement: 900 # Dumont
     maxTimeToAnnouncement: 900 # Dumont

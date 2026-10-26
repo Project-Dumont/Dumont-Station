@@ -5,6 +5,7 @@
   components:
   - type: XenomorphPheromones
     multiplier: 2
+  - type: XenomorphHiveBuilder
   - type: XenomorphTailStab
     damage:
       types:
@@ -418,6 +419,7 @@
   - type: XenomorphPheromones
     multiplier: 2.5
     pheroSuffix: hivelord
+  - type: XenomorphHiveBuilder
   - type: XenomorphResinWalker
   - type: XenomorphTailStab
     damage:
@@ -463,6 +465,7 @@
   components:
   - type: XenomorphPheromones
     multiplier: 2
+  - type: XenomorphHiveBuilder
   - type: XenomorphCarrier
   - type: XenomorphTailStab
     damage:
@@ -535,6 +538,7 @@
   components:
   - type: XenomorphPheromones
     multiplier: 2
+  - type: XenomorphHiveBuilder
   - type: XenomorphBurrow
   - type: XenomorphTailStab
     damage:
@@ -584,6 +588,7 @@
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
+  - type: XenomorphHiveBuilder
   - type: XenomorphReaper
   - type: XenomorphTailStab
     damage:
@@ -898,6 +903,7 @@
   - type: XenomorphPheromones
     multiplier: 4
     pheroSuffix: queen
+  - type: XenomorphHiveBuilder
   - type: XenomorphTailStab
     damage:
       types:
@@ -988,6 +994,7 @@
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
+  - type: XenomorphHiveBuilder
   - type: XenomorphFruitPlanter
   - type: XenomorphHealer
   - type: XenomorphTailStab
@@ -1045,6 +1052,7 @@
   components:
   - type: XenomorphPheromones
     multiplier: 2
+  - type: XenomorphHiveBuilder
   - type: XenomorphResinSurge
   - type: XenomorphFruitPlanter
     maximum: 6
@@ -1315,6 +1323,7 @@
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
+  - type: XenomorphHiveBuilder
   - type: XenomorphCarrier
     maxParasites: 0
     maxEggs: 12
@@ -1474,6 +1483,7 @@
     speed: 1
     zoom: 1.25, 1.25
     prepareDelay: 0
+  - type: XenomorphHiveBuilder
   - type: XenomorphResinWhisperer
   - type: XenomorphConstruction
   - type: XenomorphResinWalker
@@ -1530,6 +1540,7 @@
     speed: 1
     zoom: 1.25, 1.25
     prepareDelay: 0
+  - type: XenomorphHiveBuilder
   - type: XenomorphDesigner
   - type: XenomorphResinWalker
   - type: XenomorphTailStab

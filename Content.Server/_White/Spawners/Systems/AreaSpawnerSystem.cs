@@ -75,6 +75,9 @@ public sealed partial class AreaSpawnerSystem : EntitySystem
             foreach (var tile in validTiles)
             {
                 var coordinates = Transform(uid).Coordinates.Offset(tile);
+                if (areaSpawner.SpawnPrototype == "DumontHiveWeeds" && Transform(uid).GridUid is { } grid && TryComp<MapGridComponent>(grid, out var mapGrid))
+                    foreach (var existing in _map.GetAnchoredEntities((grid, mapGrid), coordinates))
+                        if (Prototype(existing)?.ID == "ResinWeed") QueueDel(existing);
                 var spawnedUid = Spawn(areaSpawner.SpawnPrototype, coordinates);
                 areaSpawner.Spawneds.Add(spawnedUid);
             }
@@ -112,7 +115,7 @@ public sealed partial class AreaSpawnerSystem : EntitySystem
 
         foreach (var entity in _map.GetAnchoredEntities((gridUid, mapGridComponent), coords))
         {
-            if (component.SpawnPrototype == "ResinWeed" && (HasComp<XenomorphHardyWeedComponent>(entity))
+            if (component.SpawnPrototype == "ResinWeed" && (HasComp<XenomorphHardyWeedComponent>(entity) || HasComp<XenomorphHiveWeedComponent>(entity))
                 || component.SpawnPrototype == "DumontXenomorphHardyWeed" && HasComp<AreaSpawnerComponent>(entity))
                 return false;
 

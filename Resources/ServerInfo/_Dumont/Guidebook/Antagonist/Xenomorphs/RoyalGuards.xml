@@ -1,0 +1,95 @@
+<Document>
+# T3 — Guardas Reais
+
+Todas as castas desta página compartilham uma vaga de Guarda Real. A captura do Aglomerado libera a segunda. Qualquer Guarda Real pode evoluir para Rainha. Escolham a função que a colmeia precisa: ruptura, artilharia, ácido, controle ou apoio.
+
+## Esmagador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUCrusher" Caption="Esmagador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Guarda Real de ruptura. Investe para esmagar inimigos e demolir estruturas no caminho, usa Pisotear em cone e conserva a pancada de cauda. Absorver dano recompensa resistir a uma sequência de golpes com cura. O escudo defensivo reduz e absorve dano, melhora a resistência a explosões e oferece alguma reflexão frontal. A investida tem recarga longa: escolha o momento de abrir a passagem.
+
+## Devastador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMURavager" Caption="Devastador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Guarda Real de assalto. Avança com Assalto, acumula escudo com Fortalecer e atinge uma linha com Corte em tesoura. A presença de vários inimigos permite o estado superfortalecido, melhorando ataques e controle. Acertos corpo a corpo ajudam a recuperar o Assalto. Entre com os outros xenos para aproveitar a abertura.
+
+## Devastador espinhoso
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUHedgehogRavager" Caption="Devastador espinhoso" Scale="1.5" Interactive="false"/>
+</Box>
+
+Usa espinhos para atacar e se proteger. Golpes corpo a corpo e espinhos disparados desaceleram as vítimas. O escudo de espinhos devolve lascas quando recebe projéteis. Descarregar espinhos consome a reserva para atacar ao redor e fugir mais rápido, mas deixa o xeno sem a proteção e a regeneração dos espinhos por um período.
+
+## Devastador furioso
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUBerserkerRavager" Caption="Devastador furioso" Scale="1.5" Interactive="false"/>
+</Box>
+
+Administra níveis de fúria no combate próximo. Perseguir ajuda a perseguir e prepara um golpe que desacelera. Encontrão arremessa e cura, com resultado melhor sob fúria elevada. Eviscerar consome fúria para atacar ao redor e recuperar vida conforme as vítimas. Confira o recurso antes de se comprometer com a luta.
+
+## Bombardeiro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUBoiler" Caption="Bombardeiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Artilharia da colmeia. Usa visão de longo alcance e prepara bombardeios de gás ácido ou neurotóxico. A escolha altera o efeito: corrosão ou intoxicação progressiva. A nuvem defensiva cobre a retirada, mas compartilha recarga com outros ataques. Jato forte e cauda corrosiva ajudam quando a luta chega perto; evite ficar isolado sem escolta.
+
+## Profanador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDespoiler" Caption="Profanador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Espalha ácido pelo piso e pelas vítimas. A barragem pode ser carregada e deixa poças nos impactos. Abraço cáustico salta e espalha ácido ao aterrissar; Feridas supurantes emite ondas cuja área cresce com os ferimentos. Ataques e dano recebido geram hipertensão, consumida por Catalisar para fortalecer a próxima habilidade e suas interações corrosivas.
+
+## Pretoriano
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUPraetorian" Caption="Pretoriano" Scale="1.5" Interactive="false"/>
+</Box>
+
+Guarda Real versátil de ácido. O cuspe acumula corrosão e ajuda a obter escudo; o avanço reposiciona sem derrubar. Bola ácida se divide em fragmentos e o jato acumula cargas que explodem em dano adicional. Assim como os demais Guardas Reais, pode evoluir para Rainha.
+
+## Pretoriano dançarino
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDancerPraetorian" Caption="Pretoriano dançarino" Scale="1.5" Interactive="false"/>
+</Box>
+
+Combina mobilidade e marcas. Esquivar melhora a movimentação entre inimigos. Ataques corpo a corpo aplicam marca vermelha: Empalar a consome para acertar duas vezes e a rasteira a consome para prolongar o controle. Golpear um alvo crítico pode espalhar marcas amarelas, usadas para recuperar recargas das técnicas de cauda. Prepare as marcas antes de gastar todos os golpes.
+
+## Pretoriano de vanguarda
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUVanguardPraetorian" Caption="Pretoriano de vanguarda" Scale="1.5" Interactive="false"/>
+</Box>
+
+Combina escudo e avanço. Perfurar atinge uma linha; acertar mais de um inimigo recupera o escudo. Avanço cortante reposiciona e prepara um corte, que pode ser antecipado. Imobilizar e Arremessar compartilham recarga e ficam mais fortes enquanto o escudo estiver ativo. Escolha o controle mais útil para a equipe.
+
+## Pretoriano opressor
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUOppressorPraetorian" Caption="Pretoriano opressor" Scale="1.5" Interactive="false"/>
+</Box>
+
+Separa inimigos da formação. Capturar com a cauda puxa a primeira vítima de um disparo; Abduzir puxa uma linha inteira, melhorando o controle conforme os acertos. Deslocar pune alvos debilitados e ajuda a recuperar recargas. Chicote de cauda atinge uma área à frente para derrubar e arremessar. Coordene a chegada das presas com os outros xenos.
+
+## Pretoriano valquíria
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUValkyriePraetorian" Caption="Pretoriano valquíria" Scale="1.5" Interactive="false"/>
+</Box>
+
+Apoia a linha de frente. Jato da cauda apaga fogo; Frenesi concede proteção ou ajuda a movimentação de Devastadores e Esmagadores. Pisoteio elevado derruba, desacelera e afasta granadas. Lutar ou fugir remove incapacitações e Resgatar puxa um aliado para segurança. Administre plasma e fúria; para puxar a Rainha, ela precisa estar deitada ou incapacitada.
+
+[textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
+</Document>

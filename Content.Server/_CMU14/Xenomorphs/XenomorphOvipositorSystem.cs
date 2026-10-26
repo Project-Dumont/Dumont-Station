@@ -118,6 +118,7 @@ public sealed partial class XenomorphOvipositorSystem : EntitySystem
 
     private void OnMobState(Entity<XenomorphOvipositorComponent> ent, ref MobStateChangedEvent args)
     {
+        if (args.NewMobState != MobState.Dead && EntityManager.System<XenomorphHiveObjectivesSystem>().HijackingQueen == ent.Owner) return;
         if (args.NewMobState == MobState.Alive || !ent.Comp.Attached)
             return;
 

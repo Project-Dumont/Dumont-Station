@@ -244,7 +244,8 @@ public sealed partial class EmergencyShuttleSystem
                 if (!Deleted(centcomm.Entity))
                 {
                     _shuttle.FTLToDock(comp.EmergencyShuttle.Value, shuttle,
-                        centcomm.Entity.Value, ConsoleAccumulator, TransitTime);
+                        centcomm.Entity.Value, ConsoleAccumulator, TransitTime,
+                        priorityTag: HasComp<Content.Server._Dumont.Xenomorphs.XenomorphCorruptedEvacComponent>(comp.EmergencyShuttle.Value) ? DockTag.ToString() : null);
                     continue;
                 }
 
@@ -291,7 +292,7 @@ public sealed partial class EmergencyShuttleSystem
             ShuttlesLeft = true;
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("emergency-shuttle-left", ("transitTime", $"{TransitTime:0}")));
 
-            Timer.Spawn((int)(TransitTime * 1000) + _bufferTime.Milliseconds, () => _roundEnd.EndRound(), _roundEndCancelToken?.Token ?? default);
+            Timer.Spawn(TimeSpan.FromSeconds(TransitTime) + _bufferTime, () => _roundEnd.EndRound(), _roundEndCancelToken?.Token ?? default);
         }
 
         // All the others.
@@ -416,6 +417,7 @@ public sealed partial class EmergencyShuttleSystem
         ConsoleAccumulator = float.MinValue;
         EarlyLaunchAuthorized = false;
         EmergencyShuttleArrived = false;
+        DockTimeOverride = null;
         TransitTime = MinimumTransitTime + (MaximumTransitTime - MinimumTransitTime) * _random.NextFloat();
         // Round to nearest 10
         TransitTime = MathF.Round(TransitTime / 10f) * 10f;
@@ -466,7 +468,7 @@ public sealed partial class EmergencyShuttleSystem
     /// </summary>
     public bool EarlyLaunch()
     {
-        if (EarlyLaunchAuthorized || !EmergencyShuttleArrived || ConsoleAccumulator <= AuthorizeTime) return false;
+        if (DockTimeOverride != null || EarlyLaunchAuthorized || !EmergencyShuttleArrived || ConsoleAccumulator <= AuthorizeTime) return false;
 
         _logger.Add(LogType.EmergencyShuttle, LogImpact.Extreme, $"Emergency shuttle launch authorized");
         ConsoleAccumulator = AuthorizeTime;

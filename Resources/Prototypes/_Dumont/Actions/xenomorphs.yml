@@ -56,3 +56,43 @@
   - type: InstantAction
     event: !type:XenomorphQueenMessageActionEvent
       mode: pheromones
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphOrderHiveConstruction
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: morph_resin }
+  - type: InstantAction
+    event: !type:XenomorphOrderHiveConstructionActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPlaceHiveConstruction
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: morph_resin }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: morph_resin }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 1.75
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphPlaceHiveConstructionActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRadioJammer
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _Dumont/Actions/xeno_jammer.rsi, state: jammer }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphRadioJammerActionEvent

@@ -1,0 +1,75 @@
+<Document>
+# Rainha — a voz da colmeia
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Rainha" Scale="1.5" Interactive="false"/>
+</Box>
+
+A Rainha coordena a colmeia, sustenta a reprodução e realiza o contato final na rede de comunicações da estação. Seu papel exige proteção e planejamento: enviar ordens, acompanhar xenos e apoiar a frente pode valer mais que perseguir uma vítima.
+
+## Como chegar à Rainha
+
+Qualquer Guarda Real (T3) pode evoluir para Rainha, incluindo todas as variantes, independentemente da linhagem do hospedeiro. Só pode haver uma Rainha viva. Se morrer, a colmeia recebe um aviso e precisa aguardar [bold]dez minutos[/bold] para permitir uma sucessora. Os outros xenos podem continuar lutando nesse intervalo.
+
+[textlink="Veja o ciclo completo e as rotas por hospedeiro." link="XenomorphClasses"]
+
+## Ovipositor e reprodução
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Ovipositor" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphEggItem" Caption="Ovo transportável" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphEgg" Caption="Ovo no ninho" Scale="2" Interactive="false"/>
+</Box>
+
+Use [bold]Desenvolver ovipositor[/bold] sobre a resina para se fixar e começar a produzir ovos. A fixação custa 500 de plasma e leva 20 segundos; soltar-se leva cinco segundos. Enquanto estiver fixada, você não pode andar. Escolha uma posição defendida e com espaço para os xenos circularem.
+
+Os ovos abastecem os ninhos e as frentes. Carregadores e construtores ajudam a distribuí-los. O ovipositor também libera cura e doação de plasma e permite iniciar o objetivo do console de comunicações.
+
+## Comando, observação e líderes
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideQueenHive" Caption="Colmeia" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideQueenWord" Caption="Palavra da Rainha" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuidePheromones" Caption="Feromônios" Scale="2" Interactive="false"/>
+</Box>
+
+Abra [bold]Colmeia[/bold] para observar xenos, retornar à própria visão e nomear líderes. É possível observar e nomear sem estar em ovipositor. Você pode manter até três líderes: enquanto estiver fixada, eles propagam seus feromônios ativos ao redor das posições deles.
+
+Use [bold]Palavra da Rainha[/bold] para mandar instruções claras. As mensagens aparecem na interface com som e efeito de digitação. Diga onde reunir, qual passagem defender ou quem precisa de escolta. Os avisos sobre núcleo, Aglomerado e Pilone também chegam por esse canal visual.
+
+## Apoio e combate
+
+- [bold]Curar a colmeia:[/bold] recupera vida de xenos numa área ao longo do tempo; exige ovipositor.
+
+- [bold]Doar plasma:[/bold] restaura plasma de um xeno na área comandada ou observada; exige ovipositor.
+
+- [bold]Eviscerar:[/bold] execução canalizada de uma vítima próxima. Mover-se interrompe e a recarga é longa.
+
+- [bold]Cauda:[/bold] defesa quando inimigos se aproximam.
+
+Depois de [bold]dez minutos viva como Rainha[/bold], você amadurece, ganha resistência e libera grito e cuspe reais. O grito causa desorientação e controle em inimigos próximos, acompanhado da onda amarela. Não confunda amadurecimento com a espera para uma sucessora após uma morte.
+
+## A mente-colmeia humana
+
+<Box>
+<GuideEntityEmbed Entity="DumontHivePylon" Caption="Estabeleça o Pilone" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerComms" Caption="Alcance o console" Scale="2" Interactive="false"/>
+</Box>
+
+O objetivo exige um Pilone já estabelecido. Fixe o ovipositor perto de um console de comunicações da estação e [bold]clique no console[/bold] para iniciar três minutos de interferência. Não é preciso usar uma habilidade separada. Protejam a Rainha durante toda a canalização.
+
+[textlink="Consulte requisitos, interrupções e o resultado do objetivo." link="XenomorphObjectives"]
+
+## Sequestro de nave: alcance a fortaleza humana
+
+<Box>
+<GuideEntityEmbed Entity="ComputerShuttle" Caption="Console de controle da nave" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Ovipositor a bordo" Scale="2" Interactive="false"/>
+</Box>
+
+Se a evac atracar antes de você concluir a interferência nas comunicações, reúna a colmeia em outra nave. Fixe o ovipositor perto do console de controle e [bold]clique nele[/bold] para iniciar [bold]120 segundos[/bold] para tomar a nave. Inicie antes que a evac chegue à Central de Comando; a própria nave de emergência não pode ser tomada.
+
+Ao concluir, sua nave viaja por três minutos e colide na entrada da Central. Chegar com xenos vivos a bordo garante uma [bold]vitória menor da colmeia[/bold]. Proteja os sobreviventes: se a tripulação eliminar todos os xenos, ela conquista a vitória maior mesmo após a invasão.
+
+[textlink="Veja a janela de invasão e os resultados possíveis." link="XenomorphObjectives"]
+</Document>

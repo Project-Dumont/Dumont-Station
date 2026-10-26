@@ -4,6 +4,7 @@
   abstract: true
   components:
   - type: XenomorphWatch
+  - type: XenomorphRadioJammer
   - type: FootstepModifier
     footstepSoundCollection: null
   - type: CombatMode
@@ -43,6 +44,8 @@
         type: XenoPheromonesBui
       enum.RadialSelectorUiKey.Key:
         type: TrackedRadialSelectorMenuBUI
+      enum.XenomorphHiveUiKey.Construction:
+        type: AttachedRadialSelectorMenuBUI
       enum.XenomorphConstructionUiKey.Key:
         type: AttachedRadialSelectorMenuBUI
   - type: GhostRole
