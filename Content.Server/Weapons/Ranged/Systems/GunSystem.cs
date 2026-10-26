@@ -357,6 +357,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 case HitscanPrototype hitscan:
 
                     EntityUid? lastHit = null;
+                    var reflectedDamage = hitscan.Damage;
 
                     var from = fromMap;
                     // can't use map coords above because funny FireEffects
@@ -401,12 +402,14 @@ public sealed partial class GunSystem : SharedGunSystem
 
                             FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
 
-                            var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, hitscan.Damage); // WD EDIT
+                            var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, reflectedDamage); // WD EDIT
                             RaiseLocalEvent(hit, ref ev);
 
                             if (!ev.Reflected)
                                 break;
 
+                            lastHit = null;
+                            reflectedDamage = ev.Damage;
                             fromEffect = Transform(hit).Coordinates;
                             from = TransformSystem.ToMapCoordinates(fromEffect);
                             dir = ev.Direction;
@@ -420,7 +423,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (hitscan.StaminaDamage > 0f)
                             _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
 
-                        var dmg = hitscan.Damage;
+                        var dmg = reflectedDamage;
 
                         var hitName = ToPrettyString(hitEntity);
                         // Goob edit start
@@ -539,6 +542,7 @@ public sealed partial class GunSystem : SharedGunSystem
         void Hitscan(EntityUid gunUid, GunComponent gun, EntityCoordinates fromCoordinates, EntityUid? user, MapCoordinates fromMap, float pointer, Vector2 mapDirection, HitscanPrototype hitscan)
         {
             EntityUid? lastHit = null;
+            var reflectedDamage = hitscan.Damage;
 
             var accuracyZone = 3f;
 
@@ -591,12 +595,14 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
 
-                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, hitscan.Damage);
+                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, reflectedDamage);
                     RaiseLocalEvent(hit, ref ev);
 
                     if (!ev.Reflected)
                         break;
 
+                    lastHit = null;
+                    reflectedDamage = ev.Damage;
                     fromEffect = Transform(hit).Coordinates;
                     from = TransformSystem.ToMapCoordinates(fromEffect); ;
                     dir = ev.Direction;
@@ -610,7 +616,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 if (hitscan.StaminaDamage > 0f)
                     _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true);
 
-                var dmg = hitscan.Damage;
+                var dmg = reflectedDamage;
 
                 var hitName = ToPrettyString(hitEntity);
                 if (dmg != null)

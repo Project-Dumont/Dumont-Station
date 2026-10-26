@@ -39,23 +39,22 @@ using Content.Shared.Station.Components;
 
 namespace Content.Server._White.GameTicking.Rules;
 
-public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponent>
+public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponent>
 {
     private static readonly EntProtoId XenomorphSpawnerProto = "SpawnPointGhostXenomorph";
 
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly NukeCodePaperSystem _nukeCodePaper = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!; // Dumont
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private EmergencyShuttleSystem _emergencyShuttle = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerGlobalSoundSystem _sound = default!; // Dumont
 
     public override void Initialize()
     {
@@ -99,6 +98,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         BeforeXenomorphEvolutionEvent args
     )
     {
+        if (HasComp<Content.Server._Dumont.Xenomorphs.XenomorphLineageComponent>(uid)) return;
         if (!_protoManager.TryIndex(args.Caste, out var cast) || cast.MaxCount == 0)
             return;
 
@@ -179,34 +179,10 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
 
     private void OnRoundEnd(XenomorphsRuleComponent component)
     {
-        if (component.WinType != WinType.XenoMinor)
-            return;
-
-        var centcomms = _emergencyShuttle.GetCentcommMaps();
-        var station = GetStationGrids();
-
-        var xenomorphs = GetXenomorphs(component);
-        foreach (var xenomorph in xenomorphs)
-        {
-            var xform = Transform(xenomorph);
-            if (xform.MapUid == null || !centcomms.Contains(xform.MapUid.Value))
-                continue;
-
-            component.WinType = WinType.XenoMajor;
-            component.WinConditions.Add(WinCondition.XenoInfiltratedOnCentCom);
-            break;
-        }
-
-        var nukeQuery = AllEntityQuery<NukeComponent, TransformComponent>();
-        while (nukeQuery.MoveNext(out _, out var xform))
-        {
-            if (xform.MapUid == null || !station.Contains(xform.MapUid.Value))
-                continue;
-
-            component.WinType = WinType.CrewMinor;
-            component.WinConditions.Add(WinCondition.NukeActiveInStation);
-            break;
-        }
+        if (GetXenomorphs(component).Count != 0) return;
+        component.WinType = WinType.CrewMajor;
+        if (!component.WinConditions.Contains(WinCondition.AllReproduceXenoDead))
+            component.WinConditions.Add(WinCondition.AllReproduceXenoDead);
     }
 
     protected override void AppendRoundEndText(
@@ -236,6 +212,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         base.Started(uid, component, gameRule, args);
 
         component.NextCheck = _timing.CurTime + component.CheckDelay;
+        component.AnnouncementTime = _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
     }
 
     protected override void ActiveTick(
@@ -250,14 +227,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
         if (component.NextCheck > _timing.CurTime)
             return;
 
-        if (!component.AnnouncementTime.HasValue)
-        {
-            var allQueens = GetXenomorphs(component, "Queen");
-            if (allQueens.Count > 0)
-            {
-                component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
-            }
-        }
         component.NextCheck = _timing.CurTime + component.CheckDelay;
 
         if (!component.Announced && component.AnnouncementTime <= _timing.CurTime)
@@ -277,7 +246,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         var stationGrids = GetStationGrids();
 
-        var humans = GetHumans(stationGrids);
         var xenomorphs = GetXenomorphs(component);
 
         // Check if there are any xenomorph larva ghost role present
@@ -303,6 +271,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             return; // Dumont
         }
 
+
         if (xenomorphs.Count / (float) (xenomorphs.Count + GetHumans(stationGrids, true).Count) >= 1)
         {
             component.WinType = WinType.XenoMajor;
@@ -311,31 +280,8 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             _roundEnd.EndRound();
             return;
         }
-
-        if (!component.Announced || component.WinType == WinType.XenoMinor
-            || xenomorphs.Count / (float) (xenomorphs.Count + humans.Count) < component.XenomorphsShuttleCallPercentage)
-            return;
-
-        _roundEnd.DoRoundEndBehavior(
-            RoundEndBehavior.ShuttleCall,
-            component.ShuttleCallTime,
-            component.RoundEndTextSender,
-            component.RoundEndTextShuttleCall,
-            component.RoundEndTextAnnouncement
-        );
-        PlayXenomorphMusic(component.XenomorphTakeoverSound); // Dumont
-
-        component.WinType = WinType.XenoMinor;
-        component.WinConditions.Add(WinCondition.XenoTakeoverStation);
-
-        var station = _station.GetStations().FirstOrNull();
-        if (!station.HasValue)
-            return;
-
-        _nukeCodePaper.SendNukeCodes(station.Value);
     }
 
-    // Dumont start
     private void PlayXenomorphMusic(SoundSpecifier sound)
     {
         foreach (var grid in GetStationGrids())
@@ -344,7 +290,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             _sound.DispatchStationEventMusic(grid, sound, StationEventMusicType.Xenomorph, sound.Params);
         }
     }
-    // Dumont end
 
     private List<EntityUid> GetHumans(HashSet<EntityUid>? stationGrids = null, bool includeOffStation = false)
     {

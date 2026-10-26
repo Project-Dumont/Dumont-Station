@@ -1,0 +1,41 @@
+- type: reagent
+  id: DumontXenomorphPainToxin
+  name: reagent-name-xenomorph-pain-toxin
+  desc: reagent-desc-xenomorph-pain-toxin
+  group: Toxins
+  physicalDesc: reagent-physical-desc-acrid
+  flavor: bitter
+  color: "#7b45b7"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.4
+      effects:
+      - !type:SuppressPain
+        identifier: XenomorphPainToxin
+        amount: -8
+        time: 5
+      - !type:Jitter
+        probability: 0.1
+      - !type:AdjustReagent
+        reagent: Tramadol
+        amount: -0.4
+      - !type:AdjustReagent
+        reagent: Oxycodone
+        amount: -0.4
+
+- type: reagent
+  id: DumontXenomorphMolecularAcid
+  name: reagent-name-xenomorph-molecular-acid
+  desc: reagent-desc-xenomorph-molecular-acid
+  group: Toxins
+  physicalDesc: reagent-physical-desc-acidic
+  color: "#669900"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.25
+            Caustic: 0.5

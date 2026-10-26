@@ -1,4 +1,6 @@
+using Content.Shared._CMU14.Xenomorphs;
 using Content.Server.DoAfter;
+using Content.Shared._Dumont.Xenomorphs;
 using Content.Shared._White.Actions;
 using Content.Shared._White.Actions.Events;
 using Content.Shared.Construction.EntitySystems;
@@ -15,17 +17,18 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._White.Actions;
 
-public sealed class ActionsSystem : EntitySystem
+public sealed partial class ActionsSystem : EntitySystem
 {
-    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
+    [Dependency] private SharedXenomorphDesignSystem _design = default!;
+    [Dependency] private ITileDefinitionManager _tileDef = default!;
 
-    [Dependency] private readonly AnchorableSystem _anchorable = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly PlasmaCostActionSystem _plasmaCost = default!; // Goobstation=
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private AnchorableSystem _anchorable = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+    [Dependency] private PlasmaCostActionSystem _plasmaCost = default!; // Goobstation=
+    [Dependency] private TransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -51,7 +54,15 @@ public sealed class ActionsSystem : EntitySystem
         TryComp<PlasmaCostActionComponent>(args.Action, out var plasmaCost);
         var plasmaCostValue = plasmaCost?.PlasmaCost ?? FixedPoint2.Zero;
 
-        if (args.Length != 0)
+        var duration = args.Length;
+        if (args.Entity is { } resin && (resin.Id == "WallResin" || resin.Id == "ResinDoor"))
+        {
+            _design.Modifiers(args.Performer, args.Target, out var time, out var cost);
+            duration *= time;
+            if (!_plasmaCost.HasEnoughPlasma(args.Performer, MathF.Ceiling(plasmaCostValue.Float() * cost))) return;
+        }
+
+        if (duration != 0)
         {
             if (CheckTileBlocked(args.Target, args.BlockedCollisionLayer, args.BlockedCollisionMask))
                 return;
@@ -68,7 +79,7 @@ public sealed class ActionsSystem : EntitySystem
                 Action = GetNetEntity(args.Action) // Goobstation end
             };
 
-            var doAfter = new DoAfterArgs(EntityManager, args.Performer, args.Length, ev, null)
+            var doAfter = new DoAfterArgs(EntityManager, args.Performer, duration, ev, null)
             {
                 BlockDuplicate = true,
                 BreakOnDamage = true,
@@ -97,15 +108,21 @@ public sealed class ActionsSystem : EntitySystem
         if (args.Cancelled || args.Handled)
             return;
 
+        var cost = args.PlasmaCost;
+        if (args.Entity is { } resin && (resin.Id == "WallResin" || resin.Id == "ResinDoor"))
+        {
+            _design.Modifiers(args.User, GetCoordinates(args.Target), out _, out var multiplier);
+            cost = MathF.Ceiling(cost.Float() * multiplier);
+        }
         // Check plasma cost only when the action is about to complete
-        if (!_plasmaCost.HasEnoughPlasma(args.User, args.PlasmaCost))
+        if (!_plasmaCost.HasEnoughPlasma(args.User, cost))
             return;
 
         // Dumont start
         if (!CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
             return;
 
-        _plasmaCost.DeductPlasma(args.User, args.PlasmaCost);
+        _plasmaCost.DeductPlasma(args.User, cost);
         args.Handled = true;
         // Dumont end
     }

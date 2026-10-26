@@ -1,0 +1,1850 @@
+- type: entity
+  id: MobXenomorphCMUDrone
+  parent: BaseMobXenomorphCMU
+  name: drone
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/drone.rsi
+  - type: Xenomorph
+    caste: Drone
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUDrone
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+- type: entity
+  id: MobXenomorphCMURunner
+  parent: BaseMobXenomorphCMU
+  name: runner
+  components:
+  - type: XenomorphSpit
+  - type: XenomorphLongRangeSight
+    offsetLength: 0
+    speed: 1
+    zoom: 1.25, 1.25
+    prepareDelay: 0
+  - type: XenomorphHide
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/runner.rsi
+  - type: Xenomorph
+    caste: Runner
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '270': Critical
+      '360': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+    attackRate: 1.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 6.5
+  - type: Body
+    prototype: XenomorphCMURunner
+  - type: VentCrawler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphBoneChips
+    - ActionXenomorphLongRangeSight
+    - ActionXenomorphTailStab
+    - ActionXenomorphLeap
+    - ActionXenomorphHide
+  - type: XenomorphLeap
+    obstacleStun: 1.5
+    knockdownTime: 2
+    moveDelay: 0.7
+    knockdownRequiresStealth: false
+    unrootOnMelee: false
+- type: entity
+  id: MobXenomorphCMUDefender
+  parent: BaseMobXenomorphCMU
+  name: defender
+  components:
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+    hitEffect: DumontXenomorphTailSlam
+    hitSound:
+      collection: Punch
+      params:
+        variation: 0.15
+  - type: XenomorphTailSweep
+  - type: XenomorphHeadbutt
+  - type: XenomorphCrest
+  - type: XenomorphFortify
+  - type: XenomorphArmor
+    armor: 35
+    explosionArmor: 70
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/defender.rsi
+    layers:
+    - state: alive
+      map:
+      - enum.DamageStateVisualLayers.Base
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - state: sleeping
+      map:
+      - rest
+      visible: false
+    - state: fortify
+      map:
+      - fortify
+      visible: false
+    - state: crest
+      map: [crest]
+      visible: false
+  - type: Xenomorph
+    caste: Defender
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9.16
+        Slash: 9.17
+        Piercing: 9.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUDefender
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailSlam
+    - ActionXenomorphTailSweep
+    - ActionXenomorphHeadbutt
+    - ActionXenomorphCrest
+    - ActionXenomorphFortify
+- type: entity
+  id: MobXenomorphCMUSentinel
+  parent: BaseMobXenomorphCMU
+  name: sentinel
+  components:
+  - type: XenomorphPreparedStrike
+    paralyzing: true
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/sentinel.rsi
+  - type: Xenomorph
+    caste: Sentinel
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUSentinel
+  - type: XenomorphSpit
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphParalyzingSlash
+    - ActionXenomorphSlowingSpit
+    - ActionXenomorphScatteredSpit
+    - ActionXenomorphTailStab
+- type: entity
+  id: MobXenomorphCMULurker
+  parent: BaseMobXenomorphCMU
+  name: lurker
+  components:
+  - type: XenomorphPreparedStrike
+    paralyzing: false
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 14
+        Slash: 14
+        Piercing: 14
+  - type: XenomorphArmor
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/lurker.rsi
+  - type: Xenomorph
+    caste: Lurker
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '450': Critical
+      '550': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11.66
+        Slash: 11.67
+        Piercing: 11.67
+    attackRate: 0.75
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 5
+  - type: Body
+    prototype: XenomorphCMULurker
+  - type: VentCrawler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphCripplingStrike
+    - ActionXenomorphTailStab
+    - ActionXenomorphPounce
+    - ActionXenomorphInvisibility
+  - type: XenomorphLeap
+    knockdownTime: 5
+    moveDelay: 1.5
+    knockdownRequiresStealth: true
+    unrootOnMelee: true
+  - type: XenomorphInvisibility
+- type: entity
+  id: MobXenomorphCMUWarrior
+  parent: BaseMobXenomorphCMU
+  name: warrior
+  components:
+  - type: XenomorphLunge
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 20
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/warrior.rsi
+  - type: Xenomorph
+    caste: Warrior
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11.66
+        Slash: 11.67
+        Piercing: 11.67
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUWarrior
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphLunge
+    - ActionXenomorphPunch
+    - ActionXenomorphFling
+  - type: XenomorphLifesteal
+- type: entity
+  id: MobXenomorphCMUSpitter
+  parent: BaseMobXenomorphCMU
+  name: spitter
+  components:
+  - type: XenomorphArmor
+    armor: 15
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/spitter.rsi
+  - type: Xenomorph
+    caste: Spitter
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '550': Critical
+      '650': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUSpitter
+  - type: XenomorphSpit
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphAcidSpit
+    - ActionXenomorphChargeSpit
+    - ActionXenomorphSprayAcid
+    - ActionXenomorphCorrosiveTail
+  - type: XenomorphSpitter
+  - type: XenomorphTailStab
+    corrosive: true
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+- type: entity
+  id: MobXenomorphCMUBull
+  parent: BaseMobXenomorphCMU
+  name: bull
+  components:
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+  - type: XenomorphArmor
+    armor: 15
+    frontalArmor: 15
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/bull.rsi
+  - type: Xenomorph
+    caste: Bull
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '450': Critical
+      '550': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8
+        Slash: 8
+        Piercing: 8
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5.2
+  - type: Body
+    prototype: XenomorphCMUBull
+  - type: XenomorphCharge
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphCharge
+    - ActionXenomorphBullPlow
+    - ActionXenomorphBullHeadbutt
+    - ActionXenomorphBullGore
+- type: entity
+  id: MobXenomorphCMUHivelord
+  parent: BaseMobXenomorphCMU
+  name: hivelord
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2.5
+    pheroSuffix: hivelord
+  - type: XenomorphResinWalker
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/hivelord.rsi
+  - type: Xenomorph
+    caste: Hivelord
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '550': Critical
+      '650': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.66
+    baseSprintSpeed: 3
+  - type: Body
+    prototype: XenomorphCMUHivelord
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphResinWalker
+    - ActionXenomorphHivelordPlasma
+    - ActionXenomorphTailStab
+- type: entity
+  id: MobXenomorphCMUCarrier
+  parent: BaseMobXenomorphCMU
+  name: carrier
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2
+  - type: XenomorphCarrier
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 14
+        Slash: 14
+        Piercing: 14
+  - type: XenomorphArmor
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/carrier.rsi
+    layers:
+    - state: alive
+      map: [enum.DamageStateVisualLayers.Base]
+    - map: [pocket1]
+    - map: [pocket2]
+    - state: sleeping
+      map: [rest]
+      visible: false
+    - state: para_0
+      map: [parasite0]
+      visible: false
+    - state: para_1
+      map: [parasite1]
+      visible: false
+    - state: para_2
+      map: [parasite2]
+      visible: false
+    - state: para_3
+      map: [parasite3]
+      visible: false
+  - type: Xenomorph
+    caste: Carrier
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9.16
+        Slash: 9.17
+        Piercing: 9.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUCarrier
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphCarrierEgg
+    - ActionXenomorphCarrierParasite
+    - ActionXenomorphCarrierReserve
+    - ActionXenomorphResinHole
+  - type: UserInterface
+    interfaces:
+      enum.XenomorphCarrierUiKey.Reserve:
+        type: ReserveParasitesBoundUserInterface
+
+- type: entity
+  id: MobXenomorphCMUBurrower
+  parent: BaseMobXenomorphCMU
+  name: burrower
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2
+  - type: XenomorphBurrow
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/burrower.rsi
+  - type: Xenomorph
+    caste: Burrower
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9.16
+        Slash: 9.17
+        Piercing: 9.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUBurrower
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphBurrow
+    - ActionXenomorphTremor
+    - ActionXenomorphDigTunnel
+    - ActionXenomorphResinHole
+- type: entity
+  id: MobXenomorphCMUReaper
+  parent: BaseMobXenomorphCMU
+  name: reaper
+  components:
+  - type: XenomorphPheromones
+    multiplier: 3
+    pheroSuffix: strong
+  - type: XenomorphReaper
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    armor: 10
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/reaper.rsi
+  - type: Xenomorph
+    caste: Reaper
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11.66
+        Slash: 11.67
+        Piercing: 11.67
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.8
+    baseSprintSpeed: 3.25
+  - type: Body
+    prototype: XenomorphCMUReaper
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphFleshHarvest
+    - ActionXenomorphRapture
+    - ActionXenomorphFleshBloom
+    - ActionXenomorphRedGas
+    - ActionXenomorphCarrionMantle
+- type: entity
+  id: MobXenomorphCMUCrusher
+  parent: BaseMobXenomorphCMU
+  name: crusher
+  components:
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 25
+    frontalArmor: 10
+    sideArmor: 5
+    explosionArmor: 100
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/crusher.rsi
+    scale: 1.3, 1.3
+  - type: Xenomorph
+    caste: Crusher
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '800': Critical
+      '900': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    angle: 60
+    maxTargets: 2
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.66
+    baseSprintSpeed: 3
+  - type: Body
+    prototype: XenomorphCMUCrusher
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphStomp
+    - ActionXenomorphCrusherCharge
+    - ActionXenomorphCrusherSoak
+    - ActionXenomorphCrusherShield
+  - type: XenomorphStomp
+  - type: XenomorphCrusher
+- type: entity
+  id: MobXenomorphCMURavager
+  parent: BaseMobXenomorphCMU
+  name: ravager
+  components:
+  - type: XenomorphRavager
+  - type: XenomorphLeap
+    range: 5
+    knockdownTime: 0
+    moveDelay: 0
+    plasmaCost: 25
+    sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 18
+        Slash: 18
+        Piercing: 18
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 80
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/ravager.rsi
+  - type: Xenomorph
+    caste: Ravager
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+        Slash: 15
+        Piercing: 15
+    attackRate: 1.05
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMURavager
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphAssault
+    - ActionXenomorphEmpower
+    - ActionXenomorphScissorCut
+- type: entity
+  id: MobXenomorphCMUBoiler
+  parent: BaseMobXenomorphCMU
+  name: boiler
+  components:
+  - type: XenomorphTailStab
+    corrosive: true
+    acidAmount: 6
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphSpitter
+    strongSpray: true
+  - type: XenomorphBoiler
+  - type: XenomorphLongRangeSight
+  - type: XenomorphArmor
+    armor: 20
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/boiler.rsi
+  - type: Xenomorph
+    caste: Boiler
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUBoiler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphCorrosiveTail
+    - ActionXenomorphSprayAcidBoiler
+    - ActionXenomorphLongRangeSight
+    - ActionXenomorphBombard
+    - ActionXenomorphToggleGas
+    - ActionXenomorphAcidShroud
+- type: entity
+  id: MobXenomorphCMUDespoiler
+  parent: BaseMobXenomorphCMU
+  name: despoiler
+  components:
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 6.66
+        Slash: 6.67
+        Piercing: 6.67
+  - type: XenomorphArmor
+    armor: 35
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/despoiler.rsi
+  - type: Xenomorph
+    caste: Despoiler
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
+        Heat: 7
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.4
+    baseSprintSpeed: 4.8
+  - type: Body
+    prototype: XenomorphCMUDespoiler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphAcidBarrage
+    - ActionXenomorphCausticEmbrace
+    - ActionXenomorphOozingWounds
+    - ActionXenomorphCatalyze
+  - type: XenomorphDespoiler
+  - type: PointLight
+    enabled: true
+    radius: 1.7
+    softness: 1
+    color: "#83ff66"
+- type: entity
+  id: MobXenomorphCMUPraetorian
+  parent: BaseMobXenomorphCMU
+  name: praetorian
+  components:
+  - type: XenomorphPraetorian
+  - type: XenomorphSpitter
+    stackingSpray: true
+    sprayRange: 7
+    sprayCost: 80
+  - type: XenomorphLeap
+    range: 6
+    plasmaCost: 40
+    knockdownTime: 0
+    moveDelay: 0
+    sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/praetorian.rsi
+  - type: Xenomorph
+    caste: Praetorian
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUPraetorian
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphPraetorianSpit
+    - ActionXenomorphPraetorianDash
+    - ActionXenomorphAcidBall
+    - ActionXenomorphSprayAcidPraetorian
+- type: entity
+  id: MobXenomorphCMUQueen
+  parent: BaseMobXenomorphCMU
+  name: queen
+  components:
+  - type: XenomorphPheromones
+    multiplier: 4
+    pheroSuffix: queen
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 18
+        Slash: 18
+        Piercing: 18
+  - type: XenomorphArmor
+    armor: 35
+    explosionArmor: 100
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/queen.rsi
+    layers:
+    - state: alive
+      map:
+      - enum.DamageStateVisualLayers.Base
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - map:
+      - rest
+      state: sleeping
+      visible: false
+    - map:
+      - ovipositor
+      sprite: _CMU14/Mobs/Xenomorphs/ovipositor.rsi
+      state: normal
+      visible: false
+  - type: Xenomorph
+    caste: Queen
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.4
+    baseSprintSpeed: 2.5
+  - type: Body
+    prototype: XenomorphCMUQueen
+  - type: XenomorphQueen
+    promoteTo: MobXenomorphCMUPraetorian
+    casteWhitelist:
+    - Lurker
+    - Spitter
+    - Hivelord
+  - type: SpamEmitSound
+    sound:
+      collection: DumontXenomorphQueenIdle
+    minInterval: 45
+    maxInterval: 60
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: DumontXenomorphQueenFootstep
+      params:
+        volume: 0
+  - type: XenomorphRoyal
+  - type: XenomorphOvipositor
+  - type: UserInterface
+    interfaces:
+      enum.XenomorphQueenUiKey.Key:
+        type: XenomorphQueenBoundUserInterface
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphOvipositor
+    - ActionXenomorphQueenGut
+    - ActionXenomorphQueenHeal
+    - ActionXenomorphQueenPlasma
+    - ActionXenomorphQueenHive
+    - ActionXenomorphQueenWord
+    - ActionXenomorphQueenOrder
+- type: entity
+  id: MobXenomorphCMUHealerDrone
+  parent: BaseMobXenomorphCMU
+  name: healer drone
+  components:
+  - type: XenomorphPheromones
+    multiplier: 3
+    pheroSuffix: strong
+  - type: XenomorphFruitPlanter
+  - type: XenomorphHealer
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
+  - type: XenomorphArmor
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/healer_drone.rsi
+    layers:
+    - state: alive
+      map: ["enum.DamageStateVisualLayers.Base"]
+    - map: [pocket1]
+    - map: [pocket2]
+    - state: sleeping
+      map: [rest]
+      visible: false
+    - state: salved
+      map: [healer-salve]
+      visible: false
+  - type: Xenomorph
+    caste: Drone
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5.83
+        Slash: 5.83
+        Piercing: 5.84
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUHealerDrone
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphSalve
+    - ActionXenomorphSacrifice
+    - ActionXenomorphPlantLesserFruit
+- type: entity
+  id: MobXenomorphCMUGardenerDrone
+  parent: BaseMobXenomorphCMU
+  name: gardener drone
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2
+  - type: XenomorphResinSurge
+  - type: XenomorphFruitPlanter
+    maximum: 6
+    choice: null
+    allowed: [Greater, Plasma, Speed, Spore, Unstable]
+    plasmaCost: 100
+    harvestMultiplier: 0.5
+    feedingMultiplier: 0.5
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/gardener_drone.rsi
+    layers:
+    - state: alive
+      map: [enum.DamageStateVisualLayers.Base]
+    - map: [pocket1]
+    - map: [pocket2]
+    - state: sleeping
+      map: [rest]
+      visible: false
+    - state: gardener_walk
+      map: [fruit-planter]
+      visible: false
+  - type: Xenomorph
+    caste: Drone
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUGardenerDrone
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphPlantHardyWeeds
+    - ActionXenomorphResinSurge
+    - ActionXenomorphChooseFruit
+    - ActionXenomorphPlantFruit
+  - type: UserInterface
+    interfaces:
+      enum.XenomorphFruitUiKey.Choose:
+        type: XenomorphFruitBoundUserInterface
+- type: entity
+  id: MobXenomorphCMUHeatshieldDefender
+  parent: BaseMobXenomorphCMU
+  name: heatshield defender
+  components:
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+    hitEffect: DumontXenomorphTailSlam
+    hitSound:
+      collection: Punch
+      params:
+        variation: 0.15
+  - type: XenomorphHeatshield
+  - type: XenomorphCrest
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 50
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/heatshield_defender.rsi
+    layers:
+    - state: alive
+      map: [enum.DamageStateVisualLayers.Base]
+    - map: [pocket1]
+    - map: [pocket2]
+    - state: sleeping
+      map: [rest]
+      visible: false
+    - state: crest
+      map: [crest]
+      visible: false
+  - type: Xenomorph
+    caste: Defender
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9.16
+        Slash: 9.17
+        Piercing: 9.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.75
+    baseSprintSpeed: 3.1
+  - type: Body
+    prototype: XenomorphCMUHeatshieldDefender
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailSlam
+    - ActionXenomorphCrest
+    - ActionXenomorphSelfImmolate
+    - ActionXenomorphThermoregulation
+    - ActionXenomorphVomitBile
+- type: entity
+  id: MobXenomorphCMUAciderRunner
+  parent: BaseMobXenomorphCMU
+  name: acider runner
+  components:
+  - type: XenomorphHide
+  - type: XenomorphAcider
+  - type: PointLight
+    enabled: false
+    radius: 3
+    softness: 1
+    color: "#22FF22"
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    armor: 15
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/acider_runner.rsi
+  - type: Xenomorph
+    caste: Runner
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '345': Critical
+      '445': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+    attackRate: 1.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 6.5
+  - type: Body
+    prototype: XenomorphCMUAciderRunner
+  - type: VentCrawler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphAciderCorrode
+    - ActionXenomorphPrimeAcid
+    - ActionXenomorphHide
+- type: entity
+  id: MobXenomorphCMUToxicSentinel
+  parent: BaseMobXenomorphCMU
+  name: toxic sentinel
+  components:
+  - type: XenomorphToxic
+  - type: XenomorphArmor
+    armor: 10
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/toxic_sentinel.rsi
+  - type: Xenomorph
+    caste: Sentinel
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.33
+        Slash: 8.33
+        Piercing: 8.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUToxicSentinel
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphToxicSpit
+    - ActionXenomorphToxicSlash
+    - ActionXenomorphDrainSting
+    - ActionXenomorphWeakCorrode
+- type: entity
+  id: MobXenomorphCMUVenatorSpitter
+  parent: BaseMobXenomorphCMU
+  name: venator spitter
+  components:
+  - type: XenomorphVenator
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/venator_spitter.rsi
+  - type: Xenomorph
+    caste: Spitter
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '400': Critical
+      '500': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.8
+    baseSprintSpeed: 3.2
+  - type: Body
+    prototype: XenomorphCMUVenatorSpitter
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphVenatorSpit
+    - ActionXenomorphVenatorBlob
+    - ActionXenomorphVenatorBreath
+    - ActionXenomorphStoreAcid
+- type: entity
+  id: MobXenomorphCMUEggsacCarrier
+  parent: BaseMobXenomorphCMU
+  name: eggsac carrier
+  components:
+  - type: XenomorphPheromones
+    multiplier: 3
+    pheroSuffix: strong
+  - type: XenomorphCarrier
+    maxParasites: 0
+    maxEggs: 12
+    canGenerateEggs: true
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 14
+        Slash: 14
+        Piercing: 14
+  - type: XenomorphArmor
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/eggsac_carrier.rsi
+    layers:
+    - state: alive
+      map: [enum.DamageStateVisualLayers.Base]
+    - map: [pocket1]
+    - map: [pocket2]
+    - state: sleeping
+      map: [rest]
+      visible: false
+    - state: eggsac_0
+      map: [eggsac]
+  - type: Xenomorph
+    caste: Carrier
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9.16
+        Slash: 9.17
+        Piercing: 9.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUEggsacCarrier
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphCarrierEgg
+    - ActionXenomorphGenerateEggs
+
+- type: entity
+  id: MobXenomorphCMUBulwarkWarrior
+  parent: BaseMobXenomorphCMU
+  name: bulwark warrior
+  components:
+  - type: XenomorphBulwark
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 20
+    flatReduction: false
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/bulwark_warrior.rsi
+  - type: Xenomorph
+    caste: Warrior
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '500': Critical
+      '600': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11.66
+        Slash: 11.67
+        Piercing: 11.67
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUBulwarkWarrior
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphEncasedPlates
+    - ActionXenomorphPlateBash
+    - ActionXenomorphBulwarkTailSwing
+    - ActionXenomorphReflectiveShield
+  - type: XenomorphLifesteal
+- type: entity
+  id: MobXenomorphCMUVampireLurker
+  parent: BaseMobXenomorphCMU
+  name: vampire lurker
+  components:
+  - type: XenomorphVampire
+  - type: XenomorphLeap
+    range: 4
+    knockdownTime: 0
+    moveDelay: 0
+    sound: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+  - type: XenomorphArmor
+    armor: 20
+    explosionArmor: 20
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/vampire_lurker.rsi
+  - type: Xenomorph
+    caste: Lurker
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '390': Critical
+      '490': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+    attackRate: 0.93
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+  - type: Body
+    prototype: XenomorphCMUVampireLurker
+  - type: VentCrawler
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphVampireRush
+    - ActionXenomorphFlurry
+    - ActionXenomorphTailJab
+    - ActionXenomorphHeadbite
+- type: entity
+  id: MobXenomorphCMUResinWhispererHivelord
+  parent: BaseMobXenomorphCMU
+  name: resin whisperer hivelord
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2.5
+    pheroSuffix: hivelord
+  - type: XenomorphLongRangeSight
+    offsetLength: 0
+    speed: 1
+    zoom: 1.25, 1.25
+    prepareDelay: 0
+  - type: XenomorphResinWhisperer
+  - type: XenomorphConstruction
+  - type: XenomorphResinWalker
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/resin_whisperer_hivelord.rsi
+  - type: Xenomorph
+    caste: Hivelord
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '550': Critical
+      '650': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.66
+    baseSprintSpeed: 3
+  - type: Body
+    prototype: XenomorphCMUResinWhispererHivelord
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphLongRangeSight
+    - ActionXenomorphResinWalker
+    - ActionXenomorphHivelordPlasma
+    - ActionXenomorphTailStab
+    - ActionXenomorphChooseResin
+    - ActionXenomorphSecreteResin
+- type: entity
+  id: MobXenomorphCMUDesignerHivelord
+  parent: BaseMobXenomorphCMU
+  name: designer hivelord
+  components:
+  - type: XenomorphPheromones
+    multiplier: 2.5
+    pheroSuffix: hivelord
+  - type: XenomorphLongRangeSight
+    offsetLength: 0
+    speed: 1
+    zoom: 1.25, 1.25
+    prepareDelay: 0
+  - type: XenomorphDesigner
+  - type: XenomorphResinWalker
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: XenomorphArmor
+    explosionArmor: 10
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/designer_hivelord.rsi
+  - type: Xenomorph
+    caste: Hivelord
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '550': Critical
+      '650': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.15
+    baseSprintSpeed: 3.9
+  - type: Body
+    prototype: XenomorphCMUDesignerHivelord
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphLongRangeSight
+    - ActionXenomorphResinWalker
+    - ActionXenomorphTailStab
+    - ActionXenomorphDesignOptimized
+    - ActionXenomorphDesignFlexible
+    - ActionXenomorphDesignConstruct
+    - ActionXenomorphDesignToggle
+    - ActionXenomorphDesignRemove
+    - ActionXenomorphDesignThicken
+    - ActionXenomorphDesignSurge
+- type: entity
+  id: MobXenomorphCMUHedgehogRavager
+  parent: BaseMobXenomorphCMU
+  name: hedgehog ravager
+  components:
+  - type: XenomorphHedgehog
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 100
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/hedgehog_ravager.rsi
+  - type: Xenomorph
+    caste: Ravager
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11.66
+        Slash: 11.67
+        Piercing: 11.67
+    attackRate: 0.9
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.8
+    baseSprintSpeed: 3.2
+  - type: Body
+    prototype: XenomorphCMUHedgehogRavager
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphFireSpikes
+    - ActionXenomorphSpikeShield
+    - ActionXenomorphSpikeShed
+- type: entity
+  id: MobXenomorphCMUBerserkerRavager
+  parent: BaseMobXenomorphCMU
+  name: berserker ravager
+  components:
+  - type: XenomorphRage
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 18
+        Slash: 18
+        Piercing: 18
+  - type: XenomorphArmor
+    armor: 30
+    explosionArmor: 80
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/berserker_ravager.rsi
+  - type: Xenomorph
+    caste: Ravager
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '590': Critical
+      '690': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+        Slash: 15
+        Piercing: 15
+    attackRate: 1.05
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUBerserkerRavager
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphApprehend
+    - ActionXenomorphClothesline
+    - ActionXenomorphEviscerate
+- type: entity
+  id: MobXenomorphCMUDancerPraetorian
+  parent: BaseMobXenomorphCMU
+  name: dancer praetorian
+  components:
+  - type: XenomorphTailStab
+    missCooldown: 0.7
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphDancer
+  - type: XenomorphArmor
+    armor: 20
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/dancer_praetorian.rsi
+  - type: Xenomorph
+    caste: Praetorian
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUDancerPraetorian
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphDodge
+    - ActionXenomorphTailLance
+    - ActionXenomorphImpale
+    - ActionXenomorphTailTrip
+- type: entity
+  id: MobXenomorphCMUVanguardPraetorian
+  parent: BaseMobXenomorphCMU
+  name: vanguard praetorian
+  components:
+  - type: XenomorphVanguard
+  - type: XenomorphLeap
+    plasmaCost: 50
+    range: 6
+    knockdownTime: 0
+    moveDelay: 0
+    sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+  - type: XenomorphTailStab
+    damage:
+      types:
+        Blunt: 16
+        Slash: 16
+        Piercing: 16
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/vanguard_praetorian.rsi
+  - type: Xenomorph
+    caste: Praetorian
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '590': Critical
+      '690': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Body
+    prototype: XenomorphCMUVanguardPraetorian
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailStab
+    - ActionXenomorphPierce
+    - ActionXenomorphBlitz
+    - ActionXenomorphCleaveRoot
+    - ActionXenomorphCleaveFling
+- type: entity
+  id: MobXenomorphCMUOppressorPraetorian
+  parent: BaseMobXenomorphCMU
+  name: oppressor praetorian
+  components:
+  - type: XenomorphOppressor
+  - type: XenomorphArmor
+    armor: 25
+    explosionArmor: 60
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/oppressor_praetorian.rsi
+  - type: Xenomorph
+    caste: Praetorian
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUOppressorPraetorian
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailSeize
+    - ActionXenomorphAbduct
+    - ActionXenomorphDislocate
+    - ActionXenomorphTailLash
+- type: entity
+  id: MobXenomorphCMUValkyriePraetorian
+  parent: BaseMobXenomorphCMU
+  name: valkyrie praetorian
+  components:
+  - type: XenomorphPheromones
+    multiplier: 3
+    pheroSuffix: strong
+  - type: XenomorphValkyrie
+  - type: XenomorphArmor
+    armor: 35
+    explosionArmor: 40
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenomorphs/valkyrie_praetorian.rsi
+  - type: Xenomorph
+    caste: Praetorian
+  - type: MobThresholds
+    thresholds:
+      '0': Alive
+      '650': Critical
+      '750': Dead
+    stateAlertDict:
+      Alive: XenomorphHealth
+      Critical: XenomorphCrit
+      Dead: XenomorphDead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 13.33
+        Slash: 13.33
+        Piercing: 13.34
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 3.5
+  - type: Body
+    prototype: XenomorphCMUValkyriePraetorian
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphTailFountain
+    - ActionXenomorphTantrum
+    - ActionXenomorphHighGallop
+    - ActionXenomorphFightOrFlight
+    - ActionXenomorphRetrieve

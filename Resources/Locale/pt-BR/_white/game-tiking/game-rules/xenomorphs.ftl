@@ -18,11 +18,14 @@ xenomorphs-xenomajor = Grande vitória xenomorfa!
 xenomorphs-xenominor = Vitória menor dos xenomorfos!
 xenomorphs-neutral = Empate
 xenomorphs-crewminor = Vitória menor da tripulação!
+    A tripulação sobreviveu aos Xenos ou os eliminou.
 xenomorphs-crewmajor = Vitória decisiva da tripulação!
+    A tripulação sobreviveu aos Xenos ou os eliminou.
 
 xenomorphs-cond-nukeexplodedonstation = A tripulação destruiu os xenomorfos com o explosivo de fissão nuclear.
 xenomorphs-cond-nukeactiveinstation = A tripulação deixou o explosivo de fissão nuclear armado na estação.
 xenomorphs-cond-xenotakeoverstation = Os xenomorfos conseguiram tomar o controle da estação.
 xenomorphs-cond-xenoinfiltratedoncentcom = Xenomorfos infiltraram-se na estação de Comando Central.
-xenomorphs-cond-allreproducexenodead = A tripulação eliminou todos os Xenomorfos capazes de reprodução.
+xenomorphs-cond-allreproducexenodead = A tripulação eliminou todos os xenomorfos.
 xenomorphs-cond-allcrewdead = Todos os tripulantes morreram.
+xenomorphs-cond-crewescaped = A tripulação escapou sem que os xenomorfos invadissem a Central de Comando.

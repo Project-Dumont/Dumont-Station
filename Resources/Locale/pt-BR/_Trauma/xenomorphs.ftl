@@ -3,7 +3,7 @@ queen-roar-start-others = A rainha se prepara para soltar um rugido poderoso!
 queen-roar-complete = Um rugido aterrorizante irrompe da rainha!
 neurotoxin-gland-activated = Você contrai sua glândula.
 neurotoxin-gland-deactivated = Você relaxa sua glândula.
-ghost-role-information-facehugger-name = Facehugger
+ghost-role-information-facehugger-name = Parasita facial
 ghost-role-information-facehugger-description = Salte no rosto de uma vítima para infectá-la. Você passará a controlar a larva que cresce dentro do hospedeiro.
 
 ent-ActionAcid = Ácido corrosivo (100)

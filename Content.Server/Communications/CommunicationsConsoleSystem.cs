@@ -263,8 +263,20 @@ namespace Content.Server.Communications
                 currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd,
                 stationName,
-                renameOnCooldown
+                renameOnCooldown,
+                comp.NuclearCodes
             ));
+        }
+
+        public void ReceiveNuclearCodes(EntityUid station, string codes)
+        {
+            var query = EntityQueryEnumerator<CommunicationsConsoleComponent>();
+            while (query.MoveNext(out var uid, out var console))
+            {
+                if (console.Global || _stationSystem.GetOwningStation(uid) != station) continue;
+                console.NuclearCodes = codes;
+                UpdateCommsConsoleInterface(uid, console);
+            }
         }
 
         private static bool CanAnnounce(CommunicationsConsoleComponent comp)

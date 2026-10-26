@@ -7,6 +7,8 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
+using Robust.Shared.GameStates;
+using Content.Shared.StatusEffectNew.Components;
 
 namespace Content.Shared.Movement.Systems;
 
@@ -22,25 +24,39 @@ namespace Content.Shared.Movement.Systems;
 /// could occupy same prototype, but be aware that this will make controlling duration of effect
 /// extra 'challenging', as it will be shared too.
 /// </remarks>
-public sealed class MovementModStatusSystem : EntitySystem
+public sealed partial class MovementModStatusSystem : EntitySystem
 {
     public static readonly EntProtoId VomitingSlowdown = "VomitingSlowdownStatusEffect";
     public static readonly EntProtoId TaserSlowdown = "TaserSlowdownStatusEffect";
     public static readonly EntProtoId FlashSlowdown = "FlashSlowdownStatusEffect";
     public static readonly EntProtoId StatusEffectFriction = "StatusEffectFriction";
 
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
-    [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit
-    [Dependency] private readonly SharedJitteringSystem _jitter = default!; // goob edit
+    [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private SharedStutteringSystem _stutter = default!; // goob edit
+    [Dependency] private SharedJitteringSystem _jitter = default!; // goob edit
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<MovementModStatusEffectComponent, AfterAutoHandleStateEvent>(OnModifierState);
+        SubscribeLocalEvent<StatusEffectComponent, AfterAutoHandleStateEvent>(OnEffectState);
         SubscribeLocalEvent<MovementModStatusEffectComponent, StatusEffectRemovedEvent>(OnMovementModRemoved);
         SubscribeLocalEvent<MovementModStatusEffectComponent, StatusEffectRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnRefreshRelay);
         SubscribeLocalEvent<FrictionStatusEffectComponent, StatusEffectRemovedEvent>(OnFrictionStatusEffectRemoved);
         SubscribeLocalEvent<FrictionStatusEffectComponent, StatusEffectRelayedEvent<RefreshFrictionModifiersEvent>>(OnRefreshFrictionStatus);
         SubscribeLocalEvent<FrictionStatusEffectComponent, StatusEffectRelayedEvent<TileFrictionEvent>>(OnRefreshTileFrictionStatus);
+    }
+
+    private void OnModifierState(Entity<MovementModStatusEffectComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        if (TryComp<StatusEffectComponent>(ent, out var effect) && effect.AppliedTo is { } target)
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
+    }
+
+    private void OnEffectState(Entity<StatusEffectComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        if (HasComp<MovementModStatusEffectComponent>(ent) && ent.Comp.AppliedTo is { } target)
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
     }
 
     private void OnMovementModRemoved(Entity<MovementModStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
@@ -178,6 +194,7 @@ public sealed class MovementModStatusSystem : EntitySystem
 
         status.Comp.SprintSpeedModifier = sprintSpeedModifier;
         status.Comp.WalkSpeedModifier = walkSpeedModifier;
+        Dirty(status);
 
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 

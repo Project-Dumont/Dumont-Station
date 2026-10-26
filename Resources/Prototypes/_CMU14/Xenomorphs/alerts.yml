@@ -1,0 +1,276 @@
+- type: alert
+  id: DumontXenomorphArmor
+  icons:
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_max
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_100
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_90
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_80
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_70
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_60
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_50
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_40
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_30
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_20
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_10
+  - sprite: /Textures/_CMU14/Interface/Alerts/xeno_armor.rsi
+    state: armor_00
+  name: xenomorph-armor-name
+  description: xenomorph-armor-desc
+  clickEvent: !type:XenomorphArmorAlertEvent
+  minSeverity: 0
+  maxSeverity: 11
+
+- type: alert
+  id: DumontXenomorphFlesh
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_full
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_16
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_15
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_14
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_13
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_12
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_11
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_10
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_9
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_8
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_7
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_6
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_5
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_4
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_3
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_2
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_1
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_0
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_flesh.rsi
+    state: power_display_empty
+  name: xenomorph-reaper-flesh-name
+  description: xenomorph-reaper-flesh-desc
+  minSeverity: 0
+  maxSeverity: 18
+  clickEvent: !type:XenomorphFleshAlertEvent
+
+- type: alert
+  id: DumontXenomorphShards
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_full
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_16
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_15
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_14
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_13
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_12
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_11
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_10
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_9
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_8
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_7
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_6
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_5
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_4
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_3
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_2
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_1
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_0
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_empty
+  name: xenomorph-hedgehog-shards-name
+  description: xenomorph-hedgehog-shards-desc
+  minSeverity: 0
+  maxSeverity: 18
+  clickEvent: !type:XenomorphShardsAlertEvent
+
+- type: alert
+  id: DumontXenomorphHealingReserve
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_full
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_16
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_15
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_14
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_13
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_12
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_11
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_10
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_9
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_8
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_7
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_6
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_5
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_4
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_3
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_2
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_1
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_0
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_shards.rsi
+    state: power_display_empty
+  name: xenomorph-healer-reserve-name
+  description: xenomorph-healer-reserve-desc
+  minSeverity: 0
+  maxSeverity: 18
+  clickEvent: !type:XenomorphHealingReserveAlertEvent
+
+- type: alert
+  id: DumontXenomorphFury
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_full
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_16
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_15
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_14
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_13
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_12
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_11
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_10
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_9
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_8
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_7
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_6
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_5
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_4
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_3
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_2
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_1
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_0
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_empty
+  name: dumont-xenomorph-fury-name
+  description: dumont-xenomorph-fury-desc
+  minSeverity: 0
+  maxSeverity: 18
+
+  clickEvent: !type:XenomorphFuryAlertEvent
+
+- type: alert
+  id: DumontXenomorphAcidReserve
+  icons:
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_full
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_16
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_15
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_14
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_13
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_12
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_11
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_10
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_9
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_8
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_7
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_6
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_5
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_4
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_3
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_2
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_1
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_0
+  - sprite: /Textures/_RMC14/Interface/Alerts/xeno_energy.rsi
+    state: power_display_empty
+  name: dumont-xenomorph-acid-reserve-name
+  description: dumont-xenomorph-acid-reserve-desc
+  minSeverity: 0
+  maxSeverity: 18
+
+  clickEvent: !type:XenomorphAcidReserveAlertEvent
+
+- type: alert
+  id: DumontXenomorphIntoxicated
+  icons: [ /Textures/Interface/Alerts/Intoxicated/intoxicated.png ]
+  name: dumont-xenomorph-intoxicated-name
+  description: dumont-xenomorph-intoxicated-desc
+  clickEvent: !type:XenomorphIntoxicatedResistAlertEvent

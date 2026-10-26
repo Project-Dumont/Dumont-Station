@@ -149,6 +149,8 @@ namespace Content.Client.Communications.UI
 
             if (_menu != null)
             {
+                _menu.NuclearCodesPanel.Visible = !string.IsNullOrEmpty(commsState.NuclearCodes);
+                _menu.NuclearCodesText.SetMessage(Robust.Shared.Utility.FormattedMessage.FromMarkupOrThrow(commsState.NuclearCodes ?? ""));
                 _menu.CanAnnounce = commsState.CanAnnounce;
                 _menu.CanBroadcast = commsState.CanBroadcast;
                 _menu.CanCall = commsState.CanCall;

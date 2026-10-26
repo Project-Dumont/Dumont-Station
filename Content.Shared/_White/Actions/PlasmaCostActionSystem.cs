@@ -3,14 +3,15 @@ using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Plasma;
 using Content.Shared._White.Xenomorphs.Plasma.Components;
 using Content.Shared.Actions;
+using Content.Shared._White.Actions.Events;
 using Content.Shared.Actions.Events;
 
 namespace Content.Shared._White.Actions;
 
-public sealed class PlasmaCostActionSystem : EntitySystem
+public sealed partial class PlasmaCostActionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedPlasmaSystem _plasma = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedPlasmaSystem _plasma = default!;
 
     public override void Initialize()
     {
@@ -52,9 +53,12 @@ public sealed class PlasmaCostActionSystem : EntitySystem
         return true;
     }
 
+    private bool IsResinConstruction(EntityUid action)
+        => _actions.GetEvent(action) is PlaceTileEntityEvent { Entity: { } resin } && (resin.Id == "WallResin" || resin.Id == "ResinDoor");
+
     private void OnPlasmaAmountChange(EntityUid uid, PlasmaCostActionComponent component, ActionRelayedEvent<PlasmaAmountChangeEvent> args)
     {
-        _actions.SetEnabled(uid, component.PlasmaCost <= args.Args.Amount);
+        _actions.SetEnabled(uid, (IsResinConstruction(uid) ? MathF.Ceiling(component.PlasmaCost.Float() / 2) : component.PlasmaCost) <= args.Args.Amount);
     }
 
     // Dumont start
@@ -67,7 +71,7 @@ public sealed class PlasmaCostActionSystem : EntitySystem
 
     private void OnActionAttempt(Entity<PlasmaCostActionComponent> ent, ref ActionAttemptEvent args)
     {
-        if (!_plasma.HasPlasma(args.User, ent.Comp.PlasmaCost))
+        if (!_plasma.HasPlasma(args.User, IsResinConstruction(ent) ? MathF.Ceiling(ent.Comp.PlasmaCost.Float() / 2) : ent.Comp.PlasmaCost))
             args.Cancelled = true;
     }
     // Goobstation end

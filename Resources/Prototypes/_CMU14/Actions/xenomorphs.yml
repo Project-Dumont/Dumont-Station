@@ -1,0 +1,2138 @@
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRest
+  name: Rest
+  description: Rest on weeds or in a resin nest to recover health. Use again to stand up.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resting }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resting }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    checkCanInteract: false
+    useDelay: 1
+  - type: InstantAction
+    event: !type:XenomorphRestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphOvipositor
+  name: Grow ovipositor
+  description: Spend 500 plasma to attach to the resin and grow an egg sac. Detaching is free.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: grow_ovipositor }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: grow_ovipositor }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    checkCanInteract: false
+    useDelay: 1
+  - type: InstantAction
+    event: !type:XenomorphOvipositorActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphWallNest
+  name: Build wall nest
+  description: Build a nest on a wall covered in resin. Costs 100 plasma.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_nest }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_nest }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 2
+  - type: TargetAction
+    range: 1.6
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      tags: [Wall]
+      components: [XenomorphWallResinOverlay]
+    event: !type:XenomorphWallNestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHeadbutt
+  name: Headbutt
+  description: Spend 10 plasma to charge at an enemy. Lowering your crest reduces damage but increases knockback.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbutt }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbutt }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 6
+  - type: TargetAction
+    range: 3.5
+  - type: EntityTargetAction
+    event: !type:XenomorphHeadbuttActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 10
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPunch
+  name: Punch
+  description: Deliver a heavy punch to an enemy.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: punch }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: punch }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 4.5
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    event: !type:XenomorphStrikeActionEvent
+      damage:
+        types:
+          Blunt: 27.5
+      throwDistance: 1
+      slow: 5
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFling
+  name: Fling
+  description: Fling an enemy away, knocking them down.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: fling }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: fling }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 7
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    event: !type:XenomorphStrikeActionEvent
+      throwDistance: 4
+      knockdown: 1
+      slow: 4
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSalve
+  name: Apply salve
+  description: Spend 200 plasma and 75 health to heal another xenomorph for 100 health over five seconds.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: apply_salve }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: apply_salve }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    whitelist:
+      components: [Xenomorph]
+    event: !type:XenomorphSalveActionEvent
+  - type: XenomorphDazeableAction
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFortify
+  name: Fortify
+  description: Become immobile and block passage, increasing armor and explosion resistance. Use again to move.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: fortify }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: fortify }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    checkCanInteract: false
+    useDelay: 5
+  - type: InstantAction
+    event: !type:XenomorphFortifyActionEvent
+
+- type: entity
+  parent: ActionJumpXenomorph
+  id: ActionXenomorphLeap
+  name: Leap
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: WorldTargetAction
+    event: !type:XenomorphLeapActionEvent
+
+- type: entity
+  parent: ActionXenomorphLeap
+  id: ActionXenomorphPounce
+  name: Pounce
+  description: Spend 20 plasma to leap. Knock down your target if you are invisible when you hit.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 6
+  - type: PlasmaCostAction
+    plasmaCost: 20
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphInvisibility
+  name: Camouflage
+  description: Spend 20 plasma to become nearly invisible for 30 seconds. Attacking or landing a pounce reveals you.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_invisibility }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_invisibility }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:XenomorphInvisibilityActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphStomp
+  name: Stomp
+  description: Spend 30 plasma to slam the ground in a cone, damaging, slowing and knocking enemies back.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: stomp }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: stomp }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 18
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphStompActionEvent
+
+  - type: XenomorphActionArea
+    range: 4
+    angle: 90
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphStompSlowdown
+  name: xenomorph stomp slowdown
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCrest
+  name: Lower crest
+  description: Lower your crest to increase armor and resist knockdowns, at the cost of movement speed. Raise it to rest or fortify.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: crest_defense }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: crest_defense }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 2
+  - type: InstantAction
+    event: !type:XenomorphCrestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailSweep
+  name: Tail sweep
+  description: Spend 10 plasma to knock down and push away enemies around you. Requires a raised crest.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_sweep }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_sweep }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 15
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphTailSweepActionEvent
+  - type: XenomorphActionArea
+    range: 1.5
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCharge
+  name: Toggle charging
+  description: Build momentum by moving in a straight line. After three tiles, each tile costs 6 plasma. Turning or stopping resets your momentum.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ready_charge0 }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ready_charge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:XenomorphChargeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBullPlow
+  name: Plow
+  description: Push enemies aside without stopping your charge. Damage increases with momentum.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ram }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ram }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+    toggled: true
+  - type: InstantAction
+    event: !type:XenomorphChargeModeActionEvent
+      mode: Plow
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBullHeadbutt
+  name: Charging headbutt
+  description: End your charge with a headbutt that knocks the target down and throws it back. Damage and knockdown duration increase with momentum.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbutt }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbutt }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:XenomorphChargeModeActionEvent
+      mode: Headbutt
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBullGore
+  name: Gore
+  description: End your charge by piercing your target, slowing it and injecting a painful toxin. Damage increases with momentum.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_impale }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_impale }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:XenomorphChargeModeActionEvent
+      mode: Gore
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphBullSlowdown
+  name: xenomorph charge slowdown
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSelfImmolate
+  name: Self-immolate
+  description: Spend 50 plasma to coat yourself in fuel and ignite after 1.5 seconds. Moving interrupts ignition.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: breathe_fire }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: breathe_fire }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 24
+  - type: InstantAction
+    event: !type:XenomorphSelfImmolateActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 50
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphThermoregulation
+  name: Thermoregulation
+  description: While burning, spend 40 plasma to move 35% faster and attack 20% faster for 5 seconds. Extinguishes you when the effect ends.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: empower }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: empower }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 16
+  - type: InstantAction
+    event: !type:XenomorphThermoregulationActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 40
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailStab
+  name: Tail stab
+  description: Strike the first enemy in front of your tail, up to 2.5 meters away. Cooldown is 10 seconds on a hit or 1 second on a miss. Costs no plasma.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_attack }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_attack }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 2.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    targetCheckCanInteract: false
+  - type: WorldTargetAction
+    event: !type:XenomorphTailStabActionEvent
+  - type: XenomorphActionArea
+    range: 2.5
+    width: 0.2
+
+- type: entity
+  parent: ActionXenomorphTailStab
+  id: ActionXenomorphTailSlam
+  name: Tail slam
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCrusherCharge
+  name: CrusherCharge
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ready_charge }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: ready_charge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 42
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: XenomorphActionArea
+    range: 5
+    width: 1
+  - type: WorldTargetAction
+    event: !type:XenomorphCrusherChargeActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 20
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCrusherSoak
+  name: CrusherSoak
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: soak }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: soak }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 17
+  - type: InstantAction
+    event: !type:XenomorphCrusherSoakActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 20
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCrusherShield
+  name: CrusherShield
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: empower }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: empower }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 26
+  - type: InstantAction
+    event: !type:XenomorphCrusherShieldActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 50
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphVomitBile
+  name: Vomit bile (40)
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 8
+  - type: TargetAction
+    range: 5.4
+    checkCanAccess: false
+  - type: EntityTargetAction
+    targetCheckCanInteract: false
+  - type: WorldTargetAction
+    event: !type:XenomorphVomitBileActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 40
+  - type: XenomorphActionArea
+    range: 3
+    width: 3
+    gridTiles: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSlowingSpit
+  name: SlowingSpit
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 2
+  - type: TargetAction
+    range: 15
+    repeat: true
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphSpitActionEvent
+      scattered: false
+  - type: PlasmaCostAction
+    plasmaCost: 20
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphScatteredSpit
+  name: ScatteredSpit
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: acid_shotgun }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: acid_shotgun }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 7
+  - type: TargetAction
+    range: 15
+    repeat: true
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphSpitActionEvent
+      scattered: true
+  - type: PlasmaCostAction
+    plasmaCost: 30
+  - type: XenomorphActionArea
+    range: 4
+    angle: 90
+
+- type: entity
+  parent: ActionXenomorphSlowingSpit
+  id: ActionXenomorphAcidSpit
+  name: Acid spit (25)
+  components:
+  - type: Action
+    useDelay: 2.5
+  - type: WorldTargetAction
+    event: !type:XenomorphSpitActionEvent
+      acid: true
+  - type: PlasmaCostAction
+    plasmaCost: 25
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphChargeSpit
+  name: Charge spit (50)
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge_spit }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge_spit }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: InstantAction
+    event: !type:XenomorphChargeSpitActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 50
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSprayAcid
+  name: Spray acid (40)
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: spray_acid }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: spray_acid }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 8
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphSprayAcidActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 40
+  - type: XenomorphActionArea
+    range: 6
+    width: 1
+    sprayLine: true
+
+- type: entity
+  parent: ActionXenomorphTailStab
+  id: ActionXenomorphCorrosiveTail
+  name: Corrosive tail
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAcidBarrage
+  name: AcidBarrage
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: acid_barrage }
+    iconOn: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: acid_barrage }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphAcidBarrageActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCausticEmbrace
+  name: CausticEmbrace
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: caustic_embrace }
+    iconOn: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: caustic_embrace }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: TargetAction
+    range: 5
+    checkCanAccess: false
+  - type: XenomorphActionArea
+    range: 5
+    width: 1
+  - type: WorldTargetAction
+    event: !type:XenomorphCausticEmbraceActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 50
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphOozingWounds
+  name: OozingWounds
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: oozing_wounds }
+    iconOn: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: oozing_wounds }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 25
+  - type: InstantAction
+    event: !type:XenomorphOozingWoundsActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 50
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCatalyze
+  name: Catalyze
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: catalyze }
+    iconOn: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: catalyze }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 20
+  - type: InstantAction
+    event: !type:XenomorphCatalyzeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCarrierParasite
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: throw_parasite }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: throw_parasite }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 16
+    checkCanAccess: false
+    deselectOnMiss: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:XenomorphCarrierParasiteActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCarrierEgg
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: retrieve_egg }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: retrieve_egg }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 16
+    checkCanAccess: false
+    deselectOnMiss: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:XenomorphCarrierEggActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCarrierReserve
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: reserve_parasite }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: reserve_parasite }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphCarrierReserveActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphGenerateEggs
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lay_egg }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lay_egg }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphGenerateEggsActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphResinHole
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: place_trap }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: place_trap }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphResinHoleActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphResinWalker
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: toggle_speed }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: toggle_speed }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.25
+  - type: InstantAction
+    event: !type:XenomorphResinWalkerActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHivelordPlasma
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    useDelay: 0
+  - type: TargetAction
+    range: 7
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:XenomorphHivelordPlasmaActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphLunge
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lunge }
+    useDelay: 10
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphLungeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphEncasedPlates
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_encased_plates }
+    iconOn: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_encased_plates }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 1
+  - type: InstantAction
+    event: !type:XenomorphEncasedPlatesActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPlateBash
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_plate_bash }
+    useDelay: 8
+  - type: TargetAction
+    range: 3
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphPlateBashActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBulwarkTailSwing
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_tail_swing }
+    useDelay: 12
+  - type: XenomorphActionArea
+    range: 1.75
+  - type: InstantAction
+    event: !type:XenomorphBulwarkTailSwingActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphReflectiveShield
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_reflective_shield }
+    iconOn: { sprite: _CMU14/Actions/bulwark.rsi, state: bulwark_reflective_shield }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 1
+  - type: InstantAction
+    event: !type:XenomorphReflectiveShieldActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBurrow
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: burrow }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: burrow }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    checkCanInteract: false
+  - type: TargetAction
+    range: 8
+    repeat: true
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphBurrowActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTremor
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tremor }
+    useDelay: 30
+  - type: XenomorphActionArea
+    range: 4
+  - type: InstantAction
+    event: !type:XenomorphTremorActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDigTunnel
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: build_tunnel }
+    useDelay: 120
+  - type: InstantAction
+    event: !type:XenomorphDigTunnelActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFleshHarvest
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_flesh_harvest }
+    iconOn: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_flesh_harvest }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 5
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphFleshHarvestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRapture
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_rapture }
+    iconOn: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_rapture }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 15
+  - type: TargetAction
+    range: 3
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphRaptureActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFleshBloom
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_flesh_bloom }
+    iconOn: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_flesh_bloom }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 25
+  - type: TargetAction
+    range: 7
+    checkCanAccess: true
+  - type: WorldTargetAction
+    event: !type:XenomorphFleshBloomActionEvent
+  - type: XenomorphActionArea
+    range: 7
+    targetSquare: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRedGas
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gas_mine }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gas_mine }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 25
+  - type: TargetAction
+    range: 7
+    checkCanAccess: true
+  - type: WorldTargetAction
+    event: !type:XenomorphRedGasActionEvent
+  - type: XenomorphActionArea
+    range: 7
+    wideningSpray: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCarrionMantle
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_carrion_mantle }
+    iconOn: { sprite: _CMU14/Actions/reaper.rsi, state: reaper_carrion_mantle }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 30
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    canTargetSelf: true
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphCarrionMantleActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAssault
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 14
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphLeapActionEvent
+  - type: XenomorphActionArea
+    range: 5
+    width: 1
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphEmpower
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_empower }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_empower }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphEmpowerActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphScissorCut
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_scissor_cut }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_scissor_cut }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 6
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphScissorCutActionEvent
+  - type: XenomorphActionArea
+    range: 4
+    width: 1
+    offset: 0.5
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFireSpikes
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_spike }
+    useDelay: 10
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphFireSpikesActionEvent
+  - type: XenomorphActionArea
+    range: 4
+    angle: 60
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSpikeShield
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_shard_shield }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_shard_shield }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 11.5
+  - type: InstantAction
+    event: !type:XenomorphSpikeShieldActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSpikeShed
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_shard_shed }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_shard_shed }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 30
+  - type: InstantAction
+    event: !type:XenomorphSpikeShedActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphApprehend
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_enrage }
+    useDelay: 18
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_enrage }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphApprehendActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphClothesline
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_cleave_fling }
+    useDelay: 16
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    whitelist:
+      components: [MobState]
+    event: !type:XenomorphClotheslineActionEvent
+  - type: XenomorphDazeableAction
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphEviscerate
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_eviscerate }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_eviscerate }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 23
+  - type: InstantAction
+    event: !type:XenomorphEviscerateActionEvent
+  - type: XenomorphDazeableAction
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSacrifice
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    whitelist:
+      components: [Xenomorph]
+    event: !type:XenomorphSacrificeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPlantLesserFruit
+  name: Plant resin fruit (50)
+  description: Plant a healing fruit on weeds for 50 plasma and 50 health. Up to three fruits can be kept at once.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gardener_plant }
+    useDelay: 5
+  - type: InstantAction
+    event: !type:XenomorphPlantFruitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHealerTransferPlasma
+  name: Transfer plasma (100)
+  description: Transfer 100 plasma to a nearby xenomorph every 1.5 seconds while remaining still.
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    whitelist:
+      components: [Xenomorph]
+    event: !type:XenomorphHealerPlasmaActionEvent
+
+- type: entity
+  parent: ActionXenomorphPlantLesserFruit
+  id: ActionXenomorphPlantFruit
+  name: Plant resin fruit (100)
+  description: Plant the selected fruit on weeds for 100 plasma and 50 health. You can keep up to six fruits.
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphChooseFruit
+  name: Choose resin fruit
+  description: Choose which resin fruit to grow.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gardener_plant_pick }
+  - type: InstantAction
+    event: !type:XenomorphChooseFruitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPlantHardyWeeds
+  name: Plant hardy weeds (125)
+  description: Plant a hardy resin node. Its weeds resist more damage and grow fruit 25% faster.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: plant_gardener_weeds }
+    useDelay: 120
+  - type: InstantAction
+    event: !type:XenomorphPlantHardyWeedsActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphResinSurge
+  name: Resin surge (75)
+  description: Ripen fruit, reinforce resin structures for 15 seconds, raise a temporary wall on weeds or create a 3x3 patch of weak sticky resin.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gardener_resin_surge }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gardener_resin_surge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 7
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components: [XenomorphSurgeReinforcable, XenomorphFruit, PlasmaGainModifier]
+  - type: WorldTargetAction
+    event: !type:XenomorphResinSurgeActionEvent
+  - type: XenomorphActionArea
+    range: 7
+    targetSquare: true
+
+- type: entity
+  parent: ActionSpawnResinWeedNode
+  id: ActionXenomorphPlantWeeds
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: plant_weeds }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: plant_weeds }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+
+- type: entity
+  parent: ActionSpawnWallResin
+  id: ActionXenomorphBuildResinWall
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_wall }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_wall }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+
+- type: entity
+  parent: ActionSpawnResinDoor
+  id: ActionXenomorphBuildResinDoor
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_door }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_door }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+
+- type: entity
+  parent: ActionAcid
+  id: ActionXenomorphCorrosiveAcid
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: corrosive_acid }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: corrosive_acid }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+
+  - type: PlasmaCostAction
+    shouldChangePlasma: false
+
+- type: entity
+  parent: ActionCombatModeToggleXenomorph
+  id: ActionXenomorphCombatMode
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Interface/xeno_interface.rsi, state: help }
+    iconOn: { sprite: _RMC14/Interface/xeno_interface.rsi, state: harm }
+
+- type: entity
+  parent: ActionXenomorphSprayAcid
+  id: ActionXenomorphSprayAcidBoiler
+  components:
+  - type: Action
+    useDelay: 10
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphLongRangeSight
+  name: Toggle long-range sight
+  description: Look farther ahead after standing still for half a second. Movement is 20% slower while active.
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: toggle_long_range }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: toggle_long_range }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.2
+  - type: InstantAction
+    event: !type:XenomorphLongRangeSightActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBombard
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: bombard }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: bombard }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 1
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphBombardActionEvent
+  - type: XenomorphActionArea
+    range: 3
+    targetCircle: true
+    targetRange: 10
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphToggleGas
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: shift_spit_acid_glob }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: shift_spit_neuro_glob }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 1
+  - type: InstantAction
+    event: !type:XenomorphToggleGasActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAcidShroud
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: acid_shroud }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: acid_shroud }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphAcidShroudActionEvent
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphNeurotoxinSlowdown
+  name: neurotoxin slowdown
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPraetorianSpit
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 2
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphPraetorianSpitActionEvent
+  - type: XenomorphActionArea
+    range: 7
+    width: 0.2
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPraetorianDash
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphLeapActionEvent
+  - type: XenomorphActionArea
+    range: 6
+    width: 0.2
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAcidBall
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_acid_ball }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_acid_ball }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphAcidBallActionEvent
+  - type: XenomorphActionArea
+    range: 3
+    targetCircle: true
+    targetRange: 6
+
+- type: entity
+  parent: ActionXenomorphSprayAcid
+  id: ActionXenomorphSprayAcidPraetorian
+  components:
+  - type: Action
+    useDelay: 10
+  - type: PlasmaCostAction
+    plasmaCost: 80
+  - type: XenomorphActionArea
+    range: 7
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDodge
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_dodge }
+    iconOn: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_dodge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 19
+  - type: InstantAction
+    event: !type:XenomorphDodgeActionEvent
+
+- type: entity
+  parent: ActionXenomorphTailStab
+  id: ActionXenomorphTailLance
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_tail_lance }
+    iconOn: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_tail_lance }
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphImpale
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_impale }
+    iconOn: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_impale }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 13
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    whitelist:
+      components: [MobState]
+  - type: WorldTargetAction
+    event: !type:XenomorphImpaleActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailTrip
+  components:
+  - type: Action
+    icon: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_tail_trip }
+    iconOn: { sprite: _CMU14/Actions/xeno_strain_actions.rsi, state: dancer_tail_trip }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 13
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    event: !type:XenomorphTailTripActionEvent
+    whitelist:
+      components: [MobState]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPierce
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_pierce }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_pierce }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 3
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphPierceActionEvent
+  - type: XenomorphActionArea
+    range: 3
+    width: 0.6
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBlitz
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphLeapActionEvent
+  - type: XenomorphActionArea
+    range: 6
+    width: 0.2
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCleaveRoot
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_cleave_root }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_cleave_root }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: TargetAction
+    range: 1.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphCleaveActionEvent
+    whitelist:
+      components: [MobState]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCleaveFling
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_cleave_fling }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_cleave_fling }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: TargetAction
+    range: 1.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphCleaveActionEvent
+      flings: true
+    whitelist:
+      components: [MobState]
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphVanguardRoot
+  name: vanguard root
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailSeize
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_seize }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: tail_seize }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 15
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphTailSeizeActionEvent
+  - type: XenomorphActionArea
+    range: 3.5
+    width: 0.2
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAbduct
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: abduct }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: abduct }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphAbductActionEvent
+  - type: XenomorphActionArea
+    range: 6
+    sprayLine: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDislocate
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: dislocate }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: dislocate }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 1.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphDislocateActionEvent
+    whitelist:
+      components: [MobState]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailLash
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_tail_lash }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_tail_lash }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphTailLashActionEvent
+  - type: XenomorphActionArea
+    range: 2
+    width: 3
+    offset: 0.5
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphOppressorSlowdown
+  name: oppressor slowdown
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphOppressorRoot
+  name: oppressor root
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailFountain
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_tail_fountain }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_tail_fountain }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphTailFountainActionEvent
+    whitelist:
+      components: [MobState]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTantrum
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: warden_heal }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: warden_heal }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 7
+  - type: TargetAction
+    range: 8
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphTantrumActionEvent
+    whitelist:
+      components: [Xenomorph]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHighGallop
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: stomp }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: stomp }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphHighGallopActionEvent
+  - type: XenomorphActionArea
+    range: 2
+    width: 3
+    offset: 0.5
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRetrieve
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: retrieve }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: retrieve }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: TargetAction
+    range: 7
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphRetrieveActionEvent
+    whitelist:
+      components: [Xenomorph]
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFightOrFlight
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    checkCanInteract: false
+    checkConsciousness: false
+    useDelay: 45
+  - type: InstantAction
+    event: !type:XenomorphFightOrFlightActionEvent
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphValkyrieSlowdown
+  name: valkyrie slowdown
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPrimeAcid
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0
+  - type: InstantAction
+    event: !type:XenomorphPrimeAcidActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHide
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xenohide }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xenohide }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.5
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphHideActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphAciderCorrode
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: corrosive_acid }
+    useDelay: 0
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphAciderCorrodeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphToxicSpit
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    useDelay: 2
+  - type: TargetAction
+    range: 15
+    repeat: true
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphToxicSpitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphToxicSlash
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: neuroclaws_off }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: neuroclaws_on }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: InstantAction
+    event: !type:XenomorphToxicSlashActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDrainSting
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: neuro_sting }
+    useDelay: 25
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    event: !type:XenomorphDrainStingActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphWeakCorrode
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: corrosive_acid }
+    useDelay: 0
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphWeakCorrodeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphVenatorSpit
+  components:
+  - type: Action
+    icon: { sprite: _CM13/Actions/xeno_strain_actions.rsi, state: venator_corrosive_spit }
+    useDelay: 11
+  - type: TargetAction
+    range: 8
+    repeat: true
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphVenatorSpitActionEvent
+
+- type: entity
+  parent: ActionXenomorphVenatorSpit
+  id: ActionXenomorphVenatorBlob
+  components:
+  - type: Action
+    icon: { sprite: _CM13/Actions/xeno_strain_actions.rsi, state: venator_acid_blob }
+  - type: WorldTargetAction
+    event: !type:XenomorphVenatorSpitActionEvent
+      blob: true
+  - type: XenomorphActionArea
+    range: 8
+    targetSquare: true
+
+- type: entity
+  parent: ActionXenomorphVenatorSpit
+  id: ActionXenomorphVenatorBreath
+  components:
+  - type: Action
+    icon: { sprite: _CM13/Actions/xeno_strain_actions.rsi, state: venator_enzymatic_breath }
+  - type: WorldTargetAction
+    event: !type:XenomorphVenatorSpitActionEvent
+      breath: true
+  - type: XenomorphActionArea
+    range: 8
+    angle: 25
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphStoreAcid
+  components:
+  - type: Action
+    icon: { sprite: _CM13/Actions/xeno_strain_actions.rsi, state: venator_store_acid }
+    iconOn: { sprite: _CM13/Actions/xeno_strain_actions.rsi, state: venator_store_acid }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 5
+  - type: InstantAction
+    event: !type:XenomorphStoreAcidActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphVampireRush
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
+    useDelay: 6
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphLeapActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphFlurry
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: rav_spike }
+    useDelay: 3
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphFlurryActionEvent
+  - type: XenomorphActionArea
+    range: 2
+    width: 1
+    offset: 0.5
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphTailJab
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_pierce }
+    useDelay: 7
+  - type: TargetAction
+    range: 2.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphTailJabActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphHeadbite
+  components:
+  - type: Action
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbite }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: headbite }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: TargetAction
+    range: 1.5
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphHeadbiteActionEvent
+
+- type: entity
+  parent: StatusEffectSlowdown
+  id: XenomorphVampireSlowdown
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRemoteResinWall
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_wall }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_wall }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 11
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphRemoteResinActionEvent
+      door: false
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphRemoteResinDoor
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_door }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: resin_door }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 11
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphRemoteResinActionEvent
+      door: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignOptimized
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_speednode }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_speednode }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphDesignActionEvent
+      kind: Optimized
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignFlexible
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_costnode }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_costnode }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphDesignActionEvent
+      kind: Flexible
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignConstruct
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_constructnode }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: icon_constructnode }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphDesignActionEvent
+      kind: Construct
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignRemove
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: remove_node }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: remove_node }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphDesignRemoveActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignThicken
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: upgrade_resin }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: upgrade_resin }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 10
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphDesignThickenActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignToggle
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.2
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: design_mark_wall }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: design_mark_door }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphDesignToggleActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphDesignSurge
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 30
+    icon: { sprite: _RMC14/Actions/designer_actions.rsi, state: greater_resin_surge }
+    iconOn: { sprite: _RMC14/Actions/designer_actions.rsi, state: greater_resin_surge }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphDesignSurgeActionEvent
+  - type: XenomorphActionArea
+    range: 7
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphChooseResin
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: place_resin }
+  - type: InstantAction
+    event: !type:XenomorphChooseResinActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphSecreteResin
+  components:
+  - type: Action
+    raiseOnUser: true
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: secrete_resin }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: secrete_resin }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 11
+    checkCanAccess: false
+  - type: EntityTargetAction
+  - type: WorldTargetAction
+    event: !type:XenomorphSecreteResinActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenScreech
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 50
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: screech }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphQueenScreechActionEvent
+  - type: XenomorphActionArea
+    range: 7
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenSpit
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 5
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: xeno_spit }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 30
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphQueenSpitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenGut
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gut }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: gut }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphQueenGutActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenHeal
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 8
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: heal_xeno }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: heal_xeno }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenomorphQueenHealActionEvent
+  - type: XenomorphActionArea
+    range: 4
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenPlasma
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 12
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: EntityTargetAction
+    event: !type:XenomorphQueenPlasmaActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphWatch
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: watch_xeno }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: watch_xeno }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.33
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphWatchActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphPheromones
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 0.33
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphPheromonesActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphBoneChips
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: runner_bonespur }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: runner_bonespur }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: TargetAction
+    range: 15
+  - type: WorldTargetAction
+    raiseOnUser: true
+    event: !type:XenomorphSpitActionEvent
+      bone: true
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphCripplingStrike
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 10
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphPreparedStrikeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphParalyzingSlash
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: lurker_inject_neuro }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+    useDelay: 12
+  - type: InstantAction
+    raiseOnUser: true
+    event: !type:XenomorphPreparedStrikeActionEvent
+

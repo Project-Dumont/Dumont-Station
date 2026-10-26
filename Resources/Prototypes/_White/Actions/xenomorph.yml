@@ -27,7 +27,7 @@
     checkCanInteract: false
     itemIconStyle: BigAction
     useDelay: 0
-    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: evolve }
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: evolve }
   - type: InstantAction
     event: !type:EvolutionsActionEvent
 
@@ -306,9 +306,10 @@
   components:
   - type: Action
     raiseOnUser: true # Dumont
+    itemIconStyle: NoItem
     priority: 0
-    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_off }
-    iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_on }
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
   - type: TargetAction
     interactOnMiss: false
     range: 2

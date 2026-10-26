@@ -1,0 +1,23 @@
+- type: entity
+  id: DumontXenomorphPunchEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/attacks.rsi
+    state: punch
+    noRot: true
+
+- type: entity
+  id: DumontXenomorphReflectiveShieldEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/xeno_shield.rsi
+    state: shield
+    noRot: true

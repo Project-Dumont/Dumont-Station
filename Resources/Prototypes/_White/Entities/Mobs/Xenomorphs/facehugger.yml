@@ -4,6 +4,15 @@
   name: xenomorph facehugger
   description: A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
   components:
+  - type: XenomorphWatch
+  - type: XenomorphHide
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphHide
+  - type: UserInterface
+    interfaces:
+      enum.XenoWatchUIKey.Key:
+        type: XenoWatchBui
   - type: Sprite
     sprite: _Trauma/Mobs/Xenos/facehugger.rsi # Dumont
     layers:

@@ -4,14 +4,15 @@
   name: resin nest
   description: Slimy and sticky mass representing a bed?....
   components:
+  - type: XenomorphNest
   - type: Sprite
-    sprite: _White/Structures/Furniture/resin_nest.rsi
-    state: full
-    noRot: true
-    drawdepth: Mobs # Dumont
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: nest_overlay
+    noRot: false
+    drawdepth: OverMobs
   - type: Icon
-    sprite: _White/Structures/Furniture/resin_nest.rsi
-    state: full
+    sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+    state: nest_overlay
   - type: Fixtures
     fixtures:
       fix1:
@@ -69,7 +70,7 @@
     selfUnBuckleDelay: 120
   - type: Transform
     anchored: true
-    noRot: true
+    noRot: false
   - type: MeleeSound #omu
     soundGroups:
       Brute:

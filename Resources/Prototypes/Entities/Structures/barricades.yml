@@ -20,6 +20,7 @@
   name: wooden barricade
   abstract: true
   components:
+  - type: XenomorphSprayAcidable
   - type: InteractionOutline
   - type: Sprite
     sprite: Structures/barricades.rsi

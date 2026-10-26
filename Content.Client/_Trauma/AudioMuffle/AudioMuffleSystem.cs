@@ -567,6 +567,9 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         float distance,
         EntityUid? ignoredEnt)
     {
+        if (distance <= 0f)
+            return 0f;
+
         var rayLength = MathF.Min(distance, _maxRayLength);
         var ray = new CollisionRay(listener.Position, delta / distance, _audio.OcclusionCollisionMask);
 

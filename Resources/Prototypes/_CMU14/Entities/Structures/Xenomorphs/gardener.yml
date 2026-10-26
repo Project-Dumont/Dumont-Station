@@ -1,0 +1,122 @@
+- type: entity
+  parent: ResinWeed
+  id: DumontXenomorphHardyWeed
+  name: hardy resin floor
+  components:
+  - type: XenomorphHardyWeed
+  - type: Sprite
+    color: "#a1a1a1"
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.508
+    sprintSpeedModifier: 0.508
+    ignoreWhitelist:
+      components: [Xenomorph]
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 23
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: DumontXenomorphHardyWeed
+  id: DumontXenomorphHardyWeedNode
+  name: hardy resin node
+  components:
+  - type: Sprite
+    layers:
+    - state: weed0
+    - state: constructionnode
+  - type: AreaSpawner
+    spawnPrototype: DumontXenomorphHardyWeed
+    spawnDelay: 3.125
+  - type: PointLight
+    radius: 2.5
+    energy: 2
+    color: "#00CED1"
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: WallResin
+  id: DumontXenomorphSurgeWall
+  name: weak resin wall
+  description: A thin wall of resin already on the verge of collapsing.
+  components:
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: BaseStructure
+  id: DumontXenomorphWeakStickyResin
+  name: weak sticky resin
+  description: A thin layer of sticky resin that is already melting.
+  components:
+  - type: XenomorphStickyResin
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_floor_resins.rsi
+    state: sticky_weak
+    drawdepth: FloorObjects
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        hard: false
+        layer: [SlipLayer]
+        mask: [ItemMask]
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.338
+    sprintSpeedModifier: 0.338
+    ignoreWhitelist:
+      components: [Xenomorph]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: TimedDespawn
+    lifetime: 20
+
+- type: entity
+  id: DumontXenomorphSurgeWallEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_surge_glow.rsi
+    noRot: true
+    drawdepth: Effects
+    layers:
+    - state: surge-wall
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 15
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphSurgeWallEffect
+  id: DumontXenomorphSurgeDoorEffect
+  components:
+  - type: Sprite
+    layers:
+    - state: surge-door
+      shader: unshaded

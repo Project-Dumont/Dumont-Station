@@ -18,7 +18,7 @@ public sealed partial class PlasmaVesselComponent : Component
     [DataField, AutoNetworkedField]
     public FixedPoint2 Plasma = 100;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public FixedPoint2 MaxPlasma = 250;
 
     /// <summary>

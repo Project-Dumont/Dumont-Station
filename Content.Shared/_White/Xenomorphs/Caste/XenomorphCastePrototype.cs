@@ -9,6 +9,9 @@ public sealed partial class XenomorphCastePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField]
+    public int Tier;
+
+    [DataField]
     public string Name = string.Empty;
 
     [DataField]

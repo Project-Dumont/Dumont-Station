@@ -4,6 +4,7 @@
   name: resin wall
   description: Thick resin solidified into a wall.
   components:
+  - type: XenomorphSurgeReinforcable
   - type: SoundBlocker # Dumont
     soundBlockPercent: 1
   - type: Sprite

@@ -44,14 +44,6 @@ public sealed partial class XenomorphsRuleComponent : Component
                     .WithVolume(-16f)
             };
 
-    [DataField] // Goobstation - play music on announcement
-    public SoundSpecifier XenomorphTakeoverSound =
-            new SoundPathSpecifier("/Audio/_Goobstation/Music/Colonial_Marines_The_Final_Battle.ogg")
-            {
-                Params = AudioParams.Default
-                    .WithVolume(-14f)
-            };
-
     [DataField]
     public Color AnnouncementColor = Color.Red;
 
@@ -81,21 +73,6 @@ public sealed partial class XenomorphsRuleComponent : Component
     #region RoundEnd
 
     [DataField]
-    public float XenomorphsShuttleCallPercentage = 0.5f;
-
-    [DataField]
-    public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(5);
-
-    [DataField]
-    public string RoundEndTextSender = "comms-console-announcement-title-centcom";
-
-    [DataField]
-    public string RoundEndTextShuttleCall = "xenomorphs-win-announcement-shuttle-call";
-
-    [DataField]
-    public string RoundEndTextAnnouncement = "xenomorphs-win-announcement";
-
-    [DataField]
     public WinType WinType = WinType.Neutral;
 
     [DataField]
@@ -120,5 +97,7 @@ public enum WinCondition : byte
     XenoTakeoverStation,
     XenoInfiltratedOnCentCom,
     AllReproduceXenoDead,
-    AllCrewDead
+    AllCrewDead,
+    HiveContactEstablished,
+    CrewEscaped
 }

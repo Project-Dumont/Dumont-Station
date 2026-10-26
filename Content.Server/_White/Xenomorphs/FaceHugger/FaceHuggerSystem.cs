@@ -1,3 +1,7 @@
+using Content.Shared._CMU14.Xenomorphs;
+using Content.Server._CMU14.Xenomorphs;
+using Content.Shared._Dumont.Xenomorphs;
+using Content.Server._Dumont.Xenomorphs;
 using Content.Server.Body.Systems;
 using Content.Server.Mind;
 using Content.Server._White.Xenomorphs.Infection;
@@ -38,27 +42,27 @@ using Content.Goobstation.Shared.Xenomorph; // Omu
 
 namespace Content.Server._White.Xenomorphs.FaceHugger;
 
-public sealed class FaceHuggerSystem : EntitySystem
+public sealed partial class FaceHuggerSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ReactiveSystem _reactiveSystem = default!; // Goobstation
-    [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Goobstation
-    [Dependency] private readonly SharedTransformSystem _transform = default!; // Goobstation
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ReactiveSystem _reactiveSystem = default!; // Goobstation
+    [Dependency] private SharedSolutionContainerSystem _solutions = default!; // Goobstation
+    [Dependency] private SharedTransformSystem _transform = default!; // Goobstation
 
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _entityLookup = default!;
+    [Dependency] private EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private StunSystem _stun = default!;
 
     // Dumont start
-    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private MindSystem _mind = default!;
     // Dumont end
 
     public override void Initialize()
@@ -262,6 +266,13 @@ public sealed class FaceHuggerSystem : EntitySystem
 
     public bool TryEquipFaceHugger(EntityUid uid, EntityUid target, FaceHuggerComponent component)
     {
+        if (_container.TryGetContainingContainer(uid, out var containing)
+            && (HasComp<XenomorphResinHoleComponent>(containing.Owner) || HasComp<XenomorphTunnelComponent>(containing.Owner)))
+            return false;
+
+        if (TryComp<XenomorphCarrierRecoveryComponent>(uid, out var recovery) && _timing.CurTime < recovery.RecoverAt)
+            return false;
+
         if (!component.Active || _mobState.IsDead(uid) || _mobState.IsDead(target) || _entityWhitelist.IsBlacklistPass(component.Blacklist, target))
             return false;
 
