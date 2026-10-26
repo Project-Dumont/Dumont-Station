@@ -1,4 +1,6 @@
-﻿// SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
 // SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>

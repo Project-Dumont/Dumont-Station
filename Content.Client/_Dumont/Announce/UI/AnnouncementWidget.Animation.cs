@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client._Dumont.Announce.Animations;
 using Content.Client._Dumont.Announce.Effects;
 using Content.Client._Dumont.Announce.Styling;

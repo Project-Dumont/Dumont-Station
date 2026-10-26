@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
@@ -94,22 +96,22 @@ namespace Content.Server.Communications
 {
     public sealed partial class CommunicationsConsoleSystem : EntitySystem // Dumont
     {
-        [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
-        [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
-        [Dependency] private readonly ChatSystem _chatSystem = default!;
-        [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-        [Dependency] private readonly EmagSystem _emag = default!;
-        [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
-        [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-        [Dependency] private readonly StationSystem _stationSystem = default!;
-        [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly AirlockSystem _airlock = default!;
-        [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
-        [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
-        [Dependency] private readonly IGameTiming _timing = default!; // cooldown
+        [Dependency] private AccessReaderSystem _accessReaderSystem = default!;
+        [Dependency] private AlertLevelSystem _alertLevelSystem = default!;
+        [Dependency] private ChatSystem _chatSystem = default!;
+        [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
+        [Dependency] private EmagSystem _emag = default!;
+        [Dependency] private EmergencyShuttleSystem _emergency = default!;
+        [Dependency] private PopupSystem _popupSystem = default!;
+        [Dependency] private RoundEndSystem _roundEndSystem = default!;
+        [Dependency] private StationSystem _stationSystem = default!;
+        [Dependency] private UserInterfaceSystem _uiSystem = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private AirlockSystem _airlock = default!;
+        [Dependency] private QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
+        [Dependency] private IChatManager _chatManager = default!; // avbiso admin
+        [Dependency] private IGameTiming _timing = default!; // cooldown
 
 
         private const float UIUpdateInterval = 5.0f;

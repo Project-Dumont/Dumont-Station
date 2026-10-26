@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class EmergencyShuttleSystem

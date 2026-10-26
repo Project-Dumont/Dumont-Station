@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Dumont.Xenomorphs;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Damage;
