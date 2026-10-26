@@ -32,7 +32,7 @@
   parent: BaseAreaCivilian
   id: AreaLawOffice
   name: law office
-  suffix: AreaGeneral, AreaService, Area Security
+  suffix: AreaGeneral, AreaService, AreaSecurity
   components:
   - type: Sprite
     state: law_office
