@@ -56,7 +56,7 @@
   - type: Occluder
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Resin
+    damageModifierSet: DumontResinBarrier
   - type: MeleeSound #omu
     soundGroups:
       Brute:
@@ -64,8 +64,7 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
+        !type:DamageTrigger
         damage: 100
       behaviors:
       - !type:DoActsBehavior

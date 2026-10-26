@@ -17,7 +17,7 @@
     base: resin
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Resin
+    damageModifierSet: DumontResinBarrier
   - type: MeleeSound #omu
     soundGroups:
       Brute:
@@ -25,8 +25,7 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
+        !type:DamageTrigger
         damage: 200
       behaviors:
       - !type:DoActsBehavior

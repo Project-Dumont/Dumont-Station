@@ -83,8 +83,7 @@
     base: thickmembrane
   - type: Destructible
     thresholds:
-    - trigger: !type:DamageTypeTrigger
-        damageType: Blunt
+    - trigger: !type:DamageTrigger
         damage: 142
       behaviors:
       - !type:DoActsBehavior

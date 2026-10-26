@@ -122,8 +122,7 @@
     base: thickresin
   - type: Destructible
     thresholds:
-    - trigger: !type:DamageTypeTrigger
-        damageType: Blunt
+    - trigger: !type:DamageTrigger
         damage: 300
       behaviors:
       - !type:DoActsBehavior
@@ -186,8 +185,7 @@
     closingSpriteState: thick_resinclosing
   - type: Destructible
     thresholds:
-    - trigger: !type:DamageTypeTrigger
-        damageType: Blunt
+    - trigger: !type:DamageTrigger
         damage: 150
       behaviors:
       - !type:DoActsBehavior
