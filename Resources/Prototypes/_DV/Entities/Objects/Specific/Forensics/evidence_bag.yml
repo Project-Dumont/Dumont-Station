@@ -10,8 +10,9 @@
   - type: Sprite
     sprite: _DV/Objects/Specific/Forensics/evidencebag.rsi
     state: evidenceobj
-  - type: NameModifier
-    baseName: evidence bag
+  # Do we need that? And why is it HARDCODED?
+  # - type: NameModifier
+  #   baseName: evidence bag
   - type: ItemSlots
     slots:
       contained_evidence:
