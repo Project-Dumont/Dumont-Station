@@ -6,6 +6,29 @@
   id: AdvancedMagboots
 
 - type: Tag
+  id: AreaBeach
+
+- type: Tag
+  id: AreaCold
+
+- type: Tag
+  id: AreaDetective
+
+- type: Tag
+  id: AreaDojo
+
+- type: Tag
+  id: AreaInterrogation
+
+# Dumont changes start
+- type: Tag
+  id: AreaMaints
+# Dumont end
+
+- type: Tag
+  id: AreaMorgue
+
+- type: Tag
   id: CartridgeRPG2
 
 - type: Tag

@@ -5,6 +5,7 @@
 using System.Numerics;
 using System.Linq;
 using Content.Trauma.Shared.AudioMuffle;
+using Robust.Shared.Map; // Dumont
 using Robust.Shared.Utility;
 
 namespace Content.Trauma.Client.AudioMuffle;
@@ -18,6 +19,7 @@ public sealed partial class AudioMuffleSystem
     private readonly PriorityQueue<MuffleTileData> _frontier = new();
     private readonly Dictionary<MuffleTileData, float> _expansionNodes = new();
     private readonly Dictionary<MuffleTileData, float> _innerExpansionNodes = new();
+    private bool _rebuildPending; // Dumont
 
     public static int ManhattanDistance(Vector2i start, Vector2i end)
     {
@@ -587,26 +589,33 @@ public sealed partial class AudioMuffleSystem
         ModifyBlockerAmount(data, sign * cost);
     }
 
+    // Dumont changes start
     private void ModifyBlockerAmount(MuffleTileData data, float delta)
     {
-        if (delta < 0 && delta < -data.TotalCost)
-            delta = -data.TotalCost;
+        _rebuildPending = true;
+    }
 
-        _reExpand.Clear();
-        if (ExpandNode(data, delta, _reExpand, out _, true, 1))
+    private void ProcessPendingRebuild()
+    {
+        if (!_rebuildPending)
             return;
 
-        _passed.Clear();
-        foreach (var node in _reExpand)
-        {
-            if (_passed.Contains(node.Indices))
-                continue;
+        _rebuildPending = false;
 
-            RewriteAndReExpand(node, _passed);
-        }
-        _reExpand.Clear();
-        _passed.Clear();
+        if (!_pathfindingEnabled || ResolvePlayer() is not { } player)
+            return;
+
+        var pos = _xform.GetMapCoordinates(player);
+        if (pos == MapCoordinates.Nullspace || ResolvePlayerGrid(pos) is not { } grid)
+            return;
+
+        var tile = _map.TileIndicesFor(grid, pos);
+        if (!_map.CollidesWithGrid(grid, grid, tile))
+            return;
+
+        Expand(tile);
     }
+    // Dumont end
 
     public sealed class MuffleTileData(Vector2i indices) : IEquatable<MuffleTileData>, IComparable<MuffleTileData>
     {

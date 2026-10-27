@@ -24,7 +24,7 @@ public sealed partial class DumontCVars
 
     public static readonly CVarDef<string> ElectionUrl =
         CVarDef.Create("election.url",
-            "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json",
+            "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json",
             CVar.SERVERONLY);
 
     /// <summary>
@@ -49,7 +49,7 @@ public sealed partial class DumontCVars
     /// how many candidate slots to open while the TSE has not sent the list
     /// </summary>
     public static readonly CVarDef<int> ElectionCandidates =
-        CVarDef.Create("election.candidates", 13, CVar.SERVERONLY);
+        CVarDef.Create("election.candidates", 2, CVar.SERVERONLY);
 
     /// <summary>
     /// fakes a whole count in a few minutes, without asking the TSE

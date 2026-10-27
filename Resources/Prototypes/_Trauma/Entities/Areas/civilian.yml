@@ -1,0 +1,134 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseAreaStation
+  id: BaseAreaCivilian
+  name: civilian
+  suffix: AreaGeneral
+  components:
+  - type: DepartmentArea
+    department: Civilian
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLibrary
+  name: library
+  suffix: AreaService, AreaGeneral
+  components:
+  - type: Sprite
+    state: library
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaCourtRoom
+  name: court room
+  suffix: AreaGeneral, AreaSecurity
+  components:
+  - type: Sprite
+    state: courtroom
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLawOffice
+  name: law office
+  suffix: AreaGeneral, AreaService, AreaSecurity
+  components:
+  - type: Sprite
+    state: law_office
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaStage
+  name: stage
+  suffix: AreaGeneral, AreaService
+  components:
+  - type: Sprite
+    state: stage
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaTheatre
+  name: theatre
+  suffix: AreaService
+  components:
+  - type: Sprite
+    state: theatre
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaJanitor
+  name: janitor
+  suffix: AreaService
+  components:
+  - type: Sprite
+    state: janitor
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaChapel
+  name: chapel
+  suffix: AreaService, AreaGeneral
+  components:
+  - type: Sprite
+    state: chapel
+  - type: HolyArea
+
+- type: entity
+  parent: AreaChapel
+  id: AreaChapelOffice
+  name: chapel office
+  suffix: AreaService, AreaGeneral
+  components:
+  - type: Sprite
+    state: chapel_office
+  - type: HolyArea
+
+- type: entity
+  parent: AreaChapel
+  id: AreaChapelCremate
+  name: crematorium
+  suffix: AreaService, AreaGeneral
+  components:
+  - type: Sprite
+    state: cremate
+  - type: HolyArea
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDojo
+  name: dojo
+  suffix: AreaGeneral
+  components:
+  - type: Sprite
+    state: dojo
+  - type: Tag
+    tags: [ AreaDojo ]
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaBoxingRing
+  name: boxing ring
+  suffix: AreaGeneral
+  components:
+  - type: Sprite
+    state: boxing_ring
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaToolStorage
+  name: tool storage
+  suffix: AreaGeneral
+  description: Birthplace of the assistants.
+  components:
+  - type: Sprite
+    state: tool_storage
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaNewsroom
+  name: news room
+  suffix: AreaService
+  components:
+  - type: Sprite
+    state: newsroom

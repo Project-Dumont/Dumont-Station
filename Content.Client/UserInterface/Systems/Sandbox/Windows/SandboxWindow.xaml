@@ -25,6 +25,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         <Button Name="ToggleSubfloorButton" Access="Public" Text="{Loc sandbox-window-toggle-subfloor-button}" ToggleMode="True"/>
         <Button Name="AiOverlayButton" Access="Public" Text="{Loc sandbox-window-ai-overlay-button}" ToggleMode="True"/>
         <Button Name="ShowMarkersButton" Access="Public" Text="{Loc sandbox-window-show-spawns-button}" ToggleMode="True"/>
+        <!-- Dumont changes start -->
+        <Button Name="ShowAreasButton" Access="Public" Text="{Loc sandbox-window-show-areas-button}" ToggleMode="True"/>
+        <!-- Dumont end -->
         <Button Name="ShowBbButton" Access="Public" Text="{Loc sandbox-window-show-bb-button}" ToggleMode="True"/>
 
         <Label Text="{Loc sandbox-window-your-character-label}"/>

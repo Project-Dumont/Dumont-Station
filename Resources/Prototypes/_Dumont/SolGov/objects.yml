@@ -1,0 +1,38 @@
+- type: entity
+  parent: IDCardStandard
+  id: SolGovIDCard
+  name: SolGov ID card
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: idhelldiver
+  - type: IdCard
+    jobTitle: job-name-solgov-expedition
+    jobIcon: JobIconSolGov
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
+
+- type: entity
+  parent: HelldiverPDA
+  id: SolGovPDA
+  name: SolGov PDA
+  description: Standard issue PDA of the Sol Government Expeditionary Force.
+  components:
+  - type: Pda
+    id: SolGovIDCard
+
+- type: entity
+  parent: PosterBase
+  id: PosterSolGovFlag
+  name: Trans-Solar Federation flag
+  description: The flag of the Trans-Solar Federation. Its golden star stands for the unity of every colony under the Sol Government.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/posters.rsi
+    state: solgov_flag

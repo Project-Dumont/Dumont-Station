@@ -1,0 +1,150 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseAreaStation
+  id: BaseAreaSecurity
+  name: security
+  suffix: AreaSecurity
+  components:
+  - type: DepartmentArea
+    department: Security
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurity
+  name: security
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: security
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaBrig
+  name: brig
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: brig
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityCheckpoint
+  name: sec checkpoint
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: sec_point
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaDetective
+  name: detective
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: detective
+  - type: Tag
+    tags: [ AreaDetective ]
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaArmory
+  name: armory
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: armory
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaBrigMed
+  name: brig med
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: sec_medical
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaExecution
+  name: execution room
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: execute_room
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaFiringRange
+  name: firing range
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: firing_range
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaInterrogation
+  name: interrogation
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: interrogation
+  - type: Tag
+    tags: [ AreaInterrogation ]
+
+- type: entity
+  parent: AreaSecurity
+  id: AreaSecurityLockers
+  name: security locker room
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: sec_locker_room
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaLaborCamp
+  name: labor camp
+  suffix: AreaSecurity, AreaLavaland
+  components:
+  - type: Sprite
+    state: sec_labor_camp
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaPrison
+  name: prison
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: sec_prison
+
+- type: entity
+  parent: AreaPrison
+  id: AreaPrisonShower
+  name: prison shower
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: prison_shower
+
+- type: entity
+  parent: AreaPrison
+  id: AreaPrisonVisit
+  name: prison visit
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: prison_visit
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaWarden
+  name: warden
+  suffix: AreaSecurity
+  components:
+  - type: Sprite
+    state: warden
