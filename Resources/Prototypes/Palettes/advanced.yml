@@ -37,10 +37,10 @@
     sciencedark: "#BE6BC3"
     scienceblack: "#724276"
     
-    cargolight: "#D69949"
-    cargomedium: "#BC863F"
-    cargodark: "#765428"
-    cargoblack: "#4A3519"
+    cargolight: "#9a612c"
+    cargomedium: "#7b4e23"
+    cargodark: "#5c3b1a"
+    cargoblack: "#3d2711"
     
     salvagelight: "#CA7EF2"
     salvagemedium: "#9A54BF"
