@@ -5,7 +5,7 @@
   description: A large, vicious looking blade.
   components:
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
