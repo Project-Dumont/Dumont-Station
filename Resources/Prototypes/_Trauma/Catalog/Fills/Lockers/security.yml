@@ -51,8 +51,8 @@
     children:
     - id: SecBreachingHammer
       amount: 2
-    - id: Truncheon
-      amount: 2
+    - id: Machete
+      amount: 4
     - id: ClothingBeltSheathKatanaFilled
       amount: 1
 
