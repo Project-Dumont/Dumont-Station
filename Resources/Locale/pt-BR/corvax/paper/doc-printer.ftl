@@ -80,7 +80,7 @@ doc-text-printer-ReportEmployeePerformance =
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ReportOnTheChaptersMeeting =
-   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+    [color=#1b487e]███░███░░░░██░░░░[/color]
     [color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form] COM[/bold]
@@ -168,7 +168,6 @@ doc-text-printer-ExperimentReport =
 
     Descrição externa do objeto do experimento:[form]
     Experimentador(-es):[form]
-    [form]
     Experimento nº...
     Descrição do experimento:[form]
     Resultado esperado:[form]
@@ -739,7 +738,6 @@ doc-text-printer-OrderRecognizingSentienceCreature =
 
     Durante os testes, foram identificados sinais de atividade cerebral superior e inteligência desta criatura, sua capacidade de pensar, aprender, compreender moralidade e ter senso comum em suas ações. Assim, eu, [signature], com base nos princípios de igualdade de direitos de todas as criaturas inteligentes, conforme estabelecido pela ORPS, reconheço esta criatura como inteligente.
     Aparência da criatura:[form]
-    [form]
     Nome completo atribuído à criatura:[form]
     A criatura é aceita/não aceita como passageira na estação até o final do turno: [check]
     =============================================
@@ -940,7 +938,7 @@ doc-text-printer-DivorceCertificate =
     Eu, [signature], divórcio o casamento entre:
     O/A [form], no cargo de [form]
     ⠀...
-    [O/A form], no cargo de [form]
+    O/A [form], no cargo de [form]
     Após o divórcio, os ex-cônjuges receberam os seguintes nomes completos:[form]
     A divisão de propriedades foi realizada da seguinte forma:[form]
     =============================================
