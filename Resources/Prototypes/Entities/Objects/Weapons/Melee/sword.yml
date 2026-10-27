@@ -210,7 +210,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/machete.rsi
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 1.5
     damage:
       types:
         Slash: 15
@@ -225,10 +225,6 @@
     shape:
     - 0,0,0,2
   - type: DisarmMalus
-  - type: Multihit
-    multihitWhitelist:
-      tags:
-      - Machete
 
 #Longswords
 - type: entity
