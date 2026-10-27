@@ -102,7 +102,7 @@ doc-text-printer-ReportOnTheChaptersMeeting =
     Abstencionistas: [signature] [signature] [signature] [signature] [signature] [signature]
 
     Decisão da Reunião dos Chefes: [form]
-=============================================
+    =============================================
                                 [italic]Espaço para carimbos[/italic]
 doc-text-printer-InternalAffairsAgentsReport =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
