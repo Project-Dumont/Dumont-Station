@@ -82,7 +82,7 @@ doc-text-printer-ReportEmployeePerformance =
 
 doc-text-printer-ReportOnTheChaptersMeeting =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
-    [color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form] COM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
