@@ -115,10 +115,8 @@ doc-text-printer-InternalAffairsAgentsReport =
     Tempo desde o início do turno: [form]
     Redator do documento e posiçao: [signature]
 
-    Eu, [form], no cargo de Agente de Assuntos Internos, durante a verificação interna solicitada por [form], no cargo de [form], devido a [form], identifiquei as seguintes violações:
-    [form]
-    Também quero relatar o seguinte:
-    [form]
+    Eu, [form], no cargo de Agente de Assuntos Internos, durante a verificação interna solicitada por [form], no cargo de [form], devido a [form], identifiquei as seguintes violações: [form]
+    Também quero relatar o seguinte: [form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ConditionReport =
@@ -134,12 +132,9 @@ doc-text-printer-ConditionReport =
     Redator do documento e posição: [form]
 
     Foi realizada uma verificação [form], os resultados foram analisados, e uma análise das razões para o mau funcionamento do objeto foi conduzida.
-    Causa da quebra do objeto:
-    [form]
-    Danos identificados no objeto:
-    [form]
-    Reparo realizado no objeto:
-    [form]
+    Causa da quebra do objeto:[form]
+    Danos identificados no objeto:[form]
+    Reparo realizado no objeto:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ReportStudyObject =
@@ -155,10 +150,8 @@ doc-text-printer-ReportStudyObject =
     Redator do documento e posição: [signature]
 
     Para realizar a análise, foi apresentado um dispositivo com propriedades não estudadas. Durante a análise, o objeto foi estudado, suas propriedades foram identificadas, assim como sua afiliação taxonômica.
-    Descrição externa do objeto:
-    [form]
-    Propriedades identificadas do objeto:
-    [form]
+    Descrição externa do objeto:[form]
+    Propriedades identificadas do objeto:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ExperimentReport =
@@ -173,19 +166,14 @@ doc-text-printer-ExperimentReport =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Descrição externa do objeto do experimento:
-    [form]
-    Experimentador(-es):
+    Descrição externa do objeto do experimento:[form]
+    Experimentador(-es):[form]
     [form]
     Experimento nº...
-    Descrição do experimento:
-    [form]
-    Resultado esperado:
-    [form]
-    Equipamento utilizado:
-    [form]
-    Resultado real:
-    [form]
+    Descrição do experimento:[form]
+    Resultado esperado:[form]
+    Equipamento utilizado:[form]
+    Resultado real:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-DisposalReport =
@@ -201,8 +189,7 @@ doc-text-printer-DisposalReport =
     Redator do documento e posição: [signature]
 
     O Departamento de Suprimentos realizou o descarte de objetos por meio de [form]. Durante o processo de descarte, foram encontrados itens valiosos, que foram encaminhados aos departamentos correspondentes para utilização.
-    Lista de itens encontrados:
-    [form]
+    Lista de itens encontrados:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ApplicationAppointmentInterim =
@@ -268,10 +255,8 @@ doc-text-printer-ApplicationAccess =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], solicito a concessão dos seguintes acessos:
-    [form]
-    Motivo para obtenção de acesso elevado:
-    [form]
+    Eu, [signature], solicito a concessão dos seguintes acessos:[form]
+    Motivo para obtenção de acesso elevado:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ApplicationEquipment =
@@ -286,10 +271,8 @@ doc-text-printer-ApplicationEquipment =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], solicito a emissão do seguinte equipamento do departamento [form]:
-    [form]
-    Motivo para a obtenção do equipamento:
-    [form]
+    Eu, [signature], solicito a emissão do seguinte equipamento do departamento [form]:[form]
+    Motivo para a obtenção do equipamento:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -306,10 +289,8 @@ doc-text-printer-Appeal =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito que [form], no cargo de [form], considere minha solicitação.
-    Conteúdo do apelo:
-    [form]
-    Razões para sua redação:
-    [form]
+    Conteúdo do apelo:[form]
+    Razões para sua redação:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-EvacuationShuttleRequest =
@@ -325,8 +306,7 @@ doc-text-printer-EvacuationShuttleRequest =
     Redator do documento e posição: [signature]
 
     Respeitável Central de Comando! Eu, [signature], solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
-    Motivo para o encerramento do turno:
-    [form]
+    Motivo para o encerramento do turno:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -343,14 +323,10 @@ doc-text-printer-ShuttleRegistrationRequest =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito o registro da nave no sistema NanoTrasen para identificação.
-    Dimensões da nave:
-    [form]
-    Classe da nave:
-    [form]
-    Responsável pela construção:
-    [form]
-    Nome solicitado:
-    [form]
+    Dimensões da nave:[form]
+    Classe da nave:[form]
+    Responsável pela construção:[form]
+    Nome solicitado:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -366,10 +342,8 @@ doc-text-printer-RequestCallMembersCentralCommitteeDSO =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], solicito a possibilidade de chamar para a estação:
-    [form]
-    Razão da chamada:
-    [form]
+    Eu, [signature], solicito a possibilidade de chamar para a estação:[form]
+    Razão da chamada:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -385,10 +359,8 @@ doc-text-printer-RequestToEstablishThreatLevel =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], solicito a avaliação da possibilidade de estabelecer o nível de ameaça na estação:
-    [form]
-    Razão para estabelecer o código:
-    [form]
+    Eu, [signature], solicito a avaliação da possibilidade de estabelecer o nível de ameaça na estação:[form]
+    Razão para estabelecer o código:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-RequestChangeSalary =
@@ -404,8 +376,7 @@ doc-text-printer-RequestChangeSalary =
     Redator do documento e posiçao: [signature]
 
     Eu, [signature], solicito a avaliação da possibilidade de aumento/redução do salário em [form] para o funcionário [form] no cargo de [form], departamento [form].
-    Razão para o aumento/redução do salário:
-    [form]
+    Razão para o aumento/redução do salário:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -422,16 +393,11 @@ doc-text-printer-RequestForNonlistedEmployment =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito a avaliação da possibilidade de contratação imediata do funcionário [form] para um cargo não listado.
-    Nome completo do cargo:
-    [form]
-    Responsável pelo funcionário, chefe ou colega:
-    [form]
-    Tarefas realizadas no cargo (SRP):
-    [form]
-    Acessos concedidos ao funcionário:
-    [form]
-    Razão para a contratação:
-    [form]
+    Nome completo do cargo:[form]
+    Responsável pelo funcionário, chefe ou colega:[form]
+    Tarefas realizadas no cargo:[form]
+    Acessos concedidos ao funcionário:[form]
+    Razão para a contratação:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -448,12 +414,9 @@ doc-text-printer-RequestForPromotion=
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito a avaliação da possibilidade de promoção de [form] no cargo de [form], de acordo com a hierarquia de comando. O funcionário adquiriu a qualificação necessária para este trabalho.
-    Cargo solicitado:
-    [form]
-    Responsável pelo funcionário, chefe ou colega:
-    [form]
-    Razão para a promoção:
-    [form]
+    Cargo solicitado:[form]
+    Responsável pelo funcionário, chefe ou colega:[form]
+    Razão para a promoção:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-RequestDocuments=
@@ -468,8 +431,7 @@ doc-text-printer-RequestDocuments=
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [form], no cargo de Agente Interno, solicito a entrega de uma cópia/original dos documentos para verificação da conformidade com a Lei Corporativa:
-    [form]
+    Eu, [form], no cargo de Agente Interno, solicito a entrega de uma cópia/original dos documentos para verificação da conformidade com a Lei Corporativa:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -503,8 +465,7 @@ doc-text-printer-RequestConstructionWork =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito a realização de trabalhos de construção em [form] devido a [form].
-    Lista de trabalhos de construção:
-    [form]
+    Lista de trabalhos de construção:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -521,8 +482,7 @@ doc-text-printer-RequestModernization =
     Redator do documento e posiçao: [signature]
 
     Eu, [signature], solicito a modernização dos dispositivos em [form] devido a [form].
-    Lista de modernizações:
-    [form]
+    Lista de modernizações:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -538,8 +498,7 @@ doc-text-printer-ComplaintViolationLaborRules =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], considero que durante o trabalho no departamento [form] foram cometidas as seguintes violações:
-    [form]
+    Eu, [signature], considero que durante o trabalho no departamento [form] foram cometidas as seguintes violações:[form]
     Solicito uma investigação interna desses fatos de violação.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
@@ -556,8 +515,7 @@ doc-text-printer-ComplaintOffense =
     Redator do documento e posição: [signature]
 
     Eu, [signature], acredito que [form], no cargo de [form], violou o Código Corporativo porque [form].
-    O que aconteceu do meu ponto de vista:
-    [form]
+    O que aconteceu do meu ponto de vista:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -573,8 +531,7 @@ doc-text-printer-PermissionEquipment =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], redatorizo o uso do seguinte equipamento de trabalho por [form] no cargo de [form]:
-    [form]
+    Eu, [signature], redatorizo o uso do seguinte equipamento de trabalho por [form] no cargo de [form]:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -591,10 +548,8 @@ doc-text-printer-PermissionToTravelInCaseOfThreat=
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo o funcionário [form] no cargo de [form] a se movimentar pela estação para cumprir suas responsabilidades de trabalho.
-    Níveis de códigos de ameaça nos quais esta permissão é válida:
-    [form]
-    Partes permitidas da estação para a localização do funcionário (pode especificar toda a estação):
-    [form]
+    Níveis de códigos de ameaça nos quais esta permissão é válida:[form]
+    Partes permitidas da estação para a localização do funcionário (pode especificar toda a estação):[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-SearchPermission =
@@ -610,8 +565,7 @@ doc-text-printer-SearchPermission =
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo a realização de uma busca em [form].
-    Razão para a busca:
-    [form]
+    Razão para a busca:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -628,12 +582,9 @@ doc-text-printer-PermissionToCarryWeapons =
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo [form], a portar armas até que seja usado para o propósito pretendido. Em caso de violação, a permissão será anulada, e a Segurança confiscará a arma.
-    Arma e tipo de munição:
-    [form]
-    Como obter a arma e a munição:
-    [form]
-    Razão para a emissão da permissão:
-    [form]
+    Arma e tipo de munição:[form]
+    Como obter a arma e a munição:[form]
+    Razão para a emissão da permissão:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -650,10 +601,8 @@ doc-text-printer-PrescriptionDrugAuthorization =
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo o armazenamento e uso do medicamento controlado ou substância narcótica "[form]" para o paciente [form], no cargo de [form].
-    Diagnóstico estabelecido:
-    [form]
-    Razão para emissão do medicamento:
-    [form]
+    Diagnóstico estabelecido:[form]
+    Razão para emissão do medicamento:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-PermissionDisposeBody =
@@ -669,8 +618,7 @@ doc-text-printer-PermissionDisposeBody =
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo o descarte do corpo de [form], no cargo de [form], devido à impossibilidade de reanimação e clonagem.
-    Método de descarte:
-    [form]
+    Método de descarte:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -687,8 +635,7 @@ doc-text-printer-ConstructionPermit =
     Redator do documento e Posição: [signature]
 
     Eu, [signature], redatorizo a realização de [form], no cargo de [form], para remodelar parte da estação [form] devido a [form].
-    Volume de remodelação aprovado:
-    [form]
+    Volume de remodelação aprovado:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -705,13 +652,13 @@ doc-text-printer-PermissionToExtendMarriage =
     Redator do documento e posição: [signature]
 
     Eu, [signature], dou minha permissão para a expansão do casamento celebrado entre:
-    [form], no cargo de [form]
+    O/A [form], no cargo de [form]
     ⠀...
-    [form], no cargo de [form]
+    O/A [form], no cargo de [form]
     ⠀Para entrar neste novo casamento:
-    [form], no cargo de [form]
+    O/A [form], no cargo de [form]
     ⠀...
-    [form], no cargo de [form]
+    O/A [form], no cargo de [form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-OrderDismissal =
@@ -726,8 +673,7 @@ doc-text-printer-OrderDismissal =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], ordeno a demissão do funcionário [form] do departamento [form] no cargo de [form] por motivo de:
-    [form]
+    Eu, [signature], ordeno a demissão do funcionário [form] do departamento [form] no cargo de [form] por motivo de:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -743,8 +689,7 @@ doc-text-printer-OrderDeprivationAccess =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], ordeno a retirada dos seguintes acessos do funcionário [form] no cargo de [form]:
-    [form]
+    Eu, [signature], ordeno a retirada dos seguintes acessos do funcionário [form] no cargo de [form]:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -760,8 +705,7 @@ doc-text-printer-OrderEncouragement =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], concedo a [form] no cargo de [form] uma medalha/diploma/lembrança/prêmio no valor de [form] pelos seguintes méritos:
-    [form]
+    Eu, [signature], concedo a [form] no cargo de [form] uma medalha/diploma/lembrança/prêmio no valor de [form] pelos seguintes méritos:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-OrderParolePrisoner =
@@ -777,8 +721,7 @@ doc-text-printer-OrderParolePrisoner =
     Redator do documento e posição: [signature]
 
     Eu, [signature], redatorizo a libertação condicional do prisioneiro [form] para o brig/permabrig. Após a concessão da liberdade condicional, será atribuída ao prisioneiro uma profissão civil com trabalho obrigatório até o final do turno.
-    Profissão atribuída:
-    [form]
+    Profissão atribuída:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -795,10 +738,9 @@ doc-text-printer-OrderRecognizingSentienceCreature =
     Redator do documento e posição: [signature]
 
     Durante os testes, foram identificados sinais de atividade cerebral superior e inteligência desta criatura, sua capacidade de pensar, aprender, compreender moralidade e ter senso comum em suas ações. Assim, eu, [signature], com base nos princípios de igualdade de direitos de todas as criaturas inteligentes, conforme estabelecido pela ORPS, reconheço esta criatura como inteligente.
-    Aparência da criatura:
+    Aparência da criatura:[form]
     [form]
-    Nome completo atribuído à criatura:
-    [form]
+    Nome completo atribuído à criatura:[form]
     A criatura é aceita/não aceita como passageira na estação até o final do turno: [check]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
@@ -816,8 +758,7 @@ doc-text-printer-OrderMedicalIntervention =
     Redator do documento e posição: [signature]
 
     Eu, [signature], ordeno a realização de intervenção médica com o objetivo de [form], em relação a [form] no cargo de [form].
-    Base para a realização da cirurgia:
-    [form]
+    Base para a realização da cirurgia:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ProductManufacturingOrder =
@@ -833,10 +774,8 @@ doc-text-printer-ProductManufacturingOrder =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito a produção de produtos pelo departamento [form].
-    Lista de produtos necessários:
-    [form]
-    Razão do pedido:
-    [form]
+    Lista de produtos necessários:[form]
+    Razão do pedido:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -852,12 +791,9 @@ doc-text-printer-OrderPurchaseResourcesEquipment =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Lista de produtos para pedido:
-    [form]
-    Local de entrega dos produtos:
-    [form]
-    Razão:
-    [form]
+    Lista de produtos para pedido:[form]
+    Local de entrega dos produtos:[form]
+    Razão:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -874,10 +810,8 @@ doc-text-printer-OrderingSpecialEquipment =
     Redator do documento e posição: [signature]
 
     Eu, [signature], solicito o fornecimento de equipamento especial para a estação pela  Central de Comando.
-    Lista do equipamento solicitado:
-    [form]
-    Razão da solicitação:
-    [form]
+    Lista do equipamento solicitado:[form]
+    Razão da solicitação:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-OrderPurchaseWeapons =
@@ -893,8 +827,7 @@ doc-text-printer-OrderPurchaseWeapons =
     Redator do documento e posição: [signature]
 
     Eu, [signature], faço um pedido de armas de combate e/ou equipamentos de combate através do Departamento de Logística.
-    Razão do pedido:
-    [form]
+    Razão do pedido:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -910,8 +843,7 @@ doc-text-printer-Certificate =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    [form], no cargo de [form], é premiado com um certificado por suas notáveis contribuições em:
-    [form]
+    O/A [form], no cargo de [form], é premiado com um certificado por suas notáveis contribuições em:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -942,16 +874,14 @@ doc-text-printer-CertificateOffense =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], certifico infrações/voluntariamente admito ter cometido infrações previstas pelos artigos:
-    [form]
+    Eu, [signature], certifico infrações/voluntariamente admito ter cometido infrações previstas pelos artigos:[form]
     Sobre este incidente, posso esclarecer o seguinte.
     Local do crime: [form]
     Motivações para cometer o crime: [form]
     Contra quem o crime foi cometido: [form]
     Natureza e extensão do dano causado pelo crime: [form]
     Cúmplices no crime: [form]
-    Cronologia completa dos eventos:
-    [form]
+    Cronologia completa dos eventos:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -972,8 +902,7 @@ doc-text-printer-DeathCertificate =
     Raça: [form]
     Gênero: [form]
     Causa da morte: [form]
-    Possibilidade de reanimação ou clonagem:
-    [form]
+    Possibilidade de reanimação ou clonagem:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -990,11 +919,10 @@ doc-text-printer-MarriageCertificate =
     Redator do documento e posição: [signature]
 
     Eu, [signature], celebro o casamento entre:
-    ⠀[form], no cargo de [form]
+    O/A [form], no cargo de [form]
     ⠀...
-    ⠀[form], no cargo de [form]
-    Após o casamento, os cônjuges receberam os seguintes nomes completos:
-    [form]
+    O/A [form], no cargo de [form]
+    Após o casamento, os cônjuges receberam os seguintes nomes completos:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-DivorceCertificate =
@@ -1010,13 +938,11 @@ doc-text-printer-DivorceCertificate =
     Redator do documento e posição: [signature]
 
     Eu, [signature], divórcio o casamento entre:
-    [form], no cargo de [form]
+    O/A [form], no cargo de [form]
     ⠀...
-    [form], no cargo de [form]
-    Após o divórcio, os ex-cônjuges receberam os seguintes nomes completos:
-    [form]
-    A divisão de propriedades foi realizada da seguinte forma:
-    [form]
+    [O/A form], no cargo de [form]
+    Após o divórcio, os ex-cônjuges receberam os seguintes nomes completos:[form]
+    A divisão de propriedades foi realizada da seguinte forma:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1032,13 +958,10 @@ doc-text-printer-ClosingIndictment =
     Tempo desde o início do turno: [form]
     Redator do documento e posição: [signature]
 
-    Eu, [signature], redatorizo a prisão de [form], no cargo de [form], devido à suspeita de cometer as seguintes infrações:
-    [form]
+    Eu, [signature], redatorizo a prisão de [form], no cargo de [form], devido à suspeita de cometer as seguintes infrações:[form]
     Durante a investigação preliminar, foram encontradas evidências que indicam que o indivíduo cometeu a infração.
-    Evidências diretas:
-    [form]
-    Evidências indiretas:
-    [form]
+    Evidências diretas:[form]
+    Evidências indiretas:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1055,12 +978,9 @@ doc-text-printer-Sentence =
         Redator do documento e posição: [signature]
 
         Eu, [signature], profiro a sentença de acordo com as redatoridades concedidas a mim em relação a [form], no cargo de [form].
-        Esta pessoa violou os seguintes artigos da Lei Corporativa:
-        [form]
-        Levando em consideração todas as circunstâncias atenuantes e agravantes, a punição legal para esta pessoa é apresentada na forma de:
-        [form]
-        Punição administrativa:
-        [form]
+        Esta pessoa violou os seguintes artigos da Lei Corporativa:[form]
+        Levando em consideração todas as circunstâncias atenuantes e agravantes, a punição legal para esta pessoa é apresentada na forma de:[form]
+        Punição administrativa:[form]
         O tempo de prisão começa a ser contado a partir de: [form]
         =============================================
                                     ⠀[italic]Espaço para carimbos[/italic]
@@ -1077,22 +997,14 @@ doc-text-printer-Judgment =
     Redator do documento e posição: [signature]
 
     Eu, [signature], proponho uma decisão sobre o processo judicial em relação a [form], no cargo de [form].
-    Infrações cometidas:
-    [form]
-    Decisão da Segurança:
-    [form]
-    Tempo de detenção antes do julgamento:
-    [form]
-    Esta pessoa violou os seguintes artigos da Lei Corporativa:
-    [form]
-    Levando em consideração todas as circunstâncias atenuantes e agravantes, a punição legal para esta pessoa é apresentada na forma de:
-    [form]
-    Punição administrativa:
-    [form]
-    O tempo de detenção começa a ser contado a partir de:
-    [form]
-    Minha decisão é fundamentada em:
-    [form]
+    Infrações cometidas:[form]
+    Decisão da Segurança:[form]
+    Tempo de detenção antes do julgamento:[form]
+    Esta pessoa violou os seguintes artigos da Lei Corporativa:[form]
+    Levando em consideração todas as circunstâncias atenuantes e agravantes, a punição legal para esta pessoa é apresentada na forma de:[form]
+    Punição administrativa:[form]
+    O tempo de detenção começa a ser contado a partir de:[form]
+    Minha decisão é fundamentada em:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1109,16 +1021,11 @@ doc-text-printer-StatementHealth =
     Redator do documento e posição: [signature]
 
     O paciente [form], no cargo de [form], foi encaminhado para exame médico devido a [form]. Foi realizado um exame completo do paciente, incluindo os exames e análises necessários.
-    Composição da comissão médica:
-    [form]
-    Estado do paciente na admissão:
-    [form]
-    Diagnóstico estabelecido:
-    [form]
-    Estado psicológico do paciente:
-    [form]
-    Tratamento administrado durante a hospitalização:
-    [form]
+    Composição da comissão médica:[form]
+    Estado do paciente na admissão:[form]
+    Diagnóstico estabelecido:[form]
+    Estado psicológico do paciente:[form]
+    Tratamento administrado durante a hospitalização:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1135,8 +1042,7 @@ doc-text-printer-DecisionToStartTrial =
     Redator do documento e posição: [signature]
 
     Eu, [signature], anuncio o início do processo judicial em relação a [form] devido à complexidade e ambiguidade do caso.
-    Infrações cometidas:
-    [form]
+    Infrações cometidas:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ErrorLoadingFormHeader =
@@ -1151,8 +1057,7 @@ doc-text-printer-ErrorLoadingFormHeader =
     Tempo desde o início do turno: [form]
     Apelido do Agente: [form]
 
-    Conteúdo completo do documento com todas as informações necessárias e descrição
-    [form]
+    Conteúdo completo do documento com todas as informações necessárias e descrição:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1169,8 +1074,7 @@ doc-text-printer-NOTICEOFLIQUIDATION =
     Apelido do agente: [form]
 
     Estimado [form], no cargo de [form]! A administração do Sindicato tomou a decisão de liquidá-lo imediatamente durante este turno. Pedimos que prepare antecipadamente um testamento e o envie ao Departamento Médico da estação. A destruição do seu corpo será realizada pelas forças do Sindicato.
-    Motivo da liquidação:
-    [form]
+    Motivo da liquidação:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1186,10 +1090,8 @@ doc-text-printer-BUSINESSDEAL =
     Tempo desde o início do turno: [form]
     Apelido do agente: [form]
 
-    O Sindicato gentilmente propõe concluir um acordo entre a estação e o agente [form]. Do lado da estação, é necessário:
-    [form]
-    Motivo para cumprir as condições do acordo:
-    [form]
+    O Sindicato gentilmente propõe concluir um acordo entre a estação e o agente [form]. Do lado da estação, é necessário:[form]
+    Motivo para cumprir as condições do acordo:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-NOTEBEGINNINGMILITARYACTIONS =
@@ -1205,8 +1107,7 @@ doc-text-printer-NOTEBEGINNINGMILITARYACTIONS =
     Apelido do agente: [form]
 
     Desprezíveis ratos corporativos da NanoTrasen! O Sindicato anuncia oficialmente o início das ações militares contra vocês, bem como o início da operação para exterminá-los.
-    Razão para apresentação da nota:
-    [form]
+    Razão para apresentação da nota:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -1223,8 +1124,7 @@ doc-text-printer-REPORTACCOMPLISHMENTGOALS =
     Apelido do agente: [form]
 
     Eu, [form], alcancei com sucesso os objetivos estabelecidos pela liderança do Sindicato. Solicito a aceitação do relatório de cumprimento.
-    Relatório:
-    [form]
+    Relatório:[form]
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
