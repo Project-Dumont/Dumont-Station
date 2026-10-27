@@ -94,26 +94,11 @@ doc-text-printer-ReportOnTheChaptersMeeting =
     Razão para convocar a Reunião dos Chefes: [form]
     Formulação da questão apresentada aos Chefes: [form]
     Número de votos "A favor": [check] [check] [check] [check] [check] [check]
-    Votantes "A favor":
-    [signature]
-    [signature]
-    [signature]
-    [signature]
-    [signature]
-    [signature]
+    Votantes "A favor": [signature] [signature] [signature] [signature] [signature] [signature]
     Número de votos "Contra": [check] [check] [check] [check] [check] [check]
-    Votantes "Contra":
-    [signature]
-    [signature]
-    [signature]
-    [signature]
-    [signature]
-    [signature]
+    Votantes "Contra": [signature] [signature] [signature] [signature] [signature] [signature]
     Número de abstenções: [form]
-    Abstencionistas:
-    [signature]
-    [signature]
-    [signature]
+    Abstencionistas: [signature] [signature] [signature] [signature] [signature] [signature]
 
     Decisão da Reunião dos Chefes: [form]
     =============================================
