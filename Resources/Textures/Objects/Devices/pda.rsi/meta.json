@@ -249,6 +249,9 @@
     {
       "name": "equipped-IDCARD",
       "directions": 4
+    },
+    {
+      "name": "pda-tramdriver"
     }
   ]
 }

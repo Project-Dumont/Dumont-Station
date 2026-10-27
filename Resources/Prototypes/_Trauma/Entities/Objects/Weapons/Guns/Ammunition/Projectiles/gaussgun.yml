@@ -59,7 +59,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _Trauma/Objects/Weapons/Guns/Ammunition/Bullets/gaussgun.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi # Dumont edit - easier to notice in combat sprite
+    state: shard
   - type: Ammo
     muzzleFlash: null
   - type: Tag
@@ -114,7 +115,7 @@
       types:
         Piercing: 29
   - type: Sprite
-    state: bullet
+    state: shard
 
 - type: entity
   parent: GaussgunShard
@@ -153,7 +154,7 @@
         Slash: 13
       armorPenetration: 0.15
   - type: Sprite
-    state: disk
+    state: shard
 
 # Ammo box
 

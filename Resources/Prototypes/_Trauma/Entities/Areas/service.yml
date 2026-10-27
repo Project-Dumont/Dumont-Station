@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaService
   name: service
+  suffix: AreaService
   components:
   # Dumont changes start
   - type: DepartmentArea
@@ -16,6 +17,7 @@
   parent: BaseAreaService
   id: AreaKitchen
   name: kitchen
+  suffix: AreaService
   components:
   - type: Sprite
     state: kitchen
@@ -25,6 +27,7 @@
   parent: AreaKitchen
   id: AreaCafeteria
   name: cafeteria
+  suffix: AreaService
   components:
   - type: Sprite
     state: cafeteria
@@ -34,6 +37,7 @@
   parent: AreaKitchen
   id: AreaColdRoom
   name: cold room
+  suffix: AreaService
   components:
   - type: Sprite
     state: kitchen_cold
@@ -44,6 +48,7 @@
   parent: AreaKitchen
   id: AreaKitchenBackRoom
   name: kitchen back room
+  suffix: AreaService
   components:
   - type: Sprite
     state: kitchen_back
@@ -52,6 +57,7 @@
   parent: BaseAreaService
   id: AreaBarber
   name: barber
+  suffix: AreaService
   components:
   - type: Sprite
     state: barber
@@ -60,6 +66,7 @@
   parent: BaseAreaService
   id: AreaBar
   name: bar
+  suffix: AreaService
   components:
   - type: Sprite
     state: bar
@@ -68,6 +75,7 @@
   parent: BaseAreaService
   id: AreaBarBackRoom
   name: bar back room
+  suffix: AreaService
   components:
   - type: Sprite
     state: bar_back_room
@@ -76,6 +84,7 @@
   parent: BaseAreaService
   id: AreaDiner
   name: diner
+  suffix: AreaService
   components:
   - type: Sprite
     state: diner
@@ -84,6 +93,7 @@
   parent: BaseAreaService
   id: AreaBotany
   name: hydro
+  suffix: AreaService
   components:
   - type: Sprite
     state: hydro
@@ -92,6 +102,7 @@
   parent: BaseAreaService
   id: AreaServiceHall
   name: service hall
+  suffix: AreaService
   components:
   - type: Sprite
     state: service_hall
@@ -100,6 +111,7 @@
   parent: BaseAreaService
   id: AreaRanch
   name: ranch
+  suffix: AreaService
   components:
   - type: Sprite
     state: ranch

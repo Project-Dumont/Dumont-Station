@@ -3231,18 +3231,18 @@ entities:
     - type: Transform
       pos: 9.372097,9.261433
       parent: 1
-- proto: AshBush
-  entities:
-  - uid: 590
-    components:
-    - type: Transform
-      pos: 8.5,9.5
-      parent: 1
-  - uid: 591
-    components:
-    - type: Transform
-      pos: 7.5,7.5
-      parent: 1
+#- proto: AshBush Dumont why did this break
+#  entities:
+#  - uid: 590
+#    components:
+#    - type: Transform
+#      pos: 8.5,9.5
+#      parent: 1
+#  - uid: 591
+#    components:
+#    - type: Transform
+#      pos: 7.5,7.5
+#      parent: 1
 - proto: FloraRockSolid
   entities:
   - uid: 583
