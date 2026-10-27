@@ -51,12 +51,12 @@
   category: cargoproduct-category-name-armory
   group: market
 
-- type: cargoProduct
-  id: CrateArmoryMachetes
-  icon:
-    sprite: Objects/Weapons/Melee/machete.rsi
-    state: icon
-  product: CrateArmoryMachetes
-  cost: 3000
-  category: cargoproduct-category-name-armory
-  group: market
+#- type: cargoProduct
+#  id: CrateArmoryMachetes
+#  icon:
+#    sprite: Objects/Weapons/Melee/machete.rsi
+#    state: icon
+#  product: CrateArmoryMachetes
+#  cost: 3000
+#  category: cargoproduct-category-name-armory
+#  group: market
