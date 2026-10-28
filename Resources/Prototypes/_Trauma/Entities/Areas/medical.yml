@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaMedical
   name: medical
+  suffix: AreaMedical
   components:
   - type: DepartmentArea
     department: Medical
@@ -13,6 +14,7 @@
   parent: BaseAreaMedical
   id: AreaMedical
   name: medbay
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: medbay
@@ -21,6 +23,7 @@
   parent: BaseAreaMedical
   id: AreaMedicalBreak
   name: medbay breakroom
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: medbay_break
@@ -29,6 +32,7 @@
   parent: BaseAreaMedical
   id: AreaMedicalLobby
   name: medbay lobby
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: medbay_lobby
@@ -37,6 +41,7 @@
   parent: BaseAreaMedical
   id: AreaMedicalStorage
   name: medbay storage
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: medbay_storage
@@ -45,6 +50,7 @@
   parent: BaseAreaMedical
   id: AreaSurgery
   name: surgery
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: surgery
@@ -53,6 +59,7 @@
   parent: BaseAreaMedical
   id: AreaSurgeryTheatre
   name: surgery theatre
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: surgery_theatre
@@ -61,6 +68,7 @@
   parent: BaseAreaMedical
   id: AreaMorgue
   name: morgue
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: morgue
@@ -71,6 +79,7 @@
   parent: BaseAreaMedical
   id: AreaPsychology
   name: psychology
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: psychology
@@ -79,6 +88,7 @@
   parent: BaseAreaMedical
   id: AreaCloning
   name: cloning
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: cloning
@@ -87,6 +97,7 @@
   parent: BaseAreaMedical
   id: AreaParamedic
   name: paramedic
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: paramed
@@ -95,6 +106,7 @@
   parent: BaseAreaMedical
   id: AreaPatientRoom
   name: patient room
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: patient_room
@@ -103,6 +115,7 @@
   parent: BaseAreaMedical
   id: AreaPharmacy
   name: pharmacy
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: pharmacy
@@ -111,6 +124,7 @@
   parent: BaseAreaMedical
   id: AreaChem
   name: chem
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: chem
@@ -119,6 +133,7 @@
   parent: BaseAreaMedical
   id: AreaCryoPods
   name: cryo pods
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: cryo_pods
@@ -127,6 +142,7 @@
   parent: BaseAreaMedical
   id: AreaVirology
   name: virology
+  suffix: AreaMedical
   components:
   - type: Sprite
     state: virology

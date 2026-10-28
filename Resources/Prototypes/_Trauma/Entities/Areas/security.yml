@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaSecurity
   name: security
+  suffix: AreaSecurity
   components:
   - type: DepartmentArea
     department: Security
@@ -13,6 +14,7 @@
   parent: BaseAreaSecurity
   id: AreaSecurity
   name: security
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: security
@@ -21,6 +23,7 @@
   parent: BaseAreaSecurity
   id: AreaBrig
   name: brig
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: brig
@@ -29,6 +32,7 @@
   parent: BaseAreaSecurity
   id: AreaSecurityCheckpoint
   name: sec checkpoint
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: sec_point
@@ -37,6 +41,7 @@
   parent: BaseAreaSecurity
   id: AreaDetective
   name: detective
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: detective
@@ -47,6 +52,7 @@
   parent: BaseAreaSecurity
   id: AreaArmory
   name: armory
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: armory
@@ -55,6 +61,7 @@
   parent: BaseAreaSecurity
   id: AreaBrigMed
   name: brig med
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: sec_medical
@@ -63,6 +70,7 @@
   parent: BaseAreaSecurity
   id: AreaExecution
   name: execution room
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: execute_room
@@ -71,6 +79,7 @@
   parent: BaseAreaSecurity
   id: AreaFiringRange
   name: firing range
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: firing_range
@@ -79,6 +88,7 @@
   parent: BaseAreaSecurity
   id: AreaInterrogation
   name: interrogation
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: interrogation
@@ -89,6 +99,7 @@
   parent: AreaSecurity
   id: AreaSecurityLockers
   name: security locker room
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: sec_locker_room
@@ -97,6 +108,7 @@
   parent: BaseAreaSecurity
   id: AreaLaborCamp
   name: labor camp
+  suffix: AreaSecurity, AreaLavaland
   components:
   - type: Sprite
     state: sec_labor_camp
@@ -105,6 +117,7 @@
   parent: BaseAreaSecurity
   id: AreaPrison
   name: prison
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: sec_prison
@@ -113,6 +126,7 @@
   parent: AreaPrison
   id: AreaPrisonShower
   name: prison shower
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: prison_shower
@@ -121,6 +135,7 @@
   parent: AreaPrison
   id: AreaPrisonVisit
   name: prison visit
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: prison_visit
@@ -129,6 +144,7 @@
   parent: BaseAreaSecurity
   id: AreaWarden
   name: warden
+  suffix: AreaSecurity
   components:
   - type: Sprite
     state: warden

@@ -4,6 +4,7 @@
   parent: BaseAreaStation
   id: AreaMaints
   name: maints
+  suffix: AreaMaint
   components:
   - type: Sprite
     state: maints
@@ -16,6 +17,7 @@
   parent: BaseAreaStation
   id: AreaRadstorm
   name: radstorm shelter
+  suffix: AreaMaint
   components:
   - type: Sprite
     state: radstorm_shelter
@@ -24,6 +26,7 @@
   parent: BaseAreaStation
   id: AreaHolodeck
   name: holodeck
+  suffix: AreaGeneral
   components:
   - type: Sprite
     state: holodeck
@@ -41,6 +44,7 @@
   parent: BaseAreaStation
   id: AreaExterior
   name: exterior
+  suffix: AreaExterior
   components:
   - type: Sprite
     state: exterior

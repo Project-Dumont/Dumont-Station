@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaCargo
   name: cargo
+  suffix: AreaSupply
   components:
   - type: DepartmentArea
     department: Cargo
@@ -13,6 +14,7 @@
   parent: BaseAreaCargo
   id: AreaCargoBay
   name: cargo bay
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: cargo_bay
@@ -21,6 +23,7 @@
   parent: BaseAreaCargo
   id: AreaCargoLobby
   name: cargo lobby
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: cargo_lobby
@@ -29,6 +32,7 @@
   parent: BaseAreaCargo
   id: AreaCargoOffice
   name: cargo office
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: cargo_office
@@ -37,6 +41,7 @@
   parent: BaseAreaCargo
   id: AreaMailRoom
   name: mail room
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: mail_room
@@ -45,6 +50,7 @@
   parent: BaseAreaCargo
   id: AreaPodBay
   name: podbay
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: podbay
@@ -53,6 +59,7 @@
   parent: BaseAreaCargo
   id: AreaSalvage
   name: salv
+  suffix: AreaSupply
   components:
   - type: Sprite
     state: salv
