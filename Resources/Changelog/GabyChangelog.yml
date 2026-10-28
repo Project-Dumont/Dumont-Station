@@ -4658,3 +4658,17 @@ Entries:
         chance de desmembrar.
   id: 550
   time: '2026-10-27T01:33:26.0000000+00:00'
+- author: Redmagician14
+  changes:
+    - type: Tweak
+      message: >-
+        Atualização da impressora de documentos para usar as tags [form],
+        [signature] e [check].
+  id: 551
+  time: '2026-10-28T20:55:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Cameras.
+  id: 552
+  time: '2026-10-28T21:42:05.0000000+00:00'
