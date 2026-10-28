@@ -49,3 +49,21 @@
     Steel: 500
     Gold: 300
     Plastic: 500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponLaserSMG
+  result: WeaponLaserSMG
+  materials:
+    Steel: 2000
+    Glass: 800
+    Plastic: 500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponLaserRifle
+  result: WeaponLaserRifle
+  materials:
+    Steel: 2000
+    Glass: 800
+    Plastic: 500

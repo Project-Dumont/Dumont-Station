@@ -3,6 +3,7 @@
 // Dumont start
 // Dumont start
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Body.Part;
 // Dumont end
 
@@ -86,7 +87,7 @@ public sealed partial class ChampionStanceSystem : EntitySystem
         if (!Condition(ent))
             return;
 
-        var dict = args.OriginalDamage.DamageDict.ToDictionary();
+        var dict = args.OriginalDamage.DamageDict.ToDictionary(entry => (ProtoId<DamageTypePrototype>) entry.Key, entry => entry.Value);
         foreach (var key in dict.Keys)
         {
             if (args.OriginalDamage.WoundSeverityMultipliers.TryGetValue(key, out var existing))

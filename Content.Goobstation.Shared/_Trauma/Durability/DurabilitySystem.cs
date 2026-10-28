@@ -410,7 +410,7 @@ public sealed partial class DurabilitySystem : EntitySystem
 
         if (TryComp<ToolComponent>(args.Used, out var tool) && ent.Comp.RepairTool is { } quality)
         {
-            if (_tool.HasQuality(args.Used, ent.Comp.RepairTool, tool))
+            if (_tool.HasQuality(args.Used, quality, tool))
             {
                 _tool.UseTool(args.Used,
                     args.User,

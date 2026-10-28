@@ -4530,3 +4530,131 @@ Entries:
         livro guia.
   id: 537
   time: '2026-10-16T19:56:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas as áreas do Trauma/Monkey, pros mapeadores marcarem as salas
+        dos mapas.
+    - type: Add
+      message: >-
+        Música ambiente própria em cada departamento e em algumas salas, nos
+        mapas que tiverem áreas.
+  id: 538
+  time: '2026-10-16T22:36:26.0000000+00:00'
+- author: 'SrKolobanov '
+  changes:
+    - type: Add
+      message: Daengati agora tem resistência a solda.
+    - type: Add
+      message: Novo emote pro Daengati.
+    - type: Remove
+      message: Daengati não tem mais visão noturna.
+    - type: Tweak
+      message: Defesa de dano de calor do Daengati reduzida pela metade.
+    - type: Tweak
+      message: Daengatis agora podem ingerir carne crua e sangue.
+  id: 539
+  time: '2026-10-16T22:41:13.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: >-
+        As cápsulas de fuga agora pousam em um planeta com uma dungeon e seus
+        inimigos, em vez de ir para a CentCom.
+    - type: Tweak
+      message: O objetivo do Ninja de sobreviver foi alterado para uma Extração.
+    - type: Add
+      message: Cápsulas de fuga agora possuem limite de capacidade.
+  id: 540
+  time: '2026-10-17T01:23:33.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Borgs conseguem pegar aço.
+  id: 541
+  time: '2026-10-17T18:53:57.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: Cloth footwrap aos calçados civis.
+  id: 542
+  time: '2026-10-19T22:57:48.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Rádio de sec é um pouco mais claro agora.
+  id: 543
+  time: '2026-10-20T20:22:17.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Soldado Experimental em bitrunning pode ser selecionado denovo.
+  id: 544
+  time: '2026-10-21T20:12:01.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Tram driver!
+  id: 545
+  time: '2026-10-25T20:01:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas berserker do HOS buffadas.
+    - type: Tweak
+      message: SMG laser é menos precisa.
+    - type: Tweak
+      message: Indutores de sec podem ser colocados em cintos de sec.
+    - type: Tweak
+      message: Agora pode imprimir rifles e SMGs laser.
+    - type: Tweak
+      message: >-
+        Agora pode imprimir carregadores preenchidos com shardshots e discos
+        afiados.
+    - type: Tweak
+      message: Sprite de bala de Gauss. É mais fácil de ver agora.
+    - type: Tweak
+      message: Receita de pólvora. Verifique a entrada do livro guia de químico.
+    - type: Tweak
+      message: Rajadas do rifle laser são mais lentas.
+    - type: Tweak
+      message: Modo letal da justice consome menos energia.
+    - type: Remove
+      message: Multihit da machete *de salv*. Machete de sec ainda tem.
+  id: 546
+  time: '2026-10-25T20:05:14.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas artes no lobby
+  id: 547
+  time: '2026-10-27T01:08:22.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Areas foram adicionadas aos mapas.
+  id: 548
+  time: '2026-10-27T01:19:01.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado um intercom para a prisão.
+    - type: Add
+      message: Intercoms possuem uma cor representando seu departamento.
+    - type: Add
+      message: Caixa de charutos havaianos agora possuem um sprite único.
+    - type: Add
+      message: Cryosleepers agora possuem sprites direcionais.
+    - type: Tweak
+      message: Diversos sprites receberam um resprite, cheque a PR para ver mais sobre.
+  id: 549
+  time: '2026-10-27T01:24:51.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Explosões não te disintegram mais, mas ainda são bem fortes e tem alta
+        chance de desmembrar.
+  id: 550
+  time: '2026-10-27T01:33:26.0000000+00:00'

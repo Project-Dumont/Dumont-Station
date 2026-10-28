@@ -201,6 +201,9 @@
           - PowerCell
           - MegaCell
     sprite: _Orion/Objects/Tools/Inducer/inducer-sec.rsi
+  - type: Tag
+    tags:
+    - SecBeltEquip
 
 - type: entity
   parent: InducerSec

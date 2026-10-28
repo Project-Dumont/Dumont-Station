@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Gibbing; // Goob
 using Content.Shared.Body.Components;
 using Content.Shared.Database;
 using Content.Shared.Gibbing.Events; // Shitmed Change
@@ -33,6 +34,9 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
 
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
+            if (system.EntityManager.HasComponent<DamageGibImmuneComponent>(owner)) // Goob
+                return;
+
             if (system.EntityManager.TryGetComponent(owner, out BodyComponent? body))
             {
                 system.BodySystem.GibBody(owner, _recursive, body, gib: GibType, contents: GibContents); // Shitmed Change

@@ -32,6 +32,8 @@ using Content.Shared._Shitmed.Damage; // Shitmed Change
 // Dumont start
 using Content.Trauma.Server.Heretic.Systems;
 // Dumont end
+using Robust.Shared.Prototypes;
+using Content.Shared.Damage.Prototypes;
 
 namespace Content.Goobstation.Shared.Religion;
 
@@ -93,7 +95,7 @@ public sealed class WeakToHolySystem : EntitySystem
 
         DamageModifierSet modifierSet = new()
         {
-            Coefficients = new Dictionary<string, float>
+            Coefficients = new Dictionary<ProtoId<DamageTypePrototype>, float>
             {
                 { "Holy", holyCoefficient },
             },

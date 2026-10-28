@@ -259,6 +259,11 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      # Dumont changes start
+      - type: AutoImplant
+        implants:
+        - RadioImplantHeadrev
+      # Dumont end
       mindRoles:
       - MindRoleHeadRevolutionary
   - type: Tag

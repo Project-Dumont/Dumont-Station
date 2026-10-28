@@ -74,6 +74,8 @@
   - SpeedLoaderWatsonEmpty # Dumont
 # Trauma gauss gun port start
   - BaseMagazineGaussgun
+  - MagazineGaussgunShard
+  - MagazineGaussgunDisc
   - MagazineGaussgun
   - MagazineBoxGaussgunDisc
   - MagazineBoxGaussgunShard
@@ -169,6 +171,9 @@
   - WeaponTemperatureGun # Goobstation
   - Terminus # Goobstation
   - WeaponLaserSvalinn
+# dumont edit lasersec
+  - WeaponLaserSMG
+  - WeaponLaserRifle
 
 - type: latheRecipePack
   id: SecurityDisablers
