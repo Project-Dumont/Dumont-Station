@@ -1651,3 +1651,14 @@
         color: "#101010"
       - state: equipped-INNERCLOTHING-tie
         color: "#eb0b00"
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTramDriver
+  name: tram driver's jumpsuit
+  description: Perfectly ironed, for well-prepared professionals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/tramdriver.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/tramdriver.rsi

@@ -4,6 +4,8 @@
   id: N14Machete
   description: A large, vicious looking blade.
   components:
+  - type: MeleeWeapon
+    attackRate: 1
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
@@ -26,6 +28,7 @@
   - type: StaticPrice
     price: 30
 
+#
 - type: entity
   name: scrap machete
   parent: N14Machete

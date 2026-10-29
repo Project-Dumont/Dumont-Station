@@ -216,6 +216,7 @@ using Robust.Shared.Map.Events;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
+    [Category("MapTests")]
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;

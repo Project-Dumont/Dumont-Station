@@ -20,12 +20,49 @@ const CommentRegex = /<!--.*?-->/gs; // HTML comments
 
 // Main function
 async function main() {
-    // Get PR details
-    const pr = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
-    const { merged_at, body, user } = pr.data;
+    // try batch every pending changelog
+    const current = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
+    const lastTime = getLastEntryTime();
+
+    const prs = new Map([[current.data.number, current.data]]);
+    if (lastTime) {
+        for (const pr of await getMergedPRsSince(lastTime)) {
+            prs.set(pr.number, pr);
+        }
+    }
+
+    const pending = [...prs.values()]
+        .filter((pr) => !lastTime || !pr.merged_at || new Date(pr.merged_at) > lastTime)
+        .sort((a, b) => new Date(a.merged_at) - new Date(b.merged_at));
+
+    for (const pr of pending) {
+        processPR(pr);
+    }
+}
+
+// Closed PRs sorted by last update, newest first
+async function getMergedPRsSince(since) {
+    const result = [];
+    const perPage = 100;
+
+    for (let page = 1; page <= 10; page++) {
+        const items = (await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls?state=closed&sort=updated&direction=desc&per_page=${perPage}&page=${page}`)).data;
+
+        for (const pr of items) {
+            if (pr.merged_at && new Date(pr.merged_at) > since) result.push(pr);
+        }
+
+        if (items.length < perPage || new Date(items[items.length - 1].updated_at) <= since) break;
+    }
+
+    return result;
+}
+
+function processPR(pr) {
+    const { merged_at, body, user } = pr;
 
     // Remove comments from the body
-    commentlessBody = body.replace(CommentRegex, '');
+    commentlessBody = (body || "").replace(CommentRegex, '');
 
     // Get author
     const headerMatch = HeaderRegex.exec(commentlessBody);
@@ -71,7 +108,7 @@ async function main() {
     // Write changelogs
     writeChangelog(entry);
 
-    console.log(`Changelog updated with changes from PR #${process.env.PR_NUMBER}`);
+    console.log(`Changelog updated with changes from PR #${pr.number}`);
 }
 
 
@@ -123,6 +160,23 @@ function getChanges(body) {
     });
 
     return entries;
+}
+
+// get the time of the newest entry in the changelogs file
+function getLastEntryTime() {
+    if (!fs.existsSync(`../../${process.env.CHANGELOG_DIR}`)) return null;
+
+    const file = fs.readFileSync(`../../${process.env.CHANGELOG_DIR}`, "utf8");
+    const data = yaml.load(file);
+    const entries = data && data.Entries ? Array.from(data.Entries) : [];
+
+    let last = null;
+    for (const entry of entries) {
+        // 7 fractional digits are not valid for every parser, keep 3
+        const time = new Date(entry.time instanceof Date ? entry.time : String(entry.time).replace(/(\.\d{3})\d*/, "$1"));
+        if (!isNaN(time) && (!last || time > last)) last = time;
+    }
+    return last;
 }
 
 // Get the highest changelog number from the changelogs file

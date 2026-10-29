@@ -52,8 +52,8 @@
             attackRate: 1
             damage:
               types:
-                Blunt: 15
-                Structural: 18
+                Blunt: 20
+                Structural: 20
             mustBeEquippedToUse: true
             canWideSwing: true
         soundStateActivate:
@@ -73,7 +73,7 @@
             autoAttack: true
             damage:
               types:
-                Slash: 8
+                Slash: 10
                 Structural: 8
             mustBeEquippedToUse: true
             soundHit:

@@ -11,16 +11,19 @@ using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Timing;
+using Content.Shared.Access.Systems;
+using Content.Shared.Power;
 
 namespace Content.Server._CorvaxGoob.PowerToggle;
 
 public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedEmitSoundSystem _emitSoundSystem = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedEmitSoundSystem _emitSoundSystem = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private AccessReaderSystem _accessReader = default!;
 
     public override void Initialize()
     {
@@ -29,6 +32,7 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         SubscribeNetworkEvent<TogglePowerMessage>(OnTogglePowerMessage);
         SubscribeLocalEvent<TogglePowerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<TogglePowerComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<TogglePowerComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     private void OnExamined(Entity<TogglePowerComponent> entity, ref ExaminedEvent args)
@@ -52,17 +56,34 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 
         if (entity.Comp.ApplyPowerOnSpawn)
             SetPower(entity, entity.Comp.IsTurnedOn, false);
+
+        entity.Comp.IsTurnedOn = !apcPowerReceiver.PowerDisabled;
+        Dirty(entity);
     }
 
-    private void OnTogglePowerMessage(TogglePowerMessage args)
+    private void OnPowerChanged(Entity<TogglePowerComponent> entity, ref PowerChangedEvent args)
     {
+        if (!TryComp<ApcPowerReceiverComponent>(entity, out var apcPowerReceiver))
+            return;
+
+        entity.Comp.IsTurnedOn = !apcPowerReceiver.PowerDisabled;
+        Dirty(entity);
+    }
+
+    private void OnTogglePowerMessage(TogglePowerMessage args, EntitySessionEventArgs eventArgs)
+    {
+        if (eventArgs.SenderSession.AttachedEntity is not { } user)
+            return;
+
         var entity = GetEntity(args.Entity);
-        var user = GetEntity(args.User);
 
         if (!_interaction.InRangeUnobstructed(user, entity) || !_actionBlocker.CanInteract(user, entity))
             return;
 
         if (!TryComp<TogglePowerComponent>(entity, out var togglePower))
+            return;
+
+        if (!_accessReader.IsAllowed(user, entity))
             return;
 
         if (_timing.CurTime < togglePower.NextToggle)

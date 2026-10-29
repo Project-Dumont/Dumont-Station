@@ -1,4 +1,4 @@
-
+#
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazineGaussgun
@@ -12,6 +12,20 @@
   result: BaseMagazineGaussgun
   materials:
     Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineGaussgunDisc
+  result: MagazineGaussgunDisc
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineGaussgunShard
+  result: MagazineGaussgunShard
+  materials:
+    Steel: 250    
 
 - type: latheRecipe
   parent: BaseAmmoRecipe

@@ -121,6 +121,7 @@
     - Sheet
     - Metal
     - Steel
+    - ConstructionMaterial
 
 - type: entity
   parent: SheetSteel

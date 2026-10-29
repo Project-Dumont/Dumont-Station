@@ -1,0 +1,104 @@
+- type: entity
+  id: KitchenOven
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: oven
+  description: A oven. It ovens.
+  components:
+  - type: Microwave
+    capacity: 10
+    canMicrowaveIdsSafely: false
+    explosionChance: 0
+    lightningChance: 0
+    beginCookingSound: /Audio/_Dumont/Machines/oven_loop_start.ogg
+    foodDoneSound: /Audio/_Dumont/Machines/oven_loop_end.ogg
+    loopingSound: /Audio/_Dumont/Machines/oven_loop_mid.ogg
+    validRecipeTypes: Oven
+    canHeat: true
+    canIrradiate: false
+    key: OvenKey
+    recipeDebug: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.VisualState:
+        enum.MicrowaveVisualizerLayers.Base:
+          Idle: { state: "off_no_door" }
+          Broken: { state: "off_no_door" } # don't care, can't break
+          Cooking: { state: "off_no_door" }
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          Idle: { state: "unlit" }
+          Broken: { state: "unlit" } # don't care, can't break
+          Cooking: { state: "cooking_unlit" }
+      enum.PowerDeviceVisuals.Powered:
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.MicrowaveUiKey.OvenKey
+  - type: DeviceLinkSink
+    ports:
+    - On
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: UserInterface
+    interfaces:
+      enum.MicrowaveUiKey.OvenKey:
+        type: MicrowaveBoundUserInterface
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1: # The body of the oven
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.30,-0.25,0.30,0.45"
+        density: 600
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Dumont/Structures/Machines/oven.rsi
+    snapCardinals: true
+    layers:
+    - state: off_no_door
+      map: ["enum.MicrowaveVisualizerLayers.Base"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.MicrowaveVisualizerLayers.BaseUnlit"]
+    - state: oven_door
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+  - type: ApcPowerReceiver
+    powerLoad: 1000 # Assume the range is off.
+  - type: Machine
+    board: OvenMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      microwave_entity_container: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - microwave_entity_container
+  - type: GuideHelp
+    guides:
+    - Chef
+  - type: Climbable
+  - type: Bonkable
+    bonkDamage:
+      types:
+        Blunt: 8
+    bonkTime: 3

@@ -92,7 +92,7 @@ using Robust.Shared.Prototypes; // para checar se o console é sindicato ou não
 
 namespace Content.Server.Communications
 {
-    public sealed class CommunicationsConsoleSystem : EntitySystem
+    public sealed partial class CommunicationsConsoleSystem : EntitySystem // Dumont
     {
         [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
         [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
@@ -143,6 +143,8 @@ namespace Content.Server.Communications
             _maintDoorPrototypeList.Add("AirlockMaintGlassLocked");
             _maintDoorPrototypeList.Add("AirlockMaintLocked");
             _maintDoorPrototypeList.Add("AirlockMaintCommonLocked");
+
+            InitializeDumont(); // Dumont
         }
         public override void Update(float frameTime)
         {
@@ -263,7 +265,9 @@ namespace Content.Server.Communications
                 currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd,
                 stationName,
-                renameOnCooldown
+                renameOnCooldown,
+                comp.CanShuttle, // Dumont
+                EscapePodsUnlocked // Dumont
             ));
         }
 

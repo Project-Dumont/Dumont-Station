@@ -18,8 +18,8 @@ public sealed partial class ExplosionReactionEffect : EventEntityEffect<Explosio
     /// <summary>
     ///     The type of explosion. Determines damage types and tile break chance scaling.
     /// </summary>
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
-    public string ExplosionType = default!;
+    [DataField(required: true)]
+    public ProtoId<ExplosionPrototype> ExplosionType = default!;
 
     /// <summary>
     ///     The max intensity the explosion can have at a given tile. Places an upper limit of damage and tile break

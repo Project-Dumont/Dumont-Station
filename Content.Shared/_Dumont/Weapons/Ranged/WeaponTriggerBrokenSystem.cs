@@ -7,11 +7,13 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -23,7 +25,7 @@ namespace Content.Shared._Dumont.Weapons.Ranged;
 /// </summary>
 public sealed class WeaponTriggerBrokenSystem : EntitySystem
 {
-    private static readonly string[] WeldingQualities = ["Welding"];
+    private static readonly ProtoId<ToolQualityPrototype>[] WeldingQualities = ["Welding"];
 
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
