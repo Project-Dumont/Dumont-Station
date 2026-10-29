@@ -110,10 +110,6 @@ namespace Content.Server.RoundEnd
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
 
-        // Dumont changes start
-        public bool RecallLocked { get; set; }
-        // Dumont end
-
         public override void Initialize()
         {
             base.Initialize();
@@ -126,8 +122,11 @@ namespace Content.Server.RoundEnd
             AutoCallStartTime = _gameTiming.CurTime;
         }
 
+        public bool RecallLocked { get; set; }
+
         private void Reset()
         {
+            RecallLocked = false;
             if (_countdownTokenSource != null)
             {
                 _countdownTokenSource.Cancel();
@@ -144,7 +143,6 @@ namespace Content.Server.RoundEnd
             ExpectedCountdownEnd = null;
             SetAutoCallTime();
             _autoCalledBefore = false;
-            RecallLocked = false; // Dumont
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
 
@@ -172,7 +170,7 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
-            return _cooldownTokenSource == null;
+            return _cooldownTokenSource == null && !RecallLocked;
         }
 
         public bool IsRoundEndRequested()
@@ -198,7 +196,7 @@ namespace Content.Server.RoundEnd
             RequestRoundEnd(duration, requester, checkCooldown, text, name, hasReason, reason);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "")
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "", bool announce = true, bool playSound = true)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
@@ -241,13 +239,17 @@ namespace Content.Server.RoundEnd
             else
                 announcement = Loc.GetString(text, ("time", time), ("units", Loc.GetString(units)));
 
-            _chatSystem.DispatchGlobalAnnouncement(announcement,
-                Loc.GetString(name),
-                false,
-                null,
-                Color.Gold);
+            // Dumont start
+            if (announce)
+                _chatSystem.DispatchGlobalAnnouncement(announcement,
+                    Loc.GetString(name),
+                    false,
+                    null,
+                    Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg", Filter.Broadcast(), true);
+            if (playSound)
+                _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg", Filter.Broadcast(), true);
+            // Dumont end
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -278,9 +280,8 @@ namespace Content.Server.RoundEnd
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             if (checkCooldown && _cooldownTokenSource != null) return;
-            if (checkCooldown && RecallLocked) return; // Dumont
 
-            if (_countdownTokenSource == null) return;
+            if (RecallLocked || _countdownTokenSource == null) return;
             _countdownTokenSource.Cancel();
             _countdownTokenSource = null;
 

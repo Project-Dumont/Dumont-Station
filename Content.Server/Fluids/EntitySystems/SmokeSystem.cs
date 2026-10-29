@@ -350,10 +350,20 @@ public sealed class SmokeSystem : EntitySystem
             return;
 
         if (!TryComp<BloodstreamComponent>(entity, out var bloodstream) || bloodstream.SmokeImmune) // Goobstation - ignore SmokeImmune entities
+        // Dumont start
+        {
+            TouchReact(entity, solution, component);
             return;
+        }
+        // Dumont end
 
         if (!_solutionContainerSystem.ResolveSolution(entity, bloodstream.ChemicalSolutionName, ref bloodstream.ChemicalSolution, out var chemSolution) || chemSolution.AvailableVolume <= 0)
+        // Dumont start
+        {
+            TouchReact(entity, solution, component);
             return;
+        }
+        // Dumont end
 
         var blockIngestion = _internals.AreInternalsWorking(entity);
 
@@ -389,6 +399,24 @@ public sealed class SmokeSystem : EntitySystem
             _logger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(entity):target} ingested smoke {SharedSolutionContainerSystem.ToPrettyString(transferSolution)}");
         }
     }
+
+    // Dumont start
+    private void TouchReact(EntityUid entity, Solution solution, SmokeComponent component)
+    {
+        var cloneSolution = solution.Clone();
+        var transferAmount = FixedPoint2.Min(cloneSolution.Volume, component.TransferRate);
+        var transferSolution = cloneSolution.SplitSolution(transferAmount);
+
+        foreach (var reagentQuantity in transferSolution.Contents.ToArray())
+        {
+            if (reagentQuantity.Quantity == FixedPoint2.Zero)
+                continue;
+
+            var reagent = _prototype.Index<ReagentPrototype>(reagentQuantity.Reagent.Prototype);
+            _reactive.ReactionEntity(entity, ReactionMethod.Touch, reagent, reagentQuantity, transferSolution);
+        }
+    }
+    // Dumont end
 
     private void ReactOnTile(EntityUid uid, SmokeComponent? component = null, TransformComponent? xform = null)
     {

@@ -396,6 +396,11 @@ public sealed partial class IngestionSystem : EntitySystem
         var finishedEv = new FullyEatenEvent(args.User);
         RaiseLocalEvent(food, ref finishedEv);
 
+        // Dumont start
+        var fullyAte = new Content.Trauma.Common.Nutrition.FullyAteEvent(food, args.User);
+        RaiseLocalEvent(entity.Owner, ref fullyAte);
+        // Dumont end
+
         var afterEatingEv = new AfterEatingEvent(food);// goob moth eating
         RaiseLocalEvent(entity.Owner, ref afterEatingEv);// goob moth eating
 

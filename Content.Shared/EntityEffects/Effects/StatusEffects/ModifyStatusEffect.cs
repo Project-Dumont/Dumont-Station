@@ -18,7 +18,7 @@ public sealed partial class ModifyStatusEffect : EntityEffect // TODO Goobstatio
     /// Time for which status effect should be applied. Behaviour changes according to <see cref="Refresh" />.
     /// </summary>
     [DataField]
-    public float Time = 2.0f;
+    public float? Time = 2.0f;
 
     /// <remarks>
     /// true - refresh status effect time (update to greater value), false - accumulate status effect time.
@@ -41,17 +41,25 @@ public sealed partial class ModifyStatusEffect : EntityEffect // TODO Goobstatio
         if (args is EntityEffectReagentArgs reagentArgs)
             time *= reagentArgs.Scale.Float();
 
-        var duration = TimeSpan.FromSeconds(time);
+        TimeSpan? duration = time is {} seconds ? TimeSpan.FromSeconds(seconds) : null;
         switch (Type)
         {
             case StatusEffectMetabolismType.Add:
                 if (Refresh)
                     statusSys.TryUpdateStatusEffectDuration(args.TargetEntity, EffectProto, duration);
+                else if (duration is {} added)
+                    statusSys.TryAddStatusEffectDuration(args.TargetEntity, EffectProto, added);
                 else
-                    statusSys.TryAddStatusEffectDuration(args.TargetEntity, EffectProto, duration);
+                    statusSys.TryUpdateStatusEffectDuration(args.TargetEntity, EffectProto, null);
                 break;
             case StatusEffectMetabolismType.Remove:
-                statusSys.TryAddTime(args.TargetEntity, EffectProto, -duration);
+                if (duration is {} removed)
+                    statusSys.TryAddTime(args.TargetEntity, EffectProto, -removed);
+                else
+                    statusSys.TryRemoveStatusEffect(args.TargetEntity, EffectProto);
+                break;
+            case StatusEffectMetabolismType.Update:
+                statusSys.TryUpdateStatusEffectDuration(args.TargetEntity, EffectProto, duration);
                 break;
             case StatusEffectMetabolismType.Set:
                 statusSys.TrySetStatusEffectDuration(args.TargetEntity, EffectProto, duration);
@@ -65,7 +73,7 @@ public sealed partial class ModifyStatusEffect : EntityEffect // TODO Goobstatio
             "reagent-effect-guidebook-status-effect",
             ("chance", Probability),
             ("type", Type),
-            ("time", Time),
+            ("time", Time ?? float.PositiveInfinity),
             ("key", prototype.Index(EffectProto).Name)
         );
 }

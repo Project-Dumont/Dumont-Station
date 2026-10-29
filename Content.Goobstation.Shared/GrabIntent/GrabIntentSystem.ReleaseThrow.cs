@@ -115,7 +115,7 @@ public sealed partial class GrabIntentSystem
     {
         if (!TryComp<PullerComponent>(uid, out var puller)
             || puller.Pulling == null
-            || puller.Pulling != _pulling.GetRelayedEntity(args.BlockingEntity))
+            || puller.Pulling != args.BlockingEntity)
             return;
 
         ThrowGrabbedEntity(uid, args.Direction);

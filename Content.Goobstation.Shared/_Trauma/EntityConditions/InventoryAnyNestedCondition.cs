@@ -1,0 +1,59 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+// Dumont end
+
+using Content.Shared.EntityConditions;
+using Content.Shared.Inventory;
+
+namespace Content.Trauma.Shared.EntityConditions;
+
+/// <summary>
+/// Condition that succeeds if any equipped inventory item passes a nested condition.
+/// </summary>
+public sealed partial class InventoryAnyNestedCondition : EntityConditionBase<InventoryAnyNestedCondition>
+{
+    /// <summary>
+    /// The nested condition to check inventory items against.
+    /// </summary>
+    [DataField(required: true)]
+    public EntityCondition Condition = default!;
+
+    [DataField]
+    public LocId GuidebookText = "entity-condition-guidebook-inventory-nested";
+
+    [DataField]
+    public SlotFlags Flags = SlotFlags.WITHOUT_POCKET;
+
+    public override string EntityConditionGuidebookText(IPrototypeManager prototype)
+        => Loc.GetString(GuidebookText, ("condition", Condition.EntityConditionGuidebookText(prototype)));
+}
+
+public sealed partial class InventoryAnyNestedConditionSystem : EntityConditionSystem<InventoryComponent, InventoryAnyNestedCondition>
+{
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private SharedEntityConditionsSystem _conditions = default!;
+
+    protected override void Condition(Entity<InventoryComponent> ent, ref EntityConditionEvent<InventoryAnyNestedCondition> args)
+    {
+        var flags = args.Condition.Flags;
+        if (!_inventory.TryGetContainerSlotEnumerator(ent.AsNullable(), out var slots, flags))
+            return;
+
+        var condition = args.Condition.Condition;
+        while (slots.NextItem(out var item))
+        {
+            if (_conditions.TryCondition(item, condition, args.SourceEnt))
+            {
+                args.Result = true;
+                return;
+            }
+        }
+    }
+}

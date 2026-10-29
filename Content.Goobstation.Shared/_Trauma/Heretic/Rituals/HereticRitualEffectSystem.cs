@@ -1,0 +1,195 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Shared.EntityConditions;
+using Content.Shared.EntityEffects;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Rituals;
+
+public sealed partial class HereticRitualEffectSystem : EntitySystem
+{
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<HereticRitualRaiserComponent, ComponentStartup>(OnStartup);
+    }
+
+    private void OnStartup(Entity<HereticRitualRaiserComponent> ent, ref ComponentStartup args)
+    {
+        ent.Comp.Raiser = new HereticRitualRaiser(EntityManager, this, ent);
+    }
+
+    public void ApplyEffect(EntityUid target, EntityEffect effect, Entity<HereticRitualRaiserComponent> ritual, EntityUid? user)
+    {
+        effect.RaiseEvent(target, ritual.Comp.Raiser, 1f, user);
+    }
+
+    public bool TryApplyEffect(EntityUid target,
+        EntityEffect effect,
+        Entity<HereticRitualRaiserComponent> ritual,
+        EntityUid? user)
+    {
+        if (!TryConditions(target, effect.Conditions, ritual))
+            return false;
+
+        ApplyEffect(target, effect, ritual, user);
+        return true;
+    }
+
+    public void ApplyEffects(EntityUid target,
+        EntityEffect[] effects,
+        Entity<HereticRitualRaiserComponent> ritual,
+        EntityUid? user)
+    {
+        foreach (var effect in effects)
+        {
+            TryApplyEffect(target, effect, ritual, user);
+        }
+    }
+
+    public bool TryCondition(EntityUid uid, EntityCondition condition, Entity<HereticRitualRaiserComponent> ritual, EntityUid? user = null)
+    {
+        return condition.Inverted != condition.RaiseEvent(uid, ritual.Comp.Raiser, user);
+    }
+
+    public bool AnyCondition(EntityUid target, EntityCondition[]? conditions, Entity<HereticRitualRaiserComponent> ritual)
+    {
+        if (conditions == null)
+            return true;
+
+        foreach (var condition in conditions)
+        {
+            if (TryCondition(target, condition, ritual))
+                return true;
+        }
+
+        return false;
+    }
+
+    public bool TryConditions(EntityUid target, EntityEffectCondition[]? conditions, Entity<HereticRitualRaiserComponent> ritual)
+    {
+        if (conditions == null)
+            return true;
+
+        foreach (var condition in conditions)
+        {
+            if (!(condition is EntityCondition current
+                ? TryCondition(target, current, ritual)
+                : condition.Condition(new EntityEffectBaseArgs(target, EntityManager))))
+                return false;
+        }
+
+        return true;
+    }
+
+    public bool TryEffects(EntityUid target,
+        IEnumerable<EntityEffect> effects,
+        Entity<HereticRitualRaiserComponent> ritual,
+        EntityUid? user)
+    {
+        foreach (var effect in effects)
+        {
+            if (!TryApplyEffect(target, effect, ritual, user))
+                return false;
+        }
+
+        return true;
+    }
+
+    public void TryApplyEffect(EntityUid target,
+        [ForbidLiteral] ProtoId<EntityEffectPrototype> id,
+        Entity<HereticRitualRaiserComponent> ritual,
+        EntityUid? user)
+    {
+        var proto = ProtoMan.Index(id);
+        if (TryConditions(target, proto.Conditions, ritual))
+            ApplyEffects(target, proto.Effects, ritual, user);
+    }
+}
+
+public sealed class HereticRitualRaiser(
+    IEntityManager entMan,
+    HereticRitualEffectSystem sys,
+    Entity<HereticRitualRaiserComponent> ritual)
+    : IEntityEffectRaiser, IEntityConditionRaiser
+{
+    // Dumont start
+    public void RaiseLegacyEffect(EntityUid target, EntityEffect effect, float scale, EntityUid? user, bool predicted)
+        => entMan.System<SharedEntityEffectsSystem>().RaiseLegacyEffect(target, effect, scale, user, predicted);
+    // Dumont end
+
+    public Entity<HereticRitualRaiserComponent> Ritual => ritual;
+    public IEntityManager EntMan => entMan;
+
+    public void RaiseEffectEvent<T>(EntityUid target, T effect, float scale, EntityUid? user, bool predicted)
+        where T : EntityEffectBase<T>
+    {
+        if (effect is not IHereticRitualEntry)
+        {
+            var ev = new EntityEffectEvent<T>(effect, scale, user, predicted);
+            entMan.EventBus.RaiseLocalEvent(target, ref ev);
+            return;
+        }
+
+        var ritualEv = new HereticRitualEffectEvent<T>(effect, ritual, user, predicted);
+        entMan.EventBus.RaiseLocalEvent(target, ref ritualEv);
+    }
+
+    public bool RaiseConditionEvent<T>(EntityUid target, T condition, EntityUid? sourceEnt) where T : EntityConditionBase<T>
+    {
+        if (condition is not IHereticRitualEntry)
+        {
+            var ev = new EntityConditionEvent<T>(condition, sourceEnt);
+            entMan.EventBus.RaiseLocalEvent(target, ref ev);
+            return ev.Result;
+        }
+
+        var ritualEv = new HereticRitualConditionEvent<T>(condition, ritual, sourceEnt);
+        entMan.EventBus.RaiseLocalEvent(target, ref ritualEv);
+        return ritualEv.Result;
+    }
+
+    public IEnumerable<T> GetTargets<T>(string applyOn)
+    {
+        if (!ritual.Comp.Blackboard.TryGetValue(applyOn, out var result))
+            yield break;
+
+        switch (result)
+        {
+            case T newTarget:
+                yield return newTarget;
+                break;
+            case IEnumerable<T> uids:
+            {
+                foreach (var uid in uids)
+                {
+                    yield return uid;
+                }
+
+                break;
+            }
+        }
+    }
+
+    public void SaveResult(string key, object result)
+    {
+        ritual.Comp.Blackboard[key] = result;
+    }
+
+    public bool TryConditions(EntityUid uid, EntityCondition[]? conditions)
+    {
+        return sys.TryConditions(uid, conditions, ritual);
+    }
+}
+
+public interface IHereticRitualEntry;

@@ -287,6 +287,18 @@ public sealed class TemperatureSystem : EntitySystem
 
         if (!ignoreHeatResistance)
         {
+            // Dumont start
+            var exchange = new BeforeHeatExchangeEvent
+            {
+                Target = uid,
+                OurTemp = temperature.CurrentTemperature,
+                OtherTemp = temperature.CurrentTemperature + heatAmount / GetHeatCapacity(uid, temperature)
+            };
+            RaiseLocalEvent(uid, ref exchange);
+            if (exchange.Cancelled)
+                return;
+            heatAmount *= exchange.HeatTransferModifier;
+            // Dumont end
             var ev = new ModifyChangedTemperatureEvent(heatAmount, uid); // Goobstation
             RaiseLocalEvent(uid, ev);
             heatAmount = ev.TemperatureDelta;

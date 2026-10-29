@@ -1,0 +1,112 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Shared.EntityEffects;
+using Content.Shared.Whitelist;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Rituals;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, EntityCategory("HereticRituals")]
+public sealed partial class HereticRitualComponent : Component
+{
+    /// <summary>
+    /// How many entities ritual can create at once. less or equal than 0 means no limit.
+    /// </summary>
+    [DataField]
+    public int Limit;
+
+    /// <summary>
+    /// If ritual creates ghouls and <see cref="Limit"/> is greater than 0 and reached,
+    /// this is value corresponds to the amount of times we kill existing inactive ghoul to free up the limit
+    /// Basically set this to the amount of ghouls that is spawned by this ritual
+    /// </summary>
+    [DataField]
+    public int LimitGhoulCleanupIterations = 1;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? RitualOwner;
+
+    /// <summary>
+    /// All entities created by this ritual.
+    /// Used for limit check.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<EntityUid> LimitedOutput = new();
+
+    /// <summary>
+    /// Events that get raised on the ritual entity
+    /// </summary>
+    [DataField(required: true)]
+    public EntityEffect[] Effects = default!;
+
+    /// <summary>
+    /// Events that are raised if <see cref="Limit"/> has reached <see cref="LimitedOutput"/> count
+    /// If this is empty, ritual gets canceled normally
+    /// </summary>
+    [DataField]
+    public EntityEffect[]? LimitReachedEffects;
+
+    /// <summary>
+    /// Should this ritual play success animation if <see cref="Events"/> succeeded
+    /// </summary>
+    [DataField]
+    public bool PlaySuccessAnimation = true;
+
+    /// <summary>
+    /// Loc entry on ritual failure.
+    /// May be overriden by ritual events
+    /// </summary>
+    [DataField]
+    public LocId? CancelLoc;
+}
+
+[DataDefinition, Serializable, NetSerializable]
+public sealed partial class RitualIngredient : IEquatable<RitualIngredient>
+{
+    [DataField]
+    public int Amount = 1;
+
+    // Dumont start
+    [DataField]
+    public Content.Shared.Body.Part.BodyPartType? PartType;
+
+    [DataField]
+    public bool RequireFood;
+    // Dumont end
+
+    [DataField(required: true)]
+    public EntityWhitelist Whitelist = new();
+
+    [DataField]
+    public EntityWhitelist? Blacklist;
+
+    [DataField(required: true)]
+    public LocId Name { get; private set; }
+
+    public bool Equals(RitualIngredient? other)
+    {
+        if (other is null)
+            return false;
+
+        return ReferenceEquals(this, other) || Name.Equals(other.Name);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return ReferenceEquals(this, obj) || obj is RitualIngredient other && Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        // ReSharper disable once NonReadonlyMemberInGetHashCode
+        return Name.GetHashCode();
+    }
+}

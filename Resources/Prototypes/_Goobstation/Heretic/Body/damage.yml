@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: damageContainer
+  id: SiliconMetaphysical
+  supportedGroups:
+  - Brute
+  - Electronic
+  - Metaphysical
+  supportedTypes:
+  - Heat
+  - Shock

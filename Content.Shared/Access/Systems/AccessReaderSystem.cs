@@ -204,6 +204,13 @@ public sealed class AccessReaderSystem : EntitySystem
         if (!Resolve(target, ref reader, false))
             return true;
 
+        // Dumont start
+        var ev = new Content.Trauma.Common.Heretic.BeforeAccessReaderCheckEvent();
+        RaiseLocalEvent(user, ref ev);
+        if (ev.Cancelled)
+            return false;
+        // Dumont end
+
         if (!reader.Enabled)
             return true;
 

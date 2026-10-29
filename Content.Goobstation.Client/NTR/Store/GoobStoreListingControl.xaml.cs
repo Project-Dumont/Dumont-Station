@@ -25,7 +25,7 @@ public sealed partial class GoobStoreListingControl : Control
         if (!_prototype.TryIndex<ListingPrototype>(listing.ID, out var prototype))
             return;
 
-        if (prototype.ResetRestockOnPurchase)
-            listing.RestockTime = _timing.CurTime + prototype.RestockDuration;
+        if (prototype.ResetRestockOnPurchase && prototype.RestockAfterPurchase is { } duration)
+            listing.RestockTime = _timing.CurTime + duration;
     }
 }

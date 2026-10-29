@@ -26,6 +26,11 @@ public sealed partial class ThermalVisionComponent : SwitchableVisionOverlayComp
     [DataField]
     public float LightRadius = 2f;
 
+    // Dumont start
+    [DataField]
+    public bool HereticOnly;
+    // Dumont end
+
     [DataField]
     public string? ThermalShader = "ThermalVision";
 }
