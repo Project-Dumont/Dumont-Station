@@ -447,19 +447,18 @@
     tags:
     - FakeMindShieldImplant
 
-# Goob - merge this
-# - type: entity
-#   parent: BaseToggleAction
-#   id: ActionToggleParamedicSiren
-#   name: Toggle Paramedic Siren
-#   description: Toggles the paramedic siren on and off.
-#   components:
-#   - type: Action
-#     icon:
-#       sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
-#       state: icon-siren
-#     useDelay: 1
-#     itemIconStyle: BigAction
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleParamedicSiren
+  name: Toggle Paramedic Siren
+  description: Toggles the paramedic siren on and off.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+      state: icon-siren
+    useDelay: 1
+    itemIconStyle: BigAction
 
 - type: entity
   parent: BaseAction
