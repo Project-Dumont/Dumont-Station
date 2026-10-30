@@ -1,5 +1,8 @@
 # PLEASE, KEEP THIS FILE ALPHABETIZED
 - type: Tag
+  id: CDCase
+
+- type: Tag
   id: ElderArena
 
 - type: Tag

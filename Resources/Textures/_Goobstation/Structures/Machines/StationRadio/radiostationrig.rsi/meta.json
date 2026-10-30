@@ -1,15 +1,35 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "taken from goonstation at commit: https://github.com/goonstation/goonstation/blob/master/icons/obj/radiostation.dmi, edited to fit 32x32 by rouden_ (discord), 4-directional sprites by Huaqas (GitHub)",
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Drawn for Starlight by Rinary1 (GitHub)",
     "size": {
         "x": 32,
         "y": 32
     },
-  "states": [
-    {
-        "name": "icon",
-        "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "icon",
+            "directions": 4
+        },
+        {
+            "name": "unlit",
+            "directions": 4
+        },
+        {
+            "name": "record0",
+            "directions": 4
+        },
+        {
+            "name": "record1",
+            "directions": 4
+        },
+        {
+            "name": "record2",
+            "directions": 4
+        },
+        {
+            "name": "record3",
+            "directions": 4
+        }
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "State based copyright",
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Drawn for Starlight by Rinary1 (GitHub)",
     "size": {
         "x": 32,
         "y": 32
@@ -9,22 +9,22 @@
     "states": [
         {
             "name": "icon",
-            "copyright": "taken from goonstation at commit: https://github.com/goonstation/goonstation/blob/master/icons/obj/radiostation.dmi, 4-directional sprites by Huaqas (GitHub). Edited by mack.wtf (GitHub)",
             "directions": 4
         },
         {
             "name": "unlit",
-            "copyright": "unlit sprites by Huaqas (GitHub). Edited by mack.wtf (GitHub)",
             "directions": 4
         },
         {
             "name": "mic_on",
-            "copyright": "mack.wtf (GitHub)",
             "directions": 4
         },
         {
             "name": "mic_off",
-            "copyright": "mack.wtf (GitHub)",
+            "directions": 4
+        },
+        {
+            "name": "panel",
             "directions": 4
         }
     ]

@@ -70,6 +70,8 @@ using Content.Shared.Chat;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Prototypes;
+using Content.Server._Starlight.StationRadio.Systems;
+using Robust.Shared.Random;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -86,6 +88,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!; // Goob
+    [Dependency] private readonly IRobustRandom _random = default!; // Starlight - Radio Host
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();
@@ -290,15 +293,15 @@ public sealed class RadioDeviceSystem : EntitySystem
         // Starlight - End
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
-        var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.
-
-        _chat.TrySendInGameICMessage(uid,
-            message,
-            component.SpeakNormally ? InGameICChatType.Speak : InGameICChatType.Whisper, // Goobstation - radio host
-            ChatTransmitRange.GhostRangeLimit,
-            nameOverride: name,
-            checkRadioPrefix: component.SpeakNormally,
-            languageOverride: args.Language); // Einstein Engines - Languages
+        var message = args.OriginalChatMsg.Message;
+        if (receiverComp != null)
+            message = StationRadioServerSystem.Garble(message, receiverComp.Interference, _random);
+        _chat.TrySendInGameICMessage(uid, message,
+            chatType,
+            transmitRange,
+            nameOverride: name, checkRadioPrefix: false,
+            languageOverride: args.Language);
+        // Starlight - End
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

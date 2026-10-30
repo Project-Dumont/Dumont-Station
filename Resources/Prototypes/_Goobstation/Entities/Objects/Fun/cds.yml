@@ -6,6 +6,7 @@
   abstract: true
   components:
   - type: Vinyl
+    labelColor: "#ccd6e3" # Starlight - Rework radio host
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/RadioStation/cds.rsi
     state: icon
@@ -34,6 +35,7 @@
   name: cd disk (Danitos Burritos)
   id: CdDiskDanitosBurritos
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/danitos_burritos.ogg
@@ -43,6 +45,7 @@
   name: cd disk (bill movie)
   id: CdDiskBillMovie
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/bill_movie.ogg
@@ -52,6 +55,7 @@
   name: cd disk (captain training PSA)
   id: CdDiskCapTraining
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/captain_training.ogg
@@ -61,6 +65,7 @@
   name: cd disk (Cargonia)
   id: CdDiskCargonia
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Cargonia.ogg
@@ -70,6 +75,7 @@
   name: cd disk (Chemistry)
   id: CdDiskChemistry
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Chemistry.ogg
@@ -79,6 +85,7 @@
   name: cd disk (cloning PSA)
   id: CdDiskCloningPsa
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/cloning_psa.ogg
@@ -88,6 +95,7 @@
   name: cd disk (Dans Tickets)
   id: CdDiskDansTickets
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/dans_tickets.ogg
@@ -97,6 +105,7 @@
   name: cd disk (grones)
   id: CdDiskGrones
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/grones.ogg
@@ -106,6 +115,7 @@
   name: cd disk (Pope Crunch Cereal)
   id: CdDiskPopeCrunchCereal
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/pope_crunch_cereal.ogg
@@ -115,6 +125,7 @@
   name: cd disk (Quik Noodles)
   id: CdDiskQuikNoodles
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/quik_noodles.ogg
@@ -124,6 +135,7 @@
   name: cd disk (robotics)
   id: CdDiskRobotics
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Robotics.ogg
@@ -133,6 +145,7 @@
   name: cd disk (security psa)
   id: CdDiskSecurityPsa
   components:
+  - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/ads/security_psa.ogg
@@ -154,6 +167,7 @@
   - type: Sprite
     state: synd-cd
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/misc/commander_announcement.ogg
 
@@ -165,6 +179,7 @@
   - type: Sprite
     state: synd-cd
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/misc/commander_figurines.ogg
 
@@ -176,6 +191,7 @@
   - type: Sprite
     state: synd-cd
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/misc/commander_resignation.ogg
 
@@ -187,6 +203,7 @@
   - type: Sprite
     state: synd-cd
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/misc/commander_support.ogg
 
@@ -250,6 +267,7 @@
   id: JVNECdDiskCapstien
   components:
   - type: Vinyl
+    labelColor: "#890034" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Capstien.ogg
 
@@ -259,6 +277,7 @@
   id: JVNECdDiskNinja
   components:
   - type: Vinyl
+    labelColor: "#890034" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Ninja.ogg
 
@@ -268,6 +287,7 @@
   id: JVNECdDiskNextUp
   components:
   - type: Vinyl
+    labelColor: "#890034" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/NextUp.ogg
 
@@ -277,6 +297,7 @@
   id: JVNECdDiskJNE
   components:
   - type: Vinyl
+    labelColor: "#890034" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/JNE.ogg
 
@@ -296,6 +317,7 @@
   description: All around the mulberry bush, the monkey chased the weasel...
   components:
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/NumberShort.ogg
   - type: VinylSummonRule
@@ -308,5 +330,6 @@
   description: 102.9 Syndicate radio
   components:
   - type: Vinyl
+    labelColor: "#860000" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Syndicate.ogg

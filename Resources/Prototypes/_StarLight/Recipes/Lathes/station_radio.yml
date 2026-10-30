@@ -1,0 +1,22 @@
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  id: CDPlayerCircuitboard
+  result: CDPlayerCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  id: BroadcastRecorderCircuitboard
+  result: BroadcastRecorderCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  id: StationRadioMixerCircuitboard
+  result: StationRadioMixerCircuitboard
+
+- type: latheRecipe
+  id: BroadcastTape
+  result: BroadcastTape
+  completetime: 2
+  materials:
+    Steel: 50
+    Plastic: 250
