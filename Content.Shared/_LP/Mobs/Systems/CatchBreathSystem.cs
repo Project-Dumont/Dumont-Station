@@ -9,7 +9,10 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Robust.Shared.Player;
+using Robust.Shared.Configuration;
 using Content.Shared._LP.Mobs.Events;
+using Content.Shared._LP.CCVar;
 
 namespace Content.Shared._LP.Mobs.Systems;
 
@@ -22,6 +25,7 @@ public sealed partial class CatchBreathSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private INetConfigurationManager _configuration = default!;
 
     private readonly Dictionary<EntityUid, EntityUid> _tryAudio = new();
 
@@ -36,6 +40,7 @@ public sealed partial class CatchBreathSystem : EntitySystem
 
         SubscribeLocalEvent<CatchBreathAlertEvent>(OnAlertClicked);
         SubscribeLocalEvent<CatchBreathDoAfterEvent>(OnDoAfter);
+        SubscribeNetworkEvent<CritStateAudioEvent>(ToggleCriticalSound);
     }
 
     private void OnAlertClicked(CatchBreathAlertEvent ev)
@@ -64,10 +69,12 @@ public sealed partial class CatchBreathSystem : EntitySystem
 
         StopTryAudio(uid);
 
-        var audio = _audio.PlayEntity(new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-try.ogg"), uid, uid);
-
-        if (audio != null)
-            _tryAudio[uid] = audio.Value.Entity;
+        if (TryComp<ActorComponent>(uid, out var actor) && actor.PlayerSession.Channel is { } channel && _configuration.GetClientCVar(channel, LPCVars.CriticalSoundEnabled))
+        {
+            var audio = _audio.PlayEntity(new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-try.ogg"), uid, uid);
+            if (audio != null)
+                _tryAudio[uid] = audio.Value.Entity;
+        }
 
         _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} start trying catch breath");
     }
@@ -130,8 +137,17 @@ public sealed partial class CatchBreathSystem : EntitySystem
         }
 
         StopTryAudio(uid);
-        _audio.PlayEntity(audio, uid, uid);
+
+        if (TryComp<ActorComponent>(uid, out var actor) && actor.PlayerSession.Channel is { } channel && _configuration.GetClientCVar(channel, LPCVars.CriticalSoundEnabled))
+            _audio.PlayEntity(audio, uid, uid);
+
         _damage.TryChangeDamage(uid, damage);
+    }
+
+    private void ToggleCriticalSound(CritStateAudioEvent ev, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is { } uid && args.SenderSession.Channel is { } channel && !_configuration.GetClientCVar(channel, LPCVars.CriticalSoundEnabled))
+            StopTryAudio(uid);
     }
 
     private void StopTryAudio(EntityUid uid)

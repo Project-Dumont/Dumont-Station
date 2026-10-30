@@ -4,6 +4,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Robust.Shared.Configuration;
+using Content.Shared._LP.CCVar;
+using Content.Shared._LP.Mobs.Events;
 
 namespace Content.Shared._LP.Mobs.Systems;
 
@@ -11,6 +14,7 @@ public sealed partial class CritStateAudioSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetConfigurationManager _configuration = default!;
 
     private readonly Dictionary<EntityUid, EntityUid> _stateAudio = new();
 
@@ -27,6 +31,7 @@ public sealed partial class CritStateAudioSystem : EntitySystem
 
         SubscribeLocalEvent<MobStateComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<MobStateComponent, ComponentShutdown>(OnComponentShutdown);
+        SubscribeNetworkEvent<CritStateAudioEvent>(ToggleCriticalSound);
     }
 
     private void OnMobStateChanged(Entity<MobStateComponent> ent, ref MobStateChangedEvent args)
@@ -45,9 +50,20 @@ public sealed partial class CritStateAudioSystem : EntitySystem
         StopStateAudio(ent.Owner);
     }
 
+    private void ToggleCriticalSound(CritStateAudioEvent ev, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { } uid || args.SenderSession.Channel is not { } channel)
+            return;
+
+        StopStateAudio(uid);
+
+        if (_configuration.GetClientCVar(channel, LPCVars.CriticalSoundEnabled) && TryComp<MobStateComponent>(uid, out var mob) && mob.CurrentState is MobState.SoftCritical or MobState.HardCritical && StateAudio.TryGetValue(mob.CurrentState, out var data))
+            PlayStateAudio(uid, data.sound, data.loop, data.volume);
+    }
+
     private void PlayStateAudio(EntityUid uid, string sound, bool loop, float volume)
     {
-        if (!_timing.IsFirstTimePredicted || !TryComp<ActorComponent>(uid, out var actor))
+        if (!_timing.IsFirstTimePredicted || !TryComp<ActorComponent>(uid, out var actor) || actor.PlayerSession.Channel is not { } channel || !_configuration.GetClientCVar(channel, LPCVars.CriticalSoundEnabled))
             return;
 
         StopStateAudio(uid);
