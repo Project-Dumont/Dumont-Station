@@ -43,6 +43,7 @@
   - type: DeployableGrid
     deployTime: 5.0
     preloadedGrid: ShelterCapsule5x5
+    ghost: ShelterCapsule5x5
     boxSize: 5,5
     offset: -2.5,-2.5
 
@@ -55,6 +56,7 @@
   - type: DeployableGrid
     deployTime: 8.0
     preloadedGrid: ShelterCapsule7x7
+    ghost: ShelterCapsule7x7
     boxSize: 7,7
     offset: -3.5,-3.5
 

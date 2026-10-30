@@ -52,7 +52,7 @@ public abstract class SharedDeployableGridSystem : EntitySystem
             NeedHand = true,
         };
 
-        if (!CheckCanDeploy((uid, component)))
+        if (!CheckCanDeploy((uid, component), args.User))
         {
             args.Handled = true;
             return;
@@ -62,36 +62,37 @@ public abstract class SharedDeployableGridSystem : EntitySystem
         args.Handled = true;
     }
 
-    protected bool CheckCanDeploy(Entity<DeployableGridComponent> ent)
+    protected bool CheckCanDeploy(Entity<DeployableGridComponent> ent, EntityUid? user = null)
+    {
+        var check = GetDeploymentCheck(ent);
+        if (check.FailureMessage is not {} message)
+            return true;
+
+        _popup.PopupPredictedCoordinates(Loc.GetString(message), Transform(ent).Coordinates, user);
+        return false;
+    }
+
+    /// <summary>
+    /// Evaluates the current map without side effects, including the exact shelter footprint.
+    /// </summary>
+    public DeployableGridCheck GetDeploymentCheck(Entity<DeployableGridComponent> ent)
     {
         var xform = Transform(ent);
         var comp = ent.Comp;
+        var worldPos = _transform.GetMapCoordinates(ent, xform);
+        var origin = (worldPos.Position + comp.Offset).Rounded();
+        var box = new Box2(origin, origin + comp.BoxSize);
 
         // Works only on planets!
         if (xform.GridUid == null || xform.MapUid == null || xform.GridUid != xform.MapUid || !TryComp<MapGridComponent>(xform.GridUid.Value, out var gridComp))
         {
-            _popup.PopupCoordinates(Loc.GetString("shelter-capsule-fail-no-planet"), xform.Coordinates);
-            return false;
+            return new DeployableGridCheck(box, false, Array.Empty<EntityUid>(), Array.Empty<EntityUid>());
         }
 
-        var worldPos = _transform.GetMapCoordinates(ent, xform);
-
-        // Make sure that surrounding area does not have any entities with physics
-        var box = Box2.CenteredAround(worldPos.Position.Rounded(), comp.BoxSize);
-
-        // Doesn't work near other grids
-        if (_lookup.GetEntitiesInRange<MapGridComponent>(xform.Coordinates, comp.BoxSize.Length()).Any())
-        {
-            _popup.PopupCoordinates(Loc.GetString("shelter-capsule-fail-near-grid"), xform.Coordinates);
-            return false;
-        }
-
-        if (_mapSystem.GetAnchoredEntities(xform.GridUid.Value, gridComp, box).Any())
-        {
-            _popup.PopupCoordinates(Loc.GetString("shelter-capsule-fail-no-space"), xform.Coordinates);
-            return false;
-        }
-
-        return true;
+        var blockers = _mapSystem.GetAnchoredEntities(xform.GridUid.Value, gridComp, box)
+            .Where(uid => !HasComp<ShelterClearableComponent>(uid)).ToArray();
+        var nearby = _lookup.GetEntitiesInRange<MapGridComponent>(xform.Coordinates, comp.BoxSize.Length())
+            .Select(grid => grid.Owner).ToArray();
+        return new DeployableGridCheck(box, true, blockers, nearby);
     }
 }

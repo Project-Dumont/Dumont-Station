@@ -5,6 +5,7 @@
   suffix: Structure
   description: A wild mushroom that likes to grow in hot, moist environments.
   components:
+  - type: ShelterClearable
   - type: Sprite
     sprite: _Lavaland/Objects/Decoration/Flora/Plants/lavashroom.rsi
     layers:
@@ -48,6 +49,7 @@
   id: SerakaMushroom
   description: A small cluster of seraka mushrooms.
   components:
+  - type: ShelterClearable
   - type: Sprite
     sprite: _Lavaland/Objects/Decoration/Flora/Plants/seraka_mushroom.rsi
     layers:

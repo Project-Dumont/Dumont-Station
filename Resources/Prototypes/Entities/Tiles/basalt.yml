@@ -80,6 +80,8 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: ShelterClearable
+      removeOnDeploy: false
     - type: Clickable
     - type: Sprite
       sprite: /Textures/Tiles/Planet/basalt.rsi

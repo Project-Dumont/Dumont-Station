@@ -1,0 +1,366 @@
+# Visual-only layouts extracted from the shelter maps. Covered by ShelterGhostTest.
+
+- type: shelterGhost
+  id: ShelterCapsule5x5
+  sourceMap: /Maps/_Lavaland/Shelters/shelter_5x5.yml
+  size: 5,5
+  tiles:
+  - [Lattice, Plating, FloorMiningDark, Plating, Lattice]
+  - [Plating, FloorMining, FloorMining, FloorMining, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, Plating]
+  - [Lattice, Plating, Plating, Plating, Lattice]
+  entities:
+  - prototype: AirAlarm
+    offset: 4.5,1.5
+    rotation: -1.5707963267948966 rad
+  - prototype: AirlockMiningGlass
+    offset: 2.5,0.5
+  - prototype: APCBasic
+    offset: 3.5,4.5
+  - prototype: AtmosDeviceFanDirectional
+    offset: 2.5,0.5
+  - prototype: Bed
+    offset: 3.5,2.5
+  - prototype: BedsheetBrown
+    offset: 3.5,2.5
+  - prototype: CableApcExtension
+    offset: 3.5,4.5
+  - prototype: CableApcExtension
+    offset: 3.5,3.5
+  - prototype: CableApcExtension
+    offset: 3.5,2.5
+  - prototype: CableApcExtension
+    offset: 2.5,2.5
+  - prototype: CableHV
+    offset: 1.5,4.5
+  - prototype: CableHV
+    offset: 1.5,3.5
+  - prototype: CableHV
+    offset: 0.5,3.5
+  - prototype: CableMV
+    offset: 1.5,4.5
+  - prototype: CableMV
+    offset: 2.5,4.5
+  - prototype: CableMV
+    offset: 3.5,4.5
+  - prototype: ComputerRadar
+    offset: 3.5,3.5
+  - prototype: ExtendedEmergencyOxygenTankFilled
+    offset: 1.6876874,1.4972172
+  - prototype: GasMixer
+    offset: 2.5,2.5
+  - prototype: GasPipeBend
+    offset: 1.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPort
+    offset: 1.5,3.5
+  - prototype: GasPort
+    offset: 2.5,3.5
+  - prototype: GasVentPump
+    offset: 2.5,1.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasVentScrubber
+    offset: 3.5,1.5
+  - prototype: GeneratorWallmountBasic
+    offset: 0.5,3.5
+  - prototype: Grille
+    offset: 4.5,2.5
+  - prototype: Grille
+    offset: 0.5,2.5
+  - prototype: MedkitOxygenFilled
+    offset: 1.4220624,1.7159672
+  - prototype: MiningWindow
+    offset: 0.5,2.5
+  - prototype: MiningWindow
+    offset: 4.5,2.5
+  - prototype: NitrogenCanister
+    offset: 2.5,3.5
+  - prototype: OxygenCanister
+    offset: 1.5,3.5
+  - prototype: PowerCellRecharger
+    offset: 3.5,1.5
+  - prototype: Poweredlight
+    offset: 2.5,3.5
+  - prototype: SignSurvival
+    offset: 2.5,4.5
+  - prototype: StasisBed
+    offset: 1.5,2.5
+  - prototype: SubstationWallBasic
+    offset: 1.5,4.5
+  - prototype: Table
+    offset: 1.5,1.5
+  - prototype: Table
+    offset: 3.5,1.5
+  - prototype: WallMining
+    offset: 1.5,4.5
+  - prototype: WallMining
+    offset: 2.5,4.5
+  - prototype: WallMining
+    offset: 3.5,4.5
+  - prototype: WallMining
+    offset: 4.5,3.5
+  - prototype: WallMining
+    offset: 4.5,1.5
+  - prototype: WallMining
+    offset: 3.5,0.5
+  - prototype: WallMining
+    offset: 1.5,0.5
+  - prototype: WallMining
+    offset: 0.5,1.5
+  - prototype: WallMining
+    offset: 0.5,3.5
+  - prototype: WallMiningDiagonal
+    offset: 0.5,4.5
+  - prototype: WallMiningDiagonal
+    offset: 4.5,4.5
+    rotation: -1.5707963267948966 rad
+  - prototype: WallMiningDiagonal
+    offset: 4.5,0.5
+    rotation: 3.141592653589793 rad
+  - prototype: WallMiningDiagonal
+    offset: 0.5,0.5
+    rotation: 1.5707963267948966 rad
+
+- type: shelterGhost
+  id: ShelterCapsule7x7
+  sourceMap: /Maps/_Lavaland/Shelters/shelter_7x7.yml
+  size: 7,7
+  tiles:
+  - [Lattice, Plating, Plating, FloorMining, Plating, Plating, Lattice]
+  - [Plating, FloorMining, FloorMining, FloorMining, FloorMining, FloorWood, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, FloorMining, FloorWood, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, FloorMining, FloorWood, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, FloorMining, FloorWood, Plating]
+  - [Plating, FloorMining, FloorMining, FloorMining, FloorWhiteMini, FloorWhiteMini, Plating]
+  - [Lattice, Plating, Plating, Plating, Plating, Plating, Lattice]
+  entities:
+  - prototype: AirAlarm
+    offset: 2.5,6.5
+  - prototype: AirlockMiningGlass
+    offset: 3.5,0.5
+  - prototype: APCBasic
+    offset: 3.5,6.5
+  - prototype: AtmosDeviceFanDirectional
+    offset: 3.5,0.5
+  - prototype: BedsheetGrey
+    offset: 3.5,4.5
+    rotation: 3.141592653589793 rad
+  - prototype: CableApcExtension
+    offset: 3.5,6.5
+  - prototype: CableApcExtension
+    offset: 3.5,5.5
+  - prototype: CableApcExtension
+    offset: 3.5,4.5
+  - prototype: CableApcExtension
+    offset: 3.5,3.5
+  - prototype: CableApcExtension
+    offset: 3.5,2.5
+  - prototype: CableApcExtension
+    offset: 3.5,1.5
+  - prototype: CableHV
+    offset: 1.5,6.5
+  - prototype: CableHV
+    offset: 1.5,5.5
+  - prototype: CableHV
+    offset: 0.5,5.5
+  - prototype: CableMV
+    offset: 1.5,6.5
+  - prototype: CableMV
+    offset: 2.5,6.5
+  - prototype: CableMV
+    offset: 3.5,6.5
+  - prototype: CigarGold
+    offset: 5.2854614,3.1023426
+  - prototype: CigarGold
+    offset: 5.4519815,2.9728727
+  - prototype: CigarGold
+    offset: 5.562995,3.1763253
+  - prototype: ComfyChair
+    offset: 5.5,4.5
+  - prototype: ComfyChair
+    offset: 5.5,1.5
+    rotation: 3.141592653589793 rad
+  - prototype: ComputerRadar
+    offset: 3.5,5.5
+  - prototype: CurtainsBlack
+    offset: 4.5,5.5
+    rotation: 3.141592653589793 rad
+  - prototype: DonkpocketBoxSpawner
+    offset: 1.5,1.5
+  - prototype: DoubleEmergencyOxygenTankFilled
+    offset: 1.5480165,2.0295935
+  - prototype: DrinkBottleWine
+    offset: 5.2896457,3.701313
+  - prototype: DrinkGlass
+    offset: 5.720201,3.4929795
+  - prototype: DrinkGlass
+    offset: 5.720201,2.854091
+  - prototype: FirelockEdge
+    offset: 2.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasMixer
+    offset: 2.5,4.5
+  - prototype: GasPipeBend
+    offset: 1.5,4.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPipeBend
+    offset: 4.5,4.5
+  - prototype: GasPipeBend
+    offset: 2.5,1.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPipeStraight
+    offset: 2.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPipeStraight
+    offset: 4.5,3.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPipeStraight
+    offset: 4.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: GasPipeTJunction
+    offset: 2.5,3.5
+    rotation: 1.5707963267948966 rad
+  - prototype: GasPort
+    offset: 1.5,5.5
+  - prototype: GasPort
+    offset: 2.5,5.5
+  - prototype: GasVentPump
+    offset: 3.5,1.5
+    rotation: -1.5707963267948966 rad
+  - prototype: GasVentPump
+    offset: 3.5,3.5
+    rotation: -1.5707963267948966 rad
+  - prototype: GasVentScrubber
+    offset: 3.5,4.5
+    rotation: 1.5707963267948966 rad
+  - prototype: GasVentScrubber
+    offset: 4.5,1.5
+    rotation: 3.141592653589793 rad
+  - prototype: GeneratorWallmountBasic
+    offset: 0.5,5.5
+  - prototype: Grille
+    offset: 0.5,4.5
+  - prototype: Grille
+    offset: 6.5,4.5
+  - prototype: KitchenMicrowave
+    offset: 1.5,2.5
+  - prototype: MedicalBed
+    offset: 3.5,4.5
+  - prototype: MedkitBruteFilled
+    offset: 1.5087464,3.3402019
+  - prototype: MedkitOxygenFilled
+    offset: 1.5135715,3.7135835
+  - prototype: MiningWindow
+    offset: 0.5,4.5
+  - prototype: MiningWindow
+    offset: 6.5,4.5
+  - prototype: NitrogenCanister
+    offset: 2.5,5.5
+  - prototype: OxygenCanister
+    offset: 1.5,5.5
+  - prototype: PlushieCarp
+    offset: 5.493782,4.465202
+  - prototype: PosterLegitCarpMount
+    offset: 6.5,3.5
+  - prototype: PottedPlantRandom
+    offset: 3.5,3.5
+  - prototype: Poweredlight
+    offset: 5.5,3.5
+    rotation: -1.5707963267948966 rad
+  - prototype: Poweredlight
+    offset: 1.5,3.5
+    rotation: 1.5707963267948966 rad
+  - prototype: RandomFoodMeal
+    offset: 5.5,2.5
+  - prototype: StasisBed
+    offset: 1.5,4.5
+  - prototype: SubstationWallBasic
+    offset: 1.5,6.5
+  - prototype: Table
+    offset: 1.5,3.5
+  - prototype: TableFancyBlack
+    offset: 3.5,2.5
+  - prototype: TableFancyBlack
+    offset: 1.5,2.5
+  - prototype: TableFancyBlack
+    offset: 5.5,2.5
+  - prototype: TableFancyBlack
+    offset: 5.5,3.5
+  - prototype: TableFancyBlack
+    offset: 1.5,1.5
+    rotation: -1.5707963267948966 rad
+  - prototype: ToiletEmpty
+    offset: 5.5,5.5
+    rotation: -1.5707963267948966 rad
+  - prototype: TurboItemRecharger
+    offset: 3.5,2.5
+  - prototype: WallDirectional
+    offset: 5.5,4.5
+    rotation: 3.141592653589793 rad
+  - prototype: WallMining
+    offset: 2.5,0.5
+  - prototype: WallMining
+    offset: 1.5,0.5
+  - prototype: WallMining
+    offset: 0.5,1.5
+  - prototype: WallMining
+    offset: 0.5,3.5
+  - prototype: WallMining
+    offset: 0.5,5.5
+  - prototype: WallMining
+    offset: 0.5,2.5
+  - prototype: WallMining
+    offset: 1.5,6.5
+  - prototype: WallMining
+    offset: 2.5,6.5
+  - prototype: WallMining
+    offset: 3.5,6.5
+  - prototype: WallMining
+    offset: 4.5,6.5
+  - prototype: WallMining
+    offset: 5.5,6.5
+  - prototype: WallMining
+    offset: 6.5,5.5
+  - prototype: WallMining
+    offset: 6.5,3.5
+  - prototype: WallMining
+    offset: 6.5,2.5
+  - prototype: WallMining
+    offset: 6.5,1.5
+  - prototype: WallMining
+    offset: 5.5,0.5
+  - prototype: WallMining
+    offset: 4.5,0.5
+  - prototype: WallMiningDiagonal
+    offset: 0.5,0.5
+    rotation: 1.5707963267948966 rad
+  - prototype: WallMiningDiagonal
+    offset: 0.5,6.5
+  - prototype: WallMiningDiagonal
+    offset: 6.5,6.5
+    rotation: -1.5707963267948966 rad
+  - prototype: WallMiningDiagonal
+    offset: 6.5,0.5
+    rotation: 3.141592653589793 rad
+  - prototype: Windoor
+    offset: 2.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: Windoor
+    offset: 4.5,4.5
+    rotation: 3.141592653589793 rad
+  - prototype: WindowReinforcedDirectional
+    offset: 3.5,5.5
+    rotation: 1.5707963267948966 rad
+  - prototype: WindowReinforcedDirectional
+    offset: 3.5,3.5
+    rotation: 1.5707963267948966 rad
+  - prototype: WindowReinforcedDirectional
+    offset: 3.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: WindowReinforcedDirectional
+    offset: 1.5,2.5
+    rotation: 3.141592653589793 rad
+  - prototype: WindowReinforcedDirectional
+    offset: 3.5,4.5
+    rotation: 1.5707963267948966 rad

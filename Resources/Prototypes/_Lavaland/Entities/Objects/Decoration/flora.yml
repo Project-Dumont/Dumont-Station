@@ -2,6 +2,7 @@
   id: BaseLavalandFlora
   abstract: true
   components:
+  - type: ShelterClearable
   - type: Transform
     anchored: true
   - type: Physics

@@ -37,6 +37,9 @@ public sealed partial class DeployableGridComponent : Component
     [DataField(required: true)]
     public Vector2 BoxSize;
 
+    [DataField]
+    public ProtoId<ShelterGhostPrototype>? Ghost;
+
     /// <remarks>
     /// This is needed only to fix the grid. Capsule always should spawn
     /// at the center, and this vector is required to ensure that.

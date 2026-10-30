@@ -28,6 +28,7 @@ using Content.Shared.Chemistry.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Lavaland.DeployableGrid;
@@ -110,6 +111,13 @@ public sealed class DeployableGridSystem : SharedDeployableGridSystem
             coords,
             Angle.Zero);
 
-        // TODO flattening of the area
+        // Clear vegetation only after the shelter has been successfully placed.
+        var bounds = _transform.GetWorldMatrix(shelter.Owner).TransformBox(Comp<MapGridComponent>(shelter).LocalAABB);
+        var planet = Comp<MapGridComponent>(coords.EntityId);
+        foreach (var vegetation in _mapSystem.GetAnchoredEntities(coords.EntityId, planet, bounds))
+        {
+            if (TryComp<ShelterClearableComponent>(vegetation, out var clearable) && clearable.RemoveOnDeploy)
+                QueueDel(vegetation);
+        }
     }
 }

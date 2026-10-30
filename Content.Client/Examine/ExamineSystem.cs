@@ -140,6 +140,11 @@ namespace Content.Client.Examine
 
         private EntityUid _examinedEntity;
         private Popup? _examineTooltipOpen;
+
+        /// <summary>
+        /// The entity whose inspection popup is currently visible.
+        /// </summary>
+        public EntityUid? ExaminedEntity => _examineTooltipOpen is { Visible: true } && _examinedEntity.Valid ? _examinedEntity : null;
         private ScreenCoordinates _popupPos;
         private CancellationTokenSource? _requestCancelTokenSource;
         private int _idCounter;
