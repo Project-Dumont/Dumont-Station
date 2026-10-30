@@ -60,7 +60,6 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
 
     private EntityCoordinates _mouseCoordsRaw = default;
     private static AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary;
-    private static float? _currentEyeRotation = null;
     private Color _guideColor = new(0, 0, 0.5785f);
     private TimeSpan _lastLayerSendTime = TimeSpan.Zero;
 
@@ -157,7 +156,7 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
             {
                 _currentLayer = newLayer;
             }
-            UpdateEyeRotation(heldEntity.Value, _eyeManager.CurrentEye.Rotation);
+            UpdateEyeRotation((heldEntity.Value, rcd), _eyeManager.CurrentEye.Rotation);
         }
 
         UpdatePlacer(_currentLayer);
@@ -165,12 +164,12 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
 
     // Since player eye rotation isn't networked, we need a way of sending current eye rotation to the rpd for correct layer placement
     // hopefully a better solution is found eventually
-    private void UpdateEyeRotation(EntityUid heldEntity, Angle eyeRotation)
+    private void UpdateEyeRotation(Entity<RCDComponent> rpd, Angle eyeRotation)
     {
-        if (_currentEyeRotation != eyeRotation.Theta)
+        var rotation = (float) eyeRotation.Theta;
+        if (_rcdSystem.SetEyeRotation(rpd, rotation))
         {
-            _currentEyeRotation = (float) eyeRotation.Theta;
-            _entityNetwork.SendSystemNetworkMessage(new RPDEyeRotationEvent(_entityManager.GetNetEntity(heldEntity), _currentEyeRotation));
+            _entityNetwork.SendSystemNetworkMessage(new RPDEyeRotationEvent(_entityManager.GetNetEntity(rpd.Owner), rotation));
         }
     }
 
