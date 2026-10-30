@@ -1,0 +1,7 @@
+- type: entity
+  id: RPDAdvanced
+  parent: RPD
+  name: advanced RPD
+  description: A rapid piping device with a selectable pipe layer.
+  components:
+  - type: RpdLayerSelector
