@@ -1,0 +1,11 @@
+<DefaultWindow xmlns="https://spacestation14.io" SetSize="360 330" MinSize="300 160">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Name="NameRow" Access="Public" Orientation="Horizontal" Margin="0 4">
+            <LineEdit Name="NameEdit" Access="Public" HorizontalExpand="True"/>
+            <Button Name="RenameButton" Access="Public" Margin="4 0"/>
+        </BoxContainer>
+        <ItemList Name="Destinations" Access="Public" VerticalExpand="True" Margin="0 4"/>
+        <Button Name="TravelButton" Access="Public" Disabled="True" Margin="0 4"/>
+        <Button Name="ExitButton" Access="Public" Margin="0 4"/>
+    </BoxContainer>
+</DefaultWindow>

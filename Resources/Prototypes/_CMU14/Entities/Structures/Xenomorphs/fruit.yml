@@ -1,0 +1,163 @@
+- type: entity
+  parent: BaseItem
+  id: DumontXenomorphFruitLesser
+  name: lesser resin fruit
+  description: A strange greenish fruit growing from alien resin.
+  components:
+  - type: XenomorphFruit
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_fruit.rsi
+    noRot: true
+    drawdepth: SmallMobs
+    layers:
+    - state: fruit_lesser_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: Tag
+    tags: [XenomorphItem]
+  - type: Item
+    size: Large
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_lesser_immature }
+          Grown: { state: fruit_lesser }
+          Item: { state: fruit_lesser_item }
+          Eaten: { state: fruit_lesser_spent }
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+    - trigger: !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: Flammable
+    fireSpread: false
+    damage:
+      types:
+        Heat: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask: [ItemMask]
+        restitution: 0.3
+        friction: 0.2
+
+- type: entity
+  parent: DumontXenomorphFruitLesser
+  id: DumontXenomorphFruitGreater
+  name: greater resin fruit
+  components:
+  - type: XenomorphFruit
+    kind: Greater
+    growTime: 30
+  - type: Sprite
+    layers:
+    - state: fruit_greater_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_greater_immature }
+          Grown: { state: fruit_greater }
+          Item: { state: fruit_greater_item }
+          Eaten: { state: fruit_greater_spent }
+
+- type: entity
+  parent: DumontXenomorphFruitLesser
+  id: DumontXenomorphFruitPlasma
+  name: plasma resin fruit
+  components:
+  - type: XenomorphFruit
+    kind: Plasma
+    growTime: 25
+  - type: Sprite
+    layers:
+    - state: fruit_plasma_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_plasma_immature }
+          Grown: { state: fruit_plasma }
+          Item: { state: fruit_plasma_item }
+          Eaten: { state: fruit_plasma_spent }
+
+- type: entity
+  parent: DumontXenomorphFruitLesser
+  id: DumontXenomorphFruitSpeed
+  name: speed resin fruit
+  components:
+  - type: XenomorphFruit
+    kind: Speed
+    growTime: 35
+  - type: Sprite
+    layers:
+    - state: fruit_speed_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_speed_immature }
+          Grown: { state: fruit_speed }
+          Item: { state: fruit_speed_item }
+          Eaten: { state: fruit_speed_spent }
+
+- type: entity
+  parent: DumontXenomorphFruitLesser
+  id: DumontXenomorphFruitSpore
+  name: spore resin fruit
+  components:
+  - type: XenomorphFruit
+    kind: Spore
+    growTime: 15
+  - type: Sprite
+    layers:
+    - state: fruit_spore_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_spore_immature }
+          Grown: { state: fruit_spore }
+          Item: { state: fruit_spore_item }
+          Eaten: { state: fruit_spore_spent }
+
+- type: entity
+  parent: DumontXenomorphFruitLesser
+  id: DumontXenomorphFruitUnstable
+  name: unstable resin fruit
+  components:
+  - type: XenomorphFruit
+    kind: Unstable
+    growTime: 45
+  - type: Sprite
+    layers:
+    - state: fruit_unstable_immature
+      map: [enum.XenomorphFruitVisuals.Base]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphFruitVisuals.State:
+        enum.XenomorphFruitVisuals.Base:
+          Growing: { state: fruit_unstable_immature }
+          Grown: { state: fruit_unstable }
+          Item: { state: fruit_unstable_item }
+          Eaten: { state: fruit_unstable_spent }

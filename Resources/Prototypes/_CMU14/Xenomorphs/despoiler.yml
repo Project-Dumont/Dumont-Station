@@ -1,0 +1,160 @@
+- type: entity
+  id: DumontDespoilerAcidShot
+  name: acid shot
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/despoiler_acid_puddle.rsi
+    drawdepth: Effects
+    layers:
+    - state: xeno_acid_lingering
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 10
+        Piercing: 0
+    deleteOnCollide: true
+  - type: XenomorphDespoilerProjectile
+  - type: XenomorphDespoilerShotVisual
+  - type: PointLight
+    enabled: true
+    radius: 1.2
+    color: "#83ff66"
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  id: DumontDespoilerLingeringAcid
+  name: lingering acid
+  description: A bubbling pool of corrosive acid.
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Effects/despoiler_acid_puddle.rsi
+    state: puddle
+    drawdepth: BelowMobs
+  - type: PointLight
+    enabled: true
+    radius: 1
+    color: "#83ff66"
+  - type: XenomorphDespoilerPool
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        hard: false
+        layer:
+        - SlipLayer
+        mask:
+        - MobMask
+
+- type: entity
+  id: DumontDespoilerAcidSpray
+  name: acid spray
+  description: A hissing burst of acid.
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Effects/despoiler_acid_puddle.rsi
+    state: puddle
+    drawdepth: BelowMobs
+  - type: PointLight
+    enabled: true
+    radius: 0.9
+    color: "#83ff66"
+  - type: XenomorphDespoilerPool
+    spray: true
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        hard: false
+        layer:
+        - SlipLayer
+        mask:
+        - MobMask
+
+- type: entity
+  id: DumontDespoilerAcidSprayEmpowered
+  parent: DumontDespoilerAcidSpray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XenomorphDespoilerPool
+    spray: true
+    empowered: true
+
+- type: entity
+  id: DumontDespoilerCausticTelegraph
+  parent: DumontDespoilerTelegraph
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Sprite
+    color: "#799657"
+
+- type: entity
+  id: DumontDespoilerOozingTelegraph
+  parent: DumontDespoilerTelegraph
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    color: "#c4a23d"
+
+- type: entity
+  id: DumontDespoilerCatalyze
+  name: hypertension burst
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: Sprite
+    sprite: _RMC14/Effects/despoiler_catalyze.rsi
+    state: bubbles
+    drawdepth: BelowMobs
+    noRot: true
+  - type: PointLight
+    enabled: true
+    radius: 1.6
+    softness: 1
+    energy: 1.2
+    color: "#83ff66"
+  - type: TimedDespawn
+    lifetime: 10
+
+- type: entity
+  id: DumontDespoilerTelegraph
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/xeno_telegraph.rsi
+    color: "#008000"
+    noRot: true
+    state: xeno_telegraph_base
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
