@@ -33,3 +33,9 @@
   background: /Textures/_Dumont/LobbyScreens/stackedbombs.webp
   name: Stacked bombs
   artist: Struater
+
+- type: lobbyBackground
+  id: bloodcultart
+  background: /Textures/_Dumont/LobbyScreens/bloodcult.png
+  name: Blood Cult
+  artist: Struater
