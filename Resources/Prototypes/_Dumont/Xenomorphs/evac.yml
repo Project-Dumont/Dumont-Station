@@ -1,0 +1,27 @@
+- type: entity
+  parent: MobHuman
+  id: MobDumontXenomorphEvacERTCorpse
+  name: ERT security officer
+  description: A dead emergency response officer, entombed in alien resin.
+  suffix: Xenomorph evacuation, Dead
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: Loadout
+    prototypes: [ERTSecurityGear]
+  - type: Buckle
+    dontCollide: true
+  - type: Damageable
+    damage:
+      types:
+        Blunt: 250
+
+- type: entity
+  parent: ResinNest
+  id: DumontXenomorphEvacNest
+  suffix: Xenomorph evacuation
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false

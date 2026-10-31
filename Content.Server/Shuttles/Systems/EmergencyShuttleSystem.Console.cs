@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
@@ -265,7 +267,8 @@ public sealed partial class EmergencyShuttleSystem
                 if (!Deleted(centcomm.Entity))
                 {
                     _shuttle.FTLToDock(comp.EmergencyShuttle.Value, shuttle,
-                        centcomm.Entity.Value, ConsoleAccumulator, TransitTime);
+                        centcomm.Entity.Value, ConsoleAccumulator, TransitTime,
+                        priorityTag: HasComp<Content.Server._Dumont.Xenomorphs.XenomorphCorruptedEvacComponent>(comp.EmergencyShuttle.Value) ? DockTag.ToString() : null);
                     continue;
                 }
 
@@ -310,7 +313,7 @@ public sealed partial class EmergencyShuttleSystem
             ShuttlesLeft = true;
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("emergency-shuttle-left", ("transitTime", $"{TransitTime:0}")));
 
-            Timer.Spawn((int)(TransitTime * 1000) + _bufferTime.Milliseconds, () => _roundEnd.EndRound(), _roundEndCancelToken?.Token ?? default);
+            Timer.Spawn(TimeSpan.FromSeconds(TransitTime) + _bufferTime, () => _roundEnd.EndRound(), _roundEndCancelToken?.Token ?? default);
         }
 
         // All the others.
@@ -435,6 +438,7 @@ public sealed partial class EmergencyShuttleSystem
         ConsoleAccumulator = float.MinValue;
         EarlyLaunchAuthorized = false;
         EmergencyShuttleArrived = false;
+        DockTimeOverride = null;
         TransitTime = MinimumTransitTime + (MaximumTransitTime - MinimumTransitTime) * _random.NextFloat();
         // Round to nearest 10
         TransitTime = MathF.Round(TransitTime / 10f) * 10f;
@@ -491,7 +495,7 @@ public sealed partial class EmergencyShuttleSystem
     /// </summary>
     public bool EarlyLaunch()
     {
-        if (EarlyLaunchAuthorized || !EmergencyShuttleArrived || ConsoleAccumulator <= AuthorizeTime) return false;
+        if (DockTimeOverride != null || EarlyLaunchAuthorized || !EmergencyShuttleArrived || ConsoleAccumulator <= AuthorizeTime) return false;
 
         _logger.Add(LogType.EmergencyShuttle, LogImpact.Extreme, $"Emergency shuttle launch authorized");
         ConsoleAccumulator = AuthorizeTime;

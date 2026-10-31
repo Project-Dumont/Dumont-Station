@@ -1,0 +1,79 @@
+<Document>
+# T1 — Prole da Colmeia
+
+As castas iniciais formam a base da colmeia e não têm limite de vagas. A linhagem da larva determina quais estão disponíveis.
+
+## Operário
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Operário" Scale="1.5" Interactive="false"/>
+</Box>
+
+Construtor básico. Escolhe e secreta estruturas de resina, planta nódulos que espalham o território e emite feromônios. Pode ordenar as estruturas maiores do ninho. Sua cauda serve para se defender, mas uma escolta continua sendo importante em áreas disputadas.
+
+## Operário curandeiro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUHealerDrone" Caption="Operário curandeiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Suporte médico da família dos operários. Aplica secreção curativa em outro xeno, gastando plasma e a própria vida, e planta frutos menores de cura. Sacrifício transfere uma grande cura a um xeno: voltar como larva depende de a transferência atingir o máximo. Não trate a habilidade como uma segunda vida garantida.
+
+## Operário jardineiro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUGardenerDrone" Caption="Operário jardineiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Cultiva os frutos da colmeia. Escolhe o tipo, planta e usa Surto de resina para amadurecer frutas, reforçar construções ou alterar o terreno. Seus nódulos resistentes aceleram o crescimento dos frutos. Planeje o pomar perto da recuperação e lembre-se de que plantar também consome vida.
+
+## Corredor
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMURunner" Caption="Corredor" Scale="1.5" Interactive="false"/>
+</Box>
+
+Batedor rápido. Usa salto para alcançar e derrubar uma vítima, fragmentos de osso para desacelerar e visão de longo alcance para observar corredores. Esconder-se permite passar sob mesas. Evite saltar contra obstáculos: colidir sem acertar a presa pode atordoar você.
+
+## Corredor ácido
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUAciderRunner" Caption="Corredor ácido" Scale="1.5" Interactive="false"/>
+</Box>
+
+Variante voltada ao ácido. Usa uma reserva de ácido para corroer itens e barricadas, mas não paredes. Pela colmeia prepara uma explosão: morrer durante a preparação impede a detonação. Pode cancelar pagando parte da reserva; ao detonar, retorna como larva. Esconder-se permite entrar sob mesas, sem invisibilidade.
+
+## Defensor
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDefender" Caption="Defensor" Scale="1.5" Interactive="false"/>
+</Box>
+
+Segura passagens e protege xenos frágeis. A posição da crista altera sua defesa e os golpes. Combina cabeçada, pancada e varredura de cauda; a varredura exige a crista levantada. Fortificar aumenta a resistência e bloqueia a passagem, mas impede movimento até ser desativado.
+
+## Defensor incendiário
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUHeatshieldDefender" Caption="Defensor incendiário" Scale="1.5" Interactive="false"/>
+</Box>
+
+Combina defesa e fogo. Autoimolação coloca seu corpo em chamas; Termorregulação aproveita esse estado para melhorar movimento e cadência antes de apagar o fogo. Vomitar bile apaga xenos e pisos em chamas, mas também cobre inimigos de combustível e pode incendiá-los quando você está queimando. Cuidado com os hospedeiros.
+
+## Sentinela
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUSentinel" Caption="Sentinela" Scale="1.5" Interactive="false"/>
+</Box>
+
+Controla inimigos com neurotoxinas. O cuspe desacelerador dificulta a fuga e o disperso cobre um cone. Corte paralisante prepara o próximo golpe para incapacitar a vítima. É útil na defesa do ninho e na captura de alvos para os parasitas faciais.
+
+## Sentinela tóxico
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUToxicSentinel" Caption="Sentinela tóxico" Scale="1.5" Interactive="false"/>
+</Box>
+
+Acumula intoxicação com cuspe e garras tóxicas. Ferrão drenante consome parte dessa intoxicação para ferir e derrubar o alvo, recuperando vida e plasma; intoxicação elevada também pode render armadura temporária. Usa ácido corrosivo fraco contra objetos e estruturas. Combine os ataques antes de drenar.
+
+[textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
+</Document>

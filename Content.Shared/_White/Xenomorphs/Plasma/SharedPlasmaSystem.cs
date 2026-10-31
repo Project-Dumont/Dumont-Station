@@ -1,12 +1,14 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._White.Xenomorphs.Plasma.Components;
 using Content.Shared.Alert;
 
 namespace Content.Shared._White.Xenomorphs.Plasma;
 
-public abstract class SharedPlasmaSystem : EntitySystem
+public abstract partial class SharedPlasmaSystem : EntitySystem
 {
-    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
 
     public override void Initialize()
     {
@@ -39,7 +41,10 @@ public abstract class SharedPlasmaSystem : EntitySystem
 
         RaiseLocalEvent(uid, new PlasmaAmountChangeEvent(component.Plasma));
 
-        _alerts.ShowAlert(uid, component.PlasmaAlert);
+        if (component.MaxPlasma > 0)
+            _alerts.ShowAlert(uid, component.PlasmaAlert);
+        else
+            _alerts.ClearAlert(uid, component.PlasmaAlert);
 
         return true;
     }

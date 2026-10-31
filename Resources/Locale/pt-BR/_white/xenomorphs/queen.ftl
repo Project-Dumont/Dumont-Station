@@ -1,9 +1,9 @@
-xenomorphs-queen-promotion-didnt-pass-whitelist = Você só pode usar isso com seus filhos adultos que não sejam da realeza!
-xenomorphs-queen-promotion-no-mind = A mente dela não consegue processar a promoção!
+xenomorphs-queen-promotion-didnt-pass-whitelist = Escolha um xeno adulto que ainda não pertença à guarda real.
+xenomorphs-queen-promotion-no-mind = Esse xeno não pode receber a promoção.
 
 ### Goobstation
-xenomorphs-queen-not-enough-plasma = Não há plasma suficiente. Precisa de mais { $plasma }.
+xenomorphs-queen-not-enough-plasma = Faltam { $plasma } de plasma.
 xenomorphs-queen-promotion-invalid-target = Só pode ser usado para promover outros xenomorfos.
 xenomorphs-queen-already-praetorian = Este xenomorfo já é um Pretoriano!
-xenomorphs-queen-promotion-success = Promoveu { $target } para Pretoriano!
+xenomorphs-queen-promotion-success = Você promoveu { $target } a pretoriano!
 

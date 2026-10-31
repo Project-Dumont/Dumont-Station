@@ -1,0 +1,68 @@
+- type: entity
+  id: BaseMobXenomorphCMU
+  parent: BaseMobXenomorphAdult
+  abstract: true
+  components:
+  - type: XenomorphWatch
+  - type: XenomorphRadioJammer
+  - type: FootstepModifier
+    footstepSoundCollection: null
+  - type: CombatMode
+    combatToggleAction: ActionXenomorphCombatMode
+  - type: XenomorphLineage
+  - type: XenomorphEvolution
+    max: 200
+    evolvesTo: []
+  - type: Body
+    prototype: XenomorphHunter
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: crit
+      Dead:
+        Base: dead
+  - type: Sprite
+    layers:
+    - state: alive
+      map:
+      - enum.DamageStateVisualLayers.Base
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - map:
+      - rest
+      state: sleeping
+      visible: false
+  - type: UserInterface
+    interfaces:
+      enum.XenoWatchUIKey.Key:
+        type: XenoWatchBui
+      enum.XenoPheromonesUI.Key:
+        type: XenoPheromonesBui
+      enum.RadialSelectorUiKey.Key:
+        type: TrackedRadialSelectorMenuBUI
+      enum.XenomorphHiveUiKey.Construction:
+        type: AttachedRadialSelectorMenuBUI
+      enum.XenomorphConstructionUiKey.Key:
+        type: AttachedRadialSelectorMenuBUI
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-xenomorph-name
+    description: ghost-role-information-xenomorph-description
+    rules: ghost-role-information-rules-default-xeno
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: GlobalAntagonist
+    antagonistPrototype: globalAntagonistXenomorph
+  - type: XenomorphRest
+  - type: ActionGrant
+    actions:
+    - ActionXenomorphRest

@@ -1,0 +1,22 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float innerRadius;
+uniform highp float outerRadius;
+
+void fragment() {
+    highp vec2 pixelSize = vec2(1.0 / SCREEN_PIXEL_SIZE.x, 1.0 / SCREEN_PIXEL_SIZE.y);
+    highp vec2 pixelCenter = pixelSize * 0.5;
+    highp float distance = length(FRAGCOORD.xy - pixelCenter);
+
+    highp vec4 color = zTextureSpec(SCREEN_TEXTURE, UV);
+
+    if (distance > outerRadius) {
+        COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+    }
+    else if (distance < innerRadius) {
+        COLOR = color;
+    }
+    else {
+        highp float ratio = (distance - innerRadius) / (outerRadius - innerRadius);
+        COLOR = mix(color, vec4(0.0, 0.0, 0.0, 1.0), ratio);
+    }
+}

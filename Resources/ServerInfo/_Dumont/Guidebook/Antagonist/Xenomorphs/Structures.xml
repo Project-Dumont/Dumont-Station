@@ -1,0 +1,142 @@
+<Document>
+# Estruturas e território da colmeia
+
+## Quem constrói
+
+Operário e suas variantes, Senhor da Colmeia e suas variantes, Carregador e Carregador de ovos, Escavador, Ceifador e Rainha possuem construção do ninho. Nem todo combatente secreta resina. Confira os botões da sua forma antes de prometer uma obra.
+
+## Resina e construções comuns
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideChooseResin" Caption="Escolher estrutura" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideSecreteResin" Caption="Secretar resina" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ResinWeedNode" Caption="Nódulo de resina" Scale="2" Interactive="false"/>
+</Box>
+
+Escolha a estrutura no menu e use [bold]Secretar resina[/bold] no local desejado. O plasma é gasto ao concluir. Plantar um nódulo espalha resina comum; essa cobertura melhora a recuperação de plasma e serve de terreno para várias habilidades.
+
+<Box>
+<GuideEntityEmbed Entity="WallResin" Caption="Parede" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ResinMembrane" Caption="Membrana" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ResinDoor" Caption="Porta" Scale="2" Interactive="false"/>
+</Box>
+
+- [bold]Parede:[/bold] fecha passagens e protege flancos. Deixe espaço para os xenos recuarem.
+
+- [bold]Membrana:[/bold] faz uma barreira que preserva visão através dela.
+
+- [bold]Porta:[/bold] cria um acesso para circular pelo ninho sem deixar o corredor permanentemente aberto.
+
+<Box>
+<GuideEntityEmbed Entity="DumontXenomorphDesignResidueThick" Caption="Resina pegajosa" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphFastResin" Caption="Resina aceleradora" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphResinSpikes" Caption="Espinhos" Scale="2" Interactive="false"/>
+</Box>
+
+A pegajosa dificulta o avanço inimigo, a aceleradora favorece o deslocamento dos xenos e os espinhos punem quem atravessa uma área preparada. Senhores da Colmeia erguem versões mais resistentes, o Arquiteto da Colmeia usa projetos e reforços, e o Operário jardineiro cria resina resistente e efeitos temporários.
+
+## Ninhos e hospedeiros
+
+<Box>
+<GuideEntityEmbed Entity="ResinNest" Caption="Ninho de piso" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphWallNest" Caption="Ninho de parede" Scale="2" Interactive="false"/>
+</Box>
+
+Os ninhos prendem hospedeiros enquanto a colmeia protege a infecção. O de parede exige uma parede acessível coberta de resina; plantar resina junto dela ajuda a preparar o local. Um ninho vazio não cria um xeno sozinho: capture a vítima e garanta a infecção.
+
+## Como ordenar as estruturas maiores
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideChooseHive" Caption="Escolher estrutura do ninho" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuidePlaceHive" Caption="Ordenar construção" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontHiveCoreConstructionNode" Caption="Projeto" Scale="2" Interactive="false"/>
+</Box>
+
+1. Abra [bold]Escolher estrutura do ninho[/bold] e selecione o projeto.
+
+2. Use [bold]Ordenar construção[/bold] num piso livre e acessível. Colocar o projeto leva três segundos e custa 400 de plasma.
+
+3. Clique no projeto para contribuir plasma. Cada contribuição leva três segundos; xenos com plasma podem ajudar mesmo sem poder ordenar.
+
+4. Examine para ver quanto falta. A estrutura só fica pronta quando recebe toda a contribuição adicional.
+
+Movimento e dano interrompem essas canalizações. Projetos inacabados já ocupam o limite da estrutura. Nódulos de apoio exigem a resina especial do núcleo e espaço livre ao redor. Planejem os corredores antes de preencher a base de obras.
+
+## Núcleo da colmeia
+
+<Box>
+<GuideEntityEmbed Entity="DumontHiveCore" Caption="Núcleo" Scale="2" Interactive="false"/>
+</Box>
+
+É a base das estruturas maiores e espalha resina da colmeia em até sete quadrados. Só pode haver [bold]um núcleo[/bold]. O projeto custa 400 para colocar e mais 1.000 de plasma para concluir. Sem um núcleo pronto, não é possível iniciar ou concluir obras que dependem dele.
+
+
+## Nódulo de recuperação
+
+<Box>
+<GuideEntityEmbed Entity="DumontHiveRecovery" Caption="Recuperação" Scale="2" Interactive="false"/>
+</Box>
+
+Cura um xeno vivo e ferido que esteja [bold]descansando[/bold] perto da estrutura. Atende um alvo elegível por ciclo, com alcance de 1,5 quadrado. Não ressuscita xenos mortos. Limite de seis, incluindo projetos; custo de 400 para iniciar e mais 450 de plasma para concluir.
+
+## Árvore de plasma
+
+<Box>
+<GuideEntityEmbed Entity="DumontHivePlasma" Caption="Árvore de plasma" Scale="2" Interactive="false"/>
+</Box>
+
+Restaura plasma de um xeno próximo que esteja descansando ou em ovipositor. Atende um alvo elegível por ciclo, com alcance de 1,5 quadrado. É útil perto da Rainha e das áreas de recuperação. Limite de três, incluindo projetos; custo de 400 mais 450 de plasma.
+
+## Morfador de ovos
+
+<Box>
+<GuideEntityEmbed Entity="DumontHiveEggMorpher" Caption="Morfador de ovos" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphFaceHugger" Caption="Parasita facial" Scale="2" Interactive="false"/>
+</Box>
+
+Produz parasitas faciais passivamente até um estoque de seis; a produção é mais rápida enquanto há uma Rainha em ovipositor. Pode armazenar até doze com depósitos de parasitas faciais vivos. Clique com uma mão livre para retirar um ou use um parasita facial no morfador para guardar.
+
+É possível reservar parte do estoque; fantasmas podem assumir os excedentes. A estrutura também usa seu estoque contra uma vítima adequada que se aproxime. Limite de seis, incluindo projetos; custo de 400 mais 450 de plasma.
+
+## Aglomerado e Pilone
+
+<Box>
+<GuideEntityEmbed Entity="DumontHiveCluster" Caption="Aglomerado" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontHivePylon" Caption="Pilone" Scale="2" Interactive="false"/>
+</Box>
+
+O Aglomerado avança com resina especial para alcançar alvos de captura. Espalha resina em até cinco quadrados e não precisa ser colocado sobre a resina do núcleo, mas exige que o núcleo exista para ser construído. Limite de quatro, incluindo projetos. Custa 400 para iniciar e mais 300 de plasma para concluir.
+
+Ao capturar uma instalação válida, vira um Pilone. Só pode haver um Pilone. Ele cumpre o objetivo, amplia as vagas de castas e libera o contato pelo console; [bold]não produz geleia real nem concede bônus de combate[/bold] nesta versão.
+
+[textlink="Veja os três alvos, a liberação e como capturar." link="XenomorphObjectives"]
+
+## Reparos
+
+Um construtor pode interagir com uma estrutura maior danificada para repará-la, contribuindo plasma. A canalização leva quatro segundos; o custo depende da estrutura e pode exigir várias contribuições. Examine e preste atenção às mensagens para não confundir uma obra incompleta com uma estrutura pronta.
+
+## Frutos dos operários jardineiros e curandeiros
+
+<Box>
+<GuideEntityEmbed Entity="DumontXenomorphFruitLesser" Caption="Cura simples" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphFruitGreater" Caption="Cura reforçada" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphFruitPlasma" Caption="Plasma" Scale="2" Interactive="false"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="DumontXenomorphFruitSpeed" Caption="Velocidade" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphFruitSpore" Caption="Recarga" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontXenomorphFruitUnstable" Caption="Instável" Scale="2" Interactive="false"/>
+</Box>
+
+- [bold]Comum e reforçado:[/bold] recuperação de vida em intensidades diferentes.
+
+- [bold]Plasma:[/bold] recuperação da reserva ao longo do tempo.
+
+- [bold]Velocidade:[/bold] melhora temporária de deslocamento.
+
+- [bold]Recarga:[/bold] favorece a recuperação de habilidades ao acertar ataques corpo a corpo durante o efeito.
+
+- [bold]Instável:[/bold] proteção e cura temporárias, com interações sobre escudos já existentes.
+
+Deixe os frutos amadurecerem e interaja para colher ou consumir conforme o estado. As plantas contam no limite do cultivador, inclusive quando os frutos foram colhidos. Distribua aos xenos que precisam.
+</Document>

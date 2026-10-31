@@ -1,0 +1,79 @@
+<Document>
+# Como jogar como um xenomorfo
+
+## Você acabou de nascer
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphLarva" Caption="Larva" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideEvolution" Caption="Evoluir" Scale="2" Interactive="false"/>
+</Box>
+
+A larva é vulnerável. Procure abrigo, encontre a colmeia e espere o contador de evolução completar. Abra [bold]Evoluir[/bold] para ver as formas da sua linhagem.
+
+A espécie do hospedeiro determina a linhagem. Nem toda larva tem as mesmas escolhas e nem toda rota chega à Rainha. [textlink="Consulte as rotas de evolução." link="XenomorphClasses"]
+
+## Fale com os outros xenos
+
+Selecione o idioma da [bold]mente-colmeia[/bold] ou digite [bold]+[/bold] antes da frase para falar com os outros xenos. Avise onde estão inimigos, hospedeiros e passagens seguras. Essa comunicação não depende dos rádios da tripulação.
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideWatch" Caption="Observar xeno" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideQueenWord" Caption="Palavra da Rainha" Scale="2" Interactive="false"/>
+</Box>
+
+[bold]Observar xeno[/bold] permite acompanhar outro xeno. O movimento encerra a observação; não deixe seu próprio corpo exposto. A Rainha envia mensagens que aparecem na interface. Leia os avisos: eles informam sobre estruturas ameaçadas e mudanças nos objetivos.
+
+## Plasma e recuperação
+
+<Box>
+<GuideEntityEmbed Entity="ResinWeedNode" Caption="Resina" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideRest" Caption="Descansar" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontHiveRecovery" Caption="Recuperação" Scale="2" Interactive="false"/>
+</Box>
+
+Quando sua casta possui plasma, a reserva alimenta construções e habilidades. A resina melhora a regeneração. Acompanhe vida e plasma e recue antes de esgotar ambos. Algumas castas não usam plasma: podem depender de ácido, espinhos, carne, fúria ou apenas de recarga.
+
+Use [bold]Descansar[/bold] em segurança sobre a resina para se recuperar. Perto de um nódulo de recuperação, descansar também permite receber cura da estrutura. Levante-se antes de voltar ao combate e não descanse numa área sob ataque.
+
+## Habilidades e alvos
+
+Habilidades instantâneas são usadas ao apertar o botão; habilidades com alvo precisam de um clique numa pessoa ou no chão. A descrição informa recurso, exigências e recarga. Para habilidades alternáveis, use o botão novamente para encerrar. A indicação de habilidade ativa ajuda a reconhecer esse estado.
+
+[bold]Não presuma que toda casta constrói, cospe ácido ou se torna invisível.[/bold] Os conjuntos de habilidades são diferentes. [textlink="Conheça as castas." link="XenomorphClasses"]
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideHide" Caption="Esconder-se" Scale="2" Interactive="false"/>
+</Box>
+
+[bold]Esconder-se[/bold], presente em formas como Corredor e Corredor ácido, permite passar sob mesas.
+
+## Feromônios
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuidePheromones" Caption="Feromônios" Scale="2" Interactive="false"/>
+</Box>
+
+Castas que emitem feromônios podem selecionar Frenesi, Proteção ou Recuperação para apoiar xenos próximos. A emissão consome plasma: encerre quando não for necessária. A Rainha pode nomear até três líderes, que propagam os feromônios dela enquanto ela está em ovipositor. Ser líder não dá acesso às habilidades da Rainha.
+
+## Interferência de rádio
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideJammer" Caption="Interferência de rádio" Scale="2" Interactive="false"/>
+</Box>
+
+Castas [bold]T1 e T2 com reserva de plasma[/bold] recebem o interferência de rádio. Ele bloqueia transmissões de rádio num raio de seis quadrados, custa 25 de plasma para ligar e cinco por segundo. Use novamente para desligar; a interferência também termina se faltar plasma ou o xeno ficar incapacitado.
+
+## Hospedeiros são recursos da colmeia
+
+<Box>
+<GuideEntityEmbed Entity="ResinNest" Caption="Ninho" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphEgg" Caption="Ovo" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphFaceHugger" Caption="Parasita facial" Scale="2" Interactive="false"/>
+</Box>
+
+Tragam vítimas para áreas protegidas e prendam-nas nos ninhos. Protejam os parasitas faciais e os hospedeiros já infectados. Matar um hospedeiro por engano pode custar um futuro xeno; capture e mantenha a vítima sob controle quando houver condições.
+
+## Lute com uma rota de saída
+
+Xenos rápidos isolam alvos; defensores seguram a linha; construtores preparam passagens. Recuem para recuperar vida e plasma, cubram xenos feridos e não bloqueiem as próprias portas com construções mal colocadas.
+</Document>

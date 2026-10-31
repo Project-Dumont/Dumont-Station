@@ -44,26 +44,26 @@ using Content.Shared.NukeOps;
 
 namespace Content.Server.ADT.Shuttles;
 
-public sealed class DropPodConsoleSystem : EntitySystem
+public sealed partial class DropPodConsoleSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedMapSystem _mapManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly DecalSystem _decalSystem = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedMapSystem _mapManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedCameraRecoilSystem _recoil = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private DecalSystem _decalSystem = default!;
 
     private static readonly SoundSpecifier DropPodMusic =
         new SoundCollectionSpecifier("DropPodMusic");
@@ -244,9 +244,9 @@ public sealed class DropPodConsoleSystem : EntitySystem
     /// Copies pod tiles onto the station grid and reparents all pod entities, correcting for any
     /// pod rotation so everything lands axis-aligned with the station grid.
     /// </summary>
-    private void MergeIntoStation(
+    public void MergeIntoStation(
         EntityUid podGrid, MapGridComponent podComp,
-        EntityUid stationGrid, MapGridComponent stationComp)
+        EntityUid stationGrid, MapGridComponent stationComp, bool preserveMobs = false)
     {
         // Build matrices BEFORE any rotation changes so world positions of children are still valid.
         var podWorldMatrix = _transform.GetWorldMatrix(podGrid);
@@ -270,7 +270,10 @@ public sealed class DropPodConsoleSystem : EntitySystem
         {
             var stationTileIdx = baseTile + tileRef.GridIndices;
             foreach (var stale in _mapSystem.GetAnchoredEntities(stationGrid, stationComp, stationTileIdx).ToList())
+            {
+                if (preserveMobs && HasComp<Content.Shared.Mobs.Components.MobStateComponent>(stale)) continue;
                 QueueDel(stale);
+            }
             tilesToSet.Add((stationTileIdx, tileRef.Tile));
         }
         _mapSystem.SetTiles((stationGrid, stationComp), tilesToSet);

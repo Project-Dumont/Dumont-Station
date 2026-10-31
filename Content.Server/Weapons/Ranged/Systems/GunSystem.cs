@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
@@ -173,25 +175,25 @@ namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IRobustRandom _rand = default!; // 🌟Starlight🌟
-    [Dependency] private readonly BatterySystem _battery = default!;
-    [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
-    [Dependency] private readonly PricingSystem _pricing = default!;
-    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly DecalSystem _decals = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private IComponentFactory _factory = default!;
+    [Dependency] private IRobustRandom _rand = default!; // 🌟Starlight🌟
+    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private DamageExamineSystem _damageExamine = default!;
+    [Dependency] private PricingSystem _pricing = default!;
+    [Dependency] private SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private IPrototypeManager _proto = default!;  // 🌟Starlight🌟
+    [Dependency] private DecalSystem _decals = default!;  // 🌟Starlight🌟
+    [Dependency] private AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
+    [Dependency] private PowerCellSystem _powerCell = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     // Goobstation
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private FlammableSystem _flammable = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private const float DamagePitchVariation = 0.05f;
     private string[] _bloodDecals = []; // 🌟Starlight🌟
@@ -363,6 +365,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 case HitscanPrototype hitscan:
 
                     EntityUid? lastHit = null;
+                    var reflectedDamage = hitscan.Damage;
 
                     var from = fromMap;
                     // can't use map coords above because funny FireEffects
@@ -407,12 +410,14 @@ public sealed partial class GunSystem : SharedGunSystem
 
                             FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
 
-                            var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, hitscan.Damage); // WD EDIT
+                            var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, reflectedDamage); // WD EDIT
                             RaiseLocalEvent(hit, ref ev);
 
                             if (!ev.Reflected)
                                 break;
 
+                            lastHit = null;
+                            reflectedDamage = ev.Damage;
                             fromEffect = Transform(hit).Coordinates;
                             from = TransformSystem.ToMapCoordinates(fromEffect);
                             dir = ev.Direction;
@@ -426,7 +431,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (hitscan.StaminaDamage > 0f)
                             _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
 
-                        var dmg = hitscan.Damage;
+                        var dmg = reflectedDamage;
 
                         var hitName = ToPrettyString(hitEntity);
                         // Goob edit start
@@ -545,6 +550,7 @@ public sealed partial class GunSystem : SharedGunSystem
         void Hitscan(EntityUid gunUid, GunComponent gun, EntityCoordinates fromCoordinates, EntityUid? user, MapCoordinates fromMap, float pointer, Vector2 mapDirection, HitscanPrototype hitscan)
         {
             EntityUid? lastHit = null;
+            var reflectedDamage = hitscan.Damage;
 
             var accuracyZone = 3f;
 
@@ -597,12 +603,14 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
 
-                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, hitscan.Damage);
+                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, reflectedDamage);
                     RaiseLocalEvent(hit, ref ev);
 
                     if (!ev.Reflected)
                         break;
 
+                    lastHit = null;
+                    reflectedDamage = ev.Damage;
                     fromEffect = Transform(hit).Coordinates;
                     from = TransformSystem.ToMapCoordinates(fromEffect); ;
                     dir = ev.Direction;
@@ -616,7 +624,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 if (hitscan.StaminaDamage > 0f)
                     _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true);
 
-                var dmg = hitscan.Damage;
+                var dmg = reflectedDamage;
 
                 var hitName = ToPrettyString(hitEntity);
                 if (dmg != null)

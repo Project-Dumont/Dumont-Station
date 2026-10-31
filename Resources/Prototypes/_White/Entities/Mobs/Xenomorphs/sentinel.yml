@@ -23,7 +23,6 @@
   #  actions:
   #  - ActionTransferPlasma
   #  - ActionSpawnResinWeedNode
-  - type: VentCrawler
   - type: Cuffable
   - type: Body
     prototype: XenomorphSentinel

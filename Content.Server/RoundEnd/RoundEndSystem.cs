@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
 // SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <zddm@outlook.es>
@@ -64,6 +66,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -79,19 +82,19 @@ namespace Content.Server.RoundEnd
     /// Handles ending rounds normally and also via requesting it (e.g. via comms console)
     /// If you request a round end then an escape shuttle will be used.
     /// </summary>
-    public sealed class RoundEndSystem : EntitySystem
+    public sealed partial class RoundEndSystem : EntitySystem
     {
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly IPrototypeManager _protoManager = default!;
-        [Dependency] private readonly ChatSystem _chatSystem = default!;
-        [Dependency] private readonly GameTicker _gameTicker = default!;
-        [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-        [Dependency] private readonly EmergencyShuttleSystem _shuttle = default!;
-        [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly StationSystem _stationSystem = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IGameTiming _gameTiming = default!;
+        [Dependency] private IPrototypeManager _protoManager = default!;
+        [Dependency] private ChatSystem _chatSystem = default!;
+        [Dependency] private GameTicker _gameTicker = default!;
+        [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
+        [Dependency] private EmergencyShuttleSystem _shuttle = default!;
+        [Dependency] private SharedAudioSystem _audio = default!;
+        [Dependency] private StationSystem _stationSystem = default!;
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -102,6 +105,7 @@ namespace Content.Server.RoundEnd
 
         private CancellationTokenSource? _countdownTokenSource = null;
         private CancellationTokenSource? _cooldownTokenSource = null;
+        private bool _countdownRecallLocked;
         public TimeSpan? LastCountdownStart { get; set; } = null;
         public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
@@ -142,6 +146,7 @@ namespace Content.Server.RoundEnd
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
+            _countdownRecallLocked = false;
             SetAutoCallTime();
             _autoCalledBefore = false;
             RecallLocked = false; // Dumont
@@ -172,7 +177,7 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
-            return _cooldownTokenSource == null;
+            return _cooldownTokenSource == null && !_countdownRecallLocked;
         }
 
         public bool IsRoundEndRequested()
@@ -198,18 +203,27 @@ namespace Content.Server.RoundEnd
             RequestRoundEnd(duration, requester, checkCooldown, text, name, hasReason, reason);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "")
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "comms-console-announcement-title-centcom", bool hasReason = false, string reason = "", bool replaceExisting = false, bool allowRecall = true, Color? announcementColor = null, SoundSpecifier? announcementSound = null)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
+
+            var attempt = new EvacuationRequestAttemptEvent();
+            RaiseLocalEvent(ref attempt);
+            if (attempt.Cancelled) return;
 
             if (checkCooldown && _cooldownTokenSource != null)
                 return;
 
             if (_countdownTokenSource != null)
-                return;
+            {
+                if (!replaceExisting) return;
+                _countdownTokenSource.Cancel();
+                _countdownTokenSource = null;
+            }
 
             _countdownTokenSource = new();
+            _countdownRecallLocked = !allowRecall;
 
             if (requester != null)
             {
@@ -245,9 +259,9 @@ namespace Content.Server.RoundEnd
                 Loc.GetString(name),
                 false,
                 null,
-                Color.Gold);
+                announcementColor ?? Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg", Filter.Broadcast(), true);
+            _audio.PlayGlobal(announcementSound ?? new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg"), Filter.Broadcast(), true);
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -274,15 +288,15 @@ namespace Content.Server.RoundEnd
             }
         }
 
-        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, string name = "comms-console-announcement-title-centcom")
+        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, string name = "comms-console-announcement-title-centcom", bool announce = true)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
-            if (checkCooldown && _cooldownTokenSource != null) return;
-            if (checkCooldown && RecallLocked) return; // Dumont
+            if (checkCooldown && (_cooldownTokenSource != null || _countdownRecallLocked || RecallLocked)) return;
 
             if (_countdownTokenSource == null) return;
             _countdownTokenSource.Cancel();
             _countdownTokenSource = null;
+            _countdownRecallLocked = false;
 
             if (requester != null)
             {
@@ -293,10 +307,12 @@ namespace Content.Server.RoundEnd
                 _adminLogger.Add(LogType.ShuttleRecalled, LogImpact.High, $"Shuttle recalled");
             }
 
-            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
-                Loc.GetString(name), false, colorOverride: Color.Gold);
-
-            _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg", Filter.Broadcast(), true);
+            if (announce)
+            {
+                _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
+                    Loc.GetString(name), false, colorOverride: Color.Gold);
+                _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg", Filter.Broadcast(), true);
+            }
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
@@ -324,6 +340,9 @@ namespace Content.Server.RoundEnd
         public void EndRound(TimeSpan? countdownTime = null)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
+            var attempt = new RoundEndAttemptEvent();
+            RaiseLocalEvent(ref attempt);
+            if (attempt.Cancelled) return;
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);

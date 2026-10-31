@@ -40,6 +40,8 @@ namespace Content.Server.Communications
     [RegisterComponent]
     public sealed partial class CommunicationsConsoleComponent : SharedCommunicationsConsoleComponent
     {
+        [DataField] public string? NuclearCodes;
+
         public float UIUpdateAccumulator = 0f;
 
         /// <summary>

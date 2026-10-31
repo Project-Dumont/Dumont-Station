@@ -19,3 +19,38 @@
     icon:
       sprite: _White/Mobs/Aliens/Xenomorphs/larva.rsi
       state: xenomorph
+
+- type: entity
+  parent: BaseObjective
+  id: XenomorphEstablishPylonObjective
+  name: Establish a Pylon.
+  description: Capture an installation with a cluster to establish a Pylon for the hive.
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: objective-issuer-xenomorph-hive
+  - type: XenomorphHiveObjective
+
+- type: entity
+  parent: BaseObjective
+  id: XenomorphCorruptCommsObjective
+  name: Corrupt the human hive-mind and establish contact with the other sisters.
+  description: Help the Queen reach the station communications console. In ovipositor mode, she must corrupt it for three minutes.
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: objective-issuer-xenomorph-hive
+  - type: XenomorphHiveObjective
+    contact: true
+
+- type: entity
+  parent: BaseObjective
+  id: XenomorphHijackShuttleObjective
+  name: Invade the distant human fortress.
+  description: Help the Queen hijack a shuttle before the emergency shuttle reaches Central Command.
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: objective-issuer-xenomorph-hive
+  - type: XenomorphHiveObjective
+    hijack: true
