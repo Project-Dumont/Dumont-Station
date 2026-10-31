@@ -7,6 +7,12 @@
 - type: weightedRandom
   id: CentcommWeights
   weights:
-    "/Maps/_Dumont/Centcomms/summerComm.yml": 1
+    "/Maps/_Dumont/Centcomms/summerComm.yml": 0.1
     "/Maps/centcomm.yml": 1
-    "/Maps/_Dumont/Centcomms/oldComm.yml": 1
+    "/Maps/_Dumont/Centcomms/oldComm.yml": 0.5
+    "/Maps/_Dumont/Centcomms/centcomm_wiz": 1
+    "/Maps/_Dumont/Centcomms/centcomm_moff": 1
+    "/Maps/_Dumont/Centcomms/centcomm_corvax": 1
+    "/Maps/_Dumont/Centcomms/centcomm_cosmatic": 1
+    "/Maps/_Dumont/Centcomms/centcomm_harmony": 1
+    "/Maps/_Dumont/Centcomms/centcomm_starlight_beach": 1
