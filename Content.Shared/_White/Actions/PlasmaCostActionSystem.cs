@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Plasma;
@@ -7,15 +9,16 @@ using Content.Shared.Actions.Events;
 
 namespace Content.Shared._White.Actions;
 
-public sealed class PlasmaCostActionSystem : EntitySystem
+public sealed partial class PlasmaCostActionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedPlasmaSystem _plasma = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedPlasmaSystem _plasma = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<PlasmaCostActionComponent, ActionRelayedEvent<PlasmaAmountChangeEvent>>(OnPlasmaAmountChange);
         SubscribeLocalEvent<PlasmaCostActionComponent, ActionAttemptEvent>(OnActionAttempt); // Goobstation
+        SubscribeLocalEvent<PlasmaCostActionComponent, ActionPerformedEvent>(OnActionPerformed); // Dumont
     }
 
     /// <summary>
@@ -55,6 +58,14 @@ public sealed class PlasmaCostActionSystem : EntitySystem
     {
         _actions.SetEnabled(uid, component.PlasmaCost <= args.Args.Amount);
     }
+
+    // Dumont start
+    private void OnActionPerformed(Entity<PlasmaCostActionComponent> ent, ref ActionPerformedEvent args)
+    {
+        if (ent.Comp.ShouldChangePlasma)
+            DeductPlasma(args.Performer, ent.Comp.PlasmaCost);
+    }
+    // Dumont end
 
     private void OnActionAttempt(Entity<PlasmaCostActionComponent> ent, ref ActionAttemptEvent args)
     {

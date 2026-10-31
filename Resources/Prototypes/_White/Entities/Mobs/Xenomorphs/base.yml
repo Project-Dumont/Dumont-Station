@@ -65,14 +65,13 @@
       Dead: XenomorphDead
   - type: SlowOnDamage
     speedModifierThresholds:
-      105: 0.9
-      125: 0.7
-      150: 0.6
+      125: 0.9
+      150: 0.8
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Xenomorph
   - type: Stamina
-    critThreshold: 500
+    critThreshold: 200 # Dumont
 #  - type: Fixtures # Orion-Edit
 #    fixtures:
 #      fix1:
@@ -101,18 +100,20 @@
       collection: AlienClaw
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 25
+      types: # Dumont
+        Blunt: 5
+        Slash: 10
+        Piercing: 10
   - type: TypingIndicator
     proto: alien
   - type: AtmosExposed
   - type: Temperature
     heatDamageThreshold: 600
-    coldDamageThreshold: -150
+    coldDamageThreshold: 100 # Dumont
     currentTemperature: 310.15
     coldDamage: #per second, scales with temperature & other constants
       types:
-        Cold : 0.1
+        Cold: 0.25
     specificHeat: 42
     heatDamage: #per second, scales with temperature & other constants
       types:
@@ -160,7 +161,7 @@
   abstract: true
   components:
   - type: Prying #Switched from Tools component to this
-    speedModifier: 1.5
+    speedModifier: 5 # Dumont
     pryPowered: true
   - type: ComplexInteraction
   - type: Hands
@@ -190,6 +191,20 @@
     - DoorBumpOpener
     - FootstepSound
   - type: XenomorphShoveTracker
+    shoveThreshold: 3
+    knockdownDuration: 7
+  # Dumont start
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    baseWeightlessAcceleration: 1.7
+    baseWeightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepXenomorph
+      params:
+        volume: -6
+  # Dumont end
 
 - type: entity
   id: BaseMobXenomorphDungeon
