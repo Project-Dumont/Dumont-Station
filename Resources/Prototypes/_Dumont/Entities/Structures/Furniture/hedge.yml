@@ -1,0 +1,36 @@
+- type: entity
+  id: Hedge
+  parent: TableBase
+  name: hedge
+  description: Just some leaves in a pot.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Furniture/hedge.rsi
+  - type: Icon
+    sprite: _Dumont/Structures/Furniture/hedge.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+  - type: IconSmooth
+    key: metaltable
+    base: state_
+  - type: Tag # goob edit
+    tags:
+    - Hedge
+  - type: SecretStash
+    tryInsertItemSound: /Audio/Effects/plant_rustle.ogg
+    tryRemoveItemSound: /Audio/Effects/plant_rustle.ogg
+    secretStashName: secret-stash-plant
