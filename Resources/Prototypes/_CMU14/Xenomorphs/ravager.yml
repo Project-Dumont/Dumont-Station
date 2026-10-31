@@ -1,0 +1,51 @@
+- type: entity
+  id: DumontXenomorphEmpowerEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_empower.rsi
+    state: empower
+    noRot: true
+    drawdepth: Effects
+
+- type: entity
+  parent: DumontXenomorphEmpowerEffect
+  id: DumontXenomorphSuperEmpowerEffect
+  components:
+  - type: TimedDespawn
+    lifetime: 6.5
+  - type: Sprite
+    color: "#FF000080"
+
+- type: entity
+  id: DumontXenomorphEmpowerTelegraph
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_telegraph.rsi
+    state: xeno_telegraph_base
+    color: "#A50824"
+    noRot: true
+    drawdepth: Effects
+
+- type: entity
+  parent: DumontXenomorphEmpowerTelegraph
+  id: DumontXenomorphScissorTelegraph
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+
+- type: entity
+  id: DumontXenomorphRavagerShield
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_shield.rsi
+    state: shield
+    color: "#FF8080"
+    noRot: true
+    drawdepth: Effects

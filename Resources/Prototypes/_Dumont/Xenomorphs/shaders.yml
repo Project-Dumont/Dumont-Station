@@ -1,0 +1,9 @@
+- type: shader
+  id: DumontXenomorphAura
+  kind: source
+  path: /Textures/Shaders/outline.swsl
+  params:
+    outline_color: "#000000FF"
+    light_boost: 4.0
+    light_gamma: 1.0
+    light_whitepoint: 1.0

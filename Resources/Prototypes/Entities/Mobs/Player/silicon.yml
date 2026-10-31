@@ -330,6 +330,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: WarpPoint
   - type: Fixtures
     fixtures:

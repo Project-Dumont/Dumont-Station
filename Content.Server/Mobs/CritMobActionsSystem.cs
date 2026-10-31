@@ -24,6 +24,7 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.Chat; // Einstein Engines - Languages
 using Content.Shared._ES.DeathCutscene;
 using Content.Shared._White.Xenomorphs.Infection;
+using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Prototypes;
@@ -35,12 +36,12 @@ namespace Content.Server.Mobs;
 /// </summary>
 public sealed partial class CritMobActionsSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly DeathgaspSystem _deathgasp = default!;
-    [Dependency] private readonly IServerConsoleHost _host = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private DeathgaspSystem _deathgasp = default!;
+    [Dependency] private IServerConsoleHost _host = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private QuickDialogSystem _quickDialog = default!;
     [Dependency] private MobThresholdSystem _mobThreshold = default!;
     [Dependency] private SharedSuicideSystem _suicide = default!;
 
@@ -59,14 +60,8 @@ public sealed partial class CritMobActionsSystem : EntitySystem
 
     private void OnSuccumb(EntityUid uid, MobStateActionsComponent component, CritSuccumbEvent args)
     {
-        if (!TryComp<ActorComponent>(uid, out var actor) || !_mobState.IsCritical(uid))
+        if (!TryComp<ActorComponent>(uid, out var actor) || !_mobState.IsCritical(uid) || HasComp<XenomorphLarvaVictimComponent>(uid))
             return;
-
-        // Goobstation
-        PreventLarvaHostDeath(uid, actor, args);
-        if (args.Handled)
-            return;
-        // END
 
         Succumb(uid, actor);
         args.Handled = true;

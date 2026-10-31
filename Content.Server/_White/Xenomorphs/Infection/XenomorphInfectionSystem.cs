@@ -1,6 +1,11 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server._CMU14.Xenomorphs;
+using Content.Server._Dumont.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.Body.Events;
+using Content.Shared.Mind;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Containers;
@@ -9,13 +14,19 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._White.Xenomorphs.Infection;
 
-public sealed class XenomorphInfectionSystem : EntitySystem
+public sealed partial class XenomorphInfectionSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly SharedEntityEffectSystem _effect = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedEntityEffectSystem _effect = default!;
+
+    [Dependency] private XenomorphLineageSystem _lineage = default!;
+
+    // Dumont start
+    [Dependency] private SharedMindSystem _mind = default!;
+    // Dumont end
 
     public override void Initialize()
     {
@@ -40,6 +51,7 @@ public sealed class XenomorphInfectionSystem : EntitySystem
         Dirty(args.Body, xenomorphInfected);
 
         component.Infected = args.Body;
+        component.Lineage = _lineage.GetLineage(args.Body);
     }
 
     private void OnOrganRemovedFromBody(EntityUid uid, XenomorphInfectionComponent component, OrganRemovedFromBodyEvent args)
@@ -61,7 +73,10 @@ public sealed class XenomorphInfectionSystem : EntitySystem
             if (!infection.Infected.HasValue || infection.GrowthStage >= infection.MaxGrowthStage || time < infection.NextPointsAt)
                 continue;
 
-            infection.NextPointsAt = time + infection.GrowTime;
+            // Dumont start
+            var growTime = _mobState.IsCritical(infection.Infected.Value) ? infection.GrowTime * 2 : infection.GrowTime;
+            infection.NextPointsAt = time + growTime;
+            // Dumont end
 
             if (_mobState.IsDead(infection.Infected.Value) || !_random.Prob(infection.GrowProb))
                 continue;
@@ -89,7 +104,8 @@ public sealed class XenomorphInfectionSystem : EntitySystem
                 continue;
             }
 
-            var larva = Spawn(infection.LarvaPrototype);
+            var larva = Spawn(infection.LarvaPrototype, Transform(infection.Infected.Value).Coordinates);
+            EnsureComp<XenomorphLineageComponent>(larva).Lineage = infection.Lineage;
 
             var larvaComponent = EnsureComp<XenomorphLarvaComponent>(larva);
             larvaComponent.Victim = infection.Infected.Value;
@@ -103,6 +119,17 @@ public sealed class XenomorphInfectionSystem : EntitySystem
 
             _container.Remove(uid, container);
             _container.Insert(larva, container);
+
+            // Dumont start
+            if (infection.SourceMindId is { } mindId && HasComp<MindComponent>(mindId))
+            {
+                _mind.TransferTo(mindId, larva);
+                _mind.UnVisit(mindId);
+                var mind = Comp<MindComponent>(mindId);
+                mind.OriginalOwnedEntity = GetNetEntity(larva);
+                Dirty(mindId, mind);
+            }
+            // Dumont end
 
             QueueDel(uid);
         }

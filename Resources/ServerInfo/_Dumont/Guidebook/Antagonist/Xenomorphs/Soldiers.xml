@@ -1,0 +1,119 @@
+<Document>
+# T2 — Soldados da Colmeia
+
+Quatro vagas compartilhadas, ampliadas para seis depois de estabelecer o Pilone. O limite inclui todas as variantes deste nível.
+
+## Espreitador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMULurker" Caption="Espreitador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Emboscador com camuflagem, bote e golpe incapacitante. A camuflagem é temporária e atacar revela sua posição. O bote derruba se você ainda estiver invisível no impacto; não conte com a derrubada ao saltar já exposto. O golpe incapacitante ajuda a impedir a fuga depois da emboscada.
+
+## Espreitador vampiro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUVampireLurker" Caption="Espreitador vampiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Luta de perto para se recuperar. Avanço fecha a distância; Frenesi atinge uma faixa à frente e cura conforme as vítimas. A estocada de cauda desacelera e agrava colisões contra paredes. Mordida craniana executa vítimas críticas ou inconscientes, mas não deve destruir hospedeiros infectados. Suas curas ofensivas não funcionam enquanto estiver em chamas.
+
+## Guerreiro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Guerreiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Combatente de captura e deslocamento. Investida fecha a distância e agarra; manter o agarrão conserva a imobilização. Soco empurra e desacelera, enquanto Arremessar afasta o inimigo ou o leva até os outros xenos. Não usa reserva de plasma, então não recebe o interferência de rádio.
+
+## Guerreiro encouraçado
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUBulwarkWarrior" Caption="Guerreiro encouraçado" Scale="1.5" Interactive="false"/>
+</Box>
+
+Defende a linha com placas abertas ou fechadas. Fechá-las melhora a proteção frontal e a resistência a derrubadas, mas reduz mobilidade e dano. Golpe de placas muda com a postura; o giro de cauda exige placas abertas e afasta granadas. Com placas fechadas, o escudo refletor pode devolver balas e lasers, sem garantir imunidade.
+
+## Cuspidor
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUSpitter" Caption="Cuspidor" Scale="1.5" Interactive="false"/>
+</Box>
+
+Atacante de ácido a média distância. Usa cuspe ácido, carrega o próximo cuspe para fortalecer o ataque e cria uma linha corrosiva com Jato de ácido. O jato também fortalece a corrosão do cuspe carregado no alvo. Cauda corrosiva ajuda quando o inimigo chega perto. Mantenha espaço para mirar e recuar.
+
+## Cuspidor caçador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUVenatorSpitter" Caption="Cuspidor caçador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Pressão corrosiva por cuspe, glóbulo e sopro enzimático, espalhando poças pelo piso. O glóbulo é mais forte contra uma vítima já coberta de ácido. Armazenar ácido prepara cargas para disparos consecutivos, mas reduz sua proteção e aumenta o dano recebido. Não acumule cargas na frente sem cobertura.
+
+## Touro
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUBull" Caption="Touro" Scale="1.5" Interactive="false"/>
+</Box>
+
+Abre a linha ganhando impulso em movimento reto. Ativar carga exige continuar avançando; virar ou parar perde o impulso e a corrida consome plasma. Escolha entre empurrar sem parar, terminar em cabeçada que derruba ou empalar para ferir e desacelerar. O ataque de cauda continua disponível fora da carga.
+
+## Senhor da Colmeia
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUHivelord" Caption="Senhor da Colmeia" Scale="1.5" Interactive="false"/>
+</Box>
+
+Construtor avançado e distribuidor de plasma. Ergue resina mais resistente, usa Caminhar pela resina para se deslocar pelo território e canaliza plasma para xenos à distância. O movimento acelerado consome plasma continuamente. Sustenta obras e ajuda a recuperar uma frente depois do combate.
+
+## Senhor da Resina
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUResinWhispererHivelord" Caption="Senhor da Resina" Scale="1.5" Interactive="false"/>
+</Box>
+
+Constrói à distância. Precisa estar sobre resina e manter alcance e visão do local para moldar estruturas remotas. Conserva a transferência de plasma, o movimento acelerado sobre resina e a visão de longo alcance. Apoia a frente sem precisar se expor junto dos combatentes.
+
+## Arquiteto da Colmeia
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDesignerHivelord" Caption="Arquiteto da Colmeia" Scale="1.5" Interactive="false"/>
+</Box>
+
+Planeja paredes e portas. Projetos otimizados reduzem tempo; flexíveis reduzem custo; cooperativos permitem contribuições de outro xeno. Pode apagar projetos, reforçar resina e consumi-los numa grande onda que cria paredes refletoras temporárias. As paredes refletoras atuam contra balas e lasers.
+
+## Carregador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUCarrier" Caption="Carregador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Transporta ovos e parasitas faciais e prepara emboscadas em cavidades de resina. Retira, lança, guarda e reserva parasitas faciais; os excedentes da reserva podem ser assumidos por fantasmas. Monte armadilhas nas rotas da tripulação e abasteça novas áreas com ovos. Também possui construção do ninho.
+
+## Carregador de ovos
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUEggsacCarrier" Caption="Carregador de ovos" Scale="1.5" Interactive="false"/>
+</Box>
+
+Variante de produção de ovos. Transporta ovos e pode gerar novos continuamente, consumindo plasma enquanto houver espaço no armazenamento. A produção pausa quando o estoque fica cheio. Seu conjunto difere do armazenamento e lançamento de parasitas faciais do Carregador comum.
+
+## Escavador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUBurrower" Caption="Escavador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Deslocamento subterrâneo. Escavar permite entrar no subsolo e escolher onde emergir; Tremor imobiliza inimigos próximos. Cria entradas ligadas por uma rede de túneis, com recarga de dois minutos para escavar uma nova entrada. Também prepara cavidades de resina e carrega cavidades vazias com ácido. Use a rede para flanquear e retirar xenos.
+
+## Ceifador
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUReaper" Caption="Ceifador" Scale="1.5" Interactive="false"/>
+</Box>
+
+Converte carne em apoio e controle de terreno. Colher carne exige um cadáver humanoide já irrecuperável e só funciona uma vez por corpo; estar parcialmente apodrecido ainda pode não bastar. Arrancar carne obtém recurso de um inimigo vivo. Gasta resina de carne em flora carnívora, gás vermelho e Manto de carniça, que protege um xeno com escudo e resistência temporária.
+
+[textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
+</Document>

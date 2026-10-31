@@ -36,6 +36,8 @@
   name: rack
   description: A rack for storing things on.
   components:
+  - type: XenomorphRavagerObstacle
+    assault: true
   - type: MeleeSound
     soundGroups:
       Brute:

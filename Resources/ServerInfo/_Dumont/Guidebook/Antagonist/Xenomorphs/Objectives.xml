@@ -1,0 +1,134 @@
+<Document>
+# Objetivos da colmeia
+
+## 1. Sobreviva e estabeleça a base
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphLarva" Caption="Proteja os novos xenos" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontHiveCore" Caption="Estabeleça o núcleo" Scale="2" Interactive="false"/>
+</Box>
+
+Sobreviver continua sendo parte da missão. Protejam larvas, hospedeiros e construtores. Um núcleo e uma rota defendida de resina permitem preparar o primeiro objetivo de conquista.
+
+[textlink="Aprenda a colocar e concluir projetos." link="XenomorphStructures"]
+
+## 2. Estabeleça um Pilone
+
+<Box>
+<GuideEntityEmbed Entity="DumontHiveCluster" Caption="Construa um Aglomerado" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="DumontHivePylon" Caption="Capture para virar Pilone" Scale="2" Interactive="false"/>
+</Box>
+
+A colmeia pode manter quatro Aglomerados e um Pilone. A resina do Aglomerado precisa alcançar o piso de [bold]um[/bold] destes três tipos de alvo, na mesma área da estação:
+
+<Box>
+<GuideEntityEmbed Entity="NuclearBomb" Caption="Bomba nuclear da estação" Scale="1.5" Interactive="false"/>
+<GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption="Núcleo da IA" Scale="1.5" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideDepartmentBeacon" Caption="Sinalizador departamental" Scale="2" Interactive="false"/>
+</Box>
+
+- [bold]Bomba nuclear da estação:[/bold] a bomba da própria estação, ancorada.
+
+- [bold]Núcleo da IA:[/bold] o núcleo físico ancorado, não um borg ou holograma.
+
+- [bold]Sinalizador departamental:[/bold] um sinalizador de departamento aceito para captura. Um sinalizador genérico qualquer não garante um alvo válido.
+
+### Onde estão os sinalizadores?
+
+[bold][color=#FFBF00]Os sinalizadores são invisíveis durante o jogo normal, escondidos sob o piso.[/color][/bold] A imagem é uma referência do dispositivo, não um marcador visível esperando por você.
+
+Eles normalmente ficam no começo ou perto da entrada do departamento, mas a posição depende do mapa. Vocês podem precisar [bold]dominar um departamento inteiro e cobri-lo com resina[/bold], ou ter a sorte de encontrar a posição do sinalizador. Espalhem território e protejam a área; não dependam de enxergar o alvo para planejar.
+
+Quando a resina de um Aglomerado alcança um alvo válido e a captura está liberada, a colmeia recebe um aviso com a localização aproximada. Examinar o Aglomerado também ajuda a conferir se encontrou uma instalação.
+
+### Quando a captura é liberada?
+
+Depois de [bold]20 minutos desde a chegada dos xenomorfos à partida[/bold], a colmeia recebe o aviso. Não é necessariamente o minuto 20 do relógio da rodada: a infestação pode ter começado depois.
+
+### Como capturar
+
+1. Construa e conclua um Aglomerado cuja resina possa alcançar um dos alvos.
+
+2. Aguarde a liberação da captura e o contato da resina com o alvo.
+
+3. Um [bold]construtor[/bold] deve se aproximar e clicar no Aglomerado, ou usar a opção de capturar no menu de interação. Não é exclusivo da Rainha.
+
+4. Proteja esse xeno por [bold]um minuto[/bold]. Movimento, dano, perda de contato da resina ou outras condições inválidas interrompem a captura.
+
+5. Ao terminar, o Aglomerado se transforma em Pilone e a colmeia recebe a confirmação.
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Um construtor captura" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Os demais defendem" Scale="2" Interactive="false"/>
+</Box>
+
+### O que muda com o Pilone?
+
+- O objetivo de estabelecer um Pilone é concluído.
+
+- As vagas de Soldados da Colmeia passam de quatro para seis.
+
+- Uma segunda vaga de Guarda Real é liberada, com aviso à colmeia.
+
+- O objetivo do console de comunicações fica disponível. Cerca de vinte segundos depois, chega outro aviso de que a colmeia já pode procurar a mente-colmeia humana.
+
+- A Central de Comando alerta a tripulação e envia os códigos de detonação nuclear aos consoles de comunicação. A estação passa a ter um motivo urgente para reagir.
+
+[bold]Defendam a conquista.[/bold] O Pilone não produz bônus ou geleia real. Aqui ele permite avançar nos objetivos e amplia a capacidade da colmeia.
+
+## 3. Corrompa a mente-colmeia humana
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Escolte a Rainha" Scale="1.4" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerComms" Caption="Console de comunicações da estação" Scale="2" Interactive="false"/>
+</Box>
+
+[bold]Só a Rainha inicia essa etapa, e um Pilone já deve ter sido estabelecido.[/bold] O alvo é um console de comunicações da estação, ancorado e capaz de chamar a nave de emergência. Não é um terminal de monitoramento, console de navegação ou console global da Central.
+
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Mantenha o ovipositor" Scale="2" Interactive="false"/>
+</Box>
+
+### O que interrompe a interferência?
+
+Depois de iniciada, só termina sem sucesso se a Rainha [bold]morrer, sair do ovipositor ou cancelar voluntariamente[/bold]. Dano, atordoamento e a destruição do console não desfazem o vínculo já estabelecido. A Rainha não fica invulnerável: mantenham a defesa e a recuperação.
+
+Para cancelar, a Rainha pode clicar novamente no console durante a interferência ou usar a opção de cancelamento no próprio menu de interação.
+
+### Vitória da colmeia
+
+Se a canalização terminar com sucesso, a colmeia estabelece contato e alcança sua [bold]vitória maior[/bold].
+
+## Alternativa: Sequestro de nave e invasão da Central de Comando
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Proteja a Rainha" Scale="1.4" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerShuttle" Caption="Tome o console da nave" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Fixe o ovipositor a bordo" Scale="2" Interactive="false"/>
+</Box>
+
+Se a nave de emergência [bold]atracar na estação antes da interferência nas comunicações ser concluída[/bold], o objetivo da mente-colmeia humana é bloqueado. A Rainha anuncia a nova missão: reunir os xenos e alcançar a fortaleza humana distante. Essa rota alternativa [bold]não exige um Pilone[/bold].
+
+### Como tomar a nave
+
+1. Reúnam os xenos em [bold]outra nave[/bold]. A própria nave de emergência não pode ser tomada.
+
+2. A Rainha deve fixar o [bold]ovipositor a bordo[/bold], perto de um console de controle da nave ancorado. A nave não pode estar viajando.
+
+3. [bold]Clique no console da nave[/bold] para iniciar uma canalização de [bold]120 segundos[/bold]. Protejam a Rainha: ela deve permanecer viva, fixada e próxima do console. Clicar novamente cancela a tentativa.
+
+4. Ao concluir, a nave parte para a Central de Comando. A viagem leva [bold]três minutos[/bold] e termina com uma colisão na entrada da instalação. Preparem-se para desembarcar e combater!
+
+[bold][color=#FFBF00]Iniciem a canalização antes que a evac chegue à Central de Comando.[/color][/bold] A evac leva apenas um minuto de viagem após partir da estação. Se ninguém começar o Sequestro de nave a tempo, a janela de invasão fecha. Uma tentativa já em andamento pode terminar depois da chegada da evac.
+
+### Resultados da invasão
+
+- [bold]Vitória menor dos xenos:[/bold] a nave tomada chega à Central com pelo menos um xeno vivo a bordo.
+
+- [bold]Vitória menor da tripulação:[/bold] tripulantes escapam vivos pela evac e os xenos não conseguem invadir a Central.
+
+- [bold]Vitória maior da tripulação:[/bold] todos os xenos são eliminados, inclusive se isso acontecer depois da invasão.
+
+A chegada da evac à Central não encerra imediatamente a rodada quando o Sequestro de nave já está em andamento. A colmeia ainda pode chegar para o combate final. Fiquem atentos aos avisos vermelhos de explosão: eles aparecem cinco segundos antes da detonação, que espalha fogo pela área.
+</Document>

@@ -1,0 +1,47 @@
+<Document>
+# Xenomorfos
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Construa" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Una a colmeia" Scale="1.4" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Proteja" Scale="2" Interactive="false"/>
+</Box>
+
+Vocês são xenos da mesma colmeia. Sobrevivam, obtenham novos hospedeiros e transformem a estação em território xenomorfo.
+
+## O mais importante
+
+[bold][color=#b56dd6]Protejam a Rainha e mantenham uma rota de retirada até o ninho.[/color][/bold] Não troquem a sobrevivência da colmeia por uma perseguição solitária. Capturem hospedeiros, ajudem xenos feridos e avisem sobre ameaças na mente-colmeia.
+
+## Objetivos da colmeia
+
+<Box>
+<GuideEntityEmbed Entity="DumontHivePylon" Caption="Estabeleça um Pilone" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerComms" Caption="Alcance a mente-colmeia humana" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerShuttle" Caption="Sequestro de nave: invada a Central" Scale="2" Interactive="false"/>
+</Box>
+
+- [bold]Mantenha-se vivo.[/bold] Um xeno vivo pode defender o ninho, evoluir e continuar a reprodução.
+
+- [bold]Estabeleça um Pilone.[/bold] Um Aglomerado precisa alcançar um alvo válido com sua resina e ser capturado por um construtor.
+
+- [bold]Corrompa a mente-colmeia humana e estabeleça contato com os outros xenos.[/bold] Depois do Pilone, ajudem a Rainha a chegar ao console de comunicações da estação.
+
+- [bold]Sequestro de nave: invada a fortaleza humana.[/bold] Se a evac atracar antes da conclusão do objetivo das comunicações, ajudem a Rainha a tomar outra nave. Chegar à Central de Comando com xenos vivos garante uma vitória menor.
+
+[textlink="Veja os requisitos e o passo a passo dos objetivos." link="XenomorphObjectives"]
+
+## Por onde começar
+
+- [textlink="Como jogar: comunicação, plasma e sobrevivência." link="XenomorphPlayGuide"]
+
+- [textlink="Ciclo de vida: todas as castas e as rotas até a Rainha." link="XenomorphClasses"]
+
+- [textlink="Estruturas: resina, ninho, núcleo e apoio à colmeia." link="XenomorphStructures"]
+
+- [textlink="Objetivos: Aglomerado, Pilone, comunicações e Sequestro de nave." link="XenomorphObjectives"]
+
+## Se você está enfrentando a colmeia
+
+Não persiga um xeno sozinho até um corredor coberto de resina: pode ser uma emboscada. Resgate hospedeiros antes da eclosão e procure ajuda médica para remover a larva. Cortar rotas e destruir estruturas de apoio enfraquece a colmeia. A morte da Rainha abre uma janela de dez minutos antes que outra possa surgir; não encerra a infestação automaticamente.
+</Document>

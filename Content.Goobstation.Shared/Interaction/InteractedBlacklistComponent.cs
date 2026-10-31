@@ -1,4 +1,6 @@
-﻿using Content.Shared.Whitelist;
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Shared.Interaction;
@@ -10,4 +12,7 @@ public sealed partial class InteractedBlacklistComponent : Component
 {
     [DataField(required: true), AutoNetworkedField]
     public EntityWhitelist? Blacklist;
+
+    [DataField, AutoNetworkedField]
+    public EntityWhitelist? Exceptions;
 }

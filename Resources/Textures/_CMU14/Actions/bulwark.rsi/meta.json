@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ported action sprites from CMSS13 PRs #11128, #10541, #9741, and #6610.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bulwark_encased_plates"
+    },
+    {
+      "name": "bulwark_plate_bash"
+    },
+    {
+      "name": "bulwark_tail_swing"
+    },
+    {
+      "name": "bulwark_reflective_shield"
+    }
+  ]
+}

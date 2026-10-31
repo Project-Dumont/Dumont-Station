@@ -25,14 +25,14 @@ namespace Content.Trauma.Client.AudioMuffle;
 
 public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
 {
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private PhysicsSystem _physics = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
 
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private static EntityQuery<GhostComponent> _ghostQuery;
     private static EntityQuery<SpectralComponent> _spectralQuery;
@@ -583,6 +583,9 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         float distance,
         EntityUid? ignoredEnt)
     {
+        if (distance <= 0f)
+            return 0f;
+
         var rayLength = MathF.Min(distance, _maxRayLength);
         var ray = new CollisionRay(listener.Position, delta / distance, _audio.OcclusionCollisionMask);
 

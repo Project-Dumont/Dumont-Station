@@ -1,0 +1,504 @@
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaDrone
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 1000
+      maxPlasma: 1000
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+    - ActionTransferPlasma
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaRunner
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaDefender
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 100
+      maxPlasma: 100
+      plasmaPerSecondOnWeed: 5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaSentinel
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 400
+      maxPlasma: 400
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaLurker
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 400
+      maxPlasma: 400
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaWarrior
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaSpitter
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 600
+      maxPlasma: 600
+      plasmaPerSecondOnWeed: 4
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaBull
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 340
+      maxPlasma: 340
+      plasmaPerSecondOnWeed: 8
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaHivelord
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 1000
+      maxPlasma: 1000
+      plasmaPerSecondOnWeed: 5.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaCarrier
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 500
+      maxPlasma: 500
+      plasmaPerSecondOnWeed: 3.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaBurrower
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 600
+      maxPlasma: 600
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaReaper
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 900
+      maxPlasma: 900
+      plasmaPerSecondOnWeed: 4
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaCrusher
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 400
+      maxPlasma: 400
+      plasmaPerSecondOnWeed: 4
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaRavager
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 300
+      maxPlasma: 300
+      plasmaPerSecondOnWeed: 5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaBoiler
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 400
+      maxPlasma: 400
+      plasmaPerSecondOnWeed: 7
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaDespoiler
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 500
+      maxPlasma: 500
+      plasmaPerSecondOnWeed: 4
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaPraetorian
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaQueen
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 1000
+      maxPlasma: 1000
+      plasmaPerSecondOnWeed: 4
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaHealerDrone
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 1000
+      maxPlasma: 1000
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+    - ActionXenomorphHealerTransferPlasma
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaGardenerDrone
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 1000
+      maxPlasma: 1000
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+    - ActionTransferPlasma
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaHeatshieldDefender
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 100
+      maxPlasma: 100
+      plasmaPerSecondOnWeed: 5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaAciderRunner
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaToxicSentinel
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 600
+      maxPlasma: 600
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaVenatorSpitter
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 600
+      maxPlasma: 600
+      plasmaPerSecondOnWeed: 4.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaEggsacCarrier
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 500
+      maxPlasma: 500
+      plasmaPerSecondOnWeed: 3.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaBulwarkWarrior
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaVampireLurker
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaResinWhispererHivelord
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 5.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaDesignerHivelord
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 700
+      maxPlasma: 700
+      plasmaPerSecondOnWeed: 5.5
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions:
+    - ActionXenomorphPlantWeeds
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaHedgehogRavager
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 0
+      maxPlasma: 0
+      plasmaPerSecondOnWeed: 0
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaBerserkerRavager
+  components:
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaDancerPraetorian
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaVanguardPraetorian
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaOppressorPraetorian
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphPlasmaVessel
+  id: OrganXenomorphCMUPlasmaValkyriePraetorian
+  components:
+  - type: Organ
+    onAdd:
+    - type: PlasmaVessel
+      plasma: 800
+      maxPlasma: 800
+      plasmaPerSecondOnWeed: 3
+      plasmaPerSecondOffWeed: 0.5
+  - type: OrganActions
+    actions: []
+- type: entity
+  parent: OrganXenomorphEggSack
+  id: OrganXenomorphCMUEggSack
+  components:
+  - type: OrganActions
+    actions: []
+
+- type: entity
+  parent: OrganXenomorphResinSpinner
+  id: OrganXenomorphCMUResinSpinner
+  components:
+  - type: Organ
+    onAdd:
+    - type: XenomorphConstruction
+  - type: OrganActions
+    actions:
+    - ActionXenomorphChooseResin
+    - ActionXenomorphSecreteResin
+
+- type: entity
+  parent: OrganXenomorphAcidGland
+  id: OrganXenomorphCMUAcidGland
+  components:
+  - type: Organ
+    onAdd:
+    - type: XenomorphAcid
+      acidId: DumontXenomorphCorrosiveAcidEffect
+      damagePerSecond:
+        types:
+          Caustic: 20
+          Heat: 20
+  - type: OrganActions
+    actions:
+    - ActionXenomorphCorrosiveAcid
+
+- type: entity
+  parent: OrganXenomorphCMUResinSpinner
+  id: OrganXenomorphCMURemoteResinSpinner
+  components:
+  - type: Organ
+    onAdd: []
+  - type: OrganActions
+    actions: []

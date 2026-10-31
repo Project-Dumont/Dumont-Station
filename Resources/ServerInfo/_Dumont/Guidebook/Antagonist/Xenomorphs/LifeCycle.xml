@@ -1,0 +1,94 @@
+<Document>
+# O ciclo de vida do xenomorfo
+
+<Box>
+<GuideEntityEmbed Entity="XenomorphEgg" Caption="Ovo" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphFaceHugger" Caption="Parasita facial" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphLarva" Caption="Larva" Scale="2" Interactive="false"/>
+</Box>
+
+Um parasita facial infecta um hospedeiro. A larva cresce dentro dele até emergir e integrar a colmeia. A espécie desse hospedeiro define a [bold]linhagem[/bold] do novo xeno, preservada nas evoluções seguintes.
+
+Sobreviva até completar o contador e selecione uma forma disponível em Evoluir. Variantes como Operário curandeiro e Pretoriano dançarino têm habilidades próprias, mas pertencem à casta-base de sua família para a progressão da linhagem.
+
+## Hierarquia e vagas
+
+- [bold]T1 — Prole da Colmeia:[/bold] sem limite de vagas.
+
+- [bold]T2 — Soldados da Colmeia:[/bold] quatro vagas; passam a seis após capturar um Aglomerado e estabelecer o Pilone.
+
+- [bold]T3 — Guardas Reais:[/bold] uma vaga; o Pilone libera a segunda.
+
+- [bold]Rainha:[/bold] apenas uma viva. Se morrer, outra pode surgir depois de dez minutos, desde que haja um Guarda Real pronto para evoluir.
+
+Os limites são compartilhados por nível, não por casta. Um Esmagador já ocupa uma vaga de Guarda Real, assim como um Pretoriano. Uma vaga livre não altera as escolhas da linhagem.
+
+## Conheça todas as castas
+
+- [textlink="Rainha: ovipositor, comando, líderes e objetivo final." link="XenomorphQueen"]
+
+- [textlink="T3: Esmagador, Devastador, Bombardeiro, Profanador, Pretoriano e variantes." link="XenomorphRoyalGuards"]
+
+- [textlink="T2: Espreitador, Guerreiro, Cuspidor, Touro, Senhor da Colmeia, Carregador, Escavador, Ceifador e variantes." link="XenomorphSoldiers"]
+
+- [textlink="T1: Operário, Corredor, Defensor, Sentinela e variantes." link="XenomorphProle"]
+
+## Um caminho até a Rainha
+
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Operário" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphCMUHivelord" Caption="Senhor da Colmeia" Scale="2" Interactive="false"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="MobXenomorphCMUPraetorian" Caption="Pretoriano" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Rainha" Scale="1.4" Interactive="false"/>
+</Box>
+
+Na linhagem humana, uma rota é [bold]Larva → Operário → Senhor da Colmeia → Pretoriano → Rainha[/bold]. Também é possível chegar a Pretoriano por Corredor → Espreitador ou Sentinela → Cuspidor dessa linhagem. Qualquer Guarda Real (T3), incluindo suas variantes, pode evoluir para Rainha, independentemente da linhagem.
+
+## Rotas por hospedeiro
+
+[bold]Humanos e espécies sem uma rota específica[/bold]
+
+- Larva → Corredor → Espreitador → Pretoriano ou variantes → Rainha.
+
+- Larva → Sentinela → Cuspidor → Pretoriano ou variantes → Rainha.
+
+- Larva → Operário → Senhor da Colmeia → Pretoriano ou variantes → Rainha.
+
+[bold]Oni[/bold]
+
+- Larva → Defensor ou Defensor incendiário → Touro → Esmagador → Rainha.
+
+[bold]Rodentia, Resomi, Dwarf e Shadowkin[/bold]
+
+- Larva → Corredor ou Corredor ácido → Cuspidor, Cuspidor caçador ou Escavador.
+
+- A família Cuspidor segue para Bombardeiro e depois para Rainha; Escavador encerra essa rota.
+
+[bold]Arachnid, Reptilian e Chitinid[/bold]
+
+- Larva → Operário → Ceifador, Carregador ou Carregador de ovos.
+
+- Ceifador segue para Profanador e depois para Rainha; as opções Carregador encerram essa rota.
+
+[bold]Plasmaman, Vox e SlimePerson[/bold]
+
+- Larva → Sentinela ou Sentinela tóxico → Cuspidor, Cuspidor caçador, Senhor da Colmeia ou Senhor da Resina.
+
+- A família Cuspidor segue para Bombardeiro e depois para Rainha; Senhor da Colmeia encerra essa rota.
+
+[bold]Feroxi, Yowie e Harpy[/bold]
+
+- Larva → Defensor → Guerreiro, Guerreiro encouraçado ou Senhor da Colmeia.
+
+- A família Guerreiro segue para Devastador, Devastador espinhoso ou Devastador furioso, que podem evoluir para Rainha; Senhor da Colmeia encerra essa rota.
+
+[bold]Vulpkanin, Daengati e Tajaran[/bold]
+
+- Larva → Operário, Operário curandeiro ou Operário jardineiro → Espreitador, Espreitador vampiro, Senhor da Colmeia ou Arquiteto da Colmeia.
+
+- A família Espreitador segue para Devastador e depois para Rainha; as opções Senhor da Colmeia encerram essa rota.
+
+[bold]Planejem a sucessão.[/bold] Qualquer Guarda Real pode se tornar Rainha, mas nem toda rota de evolução alcança T3. O menu Evoluir mostra as opções daquele corpo. Uma Rainha viva impede outra evolução para Rainha; após a morte dela, aguardem dez minutos.
+</Document>

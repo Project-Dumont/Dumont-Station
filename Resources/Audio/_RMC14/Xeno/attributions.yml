@@ -392,3 +392,23 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from cmss13"
   source: "https://github.com/cmss13-devs/cmss13/blob/ea919a8798253f334169819f21e913a3601e831e/sound/voice/alien_echoroar_3.ogg"
+
+- files: ["burrowing_b.ogg", "burrowoff.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from CMU-14"
+  source: "https://github.com/AU-14/ColonialMarinesUniverse/tree/1881202130ac29be7f2c448e3c6c686727b4ac9a/Resources/Audio/_RMC14/Xeno"
+
+- files: ["spike_spray.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/8a583493f634e4fa9e983ac78c8f2306f31d6159/sound/effects/spike_spray.ogg"
+
+- files: ["blobattack.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/21e6447cc08aea502f671c819fdbcecbb85e6028/sound/effects/blobattack.ogg"
+
+- files: ["alien_distantroar_3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/21e6447cc08aea502f671c819fdbcecbb85e6028/sound/voice/alien_distantroar_3.ogg"

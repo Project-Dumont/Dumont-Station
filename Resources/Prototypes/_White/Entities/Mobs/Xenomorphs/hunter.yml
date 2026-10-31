@@ -58,23 +58,8 @@
   #   - XenomorphHunter
 
 - type: entity
-  parent: BaseMobXenomorphHunter
+  parent: [BaseMobXenomorphDungeon, BaseMobXenomorphHunter]
   id: MobXenomorphHunter
-  components:
-  - type: GhostRole
-    allowMovement: true
-    allowSpeech: true
-    makeSentient: true
-    name: ghost-role-information-xenomorph-hunter-name
-    description: ghost-role-information-xenomorph-hunter-description
-    rules: ghost-role-information-rules-default-xeno
-    mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Orion
-    antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphHunter]

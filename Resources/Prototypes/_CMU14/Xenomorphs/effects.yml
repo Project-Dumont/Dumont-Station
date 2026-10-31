@@ -1,0 +1,513 @@
+- type: entity
+  id: DumontXenomorphTailHit
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    sprite: _RMC14/Effects/attacks.rsi
+    noRot: true
+    state: tail
+    drawdepth: Effects
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphTailSlam
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    sprite: _RMC14/Effects/attacks.rsi
+    noRot: true
+    state: slam
+    drawdepth: Effects
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+
+- type: entity
+  id: DumontXenomorphFireSpew
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/fire.rsi
+    noRot: true
+    drawdepth: WallTops
+    state: red_4
+  - type: PointLight
+    radius: 3
+    color: "#bf6d02"
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphSalveHealEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/heal.rsi
+    state: heal_overlay
+    drawdepth: Effects
+    noRot: true
+    color: "#00BE6F"
+  - type: TimedDespawn
+    lifetime: 5
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphSacrificeHealEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/heal.rsi
+    state: heal_overlay
+    drawdepth: Effects
+    noRot: true
+    color: "#44253D"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphRavagerShield
+  id: DumontXenomorphFruitShield
+  components:
+  - type: Sprite
+    color: "#179973"
+
+- type: entity
+  id: DumontXenomorphCorrosiveAcidEffect
+  name: corrosive acid
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid_normal
+    drawdepth: WallMountedItems
+  - type: AmbientSound
+    sound: /Audio/_RMC14/Xeno/acid_sizzle1.ogg
+    volume: -4
+
+- type: entity
+  id: DumontXenomorphBoilerCloud
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphBoilerGas
+  - type: TimedDespawn
+    lifetime: 12
+
+- type: entity
+  id: DumontXenomorphBoilerAcidGas
+  categories: [HideSpawnMenu]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Effects/smoke.rsi
+    state: smoke2
+    color: "#62821D"
+  - type: Occluder
+  - type: TimedDespawn
+    lifetime: 12
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphBoilerAcidGas
+  id: DumontXenomorphBoilerNeuroGas
+  components:
+  - type: Sprite
+    color: "#FFBF58"
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphDisarm
+  components:
+  - type: Sprite
+    state: disarm
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphExtraSlash
+  components:
+  - type: Sprite
+    state: slash
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphCleavePunch
+  components:
+  - type: Sprite
+    state: punch
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphAbductTelegraph
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_telegraph.rsi
+    state: xeno_telegraph_abduct_hook_anim
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  parent: DumontXenomorphAbductTelegraph
+  id: DumontXenomorphLashTelegraph
+  components:
+  - type: Sprite
+    state: xeno_telegraph_lash
+  - type: TimedDespawn
+    lifetime: 0.2
+
+- type: entity
+  parent: DumontXenomorphLashTelegraph
+  id: DumontXenomorphLashEdgeTelegraph
+  components:
+  - type: Sprite
+    state: xeno_telegraph_lash_anim
+
+- type: entity
+  parent: DumontXenomorphSalveHealEffect
+  id: DumontXenomorphValkyrieHeal
+  components:
+  - type: Sprite
+    color: "#00B800"
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  parent: DumontXenomorphValkyrieHeal
+  id: DumontXenomorphValkyrieCleanse
+  components:
+  - type: Sprite
+    color: "#F5007A"
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphAcidExtinguish
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid-extinguish
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphTantrumEmpower
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_empower.rsi
+    state: empower_custom
+    color: "#A31010C8"
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphRetrieveTelegraph
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_telegraph.rsi
+    state: xeno_telegraph_base
+    color: "#008000"
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  parent: DumontXenomorphRetrieveTelegraph
+  id: DumontXenomorphGallopTelegraph
+  components:
+  - type: Sprite
+    color: "#A50824"
+  - type: TimedDespawn
+    lifetime: 0.25
+
+- type: entity
+  parent: DumontXenomorphGallopTelegraph
+  id: DumontXenomorphGallopEdgeTelegraph
+  components:
+  - type: Sprite
+    state: xeno_telegraph_base_small
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphValkyrieScreech
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_screech.rsi
+    layers:
+    - state: screech
+      visible: false
+  - type: XenomorphScreechShockWave
+  - type: TimedDespawn
+    lifetime: 3.2
+
+- type: entity
+  parent: DumontXenomorphValkyrieScreech
+  id: DumontXenomorphValkyrieScreechWeak
+  components:
+  - type: XenomorphScreechShockWave
+    waveSpeed: 25
+    waveStrength: 0.12
+
+- type: entity
+  parent: DumontXenomorphCorrosiveAcidEffect
+  id: DumontXenomorphAciderStrongAcid
+  components:
+  - type: Sprite
+    state: acid_strong
+
+- type: entity
+  parent: DumontXenomorphBoilerAcidGas
+  id: DumontXenomorphRunnerAcidSmoke
+  components:
+  - type: Sprite
+    color: "#86B028"
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  parent: DumontXenomorphCorrosiveAcidEffect
+  id: DumontXenomorphWeakCorrosiveAcid
+  components:
+  - type: Sprite
+    state: acid_weak
+
+- type: entity
+  id: DumontXenomorphVenatorPool
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid2-weak
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: XenomorphVenatorPool
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphVenatorPool
+  id: DumontXenomorphVenatorBlobPool
+  components:
+  - type: Sprite
+    state: acid2
+  - type: TimedDespawn
+    lifetime: 1
+  - type: XenomorphVenatorPool
+    blob: true
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphVampireSlash
+  components:
+  - type: Sprite
+    state: slash
+
+- type: entity
+  parent: DumontXenomorphTailHit
+  id: DumontXenomorphVampireHeadbite
+  components:
+  - type: Sprite
+    state: headbite
+
+- type: entity
+  parent: DumontXenomorphValkyrieHeal
+  id: DumontXenomorphVampireFlurryHeal
+  components:
+  - type: Sprite
+    color: "#00BE6F"
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  parent: DumontXenomorphValkyrieHeal
+  id: DumontXenomorphVampireBiteHeal
+  components:
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: DumontXenomorphGallopTelegraph
+  id: DumontXenomorphVampireFlurryTelegraph
+  components:
+  - type: TimedDespawn
+    lifetime: 1.2
+
+- type: entity
+  id: DumontXenomorphDesignBuildWall
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: wall
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphDesignBuildWallThick
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: thick
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphDesignBuildDoor
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: door
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphDesignBuildDoorThick
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: thickdoor
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphDesignBuildMembrane
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: membrane
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontXenomorphDesignBuildMembraneThick
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphResinBuildVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_structure_animations.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - sprite: _RMC14/Effects/xeno_secrete.rsi
+      state: secrete_base
+    - state: thickmembrane
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphValkyrieScreech
+  id: DumontXenomorphQueenScreech
+  components:
+  - type: Sprite
+    noRot: true
+    layers:
+    - state: screech
+      visible: true
+
+- type: entity
+  parent: DumontXenomorphSalveHealEffect
+  id: DumontXenomorphQueenHealEffect
+  components:
+  - type: Sprite
+    color: "#D9F500"
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: shader
+  id: DumontXenomorphQueenBlind
+  kind: source
+  path: "/Textures/_RMC14/Shaders/screech_blind.swsl"
+
+- type: entity
+  id: DumontHiveHealBusy
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: Sprite
+    sprite: _RMC14/Effects/heal.rsi
+    state: busy_medical
+    color: "#FFFFFF"
+    noRot: true
+    drawdepth: Effects
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: DumontHiveHealPlasma
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: Sprite
+    sprite: _RMC14/Effects/heal.rsi
+    state: plasma_overlay
+    color: "#00FFFF"
+    noRot: true
+    drawdepth: Effects
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]

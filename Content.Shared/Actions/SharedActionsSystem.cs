@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
@@ -147,19 +149,19 @@ using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Popups;
 
-public abstract class SharedActionsSystem : EntitySystem
+public abstract partial class SharedActionsSystem : EntitySystem
 {
-    [Dependency] protected readonly IGameTiming GameTiming = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly RotateToFaceSystem _rotateToFace = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly INetManager _net = default!; // Goobstation
-    [Dependency] private readonly SharedPopupSystem _popup = default!; // Shitmed Change
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] protected IGameTiming GameTiming = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private ActionContainerSystem _actionContainer = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private RotateToFaceSystem _rotateToFace = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private INetManager _net = default!; // Goobstation
+    [Dependency] private SharedPopupSystem _popup = default!; // Shitmed Change
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private EntityQuery<ActionComponent> _actionQuery;
     private EntityQuery<ActionsComponent> _actionsQuery;
@@ -437,7 +439,10 @@ public abstract class SharedActionsSystem : EntitySystem
             _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
 
         if (!ValidateEntityTarget(user, target, ent))
+        {
+            args.Invalid = true;
             return;
+        }
 
         _adminLogger.Add(LogType.Action,
             $"{ToPrettyString(user):user} is performing the {Name(ent):action} action (provided by {ToPrettyString(args.Provider):provider}) targeted at {ToPrettyString(target):target}.");
@@ -463,7 +468,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
         if (!ValidateWorldTarget(user, target, ent))
         {
-            Fallback(); // Goobstation
+            args.Invalid |= !Fallback(); // Goobstation
             return;
         }
 
