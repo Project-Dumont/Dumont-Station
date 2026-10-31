@@ -1,8 +1,17 @@
 # SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+- files: ["harpy_hare.ogg"]
+  copyright: "Harpy Hare. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=5-I1lT6Jbdo"
 
 - files: ["macintosh_plus.ogg"]
   copyright: "Macintosh Plus. Exported with y2mate and converted to ogg in Audacity."
   license: "Custom"
   source: "https://youtu.be/bAgmGZ9iQ2Y?is=MmuUz4Qk3MDBSpBQ"
+
+- files: ["nonbreath_oblige.ogg"]
+  copyright: "Non-Breath Oblige. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=lw7pcm1W5tw"
