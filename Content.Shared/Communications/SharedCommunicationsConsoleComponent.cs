@@ -44,6 +44,7 @@ namespace Content.Shared.Communications
         // Dumont changes start
         public readonly bool CanUnlockEscapePods;
         public readonly bool EscapePodsUnlocked;
+        public bool NoSignal;
         // Dumont end
 
         public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false, bool canUnlockEscapePods = false, bool escapePodsUnlocked = false) // Dumont

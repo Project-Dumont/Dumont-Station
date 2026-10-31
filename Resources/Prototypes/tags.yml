@@ -1842,3 +1842,37 @@
 - type: Tag
   id: XenoborgModuleStealth
 # ALPHABETICAL
+
+- type: Tag
+  id: MothershipCoreGhostrole # spawn whitelist : SpawnPointGhostRoleMothershipCore
+
+- type: Tag
+  id: MothershipModule # Cyborg module category for evil xenoborg core
+
+- type: Tag
+  id: MothershipPinpointerPiece # ConstructionGraph: RepairMothershipPinpointer
+
+- type: Tag
+  id: XenoborgCrystal # MaterialStorage whitelist: Mothership core
+
+- type: Tag
+  id: XenoborgGhostrole # spawn whitelist : SpawnPointGhostRoleXenoborg
+
+- type: Tag
+  id: XenoborgModuleAccessBreaker # Used for module blacklisting
+
+- type: Tag
+  id: XenoborgModuleInvisibility # Used for module blacklisting
+
+- type: Tag
+  id: XenoborgModulePrimaryWeapon # Used for module blacklisting
+
+- type: Tag
+  id: XenoborgModuleSecondaryWeapon # Used for module blacklisting
+
+- type: Tag
+  id: XenoborgModuleWithSimpleOverlay # Used for module blacklisting
+
+## Y ##
+## Z ##
+# ALPHABETICAL

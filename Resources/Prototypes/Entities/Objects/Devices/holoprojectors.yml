@@ -239,3 +239,24 @@
       Steel: 75
       Plastic: 12
       Glass: 12
+
+- type: entity
+  parent: HolofanProjector # Trauma - use regular one
+  id: HoloprojectorXenoField
+  name: Xenoborg deflector field projector
+  description: An alien device, projecting fields that deflect projectiles.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/Holoprojectors/xenoborg.rsi
+  # <Trauma>
+  #- type: ItemSlots
+  #  slots:
+  #    cell_slot:
+  #      name: power-cell-slot-component-slot-name-default
+  #      startingItem: PowerCellMicroreactor
+  #      disableEject: true
+  #      swap: false
+  - type: ChargeHolosignProjector # different implementation
+    signProto: XenoborgDeflectorField
+    #chargeUse: 200
+  # </Trauma>

@@ -7,6 +7,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.DeviceNetwork; // Dumont
 using Content.Shared.Radio;
 using Content.Shared.Robotics.Systems;
 using Robust.Shared.GameStates;
@@ -51,6 +52,15 @@ public sealed partial class RoboticsConsoleComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan DestroyCooldown = TimeSpan.FromSeconds(30);
+
+    // Dumont changes start
+    /// <summary>
+    /// Frequency the disable and destroy commands go out on, for consoles that listen on one
+    /// frequency and talk to their borgs on another.
+    /// </summary>
+    [DataField]
+    public ProtoId<DeviceFrequencyPrototype>? CommandFrequency;
+    // Dumont end
 
     /// <summary>
     /// When a borg can next be destroyed.

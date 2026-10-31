@@ -33,6 +33,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared._Dumont.Xenoborgs; // Dumont
 
 namespace Content.Client.Robotics.UI;
 
@@ -47,6 +48,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     public Action<string>? OnDisablePressed;
     public Action<string>? OnDestroyPressed;
     public Action<string>? OnImposeLawPressed; // Funkystation -> Malf AI
+    public Action<string>? OnTakeControlPressed; // Dumont
 
     private string? _selected;
     private Dictionary<string, CyborgControlData> _cyborgs = new();
@@ -89,6 +91,12 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         {
             OnImposeLawPressed?.Invoke(_selected!);
         };
+        // Dumont changes start
+        TakeControlButton.OnPressed += _ =>
+        {
+            OnTakeControlPressed?.Invoke(_selected!);
+        };
+        // Dumont end
 
         // cant put multiple styles in xaml for some reason
         DestroyButton.StyleClasses.Add(StyleBase.ButtonCaution);
@@ -116,6 +124,16 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
             isAiControllable = data.IsAiControllable;
         }
         // Corvax-Next-AiRemoteControl-End
+
+        // Dumont changes start
+        var canTakeControl = false;
+
+        if (_selected != null && _cyborgs.TryGetValue(_selected, out var selectedData))
+            canTakeControl = selectedData.CanTakeControl;
+
+        TakeControlButton.Visible = _entMan.HasComponent<MothershipCoreControlComponent>(Entity);
+        TakeControlButton.Disabled = !canTakeControl;
+        // Dumont end
 
         var hasCyborgs = _cyborgs.Count > 0;
         NoCyborgs.Visible = !hasCyborgs;
