@@ -195,7 +195,7 @@
   chance: 0
   name: station-trait-endless-snowfall-name
   report: station-trait-endless-snowfall-report
-  conflicts: [ SpaceDust ]
+  conflicts: [ SpaceDust, MeteorSwarm ]
   mapEffects:
   - !type:StationSetWeather
     weather: SnowfallLobster
