@@ -91,7 +91,6 @@
       sprite: Nyanotrasen/Objects/Weapons/anti_psychic_knife.rsi
   - type: Clothing
     sprite: Nyanotrasen/Objects/Weapons/anti_psychic_knife.rsi
-    state: equipped-BELT
     quickEquip: false
     slots:
     - belt
