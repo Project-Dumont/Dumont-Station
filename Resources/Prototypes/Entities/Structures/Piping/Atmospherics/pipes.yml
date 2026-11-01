@@ -545,7 +545,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi # Dumont
+    sprite: Structures/Piping/Atmospherics/manifold.rsi
     layers:
     - state: pipeManifold
       map: [ "enum.PipeVisualLayers.Pipe" ]
@@ -553,13 +553,9 @@
     pipeLayersLocked: true
   - type: PipeAppearance
     sprite:
-    # Dumont changes start
-    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
-    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt1 }
-    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt2 }
-    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt3 }
-    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt4 }
-    # Dumont end
+    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
+    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt1 }
+    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt2 }
   - type: Construction
     graph: GasPipe
     node: manifold
@@ -568,7 +564,7 @@
     shape:
     - 0,0,1,0
     storedSprite:
-      sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi # Dumont
+      sprite: Structures/Piping/Atmospherics/manifold.rsi
       state: storageManifold
   - type: NodeContainer
     nodes:
@@ -587,18 +583,6 @@
         nodeGroupID: Pipe
         pipeDirection: South
         pipeLayer: 2
-      # Dumont changes start
-      south3:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: South
-        pipeLayer: 3
-      south4:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: South
-        pipeLayer: 4
-      # Dumont end
       north0:
         !type:PipeNode
         nodeGroupID: Pipe
@@ -614,18 +598,6 @@
         nodeGroupID: Pipe
         pipeDirection: North
         pipeLayer: 2
-      # Dumont changes start
-      north3:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: North
-        pipeLayer: 3
-      north4:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: North
-        pipeLayer: 4
-      # Dumont end
   - type: GasPipeManifold
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasPipeManifold
