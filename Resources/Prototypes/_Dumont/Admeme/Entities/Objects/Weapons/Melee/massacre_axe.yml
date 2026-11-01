@@ -41,8 +41,6 @@
         Slash: 30
         Heat: 25
         Structural: 35
-  - type: EmitSoundOnHit
-    sound: /Audio/_Dumont/Misc/heavy_slash.ogg
   - type: Boomerang # Yes because it's funny
   - type: Sprite
     sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
