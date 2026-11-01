@@ -237,6 +237,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: portAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: portAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: dualportventpump
       steps:
       - material: Steel
@@ -254,6 +268,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: dualportventpumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: dualportventpumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: radiator
       steps:
@@ -864,6 +892,41 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: portAlt3
+    entity: GasPortAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: portAlt4
+    entity: GasPortAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: dualportventpump
     entity: GasDualPortVentPump
     edges:
@@ -917,6 +980,45 @@
         doAfter: 1
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: dualportventpumpAlt3
+    entity: GasDualPortVentPumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: dualportventpumpAlt4
+    entity: GasDualPortVentPumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   - node: radiator
     entity: HeatExchanger

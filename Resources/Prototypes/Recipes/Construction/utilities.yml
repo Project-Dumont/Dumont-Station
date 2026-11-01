@@ -677,6 +677,10 @@
   - GasVentPump
   - GasVentPumpAlt1
   - GasVentPumpAlt2
+  # Dumont changes start
+  - GasVentPumpAlt3
+  - GasVentPumpAlt4
+  # Dumont end
 
 - type: construction
   id: GasVentPumpAlt1
@@ -693,6 +697,10 @@
   - GasVentPump
   - GasVentPumpAlt1
   - GasVentPumpAlt2
+  # Dumont changes start
+  - GasVentPumpAlt3
+  - GasVentPumpAlt4
+  # Dumont end
 
 - type: construction
   id: GasVentPumpAlt2
@@ -709,6 +717,10 @@
   - GasVentPump
   - GasVentPumpAlt1
   - GasVentPumpAlt2
+  # Dumont changes start
+  - GasVentPumpAlt3
+  - GasVentPumpAlt4
+  # Dumont end
 
 # GasPassiveVent
 - type: construction
@@ -725,6 +737,10 @@
   - GasPassiveVent
   - GasPassiveVentAlt1
   - GasPassiveVentAlt2
+  # Dumont changes start
+  - GasPassiveVentAlt3
+  - GasPassiveVentAlt4
+  # Dumont end
 
 - type: construction
   id: GasPassiveVentAlt1
@@ -741,6 +757,10 @@
   - GasPassiveVent
   - GasPassiveVentAlt1
   - GasPassiveVentAlt2
+  # Dumont changes start
+  - GasPassiveVentAlt3
+  - GasPassiveVentAlt4
+  # Dumont end
 
 - type: construction
   id: GasPassiveVentAlt2
@@ -757,6 +777,10 @@
   - GasPassiveVent
   - GasPassiveVentAlt1
   - GasPassiveVentAlt2
+  # Dumont changes start
+  - GasPassiveVentAlt3
+  - GasPassiveVentAlt4
+  # Dumont end
 
 # GasVentScrubber
 - type: construction
@@ -773,6 +797,10 @@
   - GasVentScrubber
   - GasVentScrubberAlt1
   - GasVentScrubberAlt2
+  # Dumont changes start
+  - GasVentScrubberAlt3
+  - GasVentScrubberAlt4
+  # Dumont end
 
 - type: construction
   id: GasVentScrubberAlt1
@@ -789,6 +817,10 @@
   - GasVentScrubber
   - GasVentScrubberAlt1
   - GasVentScrubberAlt2
+  # Dumont changes start
+  - GasVentScrubberAlt3
+  - GasVentScrubberAlt4
+  # Dumont end
 
 - type: construction
   id: GasVentScrubberAlt2
@@ -805,6 +837,10 @@
   - GasVentScrubber
   - GasVentScrubberAlt1
   - GasVentScrubberAlt2
+  # Dumont changes start
+  - GasVentScrubberAlt3
+  - GasVentScrubberAlt4
+  # Dumont end
 
 - type: construction
   id: GasOutletInjector
@@ -820,6 +856,10 @@
   - GasOutletInjector
   - GasOutletInjectorAlt1
   - GasOutletInjectorAlt2
+  # Dumont changes start
+  - GasOutletInjectorAlt3
+  - GasOutletInjectorAlt4
+  # Dumont end
 
 - type: construction
   id: GasOutletInjectorAlt1
@@ -836,6 +876,10 @@
   - GasOutletInjector
   - GasOutletInjectorAlt1
   - GasOutletInjectorAlt2
+  # Dumont changes start
+  - GasOutletInjectorAlt3
+  - GasOutletInjectorAlt4
+  # Dumont end
 
 - type: construction
   id: GasOutletInjectorAlt2
@@ -852,6 +896,10 @@
   - GasOutletInjector
   - GasOutletInjectorAlt1
   - GasOutletInjectorAlt2
+  # Dumont changes start
+  - GasOutletInjectorAlt3
+  - GasOutletInjectorAlt4
+  # Dumont end
 
 # ATMOS BINARY
 
@@ -1175,6 +1223,10 @@
   - GasPort
   - GasPortAlt1
   - GasPortAlt2
+  # Dumont changes start
+  - GasPortAlt3
+  - GasPortAlt4
+  # Dumont end
 
 - type: construction
   id: GasPortAlt1
@@ -1191,6 +1243,10 @@
   - GasPort
   - GasPortAlt1
   - GasPortAlt2
+  # Dumont changes start
+  - GasPortAlt3
+  - GasPortAlt4
+  # Dumont end
 
 - type: construction
   id: GasPortAlt2
@@ -1207,6 +1263,10 @@
   - GasPort
   - GasPortAlt1
   - GasPortAlt2
+  # Dumont changes start
+  - GasPortAlt3
+  - GasPortAlt4
+  # Dumont end
 
 # dual port vent
 
@@ -1222,6 +1282,10 @@
   - GasDualPortVentPump
   - GasDualPortVentPumpAlt1
   - GasDualPortVentPumpAlt2
+  # Dumont changes start
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+  # Dumont end
 
 - type: construction
   id: GasDualPortVentPumpAlt1
@@ -1236,6 +1300,10 @@
   - GasDualPortVentPump
   - GasDualPortVentPumpAlt1
   - GasDualPortVentPumpAlt2
+  # Dumont changes start
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+  # Dumont end
 
 - type: construction
   id: GasDualPortVentPumpAlt2
@@ -1250,6 +1318,10 @@
   - GasDualPortVentPump
   - GasDualPortVentPumpAlt1
   - GasDualPortVentPumpAlt2
+  # Dumont changes start
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+  # Dumont end
 
 # radiator
 
@@ -1445,6 +1517,10 @@
   - GasFilter
   - GasFilterAlt1
   - GasFilterAlt2
+  # Dumont changes start
+  - GasFilterAlt3
+  - GasFilterAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterAlt1
@@ -1462,6 +1538,10 @@
   - GasFilter
   - GasFilterAlt1
   - GasFilterAlt2
+  # Dumont changes start
+  - GasFilterAlt3
+  - GasFilterAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterAlt2
@@ -1479,6 +1559,10 @@
   - GasFilter
   - GasFilterAlt1
   - GasFilterAlt2
+  # Dumont changes start
+  - GasFilterAlt3
+  - GasFilterAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterFlipped
@@ -1496,6 +1580,10 @@
   - GasFilterFlipped
   - GasFilterFlippedAlt1
   - GasFilterFlippedAlt2
+  # Dumont changes start
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterFlippedAlt1
@@ -1513,6 +1601,10 @@
   - GasFilterFlipped
   - GasFilterFlippedAlt1
   - GasFilterFlippedAlt2
+  # Dumont changes start
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterFlippedAlt2
@@ -1530,6 +1622,10 @@
   - GasFilterFlipped
   - GasFilterFlippedAlt1
   - GasFilterFlippedAlt2
+  # Dumont changes start
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+  # Dumont end
 
 # mixer
 
@@ -1548,6 +1644,10 @@
   - GasMixer
   - GasMixerAlt1
   - GasMixerAlt2
+  # Dumont changes start
+  - GasMixerAlt3
+  - GasMixerAlt4
+  # Dumont end
 
 - type: construction
   id: GasMixerAlt1
@@ -1565,6 +1665,10 @@
   - GasMixer
   - GasMixerAlt1
   - GasMixerAlt2
+  # Dumont changes start
+  - GasMixerAlt3
+  - GasMixerAlt4
+  # Dumont end
 
 - type: construction
   id: GasMixerAlt2
@@ -1582,6 +1686,10 @@
   - GasMixer
   - GasMixerAlt1
   - GasMixerAlt2
+  # Dumont changes start
+  - GasMixerAlt3
+  - GasMixerAlt4
+  # Dumont end
 
 - type: construction
   id: GasMixerFlipped
@@ -1599,6 +1707,10 @@
   - GasMixerFlipped
   - GasMixerFlippedAlt1
   - GasMixerFlippedAlt2
+  # Dumont changes start
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+  # Dumont end
 
 - type: construction
   id: GasMixerFlippedAlt1
@@ -1616,6 +1728,10 @@
   - GasMixerFlipped
   - GasMixerFlippedAlt1
   - GasMixerFlippedAlt2
+  # Dumont changes start
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+  # Dumont end
 
 - type: construction
   id: GasMixerFlippedAlt2
@@ -1633,6 +1749,10 @@
   - GasMixerFlipped
   - GasMixerFlippedAlt1
   - GasMixerFlippedAlt2
+  # Dumont changes start
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+  # Dumont end
 
 # pneumatic valve
 
@@ -1650,6 +1770,10 @@
   - PressureControlledValve
   - PressureControlledValveAlt1
   - PressureControlledValveAlt2
+  # Dumont changes start
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+  # Dumont end
 
 - type: construction
   id: PressureControlledValveAlt1
@@ -1666,6 +1790,10 @@
   - PressureControlledValve
   - PressureControlledValveAlt1
   - PressureControlledValveAlt2
+  # Dumont changes start
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+  # Dumont end
 
 - type: construction
   id: PressureControlledValveAlt2
@@ -1682,6 +1810,10 @@
   - PressureControlledValve
   - PressureControlledValveAlt1
   - PressureControlledValveAlt2
+  # Dumont changes start
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+  # Dumont end
 
 # INTERCOM
 - type: construction

@@ -536,6 +536,10 @@
       Primary: GasPort
       Secondary: GasPortAlt1
       Tertiary: GasPortAlt2
+      # Dumont changes start
+      Quaternary: GasPortAlt3
+      Quinary: GasPortAlt4
+      # Dumont end
   - type: Appearance
   - type: PipeColorVisuals
   - type: GasPort
@@ -587,6 +591,10 @@
         Primary: GasDualPortVentPump
         Secondary: GasDualPortVentPumpAlt1
         Tertiary: GasDualPortVentPumpAlt2
+        # Dumont changes start
+        Quaternary: GasDualPortVentPumpAlt3
+        Quinary: GasDualPortVentPumpAlt4
+        # Dumont end
     - type: GenericVisualizer
       visuals:
         enum.VentPumpVisuals.State:
