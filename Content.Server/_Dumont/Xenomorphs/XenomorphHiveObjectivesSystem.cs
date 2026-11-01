@@ -241,15 +241,21 @@ public sealed partial class XenomorphHiveObjectivesSystem : EntitySystem
         CommsCorrupted = true;
         _rules.CompleteHiveContact();
         _hive.AnnounceHive(Loc.GetString("xenomorph-comms-hijack-complete"));
+        CallCorruptedEvacuation();
+    }
+
+    private void CallCorruptedEvacuation()
+    {
+        if (_shuttle.EmergencyShuttleArrived || _shuttle.ShuttlesLeft)
+            return;
+
+        _roundEnd.CancelRoundEndCountdown(checkCooldown: false, announce: false);
         _shuttle.SetDockTimeOverride(30f);
-        if (!_shuttle.EmergencyShuttleArrived && !_shuttle.ShuttlesLeft)
-        {
-            _corruptedEvac.EnableCorruption();
-            _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(2), checkCooldown: false,
-                text: "xenomorph-comms-hijack-evacuation", name: "xenomorph-comms-hijack-unknown", replaceExisting: true, allowRecall: false,
-                announcementColor: Color.FromHex("#b56dd6"),
-                announcementSound: new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_queen_screech.ogg", AudioParams.Default.WithVolume(-7)));
-        }
+        _corruptedEvac.EnableCorruption();
+        _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(2), checkCooldown: false,
+            text: "xenomorph-comms-hijack-evacuation", name: "xenomorph-comms-hijack-unknown", replaceExisting: true, allowRecall: false,
+            announcementColor: Color.FromHex("#b56dd6"),
+            announcementSound: new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_queen_screech.ogg", AudioParams.Default.WithVolume(-7)));
     }
 
     public void RefreshHiveObjectives()

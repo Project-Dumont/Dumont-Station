@@ -29,3 +29,6 @@ xenomorph-invasion-impact = IMPACT CONFIRMED. Multiple breaches in Central Comma
 ent-CMUTileFire = fire
     .desc = A roaring fire.
 xenomorph-hive-pylon-cc-sender = Central Command
+
+xenomorph-hive-contact-unlocked = We can call our sisters. Let us find the human hive-mind! I also need two more Hive Soldiers.
+xenomorph-hive-pylon-cc = Attention, crew. The xenomorphs have established a stronghold near { $location }. Do everything you can to stop them. They must not advance any further. The situation is also deteriorating at Central Command. The marines have been contacted, but no response has arrived. As a last resort, use the nuclear device to destroy the station. Detonation codes have been sent to all communications consoles. Stop the xenomorphs or evacuate.

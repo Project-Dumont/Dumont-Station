@@ -19,6 +19,6 @@ ghost-role-information-xenomorph-queen-description = Comande a colmeia, produza 
 ghost-role-information-xenomorph-sentinel-name = Sentinela xenomorfo
 ghost-role-information-xenomorph-sentinel-description = Use seus cuspes para manter os inimigos à distância e defender as passagens do ninho.
 
-ghost-role-information-rules-default-xeno = Você é um [color={role-type-team-antagonist-color}][bold]xenomorfo[/bold][/color].
+ghost-role-information-rules-default-xeno = Você é um [color=#8c3986][bold]xenomorfo[/bold][/color].
     Proteja a Rainha e ajude a colmeia a crescer.
     Capture tripulantes e leve-os ao ninho para servirem de hospedeiros.

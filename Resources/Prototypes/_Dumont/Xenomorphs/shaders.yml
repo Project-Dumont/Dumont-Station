@@ -7,3 +7,8 @@
     light_boost: 4.0
     light_gamma: 1.0
     light_whitepoint: 1.0
+
+- type: shader
+  id: DumontXenomorphRadioJammer
+  kind: source
+  path: /Textures/_Dumont/Shaders/xeno_jammer.swsl

@@ -31,7 +31,7 @@ xenomorph-hive-core-destroyed = Perdemos nosso núcleo próximo a { $location }!
 xenomorph-hive-pylon-destroyed = Perdemos nosso pilone próximo a { $location }!
 xenomorph-hive-pylon-captured = Capturamos a instalação próxima a { $location } e estabelecemos nosso pilone! Defendam-no!
 xenomorph-hive-pylon-cc-sender = Central de Comando
-xenomorph-hive-pylon-cc = Atenção, tripulação. Os xenomorfos consolidaram uma instalação próxima a { $location }. Façam tudo ao seu alcance para detê-los. Eles não podem avançar mais. A situação também está se deteriorando na Central de Comando. Os fuzileiros navais foram contatados, mas nenhuma resposta chegou até o momento. No pior dos casos, usem o dispositivo nuclear para pulverização da estação. Os códigos de detonação foram enviados a todos os consoles de comunicação.
+xenomorph-hive-pylon-cc = Atenção, tripulação. Os xenomorfos consolidaram uma instalação próxima a { $location }. Façam tudo ao seu alcance para detê-los. Eles não podem avançar mais. A situação também está se deteriorando na Central de Comando. Os fuzileiros navais foram contatados, mas nenhuma resposta chegou até o momento. No pior dos casos, usem o dispositivo nuclear para pulverização da estação. Os códigos de detonação foram enviados a todos os consoles de comunicação. Detenham os xenomorfos ou evacuem.
 
 ent-XenomorphEstablishPylonObjective = Estabeleça um Pilone.
     .desc = Capture uma instalação com um Aglomerado e estabeleça um Pilone para a colmeia.
@@ -84,7 +84,7 @@ xenomorph-evac-distress-borgs-message = 01010011 00101110 01001111 00101110 0101
 xenomorph-evac-distress-frontier-sender = Fronteira
 xenomorph-evac-distress-frontier-message = FRON...TEIRA // pedido de soc...rro. Os postos caí...ram. NÃO VENHAM. Nãø há mais refúgio. Está tudø PER...DIDO. Repito: TUDO ESTÁ PERD...▓▒█
 
-xenomorph-hive-contact-unlocked = Podemos chamar nossas irmãs, vamos encontrar a mente-colmeia humana.
+xenomorph-hive-contact-unlocked = Podemos chamar nossas irmãs. Vamos encontrar a mente-colmeia humana! Preciso também de mais dois Soldados da Colmeia.
 xenomorph-comms-hijack-requires-pylon = Capture um aglomerado e estabeleça um pilone antes de interferir na mente-colmeia humana.
 xenomorph-hive-soldier-limit = A colmeia só comporta { $limit } Soldados da Colmeia. Não há vaga disponível.
 

@@ -92,6 +92,7 @@ public sealed partial class XenomorphRadioJammerSystem : EntitySystem
         radio.SelectedPowerLevel = 0;
         Dirty(emitter, radio);
         AddComp<ActiveRadioJammerComponent>(emitter);
+        AddComp<XenomorphRadioJammerVisualComponent>(emitter);
         ent.Comp.Emitter = emitter;
         ent.Comp.NextPayment = _timing.CurTime + TimeSpan.FromSeconds(1);
         _actions.SetToggled(ent.Comp.Action, true);
@@ -103,6 +104,7 @@ public sealed partial class XenomorphRadioJammerSystem : EntitySystem
         if (ent.Comp.Emitter is { } emitter && !TerminatingOrDeleted(emitter))
         {
             RemComp<ActiveRadioJammerComponent>(emitter);
+            RemComp<XenomorphRadioJammerVisualComponent>(emitter);
             QueueDel(emitter);
         }
         ent.Comp.Emitter = null;
