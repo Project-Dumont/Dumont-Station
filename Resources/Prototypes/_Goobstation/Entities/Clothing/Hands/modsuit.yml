@@ -75,10 +75,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -110,10 +110,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -147,10 +147,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -192,10 +192,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -238,10 +238,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -286,10 +286,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -335,10 +335,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -386,10 +386,10 @@
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
   - type: FingerprintMask
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-gauntlets
-    sealDownPopup: sealable-clothing-seal-down-gauntlets
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       gloves:
@@ -405,3 +405,41 @@
         Slash: 0.95
         Piercing: 0.95
         Shock: 0.75
+
+- type: entity
+  parent: ClothingHandModsuitBase
+  id: ClothingModsuitGauntletsBrigMed
+  name: trauma modsuit gauntlets
+  description: Cool gauntlets.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Hands/Modsuits/brigmed.rsi
+    layers:
+    - state: gauntlets
+    - state: gauntlets-sealed
+      visible: false
+      map: [ "sealed" ]
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    slots: [ gloves ]
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+  - type: Fiber
+    fiberMaterial: fibers-modular
+    fiberColor: fibers-black
+  - type: FingerprintMask
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-gauntlets
+    sealDownPopup: modsuit-part-seal-down-gauntlets
+  - type: ModSuitSealedVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND-sealed
+      gloves-vox:
+      - state: equipped-HAND-sealed-vox

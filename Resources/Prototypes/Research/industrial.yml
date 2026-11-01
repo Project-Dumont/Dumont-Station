@@ -355,7 +355,7 @@
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
   - ClothingBackpackMessengerHolding # Frontier
-  - ModsuitModuleBluespaceStorageRecipe # GabyStation
+  - ModsuitModuleStorageBluespace # Goob
   # Goobstation R&D Console rework start
   position: 2,-7
   technologyPrerequisites:

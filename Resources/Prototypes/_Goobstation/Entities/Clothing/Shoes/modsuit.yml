@@ -69,10 +69,10 @@
  #- type: Tag - Dumont - It had to be from Goob.
  #  tags:
  #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -98,10 +98,10 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -149,10 +149,10 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -200,10 +200,10 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -232,16 +232,19 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
       shoes-vox:
       - state: equipped-FEET-sealed-vox
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
 
 - type: entity
   parent: ClothingShoesModsuitBase # GabyStation
@@ -264,10 +267,10 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -298,10 +301,10 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
@@ -329,13 +332,65 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
-  - type: SealableClothing
-    sealUpPopup: sealable-clothing-seal-up-boots
-    sealDownPopup: sealable-clothing-seal-down-boots
-  - type: SealableClothingVisuals
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
     spriteLayer: sealed
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
       shoes-vox:
       - state: equipped-FEET-sealed-vox
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingModsuitBootsBrigMed
+  name: trauma modsuit boots
+  description: Cool boots.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Shoes/Modsuits/brigmed.rsi
+    layers:
+    - state: boots
+    - state: boots-sealed
+      map: [ "sealed" ]
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    slots: [ feet ]
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ModPart
+    sealUpPopup: modsuit-part-seal-up-boots
+    sealDownPopup: modsuit-part-seal-down-boots
+  - type: ModSuitSealedVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET-sealed
+      shoes-vox:
+      - state: equipped-FEET-sealed-vox
+      shoes-feroxi:
+      - state: equipped-FEET-sealed-feroxi
+      shoes-reptilian:
+      - state: equipped-FEET-sealed-reptilian
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.1
+      OrganDamage: 0.1
+      BoneDamage: 0.1
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
