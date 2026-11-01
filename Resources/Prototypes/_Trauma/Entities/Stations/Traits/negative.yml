@@ -159,6 +159,7 @@
   chance: 0.4
   name: station-trait-space-dust-name
   report: station-trait-space-dust-report
+  conflicts: [ EndlessSnowfall ] # Dumont
   mapEffects:
   - !type:StationSetWeather
     weather: Sandstorm

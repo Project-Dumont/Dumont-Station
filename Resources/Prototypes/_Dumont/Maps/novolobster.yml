@@ -1,0 +1,88 @@
+- type: gameMap
+  id: NovoLobster
+  mapName: 'Novo Lobster'
+  mapPath: /Maps/_Dumont/novolobster.yml
+  minPlayers: 40
+  randomRotation: false # random rotation looks weird with weather
+  stations:
+    NovoLobster:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Novo Lobster {0} {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'CW'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/_Dumont/Shuttles/emergency_strain.yml
+        - type: StationCargoShuttle
+          path: /Maps/_Dumont/Shuttles/cargo_novolobster.yml
+        - type: StationTraits
+          rolls: 3
+          groups:
+            Neutral: 0.3
+            Positive: 0.4
+            Negative: 0.4
+          picked:
+          - EndlessSnowfall
+        - type: StationJobs
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 2, 2 ]
+            Bartender: [ 3, 3 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 3, 3 ]
+            ServiceWorker: [ 5, 5 ]
+            Boxer: [ 2, 2 ]
+            Chaplain: [ 2, 2 ]
+            Lawyer: [ 3, 3 ]
+            Librarian: [ 2, 2 ]
+            Janitor: [ 3, 3 ]
+            RadioHost: [ 2, 2 ]
+            Reporter: [ 3, 3 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 3, 3 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 7, 7 ]
+            TechnicalAssistant: [ 5, 5 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 3, 3 ]
+            MedicalDoctor: [ 8, 8 ]
+            MedicalIntern: [ 4, 4 ]
+            Psychologist: [ 1, 1 ]
+            Paramedic: [ 2, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 6, 6 ]
+            ResearchAssistant: [ 4, 4 ]
+            Roboticist: [ 3, 3 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 12, 12 ]
+            Brigmedic: [ 2, 2 ]
+            Detective: [ 2, 2 ]
+            SecurityCadet: [ 6, 6 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            ShaftMiner: [ 4, 4 ]
+            CargoTechnician: [ 6, 6 ]
+            SalvageLead: [ 1, 1 ]
+            SalvageSpecialist: [ 4, 4 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 4, 4 ]
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
