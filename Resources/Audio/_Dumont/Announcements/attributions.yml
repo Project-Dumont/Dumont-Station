@@ -1,0 +1,143 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["artifact_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["artifact_saae_2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["artifact_saae_3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["artifact_saae_4.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["anomaly_spawn_saae_1.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["anomaly_spawn_saae_2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["anomaly_spawn_saae_3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["anomaly_spawn_saae_4.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["anomaly_spawn_saae_5.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["burocratic_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["burocratic_saae_2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["disease_outbreak_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["dust_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["gasleak_on_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["gasleak_off_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["ions_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["kudzu_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["power_off_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["intercept_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["meteors_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["solarflare_ac_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["solarflare_aca_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["solarflare_una_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["vent_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["zombie_outbreak_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["power_on_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["rod_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["scrubbers_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
