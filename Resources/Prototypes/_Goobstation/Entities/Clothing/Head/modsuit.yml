@@ -138,6 +138,9 @@
     slots:
     - Snout
     hideOnToggle: true
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -225,6 +228,9 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -309,6 +315,9 @@
       map: [ "sealed" ]
   - type: IdentityBlocker
   - type: IngestionBlocker
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -374,6 +383,9 @@
       map: [ "sealed" ]
   - type: IdentityBlocker
   - type: IngestionBlocker
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -436,6 +448,9 @@
     hideOnToggle: true
   - type: IdentityBlocker
   - type: IngestionBlocker
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -513,6 +528,9 @@
       - state: equipped-HEAD-feroxi
       head-hydrakin:
       - state: equipped-HEAD-hydrakin
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -588,6 +606,9 @@
     hideOnToggle: true
   - type: IdentityBlocker
   - type: IngestionBlocker
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -661,6 +682,9 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet
@@ -747,6 +771,9 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-helmet
     sealDownPopup: modsuit-part-seal-down-helmet

@@ -69,6 +69,9 @@
  #- type: Tag - Dumont - It had to be from Goob.
  #  tags:
  #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -98,6 +101,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -149,6 +155,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -200,6 +209,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -232,6 +244,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -267,6 +282,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -301,6 +319,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -332,6 +353,9 @@
   #- type: Tag - Dumont - It had to be from Goob.
   #  tags:
   #  - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
@@ -364,6 +388,9 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: ContainerContainer
+    containers:
+      mod-part-stored: !type:ContainerSlot
   - type: ModPart
     sealUpPopup: modsuit-part-seal-up-boots
     sealDownPopup: modsuit-part-seal-down-boots
