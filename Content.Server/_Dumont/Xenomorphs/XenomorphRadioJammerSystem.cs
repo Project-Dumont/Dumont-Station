@@ -16,6 +16,7 @@ using Content.Shared.Popups;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Map;
+using Robust.Shared.Spawners;
 
 namespace Content.Server._Dumont.Xenomorphs;
 
@@ -92,7 +93,10 @@ public sealed partial class XenomorphRadioJammerSystem : EntitySystem
         radio.SelectedPowerLevel = 0;
         Dirty(emitter, radio);
         AddComp<ActiveRadioJammerComponent>(emitter);
-        AddComp<XenomorphRadioJammerVisualComponent>(emitter);
+        var visual = AddComp<XenomorphRadioJammerVisualComponent>(emitter);
+        visual.Active = true;
+        visual.TransitionAt = _timing.CurTime;
+        Dirty(emitter, visual);
         ent.Comp.Emitter = emitter;
         ent.Comp.NextPayment = _timing.CurTime + TimeSpan.FromSeconds(1);
         _actions.SetToggled(ent.Comp.Action, true);
@@ -104,8 +108,16 @@ public sealed partial class XenomorphRadioJammerSystem : EntitySystem
         if (ent.Comp.Emitter is { } emitter && !TerminatingOrDeleted(emitter))
         {
             RemComp<ActiveRadioJammerComponent>(emitter);
-            RemComp<XenomorphRadioJammerVisualComponent>(emitter);
-            QueueDel(emitter);
+            if (TryComp<XenomorphRadioJammerVisualComponent>(emitter, out var visual))
+            {
+                visual.StartScale = visual.ScaleAt(_timing.CurTime);
+                visual.Active = false;
+                visual.TransitionAt = _timing.CurTime;
+                Dirty(emitter, visual);
+                EnsureComp<TimedDespawnComponent>(emitter).Lifetime = (float) visual.FadeTime.TotalSeconds;
+            }
+            else
+                QueueDel(emitter);
         }
         ent.Comp.Emitter = null;
         _actions.SetToggled(ent.Comp.Action, false);
