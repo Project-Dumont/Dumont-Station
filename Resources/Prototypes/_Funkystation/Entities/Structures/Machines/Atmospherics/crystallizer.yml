@@ -32,6 +32,7 @@
   - type: Crystallizer
   - type: AtmosPipeColor
   - type: AtmosPipeLayers
+    numberOfPipeLayers: 3 # Dumont
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
         Primary: Structures/Piping/Atmospherics/pipe.rsi

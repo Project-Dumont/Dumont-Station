@@ -386,9 +386,13 @@
     - type: AtmosPipeLayers
       spriteLayersRsiPaths:
         enum.PipeVisualLayers.Pipe:
+          # Dumont changes start
           Primary: Structures/Piping/Atmospherics/thermomachine.rsi
           Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
           Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+          Quaternary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
+          Quinary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
+          # Dumont end
     - type: AtmosDevice
     - type: UserInterface
       interfaces:
@@ -584,9 +588,13 @@
   - type: AtmosPipeLayers
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
+        # Dumont changes start
         Primary: Structures/Piping/Atmospherics/condenser.rsi
         Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
+        Quaternary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt3.rsi
+        Quinary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt4.rsi
+        # Dumont end
   - type: AtmosDevice
   - type: PipeRestrictOverlap
   - type: ApcPowerReceiver
