@@ -2,11 +2,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- files: ["alerta_verde_saae.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Made by Struater"
-  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
-
 - files: ["epsilon_saae.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by Struater"
