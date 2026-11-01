@@ -4850,3 +4850,19 @@ Entries:
       message: Oasis foi removido da rotação de mapas.
   id: 575
   time: '2026-10-31T14:14:10.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Fix
+      message: >-
+        A mochila do Radio Host agora pode vir com os suprimentos de emergência
+        novamente.
+    - type: Add
+      message: O Headset do Radio Host agora têm acesso aos canais de Serviço.
+  id: 576
+  time: '2026-11-01T15:50:25.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Tweak
+      message: O preço das caixas de vinil foram reduzidos para 300 spessos.
+  id: 577
+  time: '2026-11-01T15:51:02.0000000+00:00'
