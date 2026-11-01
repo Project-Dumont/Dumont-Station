@@ -210,14 +210,8 @@ public sealed partial class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRule
         ref RoundEndTextAppendEvent args
         )
     {
-        var winText = Loc.GetString($"xenomorphs-{component.WinType.ToString().ToLower()}");
-        args.AddLine(winText);
-
-        foreach (var cond in component.WinConditions)
-        {
-            var text = Loc.GetString($"xenomorphs-cond-{cond.ToString().ToLower()}");
-            args.AddLine(text);
-        }
+        EntityManager.System<Content.Server._Dumont.Xenomorphs.XenomorphHiveObjectivesSystem>()
+            .AppendRoundEndReport(component.WinType, args);
     }
 
     protected override void Started(

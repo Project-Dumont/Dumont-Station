@@ -86,6 +86,7 @@ public sealed partial class XenomorphHiveObjectivesSystem : EntitySystem
         _musicSource = null;
         _pendingMinds.Clear();
         _hadXenomorphs = false;
+        _roundEndXenomorphs.Clear();
     }
 
     private void OnMindAdded(Entity<XenomorphLineageComponent> ent, ref MindAddedMessage args)
