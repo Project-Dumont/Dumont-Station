@@ -57,6 +57,6 @@
   - type: PointLight
     enabled: true
     color: "#A50F34"
-    radius: 3.0
-    energy: 1
+    radius: 5.0
+    energy: 4
     netsync: true
