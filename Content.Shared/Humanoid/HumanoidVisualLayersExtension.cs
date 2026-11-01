@@ -79,15 +79,27 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
-                    yield return HumanoidVisualLayers.Wings; // for IPC wings port from SimpleStation
-                    yield return HumanoidVisualLayers.Tail;
+                    // Dumont changes start
+                    //yield return HumanoidVisualLayers.Wings; // for IPC wings port from SimpleStation
+                    //yield return HumanoidVisualLayers.Tail;
+                    // Dumont end
                 // Shitmed Change Start
                     yield return HumanoidVisualLayers.Groin;
                     break;
                 case HumanoidVisualLayers.Groin:
                     yield return HumanoidVisualLayers.Groin;
+                    // Dumont changes start
+                    //yield return HumanoidVisualLayers.Tail;
+                    // Dumont end
+                    break;
+                // Dumont changes start
+                case HumanoidVisualLayers.Tail:
                     yield return HumanoidVisualLayers.Tail;
                     break;
+                case HumanoidVisualLayers.Wings:
+                    yield return HumanoidVisualLayers.Wings;
+                    break;
+                // Dumont end
                 case HumanoidVisualLayers.LHand:
                     yield return HumanoidVisualLayers.LHand;
                     break;
@@ -118,6 +130,10 @@ namespace Content.Shared.Humanoid
                     return HumanoidVisualLayers.Groin;
                 case BodyPartType.Tail:
                     return HumanoidVisualLayers.Tail;
+                // Dumont changes start
+                case BodyPartType.Wings:
+                    return HumanoidVisualLayers.Wings;
+                // Dumont end
                 case BodyPartType.Head:
                     // use the Sublayers method to hide the rest of the parts,
                     // if that's what you're looking for

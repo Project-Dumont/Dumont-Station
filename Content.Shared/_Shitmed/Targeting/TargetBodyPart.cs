@@ -33,6 +33,10 @@ public enum TargetBodyPart : ushort
     LeftFoot = 1 << 8,
     RightLeg = 1 << 9,
     RightFoot = 1 << 10,
+    // Dumont changes start
+    Tail = 1 << 11,
+    Wings = 1 << 12,
+    // Dumont end
 
     Hands = LeftHand | RightHand,
     Arms = LeftArm | RightArm,
@@ -43,7 +47,10 @@ public enum TargetBodyPart : ushort
     BodyMiddle = Chest | Groin | FullArms,
     FullLegsGroin = FullLegs | Groin,
 
-    All = Head | Chest | Groin | LeftArm | LeftHand | RightArm | RightHand | LeftLeg | LeftFoot | RightLeg | RightFoot,
+    // Dumont changes start
+    All = Head | Chest | Groin | LeftArm | LeftHand | RightArm | RightHand | LeftLeg | LeftFoot | RightLeg | RightFoot | Tail | Wings,
+    Other = Tail | Wings,
+    // Dumont end
 
     Vital = Head | Chest | Groin, // Goobstation
 }

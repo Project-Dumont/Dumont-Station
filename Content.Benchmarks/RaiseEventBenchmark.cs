@@ -12,6 +12,7 @@ using Content.IntegrationTests.Pair;
 using Robust.Shared;
 using Robust.Shared.Analyzers;
 using Robust.Shared.GameObjects;
+using System.IO;
 
 namespace Content.Benchmarks;
 
@@ -26,7 +27,7 @@ public class RaiseEventBenchmark
     {
         ProgramShared.PathOffset = "../../../../";
         PoolManager.Startup(typeof(BenchSystem).Assembly);
-        _pair = PoolManager.GetServerClient().GetAwaiter().GetResult();
+        _pair = PoolManager.GetServerClient(testContext: new ExternalTestContext("Benchmark", StreamWriter.Null)).GetAwaiter().GetResult();
         var entMan = _pair.Server.EntMan;
         _sys = entMan.System<BenchSystem>();
 

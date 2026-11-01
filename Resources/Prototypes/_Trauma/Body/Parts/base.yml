@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  id: BaseTail
+  name: tail
+  components:
+  - type: Sprite
+    state: tail
+  - type: Icon
+    state: tail
+  - type: BodyPart
+    partType: Tail
+    toolName: "a tail"
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: Tail
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
+  # numbers for an arm/leg since they're the most common and a reasonable default for strange parts
+  - type: Woundable
+    integrity: 80
+    integrityCap: 80
+    thresholds:
+      Minor: 70
+      Moderate: 50
+      Severe: 25
+      Critical: 10
+      Mangled: 0
+
+- type: entity
+  abstract: true
+  id: BaseWings
+  name: wings
+  components:
+  - type: Sprite
+    state: wings
+  - type: Icon
+    state: wings
+  - type: BodyPart
+    partType: Wings
+    toolName: "wings"
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: Wings
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
+  - type: Woundable
+    integrity: 80
+    integrityCap: 80
+    thresholds:
+      Minor: 70
+      Moderate: 50
+      Severe: 25
+      Critical: 10
+      Mangled: 0

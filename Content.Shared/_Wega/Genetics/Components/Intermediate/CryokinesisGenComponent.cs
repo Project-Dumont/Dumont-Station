@@ -7,8 +7,7 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CryokinesisGenComponent : Component
 {
-    [ValidatePrototypeId<EntityPrototype>]
-    public string ActionId = "ActionCryokinesis";
+    public EntProtoId ActionId = "ActionCryokinesis";
 
     [DataField]
     public EntityUid? ActionEntity;

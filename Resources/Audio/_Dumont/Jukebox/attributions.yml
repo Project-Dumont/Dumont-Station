@@ -22,6 +22,11 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=8OPgIdn95Zg"
 
+- files: ["alors_on_danse.ogg"]
+  copyright: "Alors on Danse. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=VHoT4N43jK8"
+
 - files: ["american_idiot.ogg"]
   copyright: "American Idiot. Exported with cobalt.tools"
   license: "Custom"
@@ -36,6 +41,11 @@
   copyright: "Axel F. Exported with cobalt.tools"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=k85mRPqvMbE"
+
+- files: ["baby.ogg"]
+  copyright: "Baby. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=kffacxfA7G4"
 
 - files: ["baker_street.ogg"]
   copyright: "Baker Street. Exported with cobalt.tools"
@@ -67,6 +77,11 @@
   license: "Custom"
   source: "https://youtu.be/Zi_XLOBDo_Y?si=awhpLLTaPAkBbxpd"
 
+- files: [ black_hole_sun.ogg ]
+  copyright: "Black Hole Sun. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=3mbBbFH9fAg"
+
 - files: ["blue.ogg"]
   copyright: "Blue. Exported with cobalt.tools"
   license: "Custom"
@@ -86,6 +101,11 @@
   copyright: "Break My Stride. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/B4c_SkROzzo?si=G0Wy53_Xe50Nrc6m"
+
+- files: ["bring_me_to_life.ogg"]
+  copyright: "Bring Me To Life. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/3YxaaGgTQYM?is=ISJLRRDx7CAhNpYq"
 
 - files: ["brother_louie.ogg"]
   copyright: "Brother Louie. Exported with cobalt.tools"
@@ -206,6 +226,11 @@
   copyright: "Dragostea Din Tei. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/YnopHCL1Jk8?si=vtShHKus-K2atBmv"
+
+- files: ["dreamscape.ogg"]
+  copyright: "Dreamscape. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=TKfS5zVfGBc"
 
 - files: ["elenore.ogg"]
   copyright: "Elenore. Exported with cobalt.tools"
@@ -367,6 +392,11 @@
   license: "Custom"
   source: "https://youtu.be/4QwZi9-7i5s?si=Z6ngKQKTwADn_CS1"
 
+- files: ["if_i_aint_got_you.ogg"]
+  copyright: "If I Ain't Got You. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Ju8Hr50Ckwk"
+
 - files: ["ill_never_smile_again.ogg"]
   copyright: "I'll Never Smile Again. Exported with cobalt.tools"
   license: "Custom"
@@ -451,6 +481,11 @@
   copyright: "Live And Let Die. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/08saJgLmytU?si=fwKHN0uIi1Ja-fXu"
+
+- files: ["macintosh_plus.ogg"]
+  copyright: "Macintosh Plus. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/bAgmGZ9iQ2Y?is=MmuUz4Qk3MDBSpBQ"
 
 - files: ["maria_izabel.ogg"]
   copyright: "Maria Izabel. Exported with cobalt.tools"
@@ -547,6 +582,11 @@
   license: "Custom"
   source: "https://youtu.be/vlZ9MGgC1NI?si=-HXRYFPKtaxqH3tA"
 
+- files: ["red_spectacles_theme.ogg"]
+  copyright: "Red Spectacles Theme. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Vkfks9hwNO4"
+
 - files: ["relax.ogg"]
   copyright: "Relax. Exported with cobalt.tools"
   license: "Custom"
@@ -586,6 +626,11 @@
   copyright: "Somethin' Stupid. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/Y_t2gNCXYbY?si=GWGn27HDDq5qjmTq"
+
+- files: ["somewhere_i_belong.ogg"]
+  copyright: "Somewhere I Belong. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=zsCD5XCu6CM"
 
 - files: ["southern_nights.ogg"]
   copyright: "Southern Nights. Exported with cobalt.tools"
@@ -656,6 +701,11 @@
   copyright: "Tempo Perdido. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/YPLQHeUSX2g?si=vwVlQfM0OTJLUreB"
+
+- files: ["the_chain.ogg"]
+  copyright: "The Chain. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/xwTPvcPYaOo?is=5pJxJ7zXvYrdrHx0"
 
 - files: ["there_is_a_light_that_never_goes_out.ogg"]
   copyright: "There Is A Light That Never Goes Out. Exported with cobalt.tools"

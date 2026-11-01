@@ -9,3 +9,27 @@
   background: /Textures/_Dumont/LobbyScreens/nukelatuff.webp
   name: Nuke Latuff
   artist: Desconhecido
+
+- type: lobbyBackground
+  id: retornodosxenosart
+  background: /Textures/_Dumont/LobbyScreens/retornodosxenos.webp
+  name: Retorno dos Xenos
+  artist: RumataRisus
+
+- type: lobbyBackground
+  id: maxcapart
+  background: /Textures/_Dumont/LobbyScreens/maxcap.webp
+  name: Maxcap
+  artist: gnomio
+
+- type: lobbyBackground
+  id: verdadeiraeleicaoart
+  background: /Textures/_Dumont/LobbyScreens/verdadeiraeleicao.webp
+  name: Verdadeira eleição
+  artist: gnomio
+
+- type: lobbyBackground
+  id: stackedbombsart
+  background: /Textures/_Dumont/LobbyScreens/stackedbombs.webp
+  name: Stacked bombs
+  artist: Struater

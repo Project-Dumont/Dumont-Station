@@ -14,7 +14,6 @@
 
 using Content.Server.Maps;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.GameTicking.Presets
 {
@@ -52,7 +51,7 @@ namespace Content.Server.GameTicking.Presets
         /// If specified, the gamemode will only be run with these maps.
         /// If none are elligible, the global fallback will be used.
         /// </summary>
-        [DataField("supportedMaps", customTypeSerializer: typeof(PrototypeIdSerializer<GameMapPoolPrototype>))]
-        public string? MapPool;
+        [DataField("supportedMaps")]
+        public ProtoId<GameMapPoolPrototype>? MapPool;
     }
 }

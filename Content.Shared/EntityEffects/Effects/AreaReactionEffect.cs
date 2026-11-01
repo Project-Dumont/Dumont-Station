@@ -24,8 +24,8 @@ public sealed partial class AreaReactionEffect : EventEntityEffect<AreaReactionE
     /// <summary>
     /// The entity prototype that will be spawned as the effect.
     /// </summary>
-    [DataField("prototypeId", required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string PrototypeId = default!;
+    [DataField("prototypeId", required: true)]
+    public EntProtoId PrototypeId = default!;
 
     /// <summary>
     /// Sound that will get played when this reaction effect occurs.

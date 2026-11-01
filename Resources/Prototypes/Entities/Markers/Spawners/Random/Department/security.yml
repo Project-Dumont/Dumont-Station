@@ -125,6 +125,34 @@
       chance: 0.95
       offset: 0.0
 
+# Dumont lasersec rework for open armory mapping
+- type: entity
+  name: armory loot spawner
+  suffix: Ballistic
+  id: LootSpawnerArmoryBallisticGunsOnly
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - WeaponShotgunEnforcer
+#        - WeaponRifleAk
+      rareChance: 0.05
+      prototypes:
+        - WeaponSubMachineGunWt550
+        - WeaponPistolMk58
+        - WeaponRifleLecter
+        - WeaponSubMachineGunDrozd
+        - WeaponRevolverInspector
+        - WeaponShotgunKammerer
+        - WeaponShotgunDoubleBarreled
+      chance: 0.95
+      offset: 0.0
+
 - type: entity
   name: armory loot spawner
   suffix: Armor

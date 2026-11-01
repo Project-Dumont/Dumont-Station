@@ -14,8 +14,12 @@ public abstract partial class SharedRevolutionarySystem
     /// <summary>
     /// Change headrevs ability to convert people
     /// </summary>
-    public void SetConvertAbility(Entity<HeadRevolutionaryComponent> headRev, bool enabled = true)
+    public void SetConvertAbility(Entity<HeadRevolutionaryComponent> ent, bool enabled = true)
     {
-        headRev.Comp.ConvertAbilityEnabled = enabled;
+        if (ent.Comp.ConvertAbilityEnabled == enabled)
+            return;
+
+        ent.Comp.ConvertAbilityEnabled = enabled;
+        Dirty(ent);
     }
 }

@@ -1,0 +1,227 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseAreaStation
+  id: BaseAreaEngineering
+  name: engineering
+  suffix: AreaEngineering
+  components:
+  - type: DepartmentArea
+    department: Engineering
+
+# Engi
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineering
+  name: engineering
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engie
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngine
+  name: engine room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineBreak
+  name: engi break room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_break
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineControl
+  name: engine control room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_control
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineLobby
+  name: engi lobby
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_lobby
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineMonitor
+  name: engine monitor room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_monitor
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineSM
+  name: supermatter engine
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_sm
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineSMRoom
+  name: engi supermatter room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_sm_room
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineSmes
+  name: engi smes room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_smes
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaEngineStorage
+  name: engi storage room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: engine_storage
+
+# Atmos
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmos
+  name: atmos
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: atmos
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmosEngine
+  name: atmos engine
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: atmos_engine
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmosOffice
+  name: atmos office
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: atmos_office
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmosGasStorage
+  name: atmos gas storage
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: atmos_gas_storage
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmosBurnChamber
+  name: burn chamber
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: burn_chamber
+  # TODO: mark as unsafe
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaAtmosGasMiner
+  name: gas miner
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: gas_miner
+  # TODO: mark as unsafe
+
+# Engi adjacent
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaSubstation
+  name: substation locker
+  suffix: AreaEngineering, AreaCommand, AreaMedical, AreaScience, AreaSecurity, AreaService, AreaSupply, AreaGeneral, AreaAI, AreaShuttle, AreaDepartures, AreaExternal, AreaHallway, AreaMaint
+  components:
+  - type: Sprite
+    state: substation
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaGravGen
+  name: grav gen
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: grav_gen
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaSolarPanels
+  name: solar panels
+  description: For the solars airlocks, counts as inside engi.
+  suffix: AreaEngineering, AreaExterior
+  components:
+  - type: Sprite
+    state: solar_panels
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaStationAnchor
+  name: station anchor
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: anchor
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaTechStorage
+  name: tech storage
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: tech_storage
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaTelecomms
+  name: telecomms
+  suffix: AreaCommand, AreaEngineering
+  components:
+  - type: Sprite
+    state: tcom_sat
+
+- type: entity
+  parent: AreaEngineering
+  id: AreaShuttleBuilding
+  name: shuttle building room
+  suffix: AreaEngineering
+  components:
+  - type: Sprite
+    state: shuttle_build

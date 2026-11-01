@@ -356,8 +356,9 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     # Gabystation
-    - id: HandheldPowerMonitorGs
+#   - id: HandheldPowerMonitorGs Dumont edit goob already made one
     - id: RCDProtoCE
+    - id: ClothingEyesGlassesEngineeringScanner # Dumont
     - id: InducerEngineeringWhiteBattery # Orion
 
 # Hardsuit table, used for suit storage as well
@@ -424,7 +425,7 @@
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
-    - id: MedicalLaserGunCMO
+    - id: CMOAutoinjectorGun # dumont
     - id: ClothingBeltMilitaryWebbingCMOFilled
     - id: MedicalBiofabricatorFlatpack
     # Virology
@@ -567,6 +568,7 @@
     - id: SecurityMegaphone
     - id: SOSCartridge # Dumont edit
     - id: SecureLockboxHoSFilled # Dumont
+    - id: InducerSecBattery
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

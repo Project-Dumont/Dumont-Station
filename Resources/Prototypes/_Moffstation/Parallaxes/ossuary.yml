@@ -1,0 +1,25 @@
+- type: parallax
+  id: OssuaryStation
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_Moffstation/Parallaxes/dying_stars_nebula_background.png"
+    slowness: 0.998046875
+    scale: "0.5, 0.5"
+  - texture:
+      !type:GeneratedParallaxTextureSource
+      id: "ossuary_dying_stars_2"
+      configPath: "/Prototypes/_Moffstation/Parallaxes/parallax_config_dying_stars.toml"
+    slowness: 0.99
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_Moffstation/Parallaxes/dying_stars_nebula_foreground.png"
+    slowness: 0.985
+    scale: "0.5, 0.5"
+  layersLQ:
+  - texture:
+      !type:GeneratedParallaxTextureSource
+      id: ""
+      configPath: "/Prototypes/Parallaxes/parallax_config.toml"
+    slowness: 0.875
+  layersLQUseHQ: false

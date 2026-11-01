@@ -82,7 +82,7 @@
   bitrunningRewardPoints: 150
   forcedLoadout: BitrunnerAvatarSecurityOfficerMODGear
   forcedLoadoutSpecie:
-    Plasmaman: BitrunnerAvatarSecurityOfficerMODPlasmamanGear
+    # Plasmaman: BitrunnerAvatarSecurityOfficerMODPlasmamanGear - Dumont
     Vox: BitrunnerAvatarSecurityOfficerMODVoxGear
   isModular: true
   completionLoot:
@@ -111,7 +111,7 @@
     PlushieRouny: 1
   forcedLoadout: BitrunnerAvatarXenonautenGear
   forcedLoadoutSpecie:
-    Plasmaman: BitrunnerAvatarXenonautenPlasmamanGear
+    #Plasmaman: BitrunnerAvatarXenonautenPlasmamanGear - Dumont
     Vox: BitrunnerAvatarXenonautenVoxGear
   isModular: true
   mapPath: /Maps/_Orion/Bitrun/xenomorph-infestation.yml
@@ -179,7 +179,7 @@
   bitrunningRewardPoints: 600
   forcedLoadout: BitrunnerAvatarERTSecurityGear
   forcedLoadoutSpecie:
-    Plasmaman: BitrunnerAvatarERTSecurityPlasmamanGear
+    #Plasmaman: BitrunnerAvatarERTSecurityPlasmamanGear - Dumont
     Vox: BitrunnerAvatarERTSecurityVoxGear
   mapPath: /Maps/_Orion/Bitrun/Experimental-Soldier.yml
   objectiveType: CollectEncryptedCaches

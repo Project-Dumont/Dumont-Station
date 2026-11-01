@@ -62,7 +62,6 @@ using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Singularity.Components;
 
@@ -125,8 +124,8 @@ public sealed partial class ContainmentFieldGeneratorComponent : Component
     /// It really shouldn't be anything but an emitter bolt but it's here for fun.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("idTag", customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>))]
-    public string IDTag = "EmitterBolt";
+    [DataField("idTag")]
+    public ProtoId<TagPrototype> IDTag = "EmitterBolt";
 
     /// <summary>
     /// Which fixture ID should test collision with from the entity that powers the generator?
@@ -164,8 +163,8 @@ public sealed partial class ContainmentFieldGeneratorComponent : Component
     /// What fields should this spawn?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("createdField", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string CreatedField = "ContainmentField";
+    [DataField("createdField")]
+    public EntProtoId CreatedField = "ContainmentField";
 }
 
 [Serializable, NetSerializable]

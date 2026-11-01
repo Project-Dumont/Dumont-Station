@@ -502,6 +502,14 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconTramDriver
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: TramDriver
+  jobName: job-name-tram-driver
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconSeniorPhysician
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi

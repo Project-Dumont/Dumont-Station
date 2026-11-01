@@ -1,0 +1,190 @@
+- type: stationTrait
+  id: GiantEnemySpider
+  group: Negative
+  chance: 0.4
+  name: station-trait-giant-enemy-spider-name
+  report: station-trait-giant-enemy-spider-report
+  effects:
+  - !type:StartGameRule
+    rule: GiantSpidersRule
+
+- type: stationTrait
+  id: HellishInterpolation
+  group: Negative
+  chance: 0.1
+  name: station-trait-hellish-interpolation-name
+  report: station-trait-hellish-interpolation-report
+  conflicts: [ RandomSpawns, LateArrivals ]
+  effects:
+  - !type:StartGameRule
+    rule: LavalandSpawnRule
+
+- type: stationTrait
+  id: Nightfall
+  group: Negative
+  chance: 0.4
+  name: station-trait-nightfall-name
+  report: station-trait-nightfall-report
+  conflicts: [ Sunrise ]
+  effects:
+  - !type:StartGameRule
+    rule: NightfallRule
+
+- type: stationTrait
+  id: Sunrise
+  group: Positive
+  chance: 0.4
+  name: station-trait-sunrise-name
+  report: station-trait-sunrise-report
+  conflicts: [ Nightfall ]
+  effects:
+  - !type:StartGameRule
+    rule: SunriseRule
+
+- type: stationTrait
+  id: BureaucraticChaos
+  group: Neutral
+  name: station-trait-bureaucratic-chaos-name
+  report: station-trait-bureaucratic-chaos-report
+  effects:
+  - !type:StartGameRule
+    rule: BureaucraticChaosRule
+
+- type: stationTrait
+  id: BoostedResearch
+  group: Positive
+  name: station-trait-boosted-research-name
+  report: station-trait-boosted-research-report
+  effects:
+  - !type:StartGameRule
+    rule: BoostedResearchRule
+
+- type: stationTrait
+  id: DeathrattledStation
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-station-name
+  report: station-trait-deathrattled-station-report
+  conflicts: [ DeathrattledCargo, DeathrattledCivilian, DeathrattledCommand, DeathrattledEngineering, DeathrattledMedical, DeathrattledScience, DeathrattledSecurity ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledStationRule
+
+- type: stationTrait
+  id: DeathrattledCargo
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-cargo-name
+  report: station-trait-deathrattled-cargo-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledCargoRule
+
+- type: stationTrait
+  id: DeathrattledCivilian
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-civilian-name
+  report: station-trait-deathrattled-civilian-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledCivilianRule
+
+- type: stationTrait
+  id: DeathrattledCommand
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-command-name
+  report: station-trait-deathrattled-command-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledCommandRule
+
+- type: stationTrait
+  id: DeathrattledEngineering
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-engineering-name
+  report: station-trait-deathrattled-engineering-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledEngineeringRule
+
+- type: stationTrait
+  id: DeathrattledMedical
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-medical-name
+  report: station-trait-deathrattled-medical-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledMedicalRule
+
+- type: stationTrait
+  id: DeathrattledScience
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-science-name
+  report: station-trait-deathrattled-science-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledScienceRule
+
+- type: stationTrait
+  id: DeathrattledSecurity
+  group: Positive
+  chance: 0.05
+  name: station-trait-deathrattled-security-name
+  report: station-trait-deathrattled-security-report
+  conflicts: [ DeathrattledStation ]
+  effects:
+  - !type:StartGameRule
+    rule: DeathrattledSecurityRule
+
+- type: stationTrait
+  id: CyberneticRevolution
+  group: Positive
+  chance: 0.05
+  name: station-trait-cybernetic-revolution-name
+  report: station-trait-cybernetic-revolution-report
+  effects:
+  - !type:StartGameRule
+    rule: CyberneticRevolutionRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionCargoRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionCivilianRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionCommandRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionEngineeringRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionMedicalRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionScienceRule
+  - !type:StartGameRule
+    rule: CyberneticRevolutionSecurityRule
+
+- type: stationTrait
+  id: CleanPipes
+  group: Positive
+  name: station-trait-clean-pipes-name
+  report: station-trait-clean-pipes-report
+  effects:
+  - !type:StartGameRule
+    rule: CleanPipesRule
+
+- type: stationTrait
+  id: PestControl
+  group: Positive
+  name: station-trait-pest-control-name
+  report: station-trait-pest-control-report
+  effects:
+  - !type:StartGameRule
+    rule: PestControlRule

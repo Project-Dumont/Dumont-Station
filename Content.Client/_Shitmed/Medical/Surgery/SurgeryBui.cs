@@ -47,6 +47,9 @@ public sealed class SurgeryBui : BoundUserInterface
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
         if (_window is null
+            // Dumont changes start
+            || _window.Disposed
+            // Dumont end
             || message is not SurgeryBuiRefreshMessage)
             return;
 
@@ -57,6 +60,11 @@ public sealed class SurgeryBui : BoundUserInterface
     {
         if (state is not SurgeryBuiState s)
             return;
+
+        // Dumont changes start
+        if (_window is { Disposed: true })
+            return;
+        // Dumont end
 
         Update(s);
     }
@@ -148,7 +156,10 @@ public sealed class SurgeryBui : BoundUserInterface
                     BodyPartType.Hand => 5,
                     BodyPartType.Leg => 6,
                     BodyPartType.Foot => 7,
-                    // BodyPartType.Tail => 8, No tails yet!
+                    // Dumont changes start
+                    BodyPartType.Tail => 8,
+                    BodyPartType.Wings => 8,
+                    // Dumont end
                     BodyPartType.Other => 9,
                     _ => 10
                 };

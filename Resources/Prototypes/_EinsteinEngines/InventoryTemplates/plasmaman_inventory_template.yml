@@ -11,6 +11,7 @@
       whitelist: #Dumont change
         tags:
           - PlasmamanSafe
+          - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
@@ -28,6 +29,7 @@
       whitelist: #Dumont change
         tags:
           - PlasmamanSafe
+          - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
     - name: gloves
       slotTexture: gloves
       slotFlags: GLOVES
@@ -37,6 +39,7 @@
       whitelist:
         tags:
           - PlasmamanSafe
+          - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
     - name: neck
       slotTexture: neck
       slotFlags: NECK
@@ -72,6 +75,7 @@
       whitelist:
         tags:
           - PlasmamanSafe
+          - PlasmamanSafeOther # Dumont - Allow plasmamen to wear heretic armor
     - name: pocket1
       slotTexture: pocket
       fullTextureName: template_small

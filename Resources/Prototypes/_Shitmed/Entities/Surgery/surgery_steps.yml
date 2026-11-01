@@ -295,6 +295,10 @@
     - type: IncisionOpen
     - type: BodyPartReattached
     - type: InternalBleedersClamped
+    # Dumont changes start
+    - type: JointCreated
+    - type: JointStitched
+    # Dumont end
     duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
@@ -337,6 +341,10 @@
     - type: BleedersClamped
     - type: IncisionOpen
     - type: InternalBleedersClamped
+    # Dumont changes start
+    - type: JointCreated
+    - type: JointStitched
+    # Dumont end
     duration: 2
   - type: SurgeryAffixPartStep
   - type: Sprite

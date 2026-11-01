@@ -1,0 +1,10 @@
+- type: contrabandSeverity
+  id: SolGov
+  examineText: contraband-examine-text-SolGov
+
+- type: entity
+  abstract: true
+  id: BaseSolGovContraband
+  components:
+  - type: Contraband
+    severity: SolGov

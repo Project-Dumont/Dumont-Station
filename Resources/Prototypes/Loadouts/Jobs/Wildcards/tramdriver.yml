@@ -1,0 +1,26 @@
+
+- type: loadout
+  id: TramDriverHead
+  equipment:
+    head: ClothingHeadHatTramDriver
+
+
+- type: loadout
+  id: TramDriverJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTramDriver
+
+- type: loadout
+  id: TramDriverJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtTramDriver
+
+- type: loadout
+  id: TramDriverShoes
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: TramDriverOuterClothing
+  equipment:
+    outerClothing: ClothingOuterSuitTramDriver

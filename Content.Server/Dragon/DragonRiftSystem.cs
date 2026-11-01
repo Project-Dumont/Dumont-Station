@@ -11,6 +11,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont changes start
+using Content.Shared._Trauma.Sprite;
+// Dumont end
 using Content.Server.Chat.Systems;
 using Content.Server.NPC;
 using Content.Server.NPC.Systems;
@@ -111,6 +114,10 @@ public sealed class DragonRiftSystem : EntitySystem
                     var spawnedSprite = EnsureComp<RandomSpriteComponent>(ent);
                     _serManager.CopyTo(randomSprite, ref spawnedSprite, notNullableOverride: true);
                     Dirty(ent, spawnedSprite);
+                    // Dumont changes start
+                    var ev = new RandomSpriteChangedEvent();
+                    RaiseLocalEvent(ent, ref ev);
+                    // Dumont end
                 }
 
                 if (comp.Dragon != null)

@@ -220,17 +220,17 @@ public sealed partial class TurbineComponent : Component
     public EntProtoId ArrowPrototype = "TurbineFlowArrow";
     #endregion
 
-    [DataField("speedHighPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedHighPort = "TurbineSpeedHigh";
+    [DataField("speedHighPort")]
+    public ProtoId<SourcePortPrototype> SpeedHighPort = "TurbineSpeedHigh";
 
-    [DataField("speedLowPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedLowPort = "TurbineSpeedLow";
+    [DataField("speedLowPort")]
+    public ProtoId<SourcePortPrototype> SpeedLowPort = "TurbineSpeedLow";
 
-    [DataField("statorLoadIncreasePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string StatorLoadIncreasePort = "IncreaseStatorLoad";
+    [DataField("statorLoadIncreasePort")]
+    public ProtoId<SinkPortPrototype> StatorLoadIncreasePort = "IncreaseStatorLoad";
 
-    [DataField("statorLoadDecreasePort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string StatorLoadDecreasePort = "DecreaseStatorLoad";
+    [DataField("statorLoadDecreasePort")]
+    public ProtoId<SinkPortPrototype> StatorLoadDecreasePort = "DecreaseStatorLoad";
 
     #region Debug
     [ViewVariables(VVAccess.ReadOnly)]

@@ -35,10 +35,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganReptilianStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
+    # Dumont changes start
+    tail:
+      part: TailReptilian
+    # Dumont end
     right arm:
       part: RightArmReptilian
       connections:

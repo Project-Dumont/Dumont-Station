@@ -308,12 +308,12 @@ entities:
           decals:
             72: -2,-4
         - node:
-            color: '#D69949FF'
+            color: '#9a612cFF'
             id: BrickTileWhiteEndN
           decals:
             83: -2,-5
         - node:
-            color: '#D69949FF'
+            color: '#9a612cFF'
             id: BrickTileWhiteEndS
           decals:
             82: -2,-6

@@ -1,0 +1,182 @@
+- type: startingGear
+  id: SolGovTrooperGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCamouflage
+    back: ClothingBackpackSol
+    belt: ClothingBeltMercWebbingSolGovFilled
+    mask: ClothingMaskGasMerc
+    eyes: ClothingEyesGlassesSolGov
+    ears: ClothingHeadsetAltFreelancer
+    gloves: ClothingHandsGlovesCombat
+    neck: ClothingNeckCloakSolGov
+    head: ClothingHeadHelmetSolGov
+    outerClothing: ClothingOuterArmorSolGov
+    suitstorage: WeaponEarthGovLaserRifle
+    shoes: ClothingShoesSpaceNinja
+    id: SolGovPDA
+    pocket1: WeaponEarthGovLaserPistol
+    pocket2: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - WeaponSubMachineGunP90
+    - CombatMedipen
+    - CombatMedipen
+    - MedkitCombatFilled
+    - Crowbar
+
+- type: startingGear
+  id: SolGovLeaderGear
+  parent: SolGovTrooperGear
+  equipment:
+    suitstorage: WeaponEarthGovLaserMG
+  storage:
+    back:
+    - WeaponSubMachineGunP90
+    - WeaponEarthGovLaserRifle
+    - CombatMedipen
+    - CombatMedipen
+    - MedkitCombatFilled
+    - Crowbar
+
+- type: entity
+  id: SpawnerSolGovTrooper
+  parent: RandomHumanoidSpawnerERTSecurityEVA
+  name: SolGov trooper
+  suffix: SolGov
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: RandomHumanoidSpawner
+    settings: SolGovTrooper
+
+- type: entity
+  id: SpawnerSolGovLeader
+  parent: RandomHumanoidSpawnerERTLeaderEVA
+  name: SolGov leader
+  suffix: SolGov
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirstLeader
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: RandomHumanoidSpawner
+    settings: SolGovLeader
+
+- type: randomHumanoidSettings
+  id: SolGovTrooper
+  parent: CentcommHumanoid
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  - Yowie
+  - IPC
+  - Diona
+  - Harpy
+  - Vox
+  - Tajaran
+  - Resomi
+  - Oni
+  - Gingerbread
+  - Plasmaman
+  - Reptilian
+  - Moth
+  - Shadowkin
+  - Arachnid
+  - Vulpkanin
+  - Rodentia
+  - SlimePerson
+  - Dwarf
+  - Feroxi
+  - Chitinid
+  - Synth
+  components:
+  - type: GhostRole
+    name: ghost-role-information-solgov-trooper-name
+    description: ghost-role-information-solgov-trooper-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: SolGovExpedition
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: Loadout
+    prototypes: [ SolGovTrooperGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+  - type: AutoImplant
+    implants: [ BluespaceLifelineImplant, MindShieldImplant ]
+
+- type: randomHumanoidSettings
+  id: SolGovLeader
+  parent: SolGovTrooper
+  components:
+  - type: GhostRole
+    name: ghost-role-information-solgov-leader-name
+    description: ghost-role-information-solgov-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: SolGovExpeditionLeader
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirstLeader
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: Loadout
+    prototypes: [ SolGovLeaderGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+
+- type: job
+  id: SolGovExpedition
+  name: job-name-solgov-expedition
+  description: job-description-solgov-expedition
+  playTimeTracker: JobSolGovExpedition
+  setPreference: false
+  startingGear: SolGovTrooperGear
+  icon: JobIconSolGov
+  supervisors: job-supervisors-solgov
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+
+- type: job
+  id: SolGovExpeditionLeader
+  name: job-name-solgov-expedition-leader
+  description: job-description-solgov-expedition-leader
+  playTimeTracker: JobSolGovExpeditionLeader
+  setPreference: false
+  startingGear: SolGovLeaderGear
+  icon: JobIconSolGov
+  supervisors: job-supervisors-solgov
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+
+- type: playTimeTracker
+  id: JobSolGovExpedition
+
+- type: playTimeTracker
+  id: JobSolGovExpeditionLeader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSolGov
+  icon:
+    sprite: /Textures/_Dumont/Interface/Misc/job_icons.rsi
+    state: SolGov
+  jobName: job-name-solgov-expedition

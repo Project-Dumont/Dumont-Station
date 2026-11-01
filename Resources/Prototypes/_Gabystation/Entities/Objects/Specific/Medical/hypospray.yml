@@ -25,3 +25,17 @@
         Quantity: 7
       - ReagentId: Stellibinin
         Quantity: 3
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 7
+        - ReagentId: Stellibinin
+          Quantity: 3
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10

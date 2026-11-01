@@ -1,11 +1,23 @@
 #Dumont Station Shuttles
-#These are located in /_Gabystation/Maps/Shuttles/
+#These are located in /_Dumont/Maps/Shuttles/
 
 - files: ["emergency_strain.yml"]
   authors: fuinha7
 
 - files: ["cargo_falcon.yml"]
   authors: CRISOOOOO
+
+- files: ["labor.yml"]
+  authors: CRISOOOOO
+
+- files: ["civilian.yml"]
+  authors: CRISOOOOO
+
+- files: ["mining.yml"]
+  authors: CRISOOOOO
+
+- files: ["emergency_cobblestone.yml"]
+  authors: fuinha7
 
 #Harmony Shuttles
 

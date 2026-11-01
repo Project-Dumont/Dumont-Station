@@ -149,6 +149,7 @@
   id: MobCorgiIan
   description: Favorite pet corgi.
   components:
+  - type: IanAdventureTarget # Dumont
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -290,6 +291,7 @@
   id: MobCorgiIanPup
   description: Favourite puppy corgi. Awww.
   components:
+  - type: IanAdventureTarget # Dumont
   - type: Grammar
     attributes:
       proper: true

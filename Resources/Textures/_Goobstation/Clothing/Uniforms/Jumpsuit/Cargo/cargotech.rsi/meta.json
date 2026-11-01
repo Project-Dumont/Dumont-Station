@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from paradise at commit https://github.com/ParadiseSS13/Paradise/commit/207695cbdab4cb8f81a25cdbb201a88a6851d78b , In hand sprite scaled down by potato1234_x, monkey made by SonicHDC (github) for ss14",
+  "copyright": "Taken from Paradise Station at https://github.com/ParadiseSS13/Paradise/blob/master/icons/mob/clothing/under/cargo.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -14,7 +14,7 @@
       "name": "equipped-INNERCLOTHING",
       "directions": 4
     },
-	{
+    {
       "name": "folded-equipped-INNERCLOTHING",
       "directions": 4
     },

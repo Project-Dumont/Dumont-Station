@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SurgeryStepSealBones
+  id: SurgeryStepCreateJoint
+  name: Create joint
+  components:
+  - type: SurgeryStep
+    remove: null
+    add:
+    - type: JointCreated
+
+- type: entity
+  parent: SurgeryStepCloseBloodOutputs
+  id: SurgeryStepStitchJoint
+  name: Stitch joint blood vessels
+  components:
+  - type: SurgeryStep
+    remove: null
+    add:
+    - type: JointStitched
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepOpenPartSlot
+  name: Carve out a joint
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Scalpel
+    duration: 6
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/manipulation.rsi
+    state: insertion
+  - type: SurgeryAddPartSlotStep
+  - type: SurgeryStepPainInflicter
+    amount: 21
+    painDuration: 60
+    sleepModifier: 0.34
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertKidneys
+  name: Add kidneys

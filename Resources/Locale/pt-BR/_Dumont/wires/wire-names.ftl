@@ -1,0 +1,1 @@
+wires-board-name-advancedanomalygenerator = GeradorAvancadoDeAnomalia

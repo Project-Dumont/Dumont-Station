@@ -21,7 +21,7 @@ RELEASE_DIR = "release"
 # Forks should change these to publish to their own infrastructure.
 #
 ROBUST_CDN_URL = "https://cdn.dumontstation.online/"
-FORK_ID = "gaby"
+FORK_ID = "dumont"
 
 def main():
     session = requests.Session()

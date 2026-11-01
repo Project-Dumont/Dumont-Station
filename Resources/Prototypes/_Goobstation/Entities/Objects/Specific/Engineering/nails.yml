@@ -82,6 +82,8 @@
         - EngineeringStaff
   - type: Reflective
     reflective: NonEnergy
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   name: nail (armor-piercing)

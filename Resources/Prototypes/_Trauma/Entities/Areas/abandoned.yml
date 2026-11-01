@@ -1,0 +1,89 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# these don't have the relevant department etc, they're for maints rooms
+- type: entity
+  abstract: true
+  parent: AreaMaints
+  id: BaseAreaAbandoned
+  suffix: AreaMaint
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedArcade
+  name: abandoned arcade
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_arcade
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedBar
+  name: abandoned bar
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_bar
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedChapel
+  name: abandoned chapel
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_chapel
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedGarden
+  name: abandoned garden
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_garden
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedKitchen
+  name: abandoned kitchen
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_kitchen
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedLibrary
+  name: abandoned library
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_library
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedMed
+  name: abandoned med
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_med
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedSci
+  name: abandoned sci
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_sci
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedTheatre
+  name: abandoned theatre
+  suffix: AreaMaint
+  components:
+  - type: Sprite
+    state: abandoned_theatre

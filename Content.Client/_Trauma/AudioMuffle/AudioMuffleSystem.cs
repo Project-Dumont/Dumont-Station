@@ -106,6 +106,15 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         _audio.GetOcclusionOverride -= OnOcclusion;
     }
 
+    // Dumont changes start
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        ProcessPendingRebuild();
+    }
+    // Dumont end
+
     private void OnRestart(RoundRestartCleanupEvent ev)
     {
         PlayerGrid = null;
@@ -166,6 +175,11 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
             return;
 
         var tile = _map.TileIndicesFor(grid, pos);
+
+        // Dumont changes start
+        if (ResolvePlayer() is { } player)
+            ResetAllBlockers(player);
+        // Dumont end
 
         if (!_map.CollidesWithGrid(grid, grid, tile))
             return;
@@ -534,6 +548,8 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
 
         if (!_pathfindingEnabled)
             return CalculateRaycastOcclusion(listener, delta, distance, ignoredEnt);
+
+        ProcessPendingRebuild(); // Dumont
 
         var xform = Transform(player);
         var playerPos = _xform.GetMapCoordinates(player, xform);

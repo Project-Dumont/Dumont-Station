@@ -51,7 +51,7 @@
     name: abductor-lone-ghost-role-name
     description: abductor-lone-ghost-role-desc
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleLoneAbductor
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
@@ -79,7 +79,7 @@
     name: abductor-scientist-ghost-role-name
     description: abductor-scientist-ghost-role-desc
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleAbductorScientist
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
@@ -104,7 +104,7 @@
     name: abductor-agent-ghost-role-name
     description: abductor-agent-ghost-role-desc
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleAbductorAgent
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
@@ -139,9 +139,12 @@
     outerClothing: ClothingOuterCoatAbductor
     back: ClothingBackpackAbductor
     pocket1: AbductorGizmo
-    pocket2: WeaponAlien
+    pocket2: AbductorTaskTablet
     suitstorage: Wonderprod
     id: AgentIDCard
+  storage:
+    back:
+    - WeaponAlien
 
 - type: startingGear
   id: AbductorScientistGear
@@ -153,9 +156,13 @@
     head: ClothingHeadMirror
     outerClothing: ClothingOuterCoatAbductor
     back: ClothingBackpackDuffelAbductor
-    pocket1: AbductorGizmo
+    pocket1: Silencer
+    pocket2: AbductorTaskTablet
     suitstorage: WeaponDecloner
     id: AgentIDCard
+  storage:
+    back:
+    - RadioJammer
 
 - type: startingGear
   id: AbductorAgentGear
@@ -167,25 +174,27 @@
     head: ClothingHeadHelmetAbductor
     outerClothing: ClothingOuterArmorAbductor
     back: ClothingBackpackAbductor
-    pocket1: Silencer
+    pocket1: AbductorGizmo
     pocket2: WeaponAlien
     suitstorage: Wonderprod
     id: AgentIDCard
+  inhand:
+    - ClothingBackpackChameleonFill
 
 # Spawners
 
 - type: entity
-  name: lone abductor spawner
-  id: SpawnPointLoneAbductor
   parent: MarkerBase
+  id: SpawnPointAbductor
+  name: abductor spawn point
   components:
   - type: SpawnPoint
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+    - state: green
+    - sprite: _Shitmed/Objects/Weapons/Melee/wonderprod.rsi
+      state: icon
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -197,7 +206,7 @@
     description: abductor-lone-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleLoneAbductor
     raffle:
       settings: default
     requirements:
@@ -217,19 +226,6 @@
         state: radiation
 
 - type: entity
-  name: abductor agent spawner
-  id: SpawnPointAbductorAgent
-  parent: MarkerBase
-  components:
-  - type: SpawnPoint
-  - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
-
-- type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
   id: AbductorAgentSpawner
@@ -239,7 +235,7 @@
     description: abductor-agent-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleAbductorAgent
     raffle:
       settings: default
     requirements:
@@ -248,19 +244,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10800 #3 hours
-  - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
-
-- type: entity
-  name: abductor scientist spawner
-  id: SpawnPointAbductorScientist
-  parent: MarkerBase
-  components:
-  - type: SpawnPoint
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -278,7 +261,7 @@
     description: abductor-scientist-ghost-role-desc
     rules: abductors-ghost-role-rules
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleAbductorScientist
     raffle:
       settings: default
     requirements:

@@ -35,9 +35,13 @@
   id: Default
   damagePerIntensity:
     types:
-      Heat: 5
-      Blunt: 5
-      Slash: 5 # Goob edit
+      Heat: 7
+      Blunt: 7
+      Slash: 7 # Dumont edit
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -49,10 +53,14 @@
   id: DemolitionCharge
   damagePerIntensity:
     types:
+      Heat: 5
+      Blunt: 5
+      Slash: 5 # Goob edit
+      Structural: 50
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
       Heat: 3
       Blunt: 3
-      Slash: 3 # Goob edit
-      Structural: 50
+      Slash: 3
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 0, 10, 30 ]
   tileBreakRerollReduction: 20
@@ -64,10 +72,14 @@
   id: MicroBomb
   damagePerIntensity:
     types:
-      Heat: 6
-      Blunt: 6
-      Slash: 6 # Goob edit
+      Heat: 9
+      Blunt: 9
+      Slash: 9 # Goob edit
       Structural: 20
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 1, 10, 15 ]
   tileBreakRerollReduction: 30
@@ -81,9 +93,13 @@
   damagePerIntensity:
     types:
       Radiation: 5
-      Heat: 4
+      Heat: 5
+      Blunt: 5
+      Slash: 5 # Goob edit
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
       Blunt: 3
-      Slash: 3 # Goob edit
+      Slash: 3
   lightColor: Green
   fireColor: Green
   texturePath: /Textures/Effects/fire_greyscale.rsi
@@ -96,6 +112,9 @@
       Cold: 5
       Blunt: 2
       Structural: 20
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Cold: 3
+      Blunt: 3
   tileBreakChance: [0]
   tileBreakIntensity: [0]
   lightColor: Blue
@@ -107,9 +126,13 @@
   id: Minibomb
   damagePerIntensity:
     types:
-      Heat: 8 # Goob edit
-      Blunt: 14 # Goob edit
-      Slash: 8 # Goob edit
+      Heat: 11 # Goob edit
+      Blunt: 16 # Goob edit
+      Slash: 11 # Goob edit
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -125,6 +148,10 @@
       Blunt: 24 # Goob edit
       Slash: 24 # Goob edit
       Structural: 30
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 1, 5, 10 ]
   tileBreakRerollReduction: 3
@@ -141,6 +168,10 @@
       Blunt: 30 # Goob edit
       Slash: 12 # Goob edit
       Structural: 40
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 0, 10, 30 ]
   tileBreakRerollReduction: 10
@@ -153,9 +184,13 @@
   id: FireBomb
   damagePerIntensity:
     types:
-      Heat: 1
-      Blunt: 2
-      Slash: 3 # Goob edit
+      Heat: 2
+      Blunt: 4
+      Slash: 4 # Goob edit
+    woundSeverityMultipliers: # Dumont edit - Explosion balancing
+      Heat: 3
+      Blunt: 3
+      Slash: 3
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
   fireStates: 3

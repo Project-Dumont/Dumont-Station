@@ -538,7 +538,7 @@ public sealed class EntityEffectSystem : EntitySystem
                 return;
             }
 
-            if (_spreader.RequiresFloorToSpread(args.Effect.PrototypeId) &&  _turf.IsSpace(tileRef)) //todo Goobstation? _turf should be tileRef but we dont have the RT for it?
+            if (_spreader.RequiresFloorToSpread(args.Effect.PrototypeId.Id) &&  _turf.IsSpace(tileRef)) //todo Goobstation? _turf should be tileRef but we dont have the RT for it?
                 return;
 
             var coords = _map.MapToGrid(gridUid, mapCoords);
@@ -674,7 +674,7 @@ public sealed class EntityEffectSystem : EntitySystem
 
     private void OnExecuteEmote(ref ExecuteEntityEffectEvent<Emote> args)
     {
-        if (args.Effect.EmoteId == null)
+        if (string.IsNullOrEmpty(args.Effect.EmoteId))
             return;
 
         if (args.Effect.ShowInChat)

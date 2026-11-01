@@ -27,6 +27,12 @@
     path: /Audio/_Dumont/Jukebox/alone_again.ogg
 
 - type: jukebox
+  id: AlorsOnDanse
+  name: Stromae - Alors On Danse
+  path:
+    path: /Audio/_Dumont/Jukebox/alors_on_danse.ogg
+
+- type: jukebox
   id: AmericanIdiot
   name: Green Day - American Idiot
   path:
@@ -43,6 +49,12 @@
   name: Crazy Frog - Axel F
   path:
     path: /Audio/_Dumont/Jukebox/axel_f.ogg
+
+- type: jukebox
+  id: Baby
+  name: Justin Bieber - Baby
+  path:
+    path: /Audio/_Dumont/Jukebox/baby.ogg
 
 - type: jukebox
   id: BakerStreet
@@ -81,6 +93,12 @@
     path: /Audio/_Dumont/Jukebox/billie_jean.ogg
 
 - type: jukebox
+  id: blackholesun
+  name: Soundgarden - Black Hole Sun
+  path:
+    path: /Audio/_Dumont/Jukebox/black_hole_sun.ogg
+
+- type: jukebox
   id: Blue
   name: Eiffel 65 - Blue
   path:
@@ -103,6 +121,12 @@
   name: Matthew Wilder - Break My Stride
   path:
     path: /Audio/_Dumont/Jukebox/break_my_stride.ogg
+
+- type: jukebox
+  id: BringMeToLife
+  name: Evanescence & Paul McCoy - Bring Me To Life
+  path:
+    path: /Audio/_Dumont/Jukebox/bring_me_to_life.ogg
 
 - type: jukebox
   id: Brother_Louie
@@ -247,6 +271,12 @@
   name: O-Zone - Dragostea Din Tei
   path:
     path: /Audio/_Dumont/Jukebox/dragostea_din_tei.ogg
+
+- type: jukebox
+  id: Dreamscape
+  name: 009 Sound System - Dreamscape
+  path:
+    path: /Audio/_Dumont/Jukebox/dreamscape.ogg
 
 - type: jukebox
   id: Elenore
@@ -441,6 +471,12 @@
     path: /Audio/_Dumont/Jukebox/i_want_you.ogg
 
 - type: jukebox
+  id: IfIAintGotYou
+  name: Alicia Keys - If I Ain't Got You
+  path:
+    path: /Audio/_Dumont/Jukebox/if_i_aint_got_you.ogg
+
+- type: jukebox
   id: IllNeverSmileAgain
   name: Tommy Dorsey - I'll Never Smile Again
   path:
@@ -541,6 +577,12 @@
   name: Wings - Live And Let Die
   path:
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
+
+- type: jukebox
+  id: MacintoshPlus
+  name: Vektroid - Macintosh Plus
+  path:
+    path: /Audio/_Dumont/Jukebox/macintosh_plus.ogg
 
 - type: jukebox
   id: MariaIzabel
@@ -657,6 +699,12 @@
     path: /Audio/_Dumont/Jukebox/rap_do_silva.ogg
 
 - type: jukebox
+  id: RedSpectaclesTheme
+  name: Kenji Kawai - Red Spectacles Theme
+  path:
+    path: /Audio/_Dumont/Jukebox/red_spectacles_theme.ogg
+
+- type: jukebox
   id: Relax
   name: Stelvio Cipriani - Relax
   path:
@@ -703,6 +751,13 @@
   name: Frank Sinatra - Somethin' Stupid
   path:
     path: /Audio/_Dumont/Jukebox/somethin_stupid.ogg
+
+- type: jukebox
+  id: SomewhereIBelong
+  name: Linkin Park - Somewhere I Belong
+  path:
+    path: /Audio/_Dumont/Jukebox/somewhere_i_belong.ogg
+
 
 - type: jukebox
   id: SouthernNights
@@ -787,6 +842,12 @@
   name: Legião Urbana - Tempo Perdido
   path:
     path: /Audio/_Dumont/Jukebox/tempo_perdido.ogg
+
+- type: jukebox
+  id: TheChain
+  name: Fleetwood Mac - The Chain
+  path:
+    path: /Audio/_Dumont/Jukebox/the_chain.ogg
 
 - type: jukebox
   id: ThereIsALightThatNeverGoesOut
