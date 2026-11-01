@@ -232,7 +232,7 @@ public sealed class AlertLevelSystem : EntitySystem
         if (announce)
         {
             _chatSystem.DispatchStationAnnouncement(station, announcementFull, playDefaultSound: playDefault,
-                colorOverride: detail.Color, sender: stationName);
+                colorOverride: detail.Color, sender: Loc.GetString("saae-announcement-sender")); // Dumont
         }
 
         RaiseLocalEvent(new AlertLevelChangedEvent(station, level));

@@ -203,6 +203,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
             {
                 _chat.DispatchStationAnnouncement(station,
                     Loc.GetString("zombie-start-announcement"),
+                    sender: Loc.GetString("saae-announcement-sender"), // Dumont
                     colorOverride: Color.Pink);
             }
 
