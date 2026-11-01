@@ -11,6 +11,7 @@
     wideAnimationRotation: 180
     angle: 90
     attackRate: 1
+    range: 1.7
     damage:
       types:
         Slash: 15
@@ -30,12 +31,18 @@
     fireStacks: 5
   - type: Reflect
     reflectProb: 0.75
+  - type: MeleeThrowOnHit
+    distance: 2
+    speed: 7
+  - type: CollisionWake
   - type: DamageOtherOnHit
     damage:
       types:
         Slash: 30
         Heat: 25
         Structural: 35
+  - type: EmitSoundOnHit
+    sound: /Audio/_Dumont/Misc/heavy_slash.ogg
   - type: Boomerang # Yes because it's funny
   - type: Sprite
     sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
@@ -58,5 +65,5 @@
     enabled: true
     color: "#A50F34"
     radius: 5.0
-    energy: 4
+    energy: 6
     netsync: true
