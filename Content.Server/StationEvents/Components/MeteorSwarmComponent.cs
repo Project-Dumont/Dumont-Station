@@ -42,7 +42,7 @@ public sealed partial class MeteorSwarmComponent : Component
     {
         Params = new()
         {
-            Volume = -4
+            Volume = -7 // Dumont
         }
     };
 

@@ -1,4 +1,5 @@
 using Content.Server._Dumont.MalfAI;
+using Content.Server._Dumont.Saae;
 using Content.Server._Funkystation.MalfAI.Components;
 using Content.Shared._Funkystation.CCVar;
 using Content.Shared._Funkystation.MalfAI.Events;
@@ -11,10 +12,12 @@ namespace Content.Server._Funkystation.MalfAI;
 public sealed partial class MalfAiDoomsdaySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SaaeAnnouncerSystem _saae = default!;
 
     private static readonly SoundSpecifier SaaeHackedFirst = new SoundPathSpecifier("/Audio/_Dumont/Announcements/hacked_saae_1.ogg");
     private static readonly SoundSpecifier SaaeHackedSecond = new SoundPathSpecifier("/Audio/_Dumont/Announcements/hacked_saae_2.ogg");
     private static readonly LocId SaaeSender = "saae-announcement-sender";
+    private static readonly TimeSpan SaaeHoldPadding = TimeSpan.FromSeconds(5);
 
     private readonly record struct SaaeStep(TimeSpan Time, LocId Message, SoundSpecifier? Sound = null, bool StartCountdown = false);
 
@@ -73,7 +76,7 @@ public sealed partial class MalfAiDoomsdaySystem
         if (step.Sound != null)
         {
             _audio.Stop(intro.Audio);
-            intro.Audio = _audio.PlayGlobal(step.Sound, _station.GetInOwningStation(intro.Station), true)?.Entity;
+            intro.Audio = _saae.PlayNow(step.Sound, _station.GetInOwningStation(intro.Station), GetSaaeHold(step))?.Entity;
         }
 
         _chat.DispatchStationAnnouncement(ai,
@@ -84,6 +87,17 @@ public sealed partial class MalfAiDoomsdaySystem
 
         if (step.StartCountdown)
             StartSaaeCountdown(ai, intro);
+    }
+
+    private static TimeSpan GetSaaeHold(SaaeStep step)
+    {
+        foreach (var other in SaaeSteps)
+        {
+            if (other.Time > step.Time && other.Sound != null)
+                return other.Time - step.Time;
+        }
+
+        return SaaeSteps[^1].Time + SaaeHoldPadding - step.Time;
     }
 
     private void StartSaaeCountdown(EntityUid ai, SaaeDoomsdayIntroComponent intro)
@@ -110,7 +124,7 @@ public sealed partial class MalfAiDoomsdaySystem
         if (!Resolve(ai, ref intro, false))
             return;
 
-        _audio.Stop(intro.Audio);
+        _saae.Stop(intro.Audio);
         RemCompDeferred<SaaeDoomsdayIntroComponent>(ai);
     }
 }
