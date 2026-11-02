@@ -515,7 +515,7 @@
         friction: 0.2
 
 - type: entity
-  parent: [ CombatKnife, BaseXenoborgContraband ]
+  parent: [ BaseKnife, BaseXenoborgContraband ] # Dumont - was CombatKnife
   id: XenoborgBioKnife
   name: bio knife
   description: Melds itself to specific metabolizers and will deal extra damage to those targets!

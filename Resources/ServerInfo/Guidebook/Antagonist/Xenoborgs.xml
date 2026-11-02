@@ -141,13 +141,13 @@
 
   O núcleo da nave-mãe consegue produzir um flatpack de extrator Xenoborg por 10 de aço.
 
-  Quando ancorado, ele começa a drenar energia do cabo de alta tensão embaixo dele.
+  Desempacotado na estação, ele já se ancora sozinho e começa a drenar energia do cabo de alta tensão embaixo dele.
 
   Ele produz um cristal de Xenoborg toda vez que a bateria interna enche.
 
   Ele consome 240kW e leva 15 segundos para produzir um cristal.
 
-  [bold]Atenção![/bold] Ele dispara o alerta de dispositivo consumindo energia fora do normal! Quem estiver no monitor de energia vai saber que tem algo errado.
+  Ele não aparece no monitor de energia, mas o consumo continua saindo da rede.
 
   ## Preparação e táticas
   Antes de dar FTL perto da estação, desligue o IFF.

@@ -29,7 +29,7 @@
     fireCost: 5
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 0.5
+    autoRechargeRate: 0.25 # Dumont - was 0.5
   - type: Battery
     maxCharge: 15
     startingCharge: 15

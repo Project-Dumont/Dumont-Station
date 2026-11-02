@@ -82,7 +82,9 @@ ent-XenoborgModuleSuperCloakDevice = módulo de invisibilidade Xenoborg
 # Armas
 
 ent-WeaponLaserGunXenoborg = arma de laser Xenoborg
+    .desc = Uma pistola laser alienígena com uma bateria que se recarrega sozinha.
 ent-WeaponLaserCannonXenoborg = canhão de laser Xenoborg
+    .desc = Uma arma laser alienígena pesada que bate forte.
 ent-WeaponBurstFireLaserXenoborg = laser de rajada Xenoborg
     .desc = Uma arma alienígena que canaliza um laser de rajada por um prisma, fazendo os alvos pegarem fogo.
 ent-WeaponRocketLauncherXenoborg = XB MRL-97-D

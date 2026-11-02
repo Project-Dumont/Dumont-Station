@@ -284,6 +284,7 @@
   flavor: bitter
   flavorMinimum: 0.01
   color: "#3d5cff"
+  flammability: 2 # Dumont
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
   friction: 0.4

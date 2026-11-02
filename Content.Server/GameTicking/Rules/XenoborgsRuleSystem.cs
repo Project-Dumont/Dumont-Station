@@ -7,6 +7,7 @@ using Content.Server.Antag.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Ghost.Roles.Components;
 using Content.Server.Pinpointer;
 using Content.Server.Radio;
 using Content.Server.RoundEnd;
@@ -238,15 +239,27 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
         var query = EntityQueryEnumerator<GhostRoleAntagSpawnerComponent>();
         while (query.MoveNext(out var spawner, out _))
         {
-            if (_tag.HasTag(spawner, component.MothershipCoreSpawnerTag))
-                spawners.Add(spawner);
+            if (!_tag.HasTag(spawner, component.MothershipCoreSpawnerTag))
+                continue;
+
+            // someone is still rolling for it
+            if (HasComp<GhostRoleRaffleComponent>(spawner))
+            {
+                component.MothershipCoreFallbackTime = _timing.CurTime + component.MothershipCoreFallbackDelay;
+                return;
+            }
+
+            spawners.Add(spawner);
         }
 
+        // a taken spawner sticks around after spawning the core
+        var hasCore = AllEntityQuery<MothershipCoreComponent>().MoveNext(out _, out _);
         foreach (var spawner in spawners)
         {
-            var coordinates = Transform(spawner).Coordinates;
+            QueueDel(spawner);
 
-            if (!coordinates.IsValid(EntityManager))
+            var coordinates = Transform(spawner).Coordinates;
+            if (hasCore || !coordinates.IsValid(EntityManager))
                 continue;
 
             var core = Spawn(component.MothershipCore, coordinates);
@@ -255,7 +268,7 @@ public sealed partial class XenoborgsRuleSystem : GameRuleSystem<XenoborgsRuleCo
             if (!xform.Anchored)
                 _transform.AnchorEntity((core, xform));
 
-            QueueDel(spawner);
+            hasCore = true;
         }
     }
 

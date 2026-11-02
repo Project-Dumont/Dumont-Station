@@ -663,6 +663,23 @@
   save: false
   abstract: true
   components:
+  # Dumont changes start
+  - type: XenoborgGhostRole
+    components:
+    - type: GhostRole
+      name: ghost-role-information-xenoborg-name
+      description: ghost-role-information-xenoborg-desc
+      rules: ghost-role-information-silicon-rules
+      mindRoles: []
+      requirements:
+      - !type:OverallPlaytimeRequirement
+        time: 144000 # 40 hrs
+      - !type:RoleTimeRequirement
+        role: JobBorg
+        time: 18000 # 5 hrs
+    - type: GhostTakeoverAvailable
+      ignoreMindCheck: true
+  # Dumont end
   - type: RandomMetadata
     nameSegments:
     - NamesXenoborg
@@ -738,7 +755,9 @@
     factions:
     - Xenoborg
   - type: PointLight
-    color: "#0033ff"
+    color: "#6f88ff" # Dumont - was #0033ff
+    radius: 6 # Dumont
+    energy: 2 # Dumont
   - type: GuideHelp
     guides:
     - Cyborgs

@@ -15,4 +15,10 @@ public sealed partial class AnchorOnlyOnStationComponent : Component
     /// </summary>
     [DataField]
     public LocId PopupMessageAnchorFail = "anchorable-fail-not-on-station";
+
+    /// <summary>
+    /// Anchors itself when spawned on the station, like after unpacking a flatpack.
+    /// </summary>
+    [DataField]
+    public bool AnchorOnSpawn;
 }
