@@ -151,3 +151,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Made by Struater"
   source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["breaker_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"

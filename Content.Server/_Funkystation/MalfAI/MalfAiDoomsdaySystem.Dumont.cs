@@ -106,7 +106,7 @@ public sealed partial class MalfAiDoomsdaySystem
         var comp = EnsureComp<MalfAiDoomsdayComponent>(ai);
         InitializeDoomsdayComponent(comp, intro.Station, intro.CoreHolder, duration > 0 ? duration : 1f);
 
-        _alerts.SetLevel(intro.Station, DoomsdayAlertLevel, playSound: false, announce: true, force: true, locked: true);
+        _alerts.SetLevel(intro.Station, DoomsdayAlertLevel, playSound: false, announce: false, force: true, locked: true);
         SetupDoomsdayMusic(comp);
         RaiseLocalEvent(new MalfAiDoomsdayStartedEvent(intro.Station, ai));
     }

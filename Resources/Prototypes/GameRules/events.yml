@@ -316,7 +316,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/_Gabystation/Announcements/breaker_saae.ogg
+      path: /Audio/_Dumont/Announcements/breaker_saae.ogg # Dumont
       params: # Dumont
         volume: -7 # Dumont
     weight: 7

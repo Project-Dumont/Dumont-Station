@@ -206,6 +206,8 @@ public sealed partial class MalfAiDoomsdaySystem : EntitySystem // Dumont
         if (prevMinutes > currentMinutes && currentMinutes >= 0)
         {
             var minuteThreshold = TimeSpan.FromMinutes(currentMinutes + 1);
+            if (minuteThreshold.TotalSeconds >= _cfg.GetCVar(CCVarsMalfAi.MalfAiDoomsdayDuration)) // Dumont
+                return; // Dumont
             AnnounceRemaining(ai, minuteThreshold, initial: false);
             return; // Only one announcement per frame
         }
