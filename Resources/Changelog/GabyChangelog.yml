@@ -4876,3 +4876,9 @@ Entries:
       message: Não tem mais uma entrada de fiança velha no livro guia. My bad chat.
   id: 578
   time: '2026-11-02T15:41:40.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Tweak
+      message: Ajeita o spawnpoint do ghost role Syndicate Outpost Listener
+  id: 579
+  time: '2026-11-02T18:21:40.0000000+00:00'
