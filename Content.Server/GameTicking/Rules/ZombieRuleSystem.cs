@@ -206,6 +206,7 @@ public sealed partial class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponen
                 _chat.DispatchStationAnnouncement(station,
                     Loc.GetString("zombie-start-announcement"),
                     sender: Loc.GetString("saae-announcement-sender"), // Dumont
+                    playDefaultSound: false, // Dumont
                     colorOverride: Color.Pink);
             }
 

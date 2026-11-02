@@ -223,7 +223,7 @@ public sealed partial class AlertLevelSystem : EntitySystem // Dumont
             if (detail.Sound != null)
             {
                 var filter = _stationSystem.GetInOwningStation(station);
-                _saae.Play(detail.Sound, filter); // Dumont
+                _saae.Play(detail.Sound, filter, key: "alert"); // Dumont
             }
             else
             {

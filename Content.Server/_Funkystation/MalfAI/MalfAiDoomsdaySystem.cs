@@ -102,6 +102,7 @@ public sealed partial class MalfAiDoomsdaySystem : EntitySystem // Dumont
                 comp.Active = false;
                 // Stop doomsday protocol music
                 StopDoomsdayMusic(comp.Station);
+                StopSaaeIntro(uid); // Dumont
                 RaiseLocalEvent(new MalfAiDoomsdayCompletedEvent(comp.Station, uid));
                 RemCompDeferred<MalfAiDoomsdayComponent>(uid);
                 continue;

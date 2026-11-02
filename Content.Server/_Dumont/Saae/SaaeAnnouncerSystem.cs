@@ -18,10 +18,11 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
 
     private static readonly TimeSpan Gap = TimeSpan.FromSeconds(1);
 
-    private readonly record struct QueuedAnnouncement(ResolvedSoundSpecifier Sound, Filter Filter, AudioParams Params);
+    private readonly record struct QueuedAnnouncement(ResolvedSoundSpecifier Sound, Filter Filter, AudioParams Params, string? Key);
 
-    private readonly Queue<QueuedAnnouncement> _queue = new();
+    private readonly List<QueuedAnnouncement> _queue = new();
     private TimeSpan _busyUntil;
+    private EntityUid? _current;
 
     public override void Update(float frameTime)
     {
@@ -30,7 +31,8 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
         if (_queue.Count == 0 || _timing.CurTime < _busyUntil)
             return;
 
-        var next = _queue.Dequeue();
+        var next = _queue[0];
+        _queue.RemoveAt(0);
         Start(next.Sound, next.Filter, next.Params);
     }
 
@@ -39,12 +41,14 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
     {
         _queue.Clear();
         _busyUntil = TimeSpan.Zero;
+        _current = null;
     }
 
     /// <summary>
     /// Plays an announcement now if nothing else is playing, otherwise queues it.
+    /// A queued announcement with the same <paramref name="key"/> is replaced, so only the latest one plays.
     /// </summary>
-    public void Play(SoundSpecifier? sound, Filter filter, AudioParams? audioParams = null)
+    public void Play(SoundSpecifier? sound, Filter filter, AudioParams? audioParams = null, string? key = null)
     {
         if (sound == null)
             return;
@@ -57,14 +61,19 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
             return;
         }
 
-        _queue.Enqueue(new QueuedAnnouncement(resolved, filter, finalParams));
+        if (key != null)
+            _queue.RemoveAll(queued => queued.Key == key);
+
+        _queue.Add(new QueuedAnnouncement(resolved, filter, finalParams, key));
     }
 
     /// <summary>
-    /// Plays an announcement right away, skipping the queue, and holds the queue for <paramref name="hold"/>.
+    /// Plays an announcement right away, cutting whatever announcement is playing, and holds the queue for <paramref name="hold"/>.
     /// </summary>
     public (EntityUid Entity, AudioComponent Component)? PlayNow(SoundSpecifier sound, Filter filter, TimeSpan hold)
     {
+        _audio.Stop(_current);
+        _current = null;
         _busyUntil = _timing.CurTime + hold;
         return _audio.PlayGlobal(sound, filter, true);
     }
@@ -80,7 +89,7 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
 
     private void Start(ResolvedSoundSpecifier sound, Filter filter, AudioParams audioParams)
     {
-        _audio.PlayGlobal(sound, filter, true, audioParams);
+        _current = _audio.PlayGlobal(sound, filter, true, audioParams)?.Entity;
         _busyUntil = _timing.CurTime + _audio.GetAudioLength(sound) + Gap;
     }
 }

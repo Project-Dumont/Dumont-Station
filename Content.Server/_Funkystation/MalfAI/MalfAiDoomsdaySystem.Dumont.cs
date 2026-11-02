@@ -124,6 +124,7 @@ public sealed partial class MalfAiDoomsdaySystem
         if (!Resolve(ai, ref intro, false))
             return;
 
+        intro.NextStep = SaaeSteps.Length;
         _saae.Stop(intro.Audio);
         RemCompDeferred<SaaeDoomsdayIntroComponent>(ai);
     }

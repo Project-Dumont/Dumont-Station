@@ -250,7 +250,7 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg"), Filter.Broadcast()); // Dumont
+            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg"), Filter.Broadcast(), key: "evac"); // Dumont
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -299,7 +299,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString(name), false, colorOverride: Color.Gold);
 
-            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg"), Filter.Broadcast()); // Dumont
+            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg"), Filter.Broadcast(), key: "evac"); // Dumont
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
