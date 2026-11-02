@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 Dumont Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: technology
+  id: AdvancedAnomalyGeneration
+  name: research-technology-advanced-anomaly-generation
+  icon:
+    sprite: _Dumont/Structures/Machines/Anomaly/advanced_anomaly_generator.rsi
+    state: base
+  discipline: Experimental
+  tier: 3
+  cost: 30000
+  recipeUnlocks:
+  - AdvancedAnomalyGeneratorCircuitboard
+  technologyPrerequisites:
+  - AdvancedAnomalyResearch
+  - Xenobiology
+  - XenoCompatibility
+  - ExperimentalScience
+  position: -6,0

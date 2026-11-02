@@ -30,7 +30,7 @@
   parent: BaseRevForgedWeapon
   id: RevMace
   name: forged mace
-  description: A robust mace, stuns enemies. Not great against modern armor, or for killing.
+  description: A robust mace, stuns enemies. Knocks the air out of targets and makes them struggle to speak.
   components:
   - type: Sprite
     sprite: _Trauma/Objects/Revs/mace.rsi
@@ -52,6 +52,19 @@
   - type: MeleeThrowOnHit
     distance: 0.3
     speed: 1
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 5
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: MuteToxin
+        Quantity: 5
+  - type: MeleeChemicalInjector
+    transferAmount: 5
+    solution: melee
 
 - type: entity
   parent: BaseRevForgedWeapon
@@ -176,6 +189,7 @@
         volume: -8
   - type: MeleeWeapon
     animationRotation: -45
+    heavyPartDamageMultiplier: 0.75
     damage:
       types:
         Slash: 12
@@ -242,7 +256,8 @@
     animationRotation: -135
     damage:
       types:
-        Heat: 4
+        Heat: 8
+        Piercing: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
   - type: PointLight
@@ -398,10 +413,10 @@
     graph: RevKunai
   - type: MeleeWeapon
     animationRotation: -130
-    canWideSwing: false
+    heavyPartDamageMultiplier: 0.75
     damage:
       types:
-        Piercing: 10
+        Piercing: 15
         Structural: 15
         Holy: 1
     soundHit:
@@ -416,8 +431,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 15 # 7 to crit
-        Structural: 15
+        Piercing: 20 # 5 to crit
+        Structural: 20
   - type: SolutionContainerManager
     solutions:
       melee:

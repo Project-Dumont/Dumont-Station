@@ -38,10 +38,17 @@
       connections:
       - right leg
       - left leg
+      # Dumont changes start
+      - tail
+      # Dumont end
       organs:
         stomach: OrganAnimalStomach
         liver:  OrganAnimalLiver
         kidneys: OrganAnimalKidneys
+    # Dumont changes start
+    tail:
+      part: TailHarpy
+    # Dumont end
     right arm:
       part: RightArmHarpy
       connections:

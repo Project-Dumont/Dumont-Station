@@ -38,11 +38,7 @@ namespace Content.Server.Construction.Completions
 
             var sys = entityManager.System<SharedTransformSystem>();
 
-            if (Value)
-                sys.AnchorEntity(uid, transform);
-            else
-                sys.Unanchor(uid, transform);
-
+            sys.TryAnchor((uid, transform, null), Value);
         }
     }
 }

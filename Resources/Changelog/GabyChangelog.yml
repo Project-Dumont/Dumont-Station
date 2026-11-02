@@ -4335,3 +4335,292 @@ Entries:
         Chefe
   id: 519
   time: '2026-10-09T14:40:46.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Os replays estão devolta!
+  id: 520
+  time: '2026-10-14T17:21:29.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        A bolsa de construção foi alterada para poder carregar barras de
+        ouro/prata.
+  id: 521
+  time: '2026-10-14T18:45:23.0000000+00:00'
+- author: Crenissis e Criso
+  changes:
+    - type: Tweak
+      message: Ajustes em alguns ícones de interface do jogo.
+  id: 522
+  time: '2026-10-14T22:08:21.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Punhos ingles foram rebalanceados.
+  id: 523
+  time: '2026-10-14T22:12:26.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Tweak
+      message: Alterado o óculos roundstart do Chem para MedChem.
+  id: 524
+  time: '2026-10-14T22:13:59.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Artefatos dão a quantidade correta de fragmentos quando esmagados.
+  id: 525
+  time: '2026-10-14T22:21:45.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Add
+      message: armas agora podem travar
+  id: 526
+  time: '2026-10-14T22:33:34.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: 'Minérios agora providenciam mais recursos. '
+  id: 527
+  time: '2026-10-14T22:42:32.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: >-
+        Tritium agora não pega fogo na mesma temperatura que o plasma. Sem mais
+        subframes!
+  id: 528
+  time: '2026-10-15T02:36:25.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Armas as laser não emperram mais.
+  id: 529
+  time: '2026-10-15T17:27:42.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Advanced anomaly generator
+  id: 530
+  time: '2026-10-15T19:22:22.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: MP-17 "Guardian".
+    - type: Add
+      message: >-
+        RB-18 "Guardian". Uma arma que atira cartuchos de autoinjetor,
+        disponível para o Médico Chefe.
+  id: 531
+  time: '2026-10-15T19:55:09.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Sprites e efeitos sonoros novos para armas laser.
+    - type: Tweak
+      message: >-
+        Indutores normais não conseguem mais transferir para equipamento de
+        segurança.
+    - type: Add
+      message: >-
+        Indutores de combate de segurança, que podem transferir para equipamento
+        de segurança. Tem um no armário do HOS e do Warden.
+    - type: Tweak
+      message: >-
+        Munição balística de qualquer tipo agora precisa de pólvora. O Warden
+        começa com 30 pólvora no armário.
+    - type: Add
+      message: >-
+        Armas de Gauss. Usam células de energia para impulsionar esferas de aço.
+        Não precisam de pólvora para usar.
+    - type: Add
+      message: 'Submetralhadora laser. '
+    - type: Add
+      message: Rifle laser.
+    - type: Add
+      message: Katana de segurança.
+    - type: Add
+      message: Martelo de invasão de segurança.
+    - type: Tweak
+      message: >-
+        Machetes agora são equipamento de segurança. Usar uma machete em cada
+        mão permite que você ataque com as duas ao mesmo tempo.
+    - type: Remove
+      message: Machetes de loot de manuntenção. Faz uma lança, sei lá.
+    - type: Add
+      message: Células de combate.
+    - type: Add
+      message: 'Pesquisa nova: Tecnologia anti-magnética.'
+    - type: Add
+      message: >-
+        Baterias agora podem ter resistência de EMP, reduzindo o efeito de EMP.
+        O rifle laser, lawbringer e célula de combate todos tem resistência de
+        EMP.
+    - type: Remove
+      message: Munição bluespace.
+    - type: Add
+      message: Munição de pulso. É so munição bluespace, mas ignora essa parte.
+    - type: Remove
+      message: LMG laser não tem mais bateria bluespace nem de pulso.
+    - type: Tweak
+      message: Lasers usam projéteis, pulso é hitscan.
+    - type: Tweak
+      message: Armas laser foram rebalanceadas denovo.
+    - type: Add
+      message: Novas compras de logística para todos os itens novos.
+  id: 532
+  time: '2026-10-15T19:58:55.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Maldições... Cuidando ao entrar na estação!
+    - type: Add
+      message: 'Novo quimico: Masonlina!'
+    - type: Tweak
+      message: Mason agora explode todo round!
+  id: 533
+  time: '2026-10-15T20:01:52.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: >-
+        Armas corpo-a-corpo, armas balísticas excedentes, armas de gauss, e
+        phasers nos mapas. Lasersec agora é real.
+    - type: Remove
+      message: Lecters, Kammerers, Drozds, MK-58s nos mapas.
+  id: 534
+  time: '2026-10-16T17:54:39.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionada cirurgia de cauda e asa.
+    - type: Tweak
+      message: Abductor sofreu vários ajustes em seu loop de gameplay.
+  id: 535
+  time: '2026-10-16T18:14:19.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Tweak
+      message: Apenas Pessoas Plasma conseguem usar trajes herméticos.
+    - type: Tweak
+      message: Ajuste de stats e funcionalidade de algumas peças herméticas.
+    - type: Fix
+      message: >-
+        Pessoas Plasma agora conseguem usar armaduras de herege e do culto
+        cósmico sem pegar fogo.
+    - type: Fix
+      message: Pessoas Plasmas não ficam mais doente (Eu espero).
+    - type: Fix
+      message: Arruma avatares do bitrunner para Pessoas Plasma.
+    - type: Fix
+      message: Arruma algumas interações com o Blob Pod e o capacete hermético.
+  id: 536
+  time: '2026-10-16T18:22:42.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: >-
+        Culto Cósmico recebeu uma atualização mediana. Vejam o livro guia para
+        mais detalhes.
+    - type: Tweak
+      message: >-
+        O culto cósmico foi traduzido para português, incluindo as entradas do
+        livro guia.
+  id: 537
+  time: '2026-10-16T19:56:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas as áreas do Trauma/Monkey, pros mapeadores marcarem as salas
+        dos mapas.
+    - type: Add
+      message: >-
+        Música ambiente própria em cada departamento e em algumas salas, nos
+        mapas que tiverem áreas.
+  id: 538
+  time: '2026-10-16T22:36:26.0000000+00:00'
+- author: 'SrKolobanov '
+  changes:
+    - type: Add
+      message: Daengati agora tem resistência a solda.
+    - type: Add
+      message: Novo emote pro Daengati.
+    - type: Remove
+      message: Daengati não tem mais visão noturna.
+    - type: Tweak
+      message: Defesa de dano de calor do Daengati reduzida pela metade.
+    - type: Tweak
+      message: Daengatis agora podem ingerir carne crua e sangue.
+  id: 539
+  time: '2026-10-16T22:41:13.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: >-
+        As cápsulas de fuga agora pousam em um planeta com uma dungeon e seus
+        inimigos, em vez de ir para a CentCom.
+    - type: Tweak
+      message: O objetivo do Ninja de sobreviver foi alterado para uma Extração.
+    - type: Add
+      message: Cápsulas de fuga agora possuem limite de capacidade.
+  id: 540
+  time: '2026-10-17T01:23:33.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Borgs conseguem pegar aço.
+  id: 541
+  time: '2026-10-17T18:53:57.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: Cloth footwrap aos calçados civis.
+  id: 542
+  time: '2026-10-19T22:57:48.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Rádio de sec é um pouco mais claro agora.
+  id: 543
+  time: '2026-10-20T20:22:17.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Soldado Experimental em bitrunning pode ser selecionado denovo.
+  id: 544
+  time: '2026-10-21T20:12:01.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Tram driver!
+  id: 545
+  time: '2026-10-25T20:01:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas berserker do HOS buffadas.
+    - type: Tweak
+      message: SMG laser é menos precisa.
+    - type: Tweak
+      message: Indutores de sec podem ser colocados em cintos de sec.
+    - type: Tweak
+      message: Agora pode imprimir rifles e SMGs laser.
+    - type: Tweak
+      message: >-
+        Agora pode imprimir carregadores preenchidos com shardshots e discos
+        afiados.
+    - type: Tweak
+      message: Sprite de bala de Gauss. É mais fácil de ver agora.
+    - type: Tweak
+      message: Receita de pólvora. Verifique a entrada do livro guia de químico.
+    - type: Tweak
+      message: Rajadas do rifle laser são mais lentas.
+    - type: Tweak
+      message: Modo letal da justice consome menos energia.
+    - type: Remove
+      message: Multihit da machete *de salv*. Machete de sec ainda tem.
+  id: 546
+  time: '2026-10-25T20:05:14.0000000+00:00'

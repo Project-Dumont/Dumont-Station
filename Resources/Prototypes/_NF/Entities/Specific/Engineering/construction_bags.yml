@@ -49,6 +49,7 @@
     whitelist:
       tags:
       - Sheet
+      - Ingot
       - CableCoil
       - RawMaterial
       - PartBase

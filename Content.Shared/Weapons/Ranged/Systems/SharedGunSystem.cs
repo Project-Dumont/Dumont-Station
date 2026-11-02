@@ -147,7 +147,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     private const float InteractNextFire = 0.3f;
     private const double SafetyNextFire = 0.5;
     private const float EjectOffset = 0.4f;
-    protected const string AmmoExamineColor = "yellow";
+    public const string AmmoExamineColor = "yellow"; // Trauma - made public
     protected const string FireRateExamineColor = "yellow";
     public const string ModeExamineColor = "cyan";
 
@@ -241,6 +241,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
+
         var gunUid = GetEntity(ev.Gun);
 
         var user = args.SenderSession.AttachedEntity;
@@ -443,10 +444,13 @@ public abstract partial class SharedGunSystem : EntitySystem
                 default:
                     throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.SelectedMode}!");
             }
-        } else
+        }
+        else
         {
             shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
         }
+
+
 
         var attemptEv = new AttemptShootEvent(user, null);
         RaiseLocalEvent(gunUid, ref attemptEv);
@@ -605,7 +609,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <summary>
     /// Call this whenever the ammo count for a gun changes.
     /// </summary>
-    protected virtual void UpdateAmmoCount(EntityUid uid, bool prediction = true) {}
+    public virtual void UpdateAmmoCount(EntityUid uid, bool prediction = true) {} // Trauma - made public
 
     protected void SetCartridgeSpent(EntityUid uid, CartridgeAmmoComponent cartridge, bool spent)
     {

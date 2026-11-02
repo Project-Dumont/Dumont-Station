@@ -115,4 +115,4 @@ revolutionary-converter-speech-114 = Uma guerra, guerra de classes!
 revolutionary-converter-speech-115 = Vida longa à Associação Atmosiana de Socialistas!
 revolutionary-converter-speech-116 = As gerações futuras lembrarão do nosso sacrifício!
 revolutionary-converter-speech-117 = Nanotrasen bombardeou a Kosmicheskaya Stantsiya 13!
-revolutionary-converter-speech-118 = A USSP é um farol brilhante de liberdade contra a escravidão da Nanotrasen!
+revolutionary-converter-speech-118 = A Nova URSAL é um farol brilhante de liberdade contra a escravidão da Nanotrasen!

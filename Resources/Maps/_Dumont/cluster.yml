@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/12/2026 02:12:17
-  entityCount: 13395
+  time: 10/16/2026 13:29:16
+  entityCount: 13392
 maps:
 - 1
 grids:
@@ -7642,7 +7642,7 @@ entities:
       pos: 4.5,4.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -1122.6458
+      secondsUntilStateChange: -1333.819
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -8688,6 +8688,18 @@ entities:
       anchored: False
     - type: Physics
       bodyType: Dynamic
+- proto: BaseMagazineGaussgun
+  entities:
+  - uid: 8697
+    components:
+    - type: Transform
+      parent: 2
+      pos: 36.156036,13.32231
+  - uid: 8940
+    components:
+    - type: Transform
+      parent: 2
+      pos: 36.41318,13.379454
 - proto: BassGuitarInstrument
   entities:
   - uid: 480
@@ -35212,10 +35224,10 @@ entities:
       server: 5283
       connectedToServer: True
     - type: DnaServer
-      serverId: 91
+      serverId: 92
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 676.1529312
-      lastInjectorTime: 676.1529312
+      lastSubjectInjectTime: 614.1248451
+      lastInjectorTime: 614.1248451
     - type: DeviceLinkSource
       linkedPorts:
         9031:
@@ -59424,27 +59436,27 @@ entities:
     - type: Transform
       parent: 2
       pos: 31.5,-32.5
-- proto: GunSafePistolMk58
+- proto: GunSafeMelee
   entities:
-  - uid: 8695
+  - uid: 8943
     components:
     - type: Transform
       parent: 2
       pos: 38.5,13.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafePhaser
   entities:
-  - uid: 8696
-    components:
-    - type: Transform
-      parent: 2
-      pos: 38.5,12.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 8697
+  - uid: 8941
     components:
     - type: Transform
       parent: 2
       pos: 38.5,11.5
+- proto: GunSafeSurplus
+  entities:
+  - uid: 13241
+    components:
+    - type: Transform
+      parent: 2
+      pos: 38.5,12.5
 - proto: Handcuffs
   entities:
   - uid: 8698
@@ -61452,40 +61464,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 25.5,-26.5
-- proto: MagazineRifle
-  entities:
-  - uid: 8939
-    components:
-    - type: Transform
-      parent: 2
-      pos: 36.271854,13.401509
-  - uid: 8940
-    components:
-    - type: Transform
-      parent: 2
-      pos: 36.50623,13.401509
-  - uid: 8941
-    components:
-    - type: Transform
-      parent: 2
-      pos: 36.72498,13.417134
-  - uid: 8942
-    components:
-    - type: Transform
-      parent: 2
-      pos: 36.646854,13.526509
-- proto: MagazineShotgunBeanbag
-  entities:
-  - uid: 8943
-    components:
-    - type: Transform
-      parent: 2
-      pos: 38.602123,10.763362
-  - uid: 8944
-    components:
-    - type: Transform
-      parent: 2
-      pos: 38.602123,10.482112
 - proto: MailMetricsCartridge
   entities:
   - uid: 8945
@@ -62125,13 +62103,6 @@ entities:
       pos: -16.5,-23.5
     - type: Fixtures
       fixtures: {}
-- proto: MobSlimeXenobioBabyGrey
-  entities:
-  - uid: 9058
-    components:
-    - type: Transform
-      parent: 2
-      pos: -20.5,-8.5
 - proto: MonkeyCube
   entities:
   - uid: 9059
@@ -64197,6 +64168,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -20.5,-0.5
+- proto: PowerCellHigh
+  entities:
+  - uid: 8939
+    components:
+    - type: Transform
+      parent: 2
+      pos: 36.670322,13.450883
 - proto: PowerCellRecharger
   entities:
   - uid: 9404
@@ -87421,8 +87399,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 37.427628,10.674416
+      pos: 37.527466,10.479454
 - proto: WeaponEnergyTurretAI
   entities:
   - uid: 13220
@@ -87652,35 +87629,46 @@ entities:
     - type: DeviceList
       devices:
       - 13239
+- proto: WeaponGaussgun
+  entities:
+  - uid: 8696
+    components:
+    - type: Transform
+      parent: 2
+      pos: 36.468697,13.608026
 - proto: WeaponLaserCarbine
   entities:
-  - uid: 13241
+  - uid: 570
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 38.039623,10.575862
-  - uid: 13242
+      pos: 38.388603,10.831844
+  - uid: 8942
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 38.30525,10.607112
-- proto: WeaponRifleLecter
+      pos: 38.36003,10.731844
+- proto: WeaponLaserRifle
   entities:
-  - uid: 13243
+  - uid: 8944
     components:
     - type: Transform
       parent: 2
-      pos: 36.459354,13.651509
+      pos: 38.445744,10.360415
+- proto: WeaponLaserSMG
+  entities:
+  - uid: 9058
+    components:
+    - type: Transform
+      parent: 2
+      pos: 38.417175,10.588986
 - proto: WeaponTemperatureGun
   entities:
-  - uid: 13244
+  - uid: 8695
     components:
     - type: Transform
       parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 37.693253,10.643166
+      pos: 37.45604,10.765168
 - proto: WelderIndustrialAdvanced
   entities:
   - uid: 13245

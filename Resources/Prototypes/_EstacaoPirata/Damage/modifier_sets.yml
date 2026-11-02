@@ -5,6 +5,6 @@
 - type: damageModifierSet
   id: Daengati
   coefficients:
-    Heat: 0.6 # Gabystation | Ia deixar em 50%, mas achei melhor voltar para o valor original de 40% por já ser um valor bem alto, e a raça ter recebido defesa contra fogo.
-    Cold: 1.4 # Gabystation
+    Cold: 1.4
+    Heat: 0.8 # Dumont | Nerf por conta do Laser Sec.
     Piercing: 1.15

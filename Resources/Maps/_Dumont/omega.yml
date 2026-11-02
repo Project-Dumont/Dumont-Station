@@ -4,8 +4,8 @@ meta:
   engineVersion: 286.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/12/2026 02:35:16
-  entityCount: 14259
+  time: 10/16/2026 13:43:35
+  entityCount: 14257
 maps:
 - 1
 grids:
@@ -39974,10 +39974,10 @@ entities:
       server: 5949
       connectedToServer: True
     - type: DnaServer
-      serverId: 106
+      serverId: 107
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 1999.8412874
-      lastInjectorTime: 1999.8412874
+      lastSubjectInjectTime: 1585.1247354
+      lastInjectorTime: 1585.1247354
     - type: DeviceLinkSource
       linkedPorts:
         9667:
@@ -63624,6 +63624,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -0.5,-56.5
+- proto: GunSafeGauss
+  entities:
+  - uid: 9341
+    components:
+    - type: Transform
+      parent: 2
+      pos: -36.5,22.5
 - proto: GunSafeLaserCarbine
   entities:
   - uid: 9336
@@ -63638,34 +63645,27 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.5,20.5
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 9338
-    components:
-    - type: Transform
-      parent: 2
-      pos: -37.5,21.5
-- proto: GunSafeRifleLecter
+- proto: GunSafeMelee
   entities:
   - uid: 9339
     components:
     - type: Transform
       parent: 2
       pos: -34.5,22.5
-- proto: GunSafeShotgunKammerer
+- proto: GunSafePhaser
+  entities:
+  - uid: 9338
+    components:
+    - type: Transform
+      parent: 2
+      pos: -37.5,21.5
+- proto: GunSafeSurplus
   entities:
   - uid: 9340
     components:
     - type: Transform
       parent: 2
       pos: -35.5,22.5
-- proto: GunSafeSubMachineGunDrozd
-  entities:
-  - uid: 9341
-    components:
-    - type: Transform
-      parent: 2
-      pos: -36.5,22.5
 - proto: Handcuffs
   entities:
   - uid: 9342
@@ -66863,20 +66863,6 @@ entities:
       pos: -25.5,-33.5
     - type: Fixtures
       fixtures: {}
-- proto: MobSlimeXenobioBabyGrey
-  entities:
-  - uid: 9686
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 4.5,-33.5
-  - uid: 9687
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 5.5,-35.5
 - proto: MonkeyCubeBox
   entities:
   - uid: 9688

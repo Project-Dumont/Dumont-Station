@@ -237,6 +237,9 @@
   name: kidneys
   categories: [ HideSpawnMenu ]
   components:
+  # Dumont changes start
+  - type: Kidneys
+  # Dumont end
   - type: Sprite
     layers:
     - state: kidney-l

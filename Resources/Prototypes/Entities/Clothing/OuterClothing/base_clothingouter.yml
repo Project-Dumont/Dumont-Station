@@ -322,8 +322,8 @@
   - type: TemperatureProtection
     heatingCoefficient: 0.01
     coolingCoefficient: 0.01
-  - type: FireProtection 
-    reduction: 0.50 
+  - type: FireProtection
+    reduction: 0.50
   - type: IgniteFromGasImmunity
     parts:
     - Chest
@@ -375,9 +375,8 @@
   - type: Tag
     tags:
     - Hardsuit
-    - SyringeArmor
     - WhitelistChameleon
-    - PlasmamanSafe # EE Plasmeme Change
+    - PlasmamanSafeOther # Dumont
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: DamageOnInteractProtection
@@ -415,6 +414,10 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
+  # Dumont changes start
+  - type: CosmicTransmutable
+    transmuteTo: ClothingOuterHardsuitCosmicCult
+  # Dumont end
 # SlotBlocker blocked until UI change
 #  - type: SlotBlock
 #    slots: [innerclothing, feet]
@@ -452,7 +455,7 @@
     - jumpsuit
   - type: Tag
     tags:
-    - PlasmamanSafe # EE Plasmeme Change
+    - PlasmamanSafeOther # Dumont
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 

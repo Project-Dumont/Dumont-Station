@@ -25,7 +25,10 @@
     sprite: _Nuclear14/Objects/Weapons/Melee/machete.rsi
   - type: StaticPrice
     price: 30
-
+  - type: Multihit
+    multihitWhitelist:
+      tags: # none because it shouldnt multihit
+#
 - type: entity
   name: scrap machete
   parent: N14Machete

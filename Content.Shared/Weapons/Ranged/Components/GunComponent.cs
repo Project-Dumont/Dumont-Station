@@ -33,6 +33,7 @@
 
 using System.Numerics;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -44,6 +45,28 @@ namespace Content.Shared.Weapons.Ranged.Components;
 // Goob modularity - rip explicit access
 public sealed partial class GunComponent : Component
 {
+
+    #region Jamming
+
+    /// <summary>
+    /// The quality of a weapon, determines how hard it is to jam.
+    /// Every shot, the weapon rolls with a change of 1/quality in order to jam.
+    /// 0 meaning that its impossible to jam, and 1 meaning that it always jam.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int Quality = 20;
+
+    /// <summary>
+    /// The time it takes to unjam a weapon, if applicable.
+    /// Quality must be > 1
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan TimeToUnjam = TimeSpan.FromSeconds(0);
+
+    #endregion
+
     #region Sound
 
     /// <summary>
@@ -173,7 +196,7 @@ public sealed partial class GunComponent : Component
     /// <summary>
     /// Who the gun is being requested to shoot at directly.
     /// </summary>
-    [ViewVariables]
+    [DataField]
     public EntityUid? Target = null;
 
     // Begin DeltaV additions

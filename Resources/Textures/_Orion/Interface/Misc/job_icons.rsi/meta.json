@@ -1,7 +1,7 @@
 ﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from TG Station",
+    "copyright": "Taken from TG Station. Recolored by crisooo (Discord). Bitrun-Avatar animation by Crenissis (Github)",
     "size": {
         "x": 8,
         "y": 8
@@ -11,7 +11,13 @@
             "name": "Bitrunner"
         },
         {
-            "name": "Bitrun-Avatar"
+            "name": "Bitrun-Avatar",
+            "delays":[
+                  [
+                     0.2,
+                     0.5
+                  ]
+               ]
         }
     ]
 }

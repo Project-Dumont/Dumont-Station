@@ -40,6 +40,7 @@ using Content.Goobstation.Common.Actions;
 using Content.Goobstation.Common.Body;
 using Content.Goobstation.Common.Changeling;
 using Content.Goobstation.Common.Conversion;
+using Content.Goobstation.Common.Gibbing;
 using Content.Goobstation.Common.Magic;
 using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Common.Medical;
@@ -210,7 +211,12 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         => _polymorph.CopyPolymorphComponent<ChangelingIdentityComponent>(ent, args.NewEntity);
 
     private void OnPolymorphedTakeTwo(Entity<ChangelingComponent> ent, ref PolymorphedEvent args)
-        => _polymorph.CopyPolymorphComponent<ChangelingComponent>(ent, args.NewEntity);
+    {
+        _polymorph.CopyPolymorphComponent<ChangelingComponent>(ent, args.NewEntity);
+
+        if (HasComp<DamageGibImmuneComponent>(ent))
+            EnsureComp<DamageGibImmuneComponent>(args.NewEntity);
+    }
 
     private void OnLimbAmputation(Entity<ChangelingComponent> ent, ref BeforeAmputationDamageEvent args)
     {

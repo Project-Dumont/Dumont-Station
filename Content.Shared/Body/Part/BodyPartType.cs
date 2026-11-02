@@ -25,7 +25,9 @@ namespace Content.Shared.Body.Part
     ///     Defines the type of a <see cref="BodyComponent"/>.
     /// </summary>
     [Serializable, NetSerializable]
-    public enum BodyPartType: byte
+    // Dumont changes start
+    public enum BodyPartType : ushort
+    // Dumont end
     {
         Other = 0,
         // Goobstation start
@@ -37,6 +39,9 @@ namespace Content.Shared.Body.Part
         Leg = 1 << 5,
         Foot = 1 << 6,
         Tail = 1 << 7,
+        // Dumont changes start
+        Wings = 1 << 8,
+        // Dumont end
         Vital = Chest | Groin | Head
         // Goobstation end
     }

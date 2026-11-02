@@ -1,0 +1,14 @@
+ent-TailReptilian = cauda de reptiliano
+ent-TailVox = cauda de vox
+ent-TailVulpkanin = cauda de vulpkanin
+ent-TailFeroxi = cauda de feroxi
+ent-TailTajaran = cauda de tajaran
+ent-TailFelinid = cauda de felinídeo
+ent-TailDaengati = cauda de daengati
+ent-TailShadowkin = cauda de shadowkin
+ent-TailRodentia = cauda de rodentia
+ent-TailChitinid = cauda de chitinídeo
+ent-TailHarpy = cauda de harpia
+ent-TailResomi = cauda de resomi
+ent-TailKobold = cauda de kobold
+ent-TailMonkey = cauda de macaco

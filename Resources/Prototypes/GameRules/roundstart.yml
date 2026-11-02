@@ -442,6 +442,7 @@
   id: Revolutionary
   parent: BaseGameRule
   components:
+  - type: MindshieldRemovingAntag # Trauma - puts fake mindshields into headrevs that start with a real one
   - type: GameRule
     minPlayers: 15
     chaosScore: 1000 # Goobstation - intentionally not per-antag
@@ -450,12 +451,21 @@
     selectionTime: IntraPlayerSpawn # Goobstation
     definitions:
     - prefRoles: [ HeadRev ]
+      fallbackRoles: [ Traitor ] # Trauma - make headrev-less rev rounds much rarer
       max: 3
-      playerRatio: 15
+      playerRatio: 10 # Trauma, was 15
       blacklist:
         components:
         - CommandStaff # Goobstation
-      jobBlacklist: [ Mime ] # Goobstation
+      # <Trauma>
+      jobBlacklist:
+      - Mime # can't speak so can't convert anyone
+      - NanotrasenRepresentative
+      - HeadOfPersonnel
+      - ChiefMedicalOfficer
+      - ResearchDirector
+      - ChiefEngineer
+      # </Trauma>
       briefing:
         text: head-rev-role-greeting
         color: CornflowerBlue
@@ -464,6 +474,11 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      # Dumont changes start
+      - type: AutoImplant
+        implants:
+        - RadioImplantHeadrev
+      # Dumont end
       mindRoles:
       - MindRoleHeadRevolutionary
 

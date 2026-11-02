@@ -174,6 +174,9 @@ public abstract partial class SharedSurgerySystem
 
         if (!_ignoreQuery.HasComp(args.User)
             && !_ignoreQuery.HasComp(args.Tool)
+            // Dumont changes start
+            && args.TargetSlots != SlotFlags.NONE
+            // Dumont end
             && _inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
         {
             while (containerSlotEnumerator.MoveNext(out var containerSlot))
@@ -296,9 +299,9 @@ public abstract partial class SharedSurgerySystem
             || removedComp.Symmetry != null && partComp.Symmetry != removedComp.Symmetry)
             return;
 
-        var slotName = removedComp.Symmetry != null
-                ? $"{removedComp.Symmetry?.ToString().ToLower()} {removedComp.Part.ToString().ToLower()}"
-                : removedComp.Part.ToString().ToLower();
+        // Dumont changes start
+        var slotName = _body.GetSlotFromBodyPart(partComp);
+        // Dumont end
             _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, partComp.Symmetry, out var _);
             _body.AttachPart(args.Part, slotName, args.Tool);
             EnsureComp<BodyPartReattachedComponent>(args.Tool);
@@ -382,7 +385,7 @@ public abstract partial class SharedSurgerySystem
 
         // Adding organs is generally done for a single one at a time, so we only need to check for the first.
         var firstOrgan = organComp.Organ.Values.FirstOrDefault();
-        if (firstOrgan == default)
+        if (firstOrgan.Component == null)
             return;
 
         if (!HasComp(args.Tool, firstOrgan.Component.GetType())
@@ -499,7 +502,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         var organType = ent.Comp.Organ.Values.FirstOrDefault();
-        if (organType == default)
+        if (organType.Component == null)
             return;
 
         var markingCategory = MarkingCategoriesConversion.FromHumanoidVisualLayers(ent.Comp.MarkingCategory);
@@ -1074,6 +1077,9 @@ public abstract partial class SharedSurgerySystem
             BodyPartType.Leg => SlotFlags.OUTERCLOTHING | SlotFlags.LEGS,
             BodyPartType.Foot => SlotFlags.FEET,
             BodyPartType.Tail => SlotFlags.NONE,
+            // Dumont changes start
+            BodyPartType.Wings => SlotFlags.NONE,
+            // Dumont end
             BodyPartType.Other => SlotFlags.NONE,
             _ => SlotFlags.NONE,
         };

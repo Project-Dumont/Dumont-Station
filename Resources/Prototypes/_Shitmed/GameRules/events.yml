@@ -40,19 +40,23 @@
     chaosScore: 100
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: /Maps/_Shitmed/Shuttles/ShuttleEvent/abductor_shuttle.yml
+    gridPath: /Maps/_Trauma/Shuttles/abductor_shuttle.yml
   - type: AntagObjectives
     objectives:
     - AbductObjective
+  - type: AbductorRule
   - type: AntagLoadProfileRule
     speciesHardOverride: Abductor
   - type: AntagSelection
+    agentName: abductor-round-end-agent-name
     definitions:
     - spawnerPrototype: LoneAbductorSpawner
       min: 1
       max: 1
       pickPlayer: false
       startingGear: LoneAbductorGear
+      prefRoles:
+      - LoneAbductorAntag
       briefing:
         text: abductor-role-greeting
         color: Green
@@ -143,19 +147,23 @@
     chaosScore: 150
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: /Maps/_Shitmed/Shuttles/ShuttleEvent/duo_abductor_shuttle.yml
+    gridPath: /Maps/_Trauma/Shuttles/abductor_shuttle.yml
   - type: AntagObjectives
     objectives:
     - AbductObjective
+  - type: AbductorRule
   - type: AntagLoadProfileRule
     speciesHardOverride: Abductor
   - type: AntagSelection
+    agentName: abductor-round-end-agent-name
     definitions:
     - spawnerPrototype: AbductorScientistSpawner
       min: 1
       max: 1
       pickPlayer: false
       startingGear: AbductorScientistGear
+      prefRoles:
+      - AbductorScientistAntag
       briefing:
         text: abductor-role-greeting
         color: Green
@@ -209,6 +217,8 @@
       max: 1
       pickPlayer: false
       startingGear: AbductorAgentGear
+      prefRoles:
+      - AbductorAgentAntag
       briefing:
         text: abductor-role-greeting
         color: Green
@@ -244,6 +254,7 @@
       - type: Tag
         tags:
           - Abductor
+          - AbductorScientist
           - CanPilot
           - FootstepSound
           - DoorBumpOpener

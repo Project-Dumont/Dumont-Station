@@ -38,6 +38,7 @@
   - Blob # Goobstation - Blob
   - Wizard # Goobstation - Wizard
   - CosmicCult # DeltaV - Cosmic Cult
+  - CosmicColossus
   - BloodCult # Funky Station - Blood Cult
   - NuclearOperatives
   - Zombies
@@ -76,7 +77,7 @@
 - type: guideEntry
   id: Revolutionaries
   name: guide-entry-revolutionaries
-  text: "/ServerInfo/_Trauma/Guidebook/Antagonist/Revolutionaries.xml" # trauma
+  text: "/ServerInfo/_Dumont/Guidebook/Antagonist/Revolutionaries.xml" # Dumont
 
 - type: guideEntry
   id: MinorAntagonists

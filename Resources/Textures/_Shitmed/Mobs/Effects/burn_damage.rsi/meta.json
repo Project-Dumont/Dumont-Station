@@ -80,6 +80,20 @@
 		{"name": "RHand_Burn_100", "directions": 4},
 		{"name": "RFoot_Burn_100", "directions": 4},
 		{"name": "Chest_Burn_100", "directions": 4},
-		{"name": "Groin_Burn_100", "directions": 4}
+		{"name": "Groin_Burn_100", "directions": 4},
+		{"name": "Tail_Burn_10", "directions": 4},
+		{"name": "Wings_Burn_10", "directions": 4},
+		{"name": "Tail_Burn_20", "directions": 4},
+		{"name": "Wings_Burn_20", "directions": 4},
+		{"name": "Tail_Burn_30", "directions": 4},
+		{"name": "Wings_Burn_30", "directions": 4},
+		{"name": "Tail_Burn_40", "directions": 4},
+		{"name": "Wings_Burn_40", "directions": 4},
+		{"name": "Tail_Burn_50", "directions": 4},
+		{"name": "Wings_Burn_50", "directions": 4},
+		{"name": "Tail_Burn_70", "directions": 4},
+		{"name": "Wings_Burn_70", "directions": 4},
+		{"name": "Tail_Burn_100", "directions": 4},
+		{"name": "Wings_Burn_100", "directions": 4}
 	]
 }

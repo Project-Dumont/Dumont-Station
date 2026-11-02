@@ -217,15 +217,15 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: ShardCrystalRandom
-
+#
 - type: reaction
   id: Gunpowder
   impact: Low
   quantized: true
   minTemp: 374
   reactants:
-    Potassium:
-      amount: 6
+    BlackPowder:
+      amount: 2
     Sulfur:
       amount: 2
     Charcoal:

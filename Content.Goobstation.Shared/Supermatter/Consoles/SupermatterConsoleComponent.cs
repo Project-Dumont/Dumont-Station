@@ -98,7 +98,6 @@ public partial struct SupermatterFocusData
     /// <summary>
     /// The supermatter's gas storage
     /// </summary>
-    [DataField]
     public Dictionary<Gas, float> GasStorage;
 
     /// <summary>

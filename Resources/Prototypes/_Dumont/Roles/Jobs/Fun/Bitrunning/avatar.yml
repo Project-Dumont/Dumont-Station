@@ -5,9 +5,10 @@
   parent: [BitrunnerAvatarGear]
   id: BitrunnerAvatarPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitBitrunner
-    head: ClothingHeadEnvirohelmBitrunner
-    gloves: ClothingHandsGlovesEnviroglovesBlack
+    outerClothing: ClothingOuterEnvirosuitBitrunner
+    head: ClothingHeadEnvirohelmetBitrunner
+    gloves: ClothingHandsGlovesEnviroglovesBitrunner
+    shoes: ClothingShoesEnvirobootsBitrunner
     suitstorage: InternalsPlasmaTankFilled # Dumont Change
 
 # Vox
@@ -26,89 +27,100 @@
   parent: [BitrunnerAvatarPassengerGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarPassengerPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitColorGrey
-    head: ClothingHeadEnvirohelmColorGrey
-    gloves: ClothingHandsGlovesEnviroglovesColorDarkGrey
+    outerClothing: ClothingOuterEnvirosuit
+    head: ClothingHeadEnvirohelmet
+    gloves: ClothingHandsGlovesEnvirogloves
+    shoes: ClothingShoesEnviroboots
 
 - type: startingGear
   parent: [BitrunnerAvatarClownGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarClownPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitClown
-    head: ClothingHeadEnvirohelmClown
+    outerClothing: ClothingOuterEnvirosuitClown
+    head: ClothingHeadEnvirohelmetClown
     gloves: ClothingHandsGlovesEnviroglovesClown
+    shoes: ClothingShoesEnvirobootsClown
 
 - type: startingGear
   parent: [BitrunnerAvatarMimeGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarMimePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitMime
-    head: ClothingHeadEnvirohelmMime
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+    outerClothing: ClothingOuterEnvirosuitMime
+    head: ClothingHeadEnvirohelmetMime
+    gloves: ClothingHandsGlovesEnviroglovesMime
+    shoes: ClothingShoesEnvirobootsMime
 
 - type: startingGear
   parent: [BitrunnerAvatarCaptainGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarCaptainPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitCaptain
-    head: ClothingHeadEnvirohelmCaptain
-    gloves: ClothingHandsGlovesEnviroglovesCaptain
+    outerClothing: ClothingOuterEnvirosuitCap
+    head: ClothingHeadEnvirohelmetCap
+    gloves: ClothingHandsGlovesEnviroglovesCap
+    shoes: ClothingShoesEnvirobootsCap
 
 - type: startingGear
   parent: [BitrunnerAvatarEngineerGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarEngineerPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitEngineering
-    head: ClothingHeadEnvirohelmEngineering
-    gloves: ClothingHandsGlovesEnviroglovesEngineering
+    outerClothing: ClothingOuterEnvirosuitEngineerV1
+    head: ClothingHeadEnvirohelmetEngineerV1
+    gloves: ClothingHandsGlovesEnviroglovesEngineerV1
+    shoes: ClothingShoesEnvirobootsEngineer
 
 - type: startingGear
   parent: [BitrunnerAvatarMedicalDoctorGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarMedicalDoctorPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitMedicalDoctor
-    head: ClothingHeadEnvirohelmMedicalDoctor
-    gloves: ClothingHandsGlovesEnviroglovesNitrile
+    outerClothing: ClothingOuterEnvirosuitMedic
+    head: ClothingHeadEnvirohelmetMedic
+    gloves: ClothingHandsGlovesEnviroglovesMedic
+    shoes: ClothingShoesEnvirobootsMedic
 
 - type: startingGear
   parent: [BitrunnerAvatarScientistGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarScientistPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitScientist
-    head: ClothingHeadEnvirohelmScientist
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+    outerClothing: ClothingOuterEnvirosuitScientist
+    head: ClothingHeadEnvirohelmetScientist
+    gloves: ClothingHandsGlovesEnviroglovesScientist
+    shoes: ClothingShoesEnvirobootsScientist
 
 - type: startingGear
   parent: [BitrunnerAvatarSecurityOfficerGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarSecurityOfficerPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitSec
-    head: ClothingHeadEnvirohelmSec
-    gloves: ClothingHandsGlovesEnviroglovesBlack
+    outerClothing: ClothingOuterEnvirosuitSecurityV1
+    head: ClothingHeadEnvirohelmetSecurityV1
+    gloves: ClothingHandsGlovesEnviroglovesSecurityV1
+    shoes: ClothingShoesEnvirobootsSecurity
 
 - type: startingGear
   parent: [BitrunnerAvatarCargoTechnicianGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarCargoTechnicianPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitCargo
-    head: ClothingHeadEnvirohelmCargo
-    gloves: ClothingHandsGlovesEnviroglovesCargo
+    outerClothing: ClothingOuterEnvirosuitCargoTech
+    head: ClothingHeadEnvirohelmetCargoTech
+    gloves: ClothingHandsGlovesEnviroglovesCargoTech
+    shoes: ClothingShoesEnvirobootsCargoTech
 
 - type: startingGear
   parent: [BitrunnerAvatarSalvageSpecialistGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarSalvageSpecialistPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitSalvage
-    head: ClothingHeadEnvirohelmSalvage
+    outerClothing: ClothingOuterEnvirosuitSalvage
+    head: ClothingHeadEnvirohelmetSalvage
     gloves: ClothingHandsGlovesEnviroglovesSalvage
+    shoes: ClothingShoesEnvirobootsSalvage
 
 - type: startingGear
   parent: [BitrunnerAvatarShaftMinerGear, BitrunnerAvatarPlasmamanGear]
   id: BitrunnerAvatarShaftMinerPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitSalvage
-    head: ClothingHeadEnvirohelmSalvage
-    gloves: ClothingHandsGlovesEnviroglovesSalvage
+    outerClothing: ClothingOuterEnvirosuitExplorer
+    head: ClothingHeadEnvirohelmetExplorer
+    gloves: ClothingHandsGlovesEnviroglovesExplorer
+    shoes: ClothingShoesEnvirobootsExplorer
 
 # Vox
 - type: startingGear
@@ -158,29 +170,29 @@
 # --- Domain Loadouts ---
 
 # Plasmaman
-- type: startingGear
-  parent: [BitrunnerAvatarSecurityOfficerMODGear, BitrunnerAvatarPlasmamanGear]
-  id: BitrunnerAvatarSecurityOfficerMODPlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitSec
-    head: ClothingHeadEnvirohelmSec
-    gloves: ClothingHandsGlovesEnviroglovesBlack
+#- type: startingGear
+#  parent: [BitrunnerAvatarSecurityOfficerMODGear, BitrunnerAvatarPlasmamanGear]
+#  id: BitrunnerAvatarSecurityOfficerMODPlasmamanGear
+#  equipment:
+#    jumpsuit: ClothingUniformEnvirosuitSec
+#    head: ClothingHeadEnvirohelmSec
+#    gloves: ClothingHandsGlovesEnviroglovesBlack
 
-- type: startingGear
-  parent: [BitrunnerAvatarXenonautenGear, BitrunnerAvatarPlasmamanGear]
-  id: BitrunnerAvatarXenonautenPlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitCamouflage
-    head: ClothingHeadEnvirohelmXenonaut
-    gloves: ClothingHandsGlovesEnviroglovesBlack
+#- type: startingGear
+#  parent: [BitrunnerAvatarXenonautenGear, BitrunnerAvatarPlasmamanGear]
+#  id: BitrunnerAvatarXenonautenPlasmamanGear
+#  equipment:
+#    jumpsuit: ClothingUniformEnvirosuitCamouflage
+#    head: ClothingHeadEnvirohelmXenonaut
+#    gloves: ClothingHandsGlovesEnviroglovesBlack
 
-- type: startingGear
-  parent: [BitrunnerAvatarERTSecurityGear, BitrunnerAvatarPlasmamanGear]
-  id: BitrunnerAvatarERTSecurityPlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitERTSecurity
-    head: ClothingHeadEnvirohelmERTSecurity
-    gloves: ClothingHandsGlovesEnviroglovesCombat
+#- type: startingGear
+#  parent: [BitrunnerAvatarERTSecurityGear, BitrunnerAvatarPlasmamanGear]
+#  id: BitrunnerAvatarERTSecurityPlasmamanGear
+#  equipment:
+#    jumpsuit: ClothingUniformEnvirosuitERTSecurity
+#    head: ClothingHeadEnvirohelmERTSecurity
+#    gloves: ClothingHandsGlovesEnviroglovesCombat
 
 # Vox
 - type: startingGear

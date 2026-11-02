@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by @deltanedas (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "tail_0"
+        },
+        {
+            "name": "tail_1"
+        },
+        {
+            "name": "tail_2"
+        },
+        {
+            "name": "tail_3"
+        },
+        {
+            "name": "tail_4"
+        },
+        {
+            "name": "tail_5"
+        },
+        {
+            "name": "tail_6"
+        },
+        {
+            "name": "tail_bleed"
+        }
+    ]
+}

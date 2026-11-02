@@ -1338,3 +1338,14 @@
       - state: equipped-OUTERCLOTHING-base
       - state: equipped-OUTERCLOTHING-color
         color: "#ffcc00"
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtTramDriver
+  name: tram driver's jumpskirt
+  description: Perfectly ironed, for well-prepared professionals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/tramdriver.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/tramdriver.rsi

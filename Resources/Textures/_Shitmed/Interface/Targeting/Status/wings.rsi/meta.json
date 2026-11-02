@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by @deltanedas (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "wings_0"
+        },
+        {
+            "name": "wings_1"
+        },
+        {
+            "name": "wings_2"
+        },
+        {
+            "name": "wings_3"
+        },
+        {
+            "name": "wings_4"
+        },
+        {
+            "name": "wings_5"
+        },
+        {
+            "name": "wings_6"
+        },
+        {
+            "name": "wings_bleed"
+        }
+    ]
+}

@@ -10,8 +10,8 @@ namespace Content.Shared.EntityEffects.EffectConditions;
 /// </summary>
 public sealed partial class OrganType : EventEntityEffectCondition<OrganType>
 {
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<MetabolizerTypePrototype>))]
-    public string Type = default!;
+    [DataField(required: true)]
+    public ProtoId<MetabolizerTypePrototype> Type = default!;
 
     /// <summary>
     ///     Does this condition pass when the organ has the type, or when it doesn't have the type?

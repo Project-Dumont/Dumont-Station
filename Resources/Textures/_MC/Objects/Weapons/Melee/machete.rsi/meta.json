@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/TerraGov-Marine-Corps/blob/master/icons/mob/inhands/weapons/melee_right.dmi, https://github.com/tgstation/TerraGov-Marine-Corps/blob/master/icons/mob/inhands/weapons/melee_left.dmi, https://github.com/tgstation/TerraGov-Marine-Corps/blob/master/icons/mob/suit_slot.dmi, https://github.com/tgstation/TerraGov-Marine-Corps/blob/master/icons/obj/items/weapons/swords.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGE",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "machete_alt"
+    }
+  ]
+}

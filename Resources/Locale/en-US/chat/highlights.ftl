@@ -54,6 +54,7 @@ highlights-ServiceWorker = Service Worker
 # Station-specific
 highlights-Boxer = Boxer
 highlights-Reporter = Reporter, Journalist
+highlights-TramDriver = Tram Driver, Tram, "Driver"
 highlights-Zookeeper = Zookeeper
 highlights-Psychologist = Psychologist, Psychology
 

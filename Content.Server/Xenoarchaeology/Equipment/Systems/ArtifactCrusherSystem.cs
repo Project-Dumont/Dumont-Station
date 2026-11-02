@@ -140,11 +140,8 @@ public sealed class ArtifactCrusherSystem : SharedArtifactCrusherSystem
             if (_whitelistSystem.IsWhitelistPass(crusher.CrushingWhitelist, contained))
             {
                 var amount = _random.Next(crusher.MinFragments, crusher.MaxFragments);
-                var stacks = _stack.SpawnMultiple(crusher.FragmentStackProtoId, amount, coords);
-                foreach (var stack in stacks)
-                {
-                    ContainerSystem.Insert((stack, null, null, null), crusher.OutputContainer);
-                }
+                var stack = _stack.Spawn(amount, crusher.FragmentStackProtoId, coords);
+                ContainerSystem.Insert((stack, null, null, null), crusher.OutputContainer);
             }
 
             if (!TryComp<BodyComponent>(contained, out var body))
