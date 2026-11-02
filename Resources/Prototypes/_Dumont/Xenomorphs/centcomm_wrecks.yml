@@ -1,0 +1,34 @@
+- type: entity
+  parent: BaseStructure
+  id: XenoCentcommMarauderWreck
+  name: destroços de Marauder
+  description: A carcaça destruída de um mecha de combate. Nem sua blindagem conseguiu resistir ao ataque.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: marauder-broken
+    noRot: true
+    drawdepth: SmallMobs
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 500
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+
+- type: entity
+  parent: XenoCentcommMarauderWreck
+  id: XenoCentcommSeraphWreck
+  name: destroços de Seraph
+  description: Os restos de um mecha do Esquadrão da Morte, retorcidos e cobertos de marcas de combate.
+  components:
+  - type: Sprite
+    state: seraph-broken

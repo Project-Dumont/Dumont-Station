@@ -1,0 +1,23 @@
+- type: entity
+  parent: MobHuman
+  id: XenoCentcommCorpseHuman
+  save: true
+  components:
+  - type: XenomorphCentcommCorpse
+  suffix: CC destruída, cadáver mapeado
+
+- type: entity
+  parent: MobSynth
+  id: XenoCentcommCorpseSynth
+  save: true
+  components:
+  - type: XenomorphCentcommCorpse
+  suffix: CC destruída, cadáver mapeado
+
+- type: entity
+  parent: MobDaengati
+  id: XenoCentcommCorpseDaengati
+  save: true
+  components:
+  - type: XenomorphCentcommCorpse
+  suffix: CC destruída, cadáver mapeado
