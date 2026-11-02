@@ -20,6 +20,8 @@
   - type: Tag
     tags:
       - EnergyMagAmmo
+  - type: EmpResistance
+    coefficient: 0.008 # EMP takes 1/3 of your mags
 
 - type: entity
   id: EnergyMagRifleLethal
@@ -104,4 +106,19 @@
       map: [ "enum.GunVisualLayers.Base" ]
   - type: HitscanBatteryAmmoProvider
     proto: LaserPulseEnergyRifle
+    fireCost: 50
+
+- type: entity
+  id: EnergyMagRifleGamma
+  parent: [ EnergyRifleMagBase, BaseSecurityContraband ]
+  name: energy rifle magazine (gamma)
+  description: This magazine utilizes gamma beams that are able to pierce enemies and walls.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Dumont/Objects/Weapons/Guns/Ammunition/Magazine/energyriflemag.rsi
+    layers:
+    - state: erifle_gamma
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletGammaRayCannon
     fireCost: 50

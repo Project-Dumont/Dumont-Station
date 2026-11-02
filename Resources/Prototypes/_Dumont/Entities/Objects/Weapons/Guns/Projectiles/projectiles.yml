@@ -58,6 +58,24 @@
         Heat: 27
 
 - type: entity
+  name: gamma bolt
+  id: BulletEnergyRifleGamma
+  parent: BulletLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumgold
+      shader: unshaded
+  - type: Projectile
+    penetrationThreshold: 100 
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 16
+
+- type: entity
   name: laser cannon bolt
   id: BulletLaserCannon
   parent: BulletLaser
