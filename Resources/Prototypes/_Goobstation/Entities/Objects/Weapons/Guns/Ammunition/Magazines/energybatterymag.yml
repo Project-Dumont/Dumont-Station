@@ -120,5 +120,5 @@
     - state: erifle_gamma
       map: [ "enum.GunVisualLayers.Base" ]
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletGammaRayCannon
+    proto: BulletEnergyRifleGamma
     fireCost: 50
