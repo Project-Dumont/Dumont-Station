@@ -196,7 +196,6 @@
     damageProtection:
       flatReductions:
         Heat: 10
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
@@ -245,7 +244,6 @@
     damageProtection:
       flatReductions:
         Heat: 10
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
@@ -296,7 +294,6 @@
     damageProtection:
       flatReductions:
         Heat: 10
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
@@ -348,7 +345,6 @@
     damageProtection:
       flatReductions:
         Heat: 10
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-modular
     fiberColor: fibers-black
@@ -402,7 +398,6 @@
     damageProtection:
       flatReductions:
         Heat: 10
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-modular
     fiberColor: fibers-black

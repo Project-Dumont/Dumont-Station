@@ -442,7 +442,6 @@
     state: control
   content:
     - ClothingModsuitPraetorian
-    - ModsuitModuleMagboot
 
 # ERT
 
