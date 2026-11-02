@@ -109,9 +109,6 @@
     - type: BreathMask
     - type: EyeProtection
   - type: IngestionBlocker # Work mantles, at least those with internals, make the cybernetic beast trait far more valuable to roles with these specialized mantles than those without. To offset this, at least a little, we'll say that the seals on the mantle make it impossible to eat while it's worn.
-  - type: Tag
-    tags:
-    - WorkMantle
 # slight resprite of the work mantle for engineers.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkEngineering
@@ -710,9 +707,6 @@
         shader: unshaded
   # - type: StealTarget # Omu ?????
   #  stealGroup: None
-  - type: Tag
-    tags:
-    - WorkMantle
 
 # Dumont - Lantern Toggle
 - type: entity

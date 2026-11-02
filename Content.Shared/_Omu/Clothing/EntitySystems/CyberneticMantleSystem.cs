@@ -36,7 +36,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CyberneticMantleComponent, BeingEquippedAttemptEvent>(OnBeingEquipped, after: [typeof(ClothingTakesUpExtraSlotsSystem)]);
+        SubscribeLocalEvent<CyberneticMantleComponent, BeingEquippedAttemptEvent>(OnBeingEquipped);
         SubscribeLocalEvent<CyberneticMantleComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<CyberneticMantleComponent, AboutToEnterToggleableClothingContainerEvent>(OnToggleClothing);
         SubscribeLocalEvent<CyberneticMantleComponent, GetItemActionsEvent>(OnGetActions);
