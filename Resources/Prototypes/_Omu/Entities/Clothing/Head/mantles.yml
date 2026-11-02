@@ -13,8 +13,7 @@
 # can't do everything. You eventually will need to put on another helmet, or set of glasses, or facemask, and in order to do that, you must accept some downsides
 # in return. For instance, if you're a tider, your mantle provides you with some basic upsides: night vision, vision correction. However,
 # if the station is spaced, you will need to use internals, which you don't have. So you must take off the mantle and deal with being nearsighted
-# for the time being. As well, the mantle is large, at 4x4 inventory slots, meaning that in a worst-case emergency you may need to drop it entirely and come
-# back for it later.
+# for the time being.
 #     Some concessions have been made for certain jobs. A salvager will need to go out into space, so they get internals and pressure resistance. Same with an
 # atmos technician. As well, a doctor probably needs a medhud for their job. The key is to give the player ONLY what is necessary to complete their job. A
 # doctor probably doesn't need to be spaceproofed to do their job, at least until the station goes belly up, at which point they __should__ have to play around the
@@ -72,7 +71,7 @@
   - type: StealTarget
     stealGroup: CyberneticMantles
   - type: Item
-    size: Huge
+    size: Normal
   - type: Armor
     coverage:
     - Head
