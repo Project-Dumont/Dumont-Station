@@ -203,7 +203,6 @@
     doomsday:
       announcement: alert-level-doomsday-announcement
       selectable: false
-      sound: /Audio/_Gabystation/Misc/doomsday_saae.ogg
       color: DarkRed
       disableSelection: true
       emergencyLightColor: DarkRed

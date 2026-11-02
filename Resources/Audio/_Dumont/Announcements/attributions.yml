@@ -141,3 +141,13 @@
   license: "CC-BY-SA-3.0"
   copyright: "Made by Struater"
   source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["hacked_saae_1.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["hacked_saae_2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
