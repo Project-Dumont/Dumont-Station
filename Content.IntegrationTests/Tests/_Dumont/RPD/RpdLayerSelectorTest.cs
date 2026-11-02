@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared._Dumont.RPD;
@@ -25,16 +26,18 @@ public sealed class RpdLayerSelectorTest : InteractionTest
 
 - type: entity
   id: RpdLayerTestTool
-  parent: RPDAdvanced
+  parent: RPD
   components:
   - type: RCD
     availablePrototypes: [RpdLayerTestPipe]
 ";
 
-    [Test]
-    public async Task AltClickCyclesAndNetworksLayer()
+    [TestCase("RPD")]
+    [TestCase("RPDRecharging")]
+    [TestCase("RCDProtoCE")]
+    public async Task AltClickCyclesAndNetworksLayer(string prototype)
     {
-        var tool = await PlaceInHands("RPDAdvanced");
+        var tool = await PlaceInHands(prototype);
         var serverTool = SEntMan.GetEntity(tool);
         var expectedLayers = new AtmosPipeLayer?[]
         {
@@ -64,7 +67,7 @@ public sealed class RpdLayerSelectorTest : InteractionTest
     [TestCase(3, AtmosPipeLayer.Tertiary)]
     public async Task FixedLayerIgnoresMousePosition(int clicks, AtmosPipeLayer expected)
     {
-        var tool = SEntMan.GetEntity(await PlaceInHands("RPDAdvanced"));
+        var tool = SEntMan.GetEntity(await PlaceInHands("RPD"));
         await Server.WaitPost(() =>
         {
             for (var i = 0; i < clicks; i++)
@@ -107,10 +110,8 @@ public sealed class RpdLayerSelectorTest : InteractionTest
     }
 
     [TestCase("RCD")]
-    [TestCase("RPD")]
-    [TestCase("RPDRecharging")]
-    [TestCase("RCDProtoCE")]
-    public async Task ExistingToolsDoNotHaveLayerSelector(string prototype)
+    [TestCase("RCDRecharging")]
+    public async Task RcdToolsDoNotHaveLayerSelector(string prototype)
     {
         var tool = SEntMan.GetEntity(await PlaceInHands(prototype));
         await Server.WaitAssertion(() =>
@@ -120,30 +121,42 @@ public sealed class RpdLayerSelectorTest : InteractionTest
         });
     }
 
-    [Test]
-    public async Task AdvancedRpdKeepsSpriteRecipesAndCharges()
+    [TestCase("RPD")]
+    [TestCase("RPDRecharging")]
+    [TestCase("RCDProtoCE")]
+    public async Task LayerSelectionKeepsSpriteRecipesAndCharges(string prototype)
     {
-        var regular = await PlaceInHands("RPD");
+        var tool = await PlaceInHands(prototype);
+        var serverTool = SEntMan.GetEntity(tool);
         await RunTicks(5);
-        var regularRcd = SEntMan.GetComponent<RCDComponent>(SEntMan.GetEntity(regular));
-        var regularCharges = SEntMan.GetComponent<LimitedChargesComponent>(SEntMan.GetEntity(regular)).MaxCharges;
+        var rcd = SEntMan.GetComponent<RCDComponent>(serverTool);
+        var recipes = rcd.AvailablePrototypes.ToArray();
+        var selectedRecipe = rcd.ProtoId;
+        var charges = SEntMan.GetComponent<LimitedChargesComponent>(serverTool);
+        var maxCharges = charges.MaxCharges;
+        var lastCharges = charges.LastCharges;
         string spritePath = null;
         await Client.WaitAssertion(() =>
         {
-            spritePath = CEntMan.GetComponent<SpriteComponent>(ToClient(regular)).BaseRSI?.Path.ToString();
+            spritePath = CEntMan.GetComponent<SpriteComponent>(ToClient(tool)).BaseRSI?.Path.ToString();
             Assert.That(spritePath, Is.Not.Null);
         });
 
-        var advanced = await PlaceInHands("RPDAdvanced");
+        await Server.WaitAssertion(() =>
+        {
+            for (var i = 0; i < 4; i++)
+                Assert.That(InteractSys.AltInteract(SPlayer, serverTool), Is.True);
+        });
         await RunTicks(5);
         await Server.WaitAssertion(() =>
         {
-            var uid = SEntMan.GetEntity(advanced);
-            Assert.That(SEntMan.GetComponent<RCDComponent>(uid).AvailablePrototypes, Is.EquivalentTo(regularRcd.AvailablePrototypes));
-            Assert.That(SEntMan.GetComponent<LimitedChargesComponent>(uid).MaxCharges, Is.EqualTo(regularCharges));
+            Assert.That(rcd.AvailablePrototypes, Is.EquivalentTo(recipes));
+            Assert.That(rcd.ProtoId, Is.EqualTo(selectedRecipe));
+            Assert.That(charges.MaxCharges, Is.EqualTo(maxCharges));
+            Assert.That(charges.LastCharges, Is.EqualTo(lastCharges));
         });
         await Client.WaitAssertion(() =>
-            Assert.That(CEntMan.GetComponent<SpriteComponent>(ToClient(advanced)).BaseRSI?.Path.ToString(), Is.EqualTo(spritePath)));
+            Assert.That(CEntMan.GetComponent<SpriteComponent>(ToClient(tool)).BaseRSI?.Path.ToString(), Is.EqualTo(spritePath)));
     }
 
     private EntityCoordinates GetTargetCoordinates()

@@ -1,6 +1,3 @@
-ent-RPDAdvanced = advanced RPD
-    .desc = A rapid piping device with a selectable pipe layer.
-
 rpd-layer-selector-cycle = Cycle layer
 rpd-layer-selector-examine = Layer: {$layer}
 rpd-layer-selector-changed = Layer: {$layer}
