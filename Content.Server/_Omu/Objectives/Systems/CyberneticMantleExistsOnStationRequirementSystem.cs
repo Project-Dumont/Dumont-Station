@@ -5,12 +5,13 @@
 using Content.Server._Omu.Objectives.Components;
 using Content.Shared._Omu.Clothing.Components;
 using Content.Shared.Objectives.Components;
-using Robust.Shared.Utility;
+using Content.Server.Station.Systems;
 
 namespace Content.Server._Omu.Objectives.Systems;
 
 public sealed class CyberneticMantleExistsOnStationRequirementSystem : EntitySystem
 {
+    [Dependency] private readonly StationSystem _station = default!;
 
     public override void Initialize()
     {
@@ -24,8 +25,20 @@ public sealed class CyberneticMantleExistsOnStationRequirementSystem : EntitySys
         if (args.Cancelled)
             return;
 
-        // if there exists no item on station with a CyberneticMantleComponent
-        if (EntityManager.GetAllComponents(typeof(CyberneticMantleComponent)).FirstOrNull() == null)
+        if (_station.GetOwningStation(args.Mind.OwnedEntity) is not { } station)
+        {
             args.Cancelled = true;
+            return;
+        }
+
+        // if there exists no item on station with a CyberneticMantleComponent
+        var query = EntityQueryEnumerator<CyberneticMantleComponent>();
+        while (query.MoveNext(out var mantle, out _))
+        {
+            if (_station.GetOwningStation(mantle) == station)
+                return;
+        }
+
+        args.Cancelled = true;
     }
 }

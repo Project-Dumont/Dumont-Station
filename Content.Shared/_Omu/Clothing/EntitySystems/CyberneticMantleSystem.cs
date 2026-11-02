@@ -36,7 +36,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CyberneticMantleComponent, BeingEquippedAttemptEvent>(OnBeingEquipped);
+        SubscribeLocalEvent<CyberneticMantleComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<CyberneticMantleComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<CyberneticMantleComponent, AboutToEnterToggleableClothingContainerEvent>(OnToggleClothing);
         SubscribeLocalEvent<CyberneticMantleComponent, GetItemActionsEvent>(OnGetActions);
@@ -54,7 +54,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
             return;
         }
 
-        if (args.SlotFlags != SlotFlags.MASK)
+        if (args.SlotFlags != SlotFlags.MASK || !HasComp<CyberneticBeastComponent>(args.User))
             return;
 
         args.AddAction(
@@ -69,7 +69,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
         CyberneticMantleComponent component,
         CyberneticMantleLightToggleEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || !HasComp<CyberneticBeastComponent>(args.Performer))
             return;
 
         var strongLight = !args.Action.Comp.Toggled;
@@ -89,9 +89,9 @@ public sealed class CyberneticMantleSystem : EntitySystem
     /// <summary>
     ///     A list of things to do when the mantle is equpped. Enables the mantle's ItemToggleComponent.
     /// </summary>
-    private void OnBeingEquipped(Entity<CyberneticMantleComponent> ent, ref BeingEquippedAttemptEvent args)
+    private void OnEquipped(Entity<CyberneticMantleComponent> ent, ref GotEquippedEvent args)
     {
-        if (args.Cancelled)
+        if (args.SlotFlags != SlotFlags.MASK)
             return;
 
         // if the client is resetting predicted entities, trying to modify the components on the mantle will result in an exception. So don't do it.
@@ -99,14 +99,14 @@ public sealed class CyberneticMantleSystem : EntitySystem
             return;
 
         // make sure that the person equipping the mantle is a cybernetic beast
-        if (TryComp<CyberneticBeastComponent>(args.EquipTarget, out var _))
+        if (TryComp<CyberneticBeastComponent>(args.Equipee, out var _))
         {
             // if the component can be toggled, turn it on when worn
             if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
-                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.EquipTarget, true);
+                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.Equipee, true);
 
             // get the appearance of the beast
-            if (TryComp<HumanoidAppearanceComponent>(args.EquipTarget, out var humanoidAppearance))
+            if (TryComp<HumanoidAppearanceComponent>(args.Equipee, out var humanoidAppearance))
             {
                 // clamp the beast's eye color to a reasonable brightness; no tiders with stealth mantles allowed
                 var eyeColorHsv = Color.ToHsv(humanoidAppearance.EyeColor);
@@ -131,6 +131,11 @@ public sealed class CyberneticMantleSystem : EntitySystem
         // if we try to predict this more than once it'll throw an exception about modifying components while resetting predicted entities.
         if (!_gameTiming.IsFirstTimePredicted && _netManager.IsClient)
             return;
+
+        _lightSystem.SetRadius(ent.Owner, 1.45f);
+        _lightSystem.SetEnergy(ent.Owner, 0.6f);
+        _lightSystem.SetFalloff(ent.Owner, 0f);
+        _actionsSystem.SetToggled(ent.Comp.LightToggleActionEntity, false);
 
         // if the compnent can be toggled, turn it off when unequipped.
         if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
