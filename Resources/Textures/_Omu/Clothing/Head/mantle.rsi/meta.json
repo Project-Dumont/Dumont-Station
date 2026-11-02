@@ -35,9 +35,6 @@
       "name": "icon-security"
     },
     {
-      "name": "icon-space-security"
-    },
-    {
       "name": "icon-qm"
     },
     {
@@ -48,9 +45,6 @@
     },
     {
       "name": "icon-corpsman"
-    },
-    {
-      "name": "icon-corpsman-space"
     },
     {
       "name": "icon-ce"
@@ -168,10 +162,6 @@
     },
     {
       "name": "helmet-internals-medical",
-      "directions": 4
-    },
-    {
-      "name": "helmet-internals-security",
       "directions": 4
     },
     {

@@ -3,7 +3,7 @@ ent-ClothingCyberneticBeastMantle = visor cibernético
     .desc = Um visor que auxilia a visão de uma fera cibernética, levemente iluminando por onde passa. Sem ele, enxergar volta a ser um problema.
 
 ent-ClothingCyberneticBeastMantleWork = visor cibernético de trabalho
-    .desc = Um visor cibernético adaptado para o trabalho, com conexões para internals e vedações extras para proteção atmosférica.
+    .desc = Um visor cibernético adaptado para o trabalho, com conexões para internals.
 
 ent-ClothingCyberneticBeastMantleWorkResearch = visor cibernético de trabalho experimental
     .desc = Um visor cibernético improvisado, produzido em massa e equipado com internals.
@@ -29,21 +29,15 @@ ent-ClothingCyberneticBeastMantleSecurity = visor cibernético de segurança
 ent-ClothingCyberneticBeastMantleHeadofSecurity = visor cibernético do chefe de segurança
     .desc = Um visor elegante que transmite autoridade. A blindagem antimotim ajuda a lidar com os arruaceiros que não se impressionam com a aparência.
 
-ent-ClothingCyberneticBeastSpaceMantleSecurity = visor cibernético espacial de segurança
-    .desc = Uma versão aprimorada do visor de segurança, com proteção e vedação para uso no espaço.
-
 ent-ClothingCyberneticBeastMantleCorpsman = visor cibernético do clínico brigadista
     .desc = Um visor de segurança adaptado para o clínico brigadista.
-
-ent-ClothingCyberneticBeastSpaceMantleCorpsman = visor cibernético espacial do clínico brigadista
-    .desc = Uma versão do visor do clínico brigadista preparada para caminhadas espaciais.
 
 # Medicina
 ent-ClothingCyberneticBeastMantleMedical = visor cibernético médico
     .desc = Um visor cibernético desenvolvido para a equipe médica.
 
 ent-ClothingCyberneticBeastMantleMedicalParamedic = visor cibernético de paramédico
-    .desc = Um visor médico bem construído, com internals e vedação contra pressão. Para quando aquele arruaceiro resolver passear pelo espaço sem traje. De novo.
+    .desc = Um visor médico bem construído, com conexões para internals, feito para os paramédicos da estação.
 
 ent-ClothingCyberneticBeastMantleMedicalCMO = visor cibernético do médico chefe
     .desc = O melhor visor médico que a NT pode comprar, com lentes reforçadas contra flashes intensos.

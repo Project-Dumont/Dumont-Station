@@ -12,13 +12,3 @@
     Glass: 1000
     Silver: 1000
     Gold: 1000
-
-- type: latheRecipe
-  parent: ClothingCyberneticBeastMantleWorkResearch
-  id: ClothingCyberneticBeastSpaceMantleSecurity
-  result: ClothingCyberneticBeastSpaceMantleSecurity
-
-- type: latheRecipe
-  parent: ClothingCyberneticBeastMantleWorkResearch
-  id: ClothingCyberneticBeastSpaceMantleCorpsman
-  result: ClothingCyberneticBeastSpaceMantleCorpsman
