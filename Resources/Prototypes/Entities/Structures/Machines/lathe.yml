@@ -807,6 +807,7 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    - ModsuitSecurity # Goob
     # Dumont
     - SecurityPowerguns
     - SecurityWeaponUpgrades
@@ -919,6 +920,7 @@
     - TriageStatic # Dumont-triagem
     dynamicPacks:
     - Chemistry
+    - ModsuitMedical # Goob
     # Goobstation Packs
     - Surgery
     - MedicalCybernetics

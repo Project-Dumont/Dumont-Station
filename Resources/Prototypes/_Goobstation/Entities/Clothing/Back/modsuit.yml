@@ -48,6 +48,8 @@
         type: StorageBoundUserInterface
       enum.ModSuitUiKey.Key:
         type: ModSuitBoundUserInterface
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
   - type: UseDelay
     delay: 0.5
   - type: ExplosionResistance
@@ -243,7 +245,6 @@
       outerClothing: ClothingModsuitChestplateEngineer
       shoes: ClothingModsuitBootsEngineer
     inbuiltModules:
-    - ModsuitModuleBuiltinFlashProtection
     - ModsuitModuleBuiltinInsulation
   - type: Construction
     graph: Modsuit
@@ -261,6 +262,9 @@
   id: ClothingModsuitEngineerPowerCell
   suffix: High-Capacity Battery
   components:
+  - type: ModSuit
+    startingModules:
+    - ModsuitModuleWelding
   - type: ItemSlots
     slots:
       mod-core:
@@ -287,7 +291,6 @@
       outerClothing: ClothingModsuitChestplateAtmostech
       shoes: ClothingModsuitBootsAtmostech
     inbuiltModules:
-    - ModsuitModuleBuiltinFlashProtection
     - ModsuitModuleBuiltinInsulation
   - type: Construction
     graph: Modsuit
@@ -305,6 +308,9 @@
   id: ClothingModsuitAtmostechPowerCell
   suffix: High-Capacity Battery
   components:
+  - type: ModSuit
+    startingModules:
+    - ModsuitModuleWelding
   - type: ItemSlots
     slots:
       mod-core:

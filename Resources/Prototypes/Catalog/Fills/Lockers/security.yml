@@ -170,7 +170,6 @@
   id: FillLockerSecurity
   table: !type:AllSelector
     children:
-    - id: ModsuitPlatingSecurity # Goob
     - id: FlashlightSeclite
       prob: 0.8
     #- id: WeaponDisabler # Goobstation (Disablers in belts)
