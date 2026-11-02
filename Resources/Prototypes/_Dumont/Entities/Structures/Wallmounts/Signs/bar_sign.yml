@@ -1,0 +1,899 @@
+- type: barSign
+  id: BarsignArmoksBarNGrill
+  name: barsign-component-name-dumont-armoksbarngrill
+  description: barsign-component-description-dumont-armoksbarngrill
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: armoksbarngrill
+  hidden: false
+
+- type: barSign
+  id: BarsignBargonia
+  name: barsign-component-name-dumont-bargonia
+  description: barsign-component-description-dumont-bargonia
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: bargonia
+  hidden: false
+
+- type: barSign
+  id: BarsignChalmunsCantina
+  name: barsign-component-name-dumont-chalmunscantina
+  description: barsign-component-description-dumont-chalmunscantina
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: chalmunscantina
+  hidden: false
+
+- type: barSign
+  id: BarsignColdOnes
+  name: barsign-component-name-dumont-coldones
+  description: barsign-component-description-dumont-coldones
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: coldones
+  hidden: false
+
+- type: barSign
+  id: BarsignDoctorsOrders
+  name: barsign-component-name-dumont-doctorsorders
+  description: barsign-component-description-dumont-doctorsorders
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: doctorsorders
+  hidden: false
+
+- type: barSign
+  id: BarsignHonkedNLoaded
+  name: barsign-component-name-dumont-honknloaded
+  description: barsign-component-description-dumont-honknloaded
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: honknloaded
+  hidden: false
+
+- type: barSign
+  id: BarsignIshimura
+  name: barsign-component-name-dumont-ishimura
+  description: barsign-component-description-dumont-ishimura
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: ishimura
+  hidden: false
+
+- type: barSign
+  id: BarsignLeCafeSilencieux
+  name: barsign-component-name-dumont-lecafesilencieux
+  description: barsign-component-description-dumont-lecafesilencieux
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: lecafesilencieux
+  hidden: false
+
+- type: barSign
+  id: BarsignLittleTreatTeaRoom
+  name: barsign-component-name-dumont-littletreattearoom
+  description: barsign-component-description-dumont-littletreattearoom
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: littletreattearoom
+  hidden: false
+
+- type: barSign
+  id: BarsignMalteseFalcon
+  name: barsign-component-name-dumont-maltesefalcon
+  description: barsign-component-description-dumont-maltesefalcon
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: maltesefalcon
+  hidden: false
+
+- type: barSign
+  id: BarsignMaltroach
+  name: barsign-component-name-dumont-maltroach
+  description: barsign-component-description-dumont-maltroach
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: maltroach
+  hidden: false
+
+- type: barSign
+  id: BarsignMeadBay
+  name: barsign-component-name-dumont-meadbay
+  description: barsign-component-description-dumont-meadbay
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: meadbay
+  hidden: false
+
+- type: barSign
+  id: BarsignMilliways
+  name: barsign-component-name-dumont-milliways
+  description: barsign-component-description-dumont-milliways
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: milliways
+  hidden: false
+
+- type: barSign
+  id: BarsignMoths
+  name: barsign-component-name-dumont-moths
+  description: barsign-component-description-dumont-moths
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: moths
+  hidden: false
+
+- type: barSign
+  id: BarsignNeonFlamingos
+  name: barsign-component-name-dumont-neonflamingos
+  description: barsign-component-description-dumont-neonflamingos
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: neonflamingos
+  hidden: false
+
+- type: barSign
+  id: BarsignOldCockInn
+  name: barsign-component-name-dumont-oldcockinn
+  description: barsign-component-description-dumont-oldcockinn
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: oldcockinn
+  hidden: false
+
+- type: barSign
+  id: BarsignOrangeJuice
+  name: barsign-component-name-dumont-orangejuice
+  description: barsign-component-description-dumont-orangejuice
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: orangejuice
+  hidden: false
+
+- type: barSign
+  id: BarsignPunPunsPub
+  name: barsign-component-name-dumont-punpunspub
+  description: barsign-component-description-dumont-punpunspub
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: punpunspub
+  hidden: false
+
+- type: barSign
+  id: BarsignQuarks
+  name: barsign-component-name-dumont-quarks
+  description: barsign-component-description-dumont-quarks
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: quarks
+  hidden: false
+
+- type: barSign
+  id: BarsignRockBottom
+  name: barsign-component-name-dumont-rockbottom
+  description: barsign-component-description-dumont-rockbottom
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: rockbottom
+  hidden: false
+
+- type: barSign
+  id: BarsignScotchServinWillys
+  name: barsign-component-name-dumont-scothservingwillys
+  description: barsign-component-description-dumont-scothservingwillys
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: scothservingwillys
+  hidden: false
+
+- type: barSign
+  id: BarsignSlipperyShot
+  name: barsign-component-name-dumont-slipperyshot
+  description: barsign-component-description-dumont-slipperyshot
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: slipperyshot
+  hidden: false
+
+- type: barSign
+  id: BarsignSlowDive
+  name: barsign-component-name-dumont-slowdive
+  description: barsign-component-description-dumont-slowdive
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: slowdive
+  hidden: false
+
+- type: barSign
+  id: BarsignSolaris
+  name: barsign-component-name-dumont-solaris
+  description: barsign-component-description-dumont-solaris
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: solaris
+  hidden: false
+
+- type: barSign
+  id: BarsignSpaceAsshole
+  name: barsign-component-name-dumont-spaceasshole
+  description: barsign-component-description-dumont-spaceasshole
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: spaceasshole
+  hidden: false
+
+- type: barSign
+  id: BarsignTardis
+  name: barsign-component-name-dumont-tardis
+  description: barsign-component-description-dumont-tardis
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: tardis
+  hidden: false
+
+- type: barSign
+  id: BarsignTenForward
+  name: barsign-component-name-dumont-tenforward
+  description: barsign-component-description-dumont-tenforward
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: tenforward
+  hidden: false
+
+- type: barSign
+  id: BarsignTheAssemblyLine
+  name: barsign-component-name-dumont-theassemblyline
+  description: barsign-component-description-dumont-theassemblyline
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theassemblyline
+  hidden: false
+
+- type: barSign
+  id: BarsignTheBark
+  name: barsign-component-name-dumont-thebark
+  description: barsign-component-description-dumont-thebark
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thebark
+  hidden: false
+
+- type: barSign
+  id: BarsignTheBlueNote
+  name: barsign-component-name-dumont-thebluenote
+  description: barsign-component-description-dumont-thebluenote
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thebluenote
+  hidden: false
+
+- type: barSign
+  id: BarsignTheCavern
+  name: barsign-component-name-dumont-thecavern
+  description: barsign-component-description-dumont-thecavern
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thecavern
+  hidden: false
+
+- type: barSign
+  id: BarsignTheCultCave
+  name: barsign-component-name-dumont-thecultcave
+  description: barsign-component-description-dumont-thecultcave
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thecultcave
+  hidden: false
+
+- type: barSign
+  id: BarsignTheInvasiveInn
+  name: barsign-component-name-dumont-theeinvasiveinn
+  description: barsign-component-description-dumont-theeinvasiveinn
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theeinvasiveinn
+  hidden: false
+
+- type: barSign
+  id: BarsignTheGreyTide
+  name: barsign-component-name-dumont-thegreytide
+  description: barsign-component-description-dumont-thegreytide
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thegreytide
+  hidden: false
+
+- type: barSign
+  id: BarsignTheHive
+  name: barsign-component-name-dumont-thehive
+  description: barsign-component-description-dumont-thehive
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thehive
+  hidden: false
+
+- type: barSign
+  id: BarsignTheMaint
+  name: barsign-component-name-dumont-themaint
+  description: barsign-component-description-dumont-themaint
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: themaint
+  hidden: false
+
+- type: barSign
+  id: BarsignTheNest
+  name: barsign-component-name-dumont-thenest
+  description: barsign-component-description-dumont-thenest
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thenest
+  hidden: false
+
+- type: barSign
+  id: BarsignThePrancingPony
+  name: barsign-component-name-dumont-theprancingpony
+  description: barsign-component-description-dumont-theprancingpony
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theprancingpony
+  hidden: false
+
+- type: barSign
+  id: BarsignTheRedMons
+  name: barsign-component-name-dumont-theredmons
+  description: barsign-component-description-dumont-theredmons
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theredmons
+  hidden: false
+
+- type: barSign
+  id: BarsignTheRedshirt
+  name: barsign-component-name-dumont-theredshirt
+  description: barsign-component-description-dumont-theredshirt
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theredshirt
+  hidden: false
+
+- type: barSign
+  id: BarsignTheRune
+  name: barsign-component-name-dumont-therune
+  description: barsign-component-description-dumont-therune
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: therune
+  hidden: false
+
+- type: barSign
+  id: BarsignTheShaken
+  name: barsign-component-name-dumont-theshaken
+  description: barsign-component-description-dumont-theshaken
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: theshaken
+  hidden: false
+
+- type: barSign
+  id: BarsignTheSyndicare
+  name: barsign-component-name-dumont-thesyndicare
+  description: barsign-component-description-dumont-thesyndicare
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thesyndicare
+  hidden: false
+
+- type: barSign
+  id: BarsignTheTimeOfEve
+  name: barsign-component-name-dumont-thetimeofeve
+  description: barsign-component-description-dumont-thetimeofeve
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thetimeofeve
+  hidden: false
+
+- type: barSign
+  id: BarsignTheWizard
+  name: barsign-component-name-dumont-thewizard
+  description: barsign-component-description-dumont-thewizard
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thewizard
+  hidden: false
+
+- type: barSign
+  id: BarsignTheWretchedHive
+  name: barsign-component-name-dumont-thewretchedhive
+  description: barsign-component-description-dumont-thewretchedhive
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: thewretchedhive
+  hidden: false
+
+- type: barSign
+  id: BarsignVault
+  name: barsign-component-name-dumont-vault
+  description: barsign-component-description-dumont-vault
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: vault
+  hidden: false
+
+- type: barSign
+  id: BarsignVladsSaladBar
+  name: barsign-component-name-dumont-vladssaladbar
+  description: barsign-component-description-dumont-vladssaladbar
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: vladssaladbar
+  hidden: false
+
+- type: barSign
+  id: BarsignWhiskeyImplant
+  name: barsign-component-name-dumont-whiskeyimplant
+  description: barsign-component-description-dumont-whiskeyimplant
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: whiskeyimplant
+  hidden: false
+
+- type: barSign
+  id: BarsignWrongTurn
+  name: barsign-component-name-dumont-wrongturn
+  description: barsign-component-description-dumont-wrongturn
+  icon:
+    sprite: _Dumont/Structures/Wallmounts/barsign.rsi
+    state: wrongturn
+  hidden: false
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignArmoksBarNGrill
+  name: "Armok's Bar N' Grill"
+  description: "Aqui a carne é grelhada, o ego é inflamado e o seguro não cobre nada."
+  components:
+  - type: BarSign
+    current: BarsignArmoksBarNGrill
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignBargonia
+  name: "Bargonia"
+  description: "O letreiro tá meio apagado, mas o barril jura que está tudo sob controle."
+  components:
+  - type: BarSign
+    current: BarsignBargonia
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignChalmunsCantina
+  name: "Chalmun's Cantina"
+  description: "Droides não são servidos. Humanos, depende do humor do barman."
+  components:
+  - type: BarSign
+    current: BarsignChalmunsCantina
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignColdOnes
+  name: "Cold Ones"
+  description: "Só uma gelada resolve. Duas resolvem melhor. Três é o tripulante assinando o termo."
+  components:
+  - type: BarSign
+    current: BarsignColdOnes
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignDoctorsOrders
+  name: "Doctor's Orders"
+  description: "Receitado por 9 em cada 10 médicos. O décimo está na cadeia."
+  components:
+  - type: BarSign
+    current: BarsignDoctorsOrders
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignHonkedNLoaded
+  name: "HONKed N' Loaded"
+  description: "Honk de dia, tiroteio à noite. Consulte seu palhaço antes de entrar."
+  components:
+  - type: BarSign
+    current: BarsignHonkedNLoaded
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignIshimura
+  name: "Ishimura"
+  description: "O serviço é excelente, desde que você não pergunte o que tem no porão."
+  components:
+  - type: BarSign
+    current: BarsignIshimura
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignLeCafeSilencieux
+  name: "Le Cafe Silencieux"
+  description: "Aqui ninguém ouve você gritar. É só pedir baixinho."
+  components:
+  - type: BarSign
+    current: BarsignLeCafeSilencieux
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignLittleTreatTeaRoom
+  name: "Little Treat Tea Room"
+  description: "Chá e bolinhos para quem acha que o dia ainda não foi ruim o bastante."
+  components:
+  - type: BarSign
+    current: BarsignLittleTreatTeaRoom
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignMalteseFalconDumont
+  name: "Maltese Falcon"
+  description: "Ninguém sabe o que tem dentro da estátua, mas o preço do drink é suspeito."
+  components:
+  - type: BarSign
+    current: BarsignMalteseFalcon
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignMaltroachDumont
+  name: "Maltroach"
+  description: "Duas baratas brindando sob as estrelas. Elas vão herdar a estação, então seja gentil."
+  components:
+  - type: BarSign
+    current: BarsignMaltroach
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignMeadBay
+  name: "Mead Bay"
+  description: "Hidromel para quem quer ser viking, mas esqueceu o barco em casa."
+  components:
+  - type: BarSign
+    current: BarsignMeadBay
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignMilliways
+  name: "Milliways"
+  description: "Reserve com antecedência. De preferência antes do fim do universo."
+  components:
+  - type: BarSign
+    current: BarsignMilliways
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignMoths
+  name: "Moths"
+  description: "Moths, moths, moths. Elas não vêm pelo drink, vêm pela lâmpada."
+  components:
+  - type: BarSign
+    current: BarsignMoths
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignNeonFlamingos
+  name: "Neon Flamingos"
+  description: "Um pé só, um drink na mão e nenhuma responsabilidade."
+  components:
+  - type: BarSign
+    current: BarsignNeonFlamingos
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignOldCockInn
+  name: "Old Cock Inn"
+  description: "A decoração é antiga, o cheiro é antigo e a cerveja... bom, também."
+  components:
+  - type: BarSign
+    current: BarsignOldCockInn
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignOrangeJuice
+  name: "Orange Juice"
+  description: "Totalmente sem álcool. Juramos. Ignore a garrafa atrás do balcão."
+  components:
+  - type: BarSign
+    current: BarsignOrangeJuice
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignPunPunsPub
+  name: "Pun Pun's Pub"
+  description: "Macaco bom é macaco que serve. Não dê banana para o gerente."
+  components:
+  - type: BarSign
+    current: BarsignPunPunsPub
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignQuarks
+  name: "Quark's"
+  description: "Tudo tem um preço, inclusive a sua dignidade. Aceitamos latinum."
+  components:
+  - type: BarSign
+    current: BarsignQuarks
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignRockBottom
+  name: "Rock Bottom"
+  description: "Você chegou ao fundo do poço. O drink é bom, mas a vista é de pedra."
+  components:
+  - type: BarSign
+    current: BarsignRockBottom
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignScotchServinWillys
+  name: "Scotch Servin' Willy's"
+  description: "O Willy serve o uísque. O que você faz com o Willy é problema seu."
+  components:
+  - type: BarSign
+    current: BarsignScotchServinWillys
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSlipperyShot
+  name: "Slippery Shot"
+  description: "Cuidado com o chão. E com a dose. E com o seu orgulho."
+  components:
+  - type: BarSign
+    current: BarsignSlipperyShot
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSlowDive
+  name: "Slow Dive"
+  description: "Mergulhe devagar. A ressaca chega mais devagar ainda."
+  components:
+  - type: BarSign
+    current: BarsignSlowDive
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSolaris
+  name: "Solaris"
+  description: "Olhe para o planeta por tempo demais e ele vai olhar de volta."
+  components:
+  - type: BarSign
+    current: BarsignSolaris
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSpaceAsshole
+  name: "Space Asshole"
+  description: "O atendimento é horrível, mas é por isso que você volta."
+  components:
+  - type: BarSign
+    current: BarsignSpaceAsshole
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTardis
+  name: "TARDIS"
+  description: "Por fora é uma caixa azul, por dentro é a mesma fila de sempre."
+  components:
+  - type: BarSign
+    current: BarsignTardis
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTenForward
+  name: "Ten Forward"
+  description: "Frota estelar, lounge elegante e a garantia de que o dia vai piorar."
+  components:
+  - type: BarSign
+    current: BarsignTenForward
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheAssemblyLine
+  name: "The Assembly Line"
+  description: "Drinks em série, ressaca em série e um robô sem a menor empatia."
+  components:
+  - type: BarSign
+    current: BarsignTheAssemblyLine
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheBark
+  name: "The Bark"
+  description: "Au au, bar bar. Cachorros bem-vindos, gatos sob inspeção."
+  components:
+  - type: BarSign
+    current: BarsignTheBark
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheBlueNote
+  name: "The Blue Note"
+  description: "Jazz tão suave que você nem vai notar o desconto no seu salário."
+  components:
+  - type: BarSign
+    current: BarsignTheBlueNote
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheCavern
+  name: "The Cavern"
+  description: "Fundo, escuro e com uma playlist estranhamente ótima."
+  components:
+  - type: BarSign
+    current: BarsignTheCavern
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheCultCave
+  name: "The Cult Cave"
+  description: "Primeiro drink por conta da casa. O resto, por conta da sua alma."
+  components:
+  - type: BarSign
+    current: BarsignTheCultCave
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheInvasiveInn
+  name: "The Invasive Inn"
+  description: "Os quartos são ótimos. Os hóspedes de oito patas, nem tanto."
+  components:
+  - type: BarSign
+    current: BarsignTheInvasiveInn
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheGreyTide
+  name: "The Grey Tide"
+  description: "A caixa de ferramentas é grátis. A multa por usá-la, nem tanto."
+  components:
+  - type: BarSign
+    current: BarsignTheGreyTide
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheHive
+  name: "The Hive"
+  description: "Zum zum zum. A abelha-rainha não aceita fiado."
+  components:
+  - type: BarSign
+    current: BarsignTheHive
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheMaint
+  name: "The Maint"
+  description: "Chegar aqui é fácil. Sair, só com sorte e uma chave inglesa."
+  components:
+  - type: BarSign
+    current: BarsignTheMaint
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheNest
+  name: "The Nest"
+  description: "Um ninho aconchegante para quem já voou alto demais."
+  components:
+  - type: BarSign
+    current: BarsignTheNest
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignThePrancingPony
+  name: "The Prancing Pony"
+  description: "Cerveja, cachimbo e uma história de viagem que ninguém pediu."
+  components:
+  - type: BarSign
+    current: BarsignThePrancingPony
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheRedMons
+  name: "The Red Mons"
+  description: "Fogo no planeta e fogo no copo. Chame os bombeiros antes de entrar."
+  components:
+  - type: BarSign
+    current: BarsignTheRedMons
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheRedshirt
+  name: "The Redshirt"
+  description: "Sirva-se, é o seu último turno. A camisa já combina com o resto."
+  components:
+  - type: BarSign
+    current: BarsignTheRedshirt
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheRune
+  name: "The Rune"
+  description: "Um olho verde te observa. Ele não julga, só anota."
+  components:
+  - type: BarSign
+    current: BarsignTheRune
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheShaken
+  name: "The Shaken"
+  description: "Batido, não mexido, e servido por alguém que se acha o James Bond."
+  components:
+  - type: BarSign
+    current: BarsignTheShaken
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheSyndicare
+  name: "The Syndicare"
+  description: "Cuidamos de você com carinho. Principalmente dos seus órgãos."
+  components:
+  - type: BarSign
+    current: BarsignTheSyndicare
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheTimeOfEve
+  name: "The Time of Eve"
+  description: "Vale a espera. Principalmente se você já está atrasado."
+  components:
+  - type: BarSign
+    current: BarsignTheTimeOfEve
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheWizard
+  name: "The Wizard"
+  description: "Abracadabra, a conta apareceu. Ninguém sabe como."
+  components:
+  - type: BarSign
+    current: BarsignTheWizard
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheWretchedHive
+  name: "The Wretched Hive"
+  description: "Reduto de gente suspeita, preços suspeitos e um barman muito suspeito."
+  components:
+  - type: BarSign
+    current: BarsignTheWretchedHive
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignVault
+  name: "Vault"
+  description: "Seguro, selado e com bebida racionada. A sorte é sua e o Pip-Boy é por sua conta."
+  components:
+  - type: BarSign
+    current: BarsignVault
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignVladsSaladBar
+  name: "Vlad's Salad Bar"
+  description: "Saladas frescas e sem alho. Qualquer semelhança com um vampiro é mera coincidência."
+  components:
+  - type: BarSign
+    current: BarsignVladsSaladBar
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignWhiskeyImplant
+  name: "Whiskey Implant"
+  description: "Upgrade de bebida, downgrade de memória."
+  components:
+  - type: BarSign
+    current: BarsignWhiskeyImplant
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignWrongTurn
+  name: "Wrong Turn"
+  description: "Você virou errado há uns três corredores. Pelo menos o drink é bom."
+  components:
+  - type: BarSign
+    current: BarsignWrongTurn

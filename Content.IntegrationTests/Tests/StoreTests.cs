@@ -15,6 +15,7 @@ using Content.Server.Store.Systems;
 using Content.Server.Traitor.Uplink;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Inventory;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 //using Content.Shared.StoreDiscount.Components;
@@ -30,6 +31,34 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed class StoreTests
 {
+
+    [Test]
+    public async Task StationPricesSurviveStoreRefreshWithDiscounts()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
+        await pair.Server.WaitAssertion(() =>
+        {
+            var em = pair.Server.EntMan;
+            var stores = em.System<StoreSystem>();
+            var store = new StoreComponent();
+            ListingDataWithCostModifiers Grenade() => store.FullListingsCatalog.Single(l => l.ID == "UplinkEmpGrenade");
+            stores.RefreshAllListings(store);
+            var baseCost = Grenade().Cost["Telecrystal"];
+            var rule = em.SpawnEntity("CyberneticRevolutionRule", map.GridCoords);
+            em.EnsureComponent<ActiveGameRuleComponent>(rule);
+            stores.RefreshAllListings(store);
+            var stationCost = FixedPoint2.New(System.MathF.Round(baseCost.Float() * 1.5f));
+            Assert.That(Grenade().Cost["Telecrystal"], Is.EqualTo(stationCost));
+            Grenade().AddCostModifier("DumontSales", new() { ["Telecrystal"] = -2 });
+            stores.RefreshAllListings(store);
+            Assert.That(Grenade().Cost["Telecrystal"], Is.EqualTo(stationCost - 2));
+            em.DeleteEntity(rule);
+            stores.RefreshAllListings(store);
+            Assert.That(Grenade().Cost["Telecrystal"], Is.EqualTo(baseCost - 2));
+        });
+        await pair.CleanReturnAsync();
+    }
 
     [TestPrototypes]
     private const string Prototypes = @"

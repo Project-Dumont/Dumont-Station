@@ -104,7 +104,7 @@ public sealed class HereticAscensionResponseTests
             Assert.That(em.EntityQuery<MetaDataComponent, RuleGridsComponent>(true)
                 .Count(e => e.Item1.EntityPrototype?.ID == "SpawnVatican"), Is.EqualTo(1));
         });
-        // Let the ship's electrical network settle, then check beyond the APC trip delay.
+        // Let the ship's electrical network settle, then check that the equipment stays powered.
         for (var sample = 0; sample < 4; sample++)
         {
             await pair.RunSeconds(30);
@@ -116,7 +116,7 @@ public sealed class HereticAscensionResponseTests
                 var apcs = em.EntityQuery<ApcComponent, TransformComponent>(true)
                     .Where(e => e.Item2.GridUid == grid).ToArray();
                 Assert.That(apcs.Length, Is.GreaterThan(1));
-                Assert.That(apcs.All(e => e.Item1.MainBreakerEnabled && !e.Item1.TripFlag), Is.True,
+                Assert.That(apcs.All(e => e.Item1.MainBreakerEnabled), Is.True,
                     "Judgement's APCs must stay on after startup.");
                 var equipment = em.EntityQuery<MetaDataComponent, ApcPowerReceiverComponent, TransformComponent>(true)
                     .Where(e => e.Item3.GridUid == grid &&

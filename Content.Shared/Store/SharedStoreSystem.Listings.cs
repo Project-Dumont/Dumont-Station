@@ -38,6 +38,7 @@ public abstract partial class SharedStoreSystem
     {
         var previousState = component.FullListingsCatalog;
         var newState = GetAllListings();
+        ApplyStationPrices(newState);
         // if we refresh list with existing cost modifiers - they will be removed,
         // need to restore them
         if (previousState.Count != 0)
@@ -59,6 +60,8 @@ public abstract partial class SharedStoreSystem
 
         component.FullListingsCatalog = newState;
     }
+
+    protected virtual void ApplyStationPrices(IEnumerable<ListingData> listings) { }
 
     /// <summary>
     /// Gets all listings from a prototype.

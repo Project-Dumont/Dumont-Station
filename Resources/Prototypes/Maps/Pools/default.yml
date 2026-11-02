@@ -77,7 +77,7 @@
   #- Loop Goobstation - I love maintenance!!!
   - Marathon
   - Meta
-  - Oasis
+  #- Oasis # Dumont Station - Adicionado para cobrir buraco de estação com SM, removido quando Farragus foi adicionado.
   - Omega
   - Origin
   - Saltern
@@ -98,5 +98,6 @@
   - Eclipse # Dumont Station - Harmony port
   #- Gax
   - Tram
+  - Farragus
   #- Glacier # Dumont Station - Retirado da rotação por 2k de GC
   # End of Dumont Station Maps

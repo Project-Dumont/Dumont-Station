@@ -19,6 +19,24 @@ public sealed partial class TraumaCVars
 
     #endregion
 
+    #region Station Traits
+
+    /// <summary>
+    /// Whether to enable station traits.
+    /// Used to prevent tests failing for spawned gamerules.
+    /// </summary>
+    public static readonly CVarDef<bool> StationTraitsEnabled =
+        CVarDef.Create("trauma.station_traits_enabled", true, CVar.SERVER);
+
+    /// <summary>
+    /// The offset for in-game date (the date will be server date + this amount of years).
+    /// Displayed in the station report and PDAs.
+    /// </summary>
+    public static readonly CVarDef<int> YearOffset =
+        CVarDef.Create("game.current_year_offset", 542, CVar.SERVERONLY); // Dumont
+
+    #endregion
+
     #region EndCredits
 
     /// <summary>

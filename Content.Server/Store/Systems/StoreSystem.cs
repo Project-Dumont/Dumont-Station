@@ -15,6 +15,7 @@ using Robust.Shared.ViewVariables;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager.Attributes;
 
+using Content.Server._Dumont.StationTraits;
 using Content.Shared.Implants.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -26,6 +27,13 @@ namespace Content.Server.Store.Systems;
 
 public sealed partial class StoreSystem : SharedStoreSystem
 {
+    [Dependency] private readonly ListingCostRuleSystem _listingCost = default!;
+
+    protected override void ApplyStationPrices(IEnumerable<ListingData> listings)
+    {
+        _listingCost.ApplyModifiers(listings);
+    }
+
     public override void Initialize()
     {
         base.Initialize();

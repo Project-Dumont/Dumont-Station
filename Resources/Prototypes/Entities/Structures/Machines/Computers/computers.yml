@@ -1048,6 +1048,7 @@
     access: [[ "Command" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
+  - type: StationTraitReportTarget # Dumont
   - type: DeviceNetwork
     deviceNetId: Wireless
     transmitFrequencyId: ShuttleTimer

@@ -31,6 +31,7 @@ using Content.Shared.Item;
 using Content.Shared.Rounding;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
+using Content.Shared.Chemistry.Components.SolutionManager;
 
 namespace Content.Client.Chemistry.Visualizers;
 
@@ -54,7 +55,31 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
     {
         var meta = MetaData(uid);
         component.InitialDescription = meta.EntityDescription;
+        UpdateAppearance(uid, component); // Dumont - Preview solution appearance
     }
+
+    // Dumont - Preview solution appearance - Start
+    private void UpdateAppearance(EntityUid uid, SolutionContainerVisualsComponent component)
+    {
+        if (!TryComp<SolutionContainerManagerComponent>(uid, out var manager) || manager.Solutions is not { } solutions)
+            return;
+
+        foreach (var (name, solution) in solutions)
+        {
+            if (!string.IsNullOrEmpty(component.SolutionName) && name != component.SolutionName)
+                continue;
+
+            AppearanceSystem.SetData(uid, SolutionContainerVisuals.FillFraction, solution.FillFraction);
+            AppearanceSystem.SetData(uid, SolutionContainerVisuals.Color, solution.GetColor(_prototype));
+            AppearanceSystem.SetData(uid, SolutionContainerVisuals.SolutionName, name);
+
+            if (solution.GetPrimaryReagentId() is { } reagent)
+                AppearanceSystem.SetData(uid, SolutionContainerVisuals.BaseOverride, reagent.ToString());
+
+            break;
+        }
+    }
+    // Dumont - Preview solution appearance - End
 
     protected override void OnAppearanceChange(EntityUid uid, SolutionContainerVisualsComponent component, ref AppearanceChangeEvent args)
     {
@@ -200,7 +225,7 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         if (itemSlotsComponent == null) return false;
 
         var slot = itemSlotsComponent.Slots[insertedItemSlotID];
-        var insertedUid = slot.Item;  //Uid of item (beaker for example) inserted into machine 
+        var insertedUid = slot.Item;  //Uid of item (beaker for example) inserted into machine
 
         if (insertedUid == null ||
             !_solutionContainers.TryGetFitsInDispenser(insertedUid.Value, out var solution, out _) ||

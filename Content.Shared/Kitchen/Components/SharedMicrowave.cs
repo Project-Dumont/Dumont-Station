@@ -94,7 +94,8 @@ namespace Content.Shared.Kitchen.Components
         Key,
         ElectricRangeKey, // Frontier
         AssemblerKey, // Frontier
-        MedicalAssemblerKey // Frontier
+        MedicalAssemblerKey, // Frontier
+		OvenKey // Dumont
     }
 
 }

@@ -48,7 +48,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#b89e2a"
+    color: "#ffffff"
   - type: AccessReader
     access: [["Mining"]] # Dumont edit
 
