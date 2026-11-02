@@ -102,7 +102,7 @@
   components:
   - type: Sprite
     layers:
-    - state: erifle_ion # looks okay
+    - state: erifle_disabler # looks okay
       map: [ "enum.GunVisualLayers.Base" ]
   - type: HitscanBatteryAmmoProvider
     proto: LaserPulseEnergyRifle
