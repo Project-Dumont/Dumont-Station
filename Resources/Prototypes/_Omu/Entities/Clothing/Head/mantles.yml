@@ -32,7 +32,7 @@
   parent: ClothingHeadBase
   id: ClothingCyberneticBeastMantle
   name: cybernetic beast's mantle
-  description: The mantlepiece to sit atop a cybernetic beast. It comes equipped with features to assist the Beast's vision; but should it be taken away, it will leave a Beast crippled.
+  description: A mantle that lets cybernetic beasts see normally. Its glowing eyes can be brightened to light the way.
   components:
   - type: Appearance
   - type: Sprite
@@ -89,7 +89,7 @@
   id: ClothingCyberneticBeastMantleWork
   parent: ClothingCyberneticBeastMantle
   name: beast's work mantle
-  description: A modified version of a cybernetic beast's mantle with hookups for internals.
+  description: A work mantle with internals connections and welding eye protection. It must be removed before eating.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -117,7 +117,7 @@
   id: ClothingCyberneticBeastMantleWorkEngineering
   parent: [ClothingCyberneticBeastMantleWork, BaseEngineeringContraband]
   name: cybernetic beast's engineering mantle
-  description: A modified version of a cybernetic beast's mantle. This one has integrated internals and lead plating.
+  description: Lead plating helps protect against radiation. This engineering mantle also has internals connections and welding eye protection.
   components:
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -142,7 +142,7 @@
   id: ClothingCyberneticBeastMantleWorkAtmospherics
   parent: [ClothingCyberneticBeastMantleWorkEngineering, BaseEngineeringContraband]
   name: cybernetic beast's atmospherics mantle
-  description: A modified version of a cybernetic beast's mantle. This one has internals, lead plating, and extra thermal insulation.
+  description: A mantle for atmospheric technicians, with lead plating and insulation against extreme temperatures. It also provides welding eye protection and reduces fire damage.
   components:
   - type: Armor
     coverage:
@@ -170,7 +170,7 @@
   id: ClothingCyberneticBeastMantleWorkChiefEngineering
   parent: [ClothingCyberneticBeastMantle, BaseEngineeringCommandContraband]
   name: cybernetic beast's chief engineer mantle
-  description: A modified version of a cybernetic beast's mantle. This one has internals, lead plating, and extra thermal insulation.
+  description: Built for the chief engineer, this mantle combines reinforced armour with lead plating and thermal insulation. It provides welding eye protection and reduces fire damage.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -211,7 +211,7 @@
   id: ClothingCyberneticBeastMantleWorkSalvage
   parent: [ClothingCyberneticBeastMantleWork, BaseCargoContraband]
   name: cybernetic beast's salvage specialist mantle
-  description: A modified version of a cybernetic beast's mantle. This one has been jury-rigged to mount a flashlight on its snout to help signal to other salvagers where you are in the darkness of space.
+  description: A mantle adapted for salvagers, with welding eye protection. Its glowing eyes help light the way and signal your position to the crew.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -232,7 +232,7 @@
   id: ClothingCyberneticBeastMantleHeadofSecurity
   parent: [ClothingCyberneticBeastMantle, BaseSecurityCommandContraband]
   name: cybernetic beast's head of security mantle
-  description: A refined mantle that gives the bearer a notable air of authority. Riot grade armour plating helps put down unruly tiders.
+  description: A refined mantle for the head of security, with light armour and flash protection. It still carries an air of authority.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -271,7 +271,7 @@
   id: ClothingCyberneticBeastMantleSecurity
   parent: [ClothingCyberneticBeastMantle, BaseSecurityContraband]
   name: cybernetic beast's security mantle
-  description: A modified version of a cybernetic beast's mantle with riot grade armour plating.
+  description: The security mantle has light armour plating and eye protection against flashes.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -307,7 +307,7 @@
   id: ClothingCyberneticBeastMantleCorpsman
   parent: [ClothingCyberneticBeastMantle, BaseBrigmedicContraband]
   name: cybernetic beast's corpsman mantle
-  description: A modified version of the standard security mantle, made for corpsmen.
+  description: The corpsman's version of the security mantle. It retains the light armour and eye protection against flashes.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -341,7 +341,7 @@
 # resprite of the standard mantle with a medhud.
 - type: entity
   id: ClothingCyberneticBeastMantleMedical
-  description: A modified version of a cybernetic beast's mantle, designed for medical staff.
+  description: A mantle made for medical staff, correcting a cybernetic beast's vision while tending to patients.
   parent: [ClothingCyberneticBeastMantle, BaseMedicalContraband]
   name: cybernetic beast's medical mantle
   components:
@@ -366,7 +366,7 @@
   id: ClothingCyberneticBeastMantleMedicalParamedic
   parent: [ClothingCyberneticBeastMantleMedical, BaseMedicalCommandContraband]
   name: cybernetic beast's paramedic mantle
-  description: A well constructed medical mantle with hookups for internals, made for paramedics.
+  description: A medical mantle made for station paramedics, with internals connections. It must be removed before eating.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -392,7 +392,7 @@
   id: ClothingCyberneticBeastMantleMedicalCMO
   parent: [ClothingCyberneticBeastMantleMedical, BaseMedicalCommandContraband]
   name: cybernetic beast's chief medical officer mantle
-  description: The best medical mantle that NT can afford, with reinforced lenses to protect from bright flashes.
+  description: The chief medical officer's mantle has reinforced lenses to protect against bright flashes.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -421,7 +421,7 @@
   id: ClothingCyberneticBeastMantleMedicalChemist
   parent: [ClothingCyberneticBeastMantleMedical, BaseMedicalContraband]
   name: cybernetic beast's chemistry mantle
-  description: A modified version of a cybernetic beast's mantle, designed for chemists.
+  description: A cybernetic mantle model made for the station's chemists.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -445,7 +445,7 @@
   id: ClothingCyberneticBeastMantleBlueshieldOfficer
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   name: cybernetic beast's blue shield officer mantle
-  description: The best mantle that NT can afford for their elite Officers, with Kevlar plating and eye protection to stop flashbangs from blinding the wearer.
+  description: Issued to BlueShield Officers, this mantle has the same light armour as their SWAT gas mask and eye protection against flashes.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -483,7 +483,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleCommand
   name: cybernetic beast's command mantle
-  description: A fancy gold plated mantle for command members. If found, please return to the nearest command member. Most likely the Administrative Assistant...
+  description: A gold-plated mantle for command members, with flash protection. If found, return it to the nearest command member. Most likely the Administrative Assistant...
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -510,7 +510,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseScienceCommandContraband]
   id: ClothingCyberneticBeastMantleScienceCommand
   name: cybernetic beast's research director mantle
-  description: A state-of-the-art mantle with a robotic language translator and flash protection.
+  description: The research director's mantle has flash protection and a translator for speaking and understanding robotic language.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -545,7 +545,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   id: ClothingCyberneticBeastMantleCentralCommandNoThermal
   name: cybernetic beast's nanotrasen representative mantle
-  description: A fancy gold plated mantle for the Nanotrasen Representative.
+  description: A gold-plated mantle for the Nanotrasen Representative. It protects against flashes and conceals the wearer's identity.
   suffix: No thermals, DO NOT MAP
   components:
   - type: Sprite
@@ -575,7 +575,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   id: ClothingCyberneticBeastMantleCentralCommand
   name: cybernetic beast's central command mantle
-  description: A fancy gold plated mantle for CC officals comes equiped with everything the average hypercapitalist needs
+  description: A gold-plated mantle for Central Command officers, with reinforced armour and flash protection. It also conceals the identity of the hypercapitalist wearing it.
   suffix: DO NOT MAP
   components:
   - type: Sprite
@@ -623,7 +623,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseCargoCommandContraband]
   id: ClothingCyberneticBeastMantleSupply
   name: cybernetic beast's quatermaster mantle
-  description: A gaudy and expensive mantle, fit for individuals with a high net worth
+  description: An expensive, gaudy mantle for someone with money to spare.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -648,7 +648,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseBartenderContraband]
   id: ClothingCyberneticBeastMantleBar
   name: cybernetic beast's bartender Mantle
-  description: A hand crafted mantle for the discerning bartender.
+  description: A handmade mantle for bartenders with discerning tastes.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -672,7 +672,7 @@
   parent: [ClothingCyberneticBeastMantle, BaseScienceContraband]
   id: ClothingCyberneticBeastMantleRoboticist
   name: cybernetic beast's roboticist Mantle
-  description: A specially designed roboticist mantle with eye protection to weld those robots back together.
+  description: A roboticist's mantle with welding eye protection. Time to get those robots back to work.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -698,7 +698,7 @@
   id: ClothingCyberneticBeastMantleWorkResearch
   parent: ClothingCyberneticBeastMantleWork
   name: cybernetic beast's research work mantle
-  description: A jury-rigged, mass produced cybernetic beast's mantle with integrated internals.
+  description: A mass-produced, improvised mantle with internals connections and welding eye protection.
   components:
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
