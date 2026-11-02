@@ -13,7 +13,7 @@ namespace Content.Shared._Omu.Clothing.Components;
 /// <summary>
 ///     This component indicates that an item is a Cybernetic Beast's mantle.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(CyberneticMantleSystem), typeof(CyberneticBeastSystem))]
 public sealed partial class CyberneticMantleComponent : Component, IClothingSlots
 {
@@ -31,6 +31,9 @@ public sealed partial class CyberneticMantleComponent : Component, IClothingSlot
     /// </summary>
     [DataField]
     public float MinEyeColorLevel { get; set; } = 0.5f;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? LightToggleActionEntity;
 }
 
 [Serializable, NetSerializable]

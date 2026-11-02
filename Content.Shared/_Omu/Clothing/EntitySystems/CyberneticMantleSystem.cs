@@ -12,8 +12,12 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Content.Shared.Actions;
+using Content.Shared.Inventory;
 
 namespace Content.Shared._Omu.Clothing.EntitySystems;
 
@@ -25,6 +29,8 @@ public sealed class CyberneticMantleSystem : EntitySystem
     [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -33,6 +39,51 @@ public sealed class CyberneticMantleSystem : EntitySystem
         SubscribeLocalEvent<CyberneticMantleComponent, BeingEquippedAttemptEvent>(OnBeingEquipped, after: [typeof(ClothingTakesUpExtraSlotsSystem)]);
         SubscribeLocalEvent<CyberneticMantleComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<CyberneticMantleComponent, AboutToEnterToggleableClothingContainerEvent>(OnToggleClothing);
+        SubscribeLocalEvent<CyberneticMantleComponent, GetItemActionsEvent>(OnGetActions);
+        SubscribeLocalEvent<CyberneticMantleComponent, CyberneticMantleLightToggleEvent>(OnToggleLight);
+    }
+
+    private void OnGetActions(
+        EntityUid uid,
+        CyberneticMantleComponent component,
+        GetItemActionsEvent args)
+    {
+        if (!args.IsEquipping)
+        {
+            args.AddAction(component.LightToggleActionEntity);
+            return;
+        }
+
+        if (args.SlotFlags != SlotFlags.MASK)
+            return;
+
+        args.AddAction(
+            ref component.LightToggleActionEntity,
+            "ActionToggleCyberneticMantleLight");
+
+        Dirty(uid, component);
+    }
+
+    private void OnToggleLight(
+        EntityUid uid,
+        CyberneticMantleComponent component,
+        CyberneticMantleLightToggleEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var strongLight = !args.Action.Comp.Toggled;
+
+        _lightSystem.SetRadius(uid, strongLight ? 5f : 1.45f);
+        _lightSystem.SetEnergy(uid, strongLight ? 0.45f : 0.6f);
+        _lightSystem.SetFalloff(uid, strongLight ? 6.8f : 0f);
+
+        _actionsSystem.SetToggled(component.LightToggleActionEntity, strongLight);
+        _audio.PlayPredicted(new SoundPathSpecifier(strongLight
+            ? "/Audio/Items/flashlight_on.ogg"
+            : "/Audio/Items/flashlight_off.ogg"), uid, args.Performer);
+
+        args.Handled = true;
     }
 
     /// <summary>
@@ -50,7 +101,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
         // make sure that the person equipping the mantle is a cybernetic beast
         if (TryComp<CyberneticBeastComponent>(args.EquipTarget, out var _))
         {
-            // if the compnent can be toggled, turn it on when worn
+            // if the component can be toggled, turn it on when worn
             if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
                 _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.EquipTarget, true);
 

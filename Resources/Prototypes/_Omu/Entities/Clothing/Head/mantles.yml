@@ -67,7 +67,7 @@
     falloff: 0 # Keep the short ambient glow visible after the engine's light-height attenuation.
     offset: 0,-0.2
     color: "#CCFFCC" # this will match the colour of the beast's eyes when worn, this is just a default.
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
   - type: StealTarget
     stealGroup: CyberneticMantles
@@ -230,12 +230,7 @@
       - state: helmet-internals
       - state: eyes-salvage
         shader: unshaded
-  - type: PointLight # salvagers get a light with fairly substantial range on their mantle. yes they already have night vision, but it might be nice for fellow salvagers (and is just kind of cool)
-    radius: 5
-    energy: 0.45 # lower energy, so that it's not too distracting outside of salvage operations.
-    falloff: 6.8 # Preserve salvage's original flashlight attenuation.
-    offset: 0,-0.2
-    color: "#CCFFCC"
+# Dumont change - Removed point light from Salvage Mantle.
 
 
 # resprite of the Security mantle for the Head of Security
@@ -862,3 +857,16 @@
   - type: Tag
     tags:
     - WorkMantle
+
+# Dumont - Lantern Toggle
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleCyberneticMantleLight
+  name: Alternar luz do visor
+  description: Aumenta ou diminui a potência do brilho do seu visor.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 1
+  - type: InstantAction
+    event: !type:CyberneticMantleLightToggleEvent
