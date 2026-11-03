@@ -268,6 +268,12 @@
   - ModsuitModuleRestraintAssist
 #  - ModsuitModuleBulwark
   - ModsuitModuleEmpShield
+  - ModsuitModuleThermalVisor
+  - ModsuitModuleShockAbsorber
+  - ModsuitModuleCriminalCapture
+  - ModsuitModuleMagneticHarness
+  - ModsuitModuleProjectileDampener
+  - ModsuitModuleShootingAssistant
   - ModsuitPlatingSecurity
 #  - ModsuitPlatingBrigMed we dont got the sprites
   position: 4,1

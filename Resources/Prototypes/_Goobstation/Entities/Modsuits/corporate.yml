@@ -41,6 +41,7 @@
       - ModsuitModuleBuiltinAutoInjector
       - ModsuitModuleBuiltinInstrument
       - ModsuitModuleBuiltinGrip
+      - ModsuitModuleBuiltinSphereTransformCorporate
     - type: ItemSlots
       slots:
         mod-core:
