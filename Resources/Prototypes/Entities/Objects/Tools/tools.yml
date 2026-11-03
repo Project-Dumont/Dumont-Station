@@ -593,6 +593,7 @@
   components:
   - type: RCD
     isRpd: true
+    multiplier: 2 #Dumont
     availablePrototypes:
     - PipeFourway
     - PipeStraight

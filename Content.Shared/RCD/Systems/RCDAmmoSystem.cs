@@ -54,7 +54,7 @@ public sealed class RCDAmmoSystem : EntitySystem
         var current = _sharedCharges.GetCurrentCharges((target, charges));
         var user = args.User;
         args.Handled = true;
-        var multiplier = rcd.IsRpd ? 2 : 1; //Dumont
+        var multiplier = rcd.Multiplier; //Dumont
         var count = Math.Min(charges.MaxCharges - current, comp.Charges * multiplier); //Dumont
         if (count <= 0)
         {
