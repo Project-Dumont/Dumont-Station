@@ -67,11 +67,9 @@
   - Box
   - Cluster
   - Core # Dumont Station - Reativado
-  #- Fland # Dumont Station - não está sendo mantido
   - Cog # those who forget to clear their multitool
   - Marathon
   - Meta
-  #- Oasis # Dumont Station - Adicionado para cobrir buraco de estação com SM, removido quando Farragus foi adicionado.
   - Omega
   - Origin
   - Saltern
@@ -81,5 +79,4 @@
   - Eclipse # Dumont Station - Harmony port
   - Tram
   - Farragus
-  #- Glacier # Dumont Station - Retirado da rotação por 2k de GC
   # End of Dumont Station Maps
