@@ -526,8 +526,6 @@
       - state: equipped-HEAD-vulpkanin
       head-feroxi:
       - state: equipped-HEAD-feroxi
-      head-hydrakin:
-      - state: equipped-HEAD-hydrakin
   - type: ContainerContainer
     containers:
       mod-part-stored: !type:ContainerSlot
@@ -759,8 +757,6 @@
       - state: equipped-HEAD-vulpkanin
       head-feroxi:
       - state: equipped-HEAD-feroxi
-      head-hydrakin:
-      - state: equipped-HEAD-hydrakin
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/brigmed.rsi
     layers:
@@ -790,8 +786,6 @@
       - state: equipped-HEAD-sealed-vulpkanin
       head-feroxi:
       - state: equipped-HEAD-sealed-feroxi
-      head-hydrakin:
-      - state: equipped-HEAD-sealed-hydrakin
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3

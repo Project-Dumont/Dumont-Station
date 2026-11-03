@@ -42,14 +42,6 @@
           whitelist:
             components:
             - ModCore
-        control_module: # GabyStation
-          name: modsuit-control-unit-module-slot
-          startingItem: ModsuitModuleBasicStorage
-          insertDelay: 1.0
-          ejectDelay: 0.5
-          whitelist:
-            tags:
-              - ModsuitControlUnitUpgrade
     - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
@@ -119,10 +111,6 @@
     - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
-        head-hydrakin:
-        - state: equipped-HEAD-sealed
-        - state: equipped-HEAD-sealed-unshaded
-          shader: unshaded
         head-feroxi:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
@@ -150,10 +138,6 @@
         - state: equipped-HEAD-sealed-unshaded
           shader: unshaded
         head-feroxi:
-        - state: equipped-HEAD-sealed
-        - state: equipped-HEAD-sealed-unshaded
-          shader: unshaded
-        head-hydrakin:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
           shader: unshaded

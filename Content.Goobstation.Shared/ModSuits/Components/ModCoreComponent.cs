@@ -5,8 +5,19 @@ using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Shared.ModSuits.Components;
 
-[RegisterComponent, NetworkedComponent]
-public sealed partial class ModCoreComponent : Component;
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[Access(typeof(ModCoreSystem))]
+public sealed partial class ModCoreComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public bool HasBattery;
+
+    [DataField, AutoNetworkedField]
+    public float Charge;
+
+    [DataField, AutoNetworkedField]
+    public float MaxCharge;
+}
 
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(ModCoreSystem))]

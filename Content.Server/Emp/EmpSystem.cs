@@ -134,11 +134,6 @@ public sealed class EmpSystem : SharedEmpSystem
     }
 }
 
-/// <summary>
-/// Raised on an entity before <see cref="EmpPulseEvent"/>. Cancel this to prevent the emp event being raised.
-/// </summary>
-public sealed partial class EmpAttemptEvent : CancellableEntityEventArgs;
-
 [ByRefEvent]
 public record struct EmpPulseEvent(float EnergyConsumption, bool Affected, bool Disabled, TimeSpan Duration);
 

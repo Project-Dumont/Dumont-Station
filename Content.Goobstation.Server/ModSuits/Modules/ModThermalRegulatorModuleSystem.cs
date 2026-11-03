@@ -1,12 +1,13 @@
 using Content.Goobstation.Shared.ModSuits.Components;
-using Content.Shared.Temperature.Components;
-using Content.Shared.Temperature.Systems;
+using Content.Goobstation.Shared.ModSuits.Modules;
+using Content.Server.Temperature.Components;
+using Content.Server.Temperature.Systems;
 
-namespace Content.Goobstation.Shared.ModSuits.Modules;
+namespace Content.Goobstation.Server.ModSuits.Modules;
 
-public sealed partial class ModThermalRegulatorModuleSystem : EntitySystem
+public sealed class ModThermalRegulatorModuleSystem : EntitySystem
 {
-    [Dependency] private SharedTemperatureSystem _temperature = default!;
+    [Dependency] private TemperatureSystem _temperature = default!;
 
     public override void Update(float frameTime)
     {

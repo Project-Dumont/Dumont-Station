@@ -14,8 +14,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Power.EntitySystems;
-using Content.Shared.PowerCell;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Content.Shared.Wires;
@@ -43,11 +41,9 @@ public sealed partial class ModSuitSystem : EntitySystem
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private MetaDataSystem _metaData = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private SharedBatterySystem _battery = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
@@ -334,9 +330,11 @@ public sealed partial class ModSuitSystem : EntitySystem
                 ("current", GetComplexity(ent)),
                 ("max", theme.ComplexityMax)));
 
-            if (GetBattery(ent) is { } battery)
+            if (TryGetBatteryInfo(ent, out var battery))
             {
-                var percent = (int) MathF.Round(_battery.GetChargeLevel(battery.AsNullable()) * 100f);
+                var percent = battery.MaxCharge > 0f
+                    ? (int) MathF.Round(battery.Charge / battery.MaxCharge * 100f)
+                    : 0;
                 args.PushMarkup(Loc.GetString("modsuit-examine-charge", ("percent", percent)));
             }
             else

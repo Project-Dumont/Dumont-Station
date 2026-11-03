@@ -18,7 +18,7 @@ public sealed partial class ModEmpShieldModuleSystem : EntitySystem
                 || !moduleComp.Active)
                 continue;
 
-            args.Cancelled = true;
+            args.Cancel();
             return;
         }
     }

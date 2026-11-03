@@ -132,10 +132,6 @@
     - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
-        head-hydrakin:
-        - state: equipped-HEAD-sealed
-        - state: equipped-HEAD-sealed-unshaded
-          shader: unshaded
         head-feroxi:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
@@ -195,8 +191,6 @@
         head-vulpkanin:
         - state: equipped-HEAD
         head-feroxi:
-        - state: equipped-HEAD
-        head-hydrakin:
         - state: equipped-HEAD
 
 - type: entity
@@ -402,8 +396,6 @@
         - state: equipped-HEAD
         head-feroxi:
         - state: equipped-HEAD
-        head-hydrakin:
-        - state: equipped-HEAD
     - type: ModSuitSealedVisuals
       clothingVisuals:
         head-resomi:
@@ -411,8 +403,6 @@
         head-vulpkanin:
         - state: equipped-HEAD-sealed
         head-feroxi:
-        - state: equipped-HEAD-sealed
-        head-hydrakin:
         - state: equipped-HEAD-sealed
 
 - type: entity

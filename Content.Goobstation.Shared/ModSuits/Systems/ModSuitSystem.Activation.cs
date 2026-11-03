@@ -83,7 +83,6 @@ public sealed partial class ModSuitSystem
         RaiseUpdated(ent);
         _actions.SetToggled(ent.Comp.ActivateActionEntity, false);
 
-        RefreshDrain(ent);
         RefreshSpeed(ent);
         UpdatePowerAlert(ent);
     }
@@ -140,7 +139,8 @@ public sealed partial class ModSuitSystem
     {
         ent.Comp.State = ModSuitState.Active;
         ent.Comp.ActivationQueue.Clear();
-        ent.Comp.Powered = GetBattery(ent) is { } battery && _battery.GetCharge(battery.AsNullable()) > 0f;
+        if (!_net.IsClient)
+            ent.Comp.Powered = HasCharge(ent, 0.01f);
         Dirty(ent);
         RaiseUpdated(ent);
         _actions.SetToggled(ent.Comp.ActivateActionEntity, true);
@@ -156,7 +156,6 @@ public sealed partial class ModSuitSystem
         if (ent.Comp.Powered)
             ActivatePassiveModules(ent);
 
-        RefreshDrain(ent);
         RefreshSpeed(ent);
         UpdatePowerAlert(ent);
     }
@@ -177,7 +176,6 @@ public sealed partial class ModSuitSystem
             _popup.PopupClient(Loc.GetString("modsuit-deactivated"), wearer, wearer);
         }
 
-        RefreshDrain(ent);
         RefreshSpeed(ent);
         UpdatePowerAlert(ent);
     }

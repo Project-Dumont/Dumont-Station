@@ -87,8 +87,6 @@
   components:
     - type: Clothing
       clothingVisuals:
-        head-hydrakin:
-        - state: equipped-HEAD
         head-feroxi:
         - state: equipped-HEAD
         head:
@@ -128,10 +126,6 @@
     - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
-        head-hydrakin:
-        - state: equipped-HEAD-sealed
-        - state: equipped-HEAD-sealed-unshaded
-          shader: unshaded
         head-feroxi:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded

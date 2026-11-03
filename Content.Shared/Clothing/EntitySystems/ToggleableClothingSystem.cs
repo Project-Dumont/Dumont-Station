@@ -339,7 +339,8 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
     private void OnAttachedUnequipAttempt(Entity<AttachedClothingComponent> attached, ref BeingUnequippedAttemptEvent args)
     {
-        if (!HasComp<ToggleableClothingComponent>(attached.Comp.AttachedUid))
+        var toggleable = attached.Comp.AttachedUid;
+        if (!TryComp<ToggleableClothingComponent>(toggleable, out var toggleableComp))
             return;
 
         if (!TryComp<AttachedClothingComponent>(args.Equipment, out var attachedComp))

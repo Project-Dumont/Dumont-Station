@@ -153,7 +153,6 @@ public sealed partial class ModSuitSystem
         if (module.Comp.Type == ModModuleType.Passive && ShouldPassiveBeActive(ent, module.Comp))
             SetModuleActive(ent, module, true);
 
-        RefreshDrain(ent);
         Dirty(ent);
         return true;
     }
@@ -201,7 +200,6 @@ public sealed partial class ModSuitSystem
             _audio.PlayPredicted(ent.Comp.ModuleRemoveSound, ent, user.Value);
         }
 
-        RefreshDrain(ent);
         Dirty(ent);
         return true;
     }
@@ -379,7 +377,6 @@ public sealed partial class ModSuitSystem
             RaiseLocalEvent(module, ref ev);
         }
 
-        RefreshDrain(suit);
     }
 
     public bool TryGetModuleSuit(EntityUid moduleUid, out Entity<ModSuitComponent> suit)
