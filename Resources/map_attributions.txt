@@ -1,5 +1,5 @@
 #Dumont Station Maps
-#These are located in /_Gabystation/Maps/
+#These are located in /_Dumont/Maps/
 
 - files: ["gamma.yml"]
   authors: AgRevol, CRISOOOOO
@@ -12,8 +12,18 @@
 
 - files: ["hyperion.yml"]
   authors: pn130, CRISOOOOO  
+
+- files: ["farragus.yml"]
+  authors: S34N, Warriorstar, CRISOOOOO  
+
+
+#Dumont Lavaland
+#This is located in /_Dumont/Maps/Nonstations/
+- files: ["outpost_lavaland.yml"]
+  authors: CRISOOOOO
+
 #Harmony Maps
-#These are located in /_Harmony/Maps/
+#These are located in /_Dumont/Maps/
 
 - files: ["eclipse.yml"]
   authors: Lachryphage

@@ -4,6 +4,7 @@
   parent: BaseAreaStation
   id: AreaAi
   name: AI
+  suffix: AreaCommand, AreaAI
   components:
   - type: DepartmentArea
     department: Silicon
@@ -14,6 +15,7 @@
   parent: AreaAi
   id: AreaAiCore
   name: AI core
+  suffix: AreaCommand, AreaAI
   components:
   - type: Sprite
     state: ai_core
@@ -22,6 +24,7 @@
   parent: AreaAi
   id: AreaAiUpload
   name: AI upload
+  suffix: AreaCommand, AreaAI
   components:
   - type: Sprite
     state: ai_upload

@@ -8,117 +8,16 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
+# POP de Comando
 
-  # Comando Geral
+Aqui está uma lista dos Procedimentos Operacionais Padrão para o Departamento de Comando.
 
-  [bold]1.[/bold] Membros do Comando devem garantir a segurança de toda a estação, sendo cada um principalmente responsável por seu próprio Departamento e respectivas funções;
+- [textlink="Comando Geral" link="POPCommandGeneral"]
+- [textlink="Capitão" link="POPCaptain"]
+- [textlink="Chefe dos Funcionários" link="POPHeadOfPersonnel"]
+- [textlink="Representante da Nanotrasen" link="POPNanotrasenRepresentative"]
+- [textlink="Blueshield" link="POPBlueshield"]
+- [textlink="IA" link="POPAI"]
+- [textlink="Nota sobre desvios" link="POPCommandDisclaimer"]
 
-  [bold]2.[/bold] Membros do Comando devem garantir o bem-estar e a dignidade da Nanotrasen e de seus ativos relacionados;
-
-  [bold]3.[/bold] Membros do Comando não podem difamar ou caluniar a Nanotrasen;
-
-  [bold]4.[/bold] Membros do Comando devem garantir que os segredos corporativos da Nanotrasen permaneçam confidenciais, podendo repreender ou punir outros membros do Comando que ameacem essa confidencialidade;
-
-  [bold]5.[/bold] Em caso de ameaça confirmada à estação ou à Nanotrasen como um todo, membros do Comando podem revelar temporariamente segredos corporativos relacionados à tripulação;
-
-  [bold]6.[/bold] Membros do Comando devem relatar tais quebras de confidencialidade assim que o evento for resolvido;
-
-  [bold]7.[/bold] Membros do Comando devem seguir qualquer orientação de oficiais do Comando Central (como o Representante da Nanotrasen, Agente de Assuntos Internos ou Magistrado) sobre segredos corporativos;
-
-  [bold]8.[/bold] Membros do Comando devem aceitar qualquer multa, punição, rebaixamento ou execução quando um oficial do Comando Central os informar de uma quebra indevida do acordo de confidencialidade;
-
-  [bold]9.[/bold] Membros do Comando devem garantir que haja um Capitão ativo na estação.
-
-  # Capitão
-
-  [bold]1.[/bold] O Capitão não pode realizar funções regulares de Segurança. No entanto, pode ajudar a Segurança se estiverem com pouco pessoal ou se presenciar um crime. O Capitão não pode pegar itens do Arsenal em circunstâncias normais, a menos que autorizado pelo Chefe de Segurança. Além disso, o Capitão não pode requisitar armamentos para si mesmo da Carga e/ou Ciência, a menos que haja uma ameaça imediata à estação e/ou tripulação;
-
-  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo. Não é necessário mandar um requerimento de nomeação interina para a central de comando caso o POP de promoção seja seguido;
-
-  [bold]3.[/bold] O Capitão deve garantir que a Lei Espacial está sendo corretamente aplicada, em cooperação com o Chefe de Segurança;
-
-  [bold]4.[/bold] O Capitão não deve deixar a Estação, a menos que tenha permissão específica do Comando Central ou seja o fim do turno. Fazer isso é considerado abandono de posto e motivo para demissão;
-
-  [bold]5.[/bold] O Capitão deve manter o Disco de Autenticação Nuclear consigo o tempo todo ou, caso não seja possível, sob posse do Chefe de Segurança;
-
-  [bold]6.[/bold] O Capitão deve tentar resolver todo problema que surgir no Comando localmente antes de contatar o Comando Central;
-
-  [bold]7.[/bold] O Capitão, apesar de estar no comando da Estação, não está separado da NanoTrasen. Qualquer tentativa de desrespeitar as políticas gerais da empresa é motivo imediato para rescisão de contrato;
-
-  [bold]8.[/bold] O Capitão só pode promover alguém a Chefe Interino se não houver um Chefe designado para o Departamento. O Chefe Interino deve ser membro do Departamento que irá liderar. Veja abaixo para mais informações sobre a Cadeia de Comando;
-
-  [bold]9.[/bold] O Capitão não pode demitir nenhum Chefe de Departamento sem justificativa razoável (ex: incompetência, atividade criminosa ou qualquer ação que coloque em risco a estação e/ou a tripulação). O Capitão não pode demitir VIPs do Comando Central (Representante da NanoTrasen, etc) sem permissão do Comando Central, a menos que estejam agindo claramente contra o bem-estar e a segurança da tripulação e da estação. O Capitão também deve seguir o POP do Chefe dos funcionários, ponto 5.
-
-  [bold]10.[/bold] O Capitão deve vestir seu uniforme completo, para que ele seja facilmente reconhecível;
-
-  [bold]11.[/bold] O Capitão é permitido portar sua arma laser antiga, flash e um atordoador. Além disso, se o Capitão for um Capitão Interino, ele é permitido utilizar equipamento exclusivo a sua posição anterior (por exemplo, usar a lawbringer se ele era o Chefe de Segurança).
-
-
-  # Chefe dos funcionários
-
-  [bold]1.[/bold] O Chefe dos funcionários não pode transferir nenhum funcionário para outro Departamento sem autorização do respectivo Chefe de Departamento. Se não houver Chefe disponível, o Chefe dos funcionários pode tomar uma decisão. Isso não se aplica à Segurança, que sempre requer autorização do Chefe de Segurança, ou à Genética, que requer aprovação tanto do Diretor Médico quanto do Diretor de Pesquisa. Se não houver Chefe de Segurança ativo, não são permitidas transferências para a Segurança sem autorização do Capitão;
-
-  [bold]2.[/bold] O Chefe dos funcionários não pode conceder acesso ampliado a nenhum funcionário sem autorização do respectivo Chefe de Departamento. Isso inclui o próprio Chefe dos funcionários. Além disso, o Chefe dos funcionários só pode conceder acesso de Capitão a alguém se for o Capitão Interino. Esse acesso deve ser removido quando um Capitão de fato chegar à estação;
-
-  [bold]3.[/bold] O Chefe dos funcionários não pode aumentar o número de vagas de emprego sem aprovação do respectivo Chefe de Departamento;
-
-  [bold]4.[/bold] O Chefe dos funcionários não pode demitir nenhum funcionário sem autorização do respectivo Chefe de Departamento, a menos que outras condições se apliquem (ver Lei Espacial e POP Geral);
-
-  [bold]5.[/bold] O Chefe dos funcionários não pode promover ninguém a cargos do Comando Central. Isso inclui Representante da NanoTrasen, Blueshield e outros;
-
-  [bold]6.[/bold] O Chefe dos funcionários pode utilizar papelada a seu critério. No entanto, durante emergências graves na estação, a agilidade deve prevalecer sobre a burocracia;
-
-  [bold]7.[/bold] O Chefe dos funcionários não pode deixar seu escritório desguarnecido se houver funcionários esperando na fila. Não responder a funcionários com solicitações legítimas em até dez (10) minutos, seja por rádio ou pessoalmente, é considerado violação do POP;
-
-  [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
-
-
-  # Representante da Nanotrasen
-
-  [bold]1.[/bold] O Representante da NanoTrasen deve garantir que todos os Departamentos estejam seguindo o POP, incluindo o respectivo Chefe de Departamento. Se não houver Chefe disponível para um Departamento, o Representante da NanoTrasen deve garantir que o Capitão nomeie um Chefe Interino para tal Departamento;
-
-  [bold]2.[/bold] O Representante da NanoTrasen deve tentar resolver qualquer violação do POP localmente antes de contatar o Comando Central. Isso é imperativo: o POP deve sempre ser seguido, a menos que haja um motivo muito forte para não fazê-lo;
-
-  [bold]3.[/bold] O Representante da NanoTrasen deve, junto ao Chefe de Segurança, garantir que a Lei Espacial está sendo seguida e corretamente aplicada;
-
-  [bold]4.[/bold] O Representante da NanoTrasen não pode ameaçar usar o fax para obter vantagem sobre qualquer funcionário, incluindo o Comando. Além disso, não pode ameaçar demitir ou pedir ao Comando Central que demita alguém, a menos que realmente possua uma nota de rebaixamento;
-
-  [bold]5.[/bold] O Representante da NanoTrasen pode portar seu flash e uma bengala-lâmina, ou um cassetete de choque caso a bengala-lâmina seja perdida.
-
-  # Blueshield
-
-  [bold]1.[/bold] O Blueshield não pode realizar prisões nas mesmas condições que a Segurança. No entanto, eles podem prender qualquer pessoa que invada um Escritório de Chefe ou Área de Comando, qualquer pessoa que roube desses locais ou qualquer pessoa que roube ou machuque qualquer Chefe de Departamento ou VIP do Comando Central. Contudo, todo o pessoal detido deverá ser processado pela Segurança;
-
-  [bold]2.[/bold] O Blueshield deve colocar as vidas do Comando acima das de qualquer outra pessoa, incluindo o Blueshield. A proteção deles é a principal prioridade do Blueshield. Isso inclui aplicar primeiros socorros básicos e garantir que eles sejam reanimados caso sejam mortos;
-
-  [bold]3.[/bold] O Blueshield serve para proteger a vida do Comando, não para seguir suas ordens à risca. O Blueshield não deve interferir em rebaixamentos legais ou prisões de oficiais do comando. Fazer isso é colocar-se como cumplice;
-
-  [bold]4.[/bold] O Blueshield não deve aplicar Força Letal a menos que haja um perigo claro e presente para a sua vida, ou para a vida de um membro do Comando e o agressor não possa ser detido de forma não letal;
-
-  [bold]5.[/bold] A vida do Blueshield não é descartável. Caso haja uma ameaça e a vida dos membros de comando não está em perigo imediato, ele não é permitido ficar na linha de frente. <!-- pois caso ele morra, ele coloca as vidas do resto dos membros de comando em risco. -->
-  
-  # IA
-  
-  [bold]A seguir estão os procedimentos para manutenção de IA:[/bold]
-
-  [bold]1.[/bold] Somente o Capitão ou Diretor de Pesquisa podem fazer alterações nas Leis (veja abaixo), e somente o Capitão, Diretor de Pesquisa ou Engenheiro Chefe podem entrar no Núcleo da IA para inseri-lo no cartão (veja abaixo);
-
-  [bold]2.[/bold] Nenhuma alteração na lei deverá ser realizada sem a aprovação do Capitão e do Diretor de Pesquisa. Os únicos Lawsets a serem usados são aqueles fornecidos pela Nanotrasen. A falha em realizar legalmente uma mudança na lei deve ser considerada sabotagem. O comando deve ser informado antes da mudança na lei, e todas as objeções devem ser levadas em consideração. Se o número de membros do Comando que se opõem à Mudança da Lei for maior que o número de membros do Comando a favor, a Mudança da Lei não deverá ser feita. Caso a Mudança de Lei seja realizada, a tripulação deverá ser imediatamente informada da nova Lei(s);
-  
-  [bold]3.[/bold] A IA não pode ser colocada no cartão, a menos que esteja claramente com defeito ou subvertida. No entanto, qualquer membro do Comando pode carta-la se a IA concordar com isso, seja no final do turno ou devido a circunstâncias externas (como danos massivos ao Satélite de IA);
-
-  [bold]4.[/bold] As torres da antecâmaras e do AI Upload do Satélite da IA devem ser mantidas em Não-Letal em codigo Verde e Azul. As torres do Nucleo da IA devem ser mantidas em Lethal o tempo todo. Se estiver ocorrendo uma mudança legal na lei ou cartagem, as torres deverão ficar desativadas;
-
-  [bold]5.[/bold] Se a Unidade de IA não estiver com defeito ou subvertida, qualquer tentativa de realizar uma Cartagem ilegal ou Mudança de Lei deverá ser respondida com força não letal. Se as tentativas ilegais persistirem e o perpetrador for comprovadamente hostil, é permitida força letal do Comando e Segurança;
-
-  [bold]6.[/bold] Em casos de emergência e for absolutamente necessário devido a circunstâncias externas. As alterações nas leis podem ser por qualquer um do comando com aprovação da maioria e a permissão da IA.
-
-  [bold]7.[/bold] Qualquer uso do Módulo "Antimov" deve ser seguido pelo upload imediato de um Lawset aprovado pela Nanotrasen. As Unidades de IA devem estar sempre vinculadas a um Conjunto de Leis.
-
-  # Se você precisar se desviar,
-
-  [bold]Documente, documente, documente![/bold]
-  Relatórios pós-ação, ligar para o CentCom no lendário telefone vermelho ou até mesmo rezar serão ouvidos pelo CentCom e suas ações podem ser desculpadas se forem consideradas do interesse da NanoTrasen.
-
-  Glória à NanoTrasen!
 </Document>

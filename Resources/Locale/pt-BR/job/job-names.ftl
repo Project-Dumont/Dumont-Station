@@ -15,6 +15,7 @@ job-name-paramedic = paramédico
 job-name-cmo = médico chefe
 job-name-chemist = químico
 job-name-technical-assistant = assistente técnico
+job-name-tram-driver = Condutor
 job-name-engineer = engenheiro da estação
 job-name-atmostech = técnico atmosférico
 job-name-hop = chefe dos funcionários

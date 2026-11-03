@@ -1305,3 +1305,28 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+- type: roleLoadout
+  id: JobTramDriver
+  groups:
+  - TramDriverJumpsuit
+  - TramDriverShoes
+  - TramDriverHead
+  - TramDriverOuterClothing
+  - CivilianJumpsuit
+  - CivilianBackpackRequired
+  - CivilianHat
+  - CivilianNeck
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - Survival
+  - ServiceWorkerEnvirohelmet
+  - ServiceWorkerEnvirosuit
+  - ServiceWorkerEnvirogloves
+  - ServiceWorkerEnviroboots

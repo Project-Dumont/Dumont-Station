@@ -226,6 +226,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobMonkeyPunpun
+  - type: PunPunSpawner # Dumont
 
 - type: entity
   parent: MarkerBase

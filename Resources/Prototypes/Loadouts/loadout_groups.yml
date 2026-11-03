@@ -2199,3 +2199,36 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+- type: loadoutGroup
+  id: TramDriverJumpsuit
+  name: loadout-group-tram-driver-jumpsuit
+  minLimit: 1
+  exclusiveWith: INNERCLOTHING
+  loadouts:
+  - TramDriverJumpsuit
+  - TramDriverJumpskirt
+
+- type: loadoutGroup
+  id: TramDriverShoes
+  name: loadout-group-tram-driver-shoes
+  minLimit: 1
+  exclusiveWith: FEET
+  loadouts:
+  - TramDriverShoes
+
+- type: loadoutGroup
+  id: TramDriverHead
+  name: loadout-group-tram-driver-head
+  minLimit: 1
+  exclusiveWith: HEAD
+  loadouts:
+  - TramDriverHead
+
+- type: loadoutGroup
+  id: TramDriverOuterClothing
+  name: loadout-group-tram-driver-outer-clothing
+  minLimit: 1
+  exclusiveWith: OUTERCLOTHING
+  loadouts:
+  - TramDriverOuterClothing

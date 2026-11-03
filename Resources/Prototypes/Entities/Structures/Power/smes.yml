@@ -74,6 +74,9 @@
       maxCharge: 16000000 # Goobstation - SMES buff
       pricePerJoule: .0002
     - type: ExaminableBattery
+    - type: BatterySelfRecharger # Dumontstation change
+      autoRecharge: true
+      autoRechargeRate: 300000 
     - type: NodeContainer
       examinable: true
       nodes:

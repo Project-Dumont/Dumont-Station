@@ -27,39 +27,6 @@
       "directions": 4
     },
     {
-      "name": "channel-disconnected",
-      "directions": 4
-    },
-    {
-      "name": "channel-off"
-    },
-    {
-      "name": "channel-on",
-      "directions": 4
-    },
-    {
-      "name": "channel-tripped",
-      "directions": 4,
-      "delays": [
-        [
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2
-        ]
-      ]
-    },
-    {
       "name": "lock0-locked",
       "directions": 4
     },
@@ -162,28 +129,6 @@
         [
           1,
           1
-        ]
-      ]
-    },
-    {
-      "name": "display-tripped",
-      "directions": 4,
-      "delays": [
-        [
-          0.5,
-          0.5
-        ],
-        [
-          0.5,
-          0.5
-        ],
-        [
-          0.5,
-          0.5
-        ],
-        [
-          0.5,
-          0.5
         ]
       ]
     },

@@ -1,0 +1,13 @@
+# Service
+- type: entity
+  id: SpawnPointTramDriver
+  parent: SpawnPointJobBase
+  name: tramdriver
+  components:
+  - type: SpawnPoint
+    job_id: TramDriver
+  - type: Sprite
+    sprite: _Dumont/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: tramdriver

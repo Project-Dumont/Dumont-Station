@@ -8,6 +8,12 @@ ent-BaseMagazineGaussgun = carregador Gauss (esferas)
 ent-MagazineGaussgun = carregador Gauss 
  .desc = Carregador de 15 tiros para uma arma de Gauss, pode conter uma variedade de tipos de munição.
 
+ent-MagazineGaussgunDisc = carregador Gauss (discos afiados)
+ .desc = Carregador de 15 tiros para uma arma de Gauss, pode conter uma variedade de tipos de munição.
+
+ent-MagazineGaussgunShard = carregador Gauss (shardshots)
+ .desc = Carregador de 15 tiros para uma arma de Gauss, pode conter uma variedade de tipos de munição.
+
 ent-CartridgeShard = shardshot
  .desc = Um pequeno projétil compatível com armas de Gauss. Esse divide em tiros menores quando é atirado. Menos eficiente contra armadura.
 
@@ -17,8 +23,8 @@ ent-CartridgeDisc = disco afiado
 ent-CartridgeBallBearing = esfera de aço
  .desc = Um pequeno projétil compatível com armas de Gauss.
 
-ent-MagazineBoxGaussgunBullet = caixa de esferas de aço
+ent-MagazineBoxGaussgunBullet = caixa de munição gauss (esferas de aço)
 
-ent-MagazineBoxGaussgunShard = caixa de shardshots
+ent-MagazineBoxGaussgunShard = caixa de munição gauss (shardshots)
 
-ent-MagazineBoxGaussgunDisc = caixa de discos afiados
+ent-MagazineBoxGaussgunDisc = caixa de munição gauss (discos afiados)

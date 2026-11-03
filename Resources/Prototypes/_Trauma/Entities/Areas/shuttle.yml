@@ -5,6 +5,7 @@
   abstract: true
   parent: BaseArea
   id: BaseAreaShuttle
+  suffix: AreaShuttle
   components:
   - type: Sprite
     sprite: _Trauma/Areas/shuttle.rsi
@@ -14,6 +15,7 @@
   parent: BaseAreaShuttle
   id: AreaShuttleAbductor
   name: abductor shuttle
+  suffix: AreaShuttle
   components:
   - type: Sprite
     state: abductor
@@ -22,6 +24,7 @@
   parent: BaseAreaShuttle
   id: AreaShuttleNukie
   name: nukie shuttle
+  suffix: AreaShuttle
   components:
   - type: Sprite
     state: nukie

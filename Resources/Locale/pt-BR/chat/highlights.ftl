@@ -54,6 +54,7 @@ highlights-ServiceWorker = Faz-Tudo, Serviço, Diarista
 # Station-specific
 highlights-Boxer = Boxeador, Boxer
 highlights-Reporter = Reporter, Jornalista
+highlights-TramDriver = Condutor, Motorista, Bonde, "Tram"
 highlights-Zookeeper = Zoologísta, Zoológico
 highlights-Psychologist = Psicológo, Psicologia, DOIDO VARRIDO
 

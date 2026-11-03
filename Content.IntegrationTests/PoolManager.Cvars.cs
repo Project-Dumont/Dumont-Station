@@ -13,6 +13,7 @@
 
 #nullable enable
 using Content.Goobstation.Common.CCVar;
+using Content.Trauma.Common.CCVar; // Dumont
 using Content.Shared.CCVar;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -56,6 +57,7 @@ public static partial class PoolManager
         (CCVars.MovementMobPushing.Name, "false"),
         (CCVars.LavalandEnabled.Name, "false"), // Lavaland Change
         (GoobCVars.DisablePathfinding.Name, "true"), // Goobstation
+        (TraumaCVars.StationTraitsEnabled.Name, "false"), // Dumont
     };
 
     public static async Task SetupCVars(RobustIntegrationTest.IntegrationInstance instance, PoolSettings settings)

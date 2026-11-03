@@ -1,0 +1,106 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stationTrait
+  id: BountifulBounties
+  group: Positive
+  name: station-trait-bountiful-bounties-name # Dumont
+  report: station-trait-bountiful-bounties-report # Dumont
+  effects:
+  - !type:AddComponents
+    components:
+    - type: BountyModifier
+      modifier: 1.2
+
+- type: stationTrait
+  id: FilledMaint
+  group: Positive
+  name: station-trait-filled-maint-name # Dumont
+  report: station-trait-filled-maint-report # Dumont
+  conflicts: [ EmptyMaint ]
+  startEffects: # has to run before the map inits so it can change the spawners
+  - !type:StationQueryEffects
+    compName: MaintsClosetSpawner
+    includePaused: true
+    effects:
+    # Dumont changes start
+    - !type:AddComponents
+      probability: 0.5 # 50% chance of doubling the loot -> 1.5x loot
+      components:
+      - type: EntityTableContainerFill
+        containers:
+          entity_storage: !type:NestedSelector
+            tableId: MaintenanceLockerLoot
+            rolls: 2
+    # Dumont end
+
+- type: stationTrait
+  id: FreeScarves
+  group: Positive
+  name: station-trait-free-scarves-name # Dumont
+  report: station-trait-free-scarves-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: FreeScarvesRule
+
+- type: stationTrait
+  id: GalacticGrant
+  group: Positive
+  name: station-trait-galactic-grant-name # Dumont
+  report: station-trait-galactic-grant-report # Dumont
+  effects:
+  - !type:StationModifyBank
+    account: Cargo
+    min: 2000
+    max: 5000
+
+- type: stationTrait
+  id: LuckyWinner
+  group: Positive
+  chance: 0.2
+  name: station-trait-lucky-winner-name # Dumont
+  report: station-trait-lucky-winner-report # Dumont
+  # Dumont changes start
+  requiredComponents:
+  - LuckyWinnerTarget
+  # Dumont end
+  effects:
+  - !type:StartGameRule
+    rule: LuckyWinnerRule
+
+- type: stationTrait
+  id: StrongSupplyLines
+  group: Positive
+  name: station-trait-strong-supply-lines-name # Dumont
+  report: station-trait-strong-supply-lines-report # Dumont
+  conflicts: [ DistantSupplyLines ]
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CargoPriceModifier
+      modifier: 0.8
+
+- type: stationTrait
+  id: EvilPunPun
+  group: Positive # crew is safer
+  name: station-trait-evil-pun-pun-name # Dumont
+  report: station-trait-evil-pun-pun-report # Dumont
+  # Dumont changes start
+  requiredComponents:
+  - PunPunSpawner
+  - PrisonArea
+  # Dumont end
+  startEffects: # want to move the spawner before it spawns and change the starting gear + ghost role easily
+  - !type:StationQueryEffects
+    compName: PunPunSpawner
+    includePaused: true
+    effects:
+    - !type:AddComponents
+      components:
+      - type: ConditionalSpawner
+        prototypes:
+        - MobMonkeyPunpunPrisoner
+    # Dumont changes start
+    - !type:TeleportRandomArea # banished
+      safe: true
+      compName: PrisonArea
+    # Dumont end

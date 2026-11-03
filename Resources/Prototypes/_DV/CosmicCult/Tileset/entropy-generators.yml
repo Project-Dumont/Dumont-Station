@@ -2,7 +2,7 @@
 
 - type: entity
   id: CosmicVacuousSpire
-  parent: [ BaseStructureDynamic, BaseCosmicContraband ]
+  parent: [ BaseStructureDynamic, BaseMagicalContraband ]
   name: vacuous spire
   description: Its surface shifts and moves strangely, despite no visible power source...
   components:
@@ -77,7 +77,7 @@
 # This one is currently unobtainable (and not fully implemented), because I can't figure out why the fuck PowerDeviceVisuals doesn't work properly and it's driving me insane. Please help.
 - type: entity
   id: CosmicPowerSink
-  parent: [ BaseItem, BaseCosmicContraband ]
+  parent: [ BaseItem, BaseMagicalContraband ]
   name: entropic crystallizer
   description: Sprawling tendrils thrust into nearby wiring, almost as if alive, yet completely foreign to this reality.
   components:

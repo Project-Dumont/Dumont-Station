@@ -5,6 +5,7 @@
   parent: BaseAreaStation
   id: BaseAreaCivilian
   name: civilian
+  suffix: AreaGeneral
   components:
   - type: DepartmentArea
     department: Civilian
@@ -13,6 +14,7 @@
   parent: BaseAreaCivilian
   id: AreaLibrary
   name: library
+  suffix: AreaService, AreaGeneral
   components:
   - type: Sprite
     state: library
@@ -21,6 +23,7 @@
   parent: BaseAreaCivilian
   id: AreaCourtRoom
   name: court room
+  suffix: AreaGeneral, AreaSecurity
   components:
   - type: Sprite
     state: courtroom
@@ -29,6 +32,7 @@
   parent: BaseAreaCivilian
   id: AreaLawOffice
   name: law office
+  suffix: AreaGeneral, AreaService, AreaSecurity
   components:
   - type: Sprite
     state: law_office
@@ -37,6 +41,7 @@
   parent: BaseAreaCivilian
   id: AreaStage
   name: stage
+  suffix: AreaGeneral, AreaService
   components:
   - type: Sprite
     state: stage
@@ -45,6 +50,7 @@
   parent: BaseAreaCivilian
   id: AreaTheatre
   name: theatre
+  suffix: AreaService
   components:
   - type: Sprite
     state: theatre
@@ -53,6 +59,7 @@
   parent: BaseAreaCivilian
   id: AreaJanitor
   name: janitor
+  suffix: AreaService
   components:
   - type: Sprite
     state: janitor
@@ -61,6 +68,7 @@
   parent: BaseAreaCivilian
   id: AreaChapel
   name: chapel
+  suffix: AreaService, AreaGeneral
   components:
   - type: Sprite
     state: chapel
@@ -70,6 +78,7 @@
   parent: AreaChapel
   id: AreaChapelOffice
   name: chapel office
+  suffix: AreaService, AreaGeneral
   components:
   - type: Sprite
     state: chapel_office
@@ -79,6 +88,7 @@
   parent: AreaChapel
   id: AreaChapelCremate
   name: crematorium
+  suffix: AreaService, AreaGeneral
   components:
   - type: Sprite
     state: cremate
@@ -88,6 +98,7 @@
   parent: BaseAreaCivilian
   id: AreaDojo
   name: dojo
+  suffix: AreaGeneral
   components:
   - type: Sprite
     state: dojo
@@ -98,6 +109,7 @@
   parent: BaseAreaCivilian
   id: AreaBoxingRing
   name: boxing ring
+  suffix: AreaGeneral
   components:
   - type: Sprite
     state: boxing_ring
@@ -106,6 +118,7 @@
   parent: BaseAreaCivilian
   id: AreaToolStorage
   name: tool storage
+  suffix: AreaGeneral
   description: Birthplace of the assistants.
   components:
   - type: Sprite
@@ -115,6 +128,7 @@
   parent: BaseAreaCivilian
   id: AreaNewsroom
   name: news room
+  suffix: AreaService
   components:
   - type: Sprite
     state: newsroom

@@ -140,6 +140,10 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+# dumont lasersec
+  - WeaponLaserSMG
+  - WeaponLaserRifle
+# dumont lasersec end
   - WeaponTemperatureGun # Goobstation
   - WeaponMechCombatFiredartLaser # Goobstation
   - WeaponEnergyIonRifle # Goobstation - CR second energy bolt update(and ion)

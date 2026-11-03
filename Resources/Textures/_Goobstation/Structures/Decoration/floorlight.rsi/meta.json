@@ -1,26 +1,31 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from Goonstation 13.",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/lighting.dmi",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "broken"
+            "name": "broken",
+			"directions": 1
         },
         {
-            "name": "burned"
+            "name": "burned",
+			"directions": 1
         },
         {
-            "name": "base"
+            "name": "base",
+			"directions": 1
         },
         {
-            "name": "empty"
+            "name": "empty",
+			"directions": 1
         },
         {
-            "name": "glow"
+            "name": "glow",
+			"directions": 1
         }
     ]
 }

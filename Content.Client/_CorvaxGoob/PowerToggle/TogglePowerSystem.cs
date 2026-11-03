@@ -7,12 +7,14 @@ using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Access.Systems;
 
 namespace Content.Client._CorvaxGoob.PowerToggle;
 
 public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private AccessReaderSystem _accessReader = default!;
 
     public override void Initialize()
     {
@@ -48,9 +50,16 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         var verb = new Verb
         {
             Text = Loc.GetString("power-toggle-verb"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/zap.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Act = () => VerbPowerToggle(entity, target, user)
         };
+
+        if (!_accessReader.IsAllowed(user, entity.Owner))
+        {
+            verb.Disabled = true;
+            verb.Message = Loc.GetString("apc-component-insufficient-access");
+        }
+
         args.Verbs.Add(verb);
     }
 
@@ -68,10 +77,17 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
         var verb = new AlternativeVerb
         {
             Text = Loc.GetString("power-toggle-verb"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/zap.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Act = () => VerbPowerToggle(entity, target, user),
             Priority = -100
         };
+
+        if (!_accessReader.IsAllowed(user, entity.Owner))
+        {
+            verb.Disabled = true;
+            verb.Message = Loc.GetString("apc-component-insufficient-access");
+        }
+
         args.Verbs.Add(verb);
     }
 

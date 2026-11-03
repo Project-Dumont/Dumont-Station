@@ -29,7 +29,7 @@
         Heat: 12
 
 - type: entity
-  name: medium laser bolt
+  name: laser bolt
   id: BulletLaserPistol
   parent: BulletLaser
   categories: [ HideSpawnMenu ]

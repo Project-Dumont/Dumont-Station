@@ -27,8 +27,13 @@
     - id: WeaponSubMachineGunDrozd
     - id: WeaponPistolMk58
     - id: WeaponRevolverInspector
-    - id: WeaponShotgunDoubleBarreled
-    - id: WeaponSubMachineGunWt550
+#    - id: WeaponShotgunDoubleBarreled
+    - !type:GroupSelector
+      weight: 0.3 # rarer weapons that deviate from the standard armory weapons from before
+      children:
+      - id: WeaponShotgunEnforcer # really good gun
+      - id: WeaponSubMachineGunWt550 # everyone complained from it being a bad gun
+      - id: WeaponShotgunDoubleBarreled # really bad gun
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]

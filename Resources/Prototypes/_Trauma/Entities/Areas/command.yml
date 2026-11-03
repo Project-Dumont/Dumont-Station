@@ -4,6 +4,7 @@
   abstract: true
   parent: BaseAreaStation
   id: BaseAreaCommand
+  suffix: AreaCommand
   components:
   - type: DepartmentArea
     department: Command
@@ -12,6 +13,7 @@
   parent: BaseAreaCommand
   id: AreaBridge
   name: bridge
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: bridge
@@ -20,6 +22,7 @@
   parent: BaseAreaCommand
   id: AreaBridgeHall
   name: bridge hall
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: bridge_hall
@@ -28,6 +31,7 @@
   parent: BaseAreaCommand
   id: AreaCommand
   name: command
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: command
@@ -36,6 +40,7 @@
   parent: BaseAreaCommand
   id: AreaCommandMeetingRoom
   name: command meeting room
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: meeting
@@ -44,6 +49,7 @@
   parent: BaseAreaCommand
   id: AreaCommandGateway
   name: command gateway
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: gateway
@@ -52,6 +58,7 @@
   parent: BaseAreaCommand
   id: AreaCommandShowroom
   name: command showroom
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: showroom
@@ -60,6 +67,7 @@
   parent: BaseAreaCommand
   id: AreaCommandTeleporter
   name: command teleporter
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: tele
@@ -68,6 +76,7 @@
   parent: BaseAreaCommand
   id: AreaEvaRoom
   name: eva room
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: eva
@@ -76,6 +85,7 @@
   parent: BaseAreaCommand
   id: AreaVault
   name: vault
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: vault
@@ -84,6 +94,7 @@
   parent: AreaVault
   id: AreaNukeStorage
   name: nuke storage
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: nuke_storage
@@ -94,6 +105,7 @@
   parent: BaseAreaCommand
   id: AreaCapQuarters
   name: cap quarters
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: captain
@@ -102,6 +114,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeCE
   name: CE office
+  suffix: AreaCommand, AreaEngineering
   components:
   - type: Sprite
     state: ce_office
@@ -110,6 +123,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeCmo
   name: CMO office
+  suffix: AreaCommand, AreaMedical
   components:
   - type: Sprite
     state: cmo_office
@@ -118,6 +132,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeHop
   name: HOP
+  suffix: AreaCommand, AreaService
   components:
   - type: Sprite
     state: hop_office
@@ -126,6 +141,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeHos
   name: HOS office
+  suffix: AreaCommand, AreaSecurity
   components:
   - type: Sprite
     state: hos_office
@@ -134,6 +150,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeNtr
   name: NTR office
+  suffix: AreaCommand
   components:
   - type: Sprite
     state: ntr_office
@@ -142,6 +159,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeRd
   name: RD office
+  suffix: AreaCommand, AreaScience
   components:
   - type: Sprite
     state: rd_office
@@ -150,6 +168,7 @@
   parent: BaseAreaCommand
   id: AreaOfficeQm
   name: QM office
+  suffix: AreaCommand, AreaSupply
   components:
   - type: Sprite
     state: qm_office

@@ -33,3 +33,21 @@
   - type: BallisticAmmoProvider
     proto: null
 
+- type: entity
+  name: gauss magazine (shardshot)
+  parent: [ BaseMagazineGaussgun ]
+  id: MagazineGaussgunShard
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeShard
+
+- type: entity
+  name: gauss magazine (razor disc)
+  parent: [ BaseMagazineGaussgun ]
+  id: MagazineGaussgunDisc
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeDisc
+

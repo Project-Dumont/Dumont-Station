@@ -220,6 +220,10 @@
       weight: 1
     - id: VinylDiskWeAreNumberTwo
       weight: 1
+    # Dumont - jukebox musics
+    - !type:NestedSelector
+      tableId: JukeboxVinylDisks
+      weight: 55
 
 - type: entityTable
   id: RandomVinylSleeve

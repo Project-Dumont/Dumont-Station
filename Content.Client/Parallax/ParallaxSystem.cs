@@ -11,6 +11,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Numerics;
+using Content.Client._Dumont.Parallax; // Dumont
 using Content.Client.Parallax.Data;
 using Content.Client.Parallax.Managers;
 using Content.Shared.Parallax;
@@ -25,6 +26,7 @@ public sealed class ParallaxSystem : SharedParallaxSystem
     [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IParallaxManager _parallax = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private ExtraParallaxSystem _extra = default!; // Dumont
 
     private static readonly ProtoId<ParallaxPrototype> Fallback = "Default";
 
@@ -69,7 +71,10 @@ public sealed class ParallaxSystem : SharedParallaxSystem
 
     public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId)
     {
-        return _parallax.GetParallaxLayers(GetParallax(_map.GetMapOrInvalid(mapId)));
+        // Dumont changes start
+        var map = _map.GetMapOrInvalid(mapId);
+        return _extra.AddLayers(map, _parallax.GetParallaxLayers(GetParallax(map)));
+        // Dumont end
     }
 
     public string GetParallax(MapId mapId)

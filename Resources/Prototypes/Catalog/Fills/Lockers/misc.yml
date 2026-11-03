@@ -311,6 +311,7 @@
   suffix: Filled, Random
   parent: ClosetMaintenance
   components:
+  - type: MaintsClosetSpawner # Dumont
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
