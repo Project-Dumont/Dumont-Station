@@ -257,7 +257,7 @@
     damageCoefficient: 0.1
   - type: ModifyDelayedKnockdown
     cancel: true
-    
+
 # Security voidsuit - used this instead of security hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
@@ -266,9 +266,38 @@
   description: A light hardsuit with an in-built plate carrier to provide moderate protection while remaining mobile.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Voidsuits/security.rsi
+    sprite: _Dumont/Clothing/OuterClothing/Hardsuits/security.rsi # Dumont - Security hardsuits resprite
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Voidsuits/security.rsi
+    sprite: _Dumont/Clothing/OuterClothing/Hardsuits/security.rsi # Dumont - Security hardsuits resprite
+    clothingVisuals: # Dumont - Addition of unshaded states
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-harpy:
+      - state: equipped-OUTERCLOTHING-harpy
+      - state: equipped-OUTERCLOTHING-unshaded-harpy
+        shader: unshaded
+      outerClothing-resomi:
+      - state: equipped-OUTERCLOTHING-resomi
+      - state: equipped-OUTERCLOTHING-unshaded-resomi
+        shader: unshaded
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      - state: equipped-OUTERCLOTHING-unshaded-vox
+        shader: unshaded
+      outerClothing-vulpkanin:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
