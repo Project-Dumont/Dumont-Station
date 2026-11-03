@@ -2,6 +2,7 @@ using Content.Goobstation.Shared.ModSuits.Components;
 using Content.Shared.Emp;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.PowerCell.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
@@ -38,6 +39,12 @@ public sealed partial class ModCoreSystem : EntitySystem
         ent.Comp.Charge = charge;
         ent.Comp.MaxCharge = maxCharge;
         Dirty(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnPowerCellChanged(Entity<ModCoreComponent> ent, ref PowerCellChangedEvent args)
+    {
+        RelayToSuit(ent, ref args);
     }
 
     [SubscribeLocalEvent]

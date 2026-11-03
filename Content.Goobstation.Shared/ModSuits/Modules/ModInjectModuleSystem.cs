@@ -27,6 +27,6 @@ public sealed partial class ModInjectModuleSystem : EntitySystem
             _stun.TryStanding(args.User);
         }
 
-        _bloodstream.TryAddToBloodstream(args.User, ent.Comp.Solution.Clone());
+        _bloodstream.TryAddToChemicals(args.User, ent.Comp.Solution.Clone());
     }
 }

@@ -1,6 +1,6 @@
 using Content.Goobstation.Shared.ModSuits.Components;
 using Content.Goobstation.Shared.ModSuits.Systems;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;

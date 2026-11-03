@@ -1,13 +1,11 @@
 using Content.Goobstation.Shared.ModSuits.Systems;
 using Content.Shared.Clothing.Components;
-using Content.Shared.Clothing.EntitySystems;
 
 namespace Content.Goobstation.Shared.ModSuits.Modules;
 
 public sealed partial class ModChameleonModuleSystem : EntitySystem
 {
     [Dependency] private ModSuitSystem _modSuit = default!;
-    [Dependency] private SharedChameleonClothingSystem _chameleon = default!;
 
     [SubscribeLocalEvent]
     private void OnInstalled(Entity<ModChameleonModuleComponent> ent, ref ModModuleInstalledEvent args)
@@ -17,7 +15,8 @@ public sealed partial class ModChameleonModuleSystem : EntitySystem
 
         EntityManager.AddComponents(args.Suit, ent.Comp.Components);
         ent.Comp.Granted = true;
-        _chameleon.SetSelectedPrototype(args.Suit, proto.ID, true);
+        var ev = new ModChameleonPrototypeEvent(args.Suit, proto.ID);
+        RaiseLocalEvent(ref ev);
     }
 
     [SubscribeLocalEvent]
@@ -31,7 +30,10 @@ public sealed partial class ModChameleonModuleSystem : EntitySystem
             return;
 
         if (MetaData(args.Suit).EntityPrototype is { } proto)
-            _chameleon.SetSelectedPrototype(args.Suit, proto.ID, true);
+        {
+            var ev = new ModChameleonPrototypeEvent(args.Suit, proto.ID);
+            RaiseLocalEvent(ref ev);
+        }
 
         _modSuit.RevokeComponents(args.Suit, ent.Comp.Components);
     }

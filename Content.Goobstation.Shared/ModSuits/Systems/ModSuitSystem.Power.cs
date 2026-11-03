@@ -1,4 +1,5 @@
 using Content.Goobstation.Shared.ModSuits.Components;
+using Content.Shared.PowerCell.Components;
 using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using Robust.Shared.Containers;
@@ -76,6 +77,17 @@ public sealed partial class ModSuitSystem
         }
 
         return drain;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnPowerCellChanged(Entity<ModSuitComponent> ent, ref PowerCellChangedEvent args)
+    {
+        if (_timing.ApplyingState || ent.Comp.LifeStage > ComponentLifeStage.Running)
+            return;
+
+        RaiseUpdated(ent);
+        SetPowered(ent, !args.Ejected && HasCharge(ent, 0.01f));
+        UpdatePowerAlert(ent);
     }
 
     [SubscribeLocalEvent]
