@@ -4888,3 +4888,9 @@ Entries:
       message: Bar signs não mostram um erro quando desligados.
   id: 580
   time: '2026-11-02T21:19:16.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Fix
+      message: Labor Shuttle agora funciona de fato.
+  id: 581
+  time: '2026-11-03T19:44:45.0000000+00:00'
