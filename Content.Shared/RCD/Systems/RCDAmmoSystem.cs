@@ -47,14 +47,15 @@ public sealed class RCDAmmoSystem : EntitySystem
             return;
 
         if (args.Target is not { Valid: true } target ||
-            !HasComp<RCDComponent>(target) ||
+            !TryComp<RCDComponent>(target, out var rcd) ||//Dumont
             !TryComp<LimitedChargesComponent>(target, out var charges))
             return;
 
         var current = _sharedCharges.GetCurrentCharges((target, charges));
         var user = args.User;
         args.Handled = true;
-        var count = Math.Min(charges.MaxCharges - current, comp.Charges);
+        var multiplier = rcd.IsRpd ? 2 : 1; //Dumont
+        var count = Math.Min(charges.MaxCharges - current, comp.Charges * multiplier); //Dumont
         if (count <= 0)
         {
             _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-full"), target, user);
@@ -63,7 +64,7 @@ public sealed class RCDAmmoSystem : EntitySystem
 
         _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-refilled"), target, user);
         _sharedCharges.AddCharges(target, count);
-        comp.Charges -= count;
+        comp.Charges -= (count + multiplier - 1) / multiplier; //Dumont
         Dirty(uid, comp);
 
         // prevent having useless ammo with 0 charges
