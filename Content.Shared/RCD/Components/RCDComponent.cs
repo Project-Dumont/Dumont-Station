@@ -105,7 +105,7 @@ public sealed partial class RCDComponent : Component
     public bool AccessBypass { get; set; } = false;
 
     /// <summary>
-    /// Amount of cargo that will be multiplied if it is RPD - Dumont
+    /// Load multiplier for anything that uses RCD ammunition - Dumont
     /// </summary>
     [DataField, AutoNetworkedField]
     public int Multiplier { get; set; } = 1;
