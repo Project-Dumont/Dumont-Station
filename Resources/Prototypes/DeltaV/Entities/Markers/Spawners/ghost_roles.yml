@@ -1,6 +1,7 @@
 - type: entity # Part of ListeningPost
-  categories: [ HideSpawnMenu, Spawner ]
+  categories: [ Spawner ]
   parent: BaseAntagSpawner
+  name: Spawn Point Ghost Syndicate Listener
   id: SpawnPointGhostSyndicateListener
   components:
   - type: GhostRole
@@ -21,3 +22,8 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 40000 # 11.1 hours
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: DeltaV/Clothing/Ears/Headsets/syndicate_listening.rsi
+        state: icon_alt

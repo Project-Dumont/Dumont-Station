@@ -4850,3 +4850,41 @@ Entries:
       message: Oasis foi removido da rotação de mapas.
   id: 575
   time: '2026-10-31T14:14:10.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Fix
+      message: >-
+        A mochila do Radio Host agora pode vir com os suprimentos de emergência
+        novamente.
+    - type: Add
+      message: O Headset do Radio Host agora têm acesso aos canais de Serviço.
+  id: 576
+  time: '2026-11-01T15:50:25.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Tweak
+      message: O preço das caixas de vinil foram reduzidos para 300 spessos.
+  id: 577
+  time: '2026-11-01T15:51:02.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: A lei espacial está um pouco mais bem organizada no livro guia.
+    - type: Tweak
+      message: POP está mais fácil de ler.
+    - type: Fix
+      message: Não tem mais uma entrada de fiança velha no livro guia. My bad chat.
+  id: 578
+  time: '2026-11-02T15:41:40.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Tweak
+      message: Ajeita o spawnpoint do ghost role Syndicate Outpost Listener
+  id: 579
+  time: '2026-11-02T18:21:40.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Bar signs não mostram um erro quando desligados.
+  id: 580
+  time: '2026-11-02T21:19:16.0000000+00:00'
