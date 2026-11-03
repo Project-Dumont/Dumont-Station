@@ -1,12 +1,14 @@
 using Content.Goobstation.Common.Carrying;
 using Content.Goobstation.Common.Cuffs;
 using Content.Goobstation.Common.Weapons;
+using Content.Shared.Alert;
 using Content.Shared.Gravity;
 
 namespace Content.Goobstation.Shared.ModSuits.Modules;
 
 public sealed partial class ModWearerEffectsSystem : EntitySystem
 {
+    [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
 
     [SubscribeLocalEvent]
@@ -30,14 +32,22 @@ public sealed partial class ModWearerEffectsSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnAntiGravityStartup(Entity<ModAntiGravityComponent> ent, ref ComponentStartup args)
     {
-        _gravity.RefreshWeightless(ent.Owner);
+        RefreshWeightlessAlert(ent);
     }
 
     [SubscribeLocalEvent]
     private void OnAntiGravityShutdown(Entity<ModAntiGravityComponent> ent, ref ComponentShutdown args)
     {
         if (!TerminatingOrDeleted(ent))
-            _gravity.RefreshWeightless(ent.Owner);
+            RefreshWeightlessAlert(ent);
+    }
+
+    private void RefreshWeightlessAlert(EntityUid uid)
+    {
+        if (_gravity.IsWeightless(uid))
+            _alerts.ShowAlert(uid, SharedGravitySystem.WeightlessAlert);
+        else
+            _alerts.ClearAlert(uid, SharedGravitySystem.WeightlessAlert);
     }
 
     [SubscribeLocalEvent]

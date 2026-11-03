@@ -266,7 +266,7 @@
   - ModsuitModuleMegaphone
   - ModsuitModulePepperShoulders
   - ModsuitModuleRestraintAssist
-  - ModsuitModuleBulwark
+#  - ModsuitModuleBulwark
   position: 4,1
   technologyPrerequisites:
   - ModsuitsTech

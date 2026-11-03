@@ -831,23 +831,23 @@
     - type: ModQuickCuff
       multiplier: 0.5
 
-- type: entity
-  parent: BaseModsuitModule
-  id: ModsuitModuleBulwark
-  name: MOD bulwark module
-  description: Layers of hydraulic stabilizers in the suit's legs keep the wearer firmly planted, making them impossible to shove around.
-  components:
-  - type: Sprite
-    state: bulwark
-  - type: ModModule
-    complexity: 3
-    idlePower: 0.1
-    requiredParts:
-    - shoes
-  - type: ModGrantComponentsModule
-    target: Wearer
-    components:
-    - type: ModShoveBlocker
+#- type: entity
+#  parent: BaseModsuitModule
+#  id: ModsuitModuleBulwark
+#  name: MOD bulwark module
+#  description: Layers of hydraulic stabilizers in the suit's legs keep the wearer firmly planted, making them impossible to shove around.
+#  components:
+#  - type: Sprite
+#    state: bulwark
+#  - type: ModModule
+#    complexity: 3
+#    idlePower: 0.1
+#    requiredParts:
+#    - shoes
+#  - type: ModGrantComponentsModule
+#    target: Wearer
+#    components:
+#    - type: ModShoveBlocker
 
 - type: entity
   parent: BaseModsuitModuleDevice
