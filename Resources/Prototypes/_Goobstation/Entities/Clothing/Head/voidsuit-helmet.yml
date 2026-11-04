@@ -224,7 +224,7 @@
       - state: off-equipped-HELMET-vulpkanin
       - state: off-equipped-HELMET-unshaded-vulpkanin
         shader: unshaded
-  - type: ToggleableVisuals
+  - type: ToggleableVisuals # Dumont - Security hardsuits resprite
     spriteLayer: light
     clothingVisuals:
       head:
