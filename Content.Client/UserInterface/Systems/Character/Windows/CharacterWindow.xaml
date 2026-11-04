@@ -16,22 +16,35 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:cc="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:windows="clr-namespace:Content.Client.UserInterface.Systems.Character.Windows"
     Title="{Loc 'character-info-title'}"
-    MinWidth="400"
-    MinHeight="545">
-    <ScrollContainer>
-        <BoxContainer Orientation="Vertical">
-            <Label Name="RoleType" VerticalAlignment="Top" Margin="0 6 0 10" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
-            <BoxContainer Orientation="Horizontal">
-                <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64"/>
-                <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
-                    <Label Name="NameLabel" Access="Public"/>
-                    <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
-                    <Label Name="NanoBankAccount" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/> <!-- Gabystation change -->
+    MinSize="725 425"
+    SetWidth="725"
+    SetHeight="575">
+    <!-- Dumont -->
+    <BoxContainer Orientation="Horizontal" Margin="10 5 10 10">
+        <ScrollContainer HScrollEnabled="False" SetWidth="250" Margin="5">
+            <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
+                <Label Name="RoleType" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
+                <PanelContainer StyleClasses="LowDivider" Margin="0 5"/>
+                <SpriteView OverrideDirection="South" Scale="4 4" Name="SpriteView" Access="Public" SetSize="128 128" HorizontalAlignment="Center" Margin="5 5 5 15"/>
+                <Label Name="NameLabel" Access="Public" HorizontalAlignment="Center"/>
+                <BoxContainer HorizontalAlignment="Center">
+                    <TextureRect Name="JobIcon" Access="Public" TextureScale="2 2" VerticalAlignment="Center" Margin="0 0 5 0"/>
+                    <Label Name="SubText" StyleClasses="LabelSubText" Access="Public" VerticalAlignment="Center"/>
                 </BoxContainer>
+                <Label Name="NanoBankAccount" StyleClasses="LabelSubText" Access="Public" HorizontalAlignment="Center"/>
             </BoxContainer>
-            <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
-            <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
-            <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+        </ScrollContainer>
+        <PanelContainer StyleClasses="LowDivider" Margin="5 0"/>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
+            <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" StyleClasses="LabelHeading" Margin="0 0 0 5"/>
+            <PanelContainer StyleClasses="PanelDark" HorizontalExpand="True" VerticalExpand="True">
+                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" Margin="10">
+                        <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
+                        <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
         </BoxContainer>
-    </ScrollContainer>
+    </BoxContainer>
 </windows:CharacterWindow>

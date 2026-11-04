@@ -56,14 +56,14 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client.UserInterface.Systems.Character;
 
 [UsedImplicitly]
-public sealed class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
+public sealed partial class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IEntityManager _ent = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
-    [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private CharacterInfoSystem _characterInfo = default!;
+    [UISystemDependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -161,7 +161,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName, nanoBank, _) = data;
+        var (entity, job, objectives, briefing, entityName, nanoBank, jobId) = data;
 
         _window.SpriteView.SetEntity(entity);
 
@@ -169,6 +169,11 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         _window.NameLabel.Text = entityName;
         _window.SubText.Text = job;
+        // Dumont
+        _window.JobIcon.Texture = jobId is { } id && _prototypeManager.TryIndex(id, out var jobPrototype)
+            && _prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon)
+            ? _sprite.Frame0(jobIcon.Icon)
+            : null;
         _window.NanoBankAccount.Text = nanoBank;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
@@ -178,7 +183,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             var objectiveControl = new CharacterObjectiveControl
             {
                 Orientation = BoxContainer.LayoutOrientation.Vertical,
-                Modulate = Color.Gray
+                Modulate = Color.White
             };
 
 
@@ -200,7 +205,9 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
                 conditionControl.ProgressTexture.Progress = condition.Progress;
                 var titleMessage = new FormattedMessage();
                 var descriptionMessage = new FormattedMessage();
+                titleMessage.PushTag(new MarkupNode("bold"));
                 titleMessage.AddText(condition.Title);
+                titleMessage.Pop();
                 descriptionMessage.AddText(condition.Description);
 
                 conditionControl.Title.SetMessage(titleMessage);
