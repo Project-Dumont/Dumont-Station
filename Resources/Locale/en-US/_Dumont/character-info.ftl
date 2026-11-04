@@ -9,3 +9,4 @@ character-organization-spider = The Spider Clan
 character-organization-underworld = The Underworld
 character-organization-nanotrasen = Nanotrasen
 character-organization-unaffiliated = Unaffiliated
+character-organization-conspirators = Conspirators

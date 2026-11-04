@@ -9,3 +9,4 @@ character-organization-spider = O Clã Aranha
 character-organization-underworld = O Submundo
 character-organization-nanotrasen = Nanotrasen
 character-organization-unaffiliated = Não-Afiliado
+character-organization-conspirators = Conspiracionistas
