@@ -199,9 +199,9 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             organizations.AddText(Loc.GetString(isCrew ? "character-organization-nanotrasen" : "character-organization-unaffiliated"));
             organizations.Pop();
         }
-        _window.AntagName.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=14][bold]{names.ToMarkup()}[/bold][/font]"));
+        _window.AntagName.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=16][bold]{names.ToMarkup()}[/bold][/font]"));
         _window.AntagName.Visible = !names.IsEmpty;
-        _window.Organization.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=16][bold]{organizations.ToMarkup()}[/bold][/font]"));
+        _window.Organization.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=18][bold]{organizations.ToMarkup()}[/bold][/font]"));
         _window.RoleType.Visible = names.IsEmpty;
 
         _window.NameLabel.Text = entityName;
