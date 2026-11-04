@@ -107,6 +107,6 @@ public sealed partial class RCDComponent : Component
     /// <summary>
     /// Load multiplier for anything that uses RCD ammunition - Dumont
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public int Multiplier = 1;
 }
