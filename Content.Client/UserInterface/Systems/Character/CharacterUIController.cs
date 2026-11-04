@@ -167,6 +167,27 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
 
         UpdateRoleType();
 
+        // Dumont
+        var names = new List<string>();
+        var organizations = new List<string>();
+        foreach (var antagId in data.Antags)
+        {
+            if (!_prototypeManager.TryIndex(antagId, out var antag))
+                continue;
+            names.Add(Loc.GetString(antag.Name));
+            if (antag.Organization is { } organization)
+            {
+                var name = Loc.GetString(organization);
+                if (!organizations.Contains(name))
+                    organizations.Add(name);
+            }
+        }
+        _window.AntagName.Text = string.Join("\n", names);
+        _window.AntagName.Visible = names.Count > 0;
+        _window.Organization.Text = string.Join("\n", organizations);
+        _window.Organization.Visible = organizations.Count > 0;
+        _window.RoleType.Visible = names.Count == 0;
+
         _window.NameLabel.Text = entityName;
         _window.SubText.Text = job;
         // Dumont
@@ -205,7 +226,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
                 conditionControl.ProgressTexture.Progress = condition.Progress;
                 var titleMessage = new FormattedMessage();
                 var descriptionMessage = new FormattedMessage();
-                titleMessage.PushTag(new MarkupNode("bold"));
+                titleMessage.PushTag(new MarkupNode("bold", null, null));
                 titleMessage.AddText(condition.Title);
                 titleMessage.Pop();
                 descriptionMessage.AddText(condition.Description);
@@ -241,6 +262,8 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
     {
         UpdateRoleType();
+        if (_window is { IsOpen: true })
+            _characterInfo.RequestCharacterInfo();
     }
 
     private void UpdateRoleType()

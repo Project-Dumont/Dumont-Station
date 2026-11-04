@@ -11,6 +11,7 @@
 
 - type: antag
   id: Heretic
+  organization: character-organization-forgotten # Dumont
   name: roles-antag-heretic-name
   antagonist: true
   setPreference: true

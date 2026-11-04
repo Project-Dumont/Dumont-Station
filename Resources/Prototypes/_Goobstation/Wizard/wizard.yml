@@ -29,6 +29,7 @@
 
 - type: antag
   id: Wizard
+  organization: character-organization-wizards # Dumont
   name: roles-antag-wizard-name
   antagonist: true
   setPreference: true

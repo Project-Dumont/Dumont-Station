@@ -96,6 +96,7 @@
 
 - type: antag
   id: Traitor
+  organization: character-organization-syndicate # Dumont
   name: roles-antag-syndicate-agent-name
   antagonist: true
   setPreference: true
