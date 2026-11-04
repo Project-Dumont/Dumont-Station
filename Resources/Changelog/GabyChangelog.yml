@@ -4906,3 +4906,11 @@ Entries:
       message: Algumas músicas e vozes agora não vão mais te deixar surdo.
   id: 583
   time: '2026-11-04T06:07:22.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Fix
+      message: Corrigido a progressão do culto cosmico
+    - type: Fix
+      message: Erros de sprites do Culto Cosmico foram arrumados
+  id: 584
+  time: '2026-11-04T06:42:32.0000000+00:00'
