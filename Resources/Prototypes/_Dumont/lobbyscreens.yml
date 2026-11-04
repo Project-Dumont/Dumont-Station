@@ -33,3 +33,9 @@
   background: /Textures/_Dumont/LobbyScreens/stackedbombs.webp
   name: Stacked bombs
   artist: Struater
+
+- type: lobbyBackground
+  id: couldbeanyone
+  background: /Textures/_Dumont/LobbyScreens/couldbeanyone.webp
+  name: Pode ser qualquer um
+  artist: cha

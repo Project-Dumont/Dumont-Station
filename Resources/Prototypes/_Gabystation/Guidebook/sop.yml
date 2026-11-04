@@ -14,6 +14,7 @@
   id: POP
   name: guide-entry-pop
   text: "/ServerInfo/_Gabystation/Guidebook/POP.xml"
+  priority: 0
   children:
   - POPGeral
   - POPComando
@@ -42,6 +43,55 @@
   children:
   - POPCadeiaDeComando
   - POPTransferencias
+  - POPCommandGeneral
+  - POPCaptain
+  - POPHeadOfPersonnel
+  - POPNanotrasenRepresentative
+  - POPBlueshield
+  - POPAI
+  - POPCommandDisclaimer
+
+- type: guideEntry
+  id: POPCommandGeneral
+  name: guide-entry-pop-command-general
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandGeneralSOP.xml"
+  priority: 3
+
+- type: guideEntry
+  id: POPCaptain
+  name: guide-entry-pop-captain
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CaptainSOP.xml"
+  priority: 4
+
+- type: guideEntry
+  id: POPHeadOfPersonnel
+  name: guide-entry-pop-head-of-personnel
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/HeadOfPersonnelSOP.xml"
+  priority: 5
+
+- type: guideEntry
+  id: POPNanotrasenRepresentative
+  name: guide-entry-pop-nanotrasen-representative
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/NanotrasenRepresentativeSOP.xml"
+  priority: 6
+
+- type: guideEntry
+  id: POPBlueshield
+  name: guide-entry-pop-blueshield
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/BlueshieldSOP.xml"
+  priority: 7
+
+- type: guideEntry
+  id: POPAI
+  name: guide-entry-pop-ai
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/AISOP.xml"
+  priority: 8
+
+- type: guideEntry
+  id: POPCommandDisclaimer
+  name: guide-entry-pop-command-disclaimer
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandDisclaimerSOP.xml"
+  priority: 9
 
 - type: guideEntry
   id: POPSegurança
@@ -50,38 +100,246 @@
   priority: 3
   children:
   - POPCodigoDeConduta
-  - POPConfiscar
+#  - POPConfiscar
+  - POPSecOff
+  - POPHos
+  - POPWarden
+  - POPDetective
+  - POPBrigmed
 #  - POPMulta Dumont spacelaw 2.0
+
+- type: guideEntry
+  id: POPSecOff
+  name: guide-entry-pop-secoff
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/SecOffSOP.xml"
+  priority: 4
+
+- type: guideEntry
+  id: POPWarden
+  name: guide-entry-pop-warden
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/WardenSOP.xml"
+  priority: 5
+
+- type: guideEntry
+  id: POPDetective
+  name: guide-entry-pop-detective
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/DetectiveSOP.xml"
+  priority: 6
+
+- type: guideEntry
+  id: POPBrigmed
+  name: guide-entry-pop-brigmed
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/BrigmedSOP.xml"
+  priority: 7
+
+- type: guideEntry
+  id: POPHos
+  name: guide-entry-pop-hos
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/HosSOP.xml"
+  priority: 8
 
 - type: guideEntry
   id: POPCargo
   name: guide-entry-pop-cargo
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/CargoSOP.xml"
   priority: 4
+  children:
+  - POPQuartermaster
+  - POPCargoTechnician
+  - POPSalvageSpecialist
+  - POPCargoTransport
+
+- type: guideEntry
+  id: POPQuartermaster
+  name: guide-entry-pop-quartermaster
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/QuartermasterSOP.xml"
+  priority: 5
+
+- type: guideEntry
+  id: POPCargoTechnician
+  name: guide-entry-pop-cargo-technician
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/CargoTechnicianSOP.xml"
+  priority: 6
+
+- type: guideEntry
+  id: POPSalvageSpecialist
+  name: guide-entry-pop-salvage-specialist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/SalvageSpecialistSOP.xml"
+  priority: 7
+
+- type: guideEntry
+  id: POPCargoTransport
+  name: guide-entry-pop-cargo-transport
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/CargoTransportSOP.xml"
+  priority: 8
 
 - type: guideEntry
   id: POPEngenharia
   name: guide-entry-pop-engenharia
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Engineering/EngineeringSOP.xml"
   priority: 5
+  children:
+  - POPChiefEngineer
+  - POPStationEngineer
+  - POPAtmosphericTechnician
+
+- type: guideEntry
+  id: POPChiefEngineer
+  name: guide-entry-pop-chief-engineer
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Engineering/ChiefEngineerSOP.xml"
+  priority: 6
+
+- type: guideEntry
+  id: POPStationEngineer
+  name: guide-entry-pop-station-engineer
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Engineering/StationEngineerSOP.xml"
+  priority: 7
+
+- type: guideEntry
+  id: POPAtmosphericTechnician
+  name: guide-entry-pop-atmospheric-technician
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Engineering/AtmosphericTechnicianSOP.xml"
+  priority: 8
 
 - type: guideEntry
   id: POPMedico
   name: guide-entry-pop-medico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/MedicalStandardOperatingProcedure.xml"
   priority: 6
+  children:
+  - POPChiefMedicalOfficer
+  - POPMedicalDoctor
+  - POPChemist
+  - POPParamedic
+  - POPPsychologist
+  - POPGeneticist
+
+- type: guideEntry
+  id: POPChiefMedicalOfficer
+  name: guide-entry-pop-chief-medical-officer
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/ChiefMedicalOfficerSOP.xml"
+  priority: 7
+
+- type: guideEntry
+  id: POPMedicalDoctor
+  name: guide-entry-pop-medical-doctor
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/MedicalDoctorSOP.xml"
+  priority: 8
+
+- type: guideEntry
+  id: POPChemist
+  name: guide-entry-pop-chemist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/ChemistSOP.xml"
+  priority: 9
+
+- type: guideEntry
+  id: POPParamedic
+  name: guide-entry-pop-paramedic
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/ParamedicSOP.xml"
+  priority: 10
+
+- type: guideEntry
+  id: POPPsychologist
+  name: guide-entry-pop-psychologist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/PsychologistSOP.xml"
+  priority: 11
+
+- type: guideEntry
+  id: POPGeneticist
+  name: guide-entry-pop-geneticist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/GeneticistSOP.xml"
+  priority: 12
 
 - type: guideEntry
   id: POPCiencia
   name: guide-entry-pop-ciencia
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Science/ScienceStandardOperatingProcedure.xml"
   priority: 7
+  children:
+  - POPResearchDirector
+  - POPScientist
+  - POPRoboticist
+
+- type: guideEntry
+  id: POPResearchDirector
+  name: guide-entry-pop-research-director
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Science/ResearchDirectorSOP.xml"
+  priority: 8
+
+- type: guideEntry
+  id: POPScientist
+  name: guide-entry-pop-scientist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Science/ScientistSOP.xml"
+  priority: 9
+
+- type: guideEntry
+  id: POPRoboticist
+  name: guide-entry-pop-roboticist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Science/RoboticistSOP.xml"
+  priority: 10
 
 - type: guideEntry
   id: POPServiço
   name: guide-entry-pop-servico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ServiceStandardOperatingProcedure.xml"
   priority: 8
+  children:
+  - POPChef
+  - POPBartender
+  - POPBotanist
+  - POPClown
+  - POPMime
+  - POPChaplain
+  - POPJanitor
+  - POPReporter
+
+- type: guideEntry
+  id: POPChef
+  name: guide-entry-pop-chef
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ChefSOP.xml"
+  priority: 9
+
+- type: guideEntry
+  id: POPBartender
+  name: guide-entry-pop-bartender
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/BartenderSOP.xml"
+  priority: 10
+
+- type: guideEntry
+  id: POPBotanist
+  name: guide-entry-pop-botanist
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/BotanistSOP.xml"
+  priority: 11
+
+- type: guideEntry
+  id: POPClown
+  name: guide-entry-pop-clown
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ClownSOP.xml"
+  priority: 12
+
+- type: guideEntry
+  id: POPMime
+  name: guide-entry-pop-mime
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/MimeSOP.xml"
+  priority: 13
+
+- type: guideEntry
+  id: POPChaplain
+  name: guide-entry-pop-chaplain
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ChaplainSOP.xml"
+  priority: 14
+
+- type: guideEntry
+  id: POPJanitor
+  name: guide-entry-pop-janitor
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/JanitorSOP.xml"
+  priority: 15
+
+- type: guideEntry
+  id: POPReporter
+  name: guide-entry-pop-reporter
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ReporterSOP.xml"
+  priority: 16
 
 # POP Geral
 
@@ -125,14 +383,15 @@
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/RulesOfConduct.xml"
   priority: 1
 
-- type: guideEntry
-  id: POPConfiscar
-  name: guide-entry-pop-confiscar
-  text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
-  priority: 2
+# Bloat POP
+#- type: guideEntry
+#  id: POPConfiscar
+#  name: guide-entry-pop-confiscar
+#  text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
+#  priority: 2
 
-- type: guideEntry
-  id: POPMulta
-  name: guide-entry-pop-multa
-  text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
-  priority: 3
+#- type: guideEntry
+#  id: POPMulta
+#  name: guide-entry-pop-multa
+#  text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
+#  priority: 3

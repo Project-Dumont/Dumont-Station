@@ -1,0 +1,23 @@
+<!--
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Intendente Logístico (Quartermaster)
+
+  [bold]1.[/bold] O Intendente Logístico deve garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
+
+  [bold]2.[/bold] Em caso de crise grave, a agilidade deve ser priorizada em relação à burocracia, pois excesso de papelada pode ser prejudicial ao bem-estar da estação;
+
+  [bold]3.[/bold] O Intendente Logístico não pode autorizar a compra de equipamentos e/ou itens de Segurança sem permissão expressa do Chefe de Segurança e/ou Capitão. Exceção é feita em emergências extremas, onde tais equipamentos devem ser entregues à Segurança imediatamente;
+
+  [bold]4.[/bold] O Intendente Logístico pode autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do respectivo Chefe de Departamento (neste exemplo, o Engenheiro Chefe), usando seu melhor julgamento, embora ainda possa solicitar um formulário carimbado. No entanto, qualquer violação do Procedimento Operacional Padrão e/ou da Lei Espacial resultante desse pedido também implicará o Intendente Logístico;
+
+  [bold]5.[/bold] O Intendente Logístico não pode autorizar a compra de uma Caixa de Supermatéria sem permissão expressa do Engenheiro Chefe;
+
+  [bold]6.[/bold] O Intendente Logístico deve seguir as diretrizes estabelecidas para os Técnicos de Carga;
+</Document>
