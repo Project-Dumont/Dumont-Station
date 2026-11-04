@@ -194,14 +194,14 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
         {
             var isCrew = jobId is { } crewJob && crewJob != "Visitor"
                 && _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().Any(d => d.ID is not ("CentralCommand" or "Specific") && d.Roles.Contains(crewJob));
-            _window.RoleType.FontColorOverride = isCrew ? Color.FromHex("#2953a6") : Color.FromHex("#a6a6a6");
+            _window.RoleType.FontColorOverride = Color.White;
             organizations.PushColor(isCrew ? Color.FromHex("#4080ff") : Color.White);
             organizations.AddText(Loc.GetString(isCrew ? "character-organization-nanotrasen" : "character-organization-unaffiliated"));
             organizations.Pop();
         }
-        _window.AntagName.SetMessage(names);
+        _window.AntagName.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=14][bold]{names.ToMarkup()}[/bold][/font]"));
         _window.AntagName.Visible = !names.IsEmpty;
-        _window.Organization.SetMessage(organizations);
+        _window.Organization.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=16][bold]{organizations.ToMarkup()}[/bold][/font]"));
         _window.RoleType.Visible = names.IsEmpty;
 
         _window.NameLabel.Text = entityName;
