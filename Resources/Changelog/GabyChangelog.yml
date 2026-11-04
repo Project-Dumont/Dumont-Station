@@ -4920,3 +4920,9 @@ Entries:
       message: Adiciona a arte de lobby "A NT se importa com sua saúde"
   id: 585
   time: '2026-11-04T19:27:53.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: 'Agora RPD recebe dobro de carga quando recarregado. '
+  id: 586
+  time: '2026-11-04T21:16:24.0000000+00:00'
