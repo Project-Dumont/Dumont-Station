@@ -168,25 +168,41 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
         UpdateRoleType();
 
         // Dumont
-        var names = new List<string>();
-        var organizations = new List<string>();
+        var names = new FormattedMessage();
+        var organizations = new FormattedMessage();
+        var seenOrganizations = new HashSet<string>();
         foreach (var antagId in data.Antags)
         {
             if (!_prototypeManager.TryIndex(antagId, out var antag))
                 continue;
-            names.Add(Loc.GetString(antag.Name));
-            if (antag.Organization is { } organization)
-            {
-                var name = Loc.GetString(organization);
-                if (!organizations.Contains(name))
-                    organizations.Add(name);
-            }
+            if (!names.IsEmpty)
+                names.PushNewline();
+            var color = antag.OrganizationColor;
+            names.PushColor(new Color(color.R * 0.65f, color.G * 0.65f, color.B * 0.65f));
+            names.AddText(Loc.GetString(antag.Name));
+            names.Pop();
+            var organization = antag.Organization?.ToString() ?? "character-organization-unaffiliated";
+            if (!seenOrganizations.Add(organization))
+                continue;
+            if (!organizations.IsEmpty)
+                organizations.PushNewline();
+            organizations.PushColor(color);
+            organizations.AddText(Loc.GetString(organization));
+            organizations.Pop();
         }
-        _window.AntagName.Text = string.Join("\n", names);
-        _window.AntagName.Visible = names.Count > 0;
-        _window.Organization.Text = string.Join("\n", organizations);
-        _window.Organization.Visible = organizations.Count > 0;
-        _window.RoleType.Visible = names.Count == 0;
+        if (names.IsEmpty)
+        {
+            var isCrew = jobId is { } crewJob && crewJob != "Visitor"
+                && _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().Any(d => d.ID is not ("CentralCommand" or "Specific") && d.Roles.Contains(crewJob));
+            _window.RoleType.FontColorOverride = isCrew ? Color.FromHex("#2953a6") : Color.FromHex("#a6a6a6");
+            organizations.PushColor(isCrew ? Color.FromHex("#4080ff") : Color.White);
+            organizations.AddText(Loc.GetString(isCrew ? "character-organization-nanotrasen" : "character-organization-unaffiliated"));
+            organizations.Pop();
+        }
+        _window.AntagName.SetMessage(names);
+        _window.AntagName.Visible = !names.IsEmpty;
+        _window.Organization.SetMessage(organizations);
+        _window.RoleType.Visible = names.IsEmpty;
 
         _window.NameLabel.Text = entityName;
         _window.SubText.Text = job;

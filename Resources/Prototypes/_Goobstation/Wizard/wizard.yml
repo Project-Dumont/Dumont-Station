@@ -30,6 +30,7 @@
 - type: antag
   id: Wizard
   organization: character-organization-wizards # Dumont
+  organizationColor: "#00ffff"
   name: roles-antag-wizard-name
   antagonist: true
   setPreference: true

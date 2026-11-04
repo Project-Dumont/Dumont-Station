@@ -23,10 +23,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <BoxContainer Orientation="Horizontal" Margin="10 5 10 10">
         <ScrollContainer HScrollEnabled="False" SetWidth="250" Margin="5">
             <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
-                <Label Name="RoleType" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
-                <Label Name="Organization" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
-                <Label Name="AntagName" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
+                <RichTextLabel Name="Organization" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
                 <PanelContainer StyleClasses="LowDivider" Margin="0 5"/>
+                <RichTextLabel Name="AntagName" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
+                <Label Name="RoleType" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
                 <SpriteView OverrideDirection="South" Scale="4 4" Name="SpriteView" Access="Public" SetSize="128 128" HorizontalAlignment="Center" Margin="5 5 5 15"/>
                 <Label Name="NameLabel" Access="Public" HorizontalAlignment="Center"/>
                 <BoxContainer HorizontalAlignment="Center">

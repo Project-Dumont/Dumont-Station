@@ -1,3 +1,11 @@
 character-organization-syndicate = O Sindicato
 character-organization-forgotten = Os Deuses Esquecidos
 character-organization-wizards = Federação de Magos
+character-organization-hive = A Colmeia
+character-organization-narsie = Nar'Sie
+character-organization-unknown = O Desconhecido
+character-organization-ursal = Nova URSAL
+character-organization-spider = O Clã Aranha
+character-organization-underworld = O Submundo
+character-organization-nanotrasen = Nanotrasen
+character-organization-unaffiliated = Não-Afiliado

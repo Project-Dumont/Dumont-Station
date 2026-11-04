@@ -97,6 +97,7 @@
 - type: antag
   id: Nukeops
   organization: character-organization-syndicate # Dumont
+  organizationColor: "#ff0033"
   name: roles-antag-nuclear-operative-name
   antagonist: true
   setPreference: true
@@ -116,6 +117,7 @@
 - type: antag
   id: NukeopsMedic
   organization: character-organization-syndicate # Dumont
+  organizationColor: "#ff0033"
   name: roles-antag-nuclear-operative-agent-name
   antagonist: true
   setPreference: true
@@ -138,6 +140,7 @@
 - type: antag
   id: NukeopsCommander
   organization: character-organization-syndicate # Dumont
+  organizationColor: "#ff0033"
   name: roles-antag-nuclear-operative-commander-name
   antagonist: true
   setPreference: true

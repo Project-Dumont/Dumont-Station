@@ -1,5 +1,7 @@
 - type: antag
   id: Xenomorph
+  organization: character-organization-hive # Dumont
+  organizationColor: "#b040ff"
   name: roles-antag-xenomorph-name
   antagonist: true
   objective: roles-antag-xenomorph-objective

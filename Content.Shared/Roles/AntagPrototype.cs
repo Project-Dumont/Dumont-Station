@@ -36,6 +36,9 @@ public sealed partial class AntagPrototype : IPrototype
     [DataField]
     public LocId? Organization;
 
+    [DataField]
+    public Color OrganizationColor = Color.White;
+
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;

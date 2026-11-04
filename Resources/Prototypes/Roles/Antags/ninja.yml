@@ -78,6 +78,8 @@
 
 - type: antag
   id: SpaceNinja
+  organization: character-organization-spider # Dumont
+  organizationColor: "#00e040"
   name: roles-antag-space-ninja-name
   antagonist: true
   setPreference: false
