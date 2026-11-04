@@ -8,6 +8,8 @@
 
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" MinWidth="460">
 
+            <LineEdit Name="SearchBar" PlaceHolder="{Loc 'vending-machine-component-search-filter'}" HorizontalExpand="True" Margin="0 0 0 4" />
+
             <PanelContainer Name="GlassBackground" VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
                     <gfx:StyleBoxFlat BackgroundColor="#111115" />
@@ -24,7 +26,7 @@
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#1a1a1e" BorderColor="#0d0d11" BorderThickness="2" />
                     </PanelContainer.PanelOverride>
-                    <Label Text="DISPENSE" FontColorOverride="#333333" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Label Text="{Loc 'vending-machine-keypad-dispense'}" FontColorOverride="#333333" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </PanelContainer>
             </Control>
             <Control MinHeight="8" />
@@ -58,7 +60,7 @@
                         </PanelContainer.PanelOverride>
 
                         <BoxContainer Orientation="Vertical" Margin="8 6" HorizontalAlignment="Center">
-                            <Label Text="TARGET" StyleClasses="LabelSubText" FontColorOverride="#1a551a" HorizontalAlignment="Center"/>
+                            <Label Text="{Loc 'vending-machine-keypad-target'}" StyleClasses="LabelSubText" FontColorOverride="#1a551a" HorizontalAlignment="Center"/>
                             <Label Name="BufferLabel" HorizontalAlignment="Center" Margin="0 2 0 0" StyleClasses="LabelBig" FontColorOverride="#33ff33" />
                         </BoxContainer>
                     </PanelContainer>
@@ -69,7 +71,7 @@
             <Control VerticalExpand="True" />
 
             <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="12 0 12 12">
-                <Label Text="ROW" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />
+                <Label Text="{Loc 'vending-machine-keypad-row'}" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />
                 <PanelContainer>
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#111115" BorderColor="#222228" BorderThickness="1" ContentMarginLeftOverride="8" ContentMarginRightOverride="8" ContentMarginTopOverride="8" ContentMarginBottomOverride="8" />
@@ -81,7 +83,7 @@
             <PanelContainer StyleClasses="LowDivider" />
 
             <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="12 12 12 12">
-                <Label Text="COL" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />
+                <Label Text="{Loc 'vending-machine-keypad-col'}" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />
                 <PanelContainer>
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#111115" BorderColor="#222228" BorderThickness="1" ContentMarginLeftOverride="8" ContentMarginRightOverride="8" ContentMarginTopOverride="8" ContentMarginBottomOverride="8" />

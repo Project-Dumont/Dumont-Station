@@ -119,6 +119,7 @@
   name: prison
   suffix: AreaSecurity
   components:
+  - type: PrisonArea # Dumont
   - type: Sprite
     state: sec_prison
 

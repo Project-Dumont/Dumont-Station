@@ -62,4 +62,10 @@ public sealed partial class DumontCVars
     /// </summary>
     public static readonly CVarDef<float> ElectionTestDuration =
         CVarDef.Create("election.test_duration", 60f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// weather the smes have infinite power when there are no engineers
+    /// </summary>
+    public static readonly CVarDef<bool> SmesAutoRecharge =
+        CVarDef.Create("dumont.auto_smes_recharge", true, CVar.SERVERONLY);
 }

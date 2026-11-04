@@ -22,6 +22,11 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=8OPgIdn95Zg"
 
+- files: ["alors_on_danse.ogg"]
+  copyright: "Alors on Danse. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=VHoT4N43jK8"
+
 - files: ["american_idiot.ogg"]
   copyright: "American Idiot. Exported with cobalt.tools"
   license: "Custom"
@@ -36,6 +41,11 @@
   copyright: "Axel F. Exported with cobalt.tools"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=k85mRPqvMbE"
+
+- files: ["baby.ogg"]
+  copyright: "Baby. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=kffacxfA7G4"
 
 - files: ["baker_street.ogg"]
   copyright: "Baker Street. Exported with cobalt.tools"
@@ -382,6 +392,11 @@
   license: "Custom"
   source: "https://youtu.be/4QwZi9-7i5s?si=Z6ngKQKTwADn_CS1"
 
+- files: ["if_i_aint_got_you.ogg"]
+  copyright: "If I Ain't Got You. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Ju8Hr50Ckwk"
+
 - files: ["ill_never_smile_again.ogg"]
   copyright: "I'll Never Smile Again. Exported with cobalt.tools"
   license: "Custom"
@@ -567,6 +582,11 @@
   license: "Custom"
   source: "https://youtu.be/vlZ9MGgC1NI?si=-HXRYFPKtaxqH3tA"
 
+- files: ["red_spectacles_theme.ogg"]
+  copyright: "Red Spectacles Theme. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Vkfks9hwNO4"
+
 - files: ["relax.ogg"]
   copyright: "Relax. Exported with cobalt.tools"
   license: "Custom"
@@ -606,6 +626,11 @@
   copyright: "Somethin' Stupid. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/Y_t2gNCXYbY?si=GWGn27HDDq5qjmTq"
+
+- files: ["somewhere_i_belong.ogg"]
+  copyright: "Somewhere I Belong. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=zsCD5XCu6CM"
 
 - files: ["southern_nights.ogg"]
   copyright: "Southern Nights. Exported with cobalt.tools"

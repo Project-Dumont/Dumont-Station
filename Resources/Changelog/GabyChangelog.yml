@@ -4658,3 +4658,259 @@ Entries:
         chance de desmembrar.
   id: 550
   time: '2026-10-27T01:33:26.0000000+00:00'
+- author: Redmagician14
+  changes:
+    - type: Tweak
+      message: >-
+        Atualização da impressora de documentos para usar as tags [form],
+        [signature] e [check].
+  id: 551
+  time: '2026-10-28T20:55:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Cameras.
+  id: 552
+  time: '2026-10-28T21:42:05.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: 50 placas de bar novas foram adicionadas.
+  id: 553
+  time: '2026-10-29T17:14:40.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Diversos casacos de inverno foram respritados.
+  id: 554
+  time: '2026-10-29T17:15:48.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Multihit de machete completamente removido, attack rate buffado para
+        compensar. Vocês sabem o que fizeram.
+  id: 555
+  time: '2026-10-29T17:17:15.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Cargo agora é marrom.
+  id: 556
+  time: '2026-10-29T17:17:52.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: Devil.
+  id: 557
+  time: '2026-10-29T17:22:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Chameleon projector e morph.
+  id: 558
+  time: '2026-10-29T17:22:41.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Travamento de arma em armas que não deveriam travar.
+  id: 559
+  time: '2026-10-29T17:22:50.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adicina uma barra de pesquisa na máquina de venda.
+    - type: Tweak
+      message: >-
+        Agora aperta a tecla enter, na máquina de venda, vai aparecer o último
+        código digitado.
+    - type: Fix
+      message: Agora container de liquido aparece preenchido na interface.
+  id: 560
+  time: '2026-10-29T17:28:20.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora desligar máquinas respeita o acesso.
+    - type: Tweak
+      message: >-
+        Agora tecla de atalho para desligar máquinas só funciona em
+        computadores.
+    - type: Fix
+      message: >-
+        Agora o verbo de alternar energia não aparece duplicado em algumas
+        máquinas.
+  id: 561
+  time: '2026-10-29T17:28:53.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora para fazer o emote em dupla tem que aperta a tecla duas vezes.
+    - type: Fix
+      message: Agora ipc e sintético podem fazer emote em dupla.
+  id: 562
+  time: '2026-10-29T17:29:11.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Chapa e Forno foram adicionados para a alegria de algum cozinheiro.
+  id: 563
+  time: '2026-10-29T17:33:56.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Remove
+      message: Removido mecânica de sobrecarga dos APC.
+  id: 564
+  time: '2026-10-29T17:35:58.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: >-
+        Adicionados os station traits, eventos sorteados no começo do round que
+        mudam um pouco a estação.
+    - type: Add
+      message: >-
+        Novos station traits: Poeira Espacial, Aranha Inimiga Gigante,
+        Interpolação Infernal, Anoitecer, Alvorecer, Caos Burocrático, Pesquisas
+        Tonificadas, Death Rattle, Revolução Cibernética, Limpeza de Canos em
+        Dia e Dedetização em Dia. Para o Dumont
+  id: 565
+  time: '2026-10-29T17:46:43.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Genética rosa.
+    - type: Remove
+      message: Genética azul.
+  id: 566
+  time: '2026-10-29T17:59:41.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Labor Camp foi adicionado ao Outpost da Lavaland.
+    - type: Add
+      message: Nave civil da lavaland foi adicionado.
+    - type: Add
+      message: Nave de labor camp foi adicionado para a sec.
+    - type: Tweak
+      message: Outpost da Lavaland foi completamente refeito.
+  id: 567
+  time: '2026-10-29T18:02:06.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Agora os itens do culto cosmico são contrabando especial.
+  id: 568
+  time: '2026-10-30T21:08:37.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: SMES se carregam sozinhos quando não houver um engenheiro na estação.
+  id: 569
+  time: '2026-10-30T21:11:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: 'Sprites de Vulp. '
+  id: 570
+  time: '2026-10-30T21:12:15.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: >-
+        Nave de Transporte de Prisioneiros e Nave Civil da Lavaland foram
+        adicionadas nos mapas: Box, Gamma e Eclipse.
+    - type: Tweak
+      message: >-
+        Intercom de Prisão, Spawners extras da IA, Forno e Chapa foram
+        adicionados aos mapas.
+  id: 571
+  time: '2026-10-30T21:18:05.0000000+00:00'
+- author: GIZDCERA
+  changes:
+    - type: Add
+      message: Adicionados 55 discos de vinil com músicas já disponíveis na jukebox.
+  id: 572
+  time: '2026-10-31T01:38:30.0000000+00:00'
+- author: S34N, CRISO
+  changes:
+    - type: Add
+      message: Nova estação med-pop foi adicionada à rotação, Farragus.
+  id: 573
+  time: '2026-10-31T01:57:32.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Add
+      message: Adiciona novas músicas a Jukebox e ao Lobby
+  id: 574
+  time: '2026-10-31T14:11:15.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Remove
+      message: Oasis foi removido da rotação de mapas.
+  id: 575
+  time: '2026-10-31T14:14:10.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Fix
+      message: >-
+        A mochila do Radio Host agora pode vir com os suprimentos de emergência
+        novamente.
+    - type: Add
+      message: O Headset do Radio Host agora têm acesso aos canais de Serviço.
+  id: 576
+  time: '2026-11-01T15:50:25.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Tweak
+      message: O preço das caixas de vinil foram reduzidos para 300 spessos.
+  id: 577
+  time: '2026-11-01T15:51:02.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: A lei espacial está um pouco mais bem organizada no livro guia.
+    - type: Tweak
+      message: POP está mais fácil de ler.
+    - type: Fix
+      message: Não tem mais uma entrada de fiança velha no livro guia. My bad chat.
+  id: 578
+  time: '2026-11-02T15:41:40.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Tweak
+      message: Ajeita o spawnpoint do ghost role Syndicate Outpost Listener
+  id: 579
+  time: '2026-11-02T18:21:40.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Bar signs não mostram um erro quando desligados.
+  id: 580
+  time: '2026-11-02T21:19:16.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Fix
+      message: Labor Shuttle agora funciona de fato.
+  id: 581
+  time: '2026-11-03T19:44:45.0000000+00:00'
+- author: cha
+  changes:
+    - type: Add
+      message: Adiciona a arte de lobby "Pode ser qualquer um"
+  id: 582
+  time: '2026-11-04T06:04:17.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Fix
+      message: Algumas músicas e vozes agora não vão mais te deixar surdo.
+  id: 583
+  time: '2026-11-04T06:07:22.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Fix
+      message: Corrigido a progressão do culto cosmico
+    - type: Fix
+      message: Erros de sprites do Culto Cosmico foram arrumados
+  id: 584
+  time: '2026-11-04T06:42:32.0000000+00:00'

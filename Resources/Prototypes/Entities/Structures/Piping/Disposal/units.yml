@@ -118,7 +118,8 @@
       disposals: !type:Container
   - type: StaticPrice
     price: 70
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
 
 - type: entity
   id: DisposalUnit

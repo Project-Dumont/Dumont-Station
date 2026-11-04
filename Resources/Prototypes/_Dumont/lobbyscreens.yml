@@ -39,3 +39,9 @@
   background: /Textures/_Dumont/LobbyScreens/bloodcult.png
   name: Blood Cult
   artist: Struater
+
+- type: lobbyBackgroud
+  id: couldbeanyone
+  background: /Textures/_Dumont/LobbyScreens/couldbeanyone.webp
+  name: Pode ser qualquer um
+  artist: cha

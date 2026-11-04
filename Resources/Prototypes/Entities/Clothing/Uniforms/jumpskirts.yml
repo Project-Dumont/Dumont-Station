@@ -232,9 +232,9 @@
   description: It's made of a special fiber that gives special protection against biohazards. It has a geneticist rank stripe on it.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Medical/genetics.rsi # Goob
+    sprite: Clothing/Uniforms/Jumpskirt/genetics.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Medical/genetics.rsi # Goob
+    sprite: Clothing/Uniforms/Jumpskirt/genetics.rsi
 
 - type: entity
   parent: [ClothingUniformSkirtBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ MaterialBase ]
+  parent: [ MaterialBase, BaseMagicalContraband ]
   id: MaterialCosmicCultEntropy
   name: mote of entropy
   description: A solidified mote of entropic essence. Numbing to the touch.

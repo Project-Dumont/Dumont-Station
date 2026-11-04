@@ -354,3 +354,4 @@
     - type: CombatMode
       canDisarm: true
     - type: ExaminableCharacter # WWDP
+    - type: DuoEmote # Dumont - Duo emotes
