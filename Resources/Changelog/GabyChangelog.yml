@@ -4914,3 +4914,9 @@ Entries:
       message: Erros de sprites do Culto Cosmico foram arrumados
   id: 584
   time: '2026-11-04T06:42:32.0000000+00:00'
+- author: cha
+  changes:
+    - type: Add
+      message: Adiciona a arte de lobby "A NT se importa com sua saúde"
+  id: 585
+  time: '2026-11-04T19:27:53.0000000+00:00'
