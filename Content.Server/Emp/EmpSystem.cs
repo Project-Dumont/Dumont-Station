@@ -68,6 +68,9 @@ public sealed class EmpSystem : SharedEmpSystem
         if (attemptEv.Cancelled)
             return;
 
+        if (IsEmpWardedByContainer(uid))
+            return;
+
         DoEmpEffects(uid, energyConsumption, duration);
     }
 

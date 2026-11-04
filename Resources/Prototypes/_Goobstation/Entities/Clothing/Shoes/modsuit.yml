@@ -32,21 +32,6 @@
     parts:
     - LeftFoot
     - RightFoot
-  # GabyStation start
-  - type: ItemUpgradeable # Gaby modulos de modsuit usam o mesmo sistema de upgrades que PKAs
-  - type: ContainerContainer
-    containers:
-      boot_module: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      boot_module:
-        name: modsuit-upgrade-slot
-        insertDelay: 1.0
-        ejectDelay: 0.5
-        whitelist:
-          tags:
-          - ModsuitBootUpgrade
-  # GabyStation end
 
 - type: entity
   parent: ClothingShoesModsuitBase

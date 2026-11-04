@@ -52,6 +52,15 @@ public sealed partial class ModSuitSystem
         return ev.Succeeded;
     }
 
+    public void ChangeCharge(Entity<ModSuitComponent> ent, float amount)
+    {
+        if (GetCore(ent) is not { } core || !HasComp<ModCoreComponent>(core))
+            return;
+
+        var ev = new ModSuitBatteryChangeEvent { Amount = amount };
+        RaiseLocalEvent(core, ref ev);
+    }
+
     public float GetThemeDrain(Entity<ModSuitComponent> ent)
     {
         return _proto.Index(ent.Comp.Theme).ChargeDrain;

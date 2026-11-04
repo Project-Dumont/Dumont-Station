@@ -213,7 +213,7 @@ public sealed partial class ModPatientTransportSystem : EntitySystem
         if (HasComp<MobStateComponent>(args.Entity)
             && !TerminatingOrDeleted(args.Entity)
             && TryComp<StaminaComponent>(args.Entity, out var stamina))
-            _stamina.TakeStaminaDamage(args.Entity, stamina.CritThreshold, stamina, ignoreResist: true);
+            _stamina.TakeStaminaDamage(args.Entity, stamina.CritThreshold, stamina);
     }
 
     private void Dissolve(EntityUid bag)

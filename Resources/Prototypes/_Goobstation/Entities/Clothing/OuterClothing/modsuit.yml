@@ -51,21 +51,6 @@
     - RightArm
     - LeftLeg
     - RightLeg
-  # GabyStation begin
-  - type: ItemUpgradeable # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
-  - type: ContainerContainer
-    containers:
-      chest_module: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      chest_module:
-        name: modsuit-upgrade-slot
-        insertDelay: 1.0
-        ejectDelay: 0.5
-        whitelist:
-          tags:
-          - ModsuitChestUpgrade
-  # GabyStation end
 
 - type: entity
   parent: ClothingOuterModsuitBase

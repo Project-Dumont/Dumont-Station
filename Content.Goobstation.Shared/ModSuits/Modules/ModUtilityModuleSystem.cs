@@ -8,7 +8,6 @@ using Content.Shared.Emp;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -24,7 +23,6 @@ public sealed partial class ModUtilityModuleSystem : EntitySystem
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private ModSuitSystem _modSuit = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private SharedBatterySystem _battery = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedItemSystem _item = default!;
@@ -36,7 +34,7 @@ public sealed partial class ModUtilityModuleSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnWardEmpAttempt(Entity<ModEmpWardComponent> ent, ref EmpAttemptEvent args)
     {
-        args.Cancelled = true;
+        args.Cancel();
     }
 
     [SubscribeLocalEvent]
@@ -101,10 +99,10 @@ public sealed partial class ModUtilityModuleSystem : EntitySystem
                 continue;
 
             var moved = MathF.Min((position.Position - previous.Position).Length(), torsion.MaxTilesPerUpdate);
-            if (moved <= 0.01f || _modSuit.GetBattery(suit) is not { } battery)
+            if (moved <= 0.01f)
                 continue;
 
-            _battery.ChangeCharge(battery.AsNullable(), moved * torsion.ChargePerTile);
+            _modSuit.ChangeCharge(suit, moved * torsion.ChargePerTile);
         }
     }
 

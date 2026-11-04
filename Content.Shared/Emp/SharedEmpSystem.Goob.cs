@@ -7,7 +7,7 @@ public abstract partial class SharedEmpSystem
 {
     [Dependency] private readonly SharedContainerSystem _goobContainer = default!;
 
-    private bool IsEmpWardedByContainer(EntityUid uid)
+    protected bool IsEmpWardedByContainer(EntityUid uid)
     {
         var current = uid;
         while (_goobContainer.TryGetContainingContainer((current, null, null), out var container))

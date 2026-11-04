@@ -1,6 +1,6 @@
 using Content.Goobstation.Shared.ModSuits.Components;
 using Content.Goobstation.Shared.ModSuits.Systems;
-using Content.Shared._Trauma.Projectiles;
+using Content.Shared._Lavaland.Weapons.Ranged.Events;
 using Content.Shared.Actions;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Movement.Systems;
@@ -298,12 +298,13 @@ public sealed partial class ModGunModulesSystem : VirtualController
     }
 
     [SubscribeLocalEvent]
-    private void OnPlayerShot(ref PlayerShotProjectileEvent args)
+    private void OnPlayerShot(Entity<GunComponent> gun, ref ProjectileShotEvent args)
     {
-        if (!TryComp<ModShootingAssistantComponent>(args.User, out var assistant)
+        if (!TryComp<ProjectileComponent>(args.FiredProjectile, out var projectile)
+            || projectile.Shooter is not { } user
+            || !TryComp<ModShootingAssistantComponent>(user, out var assistant)
             || assistant.Mode != ModShootingMode.Sharpshooter
-            || !TryComp<ModShootingAssistantModuleComponent>(assistant.Module, out var module)
-            || !TryComp<ProjectileComponent>(args.Projectile, out var projectile))
+            || !TryComp<ModShootingAssistantModuleComponent>(assistant.Module, out var module))
             return;
 
         projectile.Damage *= module.SharpshooterDamage;
