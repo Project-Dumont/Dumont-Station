@@ -4926,3 +4926,9 @@ Entries:
       message: 'Agora RPD recebe dobro de carga quando recarregado. '
   id: 586
   time: '2026-11-04T21:16:24.0000000+00:00'
+- author: Wolfguiter
+  changes:
+    - type: Fix
+      message: Corrigido laser de emitters passando pela SuperMatter.
+  id: 587
+  time: '2026-11-05T01:40:54.0000000+00:00'
