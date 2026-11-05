@@ -122,6 +122,7 @@ namespace Content.Client.Chat.UI
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] protected IConfigurationManager ConfigManager = default!;
         private readonly SharedTransformSystem _transformSystem;
+        private readonly Color? _fontColor;
 
         public enum SpeechType : byte
         {
@@ -195,6 +196,7 @@ namespace Content.Client.Chat.UI
         {
             IoCManager.InjectDependencies(this);
             _senderEntity = senderEntity;
+            _fontColor = fontColor;
             _transformSystem = _entityManager.System<SharedTransformSystem>();
             MouseFilter = MouseFilterMode.Ignore;
 
@@ -219,7 +221,7 @@ namespace Content.Client.Chat.UI
         public void RebuildContents(ChatMessage message, string style)
         {
             RemoveAllChildren();
-            var bubble = BuildBubble(message, style);
+            var bubble = BuildBubble(message, style, _fontColor);
             AddChild(bubble);
             ForceRunStyleUpdate();
             bubble.Measure(Vector2Helpers.Infinity);
