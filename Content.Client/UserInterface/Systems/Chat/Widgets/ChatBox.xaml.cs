@@ -60,11 +60,11 @@ namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 public partial class ChatBox : UIWidget
 {
     // <Trauma>
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
     // </Trauma>
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private ILogManager _log = default!;
 
     private readonly ISawmill _sawmill;
     private readonly ChatUIController _controller;
@@ -156,6 +156,7 @@ public partial class ChatBox : UIWidget
     private void OnChannelSelect(ChatSelectChannel channel)
     {
         _controller.UpdateSelectedChannel(this);
+        _controller.UpdateTypingPreview(this);
     }
 
     // Goobstation moved to .Goob.cs
@@ -277,6 +278,7 @@ public partial class ChatBox : UIWidget
 
         // Warn typing indicator about change
         _controller.NotifyChatTextChange();
+        _controller.UpdateTypingPreview(this);
     }
 
     private void OnFocusEnter(LineEditEventArgs args)

@@ -115,12 +115,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Chat.UI
 {
-    public abstract class SpeechBubble : Control
+    public abstract partial class SpeechBubble : Control
     {
-        [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly IEyeManager _eyeManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] protected readonly IConfigurationManager ConfigManager = default!;
+        [Dependency] private IGameTiming _timing = default!;
+        [Dependency] private IEyeManager _eyeManager = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] protected IConfigurationManager ConfigManager = default!;
         private readonly SharedTransformSystem _transformSystem;
 
         public enum SpeechType : byte
@@ -157,7 +157,7 @@ namespace Content.Client.Chat.UI
         /// <summary>
         /// The time at which this bubble will die.
         /// </summary>
-        private TimeSpan _deathTime;
+        private TimeSpan? _deathTime;
 
         public float VerticalOffset { get; set; }
         private float _verticalOffsetAchieved;
@@ -213,13 +213,26 @@ namespace Content.Client.Chat.UI
             _deathTime = _timing.RealTime + (totalTime ?? TotalTime);
         }
 
+        // Dumont
+        public void MakePermanent() => _deathTime = null;
+
+        public void RebuildContents(ChatMessage message, string style)
+        {
+            RemoveAllChildren();
+            var bubble = BuildBubble(message, style);
+            AddChild(bubble);
+            ForceRunStyleUpdate();
+            bubble.Measure(Vector2Helpers.Infinity);
+            ContentSize = bubble.DesiredSize;
+        }
+
         protected abstract Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null);
 
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
 
-            var timeLeft = (float)(_deathTime - _timing.RealTime).TotalSeconds;
+            var timeLeft = (float)((_deathTime - _timing.RealTime)?.TotalSeconds ?? float.MaxValue);
             if (_entityManager.Deleted(_senderEntity) || timeLeft <= 0)
             {
                 // Timer spawn to prevent concurrent modification exception.
@@ -287,7 +300,7 @@ namespace Content.Client.Chat.UI
         /// </summary>
         public void FadeNow()
         {
-            if (_deathTime > _timing.RealTime)
+            if (_deathTime is null || _deathTime > _timing.RealTime)
             {
                 _deathTime = _timing.RealTime + FadeTime;
             }
@@ -346,68 +359,20 @@ namespace Content.Client.Chat.UI
 
         protected override Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null)
         {
-            if (!ConfigManager.GetCVar(CCVars.ChatEnableFancyBubbles))
+            var label = new RichTextLabel
             {
-                var label = new RichTextLabel
-                {
-                    MaxWidth = SpeechMaxWidth
-                };
-
-                label.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
-
-                var unfanciedPanel = new PanelContainer
-                {
-                    StyleClasses = { "speechBox", speechStyleClass },
-                    Children = { label },
-                    ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity)),
-                };
-                return unfanciedPanel;
-            }
-
-            var bubbleHeader = new RichTextLabel
-            {
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleSpeakerOpacity)),
-                Margin = new Thickness(1, 1, 1, 1),
+                MaxWidth = SpeechMaxWidth
             };
 
-            var bubbleContent = new RichTextLabel
-            {
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleTextOpacity)),
-                MaxWidth = SpeechMaxWidth,
-                Margin = new Thickness(2, 6, 2, 2),
-                StyleClasses = { "bubbleContent" },
-            };
+            label.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
 
-            //We'll be honest. *Yes* this is hacky. Doing this in a cleaner way would require a bottom-up refactor of how saycode handles sending chat messages. -Myr
-            bubbleHeader.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleHeader", fontColor));
-            bubbleContent.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
-
-            //As for below: Some day this could probably be converted to xaml. But that is not today. -Myr
-            var mainPanel = new PanelContainer
+            var unfanciedPanel = new PanelContainer
             {
                 StyleClasses = { "speechBox", speechStyleClass },
-                Children = { bubbleContent },
+                Children = { label },
                 ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity)),
-                HorizontalAlignment = HAlignment.Center,
-                VerticalAlignment = VAlignment.Bottom,
-                Margin = new Thickness(4, 14, 4, 2)
             };
-
-            var headerPanel = new PanelContainer
-            {
-                StyleClasses = { "speechBox", speechStyleClass },
-                Children = { bubbleHeader },
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.ChatFancyNameBackground) ? ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity) : 0f),
-                HorizontalAlignment = HAlignment.Center,
-                VerticalAlignment = VAlignment.Top
-            };
-
-            var panel = new PanelContainer
-            {
-                Children = { mainPanel, headerPanel }
-            };
-
-            return panel;
+            return unfanciedPanel;
         }
     }
 }
