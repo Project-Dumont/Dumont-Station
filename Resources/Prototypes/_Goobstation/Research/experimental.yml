@@ -49,7 +49,7 @@
   - ModsuitPlatingExternal
   - ModsuitCoreStandard
   - ModsuitModuleStorageCompact
-  - ModsuitModuleStorageCase
+#  - ModsuitModuleStorageCase
   - ModsuitModuleFlashlight
   position: -4,-1
   technologyPrerequisites:
@@ -65,7 +65,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - ModsuitCorePlasma
+#  - ModsuitCorePlasma crashes the game
   - ModsuitModuleStorageLarge
   - ModsuitModuleWelding
   - ModsuitModuleThermalRegulator

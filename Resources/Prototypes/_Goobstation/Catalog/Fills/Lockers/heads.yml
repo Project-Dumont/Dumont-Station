@@ -62,7 +62,6 @@
     - id: HandheldCrewMonitorBSO
     - id: BlueshieldUndeterminedWeapon
     - id: ClothingOuterHardsuitBlueshieldLight
-    - id: ModsuitPlatingPraetorian
     - id: FlashlightSeclite
     - id: ClothingShoesHighheelBootsCombat # Gabystation
 

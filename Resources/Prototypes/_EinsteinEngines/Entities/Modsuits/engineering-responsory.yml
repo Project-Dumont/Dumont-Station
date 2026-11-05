@@ -125,6 +125,10 @@
           shader: unshaded
     - type: Clothing
       clothingVisuals:
+        head:
+        - state: equipped-HEAD-sealed
+        - state: equipped-HEAD-sealed-unshaded
+          shader: unshaded
         head-vulpkanin:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded

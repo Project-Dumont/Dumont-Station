@@ -124,6 +124,10 @@
           shader: unshaded
     - type: Clothing
       clothingVisuals:
+        head:
+        - state: equipped-HEAD-sealed
+        - state: equipped-HEAD-sealed-unshaded
+          shader: unshaded
         head-vulpkanin:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
@@ -168,8 +172,6 @@
         - state: equipped-OUTERCLOTHING-sealed
         outerClothing:
         - state: equipped-OUTERCLOTHING-sealed
-        - state: equipped-OUTERCLOTHING-sealed-unshaded
-          shader: unshaded
         outerClothing-vox:
         - state: equipped-OUTERCLOTHING-sealed-vox
     - type: StaminaResistance

@@ -267,8 +267,8 @@
   - ModsuitModulePepperShoulders
   - ModsuitModuleRestraintAssist
 #  - ModsuitModuleBulwark
-  - ModsuitModuleEmpShield
-  - ModsuitModuleThermalVisor
+  - ModsuitModuleEmpShieldAdvanced
+#  - ModsuitModuleThermalVisor
   - ModsuitModuleShockAbsorber
   - ModsuitModuleCriminalCapture
   - ModsuitModuleMagneticHarness

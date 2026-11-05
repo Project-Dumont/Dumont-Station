@@ -168,7 +168,7 @@
         - id: OxygenTankFilled
         - id: NitrogenTankFilled
         - id: ClothingShoesBootsMag
-        - id: UndeterminedVoidsuitEngineer # Goob edit
+        - id: ClothingOuterHardsuitEngineering
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Engineering"]]

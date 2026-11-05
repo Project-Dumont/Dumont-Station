@@ -356,7 +356,7 @@
   - ClothingBackpackDuffelHolding
   - ClothingBackpackMessengerHolding # Frontier
   - ModsuitModuleStorageBluespace # Goob
-  - ModsuitModuleStorageHolding # Goob
+#  - ModsuitModuleStorageHolding # the bluespace storage is right there durk, why have you done this
   # Goobstation R&D Console rework start
   position: 2,-7
   technologyPrerequisites:

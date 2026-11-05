@@ -149,13 +149,13 @@
   - ModsuitPlatingParamedic
   - ModsuitModuleHealthAnalyzer
   - ModsuitModuleVisorMedical
-  - ModsuitModuleQuickCarry
+#  - ModsuitModuleQuickCarry
   - ModsuitModuleInjector
   - ModsuitModuleDefibrillator
   - ModsuitModulePatientTransport
   - ModsuitModuleThreadRipper
   - ModsuitModuleQuickCarryAdvanced
-  - ModsuitModuleNightVisor
+#  - ModsuitModuleNightVisor
   position: 3,7
   technologyPrerequisites:
   - ModsuitsTech
@@ -177,7 +177,7 @@
   - ModsuitModuleBurgerDispenser
   - ModsuitModulePaperDispenser
   - ModsuitModuleBalloonBlower
-  - ModsuitModuleStamper
+#  - ModsuitModuleStamper crashes the game
   - ModsuitModuleFishingGlove
   position: 4,7
   technologyPrerequisites:

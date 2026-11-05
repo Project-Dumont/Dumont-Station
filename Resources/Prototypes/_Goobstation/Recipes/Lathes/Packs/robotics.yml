@@ -54,13 +54,13 @@
   id: ModsuitModules
   recipes:
   - ModsuitCoreStandard
-  - ModsuitCorePlasma
+#  - ModsuitCorePlasma
   - ModsuitCoreStandardMicroreactor
   - ModsuitModuleStorageCompact
   - ModsuitModuleStorageLarge
   - ModsuitModuleStorageBluespace
-  - ModsuitModuleStorageHolding
-  - ModsuitModuleStorageCase
+#  - ModsuitModuleStorageHolding
+#  - ModsuitModuleStorageCase
   - ModsuitModuleKinesis
   - ModsuitModuleJointTorsion
   - ModsuitModuleGloveTranslator
@@ -91,7 +91,7 @@
   - ModsuitModuleResinMister
   - ModsuitModuleAntiGravity
   - ModsuitModuleJetpackAdvanced
-  - ModsuitModuleMagbootsAdvanced
+#  - ModsuitModuleMagbootsAdvanced
   - ModsuitModuleJumpJet
   - ModsuitModuleEmpShieldAdvanced
 
@@ -101,7 +101,7 @@
   - ModsuitPlatingParamedic
   - ModsuitModuleHealthAnalyzer
   - ModsuitModuleVisorMedical
-  - ModsuitModuleQuickCarry
+#  - ModsuitModuleQuickCarry
   - ModsuitModuleInjector
   - ModsuitModuleDefibrillator
   - ModsuitModulePatientTransport
@@ -113,14 +113,14 @@
   id: ModsuitSecurity
   recipes:
   - ModsuitPlatingSecurity
-  - ModsuitPlatingBrigMed
+#  - ModsuitPlatingBrigMed
   - ModsuitModuleVisorSecurity
   - ModsuitModuleHolster
   - ModsuitModuleMegaphone
   - ModsuitModulePepperShoulders
   - ModsuitModuleRestraintAssist
 #  - ModsuitModuleBulwark
-  - ModsuitModuleEmpShield
+  - ModsuitModuleEmpShieldAdvanced
   - ModsuitModuleThermalVisor
   - ModsuitModuleNightVisor
   - ModsuitModuleShockAbsorber
@@ -139,16 +139,16 @@
   - ModsuitModuleBurgerDispenser
   - ModsuitModulePaperDispenser
   - ModsuitModuleBalloonBlower
-  - ModsuitModuleStamper
+#  - ModsuitModuleStamper crashes the game
   - ModsuitModuleFishingGlove
 
 - type: latheRecipePack
   id: ModsuitSupply
   recipes:
-  - ModsuitPlatingMining
+#  - ModsuitPlatingMining
   - ModsuitModuleCandelaSpool
   - ModsuitModuleDrill
-  - ModsuitModuleOreBag
+#  - ModsuitModuleOreBag
   - ModsuitModuleClamp
 
 - type: latheRecipePack

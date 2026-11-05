@@ -327,7 +327,7 @@
   - type: ModModule
     moduleType: Toggle
     complexity: 3
-    activePower: 20
+    activePower: 10
     requiredParts:
     - outerClothing
     incompatible:
@@ -769,7 +769,7 @@
     - gloves
   - type: ModDeviceModule
     device: ModsuitDeviceMister
-
+#
 - type: entity
   parent: BaseModsuitModuleDevice
   id: ModsuitModuleResinMister
@@ -1198,7 +1198,7 @@
   parent: BaseItem
   id: ModsuitDeviceResinMister
   name: MOD resin launcher
-  description: Fires globs of quick-setting metal foam. Recharges from the suit's internal reservoir.
+  description: Fires globs of atmos resin. Recharges from the suit's internal reservoir.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -1218,7 +1218,7 @@
     soundEmpty:
       path: /Audio/Items/hiss.ogg
   - type: BasicEntityAmmoProvider
-    proto: ModsuitResinGlob
+    proto: AtmosResin
     capacity: 5
     count: 5
   - type: RechargeBasicEntityAmmo
@@ -1391,7 +1391,7 @@
 
 - type: entity
   parent: BaseModsuitModuleSyndicate
-  id: ModsuitModuleChameleon
+  id: ModsuitModuleChameleon # this one has an error where if disguise the modsuit then remove the module then turn on the modsuit it shows an error but do we care that much
   name: MOD chameleon module
   description: A module using chameleon technology to disguise the control unit as another backpack.
   components:
@@ -1838,7 +1838,7 @@
   - type: ModModule
     moduleType: Toggle
     complexity: 3
-    activePower: 10
+    activePower: 20
     requiredParts:
     - outerClothing
     incompatible:
@@ -1919,7 +1919,7 @@
   parent: BaseModsuitModule
   id: ModsuitModuleShockAbsorber
   name: "MOD shock absorption module"
-  description: "A module that makes the user resistant to the knockdown and CNS disruption inflicted by Stun Batons."
+  description: "A module that makes the user resistant to stamina damage."
   components:
   - type: Sprite
     state: no_baton

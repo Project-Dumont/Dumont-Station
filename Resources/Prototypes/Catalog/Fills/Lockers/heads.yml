@@ -201,7 +201,6 @@
   id: LockerFillCaptainNoLaser
   table: !type:AllSelector
     children:
-    - id: ModsuitPlatingCaptain # Goob
     - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
@@ -221,9 +220,6 @@
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
     - id: CommandMegaphone # GabyStation
-      conditions:
-      - !type:PlayerCountCondition
-        max: 15
 #    - id: SecApartmentTablet # Dumont edit not the captain's job.
 
 # No laser table + Laser table
@@ -476,7 +472,6 @@
   id: LockerFillResearchDirectorNoHardsuit
   table: !type:AllSelector
     children:
-    - id: ModsuitPlatingRD # Goob
     - id: Intellicard
     - id: BoxEncryptionKeyScience
     - id: FlatpackScienceComputerComms

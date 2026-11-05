@@ -632,7 +632,7 @@
     lightMask: ConeSingle
     autoRot: true
     netsync: true
-
+#
 - type: entity
   parent: BaseClothingModsuitHelmet
   id: ClothingModsuitHelmetCaptain

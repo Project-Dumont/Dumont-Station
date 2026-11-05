@@ -173,6 +173,8 @@
         blockSmokeIngestion: True
     - type: Clothing
       clothingVisuals:
+        head:
+        - state: equipped-HEAD
         head-vulpkanin:
         - state: equipped-HEAD
         head-feroxi:
@@ -336,7 +338,7 @@
   components:
     - type: Sprite
       sprite: _Goobstation/Clothing/OuterClothing/Modsuits/nct.rsi
-
+#
 - type: entity
   parent: [ClothingModsuitHelmetCorporate, ClothingModsuitHelmetStandard, BaseCentcommContraband]
   id: ClothingModsuitHelmetTrainer
@@ -367,12 +369,16 @@
       reduction: 0.2
     - type: Clothing
       clothingVisuals:
+        head:
+        - state: equipped-HEAD
         head-vulpkanin:
         - state: equipped-HEAD
         head-feroxi:
         - state: equipped-HEAD
     - type: ModSuitSealedVisuals
       clothingVisuals:
+        head:
+        - state: equipped-HEAD-sealed
         head-resomi:
         - state: equipped-HEAD-sealed
         head-vulpkanin:

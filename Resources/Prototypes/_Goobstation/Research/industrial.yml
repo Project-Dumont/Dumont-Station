@@ -131,9 +131,8 @@
   - ModsuitModuleResinMister
   - ModsuitModuleAntiGravity
   - ModsuitModuleJetpackAdvanced
-  - ModsuitModuleMagbootsAdvanced
+#  - ModsuitModuleMagbootsAdvanced what, chief engineer boots for crew? no.
   - ModsuitModuleJumpJet
-  - ModsuitModuleEmpShieldAdvanced
   position: -3,-5
   technologyPrerequisites:
   - ModsuitEngineeringTech
@@ -148,10 +147,10 @@
   tier: 2
   cost: 7500
   recipeUnlocks:
-  - ModsuitPlatingMining
+#  - ModsuitPlatingMining to minevend
   - ModsuitModuleDrill
   - ModsuitModuleCandelaSpool
-  - ModsuitModuleOreBag
+#  - ModsuitModuleOreBag not working
   - ModsuitModuleClamp
   position: -4,-4
   technologyPrerequisites:

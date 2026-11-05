@@ -93,16 +93,6 @@
     cost: 1000
   - id: LavalandEquipmentExplorerSuit
     cost: 1000
-  # GabyStation modulos begin
-  - id: ModsuitModuleJump
-    cost: 1000
-  - id: ModsuitModuleMagboot
-    cost: 1000
-  - id: ModsuitModuleDrill
-    cost: 1000
-  - id: ModsuitModuleGPS
-    cost: 1000
-  # GabyStation modulos end
   - id: LavalandWeaponKineticMachete
     cost: 1050
   - id: LavalandWeaponKineticClaws
@@ -133,8 +123,6 @@
     cost: 2000
   - id: ClothingOuterHardsuitSalvage
     cost: 2000
-  - id: ModsuitModuleDiamondDrill #Gabystation modulos
-    cost: 2000
     #TODO: super resonator for 2500
   - id: ClothingOuterHardsuitDarkLuxury # Gabystation edit
     cost: 3000 #still costs more than just buying it with spesos you got from vendor but whatever
@@ -149,6 +137,8 @@
   - id: ClothingNeckEnsembleSalvager #Earn. It.
     cost: 10000
   - id: CrateCargoClarkeAssembly
-    cost: 12500 #TODO: Make modules real (Gabystation kk isso foi feito :D)
+    cost: 12500
+  - id: ModsuitPlatingMining
+    cost: 5000
   # TODO: luxury elite bar capsule for 10k
   # TODO: mining drone stuff
