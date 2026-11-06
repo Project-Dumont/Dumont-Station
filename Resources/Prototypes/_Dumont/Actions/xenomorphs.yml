@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphQueenHive
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -14,6 +15,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphQueenWord
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -30,6 +32,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphQueenOrder
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -46,6 +49,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphQueenPheromones
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -60,6 +64,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphOrderHiveConstruction
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     raiseOnUser: true
@@ -71,6 +76,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphPlaceHiveConstruction
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     raiseOnUser: true
@@ -87,6 +93,7 @@
 - type: entity
   parent: BaseAction
   id: ActionXenomorphRadioJammer
+  categories: [HideSpawnMenu]
   components:
   - type: Action
     raiseOnUser: true

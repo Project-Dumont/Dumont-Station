@@ -1,6 +1,7 @@
 # Combat action
 - type: entity
   id: ActionCombatModeToggleXenomorph
+  categories: [HideSpawnMenu]
   parent: ActionCombatModeToggle
   components:
   - type: Action
@@ -10,6 +11,7 @@
 # Thermal action
 - type: entity
   id: ToggleThermalVisionXenomorph
+  categories: [HideSpawnMenu]
   parent: ToggleThermalVision
   components:
   - type: Action
@@ -19,6 +21,7 @@
 # Evolution actions
 - type: entity
   id: ActionEvolution
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Evolve
   description: Evolve into a higher xenomorph caste.
@@ -33,6 +36,7 @@
 
 - type: entity
   id: ActionEvolutionPraetorian
+  categories: [HideSpawnMenu]
   parent: ActionEvolution
   name: Evolve to praetorian (500)
   description: Evolve into the main defender of the hive.
@@ -44,6 +48,7 @@
 
 - type: entity
   id: ActionEvolutionQueen
+  categories: [HideSpawnMenu]
   parent: ActionEvolutionPraetorian
   name: Evolve to queen (500)
   description: Produce an internal egg sac capable of spawning children. Only one queen can exist at a time.
@@ -54,6 +59,7 @@
 # Structures actions
 - type: entity
   id: ActionSpawnResinWeedNode
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Plant weeds (50)
   description: Plants some xenomorph weeds.
@@ -76,6 +82,7 @@
 
 - type: entity
   id: ActionSpawnXenomorphEgg
+  categories: [HideSpawnMenu]
   name: Lay egg (75)
   description: Lay an egg to produce facehuggers to impregnate prey with.
   components:
@@ -98,6 +105,7 @@
 # TODO: delete it
 - type: entity
   id: ActionSpawnWallResin
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Build a resin wall (50)
   description: Secrete tough malleable resin.
@@ -171,6 +179,7 @@
 # TODO: delete it
 - type: entity
   id: ActionSpawnResinNest
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Build a resin nest (50)
   description: Secrete tough malleable resin.
@@ -197,6 +206,7 @@
 # Tail lash action
 - type: entity
   id: ActionTailLash
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Tail lash
   description: Hit your opponent with your tail.
@@ -213,6 +223,7 @@
 # Dumont start
 - type: entity
   id: ActionAcid
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Corrosive acid (100)
   description: Drench a structure in acid, destroying it over time.
@@ -235,6 +246,7 @@
 
 - type: entity
   id: ActionAcidSpit
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Neurotoxin spit (20)
   description: Toggle neurotoxin spit. Use secondary attack to spit while enabled.
@@ -248,6 +260,7 @@
 
 - type: entity
   id: ActionFaceHuggerLeap
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Leap
   description: Leap onto a victim's face to infect them.
@@ -266,6 +279,7 @@
 
 - type: entity
   id: ActionQueenroar
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Roar
   description: Unleash a deafening roar that stuns nearby enemies.
@@ -282,6 +296,7 @@
 # Jump action
 - type: entity
   id: ActionJumpXenomorph
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Jump
   description: Stun your enemies with a quick jump.
@@ -300,6 +315,7 @@
 # Transfer plasma action
 - type: entity
   id: ActionTransferPlasma
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Transfer plasma (50)
   description: Passes plasma to your friend.
@@ -319,6 +335,7 @@
 # Promotion action
 - type: entity
   id: ActionXenomorphPromotion
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Promote to Praetorian (500) # Goobstation
   description: Directly promote a xenomorph to Praetorian status. # Goobstation
