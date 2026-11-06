@@ -1,0 +1,178 @@
+
+# For mapping shutters
+# no window
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersCommand
+  suffix: Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersKitchen
+  suffix: Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersBar
+  suffix: Bar, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersExternal
+  suffix: External, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersRobotics
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersSecurity
+  suffix: Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersCargo
+  suffix: Cargo, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersNormal
+  id: ShuttersArmory
+  suffix: Armory, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: AccessReader
+    containerAccessProvider: board
+# Window
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowCommand
+  suffix: Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowKitchen
+  suffix: Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowBar
+  suffix: Bar, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowExternal
+  suffix: External, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowRobotics
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowSecurity
+  suffix: Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowCargo
+  suffix: Cargo, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+- type: entity
+  parent: ShuttersWindow
+  id: ShuttersWindowArmory
+  suffix: Armory, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: AccessReader
+    containerAccessProvider: board
