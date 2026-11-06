@@ -41,6 +41,7 @@
   name: nuclear fission explosive
   description: You probably shouldn't stick around to see if this is armed.
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: Transform
     anchored: true
   - type: Sprite

@@ -1,6 +1,7 @@
 # Combat action
 - type: entity
   id: ActionCombatModeToggleXenomorph
+  categories: [HideSpawnMenu]
   parent: ActionCombatModeToggle
   components:
   - type: Action
@@ -10,6 +11,7 @@
 # Thermal action
 - type: entity
   id: ToggleThermalVisionXenomorph
+  categories: [HideSpawnMenu]
   parent: ToggleThermalVision
   components:
   - type: Action
@@ -19,6 +21,7 @@
 # Evolution actions
 - type: entity
   id: ActionEvolution
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Evolve
   description: Evolve into a higher xenomorph caste.
@@ -27,12 +30,13 @@
     checkCanInteract: false
     itemIconStyle: BigAction
     useDelay: 0
-    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: evolve }
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: evolve }
   - type: InstantAction
     event: !type:EvolutionsActionEvent
 
 - type: entity
   id: ActionEvolutionPraetorian
+  categories: [HideSpawnMenu]
   parent: ActionEvolution
   name: Evolve to praetorian (500)
   description: Evolve into the main defender of the hive.
@@ -44,6 +48,7 @@
 
 - type: entity
   id: ActionEvolutionQueen
+  categories: [HideSpawnMenu]
   parent: ActionEvolutionPraetorian
   name: Evolve to queen (500)
   description: Produce an internal egg sac capable of spawning children. Only one queen can exist at a time.
@@ -54,6 +59,7 @@
 # Structures actions
 - type: entity
   id: ActionSpawnResinWeedNode
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Plant weeds (50)
   description: Plants some xenomorph weeds.
@@ -76,6 +82,7 @@
 
 - type: entity
   id: ActionSpawnXenomorphEgg
+  categories: [HideSpawnMenu]
   name: Lay egg (75)
   description: Lay an egg to produce facehuggers to impregnate prey with.
   components:
@@ -98,6 +105,7 @@
 # TODO: delete it
 - type: entity
   id: ActionSpawnWallResin
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Build a resin wall (50)
   description: Secrete tough malleable resin.
@@ -117,6 +125,7 @@
       blockedCollisionLayer:
       - WallLayer
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 50 # Goobstation
 
 # TODO: delete it # Goobstation - removed
@@ -164,11 +173,13 @@
       - TableLayer
       - BulletImpassable
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 75
 
 # TODO: delete it
 - type: entity
   id: ActionSpawnResinNest
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Build a resin nest (50)
   description: Secrete tough malleable resin.
@@ -176,7 +187,7 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon: { sprite : _White/Structures/Windows/resin_membrane.rsi, state: full }
+    icon: { sprite: _White/Structures/Furniture/resin_nest.rsi, state: full } # Dumont
   - type: TargetAction
     range: 2
   - type: WorldTargetAction
@@ -189,11 +200,13 @@
       - TableLayer
       - BulletImpassable
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 50 # Goobstation
 
 # Tail lash action
 - type: entity
   id: ActionTailLash
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Tail lash
   description: Hit your opponent with your tail.
@@ -207,30 +220,83 @@
   - type: WorldTargetAction
     event: !type:TailLashActionEvent
 
-# Acid action - Goob Commented out until future fix
-#- type: entity
-#  id: ActionAcid
-#  parent: BaseAction
-#  name: Corrosive acid (200)
-#  description: Drench an object in acid, destroying it over time.
-#  components:
-#  - type: Action
-#    useDelay: 11
-#    itemIconStyle: BigAction # Goobstation
-#    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid } # Goobstation
-#  - type: TargetAction
-#    interactOnMiss: false
-#    range: 2
-#    targetingIndicator: true # Goobstation
-#    checkCanAccess: true # Goobstation
-#  - type: EntityTargetAction
-#    event: !type:AcidActionEvent
-#  - type: PlasmaCostAction
-#    plasmaCost: 200
+# Dumont start
+- type: entity
+  id: ActionAcid
+  categories: [HideSpawnMenu]
+  parent: BaseAction
+  name: Corrosive acid (100)
+  description: Drench a structure in acid, destroying it over time.
+  components:
+  - type: Action
+    useDelay: 11
+    raiseOnUser: true
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid }
+  - type: TargetAction
+    interactOnMiss: false
+    range: 2
+    targetingIndicator: true
+    checkCanAccess: true
+  - type: EntityTargetAction
+    event: !type:AcidActionEvent
+  - type: PlasmaCostAction
+    plasmaCost: 100
+    shouldChangePlasma: false
+
+- type: entity
+  id: ActionAcidSpit
+  categories: [HideSpawnMenu]
+  parent: BaseAction
+  name: Neurotoxin spit (20)
+  description: Toggle neurotoxin spit. Use secondary attack to spit while enabled.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: acid }
+  - type: InstantAction
+    event: !type:ToggleAcidSpitEvent
+
+- type: entity
+  id: ActionFaceHuggerLeap
+  categories: [HideSpawnMenu]
+  parent: BaseAction
+  name: Leap
+  description: Leap onto a victim's face to infect them.
+  components:
+  - type: Action
+    useDelay: 5
+    priority: 0
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: leap_off }
+    iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: leap_on }
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:FaceHuggerLeapActionEvent
+
+- type: entity
+  id: ActionQueenroar
+  categories: [HideSpawnMenu]
+  parent: BaseAction
+  name: Roar
+  description: Unleash a deafening roar that stuns nearby enemies.
+  components:
+  - type: Action
+    useDelay: 60
+    priority: 5
+    itemIconStyle: BigAction
+    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: screech }
+  - type: InstantAction
+    event: !type:QueenRoarActionEvent
+# Dumont end
 
 # Jump action
 - type: entity
   id: ActionJumpXenomorph
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Jump
   description: Stun your enemies with a quick jump.
@@ -241,21 +307,25 @@
     icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_off }
     iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: leap_on }
   - type: TargetAction
-    range: 10
+    range: 15
+    checkCanAccess: false # Dumont
   - type: WorldTargetAction
     event: !type:JumpActionEvent
 
 # Transfer plasma action
 - type: entity
   id: ActionTransferPlasma
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Transfer plasma (50)
   description: Passes plasma to your friend.
   components:
   - type: Action
+    raiseOnUser: true # Dumont
+    itemIconStyle: NoItem
     priority: 0
-    icon: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_off }
-    iconOn: { sprite : _White/Interface/Actions/xenomorph.rsi, state: plasma_transfer_on }
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: transfer_plasma }
   - type: TargetAction
     interactOnMiss: false
     range: 2
@@ -265,6 +335,7 @@
 # Promotion action
 - type: entity
   id: ActionXenomorphPromotion
+  categories: [HideSpawnMenu]
   parent: BaseAction
   name: Promote to Praetorian (500) # Goobstation
   description: Directly promote a xenomorph to Praetorian status. # Goobstation
@@ -281,7 +352,8 @@
     whitelist:
       requireAll: true
       components:
-        - XenomorphComponent # Goobstation end
+        - Xenomorph # Dumont
     event: !type:PromotionActionEvent
   - type: PlasmaCostAction
+    shouldChangePlasma: false # Dumont
     plasmaCost: 500

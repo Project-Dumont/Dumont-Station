@@ -4,6 +4,7 @@
   name: helmet
   description: This combat helmet is commonly used by revolutionaries and is both strong and light.
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Sprite
     sprite: Clothing/Head/Helmets/merc_helmet.rsi
   - type: Clothing
@@ -37,6 +38,7 @@
   id: ClothingHelmetRevFlame
   name: flame trooper helmet
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Item
     size: Ginormous
   - type: Sprite

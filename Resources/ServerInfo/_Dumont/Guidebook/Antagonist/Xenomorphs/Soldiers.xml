@@ -1,0 +1,203 @@
+<Document>
+# T2 — Soldados da Colmeia
+
+Quatro vagas compartilhadas, ampliadas para seis depois de estabelecer o Pilone. O limite inclui todas as variantes deste nível.
+
+## Espreitador
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMULurker" Caption="Espreitador" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+O bote derruba por quatro segundos e tem três segundos de recarga. A camuflagem ajuda a se aproximar sem ser visto. Depois do acerto há uma breve trava de movimento; um golpe corpo a corpo libera essa trava. Atacar revela você.
+
+[bold]Evolui de:[/bold] Corredor (humana e espécies sem rota própria); Operário (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria; Vulpkanin, Daengati e Tajaran: Devastador.
+
+## Espreitador vampiro
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUVampireLurker" Caption="Espreitador vampiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Avanço causa 35 de dano; Frenesi, 30; a estocada de cauda, 30. Frenesi cura conforme os inimigos atingidos. A estocada agrava colisões com paredes. Fogo bloqueia suas curas ofensivas.
+
+[bold]Evolui de:[/bold] Operário (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria; Vulpkanin, Daengati e Tajaran: Devastador.
+
+## Guerreiro
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Guerreiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Investida termina em agarrão: mantenha o alvo puxado para conservar a imobilização. Soco e Arremessar separam vítimas do grupo. Esta casta não tem reserva de plasma e não recebe interferência de rádio.
+
+[bold]Evolui de:[/bold] Defensor (Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] Feroxi, Yowie e Harpy: Devastador, Devastador espinhoso, Devastador furioso.
+
+## Guerreiro encouraçado
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUBulwarkWarrior" Caption="Guerreiro encouraçado" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Placas fechadas protegem a frente e reduzem movimento e dano. Abra-as para usar o giro de cauda, que também afasta granadas. O escudo refletor exige a postura correta e pode devolver balas e lasers pela frente.
+
+[bold]Evolui de:[/bold] Defensor (Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] Feroxi, Yowie e Harpy: Devastador, Devastador espinhoso, Devastador furioso.
+
+## Cuspidor
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUSpitter" Caption="Cuspidor" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Carregar cuspe fortalece o próximo disparo; o jato melhora a corrosão desse acerto. O jato causa 20 no primeiro contato com a vítima e 10 por outra poça atravessada. A mesma poça não aplica novamente o dano de entrada.
+
+[bold]Evolui de:[/bold] Sentinela (humana e espécies sem rota própria, Plasmaman, Vox e SlimePerson); Corredor (ágil (Rodentia, Resomi, Dwarf e Shadowkin)).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria; ágil (Rodentia, Resomi, Dwarf e Shadowkin): Bombardeiro; Plasmaman, Vox e SlimePerson: Bombardeiro.
+
+## Cuspidor caçador
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUVenatorSpitter" Caption="Cuspidor caçador" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Armazenar ácido prepara disparos consecutivos, mas cada carga reduz sua armadura. Glóbulo ganha força contra vítimas já cobertas de ácido. Cuspe, glóbulo e sopro deixam poças para controlar a passagem.
+
+[bold]Evolui de:[/bold] Corredor (ágil (Rodentia, Resomi, Dwarf e Shadowkin)); Sentinela (Plasmaman, Vox e SlimePerson).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria; ágil (Rodentia, Resomi, Dwarf e Shadowkin): Bombardeiro; Plasmaman, Vox e SlimePerson: Bombardeiro.
+
+## Touro
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUBull" Caption="Touro" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+A carga ganha estágios andando em linha reta. Parar ou virar perde impulso. Arar empurra e causa até 15; Cabeçada causa 20 e derruba; Perfurar causa 30 e desacelera. Escolha o modo antes de entrar na formação inimiga.
+
+[bold]Evolui de:[/bold] Defensor (Oni).
+
+[bold]Pode evoluir para:[/bold] Oni: Esmagador.
+
+## Senhor da Colmeia
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUHivelord" Caption="Senhor da Colmeia" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Caminhar pela resina acelera o deslocamento enquanto consome plasma. A transferência à distância precisa ser canalizada; perder as condições interrompe a doação. As versões espessas da resina resistem mais dano que as comuns.
+
+[bold]Evolui de:[/bold] Operário (humana e espécies sem rota própria, Vulpkanin, Daengati e Tajaran); Sentinela (Plasmaman, Vox e SlimePerson); Defensor (Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria.
+
+## Senhor da Resina
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUResinWhispererHivelord" Caption="Senhor da Resina" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Moldar à distância exige ficar sobre resina e manter alcance e caminho livre até o ponto escolhido. A construção leva mais tempo quando feita de longe. Pode plantar nódulos pelo seletor de resina e transferir plasma à distância.
+
+[bold]Evolui de:[/bold] Sentinela (Plasmaman, Vox e SlimePerson).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria.
+
+## Arquiteto da Colmeia
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUDesignerHivelord" Caption="Arquiteto da Colmeia" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Projetos otimizados reduzem tempo, flexíveis reduzem custo e cooperativos permitem contribuições. Reforçar resina depende da construção escolhida. A grande onda consome projetos para erguer paredes refletoras temporárias.
+
+[bold]Evolui de:[/bold] Operário (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Pretoriano, Pretoriano dançarino, Pretoriano de vanguarda, Pretoriano opressor, Pretoriano valquíria.
+
+## Carregador
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUCarrier" Caption="Carregador" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Guarde parasitas faciais e ovos para levá-los à frente. Cavidades servem de emboscada: coloque um parasita e aguarde uma vítima. Os parasitas excedentes reservados podem abrir vagas para fantasmas assumirem.
+
+[bold]Evolui de:[/bold] Operário (Arachnid, Reptilian e Chitinid).
+
+[bold]Pode evoluir para:[/bold] Esta rota termina nesta casta.
+
+## Carregador de ovos
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUEggsacCarrier" Caption="Carregador de ovos" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+O estoque comporta até 12 ovos. Ative a geração para produzi-los ao custo de plasma; a produção pausa quando o estoque enche. Esta variante não armazena parasitas faciais.
+
+[bold]Evolui de:[/bold] Operário (Arachnid, Reptilian e Chitinid).
+
+[bold]Pode evoluir para:[/bold] Esta rota termina nesta casta.
+
+## Escavador
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUBurrower" Caption="Escavador" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Escavar muda você para o subsolo; escolha o local de emergência para sair. Tremor imobiliza inimigos próximos. Entradas de túnel compartilham a rede e criar uma nova tem dois minutos de recarga.
+
+[bold]Evolui de:[/bold] Corredor (ágil (Rodentia, Resomi, Dwarf e Shadowkin)).
+
+[bold]Pode evoluir para:[/bold] Esta rota termina nesta casta.
+
+## Ceifador
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUReaper" Caption="Ceifador" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 250 até crítico; 265 até morte. [bold]Golpe básico:[/bold] 25 de dano.
+
+Colher exige um cadáver humanoide irrecuperável ainda não usado. Arrancar carne causa 20 no total: 15 contundentes e 5 celulares. Flora explosiva causa 4 de veneno por segundo por campo; o gás vermelho causa 2 por segundo.
+
+[bold]Evolui de:[/bold] Operário (Arachnid, Reptilian e Chitinid).
+
+[bold]Pode evoluir para:[/bold] Arachnid, Reptilian e Chitinid: Profanador.
+
+[textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
+</Document>

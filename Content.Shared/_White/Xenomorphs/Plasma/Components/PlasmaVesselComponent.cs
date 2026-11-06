@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
@@ -18,7 +20,7 @@ public sealed partial class PlasmaVesselComponent : Component
     [DataField, AutoNetworkedField]
     public FixedPoint2 Plasma = 100;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public FixedPoint2 MaxPlasma = 250;
 
     /// <summary>

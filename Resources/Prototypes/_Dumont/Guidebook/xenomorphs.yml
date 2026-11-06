@@ -1,0 +1,58 @@
+- type: guideEntry
+  id: Xenomorphs
+  name: guide-entry-xenomorph
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Overview.xml
+  children:
+  - XenomorphPlayGuide
+  - XenomorphClasses
+  - XenomorphStructures
+  - XenomorphObjectives
+
+- type: guideEntry
+  id: XenomorphPlayGuide
+  name: guide-entry-xenomorph-how-to-play
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Basics.xml
+
+- type: guideEntry
+  id: XenomorphClasses
+  name: guide-entry-xenomorph-classes
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/LifeCycle.xml
+  children:
+  - XenomorphQueen
+  - XenomorphRoyalGuards
+  - XenomorphSoldiers
+  - XenomorphProle
+
+- type: guideEntry
+  id: XenomorphProle
+  priority: 4
+  name: guide-entry-xenomorph-prole
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Prole.xml
+
+- type: guideEntry
+  id: XenomorphSoldiers
+  priority: 3
+  name: guide-entry-xenomorph-soldiers
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Soldiers.xml
+
+- type: guideEntry
+  id: XenomorphRoyalGuards
+  priority: 2
+  name: guide-entry-xenomorph-royal-guards
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/RoyalGuards.xml
+
+- type: guideEntry
+  id: XenomorphQueen
+  priority: 1
+  name: guide-entry-xenomorph-queen
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Queen.xml
+
+- type: guideEntry
+  id: XenomorphStructures
+  name: guide-entry-xenomorph-structures
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Structures.xml
+
+- type: guideEntry
+  id: XenomorphObjectives
+  name: guide-entry-xenomorph-objectives
+  text: /ServerInfo/_Dumont/Guidebook/Antagonist/Xenomorphs/Objectives.xml

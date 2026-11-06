@@ -143,6 +143,7 @@
   id: DefaultStationBeaconCommand
   suffix: Command
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-command
     color: "#FFFF00"
@@ -152,6 +153,7 @@
   id: DefaultStationBeaconBridge
   suffix: Bridge
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-bridge
 
@@ -192,6 +194,7 @@
   id: DefaultStationBeaconSecurity
   suffix: Security
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-security
     color: "#DE3A3A"
@@ -201,6 +204,7 @@
   id: DefaultStationBeaconBrig
   suffix: Brig
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-brig
 
@@ -327,6 +331,7 @@
   id: DefaultStationBeaconMedical
   suffix: Medical
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-medical
     color: "#52B4E9"
@@ -336,6 +341,7 @@
   id: DefaultStationBeaconMedbay
   suffix: Medbay
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-medbay
 
@@ -424,6 +430,7 @@
   id: DefaultStationBeaconScience
   suffix: Science
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-science
     color: "#D381C9"
@@ -433,6 +440,7 @@
   id: DefaultStationBeaconRND
   suffix: Research and Development
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-research-and-development
 
@@ -489,6 +497,7 @@
   id: DefaultStationBeaconSupply
   suffix: Supply
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-supply
     color: "#A46106"
@@ -498,6 +507,7 @@
   id: DefaultStationBeaconCargoReception
   suffix: Cargo Reception
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-cargo
 
@@ -506,6 +516,7 @@
   id: DefaultStationBeaconCargoBay
   suffix: Cargo Bay
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-cargo-bay
 
@@ -546,6 +557,7 @@
   id: DefaultStationBeaconEngineering
   suffix: Engineering
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-engineering
     color: "#EFB341"
@@ -683,6 +695,7 @@
   id: DefaultStationBeaconAtmospherics
   suffix: Atmospherics
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-atmos
 
@@ -715,6 +728,7 @@
   id: DefaultStationBeaconService
   suffix: Service
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-service
     color: "#9FED58"
@@ -724,6 +738,7 @@
   id: DefaultStationBeaconKitchen
   suffix: Kitchen
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-kitchen
 
@@ -732,6 +747,7 @@
   id: DefaultStationBeaconBar
   suffix: Bar
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-bar
   - type: ConditionalSpawner # Gabystation - bananilson spawn
@@ -744,6 +760,7 @@
   id: DefaultStationBeaconBotany
   suffix: Botany
   components:
+  - type: XenomorphHiveCaptureTarget
   - type: NavMapBeacon
     defaultText: station-beacon-botany
 
