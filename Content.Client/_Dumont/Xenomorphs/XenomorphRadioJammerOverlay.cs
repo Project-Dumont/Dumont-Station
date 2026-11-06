@@ -28,7 +28,7 @@ public sealed partial class XenomorphRadioJammerOverlay : Overlay
         ZIndex = (int) DrawDepth.FloorEffects;
         _transform = _entities.System<SharedTransformSystem>();
         _shader = _prototypes.Index<ShaderPrototype>("DumontXenomorphRadioJammer").Instance().Duplicate();
-        _shader.SetParameter("gridColor", new Color(0.76f, 0.24f, 1f, 1f));
+        _shader.SetParameter("gridColor", new Color(0.65f, 0.3f, 0.8f, 0.25f));
     }
 
     protected override void Draw(in OverlayDrawArgs args)

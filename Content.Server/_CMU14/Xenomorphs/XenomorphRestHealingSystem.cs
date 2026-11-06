@@ -32,13 +32,14 @@ public sealed partial class XenomorphRestHealingSystem : EntitySystem
         var query = EntityQueryEnumerator<XenomorphRestComponent, XenomorphComponent>();
         while (query.MoveNext(out var uid, out var rest, out var xeno))
         {
-            if (!rest.Resting || !_mobState.IsAlive(uid) || xeno.WeedHeal == null)
+            if (!rest.Resting || !_mobState.IsAlive(uid) || xeno.WeedHeal == null
+                || _timing.CurTime < xeno.WeedHealBlockedUntil)
                 continue;
 
             var nested = TryComp<BuckleComponent>(uid, out var buckle)
                 && HasComp<XenomorphNestComponent>(buckle.BuckledTo);
             if (xeno.OnWeed || nested || OnNest(uid))
-                _damage.TryChangeDamage(uid, xeno.WeedHeal);
+                _damage.TryChangeDamage(uid, xeno.WeedHeal, interruptsDoAfters: false);
         }
     }
 

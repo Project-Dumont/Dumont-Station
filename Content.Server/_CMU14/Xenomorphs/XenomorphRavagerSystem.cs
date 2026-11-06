@@ -67,7 +67,6 @@ public sealed partial class XenomorphRavagerSystem : EntitySystem
         SubscribeLocalEvent<XenomorphRavagerComponent, XenomorphEmpowerActionEvent>(OnEmpower);
         SubscribeLocalEvent<XenomorphRavagerComponent, XenomorphScissorCutActionEvent>(OnScissor);
         SubscribeLocalEvent<XenomorphRavagerComponent, XenomorphLeapHitEvent>(OnLeapHit);
-        SubscribeLocalEvent<XenomorphRavagerComponent, MeleeHitEvent>(OnMelee);
         SubscribeLocalEvent<XenomorphRavagerComponent, DamageModifyEvent>(OnDamage, after: new[] { typeof(XenomorphArmorSystem), typeof(XenomorphReaperSystem) });
         SubscribeLocalEvent<XenomorphRavagerComponent, ThrowDoHitEvent>(OnObstacle, before: new[] { typeof(XenomorphLeapSystem) });
         SubscribeLocalEvent<XenomorphRavagerComponent, ComponentRemove>(OnRemove);
@@ -187,23 +186,11 @@ public sealed partial class XenomorphRavagerSystem : EntitySystem
         ent.Comp.ShieldEffect = null;
     }
 
-    private void OnMelee(Entity<XenomorphRavagerComponent> ent, ref MeleeHitEvent args)
-    {
-        if (!args.IsHit || args.User != ent.Owner || !args.HitEntities.Any(Enemy)) return;
-        foreach (var action in _actions.GetActions(ent))
-            if (_actions.GetEvent(action) is XenomorphLeapActionEvent && action.Comp.Cooldown is { } cooldown)
-            {
-                var end = cooldown.End - TimeSpan.FromSeconds(3);
-                if (end <= _timing.CurTime) _actions.ClearCooldown(action.AsNullable());
-                else _actions.SetCooldown(action.AsNullable(), cooldown.Start, end);
-            }
-    }
-
     private void OnLeapHit(Entity<XenomorphRavagerComponent> ent, ref XenomorphLeapHitEvent args)
     {
         if (!Enemy(args.Target) || _timing.CurTime >= ent.Comp.SuperUntil) return;
         _damage.TryChangeDamage(args.Target, new DamageSpecifier { DamageDict = { ["Blunt"] = 10, ["Slash"] = 10, ["Piercing"] = 10 } }, origin: ent);
-        _stun.TryUpdateParalyzeDuration(args.Target, TimeSpan.FromSeconds(3.2));
+        _stun.TryUpdateParalyzeDuration(args.Target, TimeSpan.FromSeconds(4));
         var direction = _transform.GetMapCoordinates(args.Target).Position - _transform.GetMapCoordinates(ent).Position;
         if (direction.LengthSquared() > 0.0001f)
             _throwing.TryThrow(args.Target, Vector2.Normalize(direction) * 3, 10, ent, doSpin: false);

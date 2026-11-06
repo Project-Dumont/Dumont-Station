@@ -3,6 +3,8 @@
   parent: BaseMobXenomorphCMU
   name: drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -45,6 +47,8 @@
   parent: BaseMobXenomorphCMU
   name: runner
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphSpit
   - type: XenomorphLongRangeSight
     offsetLength: 0
@@ -94,16 +98,15 @@
     - ActionXenomorphLeap
     - ActionXenomorphHide
   - type: XenomorphLeap
-    obstacleStun: 1.5
-    knockdownTime: 2
     moveDelay: 0.7
-    knockdownRequiresStealth: false
     unrootOnMelee: false
 - type: entity
   id: MobXenomorphCMUDefender
   parent: BaseMobXenomorphCMU
   name: defender
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphTailStab
     damage:
       types:
@@ -177,6 +180,8 @@
   parent: BaseMobXenomorphCMU
   name: sentinel
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPreparedStrike
     paralyzing: true
   - type: XenomorphTailStab
@@ -223,6 +228,8 @@
   parent: BaseMobXenomorphCMU
   name: lurker
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPreparedStrike
     paralyzing: false
   - type: XenomorphTailStab
@@ -266,9 +273,7 @@
     - ActionXenomorphPounce
     - ActionXenomorphInvisibility
   - type: XenomorphLeap
-    knockdownTime: 5
     moveDelay: 1.5
-    knockdownRequiresStealth: true
     unrootOnMelee: true
   - type: XenomorphInvisibility
 - type: entity
@@ -276,6 +281,8 @@
   parent: BaseMobXenomorphCMU
   name: warrior
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphLunge
   - type: XenomorphTailStab
     damage:
@@ -322,6 +329,8 @@
   parent: BaseMobXenomorphCMU
   name: spitter
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphArmor
     armor: 15
     explosionArmor: 20
@@ -370,6 +379,8 @@
   parent: BaseMobXenomorphCMU
   name: bull
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphTailStab
     damage:
       types:
@@ -417,6 +428,8 @@
   parent: BaseMobXenomorphCMU
   name: hivelord
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2.5
     pheroSuffix: hivelord
@@ -464,6 +477,8 @@
   parent: BaseMobXenomorphCMU
   name: carrier
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -537,6 +552,8 @@
   parent: BaseMobXenomorphCMU
   name: burrower
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -586,6 +603,8 @@
   parent: BaseMobXenomorphCMU
   name: reaper
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
@@ -637,6 +656,11 @@
   parent: BaseMobXenomorphCMU
   name: crusher
   components:
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: DumontXenomorphQueenFootstep
+      params:
+        volume: -4
   - type: XenomorphTailStab
     damage:
       types:
@@ -669,6 +693,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 80
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.66
     baseSprintSpeed: 3
@@ -691,7 +716,6 @@
   - type: XenomorphRavager
   - type: XenomorphLeap
     range: 5
-    knockdownTime: 0
     moveDelay: 0
     plasmaCost: 25
     sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
@@ -723,6 +747,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
     attackRate: 1.05
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
@@ -776,6 +801,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3.5
@@ -823,6 +849,7 @@
         Slash: 7.2
         Piercing: 7.2
         Heat: 8.4
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.4
     baseSprintSpeed: 4.8
@@ -854,7 +881,6 @@
   - type: XenomorphLeap
     range: 6
     plasmaCost: 40
-    knockdownTime: 0
     moveDelay: 0
     sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
   - type: XenomorphTailStab
@@ -885,6 +911,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -993,6 +1020,8 @@
   parent: BaseMobXenomorphCMU
   name: healer drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
@@ -1052,6 +1081,8 @@
   parent: BaseMobXenomorphCMU
   name: gardener drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -1121,6 +1152,8 @@
   parent: BaseMobXenomorphCMU
   name: heatshield defender
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphTailStab
     damage:
       types:
@@ -1184,6 +1217,8 @@
   parent: BaseMobXenomorphCMU
   name: acider runner
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphHide
   - type: XenomorphAcider
   - type: PointLight
@@ -1237,6 +1272,8 @@
   parent: BaseMobXenomorphCMU
   name: toxic sentinel
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphToxic
   - type: XenomorphArmor
     armor: 10
@@ -1276,6 +1313,8 @@
   parent: BaseMobXenomorphCMU
   name: venator spitter
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphVenator
   - type: XenomorphTailStab
     damage:
@@ -1322,6 +1361,8 @@
   parent: BaseMobXenomorphCMU
   name: eggsac carrier
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
@@ -1383,6 +1424,8 @@
   parent: BaseMobXenomorphCMU
   name: bulwark warrior
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphBulwark
   - type: XenomorphTailStab
     damage:
@@ -1431,10 +1474,11 @@
   parent: BaseMobXenomorphCMU
   name: vampire lurker
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphVampire
   - type: XenomorphLeap
     range: 4
-    knockdownTime: 0
     moveDelay: 0
     sound: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
   - type: XenomorphArmor
@@ -1477,6 +1521,8 @@
   parent: BaseMobXenomorphCMU
   name: resin whisperer hivelord
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2.5
     pheroSuffix: hivelord
@@ -1534,6 +1580,8 @@
   parent: BaseMobXenomorphCMU
   name: designer hivelord
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2.5
     pheroSuffix: hivelord
@@ -1623,6 +1671,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
     attackRate: 0.9
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.8
@@ -1669,6 +1718,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
     attackRate: 1.05
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
@@ -1716,6 +1766,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1736,7 +1787,6 @@
   - type: XenomorphLeap
     plasmaCost: 50
     range: 6
-    knockdownTime: 0
     moveDelay: 0
     sound: /Audio/_RMC14/Xeno/alien_pounce.ogg
   - type: XenomorphTailStab
@@ -1767,6 +1817,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4
@@ -1807,6 +1858,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 3.5
@@ -1849,6 +1901,7 @@
         Blunt: 10
         Slash: 10
         Piercing: 10
+        Structural: 40
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 3.5

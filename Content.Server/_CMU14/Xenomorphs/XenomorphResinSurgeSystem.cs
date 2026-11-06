@@ -56,6 +56,7 @@ public sealed partial class XenomorphResinSurgeSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private XenomorphWallResinSystem _resin = default!;
 
     public override void Initialize()
     {
@@ -103,8 +104,7 @@ public sealed partial class XenomorphResinSurgeSystem : EntitySystem
         if (args.Handled || !CanAct(ent)) return;
         var coordinates = Snap(_transform.GetMoverCoordinates(ent));
         if (!ClearTile(coordinates)) return;
-        foreach (var uid in _lookup.GetEntitiesIntersecting(coordinates))
-            if (HasComp<XenomorphHardyWeedComponent>(uid) && HasComp<AreaSpawnerComponent>(uid)) return;
+        if (!_resin.CanPlantNode(coordinates, replaceRegular: true)) return;
         if (!_plasma.ChangePlasmaAmount(ent, -125)) return;
         Spawn("DumontXenomorphHardyWeedNode", coordinates);
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_resin_build1.ogg"), ent);

@@ -5,91 +5,157 @@ Todas as castas desta página compartilham uma vaga de Guarda Real. A captura do
 
 ## Esmagador
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUCrusher" Caption="Esmagador" Scale="1.5" Interactive="false"/>
 </Box>
 
-Guarda Real de ruptura. Investe para esmagar inimigos e demolir estruturas no caminho, usa Pisotear em cone e conserva a pancada de cauda. Absorver dano recompensa resistir a uma sequência de golpes com cura. O escudo defensivo reduz e absorve dano, melhora a resistência a explosões e oferece alguma reflexão frontal. A investida tem recarga longa: escolha o momento de abrir a passagem.
+[bold]Vida:[/bold] 400 até crítico; 415 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 80.
+
+Pisotear causa de 25 a 35 de dano conforme a posição da vítima. Investida causa 35 a pessoas e conserva 750 contra estruturas. Absorver dano cura após alcançar a meta durante a janela ativa; o escudo tem duração e reserva limitadas.
+
+[bold]Evolui de:[/bold] Touro (Oni).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Devastador
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMURavager" Caption="Devastador" Scale="1.5" Interactive="false"/>
 </Box>
 
-Guarda Real de assalto. Avança com Assalto, acumula escudo com Fortalecer e atinge uma linha com Corte em tesoura. A presença de vários inimigos permite o estado superfortalecido, melhorando ataques e controle. Acertos corpo a corpo ajudam a recuperar o Assalto. Entre com os outros xenos para aproveitar a abertura.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Fortalecer concede escudo; vários inimigos próximos permitem o estado superfortalecido. Corte em tesoura causa 35. Assalto fortalecido causa 30 e derruba. O Assalto tem três segundos de recarga.
+
+[bold]Evolui de:[/bold] Guerreiro (Feroxi, Yowie e Harpy); Espreitador (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Devastador espinhoso
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUHedgehogRavager" Caption="Devastador espinhoso" Scale="1.5" Interactive="false"/>
 </Box>
 
-Usa espinhos para atacar e se proteger. Golpes corpo a corpo e espinhos disparados desaceleram as vítimas. O escudo de espinhos devolve lascas quando recebe projéteis. Descarregar espinhos consome a reserva para atacar ao redor e fugir mais rápido, mas deixa o xeno sem a proteção e a regeneração dos espinhos por um período.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Golpes e espinhos desaceleram. O escudo devolve lascas contra projéteis recebidos. Descarregar espinhos gasta a reserva para atingir ao redor e acelerar a fuga, deixando você temporariamente sem a proteção dos espinhos.
+
+[bold]Evolui de:[/bold] Guerreiro (Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Devastador furioso
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUBerserkerRavager" Caption="Devastador furioso" Scale="1.5" Interactive="false"/>
 </Box>
 
-Administra níveis de fúria no combate próximo. Perseguir ajuda a perseguir e prepara um golpe que desacelera. Encontrão arremessa e cura, com resultado melhor sob fúria elevada. Eviscerar consome fúria para atacar ao redor e recuperar vida conforme as vítimas. Confira o recurso antes de se comprometer com a luta.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Perseguir prepara um golpe desacelerador. Encontrão empurra e cura, com resultado melhor sob fúria elevada. Eviscerar consome fúria para atingir os inimigos ao redor e recuperar vida pelos acertos.
+
+[bold]Evolui de:[/bold] Guerreiro (Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Bombardeiro
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUBoiler" Caption="Bombardeiro" Scale="1.5" Interactive="false"/>
 </Box>
 
-Artilharia da colmeia. Usa visão de longo alcance e prepara bombardeios de gás ácido ou neurotóxico. A escolha altera o efeito: corrosão ou intoxicação progressiva. A nuvem defensiva cobre a retirada, mas compartilha recarga com outros ataques. Jato forte e cauda corrosiva ajudam quando a luta chega perto; evite ficar isolado sem escolta.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Prepare a posição de bombardeio antes de disparar e escolha gás ácido ou neurotóxico. A nuvem ácida causa 10 por segundo: 7 cáusticos e 3 de asfixia. Jato forte causa 30 no primeiro contato e 5 por outra poça. A cauda injeta três unidades de ácido molecular.
+
+[bold]Evolui de:[/bold] Cuspidor (ágil (Rodentia, Resomi, Dwarf e Shadowkin), Plasmaman, Vox e SlimePerson).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Profanador
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUDespoiler" Caption="Profanador" Scale="1.5" Interactive="false"/>
 </Box>
 
-Espalha ácido pelo piso e pelas vítimas. A barragem pode ser carregada e deixa poças nos impactos. Abraço cáustico salta e espalha ácido ao aterrissar; Feridas supurantes emite ondas cuja área cresce com os ferimentos. Ataques e dano recebido geram hipertensão, consumida por Catalisar para fortalecer a próxima habilidade e suas interações corrosivas.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Hipertensão aumenta o golpe básico em 10 por acúmulo, limitado a 50; o bônus da cauda chega a 40 no total. Catalisar consome a reserva para fortalecer a próxima habilidade. Abraço cáustico espalha ácido na aterrissagem; Feridas supurantes amplia sua área conforme os ferimentos.
+
+[bold]Evolui de:[/bold] Ceifador (Arachnid, Reptilian e Chitinid).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Pretoriano
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUPraetorian" Caption="Pretoriano" Scale="1.5" Interactive="false"/>
 </Box>
 
-Guarda Real versátil de ácido. O cuspe acumula corrosão e ajuda a obter escudo; o avanço reposiciona sem derrubar. Bola ácida se divide em fragmentos e o jato acumula cargas que explodem em dano adicional. Assim como os demais Guardas Reais, pode evoluir para Rainha.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Cuspe aplica acúmulos corrosivos e ajuda a gerar escudo. Bola ácida se divide em fragmentos; o jato explora os acúmulos para causar dano adicional. O avanço também derruba a vítima por quatro segundos e tem três segundos de recarga.
+
+[bold]Evolui de:[/bold] Espreitador (humana e espécies sem rota própria); Cuspidor (humana e espécies sem rota própria); Senhor da Colmeia (humana e espécies sem rota própria).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Pretoriano dançarino
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUDancerPraetorian" Caption="Pretoriano dançarino" Scale="1.5" Interactive="false"/>
 </Box>
 
-Combina mobilidade e marcas. Esquivar melhora a movimentação entre inimigos. Ataques corpo a corpo aplicam marca vermelha: Empalar a consome para acertar duas vezes e a rasteira a consome para prolongar o controle. Golpear um alvo crítico pode espalhar marcas amarelas, usadas para recuperar recargas das técnicas de cauda. Prepare as marcas antes de gastar todos os golpes.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Golpes corpo a corpo marcam o alvo de vermelho. Empalar causa 30; ao consumir a marca vermelha, acerta duas vezes, somando 60. Rasteira usa a mesma marca para prolongar o controle. Acertos em alvos críticos podem espalhar marcas amarelas para recuperar recargas.
+
+[bold]Evolui de:[/bold] Espreitador (humana e espécies sem rota própria); Cuspidor (humana e espécies sem rota própria); Senhor da Colmeia (humana e espécies sem rota própria).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Pretoriano de vanguarda
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUVanguardPraetorian" Caption="Pretoriano de vanguarda" Scale="1.5" Interactive="false"/>
 </Box>
 
-Combina escudo e avanço. Perfurar atinge uma linha; acertar mais de um inimigo recupera o escudo. Avanço cortante reposiciona e prepara um corte, que pode ser antecipado. Imobilizar e Arremessar compartilham recarga e ficam mais fortes enquanto o escudo estiver ativo. Escolha o controle mais útil para a equipe.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Perfurar causa 25 em linha e recupera escudo ao atingir mais de um inimigo. Avanço cortante prepara um corte de 30, que pode ser antecipado. Imobilizar e Arremessar compartilham recarga; o escudo ativo fortalece essas técnicas.
+
+[bold]Evolui de:[/bold] Espreitador (humana e espécies sem rota própria); Cuspidor (humana e espécies sem rota própria); Senhor da Colmeia (humana e espécies sem rota própria).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Pretoriano opressor
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUOppressorPraetorian" Caption="Pretoriano opressor" Scale="1.5" Interactive="false"/>
 </Box>
 
-Separa inimigos da formação. Capturar com a cauda puxa a primeira vítima de um disparo; Abduzir puxa uma linha inteira, melhorando o controle conforme os acertos. Deslocar pune alvos debilitados e ajuda a recuperar recargas. Chicote de cauda atinge uma área à frente para derrubar e arremessar. Coordene a chegada das presas com os outros xenos.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Capturar com a cauda causa 30 e puxa a primeira vítima atingida; Abduzir puxa uma linha e melhora com os acertos. Deslocar causa 20 e pune alvos debilitados. Chicote de cauda exige área livre à frente para derrubar e arremessar.
+
+[bold]Evolui de:[/bold] Espreitador (humana e espécies sem rota própria); Cuspidor (humana e espécies sem rota própria); Senhor da Colmeia (humana e espécies sem rota própria).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 ## Pretoriano valquíria
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUValkyriePraetorian" Caption="Pretoriano valquíria" Scale="1.5" Interactive="false"/>
 </Box>
 
-Apoia a linha de frente. Jato da cauda apaga fogo; Frenesi concede proteção ou ajuda a movimentação de Devastadores e Esmagadores. Pisoteio elevado derruba, desacelera e afasta granadas. Lutar ou fugir remove incapacitações e Resgatar puxa um aliado para segurança. Administre plasma e fúria; para puxar a Rainha, ela precisa estar deitada ou incapacitada.
+[bold]Vida:[/bold] 350 até crítico; 365 até morte. [bold]Golpe básico:[/bold] 30 de dano. [bold]Dano estrutural adicional:[/bold] 40.
+
+Jato de cauda apaga fogo. Frenesi protege aliados e tem interação de movimento com Devastadores e Esmagadores. Pisoteio elevado derruba, desacelera e afasta granadas. Resgatar puxa um aliado; a Rainha precisa estar deitada ou incapacitada.
+
+[bold]Evolui de:[/bold] Espreitador (humana e espécies sem rota própria); Cuspidor (humana e espécies sem rota própria); Senhor da Colmeia (humana e espécies sem rota própria).
+
+[bold]Pode evoluir para:[/bold] Rainha, após completar a evolução e respeitar a sucessão da colmeia.
 
 [textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
 </Document>

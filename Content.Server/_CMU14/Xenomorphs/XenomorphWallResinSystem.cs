@@ -3,6 +3,7 @@
 using Content.Server._Dumont.Xenomorphs;
 using System.Numerics;
 using Content.Shared.Tag;
+using Content.Server._White.Spawners.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -28,6 +29,22 @@ public sealed partial class XenomorphWallResinSystem : EntitySystem
         SubscribeLocalEvent<XenomorphWeedWallSpreadComponent, ComponentShutdown>(OnWeedRemoved);
         SubscribeLocalEvent<XenomorphWallResinComponent, EntityTerminatingEvent>(OnWallRemoved);
         SubscribeLocalEvent<XenomorphWallResinComponent, AnchorStateChangedEvent>(OnWallAnchor);
+    }
+
+    public bool CanPlantNode(EntityCoordinates coordinates, bool replaceRegular = false)
+    {
+        var grid = Transform(coordinates.EntityId).GridUid;
+        if (HasComp<MapGridComponent>(coordinates.EntityId)) grid = coordinates.EntityId;
+        if (grid is not { } gridUid || !TryComp<MapGridComponent>(gridUid, out var mapGrid))
+            return false;
+        foreach (var uid in _map.GetAnchoredEntities((gridUid, mapGrid), coordinates))
+        {
+            if (!TerminatingOrDeleted(uid) && HasComp<XenomorphWeedWallSpreadComponent>(uid)
+                && HasComp<AreaSpawnerComponent>(uid)
+                && (!replaceRegular || HasComp<XenomorphHardyWeedComponent>(uid)))
+                return false;
+        }
+        return true;
     }
 
     private void OnWallInit(Entity<TagComponent> ent, ref MapInitEvent args) => SpreadToWall(ent);

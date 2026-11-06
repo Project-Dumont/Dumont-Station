@@ -22,6 +22,7 @@ namespace Content.Server._White.Actions;
 public sealed partial class ActionsSystem : EntitySystem
 {
     [Dependency] private SharedXenomorphDesignSystem _design = default!;
+    [Dependency] private Content.Server._CMU14.Xenomorphs.XenomorphWallResinSystem _resin = default!;
     [Dependency] private ITileDefinitionManager _tileDef = default!;
 
     [Dependency] private AnchorableSystem _anchorable = default!;
@@ -145,6 +146,14 @@ public sealed partial class ActionsSystem : EntitySystem
             var tile = new Tile(tileDef.TileId);
 
             _mapSystem.SetTile(grid, mapGrid, coordinates, tile);
+        }
+
+        if (entProtoId == "ResinWeedNode")
+        {
+            if (!_resin.CanPlantNode(coordinates)) return false;
+            var grid = _transform.GetGrid(coordinates)!.Value;
+            var local = _transform.ToCoordinates(grid, _transform.ToMapCoordinates(coordinates));
+            coordinates = new EntityCoordinates(grid, MathF.Floor(local.X) + .5f, MathF.Floor(local.Y) + .5f);
         }
 
         _audio.PlayPvs(audio, coordinates);

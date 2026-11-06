@@ -152,7 +152,7 @@ public sealed partial class XenomorphArmorSystem : EntitySystem
         {
             if (damage.DamageDict.TryGetValue(type, out var reduced)
                 && args.Damage.DamageDict.TryGetValue(type, out var original) && original > FixedPoint2.Zero)
-                damage.DamageDict[type] = reduced + (original - reduced) * penetration;
+                damage.DamageDict[type] = FixedPoint2.Max(original * .1, reduced + (original - reduced) * penetration);
         }
         args.Damage = damage;
     }

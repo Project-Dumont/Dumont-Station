@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Adapted from Trauma Station: https://raw.githubusercontent.com/Trauma-Station/Trauma-Station/0e7ded956aa9866e99d42a0ca154b7eff672031a/Resources/Textures/_Trauma/Shaders/grid_pulse.swsl
 
-light_mode unshaded;
-
 uniform highp vec4 gridColor;
 
 const highp float radius = 0.5;
