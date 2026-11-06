@@ -15,6 +15,9 @@ using Content.Shared.Atmos;
 using Content.Shared._Funkystation.Atmos.Visuals;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
+using Content.Server.Atmos.EntitySystems; //Dumont - Start
+using Content.Shared.Atmos;
+using Content.Server.Explosion.EntitySystems; //Dumont - End
 
 namespace Content.Server._Funkystation.Atmos.Portable;
 
@@ -25,6 +28,7 @@ public sealed class ElectrolyzerSystem : EntitySystem
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly GasTileOverlaySystem _gasOverlaySystem = default!;
+    [Dependency] private readonly ExplosionSystem _explosionSystem = default!; //Dumont
 
     public override void Initialize()
     {
@@ -33,6 +37,7 @@ public sealed class ElectrolyzerSystem : EntitySystem
         SubscribeLocalEvent<ElectrolyzerComponent, AtmosDeviceUpdateEvent>(OnDeviceUpdated);
         SubscribeLocalEvent<ElectrolyzerComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<ElectrolyzerComponent, ActivateInWorldEvent>(OnActivate);
+        SubscribeLocalEvent<ElectrolyzerComponent, AtmosExposedUpdateEvent>(OnAtmosExposedUpdate);  //Dumont
     }
 
     private void OnPowerChanged(EntityUid uid, ElectrolyzerComponent electrolyzer, ref PowerChangedEvent args)
@@ -133,4 +138,25 @@ public sealed class ElectrolyzerSystem : EntitySystem
 
         _gasOverlaySystem.UpdateSessions();
     }
+
+    //Dumont - Start
+    private void OnAtmosExposedUpdate(EntityUid uid, ElectrolyzerComponent component, ref AtmosExposedUpdateEvent args)
+    {
+
+        var airTemperature = args.GasMixture.Temperature;
+        var machineOn = TryComp<ApcPowerReceiverComponent>(uid, out var power) && !power.PowerDisabled;
+        if(airTemperature >= 30000 && machineOn)
+        {
+            _explosionSystem.QueueExplosion(
+                (EntityUid) uid,
+                typeId: "Default",
+                totalIntensity: 250f,
+                slope: 5f,
+                maxTileIntensity: 25f,
+                tileBreakScale: 1f,
+                maxTileBreak: 0,
+                canCreateVacuum: false);
+        }
+    }
+    //Dumont - End
 }

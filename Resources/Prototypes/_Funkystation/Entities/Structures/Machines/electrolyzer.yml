@@ -23,3 +23,5 @@
   - type: Machine
     board: ElectrolyzerMachineCircuitboard
   - type: WiresPanel
+  - type: AtmosExposed #Dumont
+  - type: Temperature #Dumont
