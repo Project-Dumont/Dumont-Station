@@ -1,0 +1,129 @@
+- type: entity
+  parent: CMPlatform
+  id: CMPlatformDark
+  suffix: Dark
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_dark
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayCMPlatformDark
+
+- type: entity
+  parent: CMPlatformCorner
+  id: CMPlatformCornerDark
+  suffix: Dark, Corner
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_corner_dark
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayCMPlatformCornerDark
+
+- type: entity
+  parent: RMCPlatformCornerSmall
+  id: RMCPlatformCornerSmallDark
+  suffix: Dark, Corner Small
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_deco_dark
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformCornerSmallDark
+
+- type: entity
+  parent: RMCPlatformStairRight
+  id: RMCPlatformStairRightDark
+  suffix: Dark, Stairs, Right
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_stair_dark
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformStairRightDark
+
+- type: entity
+  parent: RMCPlatformStairLeft
+  id: RMCPlatformStairLeftDark
+  suffix: Dark, Stairs, Left
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_stair_dark_alt
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformStairLeftDark
+
+- type: entity
+  parent: CMPlatform
+  id: CMPlatformWood
+  suffix: Wood
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_wood
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayCMPlatformWood
+
+- type: entity
+  parent: CMPlatformCorner
+  id: CMPlatformCornerWood
+  suffix: Wood, Corner
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_corner_wood
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayCMPlatformCornerWood
+
+- type: entity
+  parent: RMCPlatformCornerSmall
+  id: RMCPlatformCornerSmallWood
+  suffix: Wood, Corner Small
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_deco_wood
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformCornerSmallWood
+
+- type: entity
+  parent: RMCPlatformStairRight
+  id: RMCPlatformStairRightWood
+  suffix: Wood, Stairs, Right
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_stair_wood
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformStairRightWood
+
+- type: entity
+  parent: RMCPlatformStairLeft
+  id: RMCPlatformStairLeftWood
+  suffix: Wood, Stairs, Left
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/platforms.rsi
+    state: platform_stair_wood_alt
+    drawdepth: HighFloorObjects
+  - type: ChildEntities
+    childPrototypes:
+      - prototype: OverlayRMCPlatformStairLeftWood
