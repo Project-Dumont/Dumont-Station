@@ -4946,3 +4946,15 @@ Entries:
         coisa que rolar eu vou achar. 
   id: 589
   time: '2026-11-06T15:26:04.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Farragus agora é revestido por uma Rocha Anciã, que é 4x mais resistente
+        que a rocha de asteróide.
+    - type: Tweak
+      message: >-
+        Diversos feedbacks foram incluídos no Farragus para todos terem uma
+        melhor experiência.
+  id: 590
+  time: '2026-11-06T18:42:42.0000000+00:00'
