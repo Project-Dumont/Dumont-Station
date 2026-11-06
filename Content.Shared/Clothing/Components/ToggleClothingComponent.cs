@@ -45,6 +45,7 @@ using Content.Shared.Actions.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Toggleable;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -76,6 +77,18 @@ public sealed partial class ToggleClothingComponent : Component
     /// </summary>
     [DataField]
     public bool DisableOnUnequip;
+
+    /// <summary>
+    /// Sound played only when manually enabling the clothing action.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SoundActivate;
+
+    /// <summary>
+    /// Sound played only when manually disabling the action, not on unequip.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SoundDeactivate;
 
     /// <summary>
     /// If true, the clothes must equip for adding action.

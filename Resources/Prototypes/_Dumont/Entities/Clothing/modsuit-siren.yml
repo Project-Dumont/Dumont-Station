@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleModsuitParamedicSiren
+  name: Toggle Paramedic Siren
+  description: Toggles the siren while the helmet is equipped and the modsuit has power.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+      state: icon-siren
+    useDelay: 1
+    itemIconStyle: BigAction
+    predicted: false
+  - type: InstantAction
+    event: !type:ModsuitSirenToggleEvent
+
+- type: entity
+  id: ModsuitParamedicSirenEmitter
+  name: paramedic modsuit siren
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: ItemToggle
+    onUse: false
+    predictable: false
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Effects/Vehicle/ambulancesiren.ogg
+      params:
+        volume: -4
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: blue
+    lightMask: ConeDouble
+  - type: RotatingLight
+    speed: 360
