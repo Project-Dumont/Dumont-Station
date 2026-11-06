@@ -1,7 +1,3 @@
-# Starlight platform variants: Dark and Wood
-# These inherit the physics, fixtures, climbable behavior, and placement
-# from the existing RMC14 platform prototypes above.
-
 - type: entity
   parent: CMPlatform
   id: CMPlatformDark
