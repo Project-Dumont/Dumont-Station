@@ -501,14 +501,14 @@ public sealed partial class StaffHelpUIController : UIController, IOnSystemChang
             return;
 
         _mentorWindow.ClaimButton.Visible = _mentorWindow.SelectedPlayer != default;
-        _mentorWindow.ClaimButton.Text = "Claim";
+        _mentorWindow.ClaimButton.Text = "Assumir";
 
         _claims.TryGetValue(destination, out var claims);
         if (claims != null &&
             _player.LocalSession != null &&
             claims.Contains(_player.LocalSession.Name))
         {
-            _mentorWindow.ClaimButton.Text = "Unclaim";
+            _mentorWindow.ClaimButton.Text = "De-assumir";
         }
 
         if (_mentorWindow.SelectedPlayer != destination)
@@ -520,6 +520,6 @@ public sealed partial class StaffHelpUIController : UIController, IOnSystemChang
             return;
         }
 
-        _mentorWindow.ClaimIndicator.Text = $"Claimed by {string.Join(", ", claims)}";
+        _mentorWindow.ClaimIndicator.Text = $" {string.Join(", ", claims)} assumiu este mentor help";
     }
 }

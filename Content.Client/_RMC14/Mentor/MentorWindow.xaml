@@ -29,7 +29,7 @@
             <BoxContainer Orientation="Horizontal">
                 <LineEdit Name="Chat" Access="Public" HorizontalExpand="True"
                           Editable="False" />
-                <Button Name="ClaimButton" Access="Public" Text="Claim"
+                <Button Name="ClaimButton" Access="Public" Text="Assumir"
                         StyleClasses="OpenBoth" Visible="False" />
             </BoxContainer>
         </BoxContainer>

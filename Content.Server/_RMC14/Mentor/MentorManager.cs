@@ -224,7 +224,7 @@ public sealed partial class MentorManager : IPostInjectInit
             destinationSession.Name,
             null,
             null,
-            $"SERVER: {author.UserName} has claimed this mentor help",
+            $"SERVER: {author.UserName} assumiu este mentor help",
             DateTime.Now,
             true,
             isAdmin
@@ -287,7 +287,7 @@ public sealed partial class MentorManager : IPostInjectInit
             destinationData.UserName,
             null,
             null,
-            $"SERVER: {author.UserName} has given up their claim for this mentor help",
+            $"SERVER: {author.UserName} deixou de assumir este mentor help",
             DateTime.Now,
             true,
             isAdmin
