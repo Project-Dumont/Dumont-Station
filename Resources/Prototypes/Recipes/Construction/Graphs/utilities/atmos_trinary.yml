@@ -50,6 +50,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: inline_filterAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: inline_filterAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     # Mixer
     - to: mixer
       steps:
@@ -336,6 +350,40 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+  - node: inline_filterAlt3
+    entity: GasFilterInlineAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: inline_filterAlt4
+    entity: GasFilterInlineAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   # Mixer
   - node: mixer

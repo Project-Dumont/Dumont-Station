@@ -17,10 +17,10 @@
     mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi # Dumont
     drawdepth: BelowFloor
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -31,9 +31,9 @@
   - type: AtmosPipeLayers
     spriteRsiPaths:
       # Dumont changes start
-      Primary: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
-      Secondary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+      Primary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+      Secondary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+      Tertiary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
       Quaternary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt3.rsi
       Quinary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt4.rsi
       # Dumont end

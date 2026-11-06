@@ -301,6 +301,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: radiatorAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: radiatorAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: bendradiator
       steps:
       - material: Steel
@@ -318,6 +332,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: bendradiatorAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     # <Goobstation>
     - to: inlineradiator
@@ -351,6 +379,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: heatpumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: heatpumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
   - node: pressurepump
     entity: GasPressurePump
@@ -1074,6 +1116,44 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+  - node: radiatorAlt3
+    entity: HeatExchangerAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: radiatorAlt4
+    entity: HeatExchangerAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: bendradiator
     entity: HeatExchangerBend
     edges:
@@ -1127,6 +1207,44 @@
         doAfter: 1
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+  - node: bendradiatorAlt3
+    entity: HeatExchangerBendAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt4
+    entity: HeatExchangerBendAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   # <Goobstation>
   - node: inlineradiator
@@ -1214,3 +1332,38 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+  - node: heatpumpAlt3
+    entity: GasHeatPumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: heatpumpAlt4
+    entity: GasHeatPumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+

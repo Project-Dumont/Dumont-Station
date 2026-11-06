@@ -4,7 +4,7 @@
   name: crystallizer
   description: Used to crystallize or solidify gases.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Dumont
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/Machines/crystallizer.rsi
@@ -12,7 +12,7 @@
     noRot: true
     offset: 0, 0.5
     layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
         state: pipeBinaryConnectors
         offset: 0, -0.5
         map: [ "enum.PipeVisualLayers.Pipe" ]
@@ -32,12 +32,23 @@
   - type: Crystallizer
   - type: AtmosPipeColor
   - type: AtmosPipeLayers
-    numberOfPipeLayers: 3 # Dumont
+    # Dumont changes start
+    alternativePrototypes:
+      Primary: Crystallizer
+      Secondary: CrystallizerAlt1
+      Tertiary: CrystallizerAlt2
+      Quaternary: CrystallizerAlt3
+      Quinary: CrystallizerAlt4
+    # Dumont end
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
-        Primary: Structures/Piping/Atmospherics/pipe.rsi
-        Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
-        Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        # Dumont changes start
+        Primary: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        Secondary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+        Tertiary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+        Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+        Quinary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+        # Dumont end
   - type: AtmosDevice
   - type: UserInterface
     interfaces:

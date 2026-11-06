@@ -77,9 +77,9 @@
   - type: AtmosPipeLayers
     spriteRsiPaths:
       # Dumont changes start
-      Primary: Structures/Piping/Atmospherics/pump.rsi
-      Secondary: Structures/Piping/Atmospherics/pump_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/pump_alt2.rsi
+      Primary: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi
+      Secondary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi
+      Tertiary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi
       Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt3.rsi
       Quinary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt4.rsi
       # Dumont end
@@ -104,9 +104,9 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
@@ -178,9 +178,9 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeStraight
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpVolume
@@ -256,9 +256,9 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressureRegulator
@@ -318,9 +318,9 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeStraight
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpPassiveGate
@@ -371,9 +371,9 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeStraight
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpManualValve
@@ -442,9 +442,9 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
@@ -525,7 +525,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
         state: pipeUnaryConnectors
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: gasCanisterPort
@@ -581,7 +581,7 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeBinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
@@ -645,24 +645,32 @@
   name: gas recycler
   description: Recycles carbon dioxide and nitrous oxide. Heater and compressor not included.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Dumont
   components:
   - type: Sprite
     sprite: Structures/Machines/gasrecycler.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeBinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: running
     - state: unlit
       shader: unshaded
   - type: AtmosPipeLayers
+    # Dumont changes start
+    alternativePrototypes:
+      Primary: GasRecycler
+      Secondary: GasRecyclerAlt1
+      Tertiary: GasRecyclerAlt2
+      Quaternary: GasRecyclerAlt3
+      Quinary: GasRecyclerAlt4
+    # Dumont end
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
         # Dumont changes start
-        Primary: Structures/Piping/Atmospherics/pipe.rsi
-        Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
-        Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        Primary: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        Secondary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+        Tertiary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
         Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
         Quinary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
         # Dumont end
@@ -725,23 +733,30 @@
   - type: Transform
     noRot: false
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
-    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: HeatExchanger
       Secondary: HeatExchangerAlt1
       Tertiary: HeatExchangerAlt2
+      # Dumont changes start
+      Quaternary: HeatExchangerAlt3
+      Quinary: HeatExchangerAlt4
+      # Dumont end
     spriteRsiPaths:
-      Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
-      Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+      # Dumont changes start
+      Primary: _Dumont/Structures/Piping/Atmospherics/heatexchanger.rsi
+      Secondary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+      Tertiary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+      Quaternary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt3.rsi
+      Quinary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt4.rsi
+      # Dumont end
   - type: SubFloorHide
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
@@ -778,21 +793,28 @@
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
         state: pipeBend
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: AtmosPipeLayers
-      numberOfPipeLayers: 3 # Dumont
       alternativePrototypes:
         Primary: HeatExchangerBend
         Secondary: HeatExchangerBendAlt1
         Tertiary: HeatExchangerBendAlt2
+        # Dumont changes start
+        Quaternary: HeatExchangerBendAlt3
+        Quinary: HeatExchangerBendAlt4
+        # Dumont end
       spriteRsiPaths:
-        Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
-        Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
-        Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+        # Dumont changes start
+        Primary: _Dumont/Structures/Piping/Atmospherics/heatexchanger.rsi
+        Secondary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+        Tertiary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+        Quaternary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt3.rsi
+        Quinary: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt4.rsi
+        # Dumont end
     - type: NodeContainer
       nodes:
         inlet:
@@ -825,19 +847,22 @@
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpHeat
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: AtmosPipeLayers
-    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: GasHeatPump
       Secondary: GasHeatPumpAlt1
       Tertiary: GasHeatPumpAlt2
+      # Dumont changes start
+      Quaternary: GasHeatPumpAlt3
+      Quinary: GasHeatPumpAlt4
+      # Dumont end
   - type: Appearance
   - type: PipeColorVisuals
   - type: HeatPump

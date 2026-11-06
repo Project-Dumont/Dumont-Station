@@ -152,7 +152,7 @@
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
@@ -213,7 +213,7 @@
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_passive
@@ -277,7 +277,7 @@
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
       noRot: true
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
@@ -335,7 +335,7 @@
       sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
         - state: pipeUnaryConnectors
-          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: injector
           map: [ "enum.SubfloorLayers.FirstLayer" ]
@@ -403,9 +403,9 @@
       spriteLayersRsiPaths:
         enum.PipeVisualLayers.Pipe:
           # Dumont changes start
-          Primary: Structures/Piping/Atmospherics/thermomachine.rsi
-          Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
-          Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+          Primary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine.rsi
+          Secondary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+          Tertiary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt2.rsi
           Quaternary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
           Quinary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
           # Dumont end
@@ -449,7 +449,7 @@
   name: freezer
   description: Cools gas in connected pipes.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Dumont
   components:
     - type: StationAiWhitelist
     - type: Sprite
@@ -478,6 +478,15 @@
       prefix: device-address-prefix-freezer
     - type: StealTarget
       stealGroup: FreezerHeater
+    # Dumont changes start
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasThermoMachineFreezer
+        Secondary: GasThermoMachineFreezerAlt1
+        Tertiary: GasThermoMachineFreezerAlt2
+        Quaternary: GasThermoMachineFreezerAlt3
+        Quinary: GasThermoMachineFreezerAlt4
+    # Dumont end
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -487,6 +496,15 @@
   - type: GasThermoMachine
   - type: ApcPowerReceiver
     powerDisabled: false
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineFreezerEnabled
+      Secondary: GasThermoMachineFreezerEnabledAlt1
+      Tertiary: GasThermoMachineFreezerEnabledAlt2
+      Quaternary: GasThermoMachineFreezerEnabledAlt3
+      Quinary: GasThermoMachineFreezerEnabledAlt4
+  # Dumont end
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -494,7 +512,7 @@
   name: heater
   description: Heats gas in connected pipes.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Dumont
   components:
     - type: StationAiWhitelist
     - type: Sprite
@@ -523,6 +541,15 @@
       prefix: device-address-prefix-heater
     - type: StealTarget
       stealGroup: FreezerHeater
+    # Dumont changes start
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasThermoMachineHeater
+        Secondary: GasThermoMachineHeaterAlt1
+        Tertiary: GasThermoMachineHeaterAlt2
+        Quaternary: GasThermoMachineHeaterAlt3
+        Quinary: GasThermoMachineHeaterAlt4
+    # Dumont end
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -532,6 +559,15 @@
   - type: GasThermoMachine
   - type: ApcPowerReceiver
     powerDisabled: false
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineHeaterEnabled
+      Secondary: GasThermoMachineHeaterEnabledAlt1
+      Tertiary: GasThermoMachineHeaterEnabledAlt2
+      Quaternary: GasThermoMachineHeaterEnabledAlt3
+      Quinary: GasThermoMachineHeaterEnabledAlt4
+  # Dumont end
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -547,6 +583,15 @@
     energyLeakPercentage: 0.1 # Assmos
   - type: Machine
     board: HellfireFreezerMachineCircuitBoard
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineHellfireFreezer
+      Secondary: GasThermoMachineHellfireFreezerAlt1
+      Tertiary: GasThermoMachineHellfireFreezerAlt2
+      Quaternary: GasThermoMachineHellfireFreezerAlt3
+      Quinary: GasThermoMachineHellfireFreezerAlt4
+  # Dumont end
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -562,6 +607,15 @@
     energyLeakPercentage: 0.1 # Assmos
   - type: Machine
     board: HellfireHeaterMachineCircuitBoard
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineHellfireHeater
+      Secondary: GasThermoMachineHellfireHeaterAlt1
+      Tertiary: GasThermoMachineHellfireHeaterAlt2
+      Quaternary: GasThermoMachineHellfireHeaterAlt3
+      Quinary: GasThermoMachineHellfireHeaterAlt4
+  # Dumont end
 
 - type: entity
   parent: [ BaseMachinePowered, SmallConstructibleMachine, BaseAutomatedMachine ] # Goob: Automation
@@ -569,7 +623,7 @@
   name: condenser
   description: Condenses gases into liquids. Now we just need some plumbing.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Dumont
   components:
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/condenser.rsi
@@ -602,12 +656,20 @@
   - type: GasCondenser
   - type: AtmosPipeColor
   - type: AtmosPipeLayers
+    # Dumont changes start
+    alternativePrototypes:
+      Primary: BaseGasCondenser
+      Secondary: BaseGasCondenserAlt1
+      Tertiary: BaseGasCondenserAlt2
+      Quaternary: BaseGasCondenserAlt3
+      Quinary: BaseGasCondenserAlt4
+    # Dumont end
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
         # Dumont changes start
-        Primary: Structures/Piping/Atmospherics/condenser.rsi
-        Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
-        Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
+        Primary: _Carpmosia/Structures/Piping/Atmospherics/condenser.rsi
+        Secondary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt1.rsi
+        Tertiary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt2.rsi
         Quaternary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt3.rsi
         Quinary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt4.rsi
         # Dumont end
@@ -686,6 +748,16 @@
     board: ThermomachineUpgradedFreezerMachineCircuitBoard
 
 # Assmos
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineUpgradedFreezer
+      Secondary: GasThermoMachineUpgradedFreezerAlt1
+      Tertiary: GasThermoMachineUpgradedFreezerAlt2
+      Quaternary: GasThermoMachineUpgradedFreezerAlt3
+      Quinary: GasThermoMachineUpgradedFreezerAlt4
+  # Dumont end
+
 - type: entity
   parent: GasThermoMachineHeater
   id: GasThermoMachineUpgradedHeater
@@ -701,6 +773,16 @@
     board: ThermomachineUpgradedHeaterMachineCircuitBoard
 
 # Assmos
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineUpgradedHeater
+      Secondary: GasThermoMachineUpgradedHeaterAlt1
+      Tertiary: GasThermoMachineUpgradedHeaterAlt2
+      Quaternary: GasThermoMachineUpgradedHeaterAlt3
+      Quinary: GasThermoMachineUpgradedHeaterAlt4
+  # Dumont end
+
 - type: entity
   parent: GasThermoMachineFreezer
   id: GasThermoMachineAdvancedFreezer
@@ -716,6 +798,16 @@
     board: ThermomachineAdvancedFreezerMachineCircuitBoard
 
 # Assmos
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineAdvancedFreezer
+      Secondary: GasThermoMachineAdvancedFreezerAlt1
+      Tertiary: GasThermoMachineAdvancedFreezerAlt2
+      Quaternary: GasThermoMachineAdvancedFreezerAlt3
+      Quinary: GasThermoMachineAdvancedFreezerAlt4
+  # Dumont end
+
 - type: entity
   parent: GasThermoMachineHeater
   id: GasThermoMachineAdvancedHeater
@@ -729,3 +821,13 @@
     heatCapacity: 40000
   - type: Machine
     board: ThermomachineAdvancedHeaterMachineCircuitBoard
+  # Dumont changes start
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasThermoMachineAdvancedHeater
+      Secondary: GasThermoMachineAdvancedHeaterAlt1
+      Tertiary: GasThermoMachineAdvancedHeaterAlt2
+      Quaternary: GasThermoMachineAdvancedHeaterAlt3
+      Quinary: GasThermoMachineAdvancedHeaterAlt4
+  # Dumont end
+

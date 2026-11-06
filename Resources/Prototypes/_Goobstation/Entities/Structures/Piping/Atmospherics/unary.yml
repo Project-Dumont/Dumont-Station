@@ -10,9 +10,9 @@
   description: Transfers heat between the pipe and its surroundings. Doesn't need gas flow.
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heInlineStraight
@@ -36,7 +36,7 @@
   components:
     - type: Sprite
       layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
         state: pipeBend
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heInlineBend

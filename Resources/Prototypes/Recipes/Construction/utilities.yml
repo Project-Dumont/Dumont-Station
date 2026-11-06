@@ -1404,6 +1404,10 @@
   - HeatPump
   - HeatPumpAlt1
   - HeatPumpAlt2
+  # Dumont changes start
+  - HeatPumpAlt3
+  - HeatPumpAlt4
+  # Dumont end
 
 - type: construction
   id: HeatPumpAlt1
@@ -1420,6 +1424,10 @@
   - HeatPump
   - HeatPumpAlt1
   - HeatPumpAlt2
+  # Dumont changes start
+  - HeatPumpAlt3
+  - HeatPumpAlt4
+  # Dumont end
 
 - type: construction
   id: HeatPumpAlt2
@@ -1436,6 +1444,10 @@
   - HeatPump
   - HeatPumpAlt1
   - HeatPumpAlt2
+  # Dumont changes start
+  - HeatPumpAlt3
+  - HeatPumpAlt4
+  # Dumont end
 
 # pressure regulator
 

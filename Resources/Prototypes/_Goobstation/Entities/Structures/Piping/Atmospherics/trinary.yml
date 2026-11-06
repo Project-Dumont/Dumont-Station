@@ -17,11 +17,14 @@
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
   - type: AtmosPipeLayers
-    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: GasFilterInline
       Secondary: GasFilterInlineAlt1
       Tertiary: GasFilterInlineAlt2
+      # Dumont changes start
+      Quaternary: GasFilterInlineAlt3
+      Quinary: GasFilterInlineAlt4
+      # Dumont end
   - type: GasFilter
     inlet: pipe
     outlet: pipe

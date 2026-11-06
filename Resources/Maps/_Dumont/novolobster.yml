@@ -176437,6 +176437,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -12.5,-31.5
     - type: AtmosPipeColor
       color: '#087CA7FF'
@@ -176444,6 +176445,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 78.5,-22.5
       anchored: False
     - type: Physics
@@ -176454,6 +176456,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 109.5,3.5
     - type: AtmosPipeColor
       color: '#05B2DCFF'
@@ -176461,6 +176464,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 110.5,3.5
     - type: AtmosPipeColor
       color: '#05B2DCFF'
@@ -176468,6 +176472,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 111.5,3.5
     - type: AtmosPipeColor
       color: '#05B2DCFF'
@@ -176477,6 +176482,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 80.5,-22.5
       anchored: False
     - type: Physics
@@ -176487,6 +176493,7 @@ entities:
       name: greenhouse heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -21.5,-48.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176496,6 +176503,7 @@ entities:
       name: greenhouse heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -11.5,-43.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176505,6 +176513,7 @@ entities:
       name: botany main heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -4.5,-51.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176514,6 +176523,7 @@ entities:
       name: animal barn heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -4.5,-52.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176525,6 +176535,7 @@ entities:
       name: botany locker room heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -4.5,-50.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176537,6 +176548,7 @@ entities:
       desc: Not to be confused with a gun.
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 87.5,-50.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176546,6 +176558,7 @@ entities:
       name: breakroom & locker room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 56.5,-67.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176557,6 +176570,7 @@ entities:
       name: brigmedic heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 56.5,-68.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176568,6 +176582,7 @@ entities:
       name: north security hallway heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 54.5,-67.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176577,6 +176592,7 @@ entities:
       name: warden / sec front heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 54.5,-69.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176588,6 +176604,7 @@ entities:
       name: hos office heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 54.5,-68.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176599,6 +176616,7 @@ entities:
       name: south security hallway heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 56.5,-66.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176610,6 +176628,7 @@ entities:
       name: security front heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 54.5,-66.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176623,6 +176642,7 @@ entities:
       name: theater heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 1.5,-24.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176632,6 +176652,7 @@ entities:
       name: library heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 17.5,-52.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176641,6 +176662,7 @@ entities:
       name: medical paramedic heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -12.5,-33.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176652,6 +176674,7 @@ entities:
       name: medical locker room heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -16.5,-35.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176663,6 +176686,7 @@ entities:
       name: hop office heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 21.5,0.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176674,6 +176698,7 @@ entities:
       name: cargo lobby heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 40.5,0.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176685,6 +176710,7 @@ entities:
       name: medical reception heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -12.5,-35.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176696,6 +176722,7 @@ entities:
       name: janitor heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 11.5,-31.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176705,6 +176732,7 @@ entities:
       name: diner heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 13.5,-27.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176723,6 +176751,7 @@ entities:
       name: chaplain room heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -60.5,-6.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176732,6 +176761,7 @@ entities:
       name: south park entrance heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 36.5,-42.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176741,6 +176771,7 @@ entities:
       name: north park entrance heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 36.5,-40.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176768,6 +176799,7 @@ entities:
       name: clown room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 5.5,-65.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176777,6 +176809,7 @@ entities:
       name: cryosleep heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 3.5,-66.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176786,6 +176819,7 @@ entities:
       name: shrine main heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -58.5,-6.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176797,6 +176831,7 @@ entities:
       name: chemistry heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -15.5,-33.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176804,6 +176839,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -16.5,-33.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176813,6 +176849,7 @@ entities:
       name: main medbay heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -15.5,-35.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176824,6 +176861,7 @@ entities:
       name: surgery heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -30.5,-34.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176833,6 +176871,7 @@ entities:
       name: cmo heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -38.5,-38.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176842,6 +176881,7 @@ entities:
       name: shrine front entrance heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -60.5,-8.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176853,6 +176893,7 @@ entities:
       name: washrooms heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 15.5,-53.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176860,6 +176901,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 15.5,-54.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176871,6 +176913,7 @@ entities:
       name: 'dorm room #3 heater'
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 38.5,-72.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176882,6 +176925,7 @@ entities:
       name: 'dorm room #2 heater'
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 38.5,-73.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176891,6 +176935,7 @@ entities:
       name: 'dorm room #1 heater'
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 38.5,-74.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176902,6 +176947,7 @@ entities:
       name: dorms lobby heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 40.5,-72.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176911,6 +176957,7 @@ entities:
       name: dorms hallway heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 40.5,-74.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176922,6 +176969,7 @@ entities:
       name: science crafting heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -31.5,12.5
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
@@ -176933,6 +176981,7 @@ entities:
       name: science robotics heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -29.5,12.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176942,6 +176991,7 @@ entities:
       name: science entrance heater
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: -31.5,13.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176953,6 +177003,7 @@ entities:
       name: science xenoarchaeology heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -29.5,13.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176973,6 +177024,7 @@ entities:
       name: science locker room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: -29.5,14.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176984,6 +177036,7 @@ entities:
       name: science xenobiology heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -71.5,23.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -176993,6 +177046,7 @@ entities:
       name: rd heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -33.5,24.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177002,6 +177056,7 @@ entities:
       name: mime room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 3.5,-65.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177012,6 +177067,7 @@ entities:
       desc: Shouldn't the fireplace be doing this?
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 22.5,0.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177021,6 +177077,7 @@ entities:
       name: hop line heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 23.5,0.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177032,6 +177089,7 @@ entities:
       name: cargo break / locker room heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 40.5,-1.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177043,6 +177101,7 @@ entities:
       name: cargo front desk heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 41.5,-1.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177054,6 +177113,7 @@ entities:
       name: mail room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 41.5,0.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177065,6 +177125,7 @@ entities:
       name: interview room heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 62.5,-52.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177075,6 +177136,7 @@ entities:
       desc: This heater never seems to run right.
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 87.5,-66.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177089,6 +177151,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -10.5,9.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177096,6 +177159,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 50.5,-5.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177106,6 +177170,7 @@ entities:
       desc: One dinky little heater for the whole bay? No wonder why it's always cold in here.
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 32.5,10.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177115,6 +177180,7 @@ entities:
       name: bridge heater
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -2.5,23.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -177124,6 +177190,7 @@ entities:
       name: captain's room heater
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 23.5,14.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
@@ -199862,213 +199929,153 @@ entities:
     - type: Transform
       parent: 2
       pos: 64.5,-25.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29588
     components:
     - type: Transform
       parent: 2
       pos: 49.5,-52.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29593
     components:
     - type: Transform
       parent: 2
       pos: -75.5,-5.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29594
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -75.5,0.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29595
     components:
     - type: Transform
       parent: 2
       pos: 61.5,-94.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29596
     components:
     - type: Transform
       parent: 2
       pos: 67.5,-94.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29597
     components:
     - type: Transform
       parent: 2
       pos: 20.5,19.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29598
     components:
     - type: Transform
       parent: 2
       pos: 21.5,15.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29599
     components:
     - type: Transform
       parent: 2
       pos: 11.5,-66.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29600
     components:
     - type: Transform
       parent: 2
       pos: -10.5,-84.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29601
     components:
     - type: Transform
       parent: 2
       pos: 7.5,-84.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29602
     components:
     - type: Transform
       parent: 2
       pos: -36.5,-36.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29603
     components:
     - type: Transform
       parent: 2
       pos: 62.5,-25.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29604
     components:
     - type: Transform
       parent: 2
       pos: 43.5,-4.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29606
     components:
     - type: Transform
       parent: 2
       pos: -15.5,-16.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29614
     components:
     - type: Transform
       parent: 2
       pos: 80.5,-40.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29615
     components:
     - type: Transform
       parent: 2
       pos: 8.5,-35.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29616
     components:
     - type: Transform
       parent: 2
       pos: -6.5,-5.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29617
     components:
     - type: Transform
       parent: 2
       pos: 61.5,-25.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29618
     components:
     - type: Transform
       parent: 2
       pos: 87.5,-40.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29619
     components:
     - type: Transform
       parent: 2
       pos: 72.5,-57.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29620
     components:
     - type: Transform
       parent: 2
       pos: 21.5,-21.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29622
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 83.5,-62.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29626
     components:
     - type: Transform
       parent: 2
       pos: 59.5,-25.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29632
     components:
     - type: Transform
       parent: 2
       pos: 67.5,-58.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29633
     components:
     - type: Transform
       parent: 2
       pos: 114.5,-30.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29634
     components:
     - type: Transform
       parent: 2
       pos: -24.5,-23.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29635
     components:
     - type: Transform
       parent: 2
       pos: 86.5,-36.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29636
     components:
     - type: Transform
       parent: 2
       pos: 113.5,-29.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 29637
     components:
     - type: Transform
       parent: 2
       pos: 98.5,14.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 31738
     components:
     - type: Transform
@@ -235427,6 +235434,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 1.5707963267948966 rad
       pos: 89.5,-14.5
     - type: PointLight
       color: '#FF3300FF'
@@ -235434,6 +235442,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: -1.5707963267948966 rad
       pos: 89.5,-16.5
     - type: PointLight
       color: '#FF3300FF'

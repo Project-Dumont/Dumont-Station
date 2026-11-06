@@ -17,9 +17,11 @@ public sealed partial class PipeAppearanceComponent : Component
 {
     [DataField]
     public SpriteSpecifier.Rsi[] Sprite = [
-        new(new("Structures/Piping/Atmospherics/pipe.rsi"), "pipeConnector"),
-        new(new("Structures/Piping/Atmospherics/pipe_alt1.rsi"), "pipeConnector"),
-        new(new("Structures/Piping/Atmospherics/pipe_alt2.rsi"), "pipeConnector"),
+        // Dumont changes start
+        new(new("_Carpmosia/Structures/Piping/Atmospherics/pipe.rsi"), "pipeConnector"),
+        new(new("_Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi"), "pipeConnector"),
+        new(new("_Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi"), "pipeConnector"),
         new(new("_Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi"), "pipeConnector"),
         new(new("_Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi"), "pipeConnector")];
+        // Dumont end
 }

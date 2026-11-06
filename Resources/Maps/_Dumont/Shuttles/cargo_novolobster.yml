@@ -1391,6 +1391,7 @@ entities:
       desc: Keeps you toasty during your trip to the ATS.
     - type: Transform
       parent: 1
+      rot: 1.5707963267948966 rad
       pos: -3.5,2.5
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
