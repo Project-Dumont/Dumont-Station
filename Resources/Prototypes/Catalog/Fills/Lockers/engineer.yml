@@ -201,7 +201,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: UndeterminedVoidsuitEngineer # Goob edit
+      - id: ClothingOuterHardsuitEngineering
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingHandsGlovesColorYellow

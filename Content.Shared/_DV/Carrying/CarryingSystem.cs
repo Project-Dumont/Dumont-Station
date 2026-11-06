@@ -42,6 +42,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Verbs;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
+using Content.Goobstation.Common.Carrying; // Goob
 using Robust.Shared.Timing; // Goob edit
 using System.Numerics;
 using Content.Shared._EinsteinEngines.Contests;
@@ -394,6 +395,10 @@ public sealed class CarryingSystem : EntitySystem
 
         var mod = _contests.MassContest(carried, carrier);
         length *= mod;
+
+        var ev = new ModifyCarryDurationEvent(carried); // Goob
+        RaiseLocalEvent(carrier, ref ev); // Goob
+        length *= ev.Multiplier; // Goob
 
         return length;
     }

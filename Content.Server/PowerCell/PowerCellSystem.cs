@@ -94,6 +94,7 @@
 
 using Content.Server.Emp;
 using Content.Server.Power.Components;
+using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;

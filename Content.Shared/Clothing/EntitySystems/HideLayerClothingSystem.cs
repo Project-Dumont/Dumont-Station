@@ -1,6 +1,7 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
+using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -9,6 +10,7 @@ namespace Content.Shared.Clothing.EntitySystems;
 public sealed class HideLayerClothingSystem : EntitySystem
 {
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
@@ -32,6 +34,17 @@ public sealed class HideLayerClothingSystem : EntitySystem
     private void OnHideGotUnequipped(Entity<HideLayerClothingComponent> ent, ref ClothingGotUnequippedEvent args)
     {
         SetLayerVisibility(ent!, args.Wearer, hideLayers: false);
+    }
+
+    public void SetWearerLayersHidden(EntityUid clothing, bool hide)
+    {
+        if (!TryComp<HideLayerClothingComponent>(clothing, out var hideComp)
+            || !TryComp<ClothingComponent>(clothing, out var clothingComp)
+            || clothingComp.InSlot == null
+            || !_container.TryGetContainingContainer((clothing, null, null), out var container))
+            return;
+
+        SetLayerVisibility((clothing, hideComp, clothingComp), container.Owner, hide);
     }
 
     private void SetLayerVisibility(

@@ -68,6 +68,9 @@ public sealed class EmpSystem : SharedEmpSystem
         if (attemptEv.Cancelled)
             return;
 
+        if (IsEmpWardedByContainer(uid))
+            return;
+
         DoEmpEffects(uid, energyConsumption, duration);
     }
 
@@ -133,11 +136,6 @@ public sealed class EmpSystem : SharedEmpSystem
         args.Cancelled = true;
     }
 }
-
-/// <summary>
-/// Raised on an entity before <see cref="EmpPulseEvent"/>. Cancel this to prevent the emp event being raised.
-/// </summary>
-public sealed partial class EmpAttemptEvent : CancellableEntityEventArgs;
 
 [ByRefEvent]
 public record struct EmpPulseEvent(float EnergyConsumption, bool Affected, bool Disabled, TimeSpan Duration);

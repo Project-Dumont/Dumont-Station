@@ -442,7 +442,6 @@
     state: control
   content:
     - ClothingModsuitPraetorian
-    - ModsuitModuleMagboot
 
 # ERT
 
@@ -540,7 +539,6 @@
     state: control
   content:
     - ClothingModsuitHeadOfSecurityPowerCell
-    - ModsuitModuleInjector
 
 # engineer
 
@@ -563,7 +561,6 @@
     state: control
   content:
   - ClothingModsuitEngineerPowerCell
-  - ModsuitModuleMagboot
 
 # Head Of Security
 
