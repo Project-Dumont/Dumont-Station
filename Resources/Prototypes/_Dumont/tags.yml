@@ -49,6 +49,12 @@
   id: Resomi
 
 - type: Tag
+  id: TortureBlade
+
+- type: Tag
+  id: ShadowFang
+
+- type: Tag
   id: ShellShotgunImprovised
 
 - type: Tag

@@ -128,7 +128,7 @@
 
 - type: entity
   name: The Silverthorn
-  suffix: admeme
+  suffix: Admeme
   parent: [BaseWeaponRevolver, BaseMajorContraband]
   id: WeaponRevolverSilverthorn
   description: This enormous single-action revolver is a nefarious masterpiece, anti-materiel firepower that fits into your hand. Engravings give you purpose as advantage, Snake. Loads five .60 rounds. 
