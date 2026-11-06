@@ -186,12 +186,14 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Content.Server._RMC14.Mentor; // RMC Mentor Chat Funky Port
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
+using Content.Shared._RMC14.CCVar; // RMC Mentor Chat Funky Port
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -233,8 +235,12 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly DiscordChatLink _discordLink = default!;
+    [Dependency] private ILogManager _logManager = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
     [Dependency] private readonly CurrencyStoreManager _storeMan = default!; // Gaby - titles
+    [Dependency] private readonly MentorManager _mentorManager = default!; // RMC Mentor Chat Funky Port
+
+    private ISawmill? _sawmill = default!;
 
     /// <summary>
     /// The maximum length a player-sent message can be sent
@@ -253,6 +259,8 @@ internal sealed partial class ChatManager : IChatManager
 
         _configurationManager.OnValueChanged(CCVars.OocEnabled, OnOocEnabledChanged, true);
         _configurationManager.OnValueChanged(CCVars.AdminOocEnabled, OnAdminOocEnabledChanged, true);
+
+        _sawmill = _logManager.GetSawmill("SERVER");
 
         RegisterRateLimits();
     }
@@ -301,6 +309,11 @@ internal sealed partial class ChatManager : IChatManager
     {
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", FormattedMessage.EscapeText(message)));
         ChatMessageToAll(ChatChannel.Server, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride);
+
+        // _sawmill might have not been initialized when DispatchServerAnnouncement is called
+        // during server setup when some cvars are changed
+        _sawmill?.Info(message);
+
         Logger.InfoS("SERVER", message);
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Server announcement: {message}");
@@ -417,6 +430,29 @@ internal sealed partial class ChatManager : IChatManager
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Hook admin from {sender}: {message}");
     }
 
+    // RMC Mentor Chat Funky Port
+    public void SendHookMentor(string sender, string message)
+    {
+        var clients = _mentorManager.GetActiveMentors().Select(p => p.Channel);
+
+        var wrappedMessage = $"MENTOR: (D){sender}: {FormattedMessage.EscapeText(message)}";
+        foreach (var client in clients)
+        {
+            ChatMessageToOne(
+                ChatChannel.MentorChat,
+                message,
+                wrappedMessage,
+                source: EntityUid.Invalid,
+                hideChat: false,
+                client: client,
+                recordReplay: false,
+                audioPath: _netConfigManager.GetClientCVar(client, RMCCVars.RMCMentorChatSound),
+                audioVolume: _netConfigManager.GetClientCVar(client, RMCCVars.RMCMentorChatVolume));
+        }
+
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Hook mentor from {sender}: {message}");
+    }
+
     #endregion
 
     #region Public OOC Chat API
@@ -446,6 +482,9 @@ internal sealed partial class ChatManager : IChatManager
                 break;
             case OOCChatType.Admin:
                 SendAdminChat(player, message);
+                break;
+            case OOCChatType.Mentor: // RMC Mentor Chat Funky Port
+                SendMentorChat(player, message);
                 break;
         }
     }
@@ -535,9 +574,67 @@ internal sealed partial class ChatManager : IChatManager
         _adminLogger.Add(LogType.Chat, $"Admin chat from {player:Player}: {message}");
     }
 
+    // RMC Mentor Chat Funky Port
+    private void SendMentorChat(ICommonSession player, string message)
+    {
+        if (!_mentorManager.IsMentor(player.UserId))
+        {
+            _adminLogger.Add(LogType.Chat, LogImpact.Extreme, $"{player:Player} attempted to send mentor chat message but was not mentor");
+            return;
+        }
+
+        var clients = _mentorManager.GetActiveMentors().Select(p => p.Channel).ToList();
+        var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
+            ("adminChannelName", "MENTOR"),
+            ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+
+        foreach (var client in clients)
+        {
+            var isSource = client != player.Channel;
+            ChatMessageToOne(ChatChannel.MentorChat,
+                message,
+                wrappedMessage,
+                default,
+                false,
+                client,
+                audioPath: isSource ? _netConfigManager.GetClientCVar(client, RMCCVars.RMCMentorChatSound) : default,
+                audioVolume: isSource ? _netConfigManager.GetClientCVar(client, RMCCVars.RMCMentorChatVolume) : default,
+                author: player.UserId);
+        }
+
+        _discordLink.SendMessage(message, player.Name, ChatChannel.MentorChat);
+        _adminLogger.Add(LogType.Chat, $"Mentor chat from {player:Player}: {message}");
+    }
+
     #endregion
 
     #region Utility
+
+    /*
+    private bool IsValidWarpDestination(EntityUid source)
+    {
+        if (!source.Valid)
+            return false;
+
+        if (!_entityManager.TryGetComponent(source, out TransformComponent? transform))
+            return false;
+
+        return transform.MapID != MapID.Nullspace;
+    }
+    */
+
+    /*
+    public string PrependFollowButtonIfAppropriate(string wrappedMessage, EntityUid source, INetChannel recipient)
+    {
+        if (IsValidWarpDestination(source) && ShouldShowFollowButton(recipient))
+        {
+            var btnText = _localizationManager.GetString("chat-manager-follow-button");
+            return $"[cmdlink=\"{btnText}\" command=\"{GhostFollowEntityCommand.CommandName} {_entityManager.GetNetEntity(source)}\" /] " + wrappedMessage;
+        }
+
+        return wrappedMessage;
+    }
+    */
 
     // Goobstation Edit - Coalescing Chat, Trauma - added hidePopup
     public void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0, NetUserId? author = null, bool canCoalesce = true, bool hidePopup = false)
@@ -642,5 +739,6 @@ internal sealed partial class ChatManager : IChatManager
 public enum OOCChatType : byte
 {
     OOC,
-    Admin
+    Admin,
+    Mentor // RMC Mentor Chat Funky Port
 }
