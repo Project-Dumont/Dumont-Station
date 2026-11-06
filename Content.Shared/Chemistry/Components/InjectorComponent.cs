@@ -49,6 +49,23 @@ public sealed partial class InjectorComponent : Component
     [DataField]
     public bool InjectOnly;
 
+    // Dumont start
+    [DataField]
+    public bool DrawOnly;
+
+    [DataField]
+    public bool InstantTransfer;
+
+    [DataField]
+    public float? InteractionRangeOverride;
+
+    [DataField]
+    public Robust.Shared.Audio.SoundSpecifier? DrawSound;
+
+    [DataField]
+    public LocId? DrawPopupTarget;
+    // Dumont end
+
     /// <summary>
     /// Whether or not the injector is able to draw from or inject from mobs
     /// </summary>

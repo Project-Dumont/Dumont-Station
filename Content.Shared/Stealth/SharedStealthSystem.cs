@@ -235,6 +235,15 @@ public abstract class SharedStealthSystem : EntitySystem
     }
 
     // Goobstation start
+    // Dumont start
+    public void SetExamine(Entity<StealthComponent> ent, float threshold, string description)
+    {
+        ent.Comp.ExamineThreshold = threshold;
+        ent.Comp.ExaminedDesc = description;
+        Dirty(ent);
+    }
+    // Dumont end
+
     public void SetThermalsImmune(EntityUid uid, bool value, StealthComponent? comp = null)
     {
         if (!Resolve(uid, ref comp))

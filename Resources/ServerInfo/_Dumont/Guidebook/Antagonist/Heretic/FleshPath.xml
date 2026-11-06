@@ -1,0 +1,136 @@
+<Document>
+# Caminho da Carne
+
+Dificuldade: [color=yellow]Variável[/color]
+
+O Caminho da Carne invoca carniçais e monstruosidades para servir você. Escolha-o se gosta de comandar aliados como um necromante.
+
+## Vantagens
+- Transforma humanoides mortos em carniçais frágeis, mas leais.
+- Possui uma marca poderosa.
+- Oferece várias criaturas invocadas, com funções diferentes.
+- Ataques coordenados dos seus servos podem dominar a tripulação rapidamente.
+- Comer órgãos e partes do corpo traz benefícios conforme sua progressão.
+
+## Desvantagens
+- Boa parte da progressão se concentra em obter mais criaturas.
+- Oferece poucos recursos além dos servos.
+- Não dá acesso próprio a muitas magias ofensivas, defensivas ou de movimentação.
+- Seu papel é, principalmente, apoiar os servos.
+
+## Conhecimentos
+
+### Princípio da Fome
+
+Centenas de nós passaram fome, mas eu não... Encontrei força na minha ganância.
+
+Abre o Caminho da Carne.
+Permite transmutar uma faca e uma poça de sangue em uma Lâmina Sangrenta.
+Você só pode manter duas por vez.
+
+### Aperto da Carne
+
+Meus novos desejos me levaram cada vez mais longe.
+
+Seu Aperto do Mansus pode transformar um cadáver em carniçal.
+Esses carniçais têm apenas 50 de saúde e parecem corpos ressequidos aos olhos dos infiéis.
+Você só pode manter três por vez.
+Cada um recebe uma Lâmina Sangrenta que não pode ser quebrada e desaparece quando ele morre.
+Ao morrer, o carniçal volta ao normal, mas pode ser reerguido com seu aperto.
+Alt-clique em uma runa de ritual com o Aperto do Mansus para chamar de volta qualquer criatura que você tenha invocado.
+
+### Marca da Carne
+
+Foi então que os vi, os marcados. Estavam fora do meu alcance. Gritavam sem parar.
+
+Seu Aperto do Mansus passa a aplicar a Marca da Carne. Um ataque com sua Lâmina Sangrenta ativa a marca.
+Ao ser ativada, um mímico de carne se separa da vítima e a ataca.
+Mímicos de carne são iguais aos carniçais erguidos pelo Aperto do Mansus, mas sofrem dano contínuo que aumenta lentamente.
+
+### Ritual Imperfeito
+
+Encontrei anotações de um ritual sombrio, inacabado... Mesmo assim, segui em frente.
+
+Permite transmutar um cadáver e uma mordaça em um Morto sem Voz.
+Mortos sem Voz são carniçais mudos com 100 de saúde e uma Lâmina Sangrenta.
+Você só pode manter dois por vez.
+
+### Sutura da Carne
+
+Mas não ficaram fora do meu alcance por muito tempo. A cada passo, os gritos aumentavam, até que finalmente
+aprendi que podiam ser silenciados.
+
+Concede Sutura da Carne. Esta magia de toque funciona como uma poderosa ferramenta cirúrgica: ignora etapas da cirurgia e roupas, não causa dor nem dano de veneno. Também funciona como interface médica e analisador de saúde.
+A magia permite ainda curar seus servos e criaturas invocadas.
+
+### Ritual Cru
+
+Eu não podia continuar sozinho. Consegui invocar o Homem Inquietante para me ajudar a enxergar mais.
+Os gritos, antes constantes, cessaram diante de sua aparência abjeta. Nada estava fora do meu alcance.
+
+Permite transmutar um par de olhos, um estômago e uma poça de sangue em um Profeta Cru.
+Profetas Crus enxergam muito mais longe e através de paredes. Podem atravessar a realidade e conectar mentes para facilitar a comunicação, mas são frágeis e fracos em combate.
+Curam passivamente os hereges e carniçais ao seu redor.
+Você só pode manter dois por vez.
+
+### Aço Sangrento
+
+O Homem Inquietante não estava sozinho. Ele me levou ao Marechal.
+Finalmente comecei a entender. Então, sangue choveu dos céus.
+
+Sua Lâmina Sangrenta passa a causar sangramento intenso nos inimigos atingidos.
+
+### Ritual Solitário
+
+Combinei minha ganância e meus desejos para invocar uma fera sobrenatural que nunca havia visto.
+Uma massa de carne em constante transformação, que conhecia bem meus objetivos. O Marechal aprovou.
+
+Permite transmutar um coração, um estômago, pulmões e uma caneta em um Espreitador.
+Espreitadores podem usar Corte Carmesim, assumir a forma de outras criaturas e são fortes em combate.
+
+### Hino Final do Sacerdote
+
+O ritual de ascensão do Caminho da Carne. Traga 4 cadáveres para uma runa de transmutação.
+Ao concluir o ritual, você pode abandonar a forma humana e se tornar o Senhor da Noite, uma criatura de poder imenso.
+A própria transformação provoca medo e trauma nos infiéis próximos.
+Na forma do Senhor da Noite, você pode consumir braços para se curar e recuperar segmentos.
+Você também pode invocar mais seis carniçais e mais quatro Mortos sem Voz.
+Ativar Sutura da Carne na mão passa a curar seus servos em uma área ao seu redor, mas com uma recarga maior.
+
+## Armadura e habilidades passivas
+
+### Abraço Contorcido
+
+Enrolei aquelas coisas miseráveis e rastejantes ao meu redor como se fossem um cobertor quente.
+Com olhos que não são meus, elas testemunharão. Com dentes que não são meus, elas morderão. Com membros que não são meus, elas quebrarão.
+
+Permite transmutar uma mesa ou um uniforme, uma máscara e uma poça de sangue em um Abraço Contorcido.
+Detectar a condição de saúde de seres vivos e não vivos exige a melhoria passiva de nível 3 da Carne.
+Ao sofrer dano, a armadura pode gerar um mímico de carne leal com sua aparência.
+Funciona como foco mágico com o capuz erguido.
+Sua criação desbloqueia a melhoria passiva de nível 2.
+
+### Passiva de nível 1
+
+Você passa a poder consumir carne crua. Comer carne, órgãos e partes do corpo cura você.
+Também concede imunidade a dano de venenos e doenças.
+
+### Passiva de nível 2
+
+Você pode criar mais dois carniçais e mais um Morto sem Voz.
+
+### Passiva de nível 3
+
+Concede uma interface médica.
+
+## Dicas
+
+- O aperto transforma humanoides mortos em carniçais, inclusive aqueles com escudo mental, como oficiais e o capitão. A marca cria uma cópia de carne leal ao ser ativada pela lâmina.
+- Órgãos e cadáveres servem para rituais, cura e benefícios temporários.
+- Use Alt + clique na runa de rituais com o Aperto do Mansus para chamar seus carniçais e criaturas invocadas de volta.
+- Recompor Carne cura suas criaturas e serve como ferramenta cirúrgica, pulando etapas e funcionando através de roupas.
+- Profetas Crus conectam você e seus servos numa rede telepática e possuem uma aura de cura para o grupo.
+- Espreitadores de Carne lutam bem, podem se disfarçar de outras criaturas e usam Corte Carmesim.
+- O sucesso depende da experiência e da coordenação dos servos. Quantidade também ajuda.
+- Seus servos são mais substituíveis que você. Não tenha medo de enviá-los para uma luta perigosa. Talvez consiga recuperá-los depois.
+</Document>

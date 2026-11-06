@@ -23,6 +23,11 @@ public sealed partial class ComponentTogglerComponent : Component
     [DataField(required: true)]
     public ComponentRegistry Components = new();
 
+    // Dumont start
+    [DataField]
+    public ComponentRegistry DeactivateComponents = new();
+    // Dumont end
+
     /// <summary>
     /// The components to remove when deactivated.
     /// If this is null <see cref="Components"/> is reused.

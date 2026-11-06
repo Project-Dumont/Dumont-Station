@@ -82,6 +82,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
@@ -94,7 +95,9 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
+
 using Content.Shared.Heretic;
+// Dumont end
 
 namespace Content.Shared.Body.Systems;
 

@@ -4,6 +4,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.Ghoul;
+// Dumont end
+
 using Content.Goobstation.Common.Magic;
 using Content.Goobstation.Common.Religion;
 using Content.Goobstation.Shared.Changeling.Components;

@@ -4,86 +4,129 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Collections.Generic;
 using System.Linq;
-using Content.Server.Heretic.Ritual;
-using Content.Shared.Dataset;
 using Content.Shared.Tag;
+using Content.Shared.Whitelist;
+using Content.Trauma.Shared.Heretic.Components.Side;
+using Content.Trauma.Shared.Heretic.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.IntegrationTests.Tests._Goobstation.Heretic;
 
-[TestFixture, TestOf(typeof(RitualKnowledgeBehavior))]
+[TestFixture, TestOf(typeof(HereticKnowledgeRitualComponent))]
 public sealed class RitualKnowledgeTests
 {
-    private static readonly ProtoId<DatasetPrototype> KnowledgeDataset = "EligibleTags";
-
     [Test]
-    public async Task ValidateEligibleTags()
+    public async Task RitualsInitialize()
     {
-        // As far as I can tell, there's no annotation to validate
-        // a dataset of tag prototype IDs, so we'll have to do it
-        // in a test fixture. Sad.
-
         await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
         var server = pair.Server;
-
-        var entMan = server.ResolveDependency<IEntityManager>();
-        var protoMan = server.ResolveDependency<IPrototypeManager>();
-
+        var serialization = server.ResolveDependency<ISerializationManager>();
+        var context = new PrototypeSaveTest.TestEntityUidContext(serialization);
         await server.WaitAssertion(() =>
         {
-            // Get the eligible tags prototype
-            var dataset = protoMan.Index(KnowledgeDataset);
-
-            // Validate that every value is a valid tag
+            var prototypes = server.ProtoMan.EnumeratePrototypes<EntityPrototype>()
+                .Where(value => !value.Abstract && value.Components.ContainsKey("HereticRitual"));
             Assert.Multiple(() =>
             {
-                foreach (var tagId in dataset.Values)
+                foreach (var knowledge in server.ProtoMan.EnumeratePrototypes<HereticKnowledgePrototype>())
                 {
-                    Assert.That(protoMan.TryIndex<TagPrototype>(tagId, out var tagProto), Is.True, $"\"{tagId}\" is not a valid tag prototype ID");
+                    var node = serialization.WriteValue(knowledge, alwaysWrite: true, context: context);
+                    var errors = serialization.ValidateNode<HereticKnowledgePrototype>(node, context: context).GetErrors();
+                    Assert.That(errors.Select(error => error.ErrorReason), Is.Empty, knowledge.ID);
+                }
+                foreach (var prototype in prototypes)
+                {
+                    var node = serialization.WriteValue(prototype, alwaysWrite: true, context: context);
+                    var errors = serialization.ValidateNode<EntityPrototype>(node, context: context).GetErrors();
+                    Assert.That(errors.Select(error => error.ErrorReason), Is.Empty, prototype.ID);
+                    var ritual = server.EntMan.SpawnEntity(prototype.ID, map.MapCoords);
+                    server.EntMan.DeleteEntity(ritual);
                 }
             });
         });
+        await pair.CleanReturnAsync();
+    }
 
+    [TestCase("KnowledgeRitualOrgans", "arm", "LeftArmHuman")]
+    [TestCase("KnowledgeRitualOrgans", "leg", "RightLegHuman")]
+    [TestCase("KnowledgeRitualEasy", "wood-plank", "MaterialWoodPlank")]
+    [TestCase("KnowledgeRitualEasy", "gold", "IngotGold")]
+    [TestCase("KnowledgeRitualEasy", "silver", "IngotSilver")]
+    [TestCase("KnowledgeRitualEasy", "glass-shard", "ShardGlass")]
+    [TestCase("KnowledgeRitualHard", "gloves-medical", "ClothingHandsGlovesLatex")]
+    [TestCase("KnowledgeRitualHard", "gloves-medical", "ClothingHandsGlovesNitrile")]
+    [TestCase("KnowledgeRitualHard", "circular-saw", "SawElectric")]
+    [TestCase("KnowledgeRitualHard", "combat-boots", "ClothingShoesBootsCombat")]
+    public async Task StationItemMatchesIngredient(string datasetId, string ingredientName, string prototype)
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
+        var server = pair.Server;
+        await server.WaitAssertion(() =>
+        {
+            var ingredient = server.ProtoMan.Index<RitualIngredientDatasetPrototype>(datasetId).Ingredients
+                .Single(value => value.Name.ToString() == $"heretic-ritual-ingredient-{ingredientName}");
+            var item = server.EntMan.SpawnEntity(prototype, map.GridCoords);
+            var whitelist = server.EntMan.System<EntityWhitelistSystem>();
+            Assert.That(whitelist.IsValid(ingredient.Whitelist, item), Is.True, prototype);
+            Assert.That(whitelist.IsBlacklistPass(ingredient.Blacklist, item), Is.False, prototype);
+            server.EntMan.DeleteEntity(item);
+        });
         await pair.CleanReturnAsync();
     }
 
     [Test]
-    public async Task ValidateTagsHaveItems()
+    public async Task ValidateIngredientDatasets()
     {
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
-
-        var entMan = server.ResolveDependency<IEntityManager>();
-        var protoMan = server.ResolveDependency<IPrototypeManager>();
-        var compFactory = server.ResolveDependency<IComponentFactory>();
+        var factory = server.ResolveDependency<IComponentFactory>();
 
         await server.WaitAssertion(() =>
         {
-            // Get the eligible tags prototype
-            var dataset = protoMan.Index(KnowledgeDataset).Values.ToHashSet();
-
-            // Loop through every entity prototype and assemble a used tags set
-            var usedTags = new HashSet<string>();
-
-            // Ensure that every tag is used by a non-abstract entity
-            foreach (var entProto in protoMan.EnumeratePrototypes<EntityPrototype>())
+            foreach (var dataset in server.ProtoMan.EnumeratePrototypes<RitualIngredientDatasetPrototype>())
             {
-                if (entProto.Abstract)
-                    continue;
-
-                if (entProto.TryGetComponent<TagComponent>(out var tags, compFactory))
+                Assert.That(dataset.Ingredients, Is.Not.Empty, dataset.ID);
+                foreach (var ingredient in dataset.Ingredients)
                 {
-                    usedTags.UnionWith(tags.Tags.Select(t => t.Id));
+                    Assert.That(ingredient.Amount, Is.GreaterThan(0), dataset.ID);
+                    foreach (var whitelist in new[] { ingredient.Whitelist, ingredient.Blacklist })
+                    {
+                        if (whitelist == null)
+                            continue;
+                        foreach (var component in whitelist.Components ?? [])
+                            Assert.That(factory.GetRegistration(component), Is.Not.Null, dataset.ID);
+                        foreach (var tag in whitelist.Tags ?? [])
+                            Assert.That(server.ProtoMan.HasIndex<TagPrototype>(tag), Is.True, dataset.ID);
+                    }
                 }
             }
-
-            var unusedTags = dataset.Except(usedTags).ToHashSet();
-            Assert.That(unusedTags, Is.Empty, $"The following ritual item tags are not used by any obtainable entity prototypes: {string.Join(", ", unusedTags)}");
         });
+        await pair.CleanReturnAsync();
+    }
 
+    [Test]
+    public async Task KnowledgeRitualSelectsIngredients()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var map = await pair.CreateTestMap();
+        var server = pair.Server;
+        await server.WaitAssertion(() =>
+        {
+            var entity = server.EntMan.SpawnEntity("RitualKnowledge", map.MapCoords);
+            var ritual = server.EntMan.GetComponent<HereticKnowledgeRitualComponent>(entity);
+            Assert.That(ritual.Ingredients.Count, Is.EqualTo(ritual.Datasets.Values.Sum()));
+            foreach (var ingredient in ritual.Ingredients)
+            {
+                Assert.That(ritual.Datasets.Keys.Any(id =>
+                    server.ProtoMan.Index(id).Ingredients.Contains(ingredient)), Is.True);
+            }
+            server.EntMan.DeleteEntity(entity);
+        });
         await pair.CleanReturnAsync();
     }
 }

@@ -85,5 +85,15 @@ public abstract class SharedFadingTimedDespawnSystem : EntitySystem
     {
     }
 
+    // Dumont start
+    public void FadeDespawnEntity(EntityUid uid, TimeSpan lifetime, TimeSpan fadeOutTime)
+    {
+        var component = Factory.GetComponent<FadingTimedDespawnComponent>();
+        component.Lifetime = (float) lifetime.TotalSeconds;
+        component.FadeOutTime = (float) fadeOutTime.TotalSeconds;
+        AddComp(uid, component, true);
+    }
+    // Dumont end
+
     protected abstract bool CanDelete(EntityUid uid);
 }

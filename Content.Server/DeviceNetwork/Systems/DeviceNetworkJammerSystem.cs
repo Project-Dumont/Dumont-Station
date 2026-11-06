@@ -34,11 +34,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.DeviceNetwork.Systems;
 using Robust.Server.GameObjects;
+
+// Dumont start
+using Content.Trauma.Common.Heretic;
+// Dumont end
 
 namespace Content.Server.DeviceNetwork.Systems;
 
@@ -60,7 +63,11 @@ public sealed class DeviceNetworkJammerSystem : SharedDeviceNetworkJammerSystem
         if (ev.Cancelled)
             return;
 
-        if (HasComp<MansusGraspAffectedComponent>(ev.SenderTransform.ParentUid)) // Goobstation
+        // Dumont start
+        var attempt = new ParentPacketReceiveAttemptEvent();
+        RaiseLocalEvent(ev.SenderTransform.ParentUid, ref attempt);
+        // Dumont end
+        if (attempt.Cancelled)
         {
             ev.Cancel();
             return;

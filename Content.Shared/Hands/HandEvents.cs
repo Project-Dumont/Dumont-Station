@@ -382,9 +382,14 @@ namespace Content.Shared.Hands
     {
         public TEvent Args;
 
-        public HeldRelayedEvent(TEvent args)
+        // Dumont start
+        public readonly EntityUid Holder;
+
+        public HeldRelayedEvent(TEvent args, EntityUid holder = default)
         {
             Args = args;
+            Holder = holder;
         }
+        // Dumont end
     }
 }

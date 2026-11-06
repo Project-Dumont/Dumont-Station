@@ -323,6 +323,9 @@
   parent: Saw
   description: For heavy duty cutting.
   components:
+  - type: Tag
+    tags:
+    - CircularSaw
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw

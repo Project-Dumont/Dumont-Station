@@ -25,6 +25,11 @@ using Content.Shared.Storage;
 using Content.Shared.Tag; // Goobstation
 using Robust.Shared.Map; // Goobstation
 using Robust.Shared.Physics.Components; // Goobstation
+// Dumont start
+using Content.Shared.Charges.Components;
+using Content.Shared.Charges.Systems;
+using Content.Trauma.Common.Heretic;
+// Dumont end
 
 namespace Content.Server.Holosign;
 
@@ -32,6 +37,9 @@ public sealed class HolosignSystem : EntitySystem
 {
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    // Dumont start
+    [Dependency] private readonly SharedChargesSystem _charges = default!;
+    // Dumont end
 
     // Goobstation start
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -52,6 +60,10 @@ public sealed class HolosignSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, HolosignProjectorComponent component, ExaminedEvent args)
     {
+        // Dumont start
+        if (HasComp<LimitedChargesComponent>(uid))
+            return;
+        // Dumont end
         // TODO: This should probably be using an itemstatus
         // TODO: I'm too lazy to do this rn but it's literally copy-paste from emag.
         _powerCell.TryGetBatteryFromSlot(uid, out var battery);
@@ -73,9 +85,15 @@ public sealed class HolosignSystem : EntitySystem
     {
         // Goob edit start
         if (args.Handled
-            || !args.CanReach // prevent placing out of range
             || HasComp<StorageComponent>(args.Target)) // if it's a storage component like a bag, we ignore usage so it can be stored
             return;
+
+        // Dumont start
+        var attempt = new BeforeHolosignUsedEvent(args.User, args.ClickLocation);
+        RaiseLocalEvent(uid, ref attempt);
+        if (attempt.Cancelled || !attempt.Handled && !args.CanReach)
+            return;
+        // Dumont end
 
         // places the holographic sign at the click location, snapped to grid.
         var coords = args.ClickLocation.SnapToGrid(EntityManager);
@@ -98,8 +116,13 @@ public sealed class HolosignSystem : EntitySystem
                         CollisionGroup.HighImpassable)) != 0)
                 return;
         }
-        if (!_powerCell.TryUseCharge(uid, component.ChargeUse, user: args.User)) // if no battery or no charge, doesn't work
+        // Dumont start
+        var charged = TryComp<LimitedChargesComponent>(uid, out var charges)
+            ? _charges.TryUseCharge((uid, charges))
+            : _powerCell.TryUseCharge(uid, component.ChargeUse, user: args.User);
+        if (!charged)
             return;
+        // Dumont end
         var holoUid = Spawn(component.SignProto, coords);
         // Goob edit end
         var xform = Transform(holoUid);

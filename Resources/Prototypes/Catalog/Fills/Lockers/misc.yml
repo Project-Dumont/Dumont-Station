@@ -304,7 +304,8 @@
     - !type:NestedSelector
       tableId: AndromedaMaintLoot # Andromeda plushies. Should really be a part of the AllPlushiesTable, but meh.
       prob: 0.10
-
+    - id: Whetstone
+      prob: 0.25
 
 - type: entity
   id: ClosetMaintenanceFilledRandom
