@@ -197,7 +197,7 @@ public sealed partial class XenomorphVanguardSystem : EntitySystem
         {
             if (_actions.GetEvent(action) is not XenomorphLeapActionEvent) continue;
             _actions.SetToggled(action.Owner, active);
-            var delay = active ? TimeSpan.Zero : TimeSpan.FromSeconds(11) - (_timing.CurTime - Comp<XenomorphVanguardComponent>(uid).BlitzStarted);
+            var delay = active ? TimeSpan.Zero : TimeSpan.FromSeconds(3) - (_timing.CurTime - Comp<XenomorphVanguardComponent>(uid).BlitzStarted);
             if (delay < TimeSpan.Zero) delay = TimeSpan.Zero;
             _actions.SetUseDelay(action.Owner, delay);
             _actions.SetCooldown(action.Owner, delay);
@@ -245,7 +245,7 @@ public sealed partial class XenomorphVanguardSystem : EntitySystem
             if (!vanguard.SlashReady && !Comp<XenomorphLeapComponent>(uid).Leaping)
             {
                 vanguard.SlashReady = true;
-                vanguard.SlashAt = _timing.CurTime + TimeSpan.FromSeconds(3);
+                vanguard.SlashAt = vanguard.BlitzStarted + TimeSpan.FromSeconds(3);
             }
             if (vanguard.SlashReady && vanguard.SlashAt <= _timing.CurTime) Slash((uid, vanguard));
         }

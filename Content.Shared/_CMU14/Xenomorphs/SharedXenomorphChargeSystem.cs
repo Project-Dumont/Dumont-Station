@@ -26,7 +26,6 @@ public abstract partial class SharedXenomorphChargeSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private PullingSystem _pulling = default!;
     private static readonly SoundSpecifier Roar = new SoundCollectionSpecifier("DumontXenomorphRoar", AudioParams.Default.WithVariation(0.125f));
-    private static readonly SoundSpecifier Footstep = new SoundCollectionSpecifier("XenoFootstepLarge", AudioParams.Default.WithVolume(-2));
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedPlasmaSystem _plasma = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
@@ -144,8 +143,6 @@ public abstract partial class SharedXenomorphChargeSystem : EntitySystem
             if (TryComp<PullerComponent>(ent, out var puller) && puller.Pulling is { } victim
                 && TryComp<PullableComponent>(victim, out var pullable))
                 _pulling.TryStopPull(victim, pullable, ignoreGrab: true);
-            if (ent.Comp.Stage == 1 || ent.Comp.Steps % 2 == 0)
-                _audio.PlayPvs(Footstep, ent);
             Dirty(ent);
             _movement.RefreshMovementSpeedModifiers(ent);
         }

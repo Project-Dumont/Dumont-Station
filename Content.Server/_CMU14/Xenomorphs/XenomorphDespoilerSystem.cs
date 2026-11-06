@@ -366,18 +366,26 @@ public sealed partial class XenomorphDespoilerSystem : EntitySystem
         leap.Empowered = empowered;
         leap.Destination = destination;
         leap.Direction = direction;
-        leap.EndsAt = _timing.CurTime + TimeSpan.FromSeconds(Math.Min(distance, empowered ? 5 : 3) / 20);
+        leap.EndsAt = _timing.CurTime + TimeSpan.FromSeconds(Math.Min(distance, empowered ? 5 : 3) / 12);
         _physics.SetBodyStatus(ent, body, BodyStatus.InAir);
-        _physics.SetLinearVelocity(ent, direction * 20, body: body);
+        _physics.SetLinearVelocity(ent, direction * 12, body: body);
         Sound(ent, "/Audio/_RMC14/Xeno/alien_roar1.ogg");
         args.Handled = true;
     }
     private void OnLeapCollide(Entity<XenomorphCausticLeapComponent> ent, ref StartCollideEvent args)
     {
-        if (HasComp<XenomorphComponent>(args.OtherEntity))
+        if (!args.OtherFixture.Hard || HasComp<XenomorphComponent>(args.OtherEntity))
             return;
+        if (args.OtherFixture.Hard && Transform(args.OtherEntity).Anchored)
+        {
+            _stun.TryUpdateParalyzeDuration(ent, TimeSpan.FromSeconds(4));
+            FinishLeap(ent, false);
+            return;
+        }
         if (ent.Comp.Empowered && ent.Comp.Victim != args.OtherEntity)
             return;
+        if (!ent.Comp.Empowered && Victim(args.OtherEntity))
+            _stun.TryKnockdown(args.OtherEntity, TimeSpan.FromSeconds(4), true);
         FinishLeap(ent, ent.Comp.Empowered);
     }
     private void FinishLeap(Entity<XenomorphCausticLeapComponent> ent, bool hit)
@@ -396,7 +404,7 @@ public sealed partial class XenomorphDespoilerSystem : EntitySystem
             {
                 _damage.TryChangeDamage(victim, new DamageSpecifier { DamageDict = { ["Caustic"] = 30 } }, origin: ent.Owner);
                 ApplyAcid(victim, 3);
-                _stun.TryUpdateParalyzeDuration(victim, TimeSpan.FromSeconds(1));
+                _stun.TryKnockdown(victim, TimeSpan.FromSeconds(4), true);
             }
         }
         else

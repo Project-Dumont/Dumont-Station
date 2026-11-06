@@ -166,13 +166,13 @@
   id: ActionXenomorphPounce
   categories: [HideSpawnMenu]
   name: Pounce
-  description: Spend 20 plasma to leap. Knock down your target if you are invisible when you hit.
+  description: Spend 20 plasma to leap and knock down your target for four seconds.
   components:
   - type: Action
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
-    useDelay: 6
+    useDelay: 3
   - type: PlasmaCostAction
     plasmaCost: 20
 
@@ -589,7 +589,7 @@
     icon: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: caustic_embrace }
     iconOn: { sprite: _RMC14/Interface/Actions/despoiler.rsi, state: caustic_embrace }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
-    useDelay: 12
+    useDelay: 3
   - type: TargetAction
     range: 5
     checkCanAccess: false
@@ -946,7 +946,7 @@
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: charge }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
-    useDelay: 14
+    useDelay: 3
   - type: TargetAction
     range: 15
     checkCanAccess: false
@@ -1335,7 +1335,7 @@
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
-    useDelay: 10
+    useDelay: 3
   - type: TargetAction
     range: 15
     checkCanAccess: false
@@ -1462,7 +1462,7 @@
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
     iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: prae_dash }
     backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
-    useDelay: 0
+    useDelay: 3
   - type: TargetAction
     range: 15
     checkCanAccess: false
@@ -1862,7 +1862,7 @@
   components:
   - type: Action
     icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: pounce }
-    useDelay: 6
+    useDelay: 3
   - type: TargetAction
     range: 15
     checkCanAccess: false

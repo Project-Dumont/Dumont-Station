@@ -11,7 +11,7 @@ namespace Content.Shared._CMU14.Xenomorphs;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class XenomorphLeapComponent : Component
 {
-    [DataField] public TimeSpan ObstacleStun;
+    [DataField] public TimeSpan ObstacleStun = TimeSpan.FromSeconds(4);
     public bool CheckingMove;
     [DataField] public int PlasmaCost;
     [DataField] public SoundSpecifier? Sound;
@@ -23,7 +23,7 @@ public sealed partial class XenomorphLeapComponent : Component
     public float Speed = 12;
 
     [DataField]
-    public TimeSpan KnockdownTime = TimeSpan.FromSeconds(2);
+    public TimeSpan KnockdownTime = TimeSpan.FromSeconds(4);
 
     [DataField]
     public TimeSpan MoveDelay = TimeSpan.FromSeconds(0.7);
