@@ -9,7 +9,7 @@
   parent: Paper
   id: PrintedDocument
   abstract: true
-  description: Bureaucratic unit. A document printed on a printer.
+  description: Unidade burocrática. Um documento impresso em uma impressora.
   components:
     - type: Paper
 
@@ -537,7 +537,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentDNR
-  name: Diretiva de Não Reanimação
+  name: Diretiva de Não Reanimação (DNR)
   components:
     - type: Paper
       content: doc-text-printer-DNR
