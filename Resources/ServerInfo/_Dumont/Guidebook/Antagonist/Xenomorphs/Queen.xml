@@ -1,11 +1,13 @@
 <Document>
 # Rainha — a voz da colmeia
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Rainha" Scale="1.5" Interactive="false"/>
 </Box>
 
 A Rainha coordena a colmeia, sustenta a reprodução e realiza o contato final na rede de comunicações da estação. Seu papel exige proteção e planejamento: enviar ordens, acompanhar xenos e apoiar a frente pode valer mais que perseguir uma vítima.
+
+[bold]Vida:[/bold] 500 até crítico; 515 até morte. [bold]Golpe básico:[/bold] 50 de dano.
 
 ## Como chegar à Rainha
 
@@ -15,7 +17,7 @@ Qualquer Guarda Real (T3) pode evoluir para Rainha, incluindo todas as variantes
 
 ## Ovipositor e reprodução
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Ovipositor" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="DumontXenomorphEggItem" Caption="Ovo transportável" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="XenomorphEgg" Caption="Ovo no ninho" Scale="2" Interactive="false"/>
@@ -27,7 +29,7 @@ Os ovos abastecem os ninhos e as frentes. Carregadores e construtores ajudam a d
 
 ## Comando, observação e líderes
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="XenomorphGuideQueenHive" Caption="Colmeia" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="XenomorphGuideQueenWord" Caption="Palavra da Rainha" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="XenomorphGuidePheromones" Caption="Feromônios" Scale="2" Interactive="false"/>
@@ -51,7 +53,7 @@ Depois de [bold]dez minutos viva como Rainha[/bold], você amadurece, ganha resi
 
 ## A mente-colmeia humana
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="DumontHivePylon" Caption="Estabeleça o Pilone" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="ComputerComms" Caption="Alcance o console" Scale="2" Interactive="false"/>
 </Box>
@@ -62,7 +64,7 @@ O objetivo exige um Pilone já estabelecido. Fixe o ovipositor perto de um conso
 
 ## Sequestro de nave: alcance a fortaleza humana
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="ComputerShuttle" Caption="Console de controle da nave" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Ovipositor a bordo" Scale="2" Interactive="false"/>
 </Box>

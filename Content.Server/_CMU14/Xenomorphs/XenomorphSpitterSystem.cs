@@ -210,7 +210,7 @@ public sealed partial class XenomorphSpitterSystem : EntitySystem
         if (spray.Tiles.Count == 0 && spray.Barricades.Count == 0)
             return false;
         _sprays.Add(spray);
-        _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/refill.ogg"), user);
+        _audio.PlayPvs(new SoundCollectionSpecifier("DumontXenomorphSpit", AudioParams.Default.WithVolume(-6)), user);
         return true;
     }
 

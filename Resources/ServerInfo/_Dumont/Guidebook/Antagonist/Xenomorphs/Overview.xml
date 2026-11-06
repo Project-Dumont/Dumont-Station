@@ -1,7 +1,7 @@
 <Document>
 # Xenomorfos
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Construa" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Una a colmeia" Scale="1.4" Interactive="false"/>
 <GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Proteja" Scale="2" Interactive="false"/>
@@ -15,10 +15,10 @@ Vocês são xenos da mesma colmeia. Sobrevivam, obtenham novos hospedeiros e tra
 
 ## Objetivos da colmeia
 
-<Box>
-<GuideEntityEmbed Entity="DumontHivePylon" Caption="Estabeleça um Pilone" Scale="2" Interactive="false"/>
-<GuideEntityEmbed Entity="ComputerComms" Caption="Alcance a mente-colmeia humana" Scale="2" Interactive="false"/>
-<GuideEntityEmbed Entity="ComputerShuttle" Caption="Sequestro de nave: invada a Central" Scale="2" Interactive="false"/>
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="DumontHivePylon" Caption="Pilone" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerComms" Caption="Comunicações" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerShuttle" Caption="Sequestro de nave" Scale="2" Interactive="false"/>
 </Box>
 
 - [bold]Mantenha-se vivo.[/bold] Um xeno vivo pode defender o ninho, evoluir e continuar a reprodução.

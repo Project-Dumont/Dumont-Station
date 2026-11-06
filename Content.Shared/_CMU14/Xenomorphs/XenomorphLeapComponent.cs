@@ -20,7 +20,7 @@ public sealed partial class XenomorphLeapComponent : Component
     public float Range = 6;
 
     [DataField]
-    public float Speed = 20;
+    public float Speed = 12;
 
     [DataField]
     public TimeSpan KnockdownTime = TimeSpan.FromSeconds(2);

@@ -37,6 +37,7 @@ public sealed partial class XenomorphConstructionSystem : EntitySystem
     [Dependency] private SharedXenomorphDesignSystem _design = default!;
     [Dependency] private XenomorphDesignerSystem _visual = default!;
     [Dependency] private TagSystem _tags = default!;
+    [Dependency] private XenomorphWallResinSystem _resin = default!;
 
     public override void Initialize()
     {
@@ -137,6 +138,7 @@ public sealed partial class XenomorphConstructionSystem : EntitySystem
             var limit = choice.Id == "DumontXenomorphReflectiveResinWall" ? 5 : choice.Id == "DumontXenomorphResinSpikes" ? 15 : int.MaxValue;
             if (built.Count >= limit) return false;
         }
+        if (choice == "ResinWeedNode" && !_resin.CanPlantNode(coordinates)) return false;
         var near = _interaction.InRangeUnobstructed(user, coordinates, 2);
         if (!near && (!TryComp<XenomorphResinWhispererComponent>(user, out var remote)
             || !Comp<XenomorphComponent>(user).OnWeed || !_interaction.InRangeUnobstructed(user, coordinates, remote.Range))) return false;

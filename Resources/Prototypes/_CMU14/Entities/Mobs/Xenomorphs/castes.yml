@@ -3,6 +3,8 @@
   parent: BaseMobXenomorphCMU
   name: drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -45,6 +47,8 @@
   parent: BaseMobXenomorphCMU
   name: runner
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphSpit
   - type: XenomorphLongRangeSight
     offsetLength: 0
@@ -104,6 +108,8 @@
   parent: BaseMobXenomorphCMU
   name: defender
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphTailStab
     damage:
       types:
@@ -177,6 +183,8 @@
   parent: BaseMobXenomorphCMU
   name: sentinel
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPreparedStrike
     paralyzing: true
   - type: XenomorphTailStab
@@ -223,6 +231,8 @@
   parent: BaseMobXenomorphCMU
   name: lurker
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPreparedStrike
     paralyzing: false
   - type: XenomorphTailStab
@@ -637,6 +647,11 @@
   parent: BaseMobXenomorphCMU
   name: crusher
   components:
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: DumontXenomorphQueenFootstep
+      params:
+        volume: -4
   - type: XenomorphTailStab
     damage:
       types:
@@ -993,6 +1008,8 @@
   parent: BaseMobXenomorphCMU
   name: healer drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 3
     pheroSuffix: strong
@@ -1052,6 +1069,8 @@
   parent: BaseMobXenomorphCMU
   name: gardener drone
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphPheromones
     multiplier: 2
   - type: XenomorphHiveBuilder
@@ -1121,6 +1140,8 @@
   parent: BaseMobXenomorphCMU
   name: heatshield defender
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphTailStab
     damage:
       types:
@@ -1184,6 +1205,8 @@
   parent: BaseMobXenomorphCMU
   name: acider runner
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphHide
   - type: XenomorphAcider
   - type: PointLight
@@ -1237,6 +1260,8 @@
   parent: BaseMobXenomorphCMU
   name: toxic sentinel
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphToxic
   - type: XenomorphArmor
     armor: 10
@@ -1431,6 +1456,8 @@
   parent: BaseMobXenomorphCMU
   name: vampire lurker
   components:
+  - type: FootstepModifier
+    footstepSoundCollection: null
   - type: XenomorphVampire
   - type: XenomorphLeap
     range: 4

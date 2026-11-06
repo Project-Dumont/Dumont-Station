@@ -3,7 +3,7 @@
 
 ## 1. Sobreviva e estabeleça a base
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphLarva" Caption="Proteja os novos xenos" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="DumontHiveCore" Caption="Estabeleça o núcleo" Scale="2" Interactive="false"/>
 </Box>
@@ -14,17 +14,17 @@ Sobreviver continua sendo parte da missão. Protejam larvas, hospedeiros e const
 
 ## 2. Estabeleça um Pilone
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="DumontHiveCluster" Caption="Construa um Aglomerado" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="DumontHivePylon" Caption="Capture para virar Pilone" Scale="2" Interactive="false"/>
 </Box>
 
 A colmeia pode manter quatro Aglomerados e um Pilone. A resina do Aglomerado precisa alcançar o piso de [bold]um[/bold] destes três tipos de alvo, na mesma área da estação:
 
-<Box>
-<GuideEntityEmbed Entity="NuclearBomb" Caption="Bomba nuclear da estação" Scale="1.5" Interactive="false"/>
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="NuclearBomb" Caption="Bomba nuclear" Scale="1.5" Interactive="false"/>
 <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption="Núcleo da IA" Scale="1.5" Interactive="false"/>
-<GuideEntityEmbed Entity="XenomorphGuideDepartmentBeacon" Caption="Sinalizador departamental" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideDepartmentBeacon" Caption="Sinalizador" Scale="2" Interactive="false"/>
 </Box>
 
 - [bold]Bomba nuclear da estação:[/bold] a bomba da própria estação, ancorada.
@@ -57,7 +57,7 @@ Depois de [bold]20 minutos desde a chegada dos xenomorfos à partida[/bold], a c
 
 5. Ao terminar, o Aglomerado se transforma em Pilone e a colmeia recebe a confirmação.
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Um construtor captura" Scale="2" Interactive="false"/>
 <GuideEntityEmbed Entity="MobXenomorphCMUWarrior" Caption="Os demais defendem" Scale="2" Interactive="false"/>
 </Box>
@@ -78,15 +78,15 @@ Depois de [bold]20 minutos desde a chegada dos xenomorfos à partida[/bold], a c
 
 ## 3. Corrompa a mente-colmeia humana
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Escolte a Rainha" Scale="1.4" Interactive="false"/>
-<GuideEntityEmbed Entity="ComputerComms" Caption="Console de comunicações da estação" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="ComputerComms" Caption="Comunicações" Scale="2" Interactive="false"/>
 </Box>
 
 [bold]Só a Rainha inicia essa etapa, e um Pilone já deve ter sido estabelecido.[/bold] O alvo é um console de comunicações da estação, ancorado e capaz de chamar a nave de emergência. Não é um terminal de monitoramento, console de navegação ou console global da Central.
 
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Mantenha o ovipositor" Scale="2" Interactive="false"/>
 </Box>
 
@@ -102,10 +102,10 @@ Se a canalização terminar com sucesso, a colmeia estabelece contato e alcança
 
 ## Alternativa: Sequestro de nave e invasão da Central de Comando
 
-<Box>
+<Box VerticalAlignment="Bottom">
 <GuideEntityEmbed Entity="MobXenomorphCMUQueen" Caption="Proteja a Rainha" Scale="1.4" Interactive="false"/>
 <GuideEntityEmbed Entity="ComputerShuttle" Caption="Tome o console da nave" Scale="2" Interactive="false"/>
-<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Fixe o ovipositor a bordo" Scale="2" Interactive="false"/>
+<GuideEntityEmbed Entity="XenomorphGuideOvipositor" Caption="Ovipositor" Scale="2" Interactive="false"/>
 </Box>
 
 Se a nave de emergência [bold]atracar na estação antes da interferência nas comunicações ser concluída[/bold], o objetivo da mente-colmeia humana é bloqueado. A Rainha anuncia a nova missão: reunir os xenos e alcançar a fortaleza humana distante. Essa rota alternativa [bold]não exige um Pilone[/bold].

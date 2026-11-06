@@ -65,7 +65,9 @@ public sealed partial class XenomorphSpitSystem : EntitySystem
         }
         if (charged)
             Comp<XenomorphSpitterComponent>(ent).Fired = true;
-        if (!args.Bone) _audio.PlayPvs(new SoundCollectionSpecifier("DumontXenomorphSpit", AudioParams.Default.WithVolume(-10)), ent);
+        if (args.Bone)
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/_RMC14/Xeno/spike_spray.ogg", AudioParams.Default.WithVolume(-6)), ent);
+        else _audio.PlayPvs(new SoundCollectionSpecifier("DumontXenomorphSpit", AudioParams.Default.WithVolume(-10)), ent);
         args.Handled = true;
     }
     private void OnCollide(Entity<XenomorphSpitProjectileComponent> ent, ref PreventCollideEvent args)

@@ -85,7 +85,7 @@ public sealed partial class XenomorphBulwarkComponent : Component
     public float PlateBashUnencasedLeapRange = 3f;
 
     [DataField, AutoNetworkedField]
-    public float PlateBashUnencasedLeapSpeed = 30f;
+    public float PlateBashUnencasedLeapSpeed = 12f;
 
     [DataField, AutoNetworkedField]
     public float PlateBashKnockBackSpeed = 8f;

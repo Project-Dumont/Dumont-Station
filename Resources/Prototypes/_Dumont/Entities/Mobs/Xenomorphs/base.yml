@@ -6,7 +6,10 @@
   - type: XenomorphWatch
   - type: XenomorphRadioJammer
   - type: FootstepModifier
-    footstepSoundCollection: null
+    footstepSoundCollection:
+      collection: FootstepXenomorph
+      params:
+        volume: -6
   - type: CombatMode
     combatToggleAction: ActionXenomorphCombatMode
   - type: XenomorphLineage

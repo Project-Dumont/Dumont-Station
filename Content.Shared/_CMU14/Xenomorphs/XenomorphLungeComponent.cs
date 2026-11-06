@@ -10,7 +10,7 @@ namespace Content.Shared._CMU14.Xenomorphs;
 public sealed partial class XenomorphLungeComponent : Component
 {
     [DataField] public float Range = 5;
-    [DataField] public float Speed = 30;
+    [DataField] public float Speed = 12;
     [DataField] public TimeSpan StunTime = TimeSpan.FromSeconds(4);
     public EntityUid? Target;
 }
