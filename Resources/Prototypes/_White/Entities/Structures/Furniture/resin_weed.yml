@@ -4,6 +4,13 @@
   name: resin floor
   description: A thick resin surface covers the floor.
   components:
+  - type: XenomorphWeedWallSpread
+  - type: SpeedModifierContacts # Dumont
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+    ignoreWhitelist:
+      components:
+      - Xenomorph
   - type: Sprite
     noRot: true
     drawdepth: FloorTiles
@@ -28,11 +35,9 @@
           !type:PhysShapeAabb
           bounds: "-0.45,-0.45,0.45,0.45"
         mask:
-        - SlipLayer
+        - ItemMask
         layer:
-        - Impassable
-        - MidImpassable
-        - LowImpassable
+        - SlipLayer
         hard: false
   - type: Destructible
     thresholds:

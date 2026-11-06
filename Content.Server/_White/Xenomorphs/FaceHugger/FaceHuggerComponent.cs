@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Whitelist;
@@ -50,7 +52,7 @@ public sealed partial class FaceHuggerComponent : Component
 
     // Goobstation start
     [DataField]
-public string SleepChem = "Nocturine";
+    public string? SleepChem = "Nocturine"; // Dumont
 
     [DataField]
     public float SleepChemAmount = 10f;

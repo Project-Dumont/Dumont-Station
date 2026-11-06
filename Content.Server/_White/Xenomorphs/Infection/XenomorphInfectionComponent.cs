@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._CMU14.Xenomorphs;
+using Content.Shared._Dumont.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
@@ -27,6 +31,14 @@ public sealed partial class XenomorphInfectionComponent : SharedXenomorphInfecti
 
     [DataField]
     public Dictionary<int, List<EntityEffect>> Effects = new ();
+
+    // Dumont start
+    [DataField]
+    public EntityUid? SourceMindId;
+
+    [DataField]
+    public ProtoId<XenomorphLineagePrototype> Lineage = "Other";
+    // Dumont end
 
     [ViewVariables]
     public TimeSpan NextPointsAt;

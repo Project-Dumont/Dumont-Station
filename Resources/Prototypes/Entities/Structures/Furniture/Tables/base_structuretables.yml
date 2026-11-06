@@ -32,6 +32,8 @@
   description: A square piece of metal standing on four metal legs.
   abstract: true
   components:
+  - type: XenomorphRavagerObstacle
+    assault: true
   - type: Animateable
   - type: Damageable
     damageContainer: StructuralInorganic

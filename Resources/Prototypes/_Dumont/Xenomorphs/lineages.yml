@@ -1,0 +1,149 @@
+- type: xenomorphLineage
+  id: Human
+  species:
+  - Human
+  evolutions:
+    Larva:
+    - MobXenomorphCMURunner
+    - MobXenomorphCMUSentinel
+    - MobXenomorphCMUDrone
+    Runner:
+    - MobXenomorphCMULurker
+    Sentinel:
+    - MobXenomorphCMUSpitter
+    Drone:
+    - MobXenomorphCMUHivelord
+    Lurker:
+    - MobXenomorphCMUPraetorian
+    - MobXenomorphCMUDancerPraetorian
+    - MobXenomorphCMUVanguardPraetorian
+    - MobXenomorphCMUOppressorPraetorian
+    - MobXenomorphCMUValkyriePraetorian
+    Spitter:
+    - MobXenomorphCMUPraetorian
+    - MobXenomorphCMUDancerPraetorian
+    - MobXenomorphCMUVanguardPraetorian
+    - MobXenomorphCMUOppressorPraetorian
+    - MobXenomorphCMUValkyriePraetorian
+    Hivelord:
+    - MobXenomorphCMUPraetorian
+    - MobXenomorphCMUDancerPraetorian
+    - MobXenomorphCMUVanguardPraetorian
+    - MobXenomorphCMUOppressorPraetorian
+    - MobXenomorphCMUValkyriePraetorian
+    Praetorian:
+    - MobXenomorphCMUQueen
+- type: xenomorphLineage
+  id: Oni
+  species:
+  - Oni
+  evolutions:
+    Larva:
+    - MobXenomorphCMUDefender
+    - MobXenomorphCMUHeatshieldDefender
+    Defender:
+    - MobXenomorphCMUBull
+    Bull:
+    - MobXenomorphCMUCrusher
+- type: xenomorphLineage
+  id: Agile
+  species:
+  - Rodentia
+  - Resomi
+  - Dwarf
+  - Shadowkin
+  evolutions:
+    Larva:
+    - MobXenomorphCMURunner
+    - MobXenomorphCMUAciderRunner
+    Runner:
+    - MobXenomorphCMUSpitter
+    - MobXenomorphCMUVenatorSpitter
+    - MobXenomorphCMUBurrower
+    Spitter:
+    - MobXenomorphCMUBoiler
+- type: xenomorphLineage
+  id: Brood
+  species:
+  - Arachnid
+  - Reptilian
+  - Chitinid
+  evolutions:
+    Larva:
+    - MobXenomorphCMUDrone
+    Drone:
+    - MobXenomorphCMUReaper
+    - MobXenomorphCMUCarrier
+    - MobXenomorphCMUEggsacCarrier
+    Reaper:
+    - MobXenomorphCMUDespoiler
+- type: xenomorphLineage
+  id: Chemical
+  species:
+  - Plasmaman
+  - Vox
+  - SlimePerson
+  evolutions:
+    Larva:
+    - MobXenomorphCMUSentinel
+    - MobXenomorphCMUToxicSentinel
+    Sentinel:
+    - MobXenomorphCMUSpitter
+    - MobXenomorphCMUVenatorSpitter
+    - MobXenomorphCMUHivelord
+    - MobXenomorphCMUResinWhispererHivelord
+    Spitter:
+    - MobXenomorphCMUBoiler
+- type: xenomorphLineage
+  id: Assault
+  species:
+  - Feroxi
+  - Yowie
+  - Harpy
+  evolutions:
+    Larva:
+    - MobXenomorphCMUDefender
+    Defender:
+    - MobXenomorphCMUWarrior
+    - MobXenomorphCMUBulwarkWarrior
+    - MobXenomorphCMUHivelord
+    Warrior:
+    - MobXenomorphCMURavager
+    - MobXenomorphCMUHedgehogRavager
+    - MobXenomorphCMUBerserkerRavager
+- type: xenomorphLineage
+  id: Support
+  species:
+  - Vulpkanin
+  - Daengati
+  - Tajaran
+  evolutions:
+    Larva:
+    - MobXenomorphCMUDrone
+    - MobXenomorphCMUHealerDrone
+    - MobXenomorphCMUGardenerDrone
+    Drone:
+    - MobXenomorphCMULurker
+    - MobXenomorphCMUVampireLurker
+    - MobXenomorphCMUHivelord
+    - MobXenomorphCMUDesignerHivelord
+    Lurker:
+    - MobXenomorphCMURavager
+- type: xenomorphLineage
+  id: Other
+  species: []
+  evolutions:
+    Larva:
+    - MobXenomorphCMURunner
+    - MobXenomorphCMUSentinel
+    - MobXenomorphCMUDrone
+    Runner:
+    - MobXenomorphCMULurker
+    Sentinel:
+    - MobXenomorphCMUSpitter
+    Drone:
+    - MobXenomorphCMUHivelord
+    Lurker:
+    - MobXenomorphCMURavager
+    Spitter:
+    - MobXenomorphCMUBoiler
