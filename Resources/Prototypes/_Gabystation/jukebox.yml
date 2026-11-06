@@ -285,7 +285,7 @@
 
 - type: jukebox
   id: Runoutdois
-  name: Running Out V2 - Sanabi
+  name: Sanabi - Running Out V2
   path:
     path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
 
@@ -297,43 +297,43 @@
 
 - type: jukebox
   id: Tokyodrift
-  name: Tokyo Drift - Fast & Furious
+  name: Fast & Furious - Tokyo Drift
   path:
     path: /Audio/_Gabystation/Jukebox/Tokyo_Drift_Fast_&_Furious.ogg
 
 - type: jukebox
   id: frangonapanela
-  name: Franguinho Na Panela - Moacyr dos Santos & Paraíso
+  name: Moacyr dos Santos & Paraíso - Franguinho Na Panela
   path:
     path: /Audio/_Gabystation/Jukebox/franguinhonapanela.ogg
 
 - type: jukebox
   id: Vermilion
-  name: Vermilion Pt2 - Slipknot
+  name: Slipknot - Vermilion Pt2
   path:
     path: /Audio/_Gabystation/Jukebox/Vermilion_Pt2.ogg
 
 - type: jukebox
   id: Opirata
-  name: Pirata Oficial - Ave Sangria
+  name: Ave Sangria - Pirata Oficial
   path:
     path: /Audio/_Gabystation/Jukebox/Pirata_Oficial.ogg
 
 - type: jukebox
   id: Doisnavega
-  name: Dois Navegantes - Ave Sangria
+  name: Ave Sangria - Dois Navegantes
   path:
     path: /Audio/_Gabystation/Jukebox/Dois_Navegantes.ogg
 
 - type: jukebox
   id: Talisma
-  name: Talismã - Leandro & Leonardo
+  name: Leandro & Leonardo - Talismã
   path:
     path: /Audio/_Gabystation/Jukebox/Talisma.ogg
 
 - type: jukebox
   id: Éamor
-  name: É o Amor - Zezé Di Camargo & Luciano
+  name: Zezé Di Camargo & Luciano - É o Amor
   path:
     path: /Audio/_Gabystation/Jukebox/É_o_Amor.ogg
 

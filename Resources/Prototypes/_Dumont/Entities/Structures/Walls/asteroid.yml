@@ -4,7 +4,7 @@
   parent: BaseWall
   name: Rocha Vulcânica
   suffix: Labor
-  description: Uma rocha.
+  description: Uma rocha resistente, forjada pelo fogo de um vulcão extinto.
   components:
   - type: Transform
     noRot: true
@@ -64,8 +64,82 @@
   parent: LaborRock
   name: Rocha Vulcânica
   suffix: higher ore yield .33, Labor
-  description: Uma rocha.
+  description: Uma rocha resistente, forjada pelo fogo de um vulcão extinto.
   components:
   - type: OreVein
     oreChance: 0.33
     oreRarityPrototypeId: RandomOreDistributionStandard
+
+#Ancient rock
+- type: entity
+  id: AncientRock
+  parent: BaseWall
+  name: Rocha Anciã
+  suffix: Farragus
+  description: Uma rocha tão velha e densa que mal cede à uma picareta.
+  components:
+  - type: Transform
+    noRot: true
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: SmoothEdge
+  - type: Icon
+    sprite: _Dumont/Structures/Walls/ancient_rock.rsi
+    state: rock_ancient
+  - type: Sprite
+    sprite: _Dumont/Structures/Walls/ancient_rock.rsi
+    layers:
+    - state: rock_ancient
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_ancient_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_ancient_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_ancient_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_ancient_west
+  - type: MiningScannerViewable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 480 # 4x AsteroidRock (120)
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 2000
+  - type: Gatherable
+    toolWhitelist:
+      tags: []
+
+- type: entity
+  id: AncientRockMining
+  parent: AncientRock
+  name: Rocha Anciã
+  suffix: lower ore yield .05, Farragus
+  description: Uma rocha tão velha e densa que mal cede à uma picareta.
+  components:
+  - type: OreVein
+    oreChance: 0.05
+    oreRarityPrototypeId: RandomOreDistributionStandard
+
+
