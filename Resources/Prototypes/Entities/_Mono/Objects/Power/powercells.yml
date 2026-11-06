@@ -18,8 +18,8 @@
   - type: Battery
     maxCharge: 1500
     startingCharge: 1500
-  - type: HitscanBatteryAmmoProvider 
-    proto: RedLaser
+  - type: ProjectileBatteryAmmoProvider 
+    proto: BulletLaserMainWeapon
     fireCost: 187 # 8 shots
 
 

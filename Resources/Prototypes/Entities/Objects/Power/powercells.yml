@@ -144,8 +144,8 @@
     sprite: Structures/Power/power.rsi
     state: generator
   - type: Anchorable # goob end
-  - type: HitscanBatteryAmmoProvider # goob edit - svalinn buff fix
-    proto: MediumOverchargedLaser # hot potato
+  - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+    proto: BulletLaserOvercharge # hot potato
     fireCost: 70
 
 - type: entity
@@ -174,8 +174,8 @@
       Steel: 12
     chemicalComposition:
       Zinc: 5
-  - type: HitscanBatteryAmmoProvider # goob edit - svalinn buff fix
-    proto: RedLightLaser
+  - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+    proto: BulletLaserSubmachineGun
     fireCost: 45 # 8 shots
 
 - type: entity
@@ -224,8 +224,8 @@
   - type: Battery
     maxCharge: 720
     startingCharge: 720
-  - type: HitscanBatteryAmmoProvider # goob edit - battery hitscan buff
-    proto: MediumRedLaser
+  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+    proto: BulletLaserPistol
     fireCost: 90 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
@@ -270,8 +270,8 @@
   - type: Battery
     maxCharge: 1080
     startingCharge: 1080
-  - type: HitscanBatteryAmmoProvider # goob edit - battery hitscan buff
-    proto: RedLaser
+  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+    proto: BulletLaserMainWeapon
     fireCost: 135 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
@@ -316,8 +316,8 @@
   - type: Battery
     maxCharge: 1800
     startingCharge: 1800
-  - type: HitscanBatteryAmmoProvider # goob edit - battery hitscan buff
-    proto: HeavyRedLaser
+  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+    proto: BulletLaserOvercharge
     fireCost: 225 # 8 shots
 
 - type: entity
@@ -359,8 +359,8 @@
     autoRechargeRate: 12 # takes 1 minute to charge itself back to full
     # Goobstation
     canEmp: true
-  - type: HitscanBatteryAmmoProvider # goob edit - battery hitscan buff
-    proto: MediumRedLaser
+  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+    proto: BulletLaserPistol
     fireCost: 90 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
@@ -406,8 +406,8 @@
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 40
-    - type: HitscanBatteryAmmoProvider # goob edit - svalinn buff fix
-      proto: RedLaser
+    - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+      proto: BulletLaserCaptain
       fireCost: 75 # 16 shots
 
 # Power cage (big heavy power cell for big devices)

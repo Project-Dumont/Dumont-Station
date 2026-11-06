@@ -226,7 +226,7 @@
       - state: inhand-right-blade
         shader: unshaded
   - type: Reflect # Goob edit
-    reflectProb: .5
+    reflectProb: .3 # Dumont edit - Lasersec
     reflects:
       - Energy
   - type: IgnitionSource
@@ -340,7 +340,7 @@
     color: white
     netsync: false
   - type: Reflect # Goob edit
-    reflectProb: .25
+    reflectProb: .15 # Dumont edit
 
 - type: entity
   name: pen
@@ -414,8 +414,8 @@
     tags:
     - Write
   - type: Reflect
-    reflectProb: 0.25 #Goob rebalace
-    reflects: #Goob rebalance
+    reflectProb: 0.15 #Dumont edit
+    reflects:
       - Energy
     spread: 30
 
@@ -535,7 +535,7 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect # Goob edit
-    reflectProb: .8
+    reflectProb: .5 # Dumont edit
     spread: 75
   - type: FlipOnHit # WD EDIT
   - type: ThrowableBlocker # Goobstation
