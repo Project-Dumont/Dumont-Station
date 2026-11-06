@@ -591,6 +591,7 @@
   name: RPD
   description: The rapid piping device allows for the quick placement and removal of atmospheric-related buildings requires compressive matter to use.
   components:
+  - type: RpdLayerSelector
   - type: RCD
     isRpd: true
     multiplier: 2 #Dumont

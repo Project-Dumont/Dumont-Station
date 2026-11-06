@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Gameplay;
+using Content.Shared._Dumont.RPD;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Construction.Prototypes;
@@ -92,7 +93,9 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
             return;
 
         // Draw guide circles for each pipe layer if we are not in line/grid placing mode
-        if (pManager.PlacementType == PlacementTypes.None)
+        if (pManager.PlacementType == PlacementTypes.None &&
+            (!_entityManager.TryGetComponent<RpdLayerSelectorComponent>(pManager.CurrentPermission?.MobUid, out var selector) ||
+             selector.SelectedLayer == null))
         {
             var gridRotation = _transformSystem.GetWorldRotation(gridUid.Value);
             var worldPosition = _mapSystem.LocalToWorld(gridUid.Value, grid, MouseCoords.Position);
@@ -153,6 +156,9 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
             _handsSystem.TryGetActiveItem((player, hands), out var heldEntity) &&
             _entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
         {
+            if (_entityManager.TryGetComponent<RpdLayerSelectorComponent>(heldEntity, out var selector))
+                newLayer = selector.SelectedLayer ?? newLayer;
+
             if (newLayer != _currentLayer)
             {
                 _currentLayer = newLayer;
