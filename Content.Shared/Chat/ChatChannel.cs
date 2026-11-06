@@ -122,7 +122,7 @@ namespace Content.Shared.Chat
         /// <summary>
         ///     RMC Mentor chat Funky Port
         /// </summary>
-        MentorChat = 1 << 15,
+        MentorChat = 1 << 17,
 
         /// <summary>
         ///     Channels considered to be IC.
