@@ -47,8 +47,8 @@ public sealed class AlignAtmosPipeLayers : SnapgridCenter
     private const float MouseDeadzoneRadius = 0.25f;
 
     private Color _guideColor = new Color(0, 0, 0.5785f);
-    private const float GuideRadius = 0.1f;
-    private const float GuideOffset = 0.21875f;
+    private const float GuideRadius = 0.05f;
+    private const float GuideOffset = 0.125f;
 
     public AlignAtmosPipeLayers(PlacementManager pMan) : base(pMan)
     {
@@ -79,6 +79,10 @@ public sealed class AlignAtmosPipeLayers : SnapgridCenter
             args.WorldHandle.DrawCircle(worldPosition, GuideRadius, _guideColor);
             args.WorldHandle.DrawCircle(worldPosition + gridRotation.RotateVec(new Vector2(multi * GuideOffset, GuideOffset)), GuideRadius, _guideColor);
             args.WorldHandle.DrawCircle(worldPosition - gridRotation.RotateVec(new Vector2(multi * GuideOffset, GuideOffset)), GuideRadius, _guideColor);
+            // Dumont changes start
+            args.WorldHandle.DrawCircle(worldPosition + gridRotation.RotateVec(new Vector2(multi * GuideOffset * 2, GuideOffset * 2)), GuideRadius, _guideColor);
+            args.WorldHandle.DrawCircle(worldPosition - gridRotation.RotateVec(new Vector2(multi * GuideOffset * 2, GuideOffset * 2)), GuideRadius, _guideColor);
+            // Dumont end
         }
 
         base.Render(args);
@@ -114,11 +118,20 @@ public sealed class AlignAtmosPipeLayers : SnapgridCenter
         var mouseCoordsDiff = _unalignedMouseCoords.Position - MouseCoords.Position;
         var layer = AtmosPipeLayer.Primary;
 
-        if (mouseCoordsDiff.Length() > MouseDeadzoneRadius)
+        if (mouseCoordsDiff.Length() > MouseDeadzoneRadius / 2) // Dumont
         {
             // Determine the direction of the mouse is relative to the center of the tile, adjusting for the player eye and grid rotation
             var direction = (new Angle(mouseCoordsDiff) + _eyeManager.CurrentEye.Rotation + gridRotation + Math.PI / 2).GetCardinalDir();
-            layer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
+            // Dumont changes start
+            if (mouseCoordsDiff.Length() > MouseDeadzoneRadius)
+            {
+                layer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Quaternary : AtmosPipeLayer.Quinary;
+            }
+            else
+            {
+                layer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
+            }
+            // Dumont end
         }
 
         // Update the construction menu placer

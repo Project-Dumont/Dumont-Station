@@ -218,9 +218,13 @@
   - type: AtmosPipeLayers
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
+        # Dumont changes start
         Primary: Structures/Piping/Atmospherics/pipe.rsi
         Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+        Quinary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+        # Dumont end
 
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 
@@ -247,6 +251,10 @@
       Primary: GasPipeHalf
       Secondary: GasPipeHalfAlt1
       Tertiary: GasPipeHalfAlt2
+      # Dumont changes start
+      Quaternary: GasPipeHalfAlt3
+      Quinary: GasPipeHalfAlt4
+      # Dumont end
   - type: Construction
     graph: GasPipe
     node: half
@@ -288,6 +296,10 @@
       Primary: GasPipeStraight
       Secondary: GasPipeStraightAlt1
       Tertiary: GasPipeStraightAlt2
+      # Dumont changes start
+      Quaternary: GasPipeStraightAlt3
+      Quinary: GasPipeStraightAlt4
+      # Dumont end
   - type: Construction
     graph: GasPipe
     node: straight
@@ -337,6 +349,10 @@
       Primary: GasPipeBend
       Secondary: GasPipeBendAlt1
       Tertiary: GasPipeBendAlt2
+      # Dumont changes start
+      Quaternary: GasPipeBendAlt3
+      Quinary: GasPipeBendAlt4
+      # Dumont end
   - type: Construction
     graph: GasPipe
     node: bend
@@ -392,6 +408,10 @@
       Primary: GasPipeTJunction
       Secondary: GasPipeTJunctionAlt1
       Tertiary: GasPipeTJunctionAlt2
+      # Dumont changes start
+      Quaternary: GasPipeTJunctionAlt3
+      Quinary: GasPipeTJunctionAlt4
+      # Dumont end
   - type: Construction
     graph: GasPipe
     node: tjunction
@@ -447,6 +467,10 @@
       Primary: GasPipeFourway
       Secondary: GasPipeFourwayAlt1
       Tertiary: GasPipeFourwayAlt2
+      # Dumont changes start
+      Quaternary: GasPipeFourwayAlt3
+      Quinary: GasPipeFourwayAlt4
+      # Dumont end
   - type: Construction
     graph: GasPipe
     node: fourway

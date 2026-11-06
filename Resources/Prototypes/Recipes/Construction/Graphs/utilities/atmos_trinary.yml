@@ -69,6 +69,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: mixerAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: mixerAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: mixerflipped
       steps:
       - material: Steel
@@ -86,6 +100,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: mixerflippedAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: mixerflippedAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: pneumaticvalve
       steps:
@@ -142,6 +170,41 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: filterAlt3
+    entity: GasFilterAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: filterAlt4
+    entity: GasFilterAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: filterflipped
     entity: GasFilterFlipped
     edges:
@@ -189,6 +252,41 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: filterflippedAlt3
+    entity: GasFilterFlippedAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: filterflippedAlt4
+    entity: GasFilterFlippedAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   # Goobstation - inline filter
   - node: inline_filter
@@ -288,6 +386,41 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: mixerAlt3
+    entity: GasMixerAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: mixerAlt4
+    entity: GasMixerAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: mixerflipped
     entity: GasMixerFlipped
     edges:
@@ -336,6 +469,41 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: mixerflippedAlt3
+    entity: GasMixerFlippedAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: mixerflippedAlt4
+    entity: GasMixerFlippedAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: pneumaticvalve
     entity: PressureControlledValve
     edges:
@@ -383,3 +551,38 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: pneumaticvalveAlt3
+    entity: PressureControlledValveAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pneumaticvalveAlt4
+    entity: PressureControlledValveAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end

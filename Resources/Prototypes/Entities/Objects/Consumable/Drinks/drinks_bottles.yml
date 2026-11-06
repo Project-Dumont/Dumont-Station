@@ -982,6 +982,7 @@
     sprite: Objects/Consumable/Drinks/cream.rsi
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
 
 #boring jugs some more sprites are made
@@ -1005,6 +1006,7 @@
     currentLabel: reagent-name-sugar
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
 
 - type: entity
@@ -1059,6 +1061,7 @@
     currentLabel: reagent-name-ice
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
 
 - type: entity
@@ -1096,6 +1099,7 @@
     currentLabel: reagent-name-coffee
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
 
 - type: entity

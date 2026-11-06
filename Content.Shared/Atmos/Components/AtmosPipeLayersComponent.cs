@@ -21,7 +21,7 @@ public sealed partial class AtmosPipeLayersComponent : Component
     /// in <see cref="AtmosPipeLayer"/>.
     /// </summary>
     [DataField]
-    public byte NumberOfPipeLayers = 3;
+    public byte NumberOfPipeLayers = 5; // Dumont goob has 3
 
     /// <summary>
     /// Determines which layer the pipe is currently assigned.
@@ -119,4 +119,8 @@ public enum AtmosPipeLayer
     Primary,
     Secondary,
     Tertiary,
+    // Dumont changes start
+    Quaternary,
+    Quinary,
+    // Dumont end
 }

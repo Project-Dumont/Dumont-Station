@@ -76,9 +76,13 @@
         pipeDirection: South
   - type: AtmosPipeLayers
     spriteRsiPaths:
+      # Dumont changes start
       Primary: Structures/Piping/Atmospherics/pump.rsi
       Secondary: Structures/Piping/Atmospherics/pump_alt1.rsi
       Tertiary: Structures/Piping/Atmospherics/pump_alt2.rsi
+      Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt3.rsi
+      Quinary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt4.rsi
+      # Dumont end
 
 - type: entity
   parent: GasBinaryBase
@@ -112,6 +116,10 @@
       Primary: GasPressurePump
       Secondary: GasPressurePumpAlt1
       Tertiary: GasPressurePumpAlt2
+      # Dumont changes start
+      Quaternary: GasPressurePumpAlt3
+      Quinary: GasPressurePumpAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -182,6 +190,10 @@
         Primary: GasVolumePump
         Secondary: GasVolumePumpAlt1
         Tertiary: GasVolumePumpAlt2
+        # Dumont changes start
+        Quaternary: GasVolumePumpAlt3
+        Quinary: GasVolumePumpAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -256,6 +268,10 @@
       Primary: GasPressureRegulator
       Secondary: GasPressureRegulatorAlt1
       Tertiary: GasPressureRegulatorAlt2
+      # Dumont changes start
+      Quaternary: GasPressureRegulatorAlt3
+      Quinary: GasPressureRegulatorAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -314,6 +330,10 @@
         Primary: GasPassiveGate
         Secondary: GasPassiveGateAlt1
         Tertiary: GasPassiveGateAlt2
+        # Dumont changes start
+        Quaternary: GasPassiveGateAlt3
+        Quinary: GasPassiveGateAlt4
+        # Dumont end
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveGate
@@ -363,6 +383,10 @@
         Primary: GasValve
         Secondary: GasValveAlt1
         Tertiary: GasValveAlt2
+        # Dumont changes start
+        Quaternary: GasValveAlt3
+        Quinary: GasValveAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -430,6 +454,10 @@
       Primary: SignalControlledValve
       Secondary: SignalControlledValveAlt1
       Tertiary: SignalControlledValveAlt2
+      # Dumont changes start
+      Quaternary: SignalControlledValveAlt3
+      Quinary: SignalControlledValveAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -508,6 +536,10 @@
       Primary: GasPort
       Secondary: GasPortAlt1
       Tertiary: GasPortAlt2
+      # Dumont changes start
+      Quaternary: GasPortAlt3
+      Quinary: GasPortAlt4
+      # Dumont end
   - type: Appearance
   - type: PipeColorVisuals
   - type: GasPort
@@ -559,6 +591,10 @@
         Primary: GasDualPortVentPump
         Secondary: GasDualPortVentPumpAlt1
         Tertiary: GasDualPortVentPumpAlt2
+        # Dumont changes start
+        Quaternary: GasDualPortVentPumpAlt3
+        Quinary: GasDualPortVentPumpAlt4
+        # Dumont end
     - type: GenericVisualizer
       visuals:
         enum.VentPumpVisuals.State:
@@ -623,9 +659,13 @@
   - type: AtmosPipeLayers
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
+        # Dumont changes start
         Primary: Structures/Piping/Atmospherics/pipe.rsi
         Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+        Quinary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+        # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -693,6 +733,7 @@
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
+    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: HeatExchanger
       Secondary: HeatExchangerAlt1
@@ -743,6 +784,7 @@
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: AtmosPipeLayers
+      numberOfPipeLayers: 3 # Dumont
       alternativePrototypes:
         Primary: HeatExchangerBend
         Secondary: HeatExchangerBendAlt1
@@ -791,6 +833,7 @@
     - state: pumpHeat
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: AtmosPipeLayers
+    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: GasHeatPump
       Secondary: GasHeatPumpAlt1

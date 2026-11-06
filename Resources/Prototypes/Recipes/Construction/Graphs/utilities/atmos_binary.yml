@@ -45,6 +45,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: pressurepumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: pressurepumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: volumepump
       steps:
       - material: Steel
@@ -62,6 +76,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: volumepumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: volumepumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: passivegate
       steps:
@@ -81,6 +109,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: passivegateAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: passivegateAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: valve
       steps:
       - material: Steel
@@ -98,6 +140,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: valveAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: valveAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: signalvalve
       steps:
@@ -117,6 +173,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: signalvalveAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: signalvalveAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: pressureregulator
       steps:
       - material: Steel
@@ -134,6 +204,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: pressureregulatorAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: pressureregulatorAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: port
       steps:
@@ -153,6 +237,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: portAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: portAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: dualportventpump
       steps:
       - material: Steel
@@ -170,6 +268,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: dualportventpumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: dualportventpumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: radiator
       steps:
@@ -288,6 +400,40 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+  - node: pressurepumpAlt3
+    entity: GasPressurePumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+          prototype: SheetSteel1
+          amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pressurepumpAlt4
+    entity: GasPressurePumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: volumepump
     entity: GasVolumePump
     edges:
@@ -335,6 +481,40 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+  - node: volumepumpAlt3
+    entity: GasVolumePumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: volumepumpAlt4
+    entity: GasVolumePumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   - node: passivegate
     entity: GasPassiveGate
@@ -384,6 +564,40 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+  - node: passivegateAlt3
+    entity: GasPassiveGateAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: passivegateAlt4
+    entity: GasPassiveGateAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: valve
     entity: GasValve
     edges:
@@ -431,6 +645,40 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+  - node: valveAlt3
+    entity: GasValveAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: valveAlt4
+    entity: GasValveAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   - node: signalvalve
     entity: SignalControlledValve
@@ -480,6 +728,40 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+  - node: signalvalveAlt3
+    entity: SignalControlledValveAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: signalvalveAlt4
+    entity: SignalControlledValveAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: pressureregulator
     entity: GasPressureRegulator
     edges:
@@ -528,6 +810,40 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+  - node: pressureregulatorAlt3
+    entity: GasPressureRegulatorAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pressureregulatorAlt4
+    entity: GasPressureRegulatorAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   - node: port
     entity: GasPort
     edges:
@@ -575,6 +891,41 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: portAlt3
+    entity: GasPortAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: portAlt4
+    entity: GasPortAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   - node: dualportventpump
     entity: GasDualPortVentPump
@@ -629,6 +980,45 @@
         doAfter: 1
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: dualportventpumpAlt3
+    entity: GasDualPortVentPumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: dualportventpumpAlt4
+    entity: GasDualPortVentPumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   - node: radiator
     entity: HeatExchanger

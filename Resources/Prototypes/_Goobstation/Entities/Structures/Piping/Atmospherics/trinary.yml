@@ -17,6 +17,7 @@
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
   - type: AtmosPipeLayers
+    numberOfPipeLayers: 3 # Dumont
     alternativePrototypes:
       Primary: GasFilterInline
       Secondary: GasFilterInlineAlt1

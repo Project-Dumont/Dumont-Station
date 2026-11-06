@@ -165,6 +165,10 @@
       Primary: GasFilter
       Secondary: GasFilterAlt1
       Tertiary: GasFilterAlt2
+      # Dumont changes start
+      Quaternary: GasFilterAlt3
+      Quinary: GasFilterAlt4
+      # Dumont end
   # Goobstation - if you see a merge conflict here, move all new components to GasFilterBase
 
 # Goobstation - reparent to new base protos
@@ -189,6 +193,10 @@
       Primary: GasFilterFlipped
       Secondary: GasFilterFlippedAlt1
       Tertiary: GasFilterFlippedAlt2
+      # Dumont changes start
+      Quaternary: GasFilterFlippedAlt3
+      Quinary: GasFilterFlippedAlt4
+      # Dumont end
   - type: Flippable
     mirrorEntity: GasFilter
   - type: GenericVisualizer
@@ -225,6 +233,10 @@
         Primary: GasMixer
         Secondary: GasMixerAlt1
         Tertiary: GasMixerAlt2
+        # Dumont changes start
+        Quaternary: GasMixerAlt3
+        Quinary: GasMixerAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -289,6 +301,10 @@
       Primary: GasMixerFlipped
       Secondary: GasMixerFlippedAlt1
       Tertiary: GasMixerFlippedAlt2
+      # Dumont changes start
+      Quaternary: GasMixerFlippedAlt3
+      Quinary: GasMixerFlippedAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -370,6 +386,10 @@
         Primary: PressureControlledValve
         Secondary: PressureControlledValveAlt1
         Tertiary: PressureControlledValveAlt2
+        # Dumont changes start
+        Quaternary: PressureControlledValveAlt3
+        Quinary: PressureControlledValveAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:

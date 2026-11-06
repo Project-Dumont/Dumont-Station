@@ -144,6 +144,7 @@
   chance: 0.4
   name: station-trait-meteor-swarm-name # Dumont
   report: station-trait-meteor-swarm-report # Dumont
+  conflicts: [ EndlessSnowfall ] # Dumont
   effects:
   - !type:StartGameRule
     rule: MeteorSwarmScheduler # double the fun
@@ -159,6 +160,7 @@
   chance: 0.4
   name: station-trait-space-dust-name
   report: station-trait-space-dust-report
+  conflicts: [ EndlessSnowfall ] # Dumont
   mapEffects:
   - !type:StationSetWeather
     weather: Sandstorm
