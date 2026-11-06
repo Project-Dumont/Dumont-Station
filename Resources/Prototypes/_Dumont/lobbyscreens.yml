@@ -40,7 +40,7 @@
   name: Blood Cult
   artist: Struater
 
-- type: lobbyBackgroud
+- type: lobbyBackground
   id: couldbeanyone
   background: /Textures/_Dumont/LobbyScreens/couldbeanyone.webp
   name: Pode ser qualquer um
