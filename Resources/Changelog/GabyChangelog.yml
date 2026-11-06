@@ -4938,3 +4938,11 @@ Entries:
       message: Estatica de rádio ao falar em um.
   id: 588
   time: '2026-11-05T21:05:05.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Bug que causava client a travar... Pelo menos, um deles. Qualquer outra
+        coisa que rolar eu vou achar. 
+  id: 589
+  time: '2026-11-06T15:26:04.0000000+00:00'
