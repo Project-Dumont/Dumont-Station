@@ -65,7 +65,7 @@ ent-PacifismImplanter = { ent-BaseImplanter }
     .suffix = pacificador
 
 # Xeno
-ent-XenoCompatibilityImplanter = { ent-BaseImplanter }
+ent-XenoCompatibilityImplanter = implantador de compatibilidade xenomorfa
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = xeno compatibilidade
 

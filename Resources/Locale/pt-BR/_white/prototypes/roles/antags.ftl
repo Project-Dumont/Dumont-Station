@@ -1,2 +1,2 @@
 roles-antag-xenomorph-name = Xenomorfo
-roles-antag-xenomorph-objective = Só deveria haver uma espécie restante na estação espacial, e definitivamente não é humanoide.
+roles-antag-xenomorph-objective = Expanda a colmeia, capture hospedeiros e cumpra os objetivos dos xenomorfos.

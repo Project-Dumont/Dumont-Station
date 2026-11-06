@@ -1,0 +1,343 @@
+- type: entity
+  id: BaseDumontXenomorphDesignNode
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: XenomorphDesignNode
+  - type: Sprite
+    sprite: _RMC14/Structures/designer_nodes.rsi
+    noRot: true
+    drawdepth: FloorObjects
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignOptimizedWall
+  name: optimized design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Optimized
+    door: false
+  - type: Sprite
+    layers:
+    - state: static_optimizednode
+    - state: wall_mark_optimized
+      visible: false
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignOptimizedDoor
+  name: optimized design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Optimized
+    door: true
+  - type: Sprite
+    layers:
+    - state: static_optimizednode
+    - state: door_mark_optimized
+      visible: false
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignFlexibleWall
+  name: flexible design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Flexible
+    door: false
+  - type: Sprite
+    layers:
+    - state: static_flexnode
+    - state: wall_mark_flex
+      visible: false
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignFlexibleDoor
+  name: flexible design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Flexible
+    door: true
+  - type: Sprite
+    layers:
+    - state: static_flexnode
+    - state: door_mark_flex
+      visible: false
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignConstructWall
+  name: construct design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Construct
+    door: false
+  - type: Sprite
+    layers:
+    - state: static_constructnode
+    - state: wall_mark_construct
+      visible: false
+
+- type: entity
+  parent: BaseDumontXenomorphDesignNode
+  id: DumontXenomorphDesignConstructDoor
+  name: construct design node
+  components:
+  - type: XenomorphDesignNode
+    kind: Construct
+    door: true
+  - type: Sprite
+    layers:
+    - state: static_constructnode
+    - state: door_mark_construct
+      visible: false
+
+- type: entity
+  parent: WallResin
+  id: DumontXenomorphResinWallThick
+  name: thick resin wall
+  components:
+  - type: XenomorphThickResin
+  - type: Sprite
+  - type: Icon
+    state: thickresin
+  - type: IconSmooth
+    base: thickresin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+    - trigger: !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: WallResin
+  id: DumontXenomorphWeedboundWall
+  name: weedbound resin wall
+  components:
+  - type: XenomorphWeedbound
+    thick: false
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_walls.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_walls.rsi
+    state: weedboundresin
+  - type: IconSmooth
+    base: weedboundresin
+
+- type: entity
+  parent: DumontXenomorphResinWallThick
+  id: DumontXenomorphWeedboundWallThick
+  name: thick weedbound resin wall
+  components:
+  - type: XenomorphWeedbound
+    thick: true
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_walls.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_walls.rsi
+    state: thickweedboundresin
+  - type: IconSmooth
+    base: thickweedboundresin
+
+- type: entity
+  parent: ResinDoor
+  id: DumontXenomorphResinDoorThick
+  name: thick resin door
+  components:
+  - type: XenomorphThickResin
+  - type: Sprite
+    layers:
+    - state: thick_resin
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+  - type: Door
+    openSpriteState: thick_resinopen
+    closedSpriteState: thick_resin
+    openingSpriteState: thick_resinopening
+    closingSpriteState: thick_resinclosing
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+    - trigger: !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 90
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: ResinDoor
+  id: DumontXenomorphWeedboundDoor
+  name: weedbound resin door
+  components:
+  - type: XenomorphWeedbound
+    thick: false
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_doors.rsi
+    layers:
+    - state: weedbound_resin
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+  - type: Door
+    openSpriteState: weedbound_resinopen
+    closedSpriteState: weedbound_resin
+    openingSpriteState: weedbound_resinopening
+    closingSpriteState: weedbound_resinclosing
+
+- type: entity
+  parent: DumontXenomorphResinDoorThick
+  id: DumontXenomorphWeedboundDoorThick
+  name: thick weedbound resin door
+  components:
+  - type: XenomorphWeedbound
+    thick: true
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/weedbound_resin_doors.rsi
+    layers:
+    - state: thick_weedbound_resin
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+  - type: Door
+    openSpriteState: thick_weedbound_resinopen
+    closedSpriteState: thick_weedbound_resin
+    openingSpriteState: thick_weedbound_resinopening
+    closingSpriteState: thick_weedbound_resinclosing
+
+- type: damageModifierSet
+  id: DumontReflectiveResin
+  coefficients:
+    Heat: 1.5
+    Piercing: 0.3
+
+- type: entity
+  parent: WallResin
+  id: DumontXenomorphReflectiveResinWallUnstable
+  name: weakened reflective resin wall
+  components:
+  - type: XenomorphReflectiveResin
+  - type: Sprite
+    sprite: _RMC14/Structures/Walls/bone_resin.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Walls/bone_resin.rsi
+    state: bone_resin
+  - type: IconSmooth
+    base: bone_resin
+  - type: Damageable
+    damageModifierSet: DumontReflectiveResin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: TimedDespawn
+    lifetime: 13
+
+- type: entity
+  parent: BaseStructure
+  id: DumontXenomorphDesignResidue
+  name: weak sticky resin
+  components:
+  - type: XenomorphStickyResin
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_floor_resins.rsi
+    state: sticky_weak
+    drawdepth: FloorObjects
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        hard: false
+        layer: [SlipLayer]
+        mask: [ItemMask]
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.338
+    sprintSpeedModifier: 0.338
+    ignoreWhitelist:
+      components: [Xenomorph]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: DumontXenomorphDesignResidue
+  id: DumontXenomorphDesignResidueThick
+  name: sticky resin
+  components:
+  - type: Sprite
+    state: sticky
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.2053
+    sprintSpeedModifier: 0.2053
+    ignoreWhitelist:
+      components: [Xenomorph]
+
+- type: entity
+  parent: WallResin
+  id: DumontXenomorphReflectiveResinWall
+  name: reflective resin wall
+  components:
+  - type: XenomorphReflectiveResin
+  - type: Sprite
+    sprite: _RMC14/Structures/Walls/bone_resin.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Walls/bone_resin.rsi
+    state: bone_resin
+  - type: IconSmooth
+    base: bone_resin
+  - type: Damageable
+    damageModifierSet: DumontReflectiveResin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]

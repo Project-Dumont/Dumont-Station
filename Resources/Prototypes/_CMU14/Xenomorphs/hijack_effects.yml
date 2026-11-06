@@ -1,0 +1,57 @@
+# Animation, warning and shockwave effects ported from CMU.
+- type: shader
+  id: CMUExplosionShockWave
+  kind: source
+  path: /Textures/_CMU14/Shaders/shock_wave.swsl
+
+- type: entity
+  id: CMUHijackExplosionWarning
+  name: explosion warning
+  categories: [HideSpawnMenu]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/alert.rsi
+    noRot: true
+    state: alert_greyscale
+    color: "#ff0000"
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: CMUExplosionEffectGrenade
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/grenade_explosion.rsi
+    state: grenade
+    drawdepth: Effects
+    noRot: true
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: PointLight
+    radius: 5
+    energy: 4
+    color: "#ff8a24"
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  id: CMUExplosionEffectShockWave
+  categories: [HideSpawnMenu]
+  components:
+  - type: CMUExplosionShockWave
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
+  parent: CMUTileFire
+  id: CMUHijackPipeFire
+  suffix: Hijack
+  components:
+  - type: TimedDespawn
+    lifetime: 30

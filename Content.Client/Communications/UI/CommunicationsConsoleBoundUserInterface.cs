@@ -39,10 +39,10 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Communications.UI
 {
-    public sealed class CommunicationsConsoleBoundUserInterface : BoundUserInterface
+    public sealed partial class CommunicationsConsoleBoundUserInterface : BoundUserInterface
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
 
         private AccessReaderSystem _accessReader = default!;
 
@@ -163,6 +163,8 @@ namespace Content.Client.Communications.UI
 
             if (_menu != null)
             {
+                _menu.NuclearCodesPanel.Visible = !string.IsNullOrEmpty(commsState.NuclearCodes);
+                _menu.NuclearCodesText.SetMessage(Robust.Shared.Utility.FormattedMessage.FromMarkupOrThrow(commsState.NuclearCodes ?? ""));
                 _menu.CanAnnounce = commsState.CanAnnounce;
                 _menu.CanBroadcast = commsState.CanBroadcast;
                 _menu.CanCall = commsState.CanCall;
