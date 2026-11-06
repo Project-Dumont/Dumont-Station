@@ -4958,3 +4958,11 @@ Entries:
         melhor experiência.
   id: 590
   time: '2026-11-06T18:42:42.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: >-
+        Mentor Help, para fazer perguntas sobre o jogo e suas mecânicas, confira
+        no F1.
+  id: 591
+  time: '2026-11-06T21:36:13.0000000+00:00'
