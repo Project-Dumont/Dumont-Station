@@ -11,6 +11,8 @@
 
 - type: antag
   id: Heretic
+  organization: character-organization-forgotten # Dumont
+  organizationColor: "#008000"
   name: roles-antag-heretic-name
   antagonist: true
   setPreference: true

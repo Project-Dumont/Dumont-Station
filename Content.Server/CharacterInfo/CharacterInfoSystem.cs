@@ -34,15 +34,15 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.CharacterInfo;
 
-public sealed class CharacterInfoSystem : EntitySystem
+public sealed partial class CharacterInfoSystem : EntitySystem
 {
-    [Dependency] private readonly JobSystem _jobs = default!;
-    [Dependency] private readonly MindSystem _minds = default!;
-    [Dependency] private readonly RoleSystem _roles = default!;
-    [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly EconomyManagerSystem _bank = default!;
-    [Dependency] private readonly StationSystem _station = default!; // Gaby change
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private JobSystem _jobs = default!;
+    [Dependency] private MindSystem _minds = default!;
+    [Dependency] private RoleSystem _roles = default!;
+    [Dependency] private SharedObjectivesSystem _objectives = default!;
+    [Dependency] private EconomyManagerSystem _bank = default!;
+    [Dependency] private StationSystem _station = default!; // Gaby change
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -62,10 +62,19 @@ public sealed class CharacterInfoSystem : EntitySystem
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
         var jobTitle = Loc.GetString("character-info-no-profession");
         ProtoId<JobPrototype>? job = null; // Dumont Station - passa o id do job
+        var antags = new List<ProtoId<AntagPrototype>>();
         string? briefing = null;
         string? nanoBankBriefing = null; // Gabystation change - bank
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
+            // Dumont
+            foreach (var role in mind.MindRoles)
+            {
+                if (TryComp<MindRoleComponent>(role, out var roleComp)
+                    && roleComp.AntagPrototype is { } antag && !antags.Contains(antag))
+                    antags.Add(antag);
+            }
+
             // Get objectives
             foreach (var objective in mind.Objectives)
             {
@@ -100,6 +109,6 @@ public sealed class CharacterInfoSystem : EntitySystem
                 nanoBankBriefing = Loc.GetString("economy-character-info-unknown");
         }
 
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, nanoBankBriefing, job), args.SenderSession); // Dumont Station - passa o id do job
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, nanoBankBriefing, job, antags), args.SenderSession); // Dumont Station - passa o id do job
     }
 }
