@@ -579,6 +579,10 @@ namespace Content.Shared.Preferences
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
+            list.RemoveWhere(other => other != traitId &&
+                (traitProto.IncompatibleTraits.Contains(other) ||
+                 protoManager.TryIndex(other, out var otherTrait) && otherTrait.IncompatibleTraits.Contains(traitId)));
+
             if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
             {
                 return new(this)

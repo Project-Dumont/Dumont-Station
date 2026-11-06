@@ -185,6 +185,7 @@
 - type: weightedRandom
   id: ThiefObjectiveGroupItem
   weights:
+    CyberneticMantleStealObjective: 1
     ForensicScannerStealObjective: 1                    #sec
     FlippoEngravedLighterStealObjective: 0.5
     ClothingHeadHatWardenStealObjective: 1

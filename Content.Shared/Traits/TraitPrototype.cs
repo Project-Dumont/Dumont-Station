@@ -66,6 +66,18 @@ public sealed partial class TraitPrototype : IPrototype
     public EntProtoId? TraitGear;
 
     /// <summary>
+    /// Job-specific replacements for the default trait gear.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<Content.Shared.Roles.JobPrototype>, EntProtoId> TraitGearByJob = new();
+
+    /// <summary>
+    /// Traits that cannot be selected together with this trait.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<TraitPrototype>> IncompatibleTraits = new();
+
+    /// <summary>
     /// Trait Price. If negative number, points will be added.
     /// </summary>
     [DataField]
