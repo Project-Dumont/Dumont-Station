@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._White.Xenomorphs.Evolution;
 using Content.Server._White.Xenomorphs.Plasma;
 using Content.Server.Actions;
@@ -8,18 +10,21 @@ using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Queen;
 using Content.Shared._White.Xenomorphs.Xenomorph;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 
 namespace Content.Server._White.Xenomorphs.Queen;
 
-public sealed class XenomorphQueenSystem : EntitySystem
+public sealed partial class XenomorphQueenSystem : EntitySystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly PlasmaSystem _plasma = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly XenomorphEvolutionSystem _xenomorphEvolution = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private PlasmaSystem _plasma = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private XenomorphEvolutionSystem _xenomorphEvolution = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+
+    [Dependency] private MobStateSystem _mobState = default!; // Dumont
 
     public override void Initialize()
     {
@@ -97,4 +102,17 @@ public sealed class XenomorphQueenSystem : EntitySystem
         args.Handled = true;
         // Goobstation end
     }
+    // Dumont start
+    public bool IsQueenAlive()
+    {
+        var query = EntityQueryEnumerator<XenomorphQueenComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            if (!_mobState.IsDead(uid))
+                return true;
+        }
+        return false;
+    }
+    // Dumont end
+
 }

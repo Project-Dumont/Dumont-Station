@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Ghost.Roles.Components;
@@ -7,6 +9,8 @@ using Content.Shared._White.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mind.Components;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Popups;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
@@ -16,20 +20,20 @@ using Content.Shared._Shitmed.Targeting; // Omu
 
 namespace Content.Server._White.Xenomorphs.Larva;
 
-public sealed class XenomorphLarvaSystem : EntitySystem
+public sealed partial class XenomorphLarvaSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly JitteringSystem _jitter = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Omu
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private JitteringSystem _jitter = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!; // Omu
 
     public override void Initialize()
     {
         SubscribeLocalEvent<XenomorphLarvaComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<XenomorphLarvaComponent, EntGotRemovedFromContainerMessage>(OnGotRemovedFromContainer);
-        SubscribeLocalEvent<XenomorphLarvaComponent, TakeGhostRoleEvent>(OnTakeGhostRole);
+        SubscribeLocalEvent<XenomorphLarvaComponent, MindAddedMessage>(OnMindAdded); // Dumont
         SubscribeLocalEvent<XenomorphLarvaComponent, LarvaBurstDoAfterEvent>(OnLarvaBurstDoAfter);
     }
 
@@ -45,7 +49,17 @@ public sealed class XenomorphLarvaSystem : EntitySystem
             RemComp<XenomorphLarvaVictimComponent>(component.Victim.Value);
     }
 
-    private void OnTakeGhostRole(EntityUid uid, XenomorphLarvaComponent component, TakeGhostRoleEvent args)
+    // Dumont start
+    private void OnMindAdded(EntityUid uid, XenomorphLarvaComponent component, MindAddedMessage args)
+    {
+        if (!component.Victim.HasValue || !_container.TryGetContainingContainer(uid, out _))
+            return;
+
+        StartBurst(uid, component);
+    }
+    // Dumont end
+
+    private void StartBurst(EntityUid uid, XenomorphLarvaComponent component)
     {
         if (component.Victim is not {} victim)
             return;
@@ -72,10 +86,15 @@ public sealed class XenomorphLarvaSystem : EntitySystem
 
     private void OnLarvaBurstDoAfter(EntityUid uid, XenomorphLarvaComponent component, LarvaBurstDoAfterEvent args)
     {
-        if (!_container.TryGetContainingContainer((uid, null, null), out var container)
+        if (args.Cancelled || args.Handled
+            || !_container.TryGetContainingContainer((uid, null, null), out var container)
             || component.Victim is not { } victim)
             return;
 
+        // Dumont start
+        args.Handled = true;
+        EnsureComp<UnrevivableComponent>(victim);
+        // Dumont end
         _container.Remove(uid, container);
         var damage = new DamageSpecifier(); // Omu start
         damage.DamageDict.Add("Blunt", 120);
