@@ -21,7 +21,10 @@ public sealed partial class VoiceOverrideSystem : EntitySystem
         if (!entity.Comp.Enabled)
             return;
 
-        args.VoiceName = entity.Comp.NameOverride ?? args.VoiceName;
+        // Dumont changes start
+        if (entity.Comp.NameOverride is { } nameOverride)
+            args.VoiceName = Loc.TryGetString(nameOverride, out var localizedName) ? localizedName : nameOverride;
+        // Dumont end
         args.SpeechVerb = entity.Comp.SpeechVerbOverride ?? args.SpeechVerb;
     }
 }

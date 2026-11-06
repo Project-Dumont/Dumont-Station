@@ -346,6 +346,11 @@
   name: xenoborg jetpack
   suffix: Infinite
   components:
+  - type: Sprite # Imp
+    sprite: _Impstation/Objects/Tanks/Jetpacks/xenoborg_jetpack.rsi
+    layers:
+    - state: icon
+      map: ["enum.JetpackVisuals.Layer"]
   - type: GasTank
     outputPressure: 21.3
     air:

@@ -93,6 +93,7 @@ using Content.Shared.Physics;
 using Content.Shared.Random;
 using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Salvage.Expeditions.Modifiers;
+using Content.Server._Dumont.Shuttles; // Dumont
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -285,6 +286,11 @@ public sealed partial class EmergencyShuttleSystem
             {
                 pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 0.75f));
             }
+
+            // Dumont changes start
+            var departingEv = new EmergencyShuttleDepartingEvent(ConsoleAccumulator, TransitTime);
+            RaiseLocalEvent(ref departingEv);
+            // Dumont end
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();

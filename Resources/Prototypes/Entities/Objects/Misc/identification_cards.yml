@@ -1155,3 +1155,15 @@
     - state: idtramdriver
   - type: PresetIdCard
     job: TramDriver
+
+- type: entity
+  parent: IDCardStandard
+  id: XenoborgIDCard
+  name: xenoborg ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+  - type: Access
+    tags:
+    - Xenoborg

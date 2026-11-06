@@ -27,6 +27,7 @@ using Content.Shared.Robotics.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes; // Dumont
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared._Funkystation.MalfAI;
@@ -64,6 +65,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly StoreSystem _store = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // Dumont
 
     // almost never timing out more than 1 per tick so initialize with that capacity
     private List<string> _removing = new(1);
@@ -134,6 +136,16 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     }
 
 
+    // Dumont changes start
+    private uint? GetCommandFrequency(Entity<RoboticsConsoleComponent> ent)
+    {
+        if (ent.Comp.CommandFrequency is not { } id)
+            return null;
+
+        return _prototype.Index(id).Frequency;
+    }
+    // Dumont end
+
     private void OnDisable(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDisableMessage args)
     {
         if (_lock.IsLocked(ent.Owner))
@@ -147,7 +159,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DISABLE_COMMAND
         };
 
-        _deviceNetwork.QueuePacket(ent, args.Address, payload);
+        _deviceNetwork.QueuePacket(ent, args.Address, payload, GetCommandFrequency(ent)); // Dumont
         _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(args.Actor):user} disabled borg {data.Name} with address {args.Address}");
     }
 
@@ -168,7 +180,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DESTROY_COMMAND
         };
 
-        _deviceNetwork.QueuePacket(ent, args.Address, payload);
+        _deviceNetwork.QueuePacket(ent, args.Address, payload, GetCommandFrequency(ent)); // Dumont
 
         var message = Loc.GetString(ent.Comp.DestroyMessage, ("name", data.Name));
         _radio.SendRadioMessage(ent, message, ent.Comp.RadioChannel, ent);

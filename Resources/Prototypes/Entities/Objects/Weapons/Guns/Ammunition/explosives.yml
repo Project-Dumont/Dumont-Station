@@ -355,3 +355,36 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: glassshot
+
+- type: entity
+  parent: BaseBulletTrigger
+  id: BulletXenoborgMechadermisRocket
+  name: mechadermis rocket
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: mechadermis-missile-base
+    - state: mechadermis-missile-unshaded
+      shader: unshaded
+  - type: TriggerOnSpawn
+    keyOut: timerTrigger
+  - type: TimerTrigger
+    delay: 9.9 # so it explodes before it despawns
+    keysIn:
+    - timerTrigger
+  - type: ExplodeOnTrigger
+    keysIn:
+    - trigger
+    - timer
+  - type: Explosive
+    explosionType: XenoborgAntiStructureExplosion
+    totalIntensity: 15.0
+    intensitySlope: 1.6
+    maxIntensity: 1.8
+    maxTileBreak: 0
+  - type: PointLight
+    radius: 2.5
+    color: magenta
+    energy: 0.4

@@ -26,6 +26,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.Nodes;
 using Content.Server.Power.NodeGroups;
 using Content.Server.StationEvents.Components;
+using Content.Shared._Dumont.Power;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Pinpointer;
 using Content.Shared.Station.Components;
@@ -348,6 +349,9 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
                 continue;
 
             if (TryComp<PowerMonitoringDeviceComponent>(ent, out var device))
+                continue;
+
+            if (HasComp<PowerMonitoringHiddenComponent>(ent)) // Dumont
                 continue;
 
             // Flag an alert if power consumption is ridiculous

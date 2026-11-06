@@ -547,6 +547,7 @@
     nameSet: True
     mobile: True # Goobstation - mobile cameras fix, borg camera not really relevant since monitor doesn't see it anyways but eh
     id: Xenoborg
+    useEntityNameAsCameraId: true
   - type: Explosive
     explosionType: Minibomb
     deleteAfterExplosion: false # let damage threshold gib the borg
@@ -662,6 +663,23 @@
   save: false
   abstract: true
   components:
+  # Dumont changes start
+  - type: XenoborgGhostRole
+    components:
+    - type: GhostRole
+      name: ghost-role-information-xenoborg-name
+      description: ghost-role-information-xenoborg-desc
+      rules: ghost-role-information-silicon-rules
+      mindRoles: []
+      requirements:
+      - !type:OverallPlaytimeRequirement
+        time: 144000 # 40 hrs
+      - !type:RoleTimeRequirement
+        role: JobBorg
+        time: 18000 # 5 hrs
+    - type: GhostTakeoverAvailable
+      ignoreMindCheck: true
+  # Dumont end
   - type: RandomMetadata
     nameSegments:
     - NamesXenoborg
@@ -694,6 +712,9 @@
   - type: Repairable
     doAfterDelay: 13 # 25% more HP, so 30% more time to heal
   - type: BorgChassis
+    brainWhitelist:
+      components:
+      - MMI # no infinite posibrain xenoborgs
     maxModules: 0
     hasMindState: robot_e
     noMindState: robot_e_r
@@ -733,6 +754,33 @@
   - type: NpcFactionMember
     factions:
     - Xenoborg
+  - type: PointLight
+    color: "#6f88ff" # Dumont - was #0033ff
+    radius: 6 # Dumont
+    energy: 2 # Dumont
+  - type: GuideHelp
+    guides:
+    - Cyborgs
+    - Robotics
+    - Xenoborgs
+  - type: Access
+    enabled: false
+    tags:
+    - Xenoborg
+  - type: AccessReader
+    access: [["Xenoborg"]]
+  - type: ShowJobIcons # not sure if it is needed
+  - type: InteractionPopup
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Xenoborg
+
+- type: entity
+  abstract: true
+  id: BaseXenoborgDestructible
+  components:
+  - type: XenoborgDeathDrop # Dumont
+    proto: PinpointerMothershipPiece
   - type: Destructible
     thresholds:
     - trigger:
@@ -758,20 +806,3 @@
         - cell_slot
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: PointLight
-    color: "#0033ff"
-  - type: GuideHelp
-    guides:
-    - Cyborgs
-    - Robotics
-    # TODO: add Xenoborg guide (part 7 spoilers)
-  - type: Access
-    enabled: false
-    tags:
-    - Xenoborg
-  - type: AccessReader
-    access: [["Xenoborg"]]
-  - type: ShowJobIcons # not sure if it is needed
-  - type: InteractionPopup
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg

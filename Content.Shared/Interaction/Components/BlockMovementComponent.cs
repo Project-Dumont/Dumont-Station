@@ -17,4 +17,12 @@ public sealed partial class BlockMovementComponent : Component
 {
     [DataField]
     public bool BlockInteraction = true;
+
+    // Dumont changes start
+    /// <summary>
+    /// Blocks being able to use entities.
+    /// </summary>
+    [DataField]
+    public bool BlockUse = true;
+    // Dumont end
 }
