@@ -72,6 +72,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Saae;
 using Content.Server.Antag;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules.Components;
@@ -96,7 +97,7 @@ using System.Globalization;
 
 namespace Content.Server.GameTicking.Rules;
 
-public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
+public sealed partial class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent> // Dumont
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
@@ -111,6 +112,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     [Dependency] private readonly GameTicker _gameTicker = default!; // Einstein Engines - Zombie Improvements Take 2
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!; // Goobstation
+    [Dependency] private SaaeAnnouncerSystem _saae = default!; // Dumont
 
     public override void Initialize()
     {
@@ -203,10 +205,12 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
             {
                 _chat.DispatchStationAnnouncement(station,
                     Loc.GetString("zombie-start-announcement"),
+                    sender: Loc.GetString("saae-announcement-sender"), // Dumont
+                    playDefaultSound: false, // Dumont
                     colorOverride: Color.Pink);
             }
 
-            _audio.PlayGlobal("/Audio/Announcements/outbreak7.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            _saae.Play(new SoundPathSpecifier("/Audio/_Dumont/Announcements/disease_outbreak_saae.ogg"), Filter.Broadcast(), AudioParams.Default.WithVolume(-7f)); // Dumont
         }
 
         if (GetInfectedFraction(false) > zombieRuleComponent.ZombieShuttleCallPercentage && !_roundEnd.IsRoundEndRequested())

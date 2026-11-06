@@ -38,11 +38,11 @@ public sealed partial class MeteorSwarmComponent : Component
     public LocId? Announcement = "station-event-meteor-swarm-start-announcement";
 
     [DataField]
-    public SoundSpecifier? AnnouncementSound = new SoundPathSpecifier("/Audio/_Gabystation/Announcements/meteors_saae.ogg")
+    public SoundSpecifier? AnnouncementSound = new SoundPathSpecifier("/Audio/_Dumont/Announcements/meteors_saae.ogg") // Dumont
     {
         Params = new()
         {
-            Volume = -4
+            Volume = -7 // Dumont
         }
     };
 
