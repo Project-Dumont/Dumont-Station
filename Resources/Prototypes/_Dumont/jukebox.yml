@@ -9,6 +9,12 @@
     path: /Audio/_Dumont/Jukebox/alien_boy.ogg
 
 - type: jukebox
+  id: AllMyExsLiveInTexas
+  name: George Strait - All My Exs Live in Texas
+  path:
+    path: /Audio/_Dumont/Jukebox/all_my_exs_live_in_texas.ogg
+
+- type: jukebox
   id: AllStar
   name: Smash Mouth - All Star
   path:
@@ -135,6 +141,12 @@
     path: /Audio/_Dumont/Jukebox/brother_louie.ogg
 
 - type: jukebox
+  id: Bullseye
+  name: KDrew - Bullseye
+  path:
+    path: /Audio/_Dumont/Jukebox/bullseye.ogg
+
+- type: jukebox
   id: BumbleBee
   name: Bambee - Bumble Bee
   path:
@@ -199,6 +211,12 @@
   name: Milennium Cia Show - Cor De Caramelo
   path:
     path: /Audio/_Dumont/Jukebox/cor_de_caramelo.ogg
+
+- type: jukebox
+  id: Creep
+  name: RadioHead - Creep
+  path:
+    path: /Audio/_Dumont/Jukebox/creep.ogg
 
 - type: jukebox
   id: CrystalDolphin
@@ -339,6 +357,12 @@
     path: /Audio/_Dumont/Jukebox/eye_of_the_tiger.ogg
 
 - type: jukebox
+  id: FarFromAnyRoad
+  name: The Handsome Family - Far From Any Road
+  path:
+    path: /Audio/_Dumont/Jukebox/far_from_any_road.ogg
+
+- type: jukebox
   id: Fernando
   name: ABBA - Fernando
   path:
@@ -453,6 +477,12 @@
     path: /Audio/_Dumont/Jukebox/how_soon_is_now.ogg
 
 - type: jukebox
+  id: IGottaFeeling
+  name: The Black Eyed Peas - I Gotta Feeling
+  path:
+    path: /Audio/_Dumont/Jukebox/i_gotta_feeling.ogg
+
+- type: jukebox
   id: IJustThrewOutTheLoveOfMyDreams
   name: Weezer - I Just Threw Out The Love Of My Dreams
   path:
@@ -501,6 +531,12 @@
     path: /Audio/_Dumont/Jukebox/imagine.ogg
 
 - type: jukebox
+  id: Impacto
+  name: Enjambre - Impacto
+  path:
+    path: /Audio/_Dumont/Jukebox/impacto.ogg
+
+- type: jukebox
   id: InMyLife
   name: The Beatles - In My Life
   path:
@@ -513,6 +549,12 @@
     path: /Audio/_Dumont/Jukebox/into_each_life_some_rain_must_fall.ogg
 
 - type: jukebox
+  id: Intruso
+  name: Enjambre - Intruso
+  path:
+    path: /Audio/_Dumont/Jukebox/intruso.ogg
+
+- type: jukebox
   id: IslandInTheSun
   name: Weezer - Island In The Sun
   path:
@@ -523,6 +565,12 @@
   name: Lenny Kravitz - It Ain't Over 'Til It's Over
   path:
     path: /Audio/_Dumont/Jukebox/it_aint_over_til_its_over.ogg
+
+- type: jukebox
+  id: JigsawFallingIntoPlace
+  name: RadioHead - Jigsaw Falling Into Place
+  path:
+    path: /Audio/_Dumont/Jukebox/jigsaw_falling_into_place.ogg
 
 - type: jukebox
   id: JohnnyBeGoode
@@ -549,6 +597,12 @@
     path: /Audio/_Dumont/Jukebox/la_vem_o_alemao.ogg
 
 - type: jukebox
+  id: Lambada
+  name: Kaoma - Lambada
+  path:
+    path: /Audio/_Dumont/Jukebox/lambada.ogg
+
+- type: jukebox
   id: LamourToujours
   name: Gigi D'Agostino - L'Amour Toujours
   path:
@@ -559,6 +613,12 @@
   name: Wham! - Last Christmas
   path:
     path: /Audio/_Dumont/Jukebox/last_christmas.ogg
+
+- type: jukebox
+  id: LetDown
+  name: RadioHead - Let Down
+  path:
+    path: /Audio/_Dumont/Jukebox/let_down.ogg
 
 - type: jukebox
   id: LetItBe
@@ -577,6 +637,12 @@
   name: Wings - Live And Let Die
   path:
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
+
+- type: jukebox
+  id: LongDistanceRunaround
+  name: Yes - Long Distance Runaround
+  path:
+    path: /Audio/_Dumont/Jukebox/long_distance_runaround.ogg
 
 - type: jukebox
   id: MacintoshPlus
@@ -603,6 +669,12 @@
     path: /Audio/_Dumont/Jukebox/menina_veneno.ogg
 
 - type: jukebox
+  id: MovesLikeJagger
+  name: Maroon 5 & Chrsitina Aguilera - Moves Like Jagger
+  path:
+    path: /Audio/_Dumont/Jukebox/moves_like_jagger.ogg
+
+- type: jukebox
   id: MyLuckyStars
   name: Tupperwave - My Lucky Stars
   path:
@@ -619,6 +691,12 @@
   name: Gorillaz - 19-2000
   path:
     path: /Audio/_Dumont/Jukebox/nineteen_two_thousand.ogg
+
+- type: jukebox
+  id: NoSurprises
+  name: RadioHead - No Surprises
+  path:
+    path: /Audio/_Dumont/Jukebox/no_surprises.ogg
 
 - type: jukebox
   id: NovemberRain
@@ -655,6 +733,12 @@
   name: Daryl Hall & John Oates - Out Of Touch
   path:
     path: /Audio/_Dumont/Jukebox/out_of_touch.ogg
+
+- type: jukebox
+  id: PaisleyPark
+  name: Prince & The Revolution - Paisley Park
+  path:
+    path: /Audio/_Dumont/Jukebox/paisley_park.ogg
 
 - type: jukebox
   id: ParadiseCity
@@ -711,10 +795,22 @@
     path: /Audio/_Dumont/Jukebox/relax.ogg
 
 - type: jukebox
+  id: RiosDaBabilonia
+  name: Perla - Rios da Babilônia
+  path:
+    path: /Audio/_Dumont/Jukebox/rios_da_babilonia.ogg
+
+- type: jukebox
   id: RockinAroundTheChristmasTree
   name: Brenda Lee - Rockin' Around The Christmas Tree
   path:
     path: /Audio/_Dumont/Jukebox/rockin_around_the_christmas_tree.ogg
+
+- type: jukebox
+  id: Roundabout
+  name: Yes - Roundabout
+  path:
+    path: /Audio/_Dumont/Jukebox/roundabout.ogg
 
 - type: jukebox
   id: Sandman
@@ -886,6 +982,12 @@
     path: /Audio/_Dumont/Jukebox/tu_llegaste_cuando_menos_te_esperaba.ogg
 
 - type: jukebox
+  id: Tusk
+  name: Fleetwood Mac - Tusk
+  path:
+    path: /Audio/_Dumont/Jukebox/tusk.ogg
+
+- type: jukebox
   id: TwistAndShout
   name: The Beatles - Twist And Shout
   path:
@@ -920,6 +1022,12 @@
   name: Skank - Vamos Fugir
   path:
     path: /Audio/_Dumont/Jukebox/vamos_fugir.ogg
+
+- type: jukebox
+  id: VivaLaVida
+  name: Coldplay - Viva La Vida
+  path:
+    path: /Audio/_Dumont/Jukebox/viva_la_vida.ogg
 
 - type: jukebox
   id: VouDeixar
