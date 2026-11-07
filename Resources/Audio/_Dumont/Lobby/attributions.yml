@@ -6,6 +6,11 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=5-I1lT6Jbdo"
 
+- files: ["long_distance_runaround.ogg"]
+  copyright: "Long Distance Runaround. Exported with y2mate and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=ZS-k02hf-hI"
+
 - files: ["macintosh_plus.ogg"]
   copyright: "Macintosh Plus. Exported with y2mate and converted to ogg in Audacity."
   license: "Custom"
@@ -15,3 +20,8 @@
   copyright: "Non-Breath Oblige. Exported with y2mate and converted to ogg in Audacity."
   license: "Custom"
   source: "https://www.youtube.com/watch?v=lw7pcm1W5tw"
+
+- files: ["roundabout.ogg"]
+  copyright: "Roundabout by Yes. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/pk3HBb0mh5Q?si=-vjVZQJQcqIZ_tBd"
