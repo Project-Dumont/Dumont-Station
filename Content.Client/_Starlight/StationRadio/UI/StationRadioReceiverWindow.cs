@@ -44,7 +44,7 @@ public sealed class StationRadioReceiverWindow : FancyWindow
         {
             MinSize = new Vector2(40, 34),
             ToolTip = Loc.GetString("station-radio-receiver-power"),
-            StyleClasses = { StyleClass.ButtonOpenBoth },
+            StyleClasses = { StyleBase.ButtonOpenBoth },
             VerticalAlignment = VAlignment.Center,
         };
         power.AddChild(new TextureRect
@@ -75,7 +75,7 @@ public sealed class StationRadioReceiverWindow : FancyWindow
         {
             HorizontalAlignment = HAlignment.Center,
             FontColorOverride = Color.FromHex("#999696"),
-            StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+            StyleClasses = { StyleNano.StyleClassLabelSmall },
         };
 
         var dial = new BoxContainer

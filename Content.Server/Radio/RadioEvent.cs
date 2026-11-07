@@ -29,6 +29,20 @@ public readonly record struct RadioReceiveEvent(
     );
 // Einstein Engines - Language end
 
+// Starlight - Radio host rework - Start
+/// <summary>
+/// Raised after a radio message is sent and receivers are resolved.
+/// </summary>
+[ByRefEvent]
+public readonly record struct RadioSpokeEvent(
+    EntityUid Source,
+    ChatMessage Message,
+    RadioChannelPrototype Channel,
+    LanguagePrototype Language,
+    IReadOnlyList<EntityUid> Receivers
+    );
+// Starlight - Radio host rework - End
+
 /// <summary>
 /// Event raised on the parent entity of a headset radio when a radio message is received
 /// </summary>

@@ -1,3 +1,6 @@
+using Content.Goobstation.Common.Barks;
+using Robust.Shared.Prototypes;
+
 namespace Content.Shared._Starlight.StationRadio.Components;
 
 [RegisterComponent]
@@ -73,7 +76,7 @@ public sealed partial class BroadcastTapeEvent
     /// TTS voice prototype of the speaker.
     /// </summary>
     [DataField]
-    public string? Voice;
+    public ProtoId<BarkPrototype>? Voice;
 
     [DataField]
     public string? Text;

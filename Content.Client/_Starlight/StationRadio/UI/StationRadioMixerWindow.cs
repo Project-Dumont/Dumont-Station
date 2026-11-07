@@ -236,7 +236,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
         var next = new Button
         {
             Text = Loc.GetString("station-radio-mixer-next"),
-            StyleClasses = { StyleClass.ButtonOpenBoth },
+            StyleClasses = { StyleBase.ButtonOpenBoth },
             Disabled = channel.Slots.Count(d => d != null) < 2,
         };
         next.OnPressed += _ => OnTransport?.Invoke(source, StationRadioMixerAction.Next, 0);
@@ -249,7 +249,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
         {
             HorizontalAlignment = HAlignment.Center,
             FontColorOverride = _discColor,
-            StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+            StyleClasses = { StyleNano.StyleClassLabelSmall },
         };
         list.AddChild(dial);
         list.AddChild(time);
@@ -266,7 +266,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
                 ClipText = true,
                 HorizontalExpand = true,
                 Disabled = disc == null,
-                StyleClasses = { StyleClass.ButtonOpenBoth },
+                StyleClasses = { StyleBase.ButtonOpenBoth },
             };
             button.Label.Align = Label.AlignMode.Left;
             if (i == channel.CurrentSlot && disc != null)
@@ -386,7 +386,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
                 Align = Label.AlignMode.Center,
                 MinWidth = 76,
                 MaxWidth = 76,
-                StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+                StyleClasses = { StyleNano.StyleClassLabelSmall },
             };
             SetName(name);
             box.AddChild(_name);
@@ -399,7 +399,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
                 MaxWidth = 76,
                 Text = " ",
                 FontColorOverride = _discColor,
-                StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+                StyleClasses = { StyleNano.StyleClassLabelSmall },
                 Modulate = hidden,
             };
             box.AddChild(_disc);
@@ -412,7 +412,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
                 Text = " ",
                 Align = Label.AlignMode.Center,
                 FontColorOverride = _discColor,
-                StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+                StyleClasses = { StyleNano.StyleClassLabelSmall },
                 Modulate = hidden,
             };
             box.AddChild(_time);
@@ -522,7 +522,7 @@ public sealed class StationRadioMixerWindow : FancyWindow
             var button = new Button
             {
                 MinSize = new Vector2(24, 22),
-                StyleClasses = { StyleClass.ButtonOpenBoth },
+                StyleClasses = { StyleBase.ButtonOpenBoth },
             };
             button.AddChild(icon);
             return (button, icon);

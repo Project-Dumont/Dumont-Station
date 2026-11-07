@@ -1,12 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Radio.Components;
+using Content.Server.Radio.EntitySystems;
 using Content.Shared._Starlight.StationRadio;
 using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared._Starlight.StationRadio.Events;
 using Content.Shared._Starlight.StationRadio.Systems;
 using Content.Shared.DeviceLinking;
-using Content.Shared.Radio.Components;
-using Content.Shared.Radio.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
@@ -22,7 +22,7 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedRadioDeviceSystem _radioDevice = default!;
+    [Dependency] private RadioDeviceSystem _radioDevice = default!;
 
     protected override void OnReceiverMapInit(Entity<StationRadioReceiverComponent> ent, ref MapInitEvent args)
     {
@@ -132,7 +132,7 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
         var stopQuery = EntityQueryEnumerator<StationRadioReceiverComponent, TransformComponent>();
         while (stopQuery.MoveNext(out var receiver, out var receiverComp, out var receiverXform))
         {
-            if(receiverXform.GridUid != serverXform.GridUid)
+            if (receiverXform.GridUid != serverXform.GridUid)
                 continue;
 
             SetTracks((receiver, receiverComp), new Dictionary<NetEntity, StationRadioTrack>(), 0f);
@@ -178,13 +178,13 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
     /// <summary>
     /// Resolves whether Radio Rig is linked to a Radio Server that is powered and whether it can broadcast.
     /// </summary>
-    public bool TryGetPoweredGridServer(EntityUid uid, [NotNullWhen(true)]out EntityUid? server) =>
+    public bool TryGetPoweredGridServer(EntityUid uid, [NotNullWhen(true)] out EntityUid? server) =>
         TryGetGridServer(uid, out server) && _power.IsPowered(server.Value);
 
     /// <summary>
     /// Resolves the current radio server on the entities grid
     /// </summary>
-    public bool TryGetGridServer(EntityUid uid, [NotNullWhen(true)]out EntityUid? server)
+    public bool TryGetGridServer(EntityUid uid, [NotNullWhen(true)] out EntityUid? server)
     {
         server = null;
 
@@ -193,7 +193,7 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
 
         while (query.MoveNext(out var serverUid, out var _))
         {
-            var serverXform =  Transform(serverUid);
+            var serverXform = Transform(serverUid);
             if (serverXform.GridUid != receiverXform.GridUid || !serverXform.Anchored)
                 continue;
             server = serverUid;
@@ -305,7 +305,7 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
         var xform = Transform(ent.Owner);
         var c = 0;
         var query = EntityQueryEnumerator<StationRadioServerComponent>();
-        foreach (var server in  query)
+        foreach (var server in query)
         {
             var entXform = Transform(server);
             if (entXform.Anchored && entXform.GridUid == xform.GridUid)

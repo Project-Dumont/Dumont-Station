@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Audio;
 
 namespace Content.Shared._Starlight.StationRadio.Components;
 
@@ -79,6 +80,12 @@ public sealed partial class VinylPlayerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid? SoundEntity;
+
+    /// <summary>
+    /// Default audio params for the played audio.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public AudioParams DefaultParams = AudioParams.Default.WithVolume(3.5f).WithMaxDistance(8f); // 8 is just the edge of the screen usually
 
     /// <summary>
     /// Sprite state of the display layer while a disc is loaded.

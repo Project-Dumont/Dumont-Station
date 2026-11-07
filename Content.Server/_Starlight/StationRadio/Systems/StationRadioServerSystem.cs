@@ -1,14 +1,11 @@
 using System.Linq;
-using Content.Server._Starlight.TextToSpeech;
 using Content.Server.Radio;
 using Content.Server.Station.Systems;
+using Content.Server.Cargo.Systems;
+using Content.Server.Emp;
 using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared._Starlight.StationRadio.Events;
-using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
-using Content.Shared.Emp;
 using Content.Shared.Ghost;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -17,6 +14,7 @@ using Robust.Server.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Damage;
 
 namespace Content.Server._Starlight.StationRadio.Systems;
 
@@ -24,9 +22,8 @@ public sealed partial class StationRadioServerSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPlayerManager _player = default!;
-    [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private SharedCargoSystem _cargo = default!;
+    [Dependency] private CargoSystem _cargo = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPowerReceiverSystem _power = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -93,7 +90,7 @@ public sealed partial class StationRadioServerSystem : EntitySystem
             interference = MathF.Max(interference, comp.BurstInterference);
         if (TryComp<DamageableComponent>(ent, out var damageable))
         {
-            var damage = _damageable.GetTotalDamage((ent, damageable)).Float();
+            var damage = damageable.TotalDamage.Float();
             var fraction = (damage - comp.DamageInterferenceStart) / (comp.DamageInterferenceFull - comp.DamageInterferenceStart);
             interference = MathF.Max(interference, Math.Clamp(fraction, 0f, 1f) * comp.DamageInterference);
         }
@@ -207,12 +204,12 @@ public sealed partial class StationRadioServerSystem : EntitySystem
 
     private const float MinAdvertQuality = 0.05f;
 
-    private void OnRadioSpoke(RadioSpokeEvent args)
+    private void OnRadioSpoke(ref RadioSpokeEvent args)
     {
         if (args.Channel.ID != RadioShowChannel)
             return;
 
-        var length = TimeSpan.FromSeconds(args.Message.Text.Length / SpeechCharsPerSecond);
+        var length = TimeSpan.FromSeconds(args.Message.Message.Length / SpeechCharsPerSecond);
         length = length < MinSpeech ? MinSpeech : length > MaxSpeech ? MaxSpeech : length;
         var until = _timing.CurTime + length;
 

@@ -1,12 +1,10 @@
 using System.Linq;
-using Content.Server._Starlight.TextToSpeech;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Speech.Components;
-using Content.Shared._Starlight.Language;
+using Content.Server.Radio;
 using Content.Shared._Starlight.StationRadio;
 using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared._Starlight.StationRadio.Systems;
-using Content.Shared._Starlight.TextToSpeech;
 using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
@@ -17,6 +15,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared._EinsteinEngines.Language;
+using Content.Goobstation.Common.Barks;
 
 namespace Content.Server._Starlight.StationRadio.Systems;
 
@@ -245,7 +245,7 @@ public sealed partial class BroadcastRecorderSystem : SharedBroadcastRecorderSys
         });
     }
 
-    private void OnRadioSpoke(RadioSpokeEvent args)
+    private void OnRadioSpoke(ref RadioSpokeEvent args)
     {
         var query = EntityQueryEnumerator<BroadcastRecorderComponent>();
         while (query.MoveNext(out var uid, out var comp))
@@ -264,8 +264,8 @@ public sealed partial class BroadcastRecorderSystem : SharedBroadcastRecorderSys
                 Time = _timing.CurTime - comp.Start,
                 Kind = BroadcastTapeEventKind.Speech,
                 Name = nameEv.VoiceName,
-                Voice = CompOrNull<TextToSpeechComponent>(args.Source)?.VoicePrototypeId,
-                Text = args.Message.Text,
+                Voice = CompOrNull<SpeechSynthesisComponent>(args.Source)?.VoicePrototypeId,
+                Text = args.Message.Message,
                 Language = args.Language.ID,
             });
         }
@@ -401,15 +401,20 @@ public sealed partial class BroadcastRecorderSystem : SharedBroadcastRecorderSys
         voice.NameOverride = ev.Name;
         voice.Enabled = true;
 
-        var tts = EnsureComp<TextToSpeechComponent>(ent);
-        tts.VoicePrototypeId = ev.Voice;
-        Dirty(ent, tts);
-
         LanguagePrototype? language = null;
         if (ev.Language != null)
             _proto.TryIndex(ev.Language, out language);
 
         _radio.SendRadioMessage(ent, ev.Text, ent.Comp.Channel, ent, language);
+
+        if (ev.Voice == null || language == null)
+            return;
+
+        var tts = EnsureComp<SpeechSynthesisComponent>(ent);
+        tts.VoicePrototypeId = ev.Voice;
+        Dirty(ent, tts);
+
+        RaiseLocalEvent(ent, new EntitySpokeEvent(ent, ev.Text, _proto.Index(ent.Comp.Channel), true, language));
     }
 
     #endregion

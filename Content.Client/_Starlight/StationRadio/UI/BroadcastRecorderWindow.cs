@@ -45,7 +45,7 @@ public sealed class BroadcastRecorderWindow : FancyWindow
         {
             Text = Loc.GetString("broadcast-recorder-no-server"),
             FontColorOverride = RecordingColor,
-            StyleClasses = { StyleStarlight.StyleClassLabelSmall },
+            StyleClasses = { StyleNano.StyleClassLabelSmall },
             Visible = false,
         };
         _progress = new PixelProgressBar { MinHeight = 8 };
@@ -148,7 +148,7 @@ public sealed class BroadcastRecorderWindow : FancyWindow
         {
             MinSize = new Vector2(40, 30),
             ToolTip = Loc.GetString(tooltip),
-            StyleClasses = { StyleClass.ButtonOpenBoth },
+            StyleClasses = { StyleBase.ButtonOpenBoth },
         };
         button.AddChild(new TextureRect
         {

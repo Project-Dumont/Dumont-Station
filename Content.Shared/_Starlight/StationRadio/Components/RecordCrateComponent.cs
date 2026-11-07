@@ -1,6 +1,5 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Starlight.StationRadio.Components;
@@ -21,8 +20,8 @@ public sealed partial class RecordCrateComponent : Component
     public EntityWhitelist? Whitelist;
 
     [DataField]
-    public SoundSpecifier? InsertSound = new SoundPathSpecifier("/Audio/_Starlight/RadioStation/Vinyls/vinylInsert.ogg");
+    public SoundSpecifier? InsertSound = new SoundPathSpecifier("/Audio/_Goobstation/RadioStation/vinyl/vinylInsert.ogg");
 
     [DataField]
-    public SoundSpecifier? RemoveSound = new SoundPathSpecifier("/Audio/_Starlight/RadioStation/Vinyls/vinylEject.ogg");
+    public SoundSpecifier? RemoveSound = new SoundPathSpecifier("/Audio/_Goobstation/RadioStation/vinyl/vinylEject.ogg");
 }
