@@ -7,6 +7,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Trauma.Common.JobListings;
 using Content.Shared.Mind;
 using Content.Shared.PDA.Ringer;
 using Content.Shared.Popups;
@@ -25,18 +26,18 @@ namespace Content.Shared.PDA;
 /// <summary>
 /// Handles the shared functionality for PDA ringtones.
 /// </summary>
-public abstract class SharedRingerSystem : EntitySystem
+public abstract partial class SharedRingerSystem : EntitySystem
 {
     public const int RingtoneLength = 6;
     public const int NoteTempo = 300;
     public const float NoteDelay = 60f / NoteTempo;
 
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPdaSystem _pda = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPdaSystem _pda = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] protected readonly SharedUserInterfaceSystem UI = default!;
 
     /// <inheritdoc/>
@@ -147,6 +148,7 @@ public abstract class SharedRingerSystem : EntitySystem
 
         ent.Comp.Unlocked = false;
         UI.CloseUi(ent.Owner, StoreUiKey.Key);
+        UI.CloseUi(ent.Owner, JobListingsUiKey.Key); // Trauma
     }
 
     /// <summary>

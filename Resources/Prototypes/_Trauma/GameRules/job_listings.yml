@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: LoneOpsSpawn
+  id: SyndicateBattlecruiserRule
+  components:
+  - type: StationEvent
+    weight: 0 # this CANNOT happen naturally
+    startAnnouncement: station-event-syndicate-battle-cruiser
+    startAnnouncementColor: "#FF0000"
+    startAudio:
+      path: "/Audio/Announcements/war.ogg"
+  - type: LoadMapRule
+    gridPath: /Maps/_Trauma/Shuttles/ShuttleEvent/battlecruiser.yml # syndicate infiltraitor with a bunch of nukie ghostroles
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointLoneNukeOperative
+      min: 20
+      max: 20
+      pickPlayer: false
+      startingGear: SyndicateLoneOperativeGearFull
+      unequipOldGear: true
+      roleLoadout:
+      - RoleSurvivalNukie
+      components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistLoneops
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicatePrefix
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeops

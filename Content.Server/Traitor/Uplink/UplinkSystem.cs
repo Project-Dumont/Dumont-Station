@@ -39,6 +39,8 @@ using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
+using Content.Trauma.Common.Traitor;
+using Content.Trauma.Shared.JobListings;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -47,13 +49,13 @@ namespace Content.Server.Traitor.Uplink;
 
 // goobstation - heavily edited. fuck newstore
 // do not touch unless you want to shoot yourself in the leg
-public sealed class UplinkSystem : EntitySystem
+public sealed partial class UplinkSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly GoobCommonUplinkSystem _goobUplink = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private StoreSystem _store = default!;
+    [Dependency] private SharedSubdermalImplantSystem _subdermalImplant = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private GoobCommonUplinkSystem _goobUplink = default!;
 
     public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
@@ -122,6 +124,17 @@ public sealed class UplinkSystem : EntitySystem
         store.Balance.Clear();
         var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
         _store.TryAddCurrency(bal, uplink, store);
+
+        if (TryComp<JobListingsOwnerComponent>(mind, out var owner))
+        {
+            var linked = new UplinkLinkedEvent(owner.JobListings, uplink);
+            RaiseLocalEvent(ref linked);
+            return;
+        }
+
+        var board = Spawn("JobRunnerJobBoard");
+        var assigned = new UplinkAssignedEvent(user, board, uplink);
+        RaiseLocalEvent(ref assigned);
     }
 
     /// <summary>

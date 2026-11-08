@@ -7,6 +7,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.GameStates;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Systems;
 using Robust.Shared.Utility;
@@ -19,6 +20,7 @@ namespace Content.Shared.Objectives.Components;
 /// </summary>
 [RegisterComponent, Access(typeof(SharedObjectivesSystem))]
 [EntityCategory("Objectives")]
+[NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true)]
 public sealed partial class ObjectiveComponent : Component
 {
     /// <summary>
@@ -41,13 +43,15 @@ public sealed partial class ObjectiveComponent : Component
     /// Set this to false if you want multiple objectives of the same prototype.
     /// </summary>
     [DataField]
+    // Trauma - make it actually networked
+    [AutoNetworkedField]
     public bool Unique = true;
 
     /// <summary>
     /// Icon of this objective to display in the character menu.
     /// Can be specified by an <see cref="ObjectiveGetInfoEvent"/> handler but is usually done in the prototype.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public SpriteSpecifier? Icon;
 
     //Goobstation -start
