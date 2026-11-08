@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "cart-jani made by Creniss",
+    "copyright": "Made by CRISOOOOO (github). cart-jani made by Creniss, resprited by CRISOOOOO (github)",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,45 @@
     "states": [
         {
             "name": "cart-jani"
+        },
+        {
+            "name": "cart-news"
+        },
+        {
+            "name": "cart-wanted"
+        },
+        {
+            "name": "cart-eng"
+        },
+        {
+            "name": "cart-task"
+        },
+        {
+            "name": "cart-note"
+        },
+        {
+            "name": "cart-mani"
+        },
+        {
+            "name": "cart-gps"
+        },
+        {
+            "name": "cart-med"
+        },
+        {
+            "name": "cart-log"
+        },
+        {
+            "name": "cart-mail"
+        },
+        {
+            "name": "cart-sos"
+        },
+        {
+            "name": "cart-chat"
+        },
+        {
+            "name": "cart-bank"
         }
     ]
 }

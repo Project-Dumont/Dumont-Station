@@ -90,15 +90,15 @@
   description: A program for keeping notes.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
-    state: cart-y
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+    state: cart-note
   - type: UIFragment
     ui: !type:NotekeeperUi
   - type: Cartridge
     programName: notekeeper-program-name
     icon:
-      sprite:  Objects/Misc/books.rsi
-      state: book_icon
+      sprite:  _Dumont/Interface/Misc/program_icons.rsi
+      state: notepad
   - type: NotekeeperCartridge
 
 
@@ -109,13 +109,13 @@
   description: A program that allows you to keep a list of tasks to do.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
-    state: cart-nav
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+    state: cart-task
   - type: Cartridge
     programName: nano-task-program-name
     icon:
-      sprite: Interface/Misc/program_icons.rsi
-      state: nano_task
+      sprite: _Dumont/Interface/Misc/program_icons.rsi
+      state: task
   - type: UIFragment
     ui: !type:NanoTaskUi
   - type: NanoTaskCartridge
@@ -127,15 +127,15 @@
   description: A program for reading news.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
-    state: cart-y
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+    state: cart-news
   - type: UIFragment
     ui: !type:NewsReaderUi
   - type: Cartridge
     programName: news-read-program-name
     icon:
-      sprite: Interface/Misc/program_icons.rsi
-      state: news_read
+      sprite: _Dumont/Interface/Misc/program_icons.rsi
+      state: news
   - type: NewsReaderCartridge
 
 - type: entity
@@ -145,15 +145,15 @@
   description: A program for listing your fellow crewmembers.
   components:
     - type: Sprite
-      sprite: Objects/Devices/cartridge.rsi
-      state: cart-y
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-mani
     - type: UIFragment
       ui: !type:CrewManifestUi
     - type: Cartridge
       programName: crew-manifest-program-name
       icon:
-        sprite: Interface/Misc/program_icons.rsi
-        state: crew_manifest
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: manifest
     - type: CrewManifestCartridge
 
 - type: entity
@@ -163,15 +163,15 @@
   description: A program for getting the address and frequency of network devices.
   components:
     - type: Sprite
-      sprite: Objects/Devices/cartridge.rsi
-      state: cart-y
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-eng
     - type: UIFragment
       ui: !type:NetProbeUi
     - type: Cartridge
       programName: net-probe-program-name
       icon:
-        sprite: Structures/Machines/server.rsi
-        state: server
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: eng
     - type: NetProbeCartridge
 
 - type: entity
@@ -181,18 +181,18 @@
   description: A program for getting access logs from devices.
   components:
     - type: Sprite
-      sprite: Objects/Devices/cartridge.rsi
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
       state: cart-log
     - type: Icon
-      sprite: Objects/Devices/cartridge.rsi
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
       state: cart-log
     - type: UIFragment
       ui: !type:LogProbeUi
     - type: Cartridge
       programName: log-probe-program-name
       icon:
-        sprite: Structures/Doors/Airlocks/Standard/security.rsi
-        state: closed
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: log
     - type: LogProbeCartridge
     - type: GuideHelp
       guides:
@@ -205,18 +205,18 @@
   description: A program to get a list of wanted persons.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
-    state: cart-sec
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+    state: cart-wanted
   - type: Icon
-    sprite: Objects/Devices/cartridge.rsi
-    state: cart-sec
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+    state: cart-wanted
   - type: UIFragment
     ui: !type:WantedListUi
   - type: Cartridge
     programName: wanted-list-program-name
     icon:
-      sprite: Objects/Misc/books.rsi
-      state: icon_magnifier
+      sprite: _Dumont/Interface/Misc/program_icons.rsi
+      state: wanted
   - type: WantedListCartridge
   - type: StealTarget
     stealGroup: WantedListCartridge
@@ -228,16 +228,16 @@
   description: A program that provides medical diagnostic tools.
   components:
     - type: Sprite
-      sprite: Objects/Devices/cartridge.rsi
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
       state: cart-med
     - type: Icon
-      sprite: Objects/Devices/cartridge.rsi
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
       state: cart-med
     - type: Cartridge
       programName: med-tek-program-name
       icon:
-        sprite: Objects/Specific/Medical/healthanalyzer.rsi
-        state: icon
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: med
     - type: MedTekCartridge
 
 - type: entity
@@ -247,14 +247,14 @@
   description: A program for navigation that provides GPS coordinates.
   components:
     - type: Sprite
-      sprite: Objects/Devices/cartridge.rsi
-      state: cart-nav
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-gps
     - type: Icon
-      sprite: Objects/Devices/cartridge.rsi
-      state: cart-nav
+      sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
+      state: cart-gps
     - type: Cartridge
       programName: astro-nav-program-name
       icon:
-        sprite: Objects/Devices/gps.rsi
-        state: icon
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: gps
     - type: AstroNavCartridge
