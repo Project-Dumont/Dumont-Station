@@ -177,7 +177,7 @@ public abstract partial class JobListingsSystem : EntitySystem
             return;
 
         UpdateUi(owner, actor);
-        Ui.TryOpenUi(owner, JobListingsUiKey.Key, actor);
+        Ui.TryToggleUi(owner, JobListingsUiKey.Key, actor);
     }
 
     private bool CanUse(EntityUid remote, EntityUid actor, Entity<JobListingsComponent> board)
