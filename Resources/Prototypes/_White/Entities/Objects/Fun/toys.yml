@@ -28,9 +28,6 @@
     knockdownTime: 0
     infectionPrototype: null
     sleepChem: null # Dumont
-    damageOnImpact:
-      types:
-        Blunt: 0
   - type: MeleeWeapon
     hidden: true
     canHeavyAttack: false

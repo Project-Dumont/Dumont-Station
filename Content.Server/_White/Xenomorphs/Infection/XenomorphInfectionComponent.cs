@@ -5,10 +5,11 @@ using Content.Shared._Dumont.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._White.Xenomorphs.Infection;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class XenomorphInfectionComponent : SharedXenomorphInfectionComponent
 {
     [DataField]
@@ -39,6 +40,9 @@ public sealed partial class XenomorphInfectionComponent : SharedXenomorphInfecti
     [DataField]
     public ProtoId<XenomorphLineagePrototype> Lineage = "Other";
     // Dumont end
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan NextPainSoundAt;
 
     [ViewVariables]
     public TimeSpan NextPointsAt;

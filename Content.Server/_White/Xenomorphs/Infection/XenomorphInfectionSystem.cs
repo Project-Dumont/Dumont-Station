@@ -5,6 +5,9 @@ using Content.Server._Dumont.Xenomorphs;
 using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared._White.Xenomorphs.Larva;
 using Content.Shared.Body.Events;
+using Content.Shared.Humanoid;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Content.Shared.Mind;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
@@ -16,6 +19,7 @@ namespace Content.Server._White.Xenomorphs.Infection;
 
 public sealed partial class XenomorphInfectionSystem : EntitySystem
 {
+    [Dependency] private AudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ContainerSystem _container = default!;
@@ -70,6 +74,14 @@ public sealed partial class XenomorphInfectionSystem : EntitySystem
         var query = EntityQueryEnumerator<XenomorphInfectionComponent>();
         while (query.MoveNext(out var uid, out var infection))
         {
+            if (infection.Infected is { } victim && !_mobState.IsDead(victim)
+                && infection.GrowthStage >= infection.MaxGrowthStage - 1 && time >= infection.NextPainSoundAt)
+            {
+                infection.NextPainSoundAt = time + TimeSpan.FromSeconds(6);
+                var female = TryComp<HumanoidAppearanceComponent>(victim, out var appearance) && appearance.Sex == Sex.Female;
+                _audio.PlayPvs(new SoundCollectionSpecifier(female ? "CMUFemalePreburst" : "CMUMalePreburst"), victim);
+            }
+
             if (!infection.Infected.HasValue || infection.GrowthStage >= infection.MaxGrowthStage || time < infection.NextPointsAt)
                 continue;
 
