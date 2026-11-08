@@ -18,7 +18,7 @@
     materialComposition:
       Steel: 100
       Glass: 50
-
+#
 - type: entity
   abstract: true
   parent: BaseModsuitModule
@@ -774,7 +774,7 @@
   parent: BaseModsuitModuleDevice
   id: ModsuitModuleResinMister
   name: MOD resin mister module
-  description: An atmospheric resin launcher that fires globs of quick-setting metal foam, patching breaches from a safe distance.
+  description: An atmospheric resin launcher that fires globs of atmos resin, fixing the atmosphere of a room from a safe distance.
   components:
   - type: Sprite
     state: mister

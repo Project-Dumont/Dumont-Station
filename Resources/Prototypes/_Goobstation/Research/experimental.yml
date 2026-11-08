@@ -65,7 +65,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-#  - ModsuitCorePlasma crashes the game
+#  - ModsuitCorePlasma dumont edit crashes the game
   - ModsuitModuleStorageLarge
   - ModsuitModuleWelding
   - ModsuitModuleThermalRegulator
@@ -74,10 +74,10 @@
   - ModsuitModuleReagentScanner
   - ModsuitModuleJointTorsion
   - ModsuitModuleGloveTranslator
-  - ModsuitModulePlasmaStabilizer
+#  - ModsuitModulePlasmaStabilizer dumont edit doesn't do shit
   - ModsuitModuleHatStabilizer
   - ModsuitModuleRecycler
-  - ModsuitModuleDonkRecycler
+#  - ModsuitModuleDonkRecycler Dumont edit i dont think this is working?
   position: -5,-2
   technologyPrerequisites:
   - ModsuitsTech

@@ -279,3 +279,4 @@
   position: 4,1
   technologyPrerequisites:
   - ModsuitsTech
+  - DualWieldingTechnology

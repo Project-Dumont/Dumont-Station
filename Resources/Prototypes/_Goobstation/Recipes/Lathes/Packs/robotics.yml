@@ -54,20 +54,20 @@
   id: ModsuitModules
   recipes:
   - ModsuitCoreStandard
-#  - ModsuitCorePlasma
+#  - ModsuitCorePlasma Dumont edit crashes the game
   - ModsuitCoreStandardMicroreactor
   - ModsuitModuleStorageCompact
   - ModsuitModuleStorageLarge
   - ModsuitModuleStorageBluespace
-#  - ModsuitModuleStorageHolding
-#  - ModsuitModuleStorageCase
+#  - ModsuitModuleStorageHolding Dumont edit duplicate?
+#  - ModsuitModuleStorageCase Dumont edit why would you make this
   - ModsuitModuleKinesis
   - ModsuitModuleJointTorsion
   - ModsuitModuleGloveTranslator
-  - ModsuitModulePlasmaStabilizer
+#  - ModsuitModulePlasmaStabilizer Dumont edit doesnt do shit
   - ModsuitModuleHatStabilizer
   - ModsuitModuleRecycler
-  - ModsuitModuleDonkRecycler
+#  - ModsuitModuleDonkRecycler Dumont edit i dont think this is working?
   - ModsuitModuleFlashlight
   - ModsuitModuleWelding
   - ModsuitModuleThermalRegulator

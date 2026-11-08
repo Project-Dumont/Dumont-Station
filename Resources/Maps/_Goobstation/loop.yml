@@ -99758,7 +99758,7 @@ entities:
           - Reverse
         - - Middle
           - Off
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 6112
     components:
