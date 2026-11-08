@@ -37,6 +37,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#1b5e20" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/danitos_burritos.ogg
 
@@ -47,6 +48,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#fdd835" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/bill_movie.ogg
 
@@ -57,6 +59,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#41579a" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/captain_training.ogg
 
@@ -67,6 +70,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#7b4e23" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Cargonia.ogg
 
@@ -77,6 +81,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#d15b1b" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Chemistry.ogg
 
@@ -87,6 +92,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#5fa4cc" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/cloning_psa.ogg
 
@@ -97,6 +103,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#00897b" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/dans_tickets.ogg
 
@@ -107,6 +114,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#9c27b0" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/grones.ogg
 
@@ -117,6 +125,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#f06292" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/pope_crunch_cereal.ogg
 
@@ -127,6 +136,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#f9a825" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/quik_noodles.ogg
 
@@ -137,6 +147,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#546e7a" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/Robotics.ogg
 
@@ -147,6 +158,7 @@
   components:
   - type: RadioAdvert # Starlight - Rework radio host
   - type: Vinyl
+    labelColor: "#1a237e" # Starlight - Rework radio host
     song:
       path: /Audio/_Goobstation/RadioStation/ads/security_psa.ogg
 
