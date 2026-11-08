@@ -8,7 +8,7 @@
   suffix: random filled
   components:
   - type: UniqueDiscFill # Starlight - different CDs, each in its case
-    table: RandomCDDisc
+    table: RandomCDDisk
     min: 4
     max: 8
     wrapper: CDCase

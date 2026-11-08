@@ -74,7 +74,7 @@
   - type: BroadcastRecorder
   - type: TelecomExempt # Plays recorded speech straight onto the radio show channel, like the server's microphone.
   - type: Speech
-  - type: TextToSpeech
+    speechVerb: StationRadio
   - type: DeviceLinkSource
     ports:
     - BroadcastRecorderPort
@@ -116,7 +116,7 @@
   description: A long-play cassette for a radio recorder. Holds half an hour of radio, music and voices included.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Devices/cassette_tapes.rsi
+    sprite: _DV/Objects/Devices/cassette_tapes.rsi
     layers:
     - state: tape_greyscale
       color: "#c0393b"

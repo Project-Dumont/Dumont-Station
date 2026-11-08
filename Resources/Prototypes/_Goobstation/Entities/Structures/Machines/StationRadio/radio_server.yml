@@ -9,11 +9,14 @@
     layers:
     - state: icon
     # Starlight - Radio host Rework - Start
-    - state: mic_on # Starlight
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: mic_on
       shader: unshaded
       visible: false
       map: ["micOn"]
-    - state: mic_off # Starlight
+    - state: mic_off
       shader: unshaded
       map: ["micOff"]
     - state: panel
@@ -22,24 +25,24 @@
     # Starlight - Rework radio host - End
     drawdepth: SmallObjects
   # Starlight - Radio host Rework - Start
+  - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.RadioDeviceVisuals.Broadcasting: # Starlight
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+      enum.WiresVisualLayers.MaintenancePanel:
+        enum.WiresVisualLayers.MaintenancePanel:
+          True: { visible: true }
+          False: { visible: false }
+      enum.RadioDeviceVisuals.Broadcasting:
         micOn:
           True: { visible: true }
           False: { visible: false }
         micOff:
           True: { visible: false }
           False: { visible: true }
-  # Starlight - Radio host Rework - End
-  - type: StationRadioServer
-  # Starlight - Rework radio host - Start
-  - type: GenericVisualizer
-    visuals:
-      enum.WiresVisualLayers.MaintenancePanel:
-        enum.WiresVisualLayers.MaintenancePanel:
-          True: { visible: true }
-          False: { visible: false }
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires
@@ -48,7 +51,9 @@
     interfaces:
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  - type: ApcPowerReceiver
   # Starlight - Rework radio host - End
+  - type: StationRadioServer
   - type: DeviceLinkSource
     ports:
     - StationRadioServerPort
@@ -87,6 +92,9 @@
     - state: record3
       visible: false
       map: [ "slot3" ]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
     # Starlight - Rework radio host - End
     drawdepth: SmallObjects
     # TODO: unlit & maints panel sprite
@@ -100,6 +108,13 @@
     board: StationRadioRigCircuitboard
   - type: RadioRig
   # Starlight - Rework radio host - Start
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: VinylPlayer # Record shelf playing on a loop while nobody is at the desk.
     slots: [ playlist1, playlist2, playlist3, playlist4 ]
     autoPlay: false

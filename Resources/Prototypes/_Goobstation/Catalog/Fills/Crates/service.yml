@@ -65,7 +65,7 @@
   description: A crate with 6 different advertisement CDs to add to your collection, each in its case.
   components:
   - type: UniqueDiscFill
-    table: RandomCDDisc
+    table: RandomCDDisk
     min: 6
     max: 6
     wrapper: CDCase
@@ -77,7 +77,7 @@
   suffix: Filled
   components:
   - type: UniqueDiscFill
-    table: RandomVinylDisc
+    table: RandomVinylDisk
     min: 8
     max: 8
     wrapper: VinylSleeve

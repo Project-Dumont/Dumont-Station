@@ -56,6 +56,14 @@
   - type: StationRadioReceiver
   # Starlight - Rework radio host - Start
     toggleOnActivate: false
+  - type: ApcPowerReceiver
+    powerLoad: 100
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: ActivatableUI
     key: enum.StationRadioReceiverUiKey.Key
   - type: UserInterface

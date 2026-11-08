@@ -281,7 +281,6 @@
   - type: Tag
     tags:
       - CoffeeDispensable
-      - DrinkCarton # Starlight
       - MilkCarton # Starlight
 
 - type: entity
@@ -301,7 +300,6 @@
   - type: Tag
     tags:
       - CoffeeDispensable
-      - DrinkCarton # Starlight
       - MilkCarton # Starlight
 
 - type: entity
@@ -320,7 +318,6 @@
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
   - type: Tag
     tags:
-      - DrinkCarton # Starlight
       - MilkCarton # Starlight
 
 - type: entity

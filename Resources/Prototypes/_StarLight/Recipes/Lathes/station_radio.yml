@@ -1,15 +1,16 @@
+# Goobstation - Radio Host boards
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
   id: CDPlayerCircuitboard
   result: CDPlayerCircuitboard
 
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
   id: BroadcastRecorderCircuitboard
   result: BroadcastRecorderCircuitboard
 
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
   id: StationRadioMixerCircuitboard
   result: StationRadioMixerCircuitboard
 

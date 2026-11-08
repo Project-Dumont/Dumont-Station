@@ -67,7 +67,7 @@
   id: RadioVinylCrateCargo
   icon:
     sprite: _Goobstation/Objects/Misc/RadioStation/vinyls.rsi
-    state: red-vinyl-disk
+    state: default # Starlight - Radio host rework
   product: CrateRadioStationVinyls
   cost: 750 # Dumont edit, was 3000 before
   category: cargoproduct-category-name-service

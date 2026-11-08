@@ -19,6 +19,9 @@
     belt: ClothingBeltStorageWaistbag
     #shoes: ClothingShoesColorBlack - Dumont, moved to loadouts
     id: RadioHostPDA
+  storage:
+    back:
+      - RadioHandheldStation # Starlight - Radio host rework
 
 - type: chameleonOutfit
   id: RadioHostChameleonOutfit

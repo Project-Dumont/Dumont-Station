@@ -1,0 +1,6 @@
+# Record sleeves. The cover art is drawn from the record inside (see DiscCover), so these differ only in
+# what they come with. The ids are kept because maps place them.
+- type: entity
+  parent: BaseVinylSleeve
+  id: VinylSleeve
+  suffix: Empty

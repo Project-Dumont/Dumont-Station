@@ -130,7 +130,7 @@
   parent: RecordMilkCrate
   components:
   - type: UniqueDiscFill # Every record different, each in its own sleeve.
-    table: RandomVinylDisc
+    table: RandomVinylDisk
     min: 6
     max: 8
     wrapper: VinylSleeve

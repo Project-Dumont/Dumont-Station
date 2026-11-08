@@ -1,6 +1,0 @@
-- type: !PartialOnly startingGear
-  id: RadioHostGear
-  storage:
-    belt:
-      - NetworkConfigurator
-      - RadioHandheldStation

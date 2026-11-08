@@ -1,3 +1,14 @@
+# Base Disk Sleeve
+- type: entity
+  abstract: true
+  parent: BaseVinylSleeve
+  id: BaseVinylSleeveFilled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      vinyl: !type:NestedSelector
+        tableId: RandomVinylDisk
+
 # CD case
 - type: entity
   parent: BaseItem
@@ -6,7 +17,7 @@
   description: A clear plastic jewel case for a compact disc. The cover insert matches the disc inside.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Fun/RadioHost/covers.rsi
+    sprite: _Goobstation/Objects/Misc/RadioStation/vinylsleeves.rsi
     layers:
     - state: case-tray
     - state: case-base
