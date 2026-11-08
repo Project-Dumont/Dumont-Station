@@ -518,6 +518,11 @@
       head-vulpkanin:
       - state: on-equipped-HELMET-vulpkanin
         shader: unshaded
+  - type: HideClothingLayerClothing # Dumont - Security hardsuits resprite
+    hiddenSlots:
+    - mask
+    - ears
+    - eyes
 
 #Warden's Hardsuit
 - type: entity
