@@ -115,5 +115,5 @@ public sealed partial class TraitorRuleComponent : Component
     /// The amount of TC traitors start with.
     /// </summary>
     [DataField]
-    public int StartingBalance = 100;
+    public int StartingBalance = 50;
 }
