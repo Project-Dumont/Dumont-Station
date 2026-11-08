@@ -66,6 +66,8 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
             return; // Removed call to open Malf AI store window here to prevent duplicate/empty window.
 
         _menu = this.CreateWindow<StoreMenu>();
+        _menu.JobListingsButton.Visible = EntMan.HasComponent<Content.Trauma.Shared.JobListings.RemoteJobListingsComponent>(Owner);
+        _menu.JobListingsButton.OnPressed += _ => SendPredictedMessage(new Content.Trauma.Common.JobListings.PdaShowJobListingsMessage());
 
         if (store is not null)
             _menu.Title = Loc.GetString(store.Name);
@@ -107,6 +109,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         switch (state)
         {
             case StoreUpdateState msg:
+                _menu.JobListingsButton.Visible = EntMan.HasComponent<Content.Trauma.Shared.JobListings.RemoteJobListingsComponent>(Owner);
                 _listings = msg.Listings;
 
                 _menu?.UpdateBalance(msg.Balance);

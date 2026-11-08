@@ -16,7 +16,15 @@ public sealed partial class JobListingsImplantSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnImplantImplanted(Entity<JobListingsImplantComponent> ent, ref ImplantImplantedEvent args)
     {
-        if (args.Implanted is not {} implanted)
+        if (args.Implanted is not {} implanted || _jobs.GetJobBoard(ent) is null)
+            return;
+
+        GrantAction(ent, implanted);
+    }
+
+    public void GrantAction(Entity<JobListingsImplantComponent> ent, EntityUid implanted)
+    {
+        if (ent.Comp.StoredAction != null)
             return;
 
         ent.Comp.StoredAction = _actions.AddAction(implanted, ent.Comp.Action, ent);

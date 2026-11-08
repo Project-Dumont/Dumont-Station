@@ -285,6 +285,8 @@ public sealed partial class MapAreaSystem : EntitySystem
         };
     }
 
+    public bool HasMappedArea(Entity<AreaGridComponent> grid, EntProtoId area) => grid.Comp.AreaMap.ContainsValue(area);
+
     /// <summary>
     /// Try to get an area at a given grid-local position on a grid.
     /// </summary>

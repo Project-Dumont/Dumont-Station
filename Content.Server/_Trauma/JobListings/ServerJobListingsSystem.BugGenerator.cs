@@ -10,6 +10,8 @@ namespace Content.Trauma.Server.JobListings;
 /// </summary>
 public sealed partial class ServerJobListingsSystem
 {
+    [Dependency] private MapAreaSystem _mapAreas = default!;
+
     [SubscribeLocalEvent]
     private void OnFetch(Entity<BugSideJobGeneratorComponent> ent, ref GenerateSideJobsEvent args)
     {
@@ -19,7 +21,7 @@ public sealed partial class ServerJobListingsSystem
 
         foreach (var area in ent.Comp.Areas)
         {
-            if (!areas.AreaMap.ContainsValue(area))
+            if (!_mapAreas.HasMappedArea((grid, areas), area))
                 continue;
 
             // check for duplicates (any pre-existing side job with matching prototype id)

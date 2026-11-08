@@ -108,7 +108,8 @@
   - type: PickRandomPerson
     filters:
     - !type:BodyMindFilter
-      blacklist:
+      inverted: true
+      whitelist:
         components:
         - NukeOperative
 
@@ -148,9 +149,11 @@
   - type: PickRandomPerson
     filters:
     - !type:BodyMindFilter
-      blacklist:
+      inverted: true
+      whitelist:
         components:
         - NukeOperative
+    - !type:BodyMindFilter
       whitelist:
         components:
         - CommandStaff

@@ -4,6 +4,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Player;
 using Robust.Server.GameStates;
 using Content.Shared.Mind;
+using Content.Shared.Implants;
+using Content.Shared.Implants.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Random.Helpers;
 using Content.Trauma.Common.Traitor;
@@ -183,31 +185,73 @@ public sealed partial class ServerJobListingsSystem : JobListingsSystem
     [SubscribeLocalEvent]
     private void OnUplinkAssigned(ref UplinkAssignedEvent args)
     {
-        if (!JobListingsQuery.TryComp(args.Uplink, out var jobListingsComp))
-            return;
-        if (Mind.GetMind(args.User) is not { } mind)
-            return;
-        if (!MindQuery.TryComp(mind, out var mindComp))
-            return;
+        RegisterUplink(args.Mind, args.Host);
+    }
 
-        // set mind
-        jobListingsComp.Mind = mind;
-        DirtyField(args.Uplink, jobListingsComp, nameof(JobListingsComponent.Mind));
-        PVSOverrideEntity((mind, mindComp), args.Uplink);
-        AddComp(mind, new JobListingsOwnerComponent { JobListings = args.Uplink });
-
-        // init job board
-        FillSideJobs((args.Uplink, jobListingsComp));
-        Link((args.Uplink, jobListingsComp), args.Host);
-        SetRefreshTime((args.Uplink, jobListingsComp));
+    private void RegisterUplink(EntityUid mind, EntityUid host)
+    {
+        var owner = EnsureComp<UplinkOwnerComponent>(mind);
+        owner.Remotes.Add(host);
+        if (TryComp<JobListingsOwnerComponent>(mind, out var jobs) &&
+            !HasComp<RemoteJobListingsComponent>(host))
+            Link((jobs.JobListings, JobListingsQuery.Comp(jobs.JobListings)), host);
     }
 
     [SubscribeLocalEvent]
-    private void OnUplinkLinked(ref UplinkLinkedEvent args)
+    private void OnImplanted(Entity<SubdermalImplantComponent> implant, ref ImplantImplantedEvent args)
     {
-        if (!JobListingsQuery.TryComp(args.Uplink, out var jobListingsComp))
+        if (!HasComp<JobListingsImplantComponent>(implant) || args.Implanted is not {} body || Mind.GetMind(body) is not {} mind ||
+            !HasComp<UplinkOwnerComponent>(mind))
             return;
 
-        Link((args.Uplink, jobListingsComp), args.Host);
+        RegisterUplink(mind, implant);
+        if (HasComp<JobListingsOwnerComponent>(mind))
+            _implant.GrantAction((implant.Owner, Comp<JobListingsImplantComponent>(implant)), body);
     }
+
+    [SubscribeLocalEvent]
+    private void OnRemoved(Entity<SubdermalImplantComponent> implant, ref ImplantRemovedEvent args)
+    {
+        if (GetJobBoard(implant) is {} board)
+        {
+            board.Comp.Remotes.Remove(implant);
+            Dirty(board);
+            RemComp<RemoteJobListingsComponent>(implant);
+            Ui.CloseUi(implant.Owner, Content.Trauma.Common.JobListings.JobListingsUiKey.Key);
+        }
+
+        if (Mind.GetMind(args.Implanted) is {} mind && TryComp<UplinkOwnerComponent>(mind, out var owner))
+            owner.Remotes.Remove(implant);
+    }
+
+    public bool TryBuyJobBoard(EntityUid buyer, EntityUid store, CreateJobBoardEvent product)
+    {
+        if (!Mind.TryGetMind(buyer, out var mind, out var mindComp) ||
+            !TryComp<UplinkOwnerComponent>(mind, out var owner) || !owner.Remotes.Contains(store) ||
+            HasComp<JobListingsOwnerComponent>(mind))
+            return false;
+
+        var uid = Spawn(product.JobBoardProto);
+        var board = JobListingsQuery.Comp(uid);
+        board.Mind = mind;
+        Dirty(uid, board);
+        PVSOverrideEntity((mind, mindComp), uid);
+        AddComp(mind, new JobListingsOwnerComponent { JobListings = uid });
+        FillSideJobs((uid, board));
+        SetRefreshTime((uid, board));
+        foreach (var remote in owner.Remotes)
+        {
+            if (!Exists(remote))
+                continue;
+            Link((uid, board), remote);
+            if (HasComp<Content.Shared.PDA.PdaComponent>(remote))
+                _pda.UpdatePdaUi(remote);
+            if (TryComp<JobListingsImplantComponent>(remote, out var implant))
+                _implant.GrantAction((remote, implant), buyer);
+        }
+        return true;
+    }
+
+    [Dependency] private Content.Server.PDA.PdaSystem _pda = default!;
+    [Dependency] private JobListingsImplantSystem _implant = default!;
 }

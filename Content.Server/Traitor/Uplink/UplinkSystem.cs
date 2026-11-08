@@ -40,7 +40,6 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
 using Content.Trauma.Common.Traitor;
-using Content.Trauma.Shared.JobListings;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -125,16 +124,9 @@ public sealed partial class UplinkSystem : EntitySystem
         var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
         _store.TryAddCurrency(bal, uplink, store);
 
-        if (TryComp<JobListingsOwnerComponent>(mind, out var owner))
-        {
-            var linked = new UplinkLinkedEvent(owner.JobListings, uplink);
-            RaiseLocalEvent(ref linked);
-            return;
-        }
-
-        var board = Spawn("JobRunnerJobBoard");
-        var assigned = new UplinkAssignedEvent(user, board, uplink);
+        var assigned = new UplinkAssignedEvent(mind, uplink);
         RaiseLocalEvent(ref assigned);
+
     }
 
     /// <summary>

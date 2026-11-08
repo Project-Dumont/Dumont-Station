@@ -348,7 +348,7 @@ public abstract partial class JobListingsSystem : EntitySystem
     }
 
     [SubscribeLocalEvent]
-    private void OnMessage(Entity<PdaComponent> pda, ref PdaShowJobListingsMessage msg)
+    private void OnMessage(Entity<RemoteJobListingsComponent> pda, ref PdaShowJobListingsMessage msg)
     {
         OpenUi(pda, msg.Actor);
     }
