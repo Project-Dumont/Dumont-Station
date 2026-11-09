@@ -13,6 +13,9 @@ ent-BriefcaseWeaponCutlassFilled = maleta de sabre
 
 ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
 
+ent-ClothingBackpackDuffelSyndicateChameleonEVABundle = kit EVA camaleão
+    .desc = Contém os disfarces resistentes ao vácuo de que você precisa.
+
 ent-DiseaseFoxDie = FOXDIE
     .desc = Um retrovírus geneticamente modificado para matar com base no DNA do alvo.
 
@@ -187,6 +190,9 @@ ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
 
 ent-WeaponSubMachineGunBriefcase = maleta marrom
     .desc = Útil para carregar itens nas mãos.
+
+ent-DoubleEmergencyPlasmaTank = tanque de phoron para respiração
+    .desc = Um tanque de gás phoron projetado para a respiração de plasmamen.
 
 ent-CdDiskNumber = CD (Números)
     .desc = Contate o posto de escuta do Sindicato mais próximo para pedir reforços!

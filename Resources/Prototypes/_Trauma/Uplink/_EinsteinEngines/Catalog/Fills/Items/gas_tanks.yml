@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  id: DoubleEmergencyPlasmaTankFilled
+  parent: DoubleEmergencyPlasmaTank
+  suffix: Filled
+  components:
+    - type: GasTank
+      outputPressure: 5.325
+      air:
+        # 60 minutes with Plasmaman lungs
+        volume: 3
+        moles: [0, 0, 0, 1.025689525]
+        temperature: 293.15
+
+- type: entity
+  parent: DoubleEmergencyOxygenTank
+  id: DoubleEmergencyPlasmaTank
+  name: phoron internals tank
+  description: A tank of phoron gas designed to be internals for Plasmamen.
+  components:
+    - type: Sprite
+      sprite: _EinsteinEngines/Objects/Tanks/double-emergency.rsi
+    - type: Item
+      sprite: _EinsteinEngines/Objects/Tanks/double-emergency.rsi
+      storedRotation: -45
+      storedOffset: 10,0
+      storedSprite:
+        state: icon
+        sprite: _EinsteinEngines/Objects/Tanks/double-emergency.rsi
+    - type: Clothing
+      sprite: _EinsteinEngines/Objects/Tanks/double-emergency.rsi
+    - type: Tag
+      tags:
+        - EmergencyOxygenTank

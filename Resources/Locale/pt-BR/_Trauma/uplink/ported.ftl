@@ -276,6 +276,10 @@ uplink-monarch-name = Casaco Monarch
 
 uplink-monarch-desc = Uma réplica do traje do operativo mais icônico da Gorlex Entertainment. Esta armadura leve utiliza tecnologia reflexiva roubada para desviar disparos de energia. Não espere a mesma proteção contra outros ataques.
 
+uplink-chameleon-eva-suit-name = Kit EVA camaleão
+
+uplink-chameleon-eva-suit-desc = Prepare-se para situações de baixa pressão. Pode assumir a aparência de qualquer traje ou casaco!
+
 ghost-role-information-nukie-mouse-name = Rato operativo nuclear
 
 ghost-role-information-nukie-mouse-description = Um rato operativo nuclear enviado como reforço do Sindicato.

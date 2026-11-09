@@ -261,6 +261,10 @@ uplink-monarch-name = Monarch Coat
 
 uplink-monarch-desc = Directly taken from the wardrobe of Gorlex Entertainment’s most iconic operative, the Monarch Coat is a lightweight armor that uses stolen reflective technology to passively deflect energy blasts… but don't expect too much real protection from a prop.
 
+uplink-chameleon-eva-suit-name = Chameleon EVA Bundle
+
+uplink-chameleon-eva-suit-desc = Be prepared for any sort of low pressure situation. Can take the appearance of any suit or coat!
+
 ghost-role-information-nukie-mouse-name = Nuclear Operative Mouse
 
 ghost-role-information-nukie-mouse-description = A Nuclear Operative Mouse reinforcement for the Syndicate.
