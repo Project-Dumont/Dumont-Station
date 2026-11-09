@@ -86,6 +86,7 @@ entities:
         1: AreaShuttleNukie
     - type: OccluderTree
     - type: SpreaderGrid
+    - type: NukeOpsShuttle
     - type: Shuttle
       dampingModifiers:
         Cruise: 0.0075
@@ -99,82 +100,82 @@ entities:
         path: /Audio/Effects/alert.ogg
     - type: DecalGrid
       chunkCollection:
-        version: 3
+        version: 2
         nodes:
         - node:
             color: '#9C202066'
             id: BrickCornerOverlayNE
           decals:
-          - 0,-7
+            0: 0,-7
         - node:
             color: '#9C202066'
             id: BrickCornerOverlaySE
           decals:
-          - 0,-11
-          - 0,-5
+            1: 0,-11
+            2: 0,-5
         - node:
             color: '#9C202066'
             id: BrickCornerOverlaySW
           decals:
-          - 2,-11
+            3: 2,-11
         - node:
             color: '#9C202066'
             id: BrickLineOverlayE
           decals:
-          - 0,-9
-          - 0,-10
-          - 0,-8
-          - 0,-4
+            4: 0,-9
+            5: 0,-10
+            6: 0,-8
+            7: 0,-4
         - node:
             color: '#9C202066'
             id: BrickLineOverlayN
           decals:
-          - -6,-13
-          - -5,-13
-          - -4,-13
-          - 4,-13
-          - 5,-13
-          - 6,-13
+            8: -6,-13
+            9: -5,-13
+            10: -4,-13
+            11: 4,-13
+            12: 5,-13
+            13: 6,-13
         - node:
             color: '#9C202066'
             id: BrickLineOverlayS
           decals:
-          - -6,-11
-          - -2,-11
-          - -1,-11
-          - 6,-11
+            14: -6,-11
+            15: -2,-11
+            16: -1,-11
+            17: 6,-11
         - node:
             color: '#9C202066'
             id: BrickLineOverlayW
           decals:
-          - 2,-10
+            18: 2,-10
         - node:
             color: '#9C202066'
             id: HalfTileOverlayGreyscale180
           decals:
-          - -2,-2
-          - -1,-2
-          - 1,-2
-          - 2,-2
+            19: -2,-2
+            20: -1,-2
+            21: 1,-2
+            22: 2,-2
         - node:
             color: '#9C202066'
             id: HalfTileOverlayGreyscale90
           decals:
-          - -3,-7
-          - -3,-8
-          - -3,-9
-          - -2,-5
-          - -2,-4
+            23: -3,-7
+            24: -3,-8
+            25: -3,-9
+            26: -2,-5
+            27: -2,-4
         - node:
             color: '#9C202066'
             id: QuarterTileOverlayGreyscale180
           decals:
-          - -3,-6
+            28: -3,-6
         - node:
             color: '#9C202066'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
-          - -2,-6
+            29: -2,-6
     - type: GridAtmosphere
       version: 2
       data:
@@ -252,22 +253,19 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-            Oxygen: 21.824879
-            Nitrogen: 82.10312
+          - 21.824879
+          - 82.10312
         - volume: 2500
           immutable: True
-          moles: {}
+          moles: []
         - volume: 2500
           temperature: 293.15
-          moles: {}
+          moles: []
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
-    - type: TileHistory
-      chunkHistory: {}
     - type: ImplicitRoof
-    - type: ExplosionAirtightGrid
 - proto: AirCanister
   entities:
   - uid: 2

@@ -4,6 +4,7 @@
   parent: LoneOpsSpawn
   id: SyndicateBattlecruiserRule
   components:
+  - type: BattlecruiserArrival
   - type: StationEvent
     weight: 0 # this CANNOT happen naturally
     startAnnouncement: station-event-syndicate-battle-cruiser

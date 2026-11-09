@@ -53,7 +53,7 @@
   ## Side Jobs
   ### Bug an Office
   <Box>
-    <GuideEntityEmbed Entity="SyndicateBugCmo" Caption=""/>
+    <GuideEntityEmbed Entity="SyndicateBug" Caption=""/>
   </Box>
   [bold]Available to:[/bold] 'Goody Two-Shoes Nobody' and above
 
