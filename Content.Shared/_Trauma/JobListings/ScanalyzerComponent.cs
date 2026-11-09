@@ -4,6 +4,8 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Objectives;
 
+using Robust.Shared.Audio;
+
 namespace Content.Trauma.Shared.JobListings;
 
 /// <summary>
@@ -31,4 +33,10 @@ public sealed partial class ScanalyzerComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan ScanDuration;
+
+    [DataField]
+    public SoundSpecifier ScanStartSound = new SoundPathSpecifier("/Audio/_Trauma/Effects/Scanalyzer/pshoom.ogg");
+
+    [DataField]
+    public SoundSpecifier ScanEndSound = new SoundPathSpecifier("/Audio/_Trauma/Effects/Scanalyzer/wewewew.ogg");
 }

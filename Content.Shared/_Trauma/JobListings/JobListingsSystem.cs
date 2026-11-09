@@ -213,10 +213,7 @@ public abstract partial class JobListingsSystem : EntitySystem
     /// </summary>
     public void UpdateUi(Entity<JobListingsComponent> jobBoard, EntityUid actor)
     {
-        foreach (var remote in jobBoard.Comp.Remotes)
-        {
-            UpdateUi(remote, actor);
-        }
+        UpdateAllSideJobs(jobBoard);
     }
 
     /// <summary>
