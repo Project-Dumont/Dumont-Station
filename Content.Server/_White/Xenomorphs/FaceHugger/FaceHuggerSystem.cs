@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._CMU14.Xenomorphs;
-using Content.Shared.Armor;
+using Content.Shared.Actions;
+using Content.Shared.Interaction;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Robust.Shared.Audio;
@@ -55,6 +56,8 @@ public sealed partial class FaceHuggerSystem : EntitySystem
     [Dependency] private ReactiveSystem _reactiveSystem = default!; // Goobstation
     [Dependency] private SharedSolutionContainerSystem _solutions = default!; // Goobstation
 
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private BodySystem _body = default!;
@@ -289,16 +292,30 @@ public sealed partial class FaceHuggerSystem : EntitySystem
             }
             // Goobstaion end
 
-            // Check for nearby entities to latch onto
-            if (faceHugger.Active && clothing?.InSlot == null && !IsSentient(uid)) // Dumont
-            {
-                foreach (var entity in _entityLookup.GetEntitiesInRange<InventoryComponent>(Transform(uid).Coordinates,
-                             1.5f))
-                {
-                    if (TryEquipFaceHugger(uid, entity, faceHugger))
-                        break;
-                }
-            }
+            if (faceHugger.Active && clothing?.InSlot == null && !IsSentient(uid))
+                TryAutoLeap(uid, faceHugger);
+        }
+    }
+
+    private void TryAutoLeap(EntityUid uid, FaceHuggerComponent component)
+    {
+        if (_mobState.IsDead(uid) || _container.IsEntityInContainer(uid) || HasComp<ThrownItemComponent>(uid)
+            || !TryComp<FaceHuggerLeapComponent>(uid, out var leap) || leap.IsLeaping
+            || TryComp<XenomorphCarrierRecoveryComponent>(uid, out var recovery) && _timing.CurTime < recovery.RecoverAt
+            || _actions.GetAction(leap.LeapActionEntity) is not { } action || _actions.IsCooldownActive(action.Comp))
+            return;
+
+        foreach (var target in _entityLookup.GetEntitiesInRange<InventoryComponent>(Transform(uid).Coordinates, leap.AutoLeapRange))
+        {
+            if (target.Owner == uid || !HasComp<MobStateComponent>(target) || _mobState.IsDead(target)
+                || HasComp<FacehuggerImmuneComponent>(target) || _entityWhitelist.IsBlacklistPass(component.Blacklist, target)
+                || _container.IsEntityInContainer(target)
+                || !_interaction.InRangeUnobstructed(uid, target.Owner, leap.AutoLeapRange))
+                continue;
+
+            if (_actions.TryPerformAction(uid, new RequestPerformActionEvent(GetNetEntity(action.Owner),
+                    GetNetCoordinates(Transform(target).Coordinates))))
+                break;
         }
     }
 
@@ -379,7 +396,7 @@ public sealed partial class FaceHuggerSystem : EntitySystem
         component.ProtectionRequired = HasHeadProtection(target)
             || _inventory.TryGetSlotEntity(target, component.Slot, out var mask)
                 && TryComp<IngestionBlockerComponent>(mask, out var blocker) && blocker.Enabled
-                && (blocker.BlockSmokeIngestion || HasComp<BreathToolComponent>(mask));
+                && blocker.BlockSmokeIngestion;
 
         if (_inventory.TryGetSlotEntity(target, component.Slot, out _)
             && !_inventory.TryUnequip(target, component.Slot, true, true))
@@ -478,7 +495,7 @@ public sealed partial class FaceHuggerSystem : EntitySystem
         if (TryComp<SealableClothingComponent>(head, out var sealable) && !sealable.IsSealed)
             return false;
 
-        return HasComp<FaceHuggerBlockerComponent>(head) || HasComp<ArmorComponent>(head);
+        return HasComp<FaceHuggerBlockerComponent>(head);
     }
 
     #region Throwing Behavior
