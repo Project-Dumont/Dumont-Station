@@ -7,6 +7,9 @@
   id: WraithRoundstart
   components:
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     chaosScore: 500
     minPlayers: 20
   - type: AntagSpawner

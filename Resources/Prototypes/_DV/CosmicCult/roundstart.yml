@@ -9,7 +9,10 @@
     mapPath: /Maps/_DV/Nonstations/cosmicvoid.yml
   - type: GameRule
     # Dumont changes start
-    minPlayers: 20
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 25
     # Dumont end
     chaosScore: 1200
     delay:
