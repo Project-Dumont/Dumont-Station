@@ -16,7 +16,9 @@
     - state: unlit
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    snapCardinals: true # Starlight - Radio host rework
     drawdepth: SmallObjects
+    offset: "0.0,0.3" # Starlight - Radio host rework
   - type: Fixtures
     fixtures:
       fix1:

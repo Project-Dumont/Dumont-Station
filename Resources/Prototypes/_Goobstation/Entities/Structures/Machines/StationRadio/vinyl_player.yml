@@ -24,6 +24,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     drawdepth: SmallObjects
+    offset: "0.0,0.3" # Starlight - Radio host rework
   - type: Fixtures
     fixtures:
       fix1:
