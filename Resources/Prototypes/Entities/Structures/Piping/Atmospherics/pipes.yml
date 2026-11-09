@@ -552,6 +552,7 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
   - type: AtmosPipeLayers
     pipeLayersLocked: true
+    numberOfPipeLayers: 3 # Dumont
   - type: PipeAppearance
     sprite:
     # Dumont changes start

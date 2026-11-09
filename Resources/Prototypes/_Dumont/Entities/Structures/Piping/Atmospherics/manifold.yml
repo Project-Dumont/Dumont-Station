@@ -9,6 +9,8 @@
     layers:
     - state: pipeManifold
       map: [ "enum.PipeVisualLayers.Pipe" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 5
   - type: PipeAppearance
     sprite:
     - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
