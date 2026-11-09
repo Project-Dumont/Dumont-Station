@@ -1,5 +1,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   parent: BaseGameRule
   id: CosmicCult
@@ -15,9 +14,6 @@
     minPlayers: 25
     # Dumont end
     chaosScore: 1200
-    delay:
-      min: 60
-      max: 120
   - type: AntagObjectives
     objectives:
     - CosmicFinalityObjective
