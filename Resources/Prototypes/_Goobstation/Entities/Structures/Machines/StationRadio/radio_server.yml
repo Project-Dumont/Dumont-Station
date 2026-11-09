@@ -132,21 +132,25 @@
     slots:
       playlist1:
         priority: 4
+        swap: false
         whitelist:
           tags:
           - VinylSleeveFit
       playlist2:
         priority: 3
+        swap: false
         whitelist:
           tags:
           - VinylSleeveFit
       playlist3:
         priority: 2
+        swap: false
         whitelist:
           tags:
           - VinylSleeveFit
       playlist4:
         priority: 1
+        swap: false
         whitelist:
           tags:
           - VinylSleeveFit

@@ -73,16 +73,19 @@
     slots:
       cd1:
         priority: 3
+        swap: false
         whitelist:
           tags:
           - CD
       cd2:
         priority: 2
+        swap: false
         whitelist:
           tags:
           - CD
       cd3:
         priority: 1
+        swap: false
         whitelist:
           tags:
           - CD
