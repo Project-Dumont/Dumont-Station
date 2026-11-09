@@ -104,14 +104,21 @@ public abstract partial class ScanalyzerSystem : EntitySystem
         if (!_mind.TryGetMind(args.User, out var mind, out var mindComp))
             return;
 
+        var ev = new ScanalyzerScanFinishedEvent(args.Target.Value, args.User);
+        RaiseLocalEvent(ent, ref ev);
+        if (ev.Cancelled)
+        {
+            Dirty(ent);
+            _popup.PopupEntity(Loc.GetString("scanalyzer-popup-broadcast-failed"), args.User, args.User);
+            return;
+        }
+
         ent.Comp.Used = true;
         Dirty(ent);
         _popup.PopupClient(Loc.GetString("scanalyzer-popup-used"), args.User, PopupType.Medium);
 
         RegisterScan((mind, mindComp), steal.StealGroup);
         _jobs.UpdateUi((mind, mindComp));
-        var ev = new ScanalyzerScanFinishedEvent(args.Target.Value, args.User);
-        RaiseLocalEvent(ent, ref ev);
         args.Handled = true;
     }
 
@@ -135,4 +142,4 @@ public sealed partial class ScanalyzerScanDoAfterEvent : SimpleDoAfterEvent;
 /// Raised on the scanalyzer entity once a scan has finished.
 /// </summary>
 [ByRefEvent]
-public record struct ScanalyzerScanFinishedEvent(EntityUid Target, EntityUid User);
+public record struct ScanalyzerScanFinishedEvent(EntityUid Target, EntityUid User, bool Cancelled = false);

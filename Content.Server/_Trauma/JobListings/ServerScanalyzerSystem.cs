@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server.GameTicking.Rules.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Objectives.Components;
@@ -14,7 +16,18 @@ public sealed partial class ServerScanalyzerSystem : ScanalyzerSystem
     [SubscribeLocalEvent]
     private void OnBroadcast(Entity<BroadcastGameRuleOnScanComponent> ent, ref ScanalyzerScanFinishedEvent args)
     {
-        _ticker.StartGameRule(ent.Comp.GameRule);
+        var started = _ticker.StartGameRule(ent.Comp.GameRule, out var rule);
+        if (!started || HasComp<EndedGameRuleComponent>(rule) ||
+            !TryComp<RuleGridsComponent>(rule, out var grids) || grids.MapGrids.Count == 0)
+        {
+            args.Cancelled = true;
+            Log.Error($"Battlecruiser broadcast failed: rule={ToPrettyString(rule)}, started={started}.");
+            _ticker.EndGameRule(rule);
+            return;
+        }
+
+        Log.Info($"Battlecruiser broadcast loaded {grids.MapGrids.Count} grid(s) for {ToPrettyString(rule)}.");
+
     }
 
     [SubscribeLocalEvent(after: [typeof(StealConditionSystem)])]

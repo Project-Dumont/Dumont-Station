@@ -1,0 +1,58 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: SyndicateFloorEmble
+  name: syndicate floor emblem
+  description: The three-headed serpent of the Syndicate.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      drawdepth: FloorObjects
+      noRot: true
+      scale: 0.7, 0.7
+      layers:
+        - state: syndlogo1
+          offset: -1.5,2
+        - state: syndlogo10
+          offset: -0.5,0
+        - state: syndlogo11
+          offset: 0.5,0
+        - state: syndlogo12
+          offset: 1.5,0
+        - state: syndlogo13
+          offset: -1.5,-1
+        - state: syndlogo14
+          offset: 0.5,-1
+        - state: syndlogo15
+          offset: 1.5,-1
+        - state: syndlogo16
+          offset: -1.5,-2
+        - state: syndlogo17
+          offset: -0.5,-2
+        - state: syndlogo18
+          offset: 0.5,-2
+        - state: syndlogo19
+          offset: 1.5,-2
+        - state: syndlogo2
+          offset: -0.5,2
+        - state: syndlogo3
+          offset: 0.5,2
+        - state: syndlogo4
+          offset: 1.5,2
+        - state: syndlogo5
+          offset: -1.5,1
+        - state: syndlogo6
+          offset: -0.5,1
+        - state: syndlogo7
+          offset: 0.5,1
+        - state: syndlogo8
+          offset: 1.5,1
+        - state: syndlogo9
+          offset: -1.5,0
+      sprite: Decals/syndlogo.rsi
+    - type: Tag
+      tags:
+        - HideContextMenu

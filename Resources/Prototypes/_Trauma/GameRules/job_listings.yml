@@ -12,7 +12,7 @@
     startAudio:
       path: "/Audio/Announcements/war.ogg"
   - type: LoadMapRule
-    gridPath: /Maps/_Trauma/Shuttles/ShuttleEvent/battlecruiser.yml # syndicate infiltraitor with a bunch of nukie ghostroles
+    gridPath: /Maps/_Dumont/Shuttles/ShuttleEvent/leviathan.yml
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative
