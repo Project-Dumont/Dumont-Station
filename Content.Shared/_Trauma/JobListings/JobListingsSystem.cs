@@ -117,7 +117,9 @@ public abstract partial class JobListingsSystem : EntitySystem
         var title = meta.EntityName;
         var description = meta.EntityDescription;
         var icon = objectiveComp.Icon;
-        var rewardName = sideJobComp.RewardName;
+        var rewardName = Loc.TryGetString(sideJobComp.RewardName, out var localizedReward)
+            ? localizedReward
+            : sideJobComp.RewardName;
         return new SideJobInfo(sideJob, sideJobComp.CachedProgress, title, description, icon, rewardName, sideJobComp.ReputationGain);
     }
 

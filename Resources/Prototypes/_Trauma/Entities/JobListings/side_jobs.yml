@@ -167,7 +167,7 @@
   - type: SideJob
     reputationGain: 10000
     reward: SyndicateFinalReward
-    rewardName: syndicate lifetime achievement award
+    rewardName: job-listings-lifetime-reward
   - type: LevelRestrictedSideJob
     level: 3
 
