@@ -16,6 +16,9 @@ public sealed partial class FaceHuggerLeapComponent : Component
     public EntProtoId LeapAction = "ActionFaceHuggerLeap";
 
     [DataField]
+    public float AutoLeapRange = 5f;
+
+    [DataField]
     public float LeapSpeed = 6f;
 
     [DataField]
