@@ -10,7 +10,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxIRanSoFarAway
+  id: VinylDiskIRanSoFarAway
   name: "vinyl disk: A Flock Of Seagulls - I Ran"
   components:
   - type: Vinyl
@@ -19,7 +19,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxTremDasOnze
+  id: VinylDiskTremDasOnze
   name: "vinyl disk: Adoniran Barbosa - Trem das Onze"
   components:
   - type: Vinyl
@@ -28,7 +28,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxRaindropsKeepFallingOnMyHead
+  id: VinylDiskRaindropsKeepFallingOnMyHead
   name: "vinyl disk: B.J. Thomas - Raindrops Keep Fallin' On My Head"
   components:
   - type: Vinyl
@@ -37,7 +37,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBabyBlue
+  id: VinylDiskBabyBlue
   name: "vinyl disk: Badfinger - Baby Blue"
   components:
   - type: Vinyl
@@ -46,7 +46,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDoFundoDaGrota
+  id: VinylDiskDoFundoDaGrota
   name: "vinyl disk: Baitaca - Do Fundo da Grota"
   components:
   - type: Vinyl
@@ -55,7 +55,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBumbleBee
+  id: VinylDiskBumbleBee
   name: "vinyl disk: Bambee - Bumble Bee"
   components:
   - type: Vinyl
@@ -64,7 +64,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDotA
+  id: VinylDiskDotA
   name: "vinyl disk: Basshunter - DotA"
   components:
   - type: Vinyl
@@ -73,7 +73,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDancingWithMyself
+  id: VinylDiskDancingWithMyself
   name: "vinyl disk: Billy Idol - Dancing With Myself"
   components:
   - type: Vinyl
@@ -82,7 +82,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxEvidencias
+  id: VinylDiskEvidencias
   name: "vinyl disk: Chitãozinho & Xororó - Evidencias"
   components:
   - type: Vinyl
@@ -91,7 +91,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxSpaceAsshole
+  id: VinylDiskSpaceAsshole
   name: "vinyl disk: Chris Remo - Space Asshole"
   components:
   - type: Vinyl
@@ -100,7 +100,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxHaveYouEverSeenTheRain
+  id: VinylDiskHaveYouEverSeenTheRain
   name: "vinyl disk: Creedence Clearwater Revival - Have You Ever Seen The Rain"
   components:
   - type: Vinyl
@@ -109,7 +109,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDontDreamItsOver
+  id: VinylDiskDontDreamItsOver
   name: "vinyl disk: Crowded House - Don't Dream It's Over"
   components:
   - type: Vinyl
@@ -118,7 +118,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxStarman
+  id: VinylDiskStarman
   name: "vinyl disk: David Bowie - Starman"
   components:
   - type: Vinyl
@@ -127,7 +127,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxSultansOfSwing
+  id: VinylDiskSultansOfSwing
   name: "vinyl disk: Dire Straits - Sultans Of Swing"
   components:
   - type: Vinyl
@@ -136,7 +136,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxHotelCalifornia
+  id: VinylDiskHotelCalifornia
   name: "vinyl disk: Eagles - Hotel California"
   components:
   - type: Vinyl
@@ -145,7 +145,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBlue
+  id: VinylDiskEiffel65Blue
   name: "vinyl disk: Eiffel 65 - Blue"
   components:
   - type: Vinyl
@@ -154,7 +154,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxMyWay
+  id: VinylDiskMyWay
   name: "vinyl disk: Frank Sinatra - My Way"
   components:
   - type: Vinyl
@@ -163,7 +163,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxTakeMeOut
+  id: VinylDiskTakeMeOut
   name: "vinyl disk: Franz Ferdinand - Take Me Out"
   components:
   - type: Vinyl
@@ -172,7 +172,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxCarelessWhisper
+  id: VinylDiskCarelessWhisper
   name: "vinyl disk: George Michael - Careless Whisper"
   components:
   - type: Vinyl
@@ -181,7 +181,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxLamourToujours
+  id: VinylDiskLamourToujours
   name: "vinyl disk: Gigi D'Agostino - L'Amour Toujours"
   components:
   - type: Vinyl
@@ -190,7 +190,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxAmericanIdiot
+  id: VinylDiskAmericanIdiot
   name: "vinyl disk: Green Day - American Idiot"
   components:
   - type: Vinyl
@@ -199,7 +199,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxParadiseCity
+  id: VinylDiskParadiseCity
   name: "vinyl disk: Guns N' Roses - Paradise City"
   components:
   - type: Vinyl
@@ -208,7 +208,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxSummer
+  id: VinylDiskSummer
   name: "vinyl disk: HALCALI - おつかれSUMMER"
   components:
   - type: Vinyl
@@ -217,7 +217,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxCantGetOver
+  id: VinylDiskCantGetOver
   name: "vinyl disk: KASINO - Can't Get Over"
   components:
   - type: Vinyl
@@ -226,7 +226,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxTempoPerdido
+  id: VinylDiskTempoPerdido
   name: "vinyl disk: Legião Urbana - Tempo Perdido"
   components:
   - type: Vinyl
@@ -235,7 +235,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxPeladosEmSantos
+  id: VinylDiskPeladosEmSantos
   name: "vinyl disk: Mamonas Assassinas - Pelados Em Santos"
   components:
   - type: Vinyl
@@ -244,7 +244,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBreakMyStride
+  id: VinylDiskBreakMyStride
   name: "vinyl disk: Matthew Wilder - Break My Stride"
   components:
   - type: Vinyl
@@ -253,7 +253,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDownUnder
+  id: VinylDiskDownUnder
   name: "vinyl disk: Men At Work - Down Under"
   components:
   - type: Vinyl
@@ -262,7 +262,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBeatIt
+  id: VinylDiskBeatIt
   name: "vinyl disk: Michael Jackson - Beat It"
   components:
   - type: Vinyl
@@ -271,7 +271,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBillieJean
+  id: VinylDiskBillieJean
   name: "vinyl disk: Michael Jackson - Billie Jean"
   components:
   - type: Vinyl
@@ -280,7 +280,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxLady
+  id: VinylDiskLady
   name: "vinyl disk: Modjo - Lady"
   components:
   - type: Vinyl
@@ -289,7 +289,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxGreytideSong
+  id: VinylDiskGreytideSong
   name: "vinyl disk: Mrjajkes - The Greytide Song"
   components:
   - type: Vinyl
@@ -298,7 +298,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxOAstronautaDeMarmore
+  id: VinylDiskOAstronautaDeMarmore
   name: "vinyl disk: Nenhum De Nós - O Astronauta De Mármore"
   components:
   - type: Vinyl
@@ -307,7 +307,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDragosteaDinTei
+  id: VinylDiskDragosteaDinTei
   name: "vinyl disk: O-Zone - Dragostea Din Tei"
   components:
   - type: Vinyl
@@ -316,7 +316,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxJustBreathe
+  id: VinylDiskJustBreathe
   name: "vinyl disk: Pearl Jam - Just Breathe"
   components:
   - type: Vinyl
@@ -325,7 +325,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxDontStopMeNow
+  id: VinylDiskDontStopMeNow
   name: "vinyl disk: Queen - Don't Stop Me Now"
   components:
   - type: Vinyl
@@ -334,7 +334,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxKillerQueen
+  id: VinylDiskKillerQueen
   name: "vinyl disk: Queen - Killer Queen"
   components:
   - type: Vinyl
@@ -343,7 +343,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxCalifornication
+  id: VinylDiskCalifornication
   name: "vinyl disk: Red Hot Chilli Peppers - Californication"
   components:
   - type: Vinyl
@@ -352,7 +352,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxEscape
+  id: VinylDiskEscape
   name: "vinyl disk: Ruppert Holmes - Escape"
   components:
   - type: Vinyl
@@ -361,7 +361,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxAmigaDaMinhaMulher
+  id: VinylDiskAmigaDaMinhaMulher
   name: "vinyl disk: Seu Jorge - Amiga da Minha Mulher"
   components:
   - type: Vinyl
@@ -370,7 +370,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxBurguesinha
+  id: VinylDiskBurguesinha
   name: "vinyl disk: Seu Jorge - Burguesinha"
   components:
   - type: Vinyl
@@ -379,7 +379,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxAllStar
+  id: VinylDiskAllStar
   name: "vinyl disk: Smash Mouth - All Star"
   components:
   - type: Vinyl
@@ -388,7 +388,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxImABeliever
+  id: VinylDiskImABeliever
   name: "vinyl disk: Smash Mouth - I'm A Believer"
   components:
   - type: Vinyl
@@ -397,7 +397,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxFly
+  id: VinylDiskFly
   name: "vinyl disk: Spectrum - F L Y"
   components:
   - type: Vinyl
@@ -406,7 +406,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxEyeOfTheTiger
+  id: VinylDiskEyeOfTheTiger
   name: "vinyl disk: Survivor - Eye Of The Tiger"
   components:
   - type: Vinyl
@@ -415,7 +415,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxEverybodyWantsToRuleTheWorld
+  id: VinylDiskEverybodyWantsToRuleTheWorld
   name: "vinyl disk: Tears For Fears - Everybody Wants To Rule The World"
   components:
   - type: Vinyl
@@ -424,7 +424,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxSugarSugar
+  id: VinylDiskSugarSugar
   name: "vinyl disk: The Archies - Sugar Sugar"
   components:
   - type: Vinyl
@@ -433,7 +433,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxHelp
+  id: VinylDiskHelp
   name: "vinyl disk: The Beatles - Help!"
   components:
   - type: Vinyl
@@ -442,7 +442,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxShouldIStayOrShouldIGo
+  id: VinylDiskShouldIStayOrShouldIGo
   name: "vinyl disk: The Clash - Should I Stay Or Should I Go"
   components:
   - type: Vinyl
@@ -451,7 +451,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxEveryBreathYouTake
+  id: VinylDiskEveryBreathYouTake
   name: "vinyl disk: The Police - Every Breath You Take"
   components:
   - type: Vinyl
@@ -460,7 +460,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxStartMeUp
+  id: VinylDiskStartMeUp
   name: "vinyl disk: The Rolling Stones - Start Me Up"
   components:
   - type: Vinyl
@@ -469,7 +469,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxSeteMares
+  id: VinylDiskSeteMares
   name: "vinyl disk: Tim Maia - O Descobridor dos Sete Mares"
   components:
   - type: Vinyl
@@ -478,7 +478,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxGatinhaComunista
+  id: VinylDiskGatinhaComunista
   name: "vinyl disk: Vitroles - Gatinha Comunista"
   components:
   - type: Vinyl
@@ -487,7 +487,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxOceanMan
+  id: VinylDiskOceanMan
   name: "vinyl disk: Ween - Ocean Man"
   components:
   - type: Vinyl
@@ -496,7 +496,7 @@
 
 - type: entity
   parent: BaseVinylDiskJukebox
-  id: VinylDiskJukeboxIslandInTheSun
+  id: VinylDiskIslandInTheSun
   name: "vinyl disk: Weezer - Island In The Sun"
   components:
   - type: Vinyl
