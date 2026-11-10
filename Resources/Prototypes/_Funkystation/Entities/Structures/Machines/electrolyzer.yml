@@ -1,4 +1,3 @@
-
 - type: entity
   parent: [BaseMachinePowered, ConstructibleMachine]
   id: Electrolyzer
@@ -25,13 +24,12 @@
     board: ElectrolyzerMachineCircuitboard
   - type: WiresPanel
   - type: TemperatureExplosion #Dumont - Start
-    heatDamageTemperature: 600
+    heatDamageTemperature: 20000
     heatDamage:
       types:
         Heat: 1.5
     explosionTemperature: 30000
-    explosionRadius: 5
-    explosionIntensity: 20
+    explosionRadius: 10
   - type: AtmosExposed
   - type: Explosive
     explosionType: Default #Dumont - End
