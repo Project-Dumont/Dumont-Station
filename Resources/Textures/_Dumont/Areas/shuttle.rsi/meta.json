@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by CRISOOOOO (github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "arrivals_shuttle"
+    },
+    {
+      "name": "cargo_shuttle"
+    },
+    {
+      "name": "centcomm_shuttle"
+    },
+    {
+      "name": "civilian_shuttle"
+    },
+    {
+      "name": "evac_shuttle"
+    },
+    {
+      "name": "evac_shuttle_cargo"
+    },
+    {
+      "name": "evac_shuttle_command"
+    },
+    {
+      "name": "evac_shuttle_eng"
+    },
+    {
+      "name": "evac_shuttle_med"
+    },
+    {
+      "name": "evac_shuttle_sci"
+    },
+    {
+      "name": "evac_shuttle_sec"
+    },
+    {
+      "name": "evac_shuttle_service"
+    },
+    {
+      "name": "explorer_shuttle"
+    },
+    {
+      "name": "labor_shuttle"
+    },
+    {
+      "name": "mining_shuttle"
+    },
+    {
+      "name": "pod"
+    },
+    {
+      "name": "shuttle"
+    },
+    {
+      "name": "visitant_shuttle"
+    }
+  ]
+}
