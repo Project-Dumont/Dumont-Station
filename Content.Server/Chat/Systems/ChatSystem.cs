@@ -904,7 +904,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
-            if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
+            if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed) // Dumont - Radio host rework
+                continue;
+
+            if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full && range != ChatTransmitRange.HideChat) // Dumont - Radio host rework
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
             // Goob edit start
@@ -946,7 +949,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-unknown-wrap-message", string.Empty, result, language, colorOverride);
             }
 
-            _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
+            var hideChat = MessageRangeCheck(session, data, range) == MessageRangeCheckResult.HideChat; // Dumont - Radio host rework
+            _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, hideChat, session.Channel); // Dumont - Radio host rework
         }
 
         var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, message, language, colorOverride);
