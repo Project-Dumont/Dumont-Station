@@ -94,3 +94,4 @@
     - type: DeviceLinkSink
       ports:
         - Trigger
+    - type: BombCollar
