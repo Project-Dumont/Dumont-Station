@@ -112,4 +112,9 @@
   copyright: "Taken from Citadel Station 13. Remixed to mono where it was stereo by metalgearsloth then added punch sound effects by Skubman"
   source: "https://github.com/Citadel-Station-13/Citadel-Station-13-RP/tree/cc701aedb633d83eae8339a8b3712ad8ad99cca0/sound"
 
-[]
+- files:
+    - utilityknifeopen.ogg
+    - utilityknifeclose.ogg
+  license: CC0-1.0
+  copyright: Taken from FilmOrbit on freesound.org
+  source: https://freesound.org/s/554299/
