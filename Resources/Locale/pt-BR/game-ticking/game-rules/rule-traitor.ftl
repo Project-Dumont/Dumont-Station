@@ -1,1 +1,1 @@
-rule-traitor-added-announcement = Olá tripulação, tenham um otimo turno!
+rule-traitor-added-announcement = Olá, tripulação. Tenham um ótimo turno!

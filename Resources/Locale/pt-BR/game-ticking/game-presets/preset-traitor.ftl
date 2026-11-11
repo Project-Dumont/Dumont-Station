@@ -56,3 +56,15 @@ traitor-role-codewords-short =
     As palavras chave são:
     {$codewords}.
 traitor-role-uplink-code-short = Seu código do uplink é {$code}. Defina-o como toque do seu PDA para acessar o uplink.
+
+traitor-role-uplink-pen-code =
+    Gire a caneta até a combinação [color = lightgray]{$code}[/color] para desbloquear o uplink.
+    Os graus representam ângulos de rotação. O uplink é bloqueado automaticamente ao ser fechado.
+
+traitor-role-uplink-implant =
+    Seu implante de uplink foi ativado. Acesse-o pela barra de ações.
+    O uplink permanece seguro enquanto ninguém o remover do seu corpo.
+
+traitor-role-uplink-pen-code-short = O código do uplink da sua caneta é {$code}. Gire a caneta para desbloquear. Ele é bloqueado ao ser fechado.
+
+traitor-role-uplink-implant-short = Seu uplink foi implantado. Acesse-o pela barra de ações.
