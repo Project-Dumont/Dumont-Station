@@ -73,7 +73,7 @@ public sealed partial class StationRadioReceiverComponent : Component
     /// Increase "volume" by changing range
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool BoostVolume;
+    public bool BoostVolume = true;
 
     /// <summary>
     /// Client state.

@@ -42,6 +42,7 @@
         - RadioShow
     - type: StationRadioReceiver
       active: false
+      boostVolume: false
       defaultParams: !type:AudioParams
         maxDistance: 2
       boostedParams: !type:AudioParams
