@@ -4972,3 +4972,9 @@ Entries:
       message: Café, gelo e creme podem ser inseridos em dispensers de bebida denovo.
   id: 592
   time: '2026-11-08T23:53:30.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Arbusto
+  id: 593
+  time: '2026-11-12T02:07:23.0000000+00:00'
