@@ -242,7 +242,7 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
                     // Starlight start
                     // let our system preserve the cryo'd player's belongings for this slot
                     var slotReturned = new CryoSlotReturnedEvent(ent.Owner, job);
-                    RaiseLocalEvent(ent, ref slotReturned, true); //Dumontstation change
+                    RaiseLocalEvent(ref slotReturned);
                     // Starlight end
                 }
 
