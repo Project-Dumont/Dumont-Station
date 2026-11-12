@@ -144,7 +144,7 @@
     sprite: Structures/Power/power.rsi
     state: generator
   - type: Anchorable # goob end
-  - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserOvercharge # hot potato
     fireCost: 70
 
@@ -174,7 +174,7 @@
       Steel: 12
     chemicalComposition:
       Zinc: 5
-  - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserSubmachineGun
     fireCost: 45 # 8 shots
 
@@ -224,7 +224,7 @@
   - type: Battery
     maxCharge: 720
     startingCharge: 720
-  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserPistol
     fireCost: 90 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
@@ -270,7 +270,7 @@
   - type: Battery
     maxCharge: 1080
     startingCharge: 1080
-  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserMainWeapon
     fireCost: 135 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
@@ -316,7 +316,7 @@
   - type: Battery
     maxCharge: 1800
     startingCharge: 1800
-  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserOvercharge
     fireCost: 225 # 8 shots
 
@@ -359,7 +359,7 @@
     autoRechargeRate: 12 # takes 1 minute to charge itself back to full
     # Goobstation
     canEmp: true
-  - type: ProjectileBatteryAmmoProvider # goob edit - battery hitscan buff
+  - type: ProjectileBatteryAmmoProvider # Dumont edit
     proto: BulletLaserPistol
     fireCost: 90 # 8 shots
   - type: PhysicalComposition #Goobstation - Recycle update
@@ -406,7 +406,7 @@
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 40
-    - type: ProjectileBatteryAmmoProvider # goob edit - svalinn buff fix
+    - type: ProjectileBatteryAmmoProvider # Dumont edit
       proto: BulletLaserCaptain
       fireCost: 75 # 16 shots
 
