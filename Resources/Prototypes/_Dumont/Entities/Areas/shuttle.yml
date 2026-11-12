@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseAreaShuttle
   id: AreaShuttle
-  name: Shuttçe
+  name: shuttle
   suffix: AreaShuttle
   components:
   - type: Sprite
