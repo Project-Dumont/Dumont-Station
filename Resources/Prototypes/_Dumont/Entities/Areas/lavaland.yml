@@ -1,0 +1,159 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaLavaland
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_danger
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningBreak
+  name: mining break
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_break
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningCafe
+  name: mining cafe
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_cafe
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningDanger
+  name: mining danger
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_danger
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningDock
+  name: mining dock
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_dock
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningEva
+  name: mining eva
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_eva
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningHydro
+  name: mining hydro
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_hydro
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLabor
+  name: mining labor
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_labor
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLaborCafe
+  name: mining labor cafe
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_labor_cafe
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLaborLiving
+  name: mining labor living
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_labor_living
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLaborProduct
+  name: mining labor production
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_labor_product
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLiving
+  name: mining living
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_living
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLobby
+  name: mining lobby
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_lobby
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningLounge
+  name: mining lounge
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_lounge
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningStorage
+  name: mining storage
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_storage
+
+- type: entity
+  parent: BaseAreaLavaland
+  id: AreaMiningUnexplored
+  name: mining unexplored
+  suffix: AreaLavaland
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/lavaland.rsi
+    state: mining_unexplored

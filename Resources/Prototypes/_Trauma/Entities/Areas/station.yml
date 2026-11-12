@@ -37,6 +37,7 @@
   name: loot room
   components:
   - type: Sprite
+    suffix: AreaMaint
     state: loot_room
 
 # Dumont changes start
