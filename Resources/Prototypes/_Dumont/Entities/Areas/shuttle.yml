@@ -177,3 +177,13 @@
   - type: Sprite
     sprite: _Dumont/Areas/shuttle.rsi
     state: evac_shuttle_service
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleTram
+  name: tram
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: tram

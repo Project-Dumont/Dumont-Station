@@ -60,6 +60,9 @@
     },
     {
       "name": "visitant_shuttle"
+    },
+    {
+      "name": "tram"
     }
   ]
 }
