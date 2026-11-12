@@ -35,9 +35,9 @@
   parent: BaseAreaStation
   id: AreaLootRoom
   name: loot room
+  suffix: AreaMaint
   components:
   - type: Sprite
-    suffix: AreaMaint
     state: loot_room
 
 # Dumont changes start
