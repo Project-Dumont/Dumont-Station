@@ -92,3 +92,6 @@
 
 - type: Tag
   id: CurseBomb
+
+- type: Tag
+  id: Hedge
