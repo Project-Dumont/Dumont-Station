@@ -1,3 +1,4 @@
+
 <!--
 SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -7,123 +8,86 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-# Solids
+# Sólidos
 
-Recipes here are solid items that are created using chemistry.
+As receitas desta seção são itens sólidos criados por meio da química.
 
-## Aloe Cream
+## Cristais
   <Box>
-    <GuideEntityEmbed Entity="FoodAloe" Caption="Raw Aloe"/>
-    <GuideEntityEmbed Entity="AloeCream" Caption="Aloe Cream"/>
+    <GuideEntityEmbed Entity="ShardCrystalBlue" Caption="Cristal"/>
   </Box>
 
-Aloe Cream can be created by microwaving raw aloe for 10 seconds.
+Um cristal pode ser criado combinando os seguintes ingredientes:
+- 15u de Açúcar
+- 15u de Água
+- 5u de Etanol
 
-## Crystals
+## PEM
   <Box>
-    <GuideEntityEmbed Entity="ShardCrystalBlue" Caption="Crystal"/>
+    <GuideEntityEmbed Entity="EmpGrenade" Caption="PEM"/>
   </Box>
 
-A crystal can be created by combining the following ingredients:
-- 15 Sugar
-- 15 Water
-- 5 Ethanol
+Uma explosão PEM pode ser criada combinando os seguintes ingredientes:
+- 1u de Urânio
+- 1u de Ferro
+- 1u de Alumínio
 
-## EMP
+## Espuma
   <Box>
-    <GuideEntityEmbed Entity="EmpGrenade" Caption="EMP"/>
+    <GuideEntityEmbed Entity="CleanerGrenade" Caption="Espuma"/>
   </Box>
 
-An EMP blast can be created by combining the following ingredients:
-- 1 Uranium
-- 1 Iron
-- 1 Aluminum
+Uma nuvem de espuma pode ser criada combinando os seguintes ingredientes:
+- 1u de Água
+- 1u de Fluorosurfactante
 
-## Foam
+A espuma funciona da mesma forma que a fumaça, mantendo produtos químicos suspensos na quantidade produzida.
+
+## Pólvora
   <Box>
-    <GuideEntityEmbed Entity="CleanerGrenade" Caption="Foam"/>
+    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Pólvora"/>
   </Box>
 
-A cloud of foam can be created by combining the following ingredients:
-- 1 Water
-- 1 Fluorosurfactant
+A pólvora pode ser criada combinando os seguintes ingredientes:
+- 6u de Potássio
+- 2u de Enxofre
+- 2u de Carvão
 
-Foam works the same as smoke, holding chems up to the limit it was made with.
-
-## Gunpowder
+## Plástico
   <Box>
-    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Gunpowder"/>
+    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plástico"/>
   </Box>
 
-Gunpowder can be created by combining the following ingredients:
-- 6 Potassium
-- 2 Sulfur
-- 2 Charcoal
+10 unidades de Plástico podem ser criadas combinando os seguintes ingredientes:
+- 10u de Óleo
+- 6u de Cinzas
+- 4u de Ácido Sulfúrico
+- Aquecer a solução até 374 graus
 
-## Plastic
+## Carne Sintética
   <Box>
-    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plastic Sheets"/>
+    <GuideEntityEmbed Entity="FoodMeatSynth" Caption="Carne Sintética"/>
   </Box>
 
-10 Plastic Can be created by combining the following ingredients:
-- 10 Oil
-- 6 Ash
-- 4 Sulfuric Acid
-- Heating the solution to 374 degrees
+A carne sintética pode ser criada combinando os seguintes ingredientes:
+- 10u de Sangue
+- 10u de Carbono
+- 10u de Fenol
+- 10u de Poliacrilato de Sódio
 
-## Regenerative Mesh
+## Fumaça
   <Box>
-    <GuideEntityEmbed Entity="RegenerativeMesh" Caption="Mesh"/>
+    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Fumaça"/>
   </Box>
 
-Meshes can be created by microwaving the following ingredients for 10 seconds:
+Uma nuvem de fumaça pode ser criada combinando os seguintes ingredientes:
+- 1u de Açúcar
+- 1u de Potássio
+- 1u de Fósforo
 
-  <Box>
-    <GuideEntityEmbed Entity="FoodAloe" Caption="Raw Aloe"/>
-    <GuideEntityEmbed Entity="Ointment" Caption="Ointment"/>
-    <GuideEntityEmbed Entity="MaterialCloth" Caption="Cloth"/>
-  </Box>
+A fumaça transporta quaisquer reagentes adicionais presentes no meio da reação, até o limite determinado pela quantidade de fumaça produzida. Por exemplo:
 
-- 1 Raw Aloe
-- 1 Ointment
-- 1 Cloth
-- 20 units of Sigynate
-- 20 units of Dermaline
-
-
-## Smoke
-  <Box>
-    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Smoke"/>
-  </Box>
-
-A cloud of smoke can be created by combining the following ingredients:
-- 1 Sugar
-- 1 Potassium
-- 1 Phosphorus
-
-Smoke carries any extra chems in its reaction medium up to the amount of smoke you make, for example;
-
-a 5-5-5 mix can carry 5u of mutagen and pass it onto anyone who enteres the smoke cloud.
-
-## Suture
-  <Box>
-    <GuideEntityEmbed Entity="MedicatedSuture" Caption="Suture"/>
-  </Box>
-
-Sutures can be created by microwaving the following ingredients for 10 seconds:
-
-  <Box>
-    <GuideEntityEmbed Entity="FoodPoppy" Caption="Poppy"/>
-    <GuideEntityEmbed Entity="MaterialCloth" Caption="Cloth"/>
-    <GuideEntityEmbed Entity="Brutepack" Caption="Brute Packs"/>
-  </Box>
-
-- 1 Poppy
-- 1 Brute Pack
-- 1 Cloth
-- 20 units of Tranexamic Acid
-- 20 units of Cryptobiolin
-
+Uma mistura de 5-5-5 pode transportar 5 unidades de Mutagênico e transmiti-las a qualquer pessoa que entrar na nuvem de fumaça.
 
 <GuideReagentGroupEmbed Group="Solids"/>
 
