@@ -36,7 +36,7 @@ public sealed partial class RecordCrateSystem : EntitySystem
         var records = Records(ent);
         if (records.Count >= ent.Comp.Capacity)
         {
-            _popup.PopupClient(Loc.GetString("record-crate-full"), ent.Owner, args.User);
+            _popup.PopupClient(Loc.GetString(ent.Comp.Full), ent.Owner, args.User);
             return;
         }
 
@@ -83,7 +83,7 @@ public sealed partial class RecordCrateSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        args.PushMarkup(Loc.GetString("record-crate-examine",
+        args.PushMarkup(Loc.GetString(ent.Comp.Examine,
             ("count", Records(ent).Count),
             ("capacity", ent.Comp.Capacity)));
     }

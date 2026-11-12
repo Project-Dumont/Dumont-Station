@@ -12,4 +12,4 @@
     min: 4
     max: 8
     wrapper: CDCase
-    container: storagebase
+    container: records

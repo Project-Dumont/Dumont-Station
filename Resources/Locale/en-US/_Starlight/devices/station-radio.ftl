@@ -84,3 +84,5 @@ station-radio-receiver-knob = Volume: drag or scroll
 
 record-crate-full = The crate is full.
 record-crate-examine = It holds [color=yellow]{ $count }[/color] of { $capacity } records.
+cd-rack-full = The rack is full.
+cd-rack-examine = It holds [color=yellow]{ $count }[/color] of { $capacity } CDs.

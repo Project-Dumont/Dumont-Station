@@ -1,6 +1,7 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Localization;
 
 namespace Content.Shared._Starlight.StationRadio.Components;
 
@@ -24,4 +25,10 @@ public sealed partial class RecordCrateComponent : Component
 
     [DataField]
     public SoundSpecifier? RemoveSound = new SoundPathSpecifier("/Audio/_Goobstation/RadioStation/vinyl/vinylEject.ogg");
+
+    [DataField]
+    public LocId Full = "record-crate-full";
+
+    [DataField]
+    public LocId Examine = "record-crate-examine";
 }
