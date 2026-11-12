@@ -121,7 +121,8 @@
   # Power
   - type: ApcPowerReceiver
     powerLoad: 100 # Idle power usage, increases when active
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
   - type: SignalPowerSwitch
   # Guide
   - type: GuideHelp

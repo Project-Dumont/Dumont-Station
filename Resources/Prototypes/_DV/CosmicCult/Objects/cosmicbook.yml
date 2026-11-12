@@ -3,7 +3,7 @@
 ## Cosmic Cult Plushie
 
 - type: entity
-  parent: BookBase
+  parent: [ BookBase, BaseMagicalContraband ]
   id: BookCosmicCult
   name: The Unknowledge
   description: It appears to be a feeble attempt of a mortal mind to describe an indelible truth through paper.

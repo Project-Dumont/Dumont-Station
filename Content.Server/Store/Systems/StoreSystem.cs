@@ -22,6 +22,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.StationTraits; // Dumont
 using Content.Server.Store.Components;
 using Content.Shared.UserInterface;
 using Content.Goobstation.Maths.FixedPoint;
@@ -56,6 +57,7 @@ public sealed partial class StoreSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!; // WD EDIT
     [Dependency] private readonly PolymorphSystem _polymorph = default!; // goob edit
+    [Dependency] private ListingCostRuleSystem _listingCost = default!; // Dumont
 
     public override void Initialize()
     {

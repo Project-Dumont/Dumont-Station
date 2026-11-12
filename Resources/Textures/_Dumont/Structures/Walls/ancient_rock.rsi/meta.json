@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/turf/walls/shale.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "rock_ancient"
+        },
+        {
+            "name": "rock_ancient_south"
+        },
+        {
+            "name": "rock_ancient_east"
+        },
+        {
+            "name": "rock_ancient_north"
+        },
+        {
+            "name": "rock_ancient_west"
+        }
+    ]
+}

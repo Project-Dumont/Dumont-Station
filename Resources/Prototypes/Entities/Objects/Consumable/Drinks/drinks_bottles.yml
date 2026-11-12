@@ -983,6 +983,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkBottle
 
 #boring jugs some more sprites are made
 
@@ -1006,6 +1007,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
@@ -1060,6 +1062,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
@@ -1097,6 +1100,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - DrinkBottle
 
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]

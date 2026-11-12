@@ -70,6 +70,7 @@
   components:
   - type: Sprite
     state: bar
+  - type: LuckyWinnerTarget # Dumont
 
 - type: entity
   parent: BaseAreaService

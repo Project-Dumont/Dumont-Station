@@ -20,6 +20,8 @@ using Robust.Shared.Animations;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Client.UserInterface;
+using Content.Client.UserInterface.Systems.Emotes;
 
 namespace Content.Client._Funkystation.Emoting;
 
@@ -35,6 +37,7 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
     [Dependency] private SharedTransformSystem _xform = null!;
     [Dependency] private SpriteSystem _sprite = null!;
     [Dependency] private DuoEmoteAnimationSystem _emoteAnim = null!;
+    [Dependency] private IUserInterfaceManager _ui = null!;
 
     private const string LungeAnimationKey = "duo-emote-lunge";
 
@@ -49,7 +52,7 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
         SubscribeLocalEvent<DuoEmoteVisualsComponent, AfterAutoHandleStateEvent>(OnVisualsState);
 
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.OpenEmotesMenu, new PointerInputCmdHandler(OpenEmoteMenuOrDuoMenu, outsidePrediction: false))
+            .BindBefore(ContentKeyFunctions.OpenEmotesMenu, new PointerInputCmdHandler(OpenEmoteMenuOrDuoMenu, outsidePrediction: false), typeof(EmotesUIController))
             .Register<DuoEmoteSystem>();
     }
 
@@ -162,13 +165,20 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
         if (!TryComp<DuoEmoteComponent>(player, out var selfComp) || selfComp.Active)
             return false;
 
-        var target = GetHoveredDuoEmoteTarget(player.Value);
-
-        if (target == null)
+        var emotes = _ui.GetUIController<EmotesUIController>();
+        if (!emotes.EmoteMenuOpen)
+        {
+            _menu?.Close();
+            _menu = null;
             return false;
+        }
+
+        emotes.CloseEmoteMenu();
+
+        if (GetHoveredDuoEmoteTarget(player.Value) is { } target)
+            OpenDuoEmoteMenu(player.Value, target);
 
         // Return true to eat the input and not show the normal emote wheel
-        OpenDuoEmoteMenu(player.Value, target.Value);
         return true;
     }
 

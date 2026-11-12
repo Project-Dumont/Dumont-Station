@@ -1,0 +1,49 @@
+<Document>
+  # Servos Cósmicos
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionCosmicConversion" Caption="Estilhaçar Cognição"/>
+  </Box>
+
+  O culto não cresce sozinho. Quem entra depois do começo da rodada entra como [color=#4cabb3]Servo Cósmico[/color], e quem traz gente nova é o cultista que liberou a influência [color=#4cabb3]Estilhaçar Cognição[/color].
+
+  A influência fica no primeiro nível de poder e custa 10 de entropia. Ela só vale por uma conversão: assim que você usa, ela sai da sua lista e volta para a loja, então trazer o próximo servo custa mais 10 de entropia.
+
+  ## Fazendo um servo
+  O ritual leva 6 segundos, prende o alvo no lugar o tempo todo e faz as luzes em volta piscarem. Qualquer um que passar por perto vai ver.
+
+  O ritual é interrompido se você se mover ou levar dano, então escolha um canto isolado e deixe alguém de olho na porta.
+
+  Nem todo mundo pode ser convertido:
+  - Quem tem [color=Yellow]implante de escudo mental[/color] é imune.
+  - O [color=Yellow]Capelão[/color] é imune.
+  - Corpos sem mente ou já apodrecendo não servem.
+
+  ## O que o servo ganha
+  <Box>
+    <GuideEntityEmbed Entity="ActionCosmicDamageTransfer" Caption="Ceder Vitalidade"/>
+  </Box>
+
+  A conversão cura o servo por completo e dá a ele:
+
+  - Acesso ao [color=#4cabb3]Murmúrio Astral[/color], o mesmo canal de rádio dos cultistas.
+  - A visão do Monumento, que o resto da tripulação não enxerga.
+  - Imunidade a vácuo, pressão e frio, e nenhuma necessidade de respirar.
+  - A habilidade [color=#4cabb3]Ceder Vitalidade[/color], que puxa para si todos os ferimentos de um cultista ou de outro servo e traz ele de volta inteiro. O dano vem sem passar por resistência nenhuma, então isso mata o servo com facilidade. É um último recurso para salvar um cultista caído.
+
+  Os objetivos do servo são os mesmos do culto: erguer o Monumento e trazer o fim.
+
+  ## O que o servo não ganha
+  Servo não é cultista. Ele não drena entropia, não abre a Sintonia de Influências, não sobe de nível e não conta para o culto avançar de estágio.
+
+  Ele também fica [color=Red]fraco contra o sagrado[/color], igual aos cultistas, e os olhos passam a brilhar com a marca sutil do culto, o que entrega ele se estiver sem capacete ou máscara.
+
+  ## Perdendo um servo
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter" Caption=""/>
+  </Box>
+
+  Diferente de um cultista de verdade, o servo pode ser recuperado pela tripulação. Um [color=Yellow]implante de escudo mental[/color] tira ele do culto na hora e leva junto o rádio, as imunidades e a habilidade.
+
+  Por isso, vale mais converter quem a Segurança não vai revistar tão cedo do que encher o culto de gente visada.
+</Document>

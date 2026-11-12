@@ -100,6 +100,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Server.Solar.EntitySystems
 {
@@ -112,6 +113,7 @@ namespace Content.Server.Solar.EntitySystems
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private StationModifierRuleSystem _stationModifiers = default!; // Dumont
 
         /// <summary>
         /// Maximum panel angular velocity range - used to stop people rotating panels fast enough that the lag prevention becomes noticable
@@ -205,7 +207,7 @@ namespace Content.Server.Solar.EntitySystems
                 var query = EntityQueryEnumerator<SolarPanelComponent, TransformComponent>();
                 while (query.MoveNext(out var uid, out var panel, out var xform))
                 {
-                    TotalPanelPower += panel.MaxSupply * panel.Coverage;
+                    TotalPanelPower += panel.MaxSupply * panel.Coverage * _stationModifiers.SolarPower; // Dumont
                     _transformSystem.SetWorldRotation(xform, TargetPanelRotation);
                     _updateQueue.Enqueue((uid, panel));
                 }
@@ -270,7 +272,7 @@ namespace Content.Server.Solar.EntitySystems
             if (!Resolve(uid, ref solar, ref supplier, false))
                 return;
 
-            supplier.MaxSupply = (int) (solar.MaxSupply * solar.Coverage);
+            supplier.MaxSupply = (int) (solar.MaxSupply * solar.Coverage * _stationModifiers.SolarPower); // Dumont
         }
     }
 }

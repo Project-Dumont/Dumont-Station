@@ -28,6 +28,7 @@ public sealed partial class StoreSystem
     public void RefreshAllListings(StoreComponent component)
     {
         component.Listings = GetAllListings();
+        _listingCost.ApplyModifiers(component.Listings); // Dumont
         _storeDiscount.ApplyDiscounts(component.Listings, component); // WD edit
     }
 

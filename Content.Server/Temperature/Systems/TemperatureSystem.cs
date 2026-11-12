@@ -117,6 +117,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Projectiles;
 using Content.Goobstation.Shared.Temperature;
 using Content.Goobstation.Common.Temperature; // goob edit
+using Content.Server._Dumont.StationTraits; // Dumont
 
 namespace Content.Server.Temperature.Systems;
 
@@ -128,6 +129,7 @@ public sealed class TemperatureSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation
+    [Dependency] private StationModifierRuleSystem _stationModifiers = default!; // Dumont
 
     /// <summary>
     ///     All the components that will have their damage updated at the end of the tick.
@@ -420,6 +422,13 @@ public sealed class TemperatureSystem : EntitySystem
                 break;
 
             case > 0.66f:
+                // Dumont changes start
+                if (_stationModifiers.ShouldFeelHot(uid))
+                {
+                    _alerts.ShowAlert(uid, temperature.HotAlert, 1);
+                    break;
+                }
+                // Dumont end
                 _alerts.ClearAlertCategory(uid, TemperatureAlertCategory);
                 break;
         }

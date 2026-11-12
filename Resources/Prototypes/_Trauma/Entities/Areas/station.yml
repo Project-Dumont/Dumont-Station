@@ -48,4 +48,5 @@
   components:
   - type: Sprite
     state: exterior
+  - type: CarpMigrationTarget
 # Dumont end

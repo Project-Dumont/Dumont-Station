@@ -157,6 +157,11 @@ namespace Content.Shared.Administration
         Polls = 1 << 23,
 
         /// <summary>
+        ///     Lets you use the mentor help system.
+        /// </summary>
+        MentorHelp = 1 << 30,
+
+        /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>
         Host = 1u << 31,

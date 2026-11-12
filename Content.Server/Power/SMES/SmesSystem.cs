@@ -8,18 +8,25 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server._Starlight.Bed.Cryostorage;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Station.Systems;
+using Content.Shared._Dumont.CCVar;
+using Content.Shared.GameTicking;
 using Content.Shared.Power;
+using Content.Shared.Roles;
 using Content.Shared.Rounding;
 using Content.Shared.SMES;
 using JetBrains.Annotations;
+using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Power.SMES;
 
 [UsedImplicitly]
-public sealed class SmesSystem : EntitySystem // goob edit - made public
+public sealed partial class SmesSystem : EntitySystem // goob edit - made public
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -32,11 +39,20 @@ public sealed class SmesSystem : EntitySystem // goob edit - made public
 
         SubscribeLocalEvent<SmesComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SmesComponent, ChargeChangedEvent>(OnBatteryChargeChanged);
+        SubscribeLocalEvent<SmesComponent, PlayerSpawnCompleteEvent>(OnNewPlayerSpawn);             //Dumontstation change
+        SubscribeLocalEvent<SmesComponent, CryoSlotReturnedEvent>(OnSlotReturned);                  //Dumontstation change
+        _cfg.OnValueChanged(DumontCVars.SmesAutoRecharge, (value) => OnCvarChanged(value), true);   //Dumontstation change
     }
 
     private void OnMapInit(EntityUid uid, SmesComponent component, MapInitEvent args)
     {
         UpdateSmesState(uid, component);
+
+        //Dumontstation Change
+        if (!_cfg.GetCVar(DumontCVars.SmesAutoRecharge))
+        {
+            ToggleSelfRecharge(false);
+        }
     }
 
     private void OnBatteryChargeChanged(EntityUid uid, SmesComponent component, ref ChargeChangedEvent args)

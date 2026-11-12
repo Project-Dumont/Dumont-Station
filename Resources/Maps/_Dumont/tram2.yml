@@ -4,7 +4,7 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/25/2026 23:54:13
+  time: 10/29/2026 20:39:16
   entityCount: 26741
 maps:
 - 1
@@ -4501,7 +4501,7 @@ entities:
             27: 13,-18
         - node:
             id: BrickTileWhiteLineN
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             637: 58,-18
             638: 56,-18
@@ -4905,7 +4905,7 @@ entities:
             423: 0,-38
         - node:
             id: CheckerNWSE
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             807: 55,6
             808: 55,5
@@ -5129,7 +5129,7 @@ entities:
             1803: -37,-36
         - node:
             id: FullTileOverlayGreyscale
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             1800: -34,-39
         - node:
@@ -5376,7 +5376,7 @@ entities:
             92: 14,-14
         - node:
             id: HalfTileOverlayGreyscale
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             648: 61,-13
             649: 59,-13
@@ -5490,7 +5490,7 @@ entities:
             91: 16,-16
         - node:
             id: HalfTileOverlayGreyscale180
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             643: 58,-16
             644: 60,-16
@@ -5629,7 +5629,7 @@ entities:
             89: 13,-15
         - node:
             id: HalfTileOverlayGreyscale270
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             651: 57,-15
             653: 65,-17
@@ -5760,7 +5760,7 @@ entities:
             2089: -32,-31
         - node:
             id: HalfTileOverlayGreyscale90
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             646: 63,-14
             647: 63,-15
@@ -6185,7 +6185,7 @@ entities:
             2088: -33,-30
         - node:
             id: ThreeQuarterTileOverlayGreyscale
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             663: 65,-7
             679: 57,-7
@@ -6258,7 +6258,7 @@ entities:
             79: 18,-16
         - node:
             id: ThreeQuarterTileOverlayGreyscale180
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             661: 67,-11
             671: 63,-11
@@ -6328,7 +6328,7 @@ entities:
             2087: -33,-32
         - node:
             id: ThreeQuarterTileOverlayGreyscale270
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             660: 65,-11
             682: 57,-11
@@ -6402,7 +6402,7 @@ entities:
             87: 18,-14
         - node:
             id: ThreeQuarterTileOverlayGreyscale90
-            color: '#A4610696'
+            color: '#7b4e2396'
           decals:
             662: 67,-7
             674: 63,-7
@@ -10397,6 +10397,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -1.5,1.5
 - proto: AirlockGeneticsLocked
   entities:
@@ -11028,6 +11029,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: -1.5,-1.5
   - uid: 393
     components:
@@ -11431,6 +11433,7 @@ entities:
     components:
     - type: Transform
       parent: 2
+      rot: 3.141592653589793 rad
       pos: 1.5,-0.5
   - uid: 461
     components:
@@ -62064,7 +62067,7 @@ entities:
           - DoorBolt
         - - SignalShuttleConsole2
           - Toggle
-        26674:
+        26675:
         - - SignalShuttleConsole3
           - DoorBolt
         26618:
@@ -73860,10 +73863,10 @@ entities:
       server: 11892
       connectedToServer: True
     - type: DnaServer
-      serverId: 125
+      serverId: 140
     - type: DnaModifierConsole
-      lastSubjectInjectTime: 53.5336678
-      lastInjectorTime: 53.5336678
+      lastSubjectInjectTime: 4053.8247296
+      lastInjectorTime: 4053.8247296
 - proto: DogBed
   entities:
   - uid: 11893
@@ -116689,14 +116692,6 @@ entities:
       pos: 57.5,-16.5
     - type: Fixtures
       fixtures: {}
-  - uid: 17870
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: -53.5,15.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 17871
     components:
     - type: Transform
@@ -116850,6 +116845,16 @@ entities:
     - type: Transform
       parent: 2
       pos: 27.5,-34.5
+    - type: Fixtures
+      fixtures: {}
+- proto: IntercomPrison
+  entities:
+  - uid: 17870
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: -53.5,15.5
     - type: Fixtures
       fixtures: {}
 - proto: IntercomScience
@@ -117049,30 +117054,18 @@ entities:
     - type: Transform
       parent: 2
       pos: 9.5,0.5
-- proto: KitchenElectricGrill
+- proto: KitchenGriddle
   entities:
   - uid: 17911
     components:
     - type: Transform
       parent: 2
       pos: 3.5,4.5
-  - uid: 17912
+  - uid: 21915
     components:
     - type: Transform
       parent: 2
       pos: 9.5,3.5
-- proto: KitchenElectricRange
-  entities:
-  - uid: 17913
-    components:
-    - type: Transform
-      parent: 2
-      pos: 9.5,1.5
-  - uid: 17914
-    components:
-    - type: Transform
-      parent: 2
-      pos: 9.5,2.5
 - proto: KitchenMicrowave
   entities:
   - uid: 17915
@@ -117115,6 +117108,18 @@ entities:
     - type: Transform
       parent: 2
       pos: 6.5,3.5
+- proto: KitchenOven
+  entities:
+  - uid: 17912
+    components:
+    - type: Transform
+      parent: 2
+      pos: 9.5,1.5
+  - uid: 21952
+    components:
+    - type: Transform
+      parent: 2
+      pos: 9.5,2.5
 - proto: KitchenReagentGrinder
   entities:
   - uid: 17923
@@ -137412,6 +137417,18 @@ entities:
     - type: Transform
       parent: 2
       pos: -32.5,-13.5
+- proto: SpawnPointExtraAiCore
+  entities:
+  - uid: 17913
+    components:
+    - type: Transform
+      parent: 2
+      pos: 29.5,31.5
+  - uid: 17914
+    components:
+    - type: Transform
+      parent: 2
+      pos: 37.5,31.5
 - proto: SpawnPointGeneticist
   entities:
   - uid: 21247
@@ -137860,7 +137877,7 @@ entities:
       pos: -59.5,-60.5
 - proto: SpawnPointTramDriver
   entities:
-  - uid: 26678
+  - uid: 26653
     components:
     - type: Transform
       parent: 26504
@@ -138423,7 +138440,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 13.5,-57.5
-  - uid: 26653
+  - uid: 26654
     components:
     - type: Transform
       parent: 26504
@@ -138753,7 +138770,7 @@ entities:
       pos: -38.5,-42.5
 - proto: SubstationWallBasic
   entities:
-  - uid: 26654
+  - uid: 26655
     components:
     - type: Transform
       parent: 26504
@@ -140163,7 +140180,7 @@ entities:
       id: Materials Room
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
-  - uid: 26655
+  - uid: 26656
     components:
     - type: Transform
       parent: 26504
@@ -142128,11 +142145,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -67.5,-35.5
-  - uid: 21915
-    components:
-    - type: Transform
-      parent: 2
-      pos: 3.5,4.5
   - uid: 21916
     components:
     - type: Transform
@@ -142313,11 +142325,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 8.5,3.5
-  - uid: 21952
-    components:
-    - type: Transform
-      parent: 2
-      pos: 9.5,3.5
   - uid: 21953
     components:
     - type: Transform
@@ -142404,12 +142411,12 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 80.5,-15.5
-  - uid: 26656
+  - uid: 26657
     components:
     - type: Transform
       parent: 26504
       pos: -40.5,-21.5
-  - uid: 26657
+  - uid: 26658
     components:
     - type: Transform
       parent: 26504
@@ -144012,7 +144019,7 @@ entities:
       anchored: False
     - type: Physics
       bodyType: Dynamic
-  - uid: 26658
+  - uid: 26659
     components:
     - type: Transform
       parent: 26504
@@ -144020,7 +144027,7 @@ entities:
       pos: -36.5,-24.5
     missingComponents:
     - Damageable
-  - uid: 26659
+  - uid: 26660
     components:
     - type: Transform
       parent: 26504
@@ -144028,7 +144035,7 @@ entities:
       pos: -36.5,-20.5
     missingComponents:
     - Damageable
-  - uid: 26660
+  - uid: 26661
     components:
     - type: Transform
       parent: 26504
@@ -144036,7 +144043,7 @@ entities:
       pos: -49.5,-20.5
     missingComponents:
     - Damageable
-  - uid: 26661
+  - uid: 26662
     components:
     - type: Transform
       parent: 26504
@@ -156759,62 +156766,62 @@ entities:
       pos: 48.5,-31.5
 - proto: WallShuttle
   entities:
-  - uid: 26662
-    components:
-    - type: Transform
-      parent: 26504
-      pos: -48.5,-20.5
   - uid: 26663
     components:
     - type: Transform
       parent: 26504
-      pos: -48.5,-24.5
+      pos: -48.5,-20.5
   - uid: 26664
     components:
     - type: Transform
       parent: 26504
-      pos: -47.5,-24.5
+      pos: -48.5,-24.5
   - uid: 26665
     components:
     - type: Transform
       parent: 26504
-      pos: -39.5,-24.5
+      pos: -47.5,-24.5
   - uid: 26666
     components:
     - type: Transform
       parent: 26504
-      pos: -40.5,-24.5
+      pos: -39.5,-24.5
   - uid: 26667
     components:
     - type: Transform
       parent: 26504
-      pos: -38.5,-24.5
+      pos: -40.5,-24.5
   - uid: 26668
     components:
     - type: Transform
       parent: 26504
-      pos: -38.5,-20.5
+      pos: -38.5,-24.5
   - uid: 26669
     components:
     - type: Transform
       parent: 26504
-      pos: -39.5,-20.5
+      pos: -38.5,-20.5
   - uid: 26670
     components:
     - type: Transform
       parent: 26504
-      pos: -40.5,-20.5
+      pos: -39.5,-20.5
   - uid: 26671
     components:
     - type: Transform
       parent: 26504
-      pos: -37.5,-24.5
+      pos: -40.5,-20.5
   - uid: 26672
     components:
     - type: Transform
       parent: 26504
-      pos: -37.5,-20.5
+      pos: -37.5,-24.5
   - uid: 26673
+    components:
+    - type: Transform
+      parent: 26504
+      pos: -37.5,-20.5
+  - uid: 26674
     components:
     - type: Transform
       parent: 26504
@@ -164061,7 +164068,7 @@ entities:
       pos: -40.5,22.5
 - proto: WindoorServiceLocked
   entities:
-  - uid: 26674
+  - uid: 26675
     components:
     - type: Transform
       parent: 26504
@@ -166090,13 +166097,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 49.5,-33.5
-  - uid: 26675
+  - uid: 26676
     components:
     - type: Transform
       parent: 26504
       rot: 1.5707963267948966 rad
       pos: -40.5,-21.5
-  - uid: 26676
+  - uid: 26677
     components:
     - type: Transform
       parent: 26504
@@ -166256,7 +166263,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -33.52344,27.489649
-  - uid: 26677
+  - uid: 26678
     components:
     - type: Transform
       parent: 26504
