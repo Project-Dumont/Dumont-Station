@@ -60,16 +60,15 @@
 # Starlight - Rework radio host - Start
 - type: entity
   id: CrateRadioStationAds
-  parent: CrateGenericSteel
-  name: ads crate
-  description: A crate with 6 different advertisement CDs to add to your collection, each in its case.
+  parent: CdRack
+  suffix: Filled
   components:
   - type: UniqueDiscFill
     table: RandomCDDisk
     min: 6
     max: 6
     wrapper: CDCase
-    container: entity_storage
+    container: records
 
 - type: entity
   id: CrateRadioStationVinyls
