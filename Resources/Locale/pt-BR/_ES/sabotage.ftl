@@ -11,3 +11,5 @@ ent-ESBaseSabotageObjective = { ent-BaseTraitorObjective }
     .desc = { ent-BaseTraitorObjective.desc }
 ent-ESObjectiveTraitorSabotageCommunications = Sabote o computador de comunicações
     .desc = Use o verbo de sabotagem em um computador de comunicações ligado da sua estação. Interrompa os anúncios da Nanotrasen.
+ent-ESObjectiveTraitorSabotageTelecom = Sabote um servidor de telecomunicações
+    .desc = Use o verbo de sabotagem em um servidor de telecomunicações ligado da sua estação. Os canais de rádio dele sofrerão interferência até o reparo.

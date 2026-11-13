@@ -29,3 +29,19 @@
   id: TraitorObjectiveGroupSabotage
   weights:
     ESObjectiveTraitorSabotageCommunications: 1
+    ESObjectiveTraitorSabotageTelecom: 1
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageTelecom
+  name: Sabotage a telecommunication server
+  description: Use the sabotage verb on a powered telecommunication server on your station. Its radio channels will be scrambled until repaired.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Machines/telecomms.rsi
+      state: telecom-on
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - TelecomServer
