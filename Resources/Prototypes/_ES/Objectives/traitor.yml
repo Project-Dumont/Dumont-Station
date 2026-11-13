@@ -32,6 +32,7 @@
     ESObjectiveTraitorSabotageTelecom: 1
     ESObjectiveTraitorSabotageGravity: 1
     ESObjectiveTraitorSabotageNavigation: 1
+    ESObjectiveTraitorBugAPC: 1
 
 - type: entity
   parent: ESBaseSabotageObjective
@@ -77,3 +78,28 @@
     whitelist:
       components:
       - RadarConsole
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: ESObjectiveTraitorBugAPC
+  name: Bug a departmental APC
+  description: Plant a bug in an APC in the assigned department using its alternative verb. Keep it running for five minutes without anyone removing it, breaking it or switching it off.
+  components:
+  - type: Objective
+    difficulty: 1.5
+    icon:
+      sprite: Structures/Power/apc.rsi
+      state: static
+  - type: CodeCondition
+  - type: TraitorBugCondition
+    departmentAccessGroups:
+      Cargo: Cargo
+      Command: Command
+      Engineering: Engineering
+      Medical: Medical
+      Science: Research
+      Civilian: Service
+      Security: Security
+      Silicon: Silicon
+    blacklist:
+    - External
