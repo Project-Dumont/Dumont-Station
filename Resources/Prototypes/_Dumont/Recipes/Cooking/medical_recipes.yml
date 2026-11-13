@@ -98,3 +98,15 @@
     Stellibinin: 3
   recipeType: MedicalAssembler
 
+- type: microwaveMealRecipe
+  id: RecipeBloodPack
+  name: blood pack recipe
+  result: Bloodpack
+  time: 15
+  group: Medicinal
+  reagents:
+    Synthcells: 30
+    Water: 70
+  solids:
+    CMBloodPack: 1
+  recipeType: MedicalAssembler # Dumont
