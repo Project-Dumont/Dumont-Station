@@ -1,3 +1,4 @@
+xenomorphs-announcement-sender = S.A.A.E.
 xenomorphs-announcement = Aviso: Biossinais hostis detectados. Entidades desconhecidas estão se movendo pelos dutos de ventilação e poços de manutenção da estação. Todo o pessoal, inicie os protocolos de isolamento e evite áreas isoladas.
 xenomorphs-no-more-threat-announcement = De acordo com os dados de nossos sensores de longo alcance, todos os xenomorfos foram eliminados.
 xenomorphs-win-announcement-shuttle-call =
