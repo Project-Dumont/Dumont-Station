@@ -35,6 +35,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Administration.Logs;
+using Content.Shared._Dumont.RPD;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Construction;
 using Content.Shared.Database;
@@ -283,6 +284,9 @@ public sealed class RCDSystem : EntitySystem
         var effect = Spawn(effectPrototype, _mapSystem.ToCenterCoordinates(tile, mapGrid));
         var ev = new RCDDoAfterEvent(GetNetCoordinates(location), component.ConstructionDirection, component.ProtoId, cost, GetNetEntity(effect));
 
+        if (TryComp<RpdLayerSelectorComponent>(uid, out var selector))
+            ev.PipeLayer = selector.SelectedLayer ?? _currentLayer;
+
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
         {
             BreakOnDamage = true,
@@ -361,7 +365,7 @@ public sealed class RCDSystem : EntitySystem
             return;
 
         // Finalize the operation (this should handle prediction properly)
-        FinalizeRCDOperation(uid, component, gridUid.Value, mapGrid, tile, position, args.Direction, args.Target, args.User);
+        FinalizeRCDOperation(uid, component, gridUid.Value, mapGrid, tile, position, args.Direction, args.Target, args.User, args.PipeLayer);
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
@@ -694,7 +698,7 @@ public sealed class RCDSystem : EntitySystem
 
     #region Entity construction/deconstruction
 
-    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, EntityUid gridUid, MapGridComponent mapGrid, TileRef tile, Vector2i position, Direction direction, EntityUid? target, EntityUid user)
+    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, EntityUid gridUid, MapGridComponent mapGrid, TileRef tile, Vector2i position, Direction direction, EntityUid? target, EntityUid user, AtmosPipeLayer? pipeLayer)
     {
         if (!_net.IsServer)
             return;
@@ -721,7 +725,7 @@ public sealed class RCDSystem : EntitySystem
                 {
                     if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
                         entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
-                        _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
+                        _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, pipeLayer ?? _currentLayer, out var newProtoId))
                     {
                         proto = newProtoId;
                     }
@@ -784,6 +788,9 @@ public sealed partial class RCDDoAfterEvent : DoAfterEvent
 
     [DataField]
     public Direction Direction { get; private set; }
+
+    [DataField]
+    public AtmosPipeLayer? PipeLayer;
 
     [DataField]
     public ProtoId<RCDPrototype> StartingProtoId { get; private set; }
