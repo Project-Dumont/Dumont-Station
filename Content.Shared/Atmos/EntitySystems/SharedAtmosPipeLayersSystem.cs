@@ -104,7 +104,7 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
 
                 var v = new Verb
                 {
-                    Priority = 1,
+                    Priority = ent.Comp.NumberOfPipeLayers - i, // Dumont
                     Category = VerbCategory.Adjust,
                     Text = label,
                     Disabled = index == (int) ent.Comp.CurrentPipeLayer,
@@ -184,6 +184,18 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
     public void SetNextPipeLayer(Entity<AtmosPipeLayersComponent> ent, EntityUid? user = null, EntityUid? used = null)
     {
         var newLayer = ((int) ent.Comp.CurrentPipeLayer + 1) % ent.Comp.NumberOfPipeLayers;
+        // Dumont changes start
+        // Remapping to 1 2 4 5 3 for screwing convenience
+        if (ent.Comp.NumberOfPipeLayers == 5)
+        {
+            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Secondary)
+                newLayer = 3;
+            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Quinary)
+                newLayer = 2;
+            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Tertiary)
+                newLayer = 0;
+        }
+        // Dumont end
         SetPipeLayer(ent, (AtmosPipeLayer) newLayer, user, used);
     }
 

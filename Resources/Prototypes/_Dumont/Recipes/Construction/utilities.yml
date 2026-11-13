@@ -1,0 +1,71 @@
+- type: construction
+  id: HeatPumpAlt3
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: heatpumpAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - HeatPump
+  - HeatPumpAlt1
+  - HeatPumpAlt2
+  - HeatPumpAlt3
+  - HeatPumpAlt4
+
+- type: construction
+  id: HeatPumpAlt4
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: heatpumpAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - HeatPump
+  - HeatPumpAlt1
+  - HeatPumpAlt2
+  - HeatPumpAlt3
+  - HeatPumpAlt4
+
+- type: construction
+  id: GasFilterInlineAlt3
+  hide: true
+  graph: GasTrinary
+  startNode: start
+  targetNode: inline_filterAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterInline
+  - GasFilterInlineAlt1
+  - GasFilterInlineAlt2
+  - GasFilterInlineAlt3
+  - GasFilterInlineAlt4
+
+- type: construction
+  id: GasFilterInlineAlt4
+  hide: true
+  graph: GasTrinary
+  startNode: start
+  targetNode: inline_filterAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterInline
+  - GasFilterInlineAlt1
+  - GasFilterInlineAlt2
+  - GasFilterInlineAlt3
+  - GasFilterInlineAlt4

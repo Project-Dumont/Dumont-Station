@@ -17,10 +17,10 @@
     mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi # Dumont
     drawdepth: BelowFloor
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -30,13 +30,21 @@
       shader: unshaded
   - type: AtmosPipeLayers
     spriteRsiPaths:
-      Primary: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
-      Secondary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+      # Dumont changes start
+      Primary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+      Secondary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+      Tertiary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+      Quaternary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt3.rsi
+      Quinary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt4.rsi
+      # Dumont end
     alternativePrototypes:
       Primary: GasPipeSensor
       Secondary: GasPipeSensorAlt1
       Tertiary: GasPipeSensorAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorAlt3
+      Quinary: GasPipeSensorAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -81,6 +89,10 @@
       Primary: GasPipeSensorDistribution
       Secondary: GasPipeSensorDistributionAlt1
       Tertiary: GasPipeSensorDistributionAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorDistributionAlt3
+      Quinary: GasPipeSensorDistributionAlt4
+      # Dumont end
 
 - type: entity
   parent: GasPipeSensor
@@ -94,6 +106,10 @@
       Primary: GasPipeSensorWaste
       Secondary: GasPipeSensorWasteAlt1
       Tertiary: GasPipeSensorWasteAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorWasteAlt3
+      Quinary: GasPipeSensorWasteAlt4
+      # Dumont end
 
 - type: entity
   parent: GasPipeSensor
@@ -107,6 +123,10 @@
       Primary: GasPipeSensorMixedAir
       Secondary: GasPipeSensorMixedAirAlt1
       Tertiary: GasPipeSensorMixedAirAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorMixedAirAlt3
+      Quinary: GasPipeSensorMixedAirAlt4
+      # Dumont end
 
 - type: entity
   parent: GasPipeSensor
@@ -120,6 +140,10 @@
       Primary: GasPipeSensorTEGHot
       Secondary: GasPipeSensorTEGHotAlt1
       Tertiary: GasPipeSensorTEGHotAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorTEGHotAlt3
+      Quinary: GasPipeSensorTEGHotAlt4
+      # Dumont end
 
 - type: entity
   parent: GasPipeSensor
@@ -133,3 +157,7 @@
       Primary: GasPipeSensorTEGCold
       Secondary: GasPipeSensorTEGColdAlt1
       Tertiary: GasPipeSensorTEGColdAlt2
+      # Dumont changes start
+      Quaternary: GasPipeSensorTEGColdAlt3
+      Quinary: GasPipeSensorTEGColdAlt4
+      # Dumont end

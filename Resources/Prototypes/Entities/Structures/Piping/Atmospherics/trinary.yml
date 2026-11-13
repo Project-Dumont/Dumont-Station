@@ -103,7 +103,7 @@
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gasfilter.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeTrinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasFilter
@@ -165,6 +165,10 @@
       Primary: GasFilter
       Secondary: GasFilterAlt1
       Tertiary: GasFilterAlt2
+      # Dumont changes start
+      Quaternary: GasFilterAlt3
+      Quinary: GasFilterAlt4
+      # Dumont end
   # Goobstation - if you see a merge conflict here, move all new components to GasFilterBase
 
 # Goobstation - reparent to new base protos
@@ -179,7 +183,7 @@
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilterF
@@ -189,6 +193,10 @@
       Primary: GasFilterFlipped
       Secondary: GasFilterFlippedAlt1
       Tertiary: GasFilterFlippedAlt2
+      # Dumont changes start
+      Quaternary: GasFilterFlippedAlt3
+      Quinary: GasFilterFlippedAlt4
+      # Dumont end
   - type: Flippable
     mirrorEntity: GasFilter
   - type: GenericVisualizer
@@ -215,7 +223,7 @@
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gasmixer.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeTrinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasMixer
@@ -225,6 +233,10 @@
         Primary: GasMixer
         Secondary: GasMixerAlt1
         Tertiary: GasMixerAlt2
+        # Dumont changes start
+        Quaternary: GasMixerAlt3
+        Quinary: GasMixerAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -279,7 +291,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixerF
@@ -289,6 +301,10 @@
       Primary: GasMixerFlipped
       Secondary: GasMixerFlippedAlt1
       Tertiary: GasMixerFlippedAlt2
+      # Dumont changes start
+      Quaternary: GasMixerFlippedAlt3
+      Quinary: GasMixerFlippedAlt4
+      # Dumont end
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -360,7 +376,7 @@
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Dumont
           state: pipeTrinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: off
@@ -370,6 +386,10 @@
         Primary: PressureControlledValve
         Secondary: PressureControlledValveAlt1
         Tertiary: PressureControlledValveAlt2
+        # Dumont changes start
+        Quaternary: PressureControlledValveAlt3
+        Quinary: PressureControlledValveAlt4
+        # Dumont end
     - type: Appearance
     - type: GenericVisualizer
       visuals:

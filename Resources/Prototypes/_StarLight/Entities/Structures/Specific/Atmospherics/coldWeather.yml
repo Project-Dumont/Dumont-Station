@@ -1,0 +1,101 @@
+# Air Sensor
+
+- type: entity
+  abstract: true
+  id: AirSensorColdWeatherBase
+  suffix: ColdWeather
+  components:
+  - type: AtmosMonitor
+    temperatureThresholdId: stationTemperatureColdWeather # tuned for cold atmospheres / winter clothing
+    pressureThresholdId: stationPressureColdWeather # cold air is surprisingly breathable (dense)
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, AirSensor]
+  id: AirSensorColdWeather
+
+# Air Alarm
+
+- type: entity
+  parent: AirAlarm
+  id: AirAlarmColdWeather
+  name: air alarm
+  description: An air alarm set up for use in cold weather. It tolerates freezing temperatures and low pressure.
+  suffix: ColdWeather
+
+# Gas Vent
+
+- type: entity
+  abstract: true
+  id: GasVentPumpColdWeatherBase
+  suffix: ColdWeather
+  components:
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentPumpColdWeather
+      Secondary: GasVentPumpColdWeatherAlt1
+      Tertiary: GasVentPumpColdWeatherAlt2
+      Quaternary: GasVentPumpColdWeatherAlt3
+      Quinary: GasVentPumpColdWeatherAlt4
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentPumpColdWeatherBase, GasVentPump]
+  id: GasVentPumpColdWeather
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentPumpColdWeatherBase, GasVentPumpAlt1]
+  id: GasVentPumpColdWeatherAlt1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentPumpColdWeatherBase, GasVentPumpAlt2]
+  id: GasVentPumpColdWeatherAlt2
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentPumpColdWeatherBase, GasVentPumpAlt3]
+  id: GasVentPumpColdWeatherAlt3
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentPumpColdWeatherBase, GasVentPumpAlt4]
+  id: GasVentPumpColdWeatherAlt4
+  categories: [ HideSpawnMenu ]
+
+# Gas Scrubber
+
+- type: entity
+  abstract: true
+  id: GasVentScrubberColdWeatherBase
+  suffix: ColdWeather
+  components:
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentScrubberColdWeather
+      Secondary: GasVentScrubberColdWeatherAlt1
+      Tertiary: GasVentScrubberColdWeatherAlt2
+      Quaternary: GasVentScrubberColdWeatherAlt3
+      Quinary: GasVentScrubberColdWeatherAlt4
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentScrubberColdWeatherBase, GasVentScrubber]
+  id: GasVentScrubberColdWeather
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentScrubberColdWeatherBase, GasVentScrubberAlt1]
+  id: GasVentScrubberColdWeatherAlt1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentScrubberColdWeatherBase, GasVentScrubberAlt2]
+  id: GasVentScrubberColdWeatherAlt2
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentScrubberColdWeatherBase, GasVentScrubberAlt3]
+  id: GasVentScrubberColdWeatherAlt3
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [AirSensorColdWeatherBase, GasVentScrubberColdWeatherBase, GasVentScrubberAlt4]
+  id: GasVentScrubberColdWeatherAlt4
+  categories: [ HideSpawnMenu ]

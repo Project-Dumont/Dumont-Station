@@ -29,6 +29,10 @@
   - GasFilterInline
   - GasFilterInlineAlt1
   - GasFilterInlineAlt2
+  # Dumont changes start
+  - GasFilterInlineAlt3
+  - GasFilterInlineAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterInlineAlt1
@@ -45,6 +49,10 @@
   - GasFilterInline
   - GasFilterInlineAlt1
   - GasFilterInlineAlt2
+  # Dumont changes start
+  - GasFilterInlineAlt3
+  - GasFilterInlineAlt4
+  # Dumont end
 
 - type: construction
   id: GasFilterInlineAlt2
@@ -61,6 +69,10 @@
   - GasFilterInline
   - GasFilterInlineAlt1
   - GasFilterInlineAlt2
+  # Dumont changes start
+  - GasFilterInlineAlt3
+  - GasFilterInlineAlt4
+  # Dumont end
 
 - type: construction
   id: HeatExchangerInline

@@ -117,6 +117,7 @@
     collection: FootstepPlating
   friction: 0.75 #a little less then actual snow
   heatCapacity: 10000
+  weather: true # Dumont
 
 - type: tile
   id: Lattice

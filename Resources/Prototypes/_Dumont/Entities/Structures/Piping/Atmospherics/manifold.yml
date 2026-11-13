@@ -1,0 +1,82 @@
+- type: entity
+  parent: GasPipeManifold
+  id: GasPipeManifoldQuintuple
+  name: quintuple gas pipe manifold
+  description: Allows gas pipes of different configurations to be connected together. This one reaches all five pipe layers.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi
+    layers:
+    - state: pipeManifold
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 5
+  - type: PipeAppearance
+    sprite:
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt1 }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt2 }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt3 }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt4 }
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    storedSprite:
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi
+      state: storageManifold
+  - type: NodeContainer
+    nodes:
+      south0:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        pipeLayer: 0
+      south1:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        pipeLayer: 1
+      south2:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        pipeLayer: 2
+      south3:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        pipeLayer: 3
+      south4:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        pipeLayer: 4
+      north0:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        pipeLayer: 0
+      north1:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        pipeLayer: 1
+      north2:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        pipeLayer: 2
+      north3:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        pipeLayer: 3
+      north4:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        pipeLayer: 4
+  - type: GasPipeManifold
+    inlets: [ south0, south1, south2, south3, south4 ]
+    outlets: [ north0, north1, north2, north3, north4 ]

@@ -21,6 +21,10 @@
       Primary: GasFilterInline
       Secondary: GasFilterInlineAlt1
       Tertiary: GasFilterInlineAlt2
+      # Dumont changes start
+      Quaternary: GasFilterInlineAlt3
+      Quinary: GasFilterInlineAlt4
+      # Dumont end
   - type: GasFilter
     inlet: pipe
     outlet: pipe
