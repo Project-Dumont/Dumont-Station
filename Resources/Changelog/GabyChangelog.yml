@@ -4996,3 +4996,11 @@ Entries:
       message: Telefone da sec agora é 190.
   id: 596
   time: '2026-11-13T04:42:32.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: Recipe do Blood Pack
+    - type: Add
+      message: Tradução da Aba Sólidos do Guidebook
+  id: 597
+  time: '2026-11-13T05:32:32.0000000+00:00'
