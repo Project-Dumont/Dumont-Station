@@ -2,38 +2,41 @@
 // SPDX-FileCopyrightText: 2017-2026 Space Wizards Federation
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Power.Components;
-using Content.Server.Power.EntitySystems;
-using Content.Server.Gravity;
 using Content.Shared.Shuttles.Components;
 
 namespace Content.Server._ES.Sabotage;
 
 public sealed partial class TraitorSabotageSystem
 {
-    [Dependency] private PowerChargeSystem _powerCharge = default!;
+    [Dependency] private HeavyGravitySystem _heavyGravity = default!;
     [Dependency] private SpaceTurbulenceSystem _turbulence = default!;
 
     partial void InitializeNavigation()
     {
-        SubscribeLocalEvent<GravityGeneratorComponent, SabotageEffectEvent>(OnGravitySabotage);
+        SubscribeLocalEvent<Content.Server.Gravity.GravityGeneratorComponent, SabotageEffectEvent>(OnGravitySabotage);
+        SubscribeLocalEvent<Content.Server.Gravity.GravityGeneratorComponent, SabotageRepairedEvent>(OnGravityRepaired);
         SubscribeLocalEvent<RadarConsoleComponent, SabotageEffectEvent>(OnNavigationSabotage);
     }
 
-    private void OnGravitySabotage(Entity<GravityGeneratorComponent> ent, ref SabotageEffectEvent args)
+    private void OnGravitySabotage(Entity<Content.Server.Gravity.GravityGeneratorComponent> ent, ref SabotageEffectEvent args)
     {
-        if (args.Handled || !TryComp<PowerChargeComponent>(ent, out var charge))
+        if (args.Handled || !TryComp<SabotageTargetComponent>(ent, out var sabotage))
             return;
 
-        if (ent.Comp.GravityActive)
-            _chat.DispatchStationAnnouncement(ent, Loc.GetString("es-sabotage-gravity-announcement"));
-        _powerCharge.Discharge(ent, charge);
-        args.Handled = true;
+        args.Handled = _heavyGravity.TryStart(ent);
+        if (args.Handled)
+            sabotage.Sabotaged = true;
+    }
+
+    private void OnGravityRepaired(Entity<Content.Server.Gravity.GravityGeneratorComponent> ent, ref SabotageRepairedEvent args)
+    {
+        _heavyGravity.Stop(ent);
     }
 
     private void OnNavigationSabotage(Entity<RadarConsoleComponent> ent, ref SabotageEffectEvent args)
     {
-        if (args.Handled || _station.GetOwningStation(ent) is not {} station)
+        if (args.Handled || !HasComp<SabotageTargetComponent>(ent)
+            || _station.GetOwningStation(ent) is not {} station)
             return;
 
         args.Handled = _turbulence.TryStart(station);

@@ -14,7 +14,7 @@
   parent: ESBaseSabotageObjective
   id: ESObjectiveTraitorSabotageCommunications
   name: Sabotage the communications computer
-  description: Use the sabotage verb on a powered communications computer on your station. Disrupt Nanotrasen's announcements.
+  description: Use the sabotage verb on a powered communications computer on your station. Disrupt Nanotrasen's announcements until engineering repairs the sabotage.
   components:
   - type: Objective
     icon:
@@ -53,7 +53,7 @@
   parent: ESBaseSabotageObjective
   id: ESObjectiveTraitorSabotageGravity
   name: Sabotage the gravity generator
-  description: Use the sabotage verb on a powered gravity generator on your station to discharge it and switch it off.
+  description: Sabotage a powered gravity generator on your station. After five minutes, excessive gravity will force the crew to lie down and slow them by 30% until repaired.
   components:
   - type: Objective
     icon:
@@ -67,8 +67,8 @@
 - type: entity
   parent: ESBaseSabotageObjective
   id: ESObjectiveTraitorSabotageNavigation
-  name: Sabotage a navigation console
-  description: Use the sabotage verb on a powered radar or shuttle console on your station. This will cause turbulence on the station. Buckle up before the jolts begin.
+  name: Sabotage the mass scanner
+  description: Use the sabotage verb on a powered mass scanner computer on your station. This will cause turbulence on the station. Buckle up before the jolts begin.
   components:
   - type: Objective
     icon:
@@ -78,6 +78,8 @@
     whitelist:
       components:
       - RadarConsole
+      - SabotageTarget
+      requireAll: true
 
 - type: entity
   parent: BaseTraitorObjective

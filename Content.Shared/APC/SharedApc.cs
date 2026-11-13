@@ -41,6 +41,7 @@ namespace Content.Shared.APC
         /// APC lights/HUD.
         /// </summary>
         ChargeState,
+        TraitorBugging, // Dumont
     }
 
     [Serializable, NetSerializable]

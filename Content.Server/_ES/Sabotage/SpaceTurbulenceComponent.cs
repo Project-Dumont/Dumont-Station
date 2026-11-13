@@ -32,7 +32,7 @@ public sealed partial class SpaceTurbulenceComponent : Component
     public float ThrowDistance = 15;
 
     [DataField]
-    public float ThrowForce = 10;
+    public float ThrowForce = 25;
 
     [DataField]
     public int RemainingJerks;

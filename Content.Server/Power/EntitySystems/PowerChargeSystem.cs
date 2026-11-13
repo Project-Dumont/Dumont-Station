@@ -185,24 +185,6 @@ public sealed partial class PowerChargeSystem : EntitySystem
         }
     }
 
-    // Dumont
-    public void Discharge(EntityUid uid, PowerChargeComponent? component = null)
-    {
-        if (!Resolve(uid, ref component) || !TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
-            return;
-
-        SetSwitchedOn(uid, component, false, receiver);
-        component.Charge = 0;
-        if (component.Active)
-        {
-            component.Active = false;
-            var ev = new ChargedMachineDeactivatedEvent();
-            RaiseLocalEvent(uid, ref ev);
-        }
-        component.NeedUIUpdate = true;
-        UpdateState((uid, component, receiver));
-    }
-
     private void UpdateUI(Entity<PowerChargeComponent, ApcPowerReceiverComponent> ent, float chargeRate)
     {
         var (_, component, powerReceiver) = ent;

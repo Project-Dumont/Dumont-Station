@@ -348,7 +348,6 @@
           type: ShuttleConsoleBoundUserInterface
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
-  - type: SabotageTarget # Dumont
   - type: RadarConsole
   - type: WorldLoader
     radius: 256
@@ -427,7 +426,6 @@
   - type: Tag
     tags:
       - Syndicate
-  - type: SabotageTarget # Dumont
   - type: RadarConsole
     maxRange: 384
   - type: WorldLoader
@@ -460,7 +458,6 @@
   - type: DroneConsole
     components:
       - type: CargoShuttle
-  - type: SabotageTarget # Dumont
   - type: RadarConsole
     maxRange: 256
   - type: PointLight
@@ -493,7 +490,6 @@
     - type: DroneConsole
       components:
         - type: SalvageShuttle
-    - type: SabotageTarget # Dumont
     - type: RadarConsole
       maxRange: 256
     - type: PointLight

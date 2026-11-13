@@ -6,7 +6,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Server.StationEvents.Components;
+using Content.Trauma.Shared.Areas;
+using Content.Shared.Roles;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
@@ -27,6 +30,7 @@ namespace Content.Server.StationEvents.Events;
 /// </summary>
 public sealed partial class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComponent>
 {
+    [Dependency] private AreaSystem _areas = default!;
     [Dependency] private AccessReaderSystem _access = default!;
     [Dependency] private SharedAirlockSystem _airlock = default!; // Goobstation - Greytide Virus EA instead of open-bolt
     [Dependency] private SharedDoorSystem _door = default!;
@@ -63,9 +67,10 @@ public sealed partial class GreytideVirusRule : StationEventSystem<GreytideVirus
     }
 
     // Dumont
-    public void ApplyVirus(EntityUid chosenStation, IEnumerable<ProtoId<AccessGroupPrototype>> chosen,
-        ICollection<ProtoId<AccessLevelPrototype>> blacklist)
+    public int ApplyVirus(EntityUid chosenStation, IEnumerable<ProtoId<AccessGroupPrototype>> chosen,
+        ICollection<ProtoId<AccessLevelPrototype>> blacklist, ProtoId<DepartmentPrototype>? department = null)
     {
+        var affected = 0;
         // combine all the selected access groups
         var accessIds = new HashSet<ProtoId<AccessLevelPrototype>>();
         foreach (var group in chosen)
@@ -91,11 +96,12 @@ public sealed partial class GreytideVirusRule : StationEventSystem<GreytideVirus
             // the AreAccessTagsAllowed function is a little weird because it technically has support for certain tags to be locked out of opening something
             // which might have unintened side effects (see the comments in the function itself)
             // but no one uses that yet, so it is fine for now
-            if (!_access.AreAccessTagsAllowed(accessIds, accessComp) || _access.AreAccessTagsAllowed(blacklist, accessComp))
+            if (!MatchesDepartment(lockUid, accessComp, accessIds, blacklist, department))
                 continue;
 
             // open lockers
             _lock.Unlock(lockUid, null, lockComp);
+            affected++;
         }
 
         var airlockQuery = AllEntityQuery<AirlockComponent, DoorComponent, TransformComponent>();
@@ -114,11 +120,29 @@ public sealed partial class GreytideVirusRule : StationEventSystem<GreytideVirus
                 continue;
 
             // check access
-            if (!_access.AreAccessTagsAllowed(accessIds, accessEnt.Value.Comp) || _access.AreAccessTagsAllowed(blacklist, accessEnt.Value.Comp))
+            if (!MatchesDepartment(airlockUid, accessEnt.Value.Comp, accessIds, blacklist, department))
                 continue;
 
             // Goobstation - EA instead of open-bolt
-            _airlock.SetEmergencyAccess((airlockUid, airlockComp), true, null);
+            _airlock.SetEmergencyAccess((airlockUid, airlockComp), true, null, force: department != null);
+            if (airlockComp.EmergencyAccess)
+                affected++;
         }
+        return affected;
+    }
+
+    private bool MatchesDepartment(EntityUid uid, AccessReaderComponent reader,
+        HashSet<ProtoId<AccessLevelPrototype>> access, ICollection<ProtoId<AccessLevelPrototype>> blacklist,
+        ProtoId<DepartmentPrototype>? department)
+    {
+        if (department == null)
+            return _access.AreAccessTagsAllowed(access, reader) && !_access.AreAccessTagsAllowed(blacklist, reader);
+
+        // Empty readers pass every access check, including the old blacklist check.
+        if (reader.AccessLists.Any(set => set.Overlaps(blacklist)))
+            return false;
+        if (_areas.GetArea(uid) is {} area && _areas.GetAreaDepartment(area) == department)
+            return true;
+        return reader.AccessLists.Any(set => set.Count > 0 && set.IsSubsetOf(access));
     }
 }

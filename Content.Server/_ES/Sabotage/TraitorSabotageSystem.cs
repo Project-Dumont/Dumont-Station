@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server._ES.Objectives;
+using Content.Shared.Access.Systems;
+using Robust.Shared.Timing;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
@@ -27,6 +29,8 @@ namespace Content.Server._ES.Sabotage;
 
 public sealed partial class TraitorSabotageSystem : EntitySystem
 {
+    [Dependency] private AccessReaderSystem _access = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
@@ -115,6 +119,8 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
         var user = args.User;
         if (ent.Comp.Sabotaged)
         {
+            if (!CanRepair(user, ent.Comp))
+                return;
             args.Verbs.Add(new AlternativeVerb
             {
                 Text = Loc.GetString("es-sabotage-repair"),
@@ -149,8 +155,11 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
                         NeedHand = true,
                         BlockDuplicate = true,
                         DuplicateCondition = DuplicateConditions.SameEvent,
-                    }))
+                    }, out var id))
+                {
+                    ent.Comp.ActiveDoAfters.Add(id.Value);
                     _popup.PopupEntity(Loc.GetString("es-sabotage-start"), ent, user);
+                }
             },
         });
     }
@@ -189,7 +198,7 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
 
     private void OnRepair(Entity<SabotageTargetComponent> ent, ref RepairSabotageDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || !ent.Comp.Sabotaged || !IsOperational(ent, needsPower: false))
+        if (args.Cancelled || args.Handled || !ent.Comp.Sabotaged || !CanRepair(args.User, ent.Comp) || !IsOperational(ent, needsPower: false))
             return;
 
         ent.Comp.Sabotaged = false;
@@ -208,7 +217,7 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
 
         _chat.DispatchStationAnnouncement(ent, Loc.GetString("es-sabotage-comms-message"),
             Loc.GetString("es-sabotage-comms-sender"), colorOverride: Color.DarkGray);
-        sabotage.CorruptedAnnouncements = 2;
+        sabotage.Sabotaged = true;
         args.Handled = true;
     }
 
@@ -221,12 +230,36 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
         var query = EntityQueryEnumerator<SabotageTargetComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.CorruptedAnnouncements <= 0 || _station.GetOwningStation(uid) != station)
+            if (!comp.Sabotaged || !HasComp<CommunicationsConsoleComponent>(uid) || _station.GetOwningStation(uid) != station)
                 continue;
-            comp.CorruptedAnnouncements--;
             message = DistortMessage(message, 0.33f);
             sender = Loc.GetString("es-sabotage-comms-sender");
             return;
+        }
+    }
+
+    private bool CanRepair(EntityUid user, SabotageTargetComponent comp)
+    {
+        foreach (var access in _access.FindAccessTags(user))
+        {
+            if (comp.RepairAccess.Contains(access))
+                return true;
+        }
+        return false;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<SabotageTargetComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            comp.ActiveDoAfters.RemoveWhere(id => !_doAfter.IsRunning(id));
+            if (comp.ActiveDoAfters.Count == 0 || _timing.CurTime < comp.NextSpark)
+                continue;
+
+            comp.NextSpark = _timing.CurTime + TimeSpan.FromSeconds(1);
+            _sparks.DoSparks(Transform(uid).Coordinates);
         }
     }
 

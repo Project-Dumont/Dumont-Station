@@ -8,3 +8,5 @@ es-bug-progress = Um dispositivo suspeito está conectado aos circuitos. Transmi
 ent-ESObjectiveTraitorBugAPC = Instale uma escuta em um APC departamental
     .desc = Instale uma escuta em um APC do departamento indicado pelo verbo alternativo. Mantenha-o funcionando por cinco minutos, sem que ninguém remova a escuta, quebre ou desligue o APC.
 es-bug-network-failure = Atenção: invasão da rede de acesso de {$department}. Os controles de acesso de emergência foram comprometidos.
+es-bug-ai-department = IA
+es-bug-ai-objective-title = Instale uma escuta em um APC da IA

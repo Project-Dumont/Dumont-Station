@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2017-2026 Space Wizards Federation
 // SPDX-License-Identifier: MIT
 
+using Content.Shared.DoAfter;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._ES.Sabotage;
@@ -10,7 +11,7 @@ namespace Content.Server._ES.Sabotage;
 public sealed partial class TraitorBuggableComponent : Component
 {
     [DataField]
-    public TimeSpan PlantTime = TimeSpan.FromSeconds(3);
+    public TimeSpan PlantTime = TimeSpan.FromSeconds(3.6);
 
     [DataField]
     public TimeSpan RemoveTime = TimeSpan.FromSeconds(5);
@@ -26,4 +27,7 @@ public sealed partial class TraitorBuggableComponent : Component
 
     [DataField]
     public HashSet<EntityUid> Objectives = new();
+
+    [DataField]
+    public DoAfterId? Planting;
 }

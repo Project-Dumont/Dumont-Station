@@ -12,6 +12,7 @@ using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Server.Chat.Systems;
 using Content.Shared._ES.Sabotage;
+using Content.Shared.APC;
 using Content.Trauma.Shared.Areas;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
@@ -32,6 +33,7 @@ public sealed partial class TraitorBugSystem : EntitySystem
 {
     [Dependency] private GreytideVirusRule _greytide = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private AreaSystem _area = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private SharedMindSystem _mind = default!;
@@ -94,8 +96,14 @@ public sealed partial class TraitorBugSystem : EntitySystem
     private void OnAfterAssign(Entity<TraitorBugConditionComponent> ent, ref ObjectiveAfterAssignEvent args)
     {
         if (ent.Comp.Department is {} department)
-            _metaData.SetEntityName(ent, Loc.GetString("es-bug-objective-title",
-                ("department", Loc.GetString(_prototype.Index(department).Name))), args.Meta);
+            _metaData.SetEntityName(ent, Loc.GetString(department.Id == "Silicon" ? "es-bug-ai-objective-title" : "es-bug-objective-title",
+                ("department", DepartmentName(department))), args.Meta);
+    }
+
+    private string DepartmentName(ProtoId<DepartmentPrototype> department)
+    {
+        return department.Id == "Silicon" ? Loc.GetString("es-bug-ai-department")
+            : Loc.GetString(_prototype.Index(department).Name);
     }
 
     private bool Matches(EntityUid objective, EntityUid target)
@@ -108,7 +116,7 @@ public sealed partial class TraitorBugSystem : EntitySystem
 
     private bool CanBug(EntityUid user, Entity<TraitorBuggableComponent> target)
     {
-        if (target.Comp.Objectives.Count != 0 || !IsOperational(target)
+        if (target.Comp.Objectives.Count != 0 || target.Comp.Planting != null || !IsOperational(target)
             || _station.GetOwningStation(user) != _station.GetOwningStation(target)
             || !_mind.TryGetMind(user, out _, out var mind))
             return false;
@@ -156,7 +164,7 @@ public sealed partial class TraitorBugSystem : EntitySystem
             {
                 if (!CanBug(user, ent))
                     return;
-                _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, ent.Comp.PlantTime,
+                if (_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, ent.Comp.PlantTime,
                     new PlantTraitorBugDoAfterEvent(), ent, ent)
                 {
                     BreakOnMove = true,
@@ -164,7 +172,11 @@ public sealed partial class TraitorBugSystem : EntitySystem
                     NeedHand = true,
                     BlockDuplicate = true,
                     DuplicateCondition = DuplicateConditions.SameEvent,
-                });
+                }, out var id))
+                {
+                    ent.Comp.Planting = id;
+                    _appearance.SetData(ent, ApcVisuals.TraitorBugging, true);
+                }
             },
         });
     }
@@ -183,7 +195,10 @@ public sealed partial class TraitorBugSystem : EntitySystem
 
     private void OnPlanted(Entity<TraitorBuggableComponent> ent, ref PlantTraitorBugDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || !CanBug(args.User, ent)
+        if (args.Handled || ent.Comp.Planting != args.DoAfter.Id)
+            return;
+        ClearPlanting(ent);
+        if (args.Cancelled || !CanBug(args.User, ent)
             || !_mind.TryGetMind(args.User, out _, out var mind))
             return;
 
@@ -213,6 +228,16 @@ public sealed partial class TraitorBugSystem : EntitySystem
     private void OnBroken(Entity<TraitorBuggableComponent> ent, ref BreakageEventArgs args)
     {
         ent.Comp.Objectives.Clear();
+        ClearPlanting(ent, cancel: true);
+    }
+
+    private void ClearPlanting(Entity<TraitorBuggableComponent> ent, bool cancel = false)
+    {
+        var id = ent.Comp.Planting;
+        ent.Comp.Planting = null;
+        _appearance.SetData(ent, ApcVisuals.TraitorBugging, false);
+        if (cancel)
+            _doAfter.Cancel(id);
     }
 
     public override void Update(float frameTime)
@@ -221,6 +246,8 @@ public sealed partial class TraitorBugSystem : EntitySystem
         var query = EntityQueryEnumerator<TraitorBuggableComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
+            if (comp.Planting != null && (!_doAfter.IsRunning(comp.Planting) || !IsOperational(uid)))
+                ClearPlanting((uid, comp), cancel: true);
             if (comp.Objectives.Count == 0)
                 continue;
             if (!IsOperational(uid))
@@ -242,9 +269,14 @@ public sealed partial class TraitorBugSystem : EntitySystem
                     || !condition.DepartmentAccessGroups.TryGetValue(department, out var group))
                     continue;
 
-                _greytide.ApplyVirus(station, new[] { group }, condition.Blacklist);
+                var affected = _greytide.ApplyVirus(station, new[] { group }, condition.Blacklist, department);
+                _adminLog.Add(LogType.Action, LogImpact.High,
+                    $"APC bug at {ToPrettyString(uid)} compromised {affected} doors/lockers in {department}.");
+                if (affected == 0)
+                    continue;
+
                 _chat.DispatchStationAnnouncement(uid, Loc.GetString("es-bug-network-failure",
-                    ("department", Loc.GetString(_prototype.Index(department).Name))));
+                    ("department", DepartmentName(department))));
                 _code.SetCompleted(objective);
             }
             comp.Objectives.Clear();
