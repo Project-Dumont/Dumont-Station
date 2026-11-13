@@ -160,7 +160,7 @@
   components:
   - type: RotaryPhone
     category: Security
-    phoneNumber: 911
+    phoneNumber: 190
 
 - type: entity
   parent: RotaryPhone
@@ -240,7 +240,7 @@
 
 - type: entity
   parent: RotaryPhoneStandNoRot
-  suffix: Security (911)
+  suffix: Security (190)
   id: RotaryPhoneStandSecurity911
   components:
   - type: ContainerFill
