@@ -54,12 +54,13 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
     partial void InitializeTelecom();
     partial void InitializeNavigation();
 
-    private bool IsOperational(EntityUid target)
+    private bool IsOperational(EntityUid target, bool needsPower = true)
     {
         return !TerminatingOrDeleted(target)
             && Transform(target).Anchored
             && (!TryComp<DestructibleComponent>(target, out var destructible) || !destructible.IsBroken)
-            && (!TryComp<ApcPowerReceiverComponent>(target, out var power) || power.Powered);
+            && (!needsPower || !TryComp<ApcPowerReceiverComponent>(target, out var power)
+                || (power.Powered && !power.PowerDisabled));
     }
 
     private void OnAssigned(Entity<SabotageConditionComponent> ent, ref ObjectiveAssignedEvent args)
@@ -188,7 +189,7 @@ public sealed partial class TraitorSabotageSystem : EntitySystem
 
     private void OnRepair(Entity<SabotageTargetComponent> ent, ref RepairSabotageDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || !ent.Comp.Sabotaged || !IsOperational(ent))
+        if (args.Cancelled || args.Handled || !ent.Comp.Sabotaged || !IsOperational(ent, needsPower: false))
             return;
 
         ent.Comp.Sabotaged = false;

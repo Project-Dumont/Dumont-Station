@@ -16,12 +16,12 @@ using Robust.Server.GameObjects;
 
 namespace Content.Server.Power.EntitySystems;
 
-public sealed class PowerChargeSystem : EntitySystem
+public sealed partial class PowerChargeSystem : EntitySystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly AmbientSoundSystem _ambientSoundSystem = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private AmbientSoundSystem _ambientSoundSystem = default!;
 
     public override void Initialize()
     {
@@ -183,6 +183,24 @@ public sealed class PowerChargeSystem : EntitySystem
                 RaiseLocalEvent(uid, ref eventArgs);
             }
         }
+    }
+
+    // Dumont
+    public void Discharge(EntityUid uid, PowerChargeComponent? component = null)
+    {
+        if (!Resolve(uid, ref component) || !TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
+            return;
+
+        SetSwitchedOn(uid, component, false, receiver);
+        component.Charge = 0;
+        if (component.Active)
+        {
+            component.Active = false;
+            var ev = new ChargedMachineDeactivatedEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
+        component.NeedUIUpdate = true;
+        UpdateState((uid, component, receiver));
     }
 
     private void UpdateUI(Entity<PowerChargeComponent, ApcPowerReceiverComponent> ent, float chargeRate)

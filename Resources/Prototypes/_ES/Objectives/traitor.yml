@@ -30,6 +30,8 @@
   weights:
     ESObjectiveTraitorSabotageCommunications: 1
     ESObjectiveTraitorSabotageTelecom: 1
+    ESObjectiveTraitorSabotageGravity: 1
+    ESObjectiveTraitorSabotageNavigation: 1
 
 - type: entity
   parent: ESBaseSabotageObjective
@@ -45,3 +47,33 @@
     whitelist:
       components:
       - TelecomServer
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageGravity
+  name: Sabotage the gravity generator
+  description: Use the sabotage verb on a powered gravity generator on your station to discharge it and switch it off.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Machines/gravity_generator_core.rsi
+      state: idle
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - GravityGenerator
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageNavigation
+  name: Sabotage a navigation console
+  description: Use the sabotage verb on a powered radar or shuttle console on your station. The console will be disabled until repaired.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: shuttle
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - RadarConsole

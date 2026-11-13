@@ -7,3 +7,4 @@ es-sabotage-repair = Repair sabotage
 es-sabotage-repaired = Sabotage repaired.
 es-sabotage-comms-message = SYSTEM FAILURE. Communication integrity compromised. Contact engineering.
 es-sabotage-comms-sender = SIGNAL LOST
+es-sabotage-gravity-announcement = Warning: rapid loss of gravity caused by interference with the generator. Engineering investigation recommended.
