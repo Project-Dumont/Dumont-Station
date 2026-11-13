@@ -118,7 +118,7 @@ public sealed class ClosePollCommand : LocalizedEntityCommands
     }
 }
 
-[AnyCommand]
+[AdminCommand(AdminFlags.Polls)]
 public sealed class ListPollsCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly PollManager _pollManager = default!;
@@ -150,7 +150,7 @@ public sealed class ListPollsCommand : LocalizedEntityCommands
     }
 }
 
-[AnyCommand]
+[AdminCommand(AdminFlags.Polls)]
 public sealed class PollInfoCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly PollManager _pollManager = default!;
