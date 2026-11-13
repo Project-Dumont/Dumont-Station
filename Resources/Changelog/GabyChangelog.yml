@@ -4990,3 +4990,9 @@ Entries:
       message: A busca por jukebox no spawner não lista mais os discos de vinil.
   id: 595
   time: '2026-11-13T04:27:02.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Telefone da sec agora é 190.
+  id: 596
+  time: '2026-11-13T04:42:32.0000000+00:00'
