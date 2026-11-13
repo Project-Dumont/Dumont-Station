@@ -1,0 +1,16 @@
+marking-PawSocksLeftHand = Meias de pata (mão esquerda)
+marking-PawSocksLeftHand-pawsocks_left_hand = Meias de pata
+marking-PawSocksRightHand = Meias de pata (mão direita)
+marking-PawSocksRightHand-pawsocks_right_hand = Meias de pata
+marking-PawSocksLeftArm = Meias de pata (braço esquerdo)
+marking-PawSocksLeftArm-pawsocks_left_arm = Meias de pata
+marking-PawSocksRightArm = Meias de pata (braço direito)
+marking-PawSocksRightArm-pawsocks_right_arm = Meias de pata
+marking-PawSocksLeftFoot = Meias de pata (pé esquerdo)
+marking-PawSocksLeftFoot-pawsocks_left_foot = Meias de pata
+marking-PawSocksRightFoot = Meias de pata (pé direito)
+marking-PawSocksRightFoot-pawsocks_right_foot = Meias de pata
+marking-PawSocksLeftLeg = Meias de pata (perna esquerda)
+marking-PawSocksLeftLeg-pawsocks_left_leg = Meias de pata
+marking-PawSocksRightLeg = Meias de pata (perna direita)
+marking-PawSocksRightLeg-pawsocks_right_leg = Meias de pata
