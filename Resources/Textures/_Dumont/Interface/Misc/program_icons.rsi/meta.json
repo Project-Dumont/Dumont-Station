@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by CRISOOOOO (github)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "news"
+      },
+      {
+        "name": "manifest"
+      },
+      {
+        "name": "bank"
+      },
+      {
+        "name": "eng"
+      },
+      {
+        "name": "task"
+      },
+      {
+        "name": "gps"
+      },
+      {
+        "name": "jani"
+      },
+      {
+        "name": "med"
+      },
+      {
+        "name": "sos"
+      },
+      {
+        "name": "mail"
+      },
+      {
+        "name": "log"
+      },
+      {
+        "name": "notepad"
+      },
+      {
+        "name": "chat"
+      },
+      {
+        "name": "wanted"
+      }
+    ]
+}
