@@ -20,6 +20,7 @@ public sealed partial class TraitorSabotageSystem
             return;
 
         sabotage.Sabotaged = true;
+        _chat.DispatchStationAnnouncement(ent, Loc.GetString("es-sabotage-telecom-announcement"));
         args.Handled = true;
     }
 

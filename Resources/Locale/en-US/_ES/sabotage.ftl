@@ -8,3 +8,5 @@ es-sabotage-repaired = Sabotage repaired.
 es-sabotage-comms-message = SYSTEM FAILURE. Communication integrity compromised. Contact engineering.
 es-sabotage-comms-sender = SIGNAL LOST
 es-sabotage-gravity-announcement = Warning: rapid loss of gravity caused by interference with the generator. Engineering investigation recommended.
+es-sabotage-telecom-announcement = Warning: interference detected in the station's telecommunications network. Radio transmissions may be distorted. Engineering, inspect the telecommunications servers.
+es-sabotage-navigation-announcement = Interference in the station's navigation systems has resulted in oncoming turbulence. Please find a chair and fasten your seatbelts.

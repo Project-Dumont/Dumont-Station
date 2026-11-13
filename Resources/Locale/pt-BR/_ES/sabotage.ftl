@@ -17,4 +17,6 @@ es-sabotage-gravity-announcement = Atenção: perda rápida de gravidade causada
 ent-ESObjectiveTraitorSabotageGravity = Sabote o gerador de gravidade
     .desc = Use o verbo de sabotagem em um gerador de gravidade ligado da sua estação para descarregá-lo e desligá-lo.
 ent-ESObjectiveTraitorSabotageNavigation = Sabote um console de navegação
-    .desc = Use o verbo de sabotagem em um console de radar ou de nave ligado da sua estação. O console ficará desativado até o reparo.
+    .desc = Use o verbo de sabotagem em um console de radar ou de nave ligado da sua estação. Isso causará turbulência na estação. Prenda-se a um assento antes dos solavancos.
+es-sabotage-telecom-announcement = Atenção: interferência detectada na rede de telecomunicações da estação. As transmissões de rádio podem sofrer distorções. Engenharia, inspecione os servidores de telecomunicações.
+es-sabotage-navigation-announcement = Interferência nos sistemas de navegação da estação causou turbulência iminente. Procurem uma cadeira e prendam os cintos de segurança.

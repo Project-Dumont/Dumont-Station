@@ -12,13 +12,12 @@ namespace Content.Server._ES.Sabotage;
 public sealed partial class TraitorSabotageSystem
 {
     [Dependency] private PowerChargeSystem _powerCharge = default!;
-    [Dependency] private PowerReceiverSystem _powerReceiver = default!;
+    [Dependency] private SpaceTurbulenceSystem _turbulence = default!;
 
     partial void InitializeNavigation()
     {
         SubscribeLocalEvent<GravityGeneratorComponent, SabotageEffectEvent>(OnGravitySabotage);
         SubscribeLocalEvent<RadarConsoleComponent, SabotageEffectEvent>(OnNavigationSabotage);
-        SubscribeLocalEvent<RadarConsoleComponent, SabotageRepairedEvent>(OnNavigationRepaired);
     }
 
     private void OnGravitySabotage(Entity<GravityGeneratorComponent> ent, ref SabotageEffectEvent args)
@@ -34,17 +33,9 @@ public sealed partial class TraitorSabotageSystem
 
     private void OnNavigationSabotage(Entity<RadarConsoleComponent> ent, ref SabotageEffectEvent args)
     {
-        if (args.Handled || !TryComp<SabotageTargetComponent>(ent, out var sabotage))
+        if (args.Handled || _station.GetOwningStation(ent) is not {} station)
             return;
 
-        // Dumont has local navigation consoles, not ES's station warp drive.
-        sabotage.Sabotaged = true;
-        _powerReceiver.SetPowerDisabled(ent, true);
-        args.Handled = true;
-    }
-
-    private void OnNavigationRepaired(Entity<RadarConsoleComponent> ent, ref SabotageRepairedEvent args)
-    {
-        _powerReceiver.SetPowerDisabled(ent, false);
+        args.Handled = _turbulence.TryStart(station);
     }
 }

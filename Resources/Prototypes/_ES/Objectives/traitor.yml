@@ -68,7 +68,7 @@
   parent: ESBaseSabotageObjective
   id: ESObjectiveTraitorSabotageNavigation
   name: Sabotage a navigation console
-  description: Use the sabotage verb on a powered radar or shuttle console on your station. The console will be disabled until repaired.
+  description: Use the sabotage verb on a powered radar or shuttle console on your station. This will cause turbulence on the station. Buckle up before the jolts begin.
   components:
   - type: Objective
     icon:
