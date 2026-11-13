@@ -5004,3 +5004,9 @@ Entries:
       message: Tradução da Aba Sólidos do Guidebook
   id: 597
   time: '2026-11-13T05:32:32.0000000+00:00'
+- author: CRISO, Dreykor, MajinFeliz
+  changes:
+    - type: Add
+      message: Bagel Station está de volta!
+  id: 598
+  time: '2026-11-13T10:46:30.0000000+00:00'
