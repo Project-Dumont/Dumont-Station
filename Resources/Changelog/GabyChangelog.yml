@@ -4978,3 +4978,15 @@ Entries:
       message: Arbusto
   id: 593
   time: '2026-11-12T02:07:23.0000000+00:00'
+- author: GIZDCERA
+  changes:
+    - type: Fix
+      message: Corrige os vinis da jukebox que usavam todos o mesmo sprite branco.
+  id: 594
+  time: '2026-11-13T04:26:15.0000000+00:00'
+- author: GIZDCERA
+  changes:
+    - type: Fix
+      message: A busca por jukebox no spawner não lista mais os discos de vinil.
+  id: 595
+  time: '2026-11-13T04:27:02.0000000+00:00'
