@@ -1,0 +1,8 @@
+
+
+- type: guideEntry
+  id: CorporateSecrets
+  name: guide-entry-corporate-secrets
+  text: "/ServerInfo/Guidebook/_Dumont/CorporateSecrets.xml"
+  children:
+  - Forensics

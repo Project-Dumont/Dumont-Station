@@ -1,0 +1,235 @@
+
+
+# items made for dumont's MRP rules
+# these items are meant to be used together for a very specific situation where there's no central command members or chaplain on the station and the captain NEEDS to know how to deal with a certain antag
+- type: entity
+  parent: BaseWallmount
+  id: VaultLockerGlass
+  name: confidential information locker
+  suffix: Intact
+  description: A locker containing top-secret NanoTrasen secrets. Only smash the glass and open in case of emergency and no available authority able to disclose the information themselves.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/Lockers/vault_locker.rsi
+    state: lockerglass
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior # still needs to spawn the book
+        spawn:
+          BookCorporateSecrets:
+            min: 1
+            max: 1
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 2
+            max: 3
+          ShardGlass:
+            min: 1
+            max: 2
+          PartRodMetal1:
+            min: 1
+            max: 2
+          BookCorporateSecrets:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction 
+    graph: ConfidentialLockerGlassSmash
+    node: start
+
+- type: entity
+  parent: BaseWallmount
+  id: VaultLockerSafetyMalletStand # so that its easy to map 
+  name: safety mallet stand
+  description: It's supposed to hold a small safety mallet.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200 #20ish crowbar hits
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: ItemCabinet
+  - type: ContainerContainer
+    containers:
+      ItemCabinet: !type:ContainerSlot
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ItemCabinetVisuals.ContainsItem:
+        enum.ItemCabinetVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Sprite
+    sprite: _Dumont/Structures/Wallmounts/safety_mallet_stand.rsi
+    layers:
+    - state: base
+    - state: safety_mallet
+      map: ["enum.ItemCabinetVisuals.Layer"]
+      visible: true
+  - type: ItemSlots
+    slots:
+      ItemCabinet:
+        ejectOnInteract: true
+        whitelist:
+          tags:
+          - Hammer
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - SafetyMallet
+
+- type: entity
+  name: safety mallet
+  parent: MeleeHammer
+  id: SafetyMallet
+  description: Great to break an important glass case for no reason.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/safety_mallet.rsi
+    state: icon
+  - type: MeleeWeapon
+    animationRotation: -90 # WWDP
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 6
+    heavyStaminaCost: 6
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Small
+    sprite: _Dumont/Objects/Specific/safety_mallet.rsi
+  - type: Tool
+    qualities:
+    - Hammering
+    useSound:
+      path: /Audio/Effects/glass_break3.ogg
+
+- type: entity
+  parent: VaultLockerGlass
+  id: VaultLockerGlassSmashed
+  name: confidential information locker
+  suffix: Smashed
+  description: A locker containing top-secret NanoTrasen secrets. The glass is smashed.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 2
+            max: 3
+          ShardGlass:
+            min: 1
+            max: 2
+          PartRodMetal1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Dumont/Structures/Wallmounts/Lockers/vault_locker.rsi
+    state: base
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Lock
+  - type: UserInterface
+    interfaces:
+     enum.StorageUiKey.Key:
+      type: StorageBoundUserInterface
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+  - type: AccessReader
+    access: [["CentralCommand"], [Captain]]
+  - type: Storage
+    grid:
+    - 0,0,0,1
+  - type: StorageFill
+    contents:
+      - id: BookCorporateSecrets
+
+- type: constructionGraph
+  id: ConfidentialLockerGlassSmash
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: smashed
+          steps:
+            - tool: Hammering
+              doAfter: 1
+    - node: smashed
+      entity: VaultLockerGlassSmashed
+
+- type: entity
+  id: BookCorporateSecrets
+  parent: [BaseGuidebook, BaseGrandTheftContraband]
+  name: corporate secrets
+  description: There's a big red stamp that says "CONFIDENTIAL" on it. Probably should keep this locked up.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Misc/books.rsi
+    layers:
+    - state: corporate-secrets
+  - type: GuideHelp
+    guides:
+    - CorporateSecrets
