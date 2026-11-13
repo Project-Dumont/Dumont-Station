@@ -1,0 +1,58 @@
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenHive
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_eye }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_eye }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphQueenHiveActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenWord
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 10
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_word }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_word }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphQueenMessageActionEvent
+      mode: word
+
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenOrder
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    useDelay: 10
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_order }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: queen_order }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphQueenMessageActionEvent
+      mode: order
+
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenomorphQueenPheromones
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    raiseOnUser: true
+    icon: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
+    iconOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: emit_pheromones }
+    backgroundOn: { sprite: _RMC14/Actions/xeno_actions.rsi, state: template_on }
+  - type: InstantAction
+    event: !type:XenomorphQueenMessageActionEvent
+      mode: pheromones

@@ -1,0 +1,9 @@
+xenomorphs-evolution-final-caste = This caste is the end of your evolutionary lineage.
+ent-ActionXenomorphQueenHive = Manage hive
+    .desc = Watch your sisters and appoint up to three leaders while attached to an ovipositor.
+ent-ActionXenomorphQueenWord = Word of the Queen (50)
+    .desc = Send a message to your hive.
+ent-ActionXenomorphQueenOrder = Give order (100)
+    .desc = Send an order to the sister you are watching.
+ent-ActionXenomorphQueenPheromones = Pheromones (35)
+    .desc = Emit frenzy, warding or recovery pheromones within 8 tiles. Costs 2.5 plasma per second.

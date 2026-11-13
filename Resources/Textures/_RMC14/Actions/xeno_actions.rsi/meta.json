@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/cfa259bbd2d627ed94a359fa8c0dec63006f49fa/icons/mob/hud/actions_xeno.dmi, new sprites by Aleksh",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "template"
+    },
+    {
+      "name": "template_active"
+    },
+    {
+      "name": "template_on"
+    },
+    {
+      "name": "stomp"
+    },
+    {
+      "name": "pounce"
+    },
+    {
+      "name": "breathe_fire"
+    },
+    {
+      "name": "resin_nest"
+    },
+    {
+      "name": "ready_charge"
+    },
+    {
+      "name": "ready_charge0"
+    },
+    {
+      "name": "ram"
+    },
+    {
+      "name": "resting"
+    },
+    {
+      "name": "grow_ovipositor"
+    },
+    {
+      "name": "crest_defense"
+    },
+    {
+      "name": "fortify"
+    },
+    {
+      "name": "headbutt"
+    },
+    {
+      "name": "tail_sweep"
+    },
+    {
+      "name": "fling"
+    },
+    {
+      "name": "punch"
+    },
+    {
+      "name": "prae_impale"
+    },
+    {
+      "name": "empower"
+    },
+    {
+      "name": "lurker_invisibility"
+    },
+    {
+      "name": "apply_salve"
+    },
+    {
+      "name": "tail_attack"
+    },
+    {
+      "name": "soak"
+    },
+    {
+      "name": "xeno_spit"
+    },
+    {
+      "name": "acid_shotgun"
+    },
+    {
+      "name": "spray_acid"
+    },
+    {
+      "name": "charge_spit"
+    },
+    {
+      "name": "retrieve_egg"
+    },
+    {
+      "name": "throw_parasite"
+    },
+    {
+      "name": "reserve_parasite"
+    },
+    {
+      "name": "lay_egg"
+    },
+    {
+      "name": "place_trap"
+    },
+    {
+      "name": "toggle_speed"
+    },
+    {
+      "name": "transfer_plasma"
+    },
+    {
+      "name": "lunge"
+    },
+    {
+      "name": "build_tunnel"
+    },
+    {
+      "name": "burrow"
+    },
+    {
+      "name": "tremor"
+    },
+    {
+      "name": "gas_mine"
+    },
+    {
+      "name": "rav_scissor_cut"
+    },
+    {
+      "name": "rav_empower"
+    },
+    {
+      "name": "charge"
+    },
+    {
+      "name": "rav_spike"
+    },
+    {
+      "name": "rav_shard_shed"
+    },
+    {
+      "name": "rav_shard_shield"
+    },
+    {
+      "name": "rav_enrage"
+    },
+    {
+      "name": "prae_cleave_fling"
+    },
+    {
+      "name": "rav_eviscerate"
+    },
+    {
+      "name": "screech"
+    },
+    {
+      "name": "gardener_plant"
+    },
+    {
+      "name": "gardener_plant_pick"
+    },
+    {
+      "name": "gardener_resin_surge"
+    },
+    {
+      "name": "plant_gardener_weeds"
+    },
+    {
+      "name": "plant_weeds"
+    },
+    {
+      "name": "resin_wall"
+    },
+    {
+      "name": "resin_door"
+    },
+    {
+      "name": "corrosive_acid"
+    },
+    {
+      "name": "toggle_long_range"
+    },
+    {
+      "name": "bombard"
+    },
+    {
+      "name": "shift_spit_acid_glob"
+    },
+    {
+      "name": "shift_spit_neuro_glob"
+    },
+    {
+      "name": "acid_shroud"
+    },
+    {
+      "name": "prae_dash"
+    },
+    {
+      "name": "prae_acid_ball"
+    },
+    {
+      "name": "prae_pierce"
+    },
+    {
+      "name": "prae_cleave_root"
+    },
+    {
+      "name": "prae_tail_lash"
+    },
+    {
+      "name": "abduct"
+    },
+    {
+      "name": "tail_seize"
+    },
+    {
+      "name": "dislocate"
+    },
+    {
+      "name": "warden_heal"
+    },
+    {
+      "name": "retrieve"
+    },
+    {
+      "name": "prae_tail_fountain"
+    },
+    {
+      "name": "xenohide"
+    },
+    {
+      "name": "neuroclaws_off"
+    },
+    {
+      "name": "neuroclaws_on"
+    },
+    {
+      "name": "neuro_sting"
+    },
+    {
+      "name": "headbite"
+    },
+    {
+      "name": "secrete_resin"
+    },
+    {
+      "name": "evolve"
+    },
+    {
+      "name": "place_resin"
+    },
+    {
+      "name": "gut"
+    },
+    {
+      "name": "heal_xeno"
+    },
+    {
+      "name": "queen_word"
+    },
+    {
+      "name": "queen_order"
+    },
+    {
+      "name": "queen_eye"
+    },
+    {
+      "name": "emit_pheromones"
+    },
+    {
+      "name": "morph_resin"
+    },
+    {
+      "name": "watch_xeno"
+    },
+    {
+      "name": "runner_bonespur"
+    },
+    {
+      "name": "lurker_inject_neuro"
+    }
+  ]
+}

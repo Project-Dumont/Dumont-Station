@@ -4,6 +4,7 @@
   name: resin membrane
   description: Resin just thin enough to let light pass through.
   components:
+  - type: XenomorphSurgeReinforcable
   - type: Sprite
     drawdepth: WallTops
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi # Goobstation new sprites

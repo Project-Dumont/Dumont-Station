@@ -3,9 +3,9 @@ xenomorphs-face-hugger-equip-other = { $equipment } salta no rosto de { $target 
 
 xenomorphs-face-hugger-unequip = { $equipment } está preso com força demais!
 
-xenomorphs-face-hugger-try-equip = { $equipment } se choca contra seu/sua { $equipmentBlocker }
-xenomorphs-face-hugger-try-equip-other = { $equipment } se choca contra o/a { $equipmentBlocker } de { $target }
+xenomorphs-face-hugger-try-equip = { $equipment } esbarra em sua proteção facial ({ $equipmentBlocker }).
+xenomorphs-face-hugger-try-equip-other = { $equipment } esbarra na proteção facial de { $target } ({ $equipmentBlocker }).
 
 ### Goob station
-xenomorphs-face-hugger-mask-blocked = Seu/Sua { $mask } bloqueia o/a { $facehugger }!
-xenomorphs-face-hugger-mask-blocked-other = O/A { $facehugger } é bloqueado(a) pelo(a) { $mask } de { $target }!
+xenomorphs-face-hugger-mask-blocked = Você bloqueia { $facehugger } com { $mask }!
+xenomorphs-face-hugger-mask-blocked-other = { $target } bloqueia { $facehugger } com { $mask }!
