@@ -1,7 +1,6 @@
 - type: alert
   id: HumanSoftCrit
   category: Health
-  clickEvent: !type:CatchBreathAlertEvent
   icons:
   - sprite: /Textures/_Dumont/Interface/Alerts/human_softcritical.rsi
     state: softcritical

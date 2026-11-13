@@ -29,7 +29,7 @@ public sealed partial class CatchBreathSystem : EntitySystem
 
     private readonly Dictionary<EntityUid, EntityUid> _tryAudio = new();
 
-    private const float DoAfterTime = 6f;
+    private static readonly TimeSpan DoAfterTime = TimeSpan.FromSeconds(6);
     private const float BluntSuccessChance = 0.03f;
     private const float AsphyxiaSuccessChance = 0.63f;
     private const float FailureChance = 0.78f;
@@ -45,7 +45,7 @@ public sealed partial class CatchBreathSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<CatchBreathAlertEvent>(OnAlertClicked);
+        SubscribeLocalEvent<CatchBreathActionEvent>(OnCatchBreath);
         SubscribeLocalEvent<CatchBreathDoAfterEvent>(OnDoAfter);
         SubscribeNetworkEvent<CritStateAudioEvent>(ToggleCriticalSound);
     }
@@ -56,12 +56,12 @@ public sealed partial class CatchBreathSystem : EntitySystem
             StopTryAudio(args.Target);
     }
 
-    private void OnAlertClicked(CatchBreathAlertEvent ev)
+    private void OnCatchBreath(CatchBreathActionEvent ev)
     {
         if (!_net.IsServer)
             return;
 
-        var uid = ev.User;
+        var uid = ev.Performer;
 
         if (!TryComp<MobStateComponent>(uid, out var mob) || mob.CurrentState != MobState.SoftCritical)
             return;
@@ -83,7 +83,7 @@ public sealed partial class CatchBreathSystem : EntitySystem
         StopTryAudio(uid);
         PlayTryAudio(uid);
 
-        _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} start trying catch breath");
+        _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.Performer} start trying catch breath");
     }
 
     private void OnDoAfter(CatchBreathDoAfterEvent ev)
