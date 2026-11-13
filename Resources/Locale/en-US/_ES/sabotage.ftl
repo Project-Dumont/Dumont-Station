@@ -1,0 +1,9 @@
+es-sabotage-verb = Sabotage
+es-sabotage-start = Sabotaging!
+es-sabotage-success = Sabotage complete!
+es-sabotage-hint = You can sabotage this machine using its alternative verb.
+es-sabotage-damaged = Its circuits have been sabotaged. Use the repair verb to restore them.
+es-sabotage-repair = Repair sabotage
+es-sabotage-repaired = Sabotage repaired.
+es-sabotage-comms-message = SYSTEM FAILURE. Communication integrity compromised. Contact engineering.
+es-sabotage-comms-sender = SIGNAL LOST

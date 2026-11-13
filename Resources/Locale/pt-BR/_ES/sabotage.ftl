@@ -1,0 +1,13 @@
+es-sabotage-verb = Sabotar
+es-sabotage-start = Sabotando!
+es-sabotage-success = Sabotagem concluída!
+es-sabotage-hint = Você pode sabotar esta máquina pelo verbo alternativo.
+es-sabotage-damaged = Os circuitos foram sabotados. Use o verbo de reparo para restaurá-los.
+es-sabotage-repair = Reparar sabotagem
+es-sabotage-repaired = Sabotagem reparada.
+es-sabotage-comms-message = FALHA NO SISTEMA. Integridade das comunicações comprometida. Contate a engenharia.
+es-sabotage-comms-sender = SINAL PERDIDO
+ent-ESBaseSabotageObjective = { ent-BaseTraitorObjective }
+    .desc = { ent-BaseTraitorObjective.desc }
+ent-ESObjectiveTraitorSabotageCommunications = Sabote o computador de comunicações
+    .desc = Use o verbo de sabotagem em um computador de comunicações ligado da sua estação. Interrompa os anúncios da Nanotrasen.
