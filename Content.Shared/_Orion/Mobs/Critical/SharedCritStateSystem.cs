@@ -27,6 +27,6 @@ public sealed partial class SharedCritStateSystem : EntitySystem
         if (!_mobState.IsSoftCritical(ent))
             return;
 
-        args.ModifySpeed(ent.Comp.SoftCritWalkModifier, ent.Comp.SoftCritSprintModifier);
+        args.ModifySpeed(ent.Comp.SoftCritWalkModifier, ent.Comp.SoftCritSprintModifier, bypassImmunity: true);
     }
 }
