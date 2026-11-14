@@ -397,3 +397,10 @@
         offset: 0, 1
   placement:
     mode: SnapgridCenter
+
+- type: entity
+  parent: Thruster
+  id: ThrusterXenoborg
+  components:
+  - type: Sprite
+    sprite: Structures/Shuttles/xenoborg_thruster.rsi

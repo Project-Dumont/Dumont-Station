@@ -532,7 +532,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         if (!antagEnt.HasValue)
         {
-            var getEntEv = new AntagSelectEntityEvent(session, ent);
+            var getEntEv = new AntagSelectEntityEvent(session, ent, def); // Dumont
             RaiseLocalEvent(ent, ref getEntEv, true);
             antagEnt = getEntEv.Entity;
         }
@@ -566,13 +566,24 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         // Therefore any component subscribing to this has to make sure both subscriptions return the same value
         // or the ghost role raffle location preview will be wrong.
 
-        var getPosEv = new AntagSelectLocationEvent(session, ent);
+        var getPosEv = new AntagSelectLocationEvent(session, ent, def); // Dumont
         RaiseLocalEvent(ent, ref getPosEv, true);
         if (getPosEv.Handled)
         {
             var playerXform = Transform(player);
             var pos = RobustRandom.Pick(getPosEv.Coordinates);
             _transform.SetMapCoordinates((player, playerXform), pos);
+
+            // Dumont changes start
+            if (!playerXform.Anchored
+                && playerXform.GridUid != null
+                && MetaData(player).EntityPrototype is { } antagProto
+                && antagProto.TryGetComponent<TransformComponent>(out var protoXform, EntityManager.ComponentFactory)
+                && protoXform.Anchored)
+            {
+                _transform.AnchorEntity((player, playerXform));
+            }
+            // Dumont end
         }
 
         // If we want to just do a ghost role spawner, set up data here and then return early.
@@ -770,9 +781,13 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 /// Only raised if the selected player's current entity is invalid.
 /// </summary>
 [ByRefEvent]
-public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule)
+public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition Definition) // Dumont
 {
     public readonly ICommonSession? Session = Session;
+
+    // Dumont changes start
+    public readonly AntagSelectionDefinition Definition = Definition;
+    // Dumont end
 
     public bool Handled => Entity != null;
 
@@ -783,9 +798,13 @@ public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<Anta
 /// Event raised on a game rule entity to determine the location for the antagonist.
 /// </summary>
 [ByRefEvent]
-public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule)
+public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition Definition) // Dumont
 {
     public readonly ICommonSession? Session = Session;
+
+    // Dumont changes start
+    public readonly AntagSelectionDefinition Definition = Definition;
+    // Dumont end
 
     public bool Handled => Coordinates.Any();
 

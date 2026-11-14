@@ -148,16 +148,60 @@
   components:
   - type: Sprite
     layers:
-    - state: pinpointer-station
+    - sprite: _Impstation/Objects/Devices/pinpointer_xenoborg.rsi # Imp
+      state: pinpointer-xenoborg # Imp
       map: ["enum.PinpointerLayers.Base"]
-    - state: pinonnull
+    - sprite: Objects/Devices/pinpointer.rsi
+      state: pinonnull
       map: ["enum.PinpointerLayers.Screen"]
       shader: unshaded
       visible: false
   - type: Icon
-    state: pinpointer-station
+    sprite: _Impstation/Objects/Devices/pinpointer_xenoborg.rsi # Imp
+    state: pinpointer-xenoborg # Imp
   - type: Pinpointer
     whitelist: # Goob edit: pinpointer whitelist
       components:
-      - XenoborgMothership
+      - MothershipCore
     targetName: the mothership # Goob edit
+
+- type: entity
+  parent: BaseItem
+  id: PinpointerMothershipPiece
+  name: piece of core pinpointer
+  description: A piece of a core pinpointer. You need four pieces to repair it.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/pinpointer.rsi
+    layers:
+    - state: pinpointer-xenoborg-piece-1
+      map: [ "base" ]
+  - type: RandomSprite
+    available:
+    - base:
+        pinpointer-xenoborg-piece-1: ""
+        pinpointer-xenoborg-piece-2: ""
+        pinpointer-xenoborg-piece-3: ""
+        pinpointer-xenoborg-piece-4: ""
+  - type: Item
+  - type: Tag
+    tags:
+    - MothershipPinpointerPiece
+
+- type: entity
+  parent: PinpointerMothership
+  id: PinpointerMothershipRepaired
+  name: repaired core pinpointer
+  description: A handheld tracking device that leads to the direction of the Mothership core. This one has seen better days.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/pinpointer.rsi
+    layers:
+    - state: pinpointer-xenoborg-repaired
+      map: ["enum.PinpointerLayers.Base"]
+  - type: Icon
+    sprite: Objects/Devices/pinpointer.rsi
+    state: pinpointer-xenoborg-repaired
+  - type: Construction
+    graph: RepairMothershipPinpointer
+    node: repairedPinpointer

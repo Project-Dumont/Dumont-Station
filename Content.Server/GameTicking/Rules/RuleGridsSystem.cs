@@ -8,7 +8,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq; // Dumont
 using Content.Server.Antag;
+using Content.Server.Antag.Components; // Dumont
 using Content.Server.Spawners.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map;
@@ -73,6 +75,12 @@ public sealed class RuleGridsSystem : GameRuleSystem<RuleGridsComponent>
 
             if (_whitelist.IsWhitelistFail(ent.Comp.SpawnerWhitelist, uid))
                 continue;
+
+            // Dumont changes start
+            if (TryComp<AntagGridSpawnPointComponent>(uid, out var antagSpawn)
+                && !antagSpawn.Whitelist.Intersect(args.Definition.PrefRoles).Any())
+                continue;
+            // Dumont end
 
             args.Coordinates.Add(_transform.GetMapCoordinates(xform));
         }
