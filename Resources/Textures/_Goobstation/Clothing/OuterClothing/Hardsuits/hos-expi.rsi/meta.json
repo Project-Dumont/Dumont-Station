@@ -33,7 +33,11 @@
     {
       "name": "equipped-OUTERCLOTHING-resomi",
       "directions": 4
-    }, 
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-vulpkanin",
+      "directions": 4
+    },
     {
       "name": "equipped-OUTERCLOTHING-feroxi",
       "directions": 4
