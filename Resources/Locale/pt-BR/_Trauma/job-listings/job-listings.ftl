@@ -42,5 +42,5 @@ side-job-kill-title = Mate {$targetName}, {$job}
 side-job-hack-comms-computer-name = Convoque o cruzador de batalha do Sindicato
 side-job-hack-comms-computer-description = A estação está vulnerável. Invada o console de comunicações e transmita o sinal para o Sindicato.
 steal-target-groups-comms-computer = console de comunicações
-station-event-syndicate-battle-cruiser = Um cruzador armado do Sindicato foi detectado perto da estação. Recomenda-se a evacuação.
+station-event-syndicate-battle-cruiser = Um cruzador altamente armado e perigoso foi detectado perto da estação. Recomenda-se a evacuação.
 guide-entry-progtot = Contratos do traidor
