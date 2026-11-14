@@ -75,6 +75,7 @@
   - LanguageSpeaker
   - LanguageKnowledge
   - ForeignerTrait
+  - CyberneticBeast
   # Einstein Engines - Language end
   blacklist:
     components:
