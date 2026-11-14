@@ -1,5 +1,7 @@
+using Content.Shared._Dumont.Triage;
 using Content.Shared.Security;
 using Content.Shared.StationRecords;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CD.Records;
@@ -56,6 +58,37 @@ public sealed class CharacterRecordConsoleState : BoundUserInterfaceState
     /// Security status of the selected record
     /// </summary>
     public (SecurityStatus, string?)? SelectedSecurityStatus = null;
+
+    // Dumont
+    /// <summary>
+    /// Prioridades de triagem que o console oferece. Nulo quando o console não mexe com triagem.
+    /// </summary>
+    public List<ProtoId<TriageIconPrototype>>? TriageLevels = null;
+
+    /// <summary>
+    /// Triagem atual do paciente do registro selecionado. Nulo se não tem marcação.
+    /// </summary>
+    public ProtoId<TriageIconPrototype>? SelectedTriage = null;
+
+    /// <summary>
+    /// Se dá para mudar a triagem do registro selecionado (o paciente ainda existe).
+    /// </summary>
+    public bool CanSetTriage = false;
+}
+
+// Dumont
+[Serializable, NetSerializable]
+public sealed class CharacterRecordSetTriageMsg : BoundUserInterfaceMessage
+{
+    /// <summary>
+    /// Nova prioridade, ou nulo para tirar a marcação.
+    /// </summary>
+    public readonly ProtoId<TriageIconPrototype>? Level;
+
+    public CharacterRecordSetTriageMsg(ProtoId<TriageIconPrototype>? level)
+    {
+        Level = level;
+    }
 }
 
 [Serializable, NetSerializable]

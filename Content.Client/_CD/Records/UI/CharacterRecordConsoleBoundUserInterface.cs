@@ -68,6 +68,8 @@ public sealed class CharacterRecordConsoleBoundUserInterface(EntityUid owner, En
             SendMessage(new CriminalRecordChangeStatus(status, reason));
         };
 
+        _window.OnSetTriage += level => SendMessage(new CharacterRecordSetTriageMsg(level)); // Dumont
+
         _window.OnRequestArrestWarrant += (issuer, details) => // GabyStation
         {
             SendMessage(new CriminalRecordRequestArrestWarrant(issuer, details));

@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Triage; // Dumont
+using Content.Shared._Dumont.Triage; // Dumont
+using Robust.Shared.Prototypes; // Dumont
 using Content.Server.CriminalRecords.Systems; // DeltaV - i hate this, forward to criminal records console
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords.Systems;
@@ -23,6 +26,7 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
     [Dependency] private readonly StationRecordsSystem _records = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly TriageSystem _triage = default!; // Dumont
 
     public override void Initialize()
     {
@@ -42,6 +46,7 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
                 subr.Event<CriminalRecordChangeStatus>(OnCriminalRecordChangeStatus);
                 // End DeltaV - i hate this, forward to criminal records console
                 subr.Event<CriminalRecordRequestArrestWarrant>(OnRequestArrestWarrant); // GabyStation
+                subr.Event<CharacterRecordSetTriageMsg>(OnSetTriage); // Dumont
             });
     }
 
@@ -85,6 +90,36 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
         _criminalRecordsConsole.OnRequestArrestWarrant((ent.Owner, console), ref msg);
         UpdateUi(ent);
     }
+
+    // Dumont
+    private static bool HasTriage(CharacterRecordConsoleComponent console)
+    {
+        return console.ConsoleType == RecordConsoleType.Medical
+               || console.ConsoleType == RecordConsoleType.Admin;
+    }
+
+    private void OnSetTriage(Entity<CharacterRecordConsoleComponent> ent, ref CharacterRecordSetTriageMsg msg)
+    {
+        if (!HasTriage(ent.Comp) || ent.Comp.SelectedIndex is not { } index)
+            return;
+
+        var station = ent.Comp.ConsoleType == RecordConsoleType.Generic
+            ? _station.GetStationInMap(Transform(ent).MapID)
+            : _station.GetOwningStation(ent);
+
+        if (!HasComp<CharacterRecordsComponent>(station))
+            return;
+
+        // O cliente só manda a prioridade, o paciente é sempre o do registro selecionado no servidor
+        if (!_characterRecords.QueryRecords(station.Value).TryGetValue(index, out var record)
+            || record.Owner is not { } patient
+            || TerminatingOrDeleted(patient))
+            return;
+
+        _triage.ApplyTriage(msg.Actor, patient, msg.Level, ent.Comp.TriageLevels);
+        UpdateUi(ent);
+    }
+    // End Dumont
 
     private void UpdateUi(EntityUid entity, CharacterRecordConsoleComponent? console = null)
     {
@@ -146,9 +181,31 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
                 securityStatus = (entry.Status, entry.Reason);
         }
 
+        // Begin Dumont-triagem
+        List<ProtoId<TriageIconPrototype>>? triageLevels = null;
+        ProtoId<TriageIconPrototype>? triage = null;
+        var canSetTriage = false;
+
+        if (HasTriage(console))
+        {
+            triageLevels = console.TriageLevels;
+
+            if (record?.Owner is { } patient && !TerminatingOrDeleted(patient))
+            {
+                canSetTriage = true;
+
+                if (TryComp<TriageTagComponent>(patient, out var tag))
+                    triage = tag.Level;
+            }
+        }
+        // End Dumont-triagem
+
         SendState(entity,
             new CharacterRecordConsoleState
             {
+                TriageLevels = triageLevels, // Dumont-triagem
+                SelectedTriage = triage, // Dumont-triagem
+                CanSetTriage = canSetTriage, // Dumont-triagem
                 ConsoleType = console.ConsoleType,
                 CharacterList = names,
                 SelectedIndex = console.SelectedIndex,

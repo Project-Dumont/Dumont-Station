@@ -86,6 +86,12 @@
                                 <Control HorizontalExpand="True" />
                                 <Label Name="RecordContainerSex" Align="Right" />
                             </BoxContainer>
+                            <!-- Dumont -->
+                            <BoxContainer Name="RecordContainerTriage" Orientation="Horizontal" HorizontalExpand="True" Margin="0 5 0 0" Visible="False">
+                                <Label Text="{Loc 'cd-record-viewer-triage'}" FontColorOverride="DarkGray"/>
+                                <Control MinWidth="5"/>
+                                <OptionButton Name="TriageOptionButton" MinWidth="200"/>
+                            </BoxContainer>
                         </BoxContainer>
                         <!-- Security -->
                         <BoxContainer Name="RecordContainerSecurity" Orientation="Vertical" HorizontalExpand="True" Visible="False" >
@@ -107,10 +113,10 @@
                                 <Label Name="RecordContainerWantedReason" Visible="False" />
                             </BoxContainer>
                             <!-- GabyStation -->
-                            <Button Name="PrintArrestWarrantButton"  
+                            <Button Name="PrintArrestWarrantButton"
                                 Text="{Loc 'criminal-records-console-print-arrest-warrant'}"
                                 Margin="0 5" />
-                            
+
                         </BoxContainer>
                     </BoxContainer>
                     <!-- Entry viewer -->
