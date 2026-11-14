@@ -76,9 +76,9 @@
   components:
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Structures/Walls/railing.rsi
+    sprite: _Starlight/Structures/Walls/railing.rsi #Starlight
   - type: Icon
-    sprite: Structures/Walls/railing.rsi
+    sprite: _Starlight/Structures/Walls/railing.rsi #Starlight
   - type: Physics
     bodyType: Static
   - type: InteractionOutline
@@ -97,6 +97,8 @@
 - type: entity
   parent: BaseRailing
   id: Railing
+  name: railing #Starlight
+  suffix: steel #Starlight
   components:
   - type: Sprite
     state: side
@@ -143,6 +145,8 @@
 - type: entity
   parent: BaseRailing
   id: RailingCorner
+  name: railing #Starlight
+  suffix: steel, corner #Starlight
   components:
   - type: Sprite
     state: corner
@@ -198,6 +202,8 @@
 - type: entity
   parent: BaseRailing
   id: RailingCornerSmall
+  name: railing #Starlight
+  suffix: steel, corner small #Starlight
   components:
   - type: Sprite
     state: corner_small
@@ -244,6 +250,8 @@
 - type: entity
   parent: BaseRailing
   id: RailingRound
+  name: railing #Starlight
+  suffix: steel, round #Starlight
   components:
   - type: Sprite
     state: round
