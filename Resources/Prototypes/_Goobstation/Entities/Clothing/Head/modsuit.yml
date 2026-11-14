@@ -670,7 +670,7 @@
         Blunt: 0.8
         Slash: 0.85
         Piercing: 0.85
-        Heat: 0.2
+        Heat: 0.5 # Dumont edit - Lasersec
         Radiation: 0.05
   - type: EyeProtection # goob
   - type: ComponentToggler
