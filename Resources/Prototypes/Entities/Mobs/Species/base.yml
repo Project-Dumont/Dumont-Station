@@ -471,6 +471,8 @@
         type: StrippableBoundUserInterface
       enum.SetWantedVerbMenu.Key: # Goobstation-WantedMenu
         type: WantedMenuBoundUserInterface
+      enum.TriageHudUiKey.Key: # Dumont-triagem
+        type: TriageHudBoundUserInterface
       # Goobstation - changelings
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface

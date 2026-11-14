@@ -5,6 +5,7 @@
 using Content.Shared._Dumont.Triage;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -18,6 +19,7 @@ public sealed class TriageSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly TriageHudSystem _hud = default!;
 
     public override void Initialize()
     {
@@ -25,6 +27,9 @@ public sealed class TriageSystem : EntitySystem
 
         SubscribeLocalEvent<TriageTaggerComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<TriageTaggerComponent, TriageTaggerSetMessage>(OnLevelSelected);
+
+        // Janela do medhud que fica no paciente
+        SubscribeLocalEvent<MobStateComponent, TriageTaggerSetMessage>(OnHudLevelSelected);
     }
 
     private void OnAfterInteract(Entity<TriageTaggerComponent> ent, ref AfterInteractEvent args)
@@ -56,28 +61,59 @@ public sealed class TriageSystem : EntitySystem
 
         _ui.CloseUi(uid, TriageTaggerUiKey.Key);
 
-        var name = Identity.Entity(target.Value, EntityManager);
+        ApplyTriage(args.Actor, target.Value, args.Level, component.Levels);
+    }
 
-        if (args.Level is not { } level)
+    private void OnHudLevelSelected(EntityUid uid, MobStateComponent component, TriageTaggerSetMessage args)
+    {
+        // A mesma mensagem também é usada pelo aparelho então só vale a que veio da janela do medhud
+        if (!args.UiKey.Equals(TriageHudUiKey.Key))
+            return;
+
+        // Tudo é conferido de novo aqui
+        if (TerminatingOrDeleted(uid) || !_hud.TryGetHud(args.Actor, out var hud))
+            return;
+
+        if (!_interaction.InRangeUnobstructed(args.Actor, uid))
+            return;
+
+        _ui.CloseUi(uid, TriageHudUiKey.Key);
+
+        ApplyTriage(args.Actor, uid, args.Level, hud.Levels);
+    }
+
+    /// <summary>
+    /// Marca o paciente com a prioridade escolhida, ou tira a marcação se for nula
+    /// A prioridade precisa estar na lista que o medhud mostra
+    /// </summary>
+    public void ApplyTriage(
+        EntityUid user,
+        EntityUid target,
+        ProtoId<TriageIconPrototype>? picked,
+        List<ProtoId<TriageIconPrototype>> allowed)
+    {
+        var name = Identity.Entity(target, EntityManager);
+
+        if (picked is not { } level)
         {
-            if (!HasComp<TriageTagComponent>(target.Value))
+            if (!HasComp<TriageTagComponent>(target))
                 return;
 
-            RemComp<TriageTagComponent>(target.Value);
-            _popup.PopupEntity(Loc.GetString("triage-tagger-removed", ("target", name)), target.Value, args.Actor);
+            RemComp<TriageTagComponent>(target);
+            _popup.PopupEntity(Loc.GetString("triage-tagger-removed", ("target", name)), target, user);
             return;
         }
 
-        if (!component.Levels.Contains(level) || !_proto.TryIndex(level, out var proto))
+        if (!allowed.Contains(level) || !_proto.TryIndex(level, out var proto))
             return;
 
-        var tag = EnsureComp<TriageTagComponent>(target.Value);
+        var tag = EnsureComp<TriageTagComponent>(target);
         tag.Level = level;
-        Dirty(target.Value, tag);
+        Dirty(target, tag);
 
         _popup.PopupEntity(
             Loc.GetString("triage-tagger-applied", ("target", name), ("level", Loc.GetString(proto.Name))),
-            target.Value,
-            args.Actor);
+            target,
+            user);
     }
 }
