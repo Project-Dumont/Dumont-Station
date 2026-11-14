@@ -1,0 +1,60 @@
+- type: entity
+  parent: ERTChaplainPDA
+  id: VaticanPDA
+  name: Vatican PDA
+  suffix: ""
+  description: A personal terminal issued to the Inquisition.
+  components:
+  - type: Pda
+    id: VaticanIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-vatican
+  - type: PdaBorderColor
+    borderColor: "#D6BB45"
+    accentHColor: "#FDFFCF"
+    accentVColor: "#FDFFCF"
+  - type: Sprite
+    layers:
+    - sprite: _Dumont/Objects/Devices/vatican_pda.rsi
+      state: pda-vatican
+      map: [ "enum.PdaVisualLayers.Base" ]
+    - state: light_overlay
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: unshaded
+      visible: false
+    - state: id_overlay
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: unshaded
+      visible: false
+    - state: insert_overlay
+      map: [ "enum.PdaVisualLayers.Pen" ]
+  - type: Icon
+    sprite: _Dumont/Objects/Devices/vatican_pda.rsi
+    state: pda-vatican
+
+- type: entity
+  parent: VaticanPDA
+  id: VaticanLeaderPDA
+  name: lord inquisitor PDA
+  components:
+  - type: Pda
+    id: VaticanLeaderIDCard
+
+- type: entity
+  parent: ERTChaplainIDCard
+  id: VaticanIDCard
+  name: Vatican inquisitor ID card
+  components:
+  - type: PresetIdCard
+    job: VaticanInquisitor
+
+- type: entity
+  parent: VaticanIDCard
+  id: VaticanLeaderIDCard
+  name: lord inquisitor ID card
+  components:
+  - type: PresetIdCard
+    job: VaticanInquisitorLeader

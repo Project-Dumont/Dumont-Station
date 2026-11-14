@@ -67,6 +67,16 @@ public static class Identity
         if (meta.EntityLifeStage <= EntityLifeStage.Initializing)
             return FormattedMessage.EscapeText(meta.EntityName); // Goob Sanitize Text
 
+        // Dumont start
+        if (viewer is { } view)
+        {
+            var ev = new Content.Goobstation.Common.Examine.GetExamineNameEvent((uid, meta));
+            ent.EventBus.RaiseLocalEvent(view, ref ev);
+            if (ev.Result is { } result)
+                return FormattedMessage.EscapeText(result);
+        }
+        // Dumont end
+
         var uidName = meta.EntityName;
 
         if (!ent.TryGetComponent<IdentityComponent>(uid, out var identity))

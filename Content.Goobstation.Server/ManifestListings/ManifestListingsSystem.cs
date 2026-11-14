@@ -41,6 +41,14 @@ public sealed class ManifestListingsSystem : EntitySystem
         var data = args.Data;
         list.RemoveAll(x => x.ID == data.ID);
         list.Add(data);
+        // Dumont start
+        if (!listings.Spent.TryGetValue(args.Store.Id, out var storeSpent))
+            listings.Spent[args.Store.Id] = storeSpent = new();
+        if (!storeSpent.TryGetValue(data.ID, out var spent))
+            storeSpent[data.ID] = spent = new();
+        foreach (var (currency, amount) in args.Cost)
+            spent[currency] = spent.GetValueOrDefault(currency) + amount;
+        // Dumont end
     }
 
     private void OnPrepend(Entity<MindListingsComponent> ent, ref PrependObjectivesSummaryTextEvent args)
@@ -49,7 +57,7 @@ public sealed class ManifestListingsSystem : EntitySystem
         var sb2 = new StringBuilder();
 
         Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> totalSpent = new();
-        foreach (var list in ent.Comp.Listings.Values)
+        foreach (var (storeId, list) in ent.Comp.Listings)
         {
             var storeSb = new StringBuilder();
             HashSet<string> ignoredIds = new();
@@ -84,28 +92,22 @@ public sealed class ManifestListingsSystem : EntitySystem
                     continue;
 
                 Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> cost = new();
-                var costMultiplier = count;
-
-                if (data.SaleCost != null)
+                // Dumont start
+                if (ent.Comp.Spent.TryGetValue(storeId, out var spent))
                 {
-                    var salePurchases = Math.Min(data.SaleLimit, count);
-                    foreach (var (currency, amount) in data.SaleCost)
-                    {
-                        if (!cost.TryAdd(currency, amount * salePurchases))
-                            cost[currency] += amount * salePurchases;
-                    }
+                    AddSpent(dataId);
+                    if (data.ProductUpgradeId is { } upgradeId)
+                        AddSpent(upgradeId);
 
-                    costMultiplier -= salePurchases;
-                }
-
-                if (costMultiplier != 0)
-                {
-                    foreach (var (currency, amount) in data.Cost)
+                    void AddSpent(string id)
                     {
-                        if (!cost.TryAdd(currency, amount * costMultiplier))
-                            cost[currency] += amount * costMultiplier;
+                        if (!spent.TryGetValue(id, out var paid))
+                            return;
+                        foreach (var (currency, amount) in paid)
+                            cost[currency] = cost.GetValueOrDefault(currency) + amount;
                     }
                 }
+                // Dumont end
 
                 string sprite;
                 var state = "";

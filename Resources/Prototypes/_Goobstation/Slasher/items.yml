@@ -365,7 +365,7 @@
     sprite: _Goobstation/Heretic/mad_mask.rsi
   - type: Clothing
     sprite: _Goobstation/Heretic/mad_mask.rsi
-  - type: MadnessMask
+  - type: SlasherMadnessMask
     staminaProb: 0
     jitterProb: 0.75
     rainbowProb: 0.5

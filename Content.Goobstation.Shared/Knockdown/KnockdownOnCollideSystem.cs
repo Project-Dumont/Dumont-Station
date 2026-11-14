@@ -6,12 +6,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.Heretic.Components;
+// Dumont start
+using Content.Trauma.Shared.Heretic.Components.PathSpecific.Rust;
+
 using Content.Shared._Goobstation.Wizard.Mutate;
 using Content.Shared._White.Standing;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
+// Dumont end
 
 namespace Content.Goobstation.Shared.Knockdown;
 

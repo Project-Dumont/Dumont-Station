@@ -67,6 +67,12 @@
   components:
     - type: Sprite
       sprite: _EinsteinEngines/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+    - type: Clothing
+      clothingVisuals:
+        head-vulpkanin:
+        - state: equipped-HEAD
+        head-feroxi:
+        - state: equipped-HEAD
     - type: PressureProtection
       highPressureMultiplier: 0.08
       lowPressureMultiplier: 1000
@@ -100,6 +106,12 @@
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
           shader: unshaded
+        head-resomi:
+        - state: equipped-HEAD-sealed
+        head-vulpkanin:
+        - state: equipped-HEAD-sealed
+        head-feroxi:
+        - state: equipped-HEAD-sealed
         head-vox:
         - state: equipped-HEAD-sealed-vox
         - state: equipped-HEAD-sealed-unshaded-vox
@@ -135,6 +147,8 @@
       spriteLayer: sealed
       clothingVisuals:
         outerClothing:
+        - state: equipped-OUTERCLOTHING-sealed
+        outerClothing-resomi:
         - state: equipped-OUTERCLOTHING-sealed
         outerClothing-vox:
         - state: equipped-OUTERCLOTHING-sealed-vox

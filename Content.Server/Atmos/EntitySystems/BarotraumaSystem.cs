@@ -67,6 +67,9 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly IAdminLogManager _adminLogger= default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
         [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation
+        // Dumont start
+        [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
+        // Dumont end
         private const float UpdateTimer = 1f;
         private float _timer;
 
@@ -212,7 +215,10 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         public float GetFeltLowPressure(EntityUid uid, BarotraumaComponent barotrauma, float environmentPressure)
         {
-            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid))
+            // Dumont start
+            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid) ||
+                _statusEffects.HasEffectComp<PressureImmunityStatusEffectComponent>(uid))
+            // Dumont end
             {
                 return Atmospherics.OneAtmosphere;
             }
@@ -226,7 +232,10 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         public float GetFeltHighPressure(EntityUid uid, BarotraumaComponent barotrauma, float environmentPressure)
         {
-            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid))
+            // Dumont start
+            if (barotrauma.HasImmunity || HasComp<SpecialPressureImmunityComponent>(uid) ||
+                _statusEffects.HasEffectComp<PressureImmunityStatusEffectComponent>(uid))
+            // Dumont end
             {
                 return Atmospherics.OneAtmosphere;
             }

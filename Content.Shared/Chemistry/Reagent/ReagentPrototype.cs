@@ -381,6 +381,10 @@ namespace Content.Shared.Chemistry.Reagent
     [DataDefinition]
     public sealed partial class ReagentEffectsEntry
     {
+        // Dumont start
+        [DataField]
+        public EntityEffectCondition[]? Conditions;
+        // Dumont end
         /// <summary>
         ///     Amount of reagent to metabolize, per metabolism cycle.
         /// </summary>

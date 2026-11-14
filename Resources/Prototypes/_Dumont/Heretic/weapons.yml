@@ -1,0 +1,142 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSword
+  id: VaticanDawnbreaker
+  name: Dawnbreaker
+  description: The Lord Inquisitor's consecrated blade.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Melee/dawnbreaker.rsi
+    layers:
+    - state: icon
+    - state: welder_flame
+      shader: unshaded
+  - type: Item
+    sprite: _Dumont/Objects/Weapons/Melee/dawnbreaker.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: Clothing
+    sprite: _Dumont/Objects/Weapons/Melee/dawnbreaker.rsi
+    slots:
+    - back
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 20
+        Holy: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: BaseItem
+  id: VaticanDueProcess
+  name: Due Process
+  description: An inquisitorial pistol reloaded through prayer.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/due_process.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _Dumont/Objects/Weapons/Guns/due_process.rsi
+  - type: Clothing
+    sprite: _Dumont/Objects/Weapons/Guns/due_process.rsi
+    quickEquip: false
+    slots:
+    - belt
+    - suitStorage
+  - type: Gun
+    fireRate: 4
+    minAngle: 6
+    maxAngle: 22
+    angleIncrease: 4
+    angleDecay: 16
+    availableModes: [ SemiAuto ]
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: BasicEntityAmmoProvider
+    proto: VaticanDueProcessBullet
+    capacity: 12
+    count: 12
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ReloadOnPray
+  - type: AlternatePrayable
+    prayDoAfterDuration: 3.5
+  - type: Tag
+    tags: [ Sidearm ]
+
+- type: entity
+  parent: BulletPistolSilver
+  id: VaticanDueProcessBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Holy: 10
+
+- type: entity
+  parent: BaseItem
+  id: VaticanThemis
+  name: Themis
+  description: An energy crossbow consecrated for the Inquisition. Prayer restores its charges.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/themis.rsi
+    state: icon
+  - type: Item
+    size: Large
+    sprite: _Dumont/Objects/Weapons/Guns/themis.rsi
+  - type: Clothing
+    quickEquip: false
+    slots: [ suitStorage ]
+  - type: Gun
+    fireRate: 1.5
+    minAngle: 1
+    maxAngle: 5
+    angleIncrease: 1
+    angleDecay: 4
+    availableModes: [ SemiAuto ]
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: BasicEntityAmmoProvider
+    proto: VaticanThemisBolt
+    capacity: 20
+    count: 20
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ReloadOnPray
+  - type: AlternatePrayable
+    prayDoAfterDuration: 3.5
+
+- type: entity
+  parent: BulletPistolSilver
+  id: VaticanThemisBolt
+  name: consecrated bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: "#FDFFCF"
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
+        Holy: 25

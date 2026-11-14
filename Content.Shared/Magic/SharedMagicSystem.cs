@@ -112,7 +112,6 @@ using Content.Shared.Ghost;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
@@ -758,7 +757,9 @@ public abstract class SharedMagicSystem : EntitySystem
 
         List<(Type, string)> blockers = new()
         {
-            (typeof(GhoulComponent), "ghoul"),
+            // Dumont start
+            (Factory.GetRegistration("Ghoul").Type, "ghoul"),
+            // Dumont end
             // Mindswapping with aghost real.
             (typeof(GhostComponent), "ghost"),
             (typeof(SpectralComponent), "ghost"),

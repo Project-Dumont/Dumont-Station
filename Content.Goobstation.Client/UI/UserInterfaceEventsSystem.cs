@@ -13,6 +13,6 @@ public sealed class UserInterfaceEventsSystem : EntitySystem
 
     private void OnPressed(ref ButtonTagPressedEvent ev)
     {
-        RaiseNetworkEvent(new Common.Heretic.ButtonTagPressedEvent(ev.Id, ev.User, ev.Coords));
+        RaiseNetworkEvent(new Content.Trauma.Common.Heretic.ButtonTagPressedEvent(ev.Id, ev.User, ev.Coords));
     }
 }

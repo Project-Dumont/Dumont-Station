@@ -39,9 +39,11 @@ public sealed partial class GoobBibleSystem : EntitySystem
         if (!Resolve(bible, ref useDelay, ref bibleComp))
             return false;
 
-        if (!TryComp<WeakToHolyComponent>(target, out var weakToHoly)
-            || weakToHoly is {AlwaysTakeHoly: false}
-            || !HasComp<BibleUserComponent>(performer)
+        // Dumont start
+        var shouldSmite = TryComp<WeakToHolyComponent>(target, out var weakToHoly) && weakToHoly.AlwaysTakeHoly
+            || TryComp<AlwaysTakeHolyComponent>(target, out var alwaysTakeHoly) && alwaysTakeHoly.ShouldBibleSmite;
+        if (!shouldSmite || !HasComp<BibleUserComponent>(performer)
+        // Dumont end
             || !_timing.IsFirstTimePredicted
             || _delay.IsDelayed(bible)
             || !_netManager.IsServer)

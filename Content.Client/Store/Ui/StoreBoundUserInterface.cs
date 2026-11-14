@@ -1,46 +1,34 @@
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2024 J. Brown <DrMelon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
-// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
-// SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
-// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
 
+using System.Linq;
 using Content.Shared.Store;
 using JetBrains.Annotations;
-using System.Linq;
-using Content.Shared.Store.Components;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
+// Dumont end
 
 namespace Content.Client.Store.Ui;
 
-// goob edit - fuck newstore
-// do not touch unless you want to shoot yourself in the leg
 [UsedImplicitly]
 public sealed class StoreBoundUserInterface : BoundUserInterface
 {
     private IPrototypeManager _prototypeManager = default!;
+    private readonly StoreSystem _storeSystem = default!;
 
     [ViewVariables]
     private StoreMenu? _menu;
@@ -49,30 +37,24 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     private string _search = string.Empty;
 
     [ViewVariables]
-    private HashSet<ListingData> _listings = new();
+    private HashSet<ListingDataWithCostModifiers> _listings = new();
 
-    // Funkystation -> Malf AI.
-    private static readonly ProtoId<CurrencyPrototype> CpuCurrencyId = "CPU";
-
-    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    {
+        _storeSystem = EntMan.System<StoreSystem>();
+    }
 
     protected override void Open()
     {
         base.Open();
 
-        // Funkystation -> Malf AI.
-        if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store)
-            && store.CurrencyWhitelist.Contains(CpuCurrencyId))
-            return; // Removed call to open Malf AI store window here to prevent duplicate/empty window.
-
         _menu = this.CreateWindow<StoreMenu>();
-
-        if (store is not null)
-            _menu.Title = Loc.GetString(store.Name);
+        if (_storeSystem.TryGetStore(Owner, out var store))
+            _menu.Title = Loc.GetString(store.Value.Comp.Name);
 
         _menu.OnListingButtonPressed += (_, listing) =>
         {
-            SendMessage(new StoreBuyListingMessage(listing));
+            SendMessage(new StoreBuyListingMessage(listing.ID, EntMan.GetNetEntity(Owner)));
         };
 
         _menu.OnCategoryButtonPressed += (_, category) =>
@@ -101,9 +83,6 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-        if (_menu is not { Disposed: false })
-            return;
-
         switch (state)
         {
             case StoreUpdateState msg:
@@ -111,12 +90,6 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
 
                 _menu?.UpdateBalance(msg.Balance);
 
-                // Funkystation -> Malf AI.
-                if (_menu != null)
-                {
-                    if (msg.Balance.ContainsKey(CpuCurrencyId))
-                        _menu.ApplyMalfTheme();
-                }
                 UpdateListingsWithSearchFilter();
                 _menu?.SetFooterVisibility(msg.ShowFooter);
                 _menu?.UpdateRefund(msg.AllowRefund);
@@ -129,7 +102,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         if (_menu == null)
             return;
 
-        var filteredListings = new HashSet<ListingData>(_listings);
+        var filteredListings = new HashSet<ListingDataWithCostModifiers>(_listings);
         if (!string.IsNullOrEmpty(_search))
         {
             filteredListings.RemoveWhere(listingData => !ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listingData, _prototypeManager).Trim().ToLowerInvariant().Contains(_search) &&
@@ -138,4 +111,14 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         _menu.PopulateStoreCategoryButtons(filteredListings);
         _menu.UpdateListing(filteredListings.ToList());
     }
+
+    // Dumont start
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+            _menu = null;
+
+        base.Dispose(disposing);
+    }
+    // Dumont end
 }

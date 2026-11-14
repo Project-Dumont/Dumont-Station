@@ -16,6 +16,13 @@ public sealed partial class MobThresholdSystem
     /// <param name="target">The entity to check for vital damage</param>
     /// <param name="damageableComponent">The damageable component of the target entity</param>
     /// <returns>Total damage from vital body parts, or total damage if not a complex body or no vital parts found</returns>
+    // Dumont start
+    public FixedPoint2 CheckVitalDamage(Entity<DamageableComponent?> target)
+    {
+        return Resolve(target, ref target.Comp, false) ? CheckVitalDamage(target.Owner, target.Comp) : FixedPoint2.Zero;
+    }
+    // Dumont end
+
     public FixedPoint2 CheckVitalDamage(EntityUid target, DamageableComponent damageableComponent)
     {
         var damage = damageableComponent.TotalDamage;
