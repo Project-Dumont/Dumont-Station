@@ -15,7 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Operativos Nucleares
 
   <Box>
-    [color=#999999][italic]"OPERATIVOS, FIQUEM APOSTOS. SUAS OBJETIVOS SÃO SIMPLES.[/italic][/color]
+    [color=#999999][italic]"OPERATIVOS, FIQUEM A POSTOS. SEUS OBJETIVOS SÃO SIMPLES.[/italic][/color]
   </Box>
   <Box>
     [color=#999999][italic]ENTREGUEM A CARGA E SAIAM ANTES QUE A CARGA DETONE. INICIEM A MISSÃO."[/italic][/color]
@@ -24,7 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
   </Box>
 
-  Você acaba de ser escolhido para ser um operativo nuclear para o [color=#ff0000]Syndicate[/color]. Seu único objetivo é explodir uma das melhores naves da Nanotrasen com um explosivo nuclear de fissão.
+  Você acaba de ser escolhido para ser um operativo nuclear para o [color=#ff0000]Sindicato[/color]. Seu único objetivo é explodir uma das melhores estações da Nanotrasen com um explosivo nuclear de fissão.
 
   ## Operativos
   Sua equipe será composta por várias funções diferentes, que incluem:
@@ -84,10 +84,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Chegando à Estação
   Você tem o plano, tem o equipamento. Agora, execute.
 
-  Pegue um [bold]jetpack[/bold] na sua armaria e vá com os outros operativos até sua [color=cyan]nave.[/color]
+  Pegue um [bold]propulsor[/bold] na sua armaria e vá com os outros operativos até sua [color=cyan]nave.[/color]
   Entre outras coisas que você pode precisar, encontrará um [bold]computador de IFF[/bold] na nave. Ele permite que você se esconda de outras naves e scanners de massa quando [italic]Mostrar IFF[/italic] e [italic]Mostrar Nave[/italic] estão desativados.
 
-  Quando todos estiverem prontos, use o FTL para chegar à estação e voar até ela com um jetpack. Não esqueça o código, seus rastreadores e a bomba se estiverem levando-a.
+  Quando todos estiverem prontos, use o FTL para chegar à estação e voar até ela com um propulsor. Não esqueça o código, seus rastreadores e a bomba se estiverem levando-a.
 
   <Box>
     <GuideEntityEmbed Entity="JetpackBlack"/>
@@ -112,12 +112,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   O [color=#00ff00]vencedor[/color] da rodada é anunciado na tela de fim de rodada, junto com a escala de sua vitória.
 
-  [bold][color=red]Grande Vitória do Syndicate![/color][/bold]
+  [bold][color=red]Grande Vitória do Sindicato![/color][/bold]
   - A bomba detona na estação.
   - A tripulação escapa na evacuação, mas a bomba ainda está armada.
   - A bomba é armada e entregue ao Comando Central na nave de evacuação.
 
-  [bold][color=red]Pequena Vitória do Syndicate[/color][/bold]
+  [bold][color=red]Pequena Vitória do Sindicato[/color][/bold]
   - A tripulação escapa, mas todos os operativos sobrevivem.
   - A tripulação escapa e alguns operativos morrem, mas a tripulação perde o disco.
 

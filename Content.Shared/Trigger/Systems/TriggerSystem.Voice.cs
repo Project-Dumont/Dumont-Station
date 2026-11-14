@@ -27,11 +27,11 @@ public sealed partial class TriggerSystem
 
     private void OnVoiceExamine(Entity<TriggerOnVoiceComponent> ent, ref ExaminedEvent args)
     {
-        if (args.IsInDetailsRange)
+        if (ent.Comp.ShowExamine && args.IsInDetailsRange)
         {
             args.PushText(string.IsNullOrWhiteSpace(ent.Comp.KeyPhrase)
-                ? Loc.GetString("trigger-on-voice-uninitialized")
-                : Loc.GetString("trigger-on-voice-examine", ("keyphrase", ent.Comp.KeyPhrase)));
+                ? Loc.GetString(ent.Comp.InspectUninitializedLoc)
+                : Loc.GetString(ent.Comp.InspectInitializedLoc, ("keyphrase", ent.Comp.KeyPhrase)));
         }
     }
     private void OnListen(Entity<TriggerOnVoiceComponent> ent, ref ListenEvent args)
@@ -71,13 +71,13 @@ public sealed partial class TriggerSystem
 
     private void OnVoiceGetAltVerbs(Entity<TriggerOnVoiceComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess)
+        if (!ent.Comp.ShowVerbs || !args.CanInteract || !args.CanAccess)
             return;
 
         var user = args.User;
         args.Verbs.Add(new AlternativeVerb
         {
-            Text = Loc.GetString(ent.Comp.IsRecording ? "trigger-on-voice-stop" : "trigger-on-voice-record"),
+            Text = Loc.GetString(ent.Comp.IsRecording ? "trigger-on-voice-stop" : ent.Comp.StartRecordingVerb),
             Act = () =>
             {
                 if (ent.Comp.IsRecording)
@@ -85,6 +85,7 @@ public sealed partial class TriggerSystem
                 else
                     StartRecording(ent, user);
             },
+            Message = ent.Comp.RecordingVerbMessage is {} message ? Loc.GetString(message) : null,
             Priority = 1
         });
 

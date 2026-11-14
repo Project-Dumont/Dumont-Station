@@ -1,5 +1,5 @@
 traitor-corporations-dataset-1 = CyberSun Industries
-traitor-corporations-dataset-2 = Gorlex Marauders
+traitor-corporations-dataset-2 = Saqueadores Gorlex
 traitor-corporations-dataset-3 = MI13
 traitor-corporations-dataset-4 = Corporação Caramelo # Gaby lore
 traitor-corporations-dataset-5 = S.E.L.F.

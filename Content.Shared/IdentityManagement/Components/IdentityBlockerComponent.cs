@@ -41,6 +41,8 @@ public sealed class SeeIdentityAttemptEvent : CancellableEntityEventArgs, IInven
     // i.e. masks, helmets, or glasses.
     public SlotFlags TargetSlots => SlotFlags.MASK | SlotFlags.HEAD | SlotFlags.EYES | SlotFlags.OUTERCLOTHING;
 
+    public string? NameOverride;
+
     // cumulative coverage from each relayed slot
     public IdentityBlockerCoverage TotalCoverage = IdentityBlockerCoverage.NONE;
 }

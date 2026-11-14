@@ -26,3 +26,21 @@ book-text-ame-scribbles = I don't know if you're trained already, so I hope this
       The golden rule is 2 injection for every 1 core. You can go lower to save fuel.
       Higher will burn the engine out and eventually make it explode. Don't.
       Don't forget to refuel it, it tends to stop at the worst possible time.
+
+book-text-combat-bakery-kit = Obrigado por escolher nosso kit de padaria de combate!
+    Incluímos dois (2) croissants de arremesso patenteados pela Cybersun e uma (1) espada de baguete com patente pendente.
+    A placa de micro-ondas Donk Co. permite construir um micro-ondas capaz de assar mais armas.
+    Assim como as armas assadas, coma este bilhete após o uso. Boa sorte, agente.
+
+    Receita de espada de baguete:
+    Massa x 1
+    Sal 5u
+    Pimenta 5u
+    Haste de metal x 1
+    Tempo de preparo: 15 segundos
+
+    Receita de croissant de arremesso:
+    Croissant cru x 1
+    Fatia de manteiga x 1
+    Caco de vidro x 1
+    Tempo de preparo: 5 segundos

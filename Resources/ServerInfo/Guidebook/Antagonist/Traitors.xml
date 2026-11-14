@@ -24,19 +24,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
   </Box>
-  Traidores são antagonistas empregados pelo [color=#ff0000]Syndicate[/color]. Você é um agente adormecido que tem acesso a várias ferramentas e armas através do seu [bold]uplink[/bold].
-  Você também recebe [bold]código de palavras[/bold] para identificar outros agentes, e uma equipe coordenada de traidores pode ter [italic]resultados brutais[/italic].
+  Traidores são antagonistas empregados pelo [color=#ff0000]Sindicato[/color]. Você é um agente adormecido que tem acesso a várias ferramentas e armas através do seu [bold]uplink[/bold].
+  Você também recebe [bold]palavras-código[/bold] para identificar outros agentes, e uma equipe coordenada de traidores pode ter [italic]resultados brutais[/italic].
 
-  Qualquer pessoa, além dos [textlink="department heads" link="Command"] ou membros da [textlink="Security" link="Security"], pode ser um traidor.
+  Qualquer pessoa, além dos [textlink="chefes de departamento" link="Command"] ou membros da [textlink="Segurança" link="Security"], pode ser um traidor.
 
-  ## Uplink & Ativação
+  ## Uplink e ativação
   O [color=cyan]uplink[/color] é a sua ferramenta mais importante como traidor. Você pode trocar os 20 [color=red]telecristais[/color] (TC) com os quais você começa por itens que ajudarão com seus objetivos.
 
   Ao pressionar [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], você verá o código pessoal do seu uplink. [bold]Definir o toque do seu PDA como esse código abrirá o uplink.[/bold]
-  Pressionar [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color] também permite que você veja seus objetivos e os códigos de palavras.
+  Pressionar [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color] também permite que você veja seus objetivos e os palavras-código.
 
   Se você não tiver um PDA quando for ativado, um [color=cyan]implante uplink[/color] será fornecido [bold]pelo preço completo de [color=red]TC[/color] do implante.[/bold]
-  Ele pode ser acessado a partir da sua barra de atalhos.
+  Ele pode ser acessado a partir da sua barra de ações.
   <Box>
     <GuideEntityEmbed Entity="PassengerPDA" Caption="PDA"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Telecristais"/>
@@ -58,7 +58,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   As compras que você fizer devem ajudar com seus objetivos. Alguns equipamentos podem não ser úteis para você, e você terá que escolher entre ser sorrateiro ou ir para a agressão.
 
   ## Coordenação
-  Códigos de palavras são palavras ou frases que todo traidor conhecerá. Eles fornecem uma maneira discreta de identificar ou estabelecer contato com um traidor colega, o que pode ser útil se seus objetivos inclur [italic][color=cyan]ajudar eles com seus objetivos.[/color][/italic]
+  Palavras-código são palavras ou frases que todo traidor conhecerá. Eles fornecem uma maneira discreta de identificar ou estabelecer contato com um traidor colega, o que pode ser útil se seus objetivos incluírem [italic][color=cyan]ajudar outros agentes com seus objetivos.[/color][/italic]
 
   Quando encontrar alguns amigos, [bold]você pode retirar [color=red]telecristais[/color] do seu uplink para dar a eles.[/bold] Eles podem colocar esses cristais em seus próprios uplinks para gastar por si mesmos.
 
@@ -67,54 +67,54 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Assassinato
   Um dos seus objetivos pode ser [italic][color=cyan]matar ou abandonar um membro da tripulação.[/color][/italic]
 
-  Você pode [color=cyan]abandonar[/color] seu alvo impedindo que ele chegue ao CentComm via o transporte de evacuação ou uma cápsula de fuga.
+  Você pode [color=cyan]abandonar[/color] seu alvo impedindo que ele chegue ao Central de Comando pela nave de evacuação ou uma cápsula de fuga.
 
-  Se não puder abandonar seu alvo ou ele for muito importante para deixar viver, terá que sujar as mãos e [color=cyan]matá-lo[/color]. Certifique-se de que seu alvo não esteja vivo quando o [bold]transporte de evacuação chegar ao CentComm,[/bold] e não deixe que ele seja reanimado.
+  Se não puder abandonar seu alvo ou ele for muito importante para deixar viver, terá que sujar as mãos e [color=cyan]matá-lo[/color]. Certifique-se de que seu alvo não esteja vivo quando o [bold]transporte de evacuação chegar ao Central de Comando,[/bold] e não deixe que ele seja reanimado.
 
-  Lembre-se, o Syndicate quer apenas que seus alvos morram. [color=red]Tente evitar assassinatos em massa ou danos significativos à estação,[/color] quanto mais vidas inocentes você tirar, mais responsabilidade você se torna.
+  Lembre-se, o Sindicato quer apenas que seus alvos morram. [color=red]Tente evitar assassinatos em massa ou danos significativos à estação,[/color] quanto mais vidas inocentes você tirar, maior será o risco que representa para a organização.
 
-  ## Evasão & Autoterminação
-  Seus objetivos podem exigir que você [italic][color=cyan]chegue ao CentComm sem ser morto ou capturado.[/color][/italic] Não deixe a [color=#cb0000]Segurança[/color] te impedir, complete seus outros objetivos e [bold]volte vivo.[/bold]
+  ## Fuga e autossacrifício
+  Seus objetivos podem exigir que você [italic][color=cyan]chegue ao Central de Comando sem ser morto ou capturado.[/color][/italic] Não deixe a [color=#cb0000]Segurança[/color] te impedir, complete seus outros objetivos e [bold]volte vivo.[/bold]
 
   Alternativamente, seus objetivos podem exigir que você [italic][color=cyan]morra uma morte gloriosa.[/color][/italic] [bold]Certifique-se de não voltar da morte,[/bold] ou você pode acordar algemado.
 
-  ## Apropriação
+  ## Roubo
   Mais frequentemente, você terá que [italic][color=cyan]roubar uma posse de um chefe de departamento.[/color][/italic]
 
   O alvo pode estar no seu escritório ou com ele. Pode ser necessário matar quem estiver carregando, caso você não consiga roubar sem ser percebido.
 
   Algumas das coisas que você pode ser encarregado são:
-  - Roubar o [color=yellow]Cartão de ID do Capitão[/color], [bold]pistola laser antiga[/bold], [bold]jetpack[/bold], ou [bold]disco de autenticação nuclear[/bold].
+  - Roubar o [color=yellow]Cartão de ID do Capitão[/color], [bold]pistola laser antiga[/bold], [bold]propulsor[/bold], ou [bold]disco de autenticação nuclear[/bold].
   <Box>
     <GuideEntityEmbed Entity="CaptainIDCard" Caption=""/>
     <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption=""/>
     <GuideEntityEmbed Entity="JetpackCaptainFilled" Caption=""/>
     <GuideEntityEmbed Entity="NukeDisk" Caption=""/>
   </Box>
-  - Roubar o [color=#5b97bc]Chefe Médico[/color]'s [bold]hiposspray[/bold] ou [bold]monitor de tripulação portátil[/bold].
+  - Roubar o [bold]hiposspray[/bold] ou o [bold]monitor portátil de tripulação[/bold] do [color=#5b97bc]médico-chefe[/color].
   <Box>
     <GuideEntityEmbed Entity="Hypospray" Caption=""/>
     <GuideEntityEmbed Entity="RapidSyringeGun" Caption=""/>
   </Box>
-  - Roubar o [color=#c96dbf]Diretor de Pesquisa[/color]'s [bold]traje experimental[/bold] ou [bold]teleportador manual[/bold].
+  - Roubar o [bold]traje experimental[/bold] ou o [bold]teletransportador portátil[/bold] do [color=#c96dbf]diretor de pesquisa[/color].
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption=""/>
     <GuideEntityEmbed Entity="HandTeleporter" Caption=""/>
   </Box>
-  - Roubar o [color=#cb0000]Chefe de Segurança[/color]'s [bold]espingarda de energia[/bold].
+  - Roubar a [bold]escopeta de energia[/bold] do [color=#cb0000]chefe de segurança[/color].
   <Box>
     <GuideEntityEmbed Entity="WeaponEnergyGunMultiphase" Caption=""/>
     <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption=""/>
   </Box>
-  - Roubar o [color=#f39f27]Chefe de Engenharia[/color]'s [bold]botas magnéticas avançadas[/bold].
+  - Roubar as [bold]botas magnéticas avançadas[/bold] do [color=#f39f27]engenheiro-chefe[/color].
   <Box>
     <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
   </Box>
-  - Roubar o [color=#b18644]Mestre de Armazém[/color]'s [bold]placa digital de requisição[/bold].
+  - Roubar a [bold]prancheta de requisições[/bold] do [color=#b18644]mestre de carga[/color].
   <Box>
     <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption=""/>
   </Box>
-  - Matar Ian, o [color=#9fed58]Chefe de Pessoal[/color]'s cachorro, e obter a [bold]carne de corgi[/bold].
+  - Matar Ian, o cachorro do [color=#9fed58]chefe de pessoal[/color], e obter sua [bold]carne de corgi[/bold].
   <Box>
     <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>

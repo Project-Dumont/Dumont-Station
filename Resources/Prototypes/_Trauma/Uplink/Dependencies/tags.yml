@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+## S ##
+
+- type: Tag
+  id: Scimitar # Used for scabbad whitelist
+
+- type: Tag
+  id: UtilityKnife # Storage whitelist: BaseClothingBeltEngineering, BountyKnife
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Ammo for the Leviathan rocket launcher
+- type: Tag
+  id: CartridgeBazooka

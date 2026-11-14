@@ -9,6 +9,19 @@ namespace Content.Shared.Trigger.Components.Triggers;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class TriggerOnVoiceComponent : BaseTriggerOnXComponent
 {
+    [DataField, AutoNetworkedField]
+    public bool ShowVerbs = true;
+    [DataField, AutoNetworkedField]
+    public bool ShowExamine = true;
+    [DataField]
+    public LocId StartRecordingVerb = "trigger-on-voice-record";
+    [DataField]
+    public LocId? RecordingVerbMessage;
+    [DataField]
+    public LocId InspectUninitializedLoc = "trigger-on-voice-uninitialized";
+    [DataField]
+    public LocId InspectInitializedLoc = "trigger-on-voice-examine";
+
     /// <summary>
     /// Whether or not the component is actively listening at the moment.
     /// </summary>

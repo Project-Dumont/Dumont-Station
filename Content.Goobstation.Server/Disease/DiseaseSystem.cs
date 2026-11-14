@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Rejuvenate;
+using Content.Trauma.Shared.Disease;
 using Content.Goobstation.Shared.Disease;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -20,8 +21,10 @@ namespace Content.Goobstation.Server.Disease;
 
 public sealed partial class DiseaseSystem : SharedDiseaseSystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ContainerSystem _container = default!;
+
+    [Dependency] private DnaTargetDiseaseSystem _dnaTargets = default!;
 
     public override void Initialize()
     {
@@ -37,6 +40,7 @@ public sealed partial class DiseaseSystem : SharedDiseaseSystem
 
     private void OnClonedInto(Entity<DiseaseComponent> ent, ref DiseaseCloneEvent args)
     {
+        _dnaTargets.CopyTargets(args.Source.Owner, ent.Owner);
         foreach (var effectUid in args.Source.Comp.Effects.ContainedEntities)
         {
             if (!EffectQuery.TryComp(effectUid, out var effectComp) || MetaData(effectUid).EntityPrototype == null)
