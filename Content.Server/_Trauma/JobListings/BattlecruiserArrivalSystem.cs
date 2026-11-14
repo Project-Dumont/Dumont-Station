@@ -59,7 +59,7 @@ public sealed partial class BattlecruiserArrivalSystem : EntitySystem
             if (announcement.Message is { } message)
             {
                 _chat.DispatchGlobalAnnouncement(Loc.GetString(message),
-                    Loc.GetString("battlecruiser-announcement-sender"), playSound: false, colorOverride: Color.Red);
+                    Loc.GetString(announcement.Sender), playSound: false, colorOverride: Color.Red);
             }
 
             var players = Filter.Empty().AddWhere(_ticker.UserHasJoinedGame);

@@ -16,13 +16,15 @@
       music:
         path: /Audio/_Dumont/Battlecruiser/goons_with_a_warhead.ogg
         params:
-          volume: -6
+          volume: -7
     - offset: 180
       message: battlecruiser-announcement-ship
+      sender: battlecruiser-announcement-saae-sender
       sound:
         path: /Audio/_Dumont/Battlecruiser/saae_ship.ogg
     - offset: 240
       message: battlecruiser-announcement-team
+      sender: battlecruiser-announcement-saae-sender
       sound:
         path: /Audio/_Dumont/Battlecruiser/saae_team.ogg
   - type: StationEvent

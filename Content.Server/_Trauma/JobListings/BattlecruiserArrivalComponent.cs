@@ -31,6 +31,9 @@ public sealed partial class BattlecruiserAnnouncement
     public LocId? Message;
 
     [DataField]
+    public LocId Sender = "battlecruiser-announcement-sender";
+
+    [DataField]
     public SoundSpecifier? Sound;
 
     [DataField]
