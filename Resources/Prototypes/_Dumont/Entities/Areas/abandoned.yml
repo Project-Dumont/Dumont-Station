@@ -1,0 +1,99 @@
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedBoxingRing
+  name: abandoned boxing ring
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_boxing_ring
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedViro
+  name: abandoned viro
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_viro
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedAtmos
+  name: abandoned atmos
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_atmos
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedHydro
+  name: abandoned hydro
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_hydro
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedEngineering
+  name: abandoned engineering
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_engineer
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedCargo
+  name: abandoned cargo
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_cargo
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedSec
+  name: abandoned sec
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_sec
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedGamble
+  name: abandoned gambling den
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_gambling_den
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedGaming
+  name: abandoned gaming den
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_gaming_den
+
+- type: entity
+  parent: BaseAreaAbandoned
+  id: AreaAbandonedMarket
+  name: abandoned market den
+  suffix: AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: abandoned_market_den

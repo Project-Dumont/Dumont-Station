@@ -1,0 +1,359 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/tree/master/icons/area. Some made by CRISOOOOO (github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "abandoned_atmos"
+    },
+    {
+      "name": "abandoned_boxing_ring"
+    },
+    {
+      "name": "abandoned_cargo"
+    },
+    {
+      "name": "abandoned_engineer"
+    },
+    {
+      "name": "abandoned_gambling_den"
+    },
+    {
+      "name": "abandoned_gaming_den"
+    },
+    {
+      "name": "abandoned_hydro"
+    },
+    {
+      "name": "abandoned_market_den"
+    },
+    {
+      "name": "abandoned_sec"
+    },
+    {
+      "name": "abandoned_viro"
+    },
+    {
+      "name": "admin_assist_office"
+    },
+    {
+      "name": "ame_room"
+    },
+    {
+      "name": "atmos_locker"
+    },
+    {
+      "name": "atmos_reception"
+    },
+    {
+      "name": "atmos_storage"
+    },
+    {
+      "name": "bitrun"
+    },
+    {
+      "name": "botany_backroom"
+    },
+    {
+      "name": "bridge_lobby"
+    },
+    {
+      "name": "captain_private"
+    },
+    {
+      "name": "cargo_break"
+    },
+    {
+      "name": "cargo_hallway"
+    },
+    {
+      "name": "cargo_locker"
+    },
+    {
+      "name": "cargo_reception"
+    },
+    {
+      "name": "cargo_storage"
+    },
+    {
+      "name": "cargo_tele"
+    },
+    {
+      "name": "cargo_warehouse"
+    },
+    {
+      "name": "ce_private"
+    },
+    {
+      "name": "chapel_funeral"
+    },
+    {
+      "name": "chapel_storage"
+    },
+    {
+      "name": "chem_storage"
+    },
+    {
+      "name": "clinic"
+    },
+    {
+      "name": "clown"
+    },
+    {
+      "name": "cmo_private"
+    },
+    {
+      "name": "command_break"
+    },
+    {
+      "name": "command_storage"
+    },
+    {
+      "name": "containment_field"
+    },
+    {
+      "name": "dignitary_office"
+    },
+    {
+      "name": "dorm_five"
+    },
+    {
+      "name": "dorm_four"
+    },
+    {
+      "name": "dorm_one"
+    },
+    {
+      "name": "dorm_six"
+    },
+    {
+      "name": "dorm_three"
+    },
+    {
+      "name": "dorm_two"
+    },
+    {
+      "name": "eng_hallway"
+    },
+    {
+      "name": "eng_locker"
+    },
+    {
+      "name": "eng_reception"
+    },
+    {
+      "name": "eng_tele"
+    },
+    {
+      "name": "entertainment"
+    },
+    {
+      "name": "game_room"
+    },
+    {
+      "name": "gas_turbine"
+    },
+    {
+      "name": "genpop"
+    },
+    {
+      "name": "gso_office"
+    },
+    {
+      "name": "heater"
+    },
+    {
+      "name": "hfr_room"
+    },
+    {
+      "name": "hop_private"
+    },
+    {
+      "name": "hopline"
+    },
+    {
+      "name": "hos_private"
+    },
+    {
+      "name": "left_tram"
+    },
+    {
+      "name": "library_gallery"
+    },
+    {
+      "name": "library_gallery_private"
+    },
+    {
+      "name": "library_lounge"
+    },
+    {
+      "name": "locker_room"
+    },
+    {
+      "name": "med_exam_room"
+    },
+    {
+      "name": "med_hallway"
+    },
+    {
+      "name": "med_locker"
+    },
+    {
+      "name": "med_reception"
+    },
+    {
+      "name": "med_tele"
+    },
+    {
+      "name": "medbay_central"
+    },
+    {
+      "name": "mid_tram"
+    },
+    {
+      "name": "mime"
+    },
+    {
+      "name": "mini_bar"
+    },
+    {
+      "name": "mining"
+    },
+    {
+      "name": "musician"
+    },
+    {
+      "name": "nuclear_reactor"
+    },
+    {
+      "name": "pa_room"
+    },
+    {
+      "name": "ptl_room"
+    },
+    {
+      "name": "qm_private"
+    },
+    {
+      "name": "radio_studio"
+    },
+    {
+      "name": "rd_private"
+    },
+    {
+      "name": "right_tram"
+    },
+    {
+      "name": "sci_tele"
+    },
+    {
+      "name": "sci_gas_storage"
+    },
+    {
+      "name": "sci_hallway"
+    },
+    {
+      "name": "sci_locker"
+    },
+    {
+      "name": "sci_ordnance_boom"
+    },
+    {
+      "name": "sci_ordnance_launch"
+    },
+    {
+      "name": "sci_reception"
+    },
+    {
+      "name": "sci_research"
+    },
+    {
+      "name": "sci_storage"
+    },
+    {
+      "name": "sec_break"
+    },
+    {
+      "name": "sec_evidence"
+    },
+    {
+      "name": "sec_hallway"
+    },
+    {
+      "name": "sec_holding_cell"
+    },
+    {
+      "name": "sec_labor_process"
+    },
+    {
+      "name": "sec_lobby"
+    },
+    {
+      "name": "sec_point_arrival"
+    },
+    {
+      "name": "sec_point_eng"
+    },
+    {
+      "name": "sec_point_evac"
+    },
+    {
+      "name": "sec_point_med"
+    },
+    {
+      "name": "sec_point_sci"
+    },
+    {
+      "name": "sec_point_supply"
+    },
+    {
+      "name": "sec_processing"
+    },
+    {
+      "name": "sec_reception"
+    },
+    {
+      "name": "sec_storage"
+    },
+    {
+      "name": "sec_tele"
+    },
+    {
+      "name": "service"
+    },
+    {
+      "name": "service_break"
+    },
+    {
+      "name": "service_hallway"
+    },
+    {
+      "name": "service_tele"
+    },
+    {
+      "name": "solar_control"
+    },
+    {
+      "name": "space_hut"
+    },
+    {
+      "name": "vacant_office"
+    },
+    {
+      "name": "viro_isolate"
+    },
+    {
+      "name": "vox_box"
+    },
+    {
+      "name": "zoo"
+    },
+    {
+      "name": "zookeeper"
+    }
+  ]
+}

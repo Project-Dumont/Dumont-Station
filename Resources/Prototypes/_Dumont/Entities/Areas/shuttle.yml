@@ -1,0 +1,189 @@
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttle
+  name: shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttlePod
+  name: pod
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: pod
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleVisitant
+  name: visitant shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: visitant_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleMining
+  name: mining shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state:  mining_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleLabor
+  name: labor shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: labor_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleCivilian
+  name: civilian shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: civilian_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleExplorer
+  name: exploring shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: explorer_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleArrivals
+  name: arrivals shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: arrivals_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvac
+  name: evac shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleCargo
+  name: cargo shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: cargo_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleCentcomm
+  name: centcomm shuttle
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: centcomm_shuttle
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacSec
+  name: evac shuttle sec
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_sec
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacCommand
+  name: evac shuttle command
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_command
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacMed
+  name: evac shuttle med
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_med
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacSci
+  name: evac shuttle sci
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_sci
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacEng
+  name: evac shuttle eng
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_eng
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacCargo
+  name: evac shuttle cargo
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_cargo
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleEvacService
+  name: evac shuttle service
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: evac_shuttle_service
+
+- type: entity
+  parent: BaseAreaShuttle
+  id: AreaShuttleTram
+  name: tram
+  suffix: AreaShuttle
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/shuttle.rsi
+    state: tram

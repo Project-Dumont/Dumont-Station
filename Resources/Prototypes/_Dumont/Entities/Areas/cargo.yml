@@ -1,0 +1,89 @@
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoStorage
+  name: cargo storage
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_storage
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoTele
+  name: cargo teleporter
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_tele
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoHallway
+  name: cargo hallway
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_hallway
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoLocker
+  name: cargo locker
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_locker
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoWarehouse
+  name: cargo warehouse
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_warehouse
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoBreak
+  name: cargo break
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_break
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoReception
+  name: cargo reception
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cargo_reception
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoBitrun
+  name: bitrun
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: bitrun
+
+- type: entity
+  parent: BaseAreaCargo
+  id: AreaCargoMining
+  name: mining
+  suffix: AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: mining
