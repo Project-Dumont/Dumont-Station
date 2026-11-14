@@ -48,6 +48,9 @@
   components:
   - type: ChangelingRule
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 25 # Dumont - Murderbone when lowpop
   - type: AntagRandomObjectives
     sets:
@@ -236,6 +239,9 @@
   - type: MindshieldRemovingAntag
   # Dumont end
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 30
   - type: RevolutionaryRule
   - type: AntagSelection
@@ -282,6 +288,9 @@
   components:
   - type: BlobRule
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 30
     chaosScore: 1500
   - type: AntagSelection
@@ -406,6 +415,9 @@
   components:
   - type: DevilRule
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 15
   - type: AntagObjectives
     objectives:
@@ -432,6 +444,9 @@
   id: OopsAllThieves
   components:
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 30
     chaosScore: 1200
   - type: AntagSelection
