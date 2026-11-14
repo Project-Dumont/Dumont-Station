@@ -1,0 +1,57 @@
+- type: entity
+  id: DumontXenomorphTremorEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.2
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/xeno_selfstomp.rsi
+    state: stomp
+    noRot: true
+
+- type: entity
+  id: DumontXenomorphTunnel
+  name: xenomorph tunnel
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_tunnel.rsi
+    state: hole
+    noRot: true
+    drawdepth: FloorObjects
+  - type: Clickable
+  - type: InteractionOutline
+  - type: XenomorphTunnel
+  - type: ContainerContainer
+    containers:
+      xenomorph_tunnel: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.XenomorphTunnelUiKey.Destination:
+        type: XenomorphTunnelBoundUserInterface
+      enum.XenomorphTunnelUiKey.Rename:
+        type: XenomorphTunnelBoundUserInterface
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Resin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  id: DumontXenomorphTrapAcid
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid2-strong
+    drawdepth: Effects
+  - type: XenomorphTrapAcid
+  - type: TimedDespawn
+    lifetime: 3

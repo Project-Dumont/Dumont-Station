@@ -40,6 +40,9 @@ public sealed partial class PinpointerComponent : Component
     [DataField]
     public EntityWhitelist? Blacklist;
 
+    [DataField]
+    public bool IgnoreDeadTargets;
+
     [DataField("mediumDistance"), ViewVariables(VVAccess.ReadWrite)]
     public float MediumDistance = 16f;
 
