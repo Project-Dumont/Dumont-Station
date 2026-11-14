@@ -16,6 +16,7 @@ using Content.Shared._Funkystation.Atmos.Visuals;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
 
+
 namespace Content.Server._Funkystation.Atmos.Portable;
 
 public sealed class ElectrolyzerSystem : EntitySystem
