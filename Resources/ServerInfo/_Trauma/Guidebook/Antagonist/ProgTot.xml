@@ -1,0 +1,93 @@
+<Document>
+  # Contratos do traidor
+  <Box>
+    <GuideEntityEmbed Entity="MobHumanSyndicateAgentBase" Caption="Urist McEvil diz:"/>
+    [italic]"Quer fazer seu nome? Comece instalando esta escuta no escritório do médico-chefe..."[/italic]
+  </Box>
+
+  Compre o [bold]Kit de contratos[/bold] por [bold]50 TC[/bold] na categoria Contratos do uplink para desbloquear o painel.
+
+  Cada contrato oferece um objetivo extra com uma recompensa em telecristais ou equipamentos do uplink. Concluir contratos aumenta sua reputação no Sindicato e libera serviços mais difíceis e recompensadores.
+
+  ## Como funciona
+  O painel oferece até [bold]quatro contratos[/bold] ao mesmo tempo. Você pode aceitar até [bold]dois[/bold].
+
+  Ao aceitar um contrato que exige ferramentas especiais, elas aparecem nas suas mãos ou caem aos seus pés.
+
+  Os contratos aceitos mostram uma barra de progresso. Quando o objetivo estiver concluído, clique em [bold]Receber[/bold] para ganhar a recompensa e a reputação.
+
+  Você pode cancelar contratos aceitos. Após cancelar ou receber a recompensa, use [bold]Renovar ofertas[/bold] para preencher as vagas do painel.
+
+  Renovar remove todas as ofertas ainda não aceitas e gera novas. Os contratos aceitos continuam no painel.
+
+  Você ganha uma renovação a cada [bold]dez minutos[/bold] e uma renovação extra ao conquistar um novo título.
+
+  ## Títulos
+  - [bold]Zé-ninguém[/bold] — de 0 a 99 de reputação.
+  - [bold]Bandido em ascensão[/bold] — de 100 a 499.
+  - [bold]Manchete de jornal[/bold] — de 500 a 1.999.
+  - [bold]Presença aterrorizante[/bold] — de 2.000 a 9.999.
+  - [bold]Lenda viva[/bold] — a partir de 10.000.
+
+  Para conquistar o último título, você precisa concluir o contrato final.
+
+  ## Instalar uma escuta
+  <Box>
+    <GuideEntityEmbed Entity="SyndicateBug" Caption=""/>
+  </Box>
+  Disponível desde o primeiro título.
+
+  [bold]Recompensa[/bold] 100 de reputação e 7 TC ou um equipamento do uplink.
+
+  Aceite o contrato e leve a escuta ao escritório indicado. Use uma chave inglesa para fixá-la no local correto. Você precisa instalar a escuta pessoalmente para concluir o serviço.
+
+  O contrato exige a instalação. A remoção posterior da escuta não desfaz o progresso.
+
+  ## Roubar tecnologia
+  <Box>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
+  </Box>
+  Disponível a partir de Bandido em ascensão.
+
+  [bold]Recompensa[/bold] 200 de reputação e 10 TC ou um equipamento do uplink.
+
+  Ao aceitar o contrato, você recebe um analisador configurado para o item indicado. Roube o item, encontre um lugar discreto e use o analisador nele.
+
+  Você precisa realizar o escaneamento pessoalmente. Depois disso, receba a recompensa. O destino do item deixa de importar para o contrato.
+
+  Use luvas e descarte o analisador com cuidado para evitar deixar provas.
+
+  ## Assassinar um alvo
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption=""/>
+  </Box>
+  Disponível a partir de Bandido em ascensão.
+
+  [bold]Recompensa[/bold] 200 de reputação e 10 TC ou um equipamento do uplink.
+
+  Mate a pessoa indicada e receba sua recompensa. O alvo precisa estar morto. Estar em estado crítico é insuficiente.
+
+  Se o alvo for ressuscitado depois de você receber a recompensa, o contrato continua concluído.
+
+  ## Assassinar um chefe
+  <Box>
+    <GuideEntityEmbed Entity="WeaponSubMachineGunC20r" Caption=""/>
+  </Box>
+  Disponível a partir de Manchete de jornal.
+
+  [bold]Recompensa[/bold] 500 de reputação e 15 TC ou um equipamento do uplink.
+
+  Mate o chefe de departamento indicado. As condições são as mesmas do contrato de assassinato comum.
+
+  ## Convocar o cruzador do Sindicato
+  <Box>
+    <GuideEntityEmbed Entity="SyndicateFinalReward" Caption=""/>
+  </Box>
+  Disponível a partir de Presença aterrorizante.
+
+  [bold]Recompensa[/bold] 10.000 de reputação e o prêmio de reconhecimento vitalício do Sindicato.
+
+  Use o transmissor fornecido no console de comunicações ligado e conclua a transmissão para convocar um cruzador de batalha com operadores nucleares.
+
+  Prepare-se para as consequências. A chegada do cruzador representa uma ameaça para toda a estação.
+</Document>

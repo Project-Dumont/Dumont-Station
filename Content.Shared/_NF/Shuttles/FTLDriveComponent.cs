@@ -10,6 +10,9 @@ namespace Content.Shared._NF.Shuttles;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class FTLDriveComponent : Component
 {
+    [DataField]
+    public float? MassLimit; // Dumont
+
     [DataField, AutoNetworkedField]
     public FTLDriveData Data = new (SharedShuttleSystem.FTLRange, false);
 }
