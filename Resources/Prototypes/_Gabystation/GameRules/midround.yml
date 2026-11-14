@@ -12,7 +12,9 @@
     minimumPlayers: 30
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -54,7 +56,9 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -99,7 +103,9 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -145,7 +151,9 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -227,7 +235,9 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null
     occursDuringRoundEnd: false
     chaos:

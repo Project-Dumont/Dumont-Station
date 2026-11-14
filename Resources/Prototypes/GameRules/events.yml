@@ -258,7 +258,9 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Gabystation/Announcements/anomaly_spawn_saae.ogg
+      collection: SaaeAnomalySpawn # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -281,7 +283,9 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Gabystation/Announcements/bluespace_saae.ogg
+      collection: SaaeArtifact # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -312,7 +316,9 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/_Gabystation/Announcements/breaker_saae.ogg
+      path: /Audio/_Dumont/Announcements/breaker_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 7
     duration: 1
     minimumPlayers: 15
@@ -331,7 +337,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/burocratico_saae.ogg
+      path: /Audio/_Dumont/Announcements/burocratic_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -350,7 +358,9 @@
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/clerigal_saae.ogg
+      path: /Audio/_Dumont/Announcements/burocratic_saae_2.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -612,10 +622,14 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
+      path: /Audio/_Dumont/Announcements/gasleak_on_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     endAnnouncement: station-event-gas-leak-end-announcement
     endAudio:
-      path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
+      path: /Audio/_Dumont/Announcements/gasleak_off_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 8
     chaos:
       Atmos: 100
@@ -633,7 +647,9 @@
   - type: StationEvent
     startAnnouncement: station-event-kudzu-growth-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/kudzu_saae.ogg
+      path: /Audio/_Dumont/Announcements/kudzu_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 15
     minimumPlayers: 15
     weight: 3.5 # Not very interessting to be common
@@ -656,7 +672,9 @@
     weight: 3
     startAnnouncement: station-event-power-grid-check-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/power_off_saae.ogg
+      path: /Audio/_Dumont/Announcements/power_off_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     endAnnouncement: station-event-power-grid-check-end-announcement
     duration: 60
     maxDuration: 120
@@ -674,10 +692,14 @@
     weight: 6
     startAnnouncement: station-event-solar-flare-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
+      collection: SaaeSolarFlare # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     endAnnouncement: station-event-solar-flare-end-announcement
     endAudio:
-      path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
+      path: /Audio/_Dumont/Announcements/solarflare_una_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -709,7 +731,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/scrubbers_saae.ogg
+      path: /Audio/_Dumont/Announcements/scrubbers_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -733,7 +757,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
+      path: /Audio/_Dumont/Announcements/vent_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -757,7 +783,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
+      path: /Audio/_Dumont/Announcements/vent_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -783,7 +811,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
+      path: /Audio/_Dumont/Announcements/vent_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -806,7 +836,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
+      path: /Audio/_Dumont/Announcements/vent_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 3 # Goobstation - was 1.5
@@ -830,7 +862,9 @@
   - type: StationEvent
     startAnnouncement: station-event-zombie-outbreak-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/zombie_saae.ogg
+      path: /Audio/_Dumont/Announcements/zombie_outbreak_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
@@ -935,7 +969,9 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+      path: /Audio/_Dumont/Announcements/intercept_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     eventType: HostilesSpawn # Goobstation
@@ -986,7 +1022,9 @@
   - type: StationEvent
     startAnnouncement: station-event-ion-storm-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/ionstorm_saae.ogg
+      path: /Audio/_Dumont/Announcements/ions_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
@@ -1024,8 +1062,6 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/_Gabystation/Announcements/greytide_saae.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

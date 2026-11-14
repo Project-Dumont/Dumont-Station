@@ -21,6 +21,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Saae;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -39,13 +40,14 @@ namespace Content.Server.StationEvents.Events;
 /// <summary>
 ///     An abstract entity system inherited by all station events for their behavior.
 /// </summary>
-public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
+public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent // Dumont
 {
     [Dependency] protected readonly IAdminLogManager AdminLogManager = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly StationSystem StationSystem = default!;
+    [Dependency] protected SaaeAnnouncerSystem Saae = default!; // Dumont
 
     protected ISawmill Sawmill = default!;
 
@@ -75,7 +77,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         }
         // Dumont end
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        Saae.Play(stationEvent.StartAudio, allPlayersInGame); // Dumont
     }
 
     /// <inheritdoc/>
@@ -112,9 +114,9 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
         if (stationEvent.EndAnnouncement != null)
-            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
+            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), sender: Loc.GetString("saae-announcement-sender"), playSound: false, colorOverride: stationEvent.EndAnnouncementColor); // Dumont
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        Saae.Play(stationEvent.EndAudio, allPlayersInGame); // Dumont
     }
 
     /// <summary>
