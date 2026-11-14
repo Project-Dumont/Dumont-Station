@@ -51,6 +51,107 @@
   - ModsuitPlatingExternal
 
 - type: latheRecipePack
+  id: ModsuitModules
+  recipes:
+  - ModsuitCoreStandard
+#  - ModsuitCorePlasma Dumont edit crashes the game
+  - ModsuitCoreStandardMicroreactor
+  - ModsuitModuleStorageCompact
+  - ModsuitModuleStorageLarge
+  - ModsuitModuleStorageBluespace
+#  - ModsuitModuleStorageHolding Dumont edit duplicate?
+#  - ModsuitModuleStorageCase Dumont edit why would you make this
+  - ModsuitModuleKinesis
+  - ModsuitModuleJointTorsion
+  - ModsuitModuleGloveTranslator
+#  - ModsuitModulePlasmaStabilizer Dumont edit doesnt do shit
+  - ModsuitModuleHatStabilizer
+  - ModsuitModuleRecycler
+#  - ModsuitModuleDonkRecycler Dumont edit i dont think this is working?
+  - ModsuitModuleFlashlight
+  - ModsuitModuleWelding
+  - ModsuitModuleThermalRegulator
+  - ModsuitModuleGps
+  - ModsuitModuleVisorDiagnostic
+  - ModsuitModuleReagentScanner
+
+
+- type: latheRecipePack
+  id: ModsuitEngineering
+  recipes:
+  - ModsuitPlatingEngineer
+  - ModsuitPlatingAtmostech
+  - ModsuitModuleMagboots
+  - ModsuitModuleTRay
+  - ModsuitModuleTether
+  - ModsuitModuleMister
+  - ModsuitModuleHeadProtector
+  - ModsuitModuleJetpack
+  - ModsuitModuleRadProtection
+  - ModsuitModuleResinMister
+  - ModsuitModuleAntiGravity
+  - ModsuitModuleJetpackAdvanced
+#  - ModsuitModuleMagbootsAdvanced
+  - ModsuitModuleJumpJet
+  - ModsuitModuleEmpShieldAdvanced
+
+- type: latheRecipePack
+  id: ModsuitMedical
+  recipes:
+  - ModsuitPlatingParamedic
+  - ModsuitModuleHealthAnalyzer
+  - ModsuitModuleVisorMedical
+#  - ModsuitModuleQuickCarry
+  - ModsuitModuleInjector
+  - ModsuitModuleDefibrillator
+  - ModsuitModulePatientTransport
+  - ModsuitModuleThreadRipper
+  - ModsuitModuleQuickCarryAdvanced
+  - ModsuitModuleNightVisor
+
+- type: latheRecipePack
+  id: ModsuitSecurity
+  recipes:
+  - ModsuitPlatingSecurity
+#  - ModsuitPlatingBrigMed
+  - ModsuitModuleVisorSecurity
+  - ModsuitModuleHolster
+  - ModsuitModuleMegaphone
+  - ModsuitModulePepperShoulders
+  - ModsuitModuleRestraintAssist
+#  - ModsuitModuleBulwark
+  - ModsuitModuleEmpShieldAdvanced
+  - ModsuitModuleThermalVisor
+  - ModsuitModuleNightVisor
+  - ModsuitModuleShockAbsorber
+  - ModsuitModuleCriminalCapture
+  - ModsuitModuleMagneticHarness
+  - ModsuitModuleProjectileDampener
+  - ModsuitModuleShootingAssistant
+
+- type: latheRecipePack
+  id: ModsuitService
+  recipes:
+  - ModsuitModuleBikeHorn
+  - ModsuitModuleWaddle
+  - ModsuitModuleJanitorMister
+  - ModsuitModuleMouthhole
+  - ModsuitModuleBurgerDispenser
+  - ModsuitModulePaperDispenser
+  - ModsuitModuleBalloonBlower
+#  - ModsuitModuleStamper crashes the game
+  - ModsuitModuleFishingGlove
+
+- type: latheRecipePack
+  id: ModsuitSupply
+  recipes:
+#  - ModsuitPlatingMining
+  - ModsuitModuleCandelaSpool
+  - ModsuitModuleDrill
+#  - ModsuitModuleOreBag
+  - ModsuitModuleClamp
+
+- type: latheRecipePack
   id: BorgModulesGoob
   recipes:
   - BorgModuleAdvancedSurgery

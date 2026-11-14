@@ -157732,7 +157732,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 58.5,-20.5
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 22685
     components:

@@ -159,6 +159,7 @@
   id: LockerFillQuarterMaster
   table: !type:AllSelector
     children:
+    - id: ModsuitPlatingLoader # Goob
     - id: BoxEncryptionKeyCargo
     - id: BoxFolderQmClipboard
     - id: CargoBountyComputerCircuitboard
@@ -219,9 +220,6 @@
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
     - id: CommandMegaphone # GabyStation
-      conditions:
-      - !type:PlayerCountCondition
-        max: 15
 #    - id: SecApartmentTablet # Dumont edit not the captain's job.
 
 # No laser table + Laser table
@@ -238,7 +236,7 @@
   id: FillCaptainHardsuit
   table: !type:AllSelector
     children:
-    - id: UndeterminedVoidsuitCaptain # Goobstation - Modsuit Update
+    - id: ClothingOuterHardsuitCap
     - id: ClothingMaskGasCaptain
     - id: JetpackCaptainFilled
     - id: OxygenTankFilled
@@ -504,7 +502,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingMaskBreath
-    - id: UndeterminedVoidsuitRD
+    - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
 
@@ -576,7 +574,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingMaskGasSwat
-    - id: UndeterminedVoidsuitHeadOfSecurity # Goob edit
+    - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
     - id: NitrogenTankFilled

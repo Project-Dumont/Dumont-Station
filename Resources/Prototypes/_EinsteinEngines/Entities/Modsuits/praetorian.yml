@@ -26,40 +26,54 @@
         - state: equipped-BACKPACK
         back-resomi:
         - state: equipped-BACKPACK-resomi
-    - type: ToggleableClothing
-      clothingPrototypes:
+    - type: ModSuit
+      theme: ModThemePraetorian
+      parts:
         head: ClothingModsuitHelmetPraetorian
         gloves: ClothingModsuitGauntletsPraetorian
         outerClothing: ClothingModsuitChestplatePraetorian
         shoes: ClothingModsuitBootsPraetorian
-    - type: ItemSlots
-      slots:
-        cell_slot:
-          name: power-cell-slot-component-slot-name-default
-          startingItem: PowerCellHyper
-          whitelist:
-            components:
-              - PowerCell
-        control_module: # GabyStation
-          name: modsuit-control-unit-module-slot
-          startingItem: ModsuitModuleBasicStorage
-          insertDelay: 1.0
-          ejectDelay: 0.5
-          whitelist:
-            tags:
-              - ModsuitControlUnitUpgrade
-    - type: SealableClothingVisuals
+      inbuiltModules:
+      - ModsuitModuleBuiltinFlashProtection
+      - ModsuitModuleBuiltinInsulation
+    - type: Construction
+      graph: Modsuit
+      node: praetorian
+    - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
         back:
         - state: equipped-BACKPACK-sealed
         back-resomi:
         - state: equipped-BACKPACK-sealed-resomi
-    - type: Storage
-      grid:
-      - 0,0,1,3
-      - 3,0,6,3
-      - 8,0,9,3
+
+- type: entity
+  parent: ClothingModsuitPraetorian
+  id: ClothingModsuitPraetorianFilled
+  suffix: Filled
+  components:
+    - type: ModSuit
+      theme: ModThemePraetorian
+      parts:
+        head: ClothingModsuitHelmetPraetorian
+        gloves: ClothingModsuitGauntletsPraetorian
+        outerClothing: ClothingModsuitChestplatePraetorian
+        shoes: ClothingModsuitBootsPraetorian
+      startingModules:
+      - ModsuitModuleStorageLarge
+      - ModsuitModuleFlashlight
+      - ModsuitModuleMagboots
+      inbuiltModules:
+      - ModsuitModuleBuiltinFlashProtection
+      - ModsuitModuleBuiltinInsulation
+    - type: ItemSlots
+      slots:
+        mod-core:
+          name: modsuit-core-slot-name
+          startingItem: ModsuitCoreStandardHyper
+          whitelist:
+            components:
+            - ModCore
 
 - type: entity
   parent: ClothingModsuitGauntletsStandard
@@ -70,7 +84,7 @@
   components:
     - type: Sprite
       sprite: _EinsteinEngines/Clothing/NanoTrasen/Modsuits/praetorian.rsi
-    - type: SealableClothingVisuals
+    - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
         gloves:
@@ -81,7 +95,6 @@
         - state: equipped-HAND-sealed-vox
         - state: equipped-HAND-sealed-unshaded-vox
           shader: unshaded
-    - type: Insulated # Goob Edit (WHY IS IT NOT INSULATED??)
 
 - type: entity
   parent: ClothingModsuitHelmetStandard
@@ -92,6 +105,8 @@
   components:
     - type: Clothing
       clothingVisuals:
+        head-feroxi:
+        - state: equipped-HEAD
         head:
         - state: equipped-HEAD
         head-resomi:
@@ -122,13 +137,16 @@
           Radiation: 0.5
           Heat: 0.5
           Caustic: 0.5
-    - type: FlashImmunity # Goobstation
     - type: FlashSoundSuppression # Goobstation
     - type: PointLight
       color: "#4d7ae3"
-    - type: SealableClothingVisuals
+    - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
+        head-feroxi:
+        - state: equipped-HEAD-sealed
+        - state: equipped-HEAD-sealed-unshaded
+          shader: unshaded
         head:
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
@@ -174,7 +192,7 @@
           Radiation: 0.5
           Heat: 0.45
           Caustic: 0.5
-    - type: SealableClothingVisuals
+    - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
         outerClothing:
@@ -207,7 +225,7 @@
     #- type: Tag - Dumont - It had to be from Goob.
     #  tags:
     #  - WhitelistChameleon
-    - type: SealableClothingVisuals
+    - type: ModSuitSealedVisuals
       spriteLayer: sealed
       clothingVisuals:
         shoes:
@@ -216,6 +234,9 @@
         - state: equipped-FEET-sealed-vox
         shoes-reptilian:
         - state: equipped-FEET-sealed-reptilian
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.9
 
 - type: entity
   id: SuitStoragePraetorian
@@ -225,5 +246,5 @@
     - type: StorageFill
       contents:
         - id: OxygenTankFilled
-        - id: ClothingModsuitPraetorian
+        - id: ClothingModsuitPraetorianFilled
         - id: ClothingMaskBreath

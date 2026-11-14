@@ -69956,7 +69956,7 @@ entities:
           - DoorBolt
         - - Middle
           - DoorBolt
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 4700
     components:

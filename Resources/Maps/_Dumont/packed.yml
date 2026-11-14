@@ -91449,7 +91449,7 @@ entities:
           - Forward
         - - Middle
           - Off
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 6091
     components:

@@ -108,6 +108,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Goobstation.Common.Cuffs; // Goob
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Logs;
@@ -732,6 +733,10 @@ namespace Content.Shared.Cuffs
 
             if (HasComp<StunnedComponent>(target))
                 cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
+
+            var cuffEv = new ModifyCuffDurationEvent(target, cuffTime); // Goob
+            RaiseLocalEvent(user, ref cuffEv); // Goob
+            cuffTime = cuffEv.Duration; // Goob
 
             if (HasComp<DisarmProneComponent>(target))
                 cuffTime = 0.0f; // cuff them instantly.

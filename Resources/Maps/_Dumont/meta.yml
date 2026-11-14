@@ -159769,7 +159769,7 @@ entities:
           - Reverse
         - - Middle
           - Off
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 22764
     components:

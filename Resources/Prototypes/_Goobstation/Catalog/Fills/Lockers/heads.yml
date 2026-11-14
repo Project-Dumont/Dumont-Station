@@ -61,7 +61,7 @@
     - id: NitrogenTankFilled
     - id: HandheldCrewMonitorBSO
     - id: BlueshieldUndeterminedWeapon
-    - id: BlueshieldUndeterminedHardsuit
+    - id: ClothingOuterHardsuitBlueshieldLight
     - id: FlashlightSeclite
     - id: ClothingShoesHighheelBootsCombat # Gabystation
 

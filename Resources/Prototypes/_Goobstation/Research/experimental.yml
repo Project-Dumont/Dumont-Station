@@ -47,10 +47,40 @@
   - ModsuitGauntlets
   - ModsuitShell
   - ModsuitPlatingExternal
-  - ModsuitModuleLargeStorageRecipe # GabyStation
+  - ModsuitCoreStandard
+  - ModsuitModuleStorageCompact
+#  - ModsuitModuleStorageCase
+  - ModsuitModuleFlashlight
   position: -4,-1
   technologyPrerequisites:
   - MagnetsTech
+
+- type: technology
+  id: ModsuitEquipmentTech
+  name: research-technology-modsuit-equipment
+  icon:
+    sprite: _Goobstation/Objects/Specific/Robotics/mod_modules.rsi
+    state: regulator
+  discipline: Experimental
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+#  - ModsuitCorePlasma dumont edit crashes the game
+  - ModsuitModuleStorageLarge
+  - ModsuitModuleWelding
+  - ModsuitModuleThermalRegulator
+  - ModsuitModuleGps
+  - ModsuitModuleVisorDiagnostic
+  - ModsuitModuleReagentScanner
+  - ModsuitModuleJointTorsion
+  - ModsuitModuleGloveTranslator
+#  - ModsuitModulePlasmaStabilizer dumont edit doesn't do shit
+  - ModsuitModuleHatStabilizer
+  - ModsuitModuleRecycler
+#  - ModsuitModuleDonkRecycler Dumont edit i dont think this is working?
+  position: -5,-2
+  technologyPrerequisites:
+  - ModsuitsTech
 
 - type: technology
   id: Xenobiology
