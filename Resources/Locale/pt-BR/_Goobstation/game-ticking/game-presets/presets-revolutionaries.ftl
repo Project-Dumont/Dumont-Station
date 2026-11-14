@@ -11,7 +11,7 @@ revolutionaries-win-announcement-shuttle-call =
 revolutionaries-win-announcement =
     De acordo com os relatórios dos nossos Chefes Revolucionários, o comando corporativo foi derrubado e tomamos o controle da estação.
 
-    A partir de agora a atual e fraca URSAL, que se curvou diante da paz, deixa de nos representar. Nós somos a verdadeira URSAL e vamos devolvê-la à sua glória original. Segundo nossos relatórios, diversas estações da Nanotrasen, do Sindicato e vários outros assentamentos já estão sob nosso controle. A Federação Trans-Solar será a próxima.
+    A partir de agora a atual e fraca URSAL, que se curvou diante da paz, deixa de nos representar. Nós somos a verdadeira URSAL e vamos devolvê-la à sua glória original. Segundo nossos relatórios, diversas estações da Nanotrasen, da Cybersun e vários outros assentamentos já estão sob nosso controle. A Federação Trans-Solar será a próxima.
 
     Viva la revolución!
 
