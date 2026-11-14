@@ -1,12 +1,15 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._EinsteinEngines.Language;
 using Content.Shared._White.Xenomorphs.Caste;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared._White.Xenomorphs.Xenomorph;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
 public sealed partial class XenomorphComponent : Component
 {
     [DataField(required: true)]
@@ -29,6 +32,9 @@ public sealed partial class XenomorphComponent : Component
 
     [ViewVariables]
     public bool OnWeed;
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan WeedHealBlockedUntil;
 
     [ViewVariables]
     public TimeSpan NextPointsAt;

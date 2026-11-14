@@ -27,9 +27,7 @@
       - Ghost
     knockdownTime: 0
     infectionPrototype: null
-    damageOnImpact:
-      types:
-        Blunt: 0
+    sleepChem: null # Dumont
   - type: MeleeWeapon
     hidden: true
     canHeavyAttack: false

@@ -4,6 +4,9 @@
   name: resin wall
   description: Thick resin solidified into a wall.
   components:
+  - type: XenomorphSurgeReinforcable
+  - type: SoundBlocker # Dumont
+    soundBlockPercent: 1
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi # Goobstation new sprites
   - type: Icon
@@ -14,7 +17,7 @@
     base: resin
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Resin
+    damageModifierSet: DumontResinBarrier
   - type: MeleeSound #omu
     soundGroups:
       Brute:
@@ -22,8 +25,7 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
+        !type:DamageTrigger
         damage: 200
       behaviors:
       - !type:DoActsBehavior

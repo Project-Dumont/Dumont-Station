@@ -1,0 +1,133 @@
+<Document>
+# T1 — Prole da Colmeia
+
+As castas iniciais formam a base da colmeia e não têm limite de vagas. A linhagem da larva determina quais estão disponíveis.
+
+## Operário
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUDrone" Caption="Operário" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Escolha o tipo de resina antes de secretar. Nódulos espalham o piso; as construções maiores usam projetos e contribuições de plasma. Feromônios ajudam os aliados próximos, mas cobram plasma enquanto ativos.
+
+[bold]Evolui de:[/bold] Larva (humana e espécies sem rota própria, Arachnid, Reptilian e Chitinid, Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Senhor da Colmeia; Arachnid, Reptilian e Chitinid: Ceifador, Carregador, Carregador de ovos; Vulpkanin, Daengati e Tajaran: Espreitador, Espreitador vampiro, Senhor da Colmeia, Arquiteto da Colmeia.
+
+## Operário curandeiro
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUHealerDrone" Caption="Operário curandeiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Secreção curativa troca sua vida e plasma pela recuperação de um aliado. Use os frutos para recuperação fora de combate. Sacrifício não garante renascer: a transferência precisa atingir o valor exigido pela habilidade.
+
+[bold]Evolui de:[/bold] Larva (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Senhor da Colmeia; Arachnid, Reptilian e Chitinid: Ceifador, Carregador, Carregador de ovos; Vulpkanin, Daengati e Tajaran: Espreitador, Espreitador vampiro, Senhor da Colmeia, Arquiteto da Colmeia.
+
+## Operário jardineiro
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUGardenerDrone" Caption="Operário jardineiro" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Escolha o fruto antes de plantar: cura, plasma, velocidade, esporos ou recargas. Surto de resina muda conforme o alvo; nódulos resistentes aceleram o crescimento em 25%. Há limite de seis plantas desta variante.
+
+[bold]Evolui de:[/bold] Larva (Vulpkanin, Daengati e Tajaran).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Senhor da Colmeia; Arachnid, Reptilian e Chitinid: Ceifador, Carregador, Carregador de ovos; Vulpkanin, Daengati e Tajaran: Espreitador, Espreitador vampiro, Senhor da Colmeia, Arquiteto da Colmeia.
+
+## Corredor
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMURunner" Caption="Corredor" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+O salto alcança seis quadrados, derruba por quatro segundos e tem três segundos de recarga. Bater num obstáculo atordoa você por quatro segundos. Fragmentos de osso desaceleram à distância. Esconder-se permite passar sob mesas; não concede invisibilidade.
+
+[bold]Evolui de:[/bold] Larva (humana e espécies sem rota própria, ágil (Rodentia, Resomi, Dwarf e Shadowkin)).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Espreitador; ágil (Rodentia, Resomi, Dwarf e Shadowkin): Cuspidor, Cuspidor caçador, Escavador.
+
+## Corredor ácido
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUAciderRunner" Caption="Corredor ácido" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Ácido é sua reserva especial. Use-o para corrosão de objetos e barricadas. Pela colmeia precisa terminar a preparação para explodir; morrer antes disso cancela a explosão. A detonação concluída devolve você à forma de larva.
+
+[bold]Evolui de:[/bold] Larva (ágil (Rodentia, Resomi, Dwarf e Shadowkin)).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Espreitador; ágil (Rodentia, Resomi, Dwarf e Shadowkin): Cuspidor, Cuspidor caçador, Escavador.
+
+## Defensor
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUDefender" Caption="Defensor" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Cabeçada causa 25 de dano, ou 20 com a crista elevada. Varredura causa 20 por vítima e exige a crista levantada. Fortificar troca movimento por defesa; desative a postura antes de tentar sair.
+
+[bold]Evolui de:[/bold] Larva (Oni, Feroxi, Yowie e Harpy).
+
+[bold]Pode evoluir para:[/bold] Oni: Touro; Feroxi, Yowie e Harpy: Guerreiro, Guerreiro encouraçado, Senhor da Colmeia.
+
+## Defensor incendiário
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUHeatshieldDefender" Caption="Defensor incendiário" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Autoimolação ativa as interações de fogo. Termorregulação aproveita as chamas para melhorar movimento e cadência e depois apaga você. Bile apaga aliados em chamas; contra inimigos, seu próprio estado de fogo muda o resultado.
+
+[bold]Evolui de:[/bold] Larva (Oni).
+
+[bold]Pode evoluir para:[/bold] Oni: Touro; Feroxi, Yowie e Harpy: Guerreiro, Guerreiro encouraçado, Senhor da Colmeia.
+
+## Sentinela
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUSentinel" Caption="Sentinela" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Cuspe desacelerador mira um alvo; o disperso cobre um cone. Corte paralisante prepara o próximo ataque corpo a corpo, então ativá-lo sozinho não atinge ninguém. Acerte o golpe antes de a preparação terminar.
+
+[bold]Evolui de:[/bold] Larva (humana e espécies sem rota própria, Plasmaman, Vox e SlimePerson).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Cuspidor; Plasmaman, Vox e SlimePerson: Cuspidor, Cuspidor caçador, Senhor da Colmeia, Senhor da Resina.
+
+## Sentinela tóxico
+
+<Box VerticalAlignment="Bottom">
+<GuideEntityEmbed Entity="MobXenomorphCMUToxicSentinel" Caption="Sentinela tóxico" Scale="1.5" Interactive="false"/>
+</Box>
+
+[bold]Vida:[/bold] 200 até crítico; 215 até morte. [bold]Golpe básico:[/bold] 20 de dano.
+
+Acumule intoxicação antes do Ferrão drenante. Ele consome parte do acúmulo para causar dano e controle e recuperar seus recursos. Intoxicação elevada também pode gerar proteção temporária.
+
+[bold]Evolui de:[/bold] Larva (Plasmaman, Vox e SlimePerson).
+
+[bold]Pode evoluir para:[/bold] humana e espécies sem rota própria: Cuspidor; Plasmaman, Vox e SlimePerson: Cuspidor, Cuspidor caçador, Senhor da Colmeia, Senhor da Resina.
+
+[textlink="Voltar ao ciclo de vida e às linhagens." link="XenomorphClasses"]
+</Document>
