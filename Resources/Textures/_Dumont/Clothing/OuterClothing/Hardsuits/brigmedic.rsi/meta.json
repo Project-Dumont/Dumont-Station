@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Crenissis (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-unshaded-vox",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-digitigrade",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-harpy",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-unshaded-harpy",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-resomi",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-unshaded-resomi",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

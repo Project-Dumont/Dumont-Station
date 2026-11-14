@@ -196,9 +196,55 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Voidsuits/security.rsi
+    sprite: _Dumont/Clothing/Head/Hardsuits/security.rsi # Dumont - Security hardsuits resprite
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Voidsuits/security.rsi
+    sprite: _Dumont/Clothing/Head/Hardsuits/security.rsi # Dumont - Security hardsuits resprite
+    clothingVisuals: # Dumont - Addition of unshaded states
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
+      head-feroxi:
+      - state: off-equipped-HELMET-feroxi
+      - state: off-equipped-HELMET-unshaded-feroxi
+        shader: unshaded
+      head-reptilian:
+      - state: off-equipped-HELMET-reptilian
+      - state: off-equipped-HELMET-unshaded-reptilian
+        shader: unshaded
+      head-resomi:
+      - state: off-equipped-HELMET-resomi
+      - state: off-equipped-HELMET-unshaded-resomi
+        shader: unshaded
+      head-vox:
+      - state: off-equipped-HELMET-vox
+      - state: off-equipped-HELMET-unshaded-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: off-equipped-HELMET-vulpkanin
+      - state: off-equipped-HELMET-unshaded-vulpkanin
+        shader: unshaded
+  - type: ToggleableVisuals # Dumont - Security hardsuits resprite
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+      head-feroxi:
+      - state: on-equipped-HELMET-feroxi
+        shader: unshaded
+      head-reptilian:
+      - state: on-equipped-HELMET-reptilian
+        shader: unshaded
+      head-resomi:
+      - state: on-equipped-HELMET-resomi
+        shader: unshaded
+      head-vox:
+      - state: on-equipped-HELMET-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: on-equipped-HELMET-vulpkanin
+        shader: unshaded
   - type: PointLight
     color: "#a4fef4"
     rotation: 30
@@ -223,6 +269,11 @@
         Caustic: 0.5
   - type: FlashImmunity
   - type: FlashSoundSuppression
+  - type: HideClothingLayerClothing # Dumont - Security hardsuits resprite
+    hiddenSlots:
+    - mask
+    - ears
+    - eyes
 
 # Head of Security
 - type: entity

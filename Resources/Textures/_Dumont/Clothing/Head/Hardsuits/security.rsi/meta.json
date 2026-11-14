@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Baystation12 (Only off-equipped-HELMET, on-equipped-HELMET, icon, icon-flash). Resprites and new versions made by Crenissis (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon-flash"
+    },
+    {
+      "name": "off-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-vox",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-feroxi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-feroxi",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-feroxi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-reptilian",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-reptilian",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-reptilian",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-resomi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-resomi",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-resomi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-shadowkin",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-shadowkin",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-shadowkin",
+      "directions": 4
+    }
+  ]
+}

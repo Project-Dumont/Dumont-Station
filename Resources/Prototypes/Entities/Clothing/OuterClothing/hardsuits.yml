@@ -553,9 +553,38 @@
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # Goob edit
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+    sprite: _Dumont/Clothing/OuterClothing/Hardsuits/brigmedic.rsi # Dumont - Security hardsuits resprite
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+    sprite: _Dumont/Clothing/OuterClothing/Hardsuits/brigmedic.rsi # Dumont - Security hardsuits resprite
+    clothingVisuals: # Dumont - Addition of unshaded states
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-harpy:
+      - state: equipped-OUTERCLOTHING-harpy
+      - state: equipped-OUTERCLOTHING-unshaded-harpy
+        shader: unshaded
+      outerClothing-resomi:
+      - state: equipped-OUTERCLOTHING-resomi
+      - state: equipped-OUTERCLOTHING-unshaded-resomi
+        shader: unshaded
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      - state: equipped-OUTERCLOTHING-unshaded-vox
+        shader: unshaded
+      outerClothing-vulpkanin:
+      - state: equipped-OUTERCLOTHING-digitigrade
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000

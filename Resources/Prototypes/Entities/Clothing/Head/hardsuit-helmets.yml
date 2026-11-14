@@ -465,9 +465,22 @@
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Dumont/Clothing/Head/Hardsuits/brigmedic.rsi # Dumont - Security hardsuits resprite
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Dumont/Clothing/Head/Hardsuits/brigmedic.rsi # Dumont - Security hardsuits resprite
+    clothingVisuals: # Dumont - Addition of unshaded states
+      head:
+      - state: off-equipped-HELMET
+      head-feroxi:
+      - state: off-equipped-HELMET-feroxi
+      head-reptilian:
+      - state: off-equipped-HELMET-reptilian
+      head-resomi:
+      - state: off-equipped-HELMET-resomi
+      head-vox:
+      - state: off-equipped-HELMET-vox
+      head-vulpkanin:
+      - state: off-equipped-HELMET-vulpkanin
   - type: PointLight
     color: "#00FFFF"
   - type: Armor
@@ -484,6 +497,32 @@
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: ToggleableVisuals # Dumont - Security hardsuits resprite
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+      head-feroxi:
+      - state: on-equipped-HELMET-feroxi
+        shader: unshaded
+      head-reptilian:
+      - state: on-equipped-HELMET-reptilian
+        shader: unshaded
+      head-resomi:
+      - state: on-equipped-HELMET-resomi
+        shader: unshaded
+      head-vox:
+      - state: on-equipped-HELMET-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: on-equipped-HELMET-vulpkanin
+        shader: unshaded
+  - type: HideClothingLayerClothing # Dumont - Security hardsuits resprite
+    hiddenSlots:
+    - mask
+    - ears
+    - eyes
 
 #Warden's Hardsuit
 - type: entity
@@ -1272,4 +1311,3 @@
         Slash: 0.9
         Piercing: 0.85
         Caustic: 0.8
-
