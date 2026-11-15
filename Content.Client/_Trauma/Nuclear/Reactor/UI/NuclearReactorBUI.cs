@@ -2,6 +2,7 @@
 
 using Content.Shared._Trauma.Nuclear.Monitor;
 using Content.Shared._Trauma.Nuclear.Reactor;
+using Robust.Client.UserInterface;
 
 namespace Content.Client._Trauma.Nuclear.Reactor.UI;
 

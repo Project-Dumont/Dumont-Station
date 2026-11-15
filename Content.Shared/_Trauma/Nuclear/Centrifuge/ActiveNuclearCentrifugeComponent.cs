@@ -2,6 +2,7 @@
 
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._Trauma.Nuclear.Centrifuge;
 

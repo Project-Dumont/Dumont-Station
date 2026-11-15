@@ -3,6 +3,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Atmos.Piping.Components; // Dumont
 using Content.Server.Audio;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
@@ -12,7 +13,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Audio;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage; // Dumont
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Popups;
@@ -22,6 +23,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Trauma.Nuclear.Turbine;
 
@@ -192,7 +194,7 @@ public sealed partial class ServerTurbineSystem : TurbineSystem
         if (ent.Comp.RPM > ent.Comp.BestRPM / 6) // If it's barely moving then there's not really reason it would throw shrapnel
             ShootShrapnel(ent);
 
-        _adminLog.Add(LogType.Explosion, LogImpact.High, $"{ent.Owner:reactor} destroyed by overspeeding for too long");
+        _adminLog.Add(LogType.Explosion, LogImpact.High, $"{ToPrettyString(ent.Owner):reactor} destroyed by overspeeding for too long");
 
         SetRuined(ent);
         SetRPM(ent, 0);
@@ -217,16 +219,18 @@ public sealed partial class ServerTurbineSystem : TurbineSystem
     private void OnMachineLog(Entity<TurbineComponent> ent, ref NuclearMachineLogEvent args)
     {
         _adminLog.Add(LogType.AtmosVolumeChanged, LogImpact.Medium,
-            $"{args.User:player} changed turbine {ent.Owner:turbine} flow rate to {ent.Comp.FlowRate:rate} and stator load to {ent.Comp.StatorLoad:load} using {args.Monitor:monitor}");
+            $"{ToPrettyString(args.User):player} changed turbine {ToPrettyString(ent.Owner):turbine} flow rate to {ent.Comp.FlowRate:rate} and stator load to {ent.Comp.StatorLoad:load} using {ToPrettyString(args.Monitor):monitor}");
     }
 
     [SubscribeLocalEvent]
-    private void OnDamageDealt(Entity<TurbineComponent> ent, ref DamageDealtEvent args)
+    // Dumont changes start
+    private void OnDamageDealt(Entity<TurbineComponent> ent, ref DamageChangedEvent args)
     {
-        if (ent.Comp.Ruined)
+        if (ent.Comp.Ruined || !args.DamageIncreased || args.DamageDelta is not { } delta)
             return;
 
-        var damage = (float)args.Damage.GetTotal();
+        var damage = (float) delta.GetTotal();
+        // Dumont end
         if (damage < 0)
             return;
 

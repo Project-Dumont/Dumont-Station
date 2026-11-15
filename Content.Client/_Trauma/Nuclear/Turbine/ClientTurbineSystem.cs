@@ -4,6 +4,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Repairable;
 using Content.Shared._Trauma.Nuclear.Turbine;
 using Robust.Client.Animations;
+using Robust.Client.GameObjects;
 
 namespace Content.Client._Trauma.Nuclear.Reactor;
 

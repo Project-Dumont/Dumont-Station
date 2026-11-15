@@ -3,6 +3,9 @@
 using Content.Shared._Trauma.Nuclear.Reactor;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
+using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Client._Trauma.Nuclear.Reactor;
 

@@ -9,6 +9,7 @@ using Content.Shared.Stacks;
 using Content.Shared._Trauma.Nuclear.Reactor;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Trauma.Nuclear.Centrifuge;
 
@@ -45,8 +46,8 @@ public sealed partial class NuclearCentrifugeSystem : EntitySystem
                 failed = false;
                 var item = PredictedSpawnNextToOrDrop(comp.Result, uid);
                 var stack = _stackQuery.Comp(item);
-                _stack.SetCount((item, stack), (int) Math.Floor(comp.FuelToExtract));
-                _stack.TryMergeToContacts((item, stack, null));
+                _stack.SetCount(item, (int) Math.Floor(comp.FuelToExtract), stack); // Dumont
+                _stack.TryMergeToContacts(item, stack); // Dumont
                 comp.FuelToExtract -= stack.Count;
             }
             Dirty(uid, comp);

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Medical.Common.Targeting;
+using Content.Shared._Shitmed.Targeting; // Dumont
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator; // Dumont
@@ -12,13 +12,14 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Nutrition;
 using Content.Shared.Radiation.Components;
-using Content.Shared.Radiation.Systems;
-using Content.Shared.Temperature.Components;
-using Content.Shared.Temperature.Systems;
+using Content.Server.Temperature.Components; // Dumont
+using Content.Server.Temperature.Systems; // Dumont
 using Content.Shared._Trauma.Nuclear;
 using Content.Shared._Trauma.Nuclear.Reactor;
 using Robust.Shared.Collections;
+using Robust.Shared.Physics.Components; // Dumont
 using Robust.Shared.Random;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Trauma.Nuclear.Reactor;
 
@@ -33,13 +34,13 @@ public sealed partial class ReactorPartSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private NuclearReactorSystem _reactor = default!;
-    [Dependency] private SharedRadiationSystem _radiation = default!;
-    [Dependency] private SharedTemperatureSystem _temperature = default!;
+    [Dependency] private TemperatureSystem _temperature = default!; // Dumont
     [Dependency] private EntityQuery<NuclearPropertiesComponent> _propsQuery = default!;
     [Dependency] private EntityQuery<NuclearReactorComponent> _reactorQuery = default!;
     [Dependency] private EntityQuery<ReactorControlRodComponent> _controlQuery = default!;
     [Dependency] private EntityQuery<ReactorGasChannelComponent> _channelQuery = default!;
     [Dependency] private EntityQuery<TemperatureComponent> _tempQuery = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!; // Dumont
 
     private static readonly ProtoId<DamageTypePrototype> Heat = "Heat";
     private static readonly ProtoId<DamageTypePrototype> Radiation = "Radiation";
@@ -81,23 +82,29 @@ public sealed partial class ReactorPartSystem : EntitySystem
 
     #region Item Methods
 
-    [SubscribeLocalEvent(after: [typeof(SharedTemperatureSystem)])]
+    [SubscribeLocalEvent(after: [typeof(TemperatureSystem)])]
     private void OnMapInit(Entity<NuclearPropertiesComponent> ent, ref MapInitEvent args)
     {
         var (uid, comp) = ent;
         if (comp.SpentFuel > 0)
         {
             var source = EnsureComp<RadiationSourceComponent>(uid);
-            _radiation.SetIntensity((uid, source), comp.SpentFuel);
+            source.Intensity = comp.SpentFuel; // Dumont
         }
     }
 
-    [SubscribeLocalEvent(after: [typeof(SharedTemperatureSystem)])]
+    [SubscribeLocalEvent(after: [typeof(TemperatureSystem)])]
     private void OnPartMapInit(Entity<ReactorPartComponent> ent, ref MapInitEvent args)
     {
-        // can't set it in yml because it gets overriden by useless fixtures-derived value
-        if (_tempQuery.TryComp(ent, out var temp))
-            temp.HeatCapacity = ent.Comp.ThermalMass;
+        // Dumont changes start
+        // our temperature has no flat heat capacity, it's specific heat * fixture mass, so back it out of the thermal mass
+        if (!_tempQuery.TryComp(ent, out var temp))
+            return;
+
+        temp.SpecificHeat = _physicsQuery.CompOrNull(ent) is { Mass: >= 1f, FixturesMass: > 0f } physics
+            ? ent.Comp.ThermalMass / physics.FixturesMass
+            : ent.Comp.ThermalMass;
+        // Dumont end
     }
 
     [SubscribeLocalEvent]
@@ -124,7 +131,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
                 }
             }
 
-            var temp = _tempQuery.Comp(ent).Temperature;
+            var temp = _tempQuery.Comp(ent).CurrentTemperature;
 
             if (temp > _burnTemp)
                 args.PushMarkup(Loc.GetString("reactor-part-burning"));
@@ -153,7 +160,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
                 {Radiation, total}
             }
         };
-        _damage.ChangeDamage(args.Target, damage, targetPart: TargetBodyPart.Chest);
+        _damage.TryChangeDamage(args.Target, damage, targetPart: TargetBodyPart.Chest); // Dumont
     }
 
     public override void Update(float frameTime)
@@ -182,7 +189,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
             EnsureComp<AtmosExposedComponent>(uid);
 
             var burncomp = EnsureComp<DamageOnInteractComponent>(uid);
-            burncomp.IsDamageActive = temp.Temperature > _hotTemp;
+            burncomp.IsDamageActive = temp.CurrentTemperature > _hotTemp;
             _appearance.SetData(uid, ReactorPartVisuals.HeatDistort, burncomp.IsDamageActive); // Dumont
 
             if (burncomp.Damage == default)
@@ -191,7 +198,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
             var dict = burncomp.Damage.DamageDict;
             if (burncomp.IsDamageActive)
             {
-                var damage = Math.Max((temp.Temperature - _hotTemp) / _burnDiv, 0);
+                var damage = Math.Max((temp.CurrentTemperature - _hotTemp) / _burnDiv, 0);
                 if (dict.GetValueOrDefault(Heat) == damage)
                     continue; // no change, avoid dirtying
 
@@ -225,7 +232,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
         if (channel.AirContents != null)
         {
             var temp = _tempQuery.Comp(uid);
-            var compTemp = temp.Temperature;
+            var compTemp = temp.CurrentTemperature;
             var gasTemp = channel.AirContents.Temperature;
 
             var deltaT = compTemp - gasTemp;
@@ -246,8 +253,8 @@ public sealed partial class ReactorPartSystem : EntitySystem
             channel.AirContents.Temperature = (float)Math.Clamp(gasTemp +
                 (maxDeltaE / _atmos.GetHeatCapacity(channel.AirContents, true)), coldest, hottest);
 
-            _temperature.SetTemperature((uid, temp), (float)Math.Clamp(compTemp -
-                ((_atmos.GetThermalEnergy(channel.AirContents) - thermalEnergy) / part.ThermalMass), coldest, hottest));
+            _temperature.ForceChangeTemperature(uid, (float)Math.Clamp(compTemp -
+                ((_atmos.GetThermalEnergy(channel.AirContents) - thermalEnergy) / part.ThermalMass), coldest, hottest), temp);
 
 #if DEBUG
             if (gasTemp < 0 || compTemp < 0)
@@ -298,17 +305,17 @@ public sealed partial class ReactorPartSystem : EntitySystem
         foreach (var other in adjacent)
         {
             var otherTemp = _tempQuery.Comp(other);
-            deltaT = temp.Temperature - otherTemp.Temperature;
+            deltaT = temp.CurrentTemperature - otherTemp.CurrentTemperature;
             k = NuclearPropertiesComponent.CalculateHeatTransferCoefficient(props, _propsQuery.CompOrNull(other));
             A = Math.Min(part.Comp.ThermalCrossSection, other.Comp.ThermalCrossSection);
 
             energy = (float) (k * A * (0.5 * 8) * deltaT);
             // ignore resistances, fuel rods dont wear winter coats
-            _temperature.ChangeHeat((part, temp), -energy, true);
-            _temperature.ChangeHeat((other, otherTemp), energy, true);
+            _temperature.ChangeHeat(part, -energy, true, temp);
+            _temperature.ChangeHeat(other, energy, true, otherTemp);
 
 #if DEBUG
-            if (temp.Temperature < 0 || otherTemp.Temperature < 0)
+            if (temp.CurrentTemperature < 0 || otherTemp.CurrentTemperature < 0)
                 throw new Exception("ReactorPart-ReactorPart temperature calculation resulted in sub-zero value.");
 #endif
 
@@ -316,22 +323,22 @@ public sealed partial class ReactorPartSystem : EntitySystem
         }
 
         // Component-Reactor calculation
-        deltaT = temp.Temperature - reactor.Comp.Temperature;
+        deltaT = temp.CurrentTemperature - reactor.Comp.Temperature;
 
         k = NuclearPropertiesComponent.CalculateHeatTransferCoefficient(props, _propsQuery.CompOrNull(reactor));
         A = part.Comp.ThermalCrossSection;
 
         energy = (float) (k * A * (0.5 * 8) * deltaT);
-        _temperature.ChangeHeat((part, temp), -energy, true);
+        _temperature.ChangeHeat(part, -energy, true, temp);
 
 #if DEBUG
-        if (temp.Temperature < 0 || reactor.Comp.Temperature < 0)
+        if (temp.CurrentTemperature < 0 || reactor.Comp.Temperature < 0)
             throw new Exception("Reactor-ReactorPart temperature calculation resulted in sub-zero value.");
 #endif
 
         ProcessHeatEffects((part, temp));
 
-        if (temp.Temperature > part.Comp.MeltingPoint && part.Comp.MeltHealth > 0)
+        if (temp.CurrentTemperature > part.Comp.MeltingPoint && part.Comp.MeltHealth > 0)
             part.Comp.MeltHealth -= _random.Next(10, 50 + 1);
         if (part.Comp.MeltHealth <= 0)
             Melt(part, reactor);
@@ -341,7 +348,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
         void ProcessHeatEffects(Entity<TemperatureComponent> part)
         {
             var threshold = Atmospherics.T0C + 80; // lol random hardcoded shit
-            if (part.Comp.Temperature <= threshold || !_channelQuery.TryComp(part, out var channel) ||
+            if (part.Comp.CurrentTemperature <= threshold || !_channelQuery.TryComp(part, out var channel) ||
                 !_propsQuery.TryComp(part, out var props) || props.ActivePlasma <= 0)
                 return;
 
@@ -349,8 +356,8 @@ public sealed partial class ReactorPartSystem : EntitySystem
 
             // TODO: clear and reuse
             var payload = new GasMixture();
-            payload.SetMoles(Gas.Plasma, (float)Math.Min(props.ActivePlasma * molesPerUnit, Math.Log(((part.Comp.Temperature - threshold) / 100) + 1)));
-            payload.Temperature = part.Comp.Temperature;
+            payload.SetMoles(Gas.Plasma, (float)Math.Min(props.ActivePlasma * molesPerUnit, Math.Log(((part.Comp.CurrentTemperature - threshold) / 100) + 1)));
+            payload.Temperature = part.Comp.CurrentTemperature;
             props.ActivePlasma -= payload.GetMoles(Gas.Plasma) / molesPerUnit;
             // dont need to dirty since nothing shared/client needs it
 
@@ -392,7 +399,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
     {
         var (uid, part, props) = ent;
         var temp = _tempQuery.Comp(uid);
-        var preCalcTemp = temp.Temperature;
+        var preCalcTemp = temp.CurrentTemperature;
         var newTemp = preCalcTemp;
         var flux = new List<ReactorNeutron>(neutrons);
         var isControlRod = _controlQuery.TryComp(uid, out var control);
@@ -448,7 +455,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
         }
 
         if (newTemp != preCalcTemp)
-            _temperature.SetTemperature((uid, temp), newTemp);
+            _temperature.ForceChangeTemperature(uid, newTemp, temp);
 
         if (Prob(props.NeutronRadioactivity * csa))
         {
@@ -507,7 +514,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
         var temp = _tempQuery.Comp(uid);
 
         var flux = new List<ReactorNeutron>(neutrons);
-        var newTemp = temp.Temperature;
+        var newTemp = temp.CurrentTemperature;
         foreach (var neutron in flux)
         {
             if (neutron.Velocity <= 0)
@@ -527,8 +534,8 @@ public sealed partial class ReactorPartSystem : EntitySystem
             }
         }
 
-        if (newTemp != temp.Temperature)
-            _temperature.SetTemperature((uid, temp), newTemp);
+        if (newTemp != temp.CurrentTemperature)
+            _temperature.ForceChangeTemperature(uid, newTemp, temp);
 
         return neutrons;
     }

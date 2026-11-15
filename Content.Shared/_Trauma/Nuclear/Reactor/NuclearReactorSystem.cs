@@ -9,12 +9,11 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Popups;
-using Content.Shared.Temperature.Components;
-using Content.Factory.Common.DeviceLinking;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Collections;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Trauma.Nuclear.Reactor;
 
@@ -32,7 +31,6 @@ public abstract partial class NuclearReactorSystem : EntitySystem
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] protected EntityQuery<NuclearPropertiesComponent> PropsQuery = default!;
     [Dependency] protected EntityQuery<ReactorPartComponent> PartQuery = default!;
-    [Dependency] private EntityQuery<TemperatureComponent> _tempQuery = default!;
 
     public override void Initialize()
     {
@@ -92,7 +90,7 @@ public abstract partial class NuclearReactorSystem : EntitySystem
             partComp.Position = null;
             DirtyField(part.Value, partComp, nameof(ReactorPartComponent.Position));
             comp.SetPart(pos.X, pos.Y, null);
-            AdminLog.Add(LogType.Action, $"{user:player} removed {part.Value:part} from position {pos.X},{pos.Y} in {ent.Owner:target}");
+            AdminLog.Add(LogType.Action, $"{ToPrettyString(user):player} removed {ToPrettyString(part.Value):part} from position {pos.X},{pos.Y} in {ToPrettyString(ent.Owner):target}");
         }
         else
         {
@@ -110,7 +108,7 @@ public abstract partial class NuclearReactorSystem : EntitySystem
             partComp.Position = pos;
             DirtyField(item, partComp, nameof(ReactorPartComponent.Position));
 
-            AdminLog.Add(LogType.Action, $"{user:player} added {item:part} to position {pos.X},{pos.Y} in {ent.Owner:target}");
+            AdminLog.Add(LogType.Action, $"{ToPrettyString(user):player} added {ToPrettyString(item):part} to position {pos.X},{pos.Y} in {ToPrettyString(ent.Owner):target}");
         }
         DirtyField(ent, ent.Comp, nameof(NuclearReactorComponent.PartGrid));
 
@@ -219,7 +217,7 @@ public abstract partial class NuclearReactorSystem : EntitySystem
 
             array[i] = new ReactorSlotBUIData
             {
-                Temperature = _tempQuery.Comp(part).Temperature,
+                Temperature = GetPartTemperature(part), // Dumont
                 NeutronCount = neutrons,
                 NeutronRadioactivity = props.NeutronRadioactivity,
                 Radioactivity = props.Radioactivity,
@@ -271,6 +269,12 @@ public abstract partial class NuclearReactorSystem : EntitySystem
     {
         // nodegroup is server only
     }
+
+    // Dumont changes start
+    // temperature component is server only here
+    protected virtual float GetPartTemperature(EntityUid part)
+        => 0f;
+    // Dumont end
 
     public bool AdjustControlRods(Entity<NuclearReactorComponent> ent, float change)
         => SetTargetInsertion(ent, ent.Comp.ControlRodInsertion + change);

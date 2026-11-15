@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseMachinePowered, ConstructibleMachine, BaseConstructibleMachineDestructible ]
+  parent: [ BaseMachinePowered, ConstructibleMachine ] # Dumont
   id: NuclearCentrifuge
   name: nuclear centrifuge
   description: A large machine that can be used to separate radioactive isotopes from spent fuel.

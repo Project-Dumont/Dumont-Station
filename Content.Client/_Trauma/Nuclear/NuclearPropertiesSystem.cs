@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Trauma.Nuclear;
+using Robust.Client.GameObjects;
 
 namespace Content.Client._Trauma.Nuclear;
 

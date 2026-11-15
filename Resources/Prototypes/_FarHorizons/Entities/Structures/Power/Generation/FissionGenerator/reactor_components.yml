@@ -16,10 +16,7 @@
   - type: MultiHandedItem
   - type: ReactorPart
   - type: AtmosExposed # removed while in a reactor
-  - type: Temperature
-    heatCapacity: 15000
-  - type: InternalTemperature
-    conductance: 1000
+  - type: Temperature # Dumont - heat capacity comes from the part's thermalMass
   # glows when hot so you can tell if it will evaporate you
   - type: Appearance
   - type: BlackBody
@@ -64,16 +61,16 @@
     - metal
     - electrons
   - type: BadFood
-  - type: Solution
-    id: food
-    solution:
-      maxVol: 1000
-      canReact: false
-      reagents:
-      - ReagentId: Uranium
-        Quantity: 800
-      - ReagentId: Radium
-        Quantity: 200
+  - type: SolutionContainerManager # Dumont
+    solutions:
+      food:
+        maxVol: 1000
+        canReact: false
+        reagents:
+        - ReagentId: Uranium
+          Quantity: 800
+        - ReagentId: Radium
+          Quantity: 200
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.2

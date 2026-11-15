@@ -5,6 +5,8 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.Tools;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Trauma.Nuclear.Turbine;
 

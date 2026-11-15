@@ -4,7 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage; // Dumont
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.DeviceNetwork;
@@ -43,7 +43,7 @@ public abstract partial class TurbineSystem : EntitySystem
         SubscribeLocalEvent<TurbineComponent, ExaminedEvent>(OnExamined);
 
         SubscribeLocalEvent<TurbineComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<TurbineComponent, RepairDoAfterEvent>(OnRepairDoAfter);
+        SubscribeLocalEvent<TurbineComponent, RepairFinishedEvent>(OnRepairDoAfter); // Dumont
 
         SubscribeLocalEvent<TurbineComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
         SubscribeLocalEvent<TurbineComponent, ItemSlotEjectAttemptEvent>(OnEjectAttempt);
@@ -145,10 +145,10 @@ public abstract partial class TurbineSystem : EntitySystem
             return;
         }
 
-        _tool.UseTool(args.Used, user, uid, comp.RepairDelay, comp.RepairTool, new RepairDoAfterEvent(), comp.RepairFuelCost);
+        _tool.UseTool(args.Used, user, uid, comp.RepairDelay, comp.RepairTool, new RepairFinishedEvent(), comp.RepairFuelCost); // Dumont
     }
 
-    private void OnRepairDoAfter(Entity<TurbineComponent> ent, ref RepairDoAfterEvent args)
+    private void OnRepairDoAfter(Entity<TurbineComponent> ent, ref RepairFinishedEvent args) // Dumont
     {
         if (args.Cancelled)
             return;
@@ -171,7 +171,8 @@ public abstract partial class TurbineSystem : EntitySystem
         }
 
         Popup.PopupClient(Loc.GetString("turbine-repair", ("target", ent), ("tool", args.Used!)), ent, args.User);
-        _damage.ClearAllDamage(ent.Owner);
+        if (TryComp<DamageableComponent>(ent, out var damageable)) // Dumont
+            _damage.SetAllDamage(ent, damageable, 0);
     }
     #endregion
 

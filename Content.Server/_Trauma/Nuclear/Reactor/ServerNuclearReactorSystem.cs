@@ -4,20 +4,22 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.AlertLevel;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Atmos.Piping.Components; // Dumont
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Server.Temperature.Components; // Dumont
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Damage; // Dumont
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.Radiation.Components;
-using Content.Shared.Radiation.Systems;
 using Content.Shared.Radio;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
@@ -29,6 +31,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Trauma.Nuclear.Reactor;
 
@@ -52,13 +55,13 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
     [Dependency] private ReactorPartSystem _part = default!;
     [Dependency] private ServerGlobalSoundSystem _globalSound = default!;
     [Dependency] private ServerNuclearMachineSystem _machine = default!;
-    [Dependency] private SharedRadiationSystem _radiation = default!;
     [Dependency] private SharedPointLightSystem _light = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private EntityQuery<ReactorControlRodComponent> _controlQuery = default!;
     [Dependency] private EntityQuery<ReactorGasChannelComponent> _channelQuery = default!;
+    [Dependency] private EntityQuery<TemperatureComponent> _tempQuery = default!; // Dumont
 
     private List<Entity<ReactorPartComponent>> _neighbors = new(4);
     private List<ValueList<ReactorNeutron>> _flux = new(7*7);
@@ -74,7 +77,7 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
 
         SubscribeLocalEvent<NuclearReactorComponent, MapInitEvent>(OnMapInit);
 
-        SubscribeLocalEvent<NuclearReactorComponent, DamageDealtEvent>(OnDamageDealt);
+        SubscribeLocalEvent<NuclearReactorComponent, DamageChangedEvent>(OnDamageChanged); // Dumont
 
         // Atmos events
         SubscribeLocalEvent<NuclearReactorComponent, AtmosDeviceUpdateEvent>(OnUpdate);
@@ -277,9 +280,9 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
         var source = EnsureComp<RadiationSourceComponent>(uid);
 
         // shielding protects up to MaximumRadiation, linear scaling past that
-        _radiation.SetIntensity((uid, source), MathF.Max(
+        source.Intensity = MathF.Max( // Dumont
             comp.RadiationLevel - comp.MaximumRadiation,
-            comp.Melted ? comp.MeltdownRadiation : 0));
+            comp.Melted ? comp.MeltdownRadiation : 0);
         comp.RadiationLevel /= comp.RadiationStability;
         DirtyField(uid, comp, nameof(NuclearReactorComponent.RadiationLevel));
     }
@@ -307,6 +310,11 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
         => GetEntity(reactor.GetPart(x, y)) is { } uid && PartQuery.TryComp(uid, out var comp)
             ? (uid, comp)
             : null;
+
+    // Dumont changes start
+    protected override float GetPartTemperature(EntityUid part)
+        => _tempQuery.CompOrNull(part)?.CurrentTemperature ?? 0f;
+    // Dumont end
 
     protected override void UpdateGasVolume(Entity<NuclearReactorComponent> ent)
     {
@@ -427,14 +435,14 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
         if (T != null)
             _atmos.Merge(T, comp.AirContents);
 
-        AdminLog.Add(LogType.Explosion, LogImpact.Extreme, $"{uid:reactor} melted down with badness of {badness}!");
+        AdminLog.Add(LogType.Explosion, LogImpact.Extreme, $"{ToPrettyString(uid):reactor} melted down with badness of {badness}!");
 
         // You did not see graphite on the roof. You're in shock. Report to medical.
         var coords = _transform.GetMapCoordinates(uid);
         for (var i = 0; i < _random.Next(10, 30); i++)
         {
             _throwing.TryThrow(Spawn(NuclearDebrisChunk, coords), _random.NextAngle().ToVec().Normalized(), _random.NextFloat(8, 16),
-                uid, predicted: false);
+                uid); // Dumont
         }
 
         Audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_break5.ogg"), uid);
@@ -481,19 +489,19 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
         {
             if (!comp.IsSmoking)
             {
-                AdminLog.Add(LogType.Damaged, $"{ent.Owner:reactor} is at {comp.Temperature}K and may meltdown");
+                AdminLog.Add(LogType.Damaged, $"{ToPrettyString(ent.Owner):reactor} is at {comp.Temperature}K and may meltdown");
                 _radio.SendRadioMessage(uid, Loc.GetString("reactor-smoke-start-message", ("owner", uid), ("temperature", Math.Round(comp.Temperature))), engi, ent);
                 comp.LastSendTemperature = comp.Temperature;
             }
             if (comp.Temperature >= comp.ReactorFireTemp && !comp.IsBurning)
             {
-                AdminLog.Add(LogType.Damaged, $"{ent.Owner:reactor} is at {comp.Temperature}K and is likely to meltdown");
+                AdminLog.Add(LogType.Damaged, $"{ToPrettyString(ent.Owner):reactor} is at {comp.Temperature}K and is likely to meltdown");
                 _radio.SendRadioMessage(uid, Loc.GetString("reactor-fire-start-message", ("owner", uid), ("temperature", Math.Round(comp.Temperature))), engi, ent);
                 comp.LastSendTemperature = comp.Temperature;
             }
             else if (comp.Temperature < comp.ReactorFireTemp && comp.IsBurning)
             {
-                AdminLog.Add(LogType.Healed, $"{ent.Owner:reactor} is cooling from {comp.ReactorFireTemp}K");
+                AdminLog.Add(LogType.Healed, $"{ToPrettyString(ent.Owner):reactor} is cooling from {comp.ReactorFireTemp}K");
                 _radio.SendRadioMessage(uid, Loc.GetString("reactor-fire-stop-message", ("owner", uid)), engi, ent);
                 comp.LastSendTemperature = comp.Temperature;
             }
@@ -502,7 +510,7 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
         {
             if (comp.IsSmoking)
             {
-                AdminLog.Add(LogType.Healed, $"{ent.Owner:reactor} is cooling from {comp.ReactorOverheatTemp}K");
+                AdminLog.Add(LogType.Healed, $"{ToPrettyString(ent.Owner):reactor} is cooling from {comp.ReactorOverheatTemp}K");
                 _radio.SendRadioMessage(uid, Loc.GetString("reactor-smoke-stop-message", ("owner", uid)), engi, ent);
                 comp.LastSendTemperature = comp.Temperature;
                 comp.HasSentWarning = false;
@@ -549,14 +557,17 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
 
     private void OnMachineLog(Entity<NuclearReactorComponent> ent, ref NuclearMachineLogEvent args)
     {
-        AdminLog.Add(LogType.Action, $"{args.User:player} set control rod insertion of {ent.Owner:target} to {ent.Comp.ControlRodInsertion} using {args.Monitor:monitor}");
+        AdminLog.Add(LogType.Action, $"{ToPrettyString(args.User):player} set control rod insertion of {ToPrettyString(ent.Owner):target} to {ent.Comp.ControlRodInsertion} using {ToPrettyString(args.Monitor):monitor}");
     }
 
-    private void OnDamageDealt(Entity<NuclearReactorComponent> ent, ref DamageDealtEvent args)
+    // Dumont changes start
+    private void OnDamageChanged(Entity<NuclearReactorComponent> ent, ref DamageChangedEvent args)
     {
-        var damage = (float) args.Damage.GetTotal();
-        if (damage < 0f)
+        if (!args.DamageIncreased || args.DamageDelta is not { } delta)
             return;
+
+        var damage = (float) delta.GetTotal();
+        // Dumont end
 
         var destruction = 100;
         var throwProb = Math.Clamp(damage / destruction, 0, 1);
@@ -578,11 +589,10 @@ public sealed partial class ServerNuclearReactorSystem : NuclearReactorSystem
                 item = Spawn(NuclearDebrisChunk, coords);
             }
 
-            _throwing.TryThrow(item, _random.NextAngle().ToVec(), _random.NextFloat(8, 16), ent,
-                predicted: false);
+            _throwing.TryThrow(item, _random.NextAngle().ToVec(), _random.NextFloat(8, 16), ent); // Dumont
             var x = i % ent.Comp.GridWidth;
             var y = i / ent.Comp.GridWidth;
-            AdminLog.Add(LogType.Action, $"Damage by {args.Origin:actor} removed {part:part} from position {x},{y} in {ent.Owner:reactor}");
+            AdminLog.Add(LogType.Action, $"Damage by {ToPrettyString(args.Origin):actor} removed {ToPrettyString(part):part} from position {x},{y} in {ToPrettyString(ent.Owner):reactor}");
 
             ent.Comp.PartGrid[i] = null;
             dirty = true;

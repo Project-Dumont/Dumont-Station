@@ -7,6 +7,8 @@ using Content.Shared.Radio;
 using Robust.Shared.Audio;
 using Robust.Shared.Collections;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Trauma.Nuclear.Reactor;
 

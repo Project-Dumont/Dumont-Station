@@ -99,7 +99,7 @@
   result: GraphiteReactorReflector
   materials:
     Steel: 500
-    Charcoal: 1000
+    Coal: 1000 # Dumont
 
 # Gas Channel Rods
 # 5 Steel + 5 Material

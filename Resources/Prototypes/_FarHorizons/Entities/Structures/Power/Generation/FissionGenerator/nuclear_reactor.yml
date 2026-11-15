@@ -82,8 +82,7 @@
         - HighImpassable
   - type: Damageable
     damageModifierSet: StructuralReactorCasing
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageContainer: StructuralInorganic # Dumont
   - type: Destructible
     thresholds:
     - trigger:
@@ -159,11 +158,8 @@
     access: [["Engineering"]]
   - type: Lock
     unlockOnClick: false
-  - type: WarpPoint
+  - type: WarpPoint # Dumont - no ghost only warp tag here
     location: Nuclear Reactor
-    blacklist:
-      tags:
-      - GhostOnlyWarp
 
 - type: entity
   parent: NuclearReactorCrew

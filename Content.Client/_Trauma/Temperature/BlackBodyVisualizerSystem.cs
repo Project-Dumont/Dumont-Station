@@ -5,6 +5,9 @@ using Content.Shared.Hands;
 using Content.Shared.Item;
 using Content.Shared._Trauma.Temperature;
 using Robust.Shared.Maths;
+using Robust.Shared.Prototypes;
+using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Client._Trauma.Temperature;
 
