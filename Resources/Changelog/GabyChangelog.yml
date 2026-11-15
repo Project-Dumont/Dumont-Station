@@ -5010,3 +5010,11 @@ Entries:
       message: Bagel Station está de volta!
   id: 598
   time: '2026-11-13T10:46:30.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Add
+      message: >-
+        Novas Markings de "pawsocks" para os Vulpkanin, vá gritar nos corredores
+        como uma raposa!
+  id: 599
+  time: '2026-11-15T02:23:32.0000000+00:00'
