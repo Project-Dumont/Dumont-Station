@@ -144,7 +144,6 @@
     id: AgentIDCard
   storage:
     back:
-    - WeaponAlien
 
 - type: startingGear
   id: AbductorScientistGear
@@ -158,7 +157,6 @@
     back: ClothingBackpackDuffelAbductor
     pocket1: Silencer
     pocket2: AbductorTaskTablet
-    suitstorage: WeaponDecloner
     id: AgentIDCard
   storage:
     back:
@@ -175,7 +173,6 @@
     outerClothing: ClothingOuterArmorAbductor
     back: ClothingBackpackAbductor
     pocket1: AbductorGizmo
-    pocket2: WeaponAlien
     suitstorage: Wonderprod
     id: AgentIDCard
   inhand:
