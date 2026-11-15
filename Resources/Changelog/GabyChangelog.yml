@@ -5018,3 +5018,9 @@ Entries:
         como uma raposa!
   id: 599
   time: '2026-11-15T02:23:32.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Pequena mudança no texto dos revs do end-round
+  id: 600
+  time: '2026-11-15T03:02:06.0000000+00:00'
