@@ -243,6 +243,11 @@
   id: FillRadiationSuit
   table: !type:AllSelector
     children:
+    # Dumont changes start
+    - id: RadiationBlockingProjector
+    - id: PillCanisterPotassiumIodide
+      prob: 0.75
+    # Dumont end
     - id: ClothingOuterSuitRad
       amount: !type:ConstantNumberSelector
         value: 2

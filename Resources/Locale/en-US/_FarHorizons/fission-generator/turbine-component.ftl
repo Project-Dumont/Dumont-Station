@@ -41,6 +41,8 @@ gas-turbine-insert-fail-speed = You cannot insert turbine parts while the turbin
 ### UI
 
 # Shown when using the UI
+# Dumont
+comp-turbine-ui-title = Gas Turbine
 comp-turbine-ui-tab-main = Controls
 comp-turbine-ui-tab-parts = Parts
 

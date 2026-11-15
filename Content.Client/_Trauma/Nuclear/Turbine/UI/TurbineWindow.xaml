@@ -5,7 +5,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <controls:FancyWindow xmlns="https://spacestation14.io"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:Content.Client.UserInterface.Controls"
-        MinSize="525 415" Title="Gas Turbine">
+        MinSize="525 415" Title="{Loc comp-turbine-ui-title}"> <!-- Dumont -->
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5" SeparationOverride="10">
 		<TabContainer Name="CTabContainer" VerticalExpand="True" Margin="1 1 1 2">
 			<!--Main Content-->

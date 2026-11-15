@@ -27,10 +27,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 	  <GuideEntityEmbed Entity="Turbine" Caption=""/>
   </Box>
   <Box>
-    ## Nuclear Generator
+    ## Gerador Nuclear
   </Box>
   <Box>
-    [color=#999999][italic]Harnesses the power of nuclear fission to power the station.[italic][/color]
+    [color=#999999][italic]Usa a energia da fissão nuclear para alimentar a estação.[italic][/color]
   </Box>
 
   <Box>

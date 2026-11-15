@@ -24,6 +24,8 @@ reactor-meltdown-announcement = A nuclear reactor aboard the station has catastr
 reactor-meltdown-announcement-sender = Nuclear Meltdown
 
 ### UI
+# Dumont
+comp-nuclear-reactor-ui-title = Nuclear Reactor
 comp-nuclear-reactor-ui-locked = Locked
 comp-nuclear-reactor-ui-insert-button = Insert
 comp-nuclear-reactor-ui-remove-button = Remove
