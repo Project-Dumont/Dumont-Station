@@ -72,6 +72,7 @@ using Content.Shared.Radio.Components;
 using Robust.Shared.Prototypes;
 using Content.Server._Starlight.StationRadio.Systems;
 using Robust.Shared.Random;
+using Content.Shared.Verbs;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -102,6 +103,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenEvent>(OnListen);
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenAttemptEvent>(OnAttemptListen);
         SubscribeLocalEvent<RadioMicrophoneComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<RadioMicrophoneComponent, GetVerbsEvent<AlternativeVerb>>(OnAltActivateMicrophone); // Dumont - Radio host rework
 
         SubscribeLocalEvent<RadioSpeakerComponent, ComponentInit>(OnSpeakerInit);
         SubscribeLocalEvent<RadioSpeakerComponent, ActivateInWorldEvent>(OnActivateSpeaker);
@@ -151,6 +153,20 @@ public sealed class RadioDeviceSystem : EntitySystem
         args.Handled = true;
     }
 
+    // Dumont - Radio host rework - Start
+    private void OnAltActivateMicrophone(EntityUid uid, RadioMicrophoneComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!component.ToggleOnAltInteract || !args.CanAccess || !args.CanInteract || !args.CanComplexInteract)
+            return;
+
+        args.Verbs.Add(new AlternativeVerb
+        {
+            Text = Loc.GetString("handheld-radio-component-toggle-microphone"),
+            Act = () => ToggleRadioMicrophone(uid, args.User, component: component),
+        });
+    }
+    // Dumont - Radio host rework - End
+
     private void OnActivateSpeaker(EntityUid uid, RadioSpeakerComponent component, ActivateInWorldEvent args)
     {
         if (!args.Complex)
@@ -192,7 +208,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         {
             var state = Loc.GetString(component.Enabled ? "handheld-radio-component-on-state" : "handheld-radio-component-off-state");
             // Starlight Start
-            var message = HasComp<StationRadioServerComponent>(uid)
+            var message = HasComp<StationRadioServerComponent>(uid) || HasComp<RadioRigComponent>(uid)
                 ? Loc.GetString("station-radio-server-microphone-on-use", ("radioState", state))
                 : Loc.GetString("handheld-radio-component-on-use", ("radioState", state));
             // Starlight End

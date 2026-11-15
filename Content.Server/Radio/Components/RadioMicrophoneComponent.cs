@@ -43,6 +43,14 @@ public sealed partial class RadioMicrophoneComponent : Component
     public bool ToggleOnInteract = true;
 
     /// <summary>
+    /// Dumont - Radio host rework
+    /// Whether or not alternative interaction with this entity
+    /// toggles its microphone on or off.
+    /// </summary>
+    [DataField("toggleOnAltInteract")]
+    public bool ToggleOnAltInteract = false;
+
+    /// <summary>
     /// Whether or not the speaker must have an
     /// unobstructed path to the radio to speak
     /// </summary>

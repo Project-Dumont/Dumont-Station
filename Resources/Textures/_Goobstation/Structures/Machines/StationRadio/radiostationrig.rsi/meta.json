@@ -16,6 +16,14 @@
             "directions": 4
         },
         {
+            "name": "mic_on",
+            "directions": 4
+        },
+        {
+            "name": "mic_off",
+            "directions": 4
+        },
+        {
             "name": "record0",
             "directions": 4
         },
