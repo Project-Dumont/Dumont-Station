@@ -78,5 +78,6 @@
     edges:
     - to: panel_exposed
       steps:
+      - emag: construction-step-nuke-emag
       - tool: FineScrewing
         doAfter: 2

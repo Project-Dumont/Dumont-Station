@@ -114,22 +114,25 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 
-public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
+public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 {
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly KidnapHeadsConditionSystem _kidnap = default!; // DeltaV
-    [Dependency] private readonly SharedMapSystem _map = default!; // DeltaV
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private EmergencyShuttleSystem _emergency = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private RoundEndSystem _roundEndSystem = default!;
+    [Dependency] private StoreSystem _store = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private KidnapHeadsConditionSystem _kidnap = default!; // DeltaV
+    [Dependency] private SharedMapSystem _map = default!; // DeltaV
     // goob edit
-    [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private StationSystem _stationSystem = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
     // goob edit end
+
+    [Dependency] private NukeSystem _nuke = default!; // Dumont
+    [Dependency] private NukeCodePaperSystem _nukeCodes = default!; // Dumont
 
     private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
@@ -178,6 +181,33 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             return;
 
         component.TargetStation = RobustRandom.Pick(eligible);
+
+        // Dumont
+        if (!component.UseStationNukeCode || !TryComp<RuleGridsComponent>(uid, out var grids))
+            return;
+
+        var sourceQuery = AllEntityQuery<NukeComponent>();
+        while (sourceQuery.MoveNext(out var sourceUid, out var source))
+        {
+            if (source.OriginStation != component.TargetStation || string.IsNullOrEmpty(source.Code))
+                continue;
+
+            var bombs = AllEntityQuery<NukeComponent, TransformComponent>();
+            while (bombs.MoveNext(out var bombUid, out var bomb, out var transform))
+            {
+                if (transform.MapID == grids.Map)
+                    _nuke.CopyCode((sourceUid, source), (bombUid, bomb));
+            }
+
+            var papers = AllEntityQuery<NukeCodePaperComponent, TransformComponent>();
+            while (papers.MoveNext(out var paperUid, out var paper, out var transform))
+            {
+                if (transform.MapID == grids.Map)
+                    _nukeCodes.SetupPaper(paperUid, paper);
+            }
+
+            break;
+        }
     }
 
     #region Event Handlers

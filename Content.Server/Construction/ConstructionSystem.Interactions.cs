@@ -88,6 +88,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared._Dumont.Construction;
+using Content.Shared.Emag.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Construction.Components;
 using Content.Server.Temperature.Components;
@@ -114,10 +116,12 @@ namespace Content.Server.Construction
 {
     public sealed partial class ConstructionSystem
     {
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
 #if EXCEPTION_TOLERANCE
-        [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
+        [Dependency] private IRuntimeLog _runtimeLog = default!;
 #endif
+
+        [Dependency] private EmagSystem _constructionEmag = default!;
 
         private readonly Queue<EntityUid> _constructionUpdateQueue = new();
         private readonly HashSet<EntityUid> _queuedUpdates = new();
@@ -132,6 +136,16 @@ namespace Content.Server.Construction
                 new []{typeof(EncryptionKeySystem)});
             SubscribeLocalEvent<ConstructionComponent, OnTemperatureChangeEvent>(EnqueueEvent);
             SubscribeLocalEvent<ConstructionComponent, PartAssemblyPartInsertedEvent>(EnqueueEvent);
+            SubscribeLocalEvent<ConstructionComponent, GotEmaggedEvent>(OnConstructionEmag);
+        }
+
+        private void OnConstructionEmag(EntityUid uid, ConstructionComponent construction, ref GotEmaggedEvent args)
+        {
+            if (args.Handled || HandleEvent(uid, args, true, construction) != HandleResult.Validated)
+                return;
+
+            args.Handled = true;
+            EnqueueEvent(uid, construction, args);
         }
 
         /// <summary>
@@ -347,6 +361,16 @@ namespace Content.Server.Construction
                 // Make extra sure you handle DoAfter (if applicable) properly!
                 // Also make sure your event handler properly handles validation.
                 // Note: Please use braces for your new case, it's convenient.
+
+                case EmagConstructionGraphStep: // Dumont
+                {
+                    if (ev is not GotEmaggedEvent emagged ||
+                        !_constructionEmag.CompareFlag(emagged.Type, EmagType.Interaction))
+                        return HandleResult.False;
+
+                    user = emagged.UserUid;
+                    return validation ? HandleResult.Validated : HandleResult.True;
+                }
 
                 case EntityInsertConstructionGraphStep insertStep:
                 {

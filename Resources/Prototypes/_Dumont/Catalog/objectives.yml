@@ -28,8 +28,14 @@
   id: ToolboxSyndicateFilledCoreExtraction
   suffix: Filled, Core Extraction
   components:
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,5
   - type: StorageFill
     contents:
+    - id: ClothingOuterSuitRad
+    - id: Emag
     - id: Crowbar
     - id: Welder
     - id: Wrench

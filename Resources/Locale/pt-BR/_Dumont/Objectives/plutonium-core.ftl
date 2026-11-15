@@ -5,7 +5,7 @@ store-category-objectives = Objetivos
 objective-condition-steal-nuclear-bomb = bomba nuclear
 steal-target-groups-plutonium-core = núcleo de plutônio
 uplink-core-extraction-toolbox-name = Kit de extração do núcleo
-uplink-core-extraction-toolbox-desc = Tudo o que você precisa para remover o núcleo de plutônio de uma bomba nuclear. Instruções não inclusas.
+uplink-core-extraction-toolbox-desc = Ferramentas, um emag, um traje antirradiação com capuz e um recipiente blindado para extrair o núcleo de plutônio de uma bomba nuclear.
 tool-quality-fine-screwing-name = Parafusamento de precisão
 tool-quality-fine-screwing-tool-name = Chave de fenda de ponta fina
 construction-graph-tag-plutonium-core = núcleo de plutônio
@@ -20,4 +20,6 @@ ent-ThinTippedScrewdriver = chave de fenda de ponta fina
 ent-NuclearBombDisarmed = bomba nuclear sem núcleo
     .desc = Esta bomba não pode ser armada sem seu material nuclear.
 ent-ToolboxSyndicateFilledCoreExtraction = caixa de ferramentas de extração do núcleo
-    .desc = Contém as ferramentas e o recipiente necessários para extrair o núcleo de plutônio de uma bomba nuclear.
+    .desc = Contém ferramentas, um emag, um traje antirradiação com capuz e um recipiente blindado para extrair o núcleo de plutônio.
+
+construction-step-nuke-emag = Agora use um EMAG para desativar os mecanismos de segurança da bomba.

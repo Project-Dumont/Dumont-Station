@@ -5,7 +5,7 @@ store-category-objectives = Objectives
 objective-condition-steal-nuclear-bomb = nuclear fission explosive
 steal-target-groups-plutonium-core = plutonium core
 uplink-core-extraction-toolbox-name = Core extraction toolbox
-uplink-core-extraction-toolbox-desc = Everything you need to remove a nuclear bomb's plutonium core. Instructions not included.
+uplink-core-extraction-toolbox-desc = Tools, an emag, a hooded radiation suit and a shielded container for extracting a nuclear bomb's plutonium core.
 tool-quality-fine-screwing-name = Fine screwing
 tool-quality-fine-screwing-tool-name = Thin-tipped screwdriver
 construction-graph-tag-plutonium-core = plutonium core
@@ -15,3 +15,5 @@ ent-NuclearBombDisarmed = nuclear fission explosive
     .desc = This bomb cannot be armed without its nuclear material.
 ent-ThinTippedScrewdriver = thin-tipped screwdriver
     .desc = A screwdriver with an ultra thin tip, designed for delicate mechanisms.
+
+construction-step-nuke-emag = Now use an EMAG to disable the bomb's safety mechanisms.

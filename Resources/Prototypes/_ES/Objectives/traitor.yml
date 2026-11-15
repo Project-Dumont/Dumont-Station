@@ -17,9 +17,7 @@
   description: Use the sabotage verb on a powered communications computer on your station. Disrupt Nanotrasen's announcements until engineering repairs the sabotage.
   components:
   - type: Objective
-    icon:
-      sprite: Structures/Machines/computers.rsi
-      state: comm
+    icon: _Dumont/Interface/Objectives/sabotage_communications.png
   - type: SabotageCondition
     whitelist:
       components:
@@ -42,9 +40,7 @@
   description: Use the sabotage verb on a powered telecommunication server on your station. Its radio channels will be scrambled until repaired.
   components:
   - type: Objective
-    icon:
-      sprite: Structures/Machines/telecomms.rsi
-      state: telecom-on
+    icon: _Dumont/Interface/Objectives/sabotage_telecommunications.png
   - type: SabotageCondition
     whitelist:
       components:
@@ -57,9 +53,7 @@
   description: Sabotage a powered gravity generator on your station. After five minutes, excessive gravity will force the crew to lie down and slow them by 30% until repaired.
   components:
   - type: Objective
-    icon:
-      sprite: Structures/Machines/gravity_generator_core.rsi
-      state: idle
+    icon: _Dumont/Interface/Objectives/sabotage_gravity.png
   - type: SabotageCondition
     whitelist:
       components:
@@ -72,9 +66,7 @@
   description: Use the sabotage verb on a powered mass scanner computer on your station. This will cause turbulence on the station. Buckle up before the jolts begin.
   components:
   - type: Objective
-    icon:
-      sprite: Structures/Machines/computers.rsi
-      state: shuttle
+    icon: _Dumont/Interface/Objectives/sabotage_mass_scanner.png
   - type: SabotageCondition
     whitelist:
       components:

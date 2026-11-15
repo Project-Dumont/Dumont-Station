@@ -15,6 +15,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._Dumont.Construction;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -28,6 +29,9 @@ namespace Content.Shared.Construction.Steps
     {
         private Type? GetType(MappingDataNode node)
         {
+            if (node.Has("emag")) // Dumont
+                return typeof(EmagConstructionGraphStep);
+
             if (node.Has("material"))
             {
                 return typeof(MaterialConstructionGraphStep);

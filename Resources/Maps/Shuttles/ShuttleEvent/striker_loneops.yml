@@ -1457,10 +1457,19 @@ entities:
     - type: Transform
       pos: 1.373605,-0.2749618
       parent: 325
+- proto: NuclearBombUnanchored
+  entities:
+  - uid: 352
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 325
 - proto: NukeCodePaper
   entities:
   - uid: 323
     components:
+    - type: NukeCodePaper
+      allNukesAvailable: false
     - type: Transform
       pos: 1.561105,-2.5567772
       parent: 325
