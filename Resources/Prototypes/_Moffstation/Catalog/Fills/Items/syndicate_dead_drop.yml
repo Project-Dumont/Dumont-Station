@@ -12,11 +12,10 @@
   - type: EntityTableSpawner
     table: !type:AllSelector
       children:
-      - id: BriefcaseSyndieDeadDrop
       - id: EffectFlashRedspace
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseMinorContraband ]
+  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndicateRedspace, BaseMinorContraband ]
   id: BriefcaseSyndieDeadDrop
   name: syndicate briefcase
   suffix: Dead Drop, Do Not Map

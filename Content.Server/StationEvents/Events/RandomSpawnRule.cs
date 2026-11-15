@@ -8,6 +8,7 @@
 
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
+using Content.Shared._Starlight.Lock;
 using Content.Server.Pinpointer;
 using Content.Server.Radio.EntitySystems;
 using Robust.Shared.Utility;
@@ -33,7 +34,19 @@ public sealed partial class RandomSpawnRule : StationEventSystem<RandomSpawnRule
             {
                 var message = Loc.GetString(radioMessage.Message,
                     ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString(ent))));
-                _radio.SendRadioMessage(ent, message, radioMessage.Channel, ent);
+                if (TryComp<DigitalLockComponent>(ent, out var digitalLock))
+                {
+                    if (digitalLock.Code.Length == 0)
+                    {
+                        for (var i = 0; i < digitalLock.MaxCodeLength; i++)
+                            digitalLock.Code += RobustRandom.Next(0, 10).ToString();
+                    }
+
+                    message += " " + Loc.GetString("dead-drop-code-announcement", ("code", digitalLock.Code));
+                }
+
+                var sender = radioMessage.Sender is {} prototype ? Spawn(prototype, coords) : ent;
+                _radio.SendRadioMessage(sender, message, radioMessage.Channel, sender);
             }
         }
     }

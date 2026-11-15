@@ -20,7 +20,8 @@
   - type: GameRule
     chaosScore: 40
   - type: RandomSpawnRule
-    prototype: SyndieDeadDropSpawner
+    prototype: BriefcaseSyndieDeadDrop
     radioMessage:
       channel: Syndicate
       message: syndicate-dead-drop-announcement
+      sender: SyndieDeadDropSpawner

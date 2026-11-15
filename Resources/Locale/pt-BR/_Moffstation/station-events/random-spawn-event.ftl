@@ -6,3 +6,5 @@ station-syndicate-dead-drop-announcement = Atenção. Assinaturas de espaço ver
 ent-SyndieDeadDropSpawner = Alto Comando do Sindicato
 ent-BriefcaseSyndieDeadDrop = maleta do Sindicato
     .desc = Uma maleta contendo uma remessa clandestina de equipamentos do Sindicato.
+
+dead-drop-code-announcement = O código da entrega é {$code}.

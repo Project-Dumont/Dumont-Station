@@ -6,3 +6,5 @@ station-syndicate-dead-drop-announcement = Attention. Redspace signatures detect
 ent-SyndieDeadDropSpawner = Syndicate High Command
 ent-BriefcaseSyndieDeadDrop = syndicate briefcase
     .desc = A briefcase containing an illicit shipment of Syndicate equipment.
+
+dead-drop-code-announcement = The dead drop code is {$code}.

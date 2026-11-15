@@ -32,4 +32,5 @@ public sealed partial class RandomSpawnRuleComponent : Component
 [DataRecord]
 public sealed partial record RandomSpawnRuleRadioMessage(
     [field: DataField(required: true)] ProtoId<RadioChannelPrototype> Channel,
-    [field: DataField(required: true)] LocId Message);
+    [field: DataField(required: true)] LocId Message,
+    [field: DataField] EntProtoId? Sender = null);
