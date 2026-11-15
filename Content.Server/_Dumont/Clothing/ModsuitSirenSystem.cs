@@ -41,7 +41,7 @@ public sealed partial class ModsuitSirenSystem : EntitySystem
         // Suit power and the attached helmet can change independently of sealing events.
         var query = EntityQueryEnumerator<ModsuitSirenComponent>();
         while (query.MoveNext(out var uid, out var component))
-            Synchronize((uid, component));
+            SynchronizeSirenAvailability((uid, component));
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public sealed partial class ModsuitSirenSystem : EntitySystem
     /// Removes the action and stops the siren when the helmet or suit becomes unavailable.
     /// Power restoration restores the button, but never automatically restarts the siren.
     /// </summary>
-    private EntityUid? Synchronize(Entity<ModsuitSirenComponent> ent)
+    private EntityUid? SynchronizeSirenAvailability(Entity<ModsuitSirenComponent> ent)
     {
         var wearer = GetWearer(ent);
         if (wearer == null)
@@ -90,7 +90,7 @@ public sealed partial class ModsuitSirenSystem : EntitySystem
     /// </summary>
     private void OnToggle(Entity<ModsuitSirenComponent> ent, ref ModsuitSirenToggleEvent args)
     {
-        if (args.Handled || Synchronize(ent) is not {} wearer || wearer != args.Performer)
+        if (args.Handled || SynchronizeSirenAvailability(ent) is not {} wearer || wearer != args.Performer)
             return;
 
         if (ent.Comp.Emitter == null || !Exists(ent.Comp.Emitter))
