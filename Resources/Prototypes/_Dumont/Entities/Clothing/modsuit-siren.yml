@@ -27,7 +27,7 @@
     activeSound:
       path: /Audio/Effects/Vehicle/ambulancesiren.ogg
       params:
-        volume: -4
+        volume: 0
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
