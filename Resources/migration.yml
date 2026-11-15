@@ -1079,3 +1079,16 @@ EnergyChemDispenser: ChemDispenser # Dumont edit
 
 # 2026-10-09 Dumont victor total sprite death
 FloorSewageWaterEntity: FloorWaterEntity
+
+# 2026-11-15 Dumont reactor control rods got merged into fuel rods, closest thing is a reflector
+BohrumReactorControlRod: BohrumReactorReflector
+SteelReactorControlRod: SteelReactorReflector
+GoldReactorControlRod: GoldReactorReflector
+SilverReactorControlRod: SilverReactorReflector
+BrassReactorControlRod: SteelReactorReflector
+PlasteelReactorControlRod: SteelReactorReflector
+GlassReactorControlRod: SteelReactorReflector
+PlasmaGlassReactorControlRod: SteelReactorReflector
+DiamondReactorControlRod: SteelReactorReflector
+ReactorGasPipe: null
+TurbineGasPipe: null
