@@ -103,6 +103,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            NanotrasenCareerTrainer: [ 1, 1 ] # Dumont
             #service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
