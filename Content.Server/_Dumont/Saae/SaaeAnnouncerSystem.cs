@@ -24,6 +24,11 @@ public sealed partial class SaaeAnnouncerSystem : EntitySystem
     private TimeSpan _busyUntil;
     private EntityUid? _current;
 
+    /// <summary>
+    /// Nothing is playing and nothing is waiting.
+    /// </summary>
+    public bool Idle => _queue.Count == 0 && _timing.CurTime >= _busyUntil;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
