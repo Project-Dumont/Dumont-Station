@@ -30,7 +30,7 @@
 # SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
 # SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>SleeperAgents
 # SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
 # SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
@@ -952,6 +952,7 @@
       chaosScore: 200 # Goobstation - same as roundstart traitor gamerule
       blacklist:
         components:
+        - MindShield # DeltaV - Mind Shielded people are immune to becoming syndicate
         - AntagImmune
         - CommandStaff
       mindRoles:
