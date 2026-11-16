@@ -142,8 +142,6 @@
     pocket2: AbductorTaskTablet
     suitstorage: Wonderprod
     id: AgentIDCard
-  storage:
-    back:
 
 - type: startingGear
   id: AbductorScientistGear
