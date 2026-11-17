@@ -30,6 +30,7 @@
   id: RobustSoftdrinksInventory
   startingInventory:
     DrinkColaCan: 4
+    DrinkGuaranaJudasCan: 4
     DrinkGrapeCan: 2
     DrinkRootBeerCan: 2
     DrinkIcedTeaCan: 2

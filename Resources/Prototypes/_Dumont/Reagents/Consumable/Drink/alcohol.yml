@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: Skal
+  name: Skal
+  parent: BaseAlcohol
+  desc: reagent-desc-skal
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: skal
+  color: "#ffb908"
+  fizziness: 0.6
