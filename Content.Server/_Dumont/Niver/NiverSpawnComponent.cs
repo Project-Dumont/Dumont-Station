@@ -19,10 +19,22 @@ public sealed partial class NiverSpawnComponent : Component
     ];
 
     [DataField]
+    public List<EntProtoId> HornPrototypes = ["BikeHorn"];
+
+    [DataField]
+    public float HornChance = 0.1f;
+
+    [DataField]
     public ProtoId<DecalPrototype> ConfettiDecal = "Confetti";
 
     [DataField]
     public float ConfettiChance = 0.25f;
+
+    [DataField]
+    public EntProtoId BarArea = "AreaBar";
+
+    [DataField]
+    public List<EntProtoId> BarPrototypes = ["FoodCakeBirthday", "DrinkChampagneBottleFull", "DrinkChampagneBottleFull"];
 }
 
 /// <summary>
