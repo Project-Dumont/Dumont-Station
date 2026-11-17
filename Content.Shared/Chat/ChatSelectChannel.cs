@@ -76,6 +76,11 @@ namespace Content.Shared.Chat
         /// </summary>
         Telepathic = ChatChannel.Telepathic,
 
+        /// <summary>
+        ///     RMC Mentor chat Funky Port
+        /// </summary>
+        Mentor = ChatChannel.MentorChat,
+
         Console = ChatChannel.Unspecified
     }
 }

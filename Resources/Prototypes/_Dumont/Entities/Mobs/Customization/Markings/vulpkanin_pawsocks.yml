@@ -1,0 +1,74 @@
+# Ported from Starlight PR #177 (GnarlyGnoll / JohnDWolfe).
+# Adapted to Dumont's marking categories.
+
+- type: marking
+  id: PawSocksLeftHand
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_left_hand
+
+- type: marking
+  id: PawSocksRightHand
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_right_hand
+
+- type: marking
+  id: PawSocksLeftArm
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_left_arm
+
+- type: marking
+  id: PawSocksRightArm
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_right_arm
+
+- type: marking
+  id: PawSocksLeftFoot
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_left_foot
+
+- type: marking
+  id: PawSocksRightFoot
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_right_foot
+
+- type: marking
+  id: PawSocksLeftLeg
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_left_leg
+
+- type: marking
+  id: PawSocksRightLeg
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/vulpkanin/pawsocks.rsi
+    state: pawsocks_right_leg

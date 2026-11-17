@@ -10,6 +10,7 @@ using Content.Shared.Actions;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Toggleable;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared.Clothing.EntitySystems;
 
@@ -19,6 +20,7 @@ namespace Content.Shared.Clothing.EntitySystems;
 public sealed class ToggleClothingSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
 
     public override void Initialize()
@@ -58,6 +60,8 @@ public sealed class ToggleClothingSystem : EntitySystem
     private void OnToggleAction(Entity<ToggleClothingComponent> ent, ref ToggleActionEvent args)
     {
         args.Handled = _toggle.Toggle(ent.Owner, args.Performer);
+        if (args.Handled)
+            _audio.PlayPredicted(_toggle.IsActivated(ent.Owner) ? ent.Comp.SoundActivate : ent.Comp.SoundDeactivate, ent, args.Performer);
     }
 
     private void OnUnequipped(Entity<ToggleClothingComponent> ent, ref ClothingGotUnequippedEvent args)

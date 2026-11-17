@@ -393,3 +393,8 @@ flavor-complex-punishment = like punishment
 flavor-complex-artifact-glue = like crushed artifacts
 flavor-weh = like weh
 flavor-hew = like hew
+
+## Dumont Station
+
+flavor-complex-guaranajudas = like extra-sweet tutti-frutti cough syrup
+flavor-complex-skal = like watery beer that goes down smooth

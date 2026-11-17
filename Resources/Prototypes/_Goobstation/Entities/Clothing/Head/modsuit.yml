@@ -449,6 +449,7 @@
   description: A robust brain bucket for working on barely salvageable brains.
   categories: [ HideSpawnMenu ]
   components:
+  - type: ModsuitSiren
   - type: Appearance
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/paramedic.rsi

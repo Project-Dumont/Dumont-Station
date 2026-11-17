@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gamePreset
+  id: DumontBday
+  alias:
+  - aniversario
+  - birthday
+  name: dumontbday-name
+  showInVote: false
+  description: dumontbday-desc
+  rules:
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: holiday
+  id: DumontBDay
+  name: holiday-name-dumont-bday
+  beginDay: 17
+  beginMonth: November

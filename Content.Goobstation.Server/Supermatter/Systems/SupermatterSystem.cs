@@ -601,7 +601,9 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     {
         var target = args.OtherEntity;
 
-        if (args.OurEntity != uid || !args.OtherFixture.Hard)
+        if (args.OurEntity != uid)
+            return;
+        if (!args.OtherFixture.Hard && !HasComp<ProjectileComponent>(args.OtherEntity))
             return;
 
         // Stop immune entities from activating the sm.
@@ -700,7 +702,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         sm.Damage += sm.DelaminationPoint / 10;
         sm.DamageArchived += sm.DelaminationPoint / 10;
         sm.SliverRemoved = true;
-        
+
         var integrity = GetIntegrity(sm).ToString("0.00");
         SupermatterAnnouncement(uid, Loc.GetString("supermatter-announcement-cc-tamper", ("integrity", integrity)), true, "Central Command");
 

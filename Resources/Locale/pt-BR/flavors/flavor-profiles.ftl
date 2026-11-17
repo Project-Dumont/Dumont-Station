@@ -254,3 +254,8 @@ flavor-complex-sax = de jazz
 flavor-complex-bottledlightning = como um relâmpago engarrafado
 flavor-complex-punishment = de punição
 flavor-weh = like weh
+
+## Dumont Station
+
+flavor-complex-guaranajudas = de remédio sabor tutti-frutti extra doce
+flavor-complex-skal = de cerveja aguada que desce redondo

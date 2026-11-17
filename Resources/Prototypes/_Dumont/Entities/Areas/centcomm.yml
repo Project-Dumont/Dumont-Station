@@ -1,0 +1,199 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaCentcomm
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcomm
+  name: centcomm
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommAdminStorage
+  name: centcomm admin storage
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_admin_storage
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommArmory
+  name: centcomm armory
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_armory
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommBrief
+  name: centcomm brief
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_brief
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommControl
+  name: centcomm control
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_control
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommCourt
+  name: centcomm court
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_court
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommEng
+  name: centcomm eng
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_eng
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommEvac
+  name: centcomm evac
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_evac
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommMed
+  name: centcomm med
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_med
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommPrison
+  name: centcomm prison
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_prison
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommSci
+  name: centcomm sci
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_sci
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommSec
+  name: centcomm sec
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_sec
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommService
+  name: centcomm service
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_service
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaCentcommSupply
+  name: centcomm supply
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: centcomm_supply
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaThunderdome
+  name: thunderdome
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: thunderdome
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaThunderdomeAdmin
+  name: thunderdome admin
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: thunderdome_admin
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaThunderdomeObserve
+  name: thunderdome observe
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: thunderdome_observe
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaThunderdomeTeamOne
+  name: thunderdome team one
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: thunderdome_team_one
+
+- type: entity
+  parent: BaseAreaCentcomm
+  id: AreaThunderdomeTeamTwo
+  name: thunderdome team two
+  suffix: AreaCentcomm
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/centcomm.rsi
+    state: thunderdome_team_two

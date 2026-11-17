@@ -120,11 +120,16 @@ namespace Content.Shared.Chat
         Telepathic = 1 << 16, // Goobstation - Starlight collective mind port
 
         /// <summary>
+        ///     RMC Mentor chat Funky Port
+        /// </summary>
+        MentorChat = 1 << 17,
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
         IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Telepathic | CollectiveMind | Notifications, // Goobstation - Starlight collective mind port
 
-        AdminRelated = Admin | AdminAlert | AdminChat,
+        AdminRelated = Admin | AdminAlert | AdminChat | MentorChat,
     }
 
     /// <summary>
@@ -142,6 +147,7 @@ namespace Content.Shared.Chat
             {
                 ChatChannel.OOC => Loc.GetString("chat-channel-humanized-ooc"),
                 ChatChannel.AdminChat => Loc.GetString("chat-channel-humanized-admin"),
+                ChatChannel.MentorChat => "MENTOR", // RMC Mentor Chat Funky Port
                 _ => throw new ArgumentOutOfRangeException(nameof(channel), channel, null)
             };
         }

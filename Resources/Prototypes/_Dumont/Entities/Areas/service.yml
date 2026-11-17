@@ -1,0 +1,129 @@
+- type: entity
+  parent: BaseAreaService
+  id: AreaServiceTele
+  name: service teleporter
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: service_tele
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaRadioStudio
+  name: radio studio
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: radio_studio
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaServiceHallway
+  name: service hallway
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: service_hallway
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaZookeeper
+  name: zookeeper
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: zookeeper
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaService
+  name: service
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: service
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaServiceBreak
+  name: service break
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: service_break
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaHydroBackroom
+  name: hydro backroom
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: botany_backroom
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaChapelFuneral
+  name: chapel funeral
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: chapel_funeral
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaChapelStorage
+  name: chapel storage
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: chapel_storage
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaClown
+  name: clown
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: clown
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaMime
+  name: mime
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: mime
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaMusician
+  name: musician
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: musician
+
+- type: entity
+  parent: BaseAreaService
+  id: AreaMiniBar
+  name: mini bar
+  suffix: AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: mini_bar
