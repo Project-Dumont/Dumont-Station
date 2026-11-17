@@ -25,7 +25,7 @@ public sealed partial class NiverWishSystem : EntitySystem
 
     private static readonly SoundSpecifier CurseSound = new SoundPathSpecifier("/Audio/Misc/narsie_rises.ogg");
 
-    private static readonly TimeSpan WishDuration = TimeSpan.FromSeconds(15);
+    private static readonly TimeSpan WishDuration = TimeSpan.FromSeconds(30);
 
     private static readonly TimeSpan Grace = TimeSpan.FromSeconds(2);
 

@@ -19,6 +19,14 @@ public sealed partial class NiverWishSystem : EntitySystem
         _window?.Close();
     }
 
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        if (_window is { TimedOut: true })
+            _window.Close();
+    }
+
     private void OnRequest(NiverWishRequestEvent ev)
     {
         _window?.Close();

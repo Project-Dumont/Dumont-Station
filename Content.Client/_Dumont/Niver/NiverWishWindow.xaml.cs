@@ -12,20 +12,32 @@ public sealed partial class NiverWishWindow : BaseWindow
 {
     public event Action<bool>? OnAnswered;
 
+    /// <summary>
+    /// Time ran out. The server curses on its own, the window just needs closing.
+    /// </summary>
+    public bool TimedOut { get; private set; }
+
     private static readonly TimeSpan UrgentTime = TimeSpan.FromSeconds(5);
 
-    private readonly TimeSpan _duration;
+    private TimeSpan _duration;
     private readonly StyleBoxFlat _barStyle = new(Color.FromHex("#f5c542"));
     private TimeSpan _remaining;
     private bool _answered;
 
-    public NiverWishWindow(TimeSpan duration)
+    public NiverWishWindow(TimeSpan duration) : this()
+    {
+        _duration = duration;
+        _remaining = duration;
+        UpdateTimer();
+    }
+
+    public NiverWishWindow()
     {
         RobustXamlLoader.Load(this);
         Resizable = false;
 
-        _duration = duration;
-        _remaining = duration;
+        _duration = TimeSpan.FromSeconds(30);
+        _remaining = _duration;
 
         MessageLabel.SetMessage(FormattedMessage.FromMarkupPermissive(Loc.GetString("niver-wish-window-text")));
         TimerBar.ForegroundStyleBoxOverride = _barStyle;
@@ -45,8 +57,9 @@ public sealed partial class NiverWishWindow : BaseWindow
         _remaining -= TimeSpan.FromSeconds(args.DeltaSeconds);
         if (_remaining <= TimeSpan.Zero)
         {
+            // Closing here would modify the UI tree while it's being iterated, NiverWishSystem closes it instead.
             _answered = true;
-            base.Close();
+            TimedOut = true;
             return;
         }
 
