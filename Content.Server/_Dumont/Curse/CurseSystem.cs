@@ -30,6 +30,8 @@ public sealed class CurseSystem : EntitySystem
     private float _doubleChance;
     private readonly HashSet<Guid> _cursedUsers = new();
 
+    private readonly HashSet<Guid> _runtimeCursedUsers = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -57,10 +59,20 @@ public sealed class CurseSystem : EntitySystem
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
     {
-        if (!_enabled || !_cursedUsers.Contains(args.Player.UserId.UserId))
+        if (!_enabled || !IsUserCursed(args.Player.UserId.UserId))
             return;
 
         TryCurse(args.Mob);
+    }
+
+    public bool IsUserCursed(Guid userId)
+    {
+        return _cursedUsers.Contains(userId) || _runtimeCursedUsers.Contains(userId);
+    }
+
+    public void AddCursedUser(Guid userId)
+    {
+        _runtimeCursedUsers.Add(userId);
     }
 
     private void OnToggleCurse(ref ExecuteEntityEffectEvent<ToggleCurse> args)
