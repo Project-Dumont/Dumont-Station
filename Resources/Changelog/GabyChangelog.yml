@@ -5038,3 +5038,45 @@ Entries:
       message: Adicionado 178 novas áreas para mapping.
   id: 602
   time: '2026-11-17T04:49:45.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: Adicionado Guaraná Judas
+    - type: Add
+      message: Adicionado Skal
+  id: 603
+  time: '2026-11-17T21:24:21.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Mudanças foram feitas em como alguns antagonistas de início de round
+        funcionam. Veja a PR para mais detalhes.
+  id: 604
+  time: '2026-11-17T21:25:33.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Todos os aplicativos do PDA agora possuem sprites únicos.
+  id: 605
+  time: '2026-11-17T21:26:07.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Reativa o tamanho dos personagens
+  id: 606
+  time: '2026-11-17T21:26:35.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Removido sintéticos
+  id: 607
+  time: '2026-11-17T21:26:44.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Agora é possível jogar de NCT sem precisar de admin. Mas você precisa de
+        whitelist.
+  id: 608
+  time: '2026-11-17T21:27:06.0000000+00:00'
