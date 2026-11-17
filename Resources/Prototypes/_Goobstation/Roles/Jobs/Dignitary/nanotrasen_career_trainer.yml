@@ -12,11 +12,22 @@
   supervisors: job-supervisors-ntr-centcom
   canBeAntag: false
   whitelisted: true # 1984
-  setPreference: false # 1984 x2
-  accessGroups:
-  - AllAccess
   access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Engineering
+  - Medical
+  - Research
+  - Command
   - CentralCommand
+  - Service
+  - Hydroponics
+  - Kitchen
+  - Cargo
+  - Theatre
   - NanotrasenRepresentative
   - BlueshieldOfficer
   special:
@@ -31,20 +42,28 @@
   equipment:
     id: TrainerPDA
     ears: ClothingHeadsetAltCentCom
-    eyes: ClothingEyesGlassesCentComm
-    pocket1: WeaponDisabler
+    eyes: ClothingEyesGlassesCommand
+    pocket1: WeaponDisablerAdvanced
     pocket2: FoodSnackLollypopWrappedCentComm # Come on, it's a trademark at this point.
   storage:
     back:
     - Flash
     - TelescopicBatonAdvanced
     - CentralCommandBusinessCard
+    - ClothingMaskGasCentcom
+    - HandheldFaxOfficial
+    - CrowbarGreen
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - NetworkConfigurator
 
 - type: chameleonOutfit
   id: NanotrasenCareerTrainerChameleonOutfit
   job: NanotrasenCareerTrainer
   equipment:
-    eyes: ClothingEyesGlassesCentComm
+    eyes: ClothingEyesGlassesCommand
     mask: ClothingMaskBreath
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesHeavyGoldenTrim

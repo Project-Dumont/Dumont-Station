@@ -66,8 +66,8 @@
   maps:
   #- Atlas # Dumont Station - não está sendo mantido
   #- Amber # Dumont Station - não está sendo mantido s/2
-  #- Bagel # Dumont Station - não está sendo mantido
-  - Box
+  - Bagel # Dumont Station - Bagel está de volta entre nós
+  #- Box # Dumont Sário
   - Cluster
   - Core # Dumont Station - Reativado
   #- Fland # Dumont Station - não está sendo mantido

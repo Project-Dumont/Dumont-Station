@@ -4876,3 +4876,207 @@ Entries:
       message: Não tem mais uma entrada de fiança velha no livro guia. My bad chat.
   id: 578
   time: '2026-11-02T15:41:40.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Tweak
+      message: Ajeita o spawnpoint do ghost role Syndicate Outpost Listener
+  id: 579
+  time: '2026-11-02T18:21:40.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Bar signs não mostram um erro quando desligados.
+  id: 580
+  time: '2026-11-02T21:19:16.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Fix
+      message: Labor Shuttle agora funciona de fato.
+  id: 581
+  time: '2026-11-03T19:44:45.0000000+00:00'
+- author: cha
+  changes:
+    - type: Add
+      message: Adiciona a arte de lobby "Pode ser qualquer um"
+  id: 582
+  time: '2026-11-04T06:04:17.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Fix
+      message: Algumas músicas e vozes agora não vão mais te deixar surdo.
+  id: 583
+  time: '2026-11-04T06:07:22.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Fix
+      message: Corrigido a progressão do culto cosmico
+    - type: Fix
+      message: Erros de sprites do Culto Cosmico foram arrumados
+  id: 584
+  time: '2026-11-04T06:42:32.0000000+00:00'
+- author: cha
+  changes:
+    - type: Add
+      message: Adiciona a arte de lobby "A NT se importa com sua saúde"
+  id: 585
+  time: '2026-11-04T19:27:53.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: 'Agora RPD recebe dobro de carga quando recarregado. '
+  id: 586
+  time: '2026-11-04T21:16:24.0000000+00:00'
+- author: Wolfguiter
+  changes:
+    - type: Fix
+      message: Corrigido laser de emitters passando pela SuperMatter.
+  id: 587
+  time: '2026-11-05T01:40:54.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Estatica de rádio ao falar em um.
+  id: 588
+  time: '2026-11-05T21:05:05.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Bug que causava client a travar... Pelo menos, um deles. Qualquer outra
+        coisa que rolar eu vou achar. 
+  id: 589
+  time: '2026-11-06T15:26:04.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Farragus agora é revestido por uma Rocha Anciã, que é 4x mais resistente
+        que a rocha de asteróide.
+    - type: Tweak
+      message: >-
+        Diversos feedbacks foram incluídos no Farragus para todos terem uma
+        melhor experiência.
+  id: 590
+  time: '2026-11-06T18:42:42.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: >-
+        Mentor Help, para fazer perguntas sobre o jogo e suas mecânicas, confira
+        no F1.
+  id: 591
+  time: '2026-11-06T21:36:13.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Café, gelo e creme podem ser inseridos em dispensers de bebida denovo.
+  id: 592
+  time: '2026-11-08T23:53:30.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Arbusto
+  id: 593
+  time: '2026-11-12T02:07:23.0000000+00:00'
+- author: GIZDCERA
+  changes:
+    - type: Fix
+      message: Corrige os vinis da jukebox que usavam todos o mesmo sprite branco.
+  id: 594
+  time: '2026-11-13T04:26:15.0000000+00:00'
+- author: GIZDCERA
+  changes:
+    - type: Fix
+      message: A busca por jukebox no spawner não lista mais os discos de vinil.
+  id: 595
+  time: '2026-11-13T04:27:02.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Telefone da sec agora é 190.
+  id: 596
+  time: '2026-11-13T04:42:32.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: Recipe do Blood Pack
+    - type: Add
+      message: Tradução da Aba Sólidos do Guidebook
+  id: 597
+  time: '2026-11-13T05:32:32.0000000+00:00'
+- author: CRISO, Dreykor, MajinFeliz
+  changes:
+    - type: Add
+      message: Bagel Station está de volta!
+  id: 598
+  time: '2026-11-13T10:46:30.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Add
+      message: >-
+        Novas Markings de "pawsocks" para os Vulpkanin, vá gritar nos corredores
+        como uma raposa!
+  id: 599
+  time: '2026-11-15T02:23:32.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Pequena mudança no texto dos revs do end-round
+  id: 600
+  time: '2026-11-15T03:02:06.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Add
+      message: >-
+        Os trajes de paramédico agora vêm equipados com uma sirene e uma luz
+        azul giratória.
+  id: 601
+  time: '2026-11-17T04:47:49.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado 178 novas áreas para mapping.
+  id: 602
+  time: '2026-11-17T04:49:45.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: Adicionado Guaraná Judas
+    - type: Add
+      message: Adicionado Skal
+  id: 603
+  time: '2026-11-17T21:24:21.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Mudanças foram feitas em como alguns antagonistas de início de round
+        funcionam. Veja a PR para mais detalhes.
+  id: 604
+  time: '2026-11-17T21:25:33.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Todos os aplicativos do PDA agora possuem sprites únicos.
+  id: 605
+  time: '2026-11-17T21:26:07.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Reativa o tamanho dos personagens
+  id: 606
+  time: '2026-11-17T21:26:35.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Removido sintéticos
+  id: 607
+  time: '2026-11-17T21:26:44.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Agora é possível jogar de NCT sem precisar de admin. Mas você precisa de
+        whitelist.
+  id: 608
+  time: '2026-11-17T21:27:06.0000000+00:00'

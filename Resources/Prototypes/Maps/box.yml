@@ -111,6 +111,7 @@
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Dumont Station - admin assist
+            NanotrasenCareerTrainer: [ 1, 1 ] # Dumont
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
@@ -161,6 +162,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            PartyMaker: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]

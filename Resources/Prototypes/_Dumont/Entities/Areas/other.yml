@@ -1,0 +1,19 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaOther
+  suffix: AreaOther
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/other.rsi
+    state: terminal
+
+- type: entity
+  parent: BaseAreaOther
+  id: AreaTerminal
+  name: terminal
+  suffix: AreaOther
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/other.rsi
+    state: terminal

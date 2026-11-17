@@ -53,6 +53,8 @@ using Content.Shared._EinsteinEngines.Language;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -73,15 +75,19 @@ namespace Content.Server.Radio.EntitySystems;
 /// </summary>
 public sealed partial class RadioSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly IReplayRecordingManager _replay = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly RadioJobIconSystem _radioIconSystem = default!; // Goobstation - radio icons
-    [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation - Whitelisted radio channels
+    [Dependency] private INetManager _netMan = default!;
+    [Dependency] private IReplayRecordingManager _replay = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private RadioJobIconSystem _radioIconSystem = default!; // Goobstation - radio icons
+    [Dependency] private LanguageSystem _language = default!; // Einstein Engines - Language
+    [Dependency] private EntityWhitelistSystem _whitelist = default!; // Goobstation - Whitelisted radio channels
+
+    [Dependency] private SharedAudioSystem _audio = default!;
+
+    private static readonly SoundSpecifier RadioClick = new SoundCollectionSpecifier("DumontRadioClick");
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -236,6 +242,10 @@ public sealed partial class RadioSystem : EntitySystem
         var sourceMapId = Transform(radioSource).MapID;
         var hasActiveServer = HasActiveServer(sourceMapId, channel.ID);
         var sourceServerExempt = _exemptQuery.HasComp(radioSource);
+
+        // Dumont
+        if (canSend && (channel.LongRange || sourceServerExempt || hasActiveServer))
+            _audio.PlayPvs(RadioClick, messageSource, AudioParams.Default.WithVolume(-5f).WithMaxDistance(5f));
 
         var radioQuery = EntityQueryEnumerator<ActiveRadioComponent, TransformComponent>();
         while (canSend && radioQuery.MoveNext(out var receiver, out var radio, out var transform))

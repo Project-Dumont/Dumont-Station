@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseAreaStation
+  id: AreaSpaceHut
+  name: space hut
+  suffix: AreaMaint, AreaExterior, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: space_hut

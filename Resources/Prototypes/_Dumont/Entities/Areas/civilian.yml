@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaGameRoom
+  name: game room
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: game_room
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLibraryGallery
+  name: library gallery
+  suffix: AreaService, AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: library_gallery
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLibraryGalleryPrivate
+  name: library gallery private
+  suffix: AreaService, AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: library_gallery_private
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLibraryLounge
+  name: library lounge
+  suffix: AreaService, AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: library_lounge

@@ -1,0 +1,139 @@
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandStorage
+  name: command storage
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: command_storage
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaAdminAssit
+  name: administrative assistant office
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: admin_assist_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandBridgeLobby
+  name: bridge lobby
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: bridge_lobby
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaHopline
+  name: hopline
+  suffix: AreaCommand, AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: hopline
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandBreak
+  name: command break
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: command_break
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCapPrivate
+  name: captain private
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: captain_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaQmPrivate
+  name: qm private
+  suffix: AreaCommand, AreaSupply, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: qm_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaRdPrivate
+  name: rd private
+  suffix: AreaCommand, AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: rd_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaHopPrivate
+  name: hop private
+  suffix: AreaCommand, AreaService, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: hop_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaHosPrivate
+  name: hos private
+  suffix: AreaCommand, AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: hos_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCmoPrivate
+  name: cmo private
+  suffix: AreaCommand, AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: cmo_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCePrivate
+  name: ce private
+  suffix: AreaCommand, AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: ce_private
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaDignitaryOffice
+  name: dignitary office
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dignitary_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaGsoOffice
+  name: gso office
+  suffix: AreaCommand, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: gso_office

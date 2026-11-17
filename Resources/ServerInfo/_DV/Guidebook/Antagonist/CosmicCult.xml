@@ -39,6 +39,15 @@
 
   [textlink="Para saber mais sobre Influências, clique aqui." link="CosmicCultInfluences"]
 
+  ## Servos
+  <Box>
+    <GuideEntityEmbed Entity="ActionCosmicConversion" Caption="Estilhaçar Cognição"/>
+  </Box>
+
+  Com a influência [color=#4cabb3]Estilhaçar Cognição[/color], você converte um tripulante em [color=#4cabb3]Servo Cósmico[/color]. O servo entra no Murmúrio Astral e luta pelo culto, mas não drena entropia nem sobe de nível junto com vocês.
+
+  [textlink="Para saber mais sobre Servos Cósmicos, clique aqui." link="CosmicCultServants"]
+
   <Box>
     <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Um pináculo vacuoso"/>
   </Box>
