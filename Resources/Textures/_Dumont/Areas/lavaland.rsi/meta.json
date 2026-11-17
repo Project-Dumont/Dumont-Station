@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/tree/master/icons/area.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mining_break"
+    },
+    {
+      "name": "mining_cafe"
+    },
+    {
+      "name": "mining_danger"
+    },
+    {
+      "name": "mining_dock"
+    },
+    {
+      "name": "mining_eva"
+    },
+    {
+      "name": "mining_hydro"
+    },
+    {
+      "name": "mining_labor"
+    },
+    {
+      "name": "mining_labor_cafe"
+    },
+    {
+      "name": "mining_labor_living"
+    },
+    {
+      "name": "mining_labor_product"
+    },
+    {
+      "name": "mining_living"
+    },
+    {
+      "name": "mining_lobby"
+    },
+    {
+      "name": "mining_lounge"
+    },
+    {
+      "name": "mining_storage"
+    },
+    {
+      "name": "mining_unexplored"
+    }
+  ]
+}
