@@ -81,6 +81,7 @@ entities:
     - type: OccluderTree
     - type: ChunkContainer
       chunkEntities: []
+    - type: NiverSpawnBlacklist
     - type: Parallax
       parallax: Classic
     - type: MapLight

@@ -21,6 +21,9 @@ public sealed partial class DumontCVars
     public static readonly CVarDef<float> CurseDoubleChance =
         CVarDef.Create("dumont.curse.double_chance", 0.35f, CVar.SERVERONLY);
 
+    public static readonly CVarDef<float> NiverChancePerTile =
+        CVarDef.Create("dumont.niver_chance_per_tile", 0.1f, CVar.SERVER);
+
     /////// elections
 
     public static readonly CVarDef<bool> ElectionEnabled =
