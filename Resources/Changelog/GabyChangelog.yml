@@ -5024,3 +5024,11 @@ Entries:
       message: Pequena mudança no texto dos revs do end-round
   id: 600
   time: '2026-11-15T03:02:06.0000000+00:00'
+- author: Pushinka
+  changes:
+    - type: Add
+      message: >-
+        Os trajes de paramédico agora vêm equipados com uma sirene e uma luz
+        azul giratória.
+  id: 601
+  time: '2026-11-17T04:47:49.0000000+00:00'
