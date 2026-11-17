@@ -1,13 +1,12 @@
-using Robust.Shared.Configuration;
+using Content.Server.Decals;
+using Content.Server.Station.Events;
 using Content.Shared._Dumont.CCVar;
-using Robust.Shared.Random;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Robust.Server.GameObjects;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
-using Content.Server.Station.Components;
-using Content.Server.Decals;
+using Robust.Shared.Configuration;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Random;
 
 namespace Content.Server._Dumont.Niver;
 
@@ -15,63 +14,69 @@ public sealed partial class NiverSpawnSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private MapSystem _map = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private TurfSystem _turf = default!;
-    [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private DecalSystem _decals = default!;
 
-    private float _chance = 1f;
+    private float _chance;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<NiverSpawnComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<BecomesStationComponent, ComponentStartup>(OnStationInit);
+        SubscribeLocalEvent<StationPostInitEvent>(OnStationPostInit);
         Subs.CVar(_cfg, DumontCVars.NiverChancePerTile, value => _chance = value, true);
     }
 
-    private void OnStationInit(Entity<BecomesStationComponent> ent, ref ComponentStartup args)
+    // Only fires for real stations in a round, so mapping mode never gets the spawns saved into the map.
+    private void OnStationPostInit(ref StationPostInitEvent ev)
     {
-        if (HasComp<NiverSpawnBlacklistComponent>(ent.Owner))
+        if (HasComp<NiverSpawnBlacklistComponent>(ev.Station))
             return;
 
-        EnsureComp<NiverSpawnComponent>(ent.Owner);
+        foreach (var grid in ev.Station.Comp.Grids)
+        {
+            if (IsBlacklisted(grid))
+                continue;
+
+            if (!TryComp<MapGridComponent>(grid, out var gridComp))
+                continue;
+
+            var spawner = EnsureComp<NiverSpawnComponent>(grid);
+            SpawnOnGrid((grid, spawner, gridComp));
+        }
     }
 
-    private void OnComponentInit(Entity<NiverSpawnComponent> ent, ref ComponentInit args)
+    private bool IsBlacklisted(EntityUid grid)
     {
-        var uid = ent.Owner;
-        if (!TryComp<MapGridComponent>(uid, out var grid))
-            return;
+        if (HasComp<NiverSpawnBlacklistComponent>(grid))
+            return true;
 
-        var mapId = Transform(uid).MapID;
-        if (mapId == MapId.Nullspace)
-            return;
+        return Transform(grid).MapUid is { } map && HasComp<NiverSpawnBlacklistComponent>(map);
+    }
+
+    private void SpawnOnGrid(Entity<NiverSpawnComponent, MapGridComponent> ent)
+    {
+        var (uid, comp, grid) = ent;
 
         foreach (var tileRef in _map.GetAllTiles(uid, grid))
         {
             if (_turf.IsSpace(tileRef))
                 continue;
-            if (_turf.IsTileBlocked(tileRef, CollisionGroup.Opaque))
+
+            // Impassable instead of Opaque so windows count too.
+            if (_turf.IsTileBlocked(tileRef, CollisionGroup.Impassable))
                 continue;
 
             if (_random.Prob(_chance))
             {
-                var wantPresent = _random.Prob(0.5f);
-
-                string proto;
-                if (wantPresent)
-                    proto = _random.Pick(ent.Comp.PresentPrototypes);
-                else
-                    proto = _random.Pick(ent.Comp.BalloonPrototypes);
-
-                var coords = _turf.GetTileCenter(tileRef);
-                Spawn(proto, coords);
+                var list = _random.Prob(0.5f) ? comp.PresentPrototypes : comp.BalloonPrototypes;
+                if (list.Count > 0)
+                    SpawnAtPosition(_random.Pick(list), _turf.GetTileCenter(tileRef));
             }
 
-            if (_random.Prob(ent.Comp.ConfettiChance))
+            if (_random.Prob(comp.ConfettiChance))
             {
                 var decalCoords = new EntityCoordinates(uid, tileRef.GridIndices);
-                _decals.TryAddDecal(ent.Comp.ConfettiDecal, decalCoords, out _, rotation: _random.NextAngle(), cleanable: true);
+                _decals.TryAddDecal(comp.ConfettiDecal, decalCoords, out _, rotation: _random.NextAngle(), cleanable: true);
             }
         }
     }
