@@ -2,7 +2,7 @@
 
 - type: reagent
   id: Skal
-  name: Skal
+  name: reagent-name-skal
   parent: BaseAlcohol
   desc: reagent-desc-skal
   physicalDesc: reagent-physical-desc-bubbly
