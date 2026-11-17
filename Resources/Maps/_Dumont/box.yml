@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Map
@@ -81,6 +85,7 @@ entities:
     - type: OccluderTree
     - type: ChunkContainer
       chunkEntities: []
+    - type: NiverSpawnBlacklist
     - type: Parallax
       parallax: Classic
     - type: MapLight
