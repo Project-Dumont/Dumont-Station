@@ -23,7 +23,10 @@
   components:
   - type: HereticRule
   - type: GameRule
-    minPlayers: 15
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 20
   - type: AntagObjectives
     objectives:
     - HereticKnowledgeObjective
@@ -54,7 +57,10 @@
   components:
   - type: HereticRule
   - type: GameRule
-    minPlayers: 15
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 20
   - type: AntagObjectives
     objectives:
     - HereticKnowledgeObjective
