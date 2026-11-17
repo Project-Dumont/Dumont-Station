@@ -3,7 +3,9 @@ using Content.Server.Chat.Managers;
 using Content.Shared._Dumont.CCVar;
 using Content.Shared._Dumont.Niver;
 using Content.Shared.Mobs.Components;
+using Robust.Server.Audio;
 using Robust.Server.Player;
+using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
@@ -19,6 +21,9 @@ public sealed partial class NiverWishSystem : EntitySystem
     [Dependency] private IChatManager _chat = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private CurseSystem _curse = default!;
+    [Dependency] private AudioSystem _audio = default!;
+
+    private static readonly SoundSpecifier CurseSound = new SoundPathSpecifier("/Audio/Misc/narsie_rises.ogg");
 
     private static readonly TimeSpan WishDuration = TimeSpan.FromSeconds(15);
 
@@ -103,6 +108,7 @@ public sealed partial class NiverWishSystem : EntitySystem
     {
         _curse.AddCursedUser(userId.UserId);
         _chat.DispatchServerAnnouncement(Loc.GetString("niver-wish-cursed", ("name", name)), Color.Red);
+        _audio.PlayGlobal(CurseSound, Filter.Broadcast(), true);
 
         // aslready has a body on the station
         if (_player.TryGetSessionById(userId, out var session) &&

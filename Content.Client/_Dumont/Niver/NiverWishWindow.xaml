@@ -1,12 +1,44 @@
-<DefaultWindow xmlns="https://spacestation14.io"
-               Title="{Loc 'niver-wish-window-title'}"
-               MinSize="400 0">
-    <BoxContainer Orientation="Vertical" SeparationOverride="8">
-        <Label Text="{Loc 'niver-wish-window-text'}" StyleClasses="LabelHeading" HorizontalAlignment="Center" />
-        <Label Name="TimerLabel" HorizontalAlignment="Center" />
-        <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalAlignment="Center">
-            <Button Name="WishButton" Text="{Loc 'niver-wish-window-wish'}" />
-            <Button Name="RefuseButton" Text="{Loc 'niver-wish-window-refuse'}" StyleClasses="Caution" />
+<ui:NiverWishWindow xmlns="https://spacestation14.io"
+            xmlns:ui="clr-namespace:Content.Client._Dumont.Niver"
+            xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+            SetWidth="440"
+            MouseFilter="Stop">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BackgroundColor="#1b1726F0" BorderColor="#f5c542" BorderThickness="2" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Orientation="Vertical" Margin="20 16" SeparationOverride="12">
+            <Label Text="{Loc 'niver-wish-window-title'}"
+                   StyleClasses="LabelBig"
+                   FontColorOverride="#f5c542"
+                   HorizontalAlignment="Center" />
+
+            <RichTextLabel Name="MessageLabel" HorizontalExpand="True" />
+
+            <BoxContainer Orientation="Vertical" SeparationOverride="4">
+                <ProgressBar Name="TimerBar"
+                             MinValue="0"
+                             MaxValue="1"
+                             Value="1"
+                             SetHeight="10"
+                             HorizontalExpand="True" />
+                <Label Name="TimerLabel" HorizontalAlignment="Center" FontColorOverride="#bbbbbb" />
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal" SeparationOverride="8">
+                <Button Name="WishButton"
+                        Text="{Loc 'niver-wish-window-wish'}"
+                        HorizontalExpand="True"
+                        SizeFlagsStretchRatio="3"
+                        MinHeight="36" />
+                <Button Name="RefuseButton"
+                        Text="{Loc 'niver-wish-window-refuse'}"
+                        StyleClasses="Caution"
+                        HorizontalExpand="True"
+                        SizeFlagsStretchRatio="1"
+                        MinHeight="36" />
+            </BoxContainer>
         </BoxContainer>
-    </BoxContainer>
-</DefaultWindow>
+    </PanelContainer>
+</ui:NiverWishWindow>

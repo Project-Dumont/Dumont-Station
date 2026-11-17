@@ -1,12 +1,12 @@
 using Content.Server.GameTicking;
 using Content.Shared._Dumont.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -36,7 +36,7 @@ public sealed partial class NiverHatSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
-        SubscribeLocalEvent<GhostComponent, MapInitEvent>(OnGhostMapInit);
+        SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         Subs.CVar(_cfg, DumontCVars.NiverEnabled, value => _enabled = value, true);
     }
 
@@ -45,12 +45,16 @@ public sealed partial class NiverHatSystem : EntitySystem
         GiveHat(ev.Mob);
     }
 
-    private void OnGhostMapInit(Entity<GhostComponent> ent, ref MapInitEvent args)
+    private void OnPlayerAttached(PlayerAttachedEvent ev)
     {
-        if (Prototype(ent)?.ID != GameTicker.AdminObserverPrototypeName.Id)
+        var uid = ev.Entity;
+        if (Prototype(uid)?.ID != GameTicker.AdminObserverPrototypeName.Id)
             return;
 
-        GiveHat(ent);
+        if (_inventory.TryGetSlotEntity(uid, HeadSlot, out _))
+            return;
+
+        GiveHat(uid);
     }
 
     private void GiveHat(EntityUid uid)
@@ -61,7 +65,7 @@ public sealed partial class NiverHatSystem : EntitySystem
         if (_inventory.TryUnequip(uid, HeadSlot, out var oldHat, silent: true, force: true))
             StashItem(uid, oldHat.Value);
 
-        var hat = Spawn(_random.Pick(Hats), Transform(uid).Coordinates);
+        var hat = SpawnAtPosition(_random.Pick(Hats), Transform(uid).Coordinates);
         if (!_inventory.TryEquip(uid, hat, HeadSlot, silent: true, force: true))
             StashItem(uid, hat);
     }
