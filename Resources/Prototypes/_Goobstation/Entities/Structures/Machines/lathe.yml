@@ -315,7 +315,6 @@
     - Translators
     # Gabystation Packs
     - BotanicEquipment
-    - ServiceModules
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ServiceBoardsEvilStatic # Donk Co microwave circiutboard
