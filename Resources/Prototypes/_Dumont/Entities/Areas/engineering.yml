@@ -1,0 +1,159 @@
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringTele
+  name: eng teleporter
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: eng_tele
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringHallway
+  name: eng hallway
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: eng_hallway
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringLocker
+  name: eng locker
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: eng_locker
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringReception
+  name: eng reception
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: eng_reception
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringAtmosReception
+  name: atmos reception
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: atmos_reception
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringAtmosLocker
+  name: atmos locker
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: atmos_locker
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringAtmosStorage
+  name: atmos storage
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: atmos_storage
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringPtl
+  name: ptl
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: ptl_room
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringPa
+  name: pa
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: pa_room
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringHfr
+  name: hfr
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: hfr_room
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringAme
+  name: ame 
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: ame_room
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringNuclearReactor
+  name: nuclear reactor
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: nuclear_reactor
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringGasTurbine
+  name: gas turbine
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: gas_turbine
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringSolarControl
+  name: solars control
+  suffix: AreaEngineering, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: solar_control
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaEngineeringContainmentField
+  name: containment field
+  suffix: AreaEngineering, AreaExterior, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: containment_field
+
+- type: entity
+  parent: BaseAreaEngineering
+  id: AreaHeater
+  name: heater
+  suffix: AreaEngineering, AreaCommand, AreaMedical, AreaScience, AreaSecurity, AreaService, AreaSupply, AreaGeneral, AreaAI, AreaShuttle, AreaDepartures, AreaExternal, AreaHallway, AreaMaint, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: heater

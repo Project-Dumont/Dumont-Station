@@ -1,0 +1,89 @@
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceStorage
+  name: sci storage
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_storage
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceGasStorage
+  name: sci gas storage
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_gas_storage
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceTele
+  name: sci teleporter
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_tele
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceHallway
+  name: sci hallway
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_hallway
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceLocker
+  name: sci locker
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_locker
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceOrdnanceBoom
+  name: ordnance boom
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_ordnance_boom
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceOrdnanceLaunch
+  name: ordnance launch
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_ordnance_launch
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceReception
+  name: sci reception
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_reception
+
+- type: entity
+  parent: BaseAreaScience
+  id: AreaScienceResearch
+  name: RND
+  suffix: AreaScience, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sci_research

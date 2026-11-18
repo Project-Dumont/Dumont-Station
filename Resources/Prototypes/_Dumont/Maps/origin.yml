@@ -52,6 +52,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 1, 1 ] # Dumont
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]

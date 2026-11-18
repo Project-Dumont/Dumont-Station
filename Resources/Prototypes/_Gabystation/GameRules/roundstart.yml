@@ -4,6 +4,9 @@
   components:
   - type: VampireRule
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 25
     chaosScore: 800
   - type: AntagObjectives
@@ -36,7 +39,10 @@
   components:
   - type: VampireRule
   - type: GameRule
-    minPlayers: 15
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 25
   - type: AntagObjectives
     objectives:
     - BaseVampireStealObjective

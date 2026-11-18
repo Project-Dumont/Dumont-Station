@@ -1,0 +1,59 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaAntag
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: nukie_base
+
+- type: entity
+  parent: BaseAreaAntag
+  id: AreaNukieBase
+  name: nukie base
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: nukie_base
+
+- type: entity
+  parent: BaseAreaAntag
+  id: AreaDroppod
+  name: droppod
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: droppod
+
+- type: entity
+  parent: BaseAreaAntag
+  id: AreaListeningPost
+  name: listening post
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: listening_post
+
+- type: entity
+  parent: BaseAreaAntag
+  id: AreaWizard
+  name: wizard
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: wizard
+
+- type: entity
+  parent: BaseAreaAntag
+  id: AreaPirate
+  name: pirate shuttle
+  suffix: AreaAntag
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/antag.rsi
+    state: pirate_shuttle

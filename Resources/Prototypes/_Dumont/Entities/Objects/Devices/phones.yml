@@ -1,0 +1,79 @@
+- type: entity
+  parent: RotaryPhone
+  suffix: Medical
+  categories: [ HideSpawnMenu ]
+  id: RotaryPhoneMedical192
+  components:
+  - type: RotaryPhone
+    category: Medical
+    phoneNumber: 192
+
+- type: entity
+  parent: RotaryPhoneStandNoRot
+  suffix: Medical (192)
+  id: RotaryPhoneStandMedical192
+  components:
+  - type: ContainerFill
+    containers:
+      phone:
+      - RotaryPhoneMedical192
+
+- type: entity
+  parent: RotaryPhone
+  suffix: Atmos
+  categories: [ HideSpawnMenu ]
+  id: RotaryPhoneEngineering193
+  components:
+  - type: RotaryPhone
+    category: Engineering
+    phoneNumber: 193
+
+- type: entity
+  parent: RotaryPhoneStandNoRot
+  suffix: Atmos (193)
+  id: RotaryPhoneStandEngineering193
+  components:
+  - type: ContainerFill
+    containers:
+      phone:
+      - RotaryPhoneEngineering193
+
+- type: entity
+  parent: RotaryPhone
+  suffix: Engineering
+  categories: [ HideSpawnMenu ]
+  id: RotaryPhoneEngineering199
+  components:
+  - type: RotaryPhone
+    category: Engineering
+    phoneNumber: 199
+
+- type: entity
+  parent: RotaryPhoneStandNoRot
+  suffix: Engineering (199)
+  id: RotaryPhoneStandEngineering199
+  components:
+  - type: ContainerFill
+    containers:
+      phone:
+      - RotaryPhoneEngineering199
+
+- type: entity
+  parent: RotaryPhone
+  suffix: Psychology
+  categories: [ HideSpawnMenu ]
+  id: RotaryPhoneMedical188
+  components:
+  - type: RotaryPhone
+    category: Medical
+    phoneNumber: 188
+
+- type: entity
+  parent: RotaryPhoneStandNoRot
+  suffix: Psychology (188)
+  id: RotaryPhoneStandMedical188
+  components:
+  - type: ContainerFill
+    containers:
+      phone:
+      - RotaryPhoneMedical188

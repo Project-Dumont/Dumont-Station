@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Configuration;
 
 namespace Content.Shared._Dumont.CCVar;
@@ -16,6 +20,12 @@ public sealed partial class DumontCVars
 
     public static readonly CVarDef<float> CurseDoubleChance =
         CVarDef.Create("dumont.curse.double_chance", 0.35f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> NiverEnabled =
+        CVarDef.Create("dumont.niver_enabled", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> NiverChancePerTile =
+        CVarDef.Create("dumont.niver_chance_per_tile", 0.1f, CVar.SERVER);
 
     /////// elections
 
@@ -62,10 +72,4 @@ public sealed partial class DumontCVars
     /// </summary>
     public static readonly CVarDef<float> ElectionTestDuration =
         CVarDef.Create("election.test_duration", 60f, CVar.SERVERONLY);
-
-    /// <summary>
-    /// weather the smes have infinite power when there are no engineers
-    /// </summary>
-    public static readonly CVarDef<bool> SmesAutoRecharge =
-        CVarDef.Create("dumont.auto_smes_recharge", true, CVar.SERVERONLY);
 }

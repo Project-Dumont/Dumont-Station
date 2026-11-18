@@ -1,3 +1,4 @@
+using Content.Server._RMC14.Mentor;
 // SPDX-FileCopyrightText: 2019 moneyl <8206401+Moneyl@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 Campbell Suter <znix@znix.xyz>
 // SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
@@ -254,6 +255,7 @@ namespace Content.Server.IoC
             IoCManager.Register<LastRolledAntagManager>(); // Goobstation - antag pity
             IoCManager.Register<LinkAccountManager>(); // RMC - Patreon
             IoCManager.Register<CurrencyStoreManager>(); // Gabystation - Titles
+            IoCManager.Register<MentorManager>(); // RMC - Mentor Help
         }
     }
 }
