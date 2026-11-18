@@ -5102,3 +5102,9 @@ Entries:
         40
   id: 611
   time: '2026-11-18T02:27:20.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora artes no lobby podem ser animadas.
+  id: 612
+  time: '2026-11-18T23:45:41.0000000+00:00'
