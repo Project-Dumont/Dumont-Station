@@ -445,7 +445,7 @@
 - files: ["impacto.ogg"]
   copyright: "Impacto. Exported with y2mate and converted to ogg in Audacity."
   license: "Custom"
-  source: "https://youtu.be/8Bu3N-2tA_0?is=MmNYwGa49f8oMpeC "
+  source: "https://youtu.be/8Bu3N-2tA_0?is=MmNYwGa49f8oMpeC"
 
 - files: ["in_my_life.ogg"]
   copyright: "In My Life. Exported with cobalt.tools"
