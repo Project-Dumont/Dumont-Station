@@ -1,11 +1,11 @@
 using Content.Goobstation.Shared.Clothing.Components;
+using Content.Goobstation.Shared.ModSuits.Components;
 using Content.Shared._Dumont.Clothing;
 using Content.Shared.Actions;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Light.Components;
-using Content.Shared.PowerCell;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
@@ -20,7 +20,6 @@ public sealed partial class ModsuitSirenSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedPowerCellSystem _powerCell = default!;
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
@@ -50,13 +49,13 @@ public sealed partial class ModsuitSirenSystem : EntitySystem
     private EntityUid? GetWearer(EntityUid helmet)
     {
         if (!TryComp<AttachedClothingComponent>(helmet, out var attached)
-            || !TryComp<SealableClothingControlComponent>(attached.AttachedUid, out var control)
-            || control.WearerEntity is not {} wearer
+            || !TryComp<ModSuitComponent>(attached.AttachedUid, out var modSuit)
+            || modSuit.Wearer is not {} wearer
             || !_inventory.TryGetSlotEntity(wearer, "head", out var head)
             || head != helmet
             || !_inventory.TryGetSlotEntity(wearer, "back", out var back)
             || back != attached.AttachedUid
-            || !_powerCell.HasDrawCharge(attached.AttachedUid))
+            || !modSuit.Powered)
             return null;
 
         return wearer;
