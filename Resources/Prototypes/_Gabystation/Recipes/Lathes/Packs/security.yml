@@ -13,13 +13,6 @@
   - WeaponShotgunAntelope
 
 - type: latheRecipePack
-  id: SecurityModules
-  recipes:
-  - ModsuitModuleSecHudRecipe
-  - ModsuitModuleInjectorRecipe
-  - ModsuitPlatingSecurityRecipe
-
-- type: latheRecipePack
   id: SecurityClothing
   recipes:
   - SecurityMagbootsRecipe

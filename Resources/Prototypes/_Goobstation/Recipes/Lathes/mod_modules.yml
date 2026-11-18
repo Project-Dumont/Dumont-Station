@@ -311,14 +311,14 @@
     Plastic: 200
     Silver: 100
 
-- type: latheRecipe
-  parent: BaseModsuitModuleRecipe
-  id: ModsuitModuleBulwark
-  result: ModsuitModuleBulwark
-  materials:
-    Steel: 1000
-    Plasma: 200
-    Silver: 300
+#- type: latheRecipe
+#  parent: BaseModsuitModuleRecipe
+#  id: ModsuitModuleBulwark
+#  result: ModsuitModuleBulwark
+#  materials:
+#    Steel: 1000
+#    Plasma: 200
+#    Silver: 300
 
 - type: latheRecipe
   parent: BaseModsuitModuleRecipe

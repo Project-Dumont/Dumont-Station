@@ -82,7 +82,6 @@
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
-    - EngineeringModules # GabyStation
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NailgunEvilStatic
@@ -153,7 +152,6 @@
     - BluespaceTheory
     - ScienceClothing
     - ConstructionBagOfHolding
-    - CargoModules # GabyStation
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SalvageExplosivesStatic # Seismic charges - they're pretty cheap in salvage vendor anyway so why not

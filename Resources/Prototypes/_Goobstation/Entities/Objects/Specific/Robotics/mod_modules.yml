@@ -1146,7 +1146,6 @@
         Quantity: 5
   - type: UseDelay
   - type: Spray
-    solution: spray
     transferAmount: 10
     pushbackAmount: 60
     spraySound:
@@ -1186,7 +1185,6 @@
         Quantity: 5
   - type: UseDelay
   - type: Spray
-    solution: spray
     transferAmount: 10
     sprayVelocity: 2
     spraySound:

@@ -225,24 +225,5 @@
     - MindShieldImplant
     #adding bluespace implanter would be stupid
 
-- type: entity
-  categories: [ ]
-  parent: MobHumanBSOBase
-  id: MobHumanBSOModSuit
-  name: Blueshield Officer ModSuit
-  suffix: DEBUG
-  components:
-  - type: Loadout
-    prototypes: [ BlueShieldOfficerGearModSuit ]
-    roleLoadout: [ RoleSurvivalSecurity ]
-  - type: RandomMetadata
-    nameSegments:
-    - NamesFirst
-    - NamesLast
-    nameFormat: name-format-standard
-  - type: AutoImplant
-    implants:
-    - MindShieldImplant
-    #adding bluespace implanter would be stupid
 
 
