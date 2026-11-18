@@ -47,7 +47,6 @@
   jobEntity: StationAiBrain
   jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
-  whitelisted: true
 
 
 - type: job
