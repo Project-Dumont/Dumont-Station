@@ -8,10 +8,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.PDA;
+using Content.Shared.Popups;
+using Robust.Shared.GameStates;
 
 namespace Content.Client.PDA;
 
 public sealed class PdaSystem : SharedPdaSystem
 {
+    [Dependency] private SharedPopupSystem _popup = default!;
+    public override void Initialize()
+    {
+        base.Initialize();
 
+        SubscribeLocalEvent<PdaComponent, ComponentHandleState>(OnHandleState);
+    }
+
+    public void OnHandleState(Entity<PdaComponent> pda, ref ComponentHandleState msg) 
+    {
+        if (!IsPdaAttachedToPlayer(pda))
+            return;
+
+        _popup.PopupClient(Loc.GetString("pda-new-notification"), pda.Owner, PopupType.Medium);
+    }
 }

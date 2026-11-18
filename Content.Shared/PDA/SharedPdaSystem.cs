@@ -14,6 +14,7 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Containers;
+using Content.Shared.Mind;
 
 namespace Content.Shared.PDA
 {
@@ -21,6 +22,7 @@ namespace Content.Shared.PDA
     {
         [Dependency] protected readonly ItemSlotsSystem ItemSlotsSystem = default!;
         [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
+        [Dependency] protected readonly SharedMindSystem _mind = default!;
 
         public override void Initialize()
         {
@@ -92,6 +94,16 @@ namespace Content.Shared.PDA
         {
             // This does nothing yet while I finish up PDA prediction
             // Overriden by the server
+        }
+
+        /// <summary>
+        /// Returns whether or not the given PDA is on a player
+        /// </summary>
+        /// <param name="pda"></param>
+        public bool IsPdaAttachedToPlayer(Entity<PdaComponent> pda)
+        {
+            var xform = Transform(pda.Owner);
+            return TryComp<MindComponent>(xform.ParentUid, out var mindComp) && mindComp.CurrentEntity is not null;
         }
     }
 }

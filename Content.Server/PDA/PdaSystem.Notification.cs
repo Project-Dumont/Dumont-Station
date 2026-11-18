@@ -8,6 +8,7 @@ using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
+using Content.Shared.Mind;
 
 
 namespace Content.Server.PDA
@@ -113,12 +114,14 @@ namespace Content.Server.PDA
         }
 
         public void NotifyPda(Entity<PdaComponent> ent, string message, bool isLoud = false) {
-            _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner, PopupType.Medium);
+            if (!IsPdaAttachedToPlayer(ent))
+                _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner, PopupType.Medium);
 
             if (isLoud)
                 _ringer.RingerPlayRingtone(ent.Owner);
 
             ent.Comp.Notifications.Add(new Notification(_timing.CurTime, message));
+            Dirty(ent);
             UpdatePdaUi(ent.Owner, ent.Comp);
         }
 
