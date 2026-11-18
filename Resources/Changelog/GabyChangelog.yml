@@ -5092,3 +5092,13 @@ Entries:
       message: Troca anomalia santa pela liquida no gerador
   id: 610
   time: '2026-11-18T02:23:15.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Removido o Sandevistan do uplink de Loneops
+    - type: Tweak
+      message: >-
+        Alterado o ganho de TC por declaração de guerra de lone ops 5 > 2, 60 >
+        40
+  id: 611
+  time: '2026-11-18T02:27:20.0000000+00:00'
