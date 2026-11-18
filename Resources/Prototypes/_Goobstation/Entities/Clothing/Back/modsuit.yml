@@ -213,6 +213,31 @@
     clothingVisuals:
       back:
       - state: equipped-BACKPACK-sealed
+  - type: ItemToggle
+    onUse: false
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Effects/Vehicle/ambulancesiren.ogg
+      params:
+        volume: 0
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleParamedicSiren
+    disableOnUnequip: true
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: blue
+    lightMask: ConeDouble
+  - type: RotatingLight
+    speed: 360
 
 - type: entity
   parent: ClothingModsuitParamedic
