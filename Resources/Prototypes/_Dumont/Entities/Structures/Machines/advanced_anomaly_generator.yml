@@ -51,10 +51,10 @@
   researchCost: 12000
 
 - type: advancedAnomalyGeneration
-  id: AdvancedAnomalySanta
-  name: advanced-anomaly-generator-entry-santa
-  anomalyPrototype: AnomalySanta
-  researchCost: 150000
+  id: AdvancedAnomalyLiquid
+  name: advanced-anomaly-generator-entry-liquid
+  anomalyPrototype: AnomalyLiquid
+  researchCost: 16000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyShadow
@@ -114,7 +114,7 @@
     - AdvancedAnomalyBluespace
     - AdvancedAnomalyTech
     - AdvancedAnomalyRock
-    - AdvancedAnomalySanta
+    - AdvancedAnomalyLiquid
     - AdvancedAnomalyShadow
   - type: ResearchClient
   - type: MaterialStorage
