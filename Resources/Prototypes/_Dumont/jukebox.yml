@@ -1005,9 +1005,3 @@
   path:
     path: /Audio/_Dumont/Jukebox/i_dont_want_to_set_the_world_on_fire.ogg
 
-- type: jukebox
-  id: ParabensDaXuxa
-  name: Xuxa - Parabéns da Xuxa
-  path:
-    path: /Audio/_Dumont/Jukebox/parabens_da_xuxa.ogg
-
