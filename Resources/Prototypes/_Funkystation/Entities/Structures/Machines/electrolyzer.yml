@@ -25,11 +25,10 @@
   - type: WiresPanel
   - type: OverheatMachine  #Dumont - Start
     heatDamageTemperature: 20000
-    heatDamage:
+    damage:
       types:
-        Heat: 10
+        Structural: 10
     explosionTemperature: 30000
-    explosionRadius: 5
   - type: AtmosExposed
   - type: Explosive
     explosionType: Default #Dumont - End

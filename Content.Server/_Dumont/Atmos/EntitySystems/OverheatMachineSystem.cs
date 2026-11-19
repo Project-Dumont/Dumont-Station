@@ -4,6 +4,8 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Shared.Damage;
 
+namespace Content.Server.Temperature.EntitySystems;
+
 public sealed partial class OverheatMachineSystem : EntitySystem
 {
     [Dependency] private ExplosionSystem _explosionSystem = default!;

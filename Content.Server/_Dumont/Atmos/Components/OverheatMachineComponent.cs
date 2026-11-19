@@ -16,7 +16,7 @@ public sealed partial class OverheatMachineComponent : Component
     public float? HeatDamageTemperature;
 
     [DataField]
-    public DamageSpecifier HeatDamage = new();
+    public DamageSpecifier Damage = new();
 
     /// <summary>
     /// Temperature at which the machine will explode. If null, the machine will not explode.
@@ -25,5 +25,5 @@ public sealed partial class OverheatMachineComponent : Component
     public float? ExplosionTemperature;
 
     [DataField]
-    public float ExplosionRadius = 10f;
+    public float ExplosionRadius = 5f;
 }
