@@ -5114,3 +5114,15 @@ Entries:
       message: Station AI não precisa mais de whitelist.
   id: 613
   time: '2026-11-19T08:15:48.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: >-
+        Você pode abrir o armazenamento de mochilas e jaquetas equipadas por
+        outras pessoas.
+    - type: Add
+      message: >-
+        Você pode vasculhar pessoas no menu de contexto. Isso irá te notificar
+        quais itens que aquela pessoa tem equipado tem itens dentro.
+  id: 614
+  time: '2026-11-19T12:06:41.0000000+00:00'
