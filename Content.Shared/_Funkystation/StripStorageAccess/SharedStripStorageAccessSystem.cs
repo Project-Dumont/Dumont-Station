@@ -47,9 +47,7 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
     {
 
         if (args.Actor is not { Valid: true } user || !TryComp<HandsComponent>(user, out _))
-        {
             return;
-        }
 
         EntityUid? slotEntity;
         if (args.IsHand)
