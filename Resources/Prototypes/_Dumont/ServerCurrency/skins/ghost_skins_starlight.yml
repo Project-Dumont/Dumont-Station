@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Skins ported from Starlight (see the meta.json of each rsi for attribution)
+
+- type: ghostSkinListing
+  id: StarlightSheetSkin
+  name: ghost-skin-sheet
+  price: 2000
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/sheet.rsi"
+    state: ghost-sheet
+
+- type: ghostSkinListing
+  id: StarlightCatSkin
+  name: ghost-skin-starlight-cat
+  price: 1000
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/starlight_cat.rsi"
+    state: ghost-cat
+
+- type: ghostSkinListing
+  id: StarlightClownSkin
+  name: ghost-skin-clown
+  price: 500
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/clown.rsi"
+    state: clown
+
+- type: ghostSkinListing
+  id: StarlightIanCuteSkin
+  name: ghost-skin-ian-cute
+  price: 1000
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/ian_cute.rsi"
+    state: ghost-ian_cute
+
+- type: ghostSkinListing
+  id: StarlightLizardPlushieSkin
+  name: ghost-skin-lizard-plushie
+  price: 2500
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/lizard_plushie.rsi"
+    state: ghost-lizard-plushie
+
+- type: ghostSkinListing
+  id: StarlightBuffRatKingSkin
+  name: ghost-skin-buff-rat-king
+  price: 25000
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/buff_rat_king.rsi"
+    state: ghost-buff-rat-king
+
+- type: ghostSkinListing
+  id: StarlightScurretSkin
+  name: ghost-skin-scurret
+  price: 1000
+  sprite:
+    sprite: "/Textures/_Dumont/Mobs/Ghosts/scurret.rsi"
+    state: ghost-scurret
