@@ -5108,3 +5108,9 @@ Entries:
       message: Agora artes no lobby podem ser animadas.
   id: 612
   time: '2026-11-18T23:45:41.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: Station AI não precisa mais de whitelist.
+  id: 613
+  time: '2026-11-19T08:15:48.0000000+00:00'
