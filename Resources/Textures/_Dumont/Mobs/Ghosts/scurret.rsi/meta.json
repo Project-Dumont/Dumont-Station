@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Starlight (ss14Starlight/space-station-14 @ 3c2619b5ba), sprite by CrazyPhantom779, side sprites fixed by CawsForConcern",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ghost-scurret",
+      "copyright": "Default Scurret greyscaled",
+      "directions": 4
+    }
+  ]
+}
