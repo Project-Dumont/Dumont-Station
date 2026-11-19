@@ -56,9 +56,7 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
         {
             if (!TryComp<InventoryComponent>(strippable, out var inventory) ||
                 !_inventory.TryGetSlotEntity(strippable, args.Slot, out var held, inventory))
-            {
                 return;
-            }
 
             slotEntity = held;
         }
