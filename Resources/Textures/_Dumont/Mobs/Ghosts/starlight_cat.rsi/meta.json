@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Skyrat (via Starlight, ss14Starlight/space-station-14 @ 3c2619b5ba)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ghost-cat",
+      "directions": 4
+    }
+  ]
+}

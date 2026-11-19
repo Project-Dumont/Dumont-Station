@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Conf for Starlight (ss14Starlight/space-station-14 @ 3c2619b5ba)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "clown",
+      "directions": 4
+    }
+  ]
+}
