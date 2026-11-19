@@ -63,9 +63,7 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 
 
         if (slotEntity is not { } storageUid || !HasComp<StorageComponent>(storageUid))
-        {
             return;
-        }
 
         StartOpenStorageDoAfter(user, storageUid, strippable.Owner);
     }
