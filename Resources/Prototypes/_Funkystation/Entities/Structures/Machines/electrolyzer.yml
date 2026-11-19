@@ -23,13 +23,13 @@
   - type: Machine
     board: ElectrolyzerMachineCircuitboard
   - type: WiresPanel
-  - type: TemperatureExplosion #Dumont - Start
+  - type: OverheatMachine  #Dumont - Start
     heatDamageTemperature: 20000
     heatDamage:
       types:
-        Heat: 1.5
+        Heat: 10
     explosionTemperature: 30000
-    explosionRadius: 10
+    explosionRadius: 5
   - type: AtmosExposed
   - type: Explosive
     explosionType: Default #Dumont - End
