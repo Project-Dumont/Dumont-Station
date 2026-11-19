@@ -51,9 +51,7 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 
         EntityUid? slotEntity;
         if (args.IsHand)
-        {
             slotEntity = _hands.GetHeldItem(strippable.Owner, args.Slot);
-        }
         else
         {
             if (!TryComp<InventoryComponent>(strippable, out var inventory) ||
