@@ -89,6 +89,5 @@ namespace Content.Shared.PDA
         [ViewVariables] public string? StationAlertLevel;
         [ViewVariables] public Color StationAlertColor = Color.White;
 
-        [ViewVariables] public List<Notification> Notifications = [];
     }
 }

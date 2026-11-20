@@ -7,10 +7,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.PDA;
 
 /// <summary>
-/// An event that notifies all pda in a given notification group (see prototype).
-/// Can take optional isLoud and station arguments, for making the pda ring when notified and filtering for a given station respectively
+/// An event that notifies all notification receivers in a given notification group (see prototype).
+/// Can take optional isLoud and station arguments, for handling of receiving notifications and filtering for a given station respectively
 /// </summary>
-public sealed partial class PdaNotificationEvent(string message, ProtoId<NotificationGroupPrototype> group, bool isLoud = false, EntityUid? station = null) : HandledEntityEventArgs {
+public sealed partial class NotificationEvent(string message, ProtoId<NotificationGroupPrototype> group, bool isLoud = false, EntityUid? station = null) : HandledEntityEventArgs {
     /// <summary>
     /// The notification message
     /// </summary>
@@ -22,7 +22,7 @@ public sealed partial class PdaNotificationEvent(string message, ProtoId<Notific
     public readonly ProtoId<NotificationGroupPrototype> Group = group;
 
     /// <summary>
-    /// Determines whether the notified pdas will ring when receiving a message
+    /// Determines how loud the notification is to the receiver
     /// </summary>
     public readonly bool IsLoud = isLoud;
 

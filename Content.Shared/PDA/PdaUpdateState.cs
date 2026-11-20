@@ -17,6 +17,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.CartridgeLoader;
+using Content.Shared.Notification;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.PDA
@@ -25,13 +26,14 @@ namespace Content.Shared.PDA
     public sealed class PdaUpdateState : CartridgeLoaderUiState // WTF is this. what. I ... fuck me I just want net entities to work
         // TODO purge this shit
         //AAAAAAAAAAAAAAAA
+        // i feel ya brother - Dumont
     {
         public bool FlashlightEnabled;
         public bool HasPen;
         public bool HasPai;
         public PdaIdInfoText PdaOwnerInfo;
         public string? StationName;
-        public List<Notification>? Notifications;
+        public List<NotificationMessage>? Notifications;
         public bool HasUplink;
         public bool CanPlayMusic;
         public string? Address;
@@ -44,7 +46,7 @@ namespace Content.Shared.PDA
             bool hasPai,
             PdaIdInfoText pdaOwnerInfo,
             string? stationName,
-            List<Notification>? notifications,
+            List<NotificationMessage>? notifications,
             bool hasUplink = false,
             bool canPlayMusic = false,
             string? address = null)
@@ -71,7 +73,4 @@ namespace Content.Shared.PDA
         public string? StationAlertLevel;
         public Color StationAlertColor;
     }
-
-    [Serializable, NetSerializable]
-    public record Notification(TimeSpan Time, string Message);
 }

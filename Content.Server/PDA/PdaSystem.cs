@@ -128,7 +128,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
-using Content.Shared.Security.Systems; // Beepsky - GabyStation
+using Content.Shared.Security.Systems;
+using Content.Shared.Notification; // Beepsky - GabyStation
 
 namespace Content.Server.PDA
 {
@@ -169,7 +170,8 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
-            SubscribeLocalEvent<PdaNotificationEvent>(OnPdaNotification);
+            SubscribeAllEvent<NotificationEvent>(OnNotification);
+
         }
 
         private void ChameleonControllerOutfitItemSelected(Entity<PdaComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)
@@ -324,6 +326,9 @@ namespace Content.Server.PDA
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
 
+            List<NotificationMessage> notificationsMsg = new();
+            if (TryComp<NotificationReceiverComponent>(pda.Owner, out var receiverComponent))
+                notificationsMsg = receiverComponent.Notifications;
 
             var state = new PdaUpdateState(
                 programs,
@@ -340,7 +345,7 @@ namespace Content.Server.PDA
                     StationAlertColor = pda.StationAlertColor
                 },
                 pda.StationName,
-                pda.Notifications,
+                notificationsMsg,
                 showUplink,
                 hasInstrument,
                 address);
