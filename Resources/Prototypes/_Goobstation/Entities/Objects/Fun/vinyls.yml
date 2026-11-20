@@ -8,7 +8,7 @@
   - type: Vinyl
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/RadioStation/vinyls.rsi
-    state: default # Starlight - Rework radio host
+    state: default # Starlight - Radio host rework
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: Damageable
@@ -39,10 +39,8 @@
     damage:
       types:
         Slash: 5
-  # Starlight - Rework radio host - Start
-  - type: Item
-    size: Normal # Records take a 2x2 spot.
-  # Starlight - Rework radio host - End
+  - type: Item # Starlight - Rework radio host
+    size: Normal
   - type: Tag
     tags:
     - VinylSleeveFit
@@ -56,7 +54,7 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/RadioStation/vinylsleeves.rsi
-  # Starlight - Rework radio host - Start
+  # Starlight - Radio host rework - Start
     layers:
     - state: sleeve-peek
       map: [ "enum.DiscCoverVisualLayers.Peek" ]
@@ -69,10 +67,13 @@
       visible: false
     - state: sleeve-shade
   - type: Appearance
-  - type: DiscCover # Cover art comes from the record inside.
+  - type: DiscCover
   - type: Item
-    size: Normal # Records and their sleeves take a 2x2 spot.
-  # Starlight - Rework radio host - End
+    size: Normal
+  - type: Tag
+    tags:
+    - VinylSleeve
+  # Starlight - Radio host rework - End
   - type: ContainerContainer
     containers:
       vinyl: !type:ContainerSlot
@@ -88,9 +89,6 @@
         whitelist:
           tags:
           - VinylSleeveFit
-  - type: Tag # Starlight
-    tags:
-    - VinylSleeve
 
 # Vinyls
 
@@ -100,9 +98,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: ai-vinyl-disc # Starlight - Rework radio host
+    state: ai-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#4aa5de" # Starlight - Rework radio host
+    labelColor: "#4aa5de" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/SpaceJazz.ogg
 
@@ -113,9 +111,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: devil-vinyl-disc # Starlight - Rework radio host
+    state: devil-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#640f0f" # Starlight - Rework radio host
+    labelColor: "#640f0f" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/AirportLounge.ogg
 
@@ -126,9 +124,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: pizza-vinyl-disc # Starlight - Rework radio host
+    state: pizza-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#673600" # Starlight - Rework radio host
+    labelColor: "#673600" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/BoogieParty.ogg
 
@@ -139,9 +137,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: glossy-vinyl-disc # Starlight - Rework radio host
+    state: glossy-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#d37610" # Starlight - Rework radio host
+    labelColor: "#d37610" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/Corncob.ogg
 
@@ -151,15 +149,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ff0000"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ff0000" # Starlight - Rework radio host
+    labelColor: "#ff0000" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/NightInVenice.ogg
 
@@ -169,15 +167,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#add8e6"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#add8e6" # Starlight - Rework radio host
+    labelColor: "#add8e6" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/distant_star.ogg
 
@@ -188,13 +186,13 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffff00"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Slippery
   - type: StepTrigger
     triggerGroups:
@@ -214,7 +212,7 @@
         layer:
         - SlipLayer
   - type: Vinyl
-    labelColor: "#ffff00" # Starlight - Rework radio host
+    labelColor: "#ffff00" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/honkmas.ogg
 
@@ -225,9 +223,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: carrot-vinyl-disc # Starlight - Rework radio host
+    state: carrot-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#ffbf00" # Starlight - Rework radio host
+    labelColor: "#ffbf00" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/atlas.ogg
 
@@ -237,15 +235,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#00ffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#00ffff" # Starlight - Rework radio host
+    labelColor: "#00ffff" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/beaches.ogg
 
@@ -255,15 +253,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#0000ff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#0000ff" # Starlight - Rework radio host
+    labelColor: "#0000ff" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/VibingOverVenus.ogg
 
@@ -273,15 +271,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffff00"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ffff00" # Starlight - Rework radio host
+    labelColor: "#ffff00" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/DeadlyRoulette.ogg
 
@@ -291,15 +289,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#00ff00"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#00ff00" # Starlight - Rework radio host
+    labelColor: "#00ff00" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/LateNightRadio.ogg
 
@@ -310,15 +308,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#800080"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#800080" # Starlight - Rework radio host
+    labelColor: "#800080" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/adventure_3.ogg
 
@@ -328,15 +326,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffa500"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ffa500" # Starlight - Rework radio host
+    labelColor: "#ffa500" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/everyone_is_so_alive.ogg
 
@@ -346,15 +344,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ffffff" # Starlight - Rework radio host
+    labelColor: "#ffffff" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/groovy.ogg
 
@@ -365,15 +363,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ff6666"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ff6666" # Starlight - Rework radio host
+    labelColor: "#ff6666" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/fart_elise.ogg
 
@@ -383,15 +381,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#00008b"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#00008b" # Starlight - Rework radio host
+    labelColor: "#00008b" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/dance_on_a_space_volcano.ogg
 
@@ -401,9 +399,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: floaty-vinyl-disc # Starlight - Rework radio host
+    state: floaty-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#77faff" # Starlight - Rework radio host
+    labelColor: "#77faff" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/floaty.ogg
 
@@ -413,15 +411,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#32cd32"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#32cd32" # Starlight - Rework radio host
+    labelColor: "#32cd32" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/key_lime.ogg
 
@@ -431,15 +429,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffc0cb"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ffc0cb" # Starlight - Rework radio host
+    labelColor: "#ffc0cb" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/christmassong.ogg
 
@@ -449,15 +447,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ff0000"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ff0000" # Starlight - Rework radio host
+    labelColor: "#ff0000" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/BurnTheWorldWaltz.ogg
 
@@ -467,15 +465,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#00008b"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#00008b" # Starlight - Rework radio host
+    labelColor: "#00008b" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/FeralAngelWaltz.ogg
 
@@ -485,15 +483,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#fd99b8" # Starlight - Rework radio host
+    labelColor: "#fd99b8" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Also-Sprach-Zarathustra-PM-Music.ogg
 
@@ -503,15 +501,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#2202c6" # Starlight - Rework radio host
+    labelColor: "#2202c6" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Ride-of-the-Valkyries-PM-Music.ogg
 
@@ -521,15 +519,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#638414" # Starlight - Rework radio host
+    labelColor: "#638414" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Romeo-and-Juliet-PM-Music.ogg
 
@@ -539,15 +537,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#393c39" # Starlight - Rework radio host
+    labelColor: "#393c39" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Russian-Dance-PM-Music.ogg
 
@@ -557,15 +555,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#3383c4" # Starlight - Rework radio host
+    labelColor: "#3383c4" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/The-Flower-Duet-PM-Music.ogg
 
@@ -575,15 +573,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#bfd3e2" # Starlight - Rework radio host
+    labelColor: "#bfd3e2" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Winter-Vivaldi-PM-Music.ogg
 
@@ -593,15 +591,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ffffff"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#07db3c" # Starlight - Rework radio host
+    labelColor: "#07db3c" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/PMMUSIC/Bach-Cello-Suite-PM-Music.ogg
 
@@ -611,15 +609,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#3b67b1"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#3b67b1" # Starlight - Rework radio host
+    labelColor: "#3b67b1" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/GetThatAntag!.ogg
 
@@ -629,9 +627,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: earth-vinyl-disc # Starlight - Rework radio host
+    state: earth-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#6c71c4" # Starlight - Rework radio host
+    labelColor: "#6c71c4" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/WantYouGone.ogg
 
@@ -641,15 +639,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ff4d4d"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ff4d4d" # Starlight - Rework radio host
+    labelColor: "#ff4d4d" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/LAW2OPENARMORY.ogg
 
@@ -659,15 +657,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#cd5c04"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#cd5c04" # Starlight - Rework radio host
+    labelColor: "#cd5c04" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/EphedrineOverdose.ogg
 
@@ -677,15 +675,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#a69250"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#a69250" # Starlight - Rework radio host
+    labelColor: "#a69250" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/RunningOutCover.ogg
 
@@ -695,9 +693,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: ttd-vinyl-disc # Starlight - Rework radio host
+    state: ttd-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#569a02" # Starlight - Rework radio host
+    labelColor: "#569a02" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/OpenTTDJourney.ogg
 
@@ -707,15 +705,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#c1f6ed"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#c1f6ed" # Starlight - Rework radio host
+    labelColor: "#c1f6ed" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/TraitorousIntent.ogg
 
@@ -725,15 +723,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#8a2be2"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#8a2be2" # Starlight - Rework radio host
+    labelColor: "#8a2be2" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/violet.ogg
 
@@ -743,9 +741,9 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    state: pizza-vinyl-disc # Starlight - Rework radio host
+    state: pizza-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
-    labelColor: "#673600" # Starlight - Rework radio host
+    labelColor: "#673600" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/lay_egg_is_true.ogg
 
@@ -755,15 +753,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#800080"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#800080" # Starlight - Rework radio host
+    labelColor: "#800080" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/we_are_number_two.ogg
 
@@ -773,15 +771,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#00ff00"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#00ff00" # Starlight - Rework radio host
+    labelColor: "#00ff00" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/goonstation/xtra.ogg
 
@@ -791,15 +789,15 @@
   parent: BaseVinylDisk
   components:
   - type: Sprite
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     state: default
     layers:
     - state: default
     - state: label
       color: "#ff0000"
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
   - type: Vinyl
-    labelColor: "#ff0000" # Starlight - Rework radio host
+    labelColor: "#ff0000" # Starlight - Radio host rework
     song:
       path: /Audio/_Goobstation/RadioStation/music/NUKIES_TRAP.ogg
 
@@ -810,7 +808,7 @@
   description: some pieces are missing but something tell you that this is still playable, but should you?
   components:
   - type: Sprite
-    state: forgotten-vinyl-disc # Starlight - Rework radio host
+    state: forgotten-vinyl-disc # Starlight - Radio host rework
   - type: Vinyl
     song:
       path: /Audio/_Goobstation/RadioStation/music/peakasshole.ogg
@@ -823,218 +821,218 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/RadioStation/vinyls.rsi
-    state: broken-vinyl-disc # Starlight - Rework radio host
+    state: broken-vinyl-disc # Starlight - Radio host rework
 
 # Sleeves
 
 - type: entity
   name: AI vinyl sleeve
   id: VinylSleeveAI
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: devil vinyl sleeve
   id: VinylSleeveDevil
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: pizza vinyl sleeve
   id: VinylSleevePizza
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: fart vinyl sleeve
   id: VinylSleeveFart
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: sunny side of lava land vinyl sleeve
   id: VinylSleeveLavaLand
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: hockey vinyl sleeve
   id: VinylSleeveHockey
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: rat vinyl sleeve
   id: VinylSleeveRat
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: sneaky vinyl sleeve
   description: Kept you waiting huh?
   id: VinylSleeveMgs
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: questionable vinyl sleeve
   description: Abstract art, it's everyone's favorite.
   id: VinylSleeveQuestionable
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: janitor vinyl sleeve
   description: The unsung hero, now sung about!
   id: VinylSleeveJanitor
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: weird vinyl sleeve
   id: VinylSleeveWeird
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: DJ clown vinyl sleeve
   description: DJ clown a galactic sensation, his galactic tour lists sol as the only star system.
   id: VinylSleeveDJClown
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: vampire vinyl sleeve
   id: VinylSleeveVampire
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: shulker vinyl sleeve
   id: VinylSleeveShulker
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: red sun vinyl sleeve
   id: VinylSleeveRedSun
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: skull vinyl sleeve
   description: Rock on!!
   id: VinylSleeveSkull
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: fisherman vinyl sleeve
   id: VinylSleeveFisherman
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: Heisenbee vinyl sleeve
   description: The famous mascot of goonstation returns, in cardboard form.
   id: VinylSleeveHeisenbee
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: space station 13 vinyl sleeve
   description: The famous space station, unlucky 13
   id: VinylSleeveStation13
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: space station 14 vinyl sleeve
   description: The famous space station, lucky 14
   id: VinylSleeveStation14
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: reactor vinyl sleeve
   id: VinylSleeveReactor
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: pda vinyl sleeve
   id: VinylSleevePda
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: nuke disk vinyl sleeve
   description: Although it may look like one this doesn't actually work as a nuke disk.
   id: VinylSleeveNukeDisk
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: blocky craft vinyl sleeve
   description: The hit 2457 video game blocky craft's soundtrack comes to vinyl!
   id: VinylSleeveBlockyCraft
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: eye vinyl sleeve
   id: VinylSleeveEye
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: th vinyl sleeve
   description: Somehow this indie band decided that naming themselves "th" was a good idea
   id: VinylSleeveTh
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: clown vinyl sleeve
   description: The clown always wins.
   id: VinylSleeveClown
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: New Nano York vinyl sleeve
   description: The cover art depicts New Nano York after the corporate takeover of 2333.
   id: VinylSleeveNanoYork
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: JD tider vinyl sleeve
   description: DJ tider a galactic sensation, his galactic tour lists Sol and alpha centauri as stops.
   id: VinylSleeveDJTider
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: coffee vinyl sleeve
   id: VinylSleeveCoffee
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: welcome to SS13 vinyl sleeve
   description: Shame that they nuked that place.
   id: VinylSleeveWelcomeSS13
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: peace vinyl sleeve
   description: The art depicts the events of space station 12 where a captain and syndicate insurgent agreed to a truce on christmas day.
   id: VinylSleevePeace
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: japan vinyl sleeve
   id: VinylSleeveJapan
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: christmas vinyl sleeve
   id: VinylSleeveChristmas
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: pickle vinyl sleeve
   description: Many artists have tried to figure out what this art depicts, our greatest minds are agreed that it most likely depicts 3 pickles on a road.
   id: VinylSleevePickle
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: flash vinyl sleeve
   id: VinylSleeveFlash
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: beige vinyl sleeve
   id: VinylSleeveBeige
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: black vinyl sleeve
   id: VinylSleeveBlack
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework
 
 - type: entity
   name: white vinyl sleeve
   id: VinylSleeveWhite
-  parent: BaseVinylSleeveFilled # Starlight - Rework radio host
+  parent: BaseVinylSleeveFilled # Starlight - Radio host rework

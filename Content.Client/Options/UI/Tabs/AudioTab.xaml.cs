@@ -142,10 +142,12 @@ public sealed partial class AudioTab : Control
             _cfg.GetCVar(CCVars.MinMaxAmbientSourcesConfigured),
             _cfg.GetCVar(CCVars.MaxMaxAmbientSourcesConfigured));
 
+        // Starlight - Radio host rework - Start
         Control.AddOptionPercentSlider(
             StarlightCCVars.StationRadioVolume,
             SliderMusicRadio,
             scale: ContentAudioSystem.AmbientMusicMultiplier);
+        // Starlight - Radio host rework - End
 
         Control.AddOptionCheckBox(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox);
         Control.AddOptionCheckBox(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox);

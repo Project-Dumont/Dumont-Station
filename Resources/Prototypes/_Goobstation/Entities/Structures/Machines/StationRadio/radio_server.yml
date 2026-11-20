@@ -1,23 +1,21 @@
 - type: entity
   id: StationRadioServer
-  name: radio server # Starlight - Rework radio host
+  name: station radio server
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  description: A rack of servers that puts the radio show on air, music and the host's microphone alike. # Starlight - Rework radio host
+  description: A rack of servers, controls whether your voice is being broadcasted or not
   components:
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/StationRadio/stationradioserver.rsi
     layers:
     - state: icon
-    # Starlight - Radio host Rework - Start
+  # Starlight - Radio host Rework - Start
     - state: unlit
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
     - state: panel
       visible: false
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    # Starlight - Rework radio host - End
     drawdepth: SmallObjects
-  # Starlight - Radio host Rework - Start
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -38,7 +36,7 @@
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: ApcPowerReceiver
-  # Starlight - Rework radio host - End
+  # Starlight - Radio host rework - End
   - type: StationRadioServer
   - type: DeviceLinkSource
     ports:
@@ -54,14 +52,14 @@
 - type: entity
   id: StationRadioRig
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: radio rig # Starlight - Rework radio host
-  description: A desk with everything you need to run the radio show, and a record shelf that plays on a loop. # Starlight - Rework radio host
+  name: station radio rig
+  description: A collection of everything you need to play music over the station.
   components:
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/StationRadio/radiostationrig.rsi
     layers:
     - state: icon
-    # Starlight - Rework radio host - Start
+  # Starlight - Radio host rework - Start
     - state: record0
       visible: false
       map: [ "slot0" ]
@@ -84,19 +82,7 @@
     - state: mic_off
       shader: unshaded
       map: ["micOff"]
-    # Starlight - Rework radio host - End
     drawdepth: SmallObjects
-    # TODO: unlit & maints panel sprite
-  - type: DeviceLinkSink
-    ports:
-    - StationRadioRigPort
-  - type: Transform
-    noRot: false
-  - type: Rotatable
-  - type: Machine
-    board: StationRadioRigCircuitboard
-  - type: RadioRig
-  # Starlight - Rework radio host - Start
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -111,7 +97,7 @@
         micOff:
           True: { visible: false }
           False: { visible: true }
-  - type: VinylPlayer # Record shelf playing on a loop while nobody is at the desk.
+  - type: VinylPlayer
     slots: [ playlist1, playlist2, playlist3, playlist4 ]
     autoPlay: false
     loop: true
@@ -156,4 +142,14 @@
     unobstructedRequired: true
     toggleOnInteract: false
     toggleOnAltInteract: true
-  # Starlight - Rework radio host - End
+  # Starlight - Radio host rework - End
+    # TODO: unlit & maints panel sprite
+  - type: DeviceLinkSink
+    ports:
+    - StationRadioRigPort
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+  - type: Machine
+    board: StationRadioRigCircuitboard
+  - type: RadioRig

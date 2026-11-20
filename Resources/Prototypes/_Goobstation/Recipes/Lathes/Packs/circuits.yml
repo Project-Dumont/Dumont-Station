@@ -42,10 +42,10 @@
   id: ServiceBoardsGoob
   recipes:
   - VinylPlayerCircuitboard
-  - CDPlayerCircuitboard # Starlight - Rework radio host
-  - BroadcastRecorderCircuitboard # Starlight - Rework radio host
-  - StationRadioMixerCircuitboard # Starlight - Rework radio host
   - TapeDeckCircuitboard
   - StationRadioServerCircuitboard
   - StationRadioRigCircuitboard
   - ServiceEnergyChemMachineCircuitboard
+  - CDPlayerCircuitboard # Starlight - Radio host rework
+  - BroadcastRecorderCircuitboard # Starlight - Radio host rework
+  - StationRadioMixerCircuitboard # Starlight - Radio host rework

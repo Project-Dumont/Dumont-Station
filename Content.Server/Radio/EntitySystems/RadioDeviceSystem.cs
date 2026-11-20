@@ -89,7 +89,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!; // Goob
-    [Dependency] private readonly IRobustRandom _random = default!; // Starlight - Radio Host
+    [Dependency] private readonly IRobustRandom _random = default!; // Starlight - Radio host rework
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();
@@ -207,11 +207,11 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (!quiet && user != null)
         {
             var state = Loc.GetString(component.Enabled ? "handheld-radio-component-on-state" : "handheld-radio-component-off-state");
-            // Starlight Start
+            // Starlight - Radio host rework - Start
             var message = HasComp<StationRadioServerComponent>(uid) || HasComp<RadioRigComponent>(uid)
                 ? Loc.GetString("station-radio-server-microphone-on-use", ("radioState", state))
                 : Loc.GetString("handheld-radio-component-on-use", ("radioState", state));
-            // Starlight End
+           // Starlight - Radio host rework - End
             _popup.PopupEntity(message, user.Value, user.Value);
         }
 
@@ -298,7 +298,7 @@ public sealed class RadioDeviceSystem : EntitySystem
             ("speaker", Name(uid)),
             ("originalName", nameEv.VoiceName));
 
-        // Starlight - Start - Radio Host
+        // Starlight - Radio host rework - Start
         var chatType = InGameICChatType.Whisper; // Default, messages from radios are sent as whispers.
         var transmitRange = ChatTransmitRange.GhostRangeLimit; // Default, all ghosts can hear whispers from radios.
         if (TryComp<StationRadioReceiverComponent>(uid, out var receiverComp))
@@ -306,18 +306,23 @@ public sealed class RadioDeviceSystem : EntitySystem
             transmitRange = ChatTransmitRange.HideChat; // Message hidden from chat if from a Station Radio.
             chatType = !receiverComp.BoostVolume ? InGameICChatType.Whisper : InGameICChatType.Speak; // Radios will talk loudly if at full volume.
         }
-        // Starlight - End
+        // Starlight - Radio host rework - End
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
-        var message = args.OriginalChatMsg.Message;
+        var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.
+
+        // Starlight - Radio host rework - Start
         if (receiverComp != null)
             message = StationRadioServerSystem.Garble(message, receiverComp.Interference, _random);
-        _chat.TrySendInGameICMessage(uid, message,
-            chatType,
-            transmitRange,
-            nameOverride: name, checkRadioPrefix: false,
-            languageOverride: args.Language);
-        // Starlight - End
+        // Starlight - Radio host rework - End
+
+        _chat.TrySendInGameICMessage(uid,
+            message,
+            chatType, // Starlight - Radio host rework
+            transmitRange, // Starlight - Radio host rework
+            nameOverride: name,
+            checkRadioPrefix: component.SpeakNormally,
+            languageOverride: args.Language); // Einstein Engines - Languages
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

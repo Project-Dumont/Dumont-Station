@@ -45,7 +45,7 @@
     powerRequired: true
     speakNormally: true
     enabled: true
-    toggleOnInteract: false # The panel's power switch handles it. # Starlight - Rework radio host
+    toggleOnInteract: false # Starlight - Radio host rework
     channels:
     - RadioShow
   - type: Speech
@@ -54,7 +54,7 @@
     channels:
     - RadioShow
   - type: StationRadioReceiver
-  # Starlight - Rework radio host - Start
+  # Starlight - Radio host rework - Start
     toggleOnActivate: false
   - type: ApcPowerReceiver
     powerLoad: 100
@@ -70,4 +70,4 @@
     interfaces:
       enum.StationRadioReceiverUiKey.Key:
         type: StationRadioReceiverBoundUserInterface
-  # Starlight - Rework radio host - End
+  # Starlight - Radio host rework - End

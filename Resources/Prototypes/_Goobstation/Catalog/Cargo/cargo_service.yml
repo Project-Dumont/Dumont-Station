@@ -56,8 +56,8 @@
 - type: cargoProduct
   id: RadioAdsCrateCargo
   icon:
-    sprite: _Goobstation/Structures/Furniture/cdrack.rsi
-    state: base
+    sprite: Objects/Misc/cd.rsi
+    state: icon
   product: CrateRadioStationAds
   cost: 3000
   category: cargoproduct-category-name-service

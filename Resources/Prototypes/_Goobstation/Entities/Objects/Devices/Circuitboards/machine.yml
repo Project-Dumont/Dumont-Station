@@ -79,8 +79,8 @@
 - type: entity
   parent: BaseMachineCircuitboard
   id: VinylPlayerCircuitboard
-  name: record player machine board # Starlight - Rework radio host
-  description: A machine printed circuit board for a record player. # Starlight - Rework radio host
+  name: vinyl player machine board
+  description: A machine printed circuit board for a vinyl player.
   components:
   - type: Sprite
     state: service
@@ -109,8 +109,8 @@
 - type: entity
   parent: BaseMachineCircuitboard
   id: StationRadioServerCircuitboard
-  name: radio server machine board # Starlight - Rework radio host
-  description: A machine printed circuit board for a radio server. # Starlight - Rework radio host
+  name: station radio server machine board
+  description: A machine printed circuit board for a station radio server.
   components:
   - type: Sprite
     state: service
@@ -126,8 +126,8 @@
 - type: entity
   parent: BaseMachineCircuitboard
   id: StationRadioRigCircuitboard
-  name: radio rig machine board # Starlight - Rework radio host
-  description: A machine printed circuit board for a radio rig. # Starlight - Rework radio host
+  name: station radio rig machine board
+  description: A machine printed circuit board for a station radio rig.
   components:
   - type: Sprite
     state: service
@@ -152,9 +152,9 @@
     stackRequirements:
       Manipulator: 1
       Cable: 2
-  - type: Tag
+  - type: Tag # Starlight - Radio host rework
     tags:
-      - StationRadioCircuitboard # Starlight - Rework radio host
+      - StationRadioCircuitboard
 
 - type: entity
   id: VirologyServerMachineCircuitboard

@@ -467,7 +467,7 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/milk.rsi
-  - type: Tag # Starlight
+  - type: Tag # Starlight - Radio host rework
     tags:
     - Trash
     - MilkCarton
@@ -479,7 +479,7 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/soymilk.rsi
-  - type: Tag # Starlight
+  - type: Tag # Starlight - Radio host rework
     tags:
     - Trash
     - MilkCarton
@@ -491,7 +491,7 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
-  - type: Tag # Starlight
+  - type: Tag # Starlight - Radio host rework
     tags:
     - Trash
     - MilkCarton

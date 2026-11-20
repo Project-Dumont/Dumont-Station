@@ -1,8 +1,8 @@
 - type: entity
   id: VinylPlayer
-  name: record player # Starlight - Rework radio host
+  name: vinyl player
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
-  description: An old school record player sat on a set of drawers. Plays out loud for whoever is nearby; the radio rig's record shelf goes on air. # Starlight - Rework radio host
+  description: An old school vinyl record player sat on a set of drawers.
   components:
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/StationRadio/vinylplayer.rsi
@@ -10,14 +10,14 @@
     granularLayersRendering: true
     layers:
     - state: icon
-    # Starlight - Rework radio host - Start
+    # Starlight - Radio host rework - Start
     - state: disk_installed
       visible: false
       map: [ "enum.VinylPlayerVisualLayers.Disc" ]
     - state: disk_label
       visible: false
       map: [ "enum.VinylPlayerVisualLayers.Label" ]
-    # Starlight - Rework radio host - End
+    # Starlight - Radio host rework - End
     - state: unlit
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
@@ -50,7 +50,7 @@
   - type: WiresPanel
   - type: WiresVisuals
   - type: VinylPlayer
-    standalone: true # Starlight - Rework radio host
+    standalone: true # Starlight - Radio host rework
   - type: Machine
     board: VinylPlayerCircuitboard
   - type: ApcPowerReceiver
@@ -63,10 +63,10 @@
   - type: ItemSlots
     slots:
       vinyl:
-        name: item-slot-component-slot-name-vinyl # Starlight - Rework radio host
+        name: item-slot-component-slot-name-vinyl # Starlight - Radio host rework
         whitelist:
           tags:
-          - VinylSleeveFit # Records only, CDs go in the radio CD player. # Starlight - Rework radio host
+          - VinylSleeveFit # Starlight - Radio host rework
   - type: GenericVisualizer
     visuals:
       enum.WiresVisualLayers.MaintenancePanel:

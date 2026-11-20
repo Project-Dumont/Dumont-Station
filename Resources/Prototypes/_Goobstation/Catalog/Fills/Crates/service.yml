@@ -57,13 +57,12 @@
     - id: VehicleForklift
     - id: VehicleKeyForklift
 
-# Starlight - Rework radio host - Start
 - type: entity
   id: CrateRadioStationAds
-  parent: CdRack
-  suffix: Filled
+  parent: CdRack # Starlight - Radio host rework
+  suffix: Filled # Starlight - Radio host rework
   components:
-  - type: UniqueDiscFill
+  - type: UniqueDiscFill # Starlight - Radio host rework
     table: RandomCDDisk
     min: 6
     max: 6
@@ -72,16 +71,15 @@
 
 - type: entity
   id: CrateRadioStationVinyls
-  parent: RecordMilkCrate
-  suffix: Filled
+  parent: RecordMilkCrate # Starlight - Radio host rework
+  suffix: Filled # Starlight - Radio host rework
   components:
-  - type: UniqueDiscFill
+  - type: UniqueDiscFill # Starlight - Radio host rework
     table: RandomVinylDisk
     min: 8
     max: 8
     wrapper: VinylSleeve
     container: records
-  # Starlight - Rework radio host - End
 
 - type: entityTable
   id: RandomCDDisk
