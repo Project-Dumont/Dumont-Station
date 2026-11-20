@@ -60,6 +60,7 @@
   - type: SlimPoweredLight
     enabled: false
   - type: StationAiVision
+    needsPower: true # Dumont
   - type: SurveillanceCameraMicrophone
   - type: ActiveListener
   - type: Clickable

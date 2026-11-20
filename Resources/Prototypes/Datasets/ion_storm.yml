@@ -98,6 +98,8 @@
 - type: dataset
   id: IonStormAdjectives
   values:
+  # Dumont
+  - LADRÃO DE NATAL
   - ADORÁVEL
   - IRRITANTE
   - ALIMENTADO-POR-BATERIA
@@ -289,6 +291,8 @@
 - type: dataset
   id: IonStormAllergySeverities
   values:
+  # Dumont
+  - EXPLOSIVAMENTE
   - CONTAGIOSAMENTE
   - MORTALMENTE
   - EXTREMAMENTE
@@ -300,6 +304,28 @@
 - type: dataset
   id: IonStormAreas
   values:
+  # Dumont
+  - ANTE
+  - BORGINATOR 5000 DELUXE HD EDITION
+  - INVEJA
+  - FRAUDE
+  - GULA
+  - GANÂNCIA
+  - O PRÓPRIO DEUS
+  - HERESIA
+  - LIMBO
+  - ORGULHO
+  - PRIMUM MOBILE
+  - PARAÍSO
+  - PREGUIÇA
+  - ALGO PERVERSO VEM POR AQUI
+  - A NAVE-MÃE DOS XENOBORGS
+  - O EMPÍREO
+  - A CIDADE DE DIS
+  - TRAIÇÃO
+  - VIOLÊNCIA
+  - IRA
+  - A CASA DA SUA MÃE
   - COMPLEXO ALPHA
   - AMÉRICA
   - UM COVIL DO MAL # Goobstation
@@ -448,6 +474,8 @@
 - type: dataset
   id: IonStormCrew
   values:
+  # Dumont
+  - GENETICISTAS
   - ANIMAIS
   - INTELIGÊNCIAS ARTIFICIAIS
   - TÉCNICOS ATMOSFÉRICOS
@@ -597,6 +625,8 @@
 - type: dataset
   id: IonStormMusts
   values:
+  # Dumont
+  - SER UM VERDADEIRO FOFINHO, UMA CRIATURINHA ADORÁVEL
   - OBTER O ESTILO
   - AGIR CONFUSO
   - SER IRRITANTE
@@ -1036,7 +1066,6 @@
   - GOIDACODE
   - JOB
   - EMPLOYMENT
-  - CHUDS
   - DURK'S STEAK AND WINE
   - THE SWAP
   - FELINID-FREE COMMAND
@@ -1171,6 +1200,10 @@
 - type: dataset
   id: IonStormThreats
   values:
+  # Dumont
+  - RATMA
+  - DEMÔNIOS DAS SOMBRAS
+  - A FÁBRICA DAS SOMBRAS
   - AHHHPERATIVES
   - ALIENS
   - ANARCHISTS AND BANDITS
