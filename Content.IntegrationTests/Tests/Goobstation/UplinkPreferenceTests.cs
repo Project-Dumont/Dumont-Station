@@ -7,7 +7,10 @@ using Content.Server.Traitor.Uplink;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants.Components;
 using Content.Shared.PDA;
+using System.Linq;
 using Content.Shared.Store;
+using Content.Server.Store.Systems;
+using Content.Trauma.Shared.JobListings;
 using Content.Shared.Store.Components;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -186,6 +189,53 @@ public sealed class UplinkPreferenceTests
                 }
             });
         }
+    }
+
+    [Test]
+    public async Task JobRunnerKitChargesOnceAndLinksTheImplant()
+    {
+        var server = _pair.Server;
+        var client = _pair.Client;
+        EntityUid implant = default;
+        NetEntity netImplant = default;
+        var initialBalance = 0;
+        await server.WaitAssertion(() =>
+        {
+            var entities = server.EntMan;
+            Assert.That(server.System<UplinkSystem>().TryAddUplink(_player, 100, "UplinkImplant", out _, out _), Is.True);
+            implant = entities.GetComponent<ImplantedComponent>(_player).ImplantContainer.ContainedEntities
+                .Single(e => entities.HasComponent<JobListingsImplantComponent>(e));
+            Assert.That(entities.HasComponent<RemoteJobListingsComponent>(implant), Is.False);
+            var store = entities.GetComponent<StoreComponent>(implant);
+            initialBalance = (int) store.Balance[UplinkSystem.TelecrystalCurrencyPrototype];
+            netImplant = entities.GetNetEntity(implant);
+            server.System<SharedUserInterfaceSystem>().OpenUi(implant, StoreUiKey.Key, _player);
+            server.System<StoreSystem>().UpdateUserInterface(_player, implant, store);
+        });
+        await _pair.RunTicksSync(10);
+
+        ListingData kit = default!;
+        await client.WaitAssertion(() =>
+        {
+            var ui = client.System<SharedUserInterfaceSystem>();
+            var local = client.EntMan.GetEntity(netImplant);
+            Assert.That(ui.TryGetUiState<StoreUpdateState>(local, StoreUiKey.Key, out var state), Is.True);
+            kit = state!.Listings.Single(item => item.ID == "UplinkJobRunnerKit");
+            ui.ClientSendUiMessage(local, StoreUiKey.Key, new StoreBuyListingMessage(kit));
+        });
+        await _pair.RunTicksSync(10);
+        await client.WaitPost(() =>
+            client.System<SharedUserInterfaceSystem>().ClientSendUiMessage(client.EntMan.GetEntity(netImplant),
+                StoreUiKey.Key, new StoreBuyListingMessage(kit)));
+        await _pair.RunTicksSync(10);
+        await server.WaitAssertion(() =>
+        {
+            var entities = server.EntMan;
+            Assert.That((int) entities.GetComponent<StoreComponent>(implant).Balance[UplinkSystem.TelecrystalCurrencyPrototype],
+                Is.EqualTo(initialBalance - 50));
+            Assert.That(entities.HasComponent<JobListingsComponent>(entities.GetComponent<RemoteJobListingsComponent>(implant).JobListings), Is.True);
+            Assert.That(entities.GetComponent<JobListingsImplantComponent>(implant).StoredAction, Is.Not.Null);
+        });
     }
 
     [Test]

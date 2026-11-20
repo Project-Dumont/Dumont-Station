@@ -316,7 +316,8 @@ public sealed partial class ShuttleSystem
         {
 
             // Too large to FTL
-            if (FTLMassLimit > 0 &&  shuttlePhysics.Mass > FTLMassLimit)
+            var massLimit = CompOrNull<FTLDriveComponent>(shuttleUid)?.MassLimit ?? FTLMassLimit; // Dumont
+            if (massLimit > 0 && shuttlePhysics.Mass > massLimit)
             {
                 reason = Loc.GetString("shuttle-console-mass");
                 return false;

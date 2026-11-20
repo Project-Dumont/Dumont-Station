@@ -343,7 +343,10 @@ namespace Content.Server.PDA
                 pda.Notifications,
                 showUplink,
                 hasInstrument,
-                address);
+                address)
+            {
+                HasJobBoard = showUplink && HasComp<Content.Trauma.Shared.JobListings.RemoteJobListingsComponent>(uid),
+            };
 
             _ui.SetUiState(uid, PdaUiKey.Key, state);
         }

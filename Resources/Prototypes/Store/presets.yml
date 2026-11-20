@@ -28,6 +28,7 @@
   - type: Store
     name: store-preset-name-uplink
     categories:
+    - UplinkContractors
     - UplinkWeaponry
     - UplinkAmmo
     - UplinkExplosives

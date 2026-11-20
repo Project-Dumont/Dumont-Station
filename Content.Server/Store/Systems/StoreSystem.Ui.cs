@@ -46,6 +46,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Heretic; // Goob
 using Content.Shared.Heretic.Prototypes; // Goob
 using Content.Shared.Mind;
+using Content.Trauma.Shared.JobListings;
+using Content.Trauma.Server.JobListings;
 using Content.Shared.PDA.Ringer;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -65,6 +67,7 @@ namespace Content.Server.Store.Systems;
 // do not touch unless you want to shoot yourself in the leg
 public sealed partial class StoreSystem
 {
+    [Dependency] private ServerJobListingsSystem _jobListings = default!;
     [Dependency] private readonly IAdminLogManager _admin = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
@@ -212,6 +215,10 @@ public sealed partial class StoreSystem
                 return;
             }
         }
+        if (listing.ProductEvent is CreateJobBoardEvent board &&
+            !_jobListings.TryBuyJobBoard(buyer, uid, board))
+            return;
+
         if (HasComp<NtrClientAccountComponent>(uid))
             RaiseLocalEvent(uid, new NtrListingPurchaseEvent(listing.Cost.First().Value));
         OnPurchase(listing); // Goob edit - ntr shittery
@@ -388,7 +395,7 @@ public sealed partial class StoreSystem
                 HandleRefundComp(uid, component, upgradeActionId.Value, cost, originalListing, true); // Goob edit
         }
 
-        if (listing.ProductEvent != null)
+        if (listing.ProductEvent is not null and not CreateJobBoardEvent)
         {
             // Funkystation -> Malf Ai. Handle ActionPurchaseCompanionEvent specially to populate the buyer
             if (listing.ProductEvent is ActionPurchaseCompanionEvent companionEvent)

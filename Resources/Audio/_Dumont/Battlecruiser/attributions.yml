@@ -1,0 +1,9 @@
+- files: ["saae_nuclear.ogg", "saae_ship.ogg", "saae_team.ogg"]
+  copyright: "Created by Struater."
+  license: "CC-BY-SA-3.0"
+  source: "https://github.com/Struater/Gaby-Station"
+
+- files: ["goons_with_a_warhead.ogg"]
+  copyright: '"Goons with a Warhead" ("Nuclear Operations" Remake V2), by A-Guy.'
+  license: "CC0-1.0"
+  source: "https://github.com/A-Guy173/Music"

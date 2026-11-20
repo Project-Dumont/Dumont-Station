@@ -6,17 +6,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Server.Objectives.Components.Targets;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared.Objectives.Components;
 
 /// <summary>
 /// Allows an object to become the target of a StealCollection  objection
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class StealTargetComponent : Component
 {
     /// <summary>
     /// The theft group to which this item belongs.
     /// </summary>
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true), AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public string StealGroup;
 }
