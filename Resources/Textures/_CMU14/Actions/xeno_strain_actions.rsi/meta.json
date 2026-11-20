@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ported action sprites from CMSS13 PRs #11128, #10541, #9741, and #6610.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "dancer_dodge"
+    },
+    {
+      "name": "dancer_impale"
+    },
+    {
+      "name": "dancer_tail_trip"
+    },
+    {
+      "name": "dancer_tail_lance"
+    }
+  ]
+}

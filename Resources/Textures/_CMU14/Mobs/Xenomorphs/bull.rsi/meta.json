@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-4.0",
+  "copyright": "Taken from tgstation/TerraGov-Marine-Corps at https://github.com/tgstation/TerraGov-Marine-Corps/blob/3fc0dc2bf1dd46b3396c2dc3168b0098ff5a2d18/icons/Xeno/castes/bull.dmi. License and authorship per TGMC README asset table.",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "alive",
+      "directions": 4
+    },
+    {
+      "name": "running",
+      "directions": 4
+    },
+    {
+      "name": "thrown",
+      "directions": 4
+    },
+    {
+      "name": "sleeping"
+    },
+    {
+      "name": "crit"
+    },
+    {
+      "name": "dead"
+    },
+    {
+      "name": "bull_downed_1"
+    },
+    {
+      "name": "bull_downed_2"
+    },
+    {
+      "name": "bull_downed_3"
+    },
+    {
+      "name": "bull_rest_3"
+    },
+    {
+      "name": "bull_rest_2"
+    },
+    {
+      "name": "bull_rest_1"
+    },
+    {
+      "name": "bull_walk_3",
+      "directions": 4
+    },
+    {
+      "name": "bull_walk_2",
+      "directions": 4
+    },
+    {
+      "name": "bull_walk_1",
+      "directions": 4
+    }
+  ]
+}

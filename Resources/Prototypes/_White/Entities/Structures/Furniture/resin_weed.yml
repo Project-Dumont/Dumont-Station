@@ -4,6 +4,13 @@
   name: resin floor
   description: A thick resin surface covers the floor.
   components:
+  - type: XenomorphWeedWallSpread
+  - type: SpeedModifierContacts # Dumont
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+    ignoreWhitelist:
+      components:
+      - Xenomorph
   - type: Sprite
     noRot: true
     drawdepth: FloorTiles
@@ -20,7 +27,7 @@
 #  - type: SmoothEdge # goobstation new sprites
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Resin
+    damageModifierSet: DumontFragileResin
   - type: Fixtures
     fixtures:
       fix1:
@@ -28,18 +35,15 @@
           !type:PhysShapeAabb
           bounds: "-0.45,-0.45,0.45,0.45"
         mask:
-        - SlipLayer
+        - ItemMask
         layer:
-        - Impassable
-        - MidImpassable
-        - LowImpassable
+        - SlipLayer
         hard: false
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 18
+        !type:DamageTrigger
+        damage: 5
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -49,7 +53,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 18
+        damage: 5
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawnInContainer: true
@@ -92,6 +96,16 @@
   - type: Icon
     sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi # Goobstation new sprites
     state: weed0
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: XenoResinBreak
   - type: AreaSpawner
     spawnPrototype: ResinWeed
   - type: PointLight

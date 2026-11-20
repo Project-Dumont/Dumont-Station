@@ -1,0 +1,16 @@
+ent-ActionXenomorphOrderHiveConstruction = Choose hive structure
+    .desc = Choose a project. Place it and contribute plasma to complete construction.
+ent-ActionXenomorphPlaceHiveConstruction = Order hive construction
+    .desc = Place the selected project for 400 plasma, then activate it to contribute the remaining plasma.
+xenomorph-hive-not-enough-plasma = You need 400 plasma to place the project.
+xenomorph-hive-requires-core = The hive needs a completed hive core.
+xenomorph-hive-requires-weeds = This structure requires weeds spread by the hive core.
+xenomorph-hive-limit = The hive has reached this structure's limit, including unfinished projects.
+xenomorph-hive-no-space = There is not enough free space for this structure.
+xenomorph-hive-plasma-left = { $amount } plasma is still required to complete construction.
+xenomorph-hive-recovery-start = The structure begins restoring your strength.
+xenomorph-hive-recovery-other = The structure begins restoring { $target }'s strength.
+xenomorph-hive-morpher-empty = The morpher has no parasites available yet.
+xenomorph-hive-morpher-full = The morpher is full.
+xenomorph-hive-morpher-count = Stored parasites: { $count }/{ $max }.
+xenomorph-hive-reserve-parasites = Reserve parasites

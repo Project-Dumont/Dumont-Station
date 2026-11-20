@@ -1,0 +1,66 @@
+- type: entity
+  id: DumontXenomorphRaptureEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    sprite: _RMC14/Effects/attacks.rsi
+    state: slash
+    drawdepth: Effects
+    noRot: true
+
+- type: entity
+  id: DumontXenomorphFleshBloomTelegraph
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 4
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
+    state: trap_boiler
+    drawdepth: FloorObjects
+    noRot: true
+
+- type: entity
+  id: DumontXenomorphFleshBloom
+  categories: [HideSpawnMenu]
+  components:
+  - type: Transform
+    anchored: true
+  - type: TimedDespawn
+    lifetime: 8
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid2
+    color: "#7A2447"
+    drawdepth: Puddles
+  - type: XenomorphReaperField
+    bloom: true
+
+- type: entity
+  id: DumontXenomorphRedGas
+  categories: [HideSpawnMenu]
+  components:
+  - type: Transform
+    anchored: true
+  - type: TimedDespawn
+    lifetime: 6
+  - type: Sprite
+    sprite: _RMC14/Effects/smoke.rsi
+    state: smoke2
+    color: "#B01828A0"
+    drawdepth: Effects
+  - type: XenomorphReaperField
+
+- type: entity
+  id: DumontXenomorphCarrionMantleEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: Appearance
+  - type: XenomorphCarrionShieldVisual
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_shields.rsi
+    state: king-shield-full
+    noRot: true
+    drawdepth: Effects
