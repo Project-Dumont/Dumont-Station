@@ -221,18 +221,24 @@
   id: BorgChassisSyndicateSaboteur
   parent: BaseBorgChassisSyndicate
   name: syndicate saboteur cyborg
-  description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
+  description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise
+    itself as a Nanotrasen cyborg.
   components:
     - type: Sprite
       layers:
         - state: synd_engi
+          map:
+            - enum.BorgVisualLayers.Body
         - state: synd_engi_e
-          map: ["enum.BorgVisualLayers.Light"]
+          map: [ "enum.BorgVisualLayers.Light" ]
           shader: unshaded
           visible: false
         - state: synd_engi_l
           shader: unshaded
-          map: ["light"]
+          map: [ "light" ]
+          visible: false
+        - state: engineer
+          map: [ "enum.BorgDisguiseVisualLayers.Body" ]
           visible: false
     - type: BorgChassis
       maxModules: 3
@@ -245,15 +251,31 @@
       noMindState: synd_engi
     - type: ShowHealthBars
       damageContainers:
-      - Inorganic
-      - Silicon
-      - SiliconRadiation # Goobstation - Make IPCs take radiation
+        - Inorganic
+        - Silicon
+        - SiliconRadiation # Goobstation - Make IPCs take radiation
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
     - type: CyborgSparkEffect
+    - type: BorgDisguise
+      action: ActionBorgDisguiseToggle
+      disguisedPrototype: BorgChassisEngineer
+      hasMindState: engineer_e
+      noMindState: engineer_e_r
+      disguisedLight: engineer_l
+      realLight: synd_engi_l
+    - type: GenericVisualizer
+      visuals:
+        enum.BorgDisguiseVisuals.IsDisguised:
+          enum.BorgVisualLayers.Body:
+            True: { visible: false }
+            False: { visible: true }
+          enum.BorgDisguiseVisualLayers.Body:
+            True: { visible: true }
+            False: { visible: false }
 
 - type: entity
   id: BorgChassisDerelict

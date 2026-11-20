@@ -224,3 +224,32 @@ ghost-role-information-syndicate-reinforcement-rules = As regras normais para an
 ghost-role-information-syndicate-monkey-reinforcement-name = Agente Macaco do Sindicato
 ghost-role-information-syndicate-monkey-reinforcement-description = Alguém precisa de reforços. Você, um macaco treinado, irá ajudá-los.
 ghost-role-information-syndicate-monkey-reinforcement-rules = As regras normais para antagonistas do Sindicato se aplicam. Trabalhe com quem o chamou e não o prejudique.
+
+ghost-role-information-syndicate-reinforcement-medic-name = Médico do Sindicato
+
+ghost-role-information-syndicate-reinforcement-medic-description = Alguém precisa de reforços. Sua tarefa é manter vivo o agente que chamou você.
+
+ghost-role-information-syndicate-reinforcement-spy-name = Espião do Sindicato
+
+ghost-role-information-syndicate-reinforcement-spy-description = Alguém precisa de reforços. Sua especialidade é espionagem. Não seja descoberto.
+
+ghost-role-information-syndicate-reinforcement-thief-name = Ladrão do Sindicato
+
+ghost-role-information-syndicate-reinforcement-thief-description = Alguém precisa de reforços. Sua tarefa é invadir um local e recuperar algo valioso para seu agente.
+
+ghost-role-information-nukeop-reinforcement-name = Operativo nuclear
+
+ghost-role-information-nukeop-reinforcement-description = Os operativos nucleares precisam de reforços. Você é um agente da reserva e vai ajudá-los.
+
+ghost-role-information-nukeop-reinforcement-rules = Você é um [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] da equipe dos operativos nucleares que chamaram você.
+
+ghost-role-information-syndicate-kobold-reinforcement-name = Agente kobold do Sindicato
+
+ghost-role-information-syndicate-kobold-reinforcement-description = Alguém precisa de reforços. Você é um kobold treinado e vai ajudar.
+
+ghost-role-information-syndicate-cyborg-assault-name = Ciborgue de assalto do Sindicato
+
+ghost-role-information-familiar-rules = Você é um [color={role-type-familiar-color}][bold]{role-type-familiar-name}[/bold][/color]. Sirva aos interesses do seu mestre, sejam eles quais forem.
+    Você não se lembra da sua vida anterior nem de qualquer informação que aprendeu como fantasma.
+    Pode manter conhecimentos gerais sobre o jogo, como cozinhar e usar objetos.
+    Você [color=red]NÃO[/color] pode lembrar o nome, a aparência ou outras informações do seu personagem anterior.

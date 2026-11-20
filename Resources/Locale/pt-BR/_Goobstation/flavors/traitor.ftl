@@ -72,3 +72,23 @@ traitor-neulithivfederationvisionary-roundend = [color=violet]um Visionário da 
 
 issuers-corporate-flavor-1 = NanoTrasen
 issuers-corporate-flavor-2 = Central de Comando
+
+traitor-postal-intro = Você perdeu o controle.
+
+traitor-postal-goal = Os preparativos finalmente terminaram. Hoje você vai surtar de vez. Sequestre a nave de emergência e comece uma nova vida longe da Nanotrasen.
+
+traitor-postal-allies = Se o Sindicato descobrir seu plano, vai matar você e tomar seu uplink. Não arrisque.
+
+traitor-postal-uplink = Você conseguiu roubar um uplink completo há um mês. Ele certamente ajudará a cumprir seus objetivos.
+
+traitor-postal-roundend = [color=white]alguém completamente fora de controle[/color]
+
+traitor-evilchampion-intro = Você é um Campeão do Mal!
+
+traitor-evilchampion-goal = Você rabiscou alguns planos MALIGNOS para hoje. Os Campeões do Mal também estão sempre procurando mais malfeitores moralmente questionáveis. Recrute novos membros!
+
+traitor-evilchampion-allies = Qualquer um que pense e sinta como você pode se juntar aos Campeões do Mal! Isso inclui o Sindicato, os egoístas e até os insanos: basta ter um coração sombrio!
+
+traitor-evilchampion-uplink = Os Campeões do Mal têm bons contatos no mercado negro. Seu uplink foi fornecido para praticar o máximo de maldade!
+
+traitor-evilchampion-roundend = [color=red]um Campeão do Mal[/color]

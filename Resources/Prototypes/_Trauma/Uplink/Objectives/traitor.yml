@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: HijackTradeStationObjective
+  name: Hijack the Automated Trade Station.
+  description: Your uplink has been authorized one hijack beacon. Deploy it on the Automated Trade Station and defend it whilst it hijacks the trade station.
+  components:
+    - type: Objective
+      difficulty: 3
+      icon:
+        sprite: Objects/Tools/hijack_beacon.rsi
+        state: extraction_point
+    - type: HijackTradeStationCondition
+    - type: ObjectiveLimit
+      limit: 1

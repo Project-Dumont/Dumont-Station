@@ -58,6 +58,12 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool EnableAction = true; //Goobstation
 
+    [DataField]
+    public bool OverrideIdentity;
+
+    [DataField]
+    public bool ChangeIDName;
+
     #region GabyStation
     /// <summary>
     ///     The job icon to be displayed next to their name when speaking on radio

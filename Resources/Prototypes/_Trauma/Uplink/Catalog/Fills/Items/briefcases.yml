@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: BriefcaseWeaponSmall
+  id: BriefcaseWeaponBoxingGlovesFilled
+  name: secure rigged boxing gloves case
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: UndeterminedSelectorBoxingRiggedRadial
+
+- type: entity
+  parent: BriefcaseWeaponSmall
+  id: BriefcaseWeaponCutlassFilled
+  name: secure cutlass case
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: RealFoamCutlass
+
+- type: entity
+  parent: BriefcaseWeapon
+  id: BriefcaseWeaponSaiveFilled
+  name: secure saive automatique case
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: WeaponRifleFAL
+            - id: MagazineLightRifle20rd

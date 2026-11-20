@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared._Shitmed.Targeting;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Trigger.Components.Effects;
@@ -15,6 +16,9 @@ public sealed partial class DamageOnTriggerComponent : BaseXOnTriggerComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool IgnoreResistances;
+
+    [DataField, AutoNetworkedField]
+    public TargetBodyPart? TargetPart;
 
     /// <summary>
     /// The base damage amount that is dealt.

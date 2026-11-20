@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: SyndiCdDisk
+  name: cd disk (Numbers)
+  id: CdDiskNumber
+  description: Contact the nearest syndicate listening post for reinforcements!
+  components:
+    - type: Vinyl
+      song:
+        path: /Audio/_Goobstation/RadioStation/ads/Number.ogg
+    - type: VinylSummonRule
+      gameRule: NumberStationThreats
