@@ -40,6 +40,16 @@ namespace Content.Shared.Gravity
 
         private EntityQuery<GravityComponent> _gravityQuery;
 
+        // Dumont start
+        public void RefreshWeightless(EntityUid uid)
+        {
+            if (IsWeightless(uid))
+                _alerts.ShowAlert(uid, WeightlessAlert);
+            else
+                _alerts.ClearAlert(uid, WeightlessAlert);
+        }
+        // Dumont end
+
         public bool IsWeightless(EntityUid uid, PhysicsComponent? body = null, TransformComponent? xform = null)
         {
             Resolve(uid, ref body, false);

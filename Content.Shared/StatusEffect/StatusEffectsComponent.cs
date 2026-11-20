@@ -27,7 +27,9 @@ namespace Content.Shared.StatusEffect
         ///     A list of status effect IDs to be allowed
         /// </summary>
         [DataField("allowed", required: true), Access(typeof(StatusEffectsSystem), Other = AccessPermissions.ReadExecute)]
-        public List<string> AllowedEffects = default!;
+        // Dumont start
+        public List<string> AllowedEffects = new();
+        // Dumont end
     }
 
     [RegisterComponent]

@@ -1,22 +1,36 @@
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// Dumont start
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Robust.Shared.Analyzers;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+using Robust.Shared.GameStates;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
+using Robust.Shared.Maths;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.Manager.Attributes;
 
 using System.Linq;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Server.Store.Components;
 using Content.Server.Administration;
 using Content.Shared.Administration;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Console;
+// Dumont end
 
 namespace Content.Server.Store.Systems;
 
 public sealed partial class StoreSystem
 {
-    [Dependency] private readonly IConsoleHost _consoleHost = default!;
+    [Dependency] private IConsoleHost _consoleHost = default!;
 
     public void InitializeCommand()
     {
@@ -39,15 +53,17 @@ public sealed partial class StoreSystem
             return;
         }
 
+        var currency = args[1];
+        if (!ProtoMan.HasIndex<CurrencyPrototype>(currency))
+        {
+            shell.WriteError($"Unknown currency {currency}");
+            return;
+        }
+
         if (!TryComp<StoreComponent>(uid, out var store))
             return;
 
-        var currency = new Dictionary<string, FixedPoint2>
-        {
-            { args[1], id }
-        };
-
-        TryAddCurrency(currency, uid.Value, store);
+        TryAddCurrency(new() { { currency, id } }, uid.Value, store);
     }
 
     private CompletionResult AddCurrencyCommandCompletions(IConsoleShell shell, string[] args)

@@ -1,0 +1,51 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Dumont start
+using System.Numerics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using Robust.Shared.Serialization;
+
+using Content.Shared.StatusEffectNew;
+using Content.Trauma.Shared.Heretic.Components.StatusEffects;
+using Content.Trauma.Shared.Heretic.Events;
+using Content.Trauma.Shared.Teleportation;
+// Dumont end
+
+namespace Content.Trauma.Shared.Heretic.Crucible.Systems;
+
+public sealed partial class CrucibleSoulStatusEffectSystem : EntitySystem
+{
+    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private TeleportSystem _teleport = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CrucibleSoulStatusEffectComponent, StatusEffectAppliedEvent>(OnApply);
+        SubscribeLocalEvent<CrucibleSoulStatusEffectComponent, StatusEffectRemovedEvent>(OnRemove);
+
+        SubscribeLocalEvent<CrucibleSoulRecallEvent>(OnRecall);
+    }
+
+    private void OnRecall(CrucibleSoulRecallEvent ev)
+    {
+        _status.TryRemoveStatusEffect(ev.User, ev.EffectProto);
+    }
+
+    private void OnRemove(Entity<CrucibleSoulStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        if (ent.Comp.Coords is not { } coords || TerminatingOrDeleted(args.Target))
+            return;
+
+        _teleport.Teleport(args.Target, coords);
+    }
+
+    private void OnApply(Entity<CrucibleSoulStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        ent.Comp.Coords = Transform(args.Target).Coordinates;
+    }
+}

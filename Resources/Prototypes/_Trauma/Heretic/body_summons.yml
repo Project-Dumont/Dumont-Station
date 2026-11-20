@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  id: BaseMobAnimal
+  components:
+  - type: Body
+    prototype: Animal
+    requiredLegs: 1
+
+- type: body
+  id: HereticFleshSegment
+  name: flesh segment
+  root: chest
+  slots:
+    chest:
+      part: OrganTorsoGhoul
+
+- type: body
+  id: HereticFleshAscend
+  name: flesh ascension
+  root: chest
+  slots:
+    chest:
+      part: OrganTorsoGhoul
+      organs:
+        stomach: OrganHereticFleshAscendStomach

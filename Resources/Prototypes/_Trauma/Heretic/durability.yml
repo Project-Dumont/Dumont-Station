@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: KnifeDurabilitySharpenOnly
+  abstract: true
+  components:
+  - type: Durability
+    durabilityThresholds:
+      0: Pristine
+    damageProbability: .25
+    damagePopups:
+      Worn:
+      - durability-blade-0
+      - durability-blade-1
+    minDamageRoll: 2.5
+    maxDamageRoll: 5
+    maxRepairBonus: 30
+    repairable: true
+    repairMaterials:
+      Whetstone: 15, 25
+    repairDoAfter: 3

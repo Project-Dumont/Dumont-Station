@@ -19,6 +19,9 @@
   name: bonfire
   description: What can be better than a late evening under the sky with guitar and friends?
   components:
+  - type: Tag
+    tags:
+    - Bonfire
   - type: Sprite
     noRot: true
     sprite: Structures/Decoration/bonfire.rsi

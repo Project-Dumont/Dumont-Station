@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "AGPL-3.0-or-later",
+  "copyright": "Sprites from discordia-space/CEV-Eris, icons/obj/guns/energy/constantine.dmi. Converted from DMI to RSI for Dumont Station. Source: https://github.com/discordia-space/CEV-Eris/blob/master/icons/obj/guns/energy/constantine.dmi; license: https://github.com/discordia-space/CEV-Eris/blob/master/COPYING",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}
