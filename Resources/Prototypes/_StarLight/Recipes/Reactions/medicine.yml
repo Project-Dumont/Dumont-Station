@@ -1,0 +1,11 @@
+- type: reaction
+  id: Chronexaline
+  reactants:
+    Hyronalin:
+      amount: 2
+    Arithrazine:
+      amount: 2
+    Cryoxadone:
+      amount: 2
+  products:
+    Chronexaline: 3

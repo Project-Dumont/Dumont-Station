@@ -1,0 +1,2 @@
+reagent-name-chronexaline = Chronexaline
+reagent-desc-chronexaline = Uma mistura de substâncias químicas radioativas instáveis ​​e seu componente base, sob temperaturas extremamente baixas. Isso parece curar o envenenamento por radiação em corpos sem vida.
