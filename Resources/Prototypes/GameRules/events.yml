@@ -154,6 +154,7 @@
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
+    - id: SyndicateDeadDrop # Moffstation
     - id: BreakerFlip
     - id: BureaucraticError
     - id: ClericalError
@@ -891,6 +892,7 @@
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml # GabyStation
   - type: NukeopsRule
+    useStationNukeCode: true # Dumont
     roundEndBehavior: Nothing
     warDeclarationMinOps: 1 # <--- GabyStation - Adicionado aqui para permitir guerra com 1 jogador
     warNukieArriveDelay: 300 # <--- GabyStation - Adicionado para manter o Lone preso por 5 minutos.

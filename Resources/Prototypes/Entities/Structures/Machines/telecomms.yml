@@ -198,6 +198,7 @@
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying
     keySlots: 10
+  - type: SabotageTarget # Dumont
   - type: TelecomServer
   - type: ContainerContainer
     containers:

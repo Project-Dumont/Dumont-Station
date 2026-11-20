@@ -34,6 +34,10 @@ public sealed partial class LockComponent : Component
     [AutoNetworkedField]
     public bool Locked  = true;
 
+    [DataField, AutoNetworkedField]
+    public bool ShowLockVerbs = true; // Starlight
+
+
     /// <summary>
     /// Whether or not the lock is locked by simply clicking.
     /// </summary>

@@ -1,0 +1,12 @@
+es-sabotage-verb = Sabotage
+es-sabotage-start = Sabotaging!
+es-sabotage-success = Sabotage complete!
+es-sabotage-hint = You can sabotage this machine using its alternative verb.
+es-sabotage-damaged = Its circuits have been sabotaged. Use the repair verb to restore them.
+es-sabotage-repair = Repair sabotage
+es-sabotage-repaired = Sabotage repaired.
+es-sabotage-comms-message = SYSTEM FAILURE. Communication integrity compromised. Contact engineering.
+es-sabotage-comms-sender = { chat-manager-sender-announcement }
+es-sabotage-gravity-announcement = Warning: excessive gravity detected. Remain prone. Engineering, repair the gravity generator sabotage.
+es-sabotage-telecom-announcement = Warning: interference detected in the station's telecommunications network. Radio transmissions may be distorted. Engineering, inspect the telecommunications servers.
+es-sabotage-navigation-announcement = Interference in the station's navigation systems has resulted in oncoming turbulence. Please find a chair and fasten your seatbelts.

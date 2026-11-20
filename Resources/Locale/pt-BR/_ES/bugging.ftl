@@ -1,0 +1,12 @@
+es-bug-objective-title = Instale uma escuta em um APC de {$department}
+es-bug-plant = Instalar escuta
+es-bug-remove = Remover escuta
+es-bug-hint = Você pode instalar uma escuta neste APC pelo verbo alternativo.
+es-bug-planted = Escuta instalada! Mantenha este APC funcionando por cinco minutos.
+es-bug-removed = Escuta removida.
+es-bug-progress = Um dispositivo suspeito está conectado aos circuitos. Transmissão: {$progress}%.
+ent-ESObjectiveTraitorBugAPC = Instale uma escuta em um APC departamental
+    .desc = Instale uma escuta em um APC do departamento indicado pelo verbo alternativo. Mantenha-o funcionando por cinco minutos, sem que ninguém remova a escuta, quebre ou desligue o APC.
+es-bug-network-failure = Atenção: invasão da rede de acesso de {$department}. Os controles de acesso de emergência foram comprometidos.
+es-bug-ai-department = IA
+es-bug-ai-objective-title = Instale uma escuta em um APC da IA

@@ -108,6 +108,8 @@
     TraitorObjectiveGroupSteal: 1
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
+    TraitorObjectiveGroupSabotage: 1 # Dumont
+    TraitorObjectiveGroupSpecial: 0.2 # Dumont
     TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
 
 - type: weightedRandom
@@ -119,6 +121,7 @@
     CMORapidSyringeGunStealObjective: 1
     RDHardsuitStealObjective: 1
     NukeDiskStealObjective: 1
+    PlutoniumCoreStealObjective: 0.5 # Dumont
     MagbootsStealObjective: 1
     # CERocketLauncherStealObjective: 1
     CorgiMeatStealObjective: 1
@@ -140,6 +143,7 @@
     TeachLessonRandomPersonObjective: 1
     PermaKillRandomTraitorObjective: 0.3 # Goobstation - target traitor
     KillRandomHeadObjective: 0.25
+    KillStationAiObjective: 0.25 # Dumont
     TeachRandomPersonObjective: 1 #Goobstation  Teach them a lesson
     TeachRandomHeadObjective: 0.25 #Goobstation  Teach them a lesson
 

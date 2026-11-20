@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: Screwdriver
+  id: ThinTippedScrewdriver
+  description: A screwdriver with an ultra thin tip that's carefully designed to boost screwing speed.
+  suffix: DO NOT MAP
+  components:
+  - type: Tool
+    qualities:
+    - Screwing
+    - FineScrewing

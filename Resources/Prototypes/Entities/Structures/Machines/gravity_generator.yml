@@ -97,6 +97,7 @@
     windowTitle: gravity-generator-window-title
     idlePower: 50
     activePower: 2500
+  - type: SabotageTarget # Dumont
   - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5

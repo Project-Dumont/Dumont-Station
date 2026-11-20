@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-License-Identifier: AGPL-3.0-only
+
+- type: entity
+  id: SyndicateCircuitBoard
+  parent: BaseElectronics
+  name: law board (Syndicate)
+  description: An electronics board containing the Syndicate lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: SyndicateLawset

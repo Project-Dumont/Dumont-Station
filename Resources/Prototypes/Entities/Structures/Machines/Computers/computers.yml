@@ -1046,6 +1046,7 @@
       state: generic_panel_open
   - type: AccessReader
     access: [[ "Command" ]]
+  - type: SabotageTarget # Dumont
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: StationTraitReportTarget # Dumont
@@ -1090,6 +1091,7 @@
       state: generic_panel_open
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
+  - type: SabotageTarget # Dumont
   - type: CommunicationsConsole
     title: comms-console-announcement-title-nukie
     color: "#ff0000"
@@ -1124,6 +1126,7 @@
       state: generic_panel_open
   - type: AccessReader
     access: [[ "CentralCommand" ]]
+  - type: SabotageTarget # Dumont
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
     color: "#1d8bad"
@@ -1195,6 +1198,7 @@
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: SabotageTarget # Dumont
   - type: RadarConsole
   - type: ActivatableUI
     key: enum.RadarConsoleUiKey.Key

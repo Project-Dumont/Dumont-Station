@@ -7,6 +7,7 @@
 
 using Content.Server.StationEvents.Events;
 using Robust.Shared.Prototypes;
+using Content.Shared.Radio;
 
 namespace Content.Server.StationEvents.Components;
 
@@ -21,4 +22,15 @@ public sealed partial class RandomSpawnRuleComponent : Component
     /// </summary>
     [DataField("prototype", required: true)]
     public EntProtoId Prototype = string.Empty;
+
+    // Moffstation
+    [DataField]
+    public RandomSpawnRuleRadioMessage? RadioMessage;
 }
+
+// Moffstation
+[DataRecord]
+public sealed partial record RandomSpawnRuleRadioMessage(
+    [field: DataField(required: true)] ProtoId<RadioChannelPrototype> Channel,
+    [field: DataField(required: true)] LocId Message,
+    [field: DataField] EntProtoId? Sender = null);
