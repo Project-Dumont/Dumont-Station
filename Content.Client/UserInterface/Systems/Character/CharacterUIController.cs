@@ -56,14 +56,14 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client.UserInterface.Systems.Character;
 
 [UsedImplicitly]
-public sealed class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
+public sealed partial class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IEntityManager _ent = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
-    [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private CharacterInfoSystem _characterInfo = default!;
+    [UISystemDependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -161,14 +161,56 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName, nanoBank, _) = data;
+        var (entity, job, objectives, briefing, entityName, nanoBank, jobId) = data;
 
         _window.SpriteView.SetEntity(entity);
 
         UpdateRoleType();
 
+        // Dumont
+        var names = new FormattedMessage();
+        var organizations = new FormattedMessage();
+        var seenOrganizations = new HashSet<string>();
+        foreach (var antagId in data.Antags)
+        {
+            if (!_prototypeManager.TryIndex(antagId, out var antag))
+                continue;
+            if (!names.IsEmpty)
+                names.PushNewline();
+            var color = antag.OrganizationColor;
+            names.PushColor(new Color(color.R * 0.65f, color.G * 0.65f, color.B * 0.65f));
+            names.AddText(Loc.GetString(antag.Name));
+            names.Pop();
+            var organization = antag.Organization?.ToString() ?? "character-organization-unaffiliated";
+            if (!seenOrganizations.Add(organization))
+                continue;
+            if (!organizations.IsEmpty)
+                organizations.PushNewline();
+            organizations.PushColor(color);
+            organizations.AddText(Loc.GetString(organization));
+            organizations.Pop();
+        }
+        if (names.IsEmpty)
+        {
+            var isCrew = jobId is { } crewJob && crewJob != "Visitor"
+                && _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().Any(d => d.ID is not ("CentralCommand" or "Specific") && d.Roles.Contains(crewJob));
+            _window.RoleType.FontColorOverride = Color.White;
+            organizations.PushColor(isCrew ? Color.FromHex("#4080ff") : Color.White);
+            organizations.AddText(Loc.GetString(isCrew ? "character-organization-nanotrasen" : "character-organization-unaffiliated"));
+            organizations.Pop();
+        }
+        _window.AntagName.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=16][bold]{names.ToMarkup()}[/bold][/font]"));
+        _window.AntagName.Visible = !names.IsEmpty;
+        _window.Organization.SetMessage(FormattedMessage.FromMarkupOrThrow($"[font size=18][bold]{organizations.ToMarkup()}[/bold][/font]"));
+        _window.RoleType.Visible = names.IsEmpty;
+
         _window.NameLabel.Text = entityName;
         _window.SubText.Text = job;
+        // Dumont
+        _window.JobIcon.Texture = jobId is { } id && _prototypeManager.TryIndex(id, out var jobPrototype)
+            && _prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon)
+            ? _sprite.Frame0(jobIcon.Icon)
+            : null;
         _window.NanoBankAccount.Text = nanoBank;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
@@ -178,7 +220,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             var objectiveControl = new CharacterObjectiveControl
             {
                 Orientation = BoxContainer.LayoutOrientation.Vertical,
-                Modulate = Color.Gray
+                Modulate = Color.White
             };
 
 
@@ -200,7 +242,9 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
                 conditionControl.ProgressTexture.Progress = condition.Progress;
                 var titleMessage = new FormattedMessage();
                 var descriptionMessage = new FormattedMessage();
+                titleMessage.PushTag(new MarkupNode("bold", null, null));
                 titleMessage.AddText(condition.Title);
+                titleMessage.Pop();
                 descriptionMessage.AddText(condition.Description);
 
                 conditionControl.Title.SetMessage(titleMessage);
@@ -234,6 +278,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
     {
         UpdateRoleType();
+        if (_window is { IsOpen: true })
+            _characterInfo.RequestCharacterInfo();
     }
 
     private void UpdateRoleType()
