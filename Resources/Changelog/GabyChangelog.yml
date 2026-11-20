@@ -5132,3 +5132,9 @@ Entries:
       message: Aumentado o tamanho dos icones de aplicativos do pda.
   id: 615
   time: '2026-11-20T16:17:00.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Electrolyzer explodem a partir de 30000K(29726,85°C). Cuidado!
+  id: 616
+  time: '2026-11-20T20:26:12.0000000+00:00'
