@@ -674,6 +674,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+    - ModsuitPart
+    - ModsuitPlatingCaptain
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
@@ -802,6 +804,8 @@
     - HighRiskItem
     - CorgiWearable
     - Hardsuit
+    - ModsuitPart
+    - ModsuitPlatingRD
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitRd
@@ -860,6 +864,10 @@
     knockdownTimeDelta: -2.5
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.5
+  - type: Tag
+    tags:
+    - ModsuitPart
+    - ModsuitPlatingHeadOfSecurity
 
 #Luxury Mining Hardsuit
 - type: entity

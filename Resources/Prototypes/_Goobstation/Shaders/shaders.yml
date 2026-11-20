@@ -31,3 +31,13 @@
   path: "/Textures/_Goobstation/Shaders/sandevistan_glitch.swsl"
   params:
     intensity: 1.0
+
+- type: shader
+  id: ModSphere
+  kind: source
+  path: "/Textures/_Goobstation/Shaders/mod_sphere.swsl"
+
+- type: shader
+  id: ModDampenerField
+  kind: source
+  path: "/Textures/_Goobstation/Shaders/mod_dampener_field.swsl"

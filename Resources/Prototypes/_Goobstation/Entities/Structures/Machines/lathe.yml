@@ -71,6 +71,7 @@
     - EngineeringWeapons
     - PowerCells
     - Equipment
+    - ModsuitEngineering
     # - ServiceWeapons
     - SpecOpsGoogles
     - EngineeringBoards
@@ -81,7 +82,6 @@
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
-    - EngineeringModules # GabyStation
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NailgunEvilStatic
@@ -137,6 +137,7 @@
     - Mining
     - PowerCells
     - Equipment
+    - ModsuitSupply
     # - ServiceWeapons
     - MiningWeapons
     - MiningBoards
@@ -151,7 +152,6 @@
     - BluespaceTheory
     - ScienceClothing
     - ConstructionBagOfHolding
-    - CargoModules # GabyStation
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SalvageExplosivesStatic # Seismic charges - they're pretty cheap in salvage vendor anyway so why not
@@ -223,6 +223,7 @@
     - Janitor
     - Equipment
     - MedicalBoards #Goob
+    - ModsuitService
     # - ServiceWeapons
     - Surgery
     - SpecOpsGoogles
@@ -298,6 +299,7 @@
     - Janitor
     - Instruments
     - FauxTiles
+    - ModsuitService
     # - ServiceWeapons
     - MedicalMisc
     - MechBoardsCivilian
@@ -313,7 +315,6 @@
     - Translators
     # Gabystation Packs
     - BotanicEquipment
-    - ServiceModules
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ServiceBoardsEvilStatic # Donk Co microwave circiutboard

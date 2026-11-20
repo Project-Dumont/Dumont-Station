@@ -168,7 +168,7 @@
         - id: OxygenTankFilled
         - id: NitrogenTankFilled
         - id: ClothingShoesBootsMag
-        - id: UndeterminedVoidsuitEngineer # Goob edit
+        - id: ClothingOuterHardsuitEngineering
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Engineering"]]
@@ -206,7 +206,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
-    - id: UndeterminedVoidsuitSecurity # Goob edit
+    - id: ClothingOuterVoidsuitSecurity # Goob edit
     - id: ClothingMaskBreath
     - id: SecurityMagboots # GabyStation
 

@@ -9,8 +9,3 @@
   id: BotanicEquipment
   recipes:
   - BotanicDNADisk
-
-- type: latheRecipePack
-  id: ServiceModules
-  recipes:
-  - ModsuitModuleClownBootRecipe

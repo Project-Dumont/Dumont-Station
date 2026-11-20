@@ -19277,13 +19277,6 @@ entities:
     - type: Transform
       pos: 63.5,61.5
       parent: 1
-- proto: SpawnMobHumanBSOModSuit
-  entities:
-  - uid: 3230
-    components:
-    - type: Transform
-      pos: 65.5,62.5
-      parent: 1
 - proto: SpawnMobHumanBSOSuit
   entities:
   - uid: 3185
@@ -19305,13 +19298,6 @@ entities:
     - type: Transform
       pos: 63.5,59.5
       parent: 1
-- proto: SpawnMobHumanCaptainModsuit
-  entities:
-  - uid: 3614
-    components:
-    - type: Transform
-      pos: 63.5,58.5
-      parent: 1
 - proto: SpawnMobHumanChangelingArmor
   entities:
   - uid: 2219
@@ -19325,13 +19311,6 @@ entities:
     components:
     - type: Transform
       pos: 68.5,62.5
-      parent: 1
-- proto: SpawnMobHumanHosModSuit
-  entities:
-  - uid: 3234
-    components:
-    - type: Transform
-      pos: 70.5,62.5
       parent: 1
 - proto: SpawnMobHumanHoSSuit
   entities:
@@ -19409,13 +19388,6 @@ entities:
     components:
     - type: Transform
       pos: 72.5,62.5
-      parent: 1
-- proto: SpawnMobHumanSecurityOfficerModSuit
-  entities:
-  - uid: 3159
-    components:
-    - type: Transform
-      pos: 76.5,62.5
       parent: 1
 - proto: SpawnMobHumanSecurityOfficerReflectiveArmorHelmet
   entities:

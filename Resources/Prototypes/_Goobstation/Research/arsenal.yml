@@ -250,3 +250,33 @@
   - WeaponLaserCellLMGTech
   - WeaponLaserCellSniperTech
   position: 4, -2
+
+- type: technology
+  id: ModsuitSecurityTech
+  name: research-technology-modsuit-security
+  icon:
+    sprite: _Goobstation/Objects/Specific/Robotics/mod_modules.rsi
+    state: sechud_visor
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ModsuitModuleVisorSecurity
+  - ModsuitModuleHolster
+  - ModsuitModuleMegaphone
+  - ModsuitModulePepperShoulders
+  - ModsuitModuleRestraintAssist
+#  - ModsuitModuleBulwark
+  - ModsuitModuleEmpShieldAdvanced
+#  - ModsuitModuleThermalVisor
+  - ModsuitModuleShockAbsorber
+  - ModsuitModuleCriminalCapture
+  - ModsuitModuleMagneticHarness
+  - ModsuitModuleProjectileDampener
+  - ModsuitModuleShootingAssistant
+  - ModsuitPlatingSecurity
+#  - ModsuitPlatingBrigMed we dont got the sprites
+  position: 4,1
+  technologyPrerequisites:
+  - ModsuitsTech
+  - DualWieldingTechnology
