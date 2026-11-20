@@ -27,10 +27,10 @@ public sealed partial class OverheatMachineSystem : EntitySystem
         var airTemperature = args.GasMixture.Temperature;
         if (component.HeatDamageTemperature is not null &&
             airTemperature >= component.HeatDamageTemperature &&
-            component.HeatDamage.DamageDict.Count > 0)
+            component.Damage.DamageDict.Count > 0)
         {
             _popup.PopupEntity(Loc.GetString("item-temperature-overheat", ("item", uid)), uid);
-            _damageableSystem.TryChangeDamage(uid, component.HeatDamage);
+            _damageableSystem.TryChangeDamage(uid, component.Damage);
         }
         if (component.ExplosionTemperature is not null &&
             airTemperature >= component.ExplosionTemperature)

@@ -27,7 +27,7 @@
     heatDamageTemperature: 20000
     damage:
       types:
-        Structural: 10
+        Structural: 20
     explosionTemperature: 30000
   - type: AtmosExposed
   - type: Explosive
