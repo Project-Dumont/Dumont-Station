@@ -211,7 +211,10 @@
       Atmos: 25
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
-    announcementSound: /Audio/_Gabystation/Announcements/dust_saae.ogg
+    announcementSound: # Dumont
+      path: /Audio/_Dumont/Announcements/dust_saae.ogg
+      params:
+        volume: -7
     nonDirectional: true
     meteors:
       MeteorSpaceDust: 1
@@ -275,7 +278,10 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-urist-start-announcement
-    announcementSound: /Audio/_Gabystation/Announcements/dustv2_saae.ogg
+    announcementSound: # Dumont
+      path: /Audio/_Gabystation/Announcements/dustv2_saae.ogg
+      params:
+        volume: -7
     meteors:
       MeteorUrist: 1
     waves:
@@ -292,7 +298,9 @@
   - type: StationEvent
     startAnnouncement: station-event-immovable-rod-start-announcement
     startAudio:
-      path: /Audio/_Gabystation/Announcements/rod_saae.ogg
+      path: /Audio/_Dumont/Announcements/rod_saae.ogg # Dumont
+      params: # Dumont
+        volume: -7 # Dumont
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1

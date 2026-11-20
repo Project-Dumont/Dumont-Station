@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["green_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["blue_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["violet_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["yellow_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["ambar_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["red_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["gamma_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["delta_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["omicron_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["octarina_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["martial_law_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["cyan_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["honk_alert_intercom.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"

@@ -74,7 +74,7 @@ namespace Content.Server.StationEvents.Events
             component.AnnounceCancelToken = new CancellationTokenSource();
             Timer.Spawn(3000, () =>
             {
-                Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
+                Saae.Play(component.PowerOnSound, Filter.Broadcast()); // Dumont
             }, component.AnnounceCancelToken.Token);
             component.Unpowered.Clear();
         }

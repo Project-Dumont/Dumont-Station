@@ -145,7 +145,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Nuke;
 
-public sealed class NukeSystem : EntitySystem
+public sealed partial class NukeSystem : EntitySystem // Dumont
 {
     [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
@@ -180,6 +180,7 @@ public sealed class NukeSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeSaae(); // Dumont
 
         SubscribeLocalEvent<NukeComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<NukeComponent, ComponentRemove>(OnRemove);
@@ -215,6 +216,7 @@ public sealed class NukeSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+        UpdateSaae(); // Dumont
 
         var query = EntityQueryEnumerator<NukeComponent>();
         while (query.MoveNext(out var uid, out var nuke))
@@ -458,6 +460,7 @@ public sealed class NukeSystem : EntitySystem
         if (nuke.RemainingTime <= _nukeSongLength + nuke.AlertSoundTime + NukeSongBuffer && !nuke.PlayedNukeSong && !ResolvedSoundSpecifier.IsNullOrEmpty(_selectedNukeSong))
         {
             _sound.DispatchStationEventMusic(uid, _selectedNukeSong, StationEventMusicType.Nuke);
+            StopSaaeSiren(uid); // Dumont
             nuke.PlayedNukeSong = true;
         }
 
@@ -466,6 +469,7 @@ public sealed class NukeSystem : EntitySystem
         {
             _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(nuke.AlertSound), new AudioParams{Volume = -5f});
             _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
+            StopSaaeSiren(uid); // Dumont
             nuke.PlayedAlertSound = true;
             UpdateAppearance(uid, nuke);
         }
@@ -630,10 +634,13 @@ public sealed class NukeSystem : EntitySystem
         // The nuke may not be on a station, so it's more important to just
         // let people know that a nuclear bomb was armed in their vicinity instead.
         // Otherwise, you could set every station to whatever AlertLevelOnActivate is.
+        // Dumont changes start
+        var alertSound = !SaaeArmed(uid);
         if (stationUid != null && !isOverride)
-            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, true, true, true, true);
+            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, alertSound, true, true, true);
         else if (stationUid != null && isOverride)
-            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnOverride, true, true, true, true );
+            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnOverride, alertSound, true, true, true );
+        // Dumont end
 
         var pos = _transform.GetMapCoordinates(uid, xform: nukeXform);
         var x = (int) pos.X;
@@ -701,8 +708,9 @@ public sealed class NukeSystem : EntitySystem
             return;
 
         var stationUid = _station.GetOwningStation(uid);
+        var alertSound = !SaaeDisarmed(uid); // Dumont
         if (stationUid != null)
-            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, true, true, true);
+            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, alertSound, true, true); // Dumont
 
         // warn a crew
         var announcement = Loc.GetString("nuke-component-announcement-unarmed");

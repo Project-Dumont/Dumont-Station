@@ -98,41 +98,41 @@
   levels:
     green:
       announcement: alert-level-green-announcement
-      sound: /Audio/_Gabystation/Misc/alerta_verde_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/green_saae.ogg # Dumont
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
-      sound: /Audio/_Gabystation/Misc/azul_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/blue_saae.ogg # Dumont
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
       shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
-      sound: /Audio/_Gabystation/Misc/violeta_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/violet_saae.ogg # Dumont
       color: Violet
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
-      sound: /Audio/_Gabystation/Misc/amarelo_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/yellow_saae.ogg # Dumont
       color: Yellow
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
     amber: #Dumont station
       announcement: alert-level-amber-announcement
-      sound: /Audio/Effects/alert.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/ambar_saae.ogg # Dumont
       color: Orangered
       emergencyLightColor: Orangered
       forceEnableEmergencyLights: true
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/_Gabystation/Misc/vermelho_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/red_saae.ogg # Dumont
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -140,10 +140,7 @@
     gamma:
       announcement: alert-level-gamma-announcement
       selectable: false
-      sound:
-        path: /Audio/_Gabystation/Misc/gamma_saae.ogg
-        params:
-          volume: -2
+      sound: /Audio/_Dumont/Announcements/Alerts/gamma_saae.ogg # Dumont
       disableSelection: true
       color: PaleVioletRed
       emergencyLightColor: PaleVioletRed
@@ -151,10 +148,7 @@
     delta:
       announcement: alert-level-delta-announcement
       selectable: false
-      sound:
-        path: /Audio/_Gabystation/Misc/delta_saae.ogg
-        params:
-          volume: -3
+      sound: /Audio/_Dumont/Announcements/Alerts/delta_saae.ogg # Dumont
       disableSelection: true
       color: DarkRed
       emergencyLightColor: Orange
@@ -175,8 +169,7 @@
     omicron: # Goobstation
       announcement: alert-level-omicron-announcement
       selectable: false
-      sound:
-        path: /Audio/_Gabystation/Misc/omicron_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/omicron_saae.ogg # Dumont
       disableSelection: true
       color: Ivory
       emergencyLightColor: Ivory
@@ -185,19 +178,16 @@
     octarine: # DeltaV - Cosmic Cult
       announcement: alert-level-octarine-announcement
       selectable: false
-      sound: /Audio/_Gabystation/Misc/octarina_saae.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/octarina_saae.ogg # Dumont
       disableSelection: true
       color: CadetBlue
       emergencyLightColor: CadetBlue
       forceEnableEmergencyLights: true
       shuttleTime: 600
     martial: # Gabystation - Lei marcial
-      #announcement: alert-level-martial-announcement
+      announcement: alert-level-martial-announcement # Por que isso tava desativado?
       selectable: false
-      sound:
-        path: /Audio/_Gabystation/Announcements/Alerts/lei_marcial_saae.ogg
-        params:
-          volume: 7      # positive raises loudness; verify it does not clip
+      sound: /Audio/_Dumont/Announcements/Alerts/martial_law_saae.ogg # Dumont
       disableSelection: true
       color: Crimson
       emergencyLightColor: Crimson
@@ -205,7 +195,7 @@
       shuttleTime: 1200
     cyan:
       announcement: alert-level-cyan-announcement
-      sound: /Audio/_Gabystation/Misc/ciano_saae2.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/cyan_saae.ogg # Dumont
       color: Cyan
       emergencyLightColor: Cyan
       forceEnableEmergencyLights: true
@@ -213,7 +203,6 @@
     doomsday:
       announcement: alert-level-doomsday-announcement
       selectable: false
-      sound: /Audio/_Gabystation/Misc/doomsday_saae.ogg
       color: DarkRed
       disableSelection: true
       emergencyLightColor: DarkRed
@@ -223,8 +212,7 @@
       announcement: alert-level-honk-announcement
       selectable: false
       emagSelectable: true
-      sound:
-        path: /Audio/Items/bikehorn.ogg
+      sound: /Audio/_Dumont/Announcements/Alerts/honk_alert_intercom.ogg # Dumont
       color: Magenta
       emergencyLightColor: Magenta
       forceEnableEmergencyLights: true
