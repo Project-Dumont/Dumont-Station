@@ -41,7 +41,8 @@
     parent: true
     components:
     - type: Stealth
-      minVisibility: -1
-      lastVisibility: -1
+      minVisibility: -1.5 # Dumont - was -1
+      lastVisibility: -1.5 # Dumont - was -1
+      thermalsImmune: true # Dumont
   - type: PowerCellDraw
     drawRate: 12 # 30 seconds

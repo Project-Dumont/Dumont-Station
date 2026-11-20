@@ -64,6 +64,22 @@ public sealed class RoboticsConsoleDestroyMessage : BoundUserInterfaceMessage
     }
 }
 
+// Dumont changes start
+/// <summary>
+/// Message to pilot the selected cyborg from the console.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RoboticsConsoleTakeControlMessage : BoundUserInterfaceMessage
+{
+    public readonly string Address;
+
+    public RoboticsConsoleTakeControlMessage(string address)
+    {
+        Address = address;
+    }
+}
+// Dumont end
+
 // Funkystation - Malf Ai
 /// <summary>
 /// Message to impose a Malf-AI Law 0 on the selected cyborg.
@@ -149,7 +165,15 @@ public partial record struct CyborgControlData
     public bool IsAiControllable;
     // Corvax-Next-AiRemoteControl-End
 
-    public CyborgControlData(SpriteSpecifier? chassisSprite, string chassisName, string name, float charge, int moduleCount, bool hasBrain, bool canDisable, bool isAiControllable, bool emagged) // Corvax-Next-AiRemoteControl, Funkystation - Malf Ai
+    // Dumont changes start
+    /// <summary>
+    /// Whether a mothership core can pilot this cyborg from the console.
+    /// </summary>
+    [DataField]
+    public bool CanTakeControl;
+    // Dumont end
+
+    public CyborgControlData(SpriteSpecifier? chassisSprite, string chassisName, string name, float charge, int moduleCount, bool hasBrain, bool canDisable, bool isAiControllable, bool emagged, bool canTakeControl = false) // Corvax-Next-AiRemoteControl, Funkystation - Malf Ai, Dumont
     {
         ChassisSprite = chassisSprite;
         ChassisName = chassisName;
@@ -160,6 +184,7 @@ public partial record struct CyborgControlData
         CanDisable = canDisable;
         IsAiControllable = isAiControllable; // Corvax-Next-AiRemoteControl
         Emagged = emagged; // Funkystation - Malf Ai
+        CanTakeControl = canTakeControl; // Dumont
     }
 }
 

@@ -39,6 +39,9 @@ public sealed partial class BorgSystem
         SubscribeLocalEvent<SelectableBorgModuleComponent, BorgModuleUninstalledEvent>(OnSelectableUninstalled);
         SubscribeLocalEvent<SelectableBorgModuleComponent, BorgModuleActionSelectedEvent>(OnSelectableAction);
 
+        SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleInstalledEvent>(OnComponentModuleInstalled);
+        SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleUninstalledEvent>(OnComponentModuleUninstalled);
+
         SubscribeLocalEvent<ItemBorgModuleComponent, ComponentStartup>(OnProvideItemStartup);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleSelectedEvent>(OnItemModuleSelected);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleUnselectedEvent>(OnItemModuleUnselected);
@@ -68,6 +71,16 @@ public sealed partial class BorgSystem
             return;
 
         UninstallModule(chassis, uid, chassisComp, component);
+    }
+
+    private void OnComponentModuleInstalled(Entity<ComponentBorgModuleComponent> ent, ref BorgModuleInstalledEvent args)
+    {
+        EntityManager.AddComponents(args.ChassisEnt, ent.Comp.Components);
+    }
+
+    private void OnComponentModuleUninstalled(Entity<ComponentBorgModuleComponent> ent, ref BorgModuleUninstalledEvent args)
+    {
+        EntityManager.RemoveComponents(args.ChassisEnt, ent.Comp.Components);
     }
 
     private void OnProvideItemStartup(EntityUid uid, ItemBorgModuleComponent component, ComponentStartup args)
@@ -305,6 +318,28 @@ public sealed partial class BorgSystem
             return false;
         }
 
+        if (!CheckModuleWhitelists(uid, module, component, user))
+            return false;
+
+        if (TryComp<ComponentBorgModuleComponent>(module, out var componentModuleComp))
+        {
+            foreach (var containedModuleUid in component.ModuleContainer.ContainedEntities)
+            {
+                if (!TryComp<ComponentBorgModuleComponent>(containedModuleUid, out var containedComponentModuleComp))
+                    continue;
+
+                foreach (var comp in componentModuleComp.Components)
+                {
+                    if (!containedComponentModuleComp.Components.ContainsKey(comp.Key))
+                        continue;
+
+                    if (user != null)
+                        Popup.PopupEntity(Loc.GetString("borg-module-incompatible", ("existing", containedModuleUid)), uid, user.Value);
+                    return false;
+                }
+            }
+        }
+
         if (TryComp<ItemBorgModuleComponent>(module, out var itemModuleComp))
         {
             foreach (var containedModuleUid in component.ModuleContainer.ContainedEntities)
@@ -323,6 +358,46 @@ public sealed partial class BorgSystem
         }
 
         return true;
+    }
+
+    private bool CheckModuleWhitelists(EntityUid uid, EntityUid module, BorgChassisComponent component, EntityUid? user)
+    {
+        foreach (var containedModuleUid in component.ModuleContainer.ContainedEntities)
+        {
+            if (!TryComp<BorgModuleWhitelistComponent>(containedModuleUid, out var containedWhitelist))
+                continue;
+
+            if (!_whitelistSystem.IsWhitelistPass(containedWhitelist.ModuleBlacklist, module))
+                continue;
+
+            if (user != null)
+                Popup.PopupEntity(Loc.GetString("borg-module-incompatible", ("existing", containedModuleUid)), uid, user.Value);
+            return false;
+        }
+
+        if (!TryComp<BorgModuleWhitelistComponent>(module, out var whitelist))
+            return true;
+
+        var prerequisiteFulfilled = whitelist.ModuleWhitelist == null;
+        foreach (var containedModuleUid in component.ModuleContainer.ContainedEntities)
+        {
+            if (_whitelistSystem.IsWhitelistPass(whitelist.ModuleBlacklist, containedModuleUid))
+            {
+                if (user != null)
+                    Popup.PopupEntity(Loc.GetString("borg-module-incompatible", ("existing", containedModuleUid)), uid, user.Value);
+                return false;
+            }
+
+            if (!prerequisiteFulfilled && _whitelistSystem.IsWhitelistPass(whitelist.ModuleWhitelist, containedModuleUid))
+                prerequisiteFulfilled = true;
+        }
+
+        if (prerequisiteFulfilled)
+            return true;
+
+        if (user != null)
+            Popup.PopupEntity(Loc.GetString("borg-module-prerequisite-unfulfilled"), uid, user.Value);
+        return false;
     }
 
     /// <summary>

@@ -338,6 +338,19 @@
 
   Tinha algo aqui? Por que está rasurado?
 
+  [head=3][color=#000000]Xenoborgs[/color][/head]
+
+  <Box>
+    <GuideEntityEmbed Entity="MothershipCore" Caption=""/>
+  </Box>
+
+  Silícios tão antigos quanto a humanidade, forjados por uma consciência muito maior que a própria Mothership. Quem sabe o que eram? Uma raça? Uma entidade? Não que isso importe. Pois, no fim, todos serão assimilados.
+
+  Os Xenoborgs formam um grupo de silícios que permaneceu adormecido por eras, vagando à deriva pelo espaço, isto é, até que a alta concentração de energia da Estação 14 os despertasse.
+  Suas carcaças de alta tecnologia e design sofisticado os diferem drasticamente dos borgs comuns. Seu objetivo é simples: assimilar toda a vida possível e integrá-la a novos chassis de Xenoborg, fundindo tudo em uma raça única.
+
+  O motivo? Ninguém sabe... Pergunte aos ą̸̲͙̔̌͊b̶͙̪͙̳̏̂̋d̸̨̯̳̓͜͜u̷̬͚̦̣͛t̷̡͍́̓́̈́̄o̸̢̲̰̎͑̆ṟ̵̨̗̯̋͝è̴̤̲̭͒s̴̖̋̄̅͠.
+
   # Condições de Revelação
 
   Isso ira abordar a condição de revelação para os antagonistas e itens em que a tripulação e derivados possui conhecimento parcial ou zero.
@@ -468,5 +481,14 @@
   A condição da presença de um Abductor na estação é a de:
 
   - Você é um Conspirador
+
+  ## Xenoborgs
+
+  A condição da presença/revelação de Xenoborgs na estação é de:
+
+  - Um membro da tripulação alertar que existem silícios estranhos
+  - Ser atacado por um Xenoborg
+  - Ver um Xenoborg em pessoa
+  - Encontrar um Cristal Xenoborg
 
 </Document>

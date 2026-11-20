@@ -25,4 +25,12 @@ namespace Content.Shared.Power
         Powered,
         BatteryPowered
     }
+
+    // Dumont changes start
+    [Serializable, NetSerializable]
+    public enum PowerConsumerVisuals : byte
+    {
+        Consuming
+    }
+    // Dumont end
 }
