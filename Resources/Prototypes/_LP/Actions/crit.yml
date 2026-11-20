@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseCritAction
+  id: ActionCatchBreath
+  name: Catch Breath
+  description: Catch your breath to survive a little longer while you watch your teammates succumb, one by one, to a mediocre threat and then, once you're dead, talk about how much of a skill issue they are for dying first.
+  components:
+  - type: Action
+    useDelay: 6
+    icon:
+      sprite: _Dumont/Interface/Actions/actions_crit.rsi
+      state: catchbreath
+  - type: InstantAction
+    event: !type:CatchBreathActionEvent
