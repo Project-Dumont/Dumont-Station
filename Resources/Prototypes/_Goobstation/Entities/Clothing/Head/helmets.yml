@@ -56,6 +56,7 @@
   name: H.E.V helmet
   description: Not included in a set with crowbar, long jump module and gravity manipulation device.
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Helmets/hev.rsi
   - type: Clothing
@@ -164,6 +165,7 @@
   name: crusader helmet
   description: Deus Vult.
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Sprite
     sprite: _ShitChap/Clothing/Head/Misc/templar.rsi
     state: icon
@@ -195,6 +197,7 @@
   name: cage
   description: A cage that restrains the will of the self, allowing one to see the profane world for what it is.
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Sprite
     sprite: _ShitChap/Clothing/Head/Misc/cage.rsi
     state: icon
@@ -216,6 +219,7 @@
   name: ancient helmet
   description: None may pass!
   components:
+  - type: FaceHuggerBlocker # Dumont
   - type: Sprite
     sprite: _ShitChap/Clothing/Head/Misc/ancient.rsi
     state: icon

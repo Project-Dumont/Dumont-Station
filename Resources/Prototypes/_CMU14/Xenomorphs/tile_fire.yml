@@ -1,0 +1,22 @@
+# CMU floor fire, using the station's native ignition and tile interaction systems.
+- type: entity
+  parent: MolotovFire
+  id: CMUTileFire
+  name: fire
+  description: A roaring fire.
+  components:
+  - type: CMUTileFire
+  - type: Reactive
+    groups:
+      Extinguish: [Touch]
+  - type: TimedDespawn
+    lifetime: 145
+  - type: Sprite
+    sprite: _RMC14/Effects/fire.rsi
+    noRot: true
+    drawdepth: WallTops
+    layers:
+    - state: red_4
+  - type: PointLight
+    radius: 5
+    color: "#bf6d02"

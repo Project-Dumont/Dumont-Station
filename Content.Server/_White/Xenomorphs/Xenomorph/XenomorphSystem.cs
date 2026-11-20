@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Server._EinsteinEngines.Language;
@@ -21,23 +23,30 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._White.Xenomorphs.Xenomorph;
 
-public sealed class XenomorphSystem : SharedXenomorphSystem
+public sealed partial class XenomorphSystem : SharedXenomorphSystem
 {
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly LanguageSystem _language = default!;
-    [Dependency] private readonly WoundSystem _wounds = default!; // Goobstation
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!; // Goobstation
-    [Dependency] private readonly BodySystem _body = default!; // Goobstation
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private LanguageSystem _language = default!;
+    [Dependency] private WoundSystem _wounds = default!; // Goobstation
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!; // Goobstation
+    [Dependency] private BodySystem _body = default!; // Goobstation
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<XenomorphComponent, EntitySpokeEvent>(OnEntitySpoke);
+        SubscribeLocalEvent<XenomorphComponent, DamageChangedEvent>(OnDamageChanged);
+    }
+
+    private void OnDamageChanged(Entity<XenomorphComponent> ent, ref DamageChangedEvent args)
+    {
+        if (args.DamageIncreased)
+            ent.Comp.WeedHealBlockedUntil = _timing.CurTime + TimeSpan.FromSeconds(5);
     }
 
 public override void Update(float frameTime)
@@ -56,11 +65,11 @@ public override void Update(float frameTime)
         // Update next heal time
         xenomorph.NextPointsAt = time + xenomorph.WeedHealRate;
 
-        if (!xenomorph.OnWeed)
+        if (!xenomorph.OnWeed || time < xenomorph.WeedHealBlockedUntil)
             continue;
 
         // Apply regular weed healing if on weeds
-        _damageable.TryChangeDamage(uid, xenomorph.WeedHeal);
+        _damageable.TryChangeDamage(uid, xenomorph.WeedHeal, interruptsDoAfters: false);
 
         // Process bleeding and blood loss in parallel with cached values
         ProcessBleeding(uid, body);

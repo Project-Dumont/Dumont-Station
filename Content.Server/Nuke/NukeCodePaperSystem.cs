@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
 // SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
@@ -97,13 +99,13 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Nuke
 {
-    public sealed class NukeCodePaperSystem : EntitySystem
+    public sealed partial class NukeCodePaperSystem : EntitySystem
     {
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly ChatSystem _chatSystem = default!;
-        [Dependency] private readonly StationSystem _station = default!;
-        [Dependency] private readonly PaperSystem _paper = default!;
-        [Dependency] private readonly FaxSystem _faxSystem = default!;
+        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private ChatSystem _chatSystem = default!;
+        [Dependency] private StationSystem _station = default!;
+        [Dependency] private PaperSystem _paper = default!;
+        [Dependency] private FaxSystem _faxSystem = default!;
 
         public override void Initialize()
         {
@@ -183,6 +185,9 @@ namespace Content.Server.Nuke
 
             return wasSent;
         }
+
+        public bool TryGetStationNukeCodes(EntityUid station, [NotNullWhen(true)] out string? codes)
+            => TryGetRelativeNukeCode(station, out codes, station);
 
         private bool TryGetRelativeNukeCode(
             EntityUid uid,

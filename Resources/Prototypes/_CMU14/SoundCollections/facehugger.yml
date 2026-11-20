@@ -1,0 +1,46 @@
+- type: soundCollection
+  id: CMUMaleFacehugged
+  files:
+  - /Audio/_CMU14/Voice/Human/human_male_facehugged1.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_facehugged2.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_facehugged3.ogg
+
+- type: soundCollection
+  id: CMUFemaleFacehugged
+  files:
+  - /Audio/_CMU14/Voice/Human/human_female_facehugged1.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_facehugged2.ogg
+
+- type: soundCollection
+  id: CMUMalePreburst
+  files:
+  - /Audio/_CMU14/Voice/Human/human_male_preburst1.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst2.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst3.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst4.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst5.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst6.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst7.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst8.ogg
+  - /Audio/_CMU14/Voice/Human/human_male_preburst9.ogg
+
+- type: soundCollection
+  id: CMUFemalePreburst
+  files:
+  - /Audio/_CMU14/Voice/Human/human_female_preburst1.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst2.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst3.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst4.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst5.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst6.ogg
+  - /Audio/_CMU14/Voice/Human/human_female_preburst7.ogg
+
+- type: soundCollection
+  id: CMUMaleInfectionScream
+  files:
+  - /Audio/_CMU14/Voice/Human/human_male_scream_1.ogg
+
+- type: soundCollection
+  id: CMUFemaleInfectionScream
+  files:
+  - /Audio/_CMU14/Voice/Human/human_female_scream_1.ogg
