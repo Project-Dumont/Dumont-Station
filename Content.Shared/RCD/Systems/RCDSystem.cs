@@ -429,10 +429,17 @@ public sealed class RCDSystem : EntitySystem
             return;
 
         // Update the layer if different
-        if (rcd.LastKnownEyeRotation != ev.EyeRotation)
-        {
-            rcd.LastKnownEyeRotation = ev.EyeRotation;
-        }
+        SetEyeRotation((uid, rcd), ev.EyeRotation);
+    }
+
+    public bool SetEyeRotation(Entity<RCDComponent> ent, float? eyeRotation)
+    {
+        if (ent.Comp.LastKnownEyeRotation == eyeRotation)
+            return false;
+
+        ent.Comp.LastKnownEyeRotation = eyeRotation;
+        Dirty(ent);
+        return true;
     }
 
 
