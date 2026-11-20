@@ -5126,3 +5126,9 @@ Entries:
         quais itens que aquela pessoa tem equipado tem itens dentro.
   id: 614
   time: '2026-11-19T12:06:41.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: Aumentado o tamanho dos icones de aplicativos do pda.
+  id: 615
+  time: '2026-11-20T16:17:00.0000000+00:00'
