@@ -982,6 +982,7 @@
     sprite: Objects/Consumable/Drinks/cream.rsi
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
       - DrinkBottle
 
@@ -1006,6 +1007,7 @@
     currentLabel: reagent-name-sugar
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
       - DrinkBottle
 
@@ -1061,6 +1063,7 @@
     currentLabel: reagent-name-ice
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
       - DrinkBottle
 
@@ -1099,6 +1102,7 @@
     currentLabel: reagent-name-coffee
   - type: Tag
     tags:
+      - DrinkBottle # Dumont
       - CoffeeDispensable
       - DrinkBottle
 

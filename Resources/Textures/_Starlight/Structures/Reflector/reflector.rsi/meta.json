@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "copyright": "State based copyright",
+  "license": "CC-BY-SA-3.0",
+  "states": [
+    {
+      "name": "reflector_box",
+      "directions": 4,
+      "copyright": "Taken From Paradise Station"
+    }
+  ]
+}

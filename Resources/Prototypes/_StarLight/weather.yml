@@ -1,0 +1,11 @@
+# a version of SnowfallHeavy with a LOT less fog
+- type: weather
+  id: SnowfallLobster
+  sprite:
+    sprite: /Textures/_Starlight/Effects/weather.rsi
+    state: snowfall_lobster
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -10 # quiet ambience rather than in-your-face wind

@@ -40,7 +40,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
   - type: Construction
     node: straightAlt1
 
@@ -51,7 +51,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
   - type: Construction
     node: straightAlt2
 
@@ -64,7 +64,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
   - type: Construction
     node: halfAlt1
 
@@ -75,7 +75,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
   - type: Construction
     node: halfAlt2
 
@@ -88,7 +88,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
   - type: Construction
     node: bendAlt1
 
@@ -99,7 +99,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
   - type: Construction
     node: bendAlt2
 
@@ -112,7 +112,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
   - type: Construction
     node: tjunctionAlt1
 
@@ -123,7 +123,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
   - type: Construction
     node: tjunctionAlt2
 
@@ -136,7 +136,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
   - type: Construction
     node: fourwayAlt1
 
@@ -147,7 +147,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
   - type: Construction
     node: fourwayAlt2
 
@@ -163,7 +163,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_off
@@ -179,7 +179,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_off
@@ -197,7 +197,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_passive
@@ -213,7 +213,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_passive
@@ -231,7 +231,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: scrub_off
@@ -247,7 +247,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: scrub_off
@@ -266,7 +266,7 @@
     sprite: Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
     - state: pipeUnaryConnectors
-      sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: injector
       map: [ "enum.SubfloorLayers.FirstLayer" ]
@@ -286,7 +286,7 @@
     sprite: Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
     - state: pipeUnaryConnectors
-      sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: injector
       map: [ "enum.SubfloorLayers.FirstLayer" ]
@@ -307,7 +307,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasCanisterPort
@@ -323,7 +323,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasCanisterPort
@@ -341,9 +341,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
@@ -357,9 +357,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
@@ -375,9 +375,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpVolume
@@ -391,9 +391,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpVolume
@@ -409,9 +409,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPassiveGate
@@ -425,9 +425,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPassiveGate
@@ -443,9 +443,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpManualValve
@@ -459,9 +459,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpManualValve
@@ -477,9 +477,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
@@ -493,9 +493,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
@@ -513,7 +513,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeBinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_off
@@ -529,7 +529,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeBinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: vent_off
@@ -545,9 +545,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpHeat
@@ -561,9 +561,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpHeat
@@ -581,7 +581,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilter
@@ -599,7 +599,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilter
@@ -617,7 +617,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilterF
@@ -635,7 +635,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilterF
@@ -655,7 +655,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixer
@@ -673,7 +673,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixer
@@ -691,7 +691,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixerF
@@ -709,7 +709,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixerF
@@ -729,7 +729,7 @@
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilter
@@ -745,7 +745,7 @@
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilter
@@ -763,7 +763,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: off
@@ -779,7 +779,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeTrinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: off
@@ -795,9 +795,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressureRegulator
@@ -811,9 +811,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressureRegulator
@@ -829,9 +829,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heStraight
@@ -845,9 +845,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heStraight
@@ -863,9 +863,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       state: pipeBend
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heBend
@@ -879,9 +879,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    sprite: _Dumont/Structures/Piping/Atmospherics/heatexchanger_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       state: pipeBend
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heBend
@@ -897,9 +897,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -916,9 +916,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -937,9 +937,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -954,9 +954,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -973,9 +973,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -990,9 +990,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1009,9 +1009,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1026,9 +1026,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1045,9 +1045,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1062,9 +1062,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1081,9 +1081,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -1098,9 +1098,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Dumont
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Dumont
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]

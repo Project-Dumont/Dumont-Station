@@ -109,7 +109,7 @@ namespace Content.Shared.Weapons.Reflect;
 /// <summary>
 /// This handles reflecting projectiles and hitscan shots.
 /// </summary>
-public sealed class ReflectSystem : EntitySystem
+public sealed partial class ReflectSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -200,6 +200,8 @@ public sealed class ReflectSystem : EntitySystem
         var rotation = _random.NextAngle(-reflector.Comp.Spread / 2, reflector.Comp.Spread / 2).Opposite();
         var existingVelocity = _physics.GetMapLinearVelocity(projectile, component: physics);
         var relativeVelocity = existingVelocity - _physics.GetMapLinearVelocity(user);
+        if (reflector.Comp.OverrideAngle is { } overrideAngle) // Dumont
+            rotation = GetOverrideRotation(reflector, relativeVelocity, overrideAngle); // Dumont
         var newVelocity = rotation.RotateVec(relativeVelocity);
 
         // Have the velocity in world terms above so need to convert it back to local.
@@ -269,6 +271,8 @@ public sealed class ReflectSystem : EntitySystem
 
         var spread = _random.NextAngle(-reflector.Comp.Spread / 2, reflector.Comp.Spread / 2);
         newDirection = -spread.RotateVec(direction);
+        if (reflector.Comp.OverrideAngle is { } hitscanAngle) // Dumont
+            newDirection = GetOverrideDirection(reflector, hitscanAngle); // Dumont
 
         if (shooter != null)
             _adminLogger.Add(LogType.HitScanHit, LogImpact.Medium, $"{ToPrettyString(user)} reflected hitscan from {ToPrettyString(shotSource)} shot by {ToPrettyString(shooter.Value)}");

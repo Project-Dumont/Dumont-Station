@@ -126,6 +126,12 @@ public sealed partial class ReflectComponent : Component
     public Angle Spread = Angle.FromDegrees(45);
 
     /// <summary>
+    /// If set, reflected shots always leave at this angle relative to the reflector's world rotation instead of bouncing back.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Angle? OverrideAngle;
+
+    /// <summary>
     /// The sound to play when reflecting.
     /// </summary>
     [DataField]

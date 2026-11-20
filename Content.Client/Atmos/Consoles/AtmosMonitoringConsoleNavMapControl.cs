@@ -28,9 +28,9 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
     public int? FocusNetId = null;
 
     private const int ChunkSize = 4;
-    private const float ScaleModifier = 4f;
+    private const float ScaleModifier = 8f; // Dumont
 
-    private readonly float[] _layerFraction = { 0.5f, 0.75f, 0.25f };
+    private readonly float[] _layerFraction = { 0.5f, 0.625f, 0.375f, 0.75f, 0.25f }; // Dumont
     private const float LineThickness = 0.05f;
 
     private readonly Color _basePipeNetColor = Color.LightGray;
