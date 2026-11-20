@@ -1,0 +1,54 @@
+<Document>
+  # Feras Cibernéticas
+
+  <Box>
+	  <GuideEntityEmbed Entity="ClothingCyberneticBeastMantle" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleWorkEngineering" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleWorkSalvage" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleSecurity" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleMedical" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleBlueshieldOfficer" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleCommand" Caption=""/>
+  </Box>
+
+  Feras Cibernéticas são Vulpkanins com implantes que permitem conectar um visor removível à cabeça.
+  A conexão usa contatos elétricos com mola, compatíveis com os visores de outras feras cibernéticas.
+  Quem não tem essa característica pode vestir o visor, mas não recebe a correção de visão nem pode usar o botão da lanterna.
+
+  ## O visor
+
+  Sem o visor, você tem dificuldade para enxergar à distância. Ao equipá-lo, sua visão volta ao normal.
+  O visor ocupa o espaço de máscara e deixa os espaços de cabeça e óculos livres para outros equipamentos.
+  Guardado na mochila, ele ocupa uma área de 2×2.
+
+  Os olhos do visor brilham na cor dos olhos do seu personagem. Use o botão do visor para intensificar
+  esse brilho e iluminar à frente, como uma lanterna. Ao desativar o botão, o brilho fraco permanece.
+  Essa luz também torna você mais visível no escuro. Os visores não têm visão noturna nem térmica.
+
+  Todos os modelos podem ser conectados a tanques de respiração pelo sistema de internals. O visor
+  não protege contra vácuo ou alta pressão; você ainda precisa de equipamento adequado para sair no espaço.
+
+  ## Modelos de trabalho
+
+  Seu cargo define o modelo que você recebe. Cargos sem uma variante própria recebem o visor básico.
+  As proteções variam: os modelos de engenharia têm revestimento contra radiação, por exemplo, enquanto
+  os de segurança oferecem blindagem leve e proteção contra flashes. Inspecione seu visor para conferir
+  suas resistências. Nenhum modelo tem HUD ou scanner integrado.
+
+  Os visores de trabalho, incluindo os de engenharia, atmosférica, exploração e o experimental, precisam
+  ser retirados para comer. O mesmo vale para o visor de paramédico. Ao retirá-los, a dificuldade para
+  enxergar à distância volta, então escolha um lugar seguro.
+
+  Por serem raros, esses visores podem se tornar alvos de ladrões. Tome cuidado para não perder o seu.
+
+  ## História
+
+  No início dos anos 2400, a Razzi Research and Technology desenvolveu implantes cibernéticos que
+  deveriam "crescer" com o usuário. O projeto fazia parte de suas pesquisas para permitir que colonos
+  vivessem em diferentes mundos. Famílias que trabalhavam para a empresa há gerações receberam
+  a oportunidade de ter seus filhos "presenteados" com os implantes para testá-los.
+
+  A aparência das crianças com implantes lembrava os predadores de Atlam retratados em desenhos e
+  fotografias antigas. Por isso, a população passou a chamá-las de "Feras Cibernéticas".
+
+</Document>

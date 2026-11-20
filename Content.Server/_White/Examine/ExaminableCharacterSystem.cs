@@ -13,6 +13,7 @@ using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
+using Content.Shared.Inventory.VirtualItem;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -88,6 +89,9 @@ public sealed class ExaminableCharacterSystem : EntitySystem
                 slotLabel += "-selfaware";
 
             if (!_inventorySystem.TryGetSlotEntity(uid, slotName, out var slotEntity))
+                continue;
+
+            if (HasComp<VirtualItemComponent>(slotEntity))
                 continue;
 
             if (_entityManager.TryGetComponent<MetaDataComponent>(slotEntity, out var metaData)

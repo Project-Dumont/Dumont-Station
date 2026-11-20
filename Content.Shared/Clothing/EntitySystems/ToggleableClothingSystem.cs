@@ -649,6 +649,9 @@ public sealed class ToggleableClothingSystem : EntitySystem
             if (attachedComp.ClothingContainer == null || attachedComp.ClothingContainer.ContainedEntity != null)
                 return false; // Goobstation
 
+            var enteringContainer = new Content.Shared._Omu.Clothing.AboutToEnterToggleableClothingContainerEvent(parent);
+            RaiseLocalEvent(currentClothing.Value, ref enteringContainer);
+
             if (_inventorySystem.TryUnequip(user, parent, slot))
                 _containerSystem.Insert(currentClothing.Value, attachedComp.ClothingContainer);
         }
