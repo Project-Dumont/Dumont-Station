@@ -79,11 +79,8 @@ public abstract partial class SharedAbductorSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnTryRemoveOrgan(Entity<AbductorOrganComponent> ent, ref TryRemoveOrganEvent args)
-    {
-        // can never remove abductor glands chud
-        args.Cancelled |= args.OrganId == ent.Owner;
-    }
+    private void OnTryRemoveOrgan(Entity<AbductorOrganComponent> ent, ref TryRemoveOrganEvent args) =>
+        args.Cancelled = false;
 
     protected virtual void UpdateGui(NetEntity? target, Entity<AbductorConsoleComponent> computer)
     {
