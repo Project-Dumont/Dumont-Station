@@ -2,10 +2,10 @@
   id: Xenomorph
   coefficients:
     Blunt: 0.80
-    Slash: 0.80
+    Slash: 1.5 # Dumont
     Piercing: 0.80
     Cold: 0
-    Heat: 1.2
+    Heat: 2.0 # Dumont
     Poison: 0
 
 - type: damageModifierSet

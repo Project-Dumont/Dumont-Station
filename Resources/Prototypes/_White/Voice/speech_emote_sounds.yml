@@ -38,7 +38,7 @@
     Honk:
       collection: BikeHorn
     Sigh:
-      collection: MaleSigh
+      collection: XenomorphBreathe # Dumont
     Crying:
       collection: MaleCry
     Whistle:

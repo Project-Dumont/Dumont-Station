@@ -1,4 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Server._White.Xenomorphs.Queen;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.DoAfter;
@@ -20,21 +24,23 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._White.Xenomorphs.Evolution;
 
-public sealed class XenomorphEvolutionSystem : EntitySystem
+public sealed partial class XenomorphEvolutionSystem : EntitySystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private IComponentFactory _componentFactory = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
 
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly JitteringSystem _jitter = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private JitteringSystem _jitter = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+
+    [Dependency] private XenomorphQueenSystem _queen = default!; // Dumont
 
     public override void Initialize()
     {
@@ -84,7 +90,10 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
             return;
         }
 
-        if (Evolve(uid, args.SelectedItem, component.EvolutionDelay))
+        if (!component.EvolvesTo.Any(entry => entry.Prototype == args.SelectedItem)) // Dumont
+            return;
+
+        if (!Evolve(uid, args.SelectedItem, component.EvolutionDelay))
             return;
 
         var actor = args.Actor;
@@ -96,7 +105,10 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
         if (args.Handled || args.Cancelled || !_mind.TryGetMind(uid, out var mindUid, out var mind))
             return;
 
-        var ev = new BeforeXenomorphEvolutionEvent(args.Caste);
+        if (args.Caste == "Queen" && _queen.IsQueenAlive()) // Dumont
+            return;
+
+        var ev = new BeforeXenomorphEvolutionEvent(args.Caste, args.CheckNeedCasteDeath);
         RaiseLocalEvent(uid, ev);
 
         if (ev.Cancelled)
@@ -130,11 +142,11 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
         var query = EntityQueryEnumerator<XenomorphEvolutionComponent>();
         while (query.MoveNext(out var uid, out var alienEvolution))
         {
-            if (alienEvolution.Points == alienEvolution.Max || time < alienEvolution.NextPointsAt || _container.IsEntityInContainer(uid))
+            if (alienEvolution.Points >= alienEvolution.Max || time < alienEvolution.NextPointsAt || _container.IsEntityInContainer(uid))
                 continue;
 
             alienEvolution.NextPointsAt = time + TimeSpan.FromSeconds(1);
-            alienEvolution.Points += alienEvolution.PointsPerSecond;
+            alienEvolution.Points = FixedPoint2.Min(alienEvolution.Max, alienEvolution.Points + alienEvolution.PointsPerSecond); // Dumont
 
             if (alienEvolution.Points != alienEvolution.Max)
                 continue;
@@ -149,6 +161,14 @@ public sealed class XenomorphEvolutionSystem : EntitySystem
             || !_protoManager.TryIndex(evolveTo, out var xenomorphPrototype)
             || !xenomorphPrototype.TryGetComponent<XenomorphComponent>(out var xenomorph, _componentFactory)) // Goobstation
             return false;
+
+        // Dumont start
+        if (xenomorph.Caste == "Queen" && _queen.IsQueenAlive())
+        {
+            _popup.PopupEntity(Loc.GetString("xenomorphs-evolution-no-cast-slot", ("caste", Loc.GetString("xenomorph-caste-queen"))), uid, uid);
+            return false;
+        }
+        // Dumont end
 
         var ev = new BeforeXenomorphEvolutionEvent(xenomorph.Caste, checkNeedCasteDeath);
         RaiseLocalEvent(uid, ev);

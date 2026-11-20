@@ -56,6 +56,7 @@
   - type: Organ
     onAdd:
     - type: ThermalVision
+      thermalShader: null # Dumont
       toggleAction: ToggleThermalVisionXenomorph
       color: white
       drawOverlay: false
@@ -107,10 +108,9 @@
           Heat: 20 # Goobstation
   # <Goobstation>
   - type: AcidGland
-  # - type: OrganActions
-  #   actions:
-  #   - ActionAcid
-  # </Goobstation> commented until acid if fixed
+  - type: OrganActions # Dumont
+    actions:
+    - ActionAcid
 
 - type: entity
   parent: BaseXenomorphOrgan
@@ -126,7 +126,7 @@
     - type: RechargeBasicEntityAmmo
       rechargeCooldown: 0.75
     - type: PlasmaAmmoProvider
-      fireCost: 55
+      fireCost: 20 # Dumont
       proto: BulletNeurotoxin
     - type: Gun
       fireRate: 0.75
@@ -136,6 +136,9 @@
       - FullAuto
       soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: NeurotoxinGland # Goobstation
+  - type: OrganActions # Dumont
+    actions:
+    - ActionAcidSpit
 
 - type: entity
   parent: BaseXenomorphOrgan

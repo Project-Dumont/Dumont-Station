@@ -1,3 +1,4 @@
+xenomorphs-announcement-sender = S.A.A.E.
 xenomorphs-announcement = Warning: Hostile bio-signatures detected. Unknown entities are moving through the station’s vents and maintenance shafts. All personnel, initiate lockdown protocols and avoid isolated areas.
 xenomorphs-no-more-threat-announcement = According to data from our long-range sensors, all xenomorphs have been eliminated.
 xenomorphs-win-announcement-shuttle-call =

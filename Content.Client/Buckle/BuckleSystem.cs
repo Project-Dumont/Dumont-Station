@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
@@ -55,12 +57,12 @@ using Robust.Client.Graphics;
 
 namespace Content.Client.Buckle;
 
-internal sealed class BuckleSystem : SharedBuckleSystem
+internal sealed partial class BuckleSystem : SharedBuckleSystem
 {
-    [Dependency] private readonly RotationVisualizerSystem _rotationVisualizerSystem = default!;
-    [Dependency] private readonly IEyeManager _eye = default!;
-    [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private RotationVisualizerSystem _rotationVisualizerSystem = default!;
+    [Dependency] private IEyeManager _eye = default!;
+    [Dependency] private SharedTransformSystem _xformSystem = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -96,7 +98,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         // Give some of the sprite rotations their own drawdepth, maybe as an offset within the rsi, or something like this
         // And we won't ever need to set the draw depth manually
 
-        if (args.NewRotation == args.OldRotation)
+        if (!component.ModifyBuckleDrawDepth || args.NewRotation == args.OldRotation) // Dumont
             return;
 
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
@@ -135,6 +137,9 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
     {
+        if (TryComp<StrapComponent>(args.Strap, out var strap) && !strap.ModifyBuckleDrawDepth) // Dumont
+            return;
+
         if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite))
             return;
 
