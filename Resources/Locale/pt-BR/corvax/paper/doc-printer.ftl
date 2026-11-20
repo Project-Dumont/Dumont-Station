@@ -1133,32 +1133,169 @@ doc-text-printer-RelatorioSetorial =
     ▀████▀ [head=3]Assunto: Relatório Setorial – Status Operacional da Estação[/head]
     ▄█▀▀█▄ [head=3]De: Comando da Estação[/head]
     {"["}/color]──────────────────────────────────────────
-    
+
     Relatório geral de status da estação, com informações coletadas e organizadas por setor:
-    
+
     {"["}color=#f2e052][bold]Engenharia:[/bold][/color]
     \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     {"["}color=#d28150][bold]Setor de Cargas:[/bold][/color]
     \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     {"["}color=#ff5c5c][bold]Segurança:[/bold][/color]
     INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     {"["}color=#5b97bc][bold]Departamento Médico:[/bold][/color]
     \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     {"["}color=#9fed58][bold]Setor Civil e Serviços:[/bold][/color]
     \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     {"["}color=#c96dbf][bold]Pesquisa Científica (SCI):[/bold][/color]
     \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
-    
+
     As seguintes porcentagens de progresso foram atingidas:
     - Engenharia: 0%
     - Civil: 0%
     - Experimental: 0%
     - Segurança: 0%
-    
+
     =============================================
                                     ⠀[italic]Espaço para carimbos[/italic]
+# Dumont add
+doc-text-printer-DNR =
+   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form]CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░░████░███[/color]
+    =============================================
+                              DIRETIVA DE NÃO REANIMAÇÃO (DNR)
+    =============================================
+    Nome do indivíduo: [form]
+    Cargo e departamento: [form]
+    Médico responsável: [signature]
+
+    Declaro, por meio deste documento, que o indivíduo não deve ser reanimado.
+    Justificativa para a solicitação: [form]
+    Data e horário da declaração: [form]
+
+    Estou ciente de que esta decisão poderá resultar na perda
+    permanente da possibilidade de retorno à vida do paciente.
+
+    =============================================
+                                ⠀[italic]Espaço para carimbos[/italic]
+
+doc-text-printer-PerdaoCapitao=
+   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form]CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░░████░███[/color]
+    =============================================
+                              DECRETO DE PERDÃO DO CAPITÃO
+    =============================================
+    Nome do indivíduo: [form]
+    Cargo e departamento: [form]
+    Capitão responsável: [signature]
+
+    Motivo da condenação ou punição original: [form]
+    Autoridade responsável pela condenação: [form]
+
+    Por autoridade concedida ao Capitão da estação, declaro:
+    Perdão integral das infrações registradas   [check]
+    Cancelamento das punições administrativas [check]
+    Revogação da ordem de prisão [check]
+    Restituição dos acessos e privilégios anteriores [check]
+
+    Justificativa para a concessão do perdão: [form]
+    Condições adicionais: [form]
+
+    Data e horário da concessão: [form]
+    =============================================
+                                ⠀[italic]Espaço para carimbos[/italic]
+
+doc-text-printer-DeclaracaoTestemunha=
+   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form]CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░░████░███[/color]
+    =============================================
+                              DECLARAÇÃO DE TESTEMUNHA
+    =============================================
+    Nome da testemunha: [signature]
+    Data e horário do ocorrido: [form]
+    Local do ocorrido: [form]
+    Indivíduos envolvidos: [form]
+    Relato dos acontecimentos:
+
+    Declaro que as informações acima correspondem
+    ao meu conhecimento dos fatos presenciados.
+
+    Responsável pela coleta do depoimento: [form]
+    Data e horário da declaração: [form]
+
+    =============================================
+                                ⠀[italic]Espaço para carimbos[/italic]
+
+doc-text-printer-Testamento=
+   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form]CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░░████░███[/color]
+    =============================================
+                              TESTAMENTO E ÚLTIMAS VONTADES
+    =============================================
+    Nome do declarante: [signature]
+
+    Declaro que este documento representa minhas últimas
+    vontades em caso de falecimento ou incapacidade permanente.
+
+    Destinação de bens e pertences pessoais:
+
+    Destinatário dos bens: [form]
+    Destinatário alternativo: [form]
+    Últimas instruções e solicitações:
+
+    Desejo que meus pertences sejam:
+    Entregues ao destinatário indicado [check]
+    Transferidos ao departamento indicado [check]
+    Mantidos sob custódia da estação [check]
+
+    Data e horário: [form]
+
+    =============================================
+                                ⠀[italic]Espaço para carimbos[/italic]
+
+doc-text-printer-TransferenciadeComando=
+   ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
+   ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
+   ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação [form]CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░░████░███[/color]
+    =============================================
+                              TERMO DE TRANSFERÊNCIA DE COMANDO
+    =============================================
+    Comandante atual: [signature]
+    Comandante sucessor: [form]
+
+    Motivo da transferência:
+    Ausência temporária [check]
+    Incapacidade de exercer o comando [check]
+    Renúncia ao cargo [check]
+    Falecimento [check]
+    Outro [check]
+
+   No caso da opção marcada ser "Outro":
+
+    Declaro, por meio deste documento, a transferência
+    das responsabilidades de comando da estação ao sucessor
+    identificado acima.
+    Restrições ou observações:
+
+    Data e horário da transferência: [form]
+
+    =============================================
+                                ⠀[italic]Espaço para carimbos[/italic]

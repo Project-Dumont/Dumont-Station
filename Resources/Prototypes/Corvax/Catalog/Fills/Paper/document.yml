@@ -9,7 +9,7 @@
   parent: Paper
   id: PrintedDocument
   abstract: true
-  description: Bureaucratic unit. A document printed on a printer.
+  description: Unidade burocrática. Um documento impresso em uma impressora.
   components:
     - type: Paper
 
@@ -533,3 +533,43 @@
   components:
     - type: Paper
       content: doc-text-printer-RelatorioSetorial
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDNR
+  name: Diretiva de Não Reanimação (DNR)
+  components:
+    - type: Paper
+      content: doc-text-printer-DNR
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPerdaoCapitao
+  name: Decreto de Perdão do Capitão
+  components:
+    - type: Paper
+      content: doc-text-printer-PerdaoCapitao
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDeclaracaoTestemunha
+  name: Declaração de Testemunha
+  components:
+    - type: Paper
+      content: doc-text-printer-DeclaracaoTestemunha
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentTestamento
+  name: Testamento e Últimas Vontades
+  components:
+    - type: Paper
+      content: doc-text-printer-Testamento
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentTransferenciadeComando
+  name: Termo de Transferência de Comando
+  components:
+    - type: Paper
+      content: doc-text-printer-TransferenciadeComando

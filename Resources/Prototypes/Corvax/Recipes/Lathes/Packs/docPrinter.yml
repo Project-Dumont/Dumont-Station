@@ -67,6 +67,13 @@
     - PrintedDocumentDecisionToStartTrialRecipe
     # GabyStation documents
     - PrintedDocumentRelatorioSetorialRecipe
+    # DumontStation documents
+    - PrintedDocumentDNRRecipe
+    - PrintedDocumentPerdaoCapitaoRecipe
+    - PrintedDocumentDeclaracaoTestemunhaRecipe
+    - PrintedDocumentTestamentoRecipe
+    - PrintedDocumentTransferenciadeComandoRecipe
+
 
 - type: latheRecipePack
   id: docPrinterRecipeEmagPack
