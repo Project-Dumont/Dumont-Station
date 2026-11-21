@@ -57,29 +57,31 @@
     - id: VehicleForklift
     - id: VehicleKeyForklift
 
+# Starlight - Rework radio host - Start
 - type: entity
   id: CrateRadioStationAds
-  parent: CrateGenericSteel
-  name: ads crate
-  description: A whole crate which sole purpose is to store 6 exclusive ads, aint capitalism great?
+  parent: CdRack
+  suffix: Filled
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: RandomCDDisk
-        rolls: 6
+  - type: UniqueDiscFill
+    table: RandomCDDisk
+    min: 6
+    max: 6
+    wrapper: CDCase
+    container: records
 
 - type: entity
   id: CrateRadioStationVinyls
-  parent: CrateGenericSteel
-  name: vinyls crate
-  description: A crate with 12 vinyls so you'll NEVER play the same song twice, they come in sleeves!
+  parent: RecordMilkCrate
+  suffix: Filled
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: RandomVinylSleeve
-        rolls: 12
+  - type: UniqueDiscFill
+    table: RandomVinylDisk
+    min: 8
+    max: 8
+    wrapper: VinylSleeve
+    container: records
+  # Starlight - Rework radio host - End
 
 - type: entityTable
   id: RandomCDDisk

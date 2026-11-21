@@ -93,6 +93,9 @@
   cost: 10000
   recipeUnlocks:
   - VinylPlayerCircuitboard
+  - CDPlayerCircuitboard # Starlight - Rework radio host
+  - BroadcastRecorderCircuitboard # Starlight - Rework radio host
+  - StationRadioMixerCircuitboard # Starlight - Rework radio host
   - TapeDeckCircuitboard
   - StationRadioServerCircuitboard
   - StationRadioRigCircuitboard

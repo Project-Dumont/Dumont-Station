@@ -1,129 +1,101 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/radiostation.dmi",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-	  {
-      "name": "ai-vinyl-sleeve"
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Drawn for Starlight by Rinary1(Github), procedurally generated record sleeve and CD case covers by python script, not AI!!!!",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "devil-vinyl-sleeve"
-    },
-    {
-      "name": "pizza-vinyl-sleeve"
-    },
-    {
-      "name": "fart-vinyl-sleeve"
-    },
-    {
-      "name": "sunnysideoflavaland-vinyl-sleeve"
-    },
-    {
-      "name": "hockey-vinyl-sleeve"
-    },
-    {
-      "name": "rat-vinyl-sleeve"
-    },
-    {
-      "name": "mgs-vinyl-sleeve"
-    },
-    {
-      "name": "questional-vinyl-sleeve"
-    },
-    {
-      "name": "janitor-vinyl-sleeve"
-    },
-    {
-      "name": "weird-vinyl-sleeve"
-    },
-    {
-      "name": "djclown-vinyl-sleeve"
-    },
-    {
-      "name": "vampire-vinyl-sleeve"
-    },
-    {
-      "name": "shulker-vinyl-sleeve"
-    },
-    {
-      "name": "redsun-vinyl-sleeve"
-    },
-    {
-      "name": "skull-vinyl-sleeve"
-    },
-    {
-      "name": "fisherman-vinyl-sleeve"
-    },
-    {
-      "name": "heisenbee-vinyl-sleeve"
-    },
-    {
-      "name": "station13-vinyl-sleeve"
-    },
-    {
-      "name": "station14-vinyl-sleeve"
-    },
-    {
-      "name": "reactor-vinyl-sleeve"
-    },
-    {
-      "name": "pda-vinyl-sleeve"
-    },
-    {
-      "name": "nukedisk-vinyl-sleeve"
-    },
-    {
-      "name": "blockycraft-vinyl-sleeve"
-    },
-    {
-      "name": "eye-vinyl-sleeve"
-    },
-    {
-      "name": "th-vinyl-sleeve"
-    },
-    {
-      "name": "clown-vinyl-sleeve"
-    },
-    {
-      "name": "newnanoyork-vinyl-sleeve"
-    },
-    {
-      "name": "djtider-vinyl-sleeve"
-    },
-    {
-      "name": "coffee-vinyl-sleeve"
-    },
-    {
-      "name": "welcometoss13-vinyl-sleeve"
-    },
-    {
-      "name": "peace-vinyl-sleeve"
-    },
-    {
-      "name": "japan-vinyl-sleeve"
-    },
-    {
-      "name": "christmas-vinyl-sleeve"
-    },
-    {
-      "name": "pickle-vinyl-sleeve"
-    },
-    {
-      "name": "flash-vinyl-sleeve"
-    },
-    {
-      "name": "plainbeige-vinyl-sleeve"
-    },
-    {
-      "name": "plainblack-vinyl-sleeve"
-    },
-    {
-      "name": "plainwhite-vinyl-sleeve"
-    }
-
-  ]
+    "states": [
+        {
+            "name": "sleeve-base"
+        },
+        {
+            "name": "sleeve-motif-0"
+        },
+        {
+            "name": "sleeve-motif-1"
+        },
+        {
+            "name": "sleeve-motif-2"
+        },
+        {
+            "name": "sleeve-motif-3"
+        },
+        {
+            "name": "sleeve-motif-4"
+        },
+        {
+            "name": "sleeve-motif-5"
+        },
+        {
+            "name": "sleeve-motif-6"
+        },
+        {
+            "name": "sleeve-motif-7"
+        },
+        {
+            "name": "sleeve-motif-8"
+        },
+        {
+            "name": "sleeve-motif-9"
+        },
+        {
+            "name": "sleeve-motif-10"
+        },
+        {
+            "name": "sleeve-motif-11"
+        },
+        {
+            "name": "sleeve-shade"
+        },
+        {
+            "name": "sleeve-peek"
+        },
+        {
+            "name": "case-tray"
+        },
+        {
+            "name": "case-base"
+        },
+        {
+            "name": "case-motif-0"
+        },
+        {
+            "name": "case-motif-1"
+        },
+        {
+            "name": "case-motif-2"
+        },
+        {
+            "name": "case-motif-3"
+        },
+        {
+            "name": "case-motif-4"
+        },
+        {
+            "name": "case-motif-5"
+        },
+        {
+            "name": "case-motif-6"
+        },
+        {
+            "name": "case-motif-7"
+        },
+        {
+            "name": "case-motif-8"
+        },
+        {
+            "name": "case-motif-9"
+        },
+        {
+            "name": "case-motif-10"
+        },
+        {
+            "name": "case-motif-11"
+        },
+        {
+            "name": "case-shade"
+        }
+    ]
 }

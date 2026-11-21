@@ -59,6 +59,7 @@ using Content.Server._EinsteinEngines.Language;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio.Components;
+using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
@@ -69,6 +70,9 @@ using Content.Shared.Chat;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Prototypes;
+using Content.Server._Starlight.StationRadio.Systems;
+using Robust.Shared.Random;
+using Content.Shared.Verbs;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -85,6 +89,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!; // Goob
+    [Dependency] private readonly IRobustRandom _random = default!; // Starlight - Radio Host
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();
@@ -98,6 +103,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenEvent>(OnListen);
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenAttemptEvent>(OnAttemptListen);
         SubscribeLocalEvent<RadioMicrophoneComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<RadioMicrophoneComponent, GetVerbsEvent<AlternativeVerb>>(OnAltActivateMicrophone); // Dumont - Radio host rework
 
         SubscribeLocalEvent<RadioSpeakerComponent, ComponentInit>(OnSpeakerInit);
         SubscribeLocalEvent<RadioSpeakerComponent, ActivateInWorldEvent>(OnActivateSpeaker);
@@ -147,6 +153,20 @@ public sealed class RadioDeviceSystem : EntitySystem
         args.Handled = true;
     }
 
+    // Dumont - Radio host rework - Start
+    private void OnAltActivateMicrophone(EntityUid uid, RadioMicrophoneComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!component.ToggleOnAltInteract || !args.CanAccess || !args.CanInteract || !args.CanComplexInteract)
+            return;
+
+        args.Verbs.Add(new AlternativeVerb
+        {
+            Text = Loc.GetString("handheld-radio-component-toggle-microphone"),
+            Act = () => ToggleRadioMicrophone(uid, args.User, component: component),
+        });
+    }
+    // Dumont - Radio host rework - End
+
     private void OnActivateSpeaker(EntityUid uid, RadioSpeakerComponent component, ActivateInWorldEvent args)
     {
         if (!args.Complex)
@@ -187,7 +207,11 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (!quiet && user != null)
         {
             var state = Loc.GetString(component.Enabled ? "handheld-radio-component-on-state" : "handheld-radio-component-off-state");
-            var message = Loc.GetString("handheld-radio-component-on-use", ("radioState", state));
+            // Starlight Start
+            var message = HasComp<StationRadioServerComponent>(uid) || HasComp<RadioRigComponent>(uid)
+                ? Loc.GetString("station-radio-server-microphone-on-use", ("radioState", state))
+                : Loc.GetString("handheld-radio-component-on-use", ("radioState", state));
+            // Starlight End
             _popup.PopupEntity(message, user.Value, user.Value);
         }
 
@@ -274,16 +298,26 @@ public sealed class RadioDeviceSystem : EntitySystem
             ("speaker", Name(uid)),
             ("originalName", nameEv.VoiceName));
 
-        // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
-        var message = args.OriginalChatMsg.Message; // The chat system will handle the rest and re-obfuscate if needed.
+        // Starlight - Start - Radio Host
+        var chatType = InGameICChatType.Whisper; // Default, messages from radios are sent as whispers.
+        var transmitRange = ChatTransmitRange.GhostRangeLimit; // Default, all ghosts can hear whispers from radios.
+        if (TryComp<StationRadioReceiverComponent>(uid, out var receiverComp))
+        {
+            transmitRange = ChatTransmitRange.HideChat; // Message hidden from chat if from a Station Radio.
+            chatType = !receiverComp.BoostVolume ? InGameICChatType.Whisper : InGameICChatType.Speak; // Radios will talk loudly if at full volume.
+        }
+        // Starlight - End
 
-        _chat.TrySendInGameICMessage(uid,
-            message,
-            component.SpeakNormally ? InGameICChatType.Speak : InGameICChatType.Whisper, // Goobstation - radio host
-            ChatTransmitRange.GhostRangeLimit,
-            nameOverride: name,
-            checkRadioPrefix: component.SpeakNormally,
-            languageOverride: args.Language); // Einstein Engines - Languages
+        // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
+        var message = args.OriginalChatMsg.Message;
+        if (receiverComp != null)
+            message = StationRadioServerSystem.Garble(message, receiverComp.Interference, _random);
+        _chat.TrySendInGameICMessage(uid, message,
+            chatType,
+            transmitRange,
+            nameOverride: name, checkRadioPrefix: false,
+            languageOverride: args.Language);
+        // Starlight - End
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

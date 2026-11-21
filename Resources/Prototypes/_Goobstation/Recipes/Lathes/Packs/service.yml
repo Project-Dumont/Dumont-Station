@@ -23,6 +23,7 @@
   - CassetteTape
   - TapeRecorder
   - CrewCassette
+  - BroadcastTape # Starlight - Rework radio host
 
 - type: latheRecipePack
   id:  CondimentStatic
