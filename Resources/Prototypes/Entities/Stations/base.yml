@@ -166,6 +166,7 @@
           - /Maps/Ruins/whiteship_bluespacejumper.yml
           - /Maps/Ruins/wrecklaimer.yml
           - /Maps/Ruins/displaced_telescience.yml
+          - /Maps/_Dumont/Nonstations/listening_post.yml
         wrecks: !type:DungeonSpawnGroup
           minimumDistance: 150
           maximumDistance: 300
