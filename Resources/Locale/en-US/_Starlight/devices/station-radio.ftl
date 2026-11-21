@@ -81,6 +81,8 @@ station-radio-mixer-interference = Interference on air!
 station-radio-receiver-title = Station radio
 station-radio-receiver-power = Power
 station-radio-receiver-knob = Volume: drag or scroll
+station-radio-receiver-increase = Increase Volume
+station-radio-receiver-decrease = Decrease Volume
 
 record-crate-full = The crate is full.
 record-crate-examine = It holds [color=yellow]{ $count }[/color] of { $capacity } records.

@@ -63,7 +63,9 @@ public abstract partial class SharedStationRadioReceiverSystem : EntitySystem
 
         args.Verbs.Add(new AlternativeVerb
         {
-            Text = !ent.Comp.BoostVolume ? "Increase Volume" : "Decrease Volume",
+            Text = Loc.GetString(!ent.Comp.BoostVolume
+                ? "station-radio-receiver-increase"
+                : "station-radio-receiver-decrease"),
             Act = () =>
             {
                 ent.Comp.BoostVolume = !ent.Comp.BoostVolume;
