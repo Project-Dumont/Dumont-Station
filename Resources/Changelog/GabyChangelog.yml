@@ -5138,3 +5138,11 @@ Entries:
       message: Electrolyzer explodem a partir de 30000K(29726,85°C). Cuidado!
   id: 616
   time: '2026-11-20T20:26:12.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Add
+      message: >-
+        Adiciona I Really Want To Stay At Your House ao lobby como recompensa do
+        catarse
+  id: 617
+  time: '2026-11-21T13:36:03.0000000+00:00'
