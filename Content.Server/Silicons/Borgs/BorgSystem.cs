@@ -106,6 +106,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.PDA;
+using Content.Shared.Notification;
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -465,6 +466,11 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnNotification(NotificationEvent ev)
     {
-        
+        var borgs = EntityQueryEnumerator<BorgChassisComponent, NotificationReceiverComponent>();
+        while (borgs.MoveNext(out var uid, out var comp, out var receiverComponent))
+        {
+            receiverComponent.Notifications.Add(new NotificationMessage(_timing.CurTime, ev.Message));
+            UpdateNotificationUI(uid, receiverComponent);
+        }
     }
 }

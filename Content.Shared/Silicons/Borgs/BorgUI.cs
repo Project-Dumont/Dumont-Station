@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared.Notification;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Silicons.Borgs;
@@ -59,5 +60,19 @@ public sealed class BorgRemoveModuleBuiMessage : BoundUserInterfaceMessage
     public BorgRemoveModuleBuiMessage(NetEntity module)
     {
         Module = module;
+    }
+}
+
+public enum BorgNotificationsUiKey : byte
+{
+    Key
+}
+public sealed class BorgNotificationBuiState : BoundUserInterfaceState
+{
+    public List<NotificationMessage> Notifications;
+
+    public BorgNotificationBuiState(List<NotificationMessage> notifications)
+    {
+        Notifications = notifications;
     }
 }

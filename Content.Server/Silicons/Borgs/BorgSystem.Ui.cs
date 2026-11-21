@@ -19,6 +19,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Configuration;
+using Content.Shared.Notification;
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -117,5 +118,11 @@ public sealed partial class BorgSystem
 
         var state = new BorgBuiState(chargePercent, hasBattery);
         _ui.SetUiState(uid, BorgUiKey.Key, state);
+    }
+
+    public void UpdateNotificationUI(EntityUid uid, NotificationReceiverComponent comp)
+    {
+        var state = new BorgNotificationBuiState(comp.Notifications);
+        _ui.SetUiState(uid, BorgNotificationsUiKey.Key, state);
     }
 }
