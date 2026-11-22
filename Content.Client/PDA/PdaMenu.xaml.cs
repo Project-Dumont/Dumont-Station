@@ -245,7 +245,7 @@ namespace Content.Client.PDA
             // Dumont - Pda Notifications
             NotificationViewControl.RemoveAllChildren();
             if (state.Notifications is { } notifications)
-                NotificationViewControl.AddChild(new NotificationsView(notifications));
+                NotificationViewControl.AddChild(new NotificationsView(notifications) { MinHeight=50, MaxHeight=50 });
         }
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
@@ -319,6 +319,7 @@ namespace Content.Client.PDA
             ProgramListButton.IsCurrent = false;
             SettingsButton.IsCurrent = false;
             ProgramTitle.IsCurrent = false;
+            NotificationsButton.IsCurrent = false;
 
             ChangeView(HomeView);
         }
@@ -349,6 +350,7 @@ namespace Content.Client.PDA
             ProgramCloseButton.Visible = true;
             ProgramListButton.Visible = false;
             SettingsButton.Visible = false;
+            NotificationsButton.IsCurrent = false;
 
             ProgramTitle.LabelText = title;
             ChangeView(ProgramContentView);
