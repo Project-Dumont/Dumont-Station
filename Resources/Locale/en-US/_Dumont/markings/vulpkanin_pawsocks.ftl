@@ -1,0 +1,16 @@
+marking-PawSocksLeftHand = Paw Socks (Left Hand)
+marking-PawSocksLeftHand-pawsocks_left_hand = Paw Socks
+marking-PawSocksRightHand = Paw Socks (Right Hand)
+marking-PawSocksRightHand-pawsocks_right_hand = Paw Socks
+marking-PawSocksLeftArm = Paw Socks (Left Arm)
+marking-PawSocksLeftArm-pawsocks_left_arm = Paw Socks
+marking-PawSocksRightArm = Paw Socks (Right Arm)
+marking-PawSocksRightArm-pawsocks_right_arm = Paw Socks
+marking-PawSocksLeftFoot = Paw Socks (Left Foot)
+marking-PawSocksLeftFoot-pawsocks_left_foot = Paw Socks
+marking-PawSocksRightFoot = Paw Socks (Right Foot)
+marking-PawSocksRightFoot-pawsocks_right_foot = Paw Socks
+marking-PawSocksLeftLeg = Paw Socks (Left Leg)
+marking-PawSocksLeftLeg-pawsocks_left_leg = Paw Socks
+marking-PawSocksRightLeg = Paw Socks (Right Leg)
+marking-PawSocksRightLeg-pawsocks_right_leg = Paw Socks

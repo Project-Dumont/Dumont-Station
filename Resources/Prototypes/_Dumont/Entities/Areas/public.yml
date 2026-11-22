@@ -1,0 +1,139 @@
+- type: entity
+  parent: BaseAreaStation
+  id: AreaLeftTram
+  name: left tram
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: left_tram
+
+- type: entity
+  parent: BaseAreaStation
+  id: AreaMidTram
+  name: mid tram
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: mid_tram
+
+- type: entity
+  parent: BaseAreaStation
+  id: AreaRightTram
+  name: right tram
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: right_tram
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaVox
+  name: vox box
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: vox_box
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaZoo
+  name: zoo
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: zoo
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormOne
+  name: dorm one
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_one
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormTwo
+  name: dorm two
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_two
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormThree
+  name: dorm three
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_three
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormFour
+  name: dorm four
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_four
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormFive
+  name: dorm five
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_five
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaDormSix
+  name: dorm six
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: dorm_six
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaEntertainment
+  name: entertainment
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: entertainment
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaLockerRoom
+  name: locker room
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: locker_room
+
+- type: entity
+  parent: BaseAreaCivilian
+  id: AreaVacantOffice
+  name: vacant office
+  suffix: AreaGeneral, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: vacant_office

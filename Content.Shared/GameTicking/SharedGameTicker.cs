@@ -63,6 +63,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Audio;
 using Content.Goobstation.Maths.FixedPoint; // Goob Station - Round End Screen
 using Content.Shared.Mobs; // Goob Station - Round End Screen
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Shared.GameTicking
 {
@@ -156,6 +157,7 @@ namespace Content.Shared.GameTicking
     {
         public bool IsRoundStarted { get; }
         public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; } // Goobstation - Lobby Background Credits
+        public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; } // Tweak-Maid: Animated Lobby
         public bool YouAreReady { get; }
         // UTC.
         public TimeSpan StartTime { get; }
@@ -163,10 +165,11 @@ namespace Content.Shared.GameTicking
         public bool Paused { get; }
 
         // Goobstation - Lobby Background Credits
-        public TickerLobbyStatusEvent(bool isRoundStarted, ProtoId<LobbyBackgroundPrototype>? lobbyBackground, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused)
+        public TickerLobbyStatusEvent(bool isRoundStarted, ProtoId<LobbyBackgroundPrototype>? lobbyBackground, ProtoId<AnimatedLobbyScreenPrototype>? animatedLobbyScreen, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused) // Tweak-Maid: Animated Lobby
         {
             IsRoundStarted = isRoundStarted;
             LobbyBackground = lobbyBackground;
+            AnimatedLobbyScreen = animatedLobbyScreen; // Tweak-Maid: Animated Lobby
             YouAreReady = youAreReady;
             StartTime = startTime;
             RoundStartTimeSpan = roundStartTimeSpan;

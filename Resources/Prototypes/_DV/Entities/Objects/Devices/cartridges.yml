@@ -16,10 +16,10 @@
   description: A cartridge that tracks statistics related to mail deliveries.
   components:
   - type: Sprite
-    sprite: _DV/Objects/Devices/cartridge.rsi
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
     state: cart-mail
   - type: Icon
-    sprite: _DV/Objects/Devices/cartridge.rsi
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
     state: cart-mail
   - type: UIFragment
     ui: !type:MailMetricUi
@@ -27,8 +27,8 @@
   - type: Cartridge
     programName: mail-metrics-program-name
     icon:
-      sprite: Nyanotrasen/Objects/Specific/Mail/mail.rsi
-      state: icon
+      sprite: _Dumont/Interface/Misc/program_icons.rsi
+      state: mail
 
 - type: entity
   parent: BaseItem
@@ -37,7 +37,7 @@
   description: Lets you message other people!
   components:
   - type: Sprite
-    sprite: _DV/Objects/Devices/cartridge.rsi
+    sprite: _Dumont/Objects/Devices/Cartridges/cartridge.rsi
     state: cart-chat
   - type: UIFragment
     ui: !type:NanoChatUi
@@ -45,8 +45,8 @@
   - type: Cartridge
     programName: nano-chat-program-name
     icon:
-      sprite: _DV/Misc/program_icons.rsi
-      state: nanochat
+      sprite: _Dumont/Interface/Misc/program_icons.rsi
+      state: chat
   - type: ActiveRadio
     channels:
     - Common

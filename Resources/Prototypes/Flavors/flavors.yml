@@ -1579,3 +1579,14 @@
   id: dirtymartini
   flavorType: Complex
   description: flavor-complex-dirtymartini
+
+# Dumont
+- type: flavor
+  id: guaranajudas
+  flavorType: Complex
+  description: flavor-complex-guaranajudas
+
+- type: flavor
+  id: skal
+  flavorType: Complex
+  description: flavor-complex-skal

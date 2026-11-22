@@ -5,7 +5,7 @@
 - type: species
   id: Synth
   name: species-name-synth
-  roundStart: true
+  roundStart: false
   prototype: MobSynth
   sprites: MobSynthSprites
   markingLimits: MobSynthMarkingLimits
