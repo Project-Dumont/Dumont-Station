@@ -243,9 +243,9 @@ namespace Content.Client.PDA
             LockUplinkButton.Visible = state.HasUplink;
 
             // Dumont - Pda Notifications
-            NotificationViewControl.RemoveAllChildren();
+            NotificationList.RemoveAllChildren();
             if (state.Notifications is { } notifications)
-                NotificationViewControl.AddChild(new NotificationsView(notifications) { MinHeight=50, MaxHeight=50 });
+                NotificationList.AddChild(new NotificationsView(notifications) { MinHeight=50, MinWidth=50, HorizontalExpand=true, VerticalExpand=true });
         }
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
