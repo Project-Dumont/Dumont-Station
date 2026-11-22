@@ -31,7 +31,7 @@ namespace Content.Server.PDA
             }
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                PdaNotifyAll(ev);
+                NotifyAll(ev);
                 return;
             }
             
@@ -55,17 +55,17 @@ namespace Content.Server.PDA
             
 
             var amountNotified = 0;
-            if (!IsValidPda(args.Station, pda.Owner, pda.Comp, out var accessLevels) || accessLevels is null)
+            if (!IsValidNotification(args.Station, pda.Owner, pda.Comp, out var accessLevels) || accessLevels is null)
                 return;
 
             if (notiGroupProto.Access is not null)
-                if (PdaNotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args)) {
+                if (NotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args)) {
                     amountNotified++;
                     return;
                 }
 
             if (notiGroupProto.AccessGroups is not null)
-                if (PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args)) {
+                if (NotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args)) {
                     amountNotified++;
                     return;
                 }
@@ -75,7 +75,7 @@ namespace Content.Server.PDA
 
         }
 
-        private bool PdaNotifyByAccess(
+        private bool NotifyByAccess(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessLevelPrototype>> accessNoti,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
@@ -92,7 +92,7 @@ namespace Content.Server.PDA
             return true;
         }
 
-        private bool PdaNotifyByGroups(
+        private bool NotifyByGroups(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessGroupPrototype>> notiGroup,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
@@ -103,7 +103,7 @@ namespace Content.Server.PDA
                 if (!_proto.TryIndex<AccessGroupPrototype>(accessGroupId, out var accessGroup))
                     continue;
 
-                if (PdaNotifyByAccess(pda, accessGroup.Tags, exclude, accessLevels, args))
+                if (NotifyByAccess(pda, accessGroup.Tags, exclude, accessLevels, args))
                     return true;
             }
 
@@ -115,11 +115,11 @@ namespace Content.Server.PDA
         /// </summary>
         /// <param name="args">Event that holds all the information necessary for the notification.</param>
         /// <param name="proto">Notification group, used for optional exclusion, leave null for no filtering</param>
-        public void PdaNotifyAll(NotificationEvent args, NotificationGroupPrototype? proto = null) {
+        private void NotifyAll(NotificationEvent args, NotificationGroupPrototype? proto = null) {
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
-                if (!IsValidPda(args.Station, uid, comp, out var accessLevels) || accessLevels is null)
+                if (!IsValidNotification(args.Station, uid, comp, out var accessLevels) || accessLevels is null)
                     continue;
 
                 if (proto is { } prototype &&
@@ -159,7 +159,15 @@ namespace Content.Server.PDA
             return true;
         }
 
-        private bool IsValidPda(EntityUid? station, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
+        /// <summary>
+        /// Checks whether a PDA is valid for receiving a notification at all.
+        /// </summary>
+        /// <param name="station">Optional station filtering</param>
+        /// <param name="uid"Pda uid></param>
+        /// <param name="pda"Pda component></param>
+        /// <param name="accessLevels">The accesslevels acquired from the PDA, used for checking Notification Groups</param>
+        /// <returns></returns>
+        private bool IsValidNotification(EntityUid? station, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
             if (!TryGetAccessLevels(pda, out accessLevels))
                 return false;
 

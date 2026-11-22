@@ -71,3 +71,5 @@ borg-type-service-desc = Help out with a wide range of crew services, ranging fr
 borg-type-service-transponder = service cyborg
 
 
+# Borg Notification UI
+borg-notification-window-title = Notificações
