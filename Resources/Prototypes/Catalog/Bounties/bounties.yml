@@ -537,10 +537,10 @@
     whitelist:
       components:
       - Battery
-
+#
 - type: cargoBounty
   id: BountyLaserGun
-  reward: 28500
+  reward: 12000
   description: bounty-description-lasergun
   idPrefix: IV
   entries:
@@ -548,7 +548,7 @@
     amount: 6
     whitelist:
       components:
-      - HitscanBatteryAmmoProvider
+      - AlwaysHot #dumont edit: we use laser projectiles now. alwayshot is used by practically nothing: daengati hands, molotovs, fierystakes, cauterizes... i dont know what else to put here thats used by laser guns and only laser guns
     blacklist:
       components:
       - PowerCell
