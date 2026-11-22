@@ -15,6 +15,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Damage;
+using Content.Server.Radio.Components;
 
 namespace Content.Server._Starlight.StationRadio.Systems;
 
@@ -117,10 +118,13 @@ public sealed partial class StationRadioServerSystem : EntitySystem
     }
 
     [SubscribeLocalEvent]
-    private void OnRadioSendAttempt(Entity<StationRadioServerComponent> ent, ref RadioSendAttemptEvent args)
+    private void OnRadioSendAttempt(Entity<RadioMicrophoneComponent> ent, ref RadioSendAttemptEvent args)
     {
+        if (args.Channel.ID != RadioShowChannel || !_stationRadio.TryGetLinkedServer(ent.Owner, out var server) || !TryComp<StationRadioServerComponent>(server, out var comp))
+            return;
+
         // A voice fader at zero mutes the host completely, chat included.
-        if (IsMicrophoneMuted(ent.Comp) || ent.Comp.VoiceGain <= 0f)
+        if (IsMicrophoneMuted(comp) || comp.VoiceGain <= 0f)
             args.Cancelled = true;
     }
 
