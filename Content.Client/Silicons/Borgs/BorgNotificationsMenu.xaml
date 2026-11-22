@@ -1,9 +1,7 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       Title="{Loc 'borg-select-type-menu-title'}"
-                      SetSize="600 480">
-    <ScrollContainer>
-        <BoxContainer Orientation="Vertical" Access="Public" Name="NotificationsContainer">
-        </BoxContainer>
-    </ScrollContainer>
+                      SetSize="600 300">
+    <Control Name="Notifications" Access="Public">
+    </Control>
 </controls:FancyWindow>

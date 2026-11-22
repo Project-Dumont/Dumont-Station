@@ -74,15 +74,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>
         </BoxContainer>
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True">
-            <BoxContainer Orientation="Vertical"
-                          VerticalExpand="True"
-                          HorizontalExpand="True"
-                          MinSize="50 50"
-                          Name="Notifications"
-                          Access="Public">
-            </BoxContainer>
-        </ScrollContainer>
+        <Control Name="NotificationViewControl" Access="Public">
+        </Control>
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
