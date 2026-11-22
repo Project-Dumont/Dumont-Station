@@ -218,7 +218,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         var body = Loc.GetString(bodyLoc, args.ToArray());
         // fix meio merda mas vida que segue
-        _pda.NotifyPda(pda, body, false);
+        _pda.Notify(pda, body, false);
     }
 
     private void HandleToggleMute(Entity<NanoBankCardComponent> card)

@@ -165,6 +165,7 @@ nano-chat-delivery-failed = Failed to deliver
 nano-chat-look-up-no-server = No valid telecommunications server found
 nano-chat-look-up = Look up numbers
 nano-chat-list-number = List number
+nano-chat-message-recipient-notification = New message on nanochat
 
 # Create chat popup
 nano-chat-new-title = Add a new chat

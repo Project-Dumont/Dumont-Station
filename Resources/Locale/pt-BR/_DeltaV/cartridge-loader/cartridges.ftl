@@ -17,6 +17,7 @@ nano-chat-new-message-title = Mensagem de {$sender}
 nano-chat-new-message-body = {$message}
 nano-chat-toggle-mute = Mutar notificações
 nano-chat-delivery-failed = Falha ao enviar
+nano-chat-message-recipient-notification = Nova mensagem no nanochat
 
 # Create chat popup
 nano-chat-new-title = Adicionar novo contato

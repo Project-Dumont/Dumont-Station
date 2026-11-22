@@ -88,7 +88,7 @@ namespace Content.Server.PDA
             if (!accessLevels.Intersect(accessNoti).Any())
                 return false;
 
-            NotifyPda(pda, args.Message, args.IsLoud);
+            Notify(pda, args.Message, args.IsLoud);
             return true;
         }
 
@@ -127,11 +127,11 @@ namespace Content.Server.PDA
                     exclusion.Intersect(accessLevels).Any())
                     continue;
 
-                NotifyPda((uid, comp), args.Message, args.IsLoud);
+                Notify((uid, comp), args.Message, args.IsLoud);
             }
         }
 
-        public void NotifyPda(Entity<PdaComponent> pda, string message, bool isLoud = false) {
+        public void Notify(Entity<PdaComponent> pda, string message, bool isLoud = false) {
             if (!IsPdaAttachedToPlayer(pda))
                 _popup.PopupEntity(Loc.GetString("pda-new-notification"), pda.Owner, PopupType.Medium);
 

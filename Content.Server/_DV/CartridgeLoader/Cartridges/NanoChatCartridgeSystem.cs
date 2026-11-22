@@ -30,20 +30,22 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
-using Robust.Shared.Utility; // Goob
+using Robust.Shared.Utility;
+using Content.Server.PDA; // Goob
 
 namespace Content.Server._DV.CartridgeLoader.Cartridges;
 
 public sealed class NanoChatCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly CartridgeLoaderSystem _cartridge = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridge = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private SharedNanoChatSystem _nanoChat = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private IConfigurationManager _cfgManager = default!;
+    [Dependency] private PdaSystem _pda = default!;
 
     // Messages in notifications get cut off after this point
     // no point in storing it on the comp
@@ -555,7 +557,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         NanoChatRecipient? groupRecipient = null)
     {
         var senderNumber = sender.Comp.Number;
-        if (senderNumber == null)
+        if (senderNumber is null)
             return;
 
         // For group chats, use the group number. For regular chats, use the sender's number
@@ -596,6 +598,15 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         }
 
         _nanoChat.AddMessage((recipient, recipient.Comp), recipientNumber, message with { DeliveryFailed = false });
+        
+        // Dumont - Pda notifications
+        var mutedChats = recipient.Comp.MutedChats;
+        if (recipient.Comp.PdaUid is { } pdauid && 
+            TryComp<PdaComponent>(pdauid, out var pdaComp) && 
+            !recipient.Comp.NotificationsMuted &&
+            mutedChats.Contains((uint) senderNumber!)
+        )
+            _pda.Notify((pdauid, pdaComp), Loc.GetString("nano-chat-message-recipient-notification"), true);
 
         if (recipient.Comp.IsClosed || _nanoChat.GetCurrentChat((recipient, recipient.Comp)) != recipientNumber)
             HandleUnreadNotification(recipient, message, recipientNumber);
