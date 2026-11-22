@@ -180,6 +180,7 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  - type: NotificationReceiver
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:

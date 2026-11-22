@@ -63,10 +63,13 @@ public sealed class BorgRemoveModuleBuiMessage : BoundUserInterfaceMessage
     }
 }
 
+[Serializable, NetSerializable]
 public enum BorgNotificationsUiKey : byte
 {
     Key
 }
+
+[Serializable, NetSerializable]
 public sealed class BorgNotificationBuiState : BoundUserInterfaceState
 {
     public List<NotificationMessage> Notifications;

@@ -40,7 +40,7 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
 
         // Dumont Begin
         if (component.Announcement is { } locId) {
-            var ev = new PdaNotificationEvent(Loc.GetString(locId), "StationAlerts", true, _station.GetOwningStation(uid));
+            var ev = new NotificationEvent(Loc.GetString(locId), "StationAlerts", true, _station.GetOwningStation(uid));
             RaiseLocalEvent(ev);
         }
         // Dumont End

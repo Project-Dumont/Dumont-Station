@@ -183,6 +183,7 @@
   save: false
   abstract: true
   components:
+  - type: NotificationReceiver
   - type: Reactive
     groups:
       Acidic: [Touch]

@@ -1,6 +1,9 @@
 using Content.Shared.Silicons.Borgs;
+using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
+namespace Content.Client.Silicons.Borgs;
+[UsedImplicitly]
 public sealed class BorgNotificationsBoundUserInterface : BoundUserInterface
 {
     BorgNotificationsMenu? _menu; 

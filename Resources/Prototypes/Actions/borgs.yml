@@ -48,3 +48,5 @@
       sprite: Interface/Actions/actions_borg.rsi
       state: select-type
     useDelay: 0.5
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent { key: enum.BorgNotificationsUiKey.Key }

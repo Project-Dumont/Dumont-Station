@@ -38,7 +38,7 @@ public sealed partial class JaniCartridgeSystem : EntitySystem {
             ("location", location),
             ("color", color.ToHex() ?? "#FFFFFF"));
 
-        PdaNotificationEvent ev = new(message, cart.Comp.NotificationGroup, true);
+        NotificationEvent ev = new(message, cart.Comp.NotificationGroup, true);
         RaiseLocalEvent(ev);
         _popup.PopupEntity(Loc.GetString("jani-cartridge-message-sent"), cart.Owner);
     }

@@ -70,7 +70,7 @@ public sealed partial class CommunicationsConsoleSystem
                 Loc.TryGetString(ent.Comp.Title, out var title);
                 _chatSystem.DispatchStationAnnouncement(ent, message, title ?? ent.Comp.Title, colorOverride: Color.Red);
 
-                var pdaEv = new PdaNotificationEvent(Loc.GetString("escape-pods-pda-notification"), "StationAlerts", true, _stationSystem.GetOwningStation(ent));
+                var pdaEv = new NotificationEvent(Loc.GetString("escape-pods-pda-notification"), "StationAlerts", true, _stationSystem.GetOwningStation(ent));
                 RaiseLocalEvent(pdaEv);
 
                 _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(user):player} unlocked the escape pods with reason '{reason}'.");

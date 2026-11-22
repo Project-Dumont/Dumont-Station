@@ -25,8 +25,18 @@ namespace Content.Server.PDA
         {
             var pdas = EntityQueryEnumerator<PdaComponent, NotificationReceiverComponent>();
 
+            if (!_proto.TryIndex<NotificationGroupPrototype>(ev.Group, out var notiGroupProto)) {
+                _sawmill.Error($"group {ev.Group} does not exist'");
+                return;
+            }
+
+            if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
+                PdaNotifyAll(ev);
+                return;
+            }
+            
             while (pdas.MoveNext(out var uid, out var pdaComp, out var receiverComp))
-                HandleNotification((uid, pdaComp), receiverComp, ev);
+                HandleNotification((uid, pdaComp), receiverComp, ev, notiGroupProto);
         }
 
         /// <summary>
@@ -34,19 +44,15 @@ namespace Content.Server.PDA
         /// </summary>
         /// <param name="pda">Pda to notify</param>
         /// <param name="args">Arguments of the event, used for the groups</param>
-        private void HandleNotification(Entity<PdaComponent> pda, NotificationReceiverComponent receiveComp, NotificationEvent args)
+        private void HandleNotification(
+        Entity<PdaComponent> pda, 
+        NotificationReceiverComponent receiveComp, 
+        NotificationEvent args, 
+        NotificationGroupPrototype notiGroupProto)
         {
             _sawmill = _log.GetSawmill("pda_notification");
 
-            if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto)) {
-                _sawmill.Error($"group {args.Group} does not exist'");
-                return;
-            }
-
-            if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                PdaNotifyAll(args);
-                return;
-            }
+            
 
             var amountNotified = 0;
             if (!IsValidPda(args.Station, pda.Owner, pda.Comp, out var accessLevels) || accessLevels is null)
@@ -65,7 +71,7 @@ namespace Content.Server.PDA
                 }
 
             if (amountNotified == 0)
-                _sawmill.Warning("Notified zero PDAs on last PdaNotificationEvent");
+                _sawmill.Warning("Notified zero PDAs on last NotificationEvent");
 
         }
 

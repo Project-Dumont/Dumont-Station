@@ -494,7 +494,7 @@ public sealed partial class StationSystem : SharedStationSystem
 
         if (loud)
         {
-            var ev = new PdaNotificationEvent(Loc.GetString("station-rename", ("oldName", oldName), ("newName", name)), "StationAlerts", false, station);
+            var ev = new NotificationEvent(Loc.GetString("station-rename", ("oldName", oldName), ("newName", name)), "StationAlerts", false, station);
             RaiseLocalEvent(ev);
         }
 
