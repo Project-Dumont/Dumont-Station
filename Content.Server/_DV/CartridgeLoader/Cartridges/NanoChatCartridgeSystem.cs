@@ -604,7 +604,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         if (recipient.Comp.PdaUid is { } pdauid && 
             TryComp<PdaComponent>(pdauid, out var pdaComp) && 
             !recipient.Comp.NotificationsMuted &&
-            mutedChats.Contains((uint) senderNumber!)
+            !mutedChats.Contains((uint) senderNumber!)
         )
             _pda.Notify((pdauid, pdaComp), Loc.GetString("nano-chat-message-recipient-notification"), true);
 

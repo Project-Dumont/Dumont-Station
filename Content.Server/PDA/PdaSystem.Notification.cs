@@ -15,9 +15,9 @@ namespace Content.Server.PDA
 {
     public sealed partial class PdaSystem : SharedPdaSystem
     {
-        [Dependency] private readonly IPrototypeManager _proto = default!;
-        [Dependency] private readonly ILogManager _log = default!;
-        [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private IPrototypeManager _proto = default!;
+        [Dependency] private ILogManager _log = default!;
+        [Dependency] private SharedPopupSystem _popup = default!;
 
         private ISawmill _sawmill = default!;
 
@@ -35,8 +35,14 @@ namespace Content.Server.PDA
                 return;
             }
             
+            var amountNotified = 0;
             while (pdas.MoveNext(out var uid, out var pdaComp, out var receiverComp))
-                HandleNotification((uid, pdaComp), receiverComp, ev, notiGroupProto);
+                amountNotified += HandleNotification((uid, pdaComp), receiverComp, ev, notiGroupProto) ? 1 : 0;
+
+            _sawmill = _log.GetSawmill("pda_notification");
+            if (amountNotified > 0)
+                _sawmill.Warning("Notified zero PDAs on last NotificationEvent");
+
         }
 
         /// <summary>
@@ -44,34 +50,25 @@ namespace Content.Server.PDA
         /// </summary>
         /// <param name="pda">Pda to notify</param>
         /// <param name="args">Arguments of the event, used for the groups</param>
-        private void HandleNotification(
+        /// <returnsWhether the PDA was notified></returns>
+        private bool HandleNotification(
         Entity<PdaComponent> pda, 
         NotificationReceiverComponent receiveComp, 
         NotificationEvent args, 
         NotificationGroupPrototype notiGroupProto)
         {
-            _sawmill = _log.GetSawmill("pda_notification");
-
-            
-
-            var amountNotified = 0;
             if (!IsValidNotification(args.Station, pda.Owner, pda.Comp, out var accessLevels) || accessLevels is null)
-                return;
+                return false;
 
             if (notiGroupProto.Access is not null)
-                if (NotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args)) {
-                    amountNotified++;
-                    return;
-                }
+                if (NotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args))
+                    return true;
 
             if (notiGroupProto.AccessGroups is not null)
-                if (NotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args)) {
-                    amountNotified++;
-                    return;
-                }
-
-            if (amountNotified == 0)
-                _sawmill.Warning("Notified zero PDAs on last NotificationEvent");
+                if (NotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args))
+                    return true;
+                
+            return false;
 
         }
 

@@ -15,6 +15,8 @@ using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Containers;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
+using Content.Shared.Notification;
 
 namespace Content.Shared.PDA
 {
@@ -23,6 +25,8 @@ namespace Content.Shared.PDA
         [Dependency] protected readonly ItemSlotsSystem ItemSlotsSystem = default!;
         [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
         [Dependency] protected readonly SharedMindSystem _mind = default!;
+        [Dependency] private ILogManager _log = default!;
+
 
         public override void Initialize()
         {
@@ -103,7 +107,7 @@ namespace Content.Shared.PDA
         public bool IsPdaAttachedToPlayer(Entity<PdaComponent> pda)
         {
             var xform = Transform(pda.Owner);
-            return TryComp<MindComponent>(xform.ParentUid, out var mindComp) && mindComp.CurrentEntity is not null;
+            return TryComp<MindContainerComponent>(xform.ParentUid, out var mindComp) && mindComp.Mind is not null;
         }
     }
 }

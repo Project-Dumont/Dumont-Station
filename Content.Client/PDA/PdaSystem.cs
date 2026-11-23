@@ -7,27 +7,40 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Notification;
 using Content.Shared.PDA;
 using Content.Shared.Popups;
 using Robust.Shared.GameStates;
 
 namespace Content.Client.PDA;
 
-public sealed class PdaSystem : SharedPdaSystem
+public sealed partial class PdaSystem : SharedPdaSystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PdaComponent, ComponentHandleState>(OnHandleState);
+        SubscribeLocalEvent<NotificationReceiverComponent, ComponentHandleState>(OnHandleState);
     }
 
-    public void OnHandleState(Entity<PdaComponent> pda, ref ComponentHandleState msg) 
+    public void OnHandleState(Entity<NotificationReceiverComponent> receiver, ref ComponentHandleState state) 
     {
-        if (!IsPdaAttachedToPlayer(pda))
+        if (!TryComp<PdaComponent>(receiver.Owner, out var pdaComp))
             return;
 
-        _popup.PopupClient(Loc.GetString("pda-new-notification"), pda.Owner, PopupType.Medium);
+        if (!IsPdaAttachedToPlayer((receiver.Owner, pdaComp)))
+            return;
+
+        if (state.Current is not NotificationReceiverState currentState)
+            return;
+
+        if (state.Next is not NotificationReceiverState nextState)
+            return;
+
+        if (currentState.Notifications.Count == nextState.Notifications.Count)
+            return;
+
+        _popup.PopupClient(Loc.GetString("pda-new-notification"), receiver.Owner, PopupType.Medium);
     }
 }

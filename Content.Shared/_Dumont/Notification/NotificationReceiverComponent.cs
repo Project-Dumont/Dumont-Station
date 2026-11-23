@@ -13,6 +13,16 @@ public sealed partial class NotificationReceiverComponent : Component
 
 }
 
+public sealed class NotificationReceiverState : IComponentState
+{
+    public List<NotificationMessage> Notifications = [];
+
+    public NotificationReceiverState(List<NotificationMessage> notifications)
+    {
+        Notifications = notifications;
+    }
+}
+
 [Serializable, NetSerializable]
 public record NotificationMessage(TimeSpan Time, string Message);
 

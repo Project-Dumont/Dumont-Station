@@ -1,4 +1,5 @@
 using Content.Shared.Notification;
+using Robust.Shared.GameStates;
 
 public sealed class SharedNotificationSystem : EntitySystem
 {
@@ -9,7 +10,7 @@ public sealed class SharedNotificationSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<NotificationReceiverComponent, PdaModifyNotificationSettingsMessage>(OnModifySettings);
-
+        SubscribeLocalEvent<NotificationReceiverComponent, ComponentGetState>(OnGetState);
     }
     public void OpenNotificationSettingsUI(EntityUid uid, EntityUid actor, NotificationReceiverComponent comp)
     {
@@ -35,5 +36,10 @@ public sealed class SharedNotificationSystem : EntitySystem
 
         var state = new PdaNotificationSettingsState(receiver.Comp.Setting);
         _ui.SetUiState((receiver.Owner, userInterfaceComponent), ModifyNotificationSettingsKey.Key, state);
+    }
+
+    private void OnGetState(Entity<NotificationReceiverComponent> ent, ref ComponentGetState args)
+    {
+        args.State = new NotificationReceiverState(ent.Comp.Notifications);
     }
 }
