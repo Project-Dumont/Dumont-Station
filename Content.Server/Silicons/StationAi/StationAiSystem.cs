@@ -71,6 +71,7 @@ using Content.Shared.Chat;
 using Robust.Shared.Audio;
 using Content.Server._Funkystation.MalfAI;
 using Content.Server._Funkystation.MalfAI.Components;
+using Content.Shared.PDA;
 
 namespace Content.Server.Silicons.StationAi;
 

@@ -164,6 +164,7 @@
     - ActionAIViewLaws
     - ActionOpenRemoteDevicesMenu # Corvax-Next-AiRemoteControl
     - ActionOpenCameraWarpMenu # Goobstation-Ai-Camera-Jumping
+    - ActionShowBorgNotifications
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -184,6 +185,8 @@
         type: StoreBoundUserInterface
       enum.MalfAiBorgsUiKey.Key:
         type: MalfAiBorgsBoundUserInterface
+      enum.BorgNotificationsUiKey.Key:
+        type: BorgNotificationsBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -194,6 +197,9 @@
         toggleAction: ActionAGhostShowStationRecords
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
+      enum.BorgNotificationsUiKey.Key:
+        toggleAction: ActionShowBorgNotifications
+  - type: NotificationReceiver
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork

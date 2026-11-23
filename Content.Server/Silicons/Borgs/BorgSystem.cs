@@ -157,7 +157,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
         SubscribeLocalEvent<BorgBrainComponent, MindAddedMessage>(OnBrainMindAdded);
         SubscribeLocalEvent<BorgBrainComponent, PointAttemptEvent>(OnBrainPointAttempt);
 
-        SubscribeLocalEvent<NotificationEvent>(OnNotification);
 
         InitializeModules();
         InitializeMMI();
@@ -462,15 +461,5 @@ public sealed partial class BorgSystem : SharedBorgSystem
             return false;
 
         return true;
-    }
-
-    private void OnNotification(NotificationEvent ev)
-    {
-        var borgs = EntityQueryEnumerator<BorgChassisComponent, NotificationReceiverComponent>();
-        while (borgs.MoveNext(out var uid, out var comp, out var receiverComponent))
-        {
-            receiverComponent.Notifications.Add(new NotificationMessage(_timing.CurTime, ev.Message));
-            UpdateNotificationUI(uid, receiverComponent);
-        }
     }
 }
