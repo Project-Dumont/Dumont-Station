@@ -24,6 +24,9 @@ pda-bound-user-interface-show-uplink-description = Acessa seu uplink
 pda-bound-user-interface-lock-uplink-title = Bloquear Uplink
 pda-bound-user-interface-lock-uplink-description = Evite que alguém acesse seu uplink sem o código
 
+pda-bound-user-interface-modify-notification-settings-title = Modificar Configurações de Notificação
+pda-bound-user-interface-modify-notification-settings-description = Configure o quão barulhento suas notificações são
+
 comp-pda-ui-menu-title = PDA
 
 comp-pda-ui-footer = Assistente Digital Pessoal
@@ -58,3 +61,4 @@ pda-notification-message = [font size=12][bold]PDA[/bold] { $header }: [/font]
     "{ $message }"
 
 pda-new-notification = Nova notificação
+pda-notification-settings-window-title = Configurações de Notificação

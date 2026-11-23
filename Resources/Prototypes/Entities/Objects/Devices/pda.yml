@@ -288,6 +288,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.ModifyNotificationSettingsKey.Key:
+        type: NotificationSettingsBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener

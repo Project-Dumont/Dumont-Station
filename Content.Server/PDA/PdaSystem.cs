@@ -171,6 +171,8 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
             SubscribeAllEvent<NotificationEvent>(OnNotification);
+            SubscribeLocalEvent<PdaComponent, PdaOpenNotificationSettingsMessage>(OnOpenNotificationSettings);
+            SubscribeLocalEvent<PdaComponent, PdaModifyNotificationSettingsMessage>(OnModifyNotificationSettings);
 
         }
 
@@ -451,6 +453,11 @@ namespace Content.Server.PDA
             }
 
             return address;
+        }
+
+        private void OnOpenNotificationSettings(EntityUid uid, PdaComponent pda, PdaOpenNotificationSettingsMessage msg)
+        {
+            _ui.OpenUi(uid, ModifyNotificationSettingsKey.Key);
         }
     }
 }

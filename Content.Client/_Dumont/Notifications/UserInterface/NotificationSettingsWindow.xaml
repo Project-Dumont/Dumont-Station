@@ -1,0 +1,11 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'reagent-dispenser-bound-user-interface-title'}"
+                      MinSize="600 300"
+                      SetSize="800 500">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <Button Access="Public" Name="LoudNotificationSetting" Text="Loud" />
+        <Button Access="Public" Name="NormalNotificationSetting" Text="Normal" />
+        <Button Access="Public" Name="SilentNotificationSetting" Text="Silent" />
+    </BoxContainer>
+</controls:FancyWindow>

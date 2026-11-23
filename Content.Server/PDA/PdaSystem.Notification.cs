@@ -176,5 +176,23 @@ namespace Content.Server.PDA
 
             return true;
         }
+
+        private void OnModifyNotificationSettings(EntityUid uid, PdaComponent pda, PdaModifyNotificationSettingsMessage msg)
+        {
+            if (!TryComp<NotificationReceiverComponent>(uid, out var receiverComp))
+                return;
+
+            receiverComp.Setting = msg.Setting;
+            ModifySettingsUiUpdate(uid, receiverComp);
+        }
+
+        private void ModifySettingsUiUpdate(EntityUid pdaUid, NotificationReceiverComponent comp)
+        {
+            if (!TryComp<UserInterfaceComponent>(pdaUid, out var userInterfaceComponent))
+                return;
+
+            var state = new PdaNotificationSettingsState(comp.Setting);
+            _ui.SetUiState((pdaUid, userInterfaceComponent), ModifyNotificationSettinhsKey.Key, state);
+        }
     }
 }
