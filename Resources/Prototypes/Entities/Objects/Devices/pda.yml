@@ -289,7 +289,7 @@
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
       enum.ModifyNotificationSettingsKey.Key:
-        type: NotificationSettingsBoundUserInterface
+        type: NotificationSettingsBUI
   - type: Tag
     tags:
     - DoorBumpOpener

@@ -10,7 +10,7 @@ public sealed partial class NotificationSettingsBUI : BoundUserInterface
 {
     NotificationSettingsWindow? _window;
 
-    int? _selectedButton;
+    int? _selectedSetting;
     public NotificationSettingsBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey) 
     {
         
@@ -24,11 +24,8 @@ public sealed partial class NotificationSettingsBUI : BoundUserInterface
             return;
 
         _window = this.CreateWindow<NotificationSettingsWindow>();
-        var child  = _window.GetChild(_selectedButton ?? 0);
-        if (child is not Button setting)
-            return;
 
-        setting.Pressed = true;
+        UpdateSettingButton();
 
         _window.LoudNotificationSetting.OnPressed += _ => { SendMessage(new PdaModifyNotificationSettingsMessage(NotificationSetting.Loud)); };
         _window.NormalNotificationSetting.OnPressed += _ => { SendMessage(new PdaModifyNotificationSettingsMessage(NotificationSetting.Normal)); };
@@ -40,13 +37,22 @@ public sealed partial class NotificationSettingsBUI : BoundUserInterface
     {
         base.UpdateState(state);
 
-        if (_window is null)
-            return;
-
         if (state is not PdaNotificationSettingsState settingsState)
             return;
 
+        _selectedSetting = (int)settingsState.Setting;
+        UpdateSettingButton();
+    }
 
-        _selectedButton = (int)settingsState.Setting;
+    private void UpdateSettingButton() 
+    {
+        if (_window is null)
+            return;
+
+        var child = _window.SettingsButtonContainer.GetChild(_selectedSetting ?? 1);
+        if (child is not Button setting)
+            return;
+
+        setting.Pressed = true;
     }
 }

@@ -14,7 +14,7 @@ public sealed partial class NotificationSettingsWindow : FancyWindow
         RobustXamlLoader.Load(this);
 
         ButtonGroup group = new();
-        foreach (Button button in this.Children)
+        foreach (Button button in SettingsButtonContainer.Children)
             button.Group = group;
     }
 }

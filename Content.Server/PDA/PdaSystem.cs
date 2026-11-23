@@ -148,6 +148,8 @@ namespace Content.Server.PDA
         [Dependency] private readonly NanoBankCartridgeSystem _nanoBank = default!; // GabyStation -> NanoBank
         [Dependency] private readonly IGameTiming _timing = default!;
 
+        [Dependency] private SharedNotificationSystem _notification = default!; 
+
         public override void Initialize()
         {
             base.Initialize();
@@ -162,6 +164,7 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, PdaShowMusicMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaShowUplinkMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaLockUplinkMessage>(OnUiMessage);
+            SubscribeLocalEvent<PdaComponent, PdaOpenNotificationSettingsMessage>(OnUiMessage);
 
             SubscribeLocalEvent<PdaComponent, CartridgeLoaderNotificationSentEvent>(OnNotification);
 
@@ -171,8 +174,6 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
             SubscribeAllEvent<NotificationEvent>(OnNotification);
-            SubscribeLocalEvent<PdaComponent, PdaOpenNotificationSettingsMessage>(OnOpenNotificationSettings);
-            SubscribeLocalEvent<PdaComponent, PdaModifyNotificationSettingsMessage>(OnModifyNotificationSettings);
 
         }
 
@@ -421,6 +422,18 @@ namespace Content.Server.PDA
             }
         }
 
+        private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaOpenNotificationSettingsMessage msg)
+        {
+            if (!PdaUiKey.Key.Equals(msg.UiKey))
+                return;
+
+            if (TryComp<NotificationReceiverComponent>(uid, out var receiver))
+            {
+                _notification.OpenNotificationSettingsUI(uid, msg.Actor, receiver);
+                UpdatePdaUi(uid, pda);
+            }
+        }
+
         private bool IsUnlocked(EntityUid uid)
         {
             return !TryComp<RingerUplinkComponent>(uid, out var uplink) || uplink.Unlocked;
@@ -453,11 +466,6 @@ namespace Content.Server.PDA
             }
 
             return address;
-        }
-
-        private void OnOpenNotificationSettings(EntityUid uid, PdaComponent pda, PdaOpenNotificationSettingsMessage msg)
-        {
-            _ui.OpenUi(uid, ModifyNotificationSettingsKey.Key);
         }
     }
 }

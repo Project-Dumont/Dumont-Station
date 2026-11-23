@@ -5,10 +5,10 @@ namespace Content.Shared.Notification;
 [RegisterComponent]
 public sealed partial class NotificationReceiverComponent : Component
 {
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadOnly)]
     public List<NotificationMessage> Notifications = [];
 
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
     public NotificationSetting Setting = NotificationSetting.Normal;
 
 }
