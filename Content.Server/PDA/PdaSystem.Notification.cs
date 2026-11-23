@@ -132,14 +132,14 @@ namespace Content.Server.PDA
         }
 
         public void Notify(Entity<PdaComponent> pda, string message, bool isLoud = false) {
+            if (!TryComp<NotificationReceiverComponent>(pda.Owner, out var receiverComp))
+                return;
+
             if (!IsPdaAttachedToPlayer(pda))
                 _popup.PopupEntity(Loc.GetString("pda-new-notification"), pda.Owner, PopupType.Medium);
 
-            if (isLoud)
-                _ringer.RingerPlayRingtone(pda.Owner);
-
-            if (!TryComp<NotificationReceiverComponent>(pda.Owner, out var receiverComp))
-                return;
+            if (receiverComp.Setting == NotificationSetting.Loud || (receiverComp.Setting == NotificationSetting.Normal && isLoud))
+                _ringer.RingerPlayRingtone(pda.Owner, false);
 
             receiverComp.Notifications.Add(new NotificationMessage(_timing.CurTime, message));
             Dirty(pda);

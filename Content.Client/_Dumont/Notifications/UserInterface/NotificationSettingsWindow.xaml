@@ -1,8 +1,8 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       Title="{Loc 'notification-settings-menu-title'}"
-                      MinSize="350 500"
-                      SetSize="350 500">
+                      MinSize="200 350"
+                      SetSize="200 350">
     <BoxContainer Access="Public" Name="SettingsButtonContainer" Orientation="Vertical" VerticalExpand="True" SeparationOverride="4" Margin="35">
         <Button Margin="6 2" Access="Public" Name="LoudNotificationSetting"   Text="{Loc 'notification-setting-loud'}"   VerticalExpand="True"/>
         <Button Margin="6 2" Access="Public" Name="NormalNotificationSetting" Text="{Loc 'notification-setting-normal'}" VerticalExpand="True"/>
