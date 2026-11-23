@@ -548,7 +548,9 @@
     amount: 6
     whitelist:
       components:
-      - AlwaysHot #dumont edit: we use laser projectiles now. alwayshot is used by practically nothing: daengati hands, molotovs, fierystakes, cauterizes... i dont know what else to put here thats used by laser guns and only laser guns
+      - AlwaysHot #dumont edit
+      - Gun
+      requireAll: true
     blacklist:
       components:
       - PowerCell
