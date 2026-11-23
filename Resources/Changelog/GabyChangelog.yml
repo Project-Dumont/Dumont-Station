@@ -5146,3 +5146,9 @@ Entries:
         catarse
   id: 617
   time: '2026-11-21T13:36:03.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Missão de armas laser da logística.
+  id: 618
+  time: '2026-11-23T14:48:42.0000000+00:00'
