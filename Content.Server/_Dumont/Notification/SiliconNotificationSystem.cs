@@ -26,7 +26,7 @@ public sealed partial class SiliconNotificationSystem : EntitySystem
             UpdateNotificationUI(uid, receiverComponent);
         }
 
-        var ai = EntityQueryEnumerator<StationAiCoreComponent, NotificationReceiverComponent>();
+        var ai = EntityQueryEnumerator<StationAiHeldComponent, NotificationReceiverComponent>();
         while (ai.MoveNext(out var uid, out var comp, out var receiverComponent))
         {
             receiverComponent.Notifications.Add(new NotificationMessage(_timing.CurTime, ev.Message));
@@ -38,7 +38,7 @@ public sealed partial class SiliconNotificationSystem : EntitySystem
     public void UpdateNotificationUI(EntityUid uid, NotificationReceiverComponent comp)
     {
 
-        var state = new BorgNotificationBuiState(comp.Notifications);
-        _ui.SetUiState(uid, BorgNotificationsUiKey.Key, state);
+        var state = new SiliconNotificationBuiState(comp.Notifications);
+        _ui.SetUiState(uid, SiliconNotificationsUiKey.Key, state);
     }
 }

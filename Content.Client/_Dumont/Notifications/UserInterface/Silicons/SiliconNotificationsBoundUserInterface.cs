@@ -1,14 +1,16 @@
+using Content.Shared.Notification;
 using Content.Shared.Silicons.Borgs;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
+using Robust.Shared.Serialization;
 
-namespace Content.Client.Silicons.Borgs;
+namespace Content.Client._Dumont.Notifications.UserInterface.Silicons;
 [UsedImplicitly]
-public sealed class BorgNotificationsBoundUserInterface : BoundUserInterface
+public sealed class SiliconNotificationsBoundUserInterface : BoundUserInterface
 {
-    BorgNotificationsMenu? _menu; 
+    SiliconNotificationsMenu? _menu; 
 
-    public BorgNotificationsBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) 
+    public SiliconNotificationsBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) 
     {
         
     }
@@ -21,14 +23,14 @@ public sealed class BorgNotificationsBoundUserInterface : BoundUserInterface
 
     private void CreateMenu()
     {
-        _menu = this.CreateWindow<BorgNotificationsMenu>();
+        _menu = this.CreateWindow<SiliconNotificationsMenu>();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
-        if (state is not BorgNotificationBuiState notificationState)
+        if (state is not SiliconNotificationBuiState notificationState)
             return;
 
         if (_menu is null)

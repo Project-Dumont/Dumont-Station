@@ -30,3 +30,20 @@ public sealed partial class PdaNotificationSettingsState : BoundUserInterfaceSta
         Setting = setting;
     }
 }
+
+[Serializable, NetSerializable]
+public enum SiliconNotificationsUiKey : byte
+{
+    Key
+}
+
+[Serializable, NetSerializable]
+public sealed class SiliconNotificationBuiState : BoundUserInterfaceState
+{
+    public List<NotificationMessage> Notifications;
+
+    public SiliconNotificationBuiState(List<NotificationMessage> notifications)
+    {
+        Notifications = notifications;
+    }
+}

@@ -256,15 +256,15 @@
       # Goobstation - Add the station map interface to the borg
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
-      enum.BorgNotificationsUiKey.Key:
-        type: BorgNotificationsBoundUserInterface
+      enum.SiliconNotificationsUiKey.Key:
+        type: SiliconNotificationsBoundUserInterface
   # Goobstation - Add the station map interface to the borg
   - type: IntrinsicUI
     uis:
       enum.StationMapUiKey.Key:
         toggleAction: ActionShowStationMap
-      enum.BorgNotificationsUiKey.Key:
-        toggleAction: ActionShowBorgNotifications
+      enum.SiliconNotificationsUiKey.Key:
+        toggleAction: ActionShowSiliconNotifications
   - type: StationMap # Also Goobstation - Show location on the map
   - type: Targeting # Shitmed Change
   - type: ActivatableUI

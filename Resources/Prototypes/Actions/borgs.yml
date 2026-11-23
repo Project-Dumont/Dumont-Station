@@ -39,7 +39,7 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionShowBorgNotifications
+  id: ActionShowSiliconNotifications
   name: Show Notifications
   components:
   - type: Action
@@ -49,4 +49,4 @@
       state: notifications-menu
     useDelay: 0.5
   - type: InstantAction
-    event: !type:ToggleIntrinsicUIEvent { key: enum.BorgNotificationsUiKey.Key }
+    event: !type:ToggleIntrinsicUIEvent { key: enum.SiliconNotificationsUiKey.Key }
