@@ -17,6 +17,7 @@
 - type: ghostSkinListing
   id: FlippedSkin
   name: ghost-skin-flipped
+  available: false # rotação da loja de skins
   price: 500
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/flipped.rsi"
@@ -25,6 +26,7 @@
 - type: ghostSkinListing
   id: CatEarsSkin
   name: ghost-skin-cat-ears
+  available: false # rotação da loja de skins
   price: 666
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/cat.rsi"
@@ -35,6 +37,7 @@
 - type: ghostSkinListing
   id: VulpSkin
   name: ghost-skin-vulp
+  available: false # rotação da loja de skins
   price: 1200
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/vulp.rsi"
@@ -43,6 +46,7 @@
 - type: ghostSkinListing
   id: MothSkin
   name: ghost-skin-moth
+  available: false # rotação da loja de skins
   price: 1200
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/moth.rsi"
@@ -51,6 +55,7 @@
 - type: ghostSkinListing
   id: LizardSkin
   name: ghost-skin-lizard
+  available: false # rotação da loja de skins
   price: 1200
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/lizard.rsi"
@@ -61,6 +66,7 @@
 - type: ghostSkinListing
   id: AuraSkin
   name: ghost-skin-aura
+  available: false # rotação da loja de skins
   price: 1900
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/aura.rsi"
@@ -69,6 +75,7 @@
 - type: ghostSkinListing
   id: AngelSkin
   name: ghost-skin-angel
+  available: false # rotação da loja de skins
   price: 2300
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/angel.rsi"
