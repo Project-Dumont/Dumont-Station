@@ -61,13 +61,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: syndie_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: request-syndie
     - map: ["computerLayerKeys"]
-      state: syndie_generic_keys
+      state: syndie_key # Dumont - Computers resprite
     - map: ["enum.WiresVisualLayers.MaintenancePanel"]
-      state: generic_panel_open
+      state: syndie_panel_open # Dumont - Computers resprite
   - type: ItemSlots
     slots:
       tcSlot:

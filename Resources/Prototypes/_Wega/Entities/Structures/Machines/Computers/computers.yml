@@ -19,7 +19,7 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: rd_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: dna
     - map: ["computerLayerKeys"]
