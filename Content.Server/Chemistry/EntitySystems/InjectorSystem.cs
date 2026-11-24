@@ -108,7 +108,7 @@ public sealed class InjectorSystem : SharedInjectorSystem
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
 
-        if (!CanUseInjectorOnArm(entity, args.Args.Target.Value))
+        if (!CanUseInjectorOnArm(args.Args.User, args.Args.Target.Value))
             return;
 
         args.Handled = TryUseInjector(entity, args.Args.Target.Value, args.Args.User);
