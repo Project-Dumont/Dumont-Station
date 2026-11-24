@@ -41,3 +41,4 @@ injector-component-injecting-user = You start injecting the needle.
 injector-component-drawing-target = {CAPITALIZE(THE($user))} is trying to use a needle to draw from you!
 injector-component-injecting-target = {CAPITALIZE(THE($user))} is trying to inject a needle into you!
 injector-component-deny-user = Exoskeleton too thick!
+injector-component-targeting-deny-user = You must target one of the arms!
