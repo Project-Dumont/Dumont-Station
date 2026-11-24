@@ -16,7 +16,7 @@ namespace Content.Shared.Speech.EntitySystems;
 
 public abstract class SharedStutteringSystem : EntitySystem
 {
-    public static readonly ProtoId<StatusEffectPrototype> StutterKey = "Stutter";
+    public static readonly EntProtoId StutterId = "StatusEffectStutterBloodloss";
 
     [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
 
@@ -27,11 +27,11 @@ public abstract class SharedStutteringSystem : EntitySystem
 
     public virtual void DoRemoveStutterTime(EntityUid uid, double timeRemoved)
     {
-        _statusEffectsSystem.TryRemoveTime(uid, StutterKey, TimeSpan.FromSeconds(timeRemoved));
+        _statusEffectsSystem.TryRemoveTime(uid, StutterId, TimeSpan.FromSeconds(timeRemoved));
     }
 
     public void DoRemoveStutter(EntityUid uid, double timeRemoved)
     {
-       _statusEffectsSystem.TryRemoveStatusEffect(uid, StutterKey);
+       _statusEffectsSystem.TryRemoveStatusEffect(uid, StutterId);
     }
 }
