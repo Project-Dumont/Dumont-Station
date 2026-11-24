@@ -117,6 +117,7 @@
     fourRandomProb: 0
     threeRandomProb: 0
     cutRandomProb: 0
+    isFromSocialAnxiety: true
 
 - type: trait
   id: FrontalLisp
