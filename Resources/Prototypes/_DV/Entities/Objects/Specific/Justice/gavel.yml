@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: Tag
+  id: Gavel
+
+- type: entity
+  parent: BaseItem
+  id: Gavel
+  name: gavel
+  description: A hardwood mallet made to keep order in the court.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Specific/Justice/gavel.rsi
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 2
+  - type: Item
+    size: Small
+    sprite: _DV/Objects/Specific/Justice/gavel.rsi
+  - type: Tag
+    tags:
+    - Gavel
+
+- type: entity
+  parent: BaseItem
+  id: GavelBlock
+  name: gavel block
+  description: A hardwood block that, when hit with a gavel, emits an aura of authority.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Specific/Justice/gavelblock.rsi
+    layers:
+    - state: icon
+  - type: Item
+    size: Small
+  - type: Clickable
+  - type: EmitSoundOnInteractUsing
+    sound:
+      collection: NFGavel
+    whitelist:
+      tags:
+      - Gavel
