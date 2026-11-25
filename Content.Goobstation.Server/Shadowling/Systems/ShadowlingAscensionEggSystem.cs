@@ -184,7 +184,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
         var stationUid = _station.GetStationInMap(Transform(uid).MapID);
         if (stationUid != null)
-            _alertLevel.SetLevel(stationUid.Value, "delta", true, true, true, true);
+            _alertLevel.SetLevel(stationUid.Value, "omega", true, true, true, true);
 
         var effectEnt = Spawn(component.ShadowlingInside, Transform(eggUid).Coordinates);
         component.ShadowlingInsideEntity = effectEnt;

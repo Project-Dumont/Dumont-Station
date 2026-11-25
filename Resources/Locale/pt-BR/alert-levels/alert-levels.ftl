@@ -20,7 +20,7 @@ alert-level-violet-announcement = Uma ameaça biológica foi detectada na estaç
 alert-level-violet-instructions = Tripulantes devem se abrigar na Medbay. Médicos devem isolar membros da estação exibindo sintomas. Seguranças devem estar armados.
 
 alert-level-yellow = Amarelo
-alert-level-yellow-announcement =  Há uma ameaça fundamental estrutural dentro ou causado pela estação.  There is a fundamental structural threat within or from the station. Engineering staff are advised to immediately respond and perform safety measures.
+alert-level-yellow-announcement =  Há uma ameaça fundamental estrutural dentro ou causado pela estação.
 alert-level-yellow-instructions = Engenheiros são aconselhados à imediatamente responder a ameaça. Não confie em nenhum equipamento. Uso de internals é recomendado. 
 
 alert-level-pink = Rosa
@@ -46,7 +46,7 @@ alert-level-epsilon-announcement = Comando Central ordenou a anulação de todos
 alert-level-epsilon-instructions = Todos os ex-empregados devem se manter parados e esperar medidas de demissão.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = Comando central ordenou o nível gama na estação. Central Command has ordered the Gamma security level on the station.
+alert-level-gamma-announcement = Comando central ordenou o nível gama na estação.
 alert-level-gamma-instructions = Segurança deve ter armas equipadas a todo momento. Todos os cívis devem procurar os seus chefes mais próximos para transpote à uma area segura. 
 
 alert-level-omicron = Omicron

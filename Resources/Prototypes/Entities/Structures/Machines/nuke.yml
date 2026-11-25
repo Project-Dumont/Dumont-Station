@@ -125,7 +125,7 @@
       whitelist:
         components:
         - NukeDisk
-    alertLevelOnActivate: delta
+    alertLevelOnActivate: omega
     alertLevelOnDeactivate: green
     alertLevelOnOverride: omicron # Goobstation
   - type: InteractionOutline

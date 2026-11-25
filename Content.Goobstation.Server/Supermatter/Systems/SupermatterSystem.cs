@@ -430,17 +430,17 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
                 case DelamType.Singulo:
                     loc = "supermatter-delam-overmass";
-                    alertLevel = "delta";
+                    alertLevel = "omega";
                     break;
 
                 case DelamType.Tesla:
                     loc = "supermatter-delam-tesla";
-                    alertLevel = "delta";
+                    alertLevel = "omega";
                     break;
 
                 case DelamType.Cascade:
                     loc = "supermatter-delam-cascade";
-                    alertLevel = "delta";
+                    alertLevel = "omega";
                     break;
             }
 

@@ -113,7 +113,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         return true;
     }
 
-    private const string StationAlertCritical = "delta";
+    private const string StationAlertCritical = "omega";
     private const string StationAlertDetected = "red";
 
     private void CheckChangeStage(
