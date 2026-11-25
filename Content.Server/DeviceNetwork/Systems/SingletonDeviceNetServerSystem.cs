@@ -168,6 +168,29 @@ public sealed class SingletonDeviceNetServerSystem : EntitySystem
 
         _deviceNetworkSystem.DisconnectDevice(uid, device, false);
     }
+
+    /// <summary>
+    /// Tries to get the first possible server of type T on a station;
+    /// </summary>
+    /// <typeparam name="T">The server component</typeparam>
+    /// <param name="station">Station UID</param>
+    /// <param name="server">Server UID and Component</param>
+    /// <returns>Whether it was able to find a server</returns>
+    public bool TryServer<T>(EntityUid station, out Entity<T> server) where T : IComponent
+    {
+        var servers = EntityQueryEnumerator<T, SingletonDeviceNetServerComponent>();
+        while (servers.MoveNext(out var uid, out var serverComp, out var _))
+        {
+            if (_stationSystem.GetOwningStation(uid) != station)
+                continue;
+
+            server = (uid, serverComp);
+            return true;
+        }
+
+        server = default;
+        return false;
+    }
 }
 
 /// <summary>

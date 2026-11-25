@@ -22,7 +22,7 @@ alert-level-green-announcement = It is now safe to return to your workplaces.
 alert-level-green-instructions = Do your job.
 
 alert-level-blue = Blue
-alert-level-blue-announcement = There is a confirmed threat to the station. 
+alert-level-blue-announcement = There is a non-confirmed threat to the station. 
 alert-level-blue-instructions = Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
 
 alert-level-red = Red

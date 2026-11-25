@@ -66,4 +66,10 @@ public sealed partial class DumontCVars
     /// </summary>
     public static readonly CVarDef<float> ElectionTestDuration =
         CVarDef.Create("election.test_duration", 60f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Amount of necessary online players for checking if there are enough dead head of departments for certain alerts.
+    /// </summary>
+    public static readonly CVarDef<int> PlayersOnlineForAlertCheck =
+        CVarDef.Create("alert.players_online_check", 20, CVar.SERVERONLY);
 }

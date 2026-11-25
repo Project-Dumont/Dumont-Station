@@ -8,6 +8,21 @@ using Content.Shared.GameTicking;
 using Content.Shared.PDA;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared._Dumont.CCVar;
+using Robust.Shared.Player;
+using Content.Server.Medical.SuitSensors;
+using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Medical.CrewMonitoring;
+using Content.Shared.Roles;
+using Content.Shared.Mind.Components;
+using Content.Shared.Mind;
+using Content.Server.Administration.Logs.Converters;
+using Content.Goobstation.Common.ServerCurrency;
+using Content.Server.GameTicking;
+using Content.Server.AlertLevel;
+using Content.Shared.Medical.SuitSensor;
+using System.Linq;
+using Content.Shared.Roles.Jobs;
 
 namespace Content.Server.Communications;
 
@@ -16,6 +31,11 @@ namespace Content.Server.Communications;
 /// </summary>
 public sealed partial class CommunicationsConsoleSystem
 {
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private CrewMonitoringServerSystem _monitoring = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+
+    [Dependency] private SharedJobSystem _job = default!;
     private static readonly ProtoId<AccessLevelPrototype> CaptainAccess = "Captain";
 
     /// <summary>
@@ -28,7 +48,6 @@ public sealed partial class CommunicationsConsoleSystem
         SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleUnlockEscapePodsMessage>(OnUnlockEscapePodsMessage);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => EscapePodsUnlocked = false);
     }
-
     private bool IsCaptain(EntityUid user)
     {
         return _accessReaderSystem.FindAccessTags(user).Contains(CaptainAccess);
@@ -92,5 +111,25 @@ public sealed partial class CommunicationsConsoleSystem
         }
 
         UpdateCommsConsoleInterface();
+    }
+
+    private bool AreEnoughHeadsDead(EntityUid station, AlertLevelDetail proto)
+    {
+        if (_playerManager.PlayerCount < _cfg.GetCVar(DumontCVars.PlayersOnlineForAlertCheck))
+            return true;
+
+        if (!_monitoring.TryGetServer(station, out var server))
+            return true;
+
+        var deadCount = server.Comp.SensorStatus.Count(
+            pair => !pair.Value.IsAlive &&
+            _mind.TryGetMind(GetEntity(pair.Value.OwnerUid), out var mindId, out var _) &&
+            _job.MindTryGetJob(mindId, out var mindJob) &&
+            mindJob?.Equals("Captain") == true);
+
+        if (deadCount < proto.RequiredDeadHeads)
+            return false;
+
+        return true;
     }
 }

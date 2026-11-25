@@ -42,14 +42,21 @@ public sealed class AlertLevelSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
 
+
     // Until stations are a prototype, this is how it's going to have to be.
     public const string DefaultAlertLevelSet = "stationAlerts";
+
+
+
 
     public override void Initialize()
     {
         SubscribeLocalEvent<StationInitializedEvent>(OnStationInitialize);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReload);
+
     }
+
+
 
     public override void Update(float time)
     {
@@ -245,7 +252,11 @@ public sealed class AlertLevelSystem : EntitySystem
 
         component.Locked = locked;
     }
+
+
 }
+
+
 
 public sealed class AlertLevelDelayFinishedEvent : EntityEventArgs
 {}

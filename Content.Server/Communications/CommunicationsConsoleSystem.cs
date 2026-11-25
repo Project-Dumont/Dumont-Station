@@ -111,6 +111,7 @@ namespace Content.Server.Communications
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
 
+        [Dependency] private IPrototypeManager _proto = default!;
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -326,15 +327,25 @@ namespace Content.Server.Communications
                 return;
             }
 
-            var stationUid = _stationSystem.GetOwningStation(uid);
-            if (stationUid != null)
+            if (_stationSystem.GetOwningStation(uid) is not { } stationUid)
+                return;
+
+            if (!_proto.TryIndex<AlertLevelPrototype>("stationAlerts", out var proto))
+                return;
+
+            if (!proto.Levels.TryGetValue(message.Level, out var alertLevel))
+                return;
+
+            if (!AreEnoughHeadsDead(stationUid, alertLevel))
             {
-                _alertLevelSystem.SetLevel(stationUid.Value, message.Level, true, true);
-                // Goob
-                _adminLogger.Add(LogType.Chat,
-                                 LogImpact.Medium,
-                                 $"{ToPrettyString(message.Actor):actor} set alert level to {message.Level:level} with {ToPrettyString(uid):subject}");
+                return;
             }
+
+            _alertLevelSystem.SetLevel(stationUid, message.Level, true, true);
+            // Goob
+            _adminLogger.Add(LogType.Chat,
+                                LogImpact.Medium,
+                                $"{ToPrettyString(message.Actor):actor} set alert level to {message.Level:level} with {ToPrettyString(uid):subject}");
         }
 
         private void OnAnnounceMessage(EntityUid uid, CommunicationsConsoleComponent comp,

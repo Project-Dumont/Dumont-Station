@@ -91,4 +91,9 @@ public sealed partial class AlertLevelDetail
     /// Exists so checks run in the right order.
     /// </summary>
     [DataField] public bool EmagSelectable { get; private set; }
+
+    /// <summary>
+    /// Amount of dead heads necessary for an alert level to be successfully declared.
+    /// </summary>
+    [DataField] public int RequiredDeadHeads = 0;
 }
