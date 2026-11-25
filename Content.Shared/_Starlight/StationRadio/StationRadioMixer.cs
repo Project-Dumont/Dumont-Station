@@ -12,11 +12,8 @@ public enum StationRadioMixerUiKey : byte
 public enum StationRadioMixerFader : byte
 {
     Source,
-
     Master,
-
     Voice,
-
     Monitor,
 }
 
@@ -40,13 +37,9 @@ public record struct StationRadioMixerChannel(
 public enum StationRadioMixerAction : byte
 {
     TogglePlay,
-
     Rewind,
-
     Next,
-
     Select,
-
     Eject,
 }
 

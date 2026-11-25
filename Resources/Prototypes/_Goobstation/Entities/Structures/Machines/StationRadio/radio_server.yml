@@ -12,6 +12,13 @@
     - state: unlit
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: mic_on
+      shader: unshaded
+      visible: false
+      map: ["micOn"]
+    - state: mic_off
+      shader: unshaded
+      map: ["micOff"]
     - state: panel
       visible: false
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
@@ -27,6 +34,13 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: true }
           False: { visible: false }
+      enum.RadioDeviceVisuals.Broadcasting:
+        micOn:
+          True: { visible: true }
+          False: { visible: false }
+        micOff:
+          True: { visible: false }
+          False: { visible: true }
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires
@@ -48,6 +62,10 @@
   - type: Machine
     board: StationRadioServerCircuitboard
   - type: TelecomExempt
+  - type: RadioMicrophone
+    powerRequired: true
+    broadcastChannel: RadioShow
+    unobstructedRequired: true
 
 - type: entity
   id: StationRadioRig

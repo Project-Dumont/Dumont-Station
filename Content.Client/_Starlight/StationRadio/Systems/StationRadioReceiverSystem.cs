@@ -164,7 +164,7 @@ public sealed partial class StationRadioReceiverSystem : SharedStationRadioRecei
     {
         var receiverQuery = EntityQueryEnumerator<StationRadioReceiverComponent>();
         foreach (var receiver in receiverQuery)
-            RaiseLocalEvent(receiver, new  StationRadioVolumeChangedEvent(volume));
+            RaiseLocalEvent(receiver, new StationRadioVolumeChangedEvent(volume));
     }
 
     protected override void OnPowerChanged(Entity<StationRadioReceiverComponent> ent, ref PowerChangedEvent args) =>

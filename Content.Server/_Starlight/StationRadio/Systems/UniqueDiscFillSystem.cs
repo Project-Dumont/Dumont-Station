@@ -39,10 +39,10 @@ public sealed partial class UniqueDiscFillSystem : EntitySystem
         var coords = Transform(uid).Coordinates;
         foreach (var discId in picked)
         {
-            var item = Spawn(discId, coords);
+            var item = SpawnAtPosition(discId, coords);
             if (comp.Wrapper is { } wrapperId)
             {
-                var wrapper = Spawn(wrapperId, coords);
+                var wrapper = SpawnAtPosition(wrapperId, coords);
                 if (TryComp<DiscCoverComponent>(wrapper, out var cover)
                     && _container.TryGetContainer(wrapper, cover.Slot, out var slot)
                     && _container.Insert(item, slot))

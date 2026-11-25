@@ -53,7 +53,7 @@ public sealed partial class VinylSummonRuleSystem : EntitySystem
 
         _audio.PlayPvs(entity.Comp.BurnSound, vinylCoords, entity.Comp.BurnSoundParams);
 
-        Spawn(entity.Comp.AshPrototype, vinylCoords);
+        SpawnAtPosition(entity.Comp.AshPrototype, vinylCoords);
 
         QueueDel(entity);
     }

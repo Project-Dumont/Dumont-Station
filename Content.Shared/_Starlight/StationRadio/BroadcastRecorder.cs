@@ -13,7 +13,6 @@ public enum BroadcastRecorderUiKey : byte
 public enum BroadcastRecorderVisuals : byte
 {
     Mode,
-
     Tape,
 }
 

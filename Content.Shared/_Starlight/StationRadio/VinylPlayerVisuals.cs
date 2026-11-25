@@ -6,9 +6,7 @@ namespace Content.Shared._Starlight.StationRadio;
 public enum VinylPlayerVisuals : byte
 {
     Disc,
-
     LabelColor,
-
     SlotMask,
 }
 
@@ -17,6 +15,5 @@ public enum VinylPlayerVisualLayers : byte
 {
     Disc,
     Label,
-
     Display,
 }

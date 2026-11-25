@@ -1,7 +1,6 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Localization;
 
 namespace Content.Shared._Starlight.StationRadio.Components;
 
