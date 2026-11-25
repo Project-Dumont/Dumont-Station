@@ -639,12 +639,6 @@
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
 
 - type: jukebox
-  id: LongDistanceRunaround
-  name: Yes - Long Distance Runaround
-  path:
-    path: /Audio/_Dumont/Jukebox/long_distance_runaround.ogg
-
-- type: jukebox
   id: MacintoshPlus
   name: Vektroid - Macintosh Plus
   path:
