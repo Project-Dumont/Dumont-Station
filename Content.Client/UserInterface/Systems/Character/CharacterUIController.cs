@@ -161,7 +161,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName, nanoBank, jobId) = data;
+        var (entity, job, objectives, briefing, entityName, nanoBank, jobId, antags) = data;
 
         _window.SpriteView.SetEntity(entity);
 
@@ -171,7 +171,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
         var names = new FormattedMessage();
         var organizations = new FormattedMessage();
         var seenOrganizations = new HashSet<string>();
-        foreach (var antagId in data.Antags)
+        foreach (var antagId in antags)
         {
             if (!_prototypeManager.TryIndex(antagId, out var antag))
                 continue;

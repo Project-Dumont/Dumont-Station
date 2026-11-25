@@ -55,7 +55,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     private void OnCharacterInfoEvent(CharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
-        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity), msg.NanoBankBriefing, msg.Job) { Antags = msg.Antags }; // Dumont Station - passa o id do job
+        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity), msg.NanoBankBriefing, msg.Job, msg.Antags); // Dumont Station - passa o id do job
 
         OnCharacterUpdate?.Invoke(data);
     }
@@ -74,11 +74,9 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         string? Briefing,
         string EntityName,
         string? NanoBankBriefing, // Gabystation change - Bank
-        ProtoId<JobPrototype>? JobId // Dumont Station - passa o id do job
-    )
-    {
-        public List<ProtoId<AntagPrototype>> Antags { get; init; } = new();
-    }
+        ProtoId<JobPrototype>? JobId, // Dumont Station - passa o id do job
+        List<ProtoId<AntagPrototype>> Antags
+    );
 
     /// <summary>
     /// Event raised to get additional controls to display in the character info menu.
