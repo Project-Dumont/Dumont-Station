@@ -670,7 +670,7 @@
 
 - type: jukebox
   id: MovesLikeJagger
-  name: Maroon 5 & Chrsitina Aguilera - Moves Like Jagger
+  name: Maroon 5 & Christina Aguilera - Moves Like Jagger
   path:
     path: /Audio/_Dumont/Jukebox/moves_like_jagger.ogg
 
