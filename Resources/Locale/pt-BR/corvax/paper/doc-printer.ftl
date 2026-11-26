@@ -1186,7 +1186,7 @@ doc-text-printer-DNR =
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
-doc-text-printer-PerdaoCapitao=
+doc-text-printer-CaptainPardon=
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
@@ -1215,7 +1215,7 @@ doc-text-printer-PerdaoCapitao=
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
-doc-text-printer-DeclaracaoTestemunha=
+doc-text-printer-WitnessStatement=
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
@@ -1239,7 +1239,7 @@ doc-text-printer-DeclaracaoTestemunha=
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
-doc-text-printer-Testamento=
+doc-text-printer-LastWill=
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
@@ -1269,7 +1269,7 @@ doc-text-printer-Testamento=
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
-doc-text-printer-TransferenciadeComando=
+doc-text-printer-CommandTransfer=
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
