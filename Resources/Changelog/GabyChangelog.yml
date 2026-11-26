@@ -5158,3 +5158,9 @@ Entries:
       message: Resprite nos computadores.
   id: 619
   time: '2026-11-24T19:13:35.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Menus de Personagem estão mais dinâmicos.
+  id: 620
+  time: '2026-11-26T11:19:34.0000000+00:00'
