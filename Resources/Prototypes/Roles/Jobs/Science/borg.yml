@@ -47,7 +47,6 @@
   jobEntity: StationAiBrain
   jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
-  whitelisted: true
 
 
 - type: job
@@ -65,3 +64,4 @@
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery
   applyTraits: true
+  # whitelisted: true - Dumont: changes AI to not be whitelist only

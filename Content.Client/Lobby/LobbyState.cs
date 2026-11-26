@@ -106,6 +106,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Client.Lobby
 {
@@ -124,6 +125,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
 
+        private ProtoId<AnimatedLobbyScreenPrototype>? _lastAnimatedScreen; // Tweak-Maid: Animated Lobby
         private ISawmill _sawmill = default!; // Goobstation
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -314,7 +316,7 @@ namespace Content.Client.Lobby
             else
             {
                 Lobby!.StartTime.Text = string.Empty;
-                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready": "lobby-state-player-status-not-ready");
+                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready" : "lobby-state-player-status-not-ready");
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
@@ -380,13 +382,40 @@ namespace Content.Client.Lobby
             }
         }
 
-        // Goobstation - heavily modified to add credits for lobby backgrounds
+        // Goobstation - heavily modified to add credits for lobby backgrounds & Tweak-Maid: Animated Lobby
         private void UpdateLobbyBackground()
         {
+            if (_gameTicker.AnimatedLobbyScreen != null)
+            {
+                if (_gameTicker.AnimatedLobbyScreen != _lastAnimatedScreen)
+                {
+                    var animatedBackground = _protoMan.Index(_gameTicker.AnimatedLobbyScreen.Value);
+                    Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(animatedBackground.Background).RSI);
+                    _lastAnimatedScreen = _gameTicker.AnimatedLobbyScreen;
+
+                    var name = string.IsNullOrEmpty(animatedBackground.Name)
+                        ? Loc.GetString("lobby-state-background-unknown-title")
+                        : animatedBackground.Name;
+
+                    var artist = string.IsNullOrEmpty(animatedBackground.Artist)
+                        ? Loc.GetString("lobby-state-background-unknown-artist")
+                        : animatedBackground.Artist;
+
+                    var markup = Loc.GetString("lobby-state-background-text",
+                        ("backgroundName", name),
+                        ("backgroundArtist", artist));
+
+                    Lobby!.LobbyBackground.SetMarkup(markup);
+                }
+                return;
+            }
+
+            _lastAnimatedScreen = null;
+
             if (_gameTicker.LobbyBackground != null)
             {
                 var lobbyBackground = _protoMan.Index(_gameTicker.LobbyBackground.Value);
-                Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(lobbyBackground.Background);
+                Lobby!.Background.SetTexture(_resourceCache.GetResource<TextureResource>(lobbyBackground.Background).Texture); // Tweak-Maid: Animated Lobby
 
                 var name = string.IsNullOrEmpty(lobbyBackground.Name)
                     ? Loc.GetString("lobby-state-background-unknown-title")
@@ -406,7 +435,7 @@ namespace Content.Client.Lobby
             }
 
             _sawmill.Warning("_gameTicker.LobbyBackground was null! No lobby background selected.");
-            Lobby!.Background.Texture = null;
+            Lobby!.Background.SetRSI(null); // Tweak-Maid: Animated Lobby
             Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
         }
 

@@ -17,6 +17,12 @@
       state: computer
     - map: ["computerLayerScreen"]
       state: power_monitor
+    - map: ["computerLayerKeyboard"] # Dumont - Computers resprite
+      state: generic_keyboard
+    - map: ["computerLayerKeys"] # Dumont - Computers resprite
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ] # Dumont - Computers resprite
+      state: generic_panel_open
   - type: NuclearReactorMonitor
   - type: ActivatableUI
     key: enum.NuclearReactorUiKey.Key

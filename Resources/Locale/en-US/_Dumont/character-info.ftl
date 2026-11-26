@@ -1,0 +1,12 @@
+character-organization-syndicate = The Syndicate
+character-organization-forgotten = The Forgotten Gods
+character-organization-wizards = Wizard Federation
+character-organization-hive = The Hive
+character-organization-narsie = Nar'Sie
+character-organization-unknown = The Unknown
+character-organization-ursal = New URSAL
+character-organization-spider = The Spider Clan
+character-organization-underworld = The Underworld
+character-organization-nanotrasen = Nanotrasen
+character-organization-unaffiliated = Unaffiliated
+character-organization-conspirators = Conspirators

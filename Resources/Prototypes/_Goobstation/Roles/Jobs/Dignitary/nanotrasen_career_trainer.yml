@@ -33,9 +33,9 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, BluespaceLifelineImplant ]
-#  - !type:AddComponentSpecial # Intentionally not command. I don't want them to ruin rev rounds.
-#    components:
-#    - type: CommandStaff
+  - !type:AddComponentSpecial # Dumont change
+    components:
+    - type: CommandStaff
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear
