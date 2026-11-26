@@ -79,6 +79,8 @@
     CartridgeBicaridine: 4
     CartridgeDermaline: 4 # Goobstation - end
     CartridgeToxin: 4 #Gabystation
+    DVEvidenceBag: 10 # DeltaV - evidence bags
+    DVBoxEvidenceBags: 2 # DeltaV - evidence bags
   # security officers need to follow a diet regimen!
   contrabandInventory:
     WeaponMeleeNeedle: 2
