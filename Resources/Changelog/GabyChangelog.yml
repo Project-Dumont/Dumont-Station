@@ -5164,3 +5164,9 @@ Entries:
       message: Menus de Personagem estão mais dinâmicos.
   id: 620
   time: '2026-11-26T11:19:34.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona saco de evidência.
+  id: 621
+  time: '2026-11-26T12:19:50.0000000+00:00'
