@@ -69,10 +69,10 @@
     - PrintedDocumentRelatorioSetorialRecipe
     # DumontStation documents
     - PrintedDocumentDNRRecipe
-    - PrintedDocumentPerdaoCapitaoRecipe
-    - PrintedDocumentDeclaracaoTestemunhaRecipe
-    - PrintedDocumentTestamentoRecipe
-    - PrintedDocumentTransferenciadeComandoRecipe
+    - PrintedDocumentCaptainPardonRecipe
+    - PrintedDocumentWitnessStatementRecipe
+    - PrintedDocumentLastWillRecipe
+    - PrintedDocumentCommandTransferRecipe
 
 
 - type: latheRecipePack
