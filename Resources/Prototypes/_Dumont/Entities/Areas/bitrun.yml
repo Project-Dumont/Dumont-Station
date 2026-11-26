@@ -1,0 +1,29 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaBitrun
+  suffix: AreaBitrun
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/bitrun.rsi
+    state: bitrun_domain
+
+- type: entity
+  parent: BaseAreaBitrun
+  id: AreaBitrunSafe
+  name: bitrun safe
+  suffix: AreaBitrun
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/bitrun.rsi
+    state: bitrun_safe
+
+- type: entity
+  parent: BaseAreaBitrun
+  id: AreaBitrunDomain
+  name: bitrun domain
+  suffix: AreaBitrun
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/bitrun.rsi
+    state: bitrun_domain

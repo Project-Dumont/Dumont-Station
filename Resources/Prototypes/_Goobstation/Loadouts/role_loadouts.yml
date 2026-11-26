@@ -254,6 +254,7 @@
   groups:
   - RadioHostJumpsuit
   - RadioHostShoes
+  - CivilianBackpack # Civil loadout
   - Survival
   - Trinkets
   - Animals
@@ -262,7 +263,6 @@
   - GroupTankHarness
   # Civil loadout
   - CivilianJumpsuit
-  - CivilianBackpack
   - CivilianNeck
   - CivilianHat
   - CivilianFace

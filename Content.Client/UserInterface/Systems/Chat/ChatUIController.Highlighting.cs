@@ -177,7 +177,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, entityName, _, jobId) = data; // Gabystation change - bank
+        var (_, job, _, _, entityName, _, jobId, _) = data; // Gabystation change - bank
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;

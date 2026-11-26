@@ -1,5 +1,4 @@
 ## EXAMES DA TRIPULAÇÃO
-cosmic-examine-text-contraband = [color=#4cabb3]Isso é contrabando altamente ilegal com propriedades desconhecidas![/color]
 cosmic-examine-text-structures = [color=#4cabb3]Esse objeto não deveria estar na estação![/color]
 cosmic-examine-text-entities = [color=#4cabb3]Essa entidade não deveria estar na estação![/color]
 cosmic-examine-text-glyphs = [color=#4cabb3]As linhas gravadas são profundamente perturbadoras de se olhar.[/color]

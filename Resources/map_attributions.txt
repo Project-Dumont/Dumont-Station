@@ -13,6 +13,10 @@
 - files: ["hyperion.yml"]
   authors: pn130, CRISOOOOO  
 
+- files: ["farragus.yml"]
+  authors: S34N, Warriorstar, CRISOOOOO  
+
+
 #Dumont Lavaland
 #This is located in /_Dumont/Maps/Nonstations/
 - files: ["outpost_lavaland.yml"]

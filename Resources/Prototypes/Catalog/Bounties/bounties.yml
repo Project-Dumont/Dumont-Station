@@ -537,10 +537,10 @@
     whitelist:
       components:
       - Battery
-
+#
 - type: cargoBounty
   id: BountyLaserGun
-  reward: 28500
+  reward: 12000
   description: bounty-description-lasergun
   idPrefix: IV
   entries:
@@ -548,7 +548,9 @@
     amount: 6
     whitelist:
       components:
-      - HitscanBatteryAmmoProvider
+      - AlwaysHot #dumont edit
+      - Gun
+      requireAll: true
     blacklist:
       components:
       - PowerCell

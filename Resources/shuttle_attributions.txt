@@ -16,6 +16,9 @@
 - files: ["mining.yml"]
   authors: CRISOOOOO
 
+- files: ["emergency_cobblestone.yml"]
+  authors: fuinha7
+
 #Harmony Shuttles
 
 - files: ["emergency_tottality.yml"]

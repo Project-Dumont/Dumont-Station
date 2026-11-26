@@ -35,6 +35,7 @@
   parent: BaseAreaStation
   id: AreaLootRoom
   name: loot room
+  suffix: AreaMaint
   components:
   - type: Sprite
     state: loot_room

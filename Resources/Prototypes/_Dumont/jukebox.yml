@@ -27,6 +27,12 @@
     path: /Audio/_Dumont/Jukebox/alone_again.ogg
 
 - type: jukebox
+  id: AlorsOnDanse
+  name: Stromae - Alors On Danse
+  path:
+    path: /Audio/_Dumont/Jukebox/alors_on_danse.ogg
+
+- type: jukebox
   id: AmericanIdiot
   name: Green Day - American Idiot
   path:
@@ -43,6 +49,12 @@
   name: Crazy Frog - Axel F
   path:
     path: /Audio/_Dumont/Jukebox/axel_f.ogg
+
+- type: jukebox
+  id: Baby
+  name: Justin Bieber - Baby
+  path:
+    path: /Audio/_Dumont/Jukebox/baby.ogg
 
 - type: jukebox
   id: BakerStreet
@@ -459,6 +471,12 @@
     path: /Audio/_Dumont/Jukebox/i_want_you.ogg
 
 - type: jukebox
+  id: IfIAintGotYou
+  name: Alicia Keys - If I Ain't Got You
+  path:
+    path: /Audio/_Dumont/Jukebox/if_i_aint_got_you.ogg
+
+- type: jukebox
   id: IllNeverSmileAgain
   name: Tommy Dorsey - I'll Never Smile Again
   path:
@@ -681,6 +699,12 @@
     path: /Audio/_Dumont/Jukebox/rap_do_silva.ogg
 
 - type: jukebox
+  id: RedSpectaclesTheme
+  name: Kenji Kawai - Red Spectacles Theme
+  path:
+    path: /Audio/_Dumont/Jukebox/red_spectacles_theme.ogg
+
+- type: jukebox
   id: Relax
   name: Stelvio Cipriani - Relax
   path:
@@ -727,6 +751,13 @@
   name: Frank Sinatra - Somethin' Stupid
   path:
     path: /Audio/_Dumont/Jukebox/somethin_stupid.ogg
+
+- type: jukebox
+  id: SomewhereIBelong
+  name: Linkin Park - Somewhere I Belong
+  path:
+    path: /Audio/_Dumont/Jukebox/somewhere_i_belong.ogg
+
 
 - type: jukebox
   id: SouthernNights

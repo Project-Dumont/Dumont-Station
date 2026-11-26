@@ -4,8 +4,8 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/26/2026 00:00:59
-  entityCount: 93
+  time: 11/03/2026 06:16:16
+  entityCount: 91
 maps: []
 grids:
 - 1
@@ -240,6 +240,8 @@ entities:
     - type: FTLDrive
     - type: ChunkContainer
       chunkEntities: []
+    - type: GridSplitNode
+    - type: LaborShuttle
 - proto: AirlockSecurityLocked
   entities:
   - uid: 2
@@ -595,7 +597,7 @@ entities:
       pos: 1.53995,4.783619
 - proto: LockableButtonSecurity
   entities:
-  - uid: 93
+  - uid: 55
     components:
     - type: Transform
       parent: 1
@@ -610,19 +612,19 @@ entities:
       fixtures: {}
 - proto: MachineFTLDriveAutomated
   entities:
-  - uid: 55
+  - uid: 56
     components:
     - type: Transform
       parent: 1
       pos: 1.5,-1.5
 - proto: Poweredlight
   entities:
-  - uid: 56
+  - uid: 57
     components:
     - type: Transform
       parent: 1
       pos: 0.5,1.5
-  - uid: 57
+  - uid: 58
     components:
     - type: Transform
       parent: 1
@@ -630,60 +632,48 @@ entities:
       pos: 0.5,3.5
 - proto: ShuttleWindow
   entities:
-  - uid: 58
-    components:
-    - type: Transform
-      parent: 1
-      pos: 0.5,5.5
   - uid: 59
     components:
     - type: Transform
       parent: 1
-      pos: -1.5,3.5
+      pos: 0.5,5.5
   - uid: 60
     components:
     - type: Transform
       parent: 1
-      pos: -1.5,-0.5
+      pos: -1.5,3.5
   - uid: 61
     components:
     - type: Transform
       parent: 1
-      pos: -1.5,1.5
+      pos: -1.5,-0.5
   - uid: 62
     components:
     - type: Transform
       parent: 1
-      pos: -0.5,5.5
+      pos: -1.5,1.5
   - uid: 63
     components:
     - type: Transform
       parent: 1
-      pos: 1.5,2.5
+      pos: -0.5,5.5
   - uid: 64
+    components:
+    - type: Transform
+      parent: 1
+      pos: 1.5,2.5
+  - uid: 65
     components:
     - type: Transform
       parent: 1
       pos: 1.5,5.5
 - proto: SMESBasic
   entities:
-  - uid: 65
-    components:
-    - type: Transform
-      parent: 1
-      pos: -0.5,-1.5
-- proto: SpawnPointLatejoin
-  entities:
   - uid: 66
     components:
     - type: Transform
       parent: 1
-      anchored: False
-  - uid: 92
-    components:
-    - type: Transform
-      parent: 1
-      anchored: False
+      pos: -0.5,-1.5
 - proto: SubstationWallBasic
   entities:
   - uid: 67

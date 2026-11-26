@@ -5,6 +5,14 @@
   "size": { "x": 64, "y": 32 },
   "states": [
     {
+      "name": "empty",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
       "name": "armoksbarngrill",
       "delays": [
         [

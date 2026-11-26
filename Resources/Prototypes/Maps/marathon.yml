@@ -56,6 +56,7 @@
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ] # Goobstation
             BlueshieldOfficer: [ 1, 1 ] # Goobstation
+            NanotrasenCareerTrainer: [ 1, 1 ] # Dumont
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]

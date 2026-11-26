@@ -277,6 +277,8 @@
     - id: ClothingOuterHardsuitDetective # Gaby. O Goob fez bosta em adicionar a hardsuit do detetive, esqueceram de programar ela spawnar se não tiver um suit storage no mapa, e nenhum mapa tem suit storage de det. Eu vou deixar isso aqui por enquanto, e quando o goob consertar, so remove isso.
     - id: SecurityMagboots # GabyStation
     - id: DetectiveRevolverUndetermined # Dumont
+    - id: DVBoxEvidenceBags # DeltaV - evidence bags
+      amount: 2
 
 - type: entity
   id: ClosetBombFilled

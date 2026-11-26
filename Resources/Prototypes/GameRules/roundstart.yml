@@ -394,6 +394,9 @@
   components:
   - type: GameRule
     minPlayers: 5
+    delay: # Dumont
+      min: 420
+      max: 600
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn # Goobstation
     definitions:
@@ -415,7 +418,10 @@
   id: Conspirators
   components:
   - type: GameRule
-    minPlayers: 28 # minimum of 4 conspirators
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 20 # Dumont
     chaosScore: 250 # Dumont
   - type: ConspiratorRule
   - type: AntagSelection
@@ -444,7 +450,10 @@
   components:
   - type: MindshieldRemovingAntag # Trauma - puts fake mindshields into headrevs that start with a real one
   - type: GameRule
-    minPlayers: 15
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 25 # Dumont
     chaosScore: 1000 # Goobstation - intentionally not per-antag
   - type: RevolutionaryRule
   - type: AntagSelection
@@ -550,7 +559,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 30 # Dumont
     delay:
       min: 600
       max: 900

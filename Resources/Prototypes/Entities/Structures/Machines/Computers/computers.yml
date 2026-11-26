@@ -219,13 +219,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: atmos_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: alert-0
     - map: ["computerLayerKeys"]
       state: atmos_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: atmos_panel_open # Dumont - Computers resprite
   - type: GenericVisualizer
     visuals:
       enum.ComputerVisuals.Powered:
@@ -274,13 +274,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: atmos_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: tank
     - map: ["computerLayerKeys"]
       state: atmos_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: atmos_panel_open # Dumont - Computers resprite
   - type: AtmosMonitoringConsole
     navMapTileColor: "#1a1a1a"
     navMapWallColor: "#404040"
@@ -395,13 +395,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: shuttle_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: shuttle
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: shuttle_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: shuttle_panel_open # Dumont - Computers resprite
   - type: Computer
     board: ShuttleConsoleCircuitboard
 
@@ -416,13 +416,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: syndie_shuttle_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: syndishuttle
     - map: ["computerLayerKeys"]
-      state: syndie_key
+      state: syndie_shuttle_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: shuttle_panel_open # Dumont - Computers resprite
   - type: Tag
     tags:
       - Syndicate
@@ -448,13 +448,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: shuttle_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: shuttle
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: shuttle_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: shuttle_panel_open # Dumont - Computers resprite
   - type: DroneConsole
     components:
       - type: CargoShuttle
@@ -480,13 +480,13 @@
     - type: Sprite
       layers:
         - map: ["computerLayerBody"]
-          state: computer
+          state: computer-salvage-shuttle # Dumont - Computers resprite
         - map: ["computerLayerKeyboard"]
-          state: generic_keyboard
+          state: shuttle_key_off # Dumont - Computers resprite
         - map: ["computerLayerScreen"]
-          state: shuttle
+          state: shuttle_salvage # Dumont - Computers resprite
         - map: ["computerLayerKeys"]
-          state: generic_keys
+          state: shuttle_key # Dumont - Computers resprite
     - type: DroneConsole
       components:
         - type: SalvageShuttle
@@ -567,13 +567,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: power_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: power_monitor
     - map: ["computerLayerKeys"]
       state: power_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: power_panel_open # Dumont - Computers resprite
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -609,13 +609,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: med_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: medcomp
     - map: ["computerLayerKeys"]
       state: med_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: med_panel_open # Dumont - Computers resprite
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -659,13 +659,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: security_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: explosive
     - map: ["computerLayerKeys"]
       state: security_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: security_panel_open # Dumont - Computers resprite
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -720,13 +720,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: med_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: crew
     - map: ["computerLayerKeys"]
       state: med_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: med_panel_open # Dumont - Computers resprite
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -760,13 +760,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: teleport_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: teleporters_station
     - map: ["computerLayerKeys"]
-      state: telesci_key
+      state: teleport_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: teleport_panel_open # Dumont - Computers resprite
   - type: ApcPowerReceiver
     powerLoad: 500
   - type: PointLight
@@ -832,13 +832,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: syndie_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: teleporters_syndicate
     - map: ["computerLayerKeys"]
       state: syndie_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: syndie_panel_open # Dumont - Computers resprite
   - type: PointLight
     color: "#c61414"
   - type: Computer
@@ -859,13 +859,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: rd_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: rdcomp
     - map: ["computerLayerKeys"]
       state: rd_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: rd_panel_open # Dumont - Computers resprite
   - type: ResearchClient
   - type: ResearchConsole
   - type: ActiveRadio
@@ -907,13 +907,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: tech_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: artifact
     - map: ["computerLayerKeys"]
       state: tech_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: tech_panel_open # Dumont - Computers resprite
   - type: ResearchClient
   - type: AnalysisConsole
   - type: DeviceList
@@ -988,13 +988,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: id_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: id
     - map: ["computerLayerKeys"]
       state: id_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: id_panel_open # Dumont - Computers resprite
   - type: Computer
     board: IDComputerCircuitboard
   - type: PointLight
@@ -1081,13 +1081,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: syndie_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: comm_syndie
     - map: ["computerLayerKeys"]
       state: syndie_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: syndie_panel_open # Dumont - Computers resprite
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
@@ -1190,7 +1190,7 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: solar_screen
+      state: radar # Dumont - Computers resprite
     - map: ["computerLayerKeys"]
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
@@ -1440,13 +1440,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: tech_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: bounty
     - map: ["computerLayerKeys"]
       state: tech_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: tech_panel_open # Dumont - Computers resprite
   - type: CargoBountyConsole
   - type: ActivatableUI
     key: enum.CargoConsoleUiKey.Bounty
@@ -1523,7 +1523,7 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: dna
+      state: clone # Dumont - Computers resprite
     - map: ["computerLayerKeys"]
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
@@ -1570,13 +1570,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: mining_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: salvjob # givin em a salvjob like hawk tuah
     - map: ["computerLayerKeys"]
-      state: generic_keys
+      state: mining_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: mining_panel_open # Dumont - Computers resprite
   - type: SalvageJobBoardConsole
   - type: ActivatableUI
     key: enum.SalvageJobBoardUiKey.Key
@@ -1606,27 +1606,27 @@
         - map: ["computerLayerBody"]
           state: computer
         - map: ["computerLayerKeyboard"]
-          state: generic_keyboard
+          state: mining_key_off # Dumont - Computers resprite
         - map: [ "computerLayerScreen" ]
           state: mining
         - map: ["computerLayerKeys"]
-          state: tech_key
+          state: mining_key # Dumont - Computers resprite
         - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-          state: generic_panel_open
+          state: mining_panel_open # Dumont - Computers resprite
     - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.ComputerVisuals.Powered:
-          computerLayerScreen:
-            True: { visible: true, shader: unshaded }
-            False: { visible: false }
-          computerLayerKeys:
-            True: { visible: true, shader: unshaded }
-            False: { visible: true }
-        enum.WiresVisuals.MaintenancePanelState:
-          enum.WiresVisualLayers.MaintenancePanel:
-            True: { visible: false }
-            False: { visible: true }
+    #- type: GenericVisualizer # Dumont - This component is no longer needed
+    #  visuals:
+    #    enum.ComputerVisuals.Powered:
+    #      computerLayerScreen:
+    #        True: { visible: true, shader: unshaded }
+    #        False: { visible: false }
+    #      computerLayerKeys:
+    #        True: { visible: true, shader: unshaded }
+    #        False: { visible: true }
+    #    enum.WiresVisuals.MaintenancePanelState:
+    #      enum.WiresVisualLayers.MaintenancePanel:
+    #        True: { visible: false }
+    #        False: { visible: true }
     - type: SalvageExpeditionConsole
     - type: ActivatableUI
       key: enum.SalvageConsoleUiKey.Expedition
@@ -1662,13 +1662,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: tech_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: cameras
     - map: ["computerLayerKeys"]
       state: tech_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: tech_panel_open # Dumont - Computers resprite
   - type: Computer
     board: SurveillanceCameraMonitorCircuitboard
   - type: DeviceNetwork
@@ -1701,13 +1701,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: tech_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: cameras
     - map: ["computerLayerKeys"]
       state: tech_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: tech_panel_open # Dumont - Computers resprite
   - type: Computer
     board: SurveillanceWirelessCameraMonitorCircuitboard
   - type: DeviceNetwork
@@ -1786,7 +1786,7 @@
     - map: ["computerLayerScreen"]
       state: service
     - map: ["computerLayerKeys"]
-      state: service_keys
+      state: generic_keys # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: Computer
@@ -1822,13 +1822,13 @@
         - map: ["computerLayerBody"]
           state: computer
         - map: ["computerLayerKeyboard"]
-          state: generic_keyboard
+          state: atmos_key_off # Dumont - Computers resprite
         - map: ["computerLayerScreen"]
           state: sensors
         - map: ["computerLayerKeys"]
           state: atmos_key
         - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-          state: generic_panel_open
+          state: atmos_panel_open # Dumont - Computers resprite
     - type: PointLight
       radius: 1.5
       energy: 1.6
@@ -1866,13 +1866,13 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: rd_key_off # Dumont - Computers resprite
     - map: ["computerLayerScreen"]
       state: robot
     - map: ["computerLayerKeys"]
       state: rd_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: rd_panel_open # Dumont - Computers resprite
   - type: RoboticsConsole
   - type: ActiveRadio
     channels:
@@ -1909,13 +1909,13 @@
     - map: [ "computerLayerBody" ]
       state: computer
     - map: [ "computerLayerKeyboard" ]
-      state: generic_keyboard
+      state: aiupload_key_off # Dumont - Computers resprite
     - map: [ "computerLayerScreen" ]
       state: aiupload
     - map: [ "computerLayerKeys" ]
-      state: generic_keys
+      state: aiupload_key # Dumont - Computers resprite
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: aiupload_panel_open # Dumont - Computers resprite
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: Computer
@@ -2032,13 +2032,13 @@
     - map: [ "computerLayerBody" ]
       state: computer
     - map: [ "computerLayerKeyboard" ]
-      state: generic_keyboard
+      state: rd_key_off # Dumont - Computers resprite
     - map: [ "computerLayerScreen" ]
       state: ai-fixer-empty
     - map: [ "computerLayerKeys" ]
       state: rd_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+      state: rd_panel_open # Dumont - Computers resprite
   - type: Appearance
   - type: GenericVisualizer
     visuals:

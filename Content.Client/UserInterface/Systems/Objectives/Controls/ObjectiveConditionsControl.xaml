@@ -11,11 +11,15 @@ SPDX-License-Identifier: MIT
     xmlns="https://spacestation14.io"
     xmlns:cc="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Objectives.Controls"
-    Orientation="Horizontal">
-    <cc:ProgressTextureRect Name="ProgressTexture" VerticalAlignment="Top" Access="Public" Margin="0 8 0 0"/>
-    <Control MinSize="10 0"/>
-    <BoxContainer Orientation="Vertical">
-        <RichTextLabel Name="Title" Access="Public" SetWidth="325" HorizontalAlignment="Left"/>
-        <RichTextLabel Name="Description" Access="Public" SetWidth="325" HorizontalAlignment="Left"/>
-    </BoxContainer>
+    Orientation="Vertical" HorizontalExpand="True">
+    <PanelContainer StyleClasses="BackgroundPanel" HorizontalExpand="True" Margin="0 5">
+        <BoxContainer Orientation="Vertical" Margin="10">
+            <BoxContainer>
+                <cc:ProgressTextureRect Name="ProgressTexture" VerticalAlignment="Center" Access="Public" Margin="0 0 5 0"/>
+                <RichTextLabel Name="Title" Access="Public" HorizontalExpand="True" VerticalAlignment="Center"/>
+            </BoxContainer>
+            <PanelContainer StyleClasses="LowDivider" Margin="0 5"/>
+            <RichTextLabel Name="Description" Access="Public" HorizontalExpand="True"/>
+        </BoxContainer>
+    </PanelContainer>
 </controls:ObjectiveConditionsControl>

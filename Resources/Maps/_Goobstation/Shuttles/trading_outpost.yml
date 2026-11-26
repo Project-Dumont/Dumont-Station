@@ -259,7 +259,7 @@ entities:
             185: 1,-3
             186: 9,-3
         - node:
-            color: '#A4610696'
+            color: '#7b4e2396'
             id: QuarterTileOverlayGreyscale
           decals:
             129: 0,-3
@@ -273,7 +273,7 @@ entities:
             268: 2,2
             269: 1,2
         - node:
-            color: '#A4610696'
+            color: '#7b4e2396'
             id: QuarterTileOverlayGreyscale180
           decals:
             140: 10,-11
@@ -284,7 +284,7 @@ entities:
             275: 6,-12
             276: 9,-12
         - node:
-            color: '#A4610696'
+            color: '#7b4e2396'
             id: QuarterTileOverlayGreyscale270
           decals:
             144: 0,-11
@@ -295,7 +295,7 @@ entities:
             150: 3,-12
             274: 4,-12
         - node:
-            color: '#A4610696'
+            color: '#7b4e2396'
             id: QuarterTileOverlayGreyscale90
           decals:
             135: 10,2

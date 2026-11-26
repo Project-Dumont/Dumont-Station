@@ -1,0 +1,25 @@
+#
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninLLegDigi 
+  baseSprite:
+    sprite: _Dumont/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninLFootDigi
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninRLegDigi
+  baseSprite:
+    sprite: _Dumont/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninRFootDigi
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_foot

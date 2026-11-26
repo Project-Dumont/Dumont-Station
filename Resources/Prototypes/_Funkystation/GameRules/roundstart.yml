@@ -11,7 +11,10 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 20
+    delay: # Dumont
+      min: 420
+      max: 600
+    minPlayers: 25
   - type: BloodCultRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -41,6 +44,9 @@
   parent: BaseGameRule
   components:
   - type: GameRule
+    delay: # Dumont
+      min: 420
+      max: 600
     minPlayers: 20
   - type: MalfAiRule
   - type: AntagObjectives

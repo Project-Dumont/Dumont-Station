@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: GuaranaJudas
+  name: reagent-name-guarana-judas
+  parent: BaseSoda
+  desc: reagent-desc-guarana-judas
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: guaranajudas
+  color: "#f479a8"
+  fizziness: 0.9

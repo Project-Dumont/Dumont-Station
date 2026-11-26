@@ -2,7 +2,7 @@
 
 - type: entity
   name: malign barrier
-  parent: [ BaseShield, BaseCosmicContraband ]
+  parent: [ BaseShield, BaseMagicalContraband ]
   id: CosmicCultShield
   description: A heavy shield wrought of constantly shifting malign plating, it appears to slightly bend reality to protect it's user.
   components:
