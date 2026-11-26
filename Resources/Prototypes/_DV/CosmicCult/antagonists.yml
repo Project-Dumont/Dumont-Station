@@ -2,6 +2,8 @@
 
 - type: antag
   id: CosmicAntagCultist
+  organization: character-organization-unknown # Dumont
+  organizationColor: "#4cabb3"
   name: roles-antag-cosmiccult-name
   antagonist: true
   setPreference: true
@@ -13,6 +15,8 @@
 
 - type: antag
   id: CosmicAntagColossus
+  organization: character-organization-unknown # Dumont
+  organizationColor: "#4cabb3"
   name: ghost-role-information-colossus-name
   antagonist: true
   objective: ghost-role-colossus-objective

@@ -58,6 +58,7 @@ using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Content.Shared._Maid.GameTicking.Prototypes;
 
 namespace Content.Client.GameTicking.Managers
 {
@@ -69,13 +70,14 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private readonly IClyde _clyde = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
 
-        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
+        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>> _jobsAvailable = new();
         private Dictionary<NetEntity, string> _stationNames = new();
 
         [ViewVariables] public bool AreWeReady { get; private set; }
         [ViewVariables] public bool IsGameStarted { get; private set; }
         [ViewVariables] public ResolvedSoundSpecifier? RestartSound { get; private set; }
         [ViewVariables] public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; private set; }
+        [ViewVariables] public ProtoId<AnimatedLobbyScreenPrototype>? AnimatedLobbyScreen { get; private set; } // Tweak-Maid: Animated Lobby
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
         [ViewVariables] public string? InGameInfoBlob { get; private set; }
@@ -173,6 +175,7 @@ namespace Content.Client.GameTicking.Managers
             IsGameStarted = message.IsRoundStarted;
             AreWeReady = message.YouAreReady;
             LobbyBackground = message.LobbyBackground;
+            AnimatedLobbyScreen = message.AnimatedLobbyScreen; // Tweak-Maid: Animated Lobby
             Paused = message.Paused;
 
             LobbyStatusUpdated?.Invoke();

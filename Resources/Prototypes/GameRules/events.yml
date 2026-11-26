@@ -894,8 +894,8 @@
     roundEndBehavior: Nothing
     warDeclarationMinOps: 1 # <--- GabyStation - Adicionado aqui para permitir guerra com 1 jogador
     warNukieArriveDelay: 300 # <--- GabyStation - Adicionado para manter o Lone preso por 5 minutos.
-    warTcAmountPerNukie: 60 # GabyStation
-    warTcPerPlayer: 5  # GabyStation
+    warTcAmountPerNukie: 40 # GabyStation
+    warTcPerPlayer: 2  # GabyStation
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative

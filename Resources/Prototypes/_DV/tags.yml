@@ -29,3 +29,6 @@
 
 - type: Tag
   id: Gavel
+
+- type: Tag
+  id: EvidenceBag # Used to prevent evidence bags from being stored inside other evidence bags.

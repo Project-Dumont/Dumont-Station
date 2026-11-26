@@ -1,0 +1,1 @@
+item-temperature-overheat = {THE($item)} começa a superaquecer!

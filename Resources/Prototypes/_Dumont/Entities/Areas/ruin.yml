@@ -1,0 +1,19 @@
+- type: entity
+  abstract: true
+  parent: BaseArea
+  id: BaseAreaRuin
+  suffix: AreaRuin
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/ruin.rsi
+    state: ruin
+
+- type: entity
+  parent: BaseAreaRuin
+  id: AreaRuin
+  name: ruin
+  suffix: AreaRuin
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/ruin.rsi
+    state: ruins

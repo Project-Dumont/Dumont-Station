@@ -1,0 +1,11 @@
+- type: animatedLobbyScreen
+  id: Alert
+  background: /Textures/_Dumont/LobbyScreens/AnimatedScreens/Alert.rsi
+  name: Alerta
+  artist: Ascart
+
+- type: animatedLobbyScreen
+  id: Maintenance
+  background: /Textures/_Dumont/LobbyScreens/AnimatedScreens/Maintenance.rsi
+  name: Manutenções
+  artist: Lorathor6

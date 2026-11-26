@@ -32,6 +32,13 @@ namespace Content.Shared.Roles;
 [Prototype]
 public sealed partial class AntagPrototype : IPrototype
 {
+    // Dumont
+    [DataField]
+    public LocId? Organization;
+
+    [DataField]
+    public Color OrganizationColor = Color.White;
+
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;

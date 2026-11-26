@@ -1,0 +1,169 @@
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityStorage
+  name: sec storage
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_storage
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityTeleporter
+  name: sec teleporter
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_tele
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityHallway
+  name: sec hallway
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_hallway
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityLobby
+  name: sec lobby
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_lobby
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityReception
+  name: sec reception
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_reception
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityCheckpointEvac
+  name: sec checkpoint evac
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_point_evac
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityMed
+  name: sec checkpoint med
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_point_med
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecuritySci
+  name: sec checkpoint sci
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_point_sci
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecuritySupply
+  name: sec checkpoint cargo
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_point_supply
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityProcess
+  name: sec process
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_processing
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityBreak
+  name: sec break
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_break
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityEvidence
+  name: sec evidence locker
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_evidence
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityHoldingCell
+  name: sec holding cell
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_holding_cell
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityLaborProcess
+  name: sec labor process
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_labor_process
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityCheckpointArrivals
+  name: sec checkpoint arrivals
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state:  sec_point_arrival
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaSecurityCheckpointEng
+  name: sec checkpoint eng
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: sec_point_eng
+
+- type: entity
+  parent: BaseAreaSecurity
+  id: AreaGenpop
+  name: genpop
+  suffix: AreaSecurity, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: genpop

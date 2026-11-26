@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalTele
+  name: med teleporter
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: med_tele
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalHallway
+  name: med hallway
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: med_hallway
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalLocker
+  name: med locker
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: med_locker
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalReception
+  name: med reception
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: med_reception
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalCentral
+  name: medbay central
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: medbay_central
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalExam
+  name: exam
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: med_exam_room
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalClinic
+  name: clinic
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: clinic
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalViroIsolate
+  name: viro isolate
+  suffix: AreaMedical, NewArea
+  components:
+  - type: Sprite
+    sprite: _Dumont/Areas/station.rsi
+    state: viro_isolate
