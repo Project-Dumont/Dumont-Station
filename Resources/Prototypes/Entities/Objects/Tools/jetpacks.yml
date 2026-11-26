@@ -79,7 +79,7 @@
     quickEquip: false
     slots:
     - Back
-    - outerClothing # Gaby change
+    - suitStorage # Dumont change
     clothingVisuals:
       outerClothing:
       - state: equipped-BACKPACK
@@ -130,7 +130,7 @@
     sprite: Objects/Tanks/Jetpacks/blue.rsi
     slots:
       - Back
-      - outerClothing # Gaby change
+      - suitStorage
 
 # Filled blue
 - type: entity
@@ -164,7 +164,7 @@
     sprite: Objects/Tanks/Jetpacks/black.rsi
     slots:
       - Back
-      - outerClothing # Gaby change
+      - suitStorage # dumont edit
   - type: StaticPrice
     price: 1000
 
@@ -198,7 +198,6 @@
     sprite: Objects/Tanks/Jetpacks/captain.rsi
     slots:
       - Back
-      - outerClothing # Gaby change
       - SuitStorage
   - type: Item
     sprite: Objects/Tanks/Jetpacks/captain.rsi
@@ -284,7 +283,7 @@
     sprite: _Gabystation/Objects/Tanks/Jetpacks/security.rsi # Gaby
     slots:
       - Back
-      - outerClothing # Gaby change
+      - suitStorage # Dumont change
 
 #Filled security
 - type: entity
@@ -318,7 +317,6 @@
     sprite: Objects/Tanks/Jetpacks/void.rsi
     slots:
       - Back
-      - outerClothing # Gaby change
       - suitStorage
       - Belt
 
