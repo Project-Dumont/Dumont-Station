@@ -640,8 +640,8 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentPerdaoCapitaoRecipe
-  result: PrintedDocumentPerdaoCapitao
+  id: PrintedDocumentCaptainPardonRecipe
+  result: PrintedDocumentCaptainPardon
   categories:
   - ConclusionsAndDecisions
   completetime: 2
@@ -650,8 +650,8 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentDeclaracaoTestemunhaRecipe
-  result: PrintedDocumentDeclaracaoTestemunha
+  id: PrintedDocumentWitnessStatementRecipe
+  result: PrintedDocumentWitnessStatement
   categories:
   - Evidence
   completetime: 2
@@ -660,8 +660,8 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentTestamentoRecipe
-  result: PrintedDocumentTestamento
+  id: PrintedDocumentLastWillRecipe
+  result: PrintedDocumentLastWill
   categories:
   - Evidence
   completetime: 2
@@ -670,8 +670,8 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentTransferenciadeComandoRecipe
-  result: PrintedDocumentTransferenciadeComando
+  id: PrintedDocumentCommandTransferRecipe
+  result: PrintedDocumentCommandTransfer
   categories:
   - Reports
   completetime: 2
