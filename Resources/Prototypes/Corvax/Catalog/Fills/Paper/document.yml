@@ -9,7 +9,7 @@
   parent: Paper
   id: PrintedDocument
   abstract: true
-  description: Unidade burocrática. Um documento impresso em uma impressora.
+  description: Bureaucratic unit. A document printed on a printer.
   components:
     - type: Paper
 
