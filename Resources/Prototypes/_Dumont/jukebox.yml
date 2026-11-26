@@ -639,6 +639,12 @@
     path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
 
 - type: jukebox
+  id: LongDistanceRunaround
+  name: Yes - Long Distance Runaround
+  path:
+    path: /Audio/_Dumont/Jukebox/long_distance_runaround.ogg
+
+- type: jukebox
   id: MacintoshPlus
   name: Vektroid - Macintosh Plus
   path:
@@ -799,12 +805,6 @@
   name: Brenda Lee - Rockin' Around The Christmas Tree
   path:
     path: /Audio/_Dumont/Jukebox/rockin_around_the_christmas_tree.ogg
-
-- type: jukebox
-  id: Roundabout
-  name: Yes - Roundabout
-  path:
-    path: /Audio/_Dumont/Jukebox/roundabout.ogg
 
 - type: jukebox
   id: Sandman
