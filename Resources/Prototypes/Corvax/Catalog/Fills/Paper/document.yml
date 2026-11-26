@@ -541,35 +541,35 @@
   components:
     - type: Paper
       content: doc-text-printer-DNR
-
+      
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentPerdaoCapitao
+  id: PrintedDocumentCaptainPardon
   name: Decreto de Perdão do Capitão
   components:
     - type: Paper
-      content: doc-text-printer-PerdaoCapitao
+      content: doc-text-printer-CaptainPardon
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentDeclaracaoTestemunha
+  id: PrintedDocumentWitnessStatement
   name: Declaração de Testemunha
   components:
     - type: Paper
-      content: doc-text-printer-DeclaracaoTestemunha
+      content: doc-text-printer-WitnessStatement
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentTestamento
+  id: PrintedDocumentLastWill
   name: Testamento e Últimas Vontades
   components:
     - type: Paper
-      content: doc-text-printer-Testamento
+      content: doc-text-printer-LastWill
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentTransferenciadeComando
+  id: PrintedDocumentCommandTransfer
   name: Termo de Transferência de Comando
   components:
     - type: Paper
-      content: doc-text-printer-TransferenciadeComando
+      content: doc-text-printer-CommandTransfer
