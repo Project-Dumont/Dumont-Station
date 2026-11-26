@@ -1,5 +1,7 @@
 - type: antag
   id: BloodCultist
+  organization: character-organization-narsie # Dumont
+  organizationColor: "#ff2020"
   name: roles-antag-blood-cultist-name
   antagonist: true
   setPreference: true
