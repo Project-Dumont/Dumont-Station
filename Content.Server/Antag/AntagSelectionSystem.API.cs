@@ -221,7 +221,8 @@ public sealed partial class AntagSelectionSystem
             return false;
 
         var pref = (HumanoidCharacterProfile) _pref.GetPreferences(session.UserId).SelectedCharacter;
-        return pref.AntagPreferences.Any(p => def.PrefRoles.Contains(p));
+        var banned = _banManager.GetAntagBans(session.UserId);
+        return pref.AntagPreferences.Any(p => def.PrefRoles.Contains(p) && banned?.Contains(p) != true);
     }
 
     /// <summary>
@@ -236,7 +237,8 @@ public sealed partial class AntagSelectionSystem
             return false;
 
         var pref = (HumanoidCharacterProfile) _pref.GetPreferences(session.UserId).SelectedCharacter;
-        return pref.AntagPreferences.Any(p => def.FallbackRoles.Contains(p));
+        var banned = _banManager.GetAntagBans(session.UserId);
+        return pref.AntagPreferences.Any(p => def.FallbackRoles.Contains(p) && banned?.Contains(p) != true);
     }
 
     /// <summary>

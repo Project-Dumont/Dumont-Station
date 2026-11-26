@@ -36,6 +36,8 @@ namespace Content.Shared.Ghost.Roles
         // Move to ghost role prototype & respect CCvars.GameRoleTimerOverride
         public HashSet<JobRequirement>? Requirements { get; set; }
 
+        public bool AntagBanned { get; set; }
+
         /// <inheritdoc cref="GhostRoleKind"/>
         public GhostRoleKind Kind { get; set; }
 
