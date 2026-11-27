@@ -5216,3 +5216,9 @@ Entries:
       message: Adiciona cilindro de plasma líquido comprável pela cargo.
   id: 626
   time: '2026-11-27T22:03:36.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Secreto médio deveria ter mais antags roundstart.
+  id: 627
+  time: '2026-11-27T22:50:51.0000000+00:00'
