@@ -89,6 +89,14 @@ public sealed partial class BorgChassisComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> NoBatteryAlert = "BorgBatteryNone";
+
+    // Dumont changes start
+    /// <summary>
+    /// If the entity can open its own UI.
+    /// </summary>
+    [DataField]
+    public bool CanOpenSelfUi;
+    // Dumont end
 }
 
 [Serializable, NetSerializable]

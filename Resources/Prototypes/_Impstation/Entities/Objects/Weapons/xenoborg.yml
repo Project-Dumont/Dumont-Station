@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: xenoborg blade
+  parent: KukriKnife
+  id: XenoborgKnife
+  description: 4265 2065666669636965 6E742E
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Melee/xenoborg_blade.rsi
+    state: icon
+  - type: Item
+    sprite: _Impstation/Objects/Weapons/Melee/xenoborg_blade.rsi
+
+- type: entity
+  name: grappling beam
+  parent: WeaponGrapplingGun
+  id: WeaponGrapplingGunXeno
+  components:
+  - type: GrapplingGun
+    cycleSound: /Audio/Weapons/Guns/MagIn/energycrossbow_reload.ogg
+    ropeSprite:
+      sprite: _Impstation/Objects/Weapons/Guns/Launchers/xenoborg_grappling_gun.rsi
+      state: rope
+  - type: BasicEntityAmmoProvider
+    proto: GrapplingHookXenoborg
+    capacity: 1
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Launchers/xenoborg_grappling_gun.rsi
+    layers:
+    - state: base
+    - state: base-unshaded
+      map: [ "unshaded" ]
+      shader: unshaded
+      visible: true
+
+- type: entity
+  parent: GrapplingHook
+  id: GrapplingHookXenoborg
+  name: grappling beam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EmbeddableProjectile
+    deleteOnRemove: true
+    sound:
+      path: /Audio/Weapons/plasma_cutter.ogg
+      params:
+        volume: 4
+  - type: Sprite
+    noRot: false
+    sprite: _Impstation/Objects/Weapons/Guns/Launchers/xenoborg_grappling_gun.rsi
+    layers:
+    - state: hook

@@ -360,3 +360,5 @@ guide-entry-devil = Devil
 guide-entry-devil-clause = Devil Clauses
 guide-entry-slasher = Slasher
 guide-entry-slasher-demon = Slasher Demon
+
+guide-entry-xenoborgs = Xenoborgs

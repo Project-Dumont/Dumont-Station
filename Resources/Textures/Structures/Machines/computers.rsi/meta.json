@@ -3328,6 +3328,10 @@
                     0.125
                 ]
             ]
+        },
+        {
+            "name": "xenorobot",
+            "directions": 4
         }
     ]
 }

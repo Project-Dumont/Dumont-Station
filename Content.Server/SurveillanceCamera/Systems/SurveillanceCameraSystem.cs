@@ -178,7 +178,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
             {
                 { DeviceNetworkConstants.Command, string.Empty },
                 { CameraAddressData, deviceNet.Address },
-                { CameraNameData, component.CameraId },
+                { CameraNameData, component.UseEntityNameAsCameraId ? Name(uid) : component.CameraId }, // Dumont
                 { CameraSubnetData, string.Empty }
             };
 

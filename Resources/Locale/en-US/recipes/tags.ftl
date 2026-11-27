@@ -151,3 +151,5 @@ construction-graph-tag-spationaut-hardsuit = spationaut hardsuit
 
 # clothing
 construction-graph-tag-backpack = backpack
+
+construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
