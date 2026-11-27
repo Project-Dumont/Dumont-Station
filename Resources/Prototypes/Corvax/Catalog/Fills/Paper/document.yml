@@ -533,3 +533,43 @@
   components:
     - type: Paper
       content: doc-text-printer-RelatorioSetorial
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDNR
+  name: Diretiva de Não Reanimação (DNR)
+  components:
+    - type: Paper
+      content: doc-text-printer-DNR
+      
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCaptainPardon
+  name: Decreto de Perdão do Capitão
+  components:
+    - type: Paper
+      content: doc-text-printer-CaptainPardon
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentWitnessStatement
+  name: Declaração de Testemunha
+  components:
+    - type: Paper
+      content: doc-text-printer-WitnessStatement
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentLastWill
+  name: Testamento e Últimas Vontades
+  components:
+    - type: Paper
+      content: doc-text-printer-LastWill
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCommandTransfer
+  name: Termo de Transferência de Comando
+  components:
+    - type: Paper
+      content: doc-text-printer-CommandTransfer
