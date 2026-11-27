@@ -2,18 +2,21 @@
 
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.LeaderForm;
 
-public sealed class BloodCultLeaderFormSystem : EntitySystem
+public sealed partial class BloodCultLeaderFormSystem : EntitySystem
 {
     private const string SuitSlot = "outerClothing";
     private const string HeadSlot = "head";
 
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -22,6 +25,7 @@ public sealed class BloodCultLeaderFormSystem : EntitySystem
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentInit>(OnLeaderInit);
         SubscribeLocalEvent<BloodCultLeaderComponent, ComponentRemove>(OnLeaderRemove);
 
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, MobStateChangedEvent>(OnFormMobState);
         SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentShutdown>(OnFormShutdown);
     }
 
@@ -31,7 +35,22 @@ public sealed class BloodCultLeaderFormSystem : EntitySystem
 
     private void OnLeaderInit(Entity<BloodCultLeaderComponent> ent, ref ComponentInit args) => Refresh(ent);
 
-    private void OnLeaderRemove(Entity<BloodCultLeaderComponent> ent, ref ComponentRemove args) => Clear(ent);
+    private void OnLeaderRemove(Entity<BloodCultLeaderComponent> ent, ref ComponentRemove args)
+    {
+        // the rule hands the mark to someone else the moment the leader dies, the corpse keeps the husk anyway
+        if (_mobState.IsDead(ent))
+            return;
+
+        Clear(ent);
+    }
+
+    private void OnFormMobState(Entity<BloodCultLeaderFormComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Dead || HasComp<BloodCultLeaderComponent>(ent))
+            return;
+
+        Clear(ent);
+    }
 
     private void Refresh(EntityUid uid)
     {

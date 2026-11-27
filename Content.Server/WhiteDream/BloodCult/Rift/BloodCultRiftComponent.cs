@@ -13,7 +13,6 @@ namespace Content.Server.WhiteDream.BloodCult.Rift;
 [RegisterComponent]
 public sealed partial class BloodCultRiftComponent : Component
 {
-    public const string SolutionName = "sanguine_pool";
     public static readonly ProtoId<ReagentPrototype> Reagent = "SanguinePerniculate";
 
     #region Bleeding

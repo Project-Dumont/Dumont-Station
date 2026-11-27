@@ -2,12 +2,10 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Pinpointer;
 using Content.Server.Station.Systems;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Maps;
 using Content.Shared.Mind.Components;
 using Content.Shared.Physics;
@@ -46,7 +44,6 @@ public sealed partial class BloodCultRiftSetupSystem : EntitySystem
     [Dependency] private ITileDefinitionManager _tileDef = default!;
     [Dependency] private AtmosphereSystem _atmosphere = default!;
     [Dependency] private MapSystem _map = default!;
-    [Dependency] private SharedSolutionContainerSystem _solution = default!;
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private NavMapSystem _navMap = default!;
     [Dependency] private StationSystem _station = default!;
@@ -341,14 +338,6 @@ public sealed partial class BloodCultRiftSetupSystem : EntitySystem
             var rune = Spawn(SummoningRune, center.Offset(offset));
             EnsureComp<FinalSummoningRuneComponent>(rune).Rift = rift;
             riftComp.SummoningRunes.Add(rune);
-        }
-
-        // Prefill the pool so the rift starts bleeding immediately instead of after a few pulses.
-        if (_solution.TryGetSolution(rift, BloodCultRiftComponent.SolutionName, out var solutionEnt, out var solution))
-        {
-            var deficit = solution.MaxVolume - solution.Volume;
-            if (deficit > FixedPoint2.Zero)
-                _solution.TryAddReagent(solutionEnt.Value, BloodCultRiftComponent.Reagent, deficit, out _);
         }
 
         return rift;

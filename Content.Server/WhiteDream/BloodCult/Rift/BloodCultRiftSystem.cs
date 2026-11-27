@@ -3,6 +3,7 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Audio;
 using Content.Server.Body.Systems;
+using Content.Server.Fluids.EntitySystems;
 using Content.Server.Lightning; // Dumont
 using Content.Server.Mind;
 using Content.Server.Popups;
@@ -13,7 +14,7 @@ using Content.Server._EinsteinEngines.Language;
 using Content.Shared.Anomaly;
 using Content.Shared.Audio;
 using Content.Shared.Camera; // Dumont
-using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Gibbing;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -39,13 +40,13 @@ public sealed partial class BloodCultRiftSystem : EntitySystem
     [Dependency] private MindSystem _mind = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
     [Dependency] private ServerGlobalSoundSystem _sound = default!;
     // Dumont changes start
     [Dependency] private LightningSystem _lightning = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedCameraRecoilSystem _recoil = default!;
     // Dumont end
-    [Dependency] private SharedSolutionContainerSystem _solution = default!;
     [Dependency] private TransformSystem _transform = default!;
 
     public override void Initialize()
@@ -83,15 +84,15 @@ public sealed partial class BloodCultRiftSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Tops the pool back up so the rift keeps spilling a slowly growing ocean of blood.
+    ///     Bleeds another pool onto the floor. Puddles overflow into their neighbours on their own,
+    ///     so the wound slowly drowns the room it opened in.
     /// </summary>
     private void Pulse(EntityUid uid, BloodCultRiftComponent rift)
     {
-        if (_solution.TryGetSolution(uid, BloodCultRiftComponent.SolutionName, out var solutionEnt, out _))
-            _solution.TryAddReagent(solutionEnt.Value,
-                BloodCultRiftComponent.Reagent,
-                FixedPoint2.New(rift.BloodPerPulse),
-                out _);
+        var blood = new Solution(BloodCultRiftComponent.Reagent, FixedPoint2.New(rift.BloodPerPulse));
+
+        // silent, this goes off every pulse until the round ends
+        _puddle.TrySpillAt(uid, blood, out _, sound: false);
 
         if (HasComp<AppearanceComponent>(uid))
             _appearance.SetData(uid, AnomalyVisualLayers.Animated, true);

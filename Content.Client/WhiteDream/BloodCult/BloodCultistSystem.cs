@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using System.Numerics;
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
+using Content.Shared.Hands.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
@@ -30,12 +32,22 @@ public sealed partial class BloodCultistSystem : EntitySystem
         new("/Textures/_Dumont/BloodCult/Effects/halo.rsi"); // Dumont
 
     private const string LeaderBodyState = "leech";
+    private const string LeaderCritState = "crit"; // Dumont
+    private const string LeaderDeadState = "dead"; // Dumont
     private const string LeaderAuraState = "leader_aura";
     private const string LeaderHaloState = "halo"; // Dumont
 
     private static readonly Vector2 LeaderHaloOffset = new(0f, 0.2f); // Dumont
 
-    private readonly Dictionary<EntityUid, List<int>> _hiddenLayers = new();
+    // Dumont changes start
+    // the layer map takes object keys, so box these once instead of every frame
+    private static readonly object LeaderBodyKey = BloodCultVisualLayers.LeaderBody;
+    private static readonly object LeaderAuraKey = BloodCultVisualLayers.LeaderAura;
+    private static readonly object LeaderHaloKey = BloodCultVisualLayers.LeaderHalo;
+
+    private readonly Dictionary<EntityUid, HashSet<ISpriteLayer>> _hiddenLayers = new();
+    private readonly List<int> _keptLayers = new();
+    // Dumont end
 
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
@@ -45,8 +57,12 @@ public sealed partial class BloodCultistSystem : EntitySystem
     {
         SubscribeLocalEvent<PentagramComponent, ComponentStartup>(OnPentagramAdded);
         SubscribeLocalEvent<PentagramComponent, ComponentShutdown>(OnPentagramRemoved);
-        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentStartup>(OnLeaderAdded);
-        SubscribeLocalEvent<BloodCultLeaderComponent, ComponentShutdown>(OnLeaderRemoved);
+
+        // Dumont changes start
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentStartup>(OnLeaderFormAdded);
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, ComponentShutdown>(OnLeaderFormRemoved);
+        SubscribeLocalEvent<BloodCultLeaderFormComponent, MobStateChangedEvent>(OnLeaderFormMobState);
+        // Dumont end
 
         SubscribeLocalEvent<ConstructComponent, GetStatusIconsEvent>(GetCultStatusIcon);
         SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultistStatusIcon);
@@ -79,20 +95,11 @@ public sealed partial class BloodCultistSystem : EntitySystem
         GetCultStatusIcon(ent, ref args);
     }
 
-    private void OnPentagramAdded(EntityUid uid, PentagramComponent component, ComponentStartup args) =>
-        RefreshPentagramVisual(uid, component); // Dumont
-
-    // Dumont
-    private void RefreshPentagramVisual(EntityUid uid, PentagramComponent component)
+    private void OnPentagramAdded(EntityUid uid, PentagramComponent component, ComponentStartup args)
     {
-        if (HasComp<BloodCultLeaderComponent>(uid))
-        {
-            RemovePentagram(uid);
-            AddLeaderGlow(uid);
+        if (HasComp<BloodCultLeaderFormComponent>(uid)) // Dumont
             return;
-        }
 
-        RemoveLeaderGlow(uid);
         AddPentagram(uid, component);
     }
 
@@ -112,25 +119,8 @@ public sealed partial class BloodCultistSystem : EntitySystem
         }
     }
 
-    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args)
-    {
+    private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args) =>
         RemovePentagram(uid);
-        RemoveLeaderGlow(uid); // Dumont
-    }
-
-    private void OnLeaderAdded(EntityUid uid, BloodCultLeaderComponent component, ComponentStartup args)
-    {
-        if (TryComp<PentagramComponent>(uid, out var pentagram))
-            RefreshPentagramVisual(uid, pentagram); // Dumont
-    }
-
-    private void OnLeaderRemoved(EntityUid uid, BloodCultLeaderComponent component, ComponentShutdown args)
-    {
-        RemoveLeaderGlow(uid); // Dumont
-
-        if (!TerminatingOrDeleted(uid) && TryComp<PentagramComponent>(uid, out var pentagram))
-            AddPentagram(uid, pentagram); // Dumont
-    }
 
     private void RemovePentagram(EntityUid uid)
     {
@@ -142,83 +132,155 @@ public sealed partial class BloodCultistSystem : EntitySystem
     }
 
     // Dumont changes start
+    private void OnLeaderFormAdded(Entity<BloodCultLeaderFormComponent> ent, ref ComponentStartup args)
+    {
+        RemovePentagram(ent);
+        AddLeaderGlow(ent);
+    }
+
+    private void OnLeaderFormRemoved(Entity<BloodCultLeaderFormComponent> ent, ref ComponentShutdown args)
+    {
+        RemoveLeaderGlow(ent);
+
+        if (!TerminatingOrDeleted(ent) && TryComp<PentagramComponent>(ent, out var pentagram))
+            AddPentagram(ent, pentagram);
+    }
+
+    private void OnLeaderFormMobState(Entity<BloodCultLeaderFormComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (TryComp<SpriteComponent>(ent, out var sprite))
+            UpdateLeaderBody(sprite, args.NewMobState);
+    }
+
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<BloodCultLeaderComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<BloodCultLeaderFormComponent, SpriteComponent>();
 
-        while (query.MoveNext(out _, out var sprite))
-        {
-            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out var body))
-                continue;
-
-            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out var aura))
-                aura = -1;
-
-            if (!sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out var halo))
-                halo = -1;
-
-            for (var i = 0; i < sprite.AllLayers.Count(); i++)
-            {
-                if (i == body || i == aura || i == halo)
-                    continue;
-
-                if (sprite.TryGetLayer(i, out var layer) && layer.Visible)
-                    sprite.LayerSetVisible(i, false);
-            }
-        }
+        while (query.MoveNext(out var uid, out _, out var sprite))
+            HideCoveredLayers(uid, sprite);
     }
 
     private void AddLeaderGlow(EntityUid uid)
     {
-        if (!TryComp<SpriteComponent>(uid, out var sprite) ||
-            sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out _))
+        if (!TryComp<SpriteComponent>(uid, out var sprite) || sprite.LayerMapTryGet(LeaderBodyKey, out _))
             return;
 
-        var restore = new List<int>();
-
-        for (var i = 0; i < sprite.AllLayers.Count(); i++)
-        {
-            if (sprite.TryGetLayer(i, out var existing) && existing.Visible)
-                restore.Add(i);
-
-            sprite.LayerSetVisible(i, false);
-        }
-
-        _hiddenLayers[uid] = restore;
+        _hiddenLayers[uid] = new HashSet<ISpriteLayer>();
 
         var body = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderBodyRsi, LeaderBodyState));
-        sprite.LayerMapSet(BloodCultVisualLayers.LeaderBody, body);
+        sprite.LayerMapSet(LeaderBodyKey, body);
 
         var aura = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderAuraRsi, LeaderAuraState));
-        sprite.LayerMapSet(BloodCultVisualLayers.LeaderAura, aura);
+        sprite.LayerMapSet(LeaderAuraKey, aura);
 
         var halo = sprite.AddLayer(new SpriteSpecifier.Rsi(LeaderHaloRsi, LeaderHaloState));
-        sprite.LayerMapSet(BloodCultVisualLayers.LeaderHalo, halo);
+        sprite.LayerMapSet(LeaderHaloKey, halo);
         sprite.LayerSetOffset(halo, LeaderHaloOffset);
+
+        UpdateLeaderBody(sprite, CompOrNull<MobStateComponent>(uid)?.CurrentState ?? MobState.Alive);
+        HideCoveredLayers(uid, sprite);
     }
 
     private void RemoveLeaderGlow(EntityUid uid)
     {
+        _hiddenLayers.Remove(uid, out var hidden);
+
         if (!TryComp<SpriteComponent>(uid, out var sprite))
+            return;
+
+        // top down, removing a layer shifts everything above it
+        RemoveLeaderLayer(sprite, LeaderHaloKey);
+        RemoveLeaderLayer(sprite, LeaderAuraKey);
+        RemoveLeaderLayer(sprite, LeaderBodyKey);
+
+        if (hidden is null)
+            return;
+
+        // only walk what the sprite still has, a removed layer throws when you touch it
+        foreach (var layer in sprite.AllLayers)
         {
-            _hiddenLayers.Remove(uid);
-            return;
+            if (hidden.Contains(layer))
+                layer.Visible = true;
         }
+    }
 
-        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderHalo, out var halo))
-            sprite.RemoveLayer(halo);
-
-        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderAura, out var aura))
-            sprite.RemoveLayer(aura);
-
-        if (sprite.LayerMapTryGet(BloodCultVisualLayers.LeaderBody, out var body))
-            sprite.RemoveLayer(body);
-
-        if (!_hiddenLayers.Remove(uid, out var restore))
+    /// <summary>
+    ///     The husk stays on the corpse, so the aura and the halo go once the leader is dead.
+    /// </summary>
+    private void UpdateLeaderBody(SpriteComponent sprite, MobState state)
+    {
+        if (!sprite.LayerMapTryGet(LeaderBodyKey, out var body))
             return;
 
-        foreach (var index in restore)
-            sprite.LayerSetVisible(index, true);
+        sprite.LayerSetState(body,
+            state switch
+            {
+                MobState.Dead => LeaderDeadState,
+                MobState.SoftCritical or MobState.HardCritical => LeaderCritState,
+                _ => LeaderBodyState,
+            });
+
+        if (state != MobState.Dead)
+            return;
+
+        RemoveLeaderLayer(sprite, LeaderHaloKey);
+        RemoveLeaderLayer(sprite, LeaderAuraKey);
+    }
+
+    /// <summary>
+    ///     Nothing stops inventory or humanoid code from adding and revealing layers while the husk is on, so sweep
+    ///     them every frame. Hands are left alone, whatever the leader is holding stays visible.
+    /// </summary>
+    private void HideCoveredLayers(EntityUid uid, SpriteComponent sprite)
+    {
+        if (!_hiddenLayers.TryGetValue(uid, out var hidden))
+            return;
+
+        _keptLayers.Clear();
+        CollectKeptLayers(uid, sprite, _keptLayers);
+
+        var index = 0;
+
+        foreach (var layer in sprite.AllLayers)
+        {
+            if (layer.Visible && !_keptLayers.Contains(index))
+            {
+                layer.Visible = false;
+                hidden.Add(layer);
+            }
+
+            index++;
+        }
+    }
+
+    private void CollectKeptLayers(EntityUid uid, SpriteComponent sprite, List<int> kept)
+    {
+        if (sprite.LayerMapTryGet(LeaderBodyKey, out var body))
+            kept.Add(body);
+
+        if (sprite.LayerMapTryGet(LeaderAuraKey, out var aura))
+            kept.Add(aura);
+
+        if (sprite.LayerMapTryGet(LeaderHaloKey, out var halo))
+            kept.Add(halo);
+
+        if (!TryComp<HandsComponent>(uid, out var hands))
+            return;
+
+        foreach (var revealed in hands.RevealedLayers.Values)
+        {
+            foreach (var key in revealed)
+            {
+                if (sprite.LayerMapTryGet(key, out var layer))
+                    kept.Add(layer);
+            }
+        }
+    }
+
+    private static void RemoveLeaderLayer(SpriteComponent sprite, object key)
+    {
+        if (sprite.LayerMapTryGet(key, out var layer))
+            sprite.RemoveLayer(layer);
     }
     // Dumont end
 

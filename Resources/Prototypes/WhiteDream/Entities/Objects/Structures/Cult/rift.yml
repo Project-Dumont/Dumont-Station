@@ -44,14 +44,6 @@
         layer:
         - MidImpassable
   - type: BloodCultRift
-  - type: SolutionContainerManager
-    solutions:
-      sanguine_pool:
-        maxVol: 1500
-  - type: PuddleCreateAnomaly
-    solution: sanguine_pool
-  - type: RefillableSolution
-    solution: sanguine_pool
   - type: Damageable
   - type: Destructible
     thresholds:
