@@ -74,14 +74,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>
         </BoxContainer>
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           HorizontalExpand="True"
                           MinSize="50 50"
-                          Name="Notifications"
-                          Access="Public">
-            </BoxContainer>
+                          Name="NotificationList"
+                          Margin="4"/>
         </ScrollContainer>
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
             <BoxContainer Orientation="Vertical"
@@ -101,6 +100,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                        Access="Public"
                                        Text="{Loc 'comp-pda-ui-ringtone-button'}"
                                        Description="{Loc 'comp-pda-ui-ringtone-button-description'}"/>
+                <pda:PdaSettingsButton Name="ModifyNotificationSettings"
+                                       Access="Public"
+                                       Text="{Loc 'pda-bound-user-interface-modify-notification-settings-title'}"
+                                       Description="{Loc 'pda-bound-user-interface-modify-notification-settings-description'}"/>
                 <pda:PdaSettingsButton Name="ActivateMusicButton"
                                        Access="Public"
                                        Visible="False"

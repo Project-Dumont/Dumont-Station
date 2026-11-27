@@ -114,12 +114,12 @@ public abstract class SharedRingerSystem : EntitySystem
     /// <summary>
     /// Plays the ringtone on the device with the given RingerComponent.
     /// </summary>
-    public void RingerPlayRingtone(Entity<RingerComponent?> ent)
+    public void RingerPlayRingtone(Entity<RingerComponent?> ent, bool doVibrate = true)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
 
-        StartRingtone((ent, ent.Comp));
+        StartRingtone((ent, ent.Comp), doVibrate);
     }
 
     /// <summary>
@@ -205,7 +205,7 @@ public abstract class SharedRingerSystem : EntitySystem
     /// <summary>
     /// Starts playing the ringtone on the device.
     /// </summary>
-    private void StartRingtone(Entity<RingerComponent> ent)
+    private void StartRingtone(Entity<RingerComponent> ent, bool doVibrate = true)
     {
         // Already active? Don't start it again
         if (ent.Comp.Active)
@@ -217,12 +217,13 @@ public abstract class SharedRingerSystem : EntitySystem
 
         UpdateRingerUi(ent);
 
-        _popup.PopupPredicted(Loc.GetString("comp-ringer-vibration-popup"),
-            ent,
-            ent.Owner,
-            Filter.Pvs(ent, 0.05f),
-            false,
-            PopupType.Medium);
+        if (doVibrate)
+            _popup.PopupPredicted(Loc.GetString("comp-ringer-vibration-popup"),
+                ent,
+                ent.Owner,
+                Filter.Pvs(ent, 0.05f),
+                false,
+                PopupType.Medium);
 
         DirtyFields(ent.AsNullable(),
             null,

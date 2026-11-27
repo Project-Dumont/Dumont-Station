@@ -19,6 +19,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Configuration;
+using Content.Shared.Notification;
 
 namespace Content.Server.Silicons.Borgs;
 

@@ -8,65 +8,76 @@ using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
-
+using Content.Shared.Mind;
+using Content.Shared.Notification;
 
 namespace Content.Server.PDA
 {
     public sealed partial class PdaSystem : SharedPdaSystem
     {
-        [Dependency] private readonly IPrototypeManager _proto = default!;
-        [Dependency] private readonly ILogManager _log = default!;
-        [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private IPrototypeManager _proto = default!;
+        [Dependency] private ILogManager _log = default!;
+        [Dependency] private SharedPopupSystem _popup = default!;
 
         private ISawmill _sawmill = default!;
 
-        private void OnPdaNotification(PdaNotificationEvent args)
+        private void OnNotification(NotificationEvent ev)
         {
-            _sawmill = _log.GetSawmill("pda_notification");
+            var pdas = EntityQueryEnumerator<PdaComponent, NotificationReceiverComponent>();
 
-            if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto)) {
-                _sawmill.Error($"group {args.Group} does not exist'");
+            if (!_proto.TryIndex<NotificationGroupPrototype>(ev.Group, out var notiGroupProto)) {
+                _sawmill.Error($"group {ev.Group} does not exist'");
                 return;
             }
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                PdaNotifyAll(args, notiGroupProto);
+                NotifyAll(ev);
                 return;
             }
-
-            var Pdas = EntityQueryEnumerator<PdaComponent>();
+            
             var amountNotified = 0;
+            while (pdas.MoveNext(out var uid, out var pdaComp, out var receiverComp))
+                amountNotified += HandleNotification((uid, pdaComp), receiverComp, ev, notiGroupProto) ? 1 : 0;
 
-            while (Pdas.MoveNext(out var uid, out var pdaComp)) {
-                if (!IsValidPda(args, uid, pdaComp, out var accessLevels) || accessLevels is null)
-                    continue;
-
-                Entity<PdaComponent> pda = new(uid, pdaComp);
-
-                if (notiGroupProto.Access is not null)
-                    if (PdaNotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args)) {
-                        amountNotified++;
-                        continue;
-                    }
-
-                if (notiGroupProto.AccessGroups is not null)
-                    if (PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args)) {
-                        amountNotified++;
-                        continue;
-                    }
-            }
-
-            if (amountNotified == 0)
-                _sawmill.Warning("Notified zero PDAs on last PdaNotificationEvent");
+            _sawmill = _log.GetSawmill("pda_notification");
+            if (amountNotified > 0)
+                _sawmill.Warning("Notified zero PDAs on last NotificationEvent");
 
         }
 
-        private bool PdaNotifyByAccess(
+        /// <summary>
+        /// Handles a PDA being notified, taking into account notification groups and such.
+        /// </summary>
+        /// <param name="pda">Pda to notify</param>
+        /// <param name="args">Arguments of the event, used for the groups</param>
+        /// <returnsWhether the PDA was notified></returns>
+        private bool HandleNotification(
+        Entity<PdaComponent> pda, 
+        NotificationReceiverComponent receiveComp, 
+        NotificationEvent args, 
+        NotificationGroupPrototype notiGroupProto)
+        {
+            if (!IsValidNotification(args.Station, pda.Owner, pda.Comp, out var accessLevels) || accessLevels is null)
+                return false;
+
+            if (notiGroupProto.Access is not null)
+                if (NotifyByAccess(pda, notiGroupProto.Access, notiGroupProto.Exclude, accessLevels, args))
+                    return true;
+
+            if (notiGroupProto.AccessGroups is not null)
+                if (NotifyByGroups(pda, notiGroupProto.AccessGroups, notiGroupProto.Exclude, accessLevels, args))
+                    return true;
+                
+            return false;
+
+        }
+
+        private bool NotifyByAccess(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessLevelPrototype>> accessNoti,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
-            PdaNotificationEvent args)
+            NotificationEvent args)
         {
             if (exclude is { } excludesAccess && accessLevels.Intersect(excludesAccess).Any())
                 return false;
@@ -74,33 +85,38 @@ namespace Content.Server.PDA
             if (!accessLevels.Intersect(accessNoti).Any())
                 return false;
 
-            NotifyPda(pda, args.Message, args.IsLoud);
+            Notify(pda, args.Message, args.IsLoud);
             return true;
         }
 
-        private bool PdaNotifyByGroups(
+        private bool NotifyByGroups(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessGroupPrototype>> notiGroup,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
-            PdaNotificationEvent args)
+            NotificationEvent args)
         {
             foreach (var accessGroupId in notiGroup) {
                 if (!_proto.TryIndex<AccessGroupPrototype>(accessGroupId, out var accessGroup))
                     continue;
 
-                if (PdaNotifyByAccess(pda, accessGroup.Tags, exclude, accessLevels, args))
+                if (NotifyByAccess(pda, accessGroup.Tags, exclude, accessLevels, args))
                     return true;
             }
 
             return false;
         }
 
-        public void PdaNotifyAll(PdaNotificationEvent args, NotificationGroupPrototype? proto = null) {
+        /// <summary>
+        /// Notifies all PDA, regardless of their notification groups.
+        /// </summary>
+        /// <param name="args">Event that holds all the information necessary for the notification.</param>
+        /// <param name="proto">Notification group, used for optional exclusion, leave null for no filtering</param>
+        private void NotifyAll(NotificationEvent args, NotificationGroupPrototype? proto = null) {
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
-                if (!IsValidPda(args, uid, comp, out var accessLevels) || accessLevels is null)
+                if (!IsValidNotification(args.Station, uid, comp, out var accessLevels) || accessLevels is null)
                     continue;
 
                 if (proto is { } prototype &&
@@ -108,18 +124,23 @@ namespace Content.Server.PDA
                     exclusion.Intersect(accessLevels).Any())
                     continue;
 
-                NotifyPda((uid, comp), args.Message, args.IsLoud);
+                Notify((uid, comp), args.Message, args.IsLoud);
             }
         }
 
-        public void NotifyPda(Entity<PdaComponent> ent, string message, bool isLoud = false) {
-            _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner, PopupType.Medium);
+        public void Notify(Entity<PdaComponent> pda, string message, bool isLoud = false) {
+            if (!TryComp<NotificationReceiverComponent>(pda.Owner, out var receiverComp))
+                return;
 
-            if (isLoud)
-                _ringer.RingerPlayRingtone(ent.Owner);
+            if (!IsPdaAttachedToPlayer(pda))
+                _popup.PopupEntity(Loc.GetString("pda-new-notification"), pda.Owner, PopupType.Medium);
 
-            ent.Comp.Notifications.Add(new Notification(_timing.CurTime, message));
-            UpdatePdaUi(ent.Owner, ent.Comp);
+            if (receiverComp.Setting == NotificationSetting.Loud || (receiverComp.Setting == NotificationSetting.Normal && isLoud))
+                _ringer.RingerPlayRingtone(pda.Owner, false);
+
+            receiverComp.Notifications.Add(new NotificationMessage(_timing.CurTime, message));
+            Dirty(pda);
+            UpdatePdaUi(pda.Owner, pda.Comp);
         }
 
         private bool TryGetAccessLevels(PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
@@ -135,11 +156,19 @@ namespace Content.Server.PDA
             return true;
         }
 
-        private bool IsValidPda(PdaNotificationEvent args, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
+        /// <summary>
+        /// Checks whether a PDA is valid for receiving a notification at all.
+        /// </summary>
+        /// <param name="station">Optional station filtering</param>
+        /// <param name="uid"Pda uid></param>
+        /// <param name="pda"Pda component></param>
+        /// <param name="accessLevels">The accesslevels acquired from the PDA, used for checking Notification Groups</param>
+        /// <returns></returns>
+        private bool IsValidNotification(EntityUid? station, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
             if (!TryGetAccessLevels(pda, out accessLevels))
                 return false;
 
-            if (args.Station is { } notifiedStation && notifiedStation != _station.GetOwningStation(uid))
+            if (station is { } notifiedStation && notifiedStation != _station.GetOwningStation(uid))
                 return false;
 
             return true;

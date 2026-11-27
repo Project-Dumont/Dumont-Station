@@ -128,7 +128,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
-using Content.Shared.Security.Systems; // Beepsky - GabyStation
+using Content.Shared.Security.Systems;
+using Content.Shared.Notification; // Beepsky - GabyStation
 
 namespace Content.Server.PDA
 {
@@ -147,6 +148,8 @@ namespace Content.Server.PDA
         [Dependency] private readonly NanoBankCartridgeSystem _nanoBank = default!; // GabyStation -> NanoBank
         [Dependency] private readonly IGameTiming _timing = default!;
 
+        [Dependency] private SharedNotificationSystem _notification = default!; 
+
         public override void Initialize()
         {
             base.Initialize();
@@ -161,6 +164,7 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, PdaShowMusicMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaShowUplinkMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaLockUplinkMessage>(OnUiMessage);
+            SubscribeLocalEvent<PdaComponent, PdaOpenNotificationSettingsMessage>(OnUiMessage);
 
             SubscribeLocalEvent<PdaComponent, CartridgeLoaderNotificationSentEvent>(OnNotification);
 
@@ -169,7 +173,8 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
-            SubscribeLocalEvent<PdaNotificationEvent>(OnPdaNotification);
+            SubscribeAllEvent<NotificationEvent>(OnNotification);
+
         }
 
         private void ChameleonControllerOutfitItemSelected(Entity<PdaComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)
@@ -324,6 +329,9 @@ namespace Content.Server.PDA
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
 
+            List<NotificationMessage> notificationsMsg = new();
+            if (TryComp<NotificationReceiverComponent>(pda.Owner, out var receiverComponent))
+                notificationsMsg = receiverComponent.Notifications;
 
             var state = new PdaUpdateState(
                 programs,
@@ -340,7 +348,7 @@ namespace Content.Server.PDA
                     StationAlertColor = pda.StationAlertColor
                 },
                 pda.StationName,
-                pda.Notifications,
+                notificationsMsg,
                 showUplink,
                 hasInstrument,
                 address);
@@ -410,6 +418,18 @@ namespace Content.Server.PDA
             if (TryComp<RingerUplinkComponent>(uid, out var uplink))
             {
                 _ringer.LockUplink((uid, uplink));
+                UpdatePdaUi(uid, pda);
+            }
+        }
+
+        private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaOpenNotificationSettingsMessage msg)
+        {
+            if (!PdaUiKey.Key.Equals(msg.UiKey))
+                return;
+
+            if (TryComp<NotificationReceiverComponent>(uid, out var receiver))
+            {
+                _notification.OpenNotificationSettingsUI(uid, msg.Actor, receiver);
                 UpdatePdaUi(uid, pda);
             }
         }

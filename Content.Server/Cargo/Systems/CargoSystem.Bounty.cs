@@ -201,7 +201,7 @@ public sealed partial class CargoSystem
             ("bounty", "ID#" + bountyData.Id),
             ("user", InfoEv.Title ?? Loc.GetString("bounty-skip-unknown")));
 
-        var ev = new PdaNotificationEvent(message, "CargoDepartment", false, _station.GetOwningStation(uid)); // Dumont
+        var ev = new NotificationEvent(message, "CargoDepartment", false, _station.GetOwningStation(uid)); // Dumont
         RaiseLocalEvent(ev);
 
         FillBountyDatabase(station);

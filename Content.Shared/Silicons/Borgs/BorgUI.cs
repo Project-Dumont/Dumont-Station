@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared.Notification;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Silicons.Borgs;

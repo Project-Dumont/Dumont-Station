@@ -180,6 +180,7 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  - type: NotificationReceiver
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -287,6 +288,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.ModifyNotificationSettingsKey.Key:
+        type: NotificationSettingsBUI
   - type: Tag
     tags:
     - DoorBumpOpener

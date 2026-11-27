@@ -36,3 +36,17 @@
     useDelay: 0.5
   - type: InstantAction
     event: !type:BorgToggleSelectTypeEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionShowSiliconNotifications
+  name: Show Notifications
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: notifications-menu
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent { key: enum.SiliconNotificationsUiKey.Key }

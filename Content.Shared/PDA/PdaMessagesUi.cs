@@ -43,3 +43,9 @@ public sealed class PdaRequestUpdateInterfaceMessage : BoundUserInterfaceMessage
 {
     public PdaRequestUpdateInterfaceMessage() { }
 }
+
+[Serializable, NetSerializable]
+public sealed class PdaOpenNotificationSettingsMessage : BoundUserInterfaceMessage
+{
+    public PdaOpenNotificationSettingsMessage() { }
+}

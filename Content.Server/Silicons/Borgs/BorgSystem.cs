@@ -105,6 +105,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.PDA;
+using Content.Shared.Notification;
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -154,6 +156,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
         SubscribeLocalEvent<BorgBrainComponent, MindAddedMessage>(OnBrainMindAdded);
         SubscribeLocalEvent<BorgBrainComponent, PointAttemptEvent>(OnBrainPointAttempt);
+
 
         InitializeModules();
         InitializeMMI();

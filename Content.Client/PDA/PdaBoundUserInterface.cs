@@ -39,6 +39,7 @@
 using Content.Client.CartridgeLoader;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Notification;
 using Content.Shared.PDA;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
@@ -108,6 +109,10 @@ namespace Content.Client.PDA
             _menu.LockUplinkButton.OnPressed += _ =>
             {
                 SendMessage(new PdaLockUplinkMessage());
+            };
+            _menu.ModifyNotificationSettings.OnPressed += _ =>
+            {
+                SendMessage(new PdaOpenNotificationSettingsMessage());  
             };
 
             _menu.OnProgramItemPressed += ActivateCartridge;

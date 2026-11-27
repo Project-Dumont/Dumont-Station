@@ -34,6 +34,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
+using Content.Client._Dumont.Notifications.UserInterface;
 
 namespace Content.Client.PDA
 {
@@ -241,31 +242,11 @@ namespace Content.Client.PDA
             ShowUplinkButton.Visible = state.HasUplink;
             LockUplinkButton.Visible = state.HasUplink;
 
-            Notifications.RemoveAllChildren();
-            if (state.Notifications is { } notifications) {
-                foreach (var noti in notifications) {
-                    BoxContainer notificationContainer = new();
-
-                    RichTextLabel messageLabel = new();
-                    Label timeLabel = new();
-
-                    messageLabel.Text = noti.Message;
-                    messageLabel.Margin = new Thickness(15, 0);
-
-                    timeLabel.Text = noti.Time.ToString(@"hh\:mm\:ss");
-                    timeLabel.ClipText = false;
-
-                    notificationContainer.Margin = new Thickness(3, 7);
-                    notificationContainer.Orientation = BoxContainer.LayoutOrientation.Horizontal;
-
-                    notificationContainer.AddChild(timeLabel);
-                    notificationContainer.AddChild(messageLabel);
-
-                    Notifications.AddChild(notificationContainer);
-                }
-            }
+            // Dumont - Pda Notifications
+            NotificationList.RemoveAllChildren();
+            if (state.Notifications is { } notifications)
+                NotificationList.AddChild(new NotificationsView(notifications) { MinHeight=50, MinWidth=50, HorizontalExpand=true, VerticalExpand=true });
         }
-
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
             ProgramList.RemoveAllChildren();
@@ -338,6 +319,7 @@ namespace Content.Client.PDA
             ProgramListButton.IsCurrent = false;
             SettingsButton.IsCurrent = false;
             ProgramTitle.IsCurrent = false;
+            NotificationsButton.IsCurrent = false;
 
             ChangeView(HomeView);
         }
@@ -368,6 +350,7 @@ namespace Content.Client.PDA
             ProgramCloseButton.Visible = true;
             ProgramListButton.Visible = false;
             SettingsButton.Visible = false;
+            NotificationsButton.IsCurrent = false;
 
             ProgramTitle.LabelText = title;
             ChangeView(ProgramContentView);

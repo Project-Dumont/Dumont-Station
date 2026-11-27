@@ -1,0 +1,11 @@
+<ScrollContainer xmlns="https://spacestation14.io"
+                 VScrollEnabled="True"
+                 HScrollEnabled="False"
+                 HorizontalExpand="True"
+                 VerticalExpand="True">
+    <BoxContainer Name="NotificationsContainer"
+                  Access="Public"
+                  Orientation="Vertical"
+                  SeparationOverride="4">
+    </BoxContainer>
+</ScrollContainer>
