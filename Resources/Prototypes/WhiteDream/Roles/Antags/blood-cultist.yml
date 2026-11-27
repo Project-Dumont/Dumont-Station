@@ -1,0 +1,19 @@
+- type: antag
+  id: BloodCultist
+  organization: character-organization-narsie # Dumont
+  organizationColor: "#ff2020"
+  name: roles-antag-blood-cultist-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-blood-cultist-objective
+  guides: [ BloodCult ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 43200
+
+- type: startingGear
+  id: BloodCultistGear
+  storage:
+    back:
+    - RitualDagger
+    - RunedMetal20

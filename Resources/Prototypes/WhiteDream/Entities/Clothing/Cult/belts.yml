@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ BaseMagicalContraband, ClothingBeltStorageBase ]
+  id: ClothingBeltCultWebbing
+  name: cult webbing
+  description: A webbing of blood-soaked straps, pockets lined against the damp.
+  components:
+  - type: Sprite
+    sprite: _Dumont/BloodCult/Clothing/cult_webbing.rsi
+  - type: Clothing
+    sprite: _Dumont/BloodCult/Clothing/cult_webbing.rsi
+  - type: CultItem
