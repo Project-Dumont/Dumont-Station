@@ -5188,3 +5188,11 @@ Entries:
       message: Adiciona martelo de juiz e uma base pro martelo!
   id: 623
   time: '2026-11-27T11:27:11.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Add
+      message: >-
+        Papelada de DNR, Perdão do Capitão, Testemunha, Testamento e Termo de
+        Transferência de Comando.
+  id: 624
+  time: '2026-11-27T11:29:47.0000000+00:00'
