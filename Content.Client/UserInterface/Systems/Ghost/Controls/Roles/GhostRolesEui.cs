@@ -90,6 +90,7 @@ using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
+using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
@@ -191,6 +192,12 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                     groupReq.Requirements, //goobstation edit, less polluted ghost spawners menu
                     null,
                     out var reason);
+
+                if (groupReq.AntagBanned)
+                {
+                    hasAccess = false;
+                    reason = FormattedMessage.FromUnformatted(Loc.GetString("role-ban"));
+                }
 
                 // Adding a new role
                 _window.AddEntry(name, description, hasAccess, reason, group, spriteSystem);

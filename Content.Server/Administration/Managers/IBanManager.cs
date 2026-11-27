@@ -40,6 +40,10 @@ public interface IBanManager
     public HashSet<string>? GetRoleBans(NetUserId playerUserId);
     public HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId);
 
+    public HashSet<ProtoId<AntagPrototype>>? GetAntagBans(NetUserId playerUserId);
+
+    public void CreateAntagBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string antag, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan);
+
     /// <summary>
     /// Creates a job ban for the specified target, username or GUID
     /// </summary>

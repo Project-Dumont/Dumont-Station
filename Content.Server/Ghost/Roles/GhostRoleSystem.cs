@@ -44,6 +44,8 @@
 
 using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Administration.Managers;
+using Content.Server.Antag.Components;
 using Content.Server.EUI;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
@@ -94,6 +96,7 @@ public sealed class GhostRoleSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IBanManager _banManager = default!;
 
     private uint _nextRoleIdentifier;
     private bool _needsUpdateGhostRoleCount = true;
@@ -431,6 +434,9 @@ public sealed class GhostRoleSystem : EntitySystem
         if (!_ghostRoles.TryGetValue(identifier, out var roleEnt))
             return;
 
+        if (IsAntagBanned(roleEnt, player))
+            return;
+
         // get raffle or create a new one if it doesn't exist
         var raffle = _ghostRoleRaffles.TryGetValue(identifier, out var raffleEnt)
             ? raffleEnt.Comp
@@ -508,6 +514,9 @@ public sealed class GhostRoleSystem : EntitySystem
         if (!_ghostRoles.TryGetValue(identifier, out var roleEnt))
             return;
 
+        if (IsAntagBanned(roleEnt, player))
+            return;
+
         if (roleEnt.Comp.RaffleConfig is not null)
         {
             JoinRaffle(player, identifier);
@@ -527,6 +536,9 @@ public sealed class GhostRoleSystem : EntitySystem
         if (!_ghostRoles.TryGetValue(identifier, out var role))
             return false;
 
+        if (IsAntagBanned(role, player))
+            return false;
+
         var ev = new TakeGhostRoleEvent(player);
         RaiseLocalEvent(role, ref ev);
 
@@ -538,6 +550,44 @@ public sealed class GhostRoleSystem : EntitySystem
 
         CloseEui(player);
         return true;
+    }
+
+    /// <summary>
+    /// True se o ghost role dá um antagonista do qual o jogador está banido.
+    /// </summary>
+    public bool IsAntagBanned(Entity<GhostRoleComponent> role, ICommonSession player)
+    {
+        var banned = _banManager.GetAntagBans(player.UserId);
+        if (banned == null || banned.Count == 0)
+            return false;
+
+        if (TryComp<GhostRoleAntagSpawnerComponent>(role, out var spawner) &&
+            spawner.Definition is { } def &&
+            (def.PrefRoles.Any(banned.Contains) || GrantsBannedAntag(def.MindRoles, banned)))
+        {
+            return true;
+        }
+
+        return GrantsBannedAntag(role.Comp.MindRoles, banned);
+    }
+
+    private bool GrantsBannedAntag(IEnumerable<EntProtoId>? mindRoles, HashSet<ProtoId<AntagPrototype>> banned)
+    {
+        if (mindRoles == null)
+            return false;
+
+        foreach (var mindRole in mindRoles)
+        {
+            if (_prototype.TryIndex<EntityPrototype>(mindRole, out var proto) &&
+                proto.TryGetComponent<MindRoleComponent>(out var comp, EntityManager.ComponentFactory) &&
+                comp.AntagPrototype is { } antag &&
+                banned.Contains(antag))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void Follow(ICommonSession player, uint identifier)
@@ -630,6 +680,7 @@ public sealed class GhostRoleSystem : EntitySystem
                 Description = role.RoleDescription,
                 Rules = role.RoleRules,
                 Requirements = role.Requirements,
+                AntagBanned = player != null && IsAntagBanned((uid, role), player),
                 Kind = kind,
                 RafflePlayerCount = rafflePlayerCount,
                 RaffleEndTime = raffleEndTime

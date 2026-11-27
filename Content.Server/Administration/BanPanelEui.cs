@@ -190,6 +190,10 @@ public sealed class BanPanelEui : BaseEui
                 {
                     _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
                 }
+                else if (_prototypeManager.HasIndex<AntagPrototype>(role))
+                {
+                    _banManager.CreateAntagBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
+                }
                 else
                 {
                     _sawmill.Warning($"{Player.Name} ({Player.UserId}) tried to issue a job ban with an invalid job: {role}");
