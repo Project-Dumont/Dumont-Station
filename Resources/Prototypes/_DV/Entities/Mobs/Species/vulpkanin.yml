@@ -48,6 +48,28 @@
   - type: Hunger
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
+    femaleDisplacements: 
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
   - type: Thirst
   - type: Icon
     sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
@@ -165,7 +187,9 @@
     - AnomalyHost
     - VulpEmotes
   # - type: FootPrints # WD EDIT
-  - type: Wagging # Einstein-Engine
+  # Dumont changes start
+  #- type: Wagging # Einstein-Engine
+  # Dumont end
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobVulpkanin
@@ -183,3 +207,27 @@
   components:
   - type: HumanoidAppearance
     species: Vulpkanin
+  - type: Inventory # Allows vulps to wear properly shaped helmets
+    speciesId: vulpkanin
+    femaleDisplacements: 
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes

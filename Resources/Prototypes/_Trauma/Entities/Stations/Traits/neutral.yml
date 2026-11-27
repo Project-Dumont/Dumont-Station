@@ -1,0 +1,71 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stationTrait
+  id: BananiumShipment
+  name: station-trait-bananium-shipment-name # Dumont
+  report: station-trait-bananium-shipment-report # Dumont
+  effects:
+  - !type:StartGameRule
+    rule: BananiumShipmentRule
+
+- type: stationTrait
+  id: IanAdventure
+  name: station-trait-ian-adventure-name # Dumont
+  report: null # Kept you waiting, huh?
+  # Dumont changes start
+  requiredComponents:
+  - Area
+  # Dumont end
+  mapEffects: # ian has to spawn first, itd probably be weird to move the spawner instead of the spawned mob
+  - !type:StationQueryEffects
+    compName: IanAdventureTarget
+    effects:
+    - !type:TeleportRandomArea
+      safe: true
+      compName: Area
+    # TODO: spawn poof effects
+
+- type: stationTrait
+  id: UniqueAI
+  name: station-trait-unique-ai-name # Dumont
+  report: station-trait-unique-ai-report # Dumont
+  # , we've removed access to your set of alternative upload modules because we know you're already thinking about meddling with this experiment."
+  effects:
+  - !type:StartGameRule
+    rule: UniqueAIRule
+  # TODO: make researching AI stuff cost 3x if someone ever adds that, and delete all roundstart lawboards
+
+- type: stationTrait
+  id: TripleAI
+  chance: 0.2
+  name: station-trait-triple-ai-name # Dumont
+  report: station-trait-triple-ai-report # Dumont
+  # Dumont changes start
+  requiredComponents:
+  - ExtraAiCoreTarget
+  # Dumont end
+  effects:
+  - !type:StationModifyJobs
+    add:
+      StationAi: 2
+  mapEffects:
+  - !type:StationAreaEffects # without extra ai cores latejoining AIs are stuck in purgatory
+    areaComp: ExtraAiCoreTarget
+    min: 2
+    max: 2
+    checkBlocked: false # don't get cucked by windoors
+    effects:
+    - !type:SpawnAtTarget # Dumont
+      entity: PlayerStationAi
+
+- type: stationTrait
+  id: AirlockMisconfiguration
+  chance: 0.5
+  name: station-trait-airlock-misconfiguration-name # Dumont
+  report: station-trait-airlock-misconfiguration-report # Dumont
+  mapEffects:
+  - !type:StationQueryEffects
+    compName: Airlock
+    effects:
+    - !type:ScrambleAccessReader
+      probability: 0.1

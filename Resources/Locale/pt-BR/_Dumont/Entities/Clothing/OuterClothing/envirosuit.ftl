@@ -56,7 +56,6 @@ ent-ClothingOuterEnvirosuitCE = Traje hermético do Engenheiro Chefe
     .desc = Um traje de contenção de engenharia especial, projetado para operações em ambientes de baixa pressão e alta radioatividade. Conta com um gerador de mini singularidade que alimenta o traje. Desenvolvido para o engenheiro-chefe da estação.
 
 ent-ClothingOuterEnvirosuitCMO = Traje hermético do Chefe Médico
-  name: chief medical officer envirohelmet
     .desc = Um traje de contenção especial que permite que formas de vida baseadas em plasma existam com segurança em um ambiente oxigenado. Projetado para o médico chefe da estação.
 
 ent-ClothingOuterEnvirosuitHOP = Traje hermético do Chefe dos Funcionários

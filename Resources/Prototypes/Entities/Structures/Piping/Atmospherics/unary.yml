@@ -415,7 +415,8 @@
       sendBroadcastAttemptEvent: true
       examinableAddress: true
     - type: WiredNetworkConnection
-    - type: PowerSwitch
+    - type: TogglePower # Dumont - Power switch slop
+      altMode: true
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: Thermoregulator
     - type: GuideHelp
@@ -631,7 +632,8 @@
     solution: tank
   - type: ExaminableSolution
     solution: tank
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
   - type: AutomationSlots # Goobstation

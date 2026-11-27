@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: guideEntry
   id: CosmicCult
   name: guide-entry-cosmiccult
@@ -5,6 +7,7 @@
   children:
   - CosmicCultMonument
   - CosmicCultInfluences
+  - CosmicCultServants
   - CosmicCultDeconversion
 
 - type: guideEntry
@@ -18,6 +21,16 @@
   text: "/ServerInfo/_DV/Guidebook/Antagonist/CosmicCultInfluences.xml"
 
 - type: guideEntry
+  id: CosmicCultServants
+  name: guide-entry-cosmiccult-servants
+  text: "/ServerInfo/_DV/Guidebook/Antagonist/CosmicCultServants.xml"
+
+- type: guideEntry
   id: CosmicCultDeconversion
   name: guide-entry-cosmiccult-deconversion
   text: "/ServerInfo/_DV/Guidebook/Antagonist/CosmicCultDeconversion.xml"
+
+- type: guideEntry
+  id: CosmicColossus
+  name: guide-entry-cosmiccolossus
+  text: "/ServerInfo/_DV/Guidebook/Antagonist/CosmicColossus.xml"

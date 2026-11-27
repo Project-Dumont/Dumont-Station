@@ -5,6 +5,8 @@
 
 - type: antag
   id: SlaughterDemon
+  organization: character-organization-underworld # Dumont
+  organizationColor: "#ff2020"
   name: roles-antag-slaughter-demon-name
   antagonist: true
   objective: roles-antag-slaughter-demon-objective

@@ -76,6 +76,26 @@
     containers:
       board: [ DoorElectronicsBrigMedic ]
 
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalSecurityLocked
+  suffix: External, Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecSecurityLocked
+  suffix: Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+
 # Service
 - type: entity
   parent: AirlockLibrary
@@ -172,6 +192,17 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBrigMedic ]
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassSecurityLocked
+  suffix: External, Glass, Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity
 
 # Service
 - type: entity

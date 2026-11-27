@@ -4,11 +4,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: latheRecipePack
-  id: EngineerBagStatic
-  recipes:
-  - EngineerMaterialBag
-
-- type: latheRecipePack
   id: EngineeringModules
   recipes:
   - ModsuitModuleMagbootRecipe

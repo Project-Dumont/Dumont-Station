@@ -72,6 +72,14 @@
   - SpeedLoaderWatson # Dumont
   - SpeedLoaderMagnumEmpty
   - SpeedLoaderWatsonEmpty # Dumont
+# Trauma gauss gun port start
+  - BaseMagazineGaussgun
+  - MagazineGaussgunShard
+  - MagazineGaussgunDisc
+  - MagazineGaussgun
+  - MagazineBoxGaussgunDisc
+  - MagazineBoxGaussgunShard
+  - MagazineBoxGaussgunBullet
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -98,6 +106,8 @@
   - PowerCageSmall
   - TelescopicShield
   - ClothingBackpackHarmpack
+  - InducerSec # Dumont edit - Lasersec
+  - PowerCellCombat
 
 - type: latheRecipePack
   id: SecurityBoards
@@ -161,6 +171,9 @@
   - WeaponTemperatureGun # Goobstation
   - Terminus # Goobstation
   - WeaponLaserSvalinn
+# dumont edit lasersec
+  - WeaponLaserSMG
+  - WeaponLaserRifle
 
 - type: latheRecipePack
   id: SecurityDisablers

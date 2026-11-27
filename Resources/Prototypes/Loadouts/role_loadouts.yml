@@ -858,7 +858,7 @@
   - TrinketsCommand #Gabystation
   - TrinketsSecurity #Gabystation
   - HoSLawbringerSkins # Gabystation
-  - WeaponsSecurityGun # Dumontstation
+#  - WeaponsSecurityGun Dumont Lasersec rework 
   - Trinkets
   - SecurityStar
   - Animals
@@ -884,7 +884,7 @@
   - SecurityShoes
   - SurvivalSecurity
   - TrinketsSecurity  #Gabystation
-  - WeaponsSecurityGun # Dumontstation
+#  - WeaponsSecurityGun # Dumontstation
   - Trinkets
   - SecurityStar
   - Animals
@@ -910,7 +910,7 @@
   - SecurityBelt
   - SurvivalSecurity
   - TrinketsSecurity  #Gabystation
-  - WeaponsSecurityGun # Dumontstation
+#  - WeaponsSecurityGun # Dumontstation
   - Trinkets
   - SecurityStar
   - Animals
@@ -1305,3 +1305,28 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+- type: roleLoadout
+  id: JobTramDriver
+  groups:
+  - TramDriverJumpsuit
+  - TramDriverShoes
+  - TramDriverHead
+  - TramDriverOuterClothing
+  - CivilianJumpsuit
+  - CivilianBackpackRequired
+  - CivilianHat
+  - CivilianNeck
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - Survival
+  - ServiceWorkerEnvirohelmet
+  - ServiceWorkerEnvirosuit
+  - ServiceWorkerEnvirogloves
+  - ServiceWorkerEnviroboots

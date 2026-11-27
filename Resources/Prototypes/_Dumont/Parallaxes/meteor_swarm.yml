@@ -1,0 +1,15 @@
+- type: parallax
+  id: MeteorSwarm
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Parallaxes/Asteroids.png"
+      slowness: 0.95
+      scale: 0.8,0.8
+      scrolling: "0.05, 0.02"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Parallaxes/Asteroids.png"
+      slowness: 0.875
+      scale: 1.5,1.5
+      scrolling: "0.15, -0.01"

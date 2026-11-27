@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ PartMoth, BaseWings ]
+  id: WingsMoth
+  name: moth wings
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Moth/parts.rsi
+    state: wings
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Moth/parts.rsi
+    state: wings
+  - type: SpeedModifierOrgan
+    weightlessAcceleration: 2 # same as the old moth base acceleration
+    weightlessModifier: 0.3
+
+- type: entity
+  parent: WingsMoth
+  id: WingsMothDefault
+  suffix: Moth, Default
+  components:
+  - type: Sprite
+    color: "#FFDA93FF"
+  - type: BodyPartAppearance
+    visLayers: Wings
+    iD: MobHumanoidAnyMarking
+    color: "#FFDA93FF"
+    markings:
+      Wings:
+      - markingId: MothWingsDefault
+        markingColor: [ "#FFDA93FF" ]
+
+- type: entity
+  parent: [ PartArachnid, BaseWings ]
+  id: AppendagesArachnid
+  name: spider appendages
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Arachnid/parts.rsi
+    state: wings
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Arachnid/parts.rsi
+    state: wings

@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAreaStation
+  id: AreaAi
+  name: AI
+  suffix: AreaCommand, AreaAI
+  components:
+  - type: DepartmentArea
+    department: Silicon
+  - type: Sprite
+    state: ai
+
+- type: entity
+  parent: AreaAi
+  id: AreaAiCore
+  name: AI core
+  suffix: AreaCommand, AreaAI
+  components:
+  - type: Sprite
+    state: ai_core
+
+- type: entity
+  parent: AreaAi
+  id: AreaAiUpload
+  name: AI upload
+  suffix: AreaCommand, AreaAI
+  components:
+  - type: Sprite
+    state: ai_upload

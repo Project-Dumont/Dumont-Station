@@ -1,0 +1,17 @@
+﻿- type: latheRecipe
+  id: OvenMachineCircuitboard
+  result: OvenMachineCircuitboard
+  # category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 800
+    Glass: 900
+
+- type: latheRecipe
+  id: GriddleMachineCircuitboard
+  result: GriddleMachineCircuitboard
+  # category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 800
+    Glass: 900

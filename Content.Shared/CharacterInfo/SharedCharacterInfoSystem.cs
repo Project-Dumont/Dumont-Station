@@ -34,15 +34,17 @@ public sealed class RequestCharacterInfoEvent : EntityEventArgs
 public sealed class CharacterInfoEvent : EntityEventArgs
 {
     public readonly NetEntity NetEntity;
+    public readonly List<ProtoId<AntagPrototype>> Antags; // Dumont
     public readonly string JobTitle;
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
     public readonly string? NanoBankBriefing;
     public readonly ProtoId<JobPrototype>? Job; // Dumont Station - passa o id do job
 
-    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? nanoBankBriefing, ProtoId<JobPrototype>? job)
+    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? nanoBankBriefing, ProtoId<JobPrototype>? job, List<ProtoId<AntagPrototype>> antags)
     {
         NetEntity = netEntity;
+        Antags = antags;
         JobTitle = jobTitle;
         Objectives = objectives;
         Briefing = briefing;

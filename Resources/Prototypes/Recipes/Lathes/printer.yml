@@ -628,3 +628,54 @@
   materials:
     SheetPrinter: 100
 # GabyStation documents end
+# DumontStation documents start
+- type: latheRecipe
+  id: PrintedDocumentDNRRecipe
+  result: PrintedDocumentDNR
+  categories:
+  - ConclusionsAndDecisions
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCaptainPardonRecipe
+  result: PrintedDocumentCaptainPardon
+  categories:
+  - ConclusionsAndDecisions
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentWitnessStatementRecipe
+  result: PrintedDocumentWitnessStatement
+  categories:
+  - Evidence
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentLastWillRecipe
+  result: PrintedDocumentLastWill
+  categories:
+  - Evidence
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCommandTransferRecipe
+  result: PrintedDocumentCommandTransfer
+  categories:
+  - Reports
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+# DumontStation documents end

@@ -89,7 +89,7 @@
   - PowerCellXrayRevolver
   - PowerCellOverchargedRevolver
   - PowerCellIRSMG
-  - PowerCellIonSMG
+#  - PowerCellIonSMG Dumont edit Too. Fucking. Loud.
   - PowerCellXraySMG
   - PowerCellOverchargedSMG
   - PowerCellIRSniper
@@ -97,11 +97,17 @@
   - PowerCellXraySniper
   - PowerCellOverchargedSniper
   - MilitaryPowerCellLMG
-  - PowerCellBluespaceRevolver
-  - PowerCellBluespaceSMG
-  - PowerCellBluespaceSniper
-  - MilitaryPowerCellBluespaceLMG
-  - EnergyMagRifleBluespaceLethal #Dumontstation
+# Dumont station edit start
+#  - PowerCellBluespaceRevolver
+#  - PowerCellBluespaceSMG
+#  - PowerCellBluespaceSniper
+#  - MilitaryPowerCellBluespaceLMG
+#  - EnergyMagRifleBluespaceLethal
+  - PowerCellPulseRevolver
+  - PowerCellPulseSMG
+  - PowerCellPulseSniper
+  - EnergyMagRiflePulse
+  - EnergyMagRifleGamma
 
 - type: latheRecipePack
   id: SecurityEquipmentDynamicGoob

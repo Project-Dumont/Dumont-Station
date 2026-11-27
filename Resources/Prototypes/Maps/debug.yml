@@ -38,7 +38,7 @@
 - type: gameMap
   id: Dev
   mapName: Dev
-  mapPath: /Maps/Test/dev_map.yml
+  mapPath: /Maps/_Dumont/Test/dev_map.yml
   minPlayers: 0
   stations:
     Dev:
@@ -51,7 +51,8 @@
             Captain: [ -1, -1 ]
             NanotrasenRepresentative: [ -1, -1 ] # Goob - remove it after test
             BlueshieldOfficer: [ -1, -1 ] # Remove this too
-            AdministrativeAssistant: [ -1, -1 ] # Gaby - admin assist
+            AdministrativeAssistant: [ -1, -1 ] # Dumont - admin assist
+            NanotrasenCareerTrainer: [ -1, -1 ] # Dumont
         # Goobstation blob-config-start DEBUG
         - type: StationBlobConfig
           stageBegin: 20

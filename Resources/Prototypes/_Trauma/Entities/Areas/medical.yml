@@ -1,0 +1,148 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseAreaStation
+  id: BaseAreaMedical
+  name: medical
+  suffix: AreaMedical
+  components:
+  - type: DepartmentArea
+    department: Medical
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedical
+  name: medbay
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: medbay
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalBreak
+  name: medbay breakroom
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: medbay_break
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalLobby
+  name: medbay lobby
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: medbay_lobby
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMedicalStorage
+  name: medbay storage
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: medbay_storage
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaSurgery
+  name: surgery
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: surgery
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaSurgeryTheatre
+  name: surgery theatre
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: surgery_theatre
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaMorgue
+  name: morgue
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: morgue
+  - type: Tag
+    tags: [ AreaMorgue ]
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaPsychology
+  name: psychology
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: psychology
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaCloning
+  name: cloning
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: cloning
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaParamedic
+  name: paramedic
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: paramed
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaPatientRoom
+  name: patient room
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: patient_room
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaPharmacy
+  name: pharmacy
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: pharmacy
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaChem
+  name: chem
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: chem
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaCryoPods
+  name: cryo pods
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: cryo_pods
+
+- type: entity
+  parent: BaseAreaMedical
+  id: AreaVirology
+  name: virology
+  suffix: AreaMedical
+  components:
+  - type: Sprite
+    state: virology

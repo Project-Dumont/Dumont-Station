@@ -18,7 +18,20 @@
       - state: eyeball-r
   - type: Organ
     onAdd:
-    - type: NightVision # Goobstation - Nightvision
-      color: "#9c452a" #A cor parece estar forte demais, não faço ideia pra qual colocar
-      activateSound: null
-      deactivateSound: null
+    - type: EyeProtection # Dumont | Para compensar a perda de visão noturna, esses olhos são agora robustos pra aguentar solda.
+
+- type: entity
+  id: OrganDaengatiStomach
+  parent: OrganAnimalStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5

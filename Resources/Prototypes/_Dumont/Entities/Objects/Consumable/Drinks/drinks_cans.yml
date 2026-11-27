@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkGuaranaJudasCan
+  name: Guaraná Judas can
+  description: A sweet, carbonated guaraná soda. The flavor will betray you.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: GuaranaJudas
+          Quantity: 30
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Cola
+    - DrinkCan
+    - Recyclable
+  - type: Sprite
+    sprite: _Dumont/Objects/Consumable/Drinks/guarana_judas.rsi
+  - type: Item
+    sprite: _Dumont/Objects/Consumable/Drinks/guarana_judas.rsi
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkSkalCan
+  name: Skal can
+  description: The beer that goes down smooth. Please drink responsibly.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Skal
+          Quantity: 30
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Beer
+    - DrinkCan
+    - Recyclable
+  - type: Sprite
+    sprite: _Dumont/Objects/Consumable/Drinks/skal.rsi
+  - type: Item
+    sprite: _Dumont/Objects/Consumable/Drinks/skal.rsi

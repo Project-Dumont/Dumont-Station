@@ -27,6 +27,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.DecalPlacer;
 using Content.Client.UserInterface.Systems.Sandbox.Windows;
 using Content.Shared.Input;
+using Content.Trauma.Client.Areas; // Dumont
 using JetBrains.Annotations;
 using Robust.Client.Debugging;
 using Robust.Client.Graphics;
@@ -58,6 +59,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     [UISystemDependency] private readonly DebugPhysicsSystem _debugPhysics = default!;
     [UISystemDependency] private readonly MarkerSystem _marker = default!;
     [UISystemDependency] private readonly SandboxSystem _sandbox = default!;
+    [UISystemDependency] private readonly AreaVisibilitySystem _areaVisibility = default!; // Dumont
 
     private SandboxWindow? _window;
 
@@ -141,6 +143,11 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         _window.ToggleFovButton.Pressed = !_eye.CurrentEye.DrawFov;
         _window.ToggleShadowsButton.Pressed = !_light.DrawShadows;
         _window.ShowMarkersButton.Pressed = _marker.MarkersVisible;
+        // Dumont changes start
+        _window.ShowAreasButton.Pressed = _areaVisibility.Visible;
+        var areasButton = _window.ShowAreasButton;
+        _window.OnOpen += () => areasButton.Pressed = _areaVisibility.Visible;
+        // Dumont end
         _window.ShowBbButton.Pressed = (_debugPhysics.Flags & PhysicsDebugFlags.Shapes) != 0x0;
 
         _window.AiOverlayButton.OnPressed += args =>
@@ -170,6 +177,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         _window.SuicideButton.OnPressed += _ => _sandbox.Suicide();
         _window.ToggleSubfloorButton.OnPressed += _ => _sandbox.ToggleSubFloor();
         _window.ShowMarkersButton.OnPressed += _ => _sandbox.ShowMarkers();
+        _window.ShowAreasButton.OnPressed += _ => _areaVisibility.ToggleVisibility(); // Dumont
         _window.ShowBbButton.OnPressed += _ => _sandbox.ShowBb();
     }
 

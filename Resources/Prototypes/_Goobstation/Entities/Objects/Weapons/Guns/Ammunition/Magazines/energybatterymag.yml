@@ -20,6 +20,8 @@
   - type: Tag
     tags:
       - EnergyMagAmmo
+  - type: EmpResistance
+    coefficient: 0.008 # EMP takes 1/3 of your mags
 
 - type: entity
   id: EnergyMagRifleLethal
@@ -31,8 +33,8 @@
     layers:
     - state: erifle_lethal
       map: [ "enum.GunVisualLayers.Base" ]
-  - type: HitscanBatteryAmmoProvider
-    proto: RedLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserMainWeapon
     fireCost: 50
 
 - type: entity
@@ -59,8 +61,8 @@
     layers:
     - state: erifle_ion
       map: [ "enum.GunVisualLayers.Base" ]
-  - type: HitscanBatteryAmmoProvider
-    proto: IonLaser
+  - type: ProjectileBatteryAmmoProvider
+    proto: RifleBulletEnergyGunIon
     fireCost: 50
 
 - type: entity
@@ -73,9 +75,9 @@
     layers:
     - state: erifle_overcharge
       map: [ "enum.GunVisualLayers.Base" ]
-  - type: HitscanBatteryAmmoProvider
-    proto: RedLaserOvercharge
-    fireCost: 66 #15 shot hopefully
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserOvercharge
+    fireCost: 83 #12 shots
 
 # Dumontstation, why the fuck did goob forget to add in bluespace ammo for this gun are they stupid
 - type: entity
@@ -91,3 +93,32 @@
   - type: HitscanBatteryAmmoProvider
     proto: LaserBluespace
     fireCost: 66
+
+- type: entity
+  id: EnergyMagRiflePulse
+  parent: [ EnergyRifleMagBase, BaseSecurityContraband ]
+  name: energy rifle magazine (pulse)
+  description: This magazine utilizes pulse beams to bypass a few inches of armor.
+  components:
+  - type: Sprite
+    layers:
+    - state: erifle_disabler # looks okay
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: HitscanBatteryAmmoProvider
+    proto: LaserPulseEnergyRifle
+    fireCost: 50
+
+- type: entity
+  id: EnergyMagRifleGamma
+  parent: [ EnergyRifleMagBase, BaseSecurityContraband ]
+  name: energy rifle magazine (gamma)
+  description: This magazine utilizes gamma beams that are able to pierce enemies and walls.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Dumont/Objects/Weapons/Guns/Ammunition/Magazine/energyriflemag.rsi
+    layers:
+    - state: erifle_gamma
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletEnergyRifleGamma
+    fireCost: 50

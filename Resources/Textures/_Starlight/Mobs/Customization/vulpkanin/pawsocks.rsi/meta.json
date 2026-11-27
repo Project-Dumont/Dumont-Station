@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Occulus-Eris (https://github.com/Occulus-Server/Occulus-Eris), modified and addendum by Ko4erga and MureixIoL, tail_fox_waggin and tail_wolf_waggin edited by Litogin. Paw socks split into separate markings by GnarlyGnoll (JohnDWolfe), https://github.com/ss14Starlight/space-station-14/pull/177. Left/right split adapted for Dumont.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pawsocks_left_hand",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_right_hand",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_left_arm",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_right_arm",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_left_foot",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_right_foot",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_left_leg",
+      "directions": 4
+    },
+    {
+      "name": "pawsocks_right_leg",
+      "directions": 4
+    }
+  ]
+}

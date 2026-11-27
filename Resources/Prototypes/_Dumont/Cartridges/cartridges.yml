@@ -13,6 +13,6 @@
     - type: Cartridge
       programName: jani-program-name
       icon:
-        sprite: Objects/Specific/Janitorial/mop.rsi
-        state: mop
+        sprite: _Dumont/Interface/Misc/program_icons.rsi
+        state: jani
     - type: JaniCartridge

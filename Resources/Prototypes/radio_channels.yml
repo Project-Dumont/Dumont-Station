@@ -107,7 +107,7 @@
   name: chat-radio-security
   keycode: 's'
   frequency: 1359
-  color: "#0059d7"
+  color: "#5374f5"
 
 - type: radioChannel
   id: Service

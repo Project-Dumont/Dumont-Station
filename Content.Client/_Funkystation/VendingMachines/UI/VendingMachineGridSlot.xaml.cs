@@ -32,6 +32,7 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     private readonly StyleBoxFlat _exactMatchStyle = new() { BackgroundColor = new Color(40, 70, 40), BorderColor = new Color(100, 255, 100), BorderThickness = new Thickness(2) };
 
     public bool SoldOut { get; private set; }
+    public string ItemName { get; private set; } = string.Empty;
 
     public VendingMachineGridSlot()
     {
@@ -92,6 +93,8 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
             {
                 PriceLabel.Visible = false;
             }
+
+            ItemName = tooltipText;
 
             ToolTip = string.IsNullOrWhiteSpace(proto.Description)
                 ? tooltipText

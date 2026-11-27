@@ -31,6 +31,7 @@
             HeadOfPersonnel: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 1, 1 ] # Dumont
             #service 11-12
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
@@ -82,6 +83,8 @@
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
             RadioHost: [ 1, 1 ]
+            #station specific
+            TramDriver: [ 1, 1 ]
             #silicon (3)
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]

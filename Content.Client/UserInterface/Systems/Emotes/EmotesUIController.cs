@@ -31,6 +31,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
 
     private MenuButton? EmotesButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.EmotesButton;
     private SimpleRadialMenu? _menu;
+    public bool EmoteMenuOpen => _menu != null; // Dumont - Duo emotes
 
     private static readonly Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)> EmoteGroupingInfo =
         new()
@@ -89,14 +90,23 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         }
         else
         {
-            _menu.OnClose -= OnWindowClosed;
-            _menu.OnOpen -= OnWindowOpen;
-
-            if (EmotesButton != null)
-                EmotesButton.SetClickPressed(false);
-
-            CloseMenu();
+            CloseEmoteMenu(); // Dumont - Duo emote
         }
+    }
+
+    // Dumont - Duo emote
+    public void CloseEmoteMenu()
+    {
+        if (_menu == null)
+            return;
+
+        _menu.OnClose -= OnWindowClosed;
+        _menu.OnOpen -= OnWindowOpen;
+
+        if (EmotesButton != null)
+            EmotesButton.SetClickPressed(false);
+
+        CloseMenu();
     }
 
     public void UnloadButton()

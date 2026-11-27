@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: antag
+  id: CosmicAntagCultist
+  organization: character-organization-unknown # Dumont
+  organizationColor: "#4cabb3"
+  name: roles-antag-cosmiccult-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-cosmiccult-description
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 2h
+  guides: [ CosmicCult ]
+
+- type: antag
+  id: CosmicAntagColossus
+  organization: character-organization-unknown # Dumont
+  organizationColor: "#4cabb3"
+  name: ghost-role-information-colossus-name
+  antagonist: true
+  objective: ghost-role-colossus-objective

@@ -1,0 +1,611 @@
+- type: entity
+  abstract: true
+  parent: BaseVinylDisk
+  id: BaseVinylDiskJukebox
+  name: vinyl disk
+  description: A vinyl disk containing a song from the station's jukebox.
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskIRanSoFarAway
+  name: "vinyl disk: A Flock Of Seagulls - I Ran"
+  components:
+  - type: Sprite
+    state: lightblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/i_ran_so_far_away.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskTremDasOnze
+  name: "vinyl disk: Adoniran Barbosa - Trem das Onze"
+  components:
+  - type: Sprite
+    state: glossy-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskRaindropsKeepFallingOnMyHead
+  name: "vinyl disk: B.J. Thomas - Raindrops Keep Fallin' On My Head"
+  components:
+  - type: Sprite
+    state: cyan-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/raindrops_keep_falling_on_my_head.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBabyBlue
+  name: "vinyl disk: Badfinger - Baby Blue"
+  components:
+  - type: Sprite
+    state: lightblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/baby_blue.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDoFundoDaGrota
+  name: "vinyl disk: Baitaca - Do Fundo da Grota"
+  components:
+  - type: Sprite
+    state: greenish-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBumbleBee
+  name: "vinyl disk: Bambee - Bumble Bee"
+  components:
+  - type: Sprite
+    state: yellow-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/bumble_bee.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDotA
+  name: "vinyl disk: Basshunter - DotA"
+  components:
+  - type: Sprite
+    state: darkblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/dota.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDancingWithMyself
+  name: "vinyl disk: Billy Idol - Dancing With Myself"
+  components:
+  - type: Sprite
+    state: purple-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/dancing_with_myself.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEvidencias
+  name: "vinyl disk: Chitãozinho & Xororó - Evidencias"
+  components:
+  - type: Sprite
+    state: orange-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/evidencias.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskSpaceAsshole
+  name: "vinyl disk: Chris Remo - Space Asshole"
+  components:
+  - type: Sprite
+    state: earth-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/Lobby/space_asshole.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskHaveYouEverSeenTheRain
+  name: "vinyl disk: Creedence Clearwater Revival - Have You Ever Seen The Rain"
+  components:
+  - type: Sprite
+    state: cyan-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/have_you_ever_seen_the_rain.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDontDreamItsOver
+  name: "vinyl disk: Crowded House - Don't Dream It's Over"
+  components:
+  - type: Sprite
+    state: darkblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/dont_dream_its_over.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskStarman
+  name: "vinyl disk: David Bowie - Starman"
+  components:
+  - type: Sprite
+    state: floaty-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/starman.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskSultansOfSwing
+  name: "vinyl disk: Dire Straits - Sultans Of Swing"
+  components:
+  - type: Sprite
+    state: glossy-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/sultans_of_swing.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskHotelCalifornia
+  name: "vinyl disk: Eagles - Hotel California"
+  components:
+  - type: Sprite
+    state: orange-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/hotel_california.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEiffel65Blue
+  name: "vinyl disk: Eiffel 65 - Blue"
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/blue.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskMyWay
+  name: "vinyl disk: Frank Sinatra - My Way"
+  components:
+  - type: Sprite
+    state: glossy-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/my_way.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskTakeMeOut
+  name: "vinyl disk: Franz Ferdinand - Take Me Out"
+  components:
+  - type: Sprite
+    state: red-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/take_me_out.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskCarelessWhisper
+  name: "vinyl disk: George Michael - Careless Whisper"
+  components:
+  - type: Sprite
+    state: pink-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/careless_whisper.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskLamourToujours
+  name: "vinyl disk: Gigi D'Agostino - L'Amour Toujours"
+  components:
+  - type: Sprite
+    state: pink-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/lamour_toujours.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskAmericanIdiot
+  name: "vinyl disk: Green Day - American Idiot"
+  components:
+  - type: Sprite
+    state: green-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/american_idiot.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskParadiseCity
+  name: "vinyl disk: Guns N' Roses - Paradise City"
+  components:
+  - type: Sprite
+    state: lime-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/paradise_city.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskSummer
+  name: "vinyl disk: HALCALI - おつかれSUMMER"
+  components:
+  - type: Sprite
+    state: yellow-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/summer.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskCantGetOver
+  name: "vinyl disk: KASINO - Can't Get Over"
+  components:
+  - type: Sprite
+    state: purple-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/cant_get_over.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskTempoPerdido
+  name: "vinyl disk: Legião Urbana - Tempo Perdido"
+  components:
+  - type: Sprite
+    state: darkblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/tempo_perdido.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskPeladosEmSantos
+  name: "vinyl disk: Mamonas Assassinas - Pelados Em Santos"
+  components:
+  - type: Sprite
+    state: greenish-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/pelados_em_santos.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBreakMyStride
+  name: "vinyl disk: Matthew Wilder - Break My Stride"
+  components:
+  - type: Sprite
+    state: lime-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/break_my_stride.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDownUnder
+  name: "vinyl disk: Men At Work - Down Under"
+  components:
+  - type: Sprite
+    state: earth-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/down_under.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBeatIt
+  name: "vinyl disk: Michael Jackson - Beat It"
+  components:
+  - type: Sprite
+    state: red-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/beat_it.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBillieJean
+  name: "vinyl disk: Michael Jackson - Billie Jean"
+  components:
+  - type: Sprite
+    state: red-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/billie_jean.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskLady
+  name: "vinyl disk: Modjo - Lady"
+  components:
+  - type: Sprite
+    state: pink-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/lady.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskGreytideSong
+  name: "vinyl disk: Mrjajkes - The Greytide Song"
+  components:
+  - type: Sprite
+    state: glossy-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Goobstation/Music/the_gray_tide_song.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskOAstronautaDeMarmore
+  name: "vinyl disk: Nenhum De Nós - O Astronauta De Mármore"
+  components:
+  - type: Sprite
+    state: floaty-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Lobby/marmore.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDragosteaDinTei
+  name: "vinyl disk: O-Zone - Dragostea Din Tei"
+  components:
+  - type: Sprite
+    state: green-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/dragostea_din_tei.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskJustBreathe
+  name: "vinyl disk: Pearl Jam - Just Breathe"
+  components:
+  - type: Sprite
+    state: lightblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/just_breathe.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskDontStopMeNow
+  name: "vinyl disk: Queen - Don't Stop Me Now"
+  components:
+  - type: Sprite
+    state: purple-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/dont_stop_me_now.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskKillerQueen
+  name: "vinyl disk: Queen - Killer Queen"
+  components:
+  - type: Sprite
+    state: purple-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/killer_queen.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskCalifornication
+  name: "vinyl disk: Red Hot Chilli Peppers - Californication"
+  components:
+  - type: Sprite
+    state: red-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/californication.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEscape
+  name: "vinyl disk: Ruppert Holmes - Escape"
+  components:
+  - type: Sprite
+    state: yellow-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/escape.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskAmigaDaMinhaMulher
+  name: "vinyl disk: Seu Jorge - Amiga da Minha Mulher"
+  components:
+  - type: Sprite
+    state: green-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/amiga_da_minha_mulher.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskBurguesinha
+  name: "vinyl disk: Seu Jorge - Burguesinha"
+  components:
+  - type: Sprite
+    state: green-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/burguesinha.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskAllStar
+  name: "vinyl disk: Smash Mouth - All Star"
+  components:
+  - type: Sprite
+    state: yellow-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/all_star.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskImABeliever
+  name: "vinyl disk: Smash Mouth - I'm A Believer"
+  components:
+  - type: Sprite
+    state: lime-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/im_a_believer.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskFly
+  name: "vinyl disk: Spectrum - F L Y"
+  components:
+  - type: Sprite
+    state: lightblue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Jukebox/fly.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEyeOfTheTiger
+  name: "vinyl disk: Survivor - Eye Of The Tiger"
+  components:
+  - type: Sprite
+    state: orange-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/eye_of_the_tiger.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEverybodyWantsToRuleTheWorld
+  name: "vinyl disk: Tears For Fears - Everybody Wants To Rule The World"
+  components:
+  - type: Sprite
+    state: earth-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/everybody_wants_to_rule_the_world.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskSugarSugar
+  name: "vinyl disk: The Archies - Sugar Sugar"
+  components:
+  - type: Sprite
+    state: pink-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/sugar_sugar.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskHelp
+  name: "vinyl disk: The Beatles - Help!"
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/help.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskShouldIStayOrShouldIGo
+  name: "vinyl disk: The Clash - Should I Stay Or Should I Go"
+  components:
+  - type: Sprite
+    state: lightishred-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/should_i_stay_or_should_i_go.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskEveryBreathYouTake
+  name: "vinyl disk: The Police - Every Breath You Take"
+  components:
+  - type: Sprite
+    state: cyan-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/every_breath_you_take.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskStartMeUp
+  name: "vinyl disk: The Rolling Stones - Start Me Up"
+  components:
+  - type: Sprite
+    state: lightishred-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/start_me_up.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskSeteMares
+  name: "vinyl disk: Tim Maia - O Descobridor dos Sete Mares"
+  components:
+  - type: Sprite
+    state: cyan-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Lobby/sete_mares.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskGatinhaComunista
+  name: "vinyl disk: Vitroles - Gatinha Comunista"
+  components:
+  - type: Sprite
+    state: red-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskOceanMan
+  name: "vinyl disk: Ween - Ocean Man"
+  components:
+  - type: Sprite
+    state: cyan-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/ocean_man.ogg
+
+- type: entity
+  parent: BaseVinylDiskJukebox
+  id: VinylDiskIslandInTheSun
+  name: "vinyl disk: Weezer - Island In The Sun"
+  components:
+  - type: Sprite
+    state: lime-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Dumont/Jukebox/island_in_the_sun.ogg

@@ -45,7 +45,7 @@ public sealed partial class ElectionSystem : EntitySystem
     private static readonly EntProtoId FallbackPod = "SpawnPodElectionScreen";
     private static readonly CultureInfo Culture = CultureInfo.GetCultureInfo("pt-BR");
 
-    private static readonly DateTime Start = new(2026, 10, 4, 20, 0, 0, DateTimeKind.Utc);
+    private static readonly DateTime Start = new(2026, 10, 25, 20, 0, 0, DateTimeKind.Utc);
 
     private const float TestInterval = 2f;
     private const float TestWarmup = 10f;

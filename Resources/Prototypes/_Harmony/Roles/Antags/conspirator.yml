@@ -4,6 +4,7 @@
 
 - type: antag
   id: Conspirator
+  organization: character-organization-conspirators # Dumont
   name: roles-antag-conspirator-name
   antagonist: true
   setPreference: true

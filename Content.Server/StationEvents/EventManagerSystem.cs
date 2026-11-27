@@ -83,6 +83,7 @@
 
 using System.Linq;
 using Content.Goobstation.Common.CCVar; // Goobstation
+using Content.Server._Dumont.StationTraits; // Dumont
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
@@ -105,6 +106,7 @@ public sealed class EventManagerSystem : EntitySystem
     [Dependency] private readonly EntityTableSystem _entityTable = default!;
     [Dependency] public readonly GameTicker GameTicker = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
+    [Dependency] private StationEventWeightRuleSystem _eventWeight = default!; // Dumont
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
@@ -255,16 +257,18 @@ public sealed class EventManagerSystem : EntitySystem
 
         var sumOfWeights = 0.0f;
 
-        foreach (var stationEvent in availableEvents.Values)
+        // Dumont changes start
+        foreach (var (proto, stationEvent) in availableEvents)
         {
-            sumOfWeights += stationEvent.Weight;
+            sumOfWeights += stationEvent.Weight * _eventWeight.GetModifier(proto.ID);
         }
+        // Dumont end
 
         sumOfWeights = _random.NextFloat(sumOfWeights);
 
         foreach (var (proto, stationEvent) in availableEvents)
         {
-            sumOfWeights -= stationEvent.Weight;
+            sumOfWeights -= stationEvent.Weight * _eventWeight.GetModifier(proto.ID); // Dumont
 
             if (sumOfWeights <= 0.0f)
             {
@@ -299,6 +303,11 @@ public sealed class EventManagerSystem : EntitySystem
 
         foreach (var (proto, stationEvent) in AllEvents())
         {
+            // Dumont changes start
+            if (_eventWeight.GetModifier(proto.ID) <= 0f)
+                continue;
+            // Dumont end
+
             if (CanRun(proto, stationEvent, playerCount, currentTime, reoccurrenceMult)) // Goobstation
             {
                 result.Add(proto, stationEvent);

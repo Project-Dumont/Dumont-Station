@@ -1,0 +1,219 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Numerics;
+using Content.Shared.Maps;
+using Content.Shared.Physics;
+using Content.Shared.Roles;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+
+namespace Content.Trauma.Shared.Areas;
+
+/// <summary>
+/// Tracks area prototypes and provides API for using them.
+/// </summary>
+public sealed partial class AreaSystem : EntitySystem
+{
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private MapAreaSystem _mapArea = default!;
+    [Dependency] private TurfSystem _turf = default!;
+
+    private EntityQuery<DepartmentAreaComponent> _deptQuery;
+
+    /// <summary>
+    /// List of every area prototype in the game.
+    /// </summary>
+    [ViewVariables]
+    public List<EntProtoId> AllAreas = new();
+
+    /// <summary>
+    /// Dictionary of departments to area prototypes that belong to it.
+    /// </summary>
+    [ViewVariables]
+    public Dictionary<ProtoId<DepartmentPrototype>, List<EntProtoId>> DepartmentAreas = new();
+
+    private const float Range = 0.25f;
+    private const LookupFlags Flags = LookupFlags.Static;
+
+    private HashSet<Entity<AreaComponent>> _areas = new();
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _deptQuery = GetEntityQuery<DepartmentAreaComponent>();
+
+        SubscribeLocalEvent<AreaComponent, AnchorStateChangedEvent>(OnAnchorStateChanged);
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+
+        LoadPrototypes();
+    }
+
+    private void OnAnchorStateChanged(Entity<AreaComponent> ent, ref AnchorStateChangedEvent args)
+    {
+        // delete areas that get unanchored by explosions or other more cursed things
+        if (!args.Anchored && !args.Detaching)
+            PredictedQueueDel(ent);
+    }
+
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
+    {
+        if (!args.WasModified<EntityPrototype>())
+            return;
+
+        LoadPrototypes();
+    }
+
+    private void LoadPrototypes()
+    {
+        AllAreas.Clear();
+        DepartmentAreas.Clear();
+        foreach (var proto in ProtoMan.EnumeratePrototypes<EntityPrototype>())
+        {
+            if (!proto.HasComp<AreaComponent>(Factory))
+                continue;
+
+            var id = proto.ID;
+            AllAreas.Add(id);
+            if (!proto.TryComp<DepartmentAreaComponent>(out var comp, Factory))
+                continue;
+
+            var deptId = comp.Department;
+            if (!DepartmentAreas.TryGetValue(deptId, out var list))
+                DepartmentAreas[deptId] = list = [];
+            list.Add(id);
+        }
+    }
+
+    #region Public API
+
+    /// <summary>
+    /// Get the area a given mob is in.
+    /// </summary>
+    public EntityUid? GetArea(EntityUid target)
+        => GetArea(Transform(target).Coordinates);
+
+    /// <summary>
+    /// Get the area at a given position by finding its grid first.
+    /// </summary>
+    public EntityUid? GetArea(EntityCoordinates coords)
+        => _transform.GetGrid(coords) is {} grid
+            ? GetArea(grid, coords)
+            : null;
+
+    /// <summary>
+    /// Get the area at a given position on a grid.
+    /// </summary>
+    public EntityUid? GetArea(EntityUid grid, EntityCoordinates coords)
+    {
+        var pos = coords.Position;
+        if (coords.EntityId != grid)
+        {
+            // relative to some random entity, have to go from world to grid-local first
+            var matrix = _transform.GetInvWorldMatrix(grid);
+            var worldPos = _transform.ToWorldPosition(coords);
+            pos = Vector2.Transform(worldPos, matrix);
+        }
+
+        return _mapArea.GetArea(grid, pos);
+    }
+
+    /// <summary>
+    /// Get the name of an area a mob is in, or unknown if there is none.
+    /// </summary>
+    public string GetAreaName(EntityUid target)
+        => GetAreaName(Transform(target).Coordinates);
+
+    /// <summary>
+    /// Get the name of an area at a position, or unknown if there is none.
+    /// </summary>
+    public string GetAreaName(EntityCoordinates coords)
+        => GetArea(coords) is { } area
+            ? Name(area)
+            : "unknown";
+
+    /// <summary>
+    /// Get the department an area belongs to, or null if it lacks <see cref="DepartmentAreaComponent"/>.
+    /// </summary>
+    public ProtoId<DepartmentPrototype>? GetAreaDepartment(EntityUid area)
+        => _deptQuery.CompOrNull(area)?.Department;
+
+    /// <summary>
+    /// Gets the entity prototype of an area, or null if it lacks <see cref="EntityPrototype"/>.
+    /// </summary>
+    public EntProtoId? GetAreaPrototype(EntityUid area)
+    {
+        return Prototype(area)?.ID;
+    }
+
+    /// <summary>
+    /// Add any areas not blocked by anything on a given map to a list, matching a predicate.
+    /// </summary>
+    public void AddOpenAreas(MapId map, List<Entity<TransformComponent>> areas, Predicate<Entity<TransformComponent>> pred)
+    {
+        AddOpenAreas<AreaComponent>(map, areas, pred);
+    }
+
+    /// <summary>
+    /// Add areas not blocked by anything on a given map to a list, matching a predicate.
+    /// Uses a generic component type param to narrow down the query, use a marker component for it to be faster.
+    /// </summary>
+    public void AddOpenAreas<T>(MapId map, List<Entity<TransformComponent>> areas, Predicate<Entity<TransformComponent>> pred) where T: IComponent
+    {
+        AddOpenAreas(map, areas, typeof(T), pred);
+    }
+
+    /// <summary>
+    /// Add areas not blocked by anything on a given map to a list, matching a predicate.
+    /// Uses the name of a component to narrow down the query, use a marker component's name for it to be faster.
+    /// </summary>
+    public void AddOpenAreas(MapId map, List<Entity<TransformComponent>> areas, string comp, Predicate<Entity<TransformComponent>> pred) // TODO: switch to CompName after contingency
+    {
+        var type = Factory.GetRegistration(comp).Type;
+        AddOpenAreas(map, areas, type, pred);
+    }
+
+    /// <summary>
+    /// Add areas not blocked by anything on a given map to a list, matching a predicate.
+    /// Uses a component type to narrow down the query, use a marker component's type for it to be faster.
+    /// </summary>
+    public void AddOpenAreas(MapId map, List<Entity<TransformComponent>> areas, Type type, Predicate<Entity<TransformComponent>> pred)
+    {
+        // TODO: open areas cache...
+        var mask = CollisionGroup.MobMask;
+        foreach (var (uid, _) in EntityManager.GetAllComponents(type, true))
+        {
+            var xform = Transform(uid);
+            if (xform.MapID != map)
+                continue;
+
+            var coords = xform.Coordinates;
+            if (_turf.GetTileRef(coords) is not {} tile || _turf.IsTileBlocked(tile, mask))
+                continue;
+
+            var ent = new Entity<TransformComponent>(uid, xform);
+            if (pred(ent))
+                areas.Add(ent);
+        }
+    }
+
+    /// <summary>
+    /// Raises a by-ref event on the area a given mob is in.
+    /// </summary>
+    public void RaiseAreaEvent<T>(EntityUid target, ref T ev) where T: notnull
+    {
+        if (GetArea(target) is {} area)
+            RaiseLocalEvent(area, ref ev);
+    }
+
+    /// <summary>
+    /// Raises a by-ref event on the area at a given position.
+    /// </summary>
+    public void RaiseAreaEvent<T>(EntityCoordinates coords, ref T ev) where T: notnull
+    {
+        if (GetArea(coords) is {} area)
+            RaiseLocalEvent(area, ref ev);
+    }
+
+    #endregion
+}

@@ -38,19 +38,19 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Cutting
+      - behavior: [ Cutting ]
         sprite:
           sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
           state: icon-axe
         useSound: /Audio/Items/jaws_cut.ogg
         changeSound: /Audio/Items/change_jaws.ogg
-      - behavior: Prying
+      - behavior: [ Prying ]
         sprite:
           sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
           state: icon-force
         useSound: /Audio/Items/jaws_pry.ogg
         changeSound: /Audio/Items/change_jaws.ogg
-      - behavior: Screwing
+      - behavior: [ Screwing ]
         sprite:
           sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
           state: icon-pick

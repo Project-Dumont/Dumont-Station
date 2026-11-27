@@ -4,6 +4,13 @@
   name: Urist McPlasma
   abstract: true
   components:
+  # Dumont edit start
+  - type: DiseaseCarrier
+    effectImmune: true
+  - type: Immunity
+    affectedTypes:
+    - Debug
+  # Dumont edit end
   - type: ZombieImmune
   - type: Icon
     sprite: _EinsteinEngines/Mobs/Species/Plasmaman/parts.rsi

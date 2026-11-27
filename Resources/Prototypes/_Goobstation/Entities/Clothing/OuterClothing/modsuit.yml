@@ -42,12 +42,15 @@
       map: [ "sealed" ]
   - type: Tag
     tags:
-    - PlasmamanSafe
-    - SyringeArmor
+    - PlasmamanSafeOther # Dumont
   - type: IgniteFromGasImmunity
-    parts:
-    - BodyMiddle
-    - Legs
+    parts: # Dumont change
+    - Chest
+    - Groin
+    - LeftArm
+    - RightArm
+    - LeftLeg
+    - RightLeg
   # GabyStation begin
   - type: ItemUpgradeable # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
   - type: ContainerContainer
@@ -500,7 +503,7 @@
         Blunt: 0.8
         Slash: 0.85
         Piercing: 0.85
-        Heat: 0.2
+        Heat: 0.5 # Dumont edit - Lasersec
         Radiation: 0.05
   - type: ComponentToggler
     components:

@@ -21,6 +21,7 @@ using Content.Server.StationEvents.Components;
 using Content.Shared.Administration;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
+using Content.Trauma.Server.StationEvents; // Dumont
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -75,6 +76,10 @@ namespace Content.Server.StationEvents
 
                 _event.RunRandomEvent(eventScheduler.ScheduledGameRules);
                 ResetTimer(eventScheduler);
+                // Dumont changes start
+                var ev = new RuleScheduledEvent();
+                RaiseLocalEvent(uid, ref ev);
+                // Dumont end
             }
         }
 

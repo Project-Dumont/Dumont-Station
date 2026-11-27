@@ -15,6 +15,11 @@
   components:
   #- type: Speech # O valor não pode ser nulo, vai ficar assim até ter um valor
   #  speechVerb:  #No momento que estou fazendo isso acredito que não tenha um modo de falar especifico dos daengatis
+  - type: Vocal
+    sounds:
+      Male: MaleDaengati
+      Female: FemaleDaengati
+      Unsexed: MaleDaengati
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
@@ -33,8 +38,6 @@
       types:
         Slash: 3 # GabyStation
         Heat: 3 # GabyStation
-  - type: Cautery
-    speed: 0.1 # Gabystation | Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
   - type: Flammable
     damage:
       types:
@@ -55,13 +58,14 @@
   - type: Body
     prototype: Daengati
   - type: TypingIndicator
-    proto: daengati #Mudar apos adicionar indicador de escrita de daengati # Gabystation | Variante baseada no indicador de oni.
+    proto: daengati
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - DaengatiEmotes
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobDaengati

@@ -1,0 +1,298 @@
+- type: entity
+  parent: BaseGameRule
+  id: GiantSpidersRule
+  components:
+  - type: GiantSpidersRule
+    scale: 1.4
+    whitelist:
+      components:
+      - IgnoreSpiderWeb
+    blacklist:
+      components:
+      - HumanoidAppearance
+
+- type: entity
+  parent: BaseGameRule
+  id: ArrivalsSpawnRule
+  components:
+  - type: ArrivalsSpawnRule
+
+- type: entity
+  parent: BaseGameRule
+  id: LavalandSpawnRule
+  components:
+  - type: LavalandSpawnRule
+
+- type: entity
+  parent: BaseGameRule
+  id: NightfallRule
+  components:
+  - type: StationModifierRule
+    lightEnergy: 0.20
+    lightRadius: 0.35
+
+- type: entity
+  parent: BaseGameRule
+  id: SunriseRule
+  components:
+  - type: StationModifierRule
+    solarPower: 1.25
+    heatAlert: true
+
+- type: entity
+  parent: BaseGameRule
+  id: BoostedResearchRule
+  components:
+  - type: StationModifierRule
+    researchPoints: 1.2
+
+- type: entity
+  parent: BaseGameRule
+  id: BureaucraticChaosRule
+  components:
+  - type: StationEventWeightRule
+    modifiers:
+      BureaucraticError: 1.35
+
+- type: entity
+  parent: BaseGameRule
+  id: CleanPipesRule
+  components:
+  - type: StationEventWeightRule
+    modifiers:
+      VentClog: 0
+      GasLeak: 0.25
+
+- type: entity
+  parent: BaseGameRule
+  id: PestControlRule
+  components:
+  - type: PestControlRule
+  - type: StationEventWeightRule
+    modifiers:
+      MouseMigration: 0.25
+      KingRatMigration: 0.25
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledStationRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    - Civilian
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledCargoRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledCivilianRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Civilian
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledCommandRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Command
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledEngineeringRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Engineering
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledMedicalRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Medical
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledScienceRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Science
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: DeathrattledSecurityRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Security
+    effects:
+    - !type:AddComponents
+      components:
+      - type: AutoImplant
+        implants:
+        - DeathRattleImplantCrew
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionRule
+  components:
+  - type: ListingCostRule
+    modifiers:
+      UplinkEmpGrenade: 1.5
+      UplinkEmpImplanter: 1.5
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    - Civilian
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    effects:
+    - !type:ReplaceRandomLimb
+      limbs:
+      - part: LeftArmCybernetic
+        child: LeftHandCybernetic
+      - part: RightArmCybernetic
+        child: RightHandCybernetic
+      - part: LeftLegCybernetic
+        child: LeftFootCybernetic
+      - part: RightLegCybernetic
+        child: RightFootCybernetic
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionCargoRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Cargo
+    effects:
+    - !type:ReplaceOrgan
+      organ: BasicCyberneticHeart
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionCivilianRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Civilian
+    effects:
+    - !type:ReplaceOrgan
+      organ: BasicCyberneticLiver
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionCommandRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Command
+    effects:
+    - !type:ReplaceOrgan
+      organ: UpgradedCyberneticHeart
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionEngineeringRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Engineering
+    effects:
+    - !type:ReplaceOrgan
+      organ: BasicCyberneticEyes
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionMedicalRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Medical
+    effects:
+    - !type:ReplaceOrgan
+      organ: MedicalCyberneticEyes
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionScienceRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Science
+    effects:
+    - !type:ReplaceOrgan
+      organ: DiagnosticCyberneticEyes
+
+- type: entity
+  parent: BaseGameRule
+  id: CyberneticRevolutionSecurityRule
+  components:
+  - type: PlayerEffectsRule
+    departments:
+    - Security
+    effects:
+    - !type:ReplaceOrgan
+      organ: SecurityCyberneticEyes

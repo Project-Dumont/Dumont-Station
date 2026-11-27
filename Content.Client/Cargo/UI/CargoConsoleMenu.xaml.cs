@@ -25,6 +25,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Trauma.Common.Cargo; // Dumont
 using System.Linq;
 using Content.Client.Cargo.Systems;
 using Content.Client.UserInterface.Controls;
@@ -194,7 +195,7 @@ namespace Content.Client.Cargo.UI
                         Product = prototype,
                         ProductName = { Text = prototype.Name },
                         MainButton = { ToolTip = prototype.Description },
-                        PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", prototype.Cost.ToString())) },
+                        PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", ModifyCost(prototype.Cost).ToString())) }, // Dumont
                         Icon = { Texture = _spriteSystem.Frame0(prototype.Icon) },
                     };
                     button.MainButton.OnPressed += args =>
@@ -266,7 +267,7 @@ namespace Content.Client.Cargo.UI
                             "cargo-console-menu-order-row-title",
                             ("productName", productName),
                             ("orderAmount", order.OrderQuantity),
-                            ("orderPrice", order.Price)),
+                            ("orderPrice", ModifyCost(order.Price))), // Dumont
                     },
 
                     Stride =
@@ -341,6 +342,18 @@ namespace Content.Client.Cargo.UI
                 i++;
             }
         }
+
+        // Dumont changes start
+        public int ModifyCost(int cost)
+        {
+            if (_station is not {} station)
+                return cost;
+
+            var ev = new ModifyCargoPriceEvent(cost);
+            _entityManager.EventBus.RaiseLocalEvent(station, ref ev);
+            return ev.Price;
+        }
+        // Dumont end
 
         public void UpdateStation(EntityUid station)
         {

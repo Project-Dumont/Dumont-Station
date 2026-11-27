@@ -286,10 +286,12 @@
   - type: ChangeTemperatureOnCollide
     heat: -35000
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+    - state: mediumstun
       shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectDisabler
 
 - type: entity
   id: BulletTemperatureHot
@@ -309,7 +311,7 @@
   - type: ChangeTemperatureOnCollide # This will probably be tweaked.
     heat: 35000
 
-
+#
 - type: entity
   name: disabler bolt
   id: BulletEnergyGunDisabler

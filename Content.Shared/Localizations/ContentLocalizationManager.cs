@@ -89,7 +89,7 @@ namespace Content.Shared.Localizations
              */
             var cultureEn = new CultureInfo(FallbackCulture);
             _loc.LoadCulture(cultureEn);
-            _loc.SetFallbackCluture(cultureEn);
+            _loc.SetFallbackCulture(cultureEn);
 
             //_loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
             //_loc.AddFunction(cultureEn, "MANY", FormatMany);

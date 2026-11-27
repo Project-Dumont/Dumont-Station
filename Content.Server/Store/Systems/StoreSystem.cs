@@ -22,6 +22,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.StationTraits; // Dumont
 using Content.Server.Store.Components;
 using Content.Shared.UserInterface;
 using Content.Goobstation.Maths.FixedPoint;
@@ -56,6 +57,7 @@ public sealed partial class StoreSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!; // WD EDIT
     [Dependency] private readonly PolymorphSystem _polymorph = default!; // goob edit
+    [Dependency] private ListingCostRuleSystem _listingCost = default!; // Dumont
 
     public override void Initialize()
     {
@@ -177,7 +179,7 @@ public sealed partial class StoreSystem : EntitySystem
     public Dictionary<string, FixedPoint2> GetCurrencyValue(EntityUid uid, CurrencyComponent component)
     {
         var amount = EntityManager.GetComponentOrNull<StackComponent>(uid)?.Count ?? 1;
-        return component.Price.ToDictionary(v => v.Key, p => p.Value * amount);
+        return component.Price.ToDictionary(v => v.Key.Id, p => p.Value * amount);
     }
 
     /// <summary>
@@ -191,12 +193,8 @@ public sealed partial class StoreSystem : EntitySystem
         if (!Resolve(store.Owner, ref store.Comp))
             return false;
 
-        var value = currency.Comp.Price;
-        if (TryComp(currency.Owner, out StackComponent? stack) && stack.Count != 1)
-        {
-            value = currency.Comp.Price
-                .ToDictionary(v => v.Key, p => p.Value * stack.Count);
-        }
+        var count = TryComp(currency.Owner, out StackComponent? stack) ? stack.Count : 1;
+        var value = currency.Comp.Price.ToDictionary(v => v.Key.Id, p => p.Value * count);
 
         if (!TryAddCurrency(value, store, store.Comp))
             return false;

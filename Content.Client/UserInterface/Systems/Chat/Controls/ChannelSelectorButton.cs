@@ -20,6 +20,7 @@
 using System.Numerics;
 using Content.Shared._Starlight.CollectiveMind; // Goobstation - Starlight collective mind port
 using Content.Shared.Chat;
+using Content.Shared.Radio; // RMC Mentor Chat Funky Port
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
@@ -85,6 +86,7 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
             ChatSelectChannel.Dead => Color.MediumPurple,
             ChatSelectChannel.Admin => Color.HotPink,
             ChatSelectChannel.Telepathic => Color.PaleVioletRed, //Nyano - Summary: determines the color for the chat.
+            ChatSelectChannel.Mentor => Color.Orange, // RMC Mentor Chat Funky Port
             _ => Color.DarkGray
         };
     }

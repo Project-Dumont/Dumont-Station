@@ -3,7 +3,7 @@
   result: ClothingOuterArmorRev
   completetime: 15
   materials:
-    Steel: 1500
+    Steel: 750
 
 - type: latheRecipe
   id: RevDropPodTraps
@@ -20,16 +20,17 @@
   result: RevPropaganda
   completetime: 180
   materials:
-    Paper: 500
+    Paper: 100
 
 - type: latheRecipe
   id: EncryptionKeyRev
   result: EncryptionKeyRev
   completetime: 6
   materials:
-    Silver: 50
-    Gold: 50
     Steel: 50
+    Plastic: 50
+    Glass: 50
+    Gold: 50
 
 - type: latheRecipe
   id: RevTurretElectronics
@@ -45,7 +46,7 @@
   completetime: 6
   materials:
     Plastic: 100
-    Gold: 150
+    Gold: 25
 
 - type: latheRecipe
   id: TrackingImplanterRev
@@ -59,7 +60,20 @@
 - type: latheRecipe
   id: RevGunParts
   result: RevGunParts
-  completetime: 15
+  completetime: 10
   materials:
     Steel: 300
     Plastic: 100
+
+- type: latheRecipe
+  id: RevStraightPipe
+  result: GasPipeStraight
+  completetime: 3
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  parent: RevGunParts
+  id: RevModularReceiver
+  result: ModularReceiver
+  completetime: 5

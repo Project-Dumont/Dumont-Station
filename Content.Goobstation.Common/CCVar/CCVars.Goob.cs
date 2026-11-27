@@ -610,6 +610,12 @@ public sealed partial class GoobCVars
 
     #endregion
 
+    /// <summary>
+    ///     DEBUG Cvar - Should pathfinding be disabled globally. For SpawnAndDirty cause we need the mem.
+    /// </summary>
+    public static readonly CVarDef<bool> DisablePathfinding =
+        CVarDef.Create("goob.disable_pathfinding", false, CVar.SERVER | CVar.SERVERONLY);
+
     public static readonly CVarDef<bool> SecretUseOnlinePlayerCount =
         CVarDef.Create("game.secret_use_online_count", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 

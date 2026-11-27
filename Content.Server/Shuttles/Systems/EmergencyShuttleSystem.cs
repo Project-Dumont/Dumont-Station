@@ -112,6 +112,9 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Content.Server.Parallax;
+using Content.Server.Procedural;
+using Content.Shared.Construction.EntitySystems;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -145,6 +148,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
     [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
+    // Dumont changes start
+    [Dependency] private readonly BiomeSystem _biomes = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
+    [Dependency] private readonly AnchorableSystem _anchorable = default!;
+    // Dumont end
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -152,8 +160,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
 
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string MapsProto = "CentcommWeights"; // Gabystation change
+    private static readonly ProtoId<WeightedRandomPrototype> MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {
@@ -551,6 +558,11 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
 
         _commsConsole.UpdateCommsConsoleInterface();
+
+        // Dumont changes start
+        var ev = new EmergencyShuttleDockedEvent();
+        RaiseLocalEvent(ref ev);
+        // Dumont end
     }
 
     private void SetupEmergencyShuttle()

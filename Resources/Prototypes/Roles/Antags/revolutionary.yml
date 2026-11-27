@@ -13,18 +13,21 @@
 
 - type: antag
   id: HeadRev
+  organization: character-organization-ursal # Dumont
+  organizationColor: "#b22222"
   name: roles-antag-rev-head-name
   antagonist: true
   setPreference: true
   objective: roles-antag-rev-head-objective
   requirements:
-  - !type:DepartmentTimeRequirement # was  - !type:OverallPlaytimeRequirement, Goob change
-      department: Command
-      time: 36000 # 10h
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1h
   guides: [ Revolutionaries ]
 
 - type: antag
   id: Rev
+  organization: character-organization-ursal # Dumont
+  organizationColor: "#b22222"
   name: roles-antag-rev-name
   antagonist: true
   setPreference: false
@@ -44,4 +47,5 @@
     - RevMace
     - Handcuffs
     - SheetPaper
+    - Megaphone
     # </Trauma>

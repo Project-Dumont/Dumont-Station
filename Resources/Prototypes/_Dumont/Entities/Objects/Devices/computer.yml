@@ -1,0 +1,22 @@
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: LavalandLaborConsoleCircuitboard
+  name: labor shuttle console board
+  description: A printed circuit board for a labor shuttle console.
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: ComputerShuttleLaborLavaland
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: LavalandCivilianConsoleCircuitboard
+  name: civilian shuttle console board
+  description: A printed circuit board for a civilian shuttle console.
+  components:
+  - type: Sprite
+    state: cpuboard
+  - type: ComputerBoard
+    prototype: ComputerShuttleCivilianLavaland

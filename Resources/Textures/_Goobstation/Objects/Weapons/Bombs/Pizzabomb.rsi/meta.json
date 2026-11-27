@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa , primed sprite made by _Rot on Discord for use in Harmony",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/food/containers.dmi",
     "size": {
         "x": 32,
         "y": 32
@@ -11,7 +11,16 @@
             "name": "icon"
         },
         {
-            "name": "primed"
+            "name": "primed",
+			"directions": 1,
+			"delays": [
+                [
+                    0.4,
+                    0.4,
+					0.4,
+					0.4
+                ]
+			]
         },
         {
             "name": "box-inhand-right",

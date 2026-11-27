@@ -1,0 +1,28 @@
+- type: reagent
+  id: Masonlina
+  name: reagent-name-masonlina
+  group: Medicine
+  desc: reagent-desc-masonlina
+  physicalDesc: reagent-physical-desc-holy
+  flavor: medicine
+  color: "#f5e6a8"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ToggleCurse
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+
+- type: reaction
+  id: Masonlina
+  minTemp: 450
+  reactants:
+    ProcenylLazide:
+      amount: 5
+    Omnizine:
+      amount: 5
+    Desoxyephedrine:
+      amount: 10
+  products:
+    Masonlina: 5

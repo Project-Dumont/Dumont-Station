@@ -176,6 +176,8 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    quality: 890 # # Dumont Change: Weapon Jamming - Its an AK
+    timeToUnjam: 7
   - type: ChamberMagazineAmmoProvider
     boltClosed: null # Goobstation
     soundRack:
@@ -208,6 +210,18 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+
+# Dumont change start
+- type: entity
+  name: AKM
+  id: AKDebugQuality
+  parent: WeaponRifleAk
+  suffix: Low Quality, Debug
+  components:
+    - type: Gun
+      quality: 10
+      timeToUnjam: 2
+# Dumont change end
 
 - type: entity
   name: M-90GL # Goobstation
@@ -254,6 +268,8 @@
   - type: Appearance
   - type: Gun
     fireRate: 6
+    quality: 700 # Dumont Change: Weapon Jamming - Made by a s syndie corpo
+
 
 - type: entity
   name: Lecter
@@ -274,6 +290,8 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+    quality: 570 # Dumont Change: Weapon Jamming - Military grade
+    timeToUnjam: 4
   - type: ItemSlots
     slots:
       gun_magazine:

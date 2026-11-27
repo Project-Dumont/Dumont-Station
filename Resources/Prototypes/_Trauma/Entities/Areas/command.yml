@@ -1,0 +1,174 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseAreaStation
+  id: BaseAreaCommand
+  suffix: AreaCommand
+  components:
+  - type: DepartmentArea
+    department: Command
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaBridge
+  name: bridge
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: bridge
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaBridgeHall
+  name: bridge hall
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: bridge_hall
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommand
+  name: command
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: command
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandMeetingRoom
+  name: command meeting room
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: meeting
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandGateway
+  name: command gateway
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: gateway
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandShowroom
+  name: command showroom
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: showroom
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCommandTeleporter
+  name: command teleporter
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: tele
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaEvaRoom
+  name: eva room
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: eva
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaVault
+  name: vault
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: vault
+
+- type: entity
+  parent: AreaVault
+  id: AreaNukeStorage
+  name: nuke storage
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: nuke_storage
+
+# Head offices
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaCapQuarters
+  name: cap quarters
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: captain
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeCE
+  name: CE office
+  suffix: AreaCommand, AreaEngineering
+  components:
+  - type: Sprite
+    state: ce_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeCmo
+  name: CMO office
+  suffix: AreaCommand, AreaMedical
+  components:
+  - type: Sprite
+    state: cmo_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeHop
+  name: HOP
+  suffix: AreaCommand, AreaService
+  components:
+  - type: Sprite
+    state: hop_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeHos
+  name: HOS office
+  suffix: AreaCommand, AreaSecurity
+  components:
+  - type: Sprite
+    state: hos_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeNtr
+  name: NTR office
+  suffix: AreaCommand
+  components:
+  - type: Sprite
+    state: ntr_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeRd
+  name: RD office
+  suffix: AreaCommand, AreaScience
+  components:
+  - type: Sprite
+    state: rd_office
+
+- type: entity
+  parent: BaseAreaCommand
+  id: AreaOfficeQm
+  name: QM office
+  suffix: AreaCommand, AreaSupply
+  components:
+  - type: Sprite
+    state: qm_office

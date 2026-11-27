@@ -128,4 +128,5 @@
   # Power
   - type: ApcPowerReceiver
     powerLoad: 750
-  - type: PowerSwitch
+  - type: TogglePower # Dumont - Power switch slop
+    altMode: true

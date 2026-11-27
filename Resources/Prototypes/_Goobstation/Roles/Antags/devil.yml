@@ -6,6 +6,8 @@
 
 - type: antag
   id: Devil
+  organization: character-organization-underworld # Dumont
+  organizationColor: "#ff2020"
   name: roles-antag-devil-name
   antagonist: true
   setPreference: true

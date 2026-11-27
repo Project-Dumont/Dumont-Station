@@ -45,8 +45,14 @@ public readonly partial record struct CargoBountyHistoryData
     [DataField(required: true)]
     public ProtoId<CargoBountyPrototype> Bounty { get; init; } = string.Empty;
 
+    // Dumont changes start
+    [DataField]
+    public int Reward { get; init; }
+    // Dumont end
+
     public CargoBountyHistoryData(CargoBountyData bounty, BountyResult result, TimeSpan timestamp, string? actorName)
     {
+        Reward = bounty.Reward; // Dumont
         Bounty = bounty.Bounty;
         Result = result;
         Id = bounty.Id;

@@ -9,8 +9,8 @@ public sealed partial class CreateEntityReactionEffect : EventEntityEffect<Creat
     /// <summary>
     ///     What entity to create.
     /// </summary>
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Entity = default!;
+    [DataField(required: true)]
+    public EntProtoId Entity = default!;
 
     /// <summary>
     ///     How many entities to create per unit reaction.

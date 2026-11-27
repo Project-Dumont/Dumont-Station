@@ -60,6 +60,7 @@
 
 #nullable enable
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Cargo.Systems;
 using Content.Server.Construction.Completions;
 using Content.Server.Construction.Components;
@@ -218,7 +219,7 @@ public sealed class MaterialArbitrageTest
                 && proto.Components.TryGetValue(compositionName, out var compositionReg))
             {
                 var compositionComp = (PhysicalCompositionComponent)compositionReg.Component;
-                baseComposition = compositionComp.MaterialComposition;
+                baseComposition = compositionComp.MaterialComposition.ToDictionary(x => x.Key.Id, x => x.Value);
 
             }
 
@@ -470,8 +471,8 @@ public sealed class MaterialArbitrageTest
                     continue;
 
                 // Check cargo sell price
-                var materialPrice = await GetDeconstructedPrice(compositionComponent.MaterialComposition);
-                var chemicalPrice = await GetChemicalCompositionPrice(compositionComponent.ChemicalComposition);
+                var materialPrice = await GetDeconstructedPrice(compositionComponent.MaterialComposition.ToDictionary(x => x.Key.Id, x => x.Value));
+                var chemicalPrice = await GetChemicalCompositionPrice(compositionComponent.ChemicalComposition.ToDictionary(x => x.Key.Id, x => x.Value));
                 var sumPrice = materialPrice + chemicalPrice;
                 var price = await GetPrice(id);
                 if (sumPrice > 0 && price > 0)

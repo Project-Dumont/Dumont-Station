@@ -148,6 +148,7 @@ namespace Content.Client.Communications.UI
         public event Action? OnMaint; // Gabystation
         public event Action? OnMartial; // Gabystation
         public event Action<string>? OnRenameStation; // Gabystation
+        public event Action? OnEscapePods; // Dumont
 
         public AlertLevelButton? CurrentAlertButton;
 
@@ -201,6 +202,7 @@ namespace Content.Client.Communications.UI
             CentCommButton.OnPressed += _ => OnCentcomm?.Invoke(); // Gabystation
             MartialButton.OnPressed += _ => OnMartial?.Invoke(); // Gabystation
             RenameButton.OnPressed += _ => OnRenameStation?.Invoke(RenameInput.Text); // Gabystation
+            EscapePodsButton.OnPressed += _ => OnEscapePods?.Invoke(); // Dumont
 
             // we use real time here because CurTime gets it from the server at a delay
             nextBlink = _timing.RealTime.TotalSeconds + buttonBlinkDelay;

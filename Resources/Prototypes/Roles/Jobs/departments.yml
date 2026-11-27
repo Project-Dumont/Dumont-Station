@@ -145,6 +145,7 @@
   - ServiceWorker
   - PartyMaker # event-restricted, Goobstation
   - PhoneMerchant # Trauma
+  - TramDriver
 
 - type: department
   id: CentralCommand
@@ -311,4 +312,5 @@
   - Zookeeper
   - Psychologist
   - PermaPrisoner # Harmony
+  - TramDriver
   primary: false

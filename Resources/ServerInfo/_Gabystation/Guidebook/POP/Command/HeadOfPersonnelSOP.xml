@@ -1,0 +1,29 @@
+<!--
+SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+
+  # Chefe dos funcionários
+
+  [bold]1.[/bold] O Chefe dos funcionários não pode transferir nenhum funcionário para outro Departamento sem autorização do respectivo Chefe de Departamento. Se não houver Chefe disponível, o Chefe dos funcionários pode tomar uma decisão. Isso não se aplica à Segurança, que sempre requer autorização do Chefe de Segurança, ou à Genética, que requer aprovação tanto do Diretor Médico quanto do Diretor de Pesquisa. Se não houver Chefe de Segurança ativo, não são permitidas transferências para a Segurança sem autorização do Capitão;
+
+  [bold]2.[/bold] O Chefe dos funcionários não pode conceder acesso ampliado a nenhum funcionário sem autorização do respectivo Chefe de Departamento. Isso inclui o próprio Chefe dos funcionários. Além disso, o Chefe dos funcionários só pode conceder acesso de Capitão a alguém se for o Capitão Interino. Esse acesso deve ser removido quando um Capitão de fato chegar à estação;
+
+  [bold]3.[/bold] O Chefe dos funcionários não pode aumentar o número de vagas de emprego sem aprovação do respectivo Chefe de Departamento;
+
+  [bold]4.[/bold] O Chefe dos funcionários não pode demitir nenhum funcionário sem autorização do respectivo Chefe de Departamento, a menos que outras condições se apliquem (ver Lei Espacial e POP Geral);
+
+  [bold]5.[/bold] O Chefe dos funcionários não pode promover ninguém a cargos do Comando Central. Isso inclui Representante da NanoTrasen, Blueshield e outros;
+
+  [bold]6.[/bold] O Chefe dos funcionários pode utilizar papelada a seu critério. No entanto, durante emergências graves na estação, a agilidade deve prevalecer sobre a burocracia;
+
+  [bold]7.[/bold] O Chefe dos funcionários não pode deixar seu escritório desguarnecido se houver funcionários esperando na fila. Não responder a funcionários com solicitações legítimas em até dez (10) minutos, seja por rádio ou pessoalmente, é considerado violação do POP;
+
+  [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
+</Document>

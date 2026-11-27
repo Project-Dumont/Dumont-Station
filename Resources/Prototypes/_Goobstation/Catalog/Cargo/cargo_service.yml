@@ -69,7 +69,7 @@
     sprite: _Goobstation/Objects/Misc/RadioStation/vinyls.rsi
     state: red-vinyl-disk
   product: CrateRadioStationVinyls
-  cost: 3000
+  cost: 750 # Dumont edit, was 3000 before
   category: cargoproduct-category-name-service
   group: market
 

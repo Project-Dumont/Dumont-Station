@@ -19,6 +19,9 @@
   id: CartridgeWatson
 
 - type: Tag
+  id: DaengatiEmotes
+
+- type: Tag
   id: EletricRadiation
 
 - type: Tag
@@ -46,6 +49,12 @@
   id: Resomi
 
 - type: Tag
+  id: TortureBlade
+
+- type: Tag
+  id: ShadowFang
+
+- type: Tag
   id: ShellShotgunImprovised
 
 - type: Tag
@@ -65,7 +74,7 @@
 
 - type: Tag
   id: WeaponPistolDahlia
-  
+
 - type: Tag
   id: XenoDungeon
 
@@ -75,3 +84,20 @@
 - type: Tag
   id: DrinkBottleMilk
 
+- type: Tag
+  id: DockLabor
+
+- type: Tag
+  id: DockCivilian
+
+- type: Tag
+  id: KitchenOven
+  
+- type: Tag
+  id: PlasmamanSafeOther
+
+- type: Tag
+  id: CurseBomb
+
+- type: Tag
+  id: Hedge

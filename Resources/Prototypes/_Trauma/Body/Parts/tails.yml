@@ -1,0 +1,191 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ PartReptilian, BaseTail ]
+  id: TailReptilian
+  name: reptilian tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+  - type: PullerTail
+    speciesWhitelist:
+    # need to have a body adapted to controlling a tail properly
+    - Reptilian
+    - Kobold
+    - Monkey
+  - type: BodyPart
+    onAdd:
+    - type: Wagging
+
+- type: entity
+  parent: TailReptilian
+  id: TailReptilianDefault
+  suffix: Reptilian, Default
+  components:
+  - type: Sprite
+    color: "#33A222FF"
+  - type: BodyPartAppearance
+    visLayers: Tail
+    iD: MobHumanoidAnyMarking
+    color: "#33A222FF"
+    markings:
+      Tail:
+      - markingId: LizardTailSmooth
+        markingColor: [ "#33A222FF" ]
+
+- type: entity
+  parent: [ PartVoxBase, BaseTail ]
+  id: TailVox
+  name: vox tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartVulpkaninBase, BaseTail ]
+  id: TailVulpkanin
+  name: vulpkanin tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Vulpkanin/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Vulpkanin/parts.rsi
+    state: tail
+  - type: BodyPart
+    onAdd:
+    - type: Wagging
+
+- type: entity
+  parent: [ PartFeroxiBase, BaseTail ]
+  id: TailFeroxi
+  name: feroxi tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartTajaran, BaseTail ]
+  id: TailTajaran
+  name: tajaran tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartFelinid, BaseTail ]
+  id: TailFelinid
+  name: felinid tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartDaengati, BaseTail ]
+  id: TailDaengati
+  name: daengati tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartShadowkin, BaseTail ]
+  id: TailShadowkin
+  name: shadowkin tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Cat/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartRodentiaBase, BaseTail ]
+  id: TailRodentia
+  name: rodentia tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartChitinidBase, BaseTail ]
+  id: TailChitinid
+  name: chitinid tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Reptilian/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartHarpyBase, BaseTail ]
+  id: TailHarpy
+  name: harpy tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartResomi, BaseTail ]
+  id: TailResomi
+  name: resomi tail
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+  - type: Icon
+    sprite: _Trauma/Mobs/Species/Vox/parts.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartKobold, BaseTail ]
+  id: TailKobold
+  name: kobold tail
+  components:
+  - type: Icon
+    sprite: Mobs/Animals/kobold.rsi
+    state: tail
+
+- type: entity
+  parent: [ PartMonkey, BaseTail ]
+  id: TailMonkey
+  name: monkey tail
+  components:
+  - type: Icon
+    sprite: Mobs/Animals/monkey.rsi
+    state: tail

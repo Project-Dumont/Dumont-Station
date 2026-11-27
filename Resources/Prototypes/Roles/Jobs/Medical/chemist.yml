@@ -100,7 +100,7 @@
     ears: ClothingHeadsetMedical
     belt: ChemBagFilled
     pocket1: HandLabeler
-    eyes: ClothingEyesGlassesChemical
+    eyes: ClothingEyesGlassesMedChem #Dumont
   #storage:
     #back:
     #- Stuff

@@ -57,6 +57,14 @@ public sealed partial class SpaceNinjaComponent : Component
     [DataField]
     public EntProtoId SpiderChargeObjective = "SpiderChargeObjective";
 
+    // Dumont changes start
+    /// <summary>
+    /// Objective to complete for pod hacking.
+    /// </summary>
+    [DataField]
+    public EntProtoId ExtractObjective = "ExtractObjective";
+    // Dumont end
+
     /// <summary>
     /// Alert to show for suit power.
     /// </summary>

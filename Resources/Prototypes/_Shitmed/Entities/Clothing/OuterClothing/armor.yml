@@ -17,6 +17,11 @@
   - type: Sprite
     sprite: _Shitmed/Clothing/OuterClothing/Armor/abductor.rsi
   - type: AbductorVest
+  - type: VoiceMask
+  - type: UserInterface
+    interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
   - type: ModifyDelayedKnockdown # Goobstation
     cancel: true
   - type: StaminaResistance
@@ -31,6 +36,7 @@
           sprite: _Shitmed/Clothing/OuterClothing/Armor/abductor.rsi
           state: icon
         components:
+        - type: AbductorVestDisguise
         - type: Armor
           traumaDeductions:
             Dismemberment: 0.4

@@ -31,6 +31,9 @@
       uiWindowPos: 1,0
       strippingWindowPos: 1,3
       displayName: Shoes
+      blacklist: # Dumont - Only Plasmamen can use hermetic equipment.
+        tags:
+          - PlasmamanSafe
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
@@ -45,6 +48,9 @@
       uiWindowPos: 1,1
       strippingWindowPos: 1,2
       displayName: Suit
+      blacklist: # Dumont - Only Plasmamen can use hermetic equipment.
+        tags:
+          - PlasmamanSafe
       # Underwear
     # - name: undershirt
     #   slotTexture: undershirt
@@ -73,6 +79,9 @@
       uiWindowPos: 2,1
       strippingWindowPos: 2,0
       displayName: Gloves
+      blacklist: # Dumont - Only Plasmamen can use hermetic equipment.
+        tags:
+          - PlasmamanSafe
     - name: neck
       slotTexture: neck
       slotFlags: NECK
@@ -110,6 +119,9 @@
       uiWindowPos: 1,3
       strippingWindowPos: 1,0
       displayName: Head
+      blacklist: # Dumont - Only Plasmamen can use hermetic equipment.
+        tags:
+          - PlasmamanSafe
     - name: pocket1
       slotTexture: pocket
       slotFlags: POCKET

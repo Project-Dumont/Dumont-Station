@@ -204,6 +204,7 @@
   id: SpawnMobMouse
   name: Mouse Spawner
   components:
+  - type: MouseSpawner # Dumont
   - type: Sprite
     layers:
     - state: green

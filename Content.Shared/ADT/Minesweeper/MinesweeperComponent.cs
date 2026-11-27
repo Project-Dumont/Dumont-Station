@@ -6,7 +6,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.ADT.Minesweeper;
 
@@ -36,8 +35,8 @@ public sealed partial class MinesweeperComponent : Component
     /// The prototypes that can be dispensed as a reward for winning the game.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("possibleRewards", customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
-    public List<string> PossibleRewards = new();
+    [DataField("possibleRewards")]
+    public List<EntProtoId> PossibleRewards = new();
 
     /// <summary>
     /// The minimum number of prizes the arcade machine can have.

@@ -22,7 +22,6 @@
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Goobstation.Shared.EntityEffects;
 
@@ -32,8 +31,8 @@ public sealed partial class CreateRQuantityEntityReactionEffect : EntityEffect
     /// <summary>
     ///     What entity to create.
     /// </summary>
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Entity = default!;
+    [DataField(required: true)]
+    public EntProtoId Entity = default!;
 
     /// <summary>
     ///     What is our maximum allowed entities to be spawned?

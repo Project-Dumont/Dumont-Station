@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC0-1.0",
-    "copyright": "Original work by noctis on Discord",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/food/containers.dmi",
     "states": [
         {
             "name": "icon"

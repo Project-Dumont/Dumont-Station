@@ -171,6 +171,20 @@
         Quantity: 7
       - ReagentId: TranexamicAcid
         Quantity: 3 # Fully stops bleeding
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 7
+        - ReagentId: TranexamicAcid
+          Quantity: 3
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: airloss autoinjector cartridge
@@ -192,6 +206,20 @@
         Quantity: 7
       - ReagentId: DexalinPlus
         Quantity: 3
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Saline
+          Quantity: 7
+        - ReagentId: DexalinPlus
+          Quantity: 3
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: brute autoinjector cartridge
@@ -218,6 +246,23 @@
   #Dumont edit: Now it's closer to the burn autoinjector cartridge. And it doesn't include a random useless med.
   #Stats: If higher than 25 damage and only 1 damage type, it can heal 21ish. It sounds low, but bic and salic heal all 3 brute damage types simultaneously.
   #For context, if you have all 3 damage types, it heals around 63, which means it's just as eficient as the burn injector (unless the guy below me is bad at math or im bad at math.)
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 6
+        - ReagentId: SalicylicAcid
+          Quantity: 1.5
+        - ReagentId: TranexamicAcid
+          Quantity: 2.5
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
+
 
 - type: entity
   name: burn autoinjector cartridge
@@ -241,8 +286,25 @@
         Quantity: 4 #8HP if 1 damage type
       - ReagentId: Leporazine #will minorly help with temperature regulation
         Quantity: 1
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Kelotane
+          Quantity: 5
+        - ReagentId: Dermaline
+          Quantity: 4
+        - ReagentId: Leporazine
+          Quantity: 1
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 #what were they cooking here before, 114 total possible dmg heal was crazyyy
 #~21 dmg healed/dmg type (unless its cold, then its a lil more), doesnt heal caustic all that well
+
 - type: entity
   name: emergency autoinjector cartridge
   parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
@@ -261,10 +323,22 @@
       reagents:
       - ReagentId: Atropine
         Quantity: 10
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Atropine
+          Quantity: 10
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: piercing autoinjector cartridge
-  parent: [ BaseSyndicateContraband , BaseAutoinjectorCartridge ]
+  parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
   description: Contains 10u of puncturase, used in a cartridge autoinjector.
   id: CartridgePuncturase
   components:
@@ -280,10 +354,22 @@
       reagents:
       - ReagentId: Puncturase
         Quantity: 10
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Puncturase
+          Quantity: 10
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: stimulant autoinjector cartridge
-  parent: [ BaseSyndicateContraband , BaseAutoinjectorCartridge ]
+  parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
   description: Contains 10u of ephedrine, used in a cartridge autoinjector.
   id: CartridgeEphedrine
   components:
@@ -299,10 +385,22 @@
       reagents:
       - ReagentId: Ephedrine
         Quantity: 10
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Ephedrine
+          Quantity: 10
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 - type: entity
   name: sedative autoinjector cartridge
-  parent: [ BaseSyndicateContraband , BaseAutoinjectorCartridge ]
+  parent: [ BaseMajorContraband , BaseAutoinjectorCartridge ] # Dumont edit you can make it, but you probably shouldn't have it.
   description: Contains 4u of tirizene, 3u of impedrezene and 3u of haloperidol, used in a cartridge autoinjector.
   id: CartridgeTirizene
   components:
@@ -322,6 +420,22 @@
         Quantity: 3
       - ReagentId: Haloperidol
         Quantity: 3
+  - type: SolutionContainerManager # Dumont AutoInjector launcher
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Tirizene
+          Quantity: 4
+        - ReagentId: Impedrezene
+          Quantity: 3
+        - ReagentId: Haloperidol
+          Quantity: 3
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 # Q - Why is this edible?
 # A - Because the dispenser reminded me of a pez dispenser, and it'd be funny if you could eat them.
@@ -350,6 +464,10 @@
         reagents:
         - ReagentId: Amnestizine
           Quantity: 10
+      ammo: # dumont - RB-18
+        reagents:
+        - ReagentId: Amnestizine
+          Quantity: 10
   - type: Food
     delay: 0.2
     forceFeedDelay: 1.5
@@ -359,6 +477,12 @@
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: [ ]
+  - type: CartridgeAmmo # dumont RB-18 start
+    deleteOnSpawn: true
+    proto: BulletHypospray
+  - type: ChemicalAmmo
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # dumont end
 
 # Medipens
 

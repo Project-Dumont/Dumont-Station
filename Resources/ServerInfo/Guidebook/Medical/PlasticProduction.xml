@@ -1,6 +1,6 @@
 ﻿<Document>
 
-  # Produção de Plástico
+  # Produção de Recursos
 
   <GuideEntityEmbed Entity="SheetPlastic"/>
 
@@ -22,8 +22,24 @@
   <GuideReagentEmbed Reagent="Ash"/>
   <GuideReagentEmbed Reagent="SulfuricAcid"/>
 
-  ## Resultado
+  <GuideEntityEmbed Entity="MaterialGunpowder"/>
 
-  Uma vez concluído, o Plástico aparecerá sobre o béquer ou ChemMaster. Transfira-o para o armazenamento ou sistemas de fabricação conforme necessário.
+  Pólvora é um recurso limitado e valioso na estação, utilizado para fabricação de munição para armas de fogo.
+
+  ## Receita
+
+  Para produzir [bold]1 Pólvora[/bold], combine os seguintes itens em um misturador químico e aqueça a pelo menos [bold]374 Kelvin[/bold]:
+
+  — 2 unidades de [bold]Pólvora Negra[/bold]
+
+  — 2 unidades de [bold]Enxofre[/bold]
+
+  — 2 unidades de [bold]Carvão[/bold]
+
+  ## Componentes
+
+  <GuideReagentEmbed Reagent="BlackPowder"/>
+  <GuideReagentEmbed Reagent="Sulfur"/>
+  <GuideReagentEmbed Reagent="Charcoal"/>
 
 </Document>

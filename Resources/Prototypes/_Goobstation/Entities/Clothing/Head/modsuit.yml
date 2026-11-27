@@ -55,7 +55,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
   - type: IgniteFromGasImmunity
     parts:
     - Head
@@ -185,7 +185,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -217,7 +217,7 @@
     autoRechargeRate: 2
   - type: Tag
     tags:
-    - PlasmamanSafe
+    - PlasmamanSafeOther # Dumont
     - Envirohelm
   - type: IgniteFromGasImmunity
     parts:
@@ -305,7 +305,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -411,7 +411,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -449,6 +449,7 @@
   description: A robust brain bucket for working on barely salvageable brains.
   categories: [ HideSpawnMenu ]
   components:
+  - type: ModsuitSiren
   - type: Appearance
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/paramedic.rsi
@@ -496,7 +497,8 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    color: blue
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -585,7 +587,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -669,7 +671,7 @@
         Blunt: 0.8
         Slash: 0.85
         Piercing: 0.85
-        Heat: 0.2
+        Heat: 0.5 # Dumont edit - Lasersec
         Radiation: 0.05
   - type: EyeProtection # goob
   - type: ComponentToggler
@@ -693,7 +695,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -790,7 +792,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight
@@ -900,7 +902,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: true
   - type: HandheldLight

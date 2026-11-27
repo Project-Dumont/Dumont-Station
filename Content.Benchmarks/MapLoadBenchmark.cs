@@ -53,6 +53,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.IO;
 
 namespace Content.Benchmarks;
 
@@ -69,7 +70,7 @@ public class MapLoadBenchmark
         ProgramShared.PathOffset = "../../../../";
         PoolManager.Startup();
 
-        _pair = PoolManager.GetServerClient().GetAwaiter().GetResult();
+        _pair = PoolManager.GetServerClient(testContext: new ExternalTestContext("Benchmark", StreamWriter.Null)).GetAwaiter().GetResult();
         var server = _pair.Server;
 
         Paths = server.ResolveDependency<IPrototypeManager>()

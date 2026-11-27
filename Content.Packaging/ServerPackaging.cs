@@ -153,41 +153,46 @@ public static class ServerPackaging
         }
 
         // Good variable naming right here.
+        string? builtTargetOs = null; // Goobstation
         foreach (var platform in Platforms)
         {
             if (!platforms.Contains(platform.Rid))
                 continue;
 
-            await BuildPlatform(platform, skipBuild, hybridAcz, configuration, logger);
+            await BuildPlatform(platform, skipBuild, hybridAcz, configuration, logger, builtTargetOs == platform.TargetOs); // Goobstation
+            builtTargetOs = platform.TargetOs; // Goobstation
         }
     }
 
-    private static async Task BuildPlatform(PlatformReg platform, bool skipBuild, bool hybridAcz, string configuration, IPackageLogger logger)
+    private static async Task BuildPlatform(PlatformReg platform, bool skipBuild, bool hybridAcz, string configuration, IPackageLogger logger, bool reuseContentBuild) // Goobstation
     {
-        logger.Info($"Building project for {platform.TargetOs}...");
+        logger.Info(reuseContentBuild ? $"Reusing {platform.TargetOs} build..." : $"Building project for {platform.TargetOs}..."); // Goobstation
 
         if (!skipBuild)
         {
-            var serverModules = FindServerModules();
-
-            foreach (var module in serverModules)
+            if (!reuseContentBuild) // Goobstation
             {
-                await ProcessHelpers.RunCheck(new ProcessStartInfo
+                var serverModules = FindServerModules();
+
+                foreach (var module in serverModules)
                 {
-                    FileName = "dotnet",
-                    ArgumentList =
+                    await ProcessHelpers.RunCheck(new ProcessStartInfo
                     {
-                        "build",
-                        Path.Combine(module, $"{module}.csproj"),
-                        "-c", configuration,
-                        "--nologo",
-                        "/v:m",
-                        $"/p:TargetOs={platform.TargetOs}",
-                        "/t:Rebuild",
-                        "/p:FullRelease=true",
-                        "/m"
-                    }
-                });
+                        FileName = "dotnet",
+                        ArgumentList =
+                        {
+                            "build",
+                            Path.Combine(module, $"{module}.csproj"),
+                            "-c", configuration,
+                            "--nologo",
+                            "/v:m",
+                            $"/p:TargetOs={platform.TargetOs}",
+                            "/t:Rebuild",
+                            "/p:FullRelease=true",
+                            "/m"
+                        }
+                    });
+                }
             }
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);

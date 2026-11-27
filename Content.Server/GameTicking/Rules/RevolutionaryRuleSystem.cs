@@ -82,6 +82,11 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+// Dumont changes start
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Content.Shared.Hands.EntitySystems;
+// Dumont end
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Revolutionary;
 using Content.Server.Communications;
@@ -119,10 +124,21 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    // Dumont changes start
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    // Dumont end
 
     //Used in OnPostFlash, no reference to the rule component is available
     public readonly ProtoId<NpcFactionPrototype> RevolutionaryNpcFaction = "Revolutionary";
     public readonly ProtoId<NpcFactionPrototype> RevPrototypeId = "Rev";
+    // Dumont changes start
+    private static readonly EntProtoId ErtSecurity = "SpawnSolGovExpedition";
+    private static readonly SoundSpecifier RevWinMusic = new SoundPathSpecifier("/Audio/_Dumont/Revs/no_kings_in_orbit.ogg", AudioParams.Default.WithVolume(-10f));
+    private static readonly Color AnnouncementColor = Color.FromHex("#DAA520");
+    private static readonly Color SovietAnnouncementColor = Color.FromHex("#B0122B");
+    private static readonly EntProtoId ForcesBeacon = "RevDropPodForces";
+    // Dumont end
 
     public override void Initialize()
     {
@@ -140,12 +156,26 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     protected override void Started(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
-        component.CommandCheck = _timing.CurTime + component.TimerWait;
+        component.CommandCheck = _timing.CurTime + TimeSpan.FromMinutes(10); // Trauma - 10 mins instead of TimerWait
     }
 
     protected override void ActiveTick(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule, float frameTime)
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
+
+        // Dumont changes start
+        if (component.SolGovArrival is { } arrival && arrival <= _timing.CurTime)
+        {
+            component.SolGovArrival = null;
+            _chatSystem.DispatchGlobalAnnouncement(
+                Loc.GetString("revolutionaries-solgov-announcement"),
+                Loc.GetString("revolutionaries-solgov-sender"),
+                colorOverride: AnnouncementColor);
+            GameTicker.StartGameRule(ErtSecurity);
+            _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(10), checkCooldown: false);
+            _roundEnd.RecallLocked = true;
+        }
+        // Dumont end
 
         if (component.CommandCheck <= _timing.CurTime)
         {
@@ -156,12 +186,17 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             {
                 if (!component.HasRevAnnouncementPlayed)
                 {
+                    // Dumont changes start
                     _chatSystem.DispatchGlobalAnnouncement(
                         Loc.GetString("revolutionaries-win-announcement"),
                         Loc.GetString("revolutionaries-win-sender"),
-                        colorOverride: Color.Gold);
+                        colorOverride: SovietAnnouncementColor);
+                    _audio.PlayGlobal(RevWinMusic, Filter.Broadcast(), true);
 
                     component.HasRevAnnouncementPlayed = true;
+                    component.SolGovArrival = _timing.CurTime + component.SolGovDelay;
+                    GiveForcesBeacons();
+                    // Dumont end
                 }
 
                 foreach (var ms in EntityQuery<MindShieldComponent, MobStateComponent>())
@@ -187,6 +222,22 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             }
         }
     }
+
+    // Dumont changes start
+    private void GiveForcesBeacons()
+    {
+        var query = EntityQueryEnumerator<HeadRevolutionaryComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out _, out var mobState))
+        {
+            if (_mobState.IsDead(uid, mobState))
+                continue;
+
+            var beacon = Spawn(ForcesBeacon, Transform(uid).Coordinates);
+            _hands.PickupOrDrop(uid, beacon, checkActionBlocker: false);
+            _antag.SendBriefing(uid, Loc.GetString("rev-forces-beacon-received"), Color.Red, null);
+        }
+    }
+    // Dumont end
 
     protected override void AppendRoundEndText(EntityUid uid,
         RevolutionaryRuleComponent component,
@@ -324,11 +375,11 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     /// <summary>
     /// Checks if all of command is dead and if so will remove all sec and command jobs if there were any left.
     /// </summary>
-    private bool CheckCommandLose()
+    public bool CheckCommandLose() // Trauma - made public
     {
         var commandList = new List<EntityUid>();
 
-        var heads = AllEntityQuery<CommandStaffComponent>();
+        var heads = EntityQueryEnumerator<CommandStaffComponent>(); // Trauma - no reason to include paused cryo command members
         while (heads.MoveNext(out var id, out var commandComp)) // GoobStation - commandComp
         {
             // GoobStation - If mindshield was removed from head and he got converted - he won't count as command
