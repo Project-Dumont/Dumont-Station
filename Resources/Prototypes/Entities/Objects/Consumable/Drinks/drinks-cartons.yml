@@ -281,6 +281,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - MilkCarton # Starlight - Radio host rework
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]
@@ -299,6 +300,7 @@
   - type: Tag
     tags:
       - CoffeeDispensable
+      - MilkCarton # Starlight - Radio host rework
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseLargeFull]
@@ -314,6 +316,9 @@
           Quantity: 100
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
+  - type: Tag # Starlight - Radio host rework
+    tags:
+      - MilkCarton
 
 - type: entity
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]

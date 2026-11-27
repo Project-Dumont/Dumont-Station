@@ -1,5 +1,3 @@
-
-
 ent-CrateVendingMachineRestockAutoDrobeFilled = caixa de restoque RoupasLoucas
  .desc = Contém uma caixa de restoque para uma máquina de vendas RoupasLoucas.
 
@@ -54,8 +52,6 @@ ent-CrateVendingMachineRestockPTechFilled = caixa de restoque PTéc
 ent-CrateVendingMachineRestockDinnerwareFilled = caixa de restoque SpaceMaster Chef
  .desc = Contém uma caixa de restoque para uma máquina de vendas Vendedor de Louça do SpaceMaster Chef.
 
-
-
 ent-CrateRadioStationAds = caixa de anúncios
  .desc = Uma caixa contendo 6 CDs com anúncios pra tocar no rádio. Capitalismo não é incrível?
 
@@ -90,7 +86,7 @@ ent-CrateServiceBoozeDispenser = refill de máquina de bebidas alcoólicas
  .desc = Um refill completo para uma máquina de bebidas alcoólicas
 
 ent-CrateRadioStationVinyls = caixa de discos de vinil
- .desc = Uma caixa contendo 12 discos para que você nunca tenha que tocar a mesma música denovo!
+ .desc = Uma caixa contendo 8 discos para que você nunca tenha que tocar a mesma música denovo!
 
 ent-CrateServiceReplacementLights = caixa de luzes substitutas
  .desc = Que haja luz! Especificamente, 42 tubos e 21 lâmpadas.
@@ -103,7 +99,6 @@ ent-CrateMousetrapBoxes = caixa de armadilhas de rato
 
 ent-CrateServiceJanitorialSupplies = caixa de suprimentos de limpeza
  .desc = Lute contra a sujeira com os Essenciais de Zeladoria da NanoTrasen(tm)! Contém 4 granadas de limpeza, 3 baldes, 2 placas de chão molhado, sprays de limpador espacial, sacos de lixo, escovas de arame, 1 sabonete, esfregão, cubo de balde de zeladoria e uma máquina de lavar.
-
 
 ent-CrateServiceTheatre = caixa de apresentação teatral
  .desc = Contém varias fantasias e roupas para uma apresentação ou para parecer ridículo.

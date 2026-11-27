@@ -1,0 +1,49 @@
+# Base Disk Sleeve
+- type: entity
+  abstract: true
+  parent: BaseVinylSleeve
+  id: BaseVinylSleeveFilled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      vinyl: !type:NestedSelector
+        tableId: RandomVinylDisk
+
+# CD case
+- type: entity
+  parent: BaseItem
+  id: CDCase
+  name: CD case
+  description: A clear plastic jewel case for a compact disc. The cover insert matches the disc inside.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/RadioStation/vinylsleeves.rsi
+    layers:
+    - state: case-tray
+    - state: case-base
+      map: [ "enum.DiscCoverVisualLayers.Base" ]
+      visible: false
+    - state: case-motif-0
+      map: [ "enum.DiscCoverVisualLayers.Motif" ]
+      visible: false
+    - state: case-shade
+  - type: Item
+    size: Tiny # Fits a CD rack slot.
+  - type: Appearance
+  - type: DiscCover
+    slot: cd
+    motifPrefix: case-motif-
+    showEmptyBase: false
+  - type: ItemSlots
+    slots:
+      cd:
+        name: item-slot-component-slot-name-cd
+        whitelist:
+          tags:
+          - CD
+  - type: ContainerContainer
+    containers:
+      cd: !type:ContainerSlot
+  - type: Tag
+    tags:
+    - CDCase

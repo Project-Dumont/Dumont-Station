@@ -1,23 +1,26 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "taken from goonstation at commit: https://github.com/goonstation/goonstation/blob/master/icons/obj/radiostation.dmi, edited to be tabletop by rouden_ (discord)",
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Drawn for Starlight by Rinary1 (GitHub)",
     "size": {
         "x": 32,
         "y": 32
     },
-  "states": [
-    {
-        "name": "icon"
-    },
-    {
-        "name": "disk_installed"
-    },
-    {
-        "name": "unlit"
-    },
-    {
-        "name": "panel"
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "disk_installed"
+        },
+        {
+            "name": "disk_label"
+        },
+        {
+            "name": "unlit"
+        },
+        {
+            "name": "panel"
+        }
+    ]
 }

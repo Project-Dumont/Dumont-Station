@@ -152,6 +152,9 @@
     stackRequirements:
       Manipulator: 1
       Cable: 2
+  - type: Tag # Starlight - Radio host rework
+    tags:
+      - StationRadioCircuitboard
 
 - type: entity
   id: VirologyServerMachineCircuitboard

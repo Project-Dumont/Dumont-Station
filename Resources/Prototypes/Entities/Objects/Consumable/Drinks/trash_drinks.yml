@@ -467,6 +467,10 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/milk.rsi
+  - type: Tag # Starlight - Radio host rework
+    tags:
+    - Trash
+    - MilkCarton
 
 - type: entity
   name: soy milk carton
@@ -475,6 +479,10 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/soymilk.rsi
+  - type: Tag # Starlight - Radio host rework
+    tags:
+    - Trash
+    - MilkCarton
 
 - type: entity
   name: oat milk carton
@@ -483,3 +491,7 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
+  - type: Tag # Starlight - Radio host rework
+    tags:
+    - Trash
+    - MilkCarton

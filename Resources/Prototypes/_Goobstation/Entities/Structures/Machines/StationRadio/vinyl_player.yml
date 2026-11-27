@@ -10,12 +10,21 @@
     granularLayersRendering: true
     layers:
     - state: icon
+    # Starlight - Radio host rework - Start
+    - state: disk_installed
+      visible: false
+      map: [ "enum.VinylPlayerVisualLayers.Disc" ]
+    - state: disk_label
+      visible: false
+      map: [ "enum.VinylPlayerVisualLayers.Label" ]
+    # Starlight - Radio host rework - End
     - state: unlit
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     drawdepth: SmallObjects
+    offset: "0.0,0.3" # Starlight - Radio host rework
   - type: Fixtures
     fixtures:
       fix1:
@@ -42,14 +51,11 @@
   - type: WiresPanel
   - type: WiresVisuals
   - type: VinylPlayer
+    standalone: true # Starlight - Radio host rework
   - type: Machine
     board: VinylPlayerCircuitboard
   - type: ApcPowerReceiver
     powerLoad: 300 # This is a simple machine
-  - type: DeviceLinkSource
-    ports:
-    - VinylPlayerPort
-  - type: DeviceList
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -58,17 +64,10 @@
   - type: ItemSlots
     slots:
       vinyl:
-        name: vinyl
+        name: item-slot-component-slot-name-vinyl # Starlight - Radio host rework
         whitelist:
-          components:
-          - Vinyl
-  - type: ItemMapper
-    containerWhitelist: [vinyl]
-    mapLayers:
-      disk_installed:
-        whitelist:
-          components:
-          - Vinyl
+          tags:
+          - VinylSleeveFit # Starlight - Radio host rework
   - type: GenericVisualizer
     visuals:
       enum.WiresVisualLayers.MaintenancePanel:

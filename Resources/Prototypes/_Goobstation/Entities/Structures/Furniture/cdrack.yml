@@ -13,12 +13,52 @@
     snapCardinals: true
     layers:
       - state: base
-      - state: cd-0
-      - map: ["enum.StorageFillLayers.Fill"]
+      # Starlight - Radio host rework - Start
+      - state: spine0
+        map: [ "spine0" ]
+        visible: false
+      - state: spine1
+        map: [ "spine1" ]
+        visible: false
+      - state: spine2
+        map: [ "spine2" ]
+        visible: false
+      - state: spine3
+        map: [ "spine3" ]
+        visible: false
+      - state: spine4
+        map: [ "spine4" ]
+        visible: false
+      - state: spine5
+        map: [ "spine5" ]
+        visible: false
+      - state: spine6
+        map: [ "spine6" ]
+        visible: false
+      - state: spine7
+        map: [ "spine7" ]
+        visible: false
+      - state: spine8
+        map: [ "spine8" ]
+        visible: false
+      - state: spine9
+        map: [ "spine9" ]
+        visible: false
+  - type: DiscSpines
+    container: records
+    count: 10
+    bareColor: "#ccd6e3"
+  - type: RecordCrate
+    containerId: records
+    capacity: 10
+    fullLoc: cd-rack-full
+    examineLoc: cd-rack-examine
+    whitelist:
+      tags:
+        - CD
+        - CDCase
+  # Starlight - Radio host rework - End
   - type: Appearance
-  - type: StorageFillVisualizer
-    maxFillLevels: 11
-    fillBaseName: cd
   - type: Damageable
     damageModifierSet: Wood
     damageContainer: StructuralInorganic
@@ -40,6 +80,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroyHeavy
+      - !type:EmptyAllContainersBehaviour # Starlight - Radio host rework
       - !type:SpawnEntitiesBehavior
         spawn:
           MaterialWoodPlank:
@@ -55,20 +96,10 @@
     anchored: true
     noRot: true
   - type: Anchorable
-  - type: Storage
-    grid:
-    - 0,0,0,9
-    whitelist:
-      tags:
-        - CD
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: InteractionOutline
   - type: ContainerContainer
     containers:
-      storagebase: !type:Container
+      records: !type:Container # Starlight - Radio host rework
   - type: Construction
     graph: CdRackGraph
     node: CdRackNode

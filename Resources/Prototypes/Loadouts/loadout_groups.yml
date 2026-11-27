@@ -272,6 +272,7 @@
   # End Gabystation
   - PlushieJanie # DumontStation
   - PlushieIdiosoma #DumontStation
+  - RadioHandheldStation # Starlight - Radio host rework
 
 - type: loadoutGroup
   id: Glasses

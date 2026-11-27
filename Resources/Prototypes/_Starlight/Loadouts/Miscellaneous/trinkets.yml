@@ -1,0 +1,10 @@
+- type: loadout
+  id: RadioHandheldStation
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:RoleTimeRequirement
+        role: JobRadioHost
+        time: 1h
+  equipment:
+    pocket1: RadioHandheldStation

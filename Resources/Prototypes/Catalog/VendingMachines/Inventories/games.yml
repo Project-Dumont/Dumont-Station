@@ -39,6 +39,7 @@
     CardBoxBlack: 3 # GoobStation
     PokerChips100: 6 # GoobStation
     CardBoxNuno: 2 # GabyStation
+    RadioHandheldStation: 3 # Starlight - Radio host rework
   contrabandInventory:
     Basketball: 1
     FoodSnackBoritos: 3

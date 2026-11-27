@@ -247,6 +247,7 @@ public sealed partial class RadioSystem : EntitySystem
         if (canSend && (channel.LongRange || sourceServerExempt || hasActiveServer))
             _audio.PlayPvs(RadioClick, messageSource, AudioParams.Default.WithVolume(-5f).WithMaxDistance(5f));
 
+        var receivers = new List<EntityUid>(); // Starlight - Radio host rework
         var radioQuery = EntityQueryEnumerator<ActiveRadioComponent, TransformComponent>();
         while (canSend && radioQuery.MoveNext(out var receiver, out var radio, out var transform))
         {
@@ -274,8 +275,17 @@ public sealed partial class RadioSystem : EntitySystem
                 continue;
 
             // send the message
+            receivers.Add(receiver); // Starlight - Radio host rework
             RaiseLocalEvent(receiver, ref ev);
         }
+
+        // Starlight - Radio host rework - Start
+        if (canSend)
+        {
+            var radioSpoke = new RadioSpokeEvent(messageSource, msg, channel, language, receivers);
+            RaiseLocalEvent(ref radioSpoke);
+        }
+        // Starlight - Radio host rework - End
 
         if (name != Name(messageSource))
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Radio message from {ToPrettyString(messageSource):user} as {name} on {channel.LocalizedName}: {message}");

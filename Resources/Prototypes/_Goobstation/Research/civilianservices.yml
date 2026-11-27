@@ -96,6 +96,9 @@
   - TapeDeckCircuitboard
   - StationRadioServerCircuitboard
   - StationRadioRigCircuitboard
+  - CDPlayerCircuitboard # Starlight - Radio host rework
+  - BroadcastRecorderCircuitboard # Starlight - Radio host rework
+  - StationRadioMixerCircuitboard # Starlight - Radio host rework
   position: 2,6
   technologyPrerequisites:
   - ExtendedCommunications

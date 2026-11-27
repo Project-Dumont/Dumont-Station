@@ -1,0 +1,23 @@
+# Goobstation - Radio Host boards
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: CDPlayerCircuitboard
+  result: CDPlayerCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: BroadcastRecorderCircuitboard
+  result: BroadcastRecorderCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: StationRadioMixerCircuitboard
+  result: StationRadioMixerCircuitboard
+
+- type: latheRecipe
+  id: BroadcastTape
+  result: BroadcastTape
+  completetime: 2
+  materials:
+    Steel: 50
+    Plastic: 250

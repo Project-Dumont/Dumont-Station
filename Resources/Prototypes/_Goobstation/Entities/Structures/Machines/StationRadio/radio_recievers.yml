@@ -16,7 +16,9 @@
     - state: unlit
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    snapCardinals: true # Starlight - Radio host rework
     drawdepth: SmallObjects
+    offset: "0.0,0.3" # Starlight - Radio host rework
   - type: Fixtures
     fixtures:
       fix1:
@@ -45,6 +47,7 @@
     powerRequired: true
     speakNormally: true
     enabled: true
+    toggleOnInteract: false # Starlight - Radio host rework
     channels:
     - RadioShow
   - type: Speech
@@ -53,3 +56,20 @@
     channels:
     - RadioShow
   - type: StationRadioReceiver
+  # Starlight - Radio host rework - Start
+    toggleOnActivate: false
+  - type: ApcPowerReceiver
+    powerLoad: 100
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.StationRadioReceiverUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.StationRadioReceiverUiKey.Key:
+        type: StationRadioReceiverBoundUserInterface
+  # Starlight - Radio host rework - End

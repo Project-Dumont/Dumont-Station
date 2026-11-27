@@ -46,3 +46,6 @@
   - StationRadioServerCircuitboard
   - StationRadioRigCircuitboard
   - ServiceEnergyChemMachineCircuitboard
+  - CDPlayerCircuitboard # Starlight - Radio host rework
+  - BroadcastRecorderCircuitboard # Starlight - Radio host rework
+  - StationRadioMixerCircuitboard # Starlight - Radio host rework

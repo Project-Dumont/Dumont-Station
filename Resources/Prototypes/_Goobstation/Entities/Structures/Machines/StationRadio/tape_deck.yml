@@ -10,7 +10,19 @@
     sprite: _Goobstation/Structures/Machines/StationRadio/tapedeck.rsi
     layers:
     - state: icon
+  # Starlight - Radio host Rework - Start
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
     drawdepth: SmallObjects
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  # Starlight - Radio host Rework - End
     # TODO: unlit & maints panel sprite
   - type: Rotatable
   - type: Machine
