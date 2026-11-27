@@ -5170,3 +5170,21 @@ Entries:
       message: Adiciona saco de evidência.
   id: 621
   time: '2026-11-26T12:19:50.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Add
+      message: >-
+        Adiciona: Viva La Vida, Lambada, Rios da Babilônia, I Gotta Feeling,
+        Intruso, Impacto, RadioHead (Creep, Let Down, Jigsaw Falling Into Place,
+        No Surprises), Tusk, Paisley Park, Bullseye, Long Distance Runaround,
+        Roundabout, All My Exes Live in Texas, Far From Any Road para a Jukebox
+    - type: Add
+      message: 'Adiciona:  Roundabout e Long Distance Runaround para o Lobby'
+  id: 622
+  time: '2026-11-27T11:26:15.0000000+00:00'
+- author: Kion
+  changes:
+    - type: Add
+      message: Adiciona martelo de juiz e uma base pro martelo!
+  id: 623
+  time: '2026-11-27T11:27:11.0000000+00:00'
