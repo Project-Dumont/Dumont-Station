@@ -6,6 +6,7 @@ using Content.Goobstation.Shared.IntrinsicVoiceModulator.VoiceMask;
 using Content.Server.VoiceMask;
 using Content.Shared.Chat.RadioIconsEvents;
 using Content.Shared.Inventory;
+using Content.Shared.Implants;
 using Content.Shared.Popups;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
@@ -17,13 +18,15 @@ namespace Content.Goobstation.Server.IntrinsicVoiceModulator.VoiceMask;
 /// </summary>
 public sealed partial class VoiceMaskSystemGoob : EntitySystem
 {
-    [Dependency] private readonly SharedJobSystem _job = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly VoiceMaskSystem _voicemask = default!;
+    [Dependency] private SharedJobSystem _job = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private VoiceMaskSystem _voicemask = default!;
 
     public override void Initialize()
     {
+        base.Initialize();
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<TransformSpeakerJobIconEvent>>(OnImplantJobIcon);
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeJobIconMessage>(OnChangeJobIcon); // Gaby Station -> Job icons
         SubscribeLocalEvent<VoiceMaskComponent, InventoryRelayedEvent<TransformSpeakerJobIconEvent>>(OnTransformJobIcon); // GabyStation -> Radio icons
     }
@@ -35,6 +38,14 @@ public sealed partial class VoiceMaskSystemGoob : EntitySystem
 
         if (!string.IsNullOrWhiteSpace(ent.Comp.JobName))
             args.Args.JobName = ent.Comp.JobName;
+    }
+
+    private void OnImplantJobIcon(Entity<VoiceMaskComponent> ent, ref ImplantRelayEvent<TransformSpeakerJobIconEvent> args)
+    {
+        if (ent.Comp.JobIconProtoId is {} icon)
+            args.Event.JobIcon = icon;
+        if (!string.IsNullOrWhiteSpace(ent.Comp.JobName))
+            args.Event.JobName = ent.Comp.JobName;
     }
 
     private void OnChangeJobIcon(Entity<VoiceMaskComponent> entity, ref VoiceMaskChangeJobIconMessage ev)

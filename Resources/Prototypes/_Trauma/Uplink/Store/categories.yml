@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: storeCategory
+  id: UplinkObjective
+  name: store-category-objective
+  priority: 12 # Trauma, was 11

@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: CodespeakManual
+  id: DeluxeCodespeakManual
+  name: deluxe codespeak manual
+  components:
+    - type: CodespeakManual
+      singleUse: false
+
+- type: entity
+  parent:
+    - BaseItem
+    - BaseBookSounds
+    - BaseSyndicateContraband
+  id: CodespeakManual
+  name: codespeak manual
+  description: "The book's cover reads: \"Codespeak(tm) - Secure your communication with metaphors so elaborate, they seem
+    randomly generated!\""
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+        - state: paper
+        - state: cover_strong
+          color: "#b8280d"
+    - type: Tag
+      tags:
+        - Book
+    - type: CodespeakManual
+      singleUse: true

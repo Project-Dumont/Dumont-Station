@@ -21,6 +21,9 @@ public sealed partial class DoorRemoteComponent : Component
     [AutoNetworkedField]
     [DataField]
     public bool IncludeUserAccess = false;
+
+    [DataField, AutoNetworkedField]
+    public bool AllowOvercharge;
 }
 
 public enum OperatingMode : byte
@@ -28,5 +31,6 @@ public enum OperatingMode : byte
     OpenClose,
     ToggleBolts,
     ToggleEmergencyAccess,
-    placeholderForUiUpdates
+    placeholderForUiUpdates,
+    ToggleOvercharge
 }

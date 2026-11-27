@@ -44,6 +44,7 @@ public sealed class DoorRemoteStatusControl : Control
             OperatingMode.OpenClose => "door-remote-open-close-text",
             OperatingMode.ToggleBolts => "door-remote-toggle-bolt-text",
             OperatingMode.ToggleEmergencyAccess => "door-remote-emergency-access-text",
+            OperatingMode.ToggleOvercharge => "door-remote-toggle-overcharge-text",
             _ => "door-remote-invalid-text"
         });
 

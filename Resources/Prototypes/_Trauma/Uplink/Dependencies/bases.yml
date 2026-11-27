@@ -1,0 +1,238 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSheathCounterAttackWeak
+  id: BaseSheathCounterAttackStrong
+  abstract: true
+  components:
+    - type: SheathCounterattack
+      blockEffectTime: 5
+      extraDamageMultiplier: 1.8
+      extraWoundSeverityMultipliers:
+        Slash: 3
+- type: entity
+  id: BaseSheathCounterAttackWeak
+  abstract: true
+  components:
+    - type: SheathCounterattack
+      extraDamageMultiplier: 1.5
+      extraWoundSeverityMultipliers:
+        Slash: 2
+      extraArmorPenetration: 0.5
+- type: entity
+  abstract: true
+  parent: ClothingHandsGlovesBoxingBase
+  id: ClothingHandsGlovesBoxingRiggedBase
+  suffix: Rigged
+  components:
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 8
+    - type: StaminaDamageOnHit
+      damage: 16
+- type: entity
+  abstract: true
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesBoxingBase
+  components:
+    - type: StaminaDamageOnHit
+      damage: 8
+    - type: MeleeWeapon
+      attackRate: 1.5
+      damage:
+        types:
+          Blunt: 0.4
+      soundHit:
+        collection: BoxingHit
+      animation: WeaponArcFist
+      mustBeEquippedToUse: true
+    - type: Tag
+      tags:
+        - Kangaroo
+        - WhitelistChameleon
+    - type: IgniteFromGasImmunity
+      parts: [ LeftHand, RightHand ]
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingNeckUnbutcherableBase
+  components:
+    - type: Item
+      size: Small
+    - type: Clothing
+      quickEquip: true
+      slots:
+        - neck
+    - type: Sprite
+      state: icon
+- type: entity
+  parent: SelectableLock
+  abstract: true
+  id: BaseChameleon
+  components:
+    - type: ActivatableUIRequiresLock
+    - type: UserInterface
+      interfaces:
+        enum.ChameleonUiKey.Key:
+          type: ChameleonBoundUserInterface
+- type: entity
+  id: SelectableLock
+  abstract: true
+  components:
+    - type: Lock
+      locked: false
+      showLockVerbs: false
+      showExamine: false
+      lockOnClick: false
+      unlockOnClick: false
+      useAccess: false
+      unlockingSound: null
+      lockingSound: null
+      breakOnAccessBreaker: true
+      lockTime: 0
+      unlockTime: 0
+    - type: LockOnTrigger
+      keysIn:
+        - lock
+    - type: SelectableComponentAdder
+      selections: 1
+      verbCategoryName: selectable-lock-verb-category-name
+      entries:
+        - verbName: selectable-lock-tool-prying-verb
+          popup: selectable-lock-tool-prying-popup
+          priority: 4
+          componentsToAdd:
+            - type: TriggerOnSimpleToolUsage
+              keyOut: lock
+            - type: SimpleToolUsage
+              quality: Prying
+              doAfter: 1
+        - verbName: selectable-lock-tool-screwing-verb
+          popup: selectable-lock-tool-screwing-popup
+          priority: 3
+          componentsToAdd:
+            - type: TriggerOnSimpleToolUsage
+              keyOut: lock
+            - type: SimpleToolUsage
+              quality: Screwing
+              doAfter: 1
+        - verbName: selectable-lock-tool-cutting-verb
+          popup: selectable-lock-tool-cutting-popup
+          priority: 2
+          componentsToAdd:
+            - type: TriggerOnSimpleToolUsage
+              keyOut: lock
+            - type: SimpleToolUsage
+              quality: Cutting
+              doAfter: 1
+        - verbName: selectable-lock-voice-verb
+          popup: selectable-lock-voice-popup
+          priority: 1
+          componentsToAdd:
+            - type: TriggerOnVoice
+              keyOut: lock
+              listenRange: 2
+              startRecordingVerb: voice-trigger-lock-verb-record
+              recordingVerbMessage: voice-trigger-lock-verb-message
+              inspectUninitializedLoc: voice-trigger-lock-on-uninitialized
+              inspectInitializedLoc: voice-trigger-lock-on-examine
+            - type: ActiveListener
+            - type: VoiceTriggerLock
+        - verbName: selectable-lock-no-lock-verb
+          popup: selectable-lock-no-lock-popup
+          priority: 0
+          componentsToAdd: null
+- type: entity
+  abstract: true
+  parent: BaseNukieAnimal
+  id: BaseNukieAnimalSpaceproof
+  components:
+    - type: Respirator
+      minSaturation: 5
+    - type: Temperature
+      heatDamageThreshold: 423
+      coldDamageThreshold: 0
+    - type: PressureImmunity
+- type: entity
+  abstract: true
+  id: BaseNukieAnimal
+  components:
+    - type: GhostRole
+      makeSentient: true
+      allowSpeech: true
+      allowMovement: true
+      rules: ghost-role-information-syndicate-reinforcement-rules
+      mindRoles:
+        - MindRoleGhostRoleTeamAntagonist
+    - type: GhostTakeoverAvailable
+    - type: Insulated
+    - type: Damageable
+      damageModifierSet: NukieSpider
+    - type: PointLight
+      radius: 3
+      energy: 2.3
+      offset: 0, -2
+      color: green
+    - type: ShowSyndicateIcons
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Syndicate
+    - type: ActiveRadio
+      channels:
+        - Syndicate
+    - type: MobPrice
+      price: 250
+- type: entity
+  abstract: true
+  id: BaseBookSounds
+  components:
+    - type: EmitSoundOnPickup
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_pickup.ogg
+        params:
+          volume: -4
+    - type: EmitSoundOnDrop
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_drop.ogg
+        params:
+          volume: -4
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_drop.ogg
+        params:
+          volume: -4
+- type: entity
+  parent: StatusEffectBase
+  id: CounterAttackingStatusEffect
+  name: counter attacking
+  components:
+    - type: CounterAttackingStatusEffect
+    - type: StatusEffectAlert
+      alert: CounterAttacking
+- type: entity
+  parent: StatusEffectBase
+  id: BlockCounterAttackStatusEffect
+  name: counter attacking blocked
+  components:
+    - type: BlockCounterAttackStatusEffect
+    - type: StatusEffectAlert
+      alert: CounterAttackingBlocked
+- type: alert
+  id: CounterAttacking
+  icons:
+    - sprite: /Textures/_Trauma/Interface/Alerts/counterattack.rsi
+      state: counterattack
+  name: alerts-counter-attacking-name
+  description: alerts-counter-attacking-desc
+- type: alert
+  id: CounterAttackingBlocked
+  icons:
+    - sprite: /Textures/_Trauma/Interface/Alerts/counterattack.rsi
+      state: counterattack_blocked
+  name: alerts-counter-attacking-blocked-name
+  description: alerts-counter-attacking-blocked-desc

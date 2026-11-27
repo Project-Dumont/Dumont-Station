@@ -3,9 +3,9 @@ using Content.Shared.Trigger.Components.Effects;
 
 namespace Content.Shared.Trigger.Systems;
 
-public sealed class DamageOnTriggerSystem : EntitySystem
+public sealed partial class DamageOnTriggerSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
 
     public override void Initialize()
     {
@@ -28,7 +28,7 @@ public sealed class DamageOnTriggerSystem : EntitySystem
         var ev = new BeforeDamageOnTriggerEvent(damage, target.Value);
         RaiseLocalEvent(ent.Owner, ref ev);
 
-        args.Handled |= _damageableSystem.TryChangeDamage(target, ev.Damage, ent.Comp.IgnoreResistances, origin: ent.Owner) is not null;
+        args.Handled |= _damageableSystem.TryChangeDamage(target, ev.Damage, ent.Comp.IgnoreResistances, origin: ent.Owner, targetPart: ent.Comp.TargetPart) is not null;
     }
 }
 

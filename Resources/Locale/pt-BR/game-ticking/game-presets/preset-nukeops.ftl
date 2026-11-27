@@ -1,9 +1,9 @@
-nukeops-title = agentes Nucleares
-nukeops-description = agentes nucleares estão atacando a estação. Tente impedir que façam o big kaboom na estação protegendo o disco nuclear!
+nukeops-title = Operativos nucleares
+nukeops-description = Operativos nucleares estão atacando a estação. Proteja o disco de autenticação nuclear para impedir que a destruam!
 
 nukeops-welcome =
-    Você é um agente nuclear. Seu objetivo é destruir {$station}, transformando-a em um monte de escombros. Seus chefes, o Sindicato, forneceram as ferramentas necessárias para a missão.
-    Operação {$name} está em andamento! Morte à Nanotrasen!
+    Você é um operativo nuclear. Seu objetivo é destruir {$station}, reduzindo-a a escombros. Seus superiores no Sindicato forneceram as ferramentas necessárias.
+    A Operação {$name} está em andamento! Morte à Nanotrasen!
 nukeops-briefing = Seus objetivos são simples: entregar a carga e garantir que ela detone. Que comece a missão.
 
 nukeops-opsmajor = [color=crimson]Vitória maior do Sindicato![/color]
@@ -21,16 +21,18 @@ nukeops-cond-nukediskoncentcom = A tripulação escapou com o disco de autentica
 nukeops-cond-nukedisknotoncentcom = A tripulação deixou o disco de autenticação nuclear para trás.
 nukeops-cond-nukiesabandoned = Os agentes nucleares foram abandonados.
 nukeops-cond-allnukiesdead = Todos os agentes nucleares morreram.
-nukeops-cond-somenukiesalive = Alguns agentes nucleares morreram.
+nukeops-cond-somenukiesalive = Alguns operativos nucleares morreram.
 nukeops-cond-allnukiesalive = Nenhum agente nuclear morreu.
 
-nukeops-list-start = Os agentes eram:
+nukeops-list-start = Os operativos eram:
 nukeops-list-name = - [color=White]{$name}[/color]
 nukeops-list-name-user = - [color=White]{$name}[/color] ([color=gray]{$user}[/color])
 
-nukeops-not-enough-ready-players = Não há jogadores suficientes prontos para iniciar o modo! Apenas {$readyPlayersCount} jogadores estavam prontos de um total de {$minimumPlayers} necessário. Não é possível começar agentes Nucleares.
-nukeops-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar agentes Nucleares.
+nukeops-not-enough-ready-players = Não há jogadores prontos suficientes para iniciar o modo Operativos Nucleares! Apenas {$readyPlayersCount} de um mínimo de {$minimumPlayers} estavam prontos.
+nukeops-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar o modo Operativos Nucleares.
 
 nukeops-role-commander = Comandante
 nukeops-role-agent = Médico
-nukeops-role-operator = Agente
+nukeops-role-operator = Operativo
+
+nukeops-roundend-name = um operativo nuclear

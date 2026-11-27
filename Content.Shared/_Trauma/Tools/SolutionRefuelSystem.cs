@@ -1,0 +1,91 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Examine;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Interaction;
+using Content.Shared.Popups;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
+
+namespace Content.Trauma.Shared.Tools;
+
+public sealed partial class SolutionRefuelSystem : EntitySystem
+{
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<SolutionRefuelComponent, ExaminedEvent>(SolutionRefuelExamine);
+        SubscribeLocalEvent<SolutionRefuelComponent, AfterInteractEvent>(OnSolutionRefuelAfterInteract);
+    }
+
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    private bool TryGetSolutionFuelAndCapacity(Entity<SolutionRefuelComponent> ent, out FixedPoint2 fuel, out FixedPoint2 capacity)
+    {
+        fuel = default;
+        capacity = default;
+
+        if (!_solution.TryGetSolution(
+                ent.Owner,
+                ent.Comp.FuelSolutionName,
+                out _,
+                out var fuelSolution))
+            return false;
+
+        fuel = fuelSolution.GetTotalPrototypeQuantity(ent.Comp.FuelReagent);
+        capacity = fuelSolution.MaxVolume;
+        return true;
+    }
+    private void SolutionRefuelExamine(Entity<SolutionRefuelComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange ||
+            !TryGetSolutionFuelAndCapacity(ent, out var fuel, out var capacity))
+            return;
+
+        args.PushMarkup(Loc.GetString("solution-refuel-component-on-examine-detailed-message",
+                ("colorName", fuel < capacity / FixedPoint2.New(4f) ? "darkorange" : "orange"),
+                ("fuelLeft", fuel),
+                ("fuelCapacity", capacity)));
+    }
+    private void OnSolutionRefuelAfterInteract(Entity<SolutionRefuelComponent> ent, ref AfterInteractEvent args)
+    {
+        // Wowza that's a lot of conditions
+        if (args.Target is not { } target ||
+            args.Handled ||
+            !args.CanReach ||
+            !_timing.IsFirstTimePredicted ||
+            !TryComp<ReagentTankComponent>(target, out var tank) ||
+            tank.TankType != ReagentTankType.Fuel ||
+            !_solution.TryGetDrainableSolution(target, out var targetComp, out var targetSolution) ||
+            !_solution.TryGetSolution(ent.Owner, ent.Comp.FuelSolutionName, out var solutionComp, out var welderSolution))
+            return;
+
+        args.Handled = true;
+
+        // Oh those imp players
+        var trans = FixedPoint2.Min(welderSolution.AvailableVolume, targetSolution.GetTotalPrototypeQuantity(ent.Comp.FuelReagent));
+        if (trans > 0)
+        {
+            var drained = targetSolution.SplitSolutionWithOnly(trans, ent.Comp.FuelReagent);
+            _solution.UpdateChemicals(targetComp.Value);
+            _solution.TryAddSolution(solutionComp.Value, drained);
+            _audio.PlayPredicted(ent.Comp.RefillSound, ent, user: args.User);
+            _popup.PopupClient(Loc.GetString("welder-component-after-interact-refueled-message"), ent, args.User);
+        }
+        else if (welderSolution.AvailableVolume <= 0)
+        {
+            _popup.PopupClient(Loc.GetString("solution-refuel-component-already-full", ("name", ent.Comp.Name)), ent, args.User);
+        }
+        else
+        {
+            _popup.PopupClient(Loc.GetString("solution-refuel-component-no-fuel-in-tank", ("target", args.Target)), ent, args.User);
+        }
+
+    }
+}

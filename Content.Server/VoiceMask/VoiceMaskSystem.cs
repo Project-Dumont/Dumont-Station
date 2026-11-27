@@ -23,6 +23,11 @@
 
 using Content.Goobstation.Shared.IntrinsicVoiceModulator.VoiceMask; // Goobstation
 using Content.Shared.Actions;
+using Content.Shared.Implants;
+using Content.Shared.IdentityManagement.Components;
+using Content.Server.IdentityManagement;
+using Content.Server.Access.Systems;
+using Content.Server.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -42,12 +47,15 @@ namespace Content.Server.VoiceMask;
 
 public sealed partial class VoiceMaskSystem : EntitySystem
 {
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private IConfigurationManager _cfgManager = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+
+    [Dependency] private IdentitySystem _identity = default!;
+    [Dependency] private IdCardSystem _id = default!;
 
     // CCVar.
     private int _maxNameLength;
@@ -55,6 +63,10 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<TransformSpeakerNameEvent>>(OnImplantVoice);
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<SeeIdentityAttemptEvent>>(OnImplantIdentity);
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantImplantedEvent>(OnImplanted);
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRemovedEvent>(OnImplantRemoved);
         SubscribeLocalEvent<VoiceMaskComponent, InventoryRelayedEvent<TransformSpeakerNameEvent>>(OnTransformSpeakerName);
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeNameMessage>(OnChangeName);
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeVerbMessage>(OnChangeVerb);
@@ -68,6 +80,29 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     {
         args.Args.VoiceName = GetCurrentVoiceName(entity);
         args.Args.SpeechVerb = entity.Comp.VoiceMaskSpeechVerb ?? args.Args.SpeechVerb;
+    }
+
+    private void OnImplantVoice(Entity<VoiceMaskComponent> ent, ref ImplantRelayEvent<TransformSpeakerNameEvent> args)
+    {
+        args.Event.VoiceName = GetCurrentVoiceName(ent);
+        args.Event.SpeechVerb = ent.Comp.VoiceMaskSpeechVerb ?? args.Event.SpeechVerb;
+    }
+
+    private void OnImplantIdentity(Entity<VoiceMaskComponent> ent, ref ImplantRelayEvent<SeeIdentityAttemptEvent> args)
+    {
+        if (ent.Comp.OverrideIdentity)
+            args.Event.NameOverride = GetCurrentVoiceName(ent);
+    }
+
+    private void OnImplanted(Entity<VoiceMaskComponent> ent, ref ImplantImplantedEvent args)
+    {
+        if (args.Implanted is {} wearer)
+            _identity.QueueIdentityUpdate(wearer);
+    }
+
+    private void OnImplantRemoved(Entity<VoiceMaskComponent> ent, ref ImplantRemovedEvent args)
+    {
+        _identity.QueueIdentityUpdate(args.Implanted);
     }
 
     #region User inputs from UI
@@ -93,6 +128,10 @@ public sealed partial class VoiceMaskSystem : EntitySystem
         }
 
         entity.Comp.VoiceMaskName = message.Name;
+        if (entity.Comp.ChangeIDName && _id.TryFindIdCard(message.Actor, out var card) && HasComp<AgentIDCardComponent>(card))
+            _id.TryChangeFullName(card, message.Name, card.Comp, message.Actor);
+        if (entity.Comp.OverrideIdentity)
+            _identity.QueueIdentityUpdate(message.Actor);
         _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(message.Actor):player} set voice of {ToPrettyString(entity):mask}: {entity.Comp.VoiceMaskName}");
 
         _popupSystem.PopupEntity(Loc.GetString("voice-mask-popup-success"), entity, message.Actor);

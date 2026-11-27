@@ -174,3 +174,9 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from Citadel Station 13"
   source: "https://github.com/Skyrat-SS13/Skyrat13/commit/2d4f2d1b489590b559e4073f41b126cef56f4c50"
+
+- files:
+    - camera_snap.ogg
+  license: CC-BY-4.0
+  copyright: Taken from freesound, edited by ketufaispikinut(GitHub)
+  source: https://freesound.org/people/thecheeseman/sounds/51360/
