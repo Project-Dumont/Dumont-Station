@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: AtmosphericsLiquidPlasma
+  icon:
+    sprite: Structures/Storage/canister.rsi
+    state: orange
+  product: LiquidPlasmaCanister
+  cost: 8000
+  category: cargoproduct-category-name-atmospherics
+  group: market

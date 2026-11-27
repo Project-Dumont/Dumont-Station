@@ -1,0 +1,17 @@
+- type: entity
+  id: LiquidPlasmaCanister
+  parent: PlasmaCanister
+  name: liquid plasma canister
+  description: A canister that can contain any type of gas. This one is supposed to contain plasma. It can be attached to connector ports using a wrench.
+  components:
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0 # oxygen
+      - 0 # nitrogen
+      - 0 # carbon dioxide
+      - 18710.71051 # plasma
+      temperature: 72
+  - type: AccessReader
+    access: [["Atmospherics"]]
