@@ -107,6 +107,7 @@
   - PowerCellPulseSMG
   - PowerCellPulseSniper
   - EnergyMagRiflePulse
+  - EnergyMagRifleGamma
 
 - type: latheRecipePack
   id: SecurityEquipmentDynamicGoob
