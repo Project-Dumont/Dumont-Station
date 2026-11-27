@@ -5210,3 +5210,9 @@ Entries:
       message: Munição da Hera agora tem resistência a EMP.
   id: 625
   time: '2026-11-27T11:40:35.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Add
+      message: Adiciona cilindro de plasma líquido comprável pela cargo.
+  id: 626
+  time: '2026-11-27T22:03:36.0000000+00:00'
