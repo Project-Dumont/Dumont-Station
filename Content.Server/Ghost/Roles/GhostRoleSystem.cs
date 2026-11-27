@@ -563,12 +563,20 @@ public sealed class GhostRoleSystem : EntitySystem
 
         if (TryComp<GhostRoleAntagSpawnerComponent>(role, out var spawner) &&
             spawner.Definition is { } def &&
-            def.PrefRoles.Any(banned.Contains))
+            (def.PrefRoles.Any(banned.Contains) || GrantsBannedAntag(def.MindRoles, banned)))
         {
             return true;
         }
 
-        foreach (var mindRole in role.Comp.MindRoles)
+        return GrantsBannedAntag(role.Comp.MindRoles, banned);
+    }
+
+    private bool GrantsBannedAntag(IEnumerable<EntProtoId>? mindRoles, HashSet<ProtoId<AntagPrototype>> banned)
+    {
+        if (mindRoles == null)
+            return false;
+
+        foreach (var mindRole in mindRoles)
         {
             if (_prototype.TryIndex<EntityPrototype>(mindRole, out var proto) &&
                 proto.TryGetComponent<MindRoleComponent>(out var comp, EntityManager.ComponentFactory) &&

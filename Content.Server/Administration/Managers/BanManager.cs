@@ -359,26 +359,23 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             null,
             role);
 
-        if (!await AddRoleBan(banDef))
+        banDef = await _db.AddServerRoleBanAsync(banDef);
+
+        if (banDef.UserId != null
+            && _playerManager.TryGetSessionById(banDef.UserId, out var cachedSession)
+            && _cachedRoleBans.TryGetValue(cachedSession, out var cachedBans))
         {
-            _chat.SendAdminAlert(Loc.GetString("cmd-roleban-existing", ("target", targetUsername ?? "null"), ("role", role)));
-            return;
+            cachedBans.Add(banDef);
         }
 
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
 
         if (targetUsername is not null)
-        {
-            var ids = await _db.GetServerRoleBansAsync(null, target, null, null);
-            ids.TryGetValue(ids.Count, out var id);
-            SendRoleBanWebhook(banDef, targetUsername, adminName, minutes, id.Id);
-        }
+            SendRoleBanWebhook(banDef, targetUsername, adminName, minutes, banDef.Id);
 
         if (target != null && _playerManager.TryGetSessionById(target.Value, out var session))
-        {
             SendRoleBans(session);
-        }
     }
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)
@@ -438,8 +435,10 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         if (!_cachedRoleBans.TryGetValue(session, out var roleBans))
             return null;
 
+        var now = DateTimeOffset.UtcNow;
         return roleBans
-            .Where(ban => ban.Role.StartsWith(AntagPrefix, StringComparison.Ordinal))
+            .Where(ban => ban.Role.StartsWith(AntagPrefix, StringComparison.Ordinal)
+                          && (ban.ExpirationTime == null || ban.ExpirationTime > now))
             .Select(ban => new ProtoId<AntagPrototype>(ban.Role[AntagPrefix.Length..]))
             .ToHashSet();
     }
