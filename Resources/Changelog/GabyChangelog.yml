@@ -5196,3 +5196,17 @@ Entries:
         Transferência de Comando.
   id: 624
   time: '2026-11-27T11:29:47.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções pros pentes de armas laser avançadas.
+    - type: Tweak
+      message: Espada de energia reflete menos.
+    - type: Tweak
+      message: Modsuit de atmos não tem 80% resistência contra lasers mais.
+    - type: Add
+      message: Célula de energia de raios gamma pra Hera. Porque não tinha antes?...
+    - type: Tweak
+      message: Munição da Hera agora tem resistência a EMP.
+  id: 625
+  time: '2026-11-27T11:40:35.0000000+00:00'
