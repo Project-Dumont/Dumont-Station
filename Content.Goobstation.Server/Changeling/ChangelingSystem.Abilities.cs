@@ -209,7 +209,6 @@ public sealed partial class ChangelingSystem
         _blood.SpillAllSolutions(target);
 
         EnsureComp<AbsorbedComponent>(target);
-        EnsureComp<UnrevivableComponent>(target);
 
         TryComp<ChangelingChemicalComponent>(uid, out var chemComp); // user's chemical component
         var popup = string.Empty;
