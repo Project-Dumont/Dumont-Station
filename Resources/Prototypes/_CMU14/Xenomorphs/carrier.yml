@@ -1,0 +1,115 @@
+- type: entity
+  parent: BaseItem
+  id: DumontXenomorphEggItem
+  name: xenomorph egg
+  description: A leathery egg waiting to take root.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
+    state: egg_item
+  - type: Item
+    size: Huge
+  - type: XenomorphPortableEgg
+  - type: Tag
+    tags:
+    - XenomorphItem
+
+- type: entity
+  id: DumontXenomorphCarrierChildRole
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XenomorphCarrierChildRole
+  - type: GhostRole
+    name: ghost-role-information-facehugger-name
+    description: ghost-role-information-facehugger-description
+    rules: ghost-role-information-rules-default-xeno
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+
+- type: entity
+  parent: BaseStructure
+  id: DumontXenomorphResinHole
+  name: resin trap
+  description: A small hollow in the resin.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_trap.rsi
+    drawdepth: FloorObjects
+    layers:
+    - state: trap
+      map: [trap]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphCarrierVisuals.TrapContent:
+        trap:
+          Parasite: { state: trapparasite }
+          Acid: { state: trapacid3 }
+          Empty: { state: trap }
+  - type: XenomorphResinHole
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.5
+        hard: false
+        layer: [SlipLayer]
+        mask: [MobMask]
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Resin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: Flammable
+    fireSpread: false
+    damage:
+      types:
+        Heat: 3
+
+- type: entity
+  parent: XenomorphEgg
+  id: DumontXenomorphEgg
+  components:
+  - type: XenomorphEggSupport
+  - type: XenomorphEgg
+    minGrowthTime: 10
+    maxGrowthTime: 15
+    burstingDelay: 0.9
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
+    layers:
+    - state: egg_growing
+      map: [status]
+  - type: GenericVisualizer
+    visuals:
+      enum.XenomorphEggKey.Key:
+        status:
+          Burst: { state: egg_opened }
+          Bursting: { state: egg_opening }
+          Grown: { state: egg }
+          Growning: { state: egg_growing }
+
+- type: entity
+  id: DumontXenomorphEggDecayEffect
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_egg_fragile.rsi
+    state: egg_exploding
+    drawdepth: Effects
+    noRot: true
+  - type: TimedDespawn
+    lifetime: 1

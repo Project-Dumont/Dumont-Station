@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ported from CMSS13 PR #9741 at cmss13-devs/cmss13@7f42d46cabf127080ad57aa2595196e81297b7c1.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "prae_tag"
+    },
+    {
+      "name": "prae_tag_yellow"
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+- type: entity
+  id: BaseDumontHiveStructure
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        layer: [BulletImpassable]
+        density: 200
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Resin
+  - type: NpcFactionMember
+    factions: [Xeno]
+  - type: Flammable
+    fireSpread: false
+    maximumFireStacks: 0.5
+    damage:
+      types:
+        Heat: 3.8
+
+- type: entity
+  id: BaseDumontHiveConstructionNode
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Resin
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHiveCore
+  name: hive core
+  description: A giant pulsating mound of mass. It looks very much alive.
+  components:
+  - type: CollisionWake
+    enabled: false
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    layers:
+     - sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+       state: hive_weed0
+     - state: core
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveStructure
+    kind: Core
+    limit: 1
+    requiresCore: false
+    requiresHiveWeeds: false
+    requiresSpace: false
+    repairCost: 1000
+  - type: XenomorphHiveCore
+  - type: AreaSpawner
+    radius: 7
+    spawnPrototype: DumontHiveWeeds
+
+- type: entity
+  parent: BaseDumontHiveConstructionNode
+  id: DumontHiveCoreConstructionNode
+  name: hive core
+  description: A strange wriggling lump. Looks like a marker for something.
+  components:
+  - type: Sprite
+    color: '#FFFFFFAA'
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    layers:
+    - state: core
+    - sprite: _RMC14/Interface/xeno_hud.rsi
+      state: xeno_structure_node_indicator
+      scale: 0.8, 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 1000
+    spawn: DumontHiveCore
+  - type: XenomorphHiveStructure
+    kind: Core
+    limit: 1
+    requiresCore: false
+    requiresHiveWeeds: false
+    requiresSpace: false
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHiveRecovery
+  name: recovery node
+  description: A warm, soothing light source that pulsates with a faint hum.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    state: recovery
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoAfter
+  - type: XenomorphHiveStructure
+    kind: Recovery
+    limit: 6
+  - type: XenomorphRecoveryNode
+
+- type: entity
+  parent: BaseDumontHiveConstructionNode
+  id: DumontHiveRecoveryConstructionNode
+  name: recovery node
+  description: A warm, soothing light source that pulsates with a faint hum. Looks like a marker for something.
+  components:
+  - type: Sprite
+    color: '#FFFFFFAA'
+    layers:
+    - sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+      state: recovery
+    - sprite: _RMC14/Interface/xeno_hud.rsi
+      state: xeno_structure_node_indicator
+      scale: 0.8, 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 450
+    spawn: DumontHiveRecovery
+  - type: XenomorphHiveStructure
+    kind: Recovery
+    limit: 6
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHivePlasma
+  name: plasma tree
+  description: A tree-shaped node whose "berries" are filled with glowing blue liquid that drips from them.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    state: recovery_plasma
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoAfter
+  - type: XenomorphHiveStructure
+    kind: Plasma
+    limit: 3
+  - type: XenomorphPlasmaTree
+
+- type: entity
+  parent: BaseDumontHiveConstructionNode
+  id: DumontHivePlasmaConstructionNode
+  name: plasma tree
+  description: Making glowing blue "berries", replenishing plasma reserves of the sisters around it.
+  components:
+  - type: Sprite
+    color: '#FFFFFFAA'
+    layers:
+    - sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+      state: recovery_plasma
+    - sprite: _RMC14/Interface/xeno_hud.rsi
+      state: xeno_structure_node_indicator
+      scale: 0.8, 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 450
+    spawn: DumontHivePlasma
+  - type: XenomorphHiveStructure
+    kind: Plasma
+    limit: 3
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHiveEggMorpher
+  name: egg morpher
+  description: A disgusting biomass generator that reeks of rotting flesh. Capable of producing parasites on its own.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    layers:
+      - state: eggmorph
+        map: ["enum.EggmorpherOverlayLayers.Base"]
+      - state: eggmorph_0
+        map: ["enum.EggmorpherOverlayLayers.Overlay"]
+        visible: false
+  - type: CollisionWake
+    enabled: false
+  - type: Appearance
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveStructure
+    kind: EggMorpher
+    limit: 6
+  - type: XenomorphEggMorpher
+  - type: UserInterface
+    interfaces:
+      enum.XenomorphCarrierUiKey.Reserve:
+        type: ReserveParasitesBoundUserInterface
+
+- type: entity
+  parent: BaseDumontHiveConstructionNode
+  id: DumontHiveEggMorpherConstructionNode
+  name: Egg Morpher
+  description: A disgusting biomass generator that reeks of rotting flesh. Looks like a marker for something.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    layers:
+    - state: eggmorph
+      color: '#FFFFFFAA'
+    - state: eggmorph_3
+      color: '#FFFFFFAA'
+    - sprite: _RMC14/Interface/xeno_hud.rsi
+      state: xeno_structure_node_indicator
+      scale: 0.8, 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenomorphHiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 450
+    spawn: DumontHiveEggMorpher
+  - type: XenomorphHiveStructure
+    kind: EggMorpher
+    limit: 6
+
+- type: entity
+  parent: ResinWeed
+  id: DumontHiveWeeds
+  name: hive weeds
+  components:
+  - type: XenomorphHiveWeed
+  - type: Sprite
+    layers:
+    - state: hive_weed0
+  - type: Icon
+    state: hive_weed0
+  - type: IconSmooth
+    key: cm_xeno_hive_weeds
+    base: hive_weed
+    mode: CardinalFlags
+
+- type: entity
+  id: DumontHiveEggMorpherChildRole
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphEggMorpherChildRole
+  - type: GhostRole
+    name: ghost-role-information-facehugger-name
+    description: ghost-role-information-facehugger-description
+    rules: ghost-role-information-rules-default-xeno
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHiveAcidPillar
+  name: acid pillar
+  description: A tall pillar that is capable of firing weak acid.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_acid_pillar.rsi
+    state: idle
+    noRot: true
+  - type: XenomorphAcidPillar
+  - type: Damageable
+    damageModifierSet: DumontFragileResin
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHiveCluster
+  name: hive cluster
+  description: A large clump of gooey mass. It rhythmically pulses, pumping resin through the hive's weeds.
+  components:
+  - type: DoAfter
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_cluster.rsi
+    layers:
+    - sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+      state: hive_weed0
+    - state: hive_cluster_idle
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: XenomorphHiveStructure
+    kind: Cluster
+    limit: 4
+    requiresHiveWeeds: false
+    requiresSpace: false
+    repairCost: 300
+  - type: XenomorphHiveCluster
+  - type: AreaSpawner
+    radius: 5
+    spawnPrototype: DumontHiveWeeds
+
+- type: entity
+  parent: BaseDumontHiveConstructionNode
+  id: DumontHiveClusterConstructionNode
+  name: hive cluster
+  description: A wriggling marker for a hive cluster.
+  components:
+  - type: Sprite
+    color: '#FFFFFFAA'
+    layers:
+    - sprite: _RMC14/Structures/Xenos/hive_cluster.rsi
+      state: hive_cluster_idle
+    - sprite: _RMC14/Interface/xeno_hud.rsi
+      state: xeno_structure_node_indicator
+      scale: 0.8, 0.8
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: XenomorphHiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 300
+    spawn: DumontHiveCluster
+  - type: XenomorphHiveStructure
+    kind: Cluster
+    limit: 4
+    requiresHiveWeeds: false
+    requiresSpace: false
+
+- type: entity
+  parent: BaseDumontHiveStructure
+  id: DumontHivePylon
+  name: hive pylon
+  description: A towering spike of resin marking a site captured by the hive.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_structures.rsi
+    layers:
+    - sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
+      state: hive_weed0
+    - state: pylon
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+  - type: XenomorphHiveStructure
+    kind: Pylon
+    limit: 1
+    requiresHiveWeeds: false
+    requiresSpace: false
+    repairCost: 1000
+  - type: XenomorphHivePylon
+  - type: AreaSpawner
+    radius: 5
+    spawnPrototype: DumontHiveWeeds

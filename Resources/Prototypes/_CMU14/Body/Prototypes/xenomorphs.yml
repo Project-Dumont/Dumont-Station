@@ -1,0 +1,1952 @@
+- type: body
+  id: XenomorphCMUDrone
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        resin_spinner: OrganXenomorphCMUResinSpinner
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaDrone
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMURunner
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaRunner
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUDefender
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaDefender
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUSentinel
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaSentinel
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMULurker
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaLurker
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUWarrior
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaWarrior
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUSpitter
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaSpitter
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUBull
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaBull
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUHivelord
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        resin_spinner: OrganXenomorphCMUResinSpinner
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaHivelord
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUCarrier
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaCarrier
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUBurrower
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaBurrower
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUReaper
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaReaper
+        resin_spinner: OrganXenomorphCMUResinSpinner
+        acid_gland: OrganXenomorphCMUAcidGland
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUCrusher
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaCrusher
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMURavager
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaRavager
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUBoiler
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaBoiler
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUDespoiler
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaDespoiler
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUPraetorian
+  name: xenomorph praetorian
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaPraetorian
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUQueen
+  name: xenomorph queen
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        resin_spinner: OrganXenomorphCMUResinSpinner
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaQueen
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+        egg_sack: OrganXenomorphCMUEggSack
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUHealerDrone
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaHealerDrone
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUGardenerDrone
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaGardenerDrone
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUHeatshieldDefender
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaHeatshieldDefender
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUAciderRunner
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaAciderRunner
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUToxicSentinel
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaToxicSentinel
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUVenatorSpitter
+  name: xenomorph sentinel
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaVenatorSpitter
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUEggsacCarrier
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaEggsacCarrier
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUBulwarkWarrior
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaBulwarkWarrior
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUVampireLurker
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaVampireLurker
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUResinWhispererHivelord
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        resin_spinner: OrganXenomorphCMURemoteResinSpinner
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaResinWhispererHivelord
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUDesignerHivelord
+  name: xenomorph drone
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        resin_spinner: OrganXenomorphCMURemoteResinSpinner
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaDesignerHivelord
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUHedgehogRavager
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaHedgehogRavager
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUBerserkerRavager
+  name: xenomorph hunter
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaBerserkerRavager
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUDancerPraetorian
+  name: xenomorph praetorian
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaDancerPraetorian
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUVanguardPraetorian
+  name: xenomorph praetorian
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaVanguardPraetorian
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUOppressorPraetorian
+  name: xenomorph praetorian
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaOppressorPraetorian
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph
+- type: body
+  id: XenomorphCMUValkyriePraetorian
+  name: xenomorph praetorian
+  root: chest
+  slots:
+    head:
+      part: HeadXenomorph
+      connections:
+      - chest
+      organs:
+        brain: OrganXenomorphBrain
+        eyes: OrganXenomorphEyes
+        hive_node: OrganXenomorphHiveNode
+        neurotoxin_gland: OrganXenomorphNeurotoxinGland
+        acid_gland: OrganXenomorphCMUAcidGland
+    chest:
+      part: ChestXenomorph
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head
+      organs:
+        plasma_vessel: OrganXenomorphCMUPlasmaValkyriePraetorian
+    groin:
+      part: GroinXenomorph
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        stomach: OrganXenomorphStomach
+        liver: OrganXenomorphLiver
+    right arm:
+      part: RightArmXenomorph
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmXenomorph
+      connections:
+      - left hand
+    right hand:
+      part: RightHandXenomorph
+    left hand:
+      part: LeftHandXenomorph
+    right leg:
+      part: RightLegXenomorph
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegXenomorph
+      connections:
+      - left foot
+    right foot:
+      part: RightFootXenomorph
+    left foot:
+      part: LeftFootXenomorph

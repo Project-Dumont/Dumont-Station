@@ -17,4 +17,7 @@ public sealed partial class MaintsSpawnRuleComponent : Component
     /// </summary>
     [ViewVariables]
     public List<MapCoordinates>? Coords;
+
+    [DataField]
+    public bool FallbackToVents; // Dumont
 }

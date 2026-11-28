@@ -60,6 +60,7 @@ public enum StationEventMusicType : byte
     ShadowLing, // goob - shadowlings
     Doomsday, // Funkystation - Malf AI Doomsday Protocol
     BloodCult, // Funky - Blood Cult Final Ritual
+    Xenomorph, // Dumont
 }
 
 /// <summary>
