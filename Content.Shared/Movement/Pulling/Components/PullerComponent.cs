@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
@@ -80,6 +82,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Grab;
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -123,6 +126,11 @@ public sealed partial class PullerComponent : Component
     [AutoNetworkedField]
     // Dumont end
     public bool NeedsHands = true;
+
+    // Dumont start
+    [DataField, AutoNetworkedField]
+    public GrabStage? StartingGrabStage;
+    // Dumont end
 
     [DataField]
     public ProtoId<AlertPrototype> PullingAlert = "Pulling";

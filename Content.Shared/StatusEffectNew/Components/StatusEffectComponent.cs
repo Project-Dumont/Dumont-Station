@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Alert;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
@@ -10,7 +12,7 @@ namespace Content.Shared.StatusEffectNew.Components;
 /// Marker component for all status effects - every status effect entity should have it.
 /// Provides a link between the effect and the affected entity, and some data common to all status effects.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), AutoGenerateComponentPause]
 [Access(typeof(StatusEffectsSystem))]
 [EntityCategory("StatusEffects")]
 public sealed partial class StatusEffectComponent : Component

@@ -288,7 +288,7 @@
 - type: entity
   parent: BaseImplantOnlyImplanter
   id: XenoCompatibilityImplanter
-  suffix: Xeno Compatibility
+  name: xeno compatibility implanter # Dumont
   components:
   - type: Implanter
     implant: XenoCompatibilityImplant

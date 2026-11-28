@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/18e0f698bd58944a46b04d1e147c21d4b05057d5/icons/effects/beam.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "oppressor_tail"
+    },
+    {
+      "name": "oppressor_tail_hook"
+    }
+  ]
+}

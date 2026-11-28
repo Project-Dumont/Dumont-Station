@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._White.Xenomorphs.Caste;
 using Content.Shared.Actions;
@@ -31,6 +33,17 @@ public sealed partial class XenomorphEvolutionDoAfterEvent : DoAfterEvent
 
 [Serializable, NetSerializable]
 public sealed partial class LarvaBurstDoAfterEvent : SimpleDoAfterEvent;
+
+// Dumont start
+[Serializable, NetSerializable]
+public sealed partial class QueenRoarDoAfterEvent : SimpleDoAfterEvent;
+
+public sealed partial class ToggleAcidSpitEvent : InstantActionEvent;
+
+public sealed partial class FaceHuggerLeapActionEvent : WorldTargetActionEvent;
+
+public sealed partial class QueenRoarActionEvent : InstantActionEvent;
+// Dumont end
 
 public sealed partial class TransferPlasmaActionEvent : EntityTargetActionEvent
 {

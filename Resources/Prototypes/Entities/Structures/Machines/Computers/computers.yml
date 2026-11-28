@@ -339,6 +339,10 @@
   description: Used to pilot a shuttle.
   abstract: true
   components:
+  - type: InteractedBlacklist
+    exceptions:
+      components:
+      - XenomorphRoyal
   - type: ShuttleConsole
   - type: ActivatableUI
     key: enum.ShuttleConsoleUiKey.Key
@@ -1046,6 +1050,10 @@
       state: generic_panel_open
   - type: AccessReader
     access: [[ "Command" ]]
+  - type: InteractedBlacklist
+    exceptions:
+      components:
+      - XenomorphRoyal
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: StationTraitReportTarget # Dumont

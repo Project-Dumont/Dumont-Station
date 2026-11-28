@@ -1,0 +1,4 @@
+- files: ["comms.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Composite of the existing computer, generic_keyboard, comm and generic_keys sprites. Original sprites from tgstation; see Structures/Machines/computers.rsi/meta.json for credits."
+  source: "https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894"
