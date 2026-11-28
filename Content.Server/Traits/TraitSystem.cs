@@ -50,11 +50,11 @@ public sealed class TraitSystem : EntitySystem
             return;
         }
 
-        ApplyTraits(args.Mob, args.Profile); // Orion-Edit
+        ApplyTraits(args.Mob, args.Profile, args.JobId); // Orion-Edit
     }
 
     // Orion-Edit-Start
-    public void ApplyTraits(EntityUid mob, HumanoidCharacterProfile profile)
+    public void ApplyTraits(EntityUid mob, HumanoidCharacterProfile profile, string? jobId = null)
     {
         foreach (var traitId in profile.TraitPreferences)
         {
@@ -75,6 +75,9 @@ public sealed class TraitSystem : EntitySystem
             // End Goobstation: Species trait support
 
             // Add all components required by the prototype
+            if (traitPrototype.IncompatibleTraits.Overlaps(profile.TraitPreferences))
+                continue;
+
             EntityManager.AddComponents(mob, traitPrototype.Components, false);
 
             // Einstein Engines - Language begin (remove this if trait system refactor)
@@ -115,14 +118,17 @@ public sealed class TraitSystem : EntitySystem
             // Einstein Engines - Language end
 
             // Add item required by the trait
-            if (traitPrototype.TraitGear == null)
+            var gear = traitPrototype.TraitGear;
+            if (jobId != null && traitPrototype.TraitGearByJob.TryGetValue(jobId, out var jobGear))
+                gear = jobGear;
+            if (gear == null)
                 continue;
 
             if (!TryComp(mob, out HandsComponent? handsComponent))
                 continue;
 
             var coords = Transform(mob).Coordinates;
-            var inhandEntity = Spawn(traitPrototype.TraitGear, coords);
+            var inhandEntity = Spawn(gear, coords);
             _sharedHandsSystem.TryPickup(mob,
                 inhandEntity,
                 checkActionBlocker: false,

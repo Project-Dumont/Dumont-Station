@@ -114,6 +114,8 @@
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+  children:
+  - CyberneticBeast
 
 - type: guideEntry
   id: Yowie

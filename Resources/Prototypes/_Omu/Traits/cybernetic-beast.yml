@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2025 MarkerWicker (OmuStation)
+# SPDX-FileCopyrightText: 2026 raincally (OmuStation)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported from OmuStation PRs #150 and #1613.
+
+- type: trait
+  id: CyberneticBeast
+  name: trait-cybernetic-beast-name
+  description: trait-cybernetic-beast-desc
+  category: Quirks
+  includedSpecies: [Vulpkanin]
+  incompatibleTraits: [PoorVision, Blindness]
+  components:
+  - type: CyberneticBeast
+  - type: PermanentBlindness
+    blindness: 3
+  traitGear: ClothingCyberneticBeastMantle
+  traitGearByJob:
+    AtmosphericTechnician: ClothingCyberneticBeastMantleWorkAtmospherics
+    StationEngineer: ClothingCyberneticBeastMantleWorkEngineering
+    TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
+    SalvageSpecialist: ClothingCyberneticBeastMantleWorkSalvage
+    SalvageLead: ClothingCyberneticBeastMantleWorkSalvage
+    ShaftMiner: ClothingCyberneticBeastMantleWorkSalvage
+    Detective: ClothingCyberneticBeastMantleSecurity
+    SecurityCadet: ClothingCyberneticBeastMantleSecurity
+    SecurityOfficer: ClothingCyberneticBeastMantleSecurity
+    Warden: ClothingCyberneticBeastMantleSecurity
+    Chemist: ClothingCyberneticBeastMantleMedicalChemist
+    MedicalDoctor: ClothingCyberneticBeastMantleMedical
+    MedicalIntern: ClothingCyberneticBeastMantleMedical
+    Paramedic: ClothingCyberneticBeastMantleMedicalParamedic
+    Brigmedic: ClothingCyberneticBeastMantleCorpsman
+    Virologist: ClothingCyberneticBeastMantleMedical
+    Captain: ClothingCyberneticBeastMantleCommand
+    ChiefEngineer: ClothingCyberneticBeastMantleWorkChiefEngineering
+    ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedicalCMO
+    HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
+    HeadOfSecurity: ClothingCyberneticBeastMantleHeadofSecurity
+    Quartermaster: ClothingCyberneticBeastMantleSupply
+    ResearchDirector: ClothingCyberneticBeastMantleScienceCommand
+    BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
+    NanotrasenRepresentative: ClothingCyberneticBeastMantleCentralCommandNoThermal
+    Bartender: ClothingCyberneticBeastMantleBar
+    Roboticist: ClothingCyberneticBeastMantleRoboticist

@@ -76,6 +76,7 @@
   - BasicCyberneticHeart
   - BasicCyberneticLungs
   - BasicCyberneticLiver
+  - ClothingCyberneticBeastMantleWorkResearch
 
 - type: latheRecipePack
   id: AdvancedCybernetics

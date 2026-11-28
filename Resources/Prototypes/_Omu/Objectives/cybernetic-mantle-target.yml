@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2025 MarkerWicker (OmuStation)
+# SPDX-FileCopyrightText: 2026 raincally (OmuStation)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported from OmuStation PRs #150 and #1613.
+
+- type: stealTargetGroup
+  id: CyberneticMantles
+  name: steal-target-groups-cybernetic-mantles
+  sprite:
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon

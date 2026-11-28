@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 MarkerWicker (OmuStation)
+# SPDX-FileCopyrightText: 2026 raincally (OmuStation)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Ported from OmuStation PRs #150 and #1613.
+
+- type: latheRecipe
+  id: ClothingCyberneticBeastMantleWorkResearch
+  result: ClothingCyberneticBeastMantleWorkResearch
+  completetime: 15
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Silver: 1000
+    Gold: 1000
