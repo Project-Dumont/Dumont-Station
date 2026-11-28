@@ -28,7 +28,7 @@ public sealed partial class OverheatMachineComponent : Component
     public float ExplosionRadius = 5f;
 
     /// <summary>
-    /// Temperature at which the machine shuts down.
+    /// Temperature at which the machine shuts down. If null, the machine will not shutdown.
     /// </summary>
     [DataField]
     public float? TemperatureShutdown;

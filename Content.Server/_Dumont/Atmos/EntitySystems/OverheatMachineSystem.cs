@@ -19,6 +19,7 @@ public sealed partial class OverheatMachineSystem : EntitySystem
     [Dependency] private DamageableSystem _damageableSystem = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private DamageOnInteractSystem _damageOnInteractSystem = default!;
+    [Dependency] private PowerReceiverSystem _powerReceiver = default!;
 
     public override void Initialize()
     {
@@ -30,55 +31,80 @@ public sealed partial class OverheatMachineSystem : EntitySystem
     }
 
     private void OnAtmosUpdate(
-        EntityUid uid,
-        OverheatMachineComponent component,
-        ref AtmosExposedUpdateEvent args)
+    EntityUid uid,
+    OverheatMachineComponent component,
+    ref AtmosExposedUpdateEvent args)
     {
         var airTemperature = args.GasMixture.Temperature;
-        if (component.HeatDamageTemperature is not null &&
-            airTemperature >= component.HeatDamageTemperature &&
-            component.Damage.DamageDict.Count > 0)
+
+        if (component.HeatDamageTemperature is { } heatDamageTemperature &&
+        airTemperature >= heatDamageTemperature &&
+        component.Damage.DamageDict.Count > 0)
         {
             _popup.PopupEntity(Loc.GetString("item-temperature-overheat", ("item", uid)), uid);
             _damageableSystem.TryChangeDamage(uid, component.Damage);
         }
-        if (component.ExplosionTemperature is not null &&
-            airTemperature >= component.ExplosionTemperature)
+        if (component.ExplosionTemperature is { } explosionTemperature &&
+        airTemperature >= explosionTemperature)
         {
             _explosionSystem.TriggerExplosive(uid, radius: component.ExplosionRadius);
         }
-        if (component.TemperatureShutdown is not null)
-        {
-            var shutdown = airTemperature >= component.TemperatureShutdown;
-            if (component.IsShutdown != shutdown)
-            {
-                component.IsShutdown = shutdown;
-                if (TryComp<ApcPowerReceiverComponent>(uid, out var power))
-                {
-                    var powerManager = EntityManager.System<PowerReceiverSystem>();
-                    powerManager.SetPowerDisabled(uid, shutdown, power);
-                }
-                if (TryComp<DamageOnInteractComponent>(uid, out var damageOnInteractComp))
-                    _damageOnInteractSystem.SetIsDamageActiveTo((uid, damageOnInteractComp), shutdown);
-            }
-        }
-
+        
+        UpdateShutdown(uid, component, airTemperature);
     }
-
-    private void OnExamined(EntityUid uid, 
-    OverheatMachineComponent component, 
-    ExaminedEvent args)
-    {
-        if (component.IsShutdown)
-            args.PushMarkup(Loc.GetString("item-temperature-shutdown"));
-    }
-
-    private void OnTryTogglePower(
+    
+    private void UpdateShutdown(
     EntityUid uid,
     OverheatMachineComponent component,
-    ref TryTogglePowerEvent args)
+    float airTemperature)
     {
-        if (component.IsShutdown)
-            args.Cancel();
+        if (component.TemperatureShutdown is not { } temperatureShutdown)
+            return; 
+        if (component.IsShutdown == (airTemperature >= temperatureShutdown))
+            return;
+        component.IsShutdown = airTemperature >= temperatureShutdown;
+
+        UpdatePowerReceiver(uid, component.IsShutdown);
+        UpdateDamageOnInteract(uid, component.IsShutdown);
+    }
+
+    private void UpdatePowerReceiver(EntityUid uid, bool shutdown)
+    {
+        if (!TryComp<ApcPowerReceiverComponent>(uid, out var power))
+            return;
+
+        _powerReceiver.SetPowerDisabled(uid, shutdown, power);
+    }
+
+    private void UpdateDamageOnInteract(EntityUid uid, bool shutdown)
+    {
+        if (!TryComp<DamageOnInteractComponent>(uid, out var damageOnInteractComp))
+            return;
+
+        _damageOnInteractSystem.SetIsDamageActiveTo(
+        (uid, damageOnInteractComp),
+        shutdown);
+    }
+
+    private void OnExamined(
+    EntityUid uid,
+    OverheatMachineComponent component,
+    ExaminedEvent args)
+    {
+        if (!component.IsShutdown)
+            return;
+            
+        args.PushMarkup(Loc.GetString("item-temperature-shutdown"));
+    }
+
+   private void OnTryTogglePower(
+   EntityUid uid,
+   OverheatMachineComponent component,
+   ref TryTogglePowerEvent args)
+    {
+        if (!component.IsShutdown)
+            return;
+
+        args.Cancel();
     }
 }
