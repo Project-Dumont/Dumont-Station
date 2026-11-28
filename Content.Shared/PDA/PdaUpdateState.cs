@@ -33,6 +33,7 @@ namespace Content.Shared.PDA
         public string? StationName;
         public List<Notification>? Notifications;
         public bool HasUplink;
+        public bool HasJobBoard;
         public bool CanPlayMusic;
         public string? Address;
 

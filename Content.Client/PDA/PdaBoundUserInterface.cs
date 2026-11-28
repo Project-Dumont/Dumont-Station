@@ -36,6 +36,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Trauma.Common.JobListings;
 using Content.Client.CartridgeLoader;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Containers.ItemSlots;
@@ -104,6 +105,13 @@ namespace Content.Client.PDA
             {
                 SendMessage(new PdaShowUplinkMessage());
             };
+
+            // <Trauma> - job listings
+            _menu.ShowJobListingsButton.OnPressed += _ =>
+            {
+                SendPredictedMessage(new PdaShowJobListingsMessage());
+            };
+            // </Trauma>
 
             _menu.LockUplinkButton.OnPressed += _ =>
             {

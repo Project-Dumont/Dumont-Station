@@ -1,0 +1,8 @@
+- files: ["pshoom.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station"
+  source: "https://github.com/tgstation/tgstation/blob/7e201733d03edf9495c54a0e8652f0d3c248ecce/sound/items/pshoom/pshoom.ogg"
+- files: ["wewewew.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station"
+  source: "https://github.com/tgstation/tgstation/blob/7e201733d03edf9495c54a0e8652f0d3c248ecce/sound/machines/wewewew.ogg"

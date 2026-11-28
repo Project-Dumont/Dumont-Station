@@ -25,6 +25,7 @@ SPDX-License-Identifier: MIT
                         HorizontalAlignment="Left"
                         Access="Public"
                         HorizontalExpand="True" />
+                    <Button Name="JobListingsButton" Access="Public" Visible="False" Text="{Loc 'pda-bound-user-interface-show-job-listings-title'}" />
                     <Button
                         Name="WithdrawButton"
                         MinWidth="64"

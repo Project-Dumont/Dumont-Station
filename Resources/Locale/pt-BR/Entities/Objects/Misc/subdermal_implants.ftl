@@ -38,7 +38,7 @@ ent-RadioImplant = { ent-BaseSubdermalImplant } de { ent-RadioImplanter.suffix }
     .desc = Um implante que permite acesso a frequência do Sindicato sem necessidade de fones de ouvido.
 
 ent-UplinkImplant = { ent-BaseSubdermalImplant } { ent-UplinkImplanter.suffix }
-    .desc = Um implante que permite ao usuário acesso a um uplink secreto quando quiser.
+    .desc = Permite acessar discretamente o uplink do Sindicato e, após comprar o kit, o painel de contratos.
 
 ent-EmpImplant = { ent-BaseSubdermalImplant } de { ent-EmpImplanter.suffix }
     .desc = Um implante que cria um pulso eletromagnético quando ativo.

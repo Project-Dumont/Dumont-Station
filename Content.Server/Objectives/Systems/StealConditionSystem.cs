@@ -78,8 +78,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Objectives;
 using Content.Server.Objectives.Components;
-using Content.Server.Objectives.Components.Targets;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Interaction;
 using Content.Shared.Mind;
@@ -96,15 +96,15 @@ using Content.Shared.Stacks;
 
 namespace Content.Server.Objectives.Systems;
 
-public sealed class StealConditionSystem : EntitySystem
+public sealed partial class StealConditionSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedObjectivesSystem _objectives = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
 
     private EntityQuery<ContainerManagerComponent> _containerQuery;
 
@@ -121,6 +121,16 @@ public sealed class StealConditionSystem : EntitySystem
         SubscribeLocalEvent<StealConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
         SubscribeLocalEvent<StealConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
     }
+
+    // <Trauma> - had to add this because component is access-locked to this system.
+    /// <summary>
+    /// Set a steal objective's steal group.
+    /// </summary>
+    public void SetStealGroup(Entity<StealConditionComponent> condition, ProtoId<StealTargetGroupPrototype> groupId)
+    {
+        condition.Comp.StealGroup = groupId;
+    }
+    // </Trauma>
 
     /// start checks of target acceptability, and generation of start values.
     private void OnAssigned(Entity<StealConditionComponent> condition, ref ObjectiveAssignedEvent args)
@@ -157,7 +167,10 @@ public sealed class StealConditionSystem : EntitySystem
     //Set the visual, name, icon for the objective.
     private void OnAfterAssign(Entity<StealConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
-        var group = _proto.Index(condition.Comp.StealGroup);
+        if (condition.Comp.StealGroup is not {} groupId)
+            return;
+
+        var group = _proto.Index(groupId);
         string localizedName = Loc.GetString(group.Name);
 
         var title = condition.Comp.OwnerText == null

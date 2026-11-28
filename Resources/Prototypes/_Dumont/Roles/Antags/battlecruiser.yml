@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: SyndicateBattlecruiserOperativeGear
+  parent: SyndicateOperativeGearFull
+  equipment:
+    pocket2: BaseUplinkRadio350TC
+
+- type: entity
+  parent: SpawnPointNukeopsOperative
+  id: SpawnPointBattlecruiserOperative
+  components:
+  - type: GhostRole
+    name: ghost-role-information-battlecruiser-operative-name
+    description: ghost-role-information-battlecruiser-operative-description

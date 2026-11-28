@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: LoneOpsSpawn
+  id: SyndicateBattlecruiserRule
+  components:
+  - type: BattlecruiserArrival
+    announcements:
+    - offset: 0
+      sound:
+        path: /Audio/_Dumont/Battlecruiser/saae_nuclear.ogg
+    - offset: 120
+      message: station-event-syndicate-battle-cruiser
+      sound:
+        path: /Audio/Announcements/war.ogg
+      music:
+        path: /Audio/_Dumont/Battlecruiser/goons_with_a_warhead.ogg
+        params:
+          volume: -7
+    - offset: 180
+      message: battlecruiser-announcement-ship
+      sender: battlecruiser-announcement-saae-sender
+      sound:
+        path: /Audio/_Dumont/Battlecruiser/saae_ship.ogg
+    - offset: 240
+      message: battlecruiser-announcement-team
+      sender: battlecruiser-announcement-saae-sender
+      sound:
+        path: /Audio/_Dumont/Battlecruiser/saae_team.ogg
+  - type: StationEvent
+    weight: 0 # this CANNOT happen naturally
+  - type: LoadMapRule
+    gridPath: /Maps/_Dumont/Shuttles/ShuttleEvent/leviathan.yml
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointBattlecruiserOperative
+      min: 20
+      max: 20
+      pickPlayer: false
+      startingGear: SyndicateBattlecruiserOperativeGear
+      unequipOldGear: true
+      roleLoadout:
+      - RoleSurvivalNukie
+      components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicatePrefix
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeops

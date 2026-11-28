@@ -352,6 +352,7 @@
   parent: BaseGameRule
   id: BaseTraitorRuleNoObjectives
   components:
+  - type: RoundEndJobListingsInfo
   - type: TraitorRule
   # TODO: codewords in yml
   # TODO: uplink in yml
