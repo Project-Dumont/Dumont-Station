@@ -204226,7 +204226,7 @@ entities:
           - Open
         - - Middle
           - Close
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurityy
   entities:
   - uid: 30760
     components:

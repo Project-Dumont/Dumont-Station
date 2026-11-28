@@ -82,8 +82,8 @@ using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Goobstation.Shared.CloneProjector.Clone;
-using Content.Goobstation.Shared.Clothing.Components;
-using Content.Goobstation.Shared.Clothing.Systems;
+using Content.Goobstation.Shared.ModSuits.Components;
+using Content.Goobstation.Shared.ModSuits.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Interaction.Components;
@@ -110,7 +110,7 @@ public sealed partial class CloningSystem : EntitySystem
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly NameModifierSystem _nameMod = default!;
     [Dependency] private readonly ToggleableClothingSystem _toggleable = default!; // Goobstation
-    [Dependency] private readonly SharedSealableClothingSystem _sealable = default!; // Goobstation
+    [Dependency] private readonly ModSuitSystem _modSuit = default!; // Goobstation
 
     /// <summary>
     ///     Spawns a clone of the given humanoid mob at the specified location or in nullspace.
@@ -301,52 +301,29 @@ public sealed partial class CloningSystem : EntitySystem
                 }
             }
 
+            if (TryComp(item, out ModSuitComponent? modSuit))
+                _modSuit.CopyDeployState((item, modSuit), cloneItem.Value);
+
             if (!TryComp(item, out ToggleableClothingComponent? toggleable) || toggleable.ClothingUids.Count == 0 ||
                 !TryComp(cloneItem.Value, out ToggleableClothingComponent? clonedToggleable))
                 continue;
 
-            var allEquipped = true;
-            List<EntityUid> equipped = new();
             foreach (var (clothing, toggleSlot) in toggleable.ClothingUids)
             {
                 if (!_toggleable.IsToggled((item, toggleable), clothing))
-                {
-                    allEquipped = false;
                     continue;
-                }
 
                 if (clonedToggleable.ClothingUids.FirstOrNull(kvp => kvp.Value == toggleSlot) is not
                     { } newClothing)
-                {
-                    allEquipped = false;
                     continue;
-                }
 
-                if (_toggleable.EquipClothing(clone.Owner,
-                        (cloneItem.Value, clonedToggleable),
-                        newClothing.Key,
-                        newClothing.Value,
-                        true))
-                    equipped.Add(newClothing.Key);
+                _toggleable.EquipClothing(clone.Owner,
+                    (cloneItem.Value, clonedToggleable),
+                    newClothing.Key,
+                    newClothing.Value,
+                    true);
             }
 
-            if (!allEquipped || !TryComp(item, out SealableClothingControlComponent? sealable) ||
-                !sealable.IsCurrentlySealed ||
-                !TryComp(cloneItem.Value, out SealableClothingControlComponent? clonedSealable))
-                continue;
-
-            var success = true;
-            foreach (var toSeal in equipped)
-            {
-                if (!_sealable.SealPart(toSeal, (cloneItem.Value, clonedSealable), true))
-                {
-                    success = false;
-                    break;
-                }
-            }
-
-            if (success)
-                _sealable.EndSealProcess((cloneItem.Value, clonedSealable), true);
             // Goob edit end
         }
     }

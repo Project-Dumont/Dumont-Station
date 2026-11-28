@@ -23266,7 +23266,7 @@ entities:
     - type: Transform
       pos: -34.53929,-9.524399
       parent: 2
-- proto: UndeterminedVoidsuitSecurity
+- proto: ClothingOuterVoidsuitSecurity
   entities:
   - uid: 3338
     components:

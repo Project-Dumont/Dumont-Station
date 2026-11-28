@@ -129,6 +129,10 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance
     damageCoefficient: 0.6
+  - type: Tag
+    tags:
+    - ModsuitPart
+    - ModsuitPlatingPraetorian
 
 # Cybersun Stealth
 
@@ -257,7 +261,7 @@
     damageCoefficient: 0.1
   - type: ModifyDelayedKnockdown
     cancel: true
-    
+
 # Security voidsuit - used this instead of security hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
