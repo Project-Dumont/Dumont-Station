@@ -43,6 +43,8 @@ using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.Timing; // Goobstation
 using System.Linq; // Goobstation
 using Content.Shared.Chemistry.Reagent; // Goobstation
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Humanoid; // Dumont
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -106,6 +108,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
 
+        if (!CanUseInjectorOnArm(args.Args.User, args.Args.Target.Value))
+            return;
+
         args.Handled = TryUseInjector(entity, args.Args.Target.Value, args.Args.User);
     }
 
@@ -138,6 +143,10 @@ public sealed class InjectorSystem : SharedInjectorSystem
     /// </summary>
     private void InjectDoAfter(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
+        // Dumont begin - drawing from arm
+        if (!CanUseInjectorOnArm(user, target))
+            return;
+
         if (HasComp<BlockInjectionComponent>(target)) // DeltaV
         {
             Popup.PopupEntity(Loc.GetString("injector-component-deny-user"), target, user);
@@ -458,5 +467,32 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
         Dirty(injector);
         AfterDraw(injector, target);
+    }
+
+    /// <summary>
+    /// Checks targeting for the user drawing solutions
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns>True if the user cannot draw from arm, true if it can and is, and false if it can and is not.</returns>
+
+    private bool CanUseInjectorOnArm(EntityUid user, EntityUid target)
+    {
+        // Dumont begin - arms targeting
+
+        if (!HasComp<HumanoidAppearanceComponent>(target))
+            return true;
+
+        if (!TryComp<TargetingComponent>(user, out var targeting))
+            return true;
+
+        if ((targeting.Target & TargetBodyPart.Arms) == 0)
+        {
+            Popup.PopupEntity(Loc.GetString("injector-component-targeting-deny-user"), target, user);
+            return false;
+        }
+
+        return true;
+        // Dumont end
+
     }
 }
