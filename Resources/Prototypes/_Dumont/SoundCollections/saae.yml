@@ -1,0 +1,22 @@
+- type: soundCollection
+  id: SaaeArtifact
+  files:
+  - /Audio/_Dumont/Announcements/artifact_saae.ogg
+  - /Audio/_Dumont/Announcements/artifact_saae_2.ogg
+  - /Audio/_Dumont/Announcements/artifact_saae_3.ogg
+  - /Audio/_Dumont/Announcements/artifact_saae_4.ogg
+
+- type: soundCollection
+  id: SaaeAnomalySpawn
+  files:
+  - /Audio/_Dumont/Announcements/anomaly_spawn_saae_1.ogg
+  - /Audio/_Dumont/Announcements/anomaly_spawn_saae_2.ogg
+  - /Audio/_Dumont/Announcements/anomaly_spawn_saae_3.ogg
+  - /Audio/_Dumont/Announcements/anomaly_spawn_saae_4.ogg
+  - /Audio/_Dumont/Announcements/anomaly_spawn_saae_5.ogg
+
+- type: soundCollection
+  id: SaaeSolarFlare
+  files:
+  - /Audio/_Dumont/Announcements/solarflare_ac_saae.ogg
+  - /Audio/_Dumont/Announcements/solarflare_aca_saae.ogg

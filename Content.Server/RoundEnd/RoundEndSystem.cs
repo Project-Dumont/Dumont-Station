@@ -48,6 +48,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Saae;
+using Robust.Shared.Audio;
 using System.Threading;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
@@ -79,7 +81,7 @@ namespace Content.Server.RoundEnd
     /// Handles ending rounds normally and also via requesting it (e.g. via comms console)
     /// If you request a round end then an escape shuttle will be used.
     /// </summary>
-    public sealed class RoundEndSystem : EntitySystem
+    public sealed partial class RoundEndSystem : EntitySystem // Dumont
     {
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -92,6 +94,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
+        [Dependency] private SaaeAnnouncerSystem _saae = default!; // Dumont
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -247,7 +250,7 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg", Filter.Broadcast(), true);
+            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlecalled_saae.ogg"), Filter.Broadcast(), key: "evac"); // Dumont
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -296,7 +299,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString(name), false, colorOverride: Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg", Filter.Broadcast(), true);
+            _saae.Play(new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttlerecalled_saae.ogg"), Filter.Broadcast(), key: "evac"); // Dumont
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Saae;
 using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules;
@@ -22,12 +23,13 @@ using Robust.Shared.Random;
 namespace Content.Server.StationEvents.Events;
 
 // Dumont - this should be moved under Station Events, or perhaps station traits.
-public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
+public sealed partial class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent> // Dumont
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private SaaeAnnouncerSystem _saae = default!; // Dumont
 
     protected override void Added(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -44,7 +46,7 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
             RaiseLocalEvent(ev);
         }
         // Dumont End
-        _audio.PlayGlobal(component.AnnouncementSound, allPlayersInGame, true);
+        _saae.Play(component.AnnouncementSound, allPlayersInGame); // Dumont
     }
 
     protected override void ActiveTick(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, float frameTime)

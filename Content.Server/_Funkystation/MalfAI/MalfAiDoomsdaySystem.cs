@@ -26,13 +26,14 @@ using Content.Shared._Funkystation.MalfAI.Events;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Server._Funkystation.MalfAI.Components;
 using Content.Shared._Funkystation.CCVar;
+using Content.Server._Dumont.MalfAI;
 
 namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI Doomsday Protocol activation, countdown, announcements, and cancellation.
 /// </summary>
-public sealed class MalfAiDoomsdaySystem : EntitySystem
+public sealed partial class MalfAiDoomsdaySystem : EntitySystem // Dumont
 {
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly AlertLevelSystem _alerts = default!;
@@ -63,6 +64,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+        UpdateSaaeIntro(); // Dumont
         var query = EntityQueryEnumerator<MalfAiDoomsdayComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -100,6 +102,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
                 comp.Active = false;
                 // Stop doomsday protocol music
                 StopDoomsdayMusic(comp.Station);
+                StopSaaeIntro(uid); // Dumont
                 RaiseLocalEvent(new MalfAiDoomsdayCompletedEvent(comp.Station, uid));
                 RemCompDeferred<MalfAiDoomsdayComponent>(uid);
                 continue;
@@ -120,7 +123,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         }
 
         // Ensure not already active.
-        if (TryComp<MalfAiDoomsdayComponent>(ai, out var existing) && existing.Active)
+        if (TryComp<MalfAiDoomsdayComponent>(ai, out var existing) && existing.Active || HasComp<SaaeDoomsdayIntroComponent>(ai)) // Dumont
         {
             ShowDoomsdayPopup(ai.Owner, "malfai-doomsday-popup-already-active");
             args.Handled = true;
@@ -152,25 +155,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
             return;
         }
 
-        // Get duration configuration
-        var duration = _cfg.GetCVar(CCVarsMalfAi.MalfAiDoomsdayDuration);
-        var actualDuration = duration > 0 ? duration : 1f; // Ensure positive duration
-
-        // Record previous alert level state.
-        var comp = EnsureComp<MalfAiDoomsdayComponent>(ai);
-        InitializeDoomsdayComponent(comp, station.Value, holder, actualDuration);
-
-        // Switch to Cyan and lock it.
-        _alerts.SetLevel(station.Value, DoomsdayAlertLevel, playSound: true, announce: true, force: true, locked: true);
-
-        // Initialize doomsday music
-        SetupDoomsdayMusic(comp);
-
-        // Initial announcement.
-        AnnounceRemaining(ai.Owner, comp.RemainingTime, initial: true);
-
-        // Raise event to notify systems that doomsday has started
-        RaiseLocalEvent(new MalfAiDoomsdayStartedEvent(station.Value, ai.Owner));
+        StartSaaeIntro(ai.Owner, station.Value, holder); // Dumont
 
         args.Handled = true;
     }
@@ -196,6 +181,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     public void AbortDoomsday(EntityUid uid, MalfAiDoomsdayComponent comp, string reason)
     {
         comp.Active = false;
+        StopSaaeIntro(uid); // Dumont
         StopDoomsdayMusic(comp.Station);
         comp.SelectedDoomsdaySong = null;
         comp.MusicStarted = false;
@@ -221,6 +207,8 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         if (prevMinutes > currentMinutes && currentMinutes >= 0)
         {
             var minuteThreshold = TimeSpan.FromMinutes(currentMinutes + 1);
+            if (minuteThreshold.TotalSeconds >= _cfg.GetCVar(CCVarsMalfAi.MalfAiDoomsdayDuration)) // Dumont
+                return; // Dumont
             AnnounceRemaining(ai, minuteThreshold, initial: false);
             return; // Only one announcement per frame
         }

@@ -70,6 +70,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Saae;
+using Robust.Shared.Audio;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -152,6 +154,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly BiomeSystem _biomes = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly AnchorableSystem _anchorable = default!;
+    [Dependency] private SaaeAnnouncerSystem _saae = default!; // Dumont
     // Dumont end
 
     private const float ShuttleSpawnBuffer = 1f;
@@ -480,7 +483,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             : "/Audio/_Gabystation/Announcements/shuttledocked_saae.ogg";
 
         // TODO: Need filter extensions or something don't blame me.
-        _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+        _saae.Play(new SoundPathSpecifier(audioFile), Filter.Broadcast()); // Dumont
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)
