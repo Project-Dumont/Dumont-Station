@@ -3,8 +3,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
+using Content.Trauma.Shared.Heretic.Systems;
+
 using System.Linq;
-using Content.Shared._Shitcode.Heretic.Systems;
 using Content.Shared.CombatMode;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Heretic;
@@ -14,6 +16,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+// Dumont end
 
 namespace Content.Goobstation.Shared.Weapons.Multihit;
 
@@ -51,7 +54,7 @@ public sealed class MultihitSystem : EntitySystem
         if (!_heretic.TryGetHereticComponent(args.User, out var heretic, out _))
             return;
 
-        args.Handled = (args.RequiredPath == null || heretic.CurrentPath == args.RequiredPath) &&
+        args.Handled = (args.RequiredPath == null || heretic.CurrentPath?.ToString() == args.RequiredPath) &&
                        heretic.PathStage >= args.MinPathStage;
     }
 

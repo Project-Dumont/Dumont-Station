@@ -146,7 +146,7 @@ public sealed class TileSystem : EntitySystem
         return true;
     }
 
-    public bool DeconstructTile(TileRef tileRef)
+    public bool DeconstructTile(TileRef tileRef, bool spawnTile = true)
     {
         if (tileRef.Tile.IsEmpty)
             return false;
@@ -168,8 +168,13 @@ public sealed class TileSystem : EntitySystem
                 (_robustRandom.NextFloat() - 0.5f) * bounds));
 
         //Actually spawn the relevant tile item at the right position and give it some random offset.
-        var tileItem = Spawn(tileDef.ItemDropPrototypeName, coordinates);
-        Transform(tileItem).LocalRotation = _robustRandom.NextDouble() * Math.Tau;
+        // Dumont start
+        if (spawnTile)
+        {
+            var tileItem = Spawn(tileDef.ItemDropPrototypeName, coordinates);
+            Transform(tileItem).LocalRotation = _robustRandom.NextDouble() * Math.Tau;
+        }
+        // Dumont end
 
         // Destroy any decals on the tile
         var decals = _decal.GetDecalsInRange(gridUid, coordinates.SnapToGrid(EntityManager).Position, 0.5f);

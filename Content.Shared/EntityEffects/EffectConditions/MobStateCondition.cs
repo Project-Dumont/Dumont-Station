@@ -3,31 +3,35 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.EntityEffects;
+using Content.Shared.EntityConditions;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.EntityEffects.EffectConditions;
 
-public sealed partial class MobStateCondition : EntityEffectCondition
+/// <summary>
+/// Returns true if this entity's current mob state matches the condition's specified mob state.
+/// </summary>
+/// <inheritdoc cref="EntityConditionSystem{T, TCondition}"/>
+public sealed partial class MobStateEntityConditionSystem : EntityConditionSystem<MobStateComponent, MobStateCondition>
 {
+    protected override void Condition(Entity<MobStateComponent> entity, ref EntityConditionEvent<MobStateCondition> args)
+    {
+        if (entity.Comp.CurrentState == args.Condition.Mobstate)
+            args.Result = true;
+    }
+}
+
+/// <inheritdoc cref="EntityCondition"/>
+public sealed partial class MobStateCondition : EntityConditionBase<MobStateCondition>
+{
+    /// <summary>
+    /// The mobstate necessary to fulfill this condition.
+    /// </summary>
     [DataField]
     public MobState Mobstate = MobState.Alive;
 
-    public override bool Condition(EntityEffectBaseArgs args)
-    {
-        if (args.EntityManager.TryGetComponent(args.TargetEntity, out MobStateComponent? mobState))
-        {
-            if (mobState.CurrentState == Mobstate)
-                return true;
-        }
-
-        return false;
-    }
-
-    public override string GuidebookExplanation(IPrototypeManager prototype)
-    {
-        return Loc.GetString("reagent-effect-condition-guidebook-mob-state-condition", ("state", Mobstate));
-    }
+    public override string EntityConditionGuidebookText(IPrototypeManager prototype) =>
+        Loc.GetString("entity-condition-guidebook-mob-state-condition", ("state", Mobstate));
 }

@@ -17,10 +17,16 @@ public sealed class LightAttackEvent : AttackEvent
 {
     public readonly NetEntity? Target;
     public readonly NetEntity Weapon;
+    // Dumont start
+    public readonly bool CanRiposte;
+    // Dumont end
 
-    public LightAttackEvent(NetEntity? target, NetEntity weapon, NetCoordinates coordinates) : base(coordinates)
+    public LightAttackEvent(NetEntity? target, NetEntity weapon, NetCoordinates coordinates, bool canRiposte = true) : base(coordinates)
     {
         Target = target;
         Weapon = weapon;
+        // Dumont start
+        CanRiposte = canRiposte;
+        // Dumont end
     }
 }

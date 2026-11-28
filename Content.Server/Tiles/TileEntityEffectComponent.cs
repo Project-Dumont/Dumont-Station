@@ -19,4 +19,9 @@ public sealed partial class TileEntityEffectComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public List<EntityEffect> Effects = default!;
+
+    // Dumont start
+    [DataField]
+    public Content.Shared.EntityConditions.EntityCondition[]? Conditions;
+    // Dumont end
 }

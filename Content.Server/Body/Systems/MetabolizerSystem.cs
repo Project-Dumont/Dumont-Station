@@ -62,6 +62,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// Dumont start
 using System.Linq;
 using Content.Server.Body.Components;
 using Content.Shared.Administration.Logs;
@@ -77,13 +78,15 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.EntityEffects;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.Heretic;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+
+using Content.Shared.Heretic;
+// Dumont end
 
 namespace Content.Server.Body.Systems
 {
@@ -242,6 +245,16 @@ namespace Content.Server.Body.Systems
                 {
                     if (!proto.Metabolisms.TryGetValue(group.Id, out var entry))
                         continue;
+
+                    // Dumont start
+                    if (entry.Conditions is { } conditions)
+                    {
+                        var conditionArgs = new EntityEffectReagentArgs(ent.Comp2?.Body ?? solutionEntityUid.Value,
+                            EntityManager, ent, solution, quantity, proto, null, 1f);
+                        if (conditions.Any(condition => !condition.Condition(conditionArgs)))
+                            continue;
+                    }
+                    // Dumont end
 
                     var rate = entry.MetabolismRate * group.MetabolismRateModifier;
 

@@ -296,6 +296,10 @@ public sealed class ToggleableClothingSystem : EntitySystem
     {
         var comp = toggleable.Comp;
 
+        // Attached parts are deleted by OnRemoveToggleable when the suit is removed.
+        if (TerminatingOrDeleted(toggleable))
+            return;
+
         // If it's a part of PVS departure then don't handle it.
         if (_timing.ApplyingState)
             return;

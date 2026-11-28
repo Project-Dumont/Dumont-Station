@@ -1,73 +1,47 @@
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-- files: ["blind.ogg", "castsummon.ogg", "disintegrate.ogg", "hereticknock.ogg", "voidblink.ogg", "cosmic_energy.ogg", "cosmic_expansion.ogg"]
+- files: ["blind.ogg", "castsummon.ogg", "disintegrate.ogg", "hereticknock.ogg", "voidblink.ogg", "cosmic_energy.ogg", "cosmic_expansion.ogg", "demon_attack1.ogg", "curse.ogg", "repluse.ogg"]
   license: "CC-BY-SA-3.0"
-  copyright: "Taken from /tg/station. hereticknock.ogg and voidblink.ogg converted to mono by @deltanedas (github)"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/magic"
+  copyright: "Taken from /tg/station. hereticknock.ogg and voidblink.ogg converted to mono by @deltanedas (github); repulse.ogg modified by Aviu00 (github)"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/effects/magic"
 
-- files: ["repluse.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Taken from /tg/station, modified by Aviu00"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/magic/repulse.ogg"
-
-- files: ["ice_shovel.ogg"]
+- files: ["glass_reverse.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/ice_shovel.ogg"
+  source: "https://github.com/tgstation/tgstation/blob/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/effects/glass/glass_reverse.ogg"
 
-- files: ["constructform.ogg"]
+- files: ["wail.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/constructform.ogg"
+  source: "https://github.com/tgstation/tgstation/blob/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/effects/hallucinations/wail.ogg"
 
-- files: ["crack2.ogg"]
+- files: ["ark_deathrattle.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/wounds/crack2.ogg"
+  source: "https://github.com/tgstation/tgstation/blob/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/machines/clockcult/ark_deathrattle.ogg"
 
-- files: ["blood3.ogg"]
+- files: ["goresplat.ogg", "piano_hit.ogg", "ice_shovel.ogg", "constructform.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/wounds/blood3.ogg"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/effects"
 
-- files: ["sheath.ogg"]
+- files: ["crack2.ogg", "blood3.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/items/sheath.ogg"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/effects/wounds"
 
-- files: ["eatfood.ogg"]
+- files: ["coinflip.ogg", "eatfood.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/items/eatfood.ogg"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/items"
 
-- files: ["parry.ogg"]
+- files: ["parry.ogg", "rust_sower_armbomb.ogg", "rust_sower_explode.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/items/weapons/parry.ogg"
-
-- files: ["demon_attack1.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/magic/demon_attack1.ogg"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/items/weapons"
 
 - files: ["ambiatm1.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/ambience/misc/ambiatm1.ogg"
-
-- files: ["curse.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Taken from /tg/station"
-  source: "https://github.com/tgstation/tgstation/tree/master/sound/effects/magic/curse.ogg"
+  source: "https://github.com/tgstation/tgstation/tree/e6636c5d7ac979d4b7fa361910f2bf7f241fa32b/sound/ambience/misc"
 
 - files: ["heartbeat.ogg"]
   license: "CC-BY-SA-3.0"
@@ -78,3 +52,13 @@
   license: "CC-BY-SA-3.0"
   copyright: "made by Armok"
   source: "https://knowyourmeme.com/memes/source-i-made-it-up"
+
+- files: ["fear.ogg"]
+  license: "CC0-1.0"
+  copyright: "Made by Aviu"
+  source: "https://github.com/Aviu00"
+
+- files: ["doom.ogg"]
+  license: "CC0-1.0"
+  copyright: "Doom Loop by peepee321"
+  source: "https://freesound.org/people/peepee321/sounds/575803/"

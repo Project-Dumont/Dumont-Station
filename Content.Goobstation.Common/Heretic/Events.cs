@@ -1,7 +1,10 @@
+// Dumont start
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
+// Dumont end
 
-namespace Content.Goobstation.Common.Heretic;
+namespace Content.Trauma.Common.Heretic;
+// Dumont end
 
 [Serializable, NetSerializable]
 public sealed class ButtonTagPressedEvent(string id, NetEntity user, NetCoordinates coords) : EntityEventArgs
@@ -15,6 +18,3 @@ public sealed class ButtonTagPressedEvent(string id, NetEntity user, NetCoordina
 
 [ByRefEvent]
 public record struct HereticCheckEvent(EntityUid Uid, bool Result = false);
-
-[ByRefEvent]
-public record struct GetVirtualItemBlockingEntityEvent(EntityUid Uid);

@@ -207,9 +207,7 @@ public sealed partial class NPCSteeringSystem
             // Try smashing obstacles.
             else if ((component.Flags & PathFlags.Smashing) != 0x0)
             {
-                // Dumont changes start
                 if (_melee.TryGetWeapon(uid, out var weaponUid, out var meleeWeapon) && meleeWeapon.NextAttack <= Timing.CurTime && TryComp<CombatModeComponent>(uid, out var combatMode))
-                // Dumont end
                 {
                     _combat.SetInCombatMode(uid, true, combatMode);
                     var destructibleQuery = GetEntityQuery<DestructibleComponent>();
@@ -223,7 +221,7 @@ public sealed partial class NPCSteeringSystem
                         // TODO: Validate we can damage it
                         if (destructibleQuery.HasComponent(ent))
                         {
-                            // Dumont changes start
+                            // Dumont start
                             attackResult = _melee.AttemptLightAttack(uid, weaponUid, meleeWeapon, ent);
                             // Dumont end
                             break;

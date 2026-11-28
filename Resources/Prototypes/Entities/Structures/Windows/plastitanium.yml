@@ -150,6 +150,7 @@
   name: plastitanium window
   parent: PlastitaniumWindowSquareBase
   components:
+  - type: ReflectiveSurface
   - type: Destructible
     thresholds:
     - trigger:

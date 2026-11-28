@@ -1,0 +1,35 @@
+<Document>
+  # Maldições
+
+  <Box>
+    <GuideEntityEmbed Entity="CodexMorbus"/>
+    <GuideEntityEmbed Entity="HereticPhylactery"/>
+  </Box>
+
+  Maldições afetam pessoas vivas, exceto hereges, carniçais e magos. A principal forma de aplicá-las é o [color=yellow]Codex Morbus[/color], um conhecimento lateral de nível 2.
+
+  ## Codex Morbus
+
+  Depois de pesquisar o conhecimento, transmute um cadáver e um Codex Cicatrix numa runa para criar o Codex Morbus. Ele desenha runas e drena influências mais depressa, além de permitir amaldiçoar pessoas.
+
+  Com o códice aberto, use Alt + clique na runa ou a opção do menu de contexto para abrir a janela de maldições. É preciso haver uma poça de sangue da vítima ou um objeto com seu DNA sobre a runa.
+
+  Maldições feitas com sangue duram mais, conforme a quantidade de sangue na runa. Escolha primeiro a maldição e depois a vítima. O efeito é temporário.
+
+  ## Tipos de maldição
+
+  - [color=red]Corrosão[/color]: provoca vômitos constantes e dano de veneno.
+  - [color=red]Paralisia[/color]: paralisa as pernas, forçando a vítima a ficar no chão e se mover devagar.
+  - [color=red]Chamas[/color]: incendeia a vítima de tempos em tempos.
+  - [color=red]Descontrole[/color]: faz a vítima atacar outras pessoas involuntariamente.
+  - [color=red]Cegueira[/color]: cega a vítima.
+  - [color=red]Fragilidade[/color]: dobra todo o dano recebido, independentemente da origem. É silenciosa e não avisa a vítima.
+
+  ## Filactério da Danação
+
+  Todos os hereges podem aprender gratuitamente a criar esse objeto, transmutando uma poça de sangue e um béquer.
+
+  Ele extrai até 10 unidades de sangue da vítima, mesmo à distância. A vítima ainda sente uma pequena picada.
+
+  Transfira o sangue para outro recipiente ou derrame-o no chão para usar em rituais e maldições.
+</Document>

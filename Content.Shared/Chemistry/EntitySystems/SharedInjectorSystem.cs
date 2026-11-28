@@ -120,7 +120,9 @@ public abstract class SharedInjectorSystem : EntitySystem
     /// </summary>
     private void Toggle(Entity<InjectorComponent> injector, EntityUid user)
     {
-        if (injector.Comp.InjectOnly)
+        // Dumont start
+        if (injector.Comp.InjectOnly || injector.Comp.DrawOnly)
+        // Dumont end
             return;
 
         if (!SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var solEnt, out var solution))
@@ -161,6 +163,10 @@ public abstract class SharedInjectorSystem : EntitySystem
 
     public void SetMode(Entity<InjectorComponent> injector, InjectorToggleMode mode)
     {
+        // Dumont start
+        if (injector.Comp.DrawOnly && mode != InjectorToggleMode.Draw)
+            return;
+        // Dumont end
         injector.Comp.ToggleState = mode;
         Dirty(injector);
     }

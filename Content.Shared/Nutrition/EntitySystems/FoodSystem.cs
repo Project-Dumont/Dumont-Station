@@ -147,7 +147,6 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Clothing.EntitySystems;
-using Content.Shared.Heretic; // Goobstation
 
 namespace Content.Shared.Nutrition.EntitySystems;
 

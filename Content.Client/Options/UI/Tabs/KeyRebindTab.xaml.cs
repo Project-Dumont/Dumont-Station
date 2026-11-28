@@ -254,6 +254,9 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OpenBackpack);
             AddButton(ContentKeyFunctions.OpenBelt);
             AddButton(ContentKeyFunctions.ThrowItemInHand);
+            // Dumont start
+            AddButton(ContentKeyFunctions.Tackle);
+            // Dumont end
             AddButton(ContentKeyFunctions.TryPullObject);
             AddButton(ContentKeyFunctions.MovePulledObject);
             AddButton(ContentKeyFunctions.ReleasePulledObject);

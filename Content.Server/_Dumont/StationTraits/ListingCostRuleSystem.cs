@@ -17,7 +17,7 @@ public sealed partial class ListingCostRuleSystem : GameRuleSystem<ListingCostRu
                 if (!comp.Modifiers.TryGetValue(listing.ID, out var modifier))
                     continue;
 
-                listing.Cost = listing.Cost.ToDictionary(x => x.Key,
+                listing.OriginalCost = listing.OriginalCost.ToDictionary(x => x.Key,
                     x => FixedPoint2.New(MathF.Round(x.Value.Float() * modifier)));
             }
         }

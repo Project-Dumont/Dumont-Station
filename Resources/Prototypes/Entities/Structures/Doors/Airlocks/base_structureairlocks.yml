@@ -310,6 +310,7 @@
   parent: Airlock
   name: glass airlock
   components:
+  - type: ReflectiveSurface
   - type: MeleeSound
     soundGroups:
       Brute:

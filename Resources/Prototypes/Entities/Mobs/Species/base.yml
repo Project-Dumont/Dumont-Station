@@ -289,6 +289,11 @@
       state: "human"
       shader: unshaded
       visible: false
+    - map: [ "enum.HumanoidVisualEmoteLayers.Cry" ]
+      color: cyan
+      sprite: _Trauma/Mobs/Effects/emote_visuals.rsi
+      state: tears
+      visible: false
     - map: [ "eyes" ]
     - map: [ "id" ]
     - map: [ "back" ]

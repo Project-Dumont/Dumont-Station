@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MobNightVision
+  abstract: true
+  components:
+  - type: NightVision
+    toggleAction: ToggleNightVision
+    color: "#FFFFFF"
+    drawOverlay: false
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketBase
+  components:
+  - type: TemperatureProtection
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.8
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 60
