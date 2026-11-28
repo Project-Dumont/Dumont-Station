@@ -13,7 +13,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Timing;
 using Content.Shared.Access.Systems;
 using Content.Shared.Power;
-
+using Content.Shared._Dumont.Power.Events; //Dumont
 namespace Content.Server._CorvaxGoob.PowerToggle;
 
 public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
@@ -100,7 +100,13 @@ public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
     {
         if (!TryComp<ApcPowerReceiverComponent>(entity, out var apcPowerReceiver))
             return;
-
+        if (powered)
+        {
+            var ev = new TryTogglePowerEvent(null);
+            RaiseLocalEvent(entity.Owner, ref ev);
+            if (ev.Cancelled)
+                return;
+        }
         entity.Comp.IsTurnedOn = powered;
 
         if (playSound)

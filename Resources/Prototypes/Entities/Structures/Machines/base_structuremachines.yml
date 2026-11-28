@@ -83,6 +83,18 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: AtmosExposed
+  - type: OverheatMachine  #Dumont - Start
+    temperatureShutdown: 373.15
+    heatDamageTemperature: 773.15
+    damage:
+      types:
+        Structural: 20 
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 5
+    popupText: item-temperature-damage
 
 - type: entity
   abstract: true
