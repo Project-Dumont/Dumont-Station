@@ -1,0 +1,2 @@
+reagent-name-chronexaline = Chronexaline
+reagent-desc-chronexaline = A mixture of unstable radiation chemicals and its base component under extremely low temperatures. This appears to cure radiation poisoning in dead bodies.
