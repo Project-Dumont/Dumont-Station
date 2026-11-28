@@ -56,7 +56,7 @@ public sealed partial class SprayPainterWindow : DefaultWindow
     private SprayPainterDecals? _sprayPainterDecals;
 
     private readonly SpriteSpecifier _colorEntryIconTexture = new SpriteSpecifier.Rsi(
-        new ResPath("Structures/Piping/Atmospherics/pipe.rsi"),
+        new ResPath("_Carpmosia/Structures/Piping/Atmospherics/pipe.rsi"), // Dumont
         "pipeStraight");
 
     public SprayPainterWindow()

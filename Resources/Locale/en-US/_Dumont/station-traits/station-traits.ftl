@@ -50,3 +50,6 @@ station-trait-pest-control-name = Pest Control
 station-trait-pest-control-report = Your station was fumigated right before your shift. Pests should be a rare sight, and the sick ones are gone for good.
 
 chat-radio-deathrattle = Death Rattle
+
+station-trait-endless-snowfall-name = Endless Snowfall
+station-trait-endless-snowfall-report = Your station sits on a frozen world where the snow never stops falling. Bundle up before heading outside.

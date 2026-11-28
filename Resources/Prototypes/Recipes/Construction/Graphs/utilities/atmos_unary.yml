@@ -32,6 +32,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: ventpumpAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventpumpAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: passivevent
       steps:
       - material: Steel
@@ -49,6 +63,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: passiveventAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: passiveventAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
     - to: ventscrubber
       steps:
@@ -68,6 +96,20 @@
         amount: 2
         doAfter: 1
 
+    # Dumont changes start
+    - to: ventscrubberAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventscrubberAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
+
     - to: outletinjector
       steps:
       - material: Steel
@@ -85,6 +127,20 @@
       - material: Steel
         amount: 2
         doAfter: 1
+
+    # Dumont changes start
+    - to: outletinjectorAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: outletinjectorAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Dumont end
 
   # GasVentPump
   - node: ventpump
@@ -141,6 +197,45 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: ventpumpAlt3
+    entity: GasVentPumpAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventpumpAlt4
+    entity: GasVentPumpAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   # GasPassiveVent
   - node: passivevent
     entity: GasPassiveVent
@@ -195,6 +290,45 @@
         doAfter: 1
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: passiveventAlt3
+    entity: GasPassiveVentAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: passiveventAlt4
+    entity: GasPassiveVentAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
 
   # GasVentScrubber
   - node: ventscrubber
@@ -251,6 +385,45 @@
       - tool: Welding
         doAfter: 1
 
+  # Dumont changes start
+
+  - node: ventscrubberAlt3
+    entity: GasVentScrubberAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberAlt4
+    entity: GasVentScrubberAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Dumont end
+
   # GasOutletInjector
   - node: outletinjector
     entity: GasOutletInjector
@@ -299,3 +472,38 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  # Dumont changes start
+
+  - node: outletinjectorAlt3
+    entity: GasOutletInjectorAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorAlt4
+    entity: GasOutletInjectorAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+  # Dumont end

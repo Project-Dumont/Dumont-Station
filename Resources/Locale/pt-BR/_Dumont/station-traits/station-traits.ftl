@@ -50,3 +50,6 @@ station-trait-pest-control-name = Dedetização em Dia
 station-trait-pest-control-report = A estação foi dedetizada logo antes do turno. Pragas devem ser raras, e as doentes sumiram de vez.
 
 chat-radio-deathrattle = Death Rattle
+
+station-trait-endless-snowfall-name = Nevasca Sem Fim
+station-trait-endless-snowfall-report = Sua estação fica num planeta congelado onde a neve nunca para de cair. Se agasalhem bem antes de sair.
