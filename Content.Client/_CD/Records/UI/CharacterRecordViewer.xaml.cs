@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.UserInterface.Controls;
+using Content.Shared._Dumont.Triage; // Dumont
 using Content.Shared.Administration;
 using Content.Shared.Security;
 using Content.Shared.StationRecords;
@@ -66,6 +67,10 @@ public sealed partial class CharacterRecordViewer : FancyWindow
     /// </remarks>
     private uint? _openRecordKey;
     public event Action<SecurityStatus, string?>? OnSetSecurityStatus;
+
+    // Dumont-triagem
+    public event Action<ProtoId<TriageIconPrototype>?>? OnSetTriage;
+    private List<ProtoId<TriageIconPrototype>> _triageLevels = new();
 
     public uint? SecurityWantedStatusMaxLength;
 
@@ -152,6 +157,15 @@ public sealed partial class CharacterRecordViewer : FancyWindow
                 SetStatusWithReason(status);
             else
                 OnSetSecurityStatus?.Invoke(status, null);
+        };
+
+        // Dumont-triagem: o item 0 é "sem triagem", os demais seguem a ordem de _triageLevels.
+        TriageOptionButton.OnItemSelected += args =>
+        {
+            if (args.Id == 0)
+                OnSetTriage?.Invoke(null);
+            else if (args.Id - 1 < _triageLevels.Count)
+                OnSetTriage?.Invoke(_triageLevels[args.Id - 1]);
         };
 
         OnClose += () => _entryView.Close();
@@ -351,6 +365,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         RecordContainerEmployment.Visible = false;
         RecordContainerMedical.Visible = false;
         RecordContainerSecurity.Visible = false;
+        UpdateTriage(state); // Dumont-triagem
 
         switch (_type)
         {
@@ -388,6 +403,47 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         #endregion
 
     }
+
+    // Dumont
+    private void UpdateTriage(CharacterRecordConsoleState state)
+    {
+        // Só aparece nos consoles que mexem com triagem.
+        RecordContainerTriage.Visible = state.TriageLevels != null;
+
+        if (state.TriageLevels == null)
+            return;
+
+        if (!_triageLevels.SequenceEqual(state.TriageLevels))
+        {
+            _triageLevels = new List<ProtoId<TriageIconPrototype>>(state.TriageLevels);
+
+            TriageOptionButton.Clear();
+            TriageOptionButton.AddItem(Loc.GetString("cd-record-viewer-triage-none"), 0);
+
+            for (var i = 0; i < _triageLevels.Count; i++)
+            {
+                var name = _prototypeManager.TryIndex(_triageLevels[i], out var level)
+                    ? Loc.GetString(level.Name)
+                    : _triageLevels[i].Id;
+
+                TriageOptionButton.AddItem(name, i + 1);
+            }
+        }
+
+        var selected = 0;
+
+        if (state.SelectedTriage is { } current)
+        {
+            var index = _triageLevels.IndexOf(current);
+
+            if (index >= 0)
+                selected = index + 1;
+        }
+
+        TriageOptionButton.SelectId(selected);
+        TriageOptionButton.Disabled = !state.CanSetTriage;
+    }
+    // Dumont end
 
     private void SetEntries(List<PlayerProvidedCharacterRecords.RecordEntry> entries, bool addIndex = false)
     {
@@ -481,9 +537,9 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         if (_selectedListingKey == null)
             return;
 
-        
+
         var reasonEntry = new QuickDialogEntry(
-            "reason", 
+            "reason",
             QuickDialogEntryType.LongText,
             Loc.GetString("criminal-records-console-arrest-warrant-reason"),
             Loc.GetString("criminal-records-console-arrest-warrant-reason-placeholder")
@@ -499,7 +555,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         var entries = new List<QuickDialogEntry>() { reasonEntry, observationsEntry };
         var title = Loc.GetString("criminal-records-console-print-arrest-warrant");
         _arrestWarrantReasonDialog = new DialogWindow(title, entries);
-        
+
         _arrestWarrantReasonDialog.OnConfirmed += responses =>
         {
             var reason = responses["reason"];
