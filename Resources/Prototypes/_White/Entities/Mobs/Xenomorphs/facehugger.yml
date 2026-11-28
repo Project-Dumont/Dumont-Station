@@ -5,12 +5,19 @@
   description: A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
   components:
   - type: Sprite
-    sprite: _White/Mobs/Aliens/Xenomorphs/facehugger.rsi
+    sprite: _Trauma/Mobs/Xenos/facehugger.rsi # Dumont
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: facehugger
+  - type: SpriteMovement # Dumont
+    movementLayers:
+      movement:
+        state: facehugger-moving
+    noMovementLayers:
+      movement:
+        state: facehugger
   - type: Clothing
-    sprite: _White/Mobs/Aliens/Xenomorphs/facehugger.rsi
+    sprite: _Trauma/Mobs/Xenos/clothing/facehuggermask.rsi # Dumont
     slots: [mask]
   - type: IngestionBlocker
   - type: Blindfold
@@ -51,6 +58,8 @@
     spawned:
     - id: FoodMeatXeno
       amount: 1
+  - type: FaceHuggerLeap # Dumont
+  - type: LarvaInfestationVision # Dumont
   - type: FaceHugger
     blacklist:
       components:
@@ -88,7 +97,7 @@
     tags:
     - XenomorphItem
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController # Dumont
   - type: CollisionWake
     enabled: false
   - type: RequireProjectileTarget
@@ -118,3 +127,57 @@
         layer:
         - LowImpassable
         hard: false
+  # Dumont start
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-facehugger-name
+    description: ghost-role-information-facehugger-description
+    rules: ghost-role-information-rules-default-xeno
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+  - type: GhostTakeoverAvailable
+  - type: TypingIndicator
+    proto: alien
+  - type: ZombieImmune
+  - type: NoSlip
+  - type: ShowHealthIcons
+  - type: VentCrawler
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - Hissing
+    - Draconic
+  - type: Speech
+    speechSounds: Xenomorph
+    speechVerb: SmallMob
+  - type: Vocal
+    sounds:
+      Male: Xenomorph
+      Female: Xenomorph
+      Unsexed: Xenomorph
+  - type: CollectiveMind
+    defaultChannel: Xenomorphivemind
+    channels:
+    - Xenomorphivemind
+  - type: ThermalVision
+    toggleAction: ToggleThermalVisionXenomorph
+    color: white
+    drawOverlay: false
+    lightRadius: 10
+    strength: 0
+    noise: 0
+    tint: 3, 3, 3
+  - type: Pinpointer
+    whitelist:
+      components:
+      - XenomorphQueen
+    alert: QueenFinder
+    isActive: true
+    canToggle: false
+    canEmag: false
+    canExamine: false
+  # Dumont end
