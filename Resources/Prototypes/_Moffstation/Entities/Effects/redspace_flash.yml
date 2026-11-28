@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Nyxilath <colton.malone@gmail.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: EffectFlashBluespace
+  id: EffectFlashRedspace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 10.5
+    energy: 15
+    color: "#960202"
+  - type: TimedDespawn
+    lifetime: 1.75
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Moffstation/Effects/redspace_thunderclap.ogg

@@ -1,0 +1,14 @@
+- files: ["sabotage_communications.png", "sabotage_mass_scanner.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Composited from Structures/Machines/computers.rsi. Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894. comm_syndie made by Veritius, based on comm. generic_panel_open made by Errant, commit https://github.com/space-wizards/space-station-14/pull/32273, comms_wizard and wizard_key by ScarKy0, request- variants transfer made by EmoGarbage404 (github), Xenobiology by SolsticeOfTheWinter for Goobstation , viro made by Ilya246 and Gallagin based on the other sprites, teleporters_station & teleporters_syndicate by TheShuEd, ai-fixer-progress and -purge sprites made by chromiumboy,. Comms e Request sec recolored by Struater.  generic_syndie_keys and request-syndie modified from generic_keys and request by SlamBamActionman. Request, bounty, comm_cargo and supply recolored by CRISOOOOO (github)"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["sabotage_gravity.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Composited from Structures/Machines/gravity_generator.rsi, Structures/Machines/gravity_generator_core.rsi. Taken from https://github.com/tgstation/tgstation"
+  source: "https://github.com/Project-Dumont/Dumont-Station"
+
+- files: ["sabotage_telecommunications.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Composited from Structures/Machines/telecomms.rsi. Sprites by Spangs04, based on servers taken from tgstation at commit https://github.com/tgstation/tgstation/blob/9c3494fd79e6bf8dc532300b9de4f688ff276ac9/icons/obj/machines/telecomms.dmi | variant-revolutionary created by Armok for TraumaStation. Sec Recolored by Struater"
+  source: "https://github.com/Project-Dumont/Dumont-Station"

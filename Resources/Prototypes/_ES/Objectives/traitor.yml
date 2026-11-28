@@ -1,0 +1,100 @@
+# SPDX-FileCopyrightText: 2025-2026 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorObjective
+  id: ESBaseSabotageObjective
+  components:
+  - type: Objective
+    difficulty: 1.5
+  - type: CodeCondition
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageCommunications
+  name: Sabotage the communications computer
+  description: Use the sabotage verb on a powered communications computer on your station. Disrupt Nanotrasen's announcements until engineering repairs the sabotage.
+  components:
+  - type: Objective
+    icon: _Dumont/Interface/Objectives/sabotage_communications.png
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - CommunicationsConsole
+
+- type: weightedRandom
+  id: TraitorObjectiveGroupSabotage
+  weights:
+    ESObjectiveTraitorSabotageCommunications: 1
+    ESObjectiveTraitorSabotageTelecom: 1
+    ESObjectiveTraitorSabotageGravity: 1
+    ESObjectiveTraitorSabotageNavigation: 1
+    ESObjectiveTraitorBugAPC: 1
+    SupercritAnomaliesObjective: 1 # Dumont
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageTelecom
+  name: Sabotage a telecommunication server
+  description: Use the sabotage verb on a powered telecommunication server on your station. Its radio channels will be scrambled until repaired.
+  components:
+  - type: Objective
+    icon: _Dumont/Interface/Objectives/sabotage_telecommunications.png
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - TelecomServer
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageGravity
+  name: Sabotage the gravity generator
+  description: Sabotage a powered gravity generator on your station. After five minutes, excessive gravity will force the crew to lie down and slow them by 30% until repaired.
+  components:
+  - type: Objective
+    icon: _Dumont/Interface/Objectives/sabotage_gravity.png
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - GravityGenerator
+
+- type: entity
+  parent: ESBaseSabotageObjective
+  id: ESObjectiveTraitorSabotageNavigation
+  name: Sabotage the mass scanner
+  description: Use the sabotage verb on a powered mass scanner computer on your station. This will cause turbulence on the station. Buckle up before the jolts begin.
+  components:
+  - type: Objective
+    icon: _Dumont/Interface/Objectives/sabotage_mass_scanner.png
+  - type: SabotageCondition
+    whitelist:
+      components:
+      - RadarConsole
+      - SabotageTarget
+      requireAll: true
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: ESObjectiveTraitorBugAPC
+  name: Bug a departmental APC
+  description: Plant a bug in an APC in the assigned department using its alternative verb. Keep it running for five minutes without anyone removing it, breaking it or switching it off.
+  components:
+  - type: Objective
+    difficulty: 1.5
+    icon:
+      sprite: Structures/Power/apc.rsi
+      state: static
+  - type: CodeCondition
+  - type: TraitorBugCondition
+    departmentAccessGroups:
+      Cargo: Cargo
+      Command: Command
+      Engineering: Engineering
+      Medical: Medical
+      Science: Research
+      Civilian: Service
+      Security: Security
+      Silicon: Silicon
+    blacklist:
+    - External

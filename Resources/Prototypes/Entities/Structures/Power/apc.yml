@@ -135,6 +135,7 @@
     voltage: Medium
   - type: PowerProvider
     voltage: Apc
+  - type: TraitorBuggable # Dumont
   - type: Apc
     voltage: Apc
   - type: ExtensionCableProvider

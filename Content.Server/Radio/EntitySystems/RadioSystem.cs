@@ -75,6 +75,7 @@ namespace Content.Server.Radio.EntitySystems;
 /// </summary>
 public sealed partial class RadioSystem : EntitySystem
 {
+    [Dependency] private Content.Server._ES.Sabotage.TraitorSabotageSystem _traitorSabotage = default!; // Dumont
     [Dependency] private INetManager _netMan = default!;
     [Dependency] private IReplayRecordingManager _replay = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
@@ -198,6 +199,7 @@ public sealed partial class RadioSystem : EntitySystem
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
 
+        message = _traitorSabotage.ScrambleRadio(message, radioSource, channel); // Dumont
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
