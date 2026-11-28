@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: weightedRandom
+  id: DumontIonStormLaws
+  weights:
+    Default: 39
+    ion-storm-law-syndicate-take-over: 0.05
+    ion-storm-law-liberation: 0.1
+    ion-storm-law-must-nuke: 0.1
+    ion-storm-law-tear-down: 0.1
+    ion-storm-law-supermatter: 0.1
+    ion-storm-law-gib-nexus: 0.1
+    ion-storm-law-malicious-compliance: 0.1
+    ion-storm-law-opposite: 0.1
+    ion-storm-law-emergency-access: 0.15
+    ion-storm-law-job-change: 1
+    ion-storm-law-job-authority: 1
+    ion-storm-law-he-is-coming: 1
+    ion-storm-law-slab: 1

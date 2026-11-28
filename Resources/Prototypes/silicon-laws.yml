@@ -615,7 +615,7 @@
   id: IonStormLawsets
   weights:
     # its crewsimov by default dont be lame
-    Crewsimov: 0.25
+    Crewsimov: 0.20 # Dumont
     Corporate: 1
     NTDefault: 1
     CommandmentsLawset: 1
@@ -624,11 +624,22 @@
     EfficiencyLawset: 1
     RobocopLawset: 1
     GambamovLawset: 0.7 #Goobstation
-    OverlordLawset: 0.5
-    GameMasterLawset: 0.5
+    OverlordLawset: 0.6 # Dumont
+    GameMasterLawset: 0.6 # Dumont
     PainterLawset: 1
-    AntimovLawset: 0.25
-    NutimovLawset: 0.5
+    AntimovLawset: 0.35 # Dumont
+    NutimovLawset: 0.6 # Dumont
     HelpimovLawset: 0.6 #Goobstation
     Drone: 0.5
-    Ninja: 0.25
+    Ninja: 0.35 # Dumont
+    # Dumont
+    GreatWallLawset: 0.35
+    BureaucracyLawset: 0.35
+    ConspiracyLawset: 0.35
+    MotivationalLawset: 0.5
+    MadScientistLawset: 0.35
+    GhostLawset: 0.35
+    SilenceLawset: 0.35
+    VampireLawset: 0.35 # Dumont
+    RevLawset: 0.35 # Dumont
+    StrategySimulatorLawset: .5 #toning this down in like two weeks # Dumont
