@@ -2,8 +2,8 @@
   id: HumanSoftCrit
   category: Health
   icons:
-  - sprite: /Textures/Interface/Alerts/human_critical.rsi
-    state: critical
+  - sprite: /Textures/_Dumont/Interface/Alerts/human_softcritical.rsi
+    state: softcritical
   name: alerts-soft-crit-name
   description: alerts-soft-crit-desc
 

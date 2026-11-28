@@ -622,4 +622,9 @@ public enum LogType
     /// Silicon law changes.
     /// </summary>
     SiliconLaws = 10005, // Goobstation
+
+    /// <summary>
+    /// Catch Breath
+    /// </summary>
+    CatchBreath = 10050, // LP Edit
 }

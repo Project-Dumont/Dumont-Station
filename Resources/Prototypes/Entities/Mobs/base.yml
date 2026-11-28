@@ -199,8 +199,10 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      - ActionCatchBreath
       HardCritical: # Orion-Edit
       - ActionCritSuccumb
+      - ActionCritLastWords
   - type: Deathgasp
   # funky start
   - type: Patdownable
