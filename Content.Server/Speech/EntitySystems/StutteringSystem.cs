@@ -11,10 +11,16 @@
 
 using System.Text;
 using System.Text.RegularExpressions;
+using Content.Goobstation.Common.Traits.Components;
 using Content.Server.Speech.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Speech;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.Traits;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems
@@ -24,25 +30,49 @@ namespace Content.Server.Speech.EntitySystems
         [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
 
+        [Dependency] private IPrototypeManager _proto = default!;
+
+        private readonly ProtoId<TraitPrototype> SocialAnxietyTraitId = "SocialAnxiety";
+
         // Regex of characters to stutter.
         private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz]",
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public override void Initialize()
         {
+            SubscribeLocalEvent<StutteringAccentComponent, StatusEffectAppliedEvent>(OnEffectApplied);
+            SubscribeLocalEvent<StutteringAccentComponent, StatusEffectRemovedEvent>(OnEffectRemoved);
             SubscribeLocalEvent<StutteringAccentComponent, AccentGetEvent>(OnAccent);
         }
 
-        public override void DoStutter(EntityUid uid, TimeSpan time, bool refresh, StatusEffectsComponent? status = null)
+        public override void DoStutter(EntityUid uid, TimeSpan time, bool refresh)
         {
-            if (!Resolve(uid, ref status, false))
-                return;
-
             if (Terminating(uid))
                 return;
 
-            _statusEffectsSystem.TryAddStatusEffect(uid, StutterKey.Id, out _, time); //todo goobstation migrate stutter.
+            _statusEffectsSystem.TryAddStatusEffect(uid, StutterId, out _, time); //todo goobstation migrate stutter.
         }
+
+        private void OnEffectApplied(Entity<StutteringAccentComponent> entity, ref StatusEffectAppliedEvent args)
+        {
+            if (!HasComp<BloodstreamComponent>(args.Target))
+                return;
+
+            EnsureComp<StutteringAccentComponent>(args.Target);
+        }
+
+        private void OnEffectRemoved(Entity<StutteringAccentComponent> entity, ref StatusEffectRemovedEvent args)
+        {
+            if (!TryComp<StutteringAccentComponent>(args.Target, out var stutter))
+                return;
+
+            // maybe there was a better way to do this. but whatever
+            if (stutter.IsFromSocialAnxiety)
+                return;
+
+            RemComp<StutteringAccentComponent>(args.Target);
+        }
+
 
         private void OnAccent(EntityUid uid, StutteringAccentComponent component, AccentGetEvent args)
         {

@@ -240,7 +240,7 @@ public sealed partial class SeizureSystem : SharedSeizureSystem
         if (!HasComp<SeizureComponent>(uid))
             return;
 
-        _stuttering.DoRemoveStutter(uid, 0);
+        _stuttering.DoRemoveStutter(uid);
         RemComp<SeizureComponent>(uid);
     }
 

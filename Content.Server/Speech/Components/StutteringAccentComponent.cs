@@ -41,5 +41,12 @@ namespace Content.Server.Speech.Components
         [DataField("cutRandomProb")]
         [ViewVariables(VVAccess.ReadWrite)]
         public float CutRandomProb = 0.05f;
+
+        /// <summary>
+        /// Percentage chance that a stutter cut off.
+        /// </summary>
+        [DataField("isFromSocialAnxiety")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool IsFromSocialAnxiety = false;        
     }
 }
