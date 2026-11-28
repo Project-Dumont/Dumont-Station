@@ -38,6 +38,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 </BoxContainer>
             </BoxContainer>
         </PanelContainer>
+        <PanelContainer Name="NuclearCodesPanel" Access="Public" Visible="False" Margin="15 5">
+            <RichTextLabel Name="NuclearCodesText" Access="Public" MaxWidth="790"/>
+        </PanelContainer>
         <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190" VerticalExpand="True" HorizontalExpand="True">
             <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
                 <TextEdit Name="MessageInput" VerticalExpand="True" HorizontalExpand="True"/>

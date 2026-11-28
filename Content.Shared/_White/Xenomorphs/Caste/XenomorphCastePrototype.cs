@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._White.Xenomorphs.Caste;
@@ -7,6 +9,9 @@ public sealed partial class XenomorphCastePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [DataField]
+    public int Tier;
 
     [DataField]
     public string Name = string.Empty;

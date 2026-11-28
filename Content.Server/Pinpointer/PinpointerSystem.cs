@@ -28,11 +28,13 @@ using Content.Shared.Whitelist;
 
 namespace Content.Server.Pinpointer;
 
-public sealed class PinpointerSystem : SharedPinpointerSystem
+public sealed partial class PinpointerSystem : SharedPinpointerSystem
 {
-    [Dependency] private readonly AlertsSystem _alerts = default!; // WD EDIT
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private AlertsSystem _alerts = default!; // WD EDIT
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+
+    [Dependency] private Content.Shared.Mobs.Systems.MobStateSystem _mobs = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -129,12 +131,12 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 
         if (component.CanTargetMultiple)
         {
-            var targets = FindAllTargetsFromComponent(uid, component.Whitelist, component.Blacklist);
+            var targets = FindAllTargetsFromComponent(uid, component.Whitelist, component.Blacklist, component.IgnoreDeadTargets);
             SetTargets(uid, targets, component);
         }
         else
         {
-            var target = FindTargetFromComponent(uid, component.Whitelist, component.Blacklist);
+            var target = FindTargetFromComponent(uid, component.Whitelist, component.Blacklist, component.IgnoreDeadTargets);
             SetTarget(uid, target, component);
         }
     }
@@ -160,7 +162,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     private EntityUid? FindTargetFromComponent(
         Entity<TransformComponent?> ent,
         EntityWhitelist whitelist,
-        EntityWhitelist? blacklist)
+        EntityWhitelist? blacklist, bool ignoreDeadTargets)
     {
         _xformQuery.Resolve(ent, ref ent.Comp, false);
 
@@ -192,7 +194,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
                 if (!_xformQuery.TryGetComponent(otherUid, out var compXform) || compXform.MapID != mapId)
                     continue;
 
-                if (Whitelist.IsBlacklistPass(blacklist, otherUid))
+                if (TerminatingOrDeleted(otherUid) || (ignoreDeadTargets && _mobs.IsDead(otherUid)) || Whitelist.IsBlacklistPass(blacklist, otherUid))
                     continue;
 
                 var dist = (_transform.GetWorldPosition(compXform) - worldPos).LengthSquared();
@@ -211,7 +213,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     private List<EntityUid> FindAllTargetsFromComponent(
         Entity<TransformComponent?> ent,
         EntityWhitelist whitelist,
-        EntityWhitelist? blacklist)
+        EntityWhitelist? blacklist, bool ignoreDeadTargets)
     {
         _xformQuery.Resolve(ent, ref ent.Comp, false);
         var list = new List<EntityUid>();
@@ -239,7 +241,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
                 if (!_xformQuery.TryGetComponent(otherUid, out var compXform) || compXform.MapID != mapId)
                     continue;
 
-                if (Whitelist.IsBlacklistPass(blacklist, otherUid))
+                if (TerminatingOrDeleted(otherUid) || (ignoreDeadTargets && _mobs.IsDead(otherUid)) || Whitelist.IsBlacklistPass(blacklist, otherUid))
                     continue;
 
                 list.Add(otherUid);
@@ -316,6 +318,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         var list = new SortedList<float, EntityUid>();
         foreach (var target in ent.Comp.Targets)
         {
+            if (TerminatingOrDeleted(target) || (ent.Comp.IgnoreDeadTargets && _mobs.IsDead(target))) continue;
             var lengh = CalculateDirection(ent, target);
             if (lengh == null)
                 continue;

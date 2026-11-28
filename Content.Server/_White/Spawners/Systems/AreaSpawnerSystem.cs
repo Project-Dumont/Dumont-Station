@@ -5,7 +5,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._CMU14.Xenomorphs;
+using Content.Server._CMU14.Xenomorphs;
 using System.Numerics;
+using Content.Server._Dumont.Xenomorphs;
+using Content.Shared._Dumont.Xenomorphs;
 using Content.Server._White.Spawners.Components;
 using Content.Server.Atmos.Components;
 using Content.Shared.Maps;
@@ -17,13 +21,13 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._White.Spawners.Systems;
 
-public sealed class AreaSpawnerSystem : EntitySystem
+public sealed partial class AreaSpawnerSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     private readonly List<Vector2> _offsets = new List<Vector2>
     {
@@ -70,7 +74,8 @@ public sealed class AreaSpawnerSystem : EntitySystem
 
             foreach (var tile in validTiles)
             {
-                var spawnedUid = Spawn(areaSpawner.SpawnPrototype, Transform(uid).Coordinates.Offset(tile));
+                var coordinates = Transform(uid).Coordinates.Offset(tile);
+                var spawnedUid = Spawn(areaSpawner.SpawnPrototype, coordinates);
                 areaSpawner.Spawneds.Add(spawnedUid);
             }
         }
@@ -107,6 +112,10 @@ public sealed class AreaSpawnerSystem : EntitySystem
 
         foreach (var entity in _map.GetAnchoredEntities((gridUid, mapGridComponent), coords))
         {
+            if (component.SpawnPrototype == "ResinWeed" && (HasComp<XenomorphHardyWeedComponent>(entity))
+                || component.SpawnPrototype == "DumontXenomorphHardyWeed" && HasComp<AreaSpawnerComponent>(entity))
+                return false;
+
             if (TryComp<AirtightComponent>(entity, out var airtight) && airtight.AirBlocked
                 || Prototype(entity) != null && Prototype(entity)! == component.SpawnPrototype
                 || Prototype(entity) == Prototype(uid))

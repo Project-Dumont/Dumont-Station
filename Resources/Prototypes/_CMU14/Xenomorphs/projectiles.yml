@@ -1,0 +1,402 @@
+- type: entity
+  id: DumontXenomorphSlowingSpit
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Xeno/xeno_projectiles.rsi
+    noRot: false
+    layers:
+    - state: neurotoxin
+      shader: unshaded
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask: [Impassable, BulletImpassable]
+  - type: Projectile
+    damage: {}
+    impactEffect: DumontXenomorphSpitImpact
+  - type: XenomorphSpitProjectile
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: DumontXenomorphSlowingSpit
+  id: DumontXenomorphScatteredSpit
+  components:
+  - type: XenomorphSpitProjectile
+    range: 4
+    slow: 0
+    paralyze: 1
+    armorResists: false
+    drainMedicine: false
+
+- type: entity
+  id: DumontXenomorphSpitImpact
+  categories: [HideSpawnMenu]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Sprite
+    sprite: _RMC14/Objects/Xeno/xeno_projectiles.rsi
+    drawdepth: Effects
+    layers:
+    - state: ping_x
+      shader: unshaded
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphSlowingSpit
+  id: DumontXenomorphAcidSpit
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_weak
+      shader: unshaded
+  - type: Projectile
+    impactEffect: null
+    soundHit: /Audio/_RMC14/Xeno/acid_impact1.ogg
+    damage:
+      types:
+        Caustic: 20
+  - type: XenomorphSpitProjectile
+    acid: true
+    range: 7
+    slow: 0
+    paralyze: 0
+    armorResists: false
+    drainMedicine: false
+
+- type: entity
+  parent: DumontXenomorphAcidSpit
+  id: DumontXenomorphChargedSpit
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_strong
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 30
+  - type: XenomorphSpitProjectile
+    range: 5
+    charged: true
+
+- type: entity
+  id: DumontXenomorphAcidSpray
+  name: acid splatter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid2-weak
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 0.6
+
+- type: entity
+  id: DumontXenomorphAcidCoating
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_spray_acid.rsi
+    state: human_acid
+    drawdepth: Effects
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphAcidCoating
+  id: DumontXenomorphAcidCoatingEnhanced
+  components:
+  - type: Sprite
+    state: human_acid_enhanced
+
+- type: entity
+  id: DumontXenomorphEmpowerGreen
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_empower.rsi
+    state: empower_custom
+    color: "#93EC78C8"
+    noRot: true
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 2
+  - type: EffectVisuals
+  - type: Tag
+    tags: [HideContextMenu]
+
+- type: entity
+  parent: DumontXenomorphAcidCoating
+  id: DumontXenomorphBarricadeAcid
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid_normal
+
+- type: entity
+  parent: DumontXenomorphAcidCoating
+  id: DumontXenomorphAcidSplash
+  components:
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  parent: DumontXenomorphAcidSpray
+  id: DumontXenomorphStrongAcidSpray
+  components:
+  - type: Sprite
+    state: acid2
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  id: DumontXenomorphBombardAcid
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Xeno/xeno_projectiles.rsi
+    layers:
+    - state: acid_glob
+      shader: unshaded
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask: [Impassable, BulletImpassable]
+  - type: Projectile
+    damage: {}
+    impactEffect: null
+  - type: XenomorphBombardProjectile
+  - type: TimedDespawn
+    lifetime: 10
+
+- type: entity
+  parent: DumontXenomorphBombardAcid
+  id: DumontXenomorphBombardNeuro
+  components:
+  - type: Sprite
+    layers:
+    - state: neuro_glob
+      shader: unshaded
+  - type: XenomorphBombardProjectile
+    neurotoxin: true
+
+- type: entity
+  parent: DumontXenomorphAcidSpit
+  id: DumontXenomorphPraetorianSpit
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_strong
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 30
+  - type: XenomorphSpitProjectile
+    acid: false
+  - type: XenomorphPraetorianProjectile
+    rewardShield: true
+
+- type: entity
+  parent: DumontXenomorphPraetorianSpit
+  id: DumontXenomorphAcidBallSpit
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_normal
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 25
+  - type: XenomorphPraetorianProjectile
+    range: 3
+    rewardShield: false
+
+- type: entity
+  id: DumontXenomorphAcidBall
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Xeno/xeno_acid_ball.rsi
+    layers:
+    - state: neuro_nade
+      shader: unshaded
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask: [Impassable, BulletImpassable]
+  - type: Projectile
+    deleteOnCollide: false
+    impactEffect: null
+    damage: {}
+  - type: XenomorphAcidBall
+  - type: TimedDespawn
+    lifetime: 10
+
+- type: entity
+  id: DumontXenomorphAcidBallBurst
+  categories: [HideSpawnMenu]
+  components:
+  - type: XenomorphAcidBallBurst
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: DumontXenomorphStrongAcidSpray
+  id: DumontXenomorphStackingAcidSpray
+
+- type: entity
+  id: DumontXenomorphOppressorHook
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/beam.rsi
+    state: oppressor_tail_hook
+    drawdepth: Effects
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask: [Impassable, BulletImpassable]
+  - type: Projectile
+    impactEffect: null
+    damage:
+      types:
+        Slash: 40
+  - type: XenomorphOppressorHookProjectile
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: DumontXenomorphSlowingSpit
+  id: DumontXenomorphToxicSpit
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 16
+    soundHit: /Audio/_RMC14/Xeno/acid_impact1.ogg
+  - type: XenomorphToxicProjectile
+  - type: XenomorphSpitProjectile
+    range: 7
+    slow: 0
+    paralyze: 0
+    armorResists: false
+    drainMedicine: false
+
+- type: entity
+  parent: DumontXenomorphSlowingSpit
+  id: DumontXenomorphVenatorSpit
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_strong
+      shader: unshaded
+  - type: Projectile
+    impactEffect: null
+    soundHit: /Audio/_RMC14/Xeno/acid_impact1.ogg
+    damage:
+      types:
+        Caustic: 35
+  - type: XenomorphVenatorProjectile
+  - type: XenomorphSpitProjectile
+    range: 8
+    slow: 0
+    paralyze: 0
+    armorResists: false
+    drainMedicine: false
+
+- type: entity
+  parent: DumontXenomorphVenatorSpit
+  id: DumontXenomorphVenatorAcidBlob
+  components:
+  - type: Sprite
+    layers:
+    - state: acid_glob
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 25
+  - type: XenomorphVenatorProjectile
+    blob: true
+
+- type: entity
+  parent: DumontXenomorphVenatorSpit
+  id: DumontXenomorphVenatorBreath
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 12
+
+- type: entity
+  parent: DumontXenomorphChargedSpit
+  id: DumontXenomorphQueenSpit
+  components:
+  - type: XenomorphQueenVolley
+  - type: XenomorphSpitProjectile
+    range: 10
+    paralyze: 0
+    slow: 0
+    drainMedicine: false
+
+- type: entity
+  parent: DumontXenomorphSlowingSpit
+  id: DumontXenomorphBoneChips
+  name: bone chips
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Materials/shards.rsi
+    layers:
+    - state: bonechips
+      shader: unshaded
+  - type: Projectile
+    impactEffect: null
+    damage:
+      types:
+        Slash: 10
+  - type: XenomorphSpitProjectile
+    range: 4
+    slow: 5
+    slowFactor: 0.2
+    paralyze: 0
+    armorResists: false
+    drainMedicine: false
+    deleteOnFriendly: false

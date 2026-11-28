@@ -41,12 +41,13 @@ namespace Content.Shared.Communications
         public float CurrentAlertDelay;
         public string StationName;
         public readonly bool RenameOnCooldown;
+        public readonly string? NuclearCodes;
         // Dumont changes start
         public readonly bool CanUnlockEscapePods;
         public readonly bool EscapePodsUnlocked;
         // Dumont end
 
-        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false, bool canUnlockEscapePods = false, bool escapePodsUnlocked = false) // Dumont
+        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false, bool canUnlockEscapePods = false, bool escapePodsUnlocked = false, string? nuclearCodes = null) // Dumont
         {
             IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
@@ -62,6 +63,7 @@ namespace Content.Shared.Communications
             CanUnlockEscapePods = canUnlockEscapePods;
             EscapePodsUnlocked = escapePodsUnlocked;
             // Dumont end
+            NuclearCodes = nuclearCodes;
         }
     }
 
