@@ -402,7 +402,7 @@ namespace Content.Server.BloodCult.EntitySystems
 			var stationQuery = EntityQueryEnumerator<StationDataComponent>();
 			while (stationQuery.MoveNext(out var stationUid, out var _))
 			{
-				_alertLevel.SetLevel(stationUid, "delta", true, true, true);
+				_alertLevel.SetLevel(stationUid, "omega", true, true, true);
 			}
 
 			// Central Command announcement briefing the crew

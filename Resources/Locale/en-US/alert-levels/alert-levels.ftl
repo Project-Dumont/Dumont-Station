@@ -12,6 +12,8 @@
 
 alert-level-announcement = Attention! Station alert level is now {$name}! {$announcement}
 
+# Normal
+
 alert-level-unknown = Unknown.
 alert-level-unknown-instructions = Unknown.
 
@@ -20,48 +22,52 @@ alert-level-green-announcement = It is now safe to return to your workplaces.
 alert-level-green-instructions = Do your job.
 
 alert-level-blue = Blue
-alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
-alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to security.
+alert-level-blue-announcement = There is a non-confirmed threat to the station. 
+alert-level-blue-instructions = Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
 
 alert-level-red = Red
-alert-level-red-announcement = There is an immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
-alert-level-red-instructions = Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
+alert-level-red-announcement = There is a corporative threat to the station. Do not trust anyone. 
+alert-level-red-instructions = Department Heads should keep a close eye on their employees and security should be on the alert for possible breaches.
 
 alert-level-violet = Violet
-alert-level-violet-announcement = There is a viral threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
-alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
+alert-level-violet-announcement = There is a biological threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
+alert-level-violet-instructions = Crewmembers are to shelter in the Medbay. Security must be armed at all times.
 
 alert-level-yellow = Yellow
-alert-level-yellow-announcement = There is a structural or atmospheric threat within the station. Engineering staff are advised to immediately respond and perform safety measures. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
-alert-level-yellow-instructions = Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
+alert-level-yellow-announcement = There is a fundamental structural threat within or from the station. 
+alert-level-yellow-instructions = Engineering staff are advised to immediately respond and perform safety measures.. Crewmembers are advised to not trust any piece of equipment, room sealant. Usage of internals is reccomended.
 
-alert-level-gamma = Gamma
-alert-level-gamma-announcement = Central Command has ordered the Gamma security level on the station. Security is to have weapons equipped at all times, and all civilians are to immediately seek their nearest head for transportation to a secure location.
-alert-level-gamma-instructions = All civilians are to immediately seek their nearest head for transportation to a secure location.
+alert-level-pink = Pink
+alert-level-pink-announcement = A group of individuals have been found to be working against the interests of the station.
+alert-level-pink-instructions = Crewmembers are to stay away from isolated places, and to report suspicous activities. No organizing of groups is allowed.
 
-alert-level-delta = Delta
-alert-level-delta-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.
-alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
+alert-level-orange = Orange
+alert-level-orange-announcement = An individual dangerous hostile has been deemed a major threat to the station.
+alert-level-orange-instructions = Crewmembers are to shelter in place. Security is to hunt down the threat with lethal force.
+
+alert-level-white = White
+alert-level-white-announcement = Total collapse of departmental cohesion has been declared.
+alert-level-white-instructions = Crewmembers are to request for immediate emergency evacuation by any means necessary. You are on your own.
+
+# Special
+
+alert-level-omega = Omega
+alert-level-omega-announcement = The station's self destruct mechanism has been activated. All living things and structures within this sector face imminent destruction.
+alert-level-omega-instructions = All personnel are to run for their lives. Glory to NanoTrasen.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
-alert-level-epsilon-instructions = Consider all contracts terminated.
+alert-level-epsilon-announcement = Central Command has ordered the voiding of all contracts.
+alert-level-epsilon-instructions = All former employees are to shelter in place and await severance measures.
+
+alert-level-gamma = Gamma
+alert-level-gamma-announcement = Central Command has ordered the Gamma security level on the station. 
+alert-level-gamma-instructions = Security is to have weapons equipped at all times, and all civilians are to immediately seek their nearest head for transportation to a secure location.
 
 alert-level-omicron = Omicron
-alert-level-omicron-announcement = Station override activated. Await further orders from Central Command staff, stay in your departments.
+alert-level-omicron-announcement = Station override activated. 
 alert-level-omicron-instructions = Await further orders.
-
-## DeltaV - Cosmic Cult
-alert-level-octarine = Octarine
-alert-level-octarine-announcement = A cataclysmic noospheric event threatens to envelop realspace. Station crew are to contain the event if possible, or else evacuate.
-alert-level-octarine-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 ## GoobStation
 alert-level-honk = Honk
 alert-level-honk-announcement = A devious clown is on the loose and will cause cataclysmic damage if not executed! All crewmembers must collaborate in executing the clown if possible, or else evacuate.
 alert-level-honk-instructions = Crewmembers are advised to execute the clown.
-
-## Gabystation
-alert-level-cyan = Cyan
-alert-level-cyan-announcement = All silicons should be avoided and treated as hostile.
-alert-level-cyan-instructions = Report any silicon activity to Security immediately.

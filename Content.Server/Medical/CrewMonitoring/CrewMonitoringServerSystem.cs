@@ -12,6 +12,8 @@ using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
+using Robust.Shared.Prototypes;
+using Content.Shared.Roles;
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -116,4 +118,16 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
     {
         component.SensorStatus.Clear();
     }
+
+    /// <summary>
+    /// Tries getting the first crew monitoring server on a given station.
+    /// </summary>
+    /// <param name="station">The Station UID</param>
+    /// <param name="server">UID and Component of server</param>
+    /// <returns>Whether it was succesful</returns>
+    public bool TryGetServer(EntityUid station, out Entity<CrewMonitoringServerComponent> server)
+    {
+        return _singletonServerSystem.TryServer(station, out server);
+    }
+
 }

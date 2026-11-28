@@ -123,6 +123,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.Roles;
+using Content.Shared.StatusEffect;
+using Content.Server.GameTicking.Rules.Components;
+using Content.Shared.Station;
 
 namespace Content.Server.Medical.SuitSensors;
 
@@ -143,6 +147,7 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private SharedStationSystem _station = default!;
 
     public override void Initialize()
     {
